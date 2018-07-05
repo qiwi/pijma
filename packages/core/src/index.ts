@@ -6,7 +6,7 @@ import RenderChild from './RenderChild'
 import reset from './reset'
 import fonts from './fonts'
 
-import * as theme from './theme'
+import * as themes from './themes'
 
 export * from './button'
 export * from './input'
@@ -20,7 +20,7 @@ export {
   StyledComponent,
   Theme,
   RenderChild,
-  theme,
+  themes,
   reset,
   fonts,
 }
