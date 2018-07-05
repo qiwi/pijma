@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - '10'
+
+before_install:
+  - npm install -g yarn
+
+install:
+  - yarn install
+  - lerna bootstrap
+
+script:
+  - yarn build
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+    - yarn lerna exec --concurrency 1 "npx --no-install semantic-release -e semantic-release-monorepo"
