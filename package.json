@@ -1,5 +1,8 @@
 {
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "clean": "lerna clean --yes && lerna run clean",
     "build": "yarn clean && lerna run --stream build",
@@ -15,7 +18,22 @@
     "semantic-release": "^15.6.3",
     "semantic-release-monorepo": "^6.0.3"
   },
-  "workspaces": [
-    "packages/*"
-  ]
+  "release": {
+    "branch": "master",
+    "tagFormat": "v${version}",
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ],
+    "publish": [
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ]
+  }
 }
