@@ -13,6 +13,7 @@
     "@qiwi/pijma-core": "^1.0.0",
     "babel-plugin-emotion": "^9.2.4",
     "emotion": "^9.2.3",
+    "emotion-theming": "^9.2.3",
     "polished": "^1.9.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
