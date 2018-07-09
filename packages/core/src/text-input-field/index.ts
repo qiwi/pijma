@@ -1,9 +1,9 @@
-import TextInputFieldControl from './TextInputFieldControl'
-import TextInputFieldControlProps from './TextInputFieldControlProps'
-import TextInputFieldControlState from './TextInputFieldControlState'
+import TextFieldControl from './TextFieldControl'
+import TextFieldControlProps from './TextFieldControlProps'
+import TextFieldControlState from './TextFieldControlState'
 
 export {
-  TextInputFieldControl,
-  TextInputFieldControlProps,
-  TextInputFieldControlState,
+  TextFieldControl,
+  TextFieldControlProps,
+  TextFieldControlState,
 }

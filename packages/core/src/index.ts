@@ -12,6 +12,7 @@ export * from './button'
 export * from './input'
 export * from './field'
 export * from './text-input-field'
+export * from './password-field'
 export * from './icon'
 export * from './spinner'
 

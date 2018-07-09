@@ -1,15 +1,15 @@
 import React from 'react'
 
-export default interface TextInputFieldProps {
+export default interface PasswordFieldProps {
   value: string
   tabIndex?: number
-  type?: 'text' | 'password' | 'tel' | 'number' | 'search'
   name?: string
   title?: string
   error?: React.ReactNode
   action?: React.ReactNode
   help?: React.ReactNode
   hint?: React.ReactNode
+  viewed?: boolean
   autoComplete?: boolean
   autoFocus?: boolean
   placeholder?: string
@@ -20,4 +20,5 @@ export default interface TextInputFieldProps {
   onBlur?: () => void
   onKeyDown?: (event: React.KeyboardEvent) => boolean
   onKeyUp?: (event: React.KeyboardEvent) => boolean
+  onToggle?: (hidden: boolean) => void
 }
