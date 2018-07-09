@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.0.5](https://github.com/qiwi/pijma/compare/v1.0.4...v1.0.5) (2018-07-09)
+
+
+### Bug Fixes
+
+* broken deps ([84d4bb1](https://github.com/qiwi/pijma/commit/84d4bb1))
+
 # [@qiwi/pijma-core-v1.0.2](https://github.com/qiwi/pijma/compare/v1.0.1...v1.0.2) (2018-07-06)
 
 
