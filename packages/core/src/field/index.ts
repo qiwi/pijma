@@ -6,7 +6,7 @@ import FieldUnder from './FieldUnder'
 import FieldUnderAction from './FieldUnderAction'
 import FieldUnderError from './FieldUnderError'
 import FieldUnderHelp from './FieldUnderHelp'
-import FieldHint from './FieldHint'
+import FieldIcon from './FieldIcon'
 
 export {
   Field,
@@ -17,5 +17,5 @@ export {
   FieldUnderAction,
   FieldUnderError,
   FieldUnderHelp,
-  FieldHint,
+  FieldIcon,
 }

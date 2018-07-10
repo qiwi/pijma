@@ -4,7 +4,7 @@ import {
   styled,
   StyledComponent,
   Theme,
-  TextInputFieldControl,
+  TextFieldControl,
   Input,
   Field,
   FieldInput,
@@ -14,12 +14,12 @@ import {
   FieldUnderAction,
   FieldUnderError,
   FieldUnderHelp,
-  FieldHint,
+  FieldIcon,
 } from '@qiwi/pijma-core'
 
-import TextInputFieldProps from './TextInputFieldProps'
+import TextFieldProps from './TextFieldProps'
 
-interface TextInputFieldStyledProps {
+interface TextFieldStyledProps {
   focused: boolean
   value: string
   disabled?: boolean
@@ -28,7 +28,7 @@ interface TextInputFieldStyledProps {
   error?: React.ReactNode
 }
 
-const TextInputFieldStyled: StyledComponent<TextInputFieldStyledProps, {}, Theme> = styled('div')((props) => ({
+const TextFieldStyled: StyledComponent<TextFieldStyledProps, {}, Theme> = styled('div')((props) => ({
   width: '100%',
   [FieldTitleText.toString()]: {
     fontSize: props.focused || !!props.value || !!props.placeholder ? 13 : 20,
@@ -59,15 +59,15 @@ const TextInputFieldStyled: StyledComponent<TextInputFieldStyledProps, {}, Theme
   },
 }))
 
-const TextInputField: React.SFC<TextInputFieldProps> = (props) => (
-  <TextInputFieldControl
+const TextField: React.SFC<TextFieldProps> = (props) => (
+  <TextFieldControl
     onChange={props.onChange}
     onFocus={props.onFocus}
     onBlur={props.onBlur}
     onKeyDown={props.onKeyDown}
     onKeyUp={props.onKeyUp}
     children={(renderProps) => (
-      <TextInputFieldStyled
+      <TextFieldStyled
         focused={renderProps.focused}
         value={props.value}
         disabled={props.disabled}
@@ -98,9 +98,9 @@ const TextInputField: React.SFC<TextInputFieldProps> = (props) => (
               onKeyUp={renderProps.onKeyUp}
               aria-labelledby={props.title}
             />
-            <FieldHint>
+            <FieldIcon>
               {props.hint}
-            </FieldHint>
+            </FieldIcon>
           </FieldInput>
           <FieldUnder>
             {props.error ? (
@@ -123,14 +123,14 @@ const TextInputField: React.SFC<TextInputFieldProps> = (props) => (
             )}
           </FieldUnder>
         </Field>
-      </TextInputFieldStyled>
+      </TextFieldStyled>
     )}
   />
 )
 
-TextInputField.defaultProps = {
+TextField.defaultProps = {
   type: 'text',
   tabIndex: 0,
 }
 
-export default TextInputField
+export default TextField

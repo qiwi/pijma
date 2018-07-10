@@ -1,11 +1,11 @@
 import React from 'react'
 
-import TextInputFieldControlProps from './TextInputFieldControlProps'
-import TextInputFieldControlState from './TextInputFieldControlState'
+import TextFieldControlProps from './TextFieldControlProps'
+import TextFieldControlState from './TextFieldControlState'
 
-export default class TextInputFieldControl extends React.Component<TextInputFieldControlProps, TextInputFieldControlState> {
+export default class TextFieldControl extends React.Component<TextFieldControlProps, TextFieldControlState> {
 
-  public constructor(props: TextInputFieldControlProps) {
+  public constructor(props: TextFieldControlProps) {
     super(props)
     this.state = {
       focused: false,
