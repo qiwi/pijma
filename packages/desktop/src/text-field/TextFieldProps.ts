@@ -3,7 +3,7 @@ import React from 'react'
 export default interface TextFieldProps {
   value: string
   tabIndex?: number
-  type?: 'text' | 'password' | 'tel' | 'number' | 'search'
+  type?: 'text' | 'password' | 'tel' | 'number' | 'search' | 'email' | 'url'
   name?: string
   title?: string
   error?: React.ReactNode

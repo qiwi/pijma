@@ -65,7 +65,7 @@ export interface AppState {
   }
   textField: {
     value: string
-    type: 'text' | 'password' | 'tel' | 'number' | 'search'
+    type: 'text' | 'password' | 'tel' | 'number' | 'search' | 'email' | 'url'
     disabled: boolean
     help: boolean
     error: boolean
@@ -380,6 +380,28 @@ export default class App extends React.Component<{}, AppState> {
                   onChange={() => this.setState({textField: {...this.state.textField, ...{type: 'search'}}})}
                 />
                 search
+              </label>
+            </div>
+            <div>
+              <label>
+                <input
+                  type="radio"
+                  name="text-input-field-type"
+                  checked={this.state.textField.type === 'email'}
+                  onChange={() => this.setState({textField: {...this.state.textField, ...{type: 'email'}}})}
+                />
+                email
+              </label>
+            </div>
+            <div>
+              <label>
+                <input
+                  type="radio"
+                  name="text-input-field-type"
+                  checked={this.state.textField.type === 'url'}
+                  onChange={() => this.setState({textField: {...this.state.textField, ...{type: 'url'}}})}
+                />
+                url
               </label>
             </div>
           </Section>
