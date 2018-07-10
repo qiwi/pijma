@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.1.0](https://github.com/qiwi/pijma/compare/v1.0.6...v1.1.0) (2018-07-10)
+
+
+### Features
+
+* password field added and text field improvements ([49170c7](https://github.com/qiwi/pijma/commit/49170c7))
+
 # [@qiwi/pijma-core-v1.0.5](https://github.com/qiwi/pijma/compare/v1.0.4...v1.0.5) (2018-07-09)
 
 
