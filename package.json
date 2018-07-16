@@ -16,7 +16,8 @@
     "@semantic-release/npm": "^3.3.4",
     "lerna": "^2.11.0",
     "semantic-release": "^15.6.3",
-    "semantic-release-monorepo": "^6.0.3"
+    "semantic-release-monorepo": "^6.0.3",
+    "semantic-release-monorepo-hooks": "^1.1.2"
   },
   "release": {
     "branch": "master",
