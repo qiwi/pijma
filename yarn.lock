@@ -5877,9 +5877,9 @@ selfsigned@^1.9.1:
   dependencies:
     node-forge "0.7.5"
 
-semantic-release-monorepo-hooks@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/semantic-release-monorepo-hooks/-/semantic-release-monorepo-hooks-1.1.2.tgz#dd2d1f394f0716d620e43369b18ec36939d3b98e"
+semantic-release-monorepo-hooks@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/semantic-release-monorepo-hooks/-/semantic-release-monorepo-hooks-1.1.3.tgz#891e668a83904e35834994a80a9e65f5181bd687"
 
 semantic-release-monorepo@^6.0.3:
   version "6.0.3"
