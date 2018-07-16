@@ -1,3 +1,15 @@
+# [@qiwi/pijma-desktop-v1.1.1](https://github.com/qiwi/pijma/compare/v1.1.0...v1.1.1) (2018-07-16)
+
+
+### Bug Fixes
+
+* **release:** rebuild-republish ([4d4b9b1](https://github.com/qiwi/pijma/commit/4d4b9b1))
+
+
+### Performance Improvements
+
+* tech release ([db3d33b](https://github.com/qiwi/pijma/commit/db3d33b))
+
 # [@qiwi/pijma-desktop-v1.0.6](https://github.com/qiwi/pijma/compare/v1.0.5...v1.0.6) (2018-07-09)
 
 
