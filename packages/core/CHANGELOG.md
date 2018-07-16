@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.1.2](https://github.com/qiwi/pijma/compare/v1.1.1...v1.1.2) (2018-07-16)
+
+
+### Bug Fixes
+
+* **release:** rebuild-republish ([4d4b9b1](https://github.com/qiwi/pijma/commit/4d4b9b1))
+
 # [@qiwi/pijma-core-v1.1.1](https://github.com/qiwi/pijma/compare/v1.1.0...v1.1.1) (2018-07-16)
 
 
