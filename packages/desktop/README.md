@@ -7,7 +7,7 @@ Pijma desktop ui components.
 npm i --save @qiwi/pijma-desktop
 ```
 
-# Usage
+## Usage
 ```javascript
 import {Button} from '@qiwi/pijma-desktop'
 ```

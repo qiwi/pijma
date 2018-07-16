@@ -7,7 +7,7 @@ Pijma mobile ui components.
 npm i --save @qiwi/pijma-mobile
 ```
 
-# Usage
+## Usage
 ```javascript
 import {Button} from '@qiwi/pijma-mobile'
 ```
