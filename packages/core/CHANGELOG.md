@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.1.1](https://github.com/qiwi/pijma/compare/v1.1.0...v1.1.1) (2018-07-16)
+
+
+### Performance Improvements
+
+* tech release ([db3d33b](https://github.com/qiwi/pijma/commit/db3d33b))
+
 # [@qiwi/pijma-core-v1.1.0](https://github.com/qiwi/pijma/compare/v1.0.6...v1.1.0) (2018-07-10)
 
 
