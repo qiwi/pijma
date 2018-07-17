@@ -1,6 +1,8 @@
 import {rgba} from 'polished'
 
-import {styled, StyledComponent, Theme} from '@qiwi/pijma-core'
+import styled from '../styled'
+import StyledComponent from '../StyledComponent'
+import Theme from '../Theme'
 
 const Input: StyledComponent<{}, Partial<JSX.IntrinsicElements['input']>, Theme> = styled('input')((props) => ({
   width: '100%',

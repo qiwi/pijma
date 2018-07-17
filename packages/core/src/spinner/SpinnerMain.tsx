@@ -1,7 +1,9 @@
 import React from 'react'
 import {keyframes} from 'emotion'
 
-import {styled, StyledComponent, Theme} from '@qiwi/pijma-core'
+import styled from '../styled'
+import StyledComponent from '../StyledComponent'
+import Theme from '../Theme'
 
 const animation = keyframes({
   '100%': {
