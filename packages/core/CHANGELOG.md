@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.1.2](https://github.com/qiwi/pijma/compare/v1.1.1...v1.1.2) (2018-07-17)
+
+
+### Bug Fixes
+
+* **tsconfig:** separate config for each package ([bbe5e86](https://github.com/qiwi/pijma/commit/bbe5e86))
+
 # [@qiwi/pijma-core-v1.1.2](https://github.com/qiwi/pijma/compare/v1.1.1...v1.1.2) (2018-07-16)
 
 
