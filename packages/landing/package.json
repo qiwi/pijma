@@ -4,5 +4,10 @@
   "license": "MIT",
   "scripts": {},
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "lib/"
+  ]
 }

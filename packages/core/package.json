@@ -1,14 +1,19 @@
 {
   "name": "@qiwi/pijma-core",
   "version": "1.1.2",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/es5/index.js",
+  "types": "lib/es5/index.d.ts",
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf lib",
-    "build": "mkdir -p lib && cp -r src/fonts lib && tsc -p tsconfig.build.json",
-    "watch": "mkdir -p lib && cp -r src/fonts lib && tsc -p tsconfig.build.json -w"
+    "build": "mkdir -p lib/es5 && cp -r src/fonts lib/es5/fonts && tsc -p tsconfig.build.json",
+    "watch": "mkdir -p lib/es5 && cp -r src/fonts lib/es5/fonts && tsc -p tsconfig.build.json -w"
   },
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "lib/"
+  ],
   "dependencies": {
     "babel-plugin-emotion": "^9.2.4",
     "emotion": "^9.2.6",

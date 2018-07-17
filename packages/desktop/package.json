@@ -1,14 +1,19 @@
 {
   "name": "@qiwi/pijma-desktop",
   "version": "1.1.1",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/es5/index.js",
+  "types": "lib/es5/index.d.ts",
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf lib",
     "build": "tsc -p tsconfig.build.json",
     "watch": "tsc -p tsconfig.build.json -w"
   },
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "lib/"
+  ],
   "dependencies": {
     "@qiwi/pijma-core": "^1.0.0",
     "babel-plugin-emotion": "^9.2.4",

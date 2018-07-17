@@ -8,6 +8,11 @@
     "watch": "node webpack",
     "start": "node index"
   },
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "lib/"
+  ],
   "dependencies": {
     "@emotion/core": "^0.10.2",
     "@emotion/css": "^0.9.1",
