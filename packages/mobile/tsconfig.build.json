@@ -2,7 +2,7 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "lib",
+    "outDir": "lib/es5",
     "baseUrl": "src",
     "paths": {
       "@qiwi/pijma-mobile": [
