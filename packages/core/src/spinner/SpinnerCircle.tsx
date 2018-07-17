@@ -20,7 +20,7 @@ const animation = keyframes({
   },
 })
 
-const SpinnerCircle: StyledComponent<Partial<JSX.IntrinsicElements['circle']>, {}, Theme> = styled('circle')({
+const SpinnerCircle: StyledComponent<{}, JSX.IntrinsicElements['circle'], Theme> = styled('circle')({
   fill: 'none',
   stroke: '#000',
   strokeDasharray: '89, 200',

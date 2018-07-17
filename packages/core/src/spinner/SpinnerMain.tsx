@@ -11,7 +11,7 @@ const animation = keyframes({
   },
 })
 
-const SpinnerMain: StyledComponent<Partial<JSX.IntrinsicElements['svg']>, {}, Theme> = styled('svg')({
+const SpinnerMain: StyledComponent<{}, JSX.IntrinsicElements['svg'], Theme> = styled('svg')({
   width: 24,
   height: 24,
   transformOrigin: 'center center',
