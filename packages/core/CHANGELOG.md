@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.1.4](https://github.com/qiwi/pijma/compare/v1.1.3...v1.1.4) (2018-07-17)
+
+
+### Performance Improvements
+
+* throw away sources from npm packs ([bffe40f](https://github.com/qiwi/pijma/commit/bffe40f))
+
 # [@qiwi/pijma-core-v1.1.2](https://github.com/qiwi/pijma/compare/v1.1.1...v1.1.2) (2018-07-17)
 
 
