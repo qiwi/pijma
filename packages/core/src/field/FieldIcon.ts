@@ -1,4 +1,6 @@
-import {styled, StyledComponent, Theme} from '@qiwi/pijma-core'
+import styled from '../styled'
+import StyledComponent from '../StyledComponent'
+import Theme from '../Theme'
 
 const FieldIcon: StyledComponent<{}, {}, Theme> = styled('div')({
   position: 'absolute',

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {RenderChild} from '@qiwi/pijma-core'
+import RenderChild from '../RenderChild'
 
 export default interface TextFieldControlProps {
   onChange?: (value: string) => void

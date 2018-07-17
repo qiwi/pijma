@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {RenderChild} from '@qiwi/pijma-core'
+import RenderChild from '../RenderChild'
 
 export default interface PasswordFieldControlProps {
   onChange?: (value: string) => void

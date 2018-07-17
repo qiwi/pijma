@@ -1,4 +1,4 @@
-import {RenderChild} from '@qiwi/pijma-core'
+import RenderChild from '../RenderChild'
 
 export default interface ButtonControlProps {
   onClick?: () => void
