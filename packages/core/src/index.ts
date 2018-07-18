@@ -1,4 +1,5 @@
 import styled, {StyledComponent} from 'react-emotion'
+import {ThemeProvider} from 'emotion-theming'
 
 import Theme from './Theme'
 import RenderChild from './RenderChild'
@@ -22,6 +23,7 @@ export {
   Theme,
   RenderChild,
   themes,
+  ThemeProvider,
   reset,
   fonts,
 }
