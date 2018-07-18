@@ -1,12 +1,3 @@
 {
-  "extends": "./tsconfig.base.json",
-  "compilerOptions": {
-    "baseUrl": "src",
-    "paths": {
-      "@qiwi/pijma-mobile": [
-        "./*",
-        "."
-      ]
-    }
-  }
+  "extends": "../../tsconfig.json"
 }

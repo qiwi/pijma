@@ -12,6 +12,9 @@ import {
   ButtonKind,
   TextField,
   PasswordField,
+  CheckboxField,
+  RadioField,
+  Actions,
 } from '@qiwi/pijma-mobile'
 
 import './global'
@@ -40,35 +43,27 @@ const Section = styled('section')({
 
 export interface AppState {
   button: {
+    features: string[]
     type: ButtonType
     kind: ButtonKind
-    disabled: boolean
-    loading: boolean
-    icon: boolean
-    text: boolean
-    long: boolean
+  }
+  actions: {}
+  checkboxField: {
+    features: string[]
+    values: string[]
+  }
+  radioField: {
+    features: string[]
+    value: string
   }
   textField: {
+    features: string[]
     value: string
     type: 'text' | 'password' | 'tel' | 'number' | 'search' | 'email' | 'url'
-    disabled: boolean
-    help: boolean
-    error: boolean
-    hint: boolean
-    action: boolean
-    placeholder: boolean
-    maxLength: boolean
   }
   passwordField: {
+    features: string[]
     value: string
-    disabled: boolean
-    help: boolean
-    error: boolean
-    hint: boolean
-    viewed: boolean
-    action: boolean
-    placeholder: boolean
-    maxLength: boolean
   }
 }
 
@@ -78,35 +73,27 @@ export default class App extends React.Component<{}, AppState> {
     super(props)
     this.state = {
       button: {
+        features: ['icon', 'text'],
         type: 'button',
         kind: 'brand',
-        disabled: false,
-        loading: false,
-        icon: true,
-        text: true,
-        long: false,
+      },
+      actions: {},
+      checkboxField: {
+        features: ['hint', 'help'],
+        values: ['banana'],
+      },
+      radioField: {
+        features: ['hint', 'help'],
+        value: 'banana',
       },
       textField: {
+        features: ['help', 'hint', 'action'],
         value: '',
         type: 'text',
-        disabled: false,
-        help: true,
-        error: false,
-        hint: true,
-        action: true,
-        placeholder: false,
-        maxLength: false,
       },
       passwordField: {
+        features: ['help', 'hint', 'action', 'viewed'],
         value: '',
-        disabled: false,
-        help: true,
-        error: false,
-        hint: true,
-        viewed: true,
-        action: true,
-        placeholder: false,
-        maxLength: false,
       },
     }
   }
@@ -114,10 +101,117 @@ export default class App extends React.Component<{}, AppState> {
   public render() {
     return (
       <React.Fragment>
+        {this.renderCheckboxField()}
+        {this.renderRadioField()}
         {this.renderButtons()}
+        {this.renderActions()}
         {this.renderTextField()}
         {this.renderPasswordField()}
       </React.Fragment>
+    )
+  }
+
+  public renderCheckboxField() {
+    return (
+      <Dl>
+        <Dt>
+          checkbox field
+        </Dt>
+        <Dd>
+          <Section>
+            <div>
+              <CheckboxField
+                title="Checkbox"
+                hint={this.state.checkboxField.features.includes('hint') ? <QuestionIcon/> : null}
+                help={this.state.checkboxField.features.includes('help') ? 'Вариант дополнительной подсказки. Больший объем текста увеличивает отступ от текста подсказки до следующего поля' : null}
+                options={[{
+                  label: 'Banana',
+                  description: 'yellow fruit',
+                  value: 'banana',
+                  disabled: true,
+                }, {
+                  label: 'Apple',
+                  description: 'green, red or yellow fruit',
+                  value: 'apple',
+                  disabled: false,
+                }, {
+                  label: 'Mango',
+                  description: 'another yellow fruit',
+                  value: 'mango',
+                  disabled: false,
+                }]}
+                values={this.state.checkboxField.values}
+                onChange={(values) => this.setState({checkboxField: {...this.state.checkboxField, ...{values}}})}
+              />
+            </div>
+          </Section>
+          <Section>
+            <CheckboxField
+              options={[{
+                label: 'hint',
+                value: 'hint',
+              }, {
+                label: 'help',
+                value: 'help',
+              }]}
+              values={this.state.checkboxField.features}
+              onChange={(features) => this.setState({checkboxField: {...this.state.checkboxField, ...{features}}})}
+            />
+          </Section>
+        </Dd>
+      </Dl>
+    )
+  }
+
+  public renderRadioField() {
+    return (
+      <Dl>
+        <Dt>
+          radio field
+        </Dt>
+        <Dd>
+          <Section>
+            <div>
+              <RadioField
+                title="Radio"
+                hint={this.state.radioField.features.includes('hint') ? <QuestionIcon/> : null}
+                help={this.state.radioField.features.includes('help') ? 'Вариант дополнительной подсказки. Больший объем текста увеличивает отступ от текста подсказки до следующего поля' : null}
+                options={[{
+                  label: 'Banana',
+                  description: 'yellow fruit',
+                  value: 'banana',
+                  disabled: true,
+                }, {
+                  label: 'Apple',
+                  description: 'green, red or yellow fruit',
+                  value: 'apple',
+                  disabled: false,
+                }, {
+                  label: 'Mango',
+                  description: 'another yellow fruit',
+                  value: 'mango',
+                  disabled: false,
+                }]}
+                value={this.state.radioField.value}
+                onChange={(value) => this.setState({radioField: {...this.state.radioField, ...{value}}})}
+              />
+            </div>
+          </Section>
+          <Section>
+            <CheckboxField
+              options={[{
+                label: 'hint',
+                value: 'hint',
+              }, {
+                label: 'help',
+                value: 'help',
+              }]}
+              values={this.state.radioField.features}
+              onChange={(features) => this.setState({radioField: {...this.state.radioField, ...{features}}})}
+            />
+          </Section>
+        </Dd>
+      </Dl>
     )
   }
 
@@ -131,89 +225,71 @@ export default class App extends React.Component<{}, AppState> {
           <Section>
             <Button
               type={this.state.button.type}
-              disabled={this.state.button.disabled}
-              loading={this.state.button.loading}
+              disabled={this.state.button.features.includes('disabled')}
+              loading={this.state.button.features.includes('loading')}
               kind={this.state.button.kind}
-              icon={this.state.button.icon ? <StarIcon/> : undefined}
-              text={this.state.button.text ? (this.state.button.long ? 'Оплатить без комиссии и без гарантии' : 'Оплатить') : undefined}
-              onClick={() => this.setState({button: {...this.state.button, ...{loading: !this.state.button.loading}}})}
+              icon={this.state.button.features.includes('icon') ? <StarIcon/> : undefined}
+              text={this.state.button.features.includes('text') ? (this.state.button.features.includes('long') ? 'Оплатить без комиссии' : 'Оплатить') : undefined}
             />
           </Section>
           <Section>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="button-kind"
-                  checked={this.state.button.kind === 'brand'}
-                  onChange={() => this.setState({button: {...this.state.button, ...{kind: 'brand'}}})}
-                />
-                brand
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="button-kind"
-                  checked={this.state.button.kind === 'simple'}
-                  onChange={() => this.setState({button: {...this.state.button, ...{kind: 'simple'}}})}
-                />
-                simple
-              </label>
-            </div>
+            <RadioField
+              options={[{
+                label: 'brand',
+                value: 'brand',
+              }, {
+                label: 'simple',
+                value: 'simple',
+              }]}
+              value={this.state.button.kind}
+              onChange={(kind) => this.setState({button: {...this.state.button, ...{kind}}})}
+            />
           </Section>
           <Section>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.button.disabled}
-                  onChange={() => this.setState({button: {...this.state.button, ...{disabled: !this.state.button.disabled}}})}
-                />
-                disabled
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.button.loading}
-                  onChange={() => this.setState({button: {...this.state.button, ...{loading: !this.state.button.loading}}})}
-                />
-                loading
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.button.icon}
-                  onChange={() => this.setState({button: {...this.state.button, ...{icon: !this.state.button.icon}}})}
-                />
-                icon
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.button.text}
-                  onChange={() => this.setState({button: {...this.state.button, ...{text: !this.state.button.text}}})}
-                />
-                text
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.button.long}
-                  onChange={() => this.setState({button: {...this.state.button, ...{long: !this.state.button.long}}})}
-                />
-                long
-              </label>
-            </div>
+            <CheckboxField
+              options={[{
+                label: 'disabled',
+                value: 'disabled',
+              }, {
+                label: 'loading',
+                value: 'loading',
+              }, {
+                label: 'icon',
+                value: 'icon',
+              }, {
+                label: 'text',
+                value: 'text',
+              }, {
+                label: 'long',
+                value: 'long',
+              }]}
+              values={this.state.button.features}
+              onChange={(features) => this.setState({button: {...this.state.button, ...{features}}})}
+            />
+          </Section>
+        </Dd>
+      </Dl>
+    )
+  }
+
+  private renderActions() {
+    return (
+      <Dl>
+        <Dt>actions</Dt>
+        <Dd>
+          <Section>
+            <Actions>
+              <Button
+                type="button"
+                kind="brand"
+                text="Оплатить"
+              />
+              <Button
+                type="button"
+                kind="simple"
+                text="Отменить"
+              />
+            </Actions>
           </Section>
         </Dd>
       </Dl>
@@ -232,167 +308,72 @@ export default class App extends React.Component<{}, AppState> {
               type={this.state.textField.type}
               name={this.state.textField.type}
               title={this.state.textField.type}
-              disabled={this.state.textField.disabled}
-              error={this.state.textField.error ? 'Ошибка: Техническая ошибка' : undefined}
-              maxLength={this.state.textField.maxLength ? 10 : undefined}
-              hint={this.state.textField.hint ? <QuestionIcon/> : undefined}
-              help={this.state.textField.help ? 'Подсказка' : undefined}
-              action={this.state.textField.action ? <a href="#">action</a> : undefined}
-              placeholder={this.state.textField.placeholder ? 'Плейсхолдер' : undefined}
+              disabled={this.state.textField.features.includes('disabled')}
+              error={this.state.textField.features.includes('error') ? 'Ошибка: Техническая ошибка' : undefined}
+              maxLength={this.state.textField.features.includes('maxLength') ? 10 : undefined}
+              hint={this.state.textField.features.includes('hint') ? <QuestionIcon/> : undefined}
+              help={this.state.textField.features.includes('help') ? 'Подсказка' : undefined}
+              action={this.state.textField.features.includes('action') ? <a href="#">action</a> : undefined}
+              placeholder={this.state.textField.features.includes('placeholder') ? 'Плейсхолдер' : undefined}
               value={this.state.textField.value}
               onChange={(value) => this.setState({textField: Object.assign({}, this.state.textField, {value})})}
             />
           </Section>
           <Section>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="text-input-field-type"
-                  checked={this.state.textField.type === 'text'}
-                  onChange={() => this.setState({textField: {...this.state.textField, ...{type: 'text'}}})}
-                />
-                text
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="text-input-field-type"
-                  checked={this.state.textField.type === 'password'}
-                  onChange={() => this.setState({textField: {...this.state.textField, ...{type: 'password'}}})}
-                />
-                password
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="text-input-field-type"
-                  checked={this.state.textField.type === 'tel'}
-                  onChange={() => this.setState({textField: {...this.state.textField, ...{type: 'tel'}}})}
-                />
-                tel
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="text-input-field-type"
-                  checked={this.state.textField.type === 'number'}
-                  onChange={() => this.setState({textField: {...this.state.textField, ...{type: 'number'}}})}
-                />
-                number
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="text-input-field-type"
-                  checked={this.state.textField.type === 'search'}
-                  onChange={() => this.setState({textField: {...this.state.textField, ...{type: 'search'}}})}
-                />
-                search
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="text-input-field-type"
-                  checked={this.state.textField.type === 'email'}
-                  onChange={() => this.setState({textField: {...this.state.textField, ...{type: 'email'}}})}
-                />
-                email
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="radio"
-                  name="text-input-field-type"
-                  checked={this.state.textField.type === 'url'}
-                  onChange={() => this.setState({textField: {...this.state.textField, ...{type: 'url'}}})}
-                />
-                url
-              </label>
-            </div>
+            <RadioField
+              options={[{
+                label: 'text',
+                value: 'text',
+              }, {
+                label: 'password',
+                value: 'password',
+              }, {
+                label: 'tel',
+                value: 'tel',
+              }, {
+                label: 'number',
+                value: 'number',
+              }, {
+                label: 'search',
+                value: 'search',
+              }, {
+                label: 'email',
+                value: 'email',
+              }, {
+                label: 'url',
+                value: 'url',
+              }]}
+              value={this.state.textField.type}
+              onChange={(type) => this.setState({textField: {...this.state.textField, ...{type}}})}
+            />
           </Section>
           <Section>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.textField.disabled}
-                  onChange={() => this.setState({textField: {...this.state.textField, ...{disabled: !this.state.textField.disabled}}})}
-                />
-                disabled
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.textField.placeholder}
-                  onChange={() => this.setState({textField: {...this.state.textField, ...{placeholder: !this.state.textField.placeholder}}})}
-                />
-                placeholder
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.textField.error}
-                  onChange={() => this.setState({textField: {...this.state.textField, ...{error: !this.state.textField.error}}})}
-                />
-                error
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.textField.hint}
-                  onChange={() => this.setState({textField: {...this.state.textField, ...{hint: !this.state.textField.hint}}})}
-                />
-                hint
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.textField.help}
-                  onChange={() => this.setState({textField: {...this.state.textField, ...{help: !this.state.textField.help}}})}
-                />
-                help
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.textField.action}
-                  onChange={() => this.setState({textField: {...this.state.textField, ...{action: !this.state.textField.action}}})}
-                />
-                action
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.textField.maxLength}
-                  onChange={() => this.setState({textField: {...this.state.textField, ...{maxLength: !this.state.textField.maxLength}}})}
-                />
-                maxLength
-              </label>
-            </div>
+            <CheckboxField
+              options={[{
+                label: 'disabled',
+                value: 'disabled',
+              }, {
+                label: 'placeholder',
+                value: 'placeholder',
+              }, {
+                label: 'error',
+                value: 'error',
+              }, {
+                label: 'hint',
+                value: 'hint',
+              }, {
+                label: 'help',
+                value: 'help',
+              }, {
+                label: 'action',
+                value: 'action',
+              }, {
+                label: 'maxLength',
+                value: 'maxLength',
+              }]}
+              values={this.state.textField.features}
+              onChange={(features) => this.setState({textField: {...this.state.textField, ...{features}}})}
+            />
           </Section>
         </Dd>
       </Dl>
@@ -410,99 +391,48 @@ export default class App extends React.Component<{}, AppState> {
             <PasswordField
               name="password"
               title="password"
-              disabled={this.state.passwordField.disabled}
-              viewed={this.state.passwordField.viewed}
-              error={this.state.passwordField.error ? 'Ошибка: Техническая ошибка' : undefined}
-              maxLength={this.state.passwordField.maxLength ? 10 : undefined}
-              hint={this.state.passwordField.hint ? <QuestionIcon/> : undefined}
-              help={this.state.passwordField.help ? 'Подсказка' : undefined}
-              action={this.state.passwordField.action ? <a href="#">action</a> : undefined}
-              placeholder={this.state.passwordField.placeholder ? 'Плейсхолдер' : undefined}
+              disabled={this.state.passwordField.features.includes('disabled')}
+              viewed={this.state.passwordField.features.includes('viewed')}
+              error={this.state.passwordField.features.includes('error') ? 'Ошибка: Техническая ошибка' : undefined}
+              maxLength={this.state.passwordField.features.includes('maxLength') ? 10 : undefined}
+              hint={this.state.passwordField.features.includes('hint') ? <QuestionIcon/> : undefined}
+              help={this.state.passwordField.features.includes('help') ? 'Подсказка' : undefined}
+              action={this.state.passwordField.features.includes('action') ? <a href="#">action</a> : undefined}
+              placeholder={this.state.passwordField.features.includes('placeholder') ? 'Плейсхолдер' : undefined}
               value={this.state.passwordField.value}
               onChange={(value) => this.setState({passwordField: Object.assign({}, this.state.passwordField, {value})})}
             />
           </Section>
           <Section>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.passwordField.disabled}
-                  onChange={() => this.setState({passwordField: {...this.state.passwordField, ...{disabled: !this.state.passwordField.disabled}}})}
-                />
-                disabled
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.passwordField.placeholder}
-                  onChange={() => this.setState({passwordField: {...this.state.passwordField, ...{placeholder: !this.state.passwordField.placeholder}}})}
-                />
-                placeholder
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.passwordField.error}
-                  onChange={() => this.setState({passwordField: {...this.state.passwordField, ...{error: !this.state.passwordField.error}}})}
-                />
-                error
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.passwordField.hint}
-                  onChange={() => this.setState({passwordField: {...this.state.passwordField, ...{hint: !this.state.passwordField.hint}}})}
-                />
-                hint
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.passwordField.help}
-                  onChange={() => this.setState({passwordField: {...this.state.passwordField, ...{help: !this.state.passwordField.help}}})}
-                />
-                help
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.passwordField.action}
-                  onChange={() => this.setState({passwordField: {...this.state.passwordField, ...{action: !this.state.passwordField.action}}})}
-                />
-                action
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.passwordField.viewed}
-                  onChange={() => this.setState({passwordField: {...this.state.passwordField, ...{viewed: !this.state.passwordField.viewed}}})}
-                />
-                viewed
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={this.state.passwordField.maxLength}
-                  onChange={() => this.setState({passwordField: {...this.state.passwordField, ...{maxLength: !this.state.passwordField.maxLength}}})}
-                />
-                maxLength
-              </label>
-            </div>
+            <CheckboxField
+              options={[{
+                label: 'disabled',
+                value: 'disabled',
+              }, {
+                label: 'placeholder',
+                value: 'placeholder',
+              }, {
+                label: 'error',
+                value: 'error',
+              }, {
+                label: 'hint',
+                value: 'hint',
+              }, {
+                label: 'help',
+                value: 'help',
+              }, {
+                label: 'action',
+                value: 'action',
+              }, {
+                label: 'viewed',
+                value: 'viewed',
+              }, {
+                label: 'maxLength',
+                value: 'maxLength',
+              }]}
+              values={this.state.passwordField.features}
+              onChange={(features) => this.setState({passwordField: {...this.state.passwordField, ...{features}}})}
+            />
           </Section>
         </Dd>
       </Dl>
