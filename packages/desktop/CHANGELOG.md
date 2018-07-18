@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.1.6](https://github.com/qiwi/pijma/compare/v1.1.5...v1.1.6) (2018-07-18)
+
+
+### Performance Improvements
+
+* repack with babel ([f05eb15](https://github.com/qiwi/pijma/commit/f05eb15))
+
 # [@qiwi/pijma-desktop-v1.1.5](https://github.com/qiwi/pijma/compare/v1.1.4...v1.1.5) (2018-07-18)
 
 
