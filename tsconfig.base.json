@@ -4,7 +4,7 @@
     "moduleResolution": "node",
     "target": "es5",
     "lib": [
-      "es6",
+      "esnext",
       "dom"
     ],
     "strict": true,

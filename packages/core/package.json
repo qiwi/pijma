@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf lib",
-    "build": "BABEL_ENV=production mkdir -p lib/es5 && cp -r src/fonts lib/es5/fonts && tsc -p tsconfig.build.json && babel lib/es5/ --out-dir lib/es5",
+    "build": "BABEL_ENV=production mkdir -p lib/es5 && cp -r src/fonts lib/es5/fonts && tsc -p tsconfig.build.json && babel -q lib/es5/ --out-dir lib/es5",
     "watch": "BABEL_ENV=development mkdir -p lib/es5 && cp -r src/fonts lib/es5/fonts && tsc -p tsconfig.build.json -w"
   },
   "files": [
