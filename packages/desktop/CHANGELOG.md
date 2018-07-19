@@ -1,3 +1,15 @@
+# [@qiwi/pijma-desktop-v1.2.0](https://github.com/qiwi/pijma/compare/v1.1.5...v1.2.0) (2018-07-19)
+
+
+### Features
+
+* add check and radio components, minor refactorings ([358b7df](https://github.com/qiwi/pijma/commit/358b7df))
+
+
+### Performance Improvements
+
+* repack with babel ([f05eb15](https://github.com/qiwi/pijma/commit/f05eb15))
+
 # [@qiwi/pijma-desktop-v1.1.6](https://github.com/qiwi/pijma/compare/v1.1.5...v1.1.6) (2018-07-18)
 
 
