@@ -12,6 +12,8 @@ import {
   ButtonKind,
   TextField,
   PasswordField,
+  MaskTextField,
+  MaskPasswordField,
   CheckboxField,
   RadioField,
   Actions,
@@ -65,6 +67,15 @@ export interface AppState {
     features: string[]
     value: string
   }
+  maskTextField: {
+    features: string[]
+    value: string
+    type: undefined | 'text' | 'password' | 'tel'
+  }
+  maskPasswordField: {
+    features: string[]
+    value: string
+  }
 }
 
 export default class App extends React.Component<{}, AppState> {
@@ -95,6 +106,15 @@ export default class App extends React.Component<{}, AppState> {
         features: ['help', 'hint', 'action', 'viewed'],
         value: '',
       },
+      maskTextField: {
+        features: ['help', 'hint', 'action'],
+        value: '',
+        type: undefined,
+      },
+      maskPasswordField: {
+        features: ['help', 'hint', 'action', 'viewed'],
+        value: '',
+      },
     }
   }
 
@@ -107,6 +127,8 @@ export default class App extends React.Component<{}, AppState> {
         {this.renderActions()}
         {this.renderTextField()}
         {this.renderPasswordField()}
+        {this.renderMaskTextField()}
+        {this.renderMaskPasswordField()}
       </React.Fragment>
     )
   }
@@ -432,6 +454,142 @@ export default class App extends React.Component<{}, AppState> {
               }]}
               values={this.state.passwordField.features}
               onChange={(features) => this.setState({passwordField: {...this.state.passwordField, ...{features}}})}
+            />
+          </Section>
+        </Dd>
+      </Dl>
+    )
+  }
+
+  public renderMaskTextField() {
+    return (
+      <Dl>
+        <Dt>
+          mask text field
+        </Dt>
+        <Dd>
+          <Section>
+            <MaskTextField
+              type={this.state.maskTextField.type}
+              name={this.state.maskTextField.type}
+              title={this.state.maskTextField.type}
+              disabled={this.state.maskTextField.features.includes('disabled')}
+              error={this.state.maskTextField.features.includes('error') ? 'Ошибка: Техническая ошибка' : undefined}
+              maxLength={this.state.maskTextField.features.includes('maxLength') ? 10 : undefined}
+              hint={this.state.maskTextField.features.includes('hint') ? <QuestionIcon/> : undefined}
+              help={this.state.maskTextField.features.includes('help') ? 'Подсказка' : undefined}
+              action={this.state.maskTextField.features.includes('action') ? <a href="#">action</a> : undefined}
+              placeholder={this.state.maskTextField.features.includes('placeholder') ? 'Плейсхолдер' : undefined}
+              value={this.state.maskTextField.value}
+              mask={['(', /\d/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]}
+              onChange={(value) => this.setState({maskTextField: Object.assign({}, this.state.maskTextField, {value})})}
+            />
+          </Section>
+          <Section>
+            <RadioField
+              options={[{
+                label: 'undefined',
+                value: undefined,
+              }, {
+                label: 'text',
+                value: 'text',
+              }, {
+                label: 'password',
+                value: 'password',
+              }, {
+                label: 'tel',
+                value: 'tel',
+              }]}
+              value={this.state.maskTextField.type}
+              onChange={(type) => this.setState({maskTextField: {...this.state.maskTextField, ...{type}}})}
+            />
+          </Section>
+          <Section>
+            <CheckboxField
+              options={[{
+                label: 'disabled',
+                value: 'disabled',
+              }, {
+                label: 'placeholder',
+                value: 'placeholder',
+              }, {
+                label: 'error',
+                value: 'error',
+              }, {
+                label: 'hint',
+                value: 'hint',
+              }, {
+                label: 'help',
+                value: 'help',
+              }, {
+                label: 'action',
+                value: 'action',
+              }, {
+                label: 'maxLength',
+                value: 'maxLength',
+              }]}
+              values={this.state.maskTextField.features}
+              onChange={(features) => this.setState({maskTextField: {...this.state.maskTextField, ...{features}}})}
+            />
+          </Section>
+        </Dd>
+      </Dl>
+    )
+  }
+
+  public renderMaskPasswordField() {
+    return (
+      <Dl>
+        <Dt>
+          mask password field
+        </Dt>
+        <Dd>
+          <Section>
+            <MaskPasswordField
+              name="password"
+              title="password"
+              disabled={this.state.maskPasswordField.features.includes('disabled')}
+              viewed={this.state.maskPasswordField.features.includes('viewed')}
+              error={this.state.maskPasswordField.features.includes('error') ? 'Ошибка: Техническая ошибка' : undefined}
+              maxLength={this.state.maskPasswordField.features.includes('maxLength') ? 10 : undefined}
+              hint={this.state.maskPasswordField.features.includes('hint') ? <QuestionIcon/> : undefined}
+              help={this.state.maskPasswordField.features.includes('help') ? 'Подсказка' : undefined}
+              action={this.state.maskPasswordField.features.includes('action') ? <a href="#">action</a> : undefined}
+              placeholder={this.state.maskPasswordField.features.includes('placeholder') ? 'Плейсхолдер' : undefined}
+              value={this.state.maskPasswordField.value}
+              mask={[/\d/, /\d/, /\d/]}
+              onChange={(value) => this.setState({maskPasswordField: Object.assign({}, this.state.maskPasswordField, {value})})}
+            />
+          </Section>
+          <Section>
+            <CheckboxField
+              options={[{
+                label: 'disabled',
+                value: 'disabled',
+              }, {
+                label: 'placeholder',
+                value: 'placeholder',
+              }, {
+                label: 'error',
+                value: 'error',
+              }, {
+                label: 'hint',
+                value: 'hint',
+              }, {
+                label: 'help',
+                value: 'help',
+              }, {
+                label: 'action',
+                value: 'action',
+              }, {
+                label: 'viewed',
+                value: 'viewed',
+              }, {
+                label: 'maxLength',
+                value: 'maxLength',
+              }]}
+              values={this.state.maskPasswordField.features}
+              onChange={(features) => this.setState({maskPasswordField: {...this.state.maskPasswordField, ...{features}}})}
             />
           </Section>
         </Dd>

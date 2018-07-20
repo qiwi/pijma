@@ -2,6 +2,8 @@ export * from './button'
 export * from './actions'
 export * from './text-field'
 export * from './password-field'
+export * from './mask-text-field'
+export * from './mask-password-field'
 export * from './checkbox-field'
 export * from './radio-field'
 
