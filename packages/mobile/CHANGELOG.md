@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.3.0](https://github.com/qiwi/pijma/compare/v1.2.0...v1.3.0) (2018-07-20)
+
+
+### Features
+
+* add mask text field and mask password field ([48d528f](https://github.com/qiwi/pijma/commit/48d528f))
+
 # [@qiwi/pijma-mobile-v1.2.0](https://github.com/qiwi/pijma/compare/v1.1.5...v1.2.0) (2018-07-19)
 
 
