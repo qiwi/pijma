@@ -24,9 +24,10 @@ export {
 
 export * from './button'
 export * from './input'
+export * from './mask-input'
 export * from './field'
 export * from './option-field'
-export * from './text-input-field'
+export * from './text-field'
 export * from './password-field'
 export * from './checkbox-field'
 export * from './radio-field'

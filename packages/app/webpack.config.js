@@ -134,7 +134,9 @@ const config = (id) => ({
             loader: 'babel-loader'
           },
         ],
-        enforce: 'pre'
+        exclude: [
+          node_modules
+        ]
       },
       {
         test: /\.tsx?$/,
