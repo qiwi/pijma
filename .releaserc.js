@@ -1,6 +1,7 @@
+const readPkg = require('read-pkg')
 const hooks = require('semantic-release-monorepo-hooks')
 const output = hooks()
-
+const packName = readPkg.sync().name
 const publish = output.isLastChanged
   ? [
     '@semantic-release/github',
@@ -16,15 +17,11 @@ module.exports = {
   prepare: [
     '@semantic-release/changelog',
     '@semantic-release/npm',
-    '@semantic-release/git'
+    {
+      'path': '@semantic-release/git',
+      'message': 'chore(' + packName + '): release ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}'
+    }
   ],
   publish: publish,
-  verifyConditions: [
-    '@semantic-release/changelog',
-    '@semantic-release/npm',
-    '@semantic-release/git'
-  ]
-  /* verifyRelease: ['@semantic-release/npm', '@semantic-release/github']
-    .map(require)
-    .map(x => x.verifyConditions), */
+  verifyConditions: ['@semantic-release/npm', '@semantic-release/git']
 };
