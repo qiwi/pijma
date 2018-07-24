@@ -6,5 +6,3 @@ export * from './mask-text-field'
 export * from './mask-password-field'
 export * from './checkbox-field'
 export * from './radio-field'
-
-export * from './app'
