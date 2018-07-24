@@ -1,6 +1,6 @@
 import {styled, StyledComponent, Theme} from '@qiwi/pijma-core'
 
-interface OptionFieldInputItemInfoProps {
+export interface OptionFieldInputItemInfoProps {
   disabled?: boolean
 }
 

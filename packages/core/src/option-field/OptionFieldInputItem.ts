@@ -2,7 +2,7 @@ import React from 'react'
 
 import {styled, StyledComponent, Theme, indent} from '@qiwi/pijma-core'
 
-interface OptionFieldInputItemProps {
+export interface OptionFieldInputItemProps {
   disabled?: boolean
   onClick: React.MouseEventHandler
   onMouseEnter: React.MouseEventHandler
