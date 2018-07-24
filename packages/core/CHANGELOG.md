@@ -5,6 +5,13 @@
 
 * **core:** expose 'injectGlobal' and 'css' methods ([14f9889](https://github.com/qiwi/pijma/commit/14f9889))
 
+# [@qiwi/pijma-core-v1.4.0](https://github.com/qiwi/pijma/compare/v1.3.0...v1.4.0) (2018-07-24)
+
+
+### Features
+
+* **core:** expose 'injectGlobal' and 'css' methods ([14f9889](https://github.com/qiwi/pijma/commit/14f9889))
+
 # [@qiwi/pijma-core-v1.3.0](https://github.com/qiwi/pijma/compare/v1.2.0...v1.3.0) (2018-07-20)
 
 
