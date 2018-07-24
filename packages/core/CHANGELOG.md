@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.4.1](https://github.com/qiwi/pijma/compare/v1.4.0...v1.4.1) (2018-07-24)
+
+
+### Performance Improvements
+
+* make public OptionField* ifaces ([1c72e8b](https://github.com/qiwi/pijma/commit/1c72e8b))
+
 # [@qiwi/pijma-core-v1.4.0](https://github.com/qiwi/pijma/compare/v1.3.0...v1.4.0) (2018-07-24)
 
 
