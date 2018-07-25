@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.5.0](https://github.com/qiwi/pijma/compare/v1.4.1...v1.5.0) (2018-07-25)
+
+
+### Features
+
+* named icon ([8c72d9e](https://github.com/qiwi/pijma/commit/8c72d9e))
+
 # [@qiwi/pijma-mobile-v1.3.0](https://github.com/qiwi/pijma/compare/v1.2.0...v1.3.0) (2018-07-20)
 
 
