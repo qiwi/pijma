@@ -2,6 +2,7 @@ import React from 'react'
 
 import {
   styled,
+  Icon,
   StarIcon,
   QuestionIcon,
 } from '@qiwi/pijma-core'
@@ -22,6 +23,13 @@ import {
 } from '@qiwi/pijma-desktop'
 
 import './global'
+
+const IconWrapper = styled('span')({
+  display: 'inline-block',
+  width: 24,
+  height: 24,
+  margin: 8,
+})
 
 const Dl = styled('dl')({
   margin: 10,
@@ -138,6 +146,7 @@ export default class App extends React.Component<{}, AppState> {
   public render() {
     return (
       <React.Fragment>
+        {this.renderIcons()}
         {this.renderCheckboxField()}
         {this.renderRadioField()}
         {this.renderButtons()}
@@ -147,6 +156,30 @@ export default class App extends React.Component<{}, AppState> {
         {this.renderMaskTextField()}
         {this.renderMaskPasswordField()}
       </React.Fragment>
+    )
+  }
+
+  public renderIcons() {
+    return (
+      <Dl>
+        <Dt>
+          icons
+        </Dt>
+        <Dd>
+          <IconWrapper>
+            <Icon name="eye-closed"/>
+          </IconWrapper>
+          <IconWrapper>
+            <Icon name="eye-opened"/>
+          </IconWrapper>
+          <IconWrapper>
+            <Icon name="repeat"/>
+          </IconWrapper>
+          <IconWrapper>
+            <Icon name="star"/>
+          </IconWrapper>
+        </Dd>
+      </Dl>
     )
   }
 
