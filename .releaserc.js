@@ -1,6 +1,6 @@
 const hooks = require('semantic-release-monorepo-hooks')
 const output = hooks()
-const publish = output.isLastChanged
+const publish = output.isLastModified
   ? [
     '@semantic-release/github',
     '@semantic-release/npm'
