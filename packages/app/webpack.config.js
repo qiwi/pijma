@@ -5,7 +5,12 @@ const UglifyPlugin = require('uglifyjs-webpack-plugin')
 const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
 
 const src = path.resolve(__dirname, 'src')
-const node_modules = path.resolve(__dirname, 'node_modules')
+const nodeModules = path.resolve(__dirname, '..', '..', 'node_modules')
+const tsConfig = require(path.resolve(__dirname, '..', '..', 'tsconfig.json'))
+
+const alias = Object.keys(tsConfig.compilerOptions.paths).reduce((p, c) => Object.assign(p, {
+  [c.replace(/\/\*$/, '')]: path.resolve(__dirname, '..', '..', tsConfig.compilerOptions.baseUrl, tsConfig.compilerOptions.paths[c][0].replace(/\/\*$/, '')),
+}), {})
 
 const mode = process.env.MODE || 'development'
 
@@ -120,7 +125,7 @@ const config = (id) => ({
         test: /\.js$/,
         use: 'source-map-loader',
         include: [
-          node_modules
+          nodeModules
         ],
         exclude: [
           src
@@ -135,12 +140,15 @@ const config = (id) => ({
           },
         ],
         exclude: [
-          node_modules
+          nodeModules
         ]
       },
       {
         test: /\.tsx?$/,
         use: [
+          {
+            loader: 'babel-loader'
+          },
           {
             loader: 'ts-loader',
             options: {
@@ -149,7 +157,7 @@ const config = (id) => ({
           }
         ],
         exclude: [
-          node_modules
+          nodeModules
         ]
       },
       {
@@ -167,6 +175,7 @@ const config = (id) => ({
     ]
   },
   resolve: {
+    alias,
     extensions: ['.tsx', '.ts', '.js']
   },
   plugins: [

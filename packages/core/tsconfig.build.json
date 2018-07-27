@@ -6,7 +6,6 @@
     "baseUrl": "src",
     "paths": {
       "@qiwi/pijma-core": [
-        "./*",
         "."
       ]
     }

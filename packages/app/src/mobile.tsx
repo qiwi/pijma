@@ -1,4 +1,4 @@
-import {client} from '@qiwi/pijma-mobile/lib/es5/app'
+import {client} from '@qiwi/pijma-mobile/app'
 
 client()
 
