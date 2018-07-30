@@ -5,7 +5,6 @@ import {renderStylesToNodeStream} from 'emotion-server'
 
 import {server as desktop} from '@qiwi/pijma-desktop/lib/es5/app'
 import {server as mobile} from '@qiwi/pijma-mobile/lib/es5/app'
-import {server as media} from '@qiwi/pijma-media/lib/es5/app'
 
 type ClientStatsChunk = {
   initial: boolean
