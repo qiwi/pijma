@@ -1,32 +1,30 @@
 {
-  "name": "@qiwi/pijma-desktop",
-  "version": "1.5.0",
+  "name": "@qiwi/pijma-media",
+  "version": "1.0.0",
+  "license": "MIT",
   "main": "lib/es5/index.js",
   "types": "lib/es5/index.d.ts",
-  "license": "MIT",
-  "scripts": {
-    "clean": "rm -rf lib",
-    "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && babel -q lib/es5/ --out-dir lib/es5",
-    "watch": "mkdir -p lib/es5 && tsc -p tsconfig.build.json -w"
-  },
   "files": [
     "README.md",
     "CHANGELOG.md",
     "lib/"
   ],
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && babel -q lib/es5/ --out-dir lib/es5",
+    "watch": "mkdir -p lib/es5 && tsc -p tsconfig.build.json -w"
+  },
   "dependencies": {
-    "@qiwi/pijma-core": "^1.0.0",
     "emotion": "^9.2.6",
     "emotion-theming": "^9.2.3",
     "polished": "^1.9.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-emotion": "^9.2.3",
-    "react-text-mask": "^5.4.2",
     "tslib": "^1.9.2"
   },
   "devDependencies": {
-    "@qiwi/pijma-media": "^1.0.0",
+    "@qiwi/pijma-core": "^1.0.0",
     "@types/react": "^16.3.17",
     "@types/react-dom": "^16.0.6",
     "@types/react-text-mask": "^5.4.0",

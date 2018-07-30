@@ -19,6 +19,7 @@
     "@qiwi/pijma-core": "^1.0.0",
     "@qiwi/pijma-desktop": "^1.0.0",
     "@qiwi/pijma-mobile": "^1.0.0",
+    "@qiwi/pijma-media": "^1.0.0",
     "compression": "^1.7.2",
     "emotion": "^9.2.6",
     "emotion-server": "^9.2.3",

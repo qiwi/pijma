@@ -4,8 +4,10 @@ import {
   styled,
   Icon,
   StarIcon,
-  QuestionIcon,
+  QuestionIcon
 } from '@qiwi/pijma-core'
+
+import {Icon as MediaIcon} from '@qiwi/pijma-media'
 
 import {
   Button,
@@ -147,6 +149,7 @@ export default class App extends React.Component<{}, AppState> {
     return (
       <React.Fragment>
         {this.renderIcons()}
+        {this.renderMediaIcons()}
         {this.renderCheckboxField()}
         {this.renderRadioField()}
         {this.renderButtons()}
@@ -177,6 +180,33 @@ export default class App extends React.Component<{}, AppState> {
           </IconWrapper>
           <IconWrapper>
             <Icon name="star"/>
+          </IconWrapper>
+        </Dd>
+      </Dl>
+    )
+  }
+
+  public renderMediaIcons() {
+    return (
+      <Dl>
+        <Dt>
+          icons (@qiwi/pijma-media)
+        </Dt>
+        <Dd>
+          <IconWrapper>
+            <MediaIcon name="eye-closed"/>
+          </IconWrapper>
+          <IconWrapper>
+            <MediaIcon name="eye-opened"/>
+          </IconWrapper>
+          <IconWrapper>
+            <MediaIcon name="repeat"/>
+          </IconWrapper>
+          <IconWrapper>
+            <MediaIcon name="star"/>
+          </IconWrapper>
+          <IconWrapper>
+            <MediaIcon name="question"/>
           </IconWrapper>
         </Dd>
       </Dl>
