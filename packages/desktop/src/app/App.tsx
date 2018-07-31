@@ -3,11 +3,13 @@ import React from 'react'
 import {
   styled,
   Icon,
-  StarIcon,
-  QuestionIcon
 } from '@qiwi/pijma-core'
 
-import {Icon as MediaIcon} from '@qiwi/pijma-media'
+import {
+  WeakIcon,
+  StarIcon,
+  QuestionIcon,
+} from '@qiwi/pijma-media'
 
 import {
   Button,
@@ -149,7 +151,7 @@ export default class App extends React.Component<{}, AppState> {
     return (
       <React.Fragment>
         {this.renderIcons()}
-        {this.renderMediaIcons()}
+        {this.renderWeakIcons()}
         {this.renderCheckboxField()}
         {this.renderRadioField()}
         {this.renderButtons()}
@@ -186,27 +188,27 @@ export default class App extends React.Component<{}, AppState> {
     )
   }
 
-  public renderMediaIcons() {
+  public renderWeakIcons() {
     return (
       <Dl>
         <Dt>
-          icons (@qiwi/pijma-media)
+          weak icons (@qiwi/pijma-media)
         </Dt>
         <Dd>
           <IconWrapper>
-            <MediaIcon name="eye-closed"/>
+            <WeakIcon name="eye-closed"/>
           </IconWrapper>
           <IconWrapper>
-            <MediaIcon name="eye-opened"/>
+            <WeakIcon name="eye-opened"/>
           </IconWrapper>
           <IconWrapper>
-            <MediaIcon name="repeat"/>
+            <WeakIcon name="repeat"/>
           </IconWrapper>
           <IconWrapper>
-            <MediaIcon name="star"/>
+            <WeakIcon name="star"/>
           </IconWrapper>
           <IconWrapper>
-            <MediaIcon name="question"/>
+            <WeakIcon name="question"/>
           </IconWrapper>
         </Dd>
       </Dl>

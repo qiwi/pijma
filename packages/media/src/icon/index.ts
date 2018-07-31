@@ -1,4 +1,5 @@
 import Icon from './Icon'
+import WeakIcon from './WeakIcon'
 
 import EyeClosedIcon from './EyeClosedIcon'
 import EyeOpenedIcon from './EyeOpenedIcon'
@@ -8,6 +9,7 @@ import StarIcon from './StarIcon'
 
 export {
   Icon,
+  WeakIcon,
 
   EyeClosedIcon,
   EyeOpenedIcon,
