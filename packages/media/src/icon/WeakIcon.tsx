@@ -1,8 +1,8 @@
 import React from 'react'
 
-import {IconProps} from './Icon'
+import IconProps from './IconProps'
 
-const Icon: React.SFC<IconProps> = (props) => {
+const WeakIcon: React.SFC<IconProps> = (props) => {
   const componentName = ('-' + props.name).replace(/-([a-z])/g, m => m[1].toUpperCase()) + 'Icon';
 
   const RenderedIcon: React.SFC = require('@qiwi/pijma-media')[componentName]
@@ -10,4 +10,4 @@ const Icon: React.SFC<IconProps> = (props) => {
   return (<RenderedIcon/>)
 }
 
-export default Icon
+export default WeakIcon
