@@ -1,23 +1,15 @@
 import React from 'react'
 
+import IconName from './IconName'
+import IconProps from './IconProps'
+
 import EyeClosedIcon from './EyeClosedIcon'
 import EyeOpenedIcon from './EyeOpenedIcon'
 import StarIcon from './StarIcon'
 import RepeatIcon from './RepeatIcon'
 import QuestionIcon from './QuestionIcon'
 
-export type IconNames =
-  'eye-closed' |
-  'eye-opened' |
-  'repeat' |
-  'star' |
-  'question'
-
-export interface IconProps {
-  name: IconNames
-}
-
-const Icons: { [name in IconNames]: React.SFC } = {
+const Icons: { [name in IconName]: React.SFC } = {
   'eye-closed': EyeClosedIcon,
   'eye-opened': EyeOpenedIcon,
   repeat: RepeatIcon,
