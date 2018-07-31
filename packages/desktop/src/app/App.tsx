@@ -183,6 +183,9 @@ export default class App extends React.Component<{}, AppState> {
           <IconWrapper>
             <Icon name="star"/>
           </IconWrapper>
+          <IconWrapper>
+            <Icon name="question"/>
+          </IconWrapper>
         </Dd>
       </Dl>
     )

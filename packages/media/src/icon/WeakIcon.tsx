@@ -1,27 +1,9 @@
 import React from 'react'
 
-interface IconProps {
-  name: string
-}
-
-const iconMap: { [s: string]: string; } = {
-  'eye-closed': 'EyeClosedIcon',
-  'eye-opened': 'EyeOpenedIcon',
-  'repeat': 'RepeatIcon',
-  'star': 'StarIcon',
-  'question': 'QuestionIcon'
-}
-
-function resolveComponentName(name: string) {
-  return iconMap[name] || null
-}
+import {IconProps} from './Icon'
 
 const Icon: React.SFC<IconProps> = (props) => {
-  const componentName = resolveComponentName(props.name)
-
-  if (componentName === null) {
-    return null
-  }
+  const componentName = ('-' + props.name).replace(/-([a-z])/g, m => m[1].toUpperCase()) + 'Icon';
 
   const RenderedIcon: React.SFC = require('@qiwi/pijma-media')[componentName]
 
