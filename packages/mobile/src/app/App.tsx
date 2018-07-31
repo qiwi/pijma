@@ -3,9 +3,12 @@ import React from 'react'
 import {
   styled,
   Icon,
+} from '@qiwi/pijma-core'
+
+import {
   StarIcon,
   QuestionIcon,
-} from '@qiwi/pijma-core'
+} from '@qiwi/pijma-media'
 
 import {
   Button,

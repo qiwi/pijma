@@ -15,9 +15,12 @@ import {
   FieldUnderError,
   FieldUnderHelp,
   FieldIcon,
+} from '@qiwi/pijma-core'
+
+import {
   EyeClosedIcon,
   EyeOpenedIcon,
-} from '@qiwi/pijma-core'
+} from '@qiwi/pijma-media'
 
 import PasswordFieldProps from './PasswordFieldProps'
 

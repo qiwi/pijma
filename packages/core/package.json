@@ -15,6 +15,7 @@
     "lib/"
   ],
   "dependencies": {
+    "@qiwi/pijma-media": "^1.0.0",
     "emotion": "^9.2.6",
     "emotion-theming": "^9.2.3",
     "polished": "^1.9.2",

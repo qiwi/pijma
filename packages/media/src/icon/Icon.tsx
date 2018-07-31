@@ -1,31 +1,32 @@
 import React from 'react'
 
+import EyeClosedIcon from './EyeClosedIcon'
+import EyeOpenedIcon from './EyeOpenedIcon'
+import StarIcon from './StarIcon'
+import RepeatIcon from './RepeatIcon'
+
+export type IconNames =
+  'eye-closed' |
+  'eye-opened' |
+  'repeat' |
+  'star'
+
+const Icons: { [name in IconNames]: React.SFC } = {
+  'eye-closed': EyeClosedIcon,
+  'eye-opened': EyeOpenedIcon,
+  repeat: RepeatIcon,
+  star: StarIcon,
+}
+
 interface IconProps {
-  name: string
-}
-
-const iconMap: { [s: string]: string; } = {
-  'eye-closed': 'EyeClosedIcon',
-  'eye-opened': 'EyeOpenedIcon',
-  'repeat': 'RepeatIcon',
-  'star': 'StarIcon',
-  'question': 'QuestionIcon'
-}
-
-function resolveComponentName(name: string) {
-  return iconMap[name] || null
+  name: IconNames
 }
 
 const Icon: React.SFC<IconProps> = (props) => {
-  const componentName = resolveComponentName(props.name)
-
-  if (componentName === null) {
-    return null
-  }
-
-  const RenderedIcon: React.SFC = require('@qiwi/pijma-media')[componentName]
-
-  return (<RenderedIcon/>)
+  const RenderedIcon = Icons[props.name]
+  return (
+    <RenderedIcon/>
+  )
 }
 
 export default Icon
