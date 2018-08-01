@@ -4,9 +4,9 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf lib",
-    "build": "webpack",
-    "watch": "node webpack",
-    "start": "node index"
+    "build": "node build",
+    "watch": "node watch",
+    "start": "node start"
   },
   "files": [
     "README.md",
