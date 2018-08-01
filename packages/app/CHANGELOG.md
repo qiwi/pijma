@@ -1,3 +1,10 @@
+# [@qiwi/pijma-app-v1.6.0](https://github.com/qiwi/pijma/compare/v1.5.0...v1.6.0) (2018-08-01)
+
+
+### Features
+
+* introduce media pack ([9946ad5](https://github.com/qiwi/pijma/commit/9946ad5))
+
 # [@qiwi/pijma-app-v1.3.0](https://github.com/qiwi/pijma/compare/v1.2.0...v1.3.0) (2018-07-20)
 
 
