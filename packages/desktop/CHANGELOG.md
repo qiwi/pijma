@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.6.0](https://github.com/qiwi/pijma/compare/v1.5.0...v1.6.0) (2018-08-01)
+
+
+### Features
+
+* introduce media pack ([9946ad5](https://github.com/qiwi/pijma/commit/9946ad5))
+
 # [@qiwi/pijma-desktop-v1.5.0](https://github.com/qiwi/pijma/compare/v1.4.1...v1.5.0) (2018-07-25)
 
 
