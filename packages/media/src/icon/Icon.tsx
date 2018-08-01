@@ -3,6 +3,7 @@ import React from 'react'
 import IconName from './IconName'
 import IconProps from './IconProps'
 
+import CrossIcon from './CloseIcon'
 import EyeClosedIcon from './EyeClosedIcon'
 import EyeOpenedIcon from './EyeOpenedIcon'
 import StarIcon from './StarIcon'
@@ -10,11 +11,12 @@ import RepeatIcon from './RepeatIcon'
 import QuestionIcon from './QuestionIcon'
 
 const Icons: { [name in IconName]: React.SFC } = {
+  cross: CrossIcon,
   'eye-closed': EyeClosedIcon,
   'eye-opened': EyeOpenedIcon,
   repeat: RepeatIcon,
   star: StarIcon,
-  question: QuestionIcon
+  question: QuestionIcon,
 }
 
 const Icon: React.SFC<IconProps> = (props) => {

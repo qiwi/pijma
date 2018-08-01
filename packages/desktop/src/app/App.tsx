@@ -25,6 +25,7 @@ import {
   RadioField,
   Actions,
   ActionsSize,
+  SimpleModal,
 } from '@qiwi/pijma-desktop'
 
 import './global'
@@ -37,11 +38,12 @@ const IconWrapper = styled('span')({
 })
 
 const iconNames: IconName[] = [
+  'question',
+  'cross',
   'eye-closed',
   'eye-opened',
-  'question',
   'repeat',
-  'star'
+  'star',
 ]
 
 const Dl = styled('dl')({
@@ -110,6 +112,10 @@ export interface AppState {
     features: string[]
     value: string
   }
+  modal: {
+    features: string[]
+    show: boolean
+  }
 }
 
 export default class App extends React.Component<{}, AppState> {
@@ -153,6 +159,10 @@ export default class App extends React.Component<{}, AppState> {
         features: ['help', 'hint', 'action', 'viewed'],
         value: '',
       },
+      modal: {
+        features: [],
+        show: false,
+      },
     }
   }
 
@@ -169,6 +179,7 @@ export default class App extends React.Component<{}, AppState> {
         {this.renderPasswordField()}
         {this.renderMaskTextField()}
         {this.renderMaskPasswordField()}
+        {this.renderModal()}
       </React.Fragment>
     )
   }
@@ -181,10 +192,10 @@ export default class App extends React.Component<{}, AppState> {
         </Dt>
         <Dd>
           {iconNames.map(name => (
-            <IconWrapper>
-              <Icon name={name} key={name}/>
-            </IconWrapper>)
-          )}
+            <IconWrapper key={name}>
+              <Icon name={name}/>
+            </IconWrapper>
+          ))}
         </Dd>
       </Dl>
     )
@@ -198,10 +209,10 @@ export default class App extends React.Component<{}, AppState> {
         </Dt>
         <Dd>
           {iconNames.map(name => (
-            <IconWrapper>
-              <WeakIcon name={name} key={name}/>
-            </IconWrapper>)
-          )}
+            <IconWrapper key={name}>
+              <WeakIcon name={name}/>
+            </IconWrapper>
+          ))}
         </Dd>
       </Dl>
     )
@@ -712,6 +723,66 @@ export default class App extends React.Component<{}, AppState> {
               }]}
               values={this.state.maskPasswordField.features}
               onChange={(features) => this.setState({maskPasswordField: {...this.state.maskPasswordField, ...{features}}})}
+            />
+          </Section>
+        </Dd>
+      </Dl>
+    )
+  }
+
+  public renderModal() {
+    return (
+      <Dl>
+        <Dt>modal</Dt>
+        <Dd>
+          <Section>
+            <Actions size="normal">
+              <Button
+                kind="simple"
+                size="normal"
+                type="button"
+                text="Open Modal"
+                onClick={() => this.setState({modal: {...this.state.modal, ...{show: !this.state.modal.show}}})}
+              />
+            </Actions>
+            <SimpleModal
+              show={this.state.modal.show}
+              closable={this.state.modal.features.includes('closable')}
+              escapeClose={this.state.modal.features.includes('escapeClose')}
+              backdropClose={this.state.modal.features.includes('backdropClose')}
+              onHide={() => this.setState({modal: {...this.state.modal, ...{show: false}}})}
+              children={(
+                <React.Fragment>
+                  <strong>Modal</strong>
+                  <br/>
+                  <br/>
+                  <Actions size="normal">
+                    <Button
+                      kind="brand"
+                      size="normal"
+                      type="button"
+                      text="Close Modal"
+                      onClick={() => this.setState({modal: {...this.state.modal, ...{show: !this.state.modal.show}}})}
+                    />
+                  </Actions>
+                </React.Fragment>
+              )}
+            />
+          </Section>
+          <Section>
+            <CheckboxField
+              options={[{
+                label: 'closable',
+                value: 'closable',
+              }, {
+                label: 'escapeClose',
+                value: 'escapeClose',
+              }, {
+                label: 'backdropClose',
+                value: 'backdropClose',
+              }]}
+              values={this.state.modal.features}
+              onChange={(features) => this.setState({modal: {...this.state.modal, ...{features}}})}
             />
           </Section>
         </Dd>
