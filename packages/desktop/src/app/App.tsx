@@ -6,6 +6,7 @@ import {
 } from '@qiwi/pijma-core'
 
 import {
+  IconName,
   WeakIcon,
   StarIcon,
   QuestionIcon,
@@ -34,6 +35,14 @@ const IconWrapper = styled('span')({
   height: 24,
   margin: 8,
 })
+
+const iconNames: IconName[] = [
+  'eye-closed',
+  'eye-opened',
+  'question',
+  'repeat',
+  'star'
+]
 
 const Dl = styled('dl')({
   margin: 10,
@@ -171,21 +180,11 @@ export default class App extends React.Component<{}, AppState> {
           icons
         </Dt>
         <Dd>
-          <IconWrapper>
-            <Icon name="eye-closed"/>
-          </IconWrapper>
-          <IconWrapper>
-            <Icon name="eye-opened"/>
-          </IconWrapper>
-          <IconWrapper>
-            <Icon name="repeat"/>
-          </IconWrapper>
-          <IconWrapper>
-            <Icon name="star"/>
-          </IconWrapper>
-          <IconWrapper>
-            <Icon name="question"/>
-          </IconWrapper>
+          {iconNames.map(name => (
+            <IconWrapper>
+              <Icon name={name} key={name}/>
+            </IconWrapper>)
+          )}
         </Dd>
       </Dl>
     )
@@ -198,21 +197,11 @@ export default class App extends React.Component<{}, AppState> {
           weak icons (@qiwi/pijma-media)
         </Dt>
         <Dd>
-          <IconWrapper>
-            <WeakIcon name="eye-closed"/>
-          </IconWrapper>
-          <IconWrapper>
-            <WeakIcon name="eye-opened"/>
-          </IconWrapper>
-          <IconWrapper>
-            <WeakIcon name="repeat"/>
-          </IconWrapper>
-          <IconWrapper>
-            <WeakIcon name="star"/>
-          </IconWrapper>
-          <IconWrapper>
-            <WeakIcon name="question"/>
-          </IconWrapper>
+          {iconNames.map(name => (
+            <IconWrapper>
+              <WeakIcon name={name} key={name}/>
+            </IconWrapper>)
+          )}
         </Dd>
       </Dl>
     )
