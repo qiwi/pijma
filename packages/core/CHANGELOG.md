@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.7.0](https://github.com/qiwi/pijma/compare/v1.6.0...v1.7.0) (2018-08-02)
+
+
+### Features
+
+* **core/reset:** remove any outlines by default ([635b229](https://github.com/qiwi/pijma/commit/635b229))
+
 # [@qiwi/pijma-core-v1.5.0](https://github.com/qiwi/pijma/compare/v1.4.1...v1.5.0) (2018-07-25)
 
 
