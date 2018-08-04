@@ -3,6 +3,7 @@ import WeakIcon from './WeakIcon'
 import IconProps from './IconProps'
 import IconName from './IconName'
 
+import CrossIcon from './CloseIcon'
 import EyeClosedIcon from './EyeClosedIcon'
 import EyeOpenedIcon from './EyeOpenedIcon'
 import QuestionIcon from './QuestionIcon'
@@ -14,7 +15,10 @@ export {
   WeakIcon,
   IconProps,
   IconName,
+}
 
+export {
+  CrossIcon,
   EyeClosedIcon,
   EyeOpenedIcon,
   QuestionIcon,
