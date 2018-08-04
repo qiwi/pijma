@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.8.0](https://github.com/qiwi/pijma/compare/v1.7.0...v1.8.0) (2018-08-04)
+
+
+### Features
+
+* add simple modal component ([5b53ef5](https://github.com/qiwi/pijma/commit/5b53ef5))
+
 # [@qiwi/pijma-mobile-v1.5.0](https://github.com/qiwi/pijma/compare/v1.4.1...v1.5.0) (2018-07-25)
 
 
