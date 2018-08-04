@@ -30,7 +30,7 @@ contentTransition.defaultProps = {
   }),
   exitClassName: (timeout: number) => css({
     opacity: 0,
-    transform: 'translate3d(0, 35px, 0)',
+    transform: 'translate3d(0, -100%, 0)',
     transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
   }),
 }
@@ -70,12 +70,6 @@ const StyledModal: StyledComponent<Modal['props'], {}, Theme> = styled(Modal)({
   right: 0,
   height: '100%',
   overflow: 'auto',
-  '&:before': {
-    content: '""',
-    display: 'inline-block',
-    height: '100%',
-    verticalAlign: 'middle',
-  },
 })
 
 const StyledModalContent: StyledComponent<{}, {}, Theme> = styled('div')((props) => ({
