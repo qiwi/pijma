@@ -3,7 +3,7 @@ import React from 'react'
 import IconName from './IconName'
 import IconProps from './IconProps'
 
-import CrossIcon from './CloseIcon'
+import CrossIcon from './CrossIcon'
 import EyeClosedIcon from './EyeClosedIcon'
 import EyeOpenedIcon from './EyeOpenedIcon'
 import StarIcon from './StarIcon'
