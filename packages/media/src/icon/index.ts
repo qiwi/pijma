@@ -3,7 +3,7 @@ import WeakIcon from './WeakIcon'
 import IconProps from './IconProps'
 import IconName from './IconName'
 
-import CrossIcon from './CloseIcon'
+import CrossIcon from './CrossIcon'
 import EyeClosedIcon from './EyeClosedIcon'
 import EyeOpenedIcon from './EyeOpenedIcon'
 import QuestionIcon from './QuestionIcon'
