@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.8.1](https://github.com/qiwi/pijma/compare/v1.8.0...v1.8.1) (2018-08-07)
+
+
+### Bug Fixes
+
+* use single name for `cross` icon ([44947a0](https://github.com/qiwi/pijma/commit/44947a0))
+
 # [@qiwi/pijma-media-v1.8.0](https://github.com/qiwi/pijma/compare/v1.7.0...v1.8.0) (2018-08-04)
 
 
