@@ -37,10 +37,15 @@ const IconWrapper = styled('span')({
 
 const iconNames: IconName[] = [
   'cross',
+  'download',
   'eye-closed',
   'eye-opened',
+  'login',
+  'logout',
+  'percent',
   'question',
   'repeat',
+  'share',
   'star',
 ]
 
