@@ -1,9 +1,14 @@
 export type IconName =
   'cross' |
+  'download' |
   'eye-closed' |
   'eye-opened' |
+  'login' |
+  'logout' |
+  'percent' |
+  'question' |
   'repeat' |
-  'star' |
-  'question'
+  'share' |
+  'star'
 
 export default IconName
