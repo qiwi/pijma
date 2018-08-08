@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.9.0](https://github.com/qiwi/pijma/compare/v1.8.1...v1.9.0) (2018-08-08)
+
+
+### Features
+
+* **media:** add new icons login, logout, share, download, percent ([95b8a0c](https://github.com/qiwi/pijma/commit/95b8a0c))
+
 # [@qiwi/pijma-media-v1.8.1](https://github.com/qiwi/pijma/compare/v1.8.0...v1.8.1) (2018-08-07)
 
 
