@@ -13,7 +13,7 @@ const MaskInput: StyledComponent<{}, MaskedInputProps, Theme> = styled(ReactText
   border: 'none',
   borderRadius: 0,
   borderBottom: `1px solid ${rgba(props.theme.color.black, 0.2)}`,
-  fontFamily: props.theme.font.family,
+  fontFamily: 'inherit',
   fontSize: 20,
   fontWeight: 'inherit',
   textIndent: 0,

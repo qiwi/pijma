@@ -11,8 +11,7 @@
   ],
   "scripts": {
     "clean": "rm -rf lib",
-    "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && babel -q lib/es5/ --out-dir lib/es5",
-    "watch": "mkdir -p lib/es5 && tsc -p tsconfig.build.json -w"
+    "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && babel -q lib/es5/ --out-dir lib/es5"
   },
   "dependencies": {
     "react": "^16.4.1",

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {ReactNode, SFC} from 'react'
 
 import {
   RadioControl,
@@ -20,14 +20,14 @@ import {
 import RadioFieldProps from './RadioFieldProps'
 
 interface OptionAnyModel<V> extends OptionModel<V> {
-  label: React.ReactNode
-  description?: React.ReactNode
+  label: ReactNode
+  description?: ReactNode
 }
 
 interface RadioFieldsAnyProps<V> extends RadioFieldProps<OptionAnyModel<V>, V> {
-  title?: React.ReactNode
-  hint?: React.ReactNode
-  help?: React.ReactNode
+  title?: ReactNode
+  hint?: ReactNode
+  help?: ReactNode
 }
 
 class RadioAnyControl<V> extends RadioControl<OptionAnyModel<V>, V> {
@@ -36,7 +36,7 @@ class RadioAnyControl<V> extends RadioControl<OptionAnyModel<V>, V> {
 class RadioAnyOptionControl<V> extends OptionControl<OptionAnyModel<V>, V> {
 }
 
-const RadioField: React.SFC<RadioFieldsAnyProps<any>> = (props) => (
+const RadioField: SFC<RadioFieldsAnyProps<any>> = (props) => (
   <RadioAnyControl
     tabIndex={props.tabIndex}
     options={props.options}

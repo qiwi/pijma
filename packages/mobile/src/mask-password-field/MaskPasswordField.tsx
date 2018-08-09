@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {MouseEventHandler, ReactNode, SFC} from 'react'
 
 import {
   styled,
@@ -25,7 +25,7 @@ import {
 import MaskPasswordFieldProps from './MaskPasswordFieldProps'
 
 interface HiddenToggleProps {
-  onClick: React.MouseEventHandler
+  onClick: MouseEventHandler
 }
 
 const HiddenToggle: StyledComponent<HiddenToggleProps, {}, Theme> = styled('span')({
@@ -41,8 +41,8 @@ interface PasswordFieldStyledProps {
   disabled?: boolean
   viewed?: boolean
   placeholder?: string
-  hint?: React.ReactNode
-  error?: React.ReactNode
+  hint?: ReactNode
+  error?: ReactNode
 }
 
 const PasswordFieldStyled: StyledComponent<PasswordFieldStyledProps, {}, Theme> = styled('div')((props) => ({
@@ -85,7 +85,7 @@ const PasswordFieldStyled: StyledComponent<PasswordFieldStyledProps, {}, Theme> 
   },
 }))
 
-const MaskPasswordField: React.SFC<MaskPasswordFieldProps> = (props) => (
+const MaskPasswordField: SFC<MaskPasswordFieldProps> = (props) => (
   <PasswordFieldControl
     onChange={props.onChange}
     onFocus={props.onFocus}

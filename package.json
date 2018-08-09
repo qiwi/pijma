@@ -7,7 +7,8 @@
     "clean": "lerna clean --yes && lerna run clean",
     "build": "yarn clean && lerna run --stream build",
     "watch": "lerna run --parallel watch",
-    "start": "lerna run --stream start"
+    "start": "lerna run --parallel start",
+    "guide": "lerna run --parallel guide"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^2.1.1",

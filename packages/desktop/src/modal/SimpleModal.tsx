@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {SFC, Fragment} from 'react'
 
 import {Modal} from 'react-overlays'
 import {css} from 'emotion'
@@ -16,7 +16,7 @@ import {
   CrossIcon,
 } from '@qiwi/pijma-media'
 
-const contentTransition: React.SFC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const contentTransition: SFC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
 
 contentTransition.defaultProps = {
   timeout: {
@@ -35,7 +35,7 @@ contentTransition.defaultProps = {
   }),
 }
 
-const backdropTransition: React.SFC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const backdropTransition: SFC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
 
 backdropTransition.defaultProps = {
   timeout: {
@@ -61,7 +61,7 @@ interface ModalProps {
   onHide?: () => void
 }
 
-const StyledModal: StyledComponent<Modal['props'], {}, Theme> = styled(Modal)({
+const StyledModal: StyledComponent<Modal['props'], {}, Theme> = styled(Modal)((props) => ({
   position: 'fixed',
   zIndex: 9999,
   top: 0,
@@ -77,7 +77,7 @@ const StyledModal: StyledComponent<Modal['props'], {}, Theme> = styled(Modal)({
     height: '100%',
     verticalAlign: 'middle',
   },
-})
+}))
 
 const StyledModalContent: StyledComponent<{}, {}, Theme> = styled('div')((props) => ({
   position: 'relative',
@@ -111,7 +111,7 @@ const StyledModalBackdrop: StyledComponent<{}, JSX.IntrinsicElements['div'], The
   backgroundColor: rgba(props.theme.color.white, 0.96),
 }))
 
-const SimpleModal: React.SFC<ModalProps> = (props) => (
+const SimpleModal: SFC<ModalProps> = (props) => (
   <StyledModal
     show={props.show}
     keyboard={props.escapeClose}
@@ -122,7 +122,7 @@ const SimpleModal: React.SFC<ModalProps> = (props) => (
     backdropTransition={backdropTransition}
     children={(
       <StyledModalContent>
-        <React.Fragment>
+        <Fragment>
           {props.closable && props.onHide ? (
             <StyledModalClose onClick={() => props.onHide && props.onHide()}>
               <CrossIcon/>
@@ -131,7 +131,7 @@ const SimpleModal: React.SFC<ModalProps> = (props) => (
             null
           )}
           {props.children}
-        </React.Fragment>
+        </Fragment>
       </StyledModalContent>
     )}
   />

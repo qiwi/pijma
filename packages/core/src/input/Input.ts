@@ -12,7 +12,7 @@ const Input: StyledComponent<{}, JSX.IntrinsicElements['input'], Theme> = styled
   border: 'none',
   borderRadius: 0,
   borderBottom: `1px solid ${rgba(props.theme.color.black, 0.2)}`,
-  fontFamily: props.theme.font.family,
+  fontFamily: 'inherit',
   fontSize: 20,
   fontWeight: 'inherit',
   textIndent: 0,

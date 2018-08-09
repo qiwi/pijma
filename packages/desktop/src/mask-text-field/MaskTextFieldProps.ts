@@ -1,4 +1,4 @@
-import React from 'react'
+import {ReactNode, KeyboardEvent} from 'react'
 import {MaskedInputProps} from 'react-text-mask'
 
 export default interface MaskTextFieldProps {
@@ -7,10 +7,10 @@ export default interface MaskTextFieldProps {
   type?: 'text' | 'password' | 'tel'
   name?: string
   title?: string
-  error?: React.ReactNode
-  action?: React.ReactNode
-  help?: React.ReactNode
-  hint?: React.ReactNode
+  error?: ReactNode
+  action?: ReactNode
+  help?: ReactNode
+  hint?: ReactNode
   autoComplete?: boolean
   autoFocus?: boolean
   placeholder?: string
@@ -21,6 +21,6 @@ export default interface MaskTextFieldProps {
   onChange?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void
-  onKeyDown?: (event: React.KeyboardEvent) => boolean
-  onKeyUp?: (event: React.KeyboardEvent) => boolean
+  onKeyDown?: (event: KeyboardEvent) => boolean
+  onKeyUp?: (event: KeyboardEvent) => boolean
 }

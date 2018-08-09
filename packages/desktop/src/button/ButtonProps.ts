@@ -1,4 +1,4 @@
-import React from 'react'
+import {ReactNode} from 'react'
 
 import ButtonKind from './ButtonKind'
 import ButtonSize from './ButtonSize'
@@ -14,6 +14,6 @@ export default interface ButtonProps {
   size: ButtonSize
   type: ButtonType
   text?: string
-  icon?: React.ReactNode
+  icon?: ReactNode
   loading?: boolean
 }
