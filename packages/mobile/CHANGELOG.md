@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.10.0](https://github.com/qiwi/pijma/compare/v1.9.0...v1.10.0) (2018-08-09)
+
+
+### Features
+
+* **media:** add new icons calendar, clock, hamburger, search, settings ([81c834d](https://github.com/qiwi/pijma/commit/81c834d))
+
 # [@qiwi/pijma-mobile-v1.9.0](https://github.com/qiwi/pijma/compare/v1.8.1...v1.9.0) (2018-08-08)
 
 
