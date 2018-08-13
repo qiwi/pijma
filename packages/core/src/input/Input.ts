@@ -18,7 +18,6 @@ const Input: StyledComponent<{}, JSX.IntrinsicElements['input'], Theme> = styled
   textIndent: 0,
   lineHeight: 1,
   color: props.theme.color.black,
-  verticalAlign: 'middle',
   outline: 'none',
   backgroundColor: 'transparent',
   transition: 'all 120ms cubic-bezier(0.4, 0.0, 0.2, 1)',
