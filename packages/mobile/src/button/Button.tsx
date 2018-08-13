@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {SFC, ReactNode} from 'react'
 import {rgba} from 'polished'
 
 import {
@@ -23,14 +23,14 @@ export interface StyledButtonProps {
   kind: ButtonKind
   type: ButtonType
   text?: string
-  icon?: React.ReactNode
+  icon?: ReactNode
   loading?: boolean
 }
 
 const StyledButton: StyledComponent<StyledButtonProps, JSX.IntrinsicElements['button'], Theme> = styled('button')((props) => ({
   display: 'inline-block',
   outline: 'none',
-  fontFamily: props.theme.font.family,
+  fontFamily: 'inherit',
   fontStyle: 'normal',
   fontStretch: 'normal',
   fontWeight: 500,
@@ -213,7 +213,7 @@ const StyledButton: StyledComponent<StyledButtonProps, JSX.IntrinsicElements['bu
   },
 }))
 
-const Button: React.SFC<ButtonProps> = (props) => (
+const Button: SFC<ButtonProps> = (props) => (
   <ButtonControl
     onClick={props.onClick}
     onFocus={props.onFocus}

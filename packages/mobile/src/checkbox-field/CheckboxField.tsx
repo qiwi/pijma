@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {ReactNode, SFC} from 'react'
 
 import {
   CheckboxControl,
@@ -20,14 +20,14 @@ import {
 import CheckboxFieldProps from './CheckboxFieldProps'
 
 interface OptionAnyModel<V> extends OptionModel<V> {
-  label: React.ReactNode
-  description?: React.ReactNode
+  label: ReactNode
+  description?: ReactNode
 }
 
 interface CheckboxFieldAnyProps<V> extends CheckboxFieldProps<OptionAnyModel<V>, V> {
-  title?: React.ReactNode
-  hint?: React.ReactNode
-  help?: React.ReactNode
+  title?: ReactNode
+  hint?: ReactNode
+  help?: ReactNode
 }
 
 class CheckboxAnyControl<V> extends CheckboxControl<OptionAnyModel<V>, V> {
@@ -36,7 +36,7 @@ class CheckboxAnyControl<V> extends CheckboxControl<OptionAnyModel<V>, V> {
 class CheckboxAnyOptionControl<V> extends OptionControl<OptionAnyModel<V>, V> {
 }
 
-const CheckboxField: React.SFC<CheckboxFieldAnyProps<any>> = (props) => (
+const CheckboxField: SFC<CheckboxFieldAnyProps<any>> = (props) => (
   <CheckboxAnyControl
     tabIndex={props.tabIndex}
     options={props.options}

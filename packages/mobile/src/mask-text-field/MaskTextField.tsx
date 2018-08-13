@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {ReactNode, SFC} from 'react'
 import {MaskedInputProps} from 'react-text-mask'
 
 import {
@@ -37,8 +37,8 @@ interface TextFieldStyledProps {
   value: string
   disabled?: boolean
   placeholder?: string
-  hint?: React.ReactNode
-  error?: React.ReactNode
+  hint?: ReactNode
+  error?: ReactNode
 }
 
 const TextFieldStyled: StyledComponent<TextFieldStyledProps, {}, Theme> = styled('div')((props) => ({
@@ -72,7 +72,7 @@ const TextFieldStyled: StyledComponent<TextFieldStyledProps, {}, Theme> = styled
   },
 }))
 
-const MaskTextField: React.SFC<MaskTextFieldProps> = (props) => (
+const MaskTextField: SFC<MaskTextFieldProps> = (props) => (
   <TextFieldControl
     onChange={props.onChange}
     onFocus={props.onFocus}

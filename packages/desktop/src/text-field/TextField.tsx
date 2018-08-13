@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {SFC, ReactNode} from 'react'
 
 import {
   styled,
@@ -24,8 +24,8 @@ interface TextFieldStyledProps {
   value: string
   disabled?: boolean
   placeholder?: string
-  hint?: React.ReactNode
-  error?: React.ReactNode
+  hint?: ReactNode
+  error?: ReactNode
 }
 
 const TextFieldStyled: StyledComponent<TextFieldStyledProps, {}, Theme> = styled('div')((props) => ({
@@ -59,7 +59,7 @@ const TextFieldStyled: StyledComponent<TextFieldStyledProps, {}, Theme> = styled
   },
 }))
 
-const TextField: React.SFC<TextFieldProps> = (props) => (
+const TextField: SFC<TextFieldProps> = (props) => (
   <TextFieldControl
     onChange={props.onChange}
     onFocus={props.onFocus}

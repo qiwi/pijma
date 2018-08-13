@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {SFC, Children, ReactNode} from 'react'
 
 import {styled, StyledComponent, Theme} from '@qiwi/pijma-core'
 
@@ -45,9 +45,9 @@ const ActionsItem: StyledComponent<ActionsProps, {}, Theme> = styled('div')((pro
   },
 }))
 
-const Actions: React.SFC<ActionsProps> = (props) => (
+const Actions: SFC<ActionsProps> = (props) => (
   <ActionsList {...props}>
-    {React.Children.map(props.children, (child: React.ReactNode, key: number) => (
+    {Children.map(props.children, (child: ReactNode, key: number) => (
       <ActionsItem key={key} {...props}>
         {child}
       </ActionsItem>

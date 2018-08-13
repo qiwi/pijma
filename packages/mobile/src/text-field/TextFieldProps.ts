@@ -1,4 +1,4 @@
-import React from 'react'
+import {ReactNode, KeyboardEvent} from 'react'
 
 export default interface TextFieldProps {
   value: string
@@ -6,10 +6,10 @@ export default interface TextFieldProps {
   type?: 'text' | 'password' | 'tel' | 'number' | 'search' | 'email' | 'url'
   name?: string
   title?: string
-  error?: React.ReactNode
-  action?: React.ReactNode
-  help?: React.ReactNode
-  hint?: React.ReactNode
+  error?: ReactNode
+  action?: ReactNode
+  help?: ReactNode
+  hint?: ReactNode
   autoComplete?: boolean
   autoFocus?: boolean
   placeholder?: string
@@ -18,6 +18,6 @@ export default interface TextFieldProps {
   onChange?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void
-  onKeyDown?: (event: React.KeyboardEvent) => boolean
-  onKeyUp?: (event: React.KeyboardEvent) => boolean
+  onKeyDown?: (event: KeyboardEvent) => boolean
+  onKeyUp?: (event: KeyboardEvent) => boolean
 }

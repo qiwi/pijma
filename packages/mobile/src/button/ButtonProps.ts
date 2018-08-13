@@ -1,4 +1,4 @@
-import React from 'react'
+import {ReactNode} from 'react'
 
 import ButtonKind from './ButtonKind'
 import ButtonType from './ButtonType'
@@ -12,6 +12,6 @@ export default interface ButtonProps {
   kind: ButtonKind
   type: ButtonType
   text?: string
-  icon?: React.ReactNode
+  icon?: ReactNode
   loading?: boolean
 }
