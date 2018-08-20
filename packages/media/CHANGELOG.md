@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.11.0](https://github.com/qiwi/pijma/compare/v1.10.0...v1.11.0) (2018-08-20)
+
+
+### Features
+
+* **media:** add 48*24 icons Visa, Mastercard, Mir ([3c0dba5](https://github.com/qiwi/pijma/commit/3c0dba5))
+
 # [@qiwi/pijma-media-v1.10.0](https://github.com/qiwi/pijma/compare/v1.9.0...v1.10.0) (2018-08-09)
 
 
