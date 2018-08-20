@@ -5,6 +5,13 @@
 
 * input focused height ([39077f4](https://github.com/qiwi/pijma/commit/39077f4))
 
+# [@qiwi/pijma-core-v1.10.1](https://github.com/qiwi/pijma/compare/v1.10.0...v1.10.1) (2018-08-20)
+
+
+### Bug Fixes
+
+* input focused height ([39077f4](https://github.com/qiwi/pijma/commit/39077f4))
+
 # [@qiwi/pijma-core-v1.8.0](https://github.com/qiwi/pijma/compare/v1.7.0...v1.8.0) (2018-08-04)
 
 
