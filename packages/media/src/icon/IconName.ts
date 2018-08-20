@@ -8,12 +8,15 @@ export type IconName =
   'hamburger' |
   'login' |
   'logout' |
+  'mastercard' |
+  'mir' |
   'percent' |
   'question' |
   'repeat' |
   'search' |
   'settings' |
   'share' |
-  'star'
+  'star' |
+  'visa'
 
 export default IconName

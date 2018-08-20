@@ -10,6 +10,13 @@ const IconWrapper = styled('span')({
   margin: 8,
 })
 
+const PaysysIconWrapper = styled('span')({
+  display: 'inline-block',
+  width: 48,
+  height: 24,
+  margin: 8,
+})
+
 const iconNames: IconName[] = [
   'calendar',
   'clock',
@@ -29,6 +36,12 @@ const iconNames: IconName[] = [
   'star',
 ]
 
+const paysysIcons: IconName[] = [
+  'mastercard',
+  'mir',
+  'visa',
+]
+
 export default class WeakIconExample extends Component {
 
   public render() {
@@ -38,6 +51,11 @@ export default class WeakIconExample extends Component {
           <IconWrapper key={name}>
             <WeakIcon name={name}/>
           </IconWrapper>
+        ))}
+        {paysysIcons.map(name => (
+          <PaysysIconWrapper key={name}>
+            <WeakIcon name={name}/>
+          </PaysysIconWrapper>
         ))}
       </Fragment>
     )

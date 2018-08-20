@@ -12,6 +12,8 @@ import EyeOpenedIcon from './EyeOpenedIcon'
 import HamburgerIcon from './HamburgerIcon'
 import LoginIcon from './LoginIcon'
 import LogoutIcon from './LogoutIcon'
+import MastercardIcon from './MastercardIcon'
+import MirIcon from './MirIcon'
 import PercentIcon from './PercentIcon'
 import QuestionIcon from './QuestionIcon'
 import RepeatIcon from './RepeatIcon'
@@ -19,6 +21,7 @@ import SearchIcon from './SearchIcon'
 import SettingsIcon from './SettingsIcon'
 import ShareIcon from './ShareIcon'
 import StarIcon from './StarIcon'
+import VisaIcon from './VisaIcon'
 
 export {
   Icon,
@@ -37,6 +40,8 @@ export {
   HamburgerIcon,
   LoginIcon,
   LogoutIcon,
+  MastercardIcon,
+  MirIcon,
   PercentIcon,
   QuestionIcon,
   RepeatIcon,
@@ -44,4 +49,5 @@ export {
   SettingsIcon,
   ShareIcon,
   StarIcon,
+  VisaIcon,
 }
