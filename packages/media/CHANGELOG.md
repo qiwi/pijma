@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.11.1](https://github.com/qiwi/pijma/compare/v1.11.0...v1.11.1) (2018-08-22)
+
+
+### Performance Improvements
+
+* up deps ([080dee1](https://github.com/qiwi/pijma/commit/080dee1))
+
 # [@qiwi/pijma-media-v1.11.0](https://github.com/qiwi/pijma/compare/v1.10.0...v1.11.0) (2018-08-20)
 
 
