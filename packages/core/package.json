@@ -15,6 +15,9 @@
   ],
   "dependencies": {
     "@qiwi/pijma-media": "^1.0.0",
+    "@types/react": "16.4.11",
+    "@types/react-dom": "16.0.7",
+    "@types/react-transition-group": "2.0.13",
     "emotion": "9.2.6",
     "emotion-theming": "9.2.6",
     "polished": "2.0.0",
@@ -25,9 +28,6 @@
     "tslib": "1.9.3"
   },
   "devDependencies": {
-    "@types/react": "16.4.11",
-    "@types/react-dom": "16.0.7",
-    "@types/react-transition-group": "2.0.13",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
     "babel-loader": "7.1.5",

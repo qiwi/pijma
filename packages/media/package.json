@@ -14,13 +14,13 @@
     "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && BABEL_ENV=production babel -q lib/es5 --out-dir lib/es5"
   },
   "dependencies": {
+    "@types/react": "16.4.11",
+    "@types/react-dom": "16.0.7",
     "react": "16.4.2",
     "react-dom": "16.4.2",
     "tslib": "1.9.3"
   },
   "devDependencies": {
-    "@types/react": "16.4.11",
-    "@types/react-dom": "16.0.7",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
     "babel-loader": "7.1.5",
