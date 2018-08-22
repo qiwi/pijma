@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf lib",
-    "build": "BABEL_ENV=production mkdir -p lib/es5 && cp -r src/fonts lib/es5/fonts && tsc -p tsconfig.build.json && babel -q lib/es5/ --out-dir lib/es5"
+    "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && BABEL_ENV=production babel -q lib/es5 --out-dir lib/es5 && cp -r src/fonts lib/es5/fonts"
   },
   "files": [
     "README.md",
@@ -15,27 +15,27 @@
   ],
   "dependencies": {
     "@qiwi/pijma-media": "^1.0.0",
-    "emotion": "^9.2.6",
-    "emotion-theming": "^9.2.3",
-    "polished": "^1.9.2",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-emotion": "^9.2.3",
-    "react-transition-group": "^2.4.0",
-    "tslib": "^1.9.2"
+    "emotion": "9.2.6",
+    "emotion-theming": "9.2.6",
+    "polished": "2.0.0",
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
+    "react-emotion": "9.2.6",
+    "react-transition-group": "2.4.0",
+    "tslib": "1.9.3"
   },
   "devDependencies": {
-    "@types/react": "^16.3.17",
-    "@types/react-dom": "^16.0.6",
-    "@types/react-transition-group": "^2.0.12",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-emotion": "^9.2.6",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-esnext": "^1.1.3",
-    "babel-preset-react": "^6.24.1",
-    "tslint": "^5.10.0",
-    "typescript": "^2.8.4"
+    "@types/react": "16.4.11",
+    "@types/react-dom": "16.0.7",
+    "@types/react-transition-group": "2.0.13",
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.3",
+    "babel-loader": "7.1.5",
+    "babel-plugin-emotion": "9.2.6",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-esnext": "1.1.3",
+    "babel-preset-react": "6.24.1",
+    "tslint": "5.11.0",
+    "typescript": "3.0.1"
   }
 }
