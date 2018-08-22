@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.11.2](https://github.com/qiwi/pijma/compare/v1.11.1...v1.11.2) (2018-08-22)
+
+
+### Bug Fixes
+
+* types deps ([2a77c3e](https://github.com/qiwi/pijma/commit/2a77c3e))
+
 # [@qiwi/pijma-media-v1.11.1](https://github.com/qiwi/pijma/compare/v1.11.0...v1.11.1) (2018-08-22)
 
 
