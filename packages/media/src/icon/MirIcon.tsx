@@ -4,10 +4,10 @@ const MirIcon: React.SFC = () => (
   <svg viewBox="0 0 48 24" focusable="false">
     <defs>
       <linearGradient id="mirIconGradient" x1="0%" x2="100%" y1="50%" y2="50%">
-        <stop offset="0%" stop-color="#5BAAE3"/>
-        <stop offset="33%" stop-color="#58A1DC"/>
-        <stop offset="87%" stop-color="#4F89C8"/>
-        <stop offset="100%" stop-color="#4C82C3"/>
+        <stop offset="0%" stopColor="#5BAAE3"/>
+        <stop offset="33%" stopColor="#58A1DC"/>
+        <stop offset="87%" stopColor="#4F89C8"/>
+        <stop offset="100%" stopColor="#4C82C3"/>
       </linearGradient>
     </defs>
     <path

@@ -4,8 +4,8 @@ const VisaIcon: React.SFC = () => (
   <svg viewBox="0 0 48 24" focusable="false">
     <defs>
       <linearGradient id="visaIconGradient" x1="0%" x2="100%" y1="50%" y2="50%">
-        <stop offset="0%" stop-color="#363C61"/>
-        <stop offset="100%" stop-color="#4D64A9"/>
+        <stop offset="0%" stopColor="#363C61"/>
+        <stop offset="100%" stopColor="#4D64A9"/>
       </linearGradient>
     </defs>
     <path
