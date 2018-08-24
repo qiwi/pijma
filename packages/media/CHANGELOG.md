@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.11.3](https://github.com/qiwi/pijma/compare/v1.11.2...v1.11.3) (2018-08-24)
+
+
+### Bug Fixes
+
+* **media:** fix icon attrs notation ([b358f60](https://github.com/qiwi/pijma/commit/b358f60))
+
 # [@qiwi/pijma-media-v1.11.2](https://github.com/qiwi/pijma/compare/v1.11.1...v1.11.2) (2018-08-22)
 
 
