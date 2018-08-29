@@ -1,10 +1,10 @@
 import React from 'react'
 
-import {styled, StyledComponent, Theme} from '@qiwi/pijma-core'
+import {styled} from '@qiwi/pijma-core'
 
 import CheckProps from './CheckProps'
 
-const CheckMark: StyledComponent<CheckProps, JSX.IntrinsicElements['path'], Theme> = styled('path')((props) => ({
+const CheckMark = styled.path<CheckProps>((props) => ({
   transition: 'all 120ms cubic-bezier(0.4, 0.0, 0.2, 1)',
   fill: (
     props.checked ? (

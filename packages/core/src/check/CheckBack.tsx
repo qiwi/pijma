@@ -1,10 +1,10 @@
 import React from 'react'
 
-import {styled, StyledComponent, Theme} from '@qiwi/pijma-core'
+import {styled} from '@qiwi/pijma-core'
 
 import CheckProps from './CheckProps'
 
-const CheckBack: StyledComponent<CheckProps, JSX.IntrinsicElements['rect'], Theme> = styled('rect')((props) => ({
+const CheckBack = styled.rect<CheckProps>((props) => ({
   transition: 'all 120ms cubic-bezier(0.4, 0.0, 0.2, 1)',
   fill: props.theme.color.gray.light,
 }))

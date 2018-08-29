@@ -1,9 +1,8 @@
 import styled from '../styled'
-import StyledComponent from '../StyledComponent'
-import Theme from '../Theme'
 
-const Field: StyledComponent<{}, {}, Theme> = styled('div')((props) => ({
+const Field = styled.div({
   position: 'relative',
-}))
+  width: '100%',
+})
 
 export default Field

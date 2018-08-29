@@ -1,8 +1,6 @@
 import styled from '../styled'
-import StyledComponent from '../StyledComponent'
-import Theme from '../Theme'
 
-const FieldTitleText: StyledComponent<{}, {}, Theme> = styled('label')((props) => ({
+const FieldTitleText = styled.label((props) => ({
   position: 'absolute',
   top: 0,
   left: 0,

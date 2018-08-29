@@ -9,12 +9,9 @@ interface State {
 
 export default class ActionsExample extends Component<{}, State> {
 
-  public constructor(props: {}) {
-    super(props)
-    this.state = {
-      features: [],
-      size: 'accent',
-    }
+  public state: State = {
+    features: [],
+    size: 'accent',
   }
 
   public render() {

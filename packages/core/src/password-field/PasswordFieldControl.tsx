@@ -5,12 +5,9 @@ import PasswordFieldControlState from './PasswordFieldControlState'
 
 export default class PasswordFieldControl extends React.Component<PasswordFieldControlProps, PasswordFieldControlState> {
 
-  public constructor(props: PasswordFieldControlProps) {
-    super(props)
-    this.state = {
-      focused: false,
-      hidden: true,
-    }
+  public state: PasswordFieldControlState = {
+    focused: false,
+    hidden: true,
   }
 
   private onChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {

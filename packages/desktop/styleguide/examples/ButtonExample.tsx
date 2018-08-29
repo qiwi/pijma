@@ -1,25 +1,22 @@
 import React, {Component} from 'react'
 
 import {StarIcon} from '@qiwi/pijma-media'
-import {Button, ButtonType, ButtonKind, ButtonSize, RadioField, CheckboxField} from '@qiwi/pijma-desktop'
+import {Button, RadioField, CheckboxField} from '@qiwi/pijma-desktop'
 
-interface ButtonExampleState {
+interface State {
   features: string[]
-  type: ButtonType
-  kind: ButtonKind
-  size: ButtonSize
+  type: 'submit' | 'button'
+  kind: 'brand' | 'simple'
+  size: 'minor' | 'normal' | 'accent'
 }
 
-export default class ButtonExample extends Component<{}, ButtonExampleState> {
+export default class ButtonExample extends Component<{}, State> {
 
-  public constructor(props: {}) {
-    super(props)
-    this.state = {
-      features: ['icon', 'text'],
-      type: 'button',
-      kind: 'brand',
-      size: 'accent',
-    }
+  public state: State = {
+    features: ['icon', 'text'],
+    type: 'button',
+    kind: 'brand',
+    size: 'accent',
   }
 
   public render() {

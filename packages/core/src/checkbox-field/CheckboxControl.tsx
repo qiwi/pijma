@@ -7,11 +7,8 @@ import CheckboxControlState from './CheckboxControlState'
 
 export default class CheckboxControl<O extends OptionModel<V>, V> extends React.Component<CheckboxControlProps<O, V>, CheckboxControlState> {
 
-  public constructor(props: CheckboxControlProps<O, V>) {
-    super(props)
-    this.state = {
-      focused: -1,
-    }
+  public state: CheckboxControlState = {
+    focused: -1,
   }
 
   private equals(a: V, b: V): boolean {

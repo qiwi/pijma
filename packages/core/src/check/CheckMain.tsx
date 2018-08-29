@@ -1,10 +1,10 @@
 import React from 'react'
 
-import {styled, StyledComponent, Theme} from '@qiwi/pijma-core'
+import {styled} from '@qiwi/pijma-core'
 
 import CheckProps from './CheckProps'
 
-const CheckMain: StyledComponent<CheckProps, JSX.IntrinsicElements['svg'], Theme> = styled('svg')((props) => ({}))
+const CheckMain = styled.svg<CheckProps>((props) => ({}))
 
 CheckMain.defaultProps = {
   width: 24,

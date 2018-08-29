@@ -1,10 +1,8 @@
 import {rgba} from 'polished'
 
 import styled from '../styled'
-import StyledComponent from '../StyledComponent'
-import Theme from '../Theme'
 
-const Input: StyledComponent<{}, JSX.IntrinsicElements['input'], Theme> = styled('input')((props) => ({
+const Input = styled.input((props) => ({
   width: '100%',
   height: 28,
   margin: 0,
@@ -40,7 +38,7 @@ const Input: StyledComponent<{}, JSX.IntrinsicElements['input'], Theme> = styled
   '&::-webkit-search-results-button': {
     display: 'none',
   },
-  '::-webkit-search-results-decoration': {
+  '&::-webkit-search-results-decoration': {
     display: 'none',
   },
   '&::-webkit-credentials-auto-fill-button': {

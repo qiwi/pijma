@@ -10,12 +10,9 @@ interface State {
 
 export default class RadioFieldExample extends Component<{}, State> {
 
-  public constructor(props: {}) {
-    super(props)
-    this.state = {
-      features: ['hint', 'help'],
-      value: 'banana',
-    }
+  public state: State = {
+    features: ['hint', 'help'],
+    value: 'banana',
   }
 
   public render() {

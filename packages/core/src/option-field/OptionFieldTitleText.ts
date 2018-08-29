@@ -1,6 +1,6 @@
-import {styled, StyledComponent, Theme} from '@qiwi/pijma-core'
+import {styled} from '@qiwi/pijma-core'
 
-const OptionFieldTitleText: StyledComponent<{}, {}, Theme> = styled('label')((props) => ({
+const OptionFieldTitleText = styled.label((props) => ({
   color: props.theme.color.black,
   lineHeight: 1.5,
   fontSize: 18,

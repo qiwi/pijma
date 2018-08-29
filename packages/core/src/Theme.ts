@@ -17,4 +17,3 @@ export default interface Theme {
     success: string
   }
 }
-

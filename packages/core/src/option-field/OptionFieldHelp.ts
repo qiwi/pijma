@@ -1,6 +1,6 @@
-import {styled, StyledComponent, Theme, indent} from '@qiwi/pijma-core'
+import {styled, indent} from '@qiwi/pijma-core'
 
-const OptionFieldHelp: StyledComponent<{}, {}, Theme> = styled('div')((props) => ({
+const OptionFieldHelp = styled.div((props) => ({
   color: props.theme.color.black,
   ...indent(12),
   fontSize: 14,

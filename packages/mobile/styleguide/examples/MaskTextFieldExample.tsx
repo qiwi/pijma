@@ -11,13 +11,10 @@ interface State {
 
 export default class MaskTextFieldExample extends Component<{}, State> {
 
-  public constructor(props: {}) {
-    super(props)
-    this.state = {
-      features: ['help', 'hint', 'action'],
-      value: '',
-      type: undefined,
-    }
+  public state: State = {
+    features: ['help', 'hint', 'action'],
+    value: '',
+    type: undefined,
   }
 
   public render() {

@@ -5,11 +5,8 @@ import TextFieldControlState from './TextFieldControlState'
 
 export default class TextFieldControl extends React.Component<TextFieldControlProps, TextFieldControlState> {
 
-  public constructor(props: TextFieldControlProps) {
-    super(props)
-    this.state = {
-      focused: false,
-    }
+  public state: TextFieldControlState = {
+    focused: false,
   }
 
   private onChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {

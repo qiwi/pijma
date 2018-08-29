@@ -3,14 +3,14 @@ import React, {Component, Fragment} from 'react'
 import {styled, Icon} from '@qiwi/pijma-core'
 import {IconName} from '@qiwi/pijma-media'
 
-const IconWrapper = styled('span')({
+const IconWrapper = styled.span({
   display: 'inline-block',
   width: 24,
   height: 24,
   margin: 8,
 })
 
-const PaysysIconWrapper = styled('span')({
+const PaysysIconWrapper = styled.span({
   display: 'inline-block',
   width: 48,
   height: 24,

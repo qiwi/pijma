@@ -10,12 +10,9 @@ interface State {
 
 export default class CheckboxFieldExample extends Component<{}, State> {
 
-  public constructor(props: {}) {
-    super(props)
-    this.state = {
-      features: ['hint', 'help'],
-      values: ['banana'],
-    }
+  public state: State = {
+    features: ['hint', 'help'],
+    values: ['banana'],
   }
 
   public render() {

@@ -1,9 +1,7 @@
-import React, {ReactNode, SFC} from 'react'
+import React, {SFC, ReactNode} from 'react'
 
 import {
   styled,
-  StyledComponent,
-  Theme,
   TextFieldControl,
   Input,
   Field,
@@ -28,7 +26,7 @@ interface TextFieldStyledProps {
   error?: ReactNode
 }
 
-const TextFieldStyled: StyledComponent<TextFieldStyledProps, {}, Theme> = styled('div')((props) => ({
+const TextFieldStyled = styled.div<TextFieldStyledProps>((props) => ({
   width: '100%',
   [FieldTitleText.toString()]: {
     fontSize: props.focused || !!props.value || !!props.placeholder ? 13 : 20,
@@ -129,7 +127,7 @@ const TextField: SFC<TextFieldProps> = (props) => (
 )
 
 TextField.defaultProps = {
-  type: 'text',
+  type: 'text' as 'text',
   tabIndex: 0,
 }
 

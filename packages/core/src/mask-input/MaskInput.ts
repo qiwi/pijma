@@ -1,11 +1,9 @@
 import {rgba} from 'polished'
-import ReactTextMask, {MaskedInputProps} from 'react-text-mask'
+import ReactTextMask from 'react-text-mask'
 
 import styled from '../styled'
-import StyledComponent from '../StyledComponent'
-import Theme from '../Theme'
 
-const MaskInput: StyledComponent<{}, MaskedInputProps, Theme> = styled(ReactTextMask)((props) => ({
+const MaskInput = styled(ReactTextMask)((props) => ({
   width: '100%',
   height: 28,
   margin: 0,

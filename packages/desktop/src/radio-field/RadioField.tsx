@@ -1,9 +1,8 @@
-import React, {SFC, ReactNode} from 'react'
+import React, {SFC} from 'react'
 
 import {
   RadioControl,
   OptionControl,
-  OptionModel,
   Radio,
   OptionField,
   OptionFieldTitle,
@@ -18,26 +17,10 @@ import {
 } from '@qiwi/pijma-core'
 
 import RadioFieldProps from './RadioFieldProps'
+import RadioFieldOptionModel from './RadioFieldOptionModel'
 
-interface OptionAnyModel<V> extends OptionModel<V> {
-  label: ReactNode
-  description?: ReactNode
-}
-
-interface RadioFieldsAnyProps<V> extends RadioFieldProps<OptionAnyModel<V>, V> {
-  title?: ReactNode
-  hint?: ReactNode
-  help?: ReactNode
-}
-
-class RadioAnyControl<V> extends RadioControl<OptionAnyModel<V>, V> {
-}
-
-class RadioAnyOptionControl<V> extends OptionControl<OptionAnyModel<V>, V> {
-}
-
-const RadioField: SFC<RadioFieldsAnyProps<any>> = (props) => (
-  <RadioAnyControl
+const RadioField: SFC<RadioFieldProps<RadioFieldOptionModel<any>, any>> = (props) => (
+  <RadioControl<RadioFieldOptionModel<any>, any>
     tabIndex={props.tabIndex}
     options={props.options}
     value={props.value}
@@ -70,9 +53,8 @@ const RadioField: SFC<RadioFieldsAnyProps<any>> = (props) => (
           onBlur={renderProps.onBlur}
           onKeyDown={renderProps.onKeyDown}
           onMouseLeave={renderProps.onMouseLeave}
-        >
-          {renderProps.options.map((option, index) => (
-            <RadioAnyOptionControl
+          children={renderProps.options.map((option, index) => (
+            <OptionControl<any>
               key={index}
               disabled={option.disabled}
               value={option.value}
@@ -107,7 +89,7 @@ const RadioField: SFC<RadioFieldsAnyProps<any>> = (props) => (
               )}
             />
           ))}
-        </OptionFieldInput>
+        />
         {props.help ? (
           <OptionFieldHelp>
             {props.help}

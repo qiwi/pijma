@@ -2,9 +2,7 @@ import React from 'react'
 
 import {RenderChild} from '@qiwi/pijma-core'
 
-import OptionModel from './OptionModel'
-
-export default interface OptionControlProps<O extends OptionModel<V>, V> {
+export default interface OptionControlProps<V> {
   value: V
   disabled?: boolean
   onClick: (value: V) => void

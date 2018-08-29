@@ -1,9 +1,8 @@
-import React, {SFC, ReactNode} from 'react'
+import React, {SFC} from 'react'
 
 import {
   CheckboxControl,
   OptionControl,
-  OptionModel,
   Check,
   OptionField,
   OptionFieldTitle,
@@ -18,26 +17,10 @@ import {
 } from '@qiwi/pijma-core'
 
 import CheckboxFieldProps from './CheckboxFieldProps'
+import CheckboxFieldOptionModel from './CheckboxFieldOptionModel'
 
-interface OptionAnyModel<V> extends OptionModel<V> {
-  label: ReactNode
-  description?: ReactNode
-}
-
-interface CheckboxFieldAnyProps<V> extends CheckboxFieldProps<OptionAnyModel<V>, V> {
-  title?: ReactNode
-  hint?: ReactNode
-  help?: ReactNode
-}
-
-class CheckboxAnyControl<V> extends CheckboxControl<OptionAnyModel<V>, V> {
-}
-
-class CheckboxAnyOptionControl<V> extends OptionControl<OptionAnyModel<V>, V> {
-}
-
-const CheckboxField: SFC<CheckboxFieldAnyProps<any>> = (props) => (
-  <CheckboxAnyControl
+const CheckboxField: SFC<CheckboxFieldProps<CheckboxFieldOptionModel<any>, any>> = (props) => (
+  <CheckboxControl<CheckboxFieldOptionModel<any>, any>
     tabIndex={props.tabIndex}
     options={props.options}
     values={props.values}
@@ -70,9 +53,8 @@ const CheckboxField: SFC<CheckboxFieldAnyProps<any>> = (props) => (
           onBlur={renderProps.onBlur}
           onKeyDown={renderProps.onKeyDown}
           onMouseLeave={renderProps.onMouseLeave}
-        >
-          {renderProps.options.map((option, index) => (
-            <CheckboxAnyOptionControl
+          children={renderProps.options.map((option, index) => (
+            <OptionControl<any>
               key={index}
               disabled={option.disabled}
               value={option.value}
@@ -107,7 +89,7 @@ const CheckboxField: SFC<CheckboxFieldAnyProps<any>> = (props) => (
               )}
             />
           ))}
-        </OptionFieldInput>
+        />
         {props.help ? (
           <OptionFieldHelp>
             {props.help}

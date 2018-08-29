@@ -1,13 +1,13 @@
 import React, {SFC, ReactNode, Children} from 'react'
 
-import {styled, StyledComponent, Theme, indent} from '@qiwi/pijma-core'
+import {styled, indent} from '@qiwi/pijma-core'
 
-const ActionsList: StyledComponent<{}, {}, Theme> = styled('div')({
+const ActionsList = styled.div({
   display: 'block',
   width: '100%',
 })
 
-const ActionsItem: StyledComponent<{}, {}, Theme> = styled('div')({
+const ActionsItem = styled.div({
   display: 'block',
   width: '100%',
   ...indent(20),

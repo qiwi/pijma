@@ -8,11 +8,8 @@ interface State {
 
 export default class ActionsExample extends Component<{}, State> {
 
-  public constructor(props: {}) {
-    super(props)
-    this.state = {
-      features: [],
-    }
+  public state: State = {
+    features: [],
   }
 
   public render() {

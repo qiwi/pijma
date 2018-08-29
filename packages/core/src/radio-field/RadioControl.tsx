@@ -7,11 +7,8 @@ import RadioControlState from './RadioControlState'
 
 export default class RadioControl<O extends OptionModel<V>, V> extends React.Component<RadioControlProps<O, V>, RadioControlState> {
 
-  public constructor(props: RadioControlProps<O, V>) {
-    super(props)
-    this.state = {
-      focused: -1,
-    }
+  public state: RadioControlState = {
+    focused: -1,
   }
 
   private equals(a: V, b: V): boolean {

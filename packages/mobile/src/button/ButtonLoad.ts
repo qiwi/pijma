@@ -1,6 +1,6 @@
-import {styled, StyledComponent, Theme} from '@qiwi/pijma-core'
+import {styled} from '@qiwi/pijma-core'
 
-const ButtonLoad: StyledComponent<{}, {}, Theme> = styled('span')({
+const ButtonLoad = styled.span({
   display: 'none',
   position: 'absolute',
   top: 0,
