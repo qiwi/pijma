@@ -126,9 +126,11 @@ const TextField: SFC<TextFieldProps> = (props) => (
   />
 )
 
-TextField.defaultProps = {
-  type: 'text' as 'text',
+const defaultProps: Partial<TextFieldProps> = {
+  type: 'text',
   tabIndex: 0,
 }
+
+TextField.defaultProps = defaultProps
 
 export default TextField
