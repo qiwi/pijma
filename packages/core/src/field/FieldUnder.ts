@@ -1,8 +1,6 @@
 import styled from '../styled'
-import StyledComponent from '../StyledComponent'
-import Theme from '../Theme'
 
-const FieldUnder: StyledComponent<{}, {}, Theme> = styled('div')({
+const FieldUnder = styled.div({
   display: 'flex',
   justifyContent: 'flex-start',
   width: '100%',

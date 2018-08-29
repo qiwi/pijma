@@ -10,12 +10,9 @@ interface State {
 
 export default class MaskPasswordFieldExample extends Component<{}, State> {
 
-  public constructor(props: {}) {
-    super(props)
-    this.state = {
-      features: ['help', 'hint', 'action', 'viewed'],
-      value: '',
-    }
+  public state: State = {
+    features: ['help', 'hint', 'action', 'viewed'],
+    value: '',
   }
 
   public render() {

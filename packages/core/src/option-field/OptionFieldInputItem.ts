@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {styled, StyledComponent, Theme, indent} from '@qiwi/pijma-core'
+import {styled, indent} from '@qiwi/pijma-core'
 
 export interface OptionFieldInputItemProps {
   disabled?: boolean
@@ -8,7 +8,7 @@ export interface OptionFieldInputItemProps {
   onMouseEnter: React.MouseEventHandler
 }
 
-const OptionFieldInputItem: StyledComponent<OptionFieldInputItemProps, {}, Theme> = styled('div')((props) => ({
+const OptionFieldInputItem = styled.div<OptionFieldInputItemProps>((props) => ({
   position: 'relative',
   cursor: (
     props.disabled ? (

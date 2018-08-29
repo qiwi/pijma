@@ -3,8 +3,6 @@ import {MaskedInputProps} from 'react-text-mask'
 
 import {
   styled,
-  StyledComponent,
-  Theme,
   TextFieldControl,
   MaskInput,
   Field,
@@ -41,7 +39,7 @@ interface TextFieldStyledProps {
   error?: ReactNode
 }
 
-const TextFieldStyled: StyledComponent<TextFieldStyledProps, {}, Theme> = styled('div')((props) => ({
+const TextFieldStyled = styled.div<TextFieldStyledProps>((props) => ({
   width: '100%',
   [FieldTitleText.toString()]: {
     fontSize: props.focused || !!props.value || !!props.placeholder ? 13 : 20,

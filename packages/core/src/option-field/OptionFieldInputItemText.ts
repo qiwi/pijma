@@ -1,10 +1,10 @@
-import {styled, StyledComponent, Theme} from '@qiwi/pijma-core'
+import {styled} from '@qiwi/pijma-core'
 
 export interface OptionFieldInputItemTextProps {
   disabled?: boolean
 }
 
-const OptionFieldInputItemText: StyledComponent<OptionFieldInputItemTextProps, {}, Theme> = styled('div')((props) => ({
+const OptionFieldInputItemText = styled.div<OptionFieldInputItemTextProps>((props) => ({
   color: props.disabled ? props.theme.color.gray.darkest : props.theme.color.black,
   fontSize: 16,
   fontWeight: 300,

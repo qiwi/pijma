@@ -1,6 +1,11 @@
+import {ReactNode} from 'react'
+
 import {OptionModel} from '@qiwi/pijma-core'
 
-export default interface CheckboxFieldProps<O extends OptionModel<V>, V = any> {
+export default interface CheckboxFieldProps<O extends OptionModel<V>, V> {
+  title?: ReactNode
+  hint?: ReactNode
+  help?: ReactNode
   tabIndex?: number
   autoFocus?: boolean
   options: O[]

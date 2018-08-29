@@ -6,8 +6,6 @@ import {rgba} from 'polished'
 
 import {
   styled,
-  StyledComponent,
-  Theme,
   SimpleTransition,
   SimpleTransitionProps,
 } from '@qiwi/pijma-core'
@@ -61,7 +59,7 @@ interface ModalProps {
   onHide?: () => void
 }
 
-const StyledModal: StyledComponent<Modal['props'], {}, Theme> = styled(Modal)({
+const StyledModal = styled(Modal)<Modal['props']>({
   position: 'fixed',
   zIndex: 9999,
   top: 0,
@@ -72,7 +70,7 @@ const StyledModal: StyledComponent<Modal['props'], {}, Theme> = styled(Modal)({
   overflow: 'auto',
 })
 
-const StyledModalContent: StyledComponent<{}, {}, Theme> = styled('div')((props) => ({
+const StyledModalContent = styled.div((props) => ({
   position: 'relative',
   outline: 'none',
   backgroundColor: props.theme.color.white,
@@ -82,7 +80,7 @@ const StyledModalContent: StyledComponent<{}, {}, Theme> = styled('div')((props)
   overflow: 'auto',
 }))
 
-const StyledModalClose: StyledComponent<{}, JSX.IntrinsicElements['div'], Theme> = styled('div')((props) => ({
+const StyledModalClose = styled.div((props) => ({
   position: 'absolute',
   top: 24,
   right: 24,
@@ -92,7 +90,7 @@ const StyledModalClose: StyledComponent<{}, JSX.IntrinsicElements['div'], Theme>
   fill: props.theme.color.black,
 }))
 
-const StyledModalBackdrop: StyledComponent<{}, JSX.IntrinsicElements['div'], Theme> = styled('div')((props) => ({
+const StyledModalBackdrop = styled.div((props) => ({
   position: 'fixed',
   zIndex: 'auto',
   top: 0,

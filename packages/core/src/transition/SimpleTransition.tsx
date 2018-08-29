@@ -29,7 +29,6 @@ const statusClassName = (status: string, props: SimpleTransitionProps): string |
   return undefined
 }
 
-
 const SimpleTransition: React.SFC<SimpleTransitionProps> = ({children, ...props}) => {
   const child = children as React.ReactElement<{className?: string}>
   return (

@@ -2,8 +2,6 @@ import React, {MouseEventHandler, ReactNode, SFC} from 'react'
 
 import {
   styled,
-  StyledComponent,
-  Theme,
   PasswordFieldControl,
   MaskInput,
   Field,
@@ -28,7 +26,7 @@ interface HiddenToggleProps {
   onClick: MouseEventHandler
 }
 
-const HiddenToggle: StyledComponent<HiddenToggleProps, {}, Theme> = styled('span')({
+const HiddenToggle = styled.span<HiddenToggleProps>({
   display: 'inline-block',
   cursor: 'pointer',
   width: '100%',
@@ -45,7 +43,7 @@ interface PasswordFieldStyledProps {
   error?: ReactNode
 }
 
-const PasswordFieldStyled: StyledComponent<PasswordFieldStyledProps, {}, Theme> = styled('div')((props) => ({
+const PasswordFieldStyled = styled.div<PasswordFieldStyledProps>((props) => ({
   width: '100%',
   [FieldTitleText.toString()]: {
     fontSize: props.focused || !!props.value || !!props.placeholder ? 13 : 20,

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {styled, StyledComponent, Theme, indent} from '@qiwi/pijma-core'
+import {styled, indent} from '@qiwi/pijma-core'
 
 interface OptionFieldInputProps {
   tabIndex?: number
@@ -11,7 +11,7 @@ interface OptionFieldInputProps {
   onMouseLeave: React.MouseEventHandler
 }
 
-const OptionFieldInput: StyledComponent<OptionFieldInputProps, {}, Theme> = styled('div')({
+const OptionFieldInput = styled.div<OptionFieldInputProps>({
   outline: 'none',
   ...indent(12),
 })

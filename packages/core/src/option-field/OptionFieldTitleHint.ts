@@ -1,6 +1,6 @@
-import {styled, StyledComponent, Theme} from '@qiwi/pijma-core'
+import {styled} from '@qiwi/pijma-core'
 
-const FieldUnderHelp: StyledComponent<{}, {}, Theme> = styled('span')({
+const FieldUnderHelp = styled.span({
   flexShrink: 0,
   width: 24,
   height: 24,

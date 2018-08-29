@@ -11,13 +11,10 @@ interface State {
 
 export default class TextFieldExample extends Component<{}, State> {
 
-  public constructor(props: {}) {
-    super(props)
-    this.state = {
-      features: ['help', 'hint', 'action'],
-      value: '',
-      type: 'text',
-    }
+  public state: State = {
+    features: ['help', 'hint', 'action'],
+    value: '',
+    type: 'text',
   }
 
   public render() {

@@ -1,10 +1,10 @@
-import {styled, StyledComponent, Theme} from '@qiwi/pijma-core'
+import {styled} from '@qiwi/pijma-core'
 
-const ButtonText: StyledComponent<{}, {}, Theme> = styled('span')(() => ({
+const ButtonText = styled.span({
   position: 'relative',
   whiteSpace: 'nowrap',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
-}))
+})
 
 export default ButtonText

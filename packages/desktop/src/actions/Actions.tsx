@@ -1,16 +1,16 @@
 import React, {SFC, Children, ReactNode} from 'react'
 
-import {styled, StyledComponent, Theme} from '@qiwi/pijma-core'
+import {styled} from '@qiwi/pijma-core'
 
 import ActionsProps from './ActionProps'
 
-const ActionsList: StyledComponent<ActionsProps, {}, Theme> = styled('div')((props) => ({
+const ActionsList = styled.div<ActionsProps>((props) => ({
   display: props.vertical ? 'inline-block' : 'inline-flex',
   alignItems: props.vertical ? undefined : 'center',
   maxWidth: '100%',
 }))
 
-const ActionsItem: StyledComponent<ActionsProps, {}, Theme> = styled('div')((props) => ({
+const ActionsItem = styled.div<ActionsProps>((props) => ({
   display: 'block',
   textAlign: 'center',
   marginBottom: (

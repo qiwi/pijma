@@ -2,8 +2,6 @@ import React from 'react'
 import {keyframes} from 'emotion'
 
 import styled from '../styled'
-import StyledComponent from '../StyledComponent'
-import Theme from '../Theme'
 
 const animation = keyframes({
   '0%': {
@@ -20,7 +18,7 @@ const animation = keyframes({
   },
 })
 
-const SpinnerCircle: StyledComponent<{}, JSX.IntrinsicElements['circle'], Theme> = styled('circle')({
+const SpinnerCircle = styled.circle({
   fill: 'none',
   stroke: '#000',
   strokeDasharray: '89, 200',

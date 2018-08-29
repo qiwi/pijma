@@ -9,12 +9,9 @@ interface State {
 
 export default class SimpleModalExample extends Component<{}, State> {
 
-  public constructor(props: {}) {
-    super(props)
-    this.state = {
-      features: [],
-      show: false,
-    }
+  public state: State = {
+    features: [],
+    show: false,
   }
 
   public render() {

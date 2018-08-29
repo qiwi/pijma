@@ -1,6 +1,6 @@
-import {styled, StyledComponent, Theme, indent} from '@qiwi/pijma-core'
+import {styled, indent} from '@qiwi/pijma-core'
 
-const OptionFieldTitle: StyledComponent<{}, {}, Theme> = styled('div')({
+const OptionFieldTitle = styled.div({
   display: 'flex',
   justifyContent: 'flex-start',
   width: '100%',

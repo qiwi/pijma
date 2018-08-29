@@ -1,10 +1,10 @@
 import React from 'react'
 
-import {styled, StyledComponent, Theme} from '@qiwi/pijma-core'
+import {styled} from '@qiwi/pijma-core'
 
 import RadioProps from './RadioProps'
 
-const RadioMark: StyledComponent<RadioProps, JSX.IntrinsicElements['rect'], Theme> = styled('rect')((props) => ({
+const RadioMark = styled.rect<RadioProps>((props) => ({
   transition: 'all 120ms cubic-bezier(0.4, 0.0, 0.2, 1)',
   fill: (
     props.checked ? (

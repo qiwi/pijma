@@ -1,9 +1,8 @@
 import React from 'react'
 
 import OptionControlProps from './OptionControlProps'
-import OptionModel from './OptionModel'
 
-export default class OptionControl<O extends OptionModel<V>, V> extends React.Component<OptionControlProps<O, V>, {}> {
+export default class OptionControl<V> extends React.Component<OptionControlProps<V>, {}> {
 
   private onClick: React.MouseEventHandler<HTMLElement> = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault()

@@ -1,8 +1,9 @@
-import styled, {StyledComponent, injectGlobal, css} from 'react-emotion'
-import {ThemeProvider} from 'emotion-theming'
+import {injectGlobal, css} from 'react-emotion'
 
 import Theme from './Theme'
 import RenderChild from './RenderChild'
+import styled from './styled'
+import ThemeProvider from './ThemeProvider'
 
 import reset from './reset'
 import fonts from './fonts'
@@ -12,7 +13,6 @@ import * as themes from './themes'
 
 export {
   styled,
-  StyledComponent,
   css,
   injectGlobal,
   Theme,
