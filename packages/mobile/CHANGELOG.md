@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.11.4](https://github.com/qiwi/pijma/compare/v1.11.3...v1.11.4) (2018-08-29)
+
+
+### Performance Improvements
+
+* update dependencies ([c543622](https://github.com/qiwi/pijma/commit/c543622))
+
 # [@qiwi/pijma-mobile-v1.10.0](https://github.com/qiwi/pijma/compare/v1.9.0...v1.10.0) (2018-08-09)
 
 
