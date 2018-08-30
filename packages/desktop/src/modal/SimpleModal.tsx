@@ -59,7 +59,7 @@ interface ModalProps {
   onHide?: () => void
 }
 
-const StyledModal = styled(Modal)<Modal['props']>((props) => ({
+const StyledModal = styled(Modal)<Modal['props']>({
   position: 'fixed',
   zIndex: 9999,
   top: 0,
@@ -75,7 +75,7 @@ const StyledModal = styled(Modal)<Modal['props']>((props) => ({
     height: '100%',
     verticalAlign: 'middle',
   },
-}))
+})
 
 const StyledModalContent = styled.div((props) => ({
   position: 'relative',
