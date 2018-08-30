@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.11.5](https://github.com/qiwi/pijma/compare/v1.11.4...v1.11.5) (2018-08-30)
+
+
+### Bug Fixes
+
+* ts reference path ([5daee75](https://github.com/qiwi/pijma/commit/5daee75))
+
 # [@qiwi/pijma-core-v1.11.4](https://github.com/qiwi/pijma/compare/v1.11.3...v1.11.4) (2018-08-29)
 
 
