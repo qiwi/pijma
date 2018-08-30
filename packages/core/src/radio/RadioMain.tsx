@@ -1,10 +1,8 @@
-import React from 'react'
-
 import {styled} from '@qiwi/pijma-core'
 
 import RadioProps from './RadioProps'
 
-const RadioMain = styled.svg<RadioProps>((props) => ({}))
+const RadioMain = styled.svg<RadioProps>({})
 
 RadioMain.defaultProps = {
   width: 24,

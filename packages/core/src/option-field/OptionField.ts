@@ -1,6 +1,5 @@
 import {styled} from '@qiwi/pijma-core'
 
-const OptionField = styled.div((props) => ({
-}))
+const OptionField = styled.div({})
 
 export default OptionField

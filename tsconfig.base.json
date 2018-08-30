@@ -12,6 +12,8 @@
     "declaration": true,
     "jsx": "react",
     "noEmitHelpers": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "importHelpers": true,
     "allowSyntheticDefaultImports": true
   }

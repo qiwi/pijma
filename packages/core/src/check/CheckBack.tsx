@@ -1,5 +1,3 @@
-import React from 'react'
-
 import {styled} from '@qiwi/pijma-core'
 
 import CheckProps from './CheckProps'

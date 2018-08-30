@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf lib styleguide/lib",
-    "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && BABEL_ENV=production babel -q lib/es5 --out-dir lib/es5 && styleguidist build",
+    "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && find lib -name *.d.ts -exec sed -i \"/\\b\\(reference path\\)\\b/d\" {} \\; && BABEL_ENV=production babel -q lib/es5 --out-dir lib/es5 && styleguidist build",
     "watch": "styleguidist server",
     "guide": "gh-pages -d styleguide/lib -e mobile -m \"update mobile style guide v$npm_package_version\""
   },
@@ -18,7 +18,7 @@
   "dependencies": {
     "@qiwi/pijma-core": "^1.0.0",
     "@qiwi/pijma-media": "^1.0.0",
-    "@types/react": "16.4.12",
+    "@types/react": "16.4.13",
     "@types/react-dom": "16.0.7",
     "@types/react-overlays": "0.8.5",
     "@types/react-text-mask": "5.4.2",
@@ -45,10 +45,10 @@
     "file-loader": "2.0.0",
     "gh-pages": "1.2.0",
     "react-docgen-typescript": "1.7.0",
-    "react-styleguidist": "7.3.0",
+    "react-styleguidist": "7.3.1",
     "ts-loader": "4.5.0",
     "tslint": "5.11.0",
-    "typescript": "3.1.0-dev.20180825",
+    "typescript": "3.1.0-dev.20180830",
     "webpack": "4.17.1"
   }
 }
