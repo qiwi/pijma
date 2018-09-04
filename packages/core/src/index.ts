@@ -26,6 +26,7 @@ export {
 
 export * from './button'
 export * from './input'
+export * from './mask'
 export * from './mask-input'
 export * from './field'
 export * from './option-field'
