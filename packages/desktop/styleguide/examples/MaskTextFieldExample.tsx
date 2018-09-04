@@ -2,11 +2,13 @@ import React, {Component} from 'react'
 
 import {MaskTextField, RadioField, CheckboxField} from '@qiwi/pijma-desktop'
 import {QuestionIcon} from '@qiwi/pijma-media'
+import {createNumberMask} from '@qiwi/pijma-core'
 
 interface State {
   features: string[]
   value: string
-  type: undefined | 'text' | 'password' | 'tel'
+  type: undefined | 'text' | 'password' | 'tel',
+  mask: 'phone' | 'amount'
 }
 
 export default class MaskTextFieldExample extends Component<{}, State> {
@@ -15,9 +17,14 @@ export default class MaskTextFieldExample extends Component<{}, State> {
     features: ['help', 'hint', 'action'],
     value: '',
     type: undefined,
+    mask: 'phone'
   }
 
   public render() {
+    const mask = this.state.mask === 'phone'
+      ? ['(', /\d/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]
+      : createNumberMask()
+
     return (
       <table style={{width: '100%'}}>
         <tbody>
@@ -35,11 +42,12 @@ export default class MaskTextFieldExample extends Component<{}, State> {
               action={this.state.features.includes('action') ? <a href="#">action</a> : undefined}
               placeholder={this.state.features.includes('placeholder') ? 'Плейсхолдер' : undefined}
               value={this.state.value}
-              mask={['(', /\d/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]}
+              mask={mask}
               onChange={(value) => this.setState({value})}
             />
           </td>
           <td style={{padding: '10px', verticalAlign: 'top'}}>
+            <span>Type</span>
             <RadioField
               options={[{
                 label: 'undefined',
@@ -56,6 +64,19 @@ export default class MaskTextFieldExample extends Component<{}, State> {
               }]}
               value={this.state.type}
               onChange={(type) => this.setState({type})}
+            />
+            <br/>
+            <span>Mask</span>
+            <RadioField
+              options={[{
+                label: 'phone',
+                value: 'phone',
+              }, {
+                label: 'amount',
+                value: 'amount',
+              }]}
+              value={this.state.mask}
+              onChange={(mask) => this.setState({mask})}
             />
           </td>
           <td style={{padding: '10px', verticalAlign: 'top'}}>
