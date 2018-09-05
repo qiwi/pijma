@@ -2,38 +2,34 @@ import React, {Component} from 'react'
 
 import {MaskTextField, RadioField, CheckboxField} from '@qiwi/pijma-desktop'
 import {QuestionIcon} from '@qiwi/pijma-media'
-import {createNumberMask, createFilterMask} from '@qiwi/pijma-core'
+import {createNumberMask, createFilterMask, Mask} from '@qiwi/pijma-core'
 
 interface State {
   features: string[]
   value: string
   type: undefined | 'text' | 'password' | 'tel'
-  mask: 'phone' | 'amount' | 'latin'
+  mask: Mask
 }
 
 export default class MaskTextFieldExample extends Component<{}, State> {
+
+  public phoneMask = ['(', /\d/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]
+  public latinMask = createFilterMask(/[a-zA-Z\s-]/)
+  public amountMask = createNumberMask({
+    suffix: ' ₽',
+    decimalLimit: 2,
+    requireDecimal: true,
+    integerLimit: 20,
+  })
 
   public state: State = {
     features: ['help', 'hint', 'action'],
     value: '',
     type: undefined,
-    mask: 'phone',
-  }
-
-  public maskMap = {
-    phone: ['(', /\d/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/],
-    latin: createFilterMask(/[a-zA-Z\s-]/),
-    amount: createNumberMask({
-      suffix: '₽',
-      decimalLimit: 2,
-      requireDecimal: true,
-      integerLimit: 20,
-    }),
+    mask: this.phoneMask,
   }
 
   public render() {
-    const mask = this.maskMap[this.state.mask]
-
     return (
       <table style={{width: '100%'}}>
         <tbody>
@@ -51,7 +47,7 @@ export default class MaskTextFieldExample extends Component<{}, State> {
               action={this.state.features.includes('action') ? <a href="#">action</a> : undefined}
               placeholder={this.state.features.includes('placeholder') ? 'Плейсхолдер' : undefined}
               value={this.state.value}
-              mask={mask}
+              mask={this.state.mask}
               onChange={(value) => this.setState({value})}
             />
           </td>
@@ -79,13 +75,13 @@ export default class MaskTextFieldExample extends Component<{}, State> {
             <RadioField
               options={[{
                 label: 'phone',
-                value: 'phone',
+                value: this.phoneMask
               }, {
                 label: 'latin',
-                value: 'latin',
+                value: this.latinMask,
               }, {
                 label: 'amount',
-                value: 'amount',
+                value: this.amountMask,
               }]}
               value={this.state.mask}
               onChange={(mask) => this.setState({mask})}

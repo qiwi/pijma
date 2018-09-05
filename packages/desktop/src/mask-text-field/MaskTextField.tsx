@@ -1,5 +1,5 @@
 import React, {SFC, ReactNode} from 'react'
-import {MaskedInputProps} from 'react-text-mask'
+import {Mask} from '@qiwi/pijma-core'
 
 import {
   styled,
@@ -20,7 +20,7 @@ import MaskTextFieldProps from './MaskTextFieldProps'
 
 const digits = [/\d/, /[0-9]/, /0/, /1/, /2/, /3/, /4/, /5/, /6/, /7/, /8/, /9/].map(r => r.toString())
 
-const isMaskDigital = (mask: MaskedInputProps['mask']): boolean => {
+const isMaskDigital = (mask: Mask): boolean => {
   if (!Array.isArray(mask)) {
     return false
   }
