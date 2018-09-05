@@ -1,9 +1,7 @@
 import createNumberMask from './createNumberMask'
-import createRussianNameMask from './createRussianNameMask'
-import createLatinNameMask from './createLatinNameMask'
+import createFilterMask from './createFilterMask'
 
 export {
   createNumberMask,
-  createRussianNameMask,
-  createLatinNameMask,
+  createFilterMask
 }
