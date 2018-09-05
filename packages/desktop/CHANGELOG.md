@@ -1,3 +1,11 @@
+# [@qiwi/pijma-desktop-v1.12.0](https://github.com/qiwi/pijma/compare/v1.11.5...v1.12.0) (2018-09-05)
+
+
+### Features
+
+* add filter mask factory ([fa593a4](https://github.com/qiwi/pijma/commit/fa593a4))
+* add number mask factory ([ac4f718](https://github.com/qiwi/pijma/commit/ac4f718))
+
 # [@qiwi/pijma-desktop-v1.11.5](https://github.com/qiwi/pijma/compare/v1.11.4...v1.11.5) (2018-08-30)
 
 
