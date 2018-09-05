@@ -27,17 +27,22 @@ import DotsVIcon from './DotsVIcon'
 import EnvelopeIcon from './EnvelopeIcon'
 import EyeClosedIcon from './EyeClosedIcon'
 import EyeOpenedIcon from './EyeOpenedIcon'
+import FacebookIcon from './FacebookIcon'
 import FileIcon from './FileIcon'
 import FilterIcon from './FilterIcon'
 import FilterActiveIcon from './FilterActiveIcon'
 import HamburgerIcon from './HamburgerIcon'
+import InstagramIcon from './IntagramIcon'
 import LocationIcon from './LocationIcon'
 import LoginIcon from './LoginIcon'
 import LogoutIcon from './LogoutIcon'
 import MastercardIcon from './MastercardIcon'
+import MirAcceptIcon from './MirAcceptIcon'
 import MirIcon from './MirIcon'
 import MobileIcon from './MobileIcon'
+import OkIcon from './OkIcon'
 import PassportIcon from './PassportIcon'
+import PciDssIcon from './PciDssIcon'
 import PhoneIcon from './PhoneIcon'
 import PlayIcon from './PlayIcon'
 import PlusIcon from './PlusIcon'
@@ -54,8 +59,12 @@ import ShareIcon from './ShareIcon'
 import StarIcon from './StarIcon'
 import TerminalIcon from './TerminalIcon'
 import TerminalClientIcon from './TerminalClientIcon'
+import TwitterIcon from './TwitterIcon'
 import VisaIcon from './VisaIcon'
+import VisaVerifiedIcon from './VisaVerifiedIcon'
+import VkIcon from './VkIcon'
 import UserIcon from './UserIcon'
+import YoutubeIcon from './YoutubeIcon'
 
 export {
   Icon,
@@ -89,17 +98,22 @@ export {
   EnvelopeIcon,
   EyeClosedIcon,
   EyeOpenedIcon,
+  FacebookIcon,
   FileIcon,
   FilterIcon,
   FilterActiveIcon,
   HamburgerIcon,
+  InstagramIcon,
   LocationIcon,
   LoginIcon,
   LogoutIcon,
   MastercardIcon,
+  MirAcceptIcon,
   MirIcon,
   MobileIcon,
+  OkIcon,
   PassportIcon,
+  PciDssIcon,
   PhoneIcon,
   PlayIcon,
   PlusIcon,
@@ -116,6 +130,10 @@ export {
   StarIcon,
   TerminalIcon,
   TerminalClientIcon,
+  TwitterIcon,
   VisaIcon,
+  VisaVerifiedIcon,
+  VkIcon,
   UserIcon,
+  YoutubeIcon,
 }
