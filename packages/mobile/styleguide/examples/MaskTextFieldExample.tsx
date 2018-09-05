@@ -2,11 +2,13 @@ import React, {Component} from 'react'
 
 import {MaskTextField, RadioField, CheckboxField} from '@qiwi/pijma-mobile'
 import {QuestionIcon} from '@qiwi/pijma-media'
+import {createNumberMask, createFilterMask} from '@qiwi/pijma-core'
 
 interface State {
   features: string[]
   value: string
   type: undefined | 'text' | 'password' | 'tel'
+  mask: 'phone' | 'amount' | 'latin'
 }
 
 export default class MaskTextFieldExample extends Component<{}, State> {
@@ -15,9 +17,23 @@ export default class MaskTextFieldExample extends Component<{}, State> {
     features: ['help', 'hint', 'action'],
     value: '',
     type: undefined,
+    mask: 'phone',
+  }
+
+  public maskMap = {
+    phone: ['(', /\d/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/],
+    latin: createFilterMask(/[a-zA-Z\s-]/),
+    amount: createNumberMask({
+      suffix: '₽',
+      decimalLimit: 2,
+      requireDecimal: true,
+      integerLimit: 20,
+    }),
   }
 
   public render() {
+    const mask = this.maskMap[this.state.mask]
+
     return (
       <table style={{width: '100%'}}>
         <tbody>
@@ -35,13 +51,14 @@ export default class MaskTextFieldExample extends Component<{}, State> {
               action={this.state.features.includes('action') ? <a href="#">action</a> : undefined}
               placeholder={this.state.features.includes('placeholder') ? 'Плейсхолдер' : undefined}
               value={this.state.value}
-              mask={['(', /\d/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]}
+              mask={mask}
               onChange={(value) => this.setState({value})}
             />
           </td>
         </tr>
         <tr>
           <td style={{padding: '10px'}}>
+            <span>Type</span>
             <RadioField
               options={[{
                 label: 'undefined',
@@ -63,6 +80,26 @@ export default class MaskTextFieldExample extends Component<{}, State> {
         </tr>
         <tr>
           <td style={{padding: '10px'}}>
+            <span>Mask</span>
+            <RadioField
+              options={[{
+                label: 'phone',
+                value: 'phone',
+              }, {
+                label: 'latin',
+                value: 'latin',
+              }, {
+                label: 'amount',
+                value: 'amount',
+              }]}
+              value={this.state.mask}
+              onChange={(mask) => this.setState({mask})}
+            />
+          </td>
+        </tr>
+        <tr>
+          <td style={{padding: '10px'}}>
+            <span>Opts</span>
             <CheckboxField
               options={[{
                 label: 'disabled',

@@ -2,13 +2,13 @@ import React, {Component} from 'react'
 
 import {MaskTextField, RadioField, CheckboxField} from '@qiwi/pijma-desktop'
 import {QuestionIcon} from '@qiwi/pijma-media'
-import {createNumberMask} from '@qiwi/pijma-core'
+import {createNumberMask, createFilterMask} from '@qiwi/pijma-core'
 
 interface State {
   features: string[]
   value: string
-  type: undefined | 'text' | 'password' | 'tel',
-  mask: 'phone' | 'amount'
+  type: undefined | 'text' | 'password' | 'tel'
+  mask: 'phone' | 'amount' | 'latin'
 }
 
 export default class MaskTextFieldExample extends Component<{}, State> {
@@ -17,13 +17,22 @@ export default class MaskTextFieldExample extends Component<{}, State> {
     features: ['help', 'hint', 'action'],
     value: '',
     type: undefined,
-    mask: 'phone'
+    mask: 'phone',
+  }
+
+  public maskMap = {
+    phone: ['(', /\d/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/],
+    latin: createFilterMask(/[a-zA-Z\s-]/),
+    amount: createNumberMask({
+      suffix: '₽',
+      decimalLimit: 2,
+      requireDecimal: true,
+      integerLimit: 20,
+    }),
   }
 
   public render() {
-    const mask = this.state.mask === 'phone'
-      ? ['(', /\d/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]
-      : createNumberMask()
+    const mask = this.maskMap[this.state.mask]
 
     return (
       <table style={{width: '100%'}}>
@@ -71,6 +80,9 @@ export default class MaskTextFieldExample extends Component<{}, State> {
               options={[{
                 label: 'phone',
                 value: 'phone',
+              }, {
+                label: 'latin',
+                value: 'latin',
               }, {
                 label: 'amount',
                 value: 'amount',
