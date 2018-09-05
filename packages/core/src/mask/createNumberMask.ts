@@ -1,3 +1,5 @@
+import {Mask} from './Mask'
+
 const emptyString = ''
 const space = ' '
 const comma = ','
@@ -35,7 +37,7 @@ export default function createNumberMask(
     allowLeadingZeroes = false,
     integerLimit = 6,
   }: NumberMaskOpts = {},
-) {
+): Mask {
 
   const prefixLength = prefix && prefix.length || 0
   const suffixLength = suffix && suffix.length || 0

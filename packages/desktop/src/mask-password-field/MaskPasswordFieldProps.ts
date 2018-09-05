@@ -1,5 +1,6 @@
 import {ReactNode, KeyboardEvent} from 'react'
 import {MaskedInputProps} from 'react-text-mask'
+import {Mask} from '@qiwi/pijma-core'
 
 export default interface MaskPasswordFieldProps {
   value: string
@@ -16,7 +17,7 @@ export default interface MaskPasswordFieldProps {
   placeholder?: string
   disabled?: boolean
   maxLength?: number
-  mask?: MaskedInputProps['mask']
+  mask?: Mask
   pipe?: MaskedInputProps['pipe']
   onChange?: (value: string) => void
   onFocus?: () => void
