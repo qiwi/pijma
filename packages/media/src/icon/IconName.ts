@@ -1,22 +1,56 @@
 export type IconName =
+  'angle-right' |
+  'angle-left' |
+  'angle-up' |
+  'angle-down' |
+  'angle-small-right' |
+  'angle-small-left' |
+  'angle-small-up' |
+  'angle-small-down' |
+  'arrow-right' |
+  'arrow-left' |
+  'arrow-up' |
+  'arrow-down' |
+  'bank' |
   'calendar' |
+  'card' |
+  'check' |
   'clock' |
   'cross' |
+  'dots-h' |
+  'dots-v' |
   'download' |
+  'envelope' |
   'eye-closed' |
   'eye-opened' |
+  'file' |
+  'filter' |
+  'filter-active' |
   'hamburger' |
+  'location' |
   'login' |
   'logout' |
   'mastercard' |
   'mir' |
+  'mobile' |
+  'passport' |
+  'phone' |
   'percent' |
+  'play' |
+  'plus' |
+  'power' |
+  'print' |
+  'qiwi' |
   'question' |
   'repeat' |
   'search' |
   'settings' |
   'share' |
   'star' |
+  'terminal' |
+  'terminal-client' |
+  'receipt' |
+  'user' |
   'visa'
 
 export default IconName
