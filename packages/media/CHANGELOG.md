@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.14.0](https://github.com/qiwi/pijma/compare/v1.13.1...v1.14.0) (2018-09-06)
+
+
+### Features
+
+* security & social icons ([b518c17](https://github.com/qiwi/pijma/commit/b518c17))
+
 # [@qiwi/pijma-media-v1.13.1](https://github.com/qiwi/pijma/compare/v1.13.0...v1.13.1) (2018-09-06)
 
 
