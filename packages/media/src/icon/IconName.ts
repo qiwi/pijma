@@ -39,6 +39,7 @@ export type IconName =
   'mobile' |
   'ok' |
   'passport' |
+  'pci-dss' |
   'percent' |
   'phone' |
   'play' |
