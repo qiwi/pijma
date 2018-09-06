@@ -26,8 +26,8 @@ const SocialIconWrapper = styled.span({
 
 const SecurityIconWrapper = styled.span({
   display: 'inline-block',
-  width: 60,
-  height: 20,
+  width: 64,
+  height: 24,
   margin: 8,
 })
 
