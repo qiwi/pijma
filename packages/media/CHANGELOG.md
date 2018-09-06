@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.13.1](https://github.com/qiwi/pijma/compare/v1.13.0...v1.13.1) (2018-09-06)
+
+
+### Performance Improvements
+
+* **media:** optimize filter icons ([177617d](https://github.com/qiwi/pijma/commit/177617d))
+
 # [@qiwi/pijma-media-v1.13.0](https://github.com/qiwi/pijma/compare/v1.12.0...v1.13.0) (2018-09-06)
 
 
