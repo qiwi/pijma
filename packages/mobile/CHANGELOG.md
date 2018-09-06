@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.13.0](https://github.com/qiwi/pijma/compare/v1.12.0...v1.13.0) (2018-09-06)
+
+
+### Features
+
+* **media:** extend icon pack ([0800061](https://github.com/qiwi/pijma/commit/0800061))
+
 # [@qiwi/pijma-mobile-v1.12.0](https://github.com/qiwi/pijma/compare/v1.11.5...v1.12.0) (2018-09-05)
 
 
