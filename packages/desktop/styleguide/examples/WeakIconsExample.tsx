@@ -17,6 +17,20 @@ const PaysysIconWrapper = styled.span({
   margin: 8,
 })
 
+const SocialIconWrapper = styled.span({
+  display: 'inline-block',
+  width: 24,
+  height: 24,
+  margin: 8,
+})
+
+const SecurityIconWrapper = styled.span({
+  display: 'inline-block',
+  width: 64,
+  height: 24,
+  margin: 8,
+})
+
 const iconNames: IconName[] = [
   'angle-right',
   'angle-left',
@@ -76,6 +90,22 @@ const paysysIcons: IconName[] = [
   'visa',
 ]
 
+const socialIcons: IconName[] = [
+  'facebook',
+  'instagram',
+  'ok',
+  'twitter',
+  'vk',
+  'youtube',
+]
+
+const securityIcons: IconName[] = [
+  'pci-dss',
+  'mir-accept',
+  'visa-verified',
+  'mcsc',
+]
+
 export default class WeakIconExample extends Component {
 
   public render() {
@@ -86,10 +116,20 @@ export default class WeakIconExample extends Component {
             <WeakIcon name={name}/>
           </IconWrapper>
         ))}
+        {socialIcons.map(name => (
+          <SocialIconWrapper key={name}>
+            <WeakIcon name={name}/>
+          </SocialIconWrapper>
+        ))}
         {paysysIcons.map(name => (
           <PaysysIconWrapper key={name}>
             <WeakIcon name={name}/>
           </PaysysIconWrapper>
+        ))}
+        {securityIcons.map(name => (
+          <SecurityIconWrapper key={name}>
+            <WeakIcon name={name}/>
+          </SecurityIconWrapper>
         ))}
       </Fragment>
     )

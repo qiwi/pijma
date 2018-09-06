@@ -23,19 +23,25 @@ export type IconName =
   'envelope' |
   'eye-closed' |
   'eye-opened' |
+  'facebook' |
   'file' |
   'filter' |
   'filter-active' |
   'hamburger' |
+  'instagram' |
   'location' |
   'login' |
   'logout' |
   'mastercard' |
+  'mcsc' |
   'mir' |
+  'mir-accept' |
   'mobile' |
+  'ok' |
   'passport' |
-  'phone' |
+  'pci-dss' |
   'percent' |
+  'phone' |
   'play' |
   'plus' |
   'power' |
@@ -49,8 +55,12 @@ export type IconName =
   'star' |
   'terminal' |
   'terminal-client' |
+  'twitter' |
   'receipt' |
   'user' |
-  'visa'
+  'visa' |
+  'visa-verified' |
+  'vk' |
+  'youtube'
 
 export default IconName

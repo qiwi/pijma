@@ -3,59 +3,71 @@ import React from 'react'
 import IconName from './IconName'
 import IconProps from './IconProps'
 
-import AngleDownIcon from './AngleDownIcon'
-import AngleUpIcon from './AngleUpIcon'
-import AngleRightIcon from './AngleRightIcon'
-import AngleLeftIcon from './AngleLeftIcon'
-import AngleSmallDownIcon from './AngleSmallDownIcon'
-import AngleSmallUpIcon from './AngleSmallUpIcon'
-import AngleSmallRightIcon from './AngleSmallRightIcon'
-import AngleSmallLeftIcon from './AngleSmallLeftIcon'
-import ArrowDownIcon from './ArrowDownIcon'
-import ArrowUpIcon from './ArrowUpIcon'
-import ArrowRightIcon from './ArrowRightIcon'
-import ArrowLeftIcon from './ArrowLeftIcon'
-import BankIcon from './BankIcon'
-import CalendarIcon from './CalendarIcon'
-import CardIcon from './CardIcon'
-import CheckIcon from './CheckIcon'
-import ClockIcon from './ClockIcon'
-import CrossIcon from './CrossIcon'
-import DownloadIcon from './DownloadIcon'
-import DotsHIcon from './DotsHIcon'
-import DotsVIcon from './DotsVIcon'
-import EnvelopeIcon from './EnvelopeIcon'
-import EyeClosedIcon from './EyeClosedIcon'
-import EyeOpenedIcon from './EyeOpenedIcon'
-import FileIcon from './FileIcon'
-import FilterIcon from './FilterIcon'
-import FilterActiveIcon from './FilterActiveIcon'
-import HamburgerIcon from './HamburgerIcon'
-import LocationIcon from './LocationIcon'
-import LoginIcon from './LoginIcon'
-import LogoutIcon from './LogoutIcon'
-import MastercardIcon from './MastercardIcon'
-import MirIcon from './MirIcon'
-import MobileIcon from './MobileIcon'
-import PassportIcon from './PassportIcon'
-import PhoneIcon from './PhoneIcon'
-import PlayIcon from './PlayIcon'
-import PlusIcon from './PlusIcon'
-import PowerIcon from './PowerIcon'
-import PrintIcon from './PrintIcon'
-import PercentIcon from './PercentIcon'
-import QuestionIcon from './QuestionIcon'
-import QiwiIcon from './QiwiIcon'
-import ReceiptIcon from './ReceiptIcon'
-import RepeatIcon from './RepeatIcon'
-import SearchIcon from './SearchIcon'
-import SettingsIcon from './SettingsIcon'
-import ShareIcon from './ShareIcon'
-import StarIcon from './StarIcon'
-import TerminalIcon from './TerminalIcon'
-import TerminalClientIcon from './TerminalClientIcon'
-import VisaIcon from './VisaIcon'
-import UserIcon from './UserIcon'
+import {
+  AngleDownIcon,
+  AngleUpIcon,
+  AngleRightIcon,
+  AngleLeftIcon,
+  AngleSmallDownIcon,
+  AngleSmallUpIcon,
+  AngleSmallLeftIcon,
+  AngleSmallRightIcon,
+  ArrowDownIcon,
+  ArrowUpIcon,
+  ArrowRightIcon,
+  ArrowLeftIcon,
+  BankIcon,
+  CalendarIcon,
+  CardIcon,
+  CheckIcon,
+  ClockIcon,
+  CrossIcon,
+  DownloadIcon,
+  DotsHIcon,
+  DotsVIcon,
+  EnvelopeIcon,
+  EyeClosedIcon,
+  EyeOpenedIcon,
+  FacebookIcon,
+  FileIcon,
+  FilterIcon,
+  FilterActiveIcon,
+  HamburgerIcon,
+  InstagramIcon,
+  LocationIcon,
+  LoginIcon,
+  LogoutIcon,
+  MastercardIcon,
+  McscIcon,
+  MirAcceptIcon,
+  MirIcon,
+  MobileIcon,
+  OkIcon,
+  PassportIcon,
+  PciDssIcon,
+  PhoneIcon,
+  PlayIcon,
+  PlusIcon,
+  PowerIcon,
+  PrintIcon,
+  PercentIcon,
+  QuestionIcon,
+  QiwiIcon,
+  ReceiptIcon,
+  RepeatIcon,
+  SearchIcon,
+  SettingsIcon,
+  ShareIcon,
+  StarIcon,
+  TerminalIcon,
+  TerminalClientIcon,
+  TwitterIcon,
+  VisaIcon,
+  VisaVerifiedIcon,
+  VkIcon,
+  UserIcon,
+  YoutubeIcon,
+} from './icons'
 
 const Icons: { [name in IconName]: React.SFC } = {
   'angle-right': AngleRightIcon,
@@ -82,17 +94,23 @@ const Icons: { [name in IconName]: React.SFC } = {
   envelope: EnvelopeIcon,
   'eye-closed': EyeClosedIcon,
   'eye-opened': EyeOpenedIcon,
+  facebook: FacebookIcon,
   file: FileIcon,
   filter: FilterIcon,
   'filter-active': FilterActiveIcon,
   hamburger: HamburgerIcon,
+  instagram: InstagramIcon,
   location: LocationIcon,
   login: LoginIcon,
   logout: LogoutIcon,
   mastercard: MastercardIcon,
+  mcsc: McscIcon,
+  'mir-accept': MirAcceptIcon,
   mir: MirIcon,
   mobile: MobileIcon,
+  ok: OkIcon,
   passport: PassportIcon,
+  'pci-dss': PciDssIcon,
   percent: PercentIcon,
   phone: PhoneIcon,
   play: PlayIcon,
@@ -109,8 +127,12 @@ const Icons: { [name in IconName]: React.SFC } = {
   star: StarIcon,
   terminal: TerminalIcon,
   'terminal-client': TerminalClientIcon,
+  twitter: TwitterIcon,
   user: UserIcon,
   visa: VisaIcon,
+  'visa-verified': VisaVerifiedIcon,
+  vk: VkIcon,
+  youtube: YoutubeIcon,
 }
 
 const Icon: React.SFC<IconProps> = (props) => {
