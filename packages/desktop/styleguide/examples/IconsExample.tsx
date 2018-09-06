@@ -116,15 +116,15 @@ export default class IconsExample extends Component {
             <Icon name={name}/>
           </IconWrapper>
         ))}
-        {paysysIcons.map(name => (
-          <PaysysIconWrapper key={name}>
-            <Icon name={name}/>
-          </PaysysIconWrapper>
-        ))}
         {socialIcons.map(name => (
           <SocialIconWrapper key={name}>
             <Icon name={name}/>
           </SocialIconWrapper>
+        ))}
+        {paysysIcons.map(name => (
+          <PaysysIconWrapper key={name}>
+            <Icon name={name}/>
+          </PaysysIconWrapper>
         ))}
         {securityIcons.map(name => (
           <SecurityIconWrapper key={name}>

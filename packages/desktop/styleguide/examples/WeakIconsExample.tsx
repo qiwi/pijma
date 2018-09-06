@@ -26,7 +26,7 @@ const SocialIconWrapper = styled.span({
 
 const SecurityIconWrapper = styled.span({
   display: 'inline-block',
-  width: 64,
+  width: 60,
   height: 20,
   margin: 8,
 })
@@ -116,15 +116,15 @@ export default class WeakIconExample extends Component {
             <WeakIcon name={name}/>
           </IconWrapper>
         ))}
-        {paysysIcons.map(name => (
-          <PaysysIconWrapper key={name}>
-            <WeakIcon name={name}/>
-          </PaysysIconWrapper>
-        ))}
         {socialIcons.map(name => (
           <SocialIconWrapper key={name}>
             <WeakIcon name={name}/>
           </SocialIconWrapper>
+        ))}
+        {paysysIcons.map(name => (
+          <PaysysIconWrapper key={name}>
+            <WeakIcon name={name}/>
+          </PaysysIconWrapper>
         ))}
         {securityIcons.map(name => (
           <SecurityIconWrapper key={name}>

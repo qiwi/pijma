@@ -115,15 +115,15 @@ export default class WeakIconExample extends Component {
             <WeakIcon name={name}/>
           </IconWrapper>
         ))}
-        {paysysIcons.map(name => (
-          <PaysysIconWrapper key={name}>
-            <WeakIcon name={name}/>
-          </PaysysIconWrapper>
-        ))}
         {socialIcons.map(name => (
           <SocialIconWrapper key={name}>
             <WeakIcon name={name}/>
           </SocialIconWrapper>
+        ))}
+        {paysysIcons.map(name => (
+          <PaysysIconWrapper key={name}>
+            <WeakIcon name={name}/>
+          </PaysysIconWrapper>
         ))}
         {securityIcons.map(name => (
           <SecurityIconWrapper key={name}>
