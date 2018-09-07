@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.14.1](https://github.com/qiwi/pijma/compare/v1.14.0...v1.14.1) (2018-09-07)
+
+
+### Bug Fixes
+
+* **package:** add `react-text-mask` to core deps ([884bdd3](https://github.com/qiwi/pijma/commit/884bdd3))
+
 # [@qiwi/pijma-core-v1.12.0](https://github.com/qiwi/pijma/compare/v1.11.5...v1.12.0) (2018-09-05)
 
 
