@@ -25,6 +25,7 @@
     "react-dom": "16.4.2",
     "react-emotion": "9.2.8",
     "react-transition-group": "2.4.0",
+    "react-text-mask": "^5.4.3",
     "tslib": "1.9.3"
   },
   "devDependencies": {
