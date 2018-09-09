@@ -3,6 +3,22 @@ import React, {Component, Fragment} from 'react'
 import {styled} from '@qiwi/pijma-core'
 import {IconName, WeakIcon} from '@qiwi/pijma-media'
 
+const Heading = styled.span({
+  display: 'block',
+  fontSize: '120%',
+  fontWeight: 700,
+})
+
+const Name = styled.span({
+  display: 'inline-block',
+  fontSize: '80%',
+})
+
+const Columns = styled.div({
+  columnCount: 4,
+  columnGap: '40px',
+})
+
 const IconWrapper = styled.span({
   display: 'inline-block',
   width: 24,
@@ -13,13 +29,6 @@ const IconWrapper = styled.span({
 const PaysysIconWrapper = styled.span({
   display: 'inline-block',
   width: 48,
-  height: 24,
-  margin: 8,
-})
-
-const SocialIconWrapper = styled.span({
-  display: 'inline-block',
-  width: 24,
   height: 24,
   margin: 8,
 })
@@ -75,6 +84,7 @@ const iconNames: IconName[] = [
   'question',
   'repeat',
   'search',
+  'send',
   'settings',
   'share',
   'star',
@@ -111,26 +121,28 @@ export default class WeakIconExample extends Component {
   public render() {
     return (
       <Fragment>
-        {iconNames.map(name => (
-          <IconWrapper key={name}>
-            <WeakIcon name={name}/>
-          </IconWrapper>
-        ))}
-        {socialIcons.map(name => (
-          <SocialIconWrapper key={name}>
-            <WeakIcon name={name}/>
-          </SocialIconWrapper>
-        ))}
-        {paysysIcons.map(name => (
-          <PaysysIconWrapper key={name}>
-            <WeakIcon name={name}/>
-          </PaysysIconWrapper>
-        ))}
-        {securityIcons.map(name => (
-          <SecurityIconWrapper key={name}>
-            <WeakIcon name={name}/>
-          </SecurityIconWrapper>
-        ))}
+        {this.renderSection('Basic 24 × 24', iconNames, IconWrapper)}
+        {this.renderSection('Payment systems 24 × 48', paysysIcons, PaysysIconWrapper)}
+        {this.renderSection('Social networks 24 × 24', socialIcons, IconWrapper)}
+        {this.renderSection('Security badges 24 × 64', securityIcons, SecurityIconWrapper)}
+      </Fragment>
+    )
+  }
+
+  private renderSection(title: string, collection: IconName[], Wrapper: any) {
+    return (
+      <Fragment>
+        <Heading>{title}</Heading>
+        <Columns>
+          {collection.map(name => (
+            <div key={name}>
+              <Wrapper>
+                <WeakIcon name={name}/>
+              </Wrapper>
+              <Name>{name}</Name>
+            </div>
+          ))}
+        </Columns>
       </Fragment>
     )
   }
