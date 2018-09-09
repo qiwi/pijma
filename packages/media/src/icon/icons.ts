@@ -50,6 +50,7 @@ import QiwiIcon from './QiwiIcon'
 import ReceiptIcon from './ReceiptIcon'
 import RepeatIcon from './RepeatIcon'
 import SearchIcon from './SearchIcon'
+import SendIcon from './SendIcon'
 import SettingsIcon from './SettingsIcon'
 import ShareIcon from './ShareIcon'
 import StarIcon from './StarIcon'
@@ -115,6 +116,7 @@ export {
   ReceiptIcon,
   RepeatIcon,
   SearchIcon,
+  SendIcon,
   SettingsIcon,
   ShareIcon,
   StarIcon,

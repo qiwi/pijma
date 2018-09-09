@@ -50,6 +50,7 @@ export type IconName =
   'question' |
   'repeat' |
   'search' |
+  'send' |
   'settings' |
   'share' |
   'star' |
