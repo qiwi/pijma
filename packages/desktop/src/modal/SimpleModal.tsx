@@ -1,11 +1,12 @@
 import React, {SFC, Fragment} from 'react'
 
-import {Modal} from 'react-overlays'
 import {css} from 'emotion'
 import {rgba} from 'polished'
 
 import {
   styled,
+  Modal,
+  ModalProps,
   SimpleTransition,
   SimpleTransitionProps,
 } from '@qiwi/pijma-core'
@@ -50,7 +51,7 @@ backdropTransition.defaultProps = {
   }),
 }
 
-interface ModalProps {
+interface SimpleModalProps {
   show: boolean
   closable?: boolean
   escapeClose?: boolean
@@ -59,7 +60,7 @@ interface ModalProps {
   onHide?: () => void
 }
 
-const StyledModal = styled(Modal)<Modal['props']>({
+const StyledModal = styled(Modal)<ModalProps>({
   position: 'fixed',
   zIndex: 9999,
   top: 0,
@@ -109,7 +110,7 @@ const StyledModalBackdrop = styled.div((props) => ({
   backgroundColor: rgba(props.theme.color.white, 0.96),
 }))
 
-const SimpleModal: SFC<ModalProps> = (props) => (
+const SimpleModal: SFC<SimpleModalProps> = (props) => (
   <StyledModal
     show={props.show}
     keyboard={props.escapeClose}
