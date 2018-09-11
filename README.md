@@ -1,26 +1,31 @@
 # pijma
 Yet another user interface components library. Weird. Slow. Our own.
-
-## env
-
-`MODE=production|development` - режим сборки (`developent` по-умолчанию)
+### Demo
+* [pijma/desktop](https://qiwi.github.io/pijma/desktop)
+* [pijma/mobile](https://qiwi.github.io/pijma/desktop)
 
 ## install
-
-`yarn install`
-
-## bootstrap
-
-`lerna bootstrap`
+```bash
+yarn install
+lerna bootstrap
+```
 
 ## development
 
-`yarn watch`
+```bash
+yarn watch
+```
 
 ## build
 
-`yarn build`
+```bash
+yarn build
+```
 
-## demo
-
-`yarn start` and open [http://localhost:8080](http://localhost:8080)
+###### Environments
+* production
+* development (used by default)
+  
+```
+NODE_ENV=production yarn build
+```
