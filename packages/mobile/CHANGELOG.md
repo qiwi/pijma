@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.16.0](https://github.com/qiwi/pijma/compare/v1.15.0...v1.16.0) (2018-09-11)
+
+
+### Features
+
+* **media:** add basic IconWrapper ([44276f8](https://github.com/qiwi/pijma/commit/44276f8))
+
 # [@qiwi/pijma-mobile-v1.15.0](https://github.com/qiwi/pijma/compare/v1.14.1...v1.15.0) (2018-09-11)
 
 
