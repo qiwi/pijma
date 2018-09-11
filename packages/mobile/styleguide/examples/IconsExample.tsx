@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react'
 
-import {styled, Icon} from '@qiwi/pijma-core'
+import {styled, Icon, IconWrapper} from '@qiwi/pijma-core'
 import {IconName} from '@qiwi/pijma-media'
 
 const Heading = styled.span({
@@ -19,7 +19,7 @@ const Columns = styled.div({
   columnGap: '40px',
 })
 
-const IconWrapper = styled.span({
+const BasicIconWrapper = styled.span({
   display: 'inline-block',
   width: 24,
   height: 24,
@@ -39,6 +39,14 @@ const SecurityIconWrapper = styled.span({
   height: 24,
   margin: 8,
 })
+
+const ColoringWrapper: React.SFC = (props) => (
+  <BasicIconWrapper>
+    <IconWrapper color="red">
+      {props.children}
+    </IconWrapper>
+  </BasicIconWrapper>
+)
 
 const iconNames: IconName[] = [
   'angle-right',
@@ -116,15 +124,23 @@ const securityIcons: IconName[] = [
   'mcsc',
 ]
 
+const coloredIcons: IconName[] = [
+  'bank',
+  'file',
+  'star',
+  'qiwi',
+]
+
 export default class IconsExample extends Component {
 
   public render() {
     return (
       <Fragment>
-        {this.renderSection('Basic 24 × 24', iconNames, IconWrapper)}
+        {this.renderSection('Basic 24 × 24', iconNames, BasicIconWrapper)}
         {this.renderSection('Payment systems 24 × 48', paysysIcons, PaysysIconWrapper)}
-        {this.renderSection('Social networks 24 × 24', socialIcons, IconWrapper)}
+        {this.renderSection('Social networks 24 × 24', socialIcons, BasicIconWrapper)}
         {this.renderSection('Security badges 24 × 64', securityIcons, SecurityIconWrapper)}
+        {this.renderSection('Colored 24 × 24', coloredIcons, ColoringWrapper)}
       </Fragment>
     )
   }
