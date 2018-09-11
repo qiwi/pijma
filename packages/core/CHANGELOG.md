@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.15.0](https://github.com/qiwi/pijma/compare/v1.14.1...v1.15.0) (2018-09-11)
+
+
+### Features
+
+* **core:** expose overlay inners ([1604012](https://github.com/qiwi/pijma/commit/1604012))
+
 # [@qiwi/pijma-core-v1.14.1](https://github.com/qiwi/pijma/compare/v1.14.0...v1.14.1) (2018-09-07)
 
 
