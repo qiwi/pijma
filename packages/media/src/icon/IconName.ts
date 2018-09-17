@@ -11,6 +11,10 @@ export type IconName =
   'arrow-left' |
   'arrow-up' |
   'arrow-down' |
+  'arrow-small-right' |
+  'arrow-small-left' |
+  'arrow-small-up' |
+  'arrow-small-down' |
   'bank' |
   'calendar' |
   'card' |

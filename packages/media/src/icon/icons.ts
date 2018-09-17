@@ -10,6 +10,10 @@ import ArrowDownIcon from './ArrowDownIcon'
 import ArrowUpIcon from './ArrowUpIcon'
 import ArrowRightIcon from './ArrowRightIcon'
 import ArrowLeftIcon from './ArrowLeftIcon'
+import ArrowSmallDownIcon from './ArrowSmallDownIcon'
+import ArrowSmallUpIcon from './ArrowSmallUpIcon'
+import ArrowSmallRightIcon from './ArrowSmallRightIcon'
+import ArrowSmallLeftIcon from './ArrowSmallLeftIcon'
 import BankIcon from './BankIcon'
 import CalendarIcon from './CalendarIcon'
 import CardIcon from './CardIcon'
@@ -77,6 +81,10 @@ export {
   ArrowUpIcon,
   ArrowRightIcon,
   ArrowLeftIcon,
+  ArrowSmallDownIcon,
+  ArrowSmallUpIcon,
+  ArrowSmallRightIcon,
+  ArrowSmallLeftIcon,
   BankIcon,
   CalendarIcon,
   CardIcon,
