@@ -90,6 +90,8 @@ const iconNames: IconName[] = [
   'print',
   'qiwi',
   'question',
+  'receipt',
+  'refund',
   'repeat',
   'search',
   'send',
@@ -98,7 +100,6 @@ const iconNames: IconName[] = [
   'star',
   'terminal',
   'terminal-client',
-  'receipt',
   'user',
 ]
 
