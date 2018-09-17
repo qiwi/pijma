@@ -48,6 +48,7 @@ import PercentIcon from './PercentIcon'
 import QuestionIcon from './QuestionIcon'
 import QiwiIcon from './QiwiIcon'
 import ReceiptIcon from './ReceiptIcon'
+import RefundIcon from './RefundIcon'
 import RepeatIcon from './RepeatIcon'
 import SearchIcon from './SearchIcon'
 import SendIcon from './SendIcon'
@@ -114,6 +115,7 @@ export {
   QuestionIcon,
   QiwiIcon,
   ReceiptIcon,
+  RefundIcon,
   RepeatIcon,
   SearchIcon,
   SendIcon,

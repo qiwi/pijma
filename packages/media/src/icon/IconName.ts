@@ -48,6 +48,8 @@ export type IconName =
   'print' |
   'qiwi' |
   'question' |
+  'receipt' |
+  'refund' |
   'repeat' |
   'search' |
   'send' |
@@ -57,7 +59,6 @@ export type IconName =
   'terminal' |
   'terminal-client' |
   'twitter' |
-  'receipt' |
   'user' |
   'visa' |
   'visa-verified' |
