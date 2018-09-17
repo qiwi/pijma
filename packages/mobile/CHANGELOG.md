@@ -1,3 +1,11 @@
+# [@qiwi/pijma-mobile-v1.17.0](https://github.com/qiwi/pijma/compare/v1.16.0...v1.17.0) (2018-09-17)
+
+
+### Features
+
+* **media:** add refund icon ([942b78d](https://github.com/qiwi/pijma/commit/942b78d))
+* **media:** add small arrow icons ([1050132](https://github.com/qiwi/pijma/commit/1050132))
+
 # [@qiwi/pijma-mobile-v1.16.0](https://github.com/qiwi/pijma/compare/v1.15.0...v1.16.0) (2018-09-11)
 
 
