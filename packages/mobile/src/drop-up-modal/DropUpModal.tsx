@@ -29,7 +29,7 @@ contentTransition.defaultProps = {
   }),
   exitClassName: (timeout: number) => css({
     opacity: 0,
-    transform: 'translate3d(0, -100%, 0)',
+    transform: 'translate3d(0, 100%, 0)',
     transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
   }),
 }
@@ -62,22 +62,24 @@ interface SimpleModalProps {
 
 const StyledModal = styled(Modal)<ModalProps>({
   position: 'fixed',
-  zIndex: 9999,
+  top: 0,
   bottom: 0,
   left: 0,
   right: 0,
-  height: 'auto',
-  maxHeight: 516,
-  overflow: 'auto',
+  display: 'flex',
+  paddingTop: 44,
+  zIndex: 9999,
 })
 
 const StyledModalContent = styled.div((props) => ({
-  position: 'relative',
-  outline: 'none',
-  backgroundColor: props.theme.color.white,
-  padding: 24,
+  alignSelf: 'flex-end',
   width: '100%',
+  maxHeight: '100%',
+  padding: 24,
+  backgroundColor: props.theme.color.white,
+  boxShadow: `0px 0px 50px 0 ${rgba(0, 0, 0, 0.16)}`,
   overflow: 'auto',
+  outline: 'none',
 }))
 
 const StyledModalClose = styled.div((props) => ({
