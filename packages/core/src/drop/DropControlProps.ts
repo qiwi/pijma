@@ -1,11 +1,10 @@
-import RenderChild from '@qiwi/pijma-core/RenderChild'
 import React from 'react'
 
+import RenderChild from '../RenderChild'
+
 export default interface DropControlProps {
-  onShow?: () => void,
-  onHide: () => void,
+  onHide: () => void
   children: RenderChild<{
-    onShow?: React.MouseEventHandler
     onHide: React.FocusEventHandler
   }>
 }
