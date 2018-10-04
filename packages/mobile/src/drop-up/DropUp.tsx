@@ -51,15 +51,6 @@ backdropTransition.defaultProps = {
   }),
 }
 
-interface SimpleModalProps {
-  show: boolean
-  closable?: boolean
-  escapeClose?: boolean
-  backdropClose?: boolean
-  onShow?: () => void
-  onHide?: () => void
-}
-
 const StyledModal = styled(Modal)<ModalProps>({
   position: 'fixed',
   top: 0,
@@ -102,19 +93,26 @@ const StyledModalBackdrop = styled.div((props) => ({
   backgroundColor: rgba(props.theme.color.gray.lightest, 0.7),
 }))
 
-const DropUpModal: SFC<SimpleModalProps> = (props) => (
+interface DropUpProps {
+  show: boolean
+  closable?: boolean
+  escapeClose?: boolean
+  onShow?: () => void
+  onHide: () => void
+}
+
+const DropUp: SFC<DropUpProps> = (props) => (
   <StyledModal
     show={props.show}
-    keyboard={props.escapeClose}
     onShow={props.onShow}
     onHide={props.onHide}
-    renderBackdrop={({onClick}) => <StyledModalBackdrop onClick={props.backdropClose ? onClick : undefined}/>}
+    renderBackdrop={({onClick}) => <StyledModalBackdrop onClick={onClick}/>}
     transition={contentTransition}
     backdropTransition={backdropTransition}
     children={(
       <StyledModalContent>
         <Fragment>
-          {props.closable && props.onHide ? (
+          {props.closable ? (
             <StyledModalClose onClick={() => props.onHide && props.onHide()}>
               <CrossIcon/>
             </StyledModalClose>
@@ -128,4 +126,4 @@ const DropUpModal: SFC<SimpleModalProps> = (props) => (
   />
 )
 
-export default DropUpModal
+export default DropUp

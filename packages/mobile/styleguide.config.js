@@ -47,7 +47,8 @@ module.exports = {
     {
       name: 'Modals',
       components: [
-        'src/**/*Modal.{js,jsx,ts,tsx}'
+        'src/**/*Modal.{js,jsx,ts,tsx}',
+        'src/**/*DropUp.{js,jsx,ts,tsx}'
       ],
       sectionDepth: Number.MAX_VALUE
     },
