@@ -1,5 +1,4 @@
 import React, {SFC, Fragment} from 'react'
-
 import {css} from 'emotion'
 import {rgba} from 'polished'
 
