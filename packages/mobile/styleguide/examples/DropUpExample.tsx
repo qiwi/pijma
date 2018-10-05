@@ -1,16 +1,14 @@
 import React, {Component, Fragment} from 'react'
 
-import {DropUp, Actions, Button, CheckboxField} from '@qiwi/pijma-mobile'
+import {DropUp, Actions, Button} from '@qiwi/pijma-mobile'
 
 interface State {
-  features: string[]
   show: boolean
 }
 
 export default class DropUpExample extends Component<{}, State> {
 
   public state: State = {
-    features: [],
     show: false,
   }
 
@@ -30,8 +28,6 @@ export default class DropUpExample extends Component<{}, State> {
               </Actions>
               <DropUp
                 show={this.state.show}
-                closable={this.state.features.includes('closable')}
-                escapeClose={this.state.features.includes('escapeClose')}
                 onHide={() => this.setState({show: false})}
                 children={(
                   <Fragment>
@@ -48,21 +44,6 @@ export default class DropUpExample extends Component<{}, State> {
                     </Actions>
                   </Fragment>
                 )}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td style={{padding: '10px'}}>
-              <CheckboxField
-                options={[{
-                  label: 'closable',
-                  value: 'closable',
-                }, {
-                  label: 'escapeClose',
-                  value: 'escapeClose',
-                }]}
-                values={this.state.features}
-                onChange={(features) => this.setState({features})}
               />
             </td>
           </tr>

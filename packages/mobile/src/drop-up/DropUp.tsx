@@ -1,4 +1,4 @@
-import React, {SFC, Fragment} from 'react'
+import React, {SFC} from 'react'
 import {css} from 'emotion'
 import {rgba} from 'polished'
 
@@ -9,10 +9,6 @@ import {
   SimpleTransition,
   SimpleTransitionProps,
 } from '@qiwi/pijma-core'
-
-import {
-  CrossIcon,
-} from '@qiwi/pijma-media'
 
 const contentTransition: SFC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
 
@@ -72,16 +68,6 @@ const StyledModalContent = styled.div((props) => ({
   outline: 'none',
 }))
 
-const StyledModalClose = styled.div((props) => ({
-  position: 'absolute',
-  top: 24,
-  right: 24,
-  width: 24,
-  height: 24,
-  cursor: 'pointer',
-  fill: props.theme.color.black,
-}))
-
 const StyledModalBackdrop = styled.div((props) => ({
   position: 'fixed',
   zIndex: 'auto',
@@ -94,8 +80,6 @@ const StyledModalBackdrop = styled.div((props) => ({
 
 interface DropUpProps {
   show: boolean
-  closable?: boolean
-  escapeClose?: boolean
   onShow?: () => void
   onHide: () => void
 }
@@ -110,16 +94,7 @@ const DropUp: SFC<DropUpProps> = (props) => (
     backdropTransition={backdropTransition}
     children={(
       <StyledModalContent>
-        <Fragment>
-          {props.closable ? (
-            <StyledModalClose onClick={() => props.onHide && props.onHide()}>
-              <CrossIcon/>
-            </StyledModalClose>
-          ) : (
-            null
-          )}
-          {props.children}
-        </Fragment>
+        {props.children}
       </StyledModalContent>
     )}
   />
