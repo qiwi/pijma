@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.17.1](https://github.com/qiwi/pijma/compare/v1.17.0...v1.17.1) (2018-10-17)
+
+
+### Bug Fixes
+
+* up deps ([3413422](https://github.com/qiwi/pijma/commit/3413422))
+
 # [@qiwi/pijma-desktop-v1.17.0](https://github.com/qiwi/pijma/compare/v1.16.0...v1.17.0) (2018-09-17)
 
 
