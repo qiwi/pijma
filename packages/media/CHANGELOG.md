@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.18.0](https://github.com/qiwi/pijma/compare/v1.17.1...v1.18.0) (2018-10-26)
+
+
+### Features
+
+* **media:** add pagination icons ([56115d6](https://github.com/qiwi/pijma/commit/56115d6))
+
 # [@qiwi/pijma-media-v1.17.1](https://github.com/qiwi/pijma/compare/v1.17.0...v1.17.1) (2018-10-17)
 
 
