@@ -20,6 +20,10 @@ import CardIcon from './CardIcon'
 import CheckIcon from './CheckIcon'
 import ClockIcon from './ClockIcon'
 import CrossIcon from './CrossIcon'
+import AngleDoubleLeftIcon from './AngleDoubleLeftIcon'
+import AngleDoubleLeftSmallIcon from './AngleDoubleLeftSmallIcon'
+import AngleDoubleRightIcon from './AngleDoubleRightIcon'
+import AngleDoubleRightSmallIcon from './AngleDoubleRightSmallIcon'
 import DownloadIcon from './DownloadIcon'
 import DotsHIcon from './DotsHIcon'
 import DotsVIcon from './DotsVIcon'
@@ -73,6 +77,10 @@ export {
   AngleUpIcon,
   AngleRightIcon,
   AngleLeftIcon,
+  AngleDoubleRightIcon,
+  AngleDoubleLeftSmallIcon,
+  AngleDoubleLeftIcon,
+  AngleDoubleRightSmallIcon,
   AngleSmallDownIcon,
   AngleSmallUpIcon,
   AngleSmallRightIcon,

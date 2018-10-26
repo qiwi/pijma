@@ -3,6 +3,10 @@ export type IconName =
   'angle-left' |
   'angle-up' |
   'angle-down' |
+  'angle-double-right-small' |
+  'angle-double-left-small' |
+  'angle-double-right' |
+  'angle-double-left' |
   'angle-small-right' |
   'angle-small-left' |
   'angle-small-up' |
