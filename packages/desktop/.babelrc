@@ -15,8 +15,7 @@
         [
           "emotion",
           {
-            "sourceMap": true,
-            "autoLabel": true
+            "sourceMap": true
           }
         ]
       ]

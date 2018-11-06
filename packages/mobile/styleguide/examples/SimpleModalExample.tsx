@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react'
 
-import {SimpleModal, Actions, Button, CheckboxField} from '@qiwi/pijma-mobile'
+import {SimpleModal, Actions, Button, CheckboxField, Heading} from '@qiwi/pijma-mobile'
 
 interface State {
   features: string[]
@@ -36,7 +36,7 @@ export default class SimpleModalExample extends Component<{}, State> {
               onHide={() => this.setState({show: false})}
               children={(
                 <Fragment>
-                  <strong>Modal</strong>
+                  <Heading size="1" tag="h2">Modal</Heading>
                   <br/>
                   <br/>
                   <Actions>

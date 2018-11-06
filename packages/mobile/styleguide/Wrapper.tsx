@@ -1,6 +1,7 @@
 import React, {SFC} from 'react'
 
-import {themes, reset, fonts, injectGlobal, ThemeProvider} from '@qiwi/pijma-core'
+import {reset, fonts, injectGlobal, ThemeProvider} from '@qiwi/pijma-core'
+import {themes} from '@qiwi/pijma-mobile'
 
 injectGlobal(fonts, reset, {
   body: {

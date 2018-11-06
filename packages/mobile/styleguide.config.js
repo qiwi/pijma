@@ -59,6 +59,13 @@ module.exports = {
       sectionDepth: Number.MAX_VALUE
     },
     {
+      name: 'Typography',
+      components: [
+        'src/typography/*.tsx'
+      ],
+      sectionDepth: Number.MAX_VALUE
+    },
+    {
       name: 'Other',
       sections: [
         {

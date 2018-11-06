@@ -24,6 +24,8 @@ export {
   indent,
 }
 
+export * from './primitive'
+
 export * from './button'
 export * from './input'
 export * from './mask'
