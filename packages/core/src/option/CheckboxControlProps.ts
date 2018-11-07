@@ -1,13 +1,15 @@
 import React from 'react'
 
-import {RenderChild, OptionModel} from '@qiwi/pijma-core'
+import {RenderChild} from '@qiwi/pijma-core'
 
-export default interface RadioControlProps<O extends OptionModel<V>, V> {
+import OptionModel from './OptionModel'
+
+export default interface CheckboxControlProps<O extends OptionModel<V>, V> {
   tabIndex?: number
   options: O[]
-  value: V
+  values: V[]
   equals?: (a: V, b: V) => boolean
-  onChange?: (value: V) => void
+  onChange?: (values: V[]) => void
   onFocus?: () => void
   onBlur?: () => void
   children: RenderChild<{

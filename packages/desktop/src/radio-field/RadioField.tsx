@@ -5,15 +5,7 @@ import {
   OptionControl,
   Radio,
   OptionField,
-  OptionFieldTitle,
-  OptionFieldTitleText,
-  OptionFieldTitleHint,
-  OptionFieldInput,
-  OptionFieldInputItem,
-  OptionFieldInputItemIcon,
-  OptionFieldInputItemText,
-  OptionFieldInputItemInfo,
-  OptionFieldHelp,
+  OptionFieldItem,
 } from '@qiwi/pijma-core'
 
 import RadioFieldProps from './RadioFieldProps'
@@ -29,75 +21,36 @@ const RadioField: SFC<RadioFieldProps<RadioFieldOptionModel<any>, any>> = (props
     onFocus={props.onFocus}
     onBlur={props.onBlur}
     children={(renderProps) => (
-      <OptionField>
-        {props.title ? (
-          <OptionFieldTitle>
-            <OptionFieldTitleText>
-              {props.title}
-            </OptionFieldTitleText>
-            {props.hint ? (
-              <OptionFieldTitleHint>
-                {props.hint}
-              </OptionFieldTitleHint>
-            ) : (
-              null
+      <OptionField
+        title={props.title}
+        hint={props.hint}
+        help={props.help}
+        tabIndex={renderProps.tabIndex}
+        autoFocus={props.autoFocus}
+        onFocus={renderProps.onFocus}
+        onBlur={renderProps.onBlur}
+        onKeyDown={renderProps.onKeyDown}
+        onMouseLeave={renderProps.onMouseLeave}
+        children={renderProps.options.map((option, index) => (
+          <OptionControl<any>
+            key={index}
+            disabled={option.disabled}
+            value={option.value}
+            onClick={option.onClick}
+            onMouseEnter={option.onMouseEnter}
+            children={(renderOptionProps) => (
+              <OptionFieldItem
+                disabled={option.disabled}
+                icon={<Radio disabled={option.disabled} checked={option.checked} focused={option.focused}/>}
+                label={option.label}
+                description={option.description}
+                onClick={renderOptionProps.onClick}
+                onMouseEnter={renderOptionProps.onMouseEnter}
+              />
             )}
-          </OptionFieldTitle>
-        ) : (
-          null
-        )}
-        <OptionFieldInput
-          tabIndex={renderProps.tabIndex}
-          autoFocus={props.autoFocus}
-          onFocus={renderProps.onFocus}
-          onBlur={renderProps.onBlur}
-          onKeyDown={renderProps.onKeyDown}
-          onMouseLeave={renderProps.onMouseLeave}
-          children={renderProps.options.map((option, index) => (
-            <OptionControl<any>
-              key={index}
-              disabled={option.disabled}
-              value={option.value}
-              onClick={option.onClick}
-              onMouseEnter={option.onMouseEnter}
-              children={(renderOptionProps) => (
-                <OptionFieldInputItem
-                  disabled={option.disabled}
-                  onClick={renderOptionProps.onClick}
-                  onMouseEnter={renderOptionProps.onMouseEnter}
-                >
-                  <OptionFieldInputItemIcon>
-                    <Radio
-                      disabled={option.disabled}
-                      checked={option.checked}
-                      focused={option.focused}
-                    />
-                  </OptionFieldInputItemIcon>
-                  <OptionFieldInputItemText
-                    disabled={option.disabled}
-                    children={option.label}
-                  />
-                  {option.description ? (
-                    <OptionFieldInputItemInfo
-                      disabled={option.disabled}
-                      children={option.description}
-                    />
-                  ) : (
-                    null
-                  )}
-                </OptionFieldInputItem>
-              )}
-            />
-          ))}
-        />
-        {props.help ? (
-          <OptionFieldHelp>
-            {props.help}
-          </OptionFieldHelp>
-        ) : (
-          null
-        )}
-      </OptionField>
+          />
+        ))}
+      />
     )}
   />
 )

@@ -1,7 +1,6 @@
 import React from 'react'
 
-import {OptionModel} from '@qiwi/pijma-core'
-
+import OptionModel from './OptionModel'
 import RadioControlProps from './RadioControlProps'
 import RadioControlState from './RadioControlState'
 

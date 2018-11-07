@@ -25,17 +25,16 @@ export {
 }
 
 export * from './primitive'
+export * from './spacer'
 
 export * from './button'
 export * from './input'
 export * from './mask'
 export * from './mask-input'
 export * from './field'
-export * from './option-field'
+export * from './option'
 export * from './text-field'
 export * from './password-field'
-export * from './checkbox-field'
-export * from './radio-field'
 export * from './check'
 export * from './radio'
 export * from './icon'

@@ -14,7 +14,7 @@ export const pcValue = (value: number | undefined): string | undefined => {
   return `${value}%`
 }
 
-export const cssValue = (value: Value | undefined, scale: number = 1): string | undefined => {
+export const cssValue = (value: Value | undefined, scale: number = 1, relative: boolean = true): string | undefined => {
   if (value === undefined) {
     return undefined
   }
@@ -24,7 +24,7 @@ export const cssValue = (value: Value | undefined, scale: number = 1): string | 
   if (typeof value !== 'number' || isNaN(value)) {
     return undefined
   }
-  if (value === 0 || Math.abs(value) > 1) {
+  if (!relative || value === 0 || Math.abs(value) > 1) {
     return pxValue(value, scale)
   }
   return pcValue(100 * value)

@@ -4,15 +4,7 @@ import {
   styled,
   PasswordFieldControl,
   Input,
-  Field,
-  FieldInput,
-  FieldTitle,
-  FieldTitleText,
-  FieldUnder,
-  FieldUnderAction,
-  FieldUnderError,
-  FieldUnderHelp,
-  FieldIcon,
+  InputField,
 } from '@qiwi/pijma-core'
 
 import {
@@ -45,12 +37,6 @@ interface PasswordFieldStyledProps {
 
 const PasswordFieldStyled = styled.div<PasswordFieldStyledProps>((props) => ({
   width: '100%',
-  [FieldTitleText.toString()]: {
-    fontSize: props.focused || !!props.value || !!props.placeholder ? 13 : 20,
-    top: props.focused || !!props.value || !!props.placeholder ? 0 : 16,
-    lineHeight: props.focused || !!props.value || !!props.placeholder ? '16px' : '30px',
-    paddingRight: props.focused || !!props.value || !!props.placeholder ? undefined : props.hint || props.viewed ? 28 : undefined,
-  },
   [HiddenToggle.toString()]: {
     fill: (
       props.disabled ? (
@@ -100,13 +86,11 @@ const PasswordField: SFC<PasswordFieldProps> = (props) => (
         hint={props.hint}
         error={props.error}
       >
-        <Field>
-          <FieldTitle>
-            <FieldTitleText>
-              {props.title}
-            </FieldTitleText>
-          </FieldTitle>
-          <FieldInput>
+        <InputField
+          title={props.title}
+          active={renderProps.focused || !!props.value || !!props.placeholder}
+          padded={!!props.hint || !!props.viewed}
+          input={(
             <Input
               type={props.viewed && !renderProps.hidden ? 'text' : 'password'}
               value={props.value}
@@ -122,45 +106,26 @@ const PasswordField: SFC<PasswordFieldProps> = (props) => (
               onKeyDown={renderProps.onKeyDown}
               onKeyUp={renderProps.onKeyUp}
             />
-            {props.viewed ? (
-              <FieldIcon>
-                <HiddenToggle onClick={renderProps.onToggle}>
-                  {renderProps.hidden ? (
-                    <EyeClosedIcon/>
-                  ) : (
-                    <EyeOpenedIcon/>
-                  )}
-                </HiddenToggle>
-              </FieldIcon>
+          )}
+          hint={(
+            props.viewed ? (
+              <HiddenToggle onClick={renderProps.onToggle}>
+                {renderProps.hidden ? (
+                  <EyeClosedIcon/>
+                ) : (
+                  <EyeOpenedIcon/>
+                )}
+              </HiddenToggle>
             ) : props.hint ? (
-              <FieldIcon>
-                {props.hint}
-              </FieldIcon>
+              props.hint
             ) : (
               null
-            )}
-          </FieldInput>
-          <FieldUnder>
-            {props.error ? (
-              <FieldUnderError>
-                {props.error}
-              </FieldUnderError>
-            ) : props.help ? (
-              <FieldUnderHelp>
-                {props.help}
-              </FieldUnderHelp>
-            ) : (
-              null
-            )}
-            {props.action ? (
-              <FieldUnderAction>
-                {props.action}
-              </FieldUnderAction>
-            ) : (
-              null
-            )}
-          </FieldUnder>
-        </Field>
+            )
+          )}
+          error={props.error}
+          help={props.help}
+          action={props.action}
+        />
       </PasswordFieldStyled>
     )}
   />
