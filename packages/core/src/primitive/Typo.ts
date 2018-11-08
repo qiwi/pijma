@@ -1,44 +1,35 @@
 import styled from '../styled'
+import Theme from '../Theme'
 
 import {pxValue} from './Value'
 
-export type TypoDisplay = 'block' | 'inline' | 'inline-block'
-
-export type TypoSize = 't1' | 't2' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'caption' | 'normal' | 'accent' | 'assist'
-
-export type TypoWeight = 'thin' | 'light' | 'normal' | 'bold' | 'heavy'
-
-export type TypoColor = 'default' | 'service' | 'inverse' | 'error' | 'success' | 'warning'
-
-export type TypoTransform = 'lowercase' | 'uppercase' | 'capitalize' | 'none'
-
 export interface TypoProps {
-  display?: TypoDisplay
-  size?: TypoSize
-  weight?: TypoWeight
-  color?: TypoColor
-  transform?: TypoTransform
-  compact?: boolean
+  display?: 'block' | 'inline' | 'inline-block'
+  size?: number
+  height?: number
+  weight?: keyof Theme['font']['weight']
+  color?: keyof Theme['colors']
+  transform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
   nowrap?: boolean
   spacing?: number
-  transition?: 'slow' | 'mean' | 'fast'
+  transition?: keyof Theme['transition']
 }
 
-const shouldForwardProp = (prop: string) => !['display', 'size', 'weight', 'color', 'transform', 'compact', 'nowrap', 'spacing', 'transition'].includes(prop)
+const shouldForwardProp = (prop: string) => !['display', 'size', 'height', 'weight', 'color', 'transform', 'nowrap', 'spacing', 'transition'].includes(prop)
 
 export const Typo = styled('span', {
   shouldForwardProp,
-})<TypoProps>((props) => ({
-  display: props.display,
-  fontSize: props.size === undefined ? undefined : pxValue(props.theme.typo.fontSize[props.size]),
-  fontWeight: props.weight === undefined ? undefined : props.theme.typo.fontWeight[props.weight],
-  lineHeight: props.size === undefined ? undefined : pxValue(props.compact ? props.theme.typo.compactLineHeight[props.size] : props.theme.typo.lineHeight[props.size]),
-  color: props.color === undefined ? undefined : props.theme.typo.color[props.color],
-  textTransform: props.transform,
-  letterSpacing: props.spacing === undefined ? undefined : pxValue(props.spacing),
+})<TypoProps>(({theme, display, size, height, weight, color, transform, nowrap, spacing, transition}) => ({
+  display: display,
+  fontSize: pxValue(size, theme.scale),
+  lineHeight: pxValue(height, theme.scale),
+  fontWeight: weight === undefined ? undefined : theme.font.weight[weight],
+  color: color === undefined ? undefined : theme.colors[color],
+  textTransform: transform,
+  letterSpacing: pxValue(spacing),
   textOverflow: 'ellipsis',
   overflow: 'hidden',
-  whiteSpace: props.nowrap ? 'nowrap' : undefined,
+  whiteSpace: nowrap ? 'nowrap' : undefined,
   wordWrap: 'break-word',
-  transition: props.transition === undefined ? undefined : props.theme.transition[props.transition],
+  transition: transition === undefined ? undefined : theme.transition[transition],
 }))

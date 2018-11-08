@@ -1,10 +1,6 @@
 import React, {SFC} from 'react'
 
-import {Typo, TypoSize, TypoWeight} from '@qiwi/pijma-core'
-
-export type HeadingSize = '1' | '2' | '3' | '4' | '5'
-
-export type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+import {Typo, Theme} from '@qiwi/pijma-core'
 
 export interface HeadingProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -12,7 +8,23 @@ export interface HeadingProps {
   color?: 'default' | 'inverse'
 }
 
-const HeadingSizeTag: { [size in HeadingSize]: HeadingTag } = {
+const HeadingSize: { [size in HeadingProps['size']]: number } = {
+  1: 8,
+  2: 7,
+  3: 6,
+  4: 5,
+  5: 4,
+}
+
+const HeadingHeight: { [size in HeadingProps['size']]: number } = {
+  1: 9,
+  2: 8,
+  3: 7,
+  4: 6,
+  5: 5,
+}
+
+const HeadingTag: { [size in HeadingProps['size']]: NonNullable<HeadingProps['tag']> } = {
   1: 'h1',
   2: 'h2',
   3: 'h3',
@@ -20,15 +32,7 @@ const HeadingSizeTag: { [size in HeadingSize]: HeadingTag } = {
   5: 'h5',
 }
 
-const HeadingTypoSize: { [size in HeadingSize]: TypoSize } = {
-  1: 'h1',
-  2: 'h2',
-  3: 'h3',
-  4: 'h4',
-  5: 'h5',
-}
-
-const HeadingTypoWeight: { [size in HeadingSize]: TypoWeight } = {
+const HeadingWeight: { [size in HeadingProps['size']]: keyof Theme['font']['weight'] } = {
   1: 'heavy',
   2: 'heavy',
   3: 'heavy',
@@ -37,12 +41,13 @@ const HeadingTypoWeight: { [size in HeadingSize]: TypoWeight } = {
 }
 
 export const Heading: SFC<HeadingProps> = ({tag, size, color = 'default', children}) => {
-  const Tag = Typo.withComponent(tag ? tag : HeadingSizeTag[size])
+  const Tag = Typo.withComponent(tag ? tag : HeadingTag[size])
   return (
     <Tag
       display="block"
-      size={HeadingTypoSize[size]}
-      weight={HeadingTypoWeight[size]}
+      size={HeadingSize[size]}
+      height={HeadingHeight[size]}
+      weight={HeadingWeight[size]}
       color={color}
       children={children}
     />

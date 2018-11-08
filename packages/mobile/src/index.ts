@@ -1,9 +1,3 @@
-import * as themes from './themes'
-
-export {
-  themes,
-}
-
 export * from './button'
 export * from './actions'
 export * from './text-field'

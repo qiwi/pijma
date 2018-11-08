@@ -7,12 +7,12 @@ export default class ParagraphExample extends Component {
   public render() {
     return (
       <Fragment>
-        <Paragraph size="accent">Paragraph Accent</Paragraph>
-        <Paragraph size="accent" color="service">Paragraph Accent Service</Paragraph>
-        <Paragraph size="normal">Paragraph Normal</Paragraph>
-        <Paragraph size="normal" color="service">Paragraph Normal Service</Paragraph>
-        <Paragraph size="assist">Paragraph Assist</Paragraph>
-        <Paragraph size="assist" color="service">Paragraph Assist Service</Paragraph>
+        <Paragraph size="l">Paragraph L</Paragraph>
+        <Paragraph size="l" color="service">Paragraph L Service</Paragraph>
+        <Paragraph size="m">Paragraph M</Paragraph>
+        <Paragraph size="m" color="service">Paragraph M Service</Paragraph>
+        <Paragraph size="s">Paragraph S</Paragraph>
+        <Paragraph size="s" color="service">Paragraph S Service</Paragraph>
       </Fragment>
     )
   }
