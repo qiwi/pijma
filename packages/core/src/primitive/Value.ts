@@ -7,11 +7,11 @@ export const pxValue = (value: number | undefined, scale: number = 1): string | 
   return `${scale * value}px`
 }
 
-export const pcValue = (value: number | undefined, scale: number = 1): string | undefined => {
+export const pcValue = (value: number | undefined): string | undefined => {
   if (value === undefined) {
     return undefined
   }
-  return `${scale * value}%`
+  return `${value}%`
 }
 
 export const cssValue = (value: Value | undefined, scale: number = 1): string | undefined => {
@@ -27,5 +27,5 @@ export const cssValue = (value: Value | undefined, scale: number = 1): string | 
   if (value === 0 || Math.abs(value) > 1) {
     return pxValue(value, scale)
   }
-  return pcValue(100 * value, scale)
+  return pcValue(100 * value)
 }
