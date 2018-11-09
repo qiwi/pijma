@@ -1,7 +1,14 @@
 export default interface Theme {
+  scale: number,
   font: {
     family: string
-  },
+    weight: {
+      normal: number
+      strong: number
+      bold: number
+      heavy: number
+    }
+  }
   color: {
     brand: string
     white: string
@@ -15,5 +22,20 @@ export default interface Theme {
     }
     error: string
     success: string
+  }
+  typo: {
+    color: {
+      default: string
+      support: string
+      inverse: string
+      success: string
+      failure: string
+      warning: string
+    }
+  }
+  transition: {
+    fast: string
+    mean: string
+    slow: string
   }
 }

@@ -14,9 +14,6 @@ const reset: CSSObject = {
     font: 'inherit',
     verticalAlign: 'baseline',
   },
-  strong: {
-    fontWeight: 'bold',
-  },
   'article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section': {
     display: 'block',
   },

@@ -1,5 +1,1 @@
-import orange from './orange'
-
-export {
-  orange,
-}
+export * from './orange'

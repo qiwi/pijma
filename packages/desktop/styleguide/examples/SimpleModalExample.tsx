@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import {SimpleModal, Actions, Button, CheckboxField} from '@qiwi/pijma-desktop'
+import {SimpleModal, Actions, Button, CheckboxField, Heading} from '@qiwi/pijma-desktop'
 
 interface State {
   features: string[]
@@ -37,7 +37,7 @@ export default class SimpleModalExample extends Component<{}, State> {
               onHide={() => this.setState({show: false})}
               children={(
                 <React.Fragment>
-                  <strong>Modal</strong>
+                  <Heading size="1" tag="h2">Modal</Heading>
                   <br/>
                   <br/>
                   <Actions size="normal">
