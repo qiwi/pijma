@@ -8,7 +8,7 @@ export interface TypoProps {
   size?: number
   height?: number
   weight?: keyof Theme['font']['weight']
-  color?: keyof Theme['colors']
+  color?: keyof Theme['typo']['color']
   transform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
   nowrap?: boolean
   spacing?: number
@@ -24,7 +24,7 @@ export const Typo = styled('span', {
   fontSize: pxValue(size, theme.scale),
   lineHeight: pxValue(height, theme.scale),
   fontWeight: weight === undefined ? undefined : theme.font.weight[weight],
-  color: color === undefined ? undefined : theme.colors[color],
+  color: color === undefined ? undefined : theme.typo.color[color],
   textTransform: transform,
   letterSpacing: pxValue(spacing),
   textOverflow: 'ellipsis',

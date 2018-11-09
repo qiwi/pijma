@@ -6,7 +6,7 @@ export interface ParagraphProps {
   size?: 's' | 'm' | 'l'
   bold?: boolean
   compact?: boolean
-  color?: 'default' | 'service' | 'inverse'
+  color?: 'default' | 'support' | 'inverse'
   transform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
 }
 

@@ -25,13 +25,15 @@ export const orange: Theme = {
     error: '#d0021b',
     success: '#4bbd5c',
   },
-  colors: {
-    default: '#000',
-    service: '#666',
-    inverse: '#fff',
-    success: '#4bbd5c',
-    error: '#d0021b',
-    warning: '#ff8c00',
+  typo: {
+    color: {
+      default: '#000',
+      support: '#666',
+      inverse: '#fff',
+      success: '#4bbd5c',
+      failure: '#d0021b',
+      warning: '#ff8c00',
+    },
   },
   transition: {
     fast: 'all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)',

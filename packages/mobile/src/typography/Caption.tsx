@@ -3,12 +3,12 @@ import React, {SFC} from 'react'
 import {Typo} from '@qiwi/pijma-core'
 
 export interface CaptionProps {
-  color?: 'default' | 'service'
+  color?: 'default' | 'support' | 'inverse'
 }
 
 const CaptionTypo = Typo.withComponent('h6')
 
-export const Caption: SFC<CaptionProps> = ({color = 'service', children}) => (
+export const Caption: SFC<CaptionProps> = ({color = 'support', children}) => (
   <CaptionTypo
     display="block"
     size={3.5}
@@ -22,5 +22,5 @@ export const Caption: SFC<CaptionProps> = ({color = 'service', children}) => (
 )
 
 Caption.defaultProps = {
-  color: 'service',
+  color: 'support',
 }

@@ -23,13 +23,15 @@ export default interface Theme {
     error: string
     success: string
   }
-  colors: {
-    default: string
-    service: string
-    inverse: string
-    success: string
-    error: string
-    warning: string
+  typo: {
+    color: {
+      default: string
+      support: string
+      inverse: string
+      success: string
+      failure: string
+      warning: string
+    }
   }
   transition: {
     fast: string

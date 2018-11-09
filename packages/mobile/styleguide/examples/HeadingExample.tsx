@@ -10,6 +10,7 @@ export default class HeadingExample extends Component {
         <Heading size="1">Heading H1</Heading>
         <Heading size="2">Heading H2</Heading>
         <Heading size="3">Heading H3</Heading>
+        <Heading size="4">Heading H4</Heading>
       </Fragment>
     )
   }

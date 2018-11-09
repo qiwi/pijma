@@ -7,7 +7,7 @@ export interface TextProps {
   size?: 's' | 'm' | 'l'
   bold?: boolean
   compact?: boolean
-  color?: 'default' | 'service' | 'inverse' | 'error' | 'success' | 'warning'
+  color?: 'default' | 'support' | 'inverse' | 'failure' | 'success' | 'warning'
   transform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
 }
 
