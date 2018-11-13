@@ -27,6 +27,9 @@ module.exports = {
       small: '@media (max-width: 0px)'
     }
   },
+  require: [
+    path.resolve(styleguide, 'require.js')
+  ],
   defaultExample: path.resolve(styleguide, 'DefaultExample.md'),
   getComponentPathLine(componentPath) {
     return `import {${path.basename(componentPath, path.extname(componentPath))}} from '${pkg.name}'`
@@ -81,6 +84,17 @@ module.exports = {
       ],
       components: [
         'src/**/*Actions.{js,jsx,ts,tsx}'
+      ],
+      sectionDepth: Number.MAX_VALUE
+    },
+    {
+      name: 'Primitives',
+      sections: [
+        {
+          name: 'Flex',
+          content: path.resolve(styleguide, 'Flex.md'),
+          sectionDepth: Number.MAX_VALUE
+        }
       ],
       sectionDepth: Number.MAX_VALUE
     },
