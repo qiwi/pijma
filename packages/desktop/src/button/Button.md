@@ -1,0 +1,289 @@
+## Brand Button
+Brand button в размерах Normal и Minor используется для приоритетных или завершающих действий. В размере Accent — в качестве основной кнопки в промо-коммуникациях и на платежных формах.
+
+```jsx
+<Spacer size="xl">
+    <Flex align="flex-start">
+        <FlexItem pr={4}>
+            <Button
+                kind="brand"
+                size="accent"
+                text="Нажать"
+            />
+        </FlexItem>
+        <FlexItem pr={4}>
+            <Button
+                kind="brand"
+                size="normal"
+                text="Нажать"
+            />
+        </FlexItem>
+        <FlexItem>
+            <Button
+                kind="brand"
+                size="minor"
+                text="Нажать"
+            />
+        </FlexItem>
+    </Flex>
+    <Flex align="flex-start">
+        <FlexItem pr={4}>
+            <Button
+                disabled
+                kind="brand"
+                size="accent"
+                text="Нажать"
+            />
+        </FlexItem>
+        <FlexItem pr={4}>
+            <Button
+                disabled
+                kind="brand"
+                size="normal"
+                text="Нажать"
+            />
+        </FlexItem>
+        <FlexItem pr={4}>
+            <Button
+                disabled
+                kind="brand"
+                size="minor"
+                text="Нажать"
+            />
+        </FlexItem>
+    </Flex>
+</Spacer>
+```
+
+## Simple Button
+Simple Button используется для второстепенных действий в сочетании с Brand Button или самостоятельно.
+
+```jsx
+<Spacer size="xl">
+    <Flex align="flex-start">
+        <FlexItem pr={4}>
+            <Button
+                kind="simple"
+                size="accent"
+                text="Нажать"
+            />
+        </FlexItem>
+        <FlexItem pr={4}>
+            <Button
+                kind="simple"
+                size="normal"
+                text="Нажать"
+            />
+        </FlexItem>
+        <FlexItem>
+            <Button
+                kind="simple"
+                size="minor"
+                text="Нажать"
+            />
+        </FlexItem>
+    </Flex>
+    <Flex align="flex-start">
+        <FlexItem pr={4}>
+            <Button
+                disabled
+                kind="simple"
+                size="accent"
+                text="Нажать"
+            />
+        </FlexItem>
+        <FlexItem pr={4}>
+            <Button
+                disabled
+                kind="simple"
+                size="normal"
+                text="Нажать"
+            />
+        </FlexItem>
+        <FlexItem pr={4}>
+            <Button
+                disabled
+                kind="simple"
+                size="minor"
+                text="Нажать"
+            />
+        </FlexItem>
+    </Flex>
+</Spacer>
+```
+
+
+## Loading Button
+При загрузке в кнопках появляется лоадер.
+
+```jsx
+<Spacer size="xl">
+    <Flex align="flex-start">
+        <FlexItem pr={4}>
+            <Button
+                loading
+                kind="brand"
+                size="accent"
+                text="Нажать"
+            />
+        </FlexItem>
+        <FlexItem pr={4}>
+            <Button
+                loading
+                kind="brand"
+                size="normal"
+                text="Нажать"
+            />
+        </FlexItem>
+        <FlexItem>
+            <Button
+                loading
+                kind="brand"
+                size="minor"
+                text="Нажать"
+            />
+        </FlexItem>
+    </Flex>
+    <Flex align="flex-start">
+        <FlexItem pr={4}>
+            <Button
+                loading
+                kind="simple"
+                size="accent"
+                text="Нажать"
+            />
+        </FlexItem>
+        <FlexItem pr={4}>
+            <Button
+                loading
+                kind="simple"
+                size="normal"
+                text="Нажать"
+            />
+        </FlexItem>
+        <FlexItem pr={4}>
+            <Button
+                loading
+                kind="simple"
+                size="minor"
+                text="Нажать"
+            />
+        </FlexItem>
+    </Flex>
+</Spacer>
+```
+## Icon Button
+Brand Button и Simple Button могут использоваться не только с текстом, но и с иконкой.
+
+
+```jsx
+<Spacer size="xl">
+    <Flex align="flex-start">
+        <FlexItem pr={4}>
+            <Button
+                kind="brand"
+                size="accent"
+                icon={<StarIcon/>}
+                text="Нажать"
+            />
+        </FlexItem>
+        <FlexItem pr={4}>
+            <Button
+                kind="brand"
+                size="normal"
+                icon={<StarIcon/>}
+                text="Нажать"
+            />
+        </FlexItem>
+        <FlexItem>
+            <Button
+                kind="brand"
+                size="minor"
+                icon={<StarIcon/>}
+                text="Нажать"
+            />
+        </FlexItem>
+    </Flex>
+    <Flex align="flex-start">
+        <FlexItem pr={4}>
+            <Button
+                kind="simple"
+                size="accent"
+                icon={<StarIcon/>}
+                text="Нажать"
+            />
+        </FlexItem>
+        <FlexItem pr={4}>
+            <Button
+                kind="simple"
+                size="normal"
+                icon={<StarIcon/>}
+                text="Нажать"
+            />
+        </FlexItem>
+        <FlexItem pr={4}>
+            <Button
+                kind="simple"
+                size="minor"
+                icon={<StarIcon/>}
+                text="Нажать"
+            />
+        </FlexItem>
+    </Flex>
+</Spacer>
+```
+
+## Round Button
+Или только с иконкой.
+
+
+```jsx
+<Spacer size="xl">
+    <Flex align="flex-start">
+        <FlexItem pr={4}>
+            <Button
+                kind="brand"
+                size="accent"
+                icon={<StarIcon/>}
+            />
+        </FlexItem>
+        <FlexItem pr={4}>
+            <Button
+                kind="brand"
+                size="normal"
+                icon={<StarIcon/>}
+            />
+        </FlexItem>
+        <FlexItem>
+            <Button
+                kind="brand"
+                size="minor"
+                icon={<StarIcon/>}
+            />
+        </FlexItem>
+    </Flex>
+    <Flex align="flex-start">
+        <FlexItem pr={4}>
+            <Button
+                kind="simple"
+                size="accent"
+                icon={<StarIcon/>}
+            />
+        </FlexItem>
+        <FlexItem pr={4}>
+            <Button
+                kind="simple"
+                size="normal"
+                icon={<StarIcon/>}
+            />
+        </FlexItem>
+        <FlexItem pr={4}>
+            <Button
+                kind="simple"
+                size="minor"
+                icon={<StarIcon/>}
+            />
+        </FlexItem>
+    </Flex>
+</Spacer>
+```
