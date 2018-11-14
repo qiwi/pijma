@@ -1,7 +1,6 @@
 import React from 'react'
 
-import {OptionModel} from '@qiwi/pijma-core'
-
+import OptionModel from './OptionModel'
 import CheckboxControlProps from './CheckboxControlProps'
 import CheckboxControlState from './CheckboxControlState'
 

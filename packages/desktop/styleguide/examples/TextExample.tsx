@@ -1,12 +1,13 @@
-import React, {Component, Fragment} from 'react'
+import React, {Component} from 'react'
 
+import {Spacer} from '@qiwi/pijma-core'
 import {Paragraph, Text} from '@qiwi/pijma-desktop'
 
 export default class TextExample extends Component {
 
   public render() {
     return (
-      <Fragment>
+      <Spacer size="m">
         <Paragraph size="l">Paragraph L <Text bold>Dark 500</Text></Paragraph>
         <Paragraph size="l">Paragraph L <Text bold><Text color="failure">Error</Text> 500</Text></Paragraph>
         <Paragraph size="l">Paragraph L <Text color="success">Success</Text> 300</Paragraph>
@@ -19,7 +20,7 @@ export default class TextExample extends Component {
         <Paragraph size="s">Paragraph S <Text bold><Text color="failure">Error</Text> 500</Text></Paragraph>
         <Paragraph size="s">Paragraph S <Text color="success">Success</Text> 300</Paragraph>
         <Paragraph size="s" color="support">Paragraph S <Text color="warning">Warning</Text> 300</Paragraph>
-      </Fragment>
+      </Spacer>
     )
   }
 

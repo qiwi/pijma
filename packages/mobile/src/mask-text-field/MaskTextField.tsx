@@ -5,15 +5,7 @@ import {
   styled,
   TextFieldControl,
   MaskInput,
-  Field,
-  FieldInput,
-  FieldTitle,
-  FieldTitleText,
-  FieldUnder,
-  FieldUnderAction,
-  FieldUnderError,
-  FieldUnderHelp,
-  FieldIcon,
+  InputField,
 } from '@qiwi/pijma-core'
 
 import MaskTextFieldProps from './MaskTextFieldProps'
@@ -41,12 +33,6 @@ interface TextFieldStyledProps {
 
 const TextFieldStyled = styled.div<TextFieldStyledProps>((props) => ({
   width: '100%',
-  [FieldTitleText.toString()]: {
-    fontSize: props.focused || !!props.value || !!props.placeholder ? 13 : 20,
-    top: props.focused || !!props.value || !!props.placeholder ? 0 : 16,
-    lineHeight: props.focused || !!props.value || !!props.placeholder ? '16px' : '30px',
-    paddingRight: props.focused || !!props.value || !!props.placeholder ? undefined : props.hint ? 28 : undefined,
-  },
   [MaskInput.toString()]: {
     color: (
       props.disabled ? (
@@ -86,13 +72,11 @@ const MaskTextField: SFC<MaskTextFieldProps> = (props) => (
         hint={props.hint}
         error={props.error}
       >
-        <Field>
-          <FieldTitle>
-            <FieldTitleText>
-              {props.title}
-            </FieldTitleText>
-          </FieldTitle>
-          <FieldInput>
+        <InputField
+          title={props.title}
+          active={renderProps.focused || !!props.value || !!props.placeholder}
+          padded={!!props.hint}
+          input={(
             <MaskInput
               type={props.type !== undefined ? props.type : isMaskDigital(props.mask) ? 'tel' : 'text'}
               value={props.value}
@@ -114,31 +98,12 @@ const MaskTextField: SFC<MaskTextFieldProps> = (props) => (
               onKeyUp={renderProps.onKeyUp}
               aria-labelledby={props.title}
             />
-            <FieldIcon>
-              {props.hint}
-            </FieldIcon>
-          </FieldInput>
-          <FieldUnder>
-            {props.error ? (
-              <FieldUnderError>
-                {props.error}
-              </FieldUnderError>
-            ) : props.help ? (
-              <FieldUnderHelp>
-                {props.help}
-              </FieldUnderHelp>
-            ) : (
-              null
-            )}
-            {props.action ? (
-              <FieldUnderAction>
-                {props.action}
-              </FieldUnderAction>
-            ) : (
-              null
-            )}
-          </FieldUnder>
-        </Field>
+          )}
+          hint={props.hint}
+          error={props.error}
+          help={props.help}
+          action={props.action}
+        />
       </TextFieldStyled>
     )}
   />
