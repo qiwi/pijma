@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.20.0](https://github.com/qiwi/pijma/compare/v1.19.0...v1.20.0) (2018-11-14)
+
+
+### Features
+
+* box, add spacer, tinkering ([8fa6720](https://github.com/qiwi/pijma/commit/8fa6720))
+
 # [@qiwi/pijma-mobile-v1.19.0](https://github.com/qiwi/pijma/compare/v1.18.0...v1.19.0) (2018-11-09)
 
 
