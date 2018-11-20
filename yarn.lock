@@ -622,7 +622,7 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@semantic-release/changelog@3.0.1":
+"@semantic-release/changelog@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@semantic-release/changelog/-/changelog-3.0.1.tgz#d39a8130aa33c54541e529322769a1c8c51dfc54"
   dependencies:
@@ -7746,6 +7746,13 @@ semantic-release-monorepo@6.1.1:
 semantic-release-plugin-decorators@^1.2.1:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/semantic-release-plugin-decorators/-/semantic-release-plugin-decorators-1.2.3.tgz#12dd1a9a70192a46240dab009de82dd3563c28ee"
+  dependencies:
+    import-from "^2.1.0"
+    lodash "^4.17.4"
+
+semantic-release-plugin-decorators@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/semantic-release-plugin-decorators/-/semantic-release-plugin-decorators-2.0.0.tgz#de1fe410ed71a69a3ec0f605678744b570473226"
   dependencies:
     import-from "^2.1.0"
     lodash "^4.17.4"
