@@ -1,10 +1,10 @@
 import React, {SFC, Fragment} from 'react'
-
 import {css} from 'emotion'
-import {rgba} from 'polished'
 
 import {
   styled,
+  Pos,
+  Card,
   Modal,
   ModalProps,
   SimpleTransition,
@@ -71,58 +71,42 @@ const StyledModal = styled(Modal)<ModalProps>({
   overflow: 'auto',
 })
 
-const StyledModalContent = styled.div((props) => ({
-  position: 'relative',
-  outline: 'none',
-  backgroundColor: props.theme.color.white,
-  padding: 24,
-  width: '100%',
-  height: '100%',
-  overflow: 'auto',
-}))
-
-const StyledModalClose = styled.div((props) => ({
-  position: 'absolute',
-  top: 24,
-  right: 24,
-  width: 24,
-  height: 24,
-  cursor: 'pointer',
-  fill: props.theme.color.black,
-}))
-
-const StyledModalBackdrop = styled.div((props) => ({
-  position: 'fixed',
-  zIndex: 'auto',
-  top: 0,
-  bottom: 0,
-  left: 0,
-  right: 0,
-  backgroundColor: rgba(props.theme.color.white, 0.96),
-}))
-
 const SimpleModal: SFC<SimpleModalProps> = (props) => (
   <StyledModal
     show={props.show}
     keyboard={props.escapeClose}
     onShow={props.onShow}
     onHide={props.onHide}
-    renderBackdrop={({onClick}) => <StyledModalBackdrop onClick={props.backdropClose ? onClick : undefined}/>}
     transition={contentTransition}
     backdropTransition={backdropTransition}
+    renderBackdrop={({onClick}) => (
+      <Pos type="fixed" zIndex="auto" top={0} right={0} bottom={0} left={0}>
+        <Card bg="backdrop" width={1} height={1} onClick={props.backdropClose ? onClick : undefined}/>
+      </Pos>
+    )}
     children={(
-      <StyledModalContent>
-        <Fragment>
-          {props.closable && props.onHide ? (
-            <StyledModalClose onClick={() => props.onHide && props.onHide()}>
-              <CrossIcon/>
-            </StyledModalClose>
-          ) : (
-            null
-          )}
-          {props.children}
-        </Fragment>
-      </StyledModalContent>
+      <Pos type="relative" width={1} height={1}>
+        <Card bg="content" p={6} width={1} height={1} css={{overflow: 'auto'}}>
+          <Fragment>
+            {props.closable && props.onHide ? (
+              <Pos
+                type="absolute"
+                top={6}
+                right={6}
+                width={6}
+                height={6}
+                cursor="pointer"
+                onClick={() => props.onHide && props.onHide()}
+                css={{fill: '#000'}}
+                children={<CrossIcon/>}
+              />
+            ) : (
+              null
+            )}
+            {props.children}
+          </Fragment>
+        </Card>
+      </Pos>
     )}
   />
 )

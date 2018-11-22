@@ -94,6 +94,11 @@ module.exports = {
           name: 'Flex',
           content: path.resolve(styleguide, 'Flex.md'),
           sectionDepth: Number.MAX_VALUE
+        },
+        {
+          name: 'Card',
+          content: path.resolve(styleguide, 'Card.md'),
+          sectionDepth: Number.MAX_VALUE
         }
       ],
       sectionDepth: Number.MAX_VALUE

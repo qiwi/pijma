@@ -40,4 +40,25 @@ export const orange: Theme = {
     mean: 'all 200ms cubic-bezier(0.4, 0.0, 0.2, 1)',
     slow: 'all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)',
   },
+  card: {
+    shadow: {
+      z1: '0 1px 2px 0 rgba(0, 0, 0, 0.12)',
+      z2: '0 8px 16px 0 rgba(0, 0, 0, 0.12)',
+      z3: '0 16px 32px 4px rgba(0, 0, 0, 0.16)',
+      z4: '0 20px 64px 8px rgba(0, 0, 0, 0.16)',
+      f1: '0 1px 2px 0 rgba(0, 0, 0, 0.12)',
+      f2: '0 0 16px 0 rgba(0, 0, 0, 0.12)',
+      f3: '0 0 32px 0 rgba(0, 0, 0, 0.16)',
+      f4: '0 0 64px 0 rgba(0, 0, 0, 0.16)',
+    },
+    background: {
+      content: '#fff',
+      layout: '#f5f5f5',
+      backdrop: 'rgba(255, 255, 255, 0.96)'
+    },
+    border: {
+      content: '1px solid #e6e6e6',
+      layout: '1px solid #ccc',
+    },
+  },
 }

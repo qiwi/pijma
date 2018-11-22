@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 
+import {Spacer} from '@qiwi/pijma-core'
 import {SimpleModal, Actions, Button, CheckboxField, Heading} from '@qiwi/pijma-desktop'
 
 interface State {
@@ -34,12 +35,11 @@ export default class SimpleModalExample extends Component<{}, State> {
               closable={this.state.features.includes('closable')}
               escapeClose={this.state.features.includes('escapeClose')}
               backdropClose={this.state.features.includes('backdropClose')}
+              compact={this.state.features.includes('compact')}
               onHide={() => this.setState({show: false})}
               children={(
-                <React.Fragment>
-                  <Heading size="1" tag="h2">Modal</Heading>
-                  <br/>
-                  <br/>
+                <Spacer size="xxl">
+                  <Heading size="2">Modal</Heading>
                   <Actions size="normal">
                     <Button
                       kind="brand"
@@ -49,7 +49,7 @@ export default class SimpleModalExample extends Component<{}, State> {
                       onClick={() => this.setState({show: !this.state.show})}
                     />
                   </Actions>
-                </React.Fragment>
+                </Spacer>
               )}
             />
           </td>
@@ -64,6 +64,9 @@ export default class SimpleModalExample extends Component<{}, State> {
               }, {
                 label: 'backdropClose',
                 value: 'backdropClose',
+              }, {
+                label: 'compact',
+                value: 'compact',
               }]}
               values={this.state.features}
               onChange={(features) => this.setState({features})}
