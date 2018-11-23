@@ -6,7 +6,7 @@ import RadioBack from './RadioBack'
 import RadioLine from './RadioLine'
 import RadioMark from './RadioMark'
 
-const Radio: React.SFC<RadioProps> = (props) => (
+const Radio: React.FunctionComponent<RadioProps> = (props) => (
   <RadioMain {...props}>
     <RadioBack {...props}/>
     <RadioLine {...props}/>

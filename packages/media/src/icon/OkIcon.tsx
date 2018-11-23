@@ -1,6 +1,6 @@
 import React from 'react'
 
-const OkIcon: React.SFC = () => (
+const OkIcon: React.FunctionComponent = () => (
   <svg viewBox="0 0 24 24" focusable="false">
     <path
       fillRule="evenodd"

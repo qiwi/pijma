@@ -32,7 +32,7 @@ export default class ButtonExample extends Component<{}, State> {
               kind={this.state.kind}
               size={this.state.size}
               icon={this.state.features.includes('icon') ? <StarIcon/> : undefined}
-              text={this.state.features.includes('text') ? (this.state.features.includes('long') ? 'Оплатить без комиссии' : 'Оплатить') : undefined}
+              text={this.state.features.includes('text') ? (this.state.features.includes('long') ? 'Оплатить без комиссии и без проблем ' : 'Оплатить') : undefined}
             />
           </td>
           <td style={{padding: '10px', verticalAlign: 'top'}}>

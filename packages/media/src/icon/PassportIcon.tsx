@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PassportIcon: React.SFC = () => (
+const PassportIcon: React.FunctionComponent = () => (
   <svg viewBox="0 0 24 24" focusable="false">
     <path
       d="M6,4 L6,20 L18,20 L18,4 L6,4 Z M6,2 L18,2 C19.1045695,2 20,2.8954305 20,4 L20,20 C20,21.1045695 19.1045695,22 18,22 L6,22 C4.8954305,22 4,21.1045695 4,20 L4,4 C4,2.8954305 4.8954305,2 6,2 Z"

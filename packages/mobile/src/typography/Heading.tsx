@@ -1,6 +1,6 @@
-import React, {SFC} from 'react'
+import React, {FunctionComponent} from 'react'
 
-import {Typo, Theme} from '@qiwi/pijma-core'
+import {Typo} from '@qiwi/pijma-core'
 
 export interface HeadingProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -29,14 +29,19 @@ const HeadingTag: { [size in HeadingProps['size']]: NonNullable<HeadingProps['ta
   4: 'h4',
 }
 
-const HeadingWeight: { [size in HeadingProps['size']]: keyof Theme['font']['weight'] } = {
-  1: 'heavy',
-  2: 'heavy',
-  3: 'heavy',
-  4: 'bold',
+const HeadingWeight: { [size in HeadingProps['size']]: number } = {
+  1: 900,
+  2: 900,
+  3: 900,
+  4: 700,
 }
 
-export const Heading: SFC<HeadingProps> = ({tag, size, color = 'default', children}) => {
+const HeadingColor: { [color in NonNullable<HeadingProps['color']>]: string } = {
+  default: '#000',
+  inverse: '#fff',
+}
+
+export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'default', children}) => {
   const Tag = Typo.withComponent(tag ? tag : HeadingTag[size])
   return (
     <Tag
@@ -44,7 +49,7 @@ export const Heading: SFC<HeadingProps> = ({tag, size, color = 'default', childr
       size={HeadingSize[size]}
       height={HeadingHeight[size]}
       weight={HeadingWeight[size]}
-      color={color}
+      color={color === undefined ? undefined : HeadingColor[color]}
       children={children}
     />
   )

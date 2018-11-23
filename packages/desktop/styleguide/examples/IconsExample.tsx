@@ -40,7 +40,7 @@ const SecurityIconWrapper = styled.span({
   margin: 8,
 })
 
-const ColoringWrapper: React.SFC = (props) => (
+const ColoringWrapper: React.FunctionComponent = (props) => (
   <BasicIconWrapper>
     <IconWrapper color="red">
       {props.children}

@@ -1,6 +1,6 @@
-import React, {SFC} from 'react'
+import React, {FunctionComponent} from 'react'
 
-import {Typo, Theme} from '@qiwi/pijma-core'
+import {Typo} from '@qiwi/pijma-core'
 
 export interface TitleProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -23,12 +23,17 @@ const TitleTag: { [size in TitleProps['size']]: NonNullable<TitleProps['tag']> }
   2: 'h2',
 }
 
-const TitleWeight: { [size in TitleProps['size']]: keyof Theme['font']['weight'] } = {
-  1: 'heavy',
-  2: 'heavy',
+const TitleWeight: { [size in TitleProps['size']]: number } = {
+  1: 900,
+  2: 900,
 }
 
-export const Title: SFC<TitleProps> = ({tag, size, color = 'default', children}) => {
+const TitleColor: { [color in NonNullable<TitleProps['color']>]: string } = {
+  default: '#000',
+  inverse: '#fff',
+}
+
+export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'default', children}) => {
   const Tag = Typo.withComponent(tag ? tag : TitleTag[size])
   return (
     <Tag
@@ -36,7 +41,7 @@ export const Title: SFC<TitleProps> = ({tag, size, color = 'default', children})
       size={TitleSize[size]}
       height={TitleHeight[size]}
       weight={TitleWeight[size]}
-      color={color}
+      color={color === undefined ? undefined : TitleColor[color]}
       children={children}
     />
   )

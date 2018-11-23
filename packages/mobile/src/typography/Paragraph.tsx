@@ -1,4 +1,4 @@
-import React, {SFC} from 'react'
+import React, {FunctionComponent} from 'react'
 
 import {Typo} from '@qiwi/pijma-core'
 
@@ -28,15 +28,21 @@ const ParagraphHeightCompact: { [size in NonNullable<ParagraphProps['size']>]: n
   l: 7,
 }
 
+const ParagraphColor: { [color in NonNullable<ParagraphProps['color']>]: string } = {
+  default: '#000',
+  support: '#666',
+  inverse: '#fff',
+}
+
 const ParagraphTypo = Typo.withComponent('p')
 
-export const Paragraph: SFC<ParagraphProps> = ({size = 'm', bold = false, compact = false, color = 'default', transform, children}) => (
+export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold = false, compact = false, color = 'default', transform, children}) => (
   <ParagraphTypo
     display="block"
     size={ParagraphSize[size]}
     height={compact ? ParagraphHeightCompact[size] : ParagraphHeight[size]}
-    weight={bold === undefined ? undefined : bold ? 'strong' : 'normal'}
-    color={color}
+    weight={bold === undefined ? undefined : bold ? 500 : 300}
+    color={color === undefined ? undefined : ParagraphColor[color]}
     transform={transform}
     children={children}
   />

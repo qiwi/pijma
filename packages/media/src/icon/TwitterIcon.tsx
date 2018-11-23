@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TwitterIcon: React.SFC = () => (
+const TwitterIcon: React.FunctionComponent = () => (
   <svg viewBox="0 0 24 24" focusable="false">
     <path
       fillRule="evenodd"

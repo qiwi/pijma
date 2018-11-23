@@ -1,4 +1,4 @@
-import React, {ReactNode, SFC, Children, Fragment} from 'react'
+import React, {ReactNode, FunctionComponent, Children, Fragment} from 'react'
 
 import {Box} from '@qiwi/pijma-core'
 
@@ -16,7 +16,7 @@ const SpacerSize: { [size in NonNullable<SpacerProps['size']>]: number } = {
   xxl: 12,
 }
 
-export const Spacer: SFC<SpacerProps> = ({size = 'm', children}) => {
+export const Spacer: FunctionComponent<SpacerProps> = ({size = 'm', children}) => {
   const elements = Children.toArray(children).filter(child => !!child)
   if (elements.length === 0) {
     return null

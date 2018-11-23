@@ -18,16 +18,14 @@ const Label = Typo.withComponent('label')
 
 const Input = styled(Box, {
   shouldForwardProp: (prop) => !['autoFocus'].includes(prop),
-})<Partial<OptionFieldProps>>({
-  outline: 'none',
-})
+})<Partial<OptionFieldProps>>()
 
-export const OptionField: React.SFC<OptionFieldProps> = (props) => (
+export const OptionField: React.FunctionComponent<OptionFieldProps> = (props) => (
   <Box>
     <Spacer size="s">
       {props.title ? (
         <Flex justify="flex-start" width={1}>
-          <Label display="block" size={4} height={6} weight="bold" children={props.title}/>
+          <Label display="block" size={4} height={6} weight={700} children={props.title}/>
           {props.hint ? <FlexItem shrink={0} width={6} height={6} ml={1} children={props.hint}/> : null}
         </Flex>
       ) : (
@@ -43,7 +41,7 @@ export const OptionField: React.SFC<OptionFieldProps> = (props) => (
         children={<Spacer size="s" children={props.children}/>}
       />
       {props.help ? (
-        <Typo display="block" size={3.5} height={4} children={props.help}/>
+        <Typo display="block" weight={300} size={3.5} height={4} children={props.help}/>
       ) : (
         null
       )}

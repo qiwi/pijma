@@ -20,7 +20,7 @@ export default class PasswordFieldExample extends Component<{}, State> {
       <table style={{width: '100%'}}>
         <tbody>
         <tr>
-          <td style={{padding: '10px', verticalAlign: 'top', width: '50%'}}>
+          <td style={{padding: '10px'}}>
             <PasswordField
               name="password"
               title="password"
@@ -33,10 +33,13 @@ export default class PasswordFieldExample extends Component<{}, State> {
               action={this.state.features.includes('action') ? <a href="#">action</a> : undefined}
               placeholder={this.state.features.includes('placeholder') ? 'Плейсхолдер' : undefined}
               value={this.state.value}
+              mask={this.state.features.includes('mask') ? [/\d/, /\d/, /\d/] : undefined}
               onChange={(value) => this.setState({value})}
             />
           </td>
-          <td style={{padding: '10px', verticalAlign: 'top'}}>
+        </tr>
+        <tr>
+          <td style={{padding: '10px'}}>
             <CheckboxField
               options={[{
                 label: 'disabled',
@@ -62,6 +65,9 @@ export default class PasswordFieldExample extends Component<{}, State> {
               }, {
                 label: 'maxLength',
                 value: 'maxLength',
+              }, {
+                label: 'mask',
+                value: 'mask',
               }]}
               values={this.state.features}
               onChange={(features) => this.setState({features})}

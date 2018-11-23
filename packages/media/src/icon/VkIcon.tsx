@@ -1,6 +1,6 @@
 import React from 'react'
 
-const VkIcon: React.SFC = () => (
+const VkIcon: React.FunctionComponent = () => (
   <svg viewBox="0 0 24 24" focusable="false">
     <path
       fillRule="evenodd"

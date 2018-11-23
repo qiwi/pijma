@@ -6,7 +6,7 @@ import CheckBack from './CheckBack'
 import CheckLine from './CheckLine'
 import CheckMark from './CheckMark'
 
-const Check: React.SFC<CheckProps> = (props) => (
+const Check: React.FunctionComponent<CheckProps> = (props) => (
   <CheckMain {...props}>
     <CheckBack {...props}/>
     <CheckLine {...props}/>

@@ -28,8 +28,10 @@ export interface BoxProps {
   height?: Value
   minHeight?: Value
   maxHeight?: Value
-  transition?: 'slow' | 'mean' | 'fast'
+  transition?: string
   cursor?: string
+  opacity?: number
+  overflow?: string
   css?: Interpolation
 }
 
@@ -39,7 +41,7 @@ const shouldForwardProp = (prop: string) => ![
   'p', 'pt', 'pr', 'pb', 'pl', 'px', 'py',
   'width', 'minWidth', 'maxWidth',
   'height', 'minHeight', 'maxHeight',
-  'cursor',
+  'cursor', 'opacity', 'overflow',
 ].includes(prop)
 
 export const Box = styled('div', {
@@ -63,7 +65,9 @@ export const Box = styled('div', {
   minHeight: cssValue(props.minHeight, theme.scale),
   maxHeight: cssValue(props.maxHeight, theme.scale),
   cursor: props.cursor,
-  transition: props.transition === undefined ? undefined : theme.transition[props.transition],
+  opacity: props.opacity,
+  overflow: props.overflow,
+  transition: props.transition,
 }), (props) => props.css)
 
 Box.defaultProps = {

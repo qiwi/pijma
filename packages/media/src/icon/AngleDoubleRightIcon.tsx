@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AngleDoubleRightIcon: React.SFC = () => (
+const AngleDoubleRightIcon: React.FunctionComponent = () => (
     <svg viewBox="0 0 24 24" focusable="false">
         <path
             d="M18.6,12l-7.3,7.3c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1,0.4,1.4,0l8-8c0.4-0.4,0.4-1,0-1.4l-8-8
