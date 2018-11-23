@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.21.0](https://github.com/qiwi/pijma/compare/v1.20.0...v1.21.0) (2018-11-23)
+
+
+### Features
+
+* card primitive ([8f55da1](https://github.com/qiwi/pijma/commit/8f55da1))
+
 # [@qiwi/pijma-desktop-v1.20.0](https://github.com/qiwi/pijma/compare/v1.19.0...v1.20.0) (2018-11-14)
 
 
