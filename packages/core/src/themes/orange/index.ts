@@ -1,5 +1,7 @@
 import {Theme} from '@qiwi/pijma-core'
 
+import * as input from './input'
+
 export const orange: Theme = {
   scale: 4,
   font: {
@@ -61,4 +63,5 @@ export const orange: Theme = {
       layout: '1px solid #ccc',
     },
   },
+  input,
 }

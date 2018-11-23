@@ -1,4 +1,4 @@
-import React, {ReactNode} from 'react'
+import React, {FunctionComponent, ReactNode} from 'react'
 
 import {Typo, Pos, Flex, FlexItem} from '@qiwi/pijma-core'
 
@@ -15,11 +15,11 @@ export interface FieldProps {
 
 const Label = Typo.withComponent('label')
 
-export const InputField: React.SFC<FieldProps> = ({title, active, padded, input, hint, error, action, help}) => (
+export const InputField: FunctionComponent<FieldProps> = ({title, active, padded, input, hint, error, action, help}) => (
   <Pos type="relative" width={1}>
     <Pos type="relative" height={4}>
       <Pos type="absolute" top={active ? 0 : 4} left={0} maxWidth={1} transition="fast" pr={padded ? 7 : 0}>
-        <Label display="block" nowrap size={active ? 3.5 : 5} height={active ? 4 : 7} transition="fast" children={title}/>
+        <Label display="block" nowrap size={active ? 3.5 : 5} height={active ? 4 : 7} color="support" transition="fast" children={title}/>
       </Pos>
     </Pos>
     <Pos type="relative">

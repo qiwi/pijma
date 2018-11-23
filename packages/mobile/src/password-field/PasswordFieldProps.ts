@@ -1,4 +1,5 @@
 import {ReactNode, KeyboardEvent} from 'react'
+import {Mask, Pipe} from '@qiwi/pijma-core'
 
 export default interface PasswordFieldProps {
   value: string
@@ -15,6 +16,8 @@ export default interface PasswordFieldProps {
   placeholder?: string
   disabled?: boolean
   maxLength?: number
+  mask?: Mask
+  pipe?: Pipe
   onChange?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void

@@ -1,9 +1,11 @@
 import createNumberMask from './createNumberMask'
 import createFilterMask from './createFilterMask'
-import {Mask} from './Mask'
 
 export {
   createNumberMask,
   createFilterMask,
-  Mask,
 }
+
+export * from './isMaskDigital'
+export * from './Mask'
+export * from './Pipe'

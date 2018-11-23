@@ -1,3 +1,13 @@
+import {Interpolation} from 'emotion'
+
+export interface ThemeInput {
+  (props: {
+    error?: boolean
+    disabled?: boolean
+    focused?: boolean
+  }): Interpolation
+}
+
 export default interface Theme {
   scale: number,
   font: {
@@ -58,5 +68,8 @@ export default interface Theme {
       content: string
       layout: string
     }
+  }
+  input: {
+    basic: ThemeInput
   }
 }

@@ -33,6 +33,7 @@ export default class PasswordFieldExample extends Component<{}, State> {
               action={this.state.features.includes('action') ? <a href="#">action</a> : undefined}
               placeholder={this.state.features.includes('placeholder') ? 'Плейсхолдер' : undefined}
               value={this.state.value}
+              mask={this.state.features.includes('mask') ? [/\d/, /\d/, /\d/] : undefined}
               onChange={(value) => this.setState({value})}
             />
           </td>
@@ -64,6 +65,9 @@ export default class PasswordFieldExample extends Component<{}, State> {
               }, {
                 label: 'maxLength',
                 value: 'maxLength',
+              }, {
+                label: 'mask',
+                value: 'mask',
               }]}
               values={this.state.features}
               onChange={(features) => this.setState({features})}

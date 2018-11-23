@@ -1,11 +1,24 @@
 import React, {Component} from 'react'
 
-import {TextField, RadioField, CheckboxField} from '@qiwi/pijma-mobile'
+import {createNumberMask, createFilterMask, Mask} from '@qiwi/pijma-core'
 import {QuestionIcon} from '@qiwi/pijma-media'
+import {TextField, RadioField, CheckboxField} from '@qiwi/pijma-mobile'
+
+const phoneMask = ['(', /\d/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]
+
+const latinMask = createFilterMask(/[a-zA-Z\s-]/)
+
+const amountMask = createNumberMask({
+  suffix: ' ₽',
+  decimalLimit: 2,
+  requireDecimal: true,
+  integerLimit: 20,
+})
 
 interface State {
   features: string[]
   value: string
+  mask: Mask | undefined
   type: 'text' | 'password' | 'tel' | 'number' | 'search' | 'email' | 'url'
 }
 
@@ -14,6 +27,7 @@ export default class TextFieldExample extends Component<{}, State> {
   public state: State = {
     features: ['help', 'hint', 'action'],
     value: '',
+    mask: undefined,
     type: 'text',
   }
 
@@ -22,7 +36,7 @@ export default class TextFieldExample extends Component<{}, State> {
       <table style={{width: '100%'}}>
         <tbody>
         <tr>
-          <td style={{padding: '10px'}}>
+          <td style={{padding: '10px'}} colSpan={3}>
             <TextField
               type={this.state.type}
               name={this.state.type}
@@ -34,6 +48,7 @@ export default class TextFieldExample extends Component<{}, State> {
               help={this.state.features.includes('help') ? 'Подсказка' : undefined}
               action={this.state.features.includes('action') ? <a href="#">action</a> : undefined}
               placeholder={this.state.features.includes('placeholder') ? 'Плейсхолдер' : undefined}
+              mask={this.state.mask}
               value={this.state.value}
               onChange={(value) => this.setState({value})}
             />
@@ -42,7 +57,11 @@ export default class TextFieldExample extends Component<{}, State> {
         <tr>
           <td style={{padding: '10px'}}>
             <RadioField
+              title="Type"
               options={[{
+                label: 'undefined',
+                value: undefined,
+              }, {
                 label: 'text',
                 value: 'text',
               }, {
@@ -68,10 +87,29 @@ export default class TextFieldExample extends Component<{}, State> {
               onChange={(type) => this.setState({type})}
             />
           </td>
-        </tr>
-        <tr>
+          <td style={{padding: '10px'}}>
+            <RadioField
+              title="Mask"
+              options={[{
+                label: 'undefined',
+                value: undefined,
+              }, {
+                label: 'phone',
+                value: phoneMask,
+              }, {
+                label: 'latin',
+                value: latinMask,
+              }, {
+                label: 'amount',
+                value: amountMask,
+              }]}
+              value={this.state.mask}
+              onChange={(mask) => this.setState({mask})}
+            />
+          </td>
           <td style={{padding: '10px'}}>
             <CheckboxField
+              title="Options"
               options={[{
                 label: 'disabled',
                 value: 'disabled',
