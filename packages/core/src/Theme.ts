@@ -38,4 +38,25 @@ export default interface Theme {
     mean: string
     slow: string
   }
+  card: {
+    shadow: {
+      z1: string
+      z2: string
+      z3: string
+      z4: string
+      f1: string
+      f2: string
+      f3: string
+      f4: string
+    }
+    background: {
+      content: string
+      layout: string
+      backdrop: string
+    }
+    border: {
+      content: string
+      layout: string
+    }
+  }
 }
