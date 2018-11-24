@@ -7,7 +7,8 @@
     "clean": "lerna clean --yes && lerna run clean",
     "build": "yarn clean && lerna run --stream build",
     "watch": "lerna run --parallel watch",
-    "guide": "lerna run --concurrency=1 guide"
+    "guide": "lerna run --concurrency=1 guide",
+    "guide_ci": "lerna run --concurrency=1 guide_ci"
   },
   "devDependencies": {
     "@semantic-release/changelog": "3.0.1",
@@ -26,7 +27,7 @@
   "monorepoHooks": {
     "afterAll": {
       "cmd": [
-        "yarn run guide"
+        "yarn run guide_ci"
       ]
     }
   }
