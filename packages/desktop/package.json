@@ -9,7 +9,7 @@
     "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && BABEL_ENV=production babel -q lib/es5 --out-dir lib/es5 && styleguidist build",
     "watch": "styleguidist server",
     "guide": "gh-pages -d styleguide/lib -e desktop -m \"update desktop style guide v$npm_package_version\"",
-    "guide": "gh-pages -d styleguide/lib -e desktop -m \"update desktop style guide v$npm_package_version\" -r \"https://$GH_TOKEN@github.com/qiwi/pijma.git\""
+    "guide_ci": "gh-pages -d styleguide/lib -e desktop -m \"update desktop style guide v$npm_package_version\" -r \"https://$GH_TOKEN@github.com/qiwi/pijma.git\""
   },
   "files": [
     "README.md",
