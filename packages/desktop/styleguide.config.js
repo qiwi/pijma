@@ -109,14 +109,12 @@ module.exports = {
     warn: () => null
   },
   webpackConfig: {
+    devtool: process.env.NODE_ENV === 'development' ? 'inline-source-map' : false,
     module: {
       rules: [
         {
           test: /\.tsx?$/,
           use: [
-            {
-              loader: 'babel-loader'
-            },
             {
               loader: 'ts-loader'
             }

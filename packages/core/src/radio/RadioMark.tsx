@@ -2,7 +2,7 @@ import {styled} from '@qiwi/pijma-core'
 
 import RadioProps from './RadioProps'
 
-const RadioMark = styled.rect<RadioProps>((props) => ({
+const RadioMark = styled('rect')<RadioProps>((props) => ({
   transition: 'all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)',
   fill: (
     props.checked ? (

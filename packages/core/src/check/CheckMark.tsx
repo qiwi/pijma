@@ -2,7 +2,7 @@ import {styled} from '@qiwi/pijma-core'
 
 import CheckProps from './CheckProps'
 
-const CheckMark = styled.path<CheckProps>((props) => ({
+const CheckMark = styled('path')<CheckProps>((props) => ({
   transition: 'all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)',
   fill: (
     props.checked ? (

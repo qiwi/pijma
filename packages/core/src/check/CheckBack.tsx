@@ -2,7 +2,7 @@ import {styled} from '@qiwi/pijma-core'
 
 import CheckProps from './CheckProps'
 
-const CheckBack = styled.rect<CheckProps>((props) => ({
+const CheckBack = styled('rect')<CheckProps>((props) => ({
   transition: 'all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)',
   fill: props.theme.color.gray.light,
 }))
