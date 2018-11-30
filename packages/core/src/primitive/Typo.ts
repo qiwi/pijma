@@ -14,8 +14,10 @@ export interface TypoProps {
   transition?: string
 }
 
+export const TypoNonProps = ['display', 'size', 'height', 'weight', 'color', 'transform', 'nowrap', 'spacing', 'transition']
+
 export const Typo = styled('div', {
-  shouldForwardProp: (prop) => !['display', 'size', 'height', 'weight', 'color', 'transform', 'nowrap', 'spacing', 'transition'].includes(prop),
+  shouldForwardProp: (prop) => !TypoNonProps.includes(prop),
 })<TypoProps>(({theme, ...props}) => ({
   display: props.display,
   fontFamily: theme.font.family,

@@ -78,6 +78,7 @@ const Button: FunctionComponent<ButtonProps> = (props) => (
     onBlur={props.onBlur}
     children={(renderProps) => (
       <Btn
+        type={props.type}
         width={!props.icon || props.text ? 1 : buttonSize[props.size]}
         height={buttonSize[props.size]}
         minWidth={buttonMinWith[props.size]}
@@ -120,11 +121,12 @@ const Button: FunctionComponent<ButtonProps> = (props) => (
                           justify="center"
                           width={1}
                           height={1}
-                          css={{
-                            stroke: props.disabled ? '#666' : textColor[props.kind],
-                          }}
                           children={(
-                            <Spinner/>
+                            <Spinner
+                              width={6}
+                              height={6}
+                              color={props.disabled ? '#666' : textColor[props.kind]}
+                            />
                           )}
                         />
                       )}

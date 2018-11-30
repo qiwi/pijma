@@ -11,8 +11,10 @@ interface SvgProps {
   transformOrigin?: string
 }
 
+export const SvgNonProps = ['width', 'height', 'animation', 'transition', 'transform', 'transformOrigin']
+
 export const Svg = styled('svg', {
-  shouldForwardProp: (prop) => !['width', 'height', 'animation', 'transition', 'transform', 'transformOrigin'].includes(prop),
+  shouldForwardProp: (prop) => !SvgNonProps.includes(prop),
 })<SvgProps>(({theme, ...props}) => ({
   width: cssValue(props.width, theme.scale),
   height: cssValue(props.height, theme.scale),
@@ -33,9 +35,11 @@ interface SvgItemProps {
   transformOrigin?: string
 }
 
+const SvgItemNonProps = ['animation', 'transition', 'transform', 'transformOrigin']
+
 const SvgItem = (tag: keyof JSX.IntrinsicElements) => (
   styled(tag, {
-    shouldForwardProp: (prop) => !['animation', 'transition', 'transform', 'transformOrigin'].includes(prop),
+    shouldForwardProp: (prop) => !SvgItemNonProps.includes(prop),
   })<SvgItemProps>(({theme, ...props}) => ({
     animation: props.animation,
     transition: props.transition,

@@ -1,7 +1,7 @@
 import styled from '../styled'
 
 import {Value, cssValue} from './Value'
-import {Box, BoxProps} from './Box'
+import {Box, BoxNonProps, BoxProps} from './Box'
 
 export interface CardProps extends BoxProps {
   bg?: string
@@ -18,8 +18,10 @@ export interface CardProps extends BoxProps {
   rbl?: Value
 }
 
+export const CardNonProps = ['bg', 'b', 'bt', 'br', 'bb', 'bl', 'r', 'rtr', 'rtl', 'btr', 'btl', 's'].concat(BoxNonProps)
+
 export const Card = styled(Box, {
-  shouldForwardProp: (prop) => !['bg', 'b', 'bt', 'br', 'bb', 'bl', 'r', 'rtr', 'rtl', 'btr', 'btl', 's'].includes(prop),
+  shouldForwardProp: (prop) => !CardNonProps.includes(prop),
 })<CardProps>((props) => ({
   background: props.bg,
   border: props.b,

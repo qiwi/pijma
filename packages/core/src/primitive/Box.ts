@@ -35,17 +35,17 @@ export interface BoxProps {
   css?: Interpolation
 }
 
-const shouldForwardProp = (prop: string) => ![
+export const BoxNonProps = [
   'display', 'transition', 'css',
   'm', 'mt', 'mr', 'mb', 'ml', 'mx', 'my',
   'p', 'pt', 'pr', 'pb', 'pl', 'px', 'py',
   'width', 'minWidth', 'maxWidth',
   'height', 'minHeight', 'maxHeight',
   'cursor', 'opacity', 'overflow',
-].includes(prop)
+]
 
 export const Box = styled('div', {
-  shouldForwardProp,
+  shouldForwardProp: (prop) => !BoxNonProps.includes(prop),
 })<BoxProps>(({theme, ...props}) => ({
   display: props.display,
   margin: cssValue(props.m, theme.scale, false),

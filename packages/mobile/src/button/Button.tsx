@@ -88,11 +88,12 @@ const Button: FunctionComponent<ButtonProps> = (props) => (
                           justify="center"
                           width={1}
                           height={1}
-                          css={{
-                            stroke: props.disabled ? '#666' : textColor[props.kind],
-                          }}
                           children={(
-                            <Spinner/>
+                            <Spinner
+                              width={6}
+                              height={6}
+                              color={props.disabled ? '#666' : textColor[props.kind]}
+                            />
                           )}
                         />
                       )}

@@ -2,7 +2,7 @@ import {Interpolation} from 'emotion'
 
 import styled from '../styled'
 
-import {Card, CardProps} from './Card'
+import {Card, CardProps, CardNonProps} from './Card'
 import {pxValue} from './Value'
 
 const displayNone: Interpolation = {
@@ -14,27 +14,43 @@ const appearanceNone: Interpolation = {
 }
 
 export interface InputProps extends CardProps {
-  size?: number
-  weight?: number
-  color?: string
+  valueSize?: number
+  valueWeight?: number
+  valueColor?: string
+  valueTransform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
+  valueSpacing?: number
+  placeholderSize?: number
+  placeholderWeight?: number
   placeholderColor?: string
-  transform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
-  spacing?: number
+  placeholderTransform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
+  placeholderSpacing?: number
 }
 
-export const Input = styled(Card.withComponent('input'))<InputProps>(({theme, ...props}) => ({
+export const InputNonProps = [
+  'valueSize', 'valueWeight', 'valueColor', 'valueTransform', 'valueSpacing',
+  'placeholderSize', 'placeholderWeight', 'placeholderColor', 'placeholderTransform', 'placeholderSpacing',
+].concat(CardNonProps)
+
+export const Input = styled(Card.withComponent('input'), {
+  shouldForwardProp: (prop) => !InputNonProps.includes(prop),
+})<InputProps>(({theme, ...props}) => ({
   fontFamily: theme.font.family,
-  fontSize: pxValue(props.size, theme.scale),
-  fontWeight: props.weight,
-  lineHeight: pxValue(props.size, theme.scale),
-  color: props.color,
-  textTransform: props.transform,
+  fontSize: pxValue(props.valueSize, theme.scale),
+  fontWeight: props.valueWeight,
+  lineHeight: pxValue(props.valueSize, theme.scale),
+  color: props.valueColor,
+  textTransform: props.valueTransform,
   textIndent: 0,
-  letterSpacing: pxValue(props.spacing),
+  letterSpacing: pxValue(props.valueSpacing),
   outline: 'none',
   MozAppearance: 'textfield',
   '&::placeholder': {
+    fontSize: pxValue(props.placeholderSize, theme.scale),
+    fontWeight: props.placeholderWeight,
+    lineHeight: pxValue(props.placeholderSize, theme.scale),
     color: props.placeholderColor,
+    textTransform: props.placeholderTransform,
+    letterSpacing: pxValue(props.placeholderSpacing),
   },
   '&::-ms-clear': displayNone,
   '&::-ms-reveal': displayNone,
