@@ -19,7 +19,7 @@ interface State {
   features: string[]
   value: string
   mask: Mask | undefined
-  type: 'text' | 'password' | 'tel' | 'number' | 'search' | 'email' | 'url'
+  type: 'text' | 'password' | 'tel' | 'number' | 'search' | 'email' | 'url' | undefined
 }
 
 export default class TextFieldExample extends Component<{}, State> {
@@ -28,7 +28,7 @@ export default class TextFieldExample extends Component<{}, State> {
     features: ['help', 'hint', 'action'],
     value: '',
     mask: undefined,
-    type: 'text',
+    type: undefined,
   }
 
   public render() {

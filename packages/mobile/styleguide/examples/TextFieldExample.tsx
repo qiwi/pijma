@@ -19,7 +19,7 @@ interface State {
   features: string[]
   value: string
   mask: Mask | undefined
-  type: 'text' | 'password' | 'tel' | 'number' | 'search' | 'email' | 'url'
+  type: 'text' | 'password' | 'tel' | 'number' | 'search' | 'email' | 'url' | undefined
 }
 
 export default class TextFieldExample extends Component<{}, State> {
@@ -28,7 +28,7 @@ export default class TextFieldExample extends Component<{}, State> {
     features: ['help', 'hint', 'action'],
     value: '',
     mask: undefined,
-    type: 'text',
+    type: undefined,
   }
 
   public render() {
@@ -87,6 +87,8 @@ export default class TextFieldExample extends Component<{}, State> {
               onChange={(type) => this.setState({type})}
             />
           </td>
+        </tr>
+        <tr>
           <td style={{padding: '10px'}}>
             <RadioField
               title="Mask"
@@ -107,6 +109,8 @@ export default class TextFieldExample extends Component<{}, State> {
               onChange={(mask) => this.setState({mask})}
             />
           </td>
+        </tr>
+        <tr>
           <td style={{padding: '10px'}}>
             <CheckboxField
               title="Options"
