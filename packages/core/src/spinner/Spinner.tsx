@@ -1,7 +1,7 @@
 import React, {FunctionComponent} from 'react'
 import {keyframes} from 'emotion'
 
-import styled from '../styled'
+import {Svg, Circle, Value} from '../primitive'
 
 const rotate = keyframes({
   '100%': {
@@ -24,31 +24,35 @@ const progress = keyframes({
   },
 })
 
-const SpinnerMain = styled('svg')({
-  width: 24,
-  height: 24,
-  transformOrigin: 'center center',
-  animation: `${rotate} 2000ms linear infinite`,
-})
+export interface SpinnerProps {
+  width?: Value
+  height?: Value
+  color?: string
+}
 
-const SpinnerCircle = styled('circle')({
-  transition: 'stroke 333ms ease-in-out',
-  animation: `${progress} 1500ms ease-in-out infinite`,
-})
-
-const Spinner: FunctionComponent = () => (
-  <SpinnerMain viewBox="24 24 48 48" focusable="false">
-    <SpinnerCircle
-      cx="48"
-      cy="48"
-      r="20"
-      fill="none"
-      strokeDasharray="89, 200"
-      strokeDashoffset="0"
-      strokeLinecap="round"
-      strokeWidth="4"
-    />
-  </SpinnerMain>
+const Spinner: FunctionComponent<SpinnerProps> = (props) => (
+  <Svg
+    viewBox="24 24 48 48"
+    width={props.width}
+    height={props.height}
+    transformOrigin="center center"
+    animation={`${rotate} 2000ms linear infinite`}
+    children={(
+      <Circle
+        cx="48"
+        cy="48"
+        r="20"
+        fill="none"
+        stroke={props.color}
+        strokeDasharray="89, 200"
+        strokeDashoffset="0"
+        strokeLinecap="round"
+        strokeWidth="4"
+        transition="stroke 333ms ease-in-out"
+        animation={`${progress} 1500ms ease-in-out infinite`}
+      />
+    )}
+  />
 )
 
 export default Spinner
