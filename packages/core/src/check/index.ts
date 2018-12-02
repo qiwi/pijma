@@ -1,5 +1,1 @@
-import Check from './Check'
-
-export {
-  Check,
-}
+export * from './Check'

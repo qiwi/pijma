@@ -1,6 +1,6 @@
 import React from 'react'
 
-const VisaIcon: React.SFC = () => (
+const VisaIcon: React.FunctionComponent = () => (
   <svg viewBox="0 0 48 24" focusable="false">
     <defs>
       <linearGradient id="visaIconGradient" x1="0%" x2="100%" y1="50%" y2="50%">

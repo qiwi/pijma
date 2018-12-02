@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InstagramIcon: React.SFC = () => (
+const InstagramIcon: React.FunctionComponent = () => (
   <svg viewBox="0 0 24 24" focusable="false">
     <path
       fillRule="evenodd"

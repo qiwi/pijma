@@ -1,16 +1,16 @@
-import React, {SFC, Children, ReactNode} from 'react'
+import React, {FunctionComponent, Children, ReactNode} from 'react'
 
 import {styled} from '@qiwi/pijma-core'
 
 import ActionsProps from './ActionProps'
 
-const ActionsList = styled.div<ActionsProps>((props) => ({
+const ActionsList = styled('div')<ActionsProps>((props) => ({
   display: props.vertical ? 'inline-block' : 'inline-flex',
   alignItems: props.vertical ? undefined : 'center',
   maxWidth: '100%',
 }))
 
-const ActionsItem = styled.div<ActionsProps>((props) => ({
+const ActionsItem = styled('div')<ActionsProps>((props) => ({
   display: 'block',
   textAlign: 'center',
   marginBottom: (
@@ -45,7 +45,7 @@ const ActionsItem = styled.div<ActionsProps>((props) => ({
   },
 }))
 
-const Actions: SFC<ActionsProps> = (props) => (
+const Actions: FunctionComponent<ActionsProps> = (props) => (
   <ActionsList {...props}>
     {Children.map(props.children, (child: ReactNode, key: number) => (
       <ActionsItem key={key} {...props}>

@@ -23,40 +23,4 @@ export default interface Theme {
     error: string
     success: string
   }
-  typo: {
-    color: {
-      default: string
-      support: string
-      inverse: string
-      success: string
-      failure: string
-      warning: string
-    }
-  }
-  transition: {
-    fast: string
-    mean: string
-    slow: string
-  }
-  card: {
-    shadow: {
-      z1: string
-      z2: string
-      z3: string
-      z4: string
-      f1: string
-      f2: string
-      f3: string
-      f4: string
-    }
-    background: {
-      content: string
-      layout: string
-      backdrop: string
-    }
-    border: {
-      content: string
-      layout: string
-    }
-  }
 }

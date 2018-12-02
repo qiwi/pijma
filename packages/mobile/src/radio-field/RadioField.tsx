@@ -1,4 +1,4 @@
-import React, {SFC} from 'react'
+import React, {FunctionComponent} from 'react'
 
 import {
   RadioControl,
@@ -11,7 +11,7 @@ import {
 import RadioFieldProps from './RadioFieldProps'
 import RadioFieldOptionModel from './RadioFieldOptionModel'
 
-const RadioField: SFC<RadioFieldProps<RadioFieldOptionModel<any>, any>> = (props) => (
+const RadioField: FunctionComponent<RadioFieldProps<RadioFieldOptionModel<any>, any>> = (props) => (
   <RadioControl<RadioFieldOptionModel<any>, any>
     tabIndex={props.tabIndex}
     options={props.options}

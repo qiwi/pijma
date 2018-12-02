@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FilterIcon: React.SFC = () => (
+const FilterIcon: React.FunctionComponent = () => (
   <svg viewBox="0 0 24 24" focusable="false">
     <path
       d="M4,7h8.2c0.4,1.2,1.5,2,2.8,2s2.4-0.8,2.8-2H20c0.6,0,1-0.4,1-1s-0.4-1-1-1h-2.2c-0.4-1.2-1.5-2-2.8-2s-2.4,0.8-2.8,2H4   C3.4,5,3,5.4,3,6S3.4,7,4,7z M15,5c0.6,0,1,0.4,1,1s-0.4,1-1,1s-1-0.4-1-1S14.4,5,15,5z"

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MastercardIcon: React.SFC = () => (
+const MastercardIcon: React.FunctionComponent = () => (
   <svg viewBox="0 0 48 24" focusable="false">
     <path
       fill="#FC9F3A"

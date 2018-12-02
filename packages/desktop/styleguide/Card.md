@@ -1,22 +1,22 @@
 ### Shadows
 
 ```jsx
-<Card bg="layout">
+<Card bg="#f5f5f5">
   <Flex direction="row">
     <FlexItem p={10}>
       <Spacer size="xxl">
-        <Card r={10} bg="content" width={40} height={40} shadow="z1"/>
-        <Card r={10} bg="content" width={40} height={40} shadow="z2"/>
-        <Card r={10} bg="content" width={40} height={40} shadow="z3"/>
-        <Card r={10} bg="content" width={40} height={40} shadow="z4"/>
+        <Card r={10} bg="#fff" width={40} height={40} s="0 1px 2px 0 rgba(0, 0, 0, 0.12)"/>
+        <Card r={10} bg="#fff" width={40} height={40} s="0 8px 16px 0 rgba(0, 0, 0, 0.12)"/>
+        <Card r={10} bg="#fff" width={40} height={40} s="0 16px 32px 4px rgba(0, 0, 0, 0.16)"/>
+        <Card r={10} bg="#fff" width={40} height={40} s="0 20px 64px 8px rgba(0, 0, 0, 0.16)"/>
       </Spacer>
     </FlexItem>
     <FlexItem p={10}>
       <Spacer size="xxl">
-        <Card bg="content" width={40} height={40} shadow="f1"/>
-        <Card bg="content" width={40} height={40} shadow="f2"/>
-        <Card bg="content" width={40} height={40} shadow="f3"/>
-        <Card bg="content" width={40} height={40} shadow="f4"/>
+        <Card bg="#fff" width={40} height={40} s="0 1px 2px 0 rgba(0, 0, 0, 0.12)"/>
+        <Card bg="#fff" width={40} height={40} s="0 0 16px 0 rgba(0, 0, 0, 0.12)"/>
+        <Card bg="#fff" width={40} height={40} s="0 0 32px 0 rgba(0, 0, 0, 0.16)"/>
+        <Card bg="#fff" width={40} height={40} s="0 0 64px 0 rgba(0, 0, 0, 0.16)"/>
       </Spacer>
     </FlexItem>
   </Flex>
@@ -26,10 +26,10 @@
 ### Separators
 
 ```jsx
-<Card bg="layout" p={10}>
-  <Card r={10} bg="content" shadow="z1">
-    <Card height={20} bb="content"/>
-    <Card height={20} bb="content"/>
+<Card bg="#f5f5f5" p={10}>
+  <Card r={10} bg="#fff" s="0 1px 2px 0 rgba(0, 0, 0, 0.12)">
+    <Card height={20} bb="1px solid #e6e6e6"/>
+    <Card height={20} bb="1px solid #e6e6e6"/>
     <Card height={20}/>
   </Card>
 </Card>
@@ -38,8 +38,8 @@
 ### Hints
 
 ```jsx
-<Card bg="layout" p={10}>
-  <Card display="inline-block" r={10} py={4} px={6} bg="content" shadow="z2">
+<Card bg="#f5f5f5" p={10}>
+  <Card display="inline-block" r={10} py={4} px={6} bg="#fff" s="0 8px 16px 0 rgba(0, 0, 0, 0.12)">
     <Paragraph>Малые подсказки могут вмещать в себя минимум пару слов,<br/>максимум — одно предложение.</Paragraph>
   </Card>
 </Card>

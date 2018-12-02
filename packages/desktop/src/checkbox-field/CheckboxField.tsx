@@ -1,4 +1,4 @@
-import React, {SFC} from 'react'
+import React, {FunctionComponent} from 'react'
 
 import {
   CheckboxControl,
@@ -11,7 +11,7 @@ import {
 import CheckboxFieldProps from './CheckboxFieldProps'
 import CheckboxFieldOptionModel from './CheckboxFieldOptionModel'
 
-const CheckboxField: SFC<CheckboxFieldProps<CheckboxFieldOptionModel<any>, any>> = (props) => (
+const CheckboxField: FunctionComponent<CheckboxFieldProps<CheckboxFieldOptionModel<any>, any>> = (props) => (
   <CheckboxControl<CheckboxFieldOptionModel<any>, any>
     tabIndex={props.tabIndex}
     options={props.options}

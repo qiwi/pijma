@@ -3,44 +3,44 @@ import React, {Component, Fragment} from 'react'
 import {styled, IconWrapper} from '@qiwi/pijma-core'
 import {IconName, WeakIcon} from '@qiwi/pijma-media'
 
-const Heading = styled.span({
+const Heading = styled('span')({
   display: 'block',
   fontSize: '120%',
   fontWeight: 700,
 })
 
-const Name = styled.span({
+const Name = styled('span')({
   display: 'inline-block',
   fontSize: '80%',
 })
 
-const Columns = styled.div({
+const Columns = styled('div')({
   columnCount: 4,
   columnGap: '40px',
 })
 
-const BasicIconWrapper = styled.span({
+const BasicIconWrapper = styled('span')({
   display: 'inline-block',
   width: 24,
   height: 24,
   margin: 8,
 })
 
-const PaysysIconWrapper = styled.span({
+const PaysysIconWrapper = styled('span')({
   display: 'inline-block',
   width: 48,
   height: 24,
   margin: 8,
 })
 
-const SecurityIconWrapper = styled.span({
+const SecurityIconWrapper = styled('span')({
   display: 'inline-block',
   width: 64,
   height: 24,
   margin: 8,
 })
 
-const ColoringWrapper: React.SFC = (props) => (
+const ColoringWrapper: React.FunctionComponent = (props) => (
   <BasicIconWrapper>
     <IconWrapper color="red">
       {props.children}

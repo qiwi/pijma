@@ -1,6 +1,6 @@
 import React from 'react'
 
-const QuestionIcon: React.SFC = () => (
+const QuestionIcon: React.FunctionComponent = () => (
   <svg viewBox="0 0 24 24" focusable="false">
     <path
       fill="#FFF"

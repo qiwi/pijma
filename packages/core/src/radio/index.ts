@@ -1,5 +1,1 @@
-import Radio from './Radio'
-
-export {
-  Radio,
-}
+export * from './Radio'

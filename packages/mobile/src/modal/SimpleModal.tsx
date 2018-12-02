@@ -1,4 +1,4 @@
-import React, {SFC, Fragment} from 'react'
+import React, {FunctionComponent, Fragment} from 'react'
 import {css} from 'emotion'
 
 import {
@@ -15,7 +15,7 @@ import {
   CrossIcon,
 } from '@qiwi/pijma-media'
 
-const contentTransition: SFC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
 
 contentTransition.defaultProps = {
   timeout: {
@@ -34,7 +34,7 @@ contentTransition.defaultProps = {
   }),
 }
 
-const backdropTransition: SFC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const backdropTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
 
 backdropTransition.defaultProps = {
   timeout: {
@@ -71,7 +71,7 @@ const StyledModal = styled(Modal)<ModalProps>({
   overflow: 'auto',
 })
 
-const SimpleModal: SFC<SimpleModalProps> = (props) => (
+const SimpleModal: FunctionComponent<SimpleModalProps> = (props) => (
   <StyledModal
     show={props.show}
     keyboard={props.escapeClose}
@@ -81,12 +81,12 @@ const SimpleModal: SFC<SimpleModalProps> = (props) => (
     backdropTransition={backdropTransition}
     renderBackdrop={({onClick}) => (
       <Pos type="fixed" zIndex="auto" top={0} right={0} bottom={0} left={0}>
-        <Card bg="backdrop" width={1} height={1} onClick={props.backdropClose ? onClick : undefined}/>
+        <Card bg="rgba(255, 255, 255, 0.96)" width={1} height={1} onClick={props.backdropClose ? onClick : undefined}/>
       </Pos>
     )}
     children={(
       <Pos type="relative" width={1} height={1}>
-        <Card bg="content" p={6} width={1} height={1} css={{overflow: 'auto'}}>
+        <Card bg="#fff" p={6} width={1} height={1} overflow="auto">
           <Fragment>
             {props.closable && props.onHide ? (
               <Pos

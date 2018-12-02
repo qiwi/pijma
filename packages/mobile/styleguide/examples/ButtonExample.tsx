@@ -22,14 +22,14 @@ export default class ButtonExample extends Component<{}, State> {
       <table style={{width: '100%'}}>
         <tbody>
         <tr>
-          <td style={{padding: '10px'}}>
+          <td style={{padding: '10px', maxWidth: '200px'}}>
             <Button
               type={this.state.type}
               disabled={this.state.features.includes('disabled')}
               loading={this.state.features.includes('loading')}
               kind={this.state.kind}
               icon={this.state.features.includes('icon') ? <StarIcon/> : undefined}
-              text={this.state.features.includes('text') ? (this.state.features.includes('long') ? 'Оплатить без комиссии' : 'Оплатить') : undefined}
+              text={this.state.features.includes('text') ? (this.state.features.includes('long') ? 'Оплатить без комиссии и без проблем ' : 'Оплатить') : undefined}
             />
           </td>
         </tr>

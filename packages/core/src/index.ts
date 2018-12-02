@@ -1,6 +1,9 @@
 import {injectGlobal, css} from 'react-emotion'
 
 import Theme from './Theme'
+
+export * from './Theme'
+
 import RenderChild from './RenderChild'
 import styled from './styled'
 import ThemeProvider from './ThemeProvider'
@@ -28,9 +31,7 @@ export * from './primitive'
 export * from './spacer'
 
 export * from './button'
-export * from './input'
 export * from './mask'
-export * from './mask-input'
 export * from './field'
 export * from './option'
 export * from './text-field'
@@ -38,6 +39,7 @@ export * from './password-field'
 export * from './check'
 export * from './radio'
 export * from './icon'
+export * from './input'
 export * from './spinner'
 export * from './transition'
 export * from './overlays'
