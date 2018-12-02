@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-media",
-  "version": "1.19.0",
+  "version": "1.22.0",
   "license": "MIT",
   "main": "lib/es5/index.js",
   "types": "lib/es5/index.d.ts",
