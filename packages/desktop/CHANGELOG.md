@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.22.0](https://github.com/qiwi/pijma/compare/v1.21.0...v1.22.0) (2018-12-02)
+
+
+### Features
+
+* rethinking ([ee365db](https://github.com/qiwi/pijma/commit/ee365db))
+
 # [@qiwi/pijma-desktop-v1.21.0](https://github.com/qiwi/pijma/compare/v1.20.0...v1.21.0) (2018-11-23)
 
 
