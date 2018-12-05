@@ -15,4 +15,5 @@ Btn.defaultProps = {
   display: 'inline-block',
   p: 0,
   m: 0,
+  s: '',
 }

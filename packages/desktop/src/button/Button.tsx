@@ -71,6 +71,16 @@ const textSize: { [size in ButtonProps['size']]: number } = {
   minor: 3.5,
 }
 
+const shadow: { [kind in ButtonProps['kind']]: string } = {
+  brand: '0 15px 50px -10px rgb(255, 206, 135)',
+  simple: '0 15px 50px -10px rgba(0,0,0,0.15)',
+}
+
+const hoverShadow: {[kind in ButtonProps['kind']]: string} = {
+  brand: '0 25px 50px -10px rgb(255, 206, 135)',
+  simple: '0 25px 50px -10px rgba(0,0,0,0.15)'
+}
+
 const Button: FunctionComponent<ButtonProps> = (props) => (
   <ButtonControl
     onClick={props.onClick}
@@ -85,6 +95,7 @@ const Button: FunctionComponent<ButtonProps> = (props) => (
         bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? buttonHoverBackground[props.kind] : buttonBackground[props.kind]}
         b={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? buttonHoverBorder[props.kind] : buttonBorder[props.kind]}
         r={buttonRadius[props.size]}
+        s={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? hoverShadow[props.kind] : props.size === 'accent' ? shadow[props.kind] : 'none'}
         transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
