@@ -7,6 +7,7 @@ interface State {
   features: string[]
   type: 'submit' | 'button'
   kind: 'brand' | 'simple'
+  size: 'accent' | 'normal' | 'minor'
 }
 
 export default class ButtonExample extends Component<{}, State> {
@@ -15,6 +16,7 @@ export default class ButtonExample extends Component<{}, State> {
     features: ['icon', 'text'],
     type: 'button',
     kind: 'brand',
+    size: 'accent',
   }
 
   public render() {
@@ -25,6 +27,7 @@ export default class ButtonExample extends Component<{}, State> {
           <td style={{padding: '10px', maxWidth: '200px'}}>
             <Button
               type={this.state.type}
+              size={this.state.size}
               disabled={this.state.features.includes('disabled')}
               loading={this.state.features.includes('loading')}
               kind={this.state.kind}
@@ -48,6 +51,23 @@ export default class ButtonExample extends Component<{}, State> {
             />
           </td>
         </tr>
+        <td style={{padding: '10px', verticalAlign: 'top'}}>
+          <RadioField
+            options={[
+              {
+                label: 'accent',
+                value: 'accent',
+              }, {
+                label: 'normal',
+                value: 'normal',
+              }, {
+                label: 'minor',
+                value: 'minor',
+              }]}
+            value={this.state.size}
+            onChange={(size) => this.setState({size})}
+          />
+        </td>
         <tr>
           <td style={{padding: '10px'}}>
             <CheckboxField

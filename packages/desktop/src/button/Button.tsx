@@ -26,6 +26,11 @@ const buttonHoverBackground: { [kind in ButtonProps['kind']]: string } = {
   simple: '#fff padding-box',
 }
 
+const accentButtonBackground: {[kind in ButtonProps['kind']]: string | undefined} = {
+  brand: 'linear-gradient(to bottom, #ff9810, #ff8300)',
+  simple: undefined,
+}
+
 const buttonBorder: { [kind in ButtonProps['kind']]: string } = {
   brand: 'none',
   simple: '1px solid rgba(0, 0, 0, 0.14)',
@@ -71,6 +76,16 @@ const textSize: { [size in ButtonProps['size']]: number } = {
   minor: 3.5,
 }
 
+const shadow: { [kind in ButtonProps['kind']]: string } = {
+  brand: '0 15px 50px -10px rgb(255, 206, 135)',
+  simple: '0 15px 50px -10px rgba(0, 0, 0, 0.15)',
+}
+
+const hoverShadow: {[kind in ButtonProps['kind']]: string} = {
+  brand: '0 25px 50px -10px rgb(255, 206, 135)',
+  simple: '0 25px 50px -10px rgba(0, 0, 0, 0.15)'
+}
+
 const Button: FunctionComponent<ButtonProps> = (props) => (
   <ButtonControl
     onClick={props.onClick}
@@ -82,10 +97,11 @@ const Button: FunctionComponent<ButtonProps> = (props) => (
         width={!props.icon || props.text ? 1 : buttonSize[props.size]}
         height={buttonSize[props.size]}
         minWidth={buttonMinWith[props.size]}
-        bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? buttonHoverBackground[props.kind] : buttonBackground[props.kind]}
+        bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? buttonHoverBackground[props.kind] : props.size === 'accent' ? accentButtonBackground[props.kind] : buttonBackground[props.kind]}
         b={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? buttonHoverBorder[props.kind] : buttonBorder[props.kind]}
         r={buttonRadius[props.size]}
-        transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+        s={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? hoverShadow[props.kind] : props.size === 'accent' ? shadow[props.kind] : 'none'}
+        transition="box-shadow 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onFocus}
