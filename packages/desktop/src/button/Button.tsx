@@ -26,9 +26,9 @@ const buttonHoverBackground: { [kind in ButtonProps['kind']]: string } = {
   simple: '#fff padding-box',
 }
 
-const accentButtonBackground: {[kind in ButtonProps['kind']]: string | undefined} = {
+const accentButtonBackground: { [kind in ButtonProps['kind']]: string } = {
   brand: 'linear-gradient(to bottom, #ff9810, #ff8300)',
-  simple: undefined,
+  simple: '#fff padding-box',
 }
 
 const buttonBorder: { [kind in ButtonProps['kind']]: string } = {
@@ -81,9 +81,9 @@ const shadow: { [kind in ButtonProps['kind']]: string } = {
   simple: '0 15px 50px -10px rgba(0, 0, 0, 0.15)',
 }
 
-const hoverShadow: {[kind in ButtonProps['kind']]: string} = {
+const hoverShadow: { [kind in ButtonProps['kind']]: string } = {
   brand: '0 25px 50px -10px rgb(255, 206, 135)',
-  simple: '0 25px 50px -10px rgba(0, 0, 0, 0.15)'
+  simple: '0 25px 50px -10px rgba(0, 0, 0, 0.15)',
 }
 
 const Button: FunctionComponent<ButtonProps> = (props) => (
@@ -100,7 +100,7 @@ const Button: FunctionComponent<ButtonProps> = (props) => (
         bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? buttonHoverBackground[props.kind] : props.size === 'accent' ? accentButtonBackground[props.kind] : buttonBackground[props.kind]}
         b={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? buttonHoverBorder[props.kind] : buttonBorder[props.kind]}
         r={buttonRadius[props.size]}
-        s={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? hoverShadow[props.kind] : props.size === 'accent' ? shadow[props.kind] : 'none'}
+        s={props.disabled ? 'none' : (renderProps.hover || renderProps.focus) && props.size === 'accent' ? hoverShadow[props.kind] : props.size === 'accent' ? shadow[props.kind] : 'none'}
         transition="box-shadow 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
@@ -163,7 +163,7 @@ const Button: FunctionComponent<ButtonProps> = (props) => (
                     ) : (
                       null
                     )}
-                    {props.text ? (
+                    {props.text || !props.icon ? (
                       <FlexItem
                         opacity={props.loading ? 0 : renderProps.hover || renderProps.active || renderProps.focus ? 0.9 : 1}
                         overflow="hidden"
