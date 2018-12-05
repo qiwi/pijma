@@ -21,11 +21,13 @@ export default class ActionsExample extends Component<{}, State> {
             <Actions>
               <Button
                 type="button"
+                size="normal"
                 kind="brand"
                 text="Оплатить"
               />
               <Button
                 type="button"
+                size="minor"
                 kind="simple"
                 text="Отменить"
               />

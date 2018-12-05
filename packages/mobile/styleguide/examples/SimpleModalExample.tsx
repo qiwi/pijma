@@ -24,6 +24,7 @@ export default class SimpleModalExample extends Component<{}, State> {
             <Actions>
               <Button
                 kind="simple"
+                size="normal"
                 type="button"
                 text="Open Modal"
                 onClick={() => this.setState({show: !this.state.show})}
@@ -41,6 +42,7 @@ export default class SimpleModalExample extends Component<{}, State> {
                   <Actions>
                     <Button
                       kind="brand"
+                      size="normal"
                       type="button"
                       text="Close Modal"
                       onClick={() => this.setState({show: !this.state.show})}

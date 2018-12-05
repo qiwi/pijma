@@ -9,10 +9,17 @@ interface ButtonProps {
   tabIndex?: number
   disabled?: boolean
   kind: 'brand' | 'simple'
+  size: 'accent' | 'normal' | 'minor'
   type: 'button' | 'submit'
   text?: string
   icon?: ReactNode
   loading?: boolean
+}
+
+const buttonSize: { [size in ButtonProps['size']]: number } = {
+  accent: 12,
+  normal: 10,
+  minor: 8,
 }
 
 const buttonBackground: { [kind in ButtonProps['kind']]: string } = {
@@ -35,6 +42,12 @@ const buttonHoverBorder: { [kind in ButtonProps['kind']]: string } = {
   simple: '1px solid rgba(0, 0, 0, 0.28)',
 }
 
+const iconSize: {[size in ButtonProps['size']]: number} = {
+  accent: 6,
+  normal: 6,
+  minor: 5,
+}
+
 const textColor: { [kind in ButtonProps['kind']]: string } = {
   brand: '#fff',
   simple: '#000',
@@ -48,7 +61,7 @@ const Button: FunctionComponent<ButtonProps> = (props) => (
     children={(renderProps) => (
       <Btn
         width={!props.icon || props.text ? 1 : 12}
-        height={12}
+        height={buttonSize[props.size]}
         bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? buttonHoverBackground[props.kind] : buttonBackground[props.kind]}
         b={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? buttonHoverBorder[props.kind] : buttonBorder[props.kind]}
         r={24}
@@ -103,8 +116,8 @@ const Button: FunctionComponent<ButtonProps> = (props) => (
                         shrink={0}
                         opacity={props.loading ? 0 : renderProps.hover || renderProps.active || renderProps.focus ? 0.9 : 1}
                         mr={props.text ? 3 : 0}
-                        width={6}
-                        height={6}
+                        width={iconSize[props.size]}
+                        height={iconSize[props.size]}
                         transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
                         css={{
                           fill: props.disabled ? '#666' : props.kind === 'brand' ? '#fff' : '#000',
