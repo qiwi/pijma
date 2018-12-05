@@ -78,12 +78,12 @@ const textSize: { [size in ButtonProps['size']]: number } = {
 
 const shadow: { [kind in ButtonProps['kind']]: string } = {
   brand: '0 15px 50px -10px rgb(255, 206, 135)',
-  simple: '0 15px 50px -10px rgba(0,0,0,0.15)',
+  simple: '0 15px 50px -10px rgba(0, 0, 0, 0.15)',
 }
 
 const hoverShadow: {[kind in ButtonProps['kind']]: string} = {
   brand: '0 25px 50px -10px rgb(255, 206, 135)',
-  simple: '0 25px 50px -10px rgba(0,0,0,0.15)'
+  simple: '0 25px 50px -10px rgba(0, 0, 0, 0.15)'
 }
 
 const Button: FunctionComponent<ButtonProps> = (props) => (
