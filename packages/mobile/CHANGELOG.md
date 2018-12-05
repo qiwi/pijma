@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.23.1](https://github.com/qiwi/pijma/compare/v1.23.0...v1.23.1) (2018-12-05)
+
+
+### Bug Fixes
+
+* buttons styles ([35e5f78](https://github.com/qiwi/pijma/commit/35e5f78))
+
 # [@qiwi/pijma-mobile-v1.23.0](https://github.com/qiwi/pijma/compare/v1.22.0...v1.23.0) (2018-12-05)
 
 
