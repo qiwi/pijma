@@ -26,7 +26,10 @@ const buttonHoverBackground: { [kind in ButtonProps['kind']]: string } = {
   simple: '#fff padding-box',
 }
 
-const accentButtonBackground: string = 'linear-gradient(to bottom, #ff9810, #ff8300)'
+const accentButtonBackground: {[kind in ButtonProps['kind']]: string | undefined} = {
+  brand: 'linear-gradient(to bottom, #ff9810, #ff8300)',
+  simple: undefined,
+}
 
 const buttonBorder: { [kind in ButtonProps['kind']]: string } = {
   brand: 'none',
@@ -94,7 +97,7 @@ const Button: FunctionComponent<ButtonProps> = (props) => (
         width={!props.icon || props.text ? 1 : buttonSize[props.size]}
         height={buttonSize[props.size]}
         minWidth={buttonMinWith[props.size]}
-        bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? buttonHoverBackground[props.kind] : props.size === 'accent' && props.kind === 'brand' ? accentButtonBackground : buttonBackground[props.kind]}
+        bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? buttonHoverBackground[props.kind] : props.size === 'accent' ? accentButtonBackground[props.kind] : buttonBackground[props.kind]}
         b={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? buttonHoverBorder[props.kind] : buttonBorder[props.kind]}
         r={buttonRadius[props.size]}
         s={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? hoverShadow[props.kind] : props.size === 'accent' ? shadow[props.kind] : 'none'}
