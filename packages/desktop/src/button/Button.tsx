@@ -100,7 +100,7 @@ const Button: FunctionComponent<ButtonProps> = (props) => (
         bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? buttonHoverBackground[props.kind] : props.size === 'accent' ? accentButtonBackground[props.kind] : buttonBackground[props.kind]}
         b={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? buttonHoverBorder[props.kind] : buttonBorder[props.kind]}
         r={buttonRadius[props.size]}
-        s={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? hoverShadow[props.kind] : props.size === 'accent' ? shadow[props.kind] : 'none'}
+        s={props.disabled ? 'none' : (renderProps.hover || renderProps.focus) && props.size === 'accent' ? hoverShadow[props.kind] : props.size === 'accent' ? shadow[props.kind] : 'none'}
         transition="box-shadow 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
