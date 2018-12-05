@@ -42,10 +42,28 @@ const buttonHoverBorder: { [kind in ButtonProps['kind']]: string } = {
   simple: '1px solid rgba(0, 0, 0, 0.28)',
 }
 
-const iconSize: {[size in ButtonProps['size']]: number} = {
+const contextPaddingX: { [size in ButtonProps['size']]: number } = {
+  accent: 8,
+  normal: 6,
+  minor: 4,
+}
+
+const iconSize: { [size in ButtonProps['size']]: number } = {
   accent: 6,
   normal: 6,
   minor: 5,
+}
+
+const iconMargin: { [size in ButtonProps['size']]: number } = {
+  accent: 3,
+  normal: 1.5,
+  minor: 1,
+}
+
+const textSize: { [size in ButtonProps['size']]: number } = {
+  accent: 4,
+  normal: 3.5,
+  minor: 3.5,
 }
 
 const textColor: { [kind in ButtonProps['kind']]: string } = {
@@ -60,7 +78,7 @@ const Button: FunctionComponent<ButtonProps> = (props) => (
     onBlur={props.onBlur}
     children={(renderProps) => (
       <Btn
-        width={!props.icon || props.text ? 1 : 12}
+        width={!props.icon || props.text ? 1 : buttonSize[props.size]}
         height={buttonSize[props.size]}
         bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? buttonHoverBackground[props.kind] : buttonBackground[props.kind]}
         b={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? buttonHoverBorder[props.kind] : buttonBorder[props.kind]}
@@ -83,7 +101,7 @@ const Button: FunctionComponent<ButtonProps> = (props) => (
                 justify="center"
                 width={1}
                 height={1}
-                px={props.icon && !props.text ? 0 : 8}
+                px={props.icon && !props.text ? 0 : contextPaddingX[props.size]}
                 transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
                 children={(
                   <Fragment>
@@ -103,8 +121,8 @@ const Button: FunctionComponent<ButtonProps> = (props) => (
                           height={1}
                           children={(
                             <Spinner
-                              width={6}
-                              height={6}
+                              width={iconSize[props.size]}
+                              height={iconSize[props.size]}
                               color={props.disabled ? '#666' : textColor[props.kind]}
                             />
                           )}
@@ -115,7 +133,7 @@ const Button: FunctionComponent<ButtonProps> = (props) => (
                       <FlexItem
                         shrink={0}
                         opacity={props.loading ? 0 : renderProps.hover || renderProps.active || renderProps.focus ? 0.9 : 1}
-                        mr={props.text ? 3 : 0}
+                        mr={props.text ? iconMargin[props.size] : 0}
                         width={iconSize[props.size]}
                         height={iconSize[props.size]}
                         transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
@@ -127,7 +145,7 @@ const Button: FunctionComponent<ButtonProps> = (props) => (
                     ) : (
                       null
                     )}
-                    {props.text ? (
+                    {props.text || !props.icon ? (
                       <FlexItem
                         opacity={props.loading ? 0 : renderProps.hover || renderProps.active || renderProps.focus ? 0.9 : 1}
                         overflow="hidden"
@@ -138,8 +156,8 @@ const Button: FunctionComponent<ButtonProps> = (props) => (
                             display="block"
                             weight={500}
                             color={props.disabled ? '#666' : textColor[props.kind]}
-                            size={4}
-                            height={4}
+                            size={textSize[props.size]}
+                            height={textSize[props.size]}
                             transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
                             children={props.text}
                           />
