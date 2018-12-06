@@ -1,5 +1,1 @@
-import Actions from './Actions'
-
-export {
-  Actions,
-}
+export * from './Actions'

@@ -1,58 +1,48 @@
-import React, {FunctionComponent, Children, ReactNode} from 'react'
+import React, {FunctionComponent, ReactNode, Children} from 'react'
 
-import {styled} from '@qiwi/pijma-core'
+import {Box, Flex} from '@qiwi/pijma-core'
 
-import ActionsProps from './ActionProps'
+export interface ActionsProps {
+  size: 'accent' | 'normal' | 'minor'
+  vertical?: boolean
+}
 
-const ActionsList = styled('div')<ActionsProps>((props) => ({
-  display: props.vertical ? 'inline-block' : 'inline-flex',
-  alignItems: props.vertical ? undefined : 'center',
-  maxWidth: '100%',
-}))
+const margin: { [size in ActionsProps['size']]: number } = {
+  accent: 6,
+  normal: 5,
+  minor: 4,
+}
 
-const ActionsItem = styled('div')<ActionsProps>((props) => ({
-  display: 'block',
-  textAlign: 'center',
-  marginBottom: (
-    !props.vertical ? (
-      undefined
-    ) : props.size === 'accent' ? (
-      24
-    ) : props.size === 'normal' ? (
-      20
-    ) : props.size === 'minor' ? (
-      16
-    ) : (
-      undefined
+export const Actions: FunctionComponent<ActionsProps> = (props) => {
+  const elements = Children.toArray(props.children).filter(child => !!child)
+  if (elements.length === 0) {
+    return null
+  }
+  const content = Children.map(elements, (child: ReactNode, key: number) => (
+    <Box
+      key={key}
+      width={1}
+      maxWidth={1}
+      mt={key === 0 || !props.vertical ? undefined : margin[props.size]}
+      ml={key === 0 || props.vertical ? undefined : margin[props.size]}
+      children={child}
+    />
+  ))
+  if (props.vertical) {
+    return (
+      <Box
+        display="inline-block"
+        maxWidth={1}
+        children={content}
+      />
     )
-  ),
-  marginRight: (
-    props.vertical ? (
-      undefined
-    ) : props.size === 'accent' ? (
-      24
-    ) : props.size === 'normal' ? (
-      20
-    ) : props.size === 'minor' ? (
-      16
-    ) : (
-      undefined
-    )
-  ),
-  '&:last-child': {
-    marginBottom: 0,
-    marginRight: 0,
-  },
-}))
-
-const Actions: FunctionComponent<ActionsProps> = (props) => (
-  <ActionsList {...props}>
-    {Children.map(props.children, (child: ReactNode, key: number) => (
-      <ActionsItem key={key} {...props}>
-        {child}
-      </ActionsItem>
-    ))}
-  </ActionsList>
-)
-
-export default Actions
+  }
+  return (
+    <Flex
+      display="inline-flex"
+      align="center"
+      maxWidth={1}
+      children={content}
+    />
+  )
+}

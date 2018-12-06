@@ -3,7 +3,7 @@ import styled from '../styled'
 import {Box, BoxNonProps, BoxProps} from './Box'
 
 export interface FlexProps extends BoxProps {
-  display?: 'flex'
+  display?: 'flex' | 'inline-flex'
   wrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
   direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse'
   align?: string
@@ -14,10 +14,14 @@ export const FlexNonProps = BoxNonProps.concat(['display', 'wrap', 'direction', 
 
 export const Flex = styled(Box, {
   shouldForwardProp: (prop) => !FlexNonProps.includes(prop),
-})<FlexProps>(({wrap, direction, align, justify}) => ({
-  display: 'flex',
+})<FlexProps>(({display, wrap, direction, align, justify}) => ({
+  display: display,
   flexWrap: wrap,
   flexDirection: direction,
   alignItems: align,
   justifyContent: justify,
 }))
+
+Flex.defaultProps = {
+  display: 'flex',
+}

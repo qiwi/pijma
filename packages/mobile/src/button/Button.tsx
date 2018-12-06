@@ -2,7 +2,7 @@ import React, {FunctionComponent, ReactNode, Fragment} from 'react'
 
 import {ButtonControl, Spinner, Pos, Flex, FlexItem, Typo, Btn} from '@qiwi/pijma-core'
 
-interface ButtonProps {
+export interface ButtonProps {
   onClick?: () => void
   onFocus?: () => void
   onBlur?: () => void
@@ -71,7 +71,7 @@ const textColor: { [kind in ButtonProps['kind']]: string } = {
   simple: '#000',
 }
 
-const Button: FunctionComponent<ButtonProps> = (props) => (
+export const Button: FunctionComponent<ButtonProps> = (props) => (
   <ButtonControl
     onClick={props.onClick}
     onFocus={props.onFocus}
@@ -176,5 +176,3 @@ const Button: FunctionComponent<ButtonProps> = (props) => (
     )}
   />
 )
-
-export default Button

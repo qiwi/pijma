@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 
+import {Box} from '@qiwi/pijma-core'
 import {StarIcon} from '@qiwi/pijma-media'
-import {Button, RadioField, CheckboxField} from '@qiwi/pijma-desktop'
+import {Button, Actions, RadioField, CheckboxField} from '@qiwi/pijma-desktop'
 
 interface State {
   features: string[]
@@ -24,16 +25,20 @@ export default class ButtonExample extends Component<{}, State> {
       <table style={{width: '100%'}}>
         <tbody>
         <tr>
-          <td style={{padding: '10px', verticalAlign: 'top', width: '50%', maxWidth: '468px'}}>
-            <Button
-              type={this.state.type}
-              disabled={this.state.features.includes('disabled')}
-              loading={this.state.features.includes('loading')}
-              kind={this.state.kind}
-              size={this.state.size}
-              icon={this.state.features.includes('icon') ? <StarIcon/> : undefined}
-              text={this.state.features.includes('text') ? (this.state.features.includes('long') ? 'Оплатить без комиссии и без проблем ' : 'Оплатить') : undefined}
-            />
+          <td style={{padding: '10px', verticalAlign: 'top', width: '50%'}}>
+            <Box width={115}>
+              <Actions size={this.state.size}>
+                <Button
+                  type={this.state.type}
+                  disabled={this.state.features.includes('disabled')}
+                  loading={this.state.features.includes('loading')}
+                  kind={this.state.kind}
+                  size={this.state.size}
+                  icon={this.state.features.includes('icon') ? <StarIcon/> : undefined}
+                  text={this.state.features.includes('text') ? (this.state.features.includes('long') ? 'Оплатить без комиссии и без проблем' : 'Оплатить') : undefined}
+                />
+              </Actions>
+            </Box>
           </td>
           <td style={{padding: '10px', verticalAlign: 'top'}}>
             <RadioField
