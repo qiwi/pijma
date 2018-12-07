@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 
-import {Actions, ActionsSize, Button, RadioField, CheckboxField} from '@qiwi/pijma-desktop'
+import {Box} from '@qiwi/pijma-core'
+import {Actions, Button, RadioField, CheckboxField} from '@qiwi/pijma-desktop'
 
 interface State {
   features: string[]
-  size: ActionsSize
+  size: 'accent' | 'normal' | 'minor'
 }
 
 export default class ActionsExample extends Component<{}, State> {
@@ -20,23 +21,25 @@ export default class ActionsExample extends Component<{}, State> {
         <tbody>
         <tr>
           <td style={{padding: '10px', verticalAlign: 'top', width: '50%'}}>
-            <Actions
-              size={this.state.size}
-              vertical={this.state.features.includes('vertical')}
-            >
-              <Button
-                type="button"
-                kind="brand"
+            <Box width={this.state.features.includes('vertical') ? 100 : undefined}>
+              <Actions
                 size={this.state.size}
-                text="Оплатить"
-              />
-              <Button
-                type="button"
-                kind="simple"
-                size={this.state.size}
-                text="Отменить"
-              />
-            </Actions>
+                vertical={this.state.features.includes('vertical')}
+              >
+                <Button
+                  type="button"
+                  kind="brand"
+                  size={this.state.size}
+                  text={this.state.features.includes('long') ? 'Оплатить без комиссии и без проблем' : 'Оплатить'}
+                />
+                <Button
+                  type="button"
+                  kind="simple"
+                  size={this.state.size}
+                  text="Отменить"
+                />
+              </Actions>
+            </Box>
           </td>
           <td style={{padding: '10px', verticalAlign: 'top'}}>
             <RadioField
@@ -59,6 +62,9 @@ export default class ActionsExample extends Component<{}, State> {
               options={[{
                 label: 'vertical',
                 value: 'vertical',
+              }, {
+                label: 'long',
+                value: 'long',
               }]}
               values={this.state.features}
               onChange={(features) => this.setState({features})}
