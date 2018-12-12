@@ -88,6 +88,13 @@ module.exports = {
       sectionDepth: Number.MAX_VALUE
     },
     {
+      name: 'Blocks',
+      components: [
+        '../core/src/**/*Block.{js,jsx,ts,tsx}'
+      ],
+      sectionDepth: Number.MAX_VALUE
+    },
+    {
       name: 'Primitives',
       sections: [
         {
