@@ -13,7 +13,7 @@ export const InfoBlock: FC = ({children}) => {
         <Card
           key={key}
           children={child}
-          bt={key !== 0 ? '1px solid #eee' : undefined}
+          bt={key === 0 ? undefined : '1px solid #eee' }
         />
       ))}
     </Block>
