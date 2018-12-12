@@ -7,7 +7,6 @@ export interface BlockProps {
   active?: boolean
   focus?: boolean
   tabIndex?: number
-  offset?: boolean
   accent?: boolean
 }
 
