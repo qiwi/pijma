@@ -1,4 +1,4 @@
-import {injectGlobal, css} from 'react-emotion'
+import {injectGlobal, css, keyframes} from 'react-emotion'
 
 import Theme from './Theme'
 
@@ -18,6 +18,7 @@ export {
   styled,
   css,
   injectGlobal,
+  keyframes,
   Theme,
   RenderChild,
   themes,
