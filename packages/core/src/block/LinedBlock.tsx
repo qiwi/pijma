@@ -2,7 +2,7 @@ import React, {ReactNode, Children, FC} from 'react'
 
 import {Block, Card} from '@qiwi/pijma-core'
 
-export const InfoBlock: FC = ({children}) => {
+export const LinedBlock: FC = ({children}) => {
   const elements = Children.toArray(children).filter(child => !!child)
   if (elements.length === 0) {
     return null
