@@ -29,6 +29,8 @@ export interface BoxProps {
   minHeight?: Value
   maxHeight?: Value
   transition?: string
+  transform?: string
+  transformOrigin?: string
   cursor?: string
   opacity?: number
   overflow?: string
@@ -41,7 +43,7 @@ export const BoxNonProps = [
   'p', 'pt', 'pr', 'pb', 'pl', 'px', 'py',
   'width', 'minWidth', 'maxWidth',
   'height', 'minHeight', 'maxHeight',
-  'cursor', 'opacity', 'overflow',
+  'cursor', 'opacity', 'overflow', 'transform', 'transformOrigin'
 ]
 
 export const Box = styled('div', {
@@ -68,6 +70,8 @@ export const Box = styled('div', {
   opacity: props.opacity,
   overflow: props.overflow,
   transition: props.transition,
+  transform: props.transform,
+  transformOrigin: props.transformOrigin,
 }), (props) => props.css)
 
 Box.defaultProps = {
