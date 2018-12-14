@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.27.0](https://github.com/qiwi/pijma/compare/v1.26.0...v1.27.0) (2018-12-14)
+
+
+### Features
+
+* expose emotion keyframes ([3808a2b](https://github.com/qiwi/pijma/commit/3808a2b))
+
 # [@qiwi/pijma-core-v1.26.0](https://github.com/qiwi/pijma/compare/v1.25.0...v1.26.0) (2018-12-14)
 
 
