@@ -1,3 +1,24 @@
+# [@qiwi/pijma-mobile-v1.24.0](https://github.com/qiwi/pijma/compare/v1.23.1...v1.24.0) (2018-12-07)
+
+
+### Features
+
+* recompose actions ([2c603bd](https://github.com/qiwi/pijma/commit/2c603bd))
+
+# [@qiwi/pijma-mobile-v1.23.1](https://github.com/qiwi/pijma/compare/v1.23.0...v1.23.1) (2018-12-05)
+
+
+### Bug Fixes
+
+* buttons styles ([35e5f78](https://github.com/qiwi/pijma/commit/35e5f78))
+
+# [@qiwi/pijma-mobile-v1.23.0](https://github.com/qiwi/pijma/compare/v1.22.0...v1.23.0) (2018-12-05)
+
+
+### Features
+
+* add mobile button size, desktop button changes ([4963dd4](https://github.com/qiwi/pijma/commit/4963dd4))
+
 # [@qiwi/pijma-mobile-v1.22.0](https://github.com/qiwi/pijma/compare/v1.21.0...v1.22.0) (2018-12-02)
 
 

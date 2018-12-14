@@ -21,9 +21,10 @@ export default class SimpleModalExample extends Component<{}, State> {
         <tbody>
         <tr>
           <td style={{padding: '10px'}}>
-            <Actions>
+            <Actions size="normal">
               <Button
                 kind="simple"
+                size="normal"
                 type="button"
                 text="Open Modal"
                 onClick={() => this.setState({show: !this.state.show})}
@@ -38,9 +39,10 @@ export default class SimpleModalExample extends Component<{}, State> {
               children={(
                 <Spacer size="l">
                   <Heading size="2">Modal</Heading>
-                  <Actions>
+                  <Actions size="normal">
                     <Button
                       kind="brand"
+                      size="normal"
                       type="button"
                       text="Close Modal"
                       onClick={() => this.setState({show: !this.state.show})}

@@ -4,7 +4,7 @@ import styled from '../styled'
 
 import {Value, cssValue} from './Value'
 
-export type BoxDisplay = 'none' | 'inline' | 'block' | 'contents' | 'flex' | 'grid' | 'inline-block' | 'table'
+export type BoxDisplay = 'none' | 'inline' | 'block' | 'contents' | 'flex' | 'grid' | 'inline-block' | 'inline-flex' | 'table'
 
 export interface BoxProps {
   display?: BoxDisplay

@@ -1,3 +1,17 @@
+# [@qiwi/pijma-core-v1.25.0](https://github.com/qiwi/pijma/compare/v1.24.0...v1.25.0) (2018-12-12)
+
+
+### Features
+
+* add cross-burger ([4df3668](https://github.com/qiwi/pijma/commit/4df3668))
+
+# [@qiwi/pijma-core-v1.24.0](https://github.com/qiwi/pijma/compare/v1.23.1...v1.24.0) (2018-12-07)
+
+
+### Features
+
+* recompose actions ([2c603bd](https://github.com/qiwi/pijma/commit/2c603bd))
+
 # [@qiwi/pijma-core-v1.22.0](https://github.com/qiwi/pijma/compare/v1.21.0...v1.22.0) (2018-12-02)
 
 
