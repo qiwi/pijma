@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.26.0](https://github.com/qiwi/pijma/compare/v1.25.0...v1.26.0) (2018-12-14)
+
+
+### Features
+
+* add block & lined block ([161d1ef](https://github.com/qiwi/pijma/commit/161d1ef))
+
 # [@qiwi/pijma-desktop-v1.24.0](https://github.com/qiwi/pijma/compare/v1.23.1...v1.24.0) (2018-12-07)
 
 
