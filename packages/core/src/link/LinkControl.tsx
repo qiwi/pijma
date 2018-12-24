@@ -1,6 +1,6 @@
 import React from 'react'
-import LinkControlProps from "@qiwi/pijma-core/link/LinkControlProps"
-import LinkControlState from "@qiwi/pijma-core/link/LinkControlState"
+import LinkControlProps from "./LinkControlProps"
+import LinkControlState from "./LinkControlState"
 
 
 export default class LinkControl extends React.Component<LinkControlProps, LinkControlState> {
