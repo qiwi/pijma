@@ -48,6 +48,5 @@ export const NavLink: FC<NavLinkProps> = (props) => (
 )
 
 NavLink.defaultProps = {
-  target: '_blank',
   color: 'default'
 }

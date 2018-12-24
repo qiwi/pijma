@@ -34,7 +34,3 @@ export const ContentLink: FC<ContentLinkProps> = (props) => (
     )}
   />
 )
-
-ContentLink.defaultProps = {
-  target: '_blank'
-}
