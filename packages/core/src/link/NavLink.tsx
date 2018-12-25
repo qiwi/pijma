@@ -23,7 +23,6 @@ const linkColorHover: { [color in NavLinkProps['color']]: string } = {
   support: '#000',
 }
 
-
 export const NavLink: FC<NavLinkProps> = (props) => (
   <LinkControl
     onClick={props.onClick}
