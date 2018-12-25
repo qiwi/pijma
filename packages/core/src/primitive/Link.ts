@@ -13,6 +13,6 @@ export const Link = styled(Typo.withComponent('a'), {
 
 Link.defaultProps = {
   color: 'inherit',
-  textDecoration: 'none',
+  decoration: 'none',
   cursor: 'pointer',
 }
