@@ -30,7 +30,7 @@ const reset: CSSObject = {
   svg: {
     display: 'inline-block',
   },
-  'a': {
+  a: {
     textDecoration: 'none',
     cursor: 'pointer',
   }

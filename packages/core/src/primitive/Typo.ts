@@ -18,7 +18,7 @@ export interface TypoProps {
   cursor?: string
 }
 
-export const TypoNonProps = ['as', 'css', 'innerRef', 'ref', 'display', 'size', 'height', 'weight', 'color', 'transform', 'nowrap', 'spacing', 'transition', 'text-decoration', 'cursor']
+export const TypoNonProps = ['as', 'css', 'innerRef', 'ref', 'display', 'size', 'height', 'weight', 'color', 'transform', 'nowrap', 'spacing', 'transition', 'decoration', 'cursor']
 
 export const Typo = styled('div', {
   shouldForwardProp: (prop) => !TypoNonProps.includes(prop),
