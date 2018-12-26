@@ -1,6 +1,6 @@
 ## L
 
-```html static
+```css static
 font-family: Museo Sans  
 font-size: 20px  
 line-height: 32px    
@@ -17,7 +17,7 @@ line-height: 32px
 
 ## M
 
-```html static
+```css static
 font-family: Museo Sans  
 font-size: 16px  
 line-height: 24px   
@@ -34,7 +34,7 @@ line-height: 24px
 
 ## S
 
-```html static
+```css static
 font-family: Museo Sans  
 font-size: 14px  
 line-height: 20px    

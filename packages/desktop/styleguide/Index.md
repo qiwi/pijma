@@ -70,7 +70,7 @@ QIWI Guide — это развивающийся набор рекомендац
     title="Поле ввода"
     type="text"
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```
@@ -84,7 +84,7 @@ QIWI Guide — это развивающийся набор рекомендац
     help="Подсказка"
     type="text"
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```
@@ -125,7 +125,7 @@ QIWI Guide — это развивающийся набор рекомендац
 </Box>
 ```
 
-```js static
+```jsx static
 <Box>
   <Actions size="normal">
     <Button
@@ -133,7 +133,7 @@ QIWI Guide — это развивающийся набор рекомендац
       size="normal"
       type="button"
       text="Показать окно"
-      onClick={() => setState({ delete: true })}
+      onClick={() => setState({delete: true})}
     />
   </Actions>
 </Box>

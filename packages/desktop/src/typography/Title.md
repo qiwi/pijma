@@ -8,7 +8,7 @@
 </Spacer>
 ```
 
-```html static
+```css static
 font-family: Museo Sans  
 font-size: 48px  
 line-height: 56px    
@@ -25,7 +25,7 @@ font-weight: 900
 </Spacer>
 ```
 
-```html static
+```css static
 font-family: Museo Sans
 font-size: 40px
 line-height: 48px

@@ -1,6 +1,6 @@
 ## H1  
 
-```html static
+```css static
 font-family: Museo Sans  
 font-size: 28px  
 line-height: 32px  
@@ -17,7 +17,7 @@ font-weight: 900
 
 ## H2 
 
-```html static
+```css static
 font-family: Museo Sans  
 font-size: 24px  
 line-height: 28px    
@@ -34,7 +34,7 @@ font-weight: 900
 
 ## H3 
 
-```html static
+```css static
 font-family: Museo Sans    
 font-size: 20px  
 line-height: 24px   
@@ -51,7 +51,7 @@ font-weight: 900
 
 ## H4 
 
-```html static
+```css static
 font-family: Museo Sans  
 font-size: 16px  
 line-height: 20px    

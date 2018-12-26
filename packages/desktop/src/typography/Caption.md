@@ -1,4 +1,4 @@
-```html static
+```css static
 font-family: Museo Sans
 font-size: 14px
 line-height: 20px

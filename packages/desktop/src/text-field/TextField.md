@@ -24,7 +24,7 @@
     title="Поле ввода"
     type="text"
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```
@@ -38,7 +38,7 @@
     help="Подсказка"
     type="text"
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```
@@ -52,7 +52,7 @@
     type="text"
     action={<a href="#/Fields/TextField">Сылка-кнопка</a>}
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```
@@ -66,7 +66,7 @@
     error="Подсказка"
     type="text"
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```
@@ -92,7 +92,7 @@
     type="text"
     hint={<QuestionIcon />}
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```
@@ -106,7 +106,7 @@
     type="tel"
     mask={['(', /\d/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]}
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```
@@ -125,7 +125,7 @@
       integerLimit: 20
     })}
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```
@@ -139,7 +139,7 @@
     type="tel"
     mask={createFilterMask(/[a-zA-Z\s-]/)}
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```
@@ -153,7 +153,7 @@
     type="password"
     mask={[/\d/, /\d/, /\d/]}
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```
@@ -167,7 +167,7 @@
     type="text"
     maxLength={3}
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```
@@ -180,25 +180,25 @@
     placeholder="Цифровое поле"
     type="tel"
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
   <TextField
     title="Поисковое поле"
     type="search"
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
   <TextField
     title="Поле под email"
     type="email"
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
     <TextField
     title="Поле url адреса "
     type="url"
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```

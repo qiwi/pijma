@@ -10,7 +10,7 @@
       size="normal"
       type="button"
       text="Показать окно"
-      onClick={() => setState({ delete: true })}
+      onClick={() => setState({delete: true})}
     />
   </Actions>
   <SimpleModal
@@ -18,7 +18,7 @@
     size={'m'}
     closable
     backdropClose
-    onHide={() => setState({ delete: false })}
+    onHide={() => setState({delete: false})}
     children={
       <Spacer size="xl">
         <Heading size="2">Удалить из избранного?</Heading>
@@ -28,14 +28,14 @@
             size="normal"
             type="button"
             text="Удалить"
-            onClick={() => setState({ delete: false })}
+            onClick={() => setState({delete: false})}
           />
           <Button
             kind="simple"
             size="normal"
             type="button"
             text="Отменить"
-            onClick={() => setState({ delete: false })}
+            onClick={() => setState({delete: false})}
           />
         </Actions>
       </Spacer>
@@ -54,28 +54,28 @@
       size="normal"
       type="button"
       text="S"
-      onClick={() => setState({ s: true })}
+      onClick={() => setState({s: true})}
     />
     <Button
       kind="simple"
       size="normal"
       type="button"
       text="M"
-      onClick={() => setState({ m: true })}
+      onClick={() => setState({m: true})}
     />
     <Button
       kind="simple"
       size="normal"
       type="button"
       text="L"
-      onClick={() => setState({ l: true })}
+      onClick={() => setState({l: true})}
     />
   </Actions>
   <SimpleModal
     show={state.s}
     size={'s'}
     closable
-    onHide={() => setState({ s: false })}
+    onHide={() => setState({s: false})}
     children={
       <Spacer size="m">
         <Heading size="2">Малое окно</Heading>
@@ -87,7 +87,7 @@
     show={state.m}
     size={'m'}
     closable
-    onHide={() => setState({ m: false })}
+    onHide={() => setState({m: false})}
     children={
       <Spacer size="m">
         <Heading size="2">Среднее окно</Heading>
@@ -99,7 +99,7 @@
     show={state.l}
     size={'l'}
     closable
-    onHide={() => setState({ l: false })}
+    onHide={() => setState({l: false})}
     children={
       <Spacer size="m">
         <Heading size="2">Большое окно</Heading>
@@ -122,7 +122,7 @@
       size="normal"
       type="button"
       text="Открыть"
-      onClick={() => setState({ notification: true })}
+      onClick={() => setState({notification: true})}
     />
   </Actions>
   <SimpleModal
@@ -130,7 +130,7 @@
     size={'m'}
     closable
     backdropClose
-    onHide={() => setState({ notification: false })}
+    onHide={() => setState({notification: false})}
     children={
       <Spacer size="l">
         <Spacer size="m">
@@ -143,14 +143,14 @@
             size="normal"
             type="button"
             text="Отключить уведомления"
-            onClick={() => setState({ notification: false })}
+            onClick={() => setState({notification: false})}
           />
           <Button
             kind="simple"
             size="normal"
             type="button"
             text="Не отключать"
-            onClick={() => setState({ notification: false })}
+            onClick={() => setState({notification: false})}
           />
         </Actions>
       </Spacer>
@@ -169,7 +169,7 @@
       size="normal"
       type="button"
       text="Открыть"
-      onClick={() => setState({ email: true })}
+      onClick={() => setState({email: true})}
     />
   </Actions>
   <SimpleModal
@@ -177,7 +177,7 @@
     size={'m'}
     closable
     backdropClose
-    onHide={() => setState({ email: false })}
+    onHide={() => setState({email: false})}
     children={
       <Spacer size="l">
         <Spacer size="l">
@@ -186,7 +186,7 @@
               title="Адрес элктронной почты"
               type="text"
               value={state.text}
-              onChange={text => setState({ text })}
+              onChange={text => setState({text})}
             />
         </Spacer>
         <Actions size="normal">
@@ -195,7 +195,7 @@
             size="normal"
             type="button"
             text="Отправить"
-            onClick={() => setState({ email: false })}
+            onClick={() => setState({email: false})}
           />
         </Actions>
       </Spacer>
@@ -215,7 +215,7 @@ initialState = {values: ['selected']};
       size="normal"
       type="button"
       text="Открыть"
-      onClick={() => setState({ snapping: true })}
+      onClick={() => setState({snapping: true})}
     />
   </Actions>
   <SimpleModal
@@ -223,7 +223,7 @@ initialState = {values: ['selected']};
     size={'m'}
     closable
     backdropClose
-    onHide={() => setState({ snapping: false })}
+    onHide={() => setState({snapping: false})}
     children={
       <Spacer size="l">
         <Spacer size="l">
@@ -232,7 +232,7 @@ initialState = {values: ['selected']};
               title="Адрес элктронной почты"
               type="text"
               value={state.text}
-              onChange={text => setState({ text })}
+              onChange={text => setState({text})}
             />
         </Spacer>
         <Actions size="normal">
@@ -241,7 +241,7 @@ initialState = {values: ['selected']};
             size="normal"
             type="button"
             text="Привязать почту"
-            onClick={() => setState({ snapping: false })}
+            onClick={() => setState({snapping: false})}
           />
         </Actions>
        <CheckboxField

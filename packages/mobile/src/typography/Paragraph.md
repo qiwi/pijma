@@ -1,6 +1,6 @@
 ## Paragraph L
 
-```html static
+```css static
 font-family: Museo Sans  
 font-size: 20px  
 line-height: 32px    
@@ -16,7 +16,7 @@ font-weight: 300
 
 ## Paragraph M
 
-```html static
+```css static
 font-family: Museo Sans  
 font-size: 16px  
 line-height: 24px    
@@ -32,7 +32,7 @@ font-weight: 300
 
 ## Paragraph S
 
-```html static
+```css static
 font-family: Museo Sans  
 font-size: 14px  
 line-height: 20px    

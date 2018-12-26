@@ -7,7 +7,7 @@
     title="Пароль"
     viewed={false}
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```
@@ -21,7 +21,7 @@
     title="Пароль"
     viewed
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```
@@ -36,7 +36,7 @@
     viewed
     action={<a href="#/Fields/TextField">Сылка-кнопка</a>}
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```
@@ -51,7 +51,7 @@
     error="Подсказка"
     viewed
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```
@@ -78,7 +78,7 @@
     viewed={false}
     hint={<QuestionIcon />}
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```
@@ -92,7 +92,7 @@
     title="Пароль"
     maxLength={3}
     value={state.text}
-    onChange={text => setState({ text })}
+    onChange={text => setState({text})}
   />
 </Box>
 ```
