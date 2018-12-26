@@ -3,10 +3,10 @@ Title H1 и Title H2 применяются в качестве заголовк
 ## Title 1
 
 ```css static
-font-family: Museo Sans  
-font-size: 48px  
-line-height: 56px    
-font-weight: 900  
+font-family: Museo Sans
+font-size: 48px
+line-height: 56px
+font-weight: 900
 ```
 
 ```jsx
@@ -18,10 +18,10 @@ font-weight: 900
 ## Title 2
 
 ```css static
-font-family: Museo Sans  
-font-size: 40px  
-line-height: 48px    
-font-weight: 900  
+font-family: Museo Sans
+font-size: 40px
+line-height: 48px
+font-weight: 900
 ```
 
 ```jsx

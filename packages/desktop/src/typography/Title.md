@@ -9,9 +9,9 @@
 ```
 
 ```css static
-font-family: Museo Sans  
-font-size: 48px  
-line-height: 56px    
+font-family: Museo Sans
+font-size: 48px
+line-height: 56px
 font-weight: 900
 ```
 

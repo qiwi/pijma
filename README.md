@@ -25,7 +25,7 @@ yarn build
 ###### Environments
 * production
 * development (used by default)
-  
+
 ```
 NODE_ENV=production yarn build
 ```

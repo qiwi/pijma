@@ -17,10 +17,10 @@ font-weight: 300
 ## Paragraph M
 
 ```css static
-font-family: Museo Sans  
-font-size: 16px  
-line-height: 24px    
-font-weight: 300  
+font-family: Museo Sans
+font-size: 16px
+line-height: 24px
+font-weight: 300
 ```
 
 ```jsx
@@ -33,10 +33,10 @@ font-weight: 300
 ## Paragraph S
 
 ```css static
-font-family: Museo Sans  
-font-size: 14px  
-line-height: 20px    
-font-weight: 300  
+font-family: Museo Sans
+font-size: 14px
+line-height: 20px
+font-weight: 300
 ```
 
 ```jsx

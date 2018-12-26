@@ -1,9 +1,9 @@
 ## L
 
 ```css static
-font-family: Museo Sans  
-font-size: 20px  
-line-height: 32px    
+font-family: Museo Sans
+font-size: 20px
+line-height: 32px
 ```
 
 ```jsx
@@ -18,9 +18,9 @@ line-height: 32px
 ## M
 
 ```css static
-font-family: Museo Sans  
-font-size: 16px  
-line-height: 24px   
+font-family: Museo Sans
+font-size: 16px
+line-height: 24px
 ```
 
 ```jsx
@@ -30,14 +30,14 @@ line-height: 24px
   <Paragraph size="m">Paragraph M <Text color="success">Success</Text> 300</Paragraph>
   <Paragraph size="m" color="support">Paragraph M <Text color="warning">Warning</Text> 300</Paragraph>
 </Spacer>
-``` 
+```
 
 ## S
 
 ```css static
-font-family: Museo Sans  
-font-size: 14px  
-line-height: 20px    
+font-family: Museo Sans
+font-size: 14px
+line-height: 20px
 ```
 
 ```jsx
