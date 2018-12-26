@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {LinkControl, Typo} from "@qiwi/pijma-core"
+import {LinkControl, Typo} from '@qiwi/pijma-core'
 
 export interface LinkProps {
   onClick?: () => void

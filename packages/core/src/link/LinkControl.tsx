@@ -1,7 +1,6 @@
 import React from 'react'
-import LinkControlProps from "./LinkControlProps"
-import LinkControlState from "./LinkControlState"
-
+import LinkControlProps from './LinkControlProps'
+import LinkControlState from './LinkControlState'
 
 export default class LinkControl extends React.Component<LinkControlProps, LinkControlState> {
 
