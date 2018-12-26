@@ -12,6 +12,7 @@ export interface LinkProps {
   target?: string
   download?: boolean
   rel?: string
+  title?: string
   size?: 's' | 'm' | 'l'
 }
 
@@ -54,6 +55,7 @@ export const Link: FC<LinkProps> = (props) => (
         target={props.target}
         download={props.download}
         rel={props.rel}
+        title={props.title}
         size={props.size === undefined ? undefined : props.compact ? LinkHeightCompact[props.size] : LinkSize[props.size]}
         height={props.size === undefined ? undefined : LinkHeight[props.size]}
         children={props.children}
