@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 import {Spacer} from '@qiwi/pijma-core'
-import {Link} from '@qiwi/pijma-desktop'
+import {Link} from '@qiwi/pijma-mobile'
 
 export default class LinkExample extends Component<{}, {}> {
 
