@@ -10,7 +10,7 @@ export default class LinkExample extends Component<{}, {}> {
       <Spacer size="m">
         <Link size="l" href="https://qiwi.com">Link L</Link>
         <Link href="https://qiwi.com">Link M</Link>
-        <Link size="s" href="https://qiwi.com" title='link s'>Link S</Link>
+        <Link size="s" href="https://qiwi.com" title="link s">Link S</Link>
       </Spacer>
     )
   }
