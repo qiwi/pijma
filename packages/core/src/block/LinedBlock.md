@@ -1,10 +1,17 @@
+Используется для разделения контента.
+
 ```jsx
 <Card bg="#eee" p={7}>
   <LinedBlock>
-    <Card p={4}>info</Card>
-    <Card p={4}>block</Card>
-    <Card p={4}>with</Card>
-    <Card p={4}>dividers</Card>
+    <Card p={4}>
+      <Paragraph size="m">Normal</Paragraph>
+    </Card>
+    <Card p={4}>
+      <Paragraph size="m">Normal</Paragraph>
+    </Card>
+    <Card p={4}>
+      <Paragraph size="m">Normal</Paragraph>
+    </Card>
   </LinedBlock>
 </Card>
 ```

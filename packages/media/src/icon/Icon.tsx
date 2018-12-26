@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {FC} from 'react'
 
 import IconName from './IconName'
 import IconProps from './IconProps'
@@ -79,7 +79,7 @@ import {
   YoutubeIcon,
 } from './icons'
 
-const Icons: { [name in IconName]: React.FunctionComponent } = {
+const Icons: { [name in IconName]: FC } = {
   'angle-right': AngleRightIcon,
   'angle-left': AngleLeftIcon,
   'angle-up': AngleUpIcon,
@@ -155,7 +155,7 @@ const Icons: { [name in IconName]: React.FunctionComponent } = {
   youtube: YoutubeIcon,
 }
 
-const Icon: React.FunctionComponent<IconProps> = (props) => {
+const Icon: FC<IconProps> = (props) => {
   const RenderedIcon = Icons[props.name]
   return (
     <RenderedIcon/>

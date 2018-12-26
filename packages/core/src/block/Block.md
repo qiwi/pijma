@@ -1,21 +1,41 @@
+## Состояния блоков
+
+#### Default
 ```jsx
   <Card bg="#eee" p={7}>
     <Spacer size="l">
       <Block>
-        <Card p={4}>action block</Card>
+        <Card p={7}>
+          <Paragraph size="m">Normal</Paragraph>
+        </Card>
       </Block>
-      <Flex>
-        <Card mr={3} width="50%">
-          <Block hover>
-            <Card p={4}>action block hovered</Card>
-          </Block>
+    </Spacer>
+  </Card>
+```
+
+#### Hover
+```jsx
+  <Card bg="#eee" p={7}>
+    <Spacer size="l">
+      <Block hover>
+        <Card p={7}>
+          <Paragraph size="m">Hover</Paragraph>
         </Card>
-        <Card width="50%">
-          <Block hover accent>
-            <Card p={4}>action block hover accented</Card>
-          </Block>
+      </Block>
+    </Spacer>
+  </Card>
+```
+
+#### Hover accent
+Карточка смещается вверх на 4px
+```jsx
+  <Card bg="#eee" p={7}>
+    <Spacer size="l">
+      <Block hover accent>
+        <Card p={7}>
+          <Paragraph size="m">Hover accent</Paragraph>
         </Card>
-      </Flex>
+      </Block>
     </Spacer>
   </Card>
 ```
