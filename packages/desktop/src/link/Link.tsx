@@ -11,6 +11,7 @@ export interface LinkProps {
   href?: string
   target?: string
   download?: boolean
+  rel?: string
   size?: 's' | 'm' | 'l'
 }
 
@@ -52,6 +53,7 @@ export const Link: FC<LinkProps> = (props) => (
         transition="color 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         target={props.target}
         download={props.download}
+        rel={props.rel}
         size={props.size === undefined ? undefined : props.compact ? LinkHeightCompact[props.size] : LinkSize[props.size]}
         height={props.size === undefined ? undefined : LinkHeight[props.size]}
         children={props.children}
