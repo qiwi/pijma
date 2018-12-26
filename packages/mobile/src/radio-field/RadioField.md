@@ -3,10 +3,10 @@
 Размещайте в одном списке не более 7 радиокнопок. Для остальных случаев применяйте выпадающие списки.
 
 ```jsx
-initialState = {value: 'selected'}
-;<RadioField 
-title="Группа радиокнопок"
-hint={<QuestionIcon/>}
+initialState = {value: 'selected'};
+<RadioField 
+  title="Группа радиокнопок"
+  hint={<QuestionIcon/>}
   options={[{
     label: 'Выбранная радиокнопка',
     value: 'selected',
@@ -23,15 +23,15 @@ hint={<QuestionIcon/>}
     label: 'Заблокированная радиокнопка',
     value: 'disabled',
     disabled: true,
-}]}
-      value={state.value}
-      onChange={(value) => setState({value})}
+  }]}
+  value={state.value}
+  onChange={(value) => setState({value})}
 />
 ```
 
 ```jsx
-initialState = {value: 'selected'}
-;<RadioField 
+initialState = {value: 'selected'};
+<RadioField 
   title="Группа радиокнопок с примечаниями"
   hint={<QuestionIcon/>}
   options={[{
@@ -54,8 +54,8 @@ initialState = {value: 'selected'}
     description: 'Примечание к радиокнопке',
     value: 'disabled',
     disabled: true,
-    }]}
-      value={state.value}
-      onChange={(value) => setState({value})}
+  }]}
+  value={state.value}
+  onChange={(value) => setState({value})}
 />
 ```

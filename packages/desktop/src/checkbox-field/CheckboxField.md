@@ -1,10 +1,10 @@
 Чекбоксы — это элементы управления, которые позволяют выбрать несколько вариантов из списка. Используйте в одном списке не более 7 чекбоксов. Для остальных случаев применяйте выпадающие списки.
 
 ```jsx
-initialState = {values: ['selected']}
-;<CheckboxField
-title="Группа чекбоксов"
-hint={<QuestionIcon/>}
+initialState = {values: ['selected']};
+<CheckboxField
+  title="Группа чекбоксов"
+  hint={<QuestionIcon/>}
   options={[{
     label: 'Выбранный чекбокс',
     value: 'selected',
@@ -21,15 +21,15 @@ hint={<QuestionIcon/>}
     label: 'Заблокированный чекбокс',
     value: 'disabled',
     disabled: true,
-}]}
-    values={state.values}
-    onChange={(values) => setState({values})}
+  }]}
+  values={state.values}
+  onChange={(values) => setState({values})}
 />
 ```
 
 ```jsx
-initialState = {values: ['selected']}
-;<CheckboxField
+initialState = {values: ['selected']};
+<CheckboxField
   title="Группа чекбоксов с примечаниями"
   hint={<QuestionIcon/>}
   options={[{
@@ -52,8 +52,8 @@ initialState = {values: ['selected']}
     description:'Примечание к чекбоксу',
     value: 'disabled',
     disabled: true,
-}]}
-      values={state.values}
-      onChange={(values) => setState({values})}
+  }]}
+  values={state.values}
+  onChange={(values) => setState({values})}
 />
 ```
