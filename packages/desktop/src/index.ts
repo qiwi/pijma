@@ -6,6 +6,7 @@ export * from './modal'
 export * from './checkbox-field'
 export * from './radio-field'
 export * from './typography'
+export * from './link'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'
