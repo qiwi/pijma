@@ -3,7 +3,7 @@ import React, {FC} from 'react'
 import {LinkControl, Typo} from '@qiwi/pijma-core'
 
 export interface LinkProps {
-  onClick?: () => void
+  onClick?: (href?: string, target?: string, download?: boolean, rel?: string) => void
   onFocus?: () => void
   onBlur?: () => void
   tabIndex?: number
@@ -41,16 +41,21 @@ export const Link: FC<LinkProps> = (props) => (
     onClick={props.onClick}
     onFocus={props.onFocus}
     onBlur={props.onBlur}
+    href={props.href}
+    target={props.target}
+    download={props.download}
+    rel={props.rel}
     children={(renderProps) => (
       <TypoLink
         tabIndex={props.tabIndex}
         href={props.href}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
-        onBlur={renderProps.onFocus}
+        onBlur={renderProps.onBlur}
         onMouseEnter={renderProps.onMouseEnter}
         onMouseLeave={renderProps.onMouseLeave}
-        color={renderProps.hover ? '#FF8C00' : '#0055BB'}
+        onMouseUp={renderProps.onMouseUp}
+        color={renderProps.hover || renderProps.focus ? '#FF8C00' : '#0055BB'}
         transition="color 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         target={props.target}
         download={props.download}
@@ -63,3 +68,5 @@ export const Link: FC<LinkProps> = (props) => (
     )}
   />
 )
+
+Link.defaultProps = {}

@@ -1,8 +1,11 @@
 import React from 'react'
+
 import LinkControlProps from './LinkControlProps'
 import LinkControlState from './LinkControlState'
 
 export default class LinkControl extends React.Component<LinkControlProps, LinkControlState> {
+
+  public static defaultProps: Partial<LinkControlProps> = {}
 
   public state: LinkControlState = {
     active: false,
@@ -22,13 +25,22 @@ export default class LinkControl extends React.Component<LinkControlProps, LinkC
     })
   }
 
-  private onClick: React.MouseEventHandler = () => {
+  private onMouseUp: React.MouseEventHandler = () => {
+    this.setState({
+      active: false,
+    })
+  }
+
+  private onMouseDown: React.MouseEventHandler = () => {
     this.setState({
       active: true,
-      focus: true,
     })
+  }
+
+  private onClick: React.MouseEventHandler = (e: React.MouseEvent) => {
+    e.preventDefault()
     if (this.props.onClick) {
-      this.props.onClick()
+      this.props.onClick(this.props.href, this.props.target, this.props.download, this.props.rel)
     }
   }
 
@@ -44,7 +56,6 @@ export default class LinkControl extends React.Component<LinkControlProps, LinkC
 
   private onBlur: React.FocusEventHandler = (e: React.FocusEvent) => {
     this.setState({
-      active: false,
       focus: false,
     })
     e.preventDefault()
@@ -63,6 +74,8 @@ export default class LinkControl extends React.Component<LinkControlProps, LinkC
       onBlur: this.onBlur,
       onMouseEnter: this.onMouseEnter,
       onMouseLeave: this.onMouseLeave,
+      onMouseUp: this.onMouseUp,
+      onMouseDown: this.onMouseDown,
     })
   }
 
