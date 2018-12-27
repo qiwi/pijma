@@ -1,6 +1,6 @@
 import React, {ReactNode, MouseEventHandler} from 'react'
 
-import {Box, Pos, Typo} from '@qiwi/pijma-core'
+import {Box, Pos, Typo} from '../primitive'
 
 export interface OptionFieldItemProps {
   disabled?: boolean

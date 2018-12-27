@@ -1,6 +1,6 @@
 import React, {FunctionComponent, ReactNode} from 'react'
 
-import {Typo, Pos, Flex, FlexItem} from '@qiwi/pijma-core'
+import {Typo, Pos, Flex, FlexItem} from '../primitive'
 
 export interface FieldProps {
   title?: ReactNode
@@ -13,13 +13,11 @@ export interface FieldProps {
   help?: ReactNode
 }
 
-const Label = Typo.withComponent('label')
-
 export const InputField: FunctionComponent<FieldProps> = ({title, active, padded, input, hint, error, action, help}) => (
   <Pos type="relative" width={1}>
     <Pos type="relative" height={4}>
       <Pos type="absolute" top={active ? 0 : 4} left={0} maxWidth={1} transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)" pr={padded ? 7 : 0}>
-        <Label display="block" nowrap weight={300} size={active ? 3.5 : 5} height={active ? 4 : 7} color="#666" transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)" children={title}/>
+        <Typo as="label" display="block" nowrap weight={300} size={active ? 3.5 : 5} height={active ? 4 : 7} color="#666" transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)" children={title}/>
       </Pos>
     </Pos>
     <Pos type="relative">

@@ -12,7 +12,7 @@ export interface PosProps extends BoxProps {
   left?: Value
 }
 
-const PosNonProps = BoxNonProps.concat(['type', 'zIndex', 'top', 'right', 'bottom', 'left'])
+export const PosNonProps = BoxNonProps.concat(['type', 'zIndex', 'top', 'right', 'bottom', 'left'])
 
 export const Pos = styled(Box, {
   shouldForwardProp: (prop) => !PosNonProps.includes(prop),

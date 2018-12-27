@@ -35,7 +35,7 @@ interface SvgItemProps {
   transformOrigin?: string
 }
 
-const SvgItemNonProps = ['animation', 'transition', 'transform', 'transformOrigin']
+export const SvgItemNonProps = ['animation', 'transition', 'transform', 'transformOrigin']
 
 const SvgItem = (tag: keyof JSX.IntrinsicElements) => (
   styled(tag, {

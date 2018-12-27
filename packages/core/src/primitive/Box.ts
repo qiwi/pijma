@@ -1,12 +1,12 @@
-import {Interpolation} from 'emotion'
-
-import styled from '../styled'
+import styled, {CSSObject} from '../styled'
 
 import {Value, cssValue} from './Value'
 
 export type BoxDisplay = 'none' | 'inline' | 'block' | 'contents' | 'flex' | 'grid' | 'inline-block' | 'inline-flex' | 'table'
 
 export interface BoxProps {
+  as?: keyof JSX.IntrinsicElements
+  css?: CSSObject
   display?: BoxDisplay
   m?: Value
   mt?: Value
@@ -34,16 +34,17 @@ export interface BoxProps {
   cursor?: string
   opacity?: number
   overflow?: string
-  css?: Interpolation
 }
 
 export const BoxNonProps = [
-  'display', 'transition', 'css',
+  'as', 'css', 'innerRef', 'ref',
+  'display', 'transition',
   'm', 'mt', 'mr', 'mb', 'ml', 'mx', 'my',
   'p', 'pt', 'pr', 'pb', 'pl', 'px', 'py',
   'width', 'minWidth', 'maxWidth',
   'height', 'minHeight', 'maxHeight',
-  'cursor', 'opacity', 'overflow', 'transform', 'transformOrigin'
+  'cursor', 'opacity', 'overflow',
+  'transform', 'transformOrigin',
 ]
 
 export const Box = styled('div', {

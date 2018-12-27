@@ -93,6 +93,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
     onBlur={props.onBlur}
     children={(renderProps) => (
       <Btn
+        disabled={props.disabled}
         type={props.type}
         width={!props.icon || props.text ? 1 : buttonSize[props.size]}
         height={buttonSize[props.size]}

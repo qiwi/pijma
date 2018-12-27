@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Card} from '@qiwi/pijma-core'
+import {Card} from '../primitive'
 
 export interface BlockProps {
   hover?: boolean

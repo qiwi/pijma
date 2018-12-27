@@ -3,11 +3,9 @@
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "lib/es5",
-    "baseUrl": "src",
-    "paths": {
-      "@qiwi/pijma-core": [
-        "."
-      ]
-    }
-  }
+    "baseUrl": "src"
+  },
+  "include": [
+    "src/**/*"
+  ]
 }

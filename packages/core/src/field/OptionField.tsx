@@ -1,6 +1,8 @@
 import React, {ReactNode, FocusEventHandler, KeyboardEventHandler, MouseEventHandler} from 'react'
 
-import {styled, Typo, Box, Flex, FlexItem, Spacer} from '@qiwi/pijma-core'
+import styled from '../styled'
+import {Typo, Box, Flex, FlexItem, BoxProps} from '../primitive'
+import {Spacer} from '../spacer'
 
 export interface OptionFieldProps {
   title?: ReactNode
@@ -14,18 +16,16 @@ export interface OptionFieldProps {
   onMouseLeave: MouseEventHandler
 }
 
-const Label = Typo.withComponent('label')
-
 const Input = styled(Box, {
   shouldForwardProp: (prop) => !['autoFocus'].includes(prop),
-})<Partial<OptionFieldProps>>()
+})<BoxProps & Pick<OptionFieldProps, 'autoFocus'>>()
 
 export const OptionField: React.FunctionComponent<OptionFieldProps> = (props) => (
   <Box>
     <Spacer size="s">
       {props.title ? (
         <Flex justify="flex-start" width={1}>
-          <Label display="block" size={4} height={6} weight={700} children={props.title}/>
+          <Typo as="label" display="block" size={4} height={6} weight={700} children={props.title}/>
           {props.hint ? <FlexItem shrink={0} width={6} height={6} ml={1} children={props.hint}/> : null}
         </Flex>
       ) : (

@@ -12,10 +12,9 @@ const CaptionColor: { [color in NonNullable<CaptionProps['color']>]: string } = 
   inverse: '#fff',
 }
 
-const CaptionTypo = Typo.withComponent('h6')
-
 export const Caption: FunctionComponent<CaptionProps> = ({color = 'support', children}) => (
-  <CaptionTypo
+  <Typo
+    as="h6"
     display="block"
     size={3.5}
     height={4}

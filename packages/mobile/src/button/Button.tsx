@@ -42,6 +42,12 @@ const buttonHoverBorder: { [kind in ButtonProps['kind']]: string } = {
   simple: '1px solid rgba(0, 0, 0, 0.28)',
 }
 
+const buttonRadius: { [size in ButtonProps['size']]: number } = {
+  accent: 24,
+  normal: 20,
+  minor: 16,
+}
+
 const contextPaddingX: { [size in ButtonProps['size']]: number } = {
   accent: 8,
   normal: 6,
@@ -78,11 +84,13 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
     onBlur={props.onBlur}
     children={(renderProps) => (
       <Btn
+        disabled={props.disabled}
+        type={props.type}
         width={!props.icon || props.text ? 1 : buttonSize[props.size]}
         height={buttonSize[props.size]}
         bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? buttonHoverBackground[props.kind] : buttonBackground[props.kind]}
         b={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? buttonHoverBorder[props.kind] : buttonBorder[props.kind]}
-        r={24}
+        r={buttonRadius[props.size]}
         transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}

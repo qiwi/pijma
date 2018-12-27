@@ -1,6 +1,7 @@
 import React, {ReactNode, Children, FC} from 'react'
 
-import {Block, Card} from '@qiwi/pijma-core'
+import {Card} from '../primitive'
+import {Block} from './Block'
 
 export const LinedBlock: FC = ({children}) => {
   const elements = Children.toArray(children).filter(child => !!child)

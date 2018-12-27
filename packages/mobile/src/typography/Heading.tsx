@@ -41,19 +41,17 @@ const HeadingColor: { [color in NonNullable<HeadingProps['color']>]: string } = 
   inverse: '#fff',
 }
 
-export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'default', children}) => {
-  const Tag = Typo.withComponent(tag ? tag : HeadingTag[size])
-  return (
-    <Tag
-      display="block"
-      size={HeadingSize[size]}
-      height={HeadingHeight[size]}
-      weight={HeadingWeight[size]}
-      color={color === undefined ? undefined : HeadingColor[color]}
-      children={children}
-    />
-  )
-}
+export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'default', children}) => (
+  <Typo
+    as={tag ? tag : HeadingTag[size]}
+    display="block"
+    size={HeadingSize[size]}
+    height={HeadingHeight[size]}
+    weight={HeadingWeight[size]}
+    color={color === undefined ? undefined : HeadingColor[color]}
+    children={children}
+  />
+)
 
 Heading.defaultProps = {
   color: 'default',

@@ -1,4 +1,4 @@
-import {Theme} from '@qiwi/pijma-core'
+import Theme from '../Theme'
 
 export const orange: Theme = {
   scale: 4,
