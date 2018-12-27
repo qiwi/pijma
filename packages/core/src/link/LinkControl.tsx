@@ -1,7 +1,34 @@
 import React from 'react'
 
-import LinkControlProps from './LinkControlProps'
-import LinkControlState from './LinkControlState'
+import RenderChild from '@qiwi/pijma-core/RenderChild'
+
+export interface LinkControlProps {
+  onClick?: (href?: string, target?: string, download?: boolean, rel?: string) => void
+  onFocus?: () => void
+  onBlur?: () => void
+  href?: string
+  target?: string
+  download?: boolean
+  rel?: string
+  children: RenderChild<{
+    active: boolean
+    focus: boolean
+    hover: boolean
+    onClick: React.MouseEventHandler
+    onFocus: React.FocusEventHandler
+    onBlur: React.FocusEventHandler
+    onMouseEnter: React.MouseEventHandler
+    onMouseLeave: React.MouseEventHandler
+    onMouseUp: React.MouseEventHandler
+    onMouseDown: React.MouseEventHandler
+  }>
+}
+
+export interface LinkControlState {
+  active: boolean
+  focus: boolean
+  hover: boolean
+}
 
 export default class LinkControl extends React.Component<LinkControlProps, LinkControlState> {
 
