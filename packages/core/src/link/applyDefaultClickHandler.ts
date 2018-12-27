@@ -1,5 +1,4 @@
-import {LinkControl} from './LinkControl'
-import {LinkControlProps} from './LinkControl'
+import {LinkControl, LinkControlProps} from './LinkControl'
 
 export const applyDefaultClickHandler = (onClick: LinkControlProps['onClick']) => {
   LinkControl.defaultProps.onClick = onClick
