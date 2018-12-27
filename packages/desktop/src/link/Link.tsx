@@ -55,6 +55,7 @@ export const Link: FC<LinkProps> = (props) => (
         onMouseEnter={renderProps.onMouseEnter}
         onMouseLeave={renderProps.onMouseLeave}
         onMouseUp={renderProps.onMouseUp}
+        onMouseDown={renderProps.onMouseDown}
         color={renderProps.hover || renderProps.focus ? '#FF8C00' : '#0055BB'}
         transition="color 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         target={props.target}
