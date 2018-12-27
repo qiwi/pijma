@@ -3,14 +3,14 @@ import React, {FC} from 'react'
 import {LinkControl, Typo} from '@qiwi/pijma-core'
 
 export interface LinkProps {
-  onClick?: (href?: string, target?: string, download?: boolean, rel?: string) => void
+  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
   onFocus?: () => void
   onBlur?: () => void
   tabIndex?: number
   compact?: boolean
   href?: string
   target?: string
-  download?: boolean
+  download?: string | boolean
   rel?: string
   title?: string
   size?: 's' | 'm' | 'l'
@@ -69,5 +69,3 @@ export const Link: FC<LinkProps> = (props) => (
     )}
   />
 )
-
-Link.defaultProps = {}

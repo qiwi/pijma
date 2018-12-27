@@ -3,12 +3,12 @@ import React from 'react'
 import {RenderChild} from '@qiwi/pijma-core'
 
 export interface LinkControlProps {
-  onClick?: (href?: string, target?: string, download?: boolean, rel?: string) => void
+  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
   onFocus?: () => void
   onBlur?: () => void
   href?: string
   target?: string
-  download?: boolean
+  download?: string | boolean
   rel?: string
   children: RenderChild<{
     active: boolean
