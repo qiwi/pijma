@@ -1,7 +1,6 @@
 const path = require('path')
+const fs = require('fs')
 const docgen = require('react-docgen-typescript')
-
-const pkg = require(path.resolve(__dirname, 'package.json'))
 
 const styleguide = path.resolve(__dirname, 'styleguide')
 
@@ -11,15 +10,25 @@ const alias = Object.keys(tsConfig.compilerOptions.paths).reduce((p, c) => Objec
   [c.replace(/\/\*$/, '')]: path.resolve(__dirname, '..', '..', tsConfig.compilerOptions.baseUrl, tsConfig.compilerOptions.paths[c][0].replace(/\/\*$/, '')),
 }), {})
 
+const readFiles = (dir) => {
+  return fs
+    .readdirSync(dir)
+    .filter((file) => file !== '.' && file !== '..')
+    .map((file) => path.resolve(dir, file))
+    .reduce((files, file) => files.concat(fs.statSync(file).isDirectory() ? readFiles(file) : file), [])
+}
+
 module.exports = {
   resolver: docgen.resolver,
   propsParser: docgen.parse,
   serverPort: 7070,
   styleguideDir: path.resolve(styleguide, 'lib'),
-  styleguideComponents: {
-    Wrapper: path.resolve(styleguide, 'Wrapper'),
-  },
+  styleguideComponents: readFiles(path.resolve(styleguide, 'components'))
+    .reduce((components, file) => Object.assign(components, {
+      [path.relative(path.resolve(styleguide, 'components'), file).slice(0, -1 * path.extname(file).length)]: file
+    }), {}),
   theme: {
+    borderRadius: '10px',
     fontFamily: {
       base: '\'Museo Sans\', \'Helvetica Neue\', \'Helvetica\', \'Arial\', sans-serif'
     },
@@ -30,86 +39,29 @@ module.exports = {
   require: [
     path.resolve(styleguide, 'require.js')
   ],
-  defaultExample: path.resolve(styleguide, 'DefaultExample.md'),
+  ignore: [
+    '**/*/index.{js,jsx,ts,tsx}'
+  ],
+  skipComponentsWithoutExample: true,
   getComponentPathLine(componentPath) {
-    return `import {${path.basename(componentPath, path.extname(componentPath))}} from '${pkg.name}'`
+    return `import {${path.basename(componentPath, path.extname(componentPath))}} from '${Object.keys(alias).find(key => path.resolve(componentPath).startsWith(alias[key]))}'`
   },
   pagePerSection: true,
   sections: [
     {
-      name: 'Intro',
+      name: 'Главная',
+      content: path.resolve(styleguide, 'Index.md'),
       sectionDepth: Number.MAX_VALUE
     },
     {
-      name: 'Buttons',
+      name: 'Компоненты',
       components: [
-        'src/**/*Button.{js,jsx,ts,tsx}'
+        `${alias['@qiwi/pijma-core']}/**/*.{js,jsx,ts,tsx}`,
+        `${alias['@qiwi/pijma-media']}/**/*.{js,jsx,ts,tsx}`,
+        `${alias['@qiwi/pijma-mobile']}/**/*.{js,jsx,ts,tsx}`
       ],
       sectionDepth: Number.MAX_VALUE
-    },
-    {
-      name: 'Modals',
-      components: [
-        'src/**/*Modal.{js,jsx,ts,tsx}'
-      ],
-      sectionDepth: Number.MAX_VALUE
-    },
-    {
-      name: 'Fields',
-      components: [
-        'src/**/*Field.{js,jsx,ts,tsx}'
-      ],
-      sectionDepth: Number.MAX_VALUE
-    },
-    {
-      name: 'Typography',
-      components: [
-        'src/typography/*.tsx'
-      ],
-      sectionDepth: Number.MAX_VALUE
-    },
-    {
-      name: 'Other',
-      sections: [
-        {
-          name: 'Icons',
-          content: path.resolve(styleguide, 'Icons.md'),
-          sectionDepth: Number.MAX_VALUE
-        },
-        {
-          name: 'Weak icons',
-          content: path.resolve(styleguide, 'WeakIcons.md'),
-          sectionDepth: Number.MAX_VALUE
-        }
-      ],
-      components: [
-        'src/**/*Actions.{js,jsx,ts,tsx}'
-      ],
-      sectionDepth: Number.MAX_VALUE
-    },
-    {
-      name: 'Blocks',
-      components: [
-        '../core/src/**/*Block.{js,jsx,ts,tsx}'
-      ],
-      sectionDepth: Number.MAX_VALUE
-    },
-    {
-      name: 'Primitives',
-      sections: [
-        {
-          name: 'Flex',
-          content: path.resolve(styleguide, 'Flex.md'),
-          sectionDepth: Number.MAX_VALUE
-        },
-        {
-          name: 'Card',
-          content: path.resolve(styleguide, 'Card.md'),
-          sectionDepth: Number.MAX_VALUE
-        }
-      ],
-      sectionDepth: Number.MAX_VALUE
-    },
+    }
   ],
   logger: {
     info: () => null,
@@ -123,7 +75,10 @@ module.exports = {
           test: /\.tsx?$/,
           use: [
             {
-              loader: 'ts-loader'
+              loader: 'ts-loader',
+              options: {
+                configFile: path.resolve(__dirname, 'tsconfig.json')
+              }
             }
           ],
           exclude: /node_modules/,
