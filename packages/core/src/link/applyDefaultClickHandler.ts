@@ -1,4 +1,4 @@
-import {LinkControl} from '@qiwi/pijma-core'
+import {LinkControl} from './LinkControl'
 import {LinkControlProps} from './LinkControl'
 
 export const applyDefaultClickHandler = (onClick: LinkControlProps['onClick']) => {

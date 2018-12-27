@@ -30,7 +30,7 @@ export interface LinkControlState {
   hover: boolean
 }
 
-export default class LinkControl extends React.Component<LinkControlProps, LinkControlState> {
+export class LinkControl extends React.Component<LinkControlProps, LinkControlState> {
 
   public static defaultProps: Partial<LinkControlProps> = {}
 

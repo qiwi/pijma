@@ -1,7 +1,2 @@
-import LinkControl from './LinkControl'
-import {applyDefaultClickHandler} from './applyDefaultClickHandler'
-
-export {
-  LinkControl,
-  applyDefaultClickHandler
-}
+export * from './LinkControl'
+export * from './applyDefaultClickHandler'
