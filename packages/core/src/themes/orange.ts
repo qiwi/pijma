@@ -1,4 +1,17 @@
 import Theme from '../Theme'
+import {keyframes} from 'emotion'
+
+const placeholder = keyframes({
+  '0%': {
+    opacity: 0.04,
+  },
+  '50%': {
+    opacity: 0.10,
+  },
+  '100%': {
+    opacity: 0.04,
+  },
+})
 
 export const orange: Theme = {
   scale: 4,
@@ -24,5 +37,9 @@ export const orange: Theme = {
     },
     error: '#d0021b',
     success: '#4bbd5c',
+  },
+  placeholder: {
+    backgroundColor: '#000',
+    animation: `${placeholder} 1800ms ease-in-out infinite`,
   },
 }

@@ -9,6 +9,10 @@ export default interface Theme {
       heavy: number
     }
   }
+  placeholder: {
+    backgroundColor: string,
+    animation: string
+  },
   color: {
     brand: string
     white: string
