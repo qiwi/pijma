@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo} from '@qiwi/pijma-core'
+import {Typo, TypoProps} from '@qiwi/pijma-core'
 
 export interface TextProps {
   display?: 'block' | 'inline' | 'inline-block'
@@ -8,6 +8,8 @@ export interface TextProps {
   bold?: boolean
   compact?: boolean
   color?: 'default' | 'support' | 'inverse' | 'failure' | 'success' | 'warning'
+  decoration?: TypoProps['decoration']
+  transition?: TypoProps['transition']
   transform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
 }
 
@@ -38,7 +40,7 @@ const TextColor: { [color in NonNullable<TextProps['color']>]: string } = {
   warning: '#ff8c00',
 }
 
-export const Text: FunctionComponent<TextProps> = ({display, compact, size, bold, color, transform, children}) => (
+export const Text: FunctionComponent<TextProps> = ({display, compact, size, bold, color, decoration, transform, transition, children}) => (
   <Typo
     as="span"
     display={display}
@@ -46,7 +48,9 @@ export const Text: FunctionComponent<TextProps> = ({display, compact, size, bold
     height={size === undefined ? undefined : compact ? TextHeightCompact[size] : TextHeight[size]}
     weight={bold === undefined ? undefined : bold ? 500 : 300}
     color={color === undefined ? undefined : TextColor[color]}
+    decoration={decoration}
     transform={transform}
+    transition={transition}
     children={children}
   />
 )
