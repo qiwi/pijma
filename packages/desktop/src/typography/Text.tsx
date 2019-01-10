@@ -10,7 +10,7 @@ export interface TextProps {
   color?: 'default' | 'support' | 'inverse' | 'failure' | 'success' | 'warning'
   decoration?: TypoProps['decoration']
   transition?: TypoProps['transition']
-  transform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
+  transform?: TypoProps['transform']
 }
 
 const TextSize: { [size in NonNullable<TextProps['size']>]: number } = {

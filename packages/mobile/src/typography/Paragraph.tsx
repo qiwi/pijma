@@ -1,13 +1,13 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo} from '@qiwi/pijma-core'
+import {Typo, TypoProps} from '@qiwi/pijma-core'
 
 export interface ParagraphProps {
   size?: 's' | 'm' | 'l'
   bold?: boolean
   compact?: boolean
   color?: 'default' | 'support' | 'inverse'
-  transform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
+  transform?: TypoProps['transform']
 }
 
 const ParagraphSize: { [size in NonNullable<ParagraphProps['size']>]: number } = {
