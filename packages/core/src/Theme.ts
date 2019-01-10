@@ -10,7 +10,7 @@ export default interface Theme {
     }
   }
   placeholder: {
-    backgroundColor: string,
+    color: string,
     animation: string
   },
   color: {

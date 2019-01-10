@@ -39,7 +39,7 @@ export const orange: Theme = {
     success: '#4bbd5c',
   },
   placeholder: {
-    backgroundColor: '#000',
+    color: '#000',
     animation: `${placeholder} 1800ms ease-in-out infinite`,
   },
 }
