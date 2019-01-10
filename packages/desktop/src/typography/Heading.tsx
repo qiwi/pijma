@@ -1,11 +1,12 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo} from '@qiwi/pijma-core'
+import {Typo, Placeholder, Box} from '@qiwi/pijma-core'
 
 export interface HeadingProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   size: '1' | '2' | '3' | '4' | '5'
   color?: 'default' | 'inverse'
+  placeholder?: boolean
 }
 
 const HeadingSize: { [size in HeadingProps['size']]: number } = {
@@ -40,23 +41,55 @@ const HeadingWeight: { [size in HeadingProps['size']]: number } = {
   5: 700,
 }
 
+const placeholderOffset: { [size in HeadingProps['size']]: {top: number, bottom: number} } = {
+  1: {top: 3, bottom: 2},
+  2: {top: 3, bottom: 1},
+  3: {top: 2, bottom: 1},
+  4: {top: 2, bottom: 1},
+  5: {top: 1, bottom: 1},
+}
+
+const placeholderHeight: { [size in HeadingProps['size']]: number } = {
+  1: 4,
+  2: 4,
+  3: 4,
+  4: 3,
+  5: 3,
+}
+
 const HeadingColor: { [color in NonNullable<HeadingProps['color']>]: string } = {
   default: '#000',
   inverse: '#fff',
 }
 
-export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'default', children}) => (
-  <Typo
-    as={tag ? tag : HeadingTag[size]}
-    display="block"
-    size={HeadingSize[size]}
-    height={HeadingHeight[size]}
-    weight={HeadingWeight[size]}
-    color={HeadingColor[color]}
-    children={children}
-  />
-)
+export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'default', placeholder, children}) => {
+  if (placeholder) {
+    const offset = placeholderOffset[size]
+    return (
+      <Box pt={offset.top} pb={offset.bottom}>
+        <Placeholder
+          width={50}
+          height={placeholderHeight[size]}
+          borderRadius={1}
+          color={color === undefined ? undefined : HeadingColor[color]}
+        />
+      </Box>
+    )
+  }
+  return (
+    <Typo
+      as={tag ? tag : HeadingTag[size]}
+      display="block"
+      size={HeadingSize[size]}
+      height={HeadingHeight[size]}
+      weight={HeadingWeight[size]}
+      color={HeadingColor[color]}
+      children={children}
+    />
+  )
+}
 
 Heading.defaultProps = {
   color: 'default',
+  placeholder: false,
 }
