@@ -90,5 +90,4 @@ Paragraph.defaultProps = {
   bold: false,
   compact: false,
   color: 'default',
-  placeholder: false,
 }

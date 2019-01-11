@@ -37,5 +37,4 @@ export const Caption: FunctionComponent<CaptionProps> = ({color = 'support', pla
 
 Caption.defaultProps = {
   color: 'support',
-  placeholder: false,
 }
