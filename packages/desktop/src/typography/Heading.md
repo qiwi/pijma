@@ -8,11 +8,22 @@ font-weight: 900
 ```
 
 ```jsx
-<Spacer size="m">
-  <Heading size="1">
-    Заголовок страницы
-  </Heading>
-</Spacer>
+<Flex>
+  <FlexItem>
+    <Spacer size="m">
+      <Heading size="1">
+        Заголовок страницы
+      </Heading>
+    </Spacer>
+  </FlexItem>
+  <FlexItem>
+    <Box ml={5}>
+      <Spacer size="m">
+        <Heading size="1" placeholder/>
+      </Spacer>
+    </Box>
+  </FlexItem>
+</Flex>
 ```
 
 ## H2
@@ -25,11 +36,22 @@ font-weight: 900
 ```
 
 ```jsx
-<Spacer size="m">
-  <Heading size="2">
-    Заголовок раздела
-  </Heading>
-</Spacer>
+<Flex>
+  <FlexItem>
+    <Spacer size="m">
+      <Heading size="2">
+        Заголовок раздела
+      </Heading>
+    </Spacer>
+  </FlexItem>
+  <FlexItem>
+    <Box ml={5}>
+      <Spacer size="m">
+        <Heading size="2" placeholder/>
+      </Spacer>
+    </Box>
+  </FlexItem>
+</Flex>
 ```
 
 ## H3
@@ -42,11 +64,22 @@ font-weight: 900
 ```
 
 ```jsx
-<Spacer size="m">
-  <Heading size="3">
-    Заголовок подраздела
-  </Heading>
-</Spacer>
+<Flex>
+  <FlexItem>
+    <Spacer size="m">
+      <Heading size="3">
+        Заголовок подраздела
+      </Heading>
+    </Spacer>
+  </FlexItem>
+  <FlexItem>
+    <Box ml={5}>
+      <Spacer size="m">
+        <Heading size="3" placeholder/>
+      </Spacer>
+    </Box>
+  </FlexItem>
+</Flex>
 ```
 
 ## H4
@@ -59,11 +92,22 @@ font-weight: 700
 ```
 
 ```jsx
-<Spacer size="m">
-  <Heading size="4">
-    Заголовок блока
-  </Heading>
-</Spacer>
+<Flex>
+  <FlexItem>
+    <Spacer size="m">
+      <Heading size="4">
+        Заголовок блока
+      </Heading>
+    </Spacer>
+  </FlexItem>
+  <FlexItem>
+    <Box ml={5}>
+      <Spacer size="m">
+        <Heading size="4" placeholder/>
+      </Spacer>
+    </Box>
+  </FlexItem>
+</Flex>
 ```
 
 ## H5
@@ -76,9 +120,20 @@ font-weight: 700
 ```
 
 ```jsx
-<Spacer size="m">
-  <Heading size="5">
-    Заголовок карточки
-  </Heading>
-</Spacer>
+<Flex>
+  <FlexItem>
+    <Spacer size="m">
+      <Heading size="5">
+        Заголовок карточки
+      </Heading>
+    </Spacer>
+  </FlexItem>
+  <FlexItem>
+    <Box ml={5}>
+      <Spacer size="m">
+        <Heading size="5" placeholder/>
+      </Spacer>
+    </Box>
+  </FlexItem>
+</Flex>
 ```
