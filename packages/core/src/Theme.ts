@@ -10,8 +10,9 @@ export default interface Theme {
     }
   }
   placeholder: {
-    color: string,
+    color: string
     animation: string
+    radius: number
   },
   color: {
     brand: string

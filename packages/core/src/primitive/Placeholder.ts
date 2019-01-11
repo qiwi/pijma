@@ -6,11 +6,11 @@ export interface PlaceholderProps {
   width?: number
   height?: number
   color?: string
-  borderRadius?: number
+  radius?: number
   animation?: string
 }
 
-export const PlaceholderNonProps = ['width', 'height', 'borderRadius', 'animation', 'color']
+export const PlaceholderNonProps = ['width', 'height', 'radius', 'animation', 'color']
 
 export const Placeholder = styled('div', {
   shouldForwardProp: (prop) => !PlaceholderNonProps.includes(prop),
@@ -20,5 +20,5 @@ export const Placeholder = styled('div', {
   display: 'block',
   width: pxValue(props.width, theme.scale),
   height: pxValue(props.height, theme.scale),
-  borderRadius: pxValue(props.borderRadius, theme.scale),
+  borderRadius: pxValue(props.radius || theme.placeholder.radius, theme.scale),
 }))

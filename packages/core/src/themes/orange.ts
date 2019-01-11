@@ -40,6 +40,7 @@ export const orange: Theme = {
   },
   placeholder: {
     color: '#000',
+    radius: 1,
     animation: `${placeholder} 1800ms ease-in-out infinite`,
   },
 }

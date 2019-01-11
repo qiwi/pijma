@@ -70,7 +70,6 @@ export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'de
         <Placeholder
           width={50}
           height={placeholderHeight[size]}
-          borderRadius={1}
           color={color === undefined ? undefined : HeadingColor[color]}
         />
       </Box>

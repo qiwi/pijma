@@ -18,7 +18,6 @@ export const Caption: FunctionComponent<CaptionProps> = ({color = 'support', pla
     <Placeholder
       width={50}
       height={3}
-      borderRadius={1}
       color={color === 'inverse' ? CaptionColor['inverse'] : CaptionColor['default']}
     />
   </Box>
