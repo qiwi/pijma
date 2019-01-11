@@ -8,10 +8,21 @@ font-weight: 300
 ```
 
 ```jsx
-<Spacer size="m">
-  <Paragraph size="l">Paragraph L Black</Paragraph>
-  <Paragraph size="l" color="support">Paragraph 20px Gray</Paragraph>
-</Spacer>
+<Flex>
+  <FlexItem>
+    <Spacer size="m">
+      <Paragraph size="l">Paragraph L Black</Paragraph>
+      <Paragraph size="l" color="support">Paragraph 20px Gray</Paragraph>
+    </Spacer>
+  </FlexItem>
+  <FlexItem>
+    <Box ml={5}>
+      <Spacer size="m">
+        <Paragraph size="l" placeholder/>
+      </Spacer>
+    </Box>
+  </FlexItem>
+</Flex>
 ```
 
 ## Paragraph M
@@ -24,10 +35,21 @@ font-weight: 300
 ```
 
 ```jsx
-<Spacer size="m">
-  <Paragraph size="m">Paragraph M Black</Paragraph>
-  <Paragraph size="m" color="support">Paragraph M Gray</Paragraph>
-</Spacer>
+<Flex>
+  <FlexItem>
+    <Spacer size="m">
+      <Paragraph size="m">Paragraph M Black</Paragraph>
+      <Paragraph size="m" color="support">Paragraph M Gray</Paragraph>
+    </Spacer>
+  </FlexItem>
+  <FlexItem>
+    <Box ml={5}>
+      <Spacer size="m">
+        <Paragraph size="m" placeholder/>
+      </Spacer>
+    </Box>
+  </FlexItem>
+</Flex>
 ```
 
 ## Paragraph S
@@ -40,8 +62,19 @@ font-weight: 300
 ```
 
 ```jsx
-<Spacer size="m">
-  <Paragraph size="s">Paragraph S Black</Paragraph>
-  <Paragraph size="s" color="support">Paragraph S Gray</Paragraph>
-</Spacer>
+<Flex>
+  <FlexItem>
+    <Spacer size="m">
+      <Paragraph size="s">Paragraph S Black</Paragraph>
+      <Paragraph size="s" color="support">Paragraph S Gray</Paragraph>
+    </Spacer>
+  </FlexItem>
+  <FlexItem>
+    <Box ml={5}>
+      <Spacer size="m">
+        <Paragraph size="s" placeholder/>
+      </Spacer>
+    </Box>
+  </FlexItem>
+</Flex>
 ```
