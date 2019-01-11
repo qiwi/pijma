@@ -27,7 +27,7 @@ export const Caption: FunctionComponent<CaptionProps> = ({color = 'support', pla
     as="h6"
     display="block"
     size={3.5}
-    height={4}
+    height={5}
     weight={500}
     color={CaptionColor[color]}
     transform="uppercase"
