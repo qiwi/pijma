@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 import {themes, ThemeProvider, applyDefaultClickHandler} from '@qiwi/pijma-core'
 
-import {Link, LinkProps} from '@qiwi/pijma-desktop'
+import {Link, LinkProps} from '@qiwi/pijma-mobile'
 
 applyDefaultClickHandler((href, target) => window.open(href, target || '_self'))
 
