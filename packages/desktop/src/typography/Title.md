@@ -3,9 +3,20 @@
 Применяются в качестве заголовков
 
 ```jsx
-<Spacer size="m">
-  <Title size="1">Title H1</Title>
-</Spacer>
+<Flex>
+  <FlexItem>
+    <Spacer size="m">
+      <Title size="1">Title H1</Title>
+    </Spacer>
+  </FlexItem>
+  <FlexItem>
+    <Box ml={5}>
+      <Spacer size="m">
+        <Title size="1" placeholder/>
+      </Spacer>
+    </Box>
+  </FlexItem>
+</Flex>
 ```
 
 ```css static
@@ -20,9 +31,20 @@ font-weight: 900
 Применяются в качестве подзаголовков на лендингах.
 
 ```jsx
-<Spacer size="m">
-  <Title size="2">Title H2</Title>
-</Spacer>
+<Flex>
+  <FlexItem>
+    <Spacer size="m">
+      <Title size="2">Title H2</Title>
+    </Spacer>
+  </FlexItem>
+  <FlexItem>
+    <Box ml={5}>
+      <Spacer size="m">
+        <Title size="2" placeholder/>
+      </Spacer>
+    </Box>
+  </FlexItem>
+</Flex>
 ```
 
 ```css static
