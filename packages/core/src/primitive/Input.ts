@@ -1,15 +1,13 @@
-import {Interpolation} from 'emotion'
-
-import styled from '../styled'
+import styled, {CSSObject} from '../styled'
 
 import {Card, CardProps, CardNonProps} from './Card'
 import {pxValue} from './Value'
 
-const displayNone: Interpolation = {
+const displayNone: CSSObject = {
   display: 'none',
 }
 
-const appearanceNone: Interpolation = {
+const appearanceNone: CSSObject = {
   appearance: 'none',
 }
 

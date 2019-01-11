@@ -1,6 +1,7 @@
 import React, {FunctionComponent, ChangeEventHandler, FocusEventHandler, KeyboardEventHandler} from 'react'
 
-import {MaskInput, Input, isMaskDigital, Mask, Pipe} from '@qiwi/pijma-core'
+import {MaskInput, Input} from '../primitive'
+import {isMaskDigital, Mask, Pipe} from '../mask'
 
 export interface BasicInputProps {
   value: string

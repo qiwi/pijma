@@ -1,6 +1,6 @@
 import React, {ReactNode, FunctionComponent, Children, Fragment} from 'react'
 
-import {Box} from '@qiwi/pijma-core'
+import {Box} from '../primitive'
 
 export interface SpacerProps {
   size?: 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl'

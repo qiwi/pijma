@@ -34,10 +34,9 @@ const ParagraphColor: { [color in NonNullable<ParagraphProps['color']>]: string 
   inverse: '#fff',
 }
 
-const ParagraphTypo = Typo.withComponent('p')
-
 export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold = false, compact = false, color = 'default', transform, children}) => (
-  <ParagraphTypo
+  <Typo
+    as="p"
     display="block"
     size={ParagraphSize[size]}
     height={compact ? ParagraphHeightCompact[size] : ParagraphHeight[size]}

@@ -17,6 +17,8 @@
     "lib/"
   ],
   "dependencies": {
+    "@emotion/core": "^10.0.6",
+    "@emotion/styled": "^10.0.6",
     "@qiwi/pijma-core": "^1.x.x",
     "@qiwi/pijma-media": "^1.x.x",
     "@types/react": "^16.7.13",
@@ -24,12 +26,11 @@
     "@types/react-overlays": "^0.8.5",
     "@types/react-text-mask": "^5.4.2",
     "@types/react-transition-group": "^2.0.14",
-    "emotion": "^9.2.12",
-    "emotion-theming": "^9.2.9",
+    "emotion": "^10.0.6",
+    "emotion-theming": "^10.0.6",
     "polished": "^2.3.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-emotion": "^9.2.12",
     "react-overlays": "^0.8.3",
     "react-text-mask": "^5.4.3",
     "react-transition-group": "^2.5.0",

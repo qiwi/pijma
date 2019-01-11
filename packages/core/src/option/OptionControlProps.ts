@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {RenderChild} from '@qiwi/pijma-core'
+import RenderChild from '../RenderChild'
 
 export default interface OptionControlProps<V> {
   value: V

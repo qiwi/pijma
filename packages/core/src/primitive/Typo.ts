@@ -1,8 +1,10 @@
-import styled from '../styled'
+import styled, {CSSObject} from '../styled'
 
 import {pxValue} from './Value'
 
 export interface TypoProps {
+  as?: keyof JSX.IntrinsicElements
+  css?: CSSObject
   display?: 'block' | 'inline' | 'inline-block'
   size?: number
   height?: number
@@ -14,7 +16,7 @@ export interface TypoProps {
   transition?: string
 }
 
-export const TypoNonProps = ['display', 'size', 'height', 'weight', 'color', 'transform', 'nowrap', 'spacing', 'transition']
+export const TypoNonProps = ['as', 'css', 'innerRef', 'ref', 'display', 'size', 'height', 'weight', 'color', 'transform', 'nowrap', 'spacing', 'transition']
 
 export const Typo = styled('div', {
   shouldForwardProp: (prop) => !TypoNonProps.includes(prop),
@@ -32,4 +34,4 @@ export const Typo = styled('div', {
   whiteSpace: props.nowrap ? 'nowrap' : undefined,
   wordWrap: 'break-word',
   transition: props.transition,
-}))
+}), (props) => props.css)

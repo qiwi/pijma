@@ -33,19 +33,17 @@ const TitleColor: { [color in NonNullable<TitleProps['color']>]: string } = {
   inverse: '#fff',
 }
 
-export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'default', children}) => {
-  const Tag = Typo.withComponent(tag ? tag : TitleTag[size])
-  return (
-    <Tag
-      display="block"
-      size={TitleSize[size]}
-      height={TitleHeight[size]}
-      weight={TitleWeight[size]}
-      color={color === undefined ? undefined : TitleColor[color]}
-      children={children}
-    />
-  )
-}
+export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'default', children}) => (
+  <Typo
+    as={tag ? tag : TitleTag[size]}
+    display="block"
+    size={TitleSize[size]}
+    height={TitleHeight[size]}
+    weight={TitleWeight[size]}
+    color={color === undefined ? undefined : TitleColor[color]}
+    children={children}
+  />
+)
 
 Title.defaultProps = {
   color: 'default',

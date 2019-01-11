@@ -1,7 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
 import {Typo} from '@qiwi/pijma-core'
-import {TextProps} from '@qiwi/pijma-mobile'
 
 export interface TextProps {
   display?: 'block' | 'inline' | 'inline-block'
@@ -39,10 +38,9 @@ const TextColor: { [color in NonNullable<TextProps['color']>]: string } = {
   warning: '#ff8c00',
 }
 
-const TextTypo = Typo.withComponent('span')
-
 export const Text: FunctionComponent<TextProps> = ({display, compact, size, bold, color, transform, children}) => (
-  <TextTypo
+  <Typo
+    as="span"
     display={display}
     size={size === undefined ? undefined : TextSize[size]}
     height={size === undefined ? undefined : compact ? TextHeightCompact[size] : TextHeight[size]}

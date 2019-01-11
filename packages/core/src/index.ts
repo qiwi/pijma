@@ -1,31 +1,28 @@
-import {injectGlobal, css, keyframes} from 'react-emotion'
+import {injectGlobal, css, keyframes} from 'emotion'
+import {ThemeProvider} from 'emotion-theming'
 
 import Theme from './Theme'
-
-export * from './Theme'
-
 import RenderChild from './RenderChild'
 import styled from './styled'
-import ThemeProvider from './ThemeProvider'
 
 import reset from './reset'
 import fonts from './fonts'
-import indent from './indent'
 
 import * as themes from './themes'
 
+export * from './styled'
+
 export {
   styled,
-  css,
   injectGlobal,
+  css,
   keyframes,
   Theme,
   RenderChild,
-  themes,
   ThemeProvider,
+  themes,
   reset,
   fonts,
-  indent,
 }
 
 export * from './primitive'
