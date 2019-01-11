@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.27.1](https://github.com/qiwi/pijma/compare/v1.27.0...v1.27.1) (2019-01-11)
+
+
+### Performance Improvements
+
+* up emotion to 10 ([511987f](https://github.com/qiwi/pijma/commit/511987f))
+
 # [@qiwi/pijma-media-v1.24.0](https://github.com/qiwi/pijma/compare/v1.23.1...v1.24.0) (2018-12-07)
 
 
