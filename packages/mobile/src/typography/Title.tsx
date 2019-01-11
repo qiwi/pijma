@@ -10,13 +10,13 @@ export interface TitleProps {
 }
 
 const TitleSize: { [size in TitleProps['size']]: number } = {
-  1: 12,
-  2: 10,
+  1: 11,
+  2: 9,
 }
 
 const TitleHeight: { [size in TitleProps['size']]: number } = {
-  1: 14,
-  2: 12,
+  1: 13,
+  2: 10,
 }
 
 const TitleTag: { [size in TitleProps['size']]: NonNullable<TitleProps['tag']> } = {
