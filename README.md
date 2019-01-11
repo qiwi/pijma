@@ -1,8 +1,9 @@
 # pijma
 Yet another user interface components library. Weird. Slow. Our own.
+
 ### Demo
 * [pijma/desktop](https://qiwi.github.io/pijma/desktop)
-* [pijma/mobile](https://qiwi.github.io/pijma/desktop)
+* [pijma/mobile](https://qiwi.github.io/pijma/mobile)
 
 ## install
 ```bash
