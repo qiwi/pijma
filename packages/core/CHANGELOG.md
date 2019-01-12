@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.28.0](https://github.com/qiwi/pijma/compare/v1.27.1...v1.28.0) (2019-01-12)
+
+
+### Features
+
+* **core:** expose [@emotion](https://github.com/emotion) cache utils ([ff3c5d9](https://github.com/qiwi/pijma/commit/ff3c5d9))
+
 # [@qiwi/pijma-core-v1.27.1](https://github.com/qiwi/pijma/compare/v1.27.0...v1.27.1) (2019-01-11)
 
 
