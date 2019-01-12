@@ -1,4 +1,5 @@
-import {injectGlobal, css, keyframes} from 'emotion'
+import {injectGlobal, keyframes, cache} from 'emotion'
+import {Global, css, CacheProvider} from '@emotion/core'
 import {ThemeProvider} from 'emotion-theming'
 
 import Theme from './Theme'
@@ -13,8 +14,11 @@ import * as themes from './themes'
 export * from './styled'
 
 export {
+  cache,
+  CacheProvider,
   styled,
   injectGlobal,
+  Global,
   css,
   keyframes,
   Theme,
