@@ -28,6 +28,7 @@ import DownloadIcon from './DownloadIcon'
 import DotsHIcon from './DotsHIcon'
 import DotsVIcon from './DotsVIcon'
 import EnvelopeIcon from './EnvelopeIcon'
+import ErrorIcon from './ErrorIcon'
 import EyeClosedIcon from './EyeClosedIcon'
 import EyeOpenedIcon from './EyeOpenedIcon'
 import FacebookIcon from './FacebookIcon'
@@ -103,6 +104,7 @@ export {
   DotsHIcon,
   DotsVIcon,
   EnvelopeIcon,
+  ErrorIcon,
   EyeClosedIcon,
   EyeOpenedIcon,
   FacebookIcon,

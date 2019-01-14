@@ -29,6 +29,7 @@ export type IconName =
   'dots-v' |
   'download' |
   'envelope' |
+  'error' |
   'eye-closed' |
   'eye-opened' |
   'facebook' |
