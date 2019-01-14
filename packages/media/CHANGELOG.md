@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.30.0](https://github.com/qiwi/pijma/compare/v1.29.0...v1.30.0) (2019-01-14)
+
+
+### Features
+
+* **media:** add attention icon ([6c26a4f](https://github.com/qiwi/pijma/commit/6c26a4f))
+
 # [@qiwi/pijma-media-v1.27.1](https://github.com/qiwi/pijma/compare/v1.27.0...v1.27.1) (2019-01-11)
 
 
