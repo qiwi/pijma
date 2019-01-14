@@ -183,7 +183,7 @@
     <Icon name="user"/>
   </FlexItem>
   <FlexItem shrink={0} width={6} height={6} m={3}>
-    <Icon name="error"/>
+    <Icon name="attention"/>
   </FlexItem>
 </Flex>
 ```

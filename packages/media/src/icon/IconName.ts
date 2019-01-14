@@ -19,6 +19,7 @@ export type IconName =
   'arrow-small-left' |
   'arrow-small-up' |
   'arrow-small-down' |
+  'attention' |
   'bank' |
   'calendar' |
   'card' |
@@ -29,7 +30,6 @@ export type IconName =
   'dots-v' |
   'download' |
   'envelope' |
-  'error' |
   'eye-closed' |
   'eye-opened' |
   'facebook' |
