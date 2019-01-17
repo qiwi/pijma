@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.31.0](https://github.com/qiwi/pijma/compare/v1.30.0...v1.31.0) (2019-01-17)
+
+
+### Features
+
+* **media:** add sort icons ([95476da](https://github.com/qiwi/pijma/commit/95476da))
+
 # [@qiwi/pijma-media-v1.30.0](https://github.com/qiwi/pijma/compare/v1.29.0...v1.30.0) (2019-01-14)
 
 
