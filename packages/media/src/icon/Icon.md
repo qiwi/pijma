@@ -186,7 +186,10 @@
     <Icon name="attention"/>
   </FlexItem>
   <FlexItem shrink={0} width={6} height={6} m={3}>
-    <Icon name="sort"/>
+    <Icon name="sort-asc"/>
+  </FlexItem>
+  <FlexItem shrink={0} width={6} height={6} m={3}>
+    <Icon name="sort-desc"/>
   </FlexItem>
 </Flex>
 ```

@@ -63,7 +63,8 @@ import SearchIcon from './SearchIcon'
 import SendIcon from './SendIcon'
 import SettingsIcon from './SettingsIcon'
 import ShareIcon from './ShareIcon'
-import SortIcon from './SortIcon'
+import SortAscIcon from './SortAscIcon'
+import SortDescIcon from './SortDescIcon'
 import StarIcon from './StarIcon'
 import TerminalIcon from './TerminalIcon'
 import TerminalClientIcon from './TerminalClientIcon'
@@ -140,7 +141,8 @@ export {
   SendIcon,
   SettingsIcon,
   ShareIcon,
-  SortIcon,
+  SortAscIcon,
+  SortDescIcon,
   StarIcon,
   TerminalIcon,
   TerminalClientIcon,
