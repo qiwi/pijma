@@ -185,6 +185,9 @@
   <FlexItem shrink={0} width={6} height={6} m={3}>
     <WeakIcon name="attention"/>
   </FlexItem>
+  <FlexItem shrink={0} width={6} height={6} m={3}>
+    <WeakIcon name="sort"/>
+  </FlexItem>
 </Flex>
 ```
 

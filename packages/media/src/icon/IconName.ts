@@ -64,6 +64,7 @@ export type IconName =
   'send' |
   'settings' |
   'share' |
+  'sort' |
   'star' |
   'terminal' |
   'terminal-client' |

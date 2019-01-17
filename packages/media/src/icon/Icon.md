@@ -185,6 +185,9 @@
   <FlexItem shrink={0} width={6} height={6} m={3}>
     <Icon name="attention"/>
   </FlexItem>
+  <FlexItem shrink={0} width={6} height={6} m={3}>
+    <Icon name="sort"/>
+  </FlexItem>
 </Flex>
 ```
 
