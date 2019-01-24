@@ -13,8 +13,14 @@ import {
 } from '@qiwi/pijma-core'
 
 const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const contentTransitionHorizontal: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
 
-contentTransition.defaultProps = {
+const translate3d = {
+  vertical: '0, 100%, 0',
+  horizontal: '100%, 0, 0',
+}
+
+const defaultProps = (direction: 'vertical' | 'horizontal') => ({
   timeout: {
     enter: 370,
     exit: 250,
@@ -26,10 +32,13 @@ contentTransition.defaultProps = {
   }),
   exitClassName: (timeout: number) => css({
     opacity: 0,
-    transform: 'translate3d(0, 100%, 0)',
+    transform: `translate3d(${translate3d[direction]})`,
     transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
   }),
-}
+})
+
+contentTransition.defaultProps = defaultProps('vertical')
+contentTransitionHorizontal.defaultProps = defaultProps('horizontal')
 
 const backdropTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
 
@@ -63,6 +72,7 @@ interface DropUpProps {
   show: boolean
   onShow?: () => void
   onHide: () => void
+  horizontal?: boolean
 }
 
 const DropUp: FunctionComponent<DropUpProps> = (props) => (
@@ -75,7 +85,7 @@ const DropUp: FunctionComponent<DropUpProps> = (props) => (
         <Card bg="rgba(245, 245, 245, 0.7)" width={1} height={1} onClick={onClick}/>
       </Pos>
     )}
-    transition={contentTransition}
+    transition={props.horizontal ? contentTransitionHorizontal : contentTransition}
     backdropTransition={backdropTransition}
     children={(
       <FlexItem align="flex-end" overflow="auto" width="100%" maxHeight="100%" css={{boxShadow: '0px 0px 50px 0px rgba(0, 0, 0, 0.16)'}}>
