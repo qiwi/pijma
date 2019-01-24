@@ -1,6 +1,5 @@
-import React, {SFC} from 'react'
+import React, {FunctionComponent, Fragment} from 'react'
 import {css} from 'emotion'
-import {rgba} from 'polished'
 
 import {
   styled,
@@ -8,9 +7,12 @@ import {
   ModalProps,
   SimpleTransition,
   SimpleTransitionProps,
+  Pos,
+  Card,
+  FlexItem,
 } from '@qiwi/pijma-core'
 
-const contentTransition: SFC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
 
 contentTransition.defaultProps = {
   timeout: {
@@ -29,7 +31,7 @@ contentTransition.defaultProps = {
   }),
 }
 
-const backdropTransition: SFC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const backdropTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
 
 backdropTransition.defaultProps = {
   timeout: {
@@ -57,45 +59,32 @@ const StyledModal = styled(Modal)<ModalProps>({
   zIndex: 9999,
 })
 
-const StyledModalContent = styled.div((props) => ({
-  alignSelf: 'flex-end',
-  width: '100%',
-  maxHeight: '100%',
-  padding: 24,
-  backgroundColor: props.theme.color.white,
-  boxShadow: `0px 0px 50px 0 ${rgba(0, 0, 0, 0.16)}`,
-  overflow: 'auto',
-  outline: 'none',
-}))
-
-const StyledModalBackdrop = styled.div((props) => ({
-  position: 'fixed',
-  zIndex: 'auto',
-  top: 0,
-  bottom: 0,
-  left: 0,
-  right: 0,
-  backgroundColor: rgba(props.theme.color.gray.lightest, 0.7),
-}))
-
 interface DropUpProps {
   show: boolean
   onShow?: () => void
   onHide: () => void
 }
 
-const DropUp: SFC<DropUpProps> = (props) => (
+const DropUp: FunctionComponent<DropUpProps> = (props) => (
   <StyledModal
     show={props.show}
     onShow={props.onShow}
     onHide={props.onHide}
-    renderBackdrop={({onClick}) => <StyledModalBackdrop onClick={onClick}/>}
+    renderBackdrop={({onClick}) => (
+      <Pos type="fixed" zIndex="auto" top={0} right={0} bottom={0} left={0}>
+        <Card bg="rgba(245, 245, 245, 0.7)" width={1} height={1} onClick={onClick}/>
+      </Pos>
+    )}
     transition={contentTransition}
     backdropTransition={backdropTransition}
     children={(
-      <StyledModalContent>
-        {props.children}
-      </StyledModalContent>
+      <FlexItem align="flex-end" overflow="auto" width="100%" maxHeight="100%" css={{boxShadow: '0px 0px 50px 0px rgba(0, 0, 0, 0.16)'}}>
+        <Card bg="#fff" width={1} height={1} p="24px">
+          <Fragment>
+            {props.children}
+          </Fragment>
+        </Card>
+      </FlexItem>
     )}
   />
 )
