@@ -53,6 +53,7 @@ export type IconName =
   'phone' |
   'play' |
   'plus' |
+  'plus-circle' |
   'power' |
   'print' |
   'qiwi' |

@@ -138,6 +138,9 @@
     <Icon name="plus"/>
   </FlexItem>
   <FlexItem shrink={0} width={6} height={6} m={3}>
+    <Icon name="plus-circle"/>
+  </FlexItem>
+  <FlexItem shrink={0} width={6} height={6} m={3}>
     <Icon name="power"/>
   </FlexItem>
   <FlexItem shrink={0} width={6} height={6} m={3}>
