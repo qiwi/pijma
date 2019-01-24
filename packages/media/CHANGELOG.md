@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.32.0](https://github.com/qiwi/pijma/compare/v1.31.0...v1.32.0) (2019-01-24)
+
+
+### Features
+
+* **media:** add plus circle ([72ad07a](https://github.com/qiwi/pijma/commit/72ad07a))
+
 # [@qiwi/pijma-media-v1.31.0](https://github.com/qiwi/pijma/compare/v1.30.0...v1.31.0) (2019-01-17)
 
 
