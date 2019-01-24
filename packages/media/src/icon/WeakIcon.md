@@ -138,6 +138,9 @@
     <WeakIcon name="plus"/>
   </FlexItem>
   <FlexItem shrink={0} width={6} height={6} m={3}>
+    <WeakIcon name="plus-circle"/>
+  </FlexItem>
+  <FlexItem shrink={0} width={6} height={6} m={3}>
     <WeakIcon name="power"/>
   </FlexItem>
   <FlexItem shrink={0} width={6} height={6} m={3}>

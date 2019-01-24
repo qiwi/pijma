@@ -51,6 +51,7 @@ import PciDssIcon from './PciDssIcon'
 import PhoneIcon from './PhoneIcon'
 import PlayIcon from './PlayIcon'
 import PlusIcon from './PlusIcon'
+import PlusCircleIcon from './PlusCircleIcon'
 import PowerIcon from './PowerIcon'
 import PrintIcon from './PrintIcon'
 import PercentIcon from './PercentIcon'
@@ -129,6 +130,7 @@ export {
   PhoneIcon,
   PlayIcon,
   PlusIcon,
+  PlusCircleIcon,
   PowerIcon,
   PrintIcon,
   PercentIcon,
