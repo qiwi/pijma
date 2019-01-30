@@ -14,8 +14,10 @@
   <DropUp
     show={state.show}
     onHide={() => setState({show: false})}
+    onBack={() => setState({show: false})}
+    header={<Heading>Eto shapka</Heading>}
     children={(
-      <React.Fragment>
+      <Box p="24px">
         <Heading>DropUp</Heading>
         <br/>
         <br/>
@@ -28,7 +30,7 @@
             onClick={() => setState({show: !state.show})}
           />
         </Actions>
-      </React.Fragment>
+      </Box>
     )}
   />
 </Box>
@@ -48,9 +50,10 @@
   <DropUp
     show={state.showHorizontal}
     onHide={() => setState({showHorizontal: false})}
+    header={<Heading>Eto shapka</Heading>}
     horizontal
     children={(
-      <React.Fragment>
+      <Box p="24px">
         <Heading>DropUp Horizontal</Heading>
         <br/>
         <br/>
@@ -60,10 +63,10 @@
             size="normal"
             type="button"
             text="Close DropUp Horizontal"
-            onClick={() => setState({show: !state.showHorizontal})}
+            onClick={() => setState({showHorizontal: !state.showHorizontal})}
           />
         </Actions>
-      </React.Fragment>
+      </Box>
     )}
   />
 </Box>

@@ -1,4 +1,4 @@
-import React, {FunctionComponent, Fragment} from 'react'
+import React, {FunctionComponent, Fragment, ReactNode} from 'react'
 import {css} from 'emotion'
 
 import {
@@ -7,12 +7,16 @@ import {
   ModalProps,
   SimpleTransition,
   SimpleTransitionProps,
+  Box,
   Pos,
   Card,
+  Flex,
   FlexItem,
 } from '@qiwi/pijma-core'
 
-const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+import {WeakIcon} from '@qiwi/pijma-media'
+
+const contentTransitionVertical: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
 const contentTransitionHorizontal: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
 
 const translate3d = {
@@ -37,7 +41,7 @@ const defaultProps = (direction: 'vertical' | 'horizontal') => ({
   }),
 })
 
-contentTransition.defaultProps = defaultProps('vertical')
+contentTransitionVertical.defaultProps = defaultProps('vertical')
 contentTransitionHorizontal.defaultProps = defaultProps('horizontal')
 
 const backdropTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
@@ -63,8 +67,6 @@ const StyledModal = styled(Modal)<ModalProps>({
   bottom: 0,
   left: 0,
   right: 0,
-  display: 'flex',
-  paddingTop: 44,
   zIndex: 9999,
 })
 
@@ -72,7 +74,10 @@ interface DropUpProps {
   show: boolean
   onShow?: () => void
   onHide: () => void
+  onBack?: () => void
   horizontal?: boolean
+  header: ReactNode
+  footer?: ReactNode
 }
 
 const DropUp: FunctionComponent<DropUpProps> = (props) => (
@@ -85,17 +90,43 @@ const DropUp: FunctionComponent<DropUpProps> = (props) => (
         <Card bg="rgba(245, 245, 245, 0.7)" width={1} height={1} onClick={onClick}/>
       </Pos>
     )}
-    transition={props.horizontal ? contentTransitionHorizontal : contentTransition}
+    transition={props.horizontal ? contentTransitionHorizontal : contentTransitionVertical}
     backdropTransition={backdropTransition}
-    children={(
-      <FlexItem align="flex-end" overflow="auto" width="100%" maxHeight="100%" css={{boxShadow: '0px 0px 50px 0px rgba(0, 0, 0, 0.16)'}}>
-        <Card bg="#fff" width={1} height={1} p="24px">
-          <Fragment>
-            {props.children}
-          </Fragment>
+    children={
+      <Flex direction="column" align="stretch" width={1} maxHeight="calc(100% - 44px)"css={{
+        position: 'absolute',
+        bottom: 0,
+        background: '#fff',
+      }}>
+        <Card width={1} px="24px" py="16px" bb="1px solid #d8d8d8">
+          <Flex width={1} align="center">
+            {props.onBack ? (
+              <Box width="24px" height="24px" mr="12px" onClick={props.onBack}>
+                <WeakIcon name="arrow-left"/>
+              </Box>
+            ) : (
+              null
+            )}
+            {props.header}
+            <Box width="24px" height="24px" ml="auto" onClick={props.onHide}>
+              <WeakIcon name="cross"/>
+            </Box>
+          </Flex>
         </Card>
-      </FlexItem>
-    )}
+        <FlexItem grow={1} css={{display: 'flex', align: 'stretch'}}>
+          <FlexItem grow={1} overflow="auto">
+            {props.children}
+          </FlexItem>
+        </FlexItem>
+        {props.footer ? (
+          <Fragment>
+            {props.footer}
+          </Fragment>
+        ) : (
+          null
+        )}
+      </Flex>
+    }
   />
 )
 
