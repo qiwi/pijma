@@ -18,7 +18,7 @@ import {
   } from '@qiwi/pijma-core'
 
 import {Icon} from '@qiwi/pijma-media'
-import {Text} from '@qiwi/pijma-mobile'
+import {Text} from '../typography/Text'
 
 const contentTransitionVertical: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
 const contentTransitionHorizontal: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
