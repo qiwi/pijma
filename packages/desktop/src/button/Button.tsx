@@ -23,7 +23,7 @@ const buttonBackground: { [kind in ButtonProps['kind']]: string } = {
 
 const buttonHoverBackground: { [kind in ButtonProps['kind']]: string } = {
   brand: '#ff8200',
-  simple: '#fff padding-box',
+  simple: '#F5F5F5 padding-box',
 }
 
 const accentButtonBackground: { [kind in ButtonProps['kind']]: string } = {
@@ -38,7 +38,7 @@ const buttonBorder: { [kind in ButtonProps['kind']]: string } = {
 
 const buttonHoverBorder: { [kind in ButtonProps['kind']]: string } = {
   brand: 'none',
-  simple: '1px solid rgba(0, 0, 0, 0.28)',
+  simple: '1px solid rgba(0, 0, 0, 0.22)',
 }
 
 const buttonRadius: { [size in ButtonProps['size']]: number } = {
@@ -98,7 +98,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
         width={!props.icon || props.text ? 1 : buttonSize[props.size]}
         height={buttonSize[props.size]}
         minWidth={buttonMinWith[props.size]}
-        bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? buttonHoverBackground[props.kind] : props.size === 'accent' ? accentButtonBackground[props.kind] : buttonBackground[props.kind]}
+        bg={props.disabled ? '#e6e6e6' : renderProps.active ? 'red' : renderProps.hover || renderProps.focus ? buttonHoverBackground[props.kind] : props.size === 'accent' ? accentButtonBackground[props.kind] : buttonBackground[props.kind]}
         b={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? buttonHoverBorder[props.kind] : buttonBorder[props.kind]}
         r={buttonRadius[props.size]}
         s={props.disabled ? 'none' : (renderProps.hover || renderProps.focus) && props.size === 'accent' ? hoverShadow[props.kind] : props.size === 'accent' ? shadow[props.kind] : 'none'}
@@ -108,6 +108,8 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
         onBlur={renderProps.onFocus}
         onMouseEnter={renderProps.onMouseEnter}
         onMouseLeave={renderProps.onMouseLeave}
+        onMouseDown={renderProps.onMouseDown}
+        onMouseUp={renderProps.onMouseUp}
         children={(
           <Pos
             type="relative"
@@ -178,7 +180,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
                             size={textSize[props.size]}
                             height={textSize[props.size]}
                             transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-                            children={props.text}
+                            children={`${props.text} ${renderProps.active} ${renderProps.hover} ${renderProps.focus}`}
                           />
                         )}
                       />

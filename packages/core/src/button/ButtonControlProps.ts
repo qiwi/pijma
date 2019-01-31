@@ -13,5 +13,7 @@ export default interface ButtonControlProps {
     onBlur: React.FocusEventHandler
     onMouseEnter: React.MouseEventHandler
     onMouseLeave: React.MouseEventHandler
+    onMouseDown: React.MouseEventHandler
+    onMouseUp: React.MouseEventHandler
   }>
 }
