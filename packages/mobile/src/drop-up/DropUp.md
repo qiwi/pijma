@@ -15,21 +15,22 @@
     show={state.show}
     onHide={() => setState({show: false})}
     onBack={() => setState({show: false})}
-    header={<Heading>Eto shapka</Heading>}
+    title="Eto shapka"
+    footer={<Actions>
+              <Button
+                kind="brand"
+                size="normal"
+                type="button"
+                text="Close DropUp"
+                onClick={() => setState({show: !state.show})}
+              />
+            </Actions>
+            }
     children={(
-      <Box p="24px">
+      <Box p={6}>
         <Heading>DropUp</Heading>
         <br/>
         <br/>
-        <Actions>
-          <Button
-            kind="brand"
-            size="normal"
-            type="button"
-            text="Close DropUp"
-            onClick={() => setState({show: !state.show})}
-          />
-        </Actions>
       </Box>
     )}
   />
@@ -50,10 +51,10 @@
   <DropUp
     show={state.showHorizontal}
     onHide={() => setState({showHorizontal: false})}
-    header={<Heading>Eto shapka</Heading>}
+    title="Eto shapka"
     horizontal
     children={(
-      <Box p="24px">
+      <Box p={6}>
         <Heading>DropUp Horizontal</Heading>
         <br/>
         <br/>
