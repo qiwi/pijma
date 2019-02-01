@@ -68,6 +68,7 @@ export type IconName =
   'sort-asc' |
   'sort-desc' |
   'star' |
+  'success' |
   'terminal' |
   'terminal-client' |
   'twitter' |
