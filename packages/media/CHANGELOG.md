@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.34.0](https://github.com/qiwi/pijma/compare/v1.33.0...v1.34.0) (2019-02-01)
+
+
+### Features
+
+* **media:** add waiting icon ([6b514c7](https://github.com/qiwi/pijma/commit/6b514c7))
+
 # [@qiwi/pijma-media-v1.33.0](https://github.com/qiwi/pijma/compare/v1.32.0...v1.33.0) (2019-02-01)
 
 
