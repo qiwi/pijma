@@ -74,6 +74,7 @@ import TwitterIcon from './TwitterIcon'
 import VisaIcon from './VisaIcon'
 import VisaVerifiedIcon from './VisaVerifiedIcon'
 import VkIcon from './VkIcon'
+import WaitingIcon from './WaitingIcon'
 import UserIcon from './UserIcon'
 import YoutubeIcon from './YoutubeIcon'
 
@@ -154,6 +155,7 @@ export {
   VisaIcon,
   VisaVerifiedIcon,
   VkIcon,
+  WaitingIcon,
   UserIcon,
   YoutubeIcon,
 }

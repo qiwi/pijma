@@ -192,6 +192,9 @@
     <WeakIcon name="attention"/>
   </FlexItem>
   <FlexItem shrink={0} width={6} height={6} m={3}>
+    <WeakIcon name="waiting"/>
+  </FlexItem>
+  <FlexItem shrink={0} width={6} height={6} m={3}>
     <WeakIcon name="sort-asc"/>
   </FlexItem>
   <FlexItem shrink={0} width={6} height={6} m={3}>
