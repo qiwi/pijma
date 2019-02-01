@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.33.0](https://github.com/qiwi/pijma/compare/v1.32.0...v1.33.0) (2019-02-01)
+
+
+### Features
+
+* **media:** add success icon ([9d819ca](https://github.com/qiwi/pijma/commit/9d819ca))
+
 # [@qiwi/pijma-media-v1.32.0](https://github.com/qiwi/pijma/compare/v1.31.0...v1.32.0) (2019-01-24)
 
 
