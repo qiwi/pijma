@@ -76,6 +76,7 @@ export type IconName =
   'visa' |
   'visa-verified' |
   'vk' |
+  'waiting' |
   'youtube'
 
 export default IconName

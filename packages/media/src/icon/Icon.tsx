@@ -80,6 +80,7 @@ import {
   VisaIcon,
   VisaVerifiedIcon,
   VkIcon,
+  WaitingIcon,
   UserIcon,
   YoutubeIcon,
 } from './icons'
@@ -162,6 +163,7 @@ const Icons: { [name in IconName]: FC } = {
   visa: VisaIcon,
   'visa-verified': VisaVerifiedIcon,
   vk: VkIcon,
+  waiting: WaitingIcon,
   youtube: YoutubeIcon,
 }
 
