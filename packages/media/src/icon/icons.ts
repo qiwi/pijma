@@ -67,6 +67,7 @@ import ShareIcon from './ShareIcon'
 import SortAscIcon from './SortAscIcon'
 import SortDescIcon from './SortDescIcon'
 import StarIcon from './StarIcon'
+import SuccessIcon from './SuccessIcon'
 import TerminalIcon from './TerminalIcon'
 import TerminalClientIcon from './TerminalClientIcon'
 import TwitterIcon from './TwitterIcon'
@@ -146,6 +147,7 @@ export {
   SortAscIcon,
   SortDescIcon,
   StarIcon,
+  SuccessIcon,
   TerminalIcon,
   TerminalClientIcon,
   TwitterIcon,
