@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AttentionIcon: React.FunctionComponent = () => (
+const WaitingIcon: React.FunctionComponent = () => (
   <svg viewBox="0 0 40 40" focusable="false">
     <circle cx="20" cy="20" r="20" />
     <path
@@ -10,4 +10,4 @@ const AttentionIcon: React.FunctionComponent = () => (
   </svg>
 )
 
-export default AttentionIcon
+export default WaitingIcon
