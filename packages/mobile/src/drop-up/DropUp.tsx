@@ -94,14 +94,14 @@ const DropUp: FunctionComponent<DropUpProps> = (props) => (
     onHide={props.onHide}
     renderBackdrop={({onClick}) => (
       <Pos type="fixed" zIndex="auto" top={0} right={0} bottom={0} left={0}>
-        <Card bg="rgba(245, 245, 245, 0.7)" width={1} height={1} onClick={onClick}/>
+        <Card bg="rgba(245, 245, 245, 0.8)" width={1} height={1} onClick={onClick}/>
       </Pos>
     )}
     transition={props.horizontal ? contentTransitionHorizontal : contentTransitionVertical}
     backdropTransition={backdropTransition}
     children={
       <FlexPosCard direction="column" align="stretch" width={1} maxHeight="calc(100% - 44px)" bg="#fff" type="absolute" bottom={0}>
-        <Card width={1} px={6} py={4} bb="1px solid #d8d8d8">
+        <Card width={1} px={6} py={4} bb="1px solid #e6e6e6">
           <Flex width={1} align="center">
             {props.onBack ? (
               <Box width="24px" height="24px" mr={3} onClick={props.onBack}>

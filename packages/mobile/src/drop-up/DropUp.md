@@ -1,4 +1,6 @@
-## DropUp
+Компонент используется как контейнер для выпадающих списков, календаря и выбора периода в датах. Состоит из заголовка, контейнера под контент и футера.
+
+Футер чаще всего будет использоваться как контейнер для кнопок.
 
 ```jsx
 <Box>
@@ -7,32 +9,104 @@
       kind="simple"
       size="normal"
       type="button"
-      text="Open DropUp"
+      text="Показать"
       onClick={() => setState({show: !state.show})}
     />
   </Actions>
   <DropUp
     show={state.show}
     onHide={() => setState({show: false})}
-    onBack={() => setState({show: false})}
-    title="Eto shapka"
+    title="Заголовок"
+    children={(
+      <Flex height={14} align="center" px={0} onClick={() => {}}>
+        <FlexItem ml={6}>
+          <Paragraph size="m" bold>Опция</Paragraph>
+        </FlexItem>
+      </Flex>
+    )}
+    footer={(
+      <Actions>
+        <Button
+          kind="brand"
+          size="normal"
+          type="button"
+          text="Закрыть"
+          onClick={() => setState({show: !state.show})}
+        />
+      </Actions>
+    )}
+  />
+</Box>
+```
+
+## DropUp второго уровня
+
+Компонент может иметь второй уровень, в этом случае рядом с заголовком появляется кнопка «Назад», для перехода на уровень выше. Количество уровней не ограничено.
+
+```jsx
+<Box>
+  <Actions>
+    <Button
+      kind="simple"
+      size="normal"
+      type="button"
+      text="Показать"
+      onClick={() => setState({show: !state.show})}
+    />
+  </Actions>
+  <DropUp
+    show={state.show}
+    onHide={() => setState({show: false})}
+    title="Заголовок"
+    children={(
+      <Flex height={14} align="center" px={0} onClick={() => {}}>
+        <FlexItem ml={6}>
+          <Paragraph size="m" bold>Опция</Paragraph>
+        </FlexItem>
+      </Flex>
+    )}
+    footer={
+              <Actions>
+                <Button
+                  kind="brand"
+                  size="normal"
+                  type="button"
+                  text="Показать второй уровень"
+                  onClick={() => setState({showHorizontal: !state.showHorizontal, show: !state.show})}
+                />
+                <Button
+                  kind="simple"
+                  size="normal"
+                  type="button"
+                  text="Закрыть"
+                  onClick={() => setState({show: !state.show})}
+                />
+              </Actions>
+            }
+  />
+  <DropUp
+    show={state.showHorizontal}
+    onHide={() => setState({showHorizontal: false})}
+    onBack={() => setState({showHorizontal: false, show: true})}
+    horizontal
+    title="Заголовок"
+    children={(
+              <Flex height={14} align="center" px={0} onClick={() => {}}>
+                <FlexItem ml={6}>
+                  <Paragraph size="m" bold>Опция</Paragraph>
+                </FlexItem>
+              </Flex>
+    )}
     footer={<Actions>
               <Button
-                kind="brand"
+                kind="simple"
                 size="normal"
                 type="button"
-                text="Close DropUp"
-                onClick={() => setState({show: !state.show})}
+                text="Закрыть"
+                onClick={() => setState({showHorizontal: !state.showHorizontal})}
               />
             </Actions>
             }
-    children={(
-      <Box p={6}>
-        <Heading>DropUp</Heading>
-        <br/>
-        <br/>
-      </Box>
-    )}
   />
 </Box>
 ```
@@ -44,31 +118,33 @@
       kind="simple"
       size="normal"
       type="button"
-      text="Open DropUp Horizontal"
+      text="Показать"
       onClick={() => setState({showHorizontal: !state.showHorizontal})}
     />
   </Actions>
   <DropUp
     show={state.showHorizontal}
     onHide={() => setState({showHorizontal: false})}
-    title="Eto shapka"
+    onBack={() => setState({showHorizontal: false})}
     horizontal
+    title="Заголовок"
     children={(
-      <Box p={6}>
-        <Heading>DropUp Horizontal</Heading>
-        <br/>
-        <br/>
-        <Actions>
-          <Button
-            kind="brand"
-            size="normal"
-            type="button"
-            text="Close DropUp Horizontal"
-            onClick={() => setState({showHorizontal: !state.showHorizontal})}
-          />
-        </Actions>
-      </Box>
+              <Flex height={14} align="center" px={0} onClick={() => {}}>
+                <FlexItem ml={6}>
+                  <Paragraph size="m" bold>Опция</Paragraph>
+                </FlexItem>
+              </Flex>
     )}
+    footer={<Actions>
+              <Button
+                kind="brand"
+                size="normal"
+                type="button"
+                text="Закрыть"
+                onClick={() => setState({showHorizontal: !state.showHorizontal})}
+              />
+            </Actions>
+            }
   />
 </Box>
 ```
