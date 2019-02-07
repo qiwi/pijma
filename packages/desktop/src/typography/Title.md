@@ -12,7 +12,7 @@
   <FlexItem>
     <Box ml={5}>
       <Spacer size="m">
-        <Title size="1" placeholder/>
+        <Title size="1" stub/>
       </Spacer>
     </Box>
   </FlexItem>
@@ -40,7 +40,7 @@ font-weight: 900
   <FlexItem>
     <Box ml={5}>
       <Spacer size="m">
-        <Title size="2" placeholder/>
+        <Title size="2" stub/>
       </Spacer>
     </Box>
   </FlexItem>

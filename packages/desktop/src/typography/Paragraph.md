@@ -18,7 +18,7 @@ font-weight: 300
   <FlexItem>
     <Box ml={5}>
       <Spacer size="m">
-        <Paragraph size="l" placeholder/>
+        <Paragraph size="l" stub/>
       </Spacer>
     </Box>
   </FlexItem>
@@ -45,7 +45,7 @@ font-weight: 300
   <FlexItem>
     <Box ml={5}>
       <Spacer size="m">
-        <Paragraph size="m" placeholder/>
+        <Paragraph size="m" stub/>
       </Spacer>
     </Box>
   </FlexItem>
@@ -72,7 +72,7 @@ font-weight: 300
   <FlexItem>
     <Box ml={5}>
       <Spacer size="m">
-        <Paragraph size="s" placeholder/>
+        <Paragraph size="s" stub/>
       </Spacer>
     </Box>
   </FlexItem>

@@ -1,7 +1,7 @@
 import Theme from '../Theme'
 import {keyframes} from 'emotion'
 
-const placeholder = keyframes({
+const stub = keyframes({
   '0%': {
     opacity: 0.04,
   },
@@ -38,9 +38,9 @@ export const orange: Theme = {
     error: '#d0021b',
     success: '#4bbd5c',
   },
-  placeholder: {
+  stub: {
     color: '#000',
     radius: 1,
-    animation: `${placeholder} 1800ms ease-in-out infinite`,
+    animation: `${stub} 1800ms ease-in-out infinite`,
   },
 }

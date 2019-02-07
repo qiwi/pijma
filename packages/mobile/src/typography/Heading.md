@@ -20,7 +20,7 @@ font-weight: 900
   <FlexItem>
     <Box ml={5}>
       <Spacer size="m">
-        <Heading size="1" placeholder/>
+        <Heading size="1" stub/>
       </Spacer>
     </Box>
   </FlexItem>
@@ -48,7 +48,7 @@ font-weight: 900
   <FlexItem>
     <Box ml={5}>
       <Spacer size="m">
-        <Heading size="2" placeholder/>
+        <Heading size="2" stub/>
       </Spacer>
     </Box>
   </FlexItem>
@@ -76,7 +76,7 @@ font-weight: 900
   <FlexItem>
     <Box ml={5}>
       <Spacer size="m">
-        <Heading size="3" placeholder/>
+        <Heading size="3" stub/>
       </Spacer>
     </Box>
   </FlexItem>
@@ -104,7 +104,7 @@ font-weight: 700
   <FlexItem>
     <Box ml={5}>
       <Spacer size="m">
-        <Heading size="4" placeholder/>
+        <Heading size="4" stub/>
       </Spacer>
     </Box>
   </FlexItem>

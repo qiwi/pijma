@@ -1,12 +1,12 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo, Box, Placeholder} from '@qiwi/pijma-core'
+import {Typo, Box, Stub} from '@qiwi/pijma-core'
 
 export interface TitleProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   size: '1' | '2'
   color?: 'default' | 'inverse'
-  placeholder?: boolean
+  stub?: boolean
 }
 
 const TitleSize: { [size in TitleProps['size']]: number } = {
@@ -29,12 +29,12 @@ const TitleWeight: { [size in TitleProps['size']]: number } = {
   2: 900,
 }
 
-const PlaceholderOffset: { [size in TitleProps['size']]: {top: number, bottom: number} } = {
+const StubOffset: { [size in TitleProps['size']]: {top: number, bottom: number} } = {
   1: {top: 4, bottom: 3},
   2: {top: 4, bottom: 2},
 }
 
-const PlaceholderHeight: { [size in TitleProps['size']]: number } = {
+const StubHeight: { [size in TitleProps['size']]: number } = {
   1: 7,
   2: 6,
 }
@@ -44,13 +44,13 @@ const TitleColor: { [color in NonNullable<TitleProps['color']>]: string } = {
   inverse: '#fff',
 }
 
-export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'default', placeholder, children}) => {
-  if (placeholder) {
-    const offset = PlaceholderOffset[size]
+export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'default', stub, children}) => {
+  if (stub) {
+    const offset = StubOffset[size]
     return (
       <Box pt={offset.top} pb={offset.bottom}>
-        <Placeholder
-          height={PlaceholderHeight[size]}
+        <Stub
+          height={StubHeight[size]}
           width={50}
           color={color === 'inverse' ? TitleColor.inverse : TitleColor.default}
         />

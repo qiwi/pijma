@@ -9,7 +9,7 @@ export default interface Theme {
       heavy: number
     }
   }
-  placeholder: {
+  stub: {
     color: string
     animation: string
     radius: number

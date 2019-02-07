@@ -17,8 +17,8 @@ letter-spacing: 1.5
   <FlexItem>
     <Box ml={5}>
       <Spacer size="m">
-        <Caption placeholder/>
-        <Caption placeholder/>
+        <Caption stub/>
+        <Caption stub/>
       </Spacer>
     </Box>
   </FlexItem>
