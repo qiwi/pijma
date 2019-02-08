@@ -1,6 +1,7 @@
 import React from 'react'
-import {cx} from 'emotion'
 import Transition, {ENTERED, ENTERING, EXITED, EXITING} from 'react-transition-group/Transition'
+
+import {cx} from '../styled'
 
 import SimpleTransitionProps from './SimpleTransitionProps'
 

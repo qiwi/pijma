@@ -28,6 +28,7 @@ export interface BoxProps {
   height?: Value
   minHeight?: Value
   maxHeight?: Value
+  animation?: string
   transition?: string
   transform?: string
   transformOrigin?: string
@@ -38,7 +39,7 @@ export interface BoxProps {
 
 export const BoxNonProps = [
   'as', 'css', 'innerRef', 'ref',
-  'display', 'transition',
+  'display', 'transition', 'animation',
   'm', 'mt', 'mr', 'mb', 'ml', 'mx', 'my',
   'p', 'pt', 'pr', 'pb', 'pl', 'px', 'py',
   'width', 'minWidth', 'maxWidth',
@@ -70,6 +71,7 @@ export const Box = styled('div', {
   cursor: props.cursor,
   opacity: props.opacity,
   overflow: props.overflow,
+  animation: props.animation,
   transition: props.transition,
   transform: props.transform,
   transformOrigin: props.transformOrigin,

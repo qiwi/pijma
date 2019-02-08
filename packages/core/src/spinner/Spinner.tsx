@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
-import {keyframes} from 'emotion'
 
+import {keyframes} from '../styled'
 import {Svg, Circle, Value} from '../primitive'
 
 const rotate = keyframes({
