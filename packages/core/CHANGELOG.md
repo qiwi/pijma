@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.35.0](https://github.com/qiwi/pijma/compare/v1.34.0...v1.35.0) (2019-02-11)
+
+
+### Features
+
+* **core:** add recaptcha ([89c9336](https://github.com/qiwi/pijma/commit/89c9336))
+
 # [@qiwi/pijma-core-v1.29.0](https://github.com/qiwi/pijma/compare/v1.28.0...v1.29.0) (2019-01-12)
 
 
