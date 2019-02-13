@@ -1,5 +1,5 @@
-import TextareaField from './Textarea'
+import Textarea from './Textarea'
 
 export {
-  TextareaField,
+  Textarea
 }
