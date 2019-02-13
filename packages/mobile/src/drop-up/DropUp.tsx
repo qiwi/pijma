@@ -15,10 +15,13 @@ import {
   FlexProps,
   styled,
   PosProps,
-  } from '@qiwi/pijma-core'
+  FlexNonProps,
+  PosNonProps,
+  CardNonProps,
+} from '@qiwi/pijma-core'
 
 import {Icon} from '@qiwi/pijma-media'
-import {Text} from '../typography/Text'
+import {Paragraph} from '../typography'
 
 const contentTransitionVertical: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
 const contentTransitionHorizontal: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
@@ -84,8 +87,11 @@ export interface DropUpProps {
   footer?: ReactNode
 }
 
-// todo fix types issue
-const FlexPosCard = styled(Flex.withComponent(Pos).withComponent(Card))<PosProps & CardProps & FlexProps>()
+const FlexPosCardNonProps = FlexNonProps.concat(PosNonProps).concat(CardNonProps)
+
+const FlexPosCard = styled(Flex.withComponent(Pos).withComponent(Card), {
+  shouldForwardProp: (prop) => !FlexPosCardNonProps.includes(prop),
+})<PosProps & CardProps & FlexProps>()
 
 const DropUp: FunctionComponent<DropUpProps> = (props) => (
   <StyledModal
@@ -100,8 +106,17 @@ const DropUp: FunctionComponent<DropUpProps> = (props) => (
     transition={props.horizontal ? contentTransitionHorizontal : contentTransitionVertical}
     backdropTransition={backdropTransition}
     children={
-      <FlexPosCard direction="column" align="stretch" width={1} maxHeight="calc(100% - 44px)" bg="#fff" type="absolute" bottom={0}>
-        <Card width={1} px={6} py={4} bb="1px solid #e6e6e6">
+      <FlexPosCard
+        display="flex"
+        direction="column"
+        align="stretch"
+        width={1}
+        maxHeight="calc(100% - 44px)"
+        bg="#fff"
+        type="absolute"
+        bottom={0} s="0px 0px 64px 0px rgba(0, 0, 0, 0.16)"
+      >
+        <Card width={1} px={6} py={4} s="0 1px 2px 0 rgba(0, 0, 0, 0.12)">
           <Flex width={1} align="center">
             {props.onBack ? (
               <Box width="24px" height="24px" mr={3} onClick={props.onBack}>
@@ -110,19 +125,19 @@ const DropUp: FunctionComponent<DropUpProps> = (props) => (
             ) : (
               null
             )}
-            <Text size="m">{props.title}</Text>
+            <Paragraph size="m" bold>{props.title}</Paragraph>
             <Box width="24px" height="24px" ml="auto" onClick={props.onHide}>
               <Icon name="cross"/>
             </Box>
           </Flex>
         </Card>
-        <FlexItem grow={1} css={{display: 'flex', align: 'stretch'}}>
+        <FlexItem width={1} grow={1} css={{display: 'flex', align: 'stretch'}}>
           <FlexItem grow={1} overflow="auto">
             {props.children}
           </FlexItem>
         </FlexItem>
         {props.footer ? (
-          <Box p={4}>
+          <Box p={4} width={1}>
             {props.footer}
           </Box>
         ) : (

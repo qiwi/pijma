@@ -18,7 +18,7 @@
     onHide={() => setState({show: false})}
     title="Заголовок"
     children={(
-      <Flex height={14} align="center" px={0} onClick={() => {}}>
+      <Flex height={14} align="center" px={0} onClick={() => null}>
         <FlexItem ml={6}>
           <Paragraph size="m" bold>Опция</Paragraph>
         </FlexItem>
@@ -59,30 +59,30 @@
     onHide={() => setState({show: false})}
     title="Заголовок"
     children={(
-      <Flex height={14} align="center" px={0} onClick={() => {}}>
+      <Flex height={14} align="center" px={0} onClick={() => null}>
         <FlexItem ml={6}>
           <Paragraph size="m" bold>Опция</Paragraph>
         </FlexItem>
       </Flex>
     )}
     footer={
-              <Actions>
-                <Button
-                  kind="brand"
-                  size="normal"
-                  type="button"
-                  text="Показать второй уровень"
-                  onClick={() => setState({showHorizontal: !state.showHorizontal, show: !state.show})}
-                />
-                <Button
-                  kind="simple"
-                  size="normal"
-                  type="button"
-                  text="Закрыть"
-                  onClick={() => setState({show: !state.show})}
-                />
-              </Actions>
-            }
+      <Actions>
+        <Button
+          kind="brand"
+          size="normal"
+          type="button"
+          text="Показать второй уровень"
+          onClick={() => setState({showHorizontal: !state.showHorizontal, show: !state.show})}
+        />
+        <Button
+          kind="simple"
+          size="normal"
+          type="button"
+          text="Закрыть"
+          onClick={() => setState({show: !state.show})}
+        />
+      </Actions>
+    }
   />
   <DropUp
     show={state.showHorizontal}
@@ -91,22 +91,23 @@
     horizontal
     title="Заголовок"
     children={(
-              <Flex height={14} align="center" px={0} onClick={() => {}}>
-                <FlexItem ml={6}>
-                  <Paragraph size="m" bold>Опция</Paragraph>
-                </FlexItem>
-              </Flex>
+      <Flex height={14} align="center" px={0} onClick={() => null}>
+        <FlexItem ml={6}>
+          <Paragraph size="m" bold>Опция</Paragraph>
+        </FlexItem>
+      </Flex>
     )}
-    footer={<Actions>
-              <Button
-                kind="simple"
-                size="normal"
-                type="button"
-                text="Закрыть"
-                onClick={() => setState({showHorizontal: !state.showHorizontal})}
-              />
-            </Actions>
-            }
+    footer={
+      <Actions>
+        <Button
+          kind="simple"
+          size="normal"
+          type="button"
+          text="Закрыть"
+          onClick={() => setState({showHorizontal: !state.showHorizontal})}
+        />
+      </Actions>
+    }
   />
 </Box>
 ```
@@ -129,22 +130,23 @@
     horizontal
     title="Заголовок"
     children={(
-              <Flex height={14} align="center" px={0} onClick={() => {}}>
-                <FlexItem ml={6}>
-                  <Paragraph size="m" bold>Опция</Paragraph>
-                </FlexItem>
-              </Flex>
+      <Flex height={14} align="center" px={0} onClick={() => null}>
+        <FlexItem ml={6}>
+          <Paragraph size="m" bold>Опция</Paragraph>
+        </FlexItem>
+      </Flex>
     )}
-    footer={<Actions>
-              <Button
-                kind="brand"
-                size="normal"
-                type="button"
-                text="Закрыть"
-                onClick={() => setState({showHorizontal: !state.showHorizontal})}
-              />
-            </Actions>
-            }
+    footer={
+      <Actions>
+        <Button
+          kind="brand"
+          size="normal"
+          type="button"
+          text="Закрыть"
+          onClick={() => setState({showHorizontal: !state.showHorizontal})}
+        />
+      </Actions>
+    }
   />
 </Box>
 ```

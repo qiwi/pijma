@@ -14,8 +14,7 @@ export const FlexNonProps = BoxNonProps.concat(['display', 'wrap', 'direction', 
 
 export const Flex = styled(Box, {
   shouldForwardProp: (prop) => !FlexNonProps.includes(prop),
-})<FlexProps>(({display, wrap, direction, align, justify}) => ({
-  display,
+})<FlexProps>(({wrap, direction, align, justify}) => ({
   flexWrap: wrap,
   flexDirection: direction,
   alignItems: align,
