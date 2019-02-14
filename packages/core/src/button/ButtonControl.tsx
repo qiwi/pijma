@@ -14,29 +14,29 @@ export default class ButtonControl extends React.Component<ButtonControlProps, B
   private onMouseEnter: React.MouseEventHandler = () => {
     this.setState({
       hover: true,
-      focus: false,
+      // focus: false,
     })
   }
 
   private onMouseLeave: React.MouseEventHandler = () => {
     this.setState({
-      active: false,
+      // active: false,
       hover: false,
-      focus: false,
+      // focus: false,
     })
   }
 
   private onMouseUp: React.MouseEventHandler = () => {
     this.setState({
       active: false,
-      focus: false,
+      // focus: false,
     })
   }
 
   private onMouseDown: React.MouseEventHandler = () => {
     this.setState({
       active: true,
-      focus: false,
+      // focus: false,
     })
   }
 
