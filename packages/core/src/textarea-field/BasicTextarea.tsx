@@ -24,7 +24,8 @@ export interface BasicTextareaProps {
 export const BasicTextarea: FunctionComponent<BasicTextareaProps> = (props) => {
   const common = {
     width: 1,
-    height: 7,
+    height: 12,
+    resize: 'none',
     m: 0,
     p: 0,
     pr: props.padded ? 7 : undefined,
