@@ -1,17 +1,11 @@
 import styled from '../styled'
 
-import { Input, InputProps, InputNonProps } from './Input'
+import { cssValue, pxValue } from './Value'
+import { Input, InputProps } from './Input'
 
-export interface TextareaProps extends InputProps {
-  resize?: 'auto' | 'none'
-}
-
-export const TextareaNonProps = [
-  'resize', 
-].concat(InputNonProps)
-
-export const Textarea = styled(Input.withComponent('textarea'), {
-  shouldForwardProp: (prop) => !TextareaNonProps.includes(prop),
-})<TextareaProps>(({theme, ...props}) => ({
-  resize: props.resize,
+export const Textarea = styled(Input.withComponent('textarea'))<InputProps>(({ theme, ...props }) => ({
+  resize: 'none',
+  minHeight: pxValue(props.valueSize, theme.scale * 2),
+  height: cssValue(props.height, theme.scale),
+  overflow: 'hidden',
 }))

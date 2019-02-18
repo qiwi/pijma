@@ -6,6 +6,7 @@ export interface BasicTextareaProps {
   value: string
   tabIndex?: number
   name?: string
+  height?: number
   autoComplete?: boolean
   autoFocus?: boolean
   placeholder?: string
@@ -24,7 +25,7 @@ export interface BasicTextareaProps {
 export const BasicTextarea: FunctionComponent<BasicTextareaProps> = (props) => {
   const common = {
     width: 1,
-    height: 12,
+    height: props.height,
     resize: 'none',
     m: 0,
     p: 0,

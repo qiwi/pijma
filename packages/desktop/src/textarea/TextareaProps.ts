@@ -1,10 +1,10 @@
 import {ReactNode, KeyboardEvent} from 'react'
 
-import {Pipe} from '@qiwi/pijma-core'
 
 export default interface TextFieldProps {
   value: string
   tabIndex?: number
+  height?: number
   name?: string
   title?: string
   error?: ReactNode
@@ -15,7 +15,6 @@ export default interface TextFieldProps {
   placeholder?: string
   disabled?: boolean
   maxLength?: number
-  pipe?: Pipe
   onChange?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void
