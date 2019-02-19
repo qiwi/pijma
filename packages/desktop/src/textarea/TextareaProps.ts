@@ -4,7 +4,6 @@ import {ReactNode, KeyboardEvent} from 'react'
 export default interface TextFieldProps {
   value: string
   tabIndex?: number
-  height?: number
   name?: string
   title?: string
   error?: ReactNode

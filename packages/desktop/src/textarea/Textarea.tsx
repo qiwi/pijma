@@ -20,7 +20,6 @@ const Textarea: FunctionComponent<TextareaProps> = (props) => (
           <BasicTextarea
             value={props.value}
             name={props.name}
-            height={props.height}
             autoFocus={props.autoFocus}
             placeholder={props.placeholder}
             disabled={props.disabled}
