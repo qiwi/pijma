@@ -23,7 +23,7 @@ export interface BasicTextareaProps {
 }
 
 export interface BasicTextareaState {
-  height?: number
+  height: number
 }
 
 class BasicTextarea extends React.Component<BasicTextareaProps, BasicTextareaState> { 
@@ -31,14 +31,16 @@ class BasicTextarea extends React.Component<BasicTextareaProps, BasicTextareaSta
     tabIndex: 0,
   }
 
+  private defaultHeight: number = 7
+
   public state: BasicTextareaState = {
-    height: 7,
+    height: this.defaultHeight,
   }
 
   private onFocus: React.FocusEventHandler<HTMLElement> = (event: React.FocusEvent<HTMLElement>) => {
-    if (this.state.height) {
+    if (this.state.height <= this.defaultHeight) {
       this.setState({
-        height: this.state.height * 2,
+        height: this.state.height + 4,
       })
     }
     if (this.props.onFocus) {
@@ -49,7 +51,7 @@ class BasicTextarea extends React.Component<BasicTextareaProps, BasicTextareaSta
   private onBlur: React.FocusEventHandler<HTMLElement> = (event: React.FocusEvent<HTMLElement>) => {
     if (!this.props.value) {
       this.setState({
-        height: 7,
+        height: this.defaultHeight,
       })
     }
     if (this.props.onBlur) {
@@ -62,7 +64,6 @@ class BasicTextarea extends React.Component<BasicTextareaProps, BasicTextareaSta
     const common = {
       width: 1,
       height: this.state.height,
-      resize: 'none',
       m: 0,
       p: 0,
       pr: props.padded ? 7 : undefined,
