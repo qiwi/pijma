@@ -1,7 +1,7 @@
 import {ReactNode, KeyboardEvent} from 'react'
 
 
-export default interface TextFieldProps {
+export default interface TextAreaProps {
   value: string
   tabIndex?: number
   name?: string

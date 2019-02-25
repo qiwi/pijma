@@ -1,13 +1,8 @@
-## Textarea
-
-Многострочное текстовое поле.
-
-
-#### Обычное поле
+## Стандартное многострочное текстовое поле
 
 ```jsx
 <Box width={64}>
-  <Textarea
+  <TextArea
     title="Поле ввода"
     value={state.text}
     onChange={text => setState({text})}
@@ -19,7 +14,7 @@
 
 ```jsx
 <Box width={64}>
-  <Textarea
+  <TextArea
     title="Поле ввода"
     help="Подсказка"
     value={state.text}
@@ -32,9 +27,9 @@
 
 ```jsx
 <Box width={64}>
-  <Textarea
+  <TextArea
     title="Поле ввода"
-    action={<a href="#/Fields/Textarea">Сылка-кнопка</a>}
+    action={<a href="#/Fields/TextArea">Сылка-кнопка</a>}
     value={state.text}
     onChange={text => setState({text})}
   />
@@ -45,7 +40,7 @@
 
 ```jsx
 <Box width={64}>
-  <Textarea
+  <TextArea
     title="Поле ввода"
     error="Подсказка"
     value={state.text}
@@ -58,7 +53,7 @@
 
 ```jsx
 <Box width={64}>
-  <Textarea
+  <TextArea
     title="Поле ввода"
     disabled={true}
   />
@@ -69,7 +64,7 @@
 
 ```jsx
 <Box width={64}>
-  <Textarea
+  <TextArea
     title="Поле ввода"
     hint={<QuestionIcon />}
     value={state.text}
@@ -82,9 +77,9 @@
 
 ```jsx
 <Box width={64}>
-  <Textarea
+  <TextArea
     title="Поле ввода"
-    maxLength={3}
+    maxLength={60}
     value={state.text}
     onChange={text => setState({text})}
   />

@@ -1,39 +1,18 @@
-import React, { ChangeEventHandler, FocusEventHandler, KeyboardEventHandler } from 'react'
+import React from 'react'
 
-import { Textarea } from '../primitive'
+import { TextArea } from '../primitive'
 
-export interface BasicTextareaProps {
-  value: string
-  tabIndex?: number
-  name?: string
-  height?: number
-  autoComplete?: boolean
-  autoFocus?: boolean
-  placeholder?: string
-  maxLength?: number
-  padded: boolean
-  disabled?: boolean
-  error: boolean
-  focused: boolean
-  onChange?: ChangeEventHandler
-  onFocus?: FocusEventHandler
-  onBlur?: FocusEventHandler
-  onKeyDown?: KeyboardEventHandler
-  onKeyUp?: KeyboardEventHandler
-}
+import BasicTextAreaProps from './BasicTextAreaProps'
+import BasicTextAreaState from './BasicTextAreaState'
 
-export interface BasicTextareaState {
-  height: number
-}
-
-class BasicTextarea extends React.Component<BasicTextareaProps, BasicTextareaState> { 
+class BasicTextArea extends React.Component<BasicTextAreaProps, BasicTextAreaState> { 
   static defaultProps = {
     tabIndex: 0,
   }
 
   private defaultHeight: number = 7
 
-  public state: BasicTextareaState = {
+  public state: BasicTextAreaState = {
     height: this.defaultHeight,
   }
 
@@ -90,8 +69,8 @@ class BasicTextarea extends React.Component<BasicTextareaProps, BasicTextareaSta
       onKeyDown: props.onKeyDown,
       onKeyUp: props.onKeyUp,
     }
-    return (<Textarea {...common}/>)
+    return (<TextArea {...common}/>)
   }
 }
 
-export default BasicTextarea
+export default BasicTextArea

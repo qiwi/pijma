@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from 'react'
 
-import { TextFieldControl, InputField, BasicTextarea } from '@qiwi/pijma-core'
+import { TextFieldControl, InputField, BasicTextArea } from '@qiwi/pijma-core'
 
-import TextareaProps from './TextareaProps'
+import TextAreaProps from './TextAreaProps'
 
-const Textarea: FunctionComponent<TextareaProps> = (props) => (
+const TextArea: FunctionComponent<TextAreaProps> = (props) => (
   <TextFieldControl
     onChange={props.onChange}
     onFocus={props.onFocus}
@@ -17,7 +17,7 @@ const Textarea: FunctionComponent<TextareaProps> = (props) => (
         active={renderProps.focused || !!props.value || !!props.placeholder}
         padded={!!props.hint}
         input={(
-          <BasicTextarea
+          <BasicTextArea
             value={props.value}
             name={props.name}
             autoFocus={props.autoFocus}
@@ -43,8 +43,8 @@ const Textarea: FunctionComponent<TextareaProps> = (props) => (
   />
 )
 
-Textarea.defaultProps = {
+TextArea.defaultProps = {
   tabIndex: 0,
 }
 
-export default Textarea
+export default TextArea
