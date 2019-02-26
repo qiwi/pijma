@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { TextArea } from '../primitive'
+import {TextArea} from '../primitive'
 
 import BasicTextAreaProps from './BasicTextAreaProps'
 import BasicTextAreaState from './BasicTextAreaState'
