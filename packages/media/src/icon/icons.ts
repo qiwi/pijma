@@ -14,6 +14,7 @@ import ArrowSmallDownIcon from './ArrowSmallDownIcon'
 import ArrowSmallUpIcon from './ArrowSmallUpIcon'
 import ArrowSmallRightIcon from './ArrowSmallRightIcon'
 import ArrowSmallLeftIcon from './ArrowSmallLeftIcon'
+import ArrowCircleLeft from './ArrowCircleLeft'
 import AttentionIcon from './AttentionIcon'
 import BankIcon from './BankIcon'
 import CalendarIcon from './CalendarIcon'
@@ -91,6 +92,7 @@ export {
   AngleSmallUpIcon,
   AngleSmallRightIcon,
   AngleSmallLeftIcon,
+  ArrowCircleLeft,
   ArrowDownIcon,
   ArrowUpIcon,
   ArrowRightIcon,

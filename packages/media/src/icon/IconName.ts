@@ -19,6 +19,7 @@ export type IconName =
   'arrow-small-left' |
   'arrow-small-up' |
   'arrow-small-down' |
+  'arrow-circle-left' |
   'attention' |
   'bank' |
   'calendar' |
