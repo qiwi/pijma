@@ -14,30 +14,28 @@
     "lib/"
   ],
   "dependencies": {
-    "@emotion/core": "^10.0.6",
-    "@emotion/styled": "^10.0.6",
+    "@emotion/core": "^10.0.7",
+    "@emotion/styled": "^10.0.7",
     "@qiwi/pijma-media": "^1.x.x",
-    "@types/dom-helpers": "^3.4.0",
-    "@types/react": "^16.7.13",
-    "@types/react-dom": "^16.0.11",
+    "@types/dom-helpers": "^3.4.1",
+    "@types/react": "^16.8.6",
+    "@types/react-dom": "^16.8.2",
     "@types/react-google-recaptcha": "^0.10.0",
-    "@types/react-overlays": "^0.8.5",
-    "@types/react-transition-group": "^2.0.14",
+    "@types/react-overlays": "^1.1.2",
+    "@types/react-transition-group": "^2.0.16",
     "dom-helpers": "^3.4.0",
-    "emotion": "^10.0.6",
-    "emotion-theming": "^10.0.6",
-    "polished": "^2.3.1",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "emotion": "^10.0.7",
+    "emotion-theming": "^10.0.7",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-google-recaptcha": "^1.0.5",
-    "react-overlays": "^0.8.3",
+    "react-overlays": "^1.1.2",
     "react-text-mask": "^5.4.3",
-    "react-transition-group": "^2.5.0",
+    "react-transition-group": "^2.6.0",
     "tslib": "^1.9.3"
   },
   "devDependencies": {
-    "@types/webpack-env": "^1.13.6",
-    "tslint": "^5.11.0",
-    "typescript": "3.1.6"
+    "tslint": "5.13.1",
+    "typescript": "3.3.3333"
   }
 }
