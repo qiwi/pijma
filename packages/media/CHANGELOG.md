@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.36.0](https://github.com/qiwi/pijma/compare/v1.35.0...v1.36.0) (2019-03-01)
+
+
+### Features
+
+* **media:** add forward, backward icons ([3067b5b](https://github.com/qiwi/pijma/commit/3067b5b))
+
 # [@qiwi/pijma-media-v1.34.0](https://github.com/qiwi/pijma/compare/v1.33.0...v1.34.0) (2019-02-01)
 
 
