@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {RenderChild} from '@qiwi/pijma-core'
+import RenderChild from '../RenderChild'
 
 export interface LinkControlProps {
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
