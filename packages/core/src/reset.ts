@@ -30,7 +30,7 @@ const reset: CSSObject = {
   svg: {
     display: 'inline-block',
     verticalAlign: 'top',
-  }
+  },
 }
 
 export default reset

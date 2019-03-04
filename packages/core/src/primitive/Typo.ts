@@ -16,9 +16,10 @@ export interface TypoProps {
   transition?: string
   decoration?: 'line-through' | 'overline' | 'underline' | 'none'
   cursor?: string
+  align?: 'center' | 'justify' | 'left' | 'right' | 'inherit'
 }
 
-export const TypoNonProps = ['as', 'css', 'innerRef', 'ref', 'display', 'size', 'height', 'weight', 'color', 'transform', 'nowrap', 'spacing', 'transition', 'decoration', 'cursor']
+export const TypoNonProps = ['as', 'css', 'innerRef', 'ref', 'display', 'size', 'height', 'weight', 'color', 'transform', 'nowrap', 'spacing', 'transition', 'decoration', 'cursor', 'align']
 
 export const Typo = styled('div', {
   shouldForwardProp: (prop) => !TypoNonProps.includes(prop),
@@ -37,5 +38,6 @@ export const Typo = styled('div', {
   wordWrap: 'break-word',
   transition: props.transition,
   textDecoration: props.decoration,
-  cursor: props.cursor
+  cursor: props.cursor,
+  textAlign: props.align,
 }), (props) => props.css)
