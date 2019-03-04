@@ -15,8 +15,8 @@ export interface TypoProps {
   spacing?: number
   transition?: string
   decoration?: 'line-through' | 'overline' | 'underline' | 'none'
+  align?: 'center' | 'justify' | 'left' | 'right'
   cursor?: string
-  align?: 'center' | 'justify' | 'left' | 'right' | 'inherit'
 }
 
 export const TypoNonProps = ['as', 'css', 'innerRef', 'ref', 'display', 'size', 'height', 'weight', 'color', 'transform', 'nowrap', 'spacing', 'transition', 'decoration', 'cursor', 'align']
@@ -38,6 +38,6 @@ export const Typo = styled('div', {
   wordWrap: 'break-word',
   transition: props.transition,
   textDecoration: props.decoration,
-  cursor: props.cursor,
   textAlign: props.align,
+  cursor: props.cursor,
 }), (props) => props.css)
