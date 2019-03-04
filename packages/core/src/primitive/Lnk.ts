@@ -1,13 +1,13 @@
 import styled from '../styled'
 
-import {Card, CardProps, CardNonProps} from './Card'
-
-export interface LnkProps extends CardProps {
+export interface LnkProps {
+  textDecoration?: string
+  cursor?: string
 }
 
-export const LnkNonProps = CardNonProps
+export const LnkNonProps = ['textDecoration', 'cursor']
 
-export const Lnk = styled(Card.withComponent('a'), {
+export const Lnk = styled('a', {
   shouldForwardProp: (prop) => !LnkNonProps.includes(prop),
 })<LnkProps>(()=>({
   textDecoration: 'none',
