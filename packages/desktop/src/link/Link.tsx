@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {LinkControl, Typo} from '@qiwi/pijma-core'
+import {LinkControl, Lnk, Typo} from '@qiwi/pijma-core'
 
 export interface LinkProps {
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
@@ -34,7 +34,7 @@ const LinkHeightCompact: { [size in NonNullable<LinkProps['size']>]: number } = 
   l: 7,
 }
 
-const TypoLink = Typo.withComponent('a')
+const TypoLink = Typo.withComponent(Lnk)
 
 export const Link: FC<LinkProps> = (props) => (
   <LinkControl
@@ -58,8 +58,6 @@ export const Link: FC<LinkProps> = (props) => (
         onMouseDown={renderProps.onMouseDown}
         color={renderProps.hover || renderProps.focus ? '#FF8C00' : '#0055BB'}
         transition="color 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-        decoration="none"
-        cursor="pointer"
         target={props.target}
         download={props.download}
         rel={props.rel}
