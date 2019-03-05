@@ -15,7 +15,7 @@ import ArrowSmallUpIcon from './ArrowSmallUpIcon'
 import ArrowSmallRightIcon from './ArrowSmallRightIcon'
 import ArrowSmallLeftIcon from './ArrowSmallLeftIcon'
 import AttentionIcon from './AttentionIcon'
-import Backward from './Backward'
+import BackwardIcon from './BackwardIcon'
 import BankIcon from './BankIcon'
 import CalendarIcon from './CalendarIcon'
 import CardIcon from './CardIcon'
@@ -36,7 +36,7 @@ import FacebookIcon from './FacebookIcon'
 import FileIcon from './FileIcon'
 import FilterIcon from './FilterIcon'
 import FilterActiveIcon from './FilterActiveIcon'
-import Forward from './Forward'
+import ForwardIcon from './ForwardIcon'
 import HamburgerIcon from './HamburgerIcon'
 import InstagramIcon from './IntagramIcon'
 import LocationIcon from './LocationIcon'
@@ -102,7 +102,7 @@ export {
   ArrowSmallRightIcon,
   ArrowSmallLeftIcon,
   AttentionIcon,
-  Backward,
+  BackwardIcon,
   BankIcon,
   CalendarIcon,
   CardIcon,
@@ -119,7 +119,7 @@ export {
   FileIcon,
   FilterIcon,
   FilterActiveIcon,
-  Forward,
+  ForwardIcon,
   HamburgerIcon,
   InstagramIcon,
   LocationIcon,

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Forward: React.FunctionComponent = () => (
+const ForwardIcon: React.FunctionComponent = () => (
   <svg viewBox="0 0 48 48" focusable="false">
     <g transform="matrix(-1 0 0 1 48 0)">
       <circle cx="24" cy="24" r="24"/>
@@ -11,4 +11,4 @@ const Forward: React.FunctionComponent = () => (
   </svg>
 )
 
-export default Forward
+export default ForwardIcon
