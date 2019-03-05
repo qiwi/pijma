@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Backward: React.FunctionComponent = () => (
+const BackwardIcon: React.FunctionComponent = () => (
   <svg viewBox="0 0 48 48" focusable="false">
     <circle cx="24" cy="24" r="24" />
     <path fill='#FFF' d='M30 22.8H19.2v2.4H30a1.2 1.2 0 1 0 0-2.4z' />
@@ -8,4 +8,4 @@ const Backward: React.FunctionComponent = () => (
   </svg>
 )
 
-export default Backward
+export default BackwardIcon
