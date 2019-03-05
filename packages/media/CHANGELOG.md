@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.36.1](https://github.com/qiwi/pijma/compare/v1.36.0...v1.36.1) (2019-03-05)
+
+
+### Bug Fixes
+
+* **media:** repair backward & forward icons exports ([0f6f920](https://github.com/qiwi/pijma/commit/0f6f920))
+
 # [@qiwi/pijma-media-v1.36.0](https://github.com/qiwi/pijma/compare/v1.35.0...v1.36.0) (2019-03-01)
 
 
