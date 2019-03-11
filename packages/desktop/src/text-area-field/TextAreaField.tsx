@@ -1,16 +1,18 @@
 import React, {FunctionComponent} from 'react'
 
-import {TextFieldControl, InputField, BasicTextArea} from '@qiwi/pijma-core'
+import {TextAreaFieldControl, InputField, BasicTextArea} from '@qiwi/pijma-core'
 
-import TextAreaProps from './TextAreaProps'
+import TextAreaFieldProps from './TextAreaFieldProps'
 
-const TextArea: FunctionComponent<TextAreaProps> = (props) => (
-  <TextFieldControl
+const TextAreaField: FunctionComponent<TextAreaFieldProps> = (props) => (
+  <TextAreaFieldControl
     onChange={props.onChange}
     onFocus={props.onFocus}
     onBlur={props.onBlur}
     onKeyDown={props.onKeyDown}
     onKeyUp={props.onKeyUp}
+    minRows={props.minRows}
+    maxRows={props.maxRows}
     children={(renderProps) => (
       <InputField
         title={props.title}
@@ -27,6 +29,7 @@ const TextArea: FunctionComponent<TextAreaProps> = (props) => (
             error={!!props.error}
             focused={renderProps.focused}
             maxLength={props.maxLength}
+            rows={renderProps.rows}
             onChange={renderProps.onChange}
             onFocus={renderProps.onFocus}
             onBlur={renderProps.onBlur}
@@ -43,8 +46,10 @@ const TextArea: FunctionComponent<TextAreaProps> = (props) => (
   />
 )
 
-TextArea.defaultProps = {
+TextAreaField.defaultProps = {
   tabIndex: 0,
+  minRows: 1,
+  maxRows: 5
 }
 
-export default TextArea
+export default TextAreaField

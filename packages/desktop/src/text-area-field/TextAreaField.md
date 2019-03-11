@@ -2,8 +2,21 @@
 
 ```jsx
 <Box width={64}>
-  <TextArea
+  <TextAreaField
     title="Поле ввода"
+    value={state.text}
+    onChange={text => setState({text})}
+  />
+</Box>
+```
+## Стандартное многострочное текстовое поле с настраиваемым количеством полей
+
+```jsx
+<Box width={64}>
+  <TextAreaField
+    title="Поле ввода"
+    minRows={2}
+    maxRows={3}
     value={state.text}
     onChange={text => setState({text})}
   />
@@ -14,7 +27,7 @@
 
 ```jsx
 <Box width={64}>
-  <TextArea
+  <TextAreaField
     title="Поле ввода"
     help="Подсказка"
     value={state.text}
@@ -27,9 +40,9 @@
 
 ```jsx
 <Box width={64}>
-  <TextArea
+  <TextAreaField
     title="Поле ввода"
-    action={<a href="#/Fields/TextArea">Сылка-кнопка</a>}
+    action={<a href="#/Fields/TextAreaField">Сылка-кнопка</a>}
     value={state.text}
     onChange={text => setState({text})}
   />
@@ -40,7 +53,7 @@
 
 ```jsx
 <Box width={64}>
-  <TextArea
+  <TextAreaField
     title="Поле ввода"
     error="Подсказка"
     value={state.text}
@@ -53,7 +66,7 @@
 
 ```jsx
 <Box width={64}>
-  <TextArea
+  <TextAreaField
     title="Поле ввода"
     disabled={true}
   />
@@ -64,7 +77,7 @@
 
 ```jsx
 <Box width={64}>
-  <TextArea
+  <TextAreaField
     title="Поле ввода"
     hint={<QuestionIcon />}
     value={state.text}
@@ -73,13 +86,14 @@
 </Box>
 ```
 
-#### Поле ввода с ограниченным количеством символов
+#### Поле ввода с ограниченным количеством символов и количеством полей
 
 ```jsx
 <Box width={64}>
-  <TextArea
+  <TextAreaField
     title="Поле ввода"
     maxLength={60}
+    maxRows={1}
     value={state.text}
     onChange={text => setState({text})}
   />
