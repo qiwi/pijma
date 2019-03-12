@@ -16,7 +16,7 @@
   <TextAreaField
     title="Поле ввода"
     minRows={2}
-    maxRows={3}
+    maxRows={4}
     value={state.text}
     onChange={text => setState({text})}
   />

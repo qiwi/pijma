@@ -22,11 +22,13 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
     const lineHeight = parseInt(style.lineHeight || '0', 10)
     const scrollHeight = element.scrollHeight
     
-    const rows = Math.ceil(scrollHeight / lineHeight) - 1
-    
+    let rows = Math.ceil(scrollHeight / lineHeight) - 1
+
+    rows = rows < minRows ? minRows : rows 
+
     if (rows <= maxRows && rows !== this.state.rows) {
       this.setState({
-        rows: rows < minRows ? minRows: rows
+        rows
       })
     }
   }
