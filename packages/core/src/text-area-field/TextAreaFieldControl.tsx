@@ -24,13 +24,11 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
     
     let rows = Math.ceil(scrollHeight / lineHeight) - 1
 
-    rows = rows < minRows ? minRows : rows 
+    rows = rows > minRows ? rows <= maxRows? rows: maxRows : minRows  
 
-    if (rows <= maxRows && rows !== this.state.rows) {
-      this.setState({
-        rows
-      })
-    }
+    this.setState({
+      rows
+    })
   }
 
   private onChange: React.ChangeEventHandler<HTMLTextAreaElement> = (e: React.ChangeEvent<HTMLTextAreaElement>) => {

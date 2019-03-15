@@ -27,7 +27,7 @@ const BasicTextArea: FunctionComponent<BasicTextAreaProps> = (props) => {
   
   const common = {
     width: 1,
-    height: props.rows > 1? 'auto': 7,
+    minHeight: 7,
     rows: props.rows,
     m: 0,
     p: 0,
