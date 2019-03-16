@@ -13,6 +13,7 @@ const TextAreaField: FunctionComponent<TextAreaFieldProps> = (props) => (
     onKeyUp={props.onKeyUp}
     minRows={props.minRows}
     maxRows={props.maxRows}
+    value={props.value}
     children={(renderProps) => (
       <InputField
         title={props.title}
@@ -45,6 +46,7 @@ const TextAreaField: FunctionComponent<TextAreaFieldProps> = (props) => (
     )}
   />
 )
+
 
 TextAreaField.defaultProps = {
   tabIndex: 0,

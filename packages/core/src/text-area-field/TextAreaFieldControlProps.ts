@@ -5,6 +5,7 @@ import RenderChild from '../RenderChild'
 export default interface TextAreaFieldControlProps {
   maxRows: number
   minRows: number
+  value: string
   onChange?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void

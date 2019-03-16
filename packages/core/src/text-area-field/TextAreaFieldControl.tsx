@@ -48,13 +48,17 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
     }
   }
 
-  private onBlur: React.FocusEventHandler<HTMLTextAreaElement> = (e: React.FocusEvent<HTMLTextAreaElement>) => {
-    const value = e.currentTarget.value
-    const rows = value ? this.state.rows : 1
+  static getDerivedStateFromProps(nextProps: TextAreaFieldControlProps) {
+    if (!nextProps.value) {
+      return {
+        rows: 1
+      }
+    }
+  }
 
+  private onBlur: React.FocusEventHandler<HTMLTextAreaElement> = (e: React.FocusEvent<HTMLTextAreaElement>) => {
     this.setState({
-      focused: false,
-      rows
+      focused: false
     })
     e.preventDefault()
     if (this.props.onBlur) {
