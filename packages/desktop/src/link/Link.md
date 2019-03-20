@@ -1,7 +1,6 @@
 Ссылки связывают страницы между собой. Обычно ссылка ведет на внутреннюю страницу самого сайта или на другой сайт. Если ссылка ведет на внешнюю страницу, окно открывается в новой вкладке.
 
 ```jsx
-{applyDefaultClickHandler((href, target) => window.open(href, target || '_self'))}
 <Spacer size="xl">
   <Flex align="baseline">
     <FlexItem pr={4}>
