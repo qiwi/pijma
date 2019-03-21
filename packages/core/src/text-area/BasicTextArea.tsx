@@ -28,8 +28,8 @@ const BasicTextArea: FunctionComponent<BasicTextAreaProps> = (props) => {
     <TextArea
       width={1}
       minHeight={7}
-      valueHeight={1.4}
-      placeholderHeight={1.4}
+      valueHeight={7}
+      placeholderHeight={7}
       rows={props.rows}
       m={0}
       p={0}

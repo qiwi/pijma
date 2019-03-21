@@ -29,7 +29,7 @@ export const TextArea = styled(Card.withComponent('textarea'), {
   fontFamily: theme.font.family,
   fontSize: pxValue(props.valueSize, theme.scale),
   fontWeight: props.valueWeight,
-  lineHeight: props.valueHeight,
+  lineHeight: pxValue(props.valueHeight, theme.scale),
   color: props.valueColor,
   textTransform: props.valueTransform,
   textIndent: 0,
@@ -41,7 +41,7 @@ export const TextArea = styled(Card.withComponent('textarea'), {
   '&::placeholder': {
     fontSize: pxValue(props.placeholderSize, theme.scale),
     fontWeight: props.placeholderWeight,
-    lineHeight: props.placeholderHeight,
+    lineHeight: pxValue(props.placeholderHeight, theme.scale),
     color: props.placeholderColor,
     textTransform: props.placeholderTransform,
     letterSpacing: pxValue(props.placeholderSpacing),
