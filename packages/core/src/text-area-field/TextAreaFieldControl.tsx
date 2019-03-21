@@ -10,9 +10,13 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
     maxRows: 4
   }
 
-  public state: TextAreaFieldControlState = {
-    focused: false,
-    rows: 1
+  constructor(props: TextAreaFieldControlProps) {
+    super(props)
+
+    this.state = {
+      focused: false,
+      rows: props.value ? props.minRows: 1
+    }
   }
 
   private resize(element: HTMLTextAreaElement): void {
