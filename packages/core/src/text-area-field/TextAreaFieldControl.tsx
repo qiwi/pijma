@@ -22,7 +22,7 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
     const lineHeight = parseInt(style.lineHeight || '0', 10)
     const scrollHeight = element.scrollHeight
     
-    let rows = Math.ceil(scrollHeight / lineHeight) - 1
+    let rows = Math.ceil(scrollHeight / lineHeight)
 
     rows = rows > minRows ? rows <= maxRows? rows: maxRows : minRows  
 
@@ -38,22 +38,28 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
     }
   }
 
-  private onFocus: React.FocusEventHandler = (e: React.FocusEvent) => {
+  private onFocus: React.FocusEventHandler<HTMLTextAreaElement> = (event: React.FocusEvent<HTMLTextAreaElement>) => {
     this.setState({
       focused: true,
     })
-    e.preventDefault()
+    event.preventDefault()
     if (this.props.onFocus) {
       this.props.onFocus()
     }
   }
 
-  static getDerivedStateFromProps(nextProps: TextAreaFieldControlProps) {
+  static getDerivedStateFromProps(nextProps: TextAreaFieldControlProps, nextState: TextAreaFieldControlState) {
+    if (nextState.focused && !nextProps.value) {
+      return {
+        rows: nextProps.minRows
+      }
+    }
     if (!nextProps.value) {
       return {
         rows: 1
       }
     }
+    return null
   }
 
   private onBlur: React.FocusEventHandler<HTMLTextAreaElement> = (e: React.FocusEvent<HTMLTextAreaElement>) => {
@@ -67,7 +73,7 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
   }
 
   private onKeyDown: React.KeyboardEventHandler<HTMLTextAreaElement> = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    this.resize(event.currentTarget);
+    this.resize(event.currentTarget)
     if (this.props.onKeyDown && this.props.onKeyDown(event)) {
       event.preventDefault()
     }

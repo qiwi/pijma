@@ -9,6 +9,7 @@ export interface TextAreaProps extends CardProps {
   valueColor?: string
   valueTransform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
   valueSpacing?: number
+  lineheight?: number
   placeholderSize?: number
   placeholderWeight?: number
   placeholderColor?: string
@@ -27,7 +28,7 @@ export const TextArea = styled(Card.withComponent('textarea'), {
   fontFamily: theme.font.family,
   fontSize: pxValue(props.valueSize, theme.scale),
   fontWeight: props.valueWeight,
-  lineHeight: pxValue(props.valueSize, theme.scale),
+  lineHeight: props.lineheight,
   color: props.valueColor,
   textTransform: props.valueTransform,
   textIndent: 0,
@@ -39,7 +40,7 @@ export const TextArea = styled(Card.withComponent('textarea'), {
   '&::placeholder': {
     fontSize: pxValue(props.placeholderSize, theme.scale),
     fontWeight: props.placeholderWeight,
-    lineHeight: pxValue(props.placeholderSize, theme.scale),
+    lineHeight: props.lineheight,
     color: props.placeholderColor,
     textTransform: props.placeholderTransform,
     letterSpacing: pxValue(props.placeholderSpacing),
