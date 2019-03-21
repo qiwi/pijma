@@ -7,7 +7,7 @@ class LevelMenuDemo extends React.Component {
   constructor() {
     super()
     this.state = {
-      activeId: 't2',
+      selected: 't2',
     }
   }
 
@@ -15,8 +15,8 @@ class LevelMenuDemo extends React.Component {
     return (
       <LevelMenu
         id="kassa-menus"
-        activeId={this.state.activeId}
-        onClick={item => this.setState({activeId: item.id})}
+        selected={this.state.selected}
+        onSelect={item => this.setState({selected: item.id})}
         items={[
           {
             title: 'Услуги',

@@ -7,7 +7,7 @@ class HorizontalMenuDemo extends React.Component {
   constructor() {
     super()
     this.state = {
-      activeId: 'requests',
+      selected: 'requests',
     }
   }
 
@@ -15,8 +15,8 @@ class HorizontalMenuDemo extends React.Component {
     return (
       <HorizontalMenu
         id="kassa-menu-first"
-        activeId={this.state.activeId}
-        onClick={item => this.setState({activeId: item.id})}
+        selected={this.state.selected}
+        onSelect={item => this.setState({selected: item.id})}
         items={[
           {
             title: 'Услуги',

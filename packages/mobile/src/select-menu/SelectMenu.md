@@ -7,7 +7,7 @@ class SelectMenuDemo extends React.Component {
   constructor() {
     super()
     this.state = {
-      activeId: 'transactions',
+      selected: 'transactions',
     }
   }
 
@@ -15,8 +15,8 @@ class SelectMenuDemo extends React.Component {
     return (
       <SelectMenu
         id="kassa-menu-second"
-        activeId={this.state.activeId}
-        onClick={item => this.setState({activeId: item.id})}
+        selected={this.state.selected}
+        onSelect={item => this.setState({selected: item.id})}
         items={[
           {
             title: 'Транзакции и отчеты',

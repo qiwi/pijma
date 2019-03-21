@@ -9,29 +9,30 @@ export type MenuTree<Item extends BaseMenuItem> = Item & {
   sub?: MenuTree<Item>[]
 }
 
-export class MenuLevel<Item extends BaseMenuItem> {
-  constructor(public items: Item[], public activeId: string) {}
-}
+export type MenuLevel<Item extends BaseMenuItem> = {
+  items: Item[]
+  selected: string
+} | undefined
 
 export class MenuLevelBuilder<Item extends BaseMenuItem> {
   constructor(protected items: MenuTree<Item>[]) {}
 
   protected buildLevels(
-    activeId: string,
+    selected: string,
     items: MenuTree<Item>[],
-    levels: (MenuLevel<Item> | undefined)[],
+    levels: MenuLevel<Item>[],
     depth = 0,
     parentActive = false
   ): boolean {
     if (levels.length <= depth) levels.push(undefined)
     let activeItem: MenuTree<Item> | undefined
     for (let item of items) {
-      const currentActive = item.id === activeId
+      const currentActive = item.id === selected
       const sub = item.sub
       const childActive =
         sub && sub.length > 0
           ? this.buildLevels(
-              activeId,
+              selected,
               sub,
               levels,
               depth + 1,
@@ -43,10 +44,10 @@ export class MenuLevelBuilder<Item extends BaseMenuItem> {
     }
 
     if (activeItem || parentActive) {
-      levels[depth] = new MenuLevel(
+      levels[depth] = {
         items,
-        activeItem ? activeItem.id : items[0].id
-      )
+        selected: activeItem ? activeItem.id : items[0].id
+      }
     }
 
     return !!activeItem
@@ -56,11 +57,11 @@ export class MenuLevelBuilder<Item extends BaseMenuItem> {
    * Split MenuTree structure to levels.
    * Returns array, where index is a menu level.
    *
-   * @param activeId current menu item id
+   * @param selected current menu item id
    */
-  levels(activeId: string): (MenuLevel<Item> | undefined)[] {
-    const result: (MenuLevel<Item>[] | undefined) = []
-    this.buildLevels(activeId, this.items, result)
+  levels(selected: string): MenuLevel<Item>[] {
+    const result: MenuLevel<Item>[] = []
+    this.buildLevels(selected, this.items, result)
     return result
   }
 }

@@ -1,37 +1,7 @@
 import {BaseMenuItem, ButtonControl, styled} from '@qiwi/pijma-core'
-import React, {ReactNode} from 'react'
+import React from 'react'
 
 import {HorizontalMenuItem} from './HorizontalMenuItem'
-
-export interface HorizontalMenuRenderItemProps<Item extends BaseMenuItem> {
-  /**
-   * Html item id
-   */
-  id: string
-  item: Item
-  active: boolean
-  onClick: () => void
-}
-
-const horizontalMenuRenderItemDefault = <Item extends BaseMenuItem>({
-  item,
-  active,
-  id,
-  onClick,
-}: HorizontalMenuRenderItemProps<Item>): ReactNode => (
-  <ButtonControl
-    key={item.id}
-    onClick={onClick}
-    children={renderProps => (
-      <HorizontalMenuItem
-        active={active}
-        onClick={renderProps.onClick}
-        id={id}
-        children={item.title}
-      />
-    )}
-  />
-)
 
 // @see https://iamsteve.me/blog/entry/using-flexbox-for-horizontal-scrolling-navigation
 export const HorizontalMenuContainer = styled('nav')(({theme}) => ({
@@ -59,33 +29,32 @@ export interface HorizontalMenuProps<Item extends BaseMenuItem = BaseMenuItem> {
   /**
    * Active menu item id
    */
-  activeId: string
+  selected: string
   items: Item[]
-  onClick: (item: Item) => void
-  renderItem: (props: HorizontalMenuRenderItemProps<Item>) => ReactNode
+  onSelect: (item: Item) => void
 }
 
-// Do not use React.FC
-// See https://github.com/sw-yx/react-typescript-cheatsheet#typing-defaultprops
-export const HorizontalMenu = <Item extends BaseMenuItem = BaseMenuItem>({
+export const HorizontalMenu = <Item extends BaseMenuItem>({
   items,
-  renderItem,
-  onClick,
-  activeId,
+  onSelect,
+  selected,
   id,
 }: HorizontalMenuProps<Item>) => (
   <HorizontalMenuContainer
     id={id}
-    children={items.map(item =>
-      renderItem({
-        item,
-        id: `${id}-${item.id}`,
-        active: item.id === activeId,
-        onClick: onClick.bind(null, item),
-      })
-    )}
+    children={items.map(item => (
+      <ButtonControl
+        key={item.id}
+        onClick={onSelect.bind(null, item)}
+        children={renderProps => (
+          <HorizontalMenuItem
+            id={`${id}-${item.id}`}
+            active={selected === item.id}
+            onClick={renderProps.onClick}
+            children={item.title}
+          />
+        )}
+      />
+    ))}
   />
 )
-HorizontalMenu.defaultProps = {
-  renderItem: horizontalMenuRenderItemDefault,
-}
