@@ -40,7 +40,7 @@ export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'defaul
     size={TitleSize[size]}
     height={TitleHeight[size]}
     weight={TitleWeight[size]}
-    color={color === undefined ? undefined : TitleColor[color]}
+    color={TitleColor[color]}
     children={children}
   />
 )

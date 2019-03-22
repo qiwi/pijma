@@ -48,7 +48,7 @@ export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'de
     size={HeadingSize[size]}
     height={HeadingHeight[size]}
     weight={HeadingWeight[size]}
-    color={color === undefined ? undefined : HeadingColor[color]}
+    color={HeadingColor[color]}
     children={children}
   />
 )

@@ -40,8 +40,8 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold =
     display="block"
     size={ParagraphSize[size]}
     height={compact ? ParagraphHeightCompact[size] : ParagraphHeight[size]}
-    weight={bold === undefined ? undefined : bold ? 500 : 300}
-    color={color === undefined ? undefined : ParagraphColor[color]}
+    weight={bold ? 500 : 300}
+    color={ParagraphColor[color]}
     transform={transform}
     children={children}
   />

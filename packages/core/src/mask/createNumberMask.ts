@@ -89,7 +89,7 @@ export default function createNumberMask(
       }
     }
 
-    if (integerLimit && typeof integerLimit === 'number') {
+    if (integerLimit) {
       const thousandsSeparatorRegex = thousandsSeparatorSymbol === '.' ? '[.]' : `${thousandsSeparatorSymbol}`
       const numberOfThousandSeparators = (integer.match(new RegExp(thousandsSeparatorRegex, 'g')) || []).length
       integer = integer.slice(0, integerLimit + (numberOfThousandSeparators * thousandsSeparatorSymbolLength))
@@ -113,7 +113,7 @@ export default function createNumberMask(
         mask.push(decimalSymbol, caretTrap)
       }
       if (fraction) {
-        if (typeof decimalLimit === 'number') {
+        if (decimalLimit) {
           fraction = fraction.slice(0, decimalLimit)
         }
         mask = mask.concat(fraction)
@@ -145,7 +145,7 @@ export default function createNumberMask(
 
 }
 
-function convertToMask(strNumber: string): Array<string|RegExp> {
+function convertToMask(strNumber: string): Array<string | RegExp> {
   return strNumber
     .split(emptyString)
     .map((char) => digitRegExp.test(char) ? digitRegExp : char)

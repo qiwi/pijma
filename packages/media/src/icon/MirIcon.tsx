@@ -31,4 +31,3 @@ const MirIcon: React.FunctionComponent = () => (
 )
 
 export default MirIcon
-

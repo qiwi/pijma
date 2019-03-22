@@ -113,7 +113,8 @@ export default class CheckboxControl<O extends OptionModel<V>, V> extends React.
       onBlur: this.onBlur,
       onKeyDown: this.onKeyDown,
       onMouseLeave: this.onMouseLeave,
-      options: this.props.options.map((option, index) => Object.assign({}, option, {
+      options: this.props.options.map((option, index) => ({
+        ...option,
         checked: this.props.values.findIndex(value => this.equals(value, option.value)) !== -1,
         focused: index === this.state.focused,
         onClick: this.onOptionClick,

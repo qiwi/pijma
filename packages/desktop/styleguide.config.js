@@ -25,22 +25,22 @@ module.exports = {
   styleguideDir: path.resolve(styleguide, 'lib'),
   styleguideComponents: readFiles(path.resolve(styleguide, 'components'))
     .reduce((components, file) => Object.assign(components, {
-      [path.relative(path.resolve(styleguide, 'components'), file).slice(0, -1 * path.extname(file).length)]: file
+      [path.relative(path.resolve(styleguide, 'components'), file).slice(0, -1 * path.extname(file).length)]: file,
     }), {}),
   theme: {
     borderRadius: '10px',
     fontFamily: {
-      base: '\'Museo Sans\', \'Helvetica Neue\', \'Helvetica\', \'Arial\', sans-serif'
+      base: '\'Museo Sans\', \'Helvetica Neue\', \'Helvetica\', \'Arial\', sans-serif',
     },
     mq: {
-      small: '@media (max-width: 0px)'
-    }
+      small: '@media (max-width: 0px)',
+    },
   },
   require: [
-    path.resolve(styleguide, 'require.js')
+    path.resolve(styleguide, 'require.js'),
   ],
   ignore: [
-    '**/*/index.{js,jsx,ts,tsx}'
+    '**/*/index.{js,jsx,ts,tsx}',
   ],
   skipComponentsWithoutExample: true,
   getComponentPathLine(componentPath) {
@@ -51,21 +51,21 @@ module.exports = {
     {
       name: 'Главная',
       content: path.resolve(styleguide, 'Index.md'),
-      sectionDepth: Number.MAX_VALUE
+      sectionDepth: Number.MAX_VALUE,
     },
     {
       name: 'Компоненты',
       components: [
         `${alias['@qiwi/pijma-core']}/**/*.{js,jsx,ts,tsx}`,
         `${alias['@qiwi/pijma-media']}/**/*.{js,jsx,ts,tsx}`,
-        `${alias['@qiwi/pijma-desktop']}/**/*.{js,jsx,ts,tsx}`
+        `${alias['@qiwi/pijma-desktop']}/**/*.{js,jsx,ts,tsx}`,
       ],
-      sectionDepth: Number.MAX_VALUE
-    }
+      sectionDepth: Number.MAX_VALUE,
+    },
   ],
   logger: {
     info: () => null,
-    warn: () => null
+    warn: () => null,
   },
   webpackConfig: {
     devtool: process.env.NODE_ENV === 'development' ? 'inline-source-map' : false,
@@ -73,13 +73,23 @@ module.exports = {
       rules: [
         {
           test: /\.tsx?$/,
+          enforce: 'pre',
+          loader: 'tslint-loader',
+          options: {
+            configFile: path.resolve(__dirname, 'tslint.json'),
+            tsConfigFile: path.resolve(__dirname, 'tsconfig.json'),
+          },
+          exclude: /node_modules/,
+        },
+        {
+          test: /\.tsx?$/,
           use: [
             {
               loader: 'ts-loader',
               options: {
-                configFile: path.resolve(__dirname, 'tsconfig.json')
-              }
-            }
+                configFile: path.resolve(__dirname, 'tsconfig.json'),
+              },
+            },
           ],
           exclude: /node_modules/,
         },
@@ -89,16 +99,16 @@ module.exports = {
             {
               loader: 'file-loader',
               options: {
-                name: '[name].[hash].[ext]'
-              }
-            }
-          ]
-        }
-      ]
+                name: '[name].[hash].[ext]',
+              },
+            },
+          ],
+        },
+      ],
     },
     resolve: {
       alias,
-      extensions: ['.tsx', '.ts', '.js']
-    }
-  }
-};
+      extensions: ['.tsx', '.ts', '.js'],
+    },
+  },
+}

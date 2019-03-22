@@ -19,7 +19,7 @@ export const Caption: FunctionComponent<CaptionProps> = ({color = 'support', chi
     size={3.5}
     height={4}
     weight={500}
-    color={color === undefined ? undefined : CaptionColor[color]}
+    color={CaptionColor[color]}
     transform="uppercase"
     spacing={1.5}
     children={children}
