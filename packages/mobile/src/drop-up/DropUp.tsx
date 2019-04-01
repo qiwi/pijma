@@ -119,23 +119,23 @@ const DropUp: FunctionComponent<DropUpProps> = (props) => (
         <Card width={1} px={6} py={4} s="0 1px 2px 0 rgba(0, 0, 0, 0.12)">
           <Flex width={1} align="center">
             {props.onBack ? (
-              <Box width="24px" height="24px" mr={3} onClick={props.onBack}>
+              <Box width={6} height={6} mr={3} onClick={props.onBack}>
                 <Icon name="arrow-left"/>
               </Box>
             ) : (
               null
             )}
             <Paragraph size="m" bold>{props.title}</Paragraph>
-            <Box width="24px" height="24px" ml="auto" onClick={props.onHide}>
+            <Box width={6} height={6} ml="auto" onClick={props.onHide}>
               <Icon name="cross"/>
             </Box>
           </Flex>
         </Card>
-        <FlexItem width={1} grow={1} css={{display: 'flex', align: 'stretch'}}>
+        <Flex width={1} css={{display: 'flex', align: 'stretch', flexGrow: 1}}>
           <FlexItem grow={1} overflow="auto">
             {props.children}
           </FlexItem>
-        </FlexItem>
+        </Flex>
         {props.footer ? (
           <Box p={4} width={1}>
             {props.footer}
