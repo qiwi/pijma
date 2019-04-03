@@ -31,6 +31,8 @@ const TextAreaField: FunctionComponent<TextAreaFieldProps> = (props) => (
             focused={renderProps.focused}
             maxLength={props.maxLength}
             rows={renderProps.rows}
+            minRows={props.minRows}
+            maxRows={props.maxRows}
             onChange={renderProps.onChange}
             onFocus={renderProps.onFocus}
             onBlur={renderProps.onBlur}

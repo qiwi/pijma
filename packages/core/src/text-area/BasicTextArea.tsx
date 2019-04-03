@@ -1,9 +1,16 @@
-import React, {FunctionComponent,ChangeEventHandler,FocusEventHandler,KeyboardEventHandler} from 'react'
+import React, {
+  FunctionComponent,
+  ChangeEventHandler,
+  FocusEventHandler,
+  KeyboardEventHandler
+} from 'react'
 
 import { TextArea } from '../primitive'
 
 interface BasicTextAreaProps {
   rows: number
+  minRows?: number
+  maxRows?: number
   value: string
   tabIndex?: number
   name?: string
@@ -24,13 +31,20 @@ interface BasicTextAreaProps {
 }
 
 const BasicTextArea: FunctionComponent<BasicTextAreaProps> = (props) => {
+  const { rows, minRows = 1, maxRows = 5 } = props
   return (
     <TextArea
       width={1}
       minHeight={7}
       valueHeight={7}
       placeholderHeight={7}
-      rows={props.rows}
+      rows={
+        rows > minRows
+          ? rows <= maxRows
+            ? rows
+            : maxRows
+          : minRows
+      }
       m={0}
       p={0}
       pr={props.padded ? 7 : undefined}

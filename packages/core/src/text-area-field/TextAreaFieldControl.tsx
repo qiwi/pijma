@@ -20,15 +20,12 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
   }
 
   private resize(element: HTMLTextAreaElement): void {
-    const {maxRows, minRows} = this.props
 
     const style = getComputedStyle(element)
     const lineHeight = parseInt(style.lineHeight || '0', 10)
     const scrollHeight = element.scrollHeight
     
-    let rows = Math.ceil(scrollHeight / lineHeight)
-
-    rows = rows > minRows ? rows <= maxRows? rows: maxRows : minRows  
+    const rows = Math.ceil(scrollHeight / lineHeight)
 
     this.setState({
       rows

@@ -36,7 +36,7 @@ export const TextArea = styled(Card.withComponent('textarea'), {
   letterSpacing: pxValue(props.valueSpacing),
   outline: 'none',
   resize: 'none',
-  overflowY: 'auto',
+  overflow: 'none',
   MozAppearance: 'textfield',
   '&::placeholder': {
     fontSize: pxValue(props.placeholderSize, theme.scale),
