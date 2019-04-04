@@ -31,7 +31,7 @@ interface BasicTextAreaProps {
 }
 
 const BasicTextArea: FunctionComponent<BasicTextAreaProps> = (props) => {
-  const { rows, minRows = 1, maxRows = 5 } = props
+  const { rows, minRows = 1, maxRows = 4 } = props
   return (
     <TextArea
       width={1}

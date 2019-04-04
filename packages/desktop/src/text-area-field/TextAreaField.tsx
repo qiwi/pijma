@@ -11,13 +11,11 @@ const TextAreaField: FunctionComponent<TextAreaFieldProps> = (props) => (
     onBlur={props.onBlur}
     onKeyDown={props.onKeyDown}
     onKeyUp={props.onKeyUp}
-    minRows={props.minRows}
-    maxRows={props.maxRows}
     value={props.value}
     children={(renderProps) => (
       <InputField
         title={props.title}
-        active={renderProps.focused || !!props.value || !!props.placeholder}
+        active={true}
         padded={!!props.hint}
         input={(
           <BasicTextArea
@@ -53,7 +51,7 @@ const TextAreaField: FunctionComponent<TextAreaFieldProps> = (props) => (
 TextAreaField.defaultProps = {
   tabIndex: 0,
   minRows: 1,
-  maxRows: 5
+  maxRows: 4
 }
 
 export default TextAreaField

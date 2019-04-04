@@ -5,17 +5,12 @@ import TextAreaFieldControlState from './TextAreaFieldControlState'
 
 export default class TextAreaFieldControl extends React.Component<TextAreaFieldControlProps, TextAreaFieldControlState> {
 
-  static defaultProps = {
-    minRows: 1,
-    maxRows: 4
-  }
-
   constructor(props: TextAreaFieldControlProps) {
     super(props)
 
     this.state = {
       focused: false,
-      rows: props.value ? props.minRows: 1
+      rows: 1
     }
   }
 
@@ -26,6 +21,9 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
     const scrollHeight = element.scrollHeight
     
     const rows = Math.ceil(scrollHeight / lineHeight)
+
+    console.log(scrollHeight)
+    console.log(rows)
 
     this.setState({
       rows
@@ -41,26 +39,12 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
 
   private onFocus: React.FocusEventHandler<HTMLTextAreaElement> = (event: React.FocusEvent<HTMLTextAreaElement>) => {
     this.setState({
-      focused: true,
+      focused: true
     })
     event.preventDefault()
     if (this.props.onFocus) {
       this.props.onFocus()
     }
-  }
-
-  static getDerivedStateFromProps(nextProps: TextAreaFieldControlProps, nextState: TextAreaFieldControlState) {
-    if (nextState.focused && !nextProps.value) {
-      return {
-        rows: nextProps.minRows
-      }
-    }
-    if (!nextProps.value) {
-      return {
-        rows: 1
-      }
-    }
-    return null
   }
 
   private onBlur: React.FocusEventHandler<HTMLTextAreaElement> = (e: React.FocusEvent<HTMLTextAreaElement>) => {
