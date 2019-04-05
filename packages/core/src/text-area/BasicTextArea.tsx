@@ -37,7 +37,7 @@ const BasicTextArea: FunctionComponent<BasicTextAreaProps> = (props) => {
       valueHeight={7}
       placeholderHeight={7}
       rows={props.rows}
-      overflowed={props.overflowed}
+      overflow={props.overflowed ? 'auto' : 'hidden'}
       m={0}
       p={0}
       pr={props.padded ? 7 : undefined}

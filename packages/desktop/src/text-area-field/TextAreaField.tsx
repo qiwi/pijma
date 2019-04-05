@@ -1,12 +1,12 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent } from 'react';
 
 import {
   TextAreaFieldControl,
   InputField,
   BasicTextArea
-} from '@qiwi/pijma-core'
+} from '@qiwi/pijma-core';
 
-import TextAreaFieldProps from './TextAreaFieldProps'
+import TextAreaFieldProps from './TextAreaFieldProps';
 
 const TextAreaField: FunctionComponent<TextAreaFieldProps> = ({
   minRows = 1,
@@ -24,7 +24,7 @@ const TextAreaField: FunctionComponent<TextAreaFieldProps> = ({
       <InputField
         title={props.title}
         active={
-          rows > 1 ||
+          minRows > 1 ||
           renderProps.focused ||
           !!props.value ||
           !!props.placeholder
@@ -57,12 +57,12 @@ const TextAreaField: FunctionComponent<TextAreaFieldProps> = ({
       />
     )}
   />
-)
+);
 
 TextAreaField.defaultProps = {
   tabIndex: 0,
   minRows: 1,
   maxRows: 4
-}
+};
 
-export default TextAreaField
+export default TextAreaField;

@@ -9,10 +9,10 @@
   />
 </Box>
 ```
-## Стандартное многострочное текстовое поле с настраиваемым количеством полей
+## Поле с настраиваемым количеством строк
 
 ```jsx
-initialState = {text: 'Текст в многострочном текстовом поле'};
+initialState = {text: 'Многострочный длинный текст'};
 
 <Box width={64}>
   <TextAreaField
@@ -95,7 +95,7 @@ initialState = {text: 'Текст в многострочном текстово
   <TextAreaField
     title="Поле ввода"
     maxLength={60}
-    maxRows={1}
+    maxRows={3}
     value={state.text}
     onChange={text => setState({text})}
   />

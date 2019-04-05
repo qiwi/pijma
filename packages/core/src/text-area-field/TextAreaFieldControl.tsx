@@ -16,14 +16,15 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
 
   private resize(element: HTMLTextAreaElement): void {
 
+    element.style.height = '0px'
+
     const style = getComputedStyle(element)
     const lineHeight = parseInt(style.lineHeight || '0', 10)
     const scrollHeight = element.scrollHeight
-    element.style.height = ''
-    const rows = Math.ceil(scrollHeight / lineHeight)
 
-    console.log(scrollHeight)
-    console.log(rows)
+    element.style.height = 'auto'
+
+    const rows = Math.ceil(scrollHeight / lineHeight)
 
     this.setState({
       rows
