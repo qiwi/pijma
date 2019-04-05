@@ -1,10 +1,18 @@
-import React, {FunctionComponent} from 'react'
+import React, { FunctionComponent } from 'react'
 
-import {TextAreaFieldControl, InputField, BasicTextArea} from '@qiwi/pijma-core'
+import {
+  TextAreaFieldControl,
+  InputField,
+  BasicTextArea
+} from '@qiwi/pijma-core'
 
 import TextAreaFieldProps from './TextAreaFieldProps'
 
-const TextAreaField: FunctionComponent<TextAreaFieldProps> = (props) => (
+const TextAreaField: FunctionComponent<TextAreaFieldProps> = ({
+  minRows = 1,
+  maxRows = 4,
+  ...props
+}) => (
   <TextAreaFieldControl
     onChange={props.onChange}
     onFocus={props.onFocus}
@@ -12,12 +20,17 @@ const TextAreaField: FunctionComponent<TextAreaFieldProps> = (props) => (
     onKeyDown={props.onKeyDown}
     onKeyUp={props.onKeyUp}
     value={props.value}
-    children={(renderProps) => (
+    children={({ rows, ...renderProps }) => (
       <InputField
         title={props.title}
-        active={true}
+        active={
+          rows > 1 ||
+          renderProps.focused ||
+          !!props.value ||
+          !!props.placeholder
+        }
         padded={!!props.hint}
-        input={(
+        input={
           <BasicTextArea
             value={props.value}
             name={props.name}
@@ -28,16 +41,15 @@ const TextAreaField: FunctionComponent<TextAreaFieldProps> = (props) => (
             error={!!props.error}
             focused={renderProps.focused}
             maxLength={props.maxLength}
-            rows={renderProps.rows}
-            minRows={props.minRows}
-            maxRows={props.maxRows}
+            rows={rows > minRows ? (rows <= maxRows ? rows : maxRows) : minRows}
+            overflowed={rows >= maxRows}
             onChange={renderProps.onChange}
             onFocus={renderProps.onFocus}
             onBlur={renderProps.onBlur}
             onKeyDown={renderProps.onKeyDown}
             onKeyUp={renderProps.onKeyUp}
           />
-        )}
+        }
         hint={props.hint}
         error={props.error}
         help={props.help}
@@ -46,7 +58,6 @@ const TextAreaField: FunctionComponent<TextAreaFieldProps> = (props) => (
     )}
   />
 )
-
 
 TextAreaField.defaultProps = {
   tabIndex: 0,

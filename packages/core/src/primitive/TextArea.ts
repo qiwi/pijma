@@ -1,11 +1,12 @@
 import styled from '../styled'
 
-import {Card, CardProps, CardNonProps} from './Card'
-import {pxValue} from './Value'
+import { Card, CardProps, CardNonProps } from './Card'
+import { pxValue } from './Value'
 
 export interface TextAreaProps extends CardProps {
   valueSize?: number
   valueWeight?: number
+  overflowed: boolean
   valueColor?: string
   valueTransform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
   valueSpacing?: number
@@ -19,13 +20,21 @@ export interface TextAreaProps extends CardProps {
 }
 
 export const TextAreaNonProps = [
-  'valueSize', 'valueWeight', 'valueColor', 'valueTransform', 'valueSpacing',
-  'placeholderSize', 'placeholderWeight', 'placeholderColor', 'placeholderTransform', 'placeholderSpacing',
+  'valueSize',
+  'valueWeight',
+  'valueColor',
+  'valueTransform',
+  'valueSpacing',
+  'placeholderSize',
+  'placeholderWeight',
+  'placeholderColor',
+  'placeholderTransform',
+  'placeholderSpacing'
 ].concat(CardNonProps)
 
 export const TextArea = styled(Card.withComponent('textarea'), {
-  shouldForwardProp: (prop) => !TextAreaNonProps.includes(prop),
-})<TextAreaProps>(({theme, ...props}) => ({
+  shouldForwardProp: (prop) => !TextAreaNonProps.includes(prop)
+})<TextAreaProps>(({ theme, ...props }) => ({
   fontFamily: theme.font.family,
   fontSize: pxValue(props.valueSize, theme.scale),
   fontWeight: props.valueWeight,
@@ -36,7 +45,7 @@ export const TextArea = styled(Card.withComponent('textarea'), {
   letterSpacing: pxValue(props.valueSpacing),
   outline: 'none',
   resize: 'none',
-  overflow: 'none',
+  overflowY: props.overflowed ? 'auto' : 'hidden',
   MozAppearance: 'textfield',
   '&::placeholder': {
     fontSize: pxValue(props.placeholderSize, theme.scale),
@@ -44,6 +53,6 @@ export const TextArea = styled(Card.withComponent('textarea'), {
     lineHeight: pxValue(props.placeholderHeight, theme.scale),
     color: props.placeholderColor,
     textTransform: props.placeholderTransform,
-    letterSpacing: pxValue(props.placeholderSpacing),
-  },
+    letterSpacing: pxValue(props.placeholderSpacing)
+  }
 }))

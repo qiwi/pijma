@@ -9,8 +9,7 @@ import { TextArea } from '../primitive'
 
 interface BasicTextAreaProps {
   rows: number
-  minRows?: number
-  maxRows?: number
+  overflowed: boolean
   value: string
   tabIndex?: number
   name?: string
@@ -31,20 +30,14 @@ interface BasicTextAreaProps {
 }
 
 const BasicTextArea: FunctionComponent<BasicTextAreaProps> = (props) => {
-  const { rows, minRows = 1, maxRows = 4 } = props
   return (
     <TextArea
       width={1}
       minHeight={7}
       valueHeight={7}
       placeholderHeight={7}
-      rows={
-        rows > minRows
-          ? rows <= maxRows
-            ? rows
-            : maxRows
-          : minRows
-      }
+      rows={props.rows}
+      overflowed={props.overflowed}
       m={0}
       p={0}
       pr={props.padded ? 7 : undefined}

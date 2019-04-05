@@ -19,7 +19,7 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
     const style = getComputedStyle(element)
     const lineHeight = parseInt(style.lineHeight || '0', 10)
     const scrollHeight = element.scrollHeight
-    
+    element.style.height = ''
     const rows = Math.ceil(scrollHeight / lineHeight)
 
     console.log(scrollHeight)
@@ -29,6 +29,14 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
       rows
     })
   }
+
+  /* componentDidUpdate(nextProps: TextAreaFieldControlProps):void {
+    if (nextProps.value && nextProps.value.length > this.props.value.length) {
+      this.setState({
+        rows: 1
+      })
+    }
+  } */
 
   private onChange: React.ChangeEventHandler<HTMLTextAreaElement> = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     e.preventDefault()
