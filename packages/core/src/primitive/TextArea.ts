@@ -1,22 +1,22 @@
-import styled from '../styled';
+import styled from '../styled'
 
-import { Card, CardProps, CardNonProps } from './Card';
-import { pxValue } from './Value';
+import { Card, CardProps, CardNonProps } from './Card'
+import { pxValue } from './Value'
 
 export interface TextAreaProps extends CardProps {
-  valueSize?: number;
-  valueWeight?: number;
-  overflow: 'auto' | 'hidden';
-  valueColor?: string;
-  valueTransform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none';
-  valueSpacing?: number;
-  valueHeight?: number;
-  placeholderHeight?: number;
-  placeholderSize?: number;
-  placeholderWeight?: number;
-  placeholderColor?: string;
-  placeholderTransform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none';
-  placeholderSpacing?: number;
+  valueSize?: number
+  valueWeight?: number
+  overflow: 'auto' | 'hidden'
+  valueColor?: string
+  valueTransform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
+  valueSpacing?: number
+  valueHeight?: number
+  placeholderHeight?: number
+  placeholderSize?: number
+  placeholderWeight?: number
+  placeholderColor?: string
+  placeholderTransform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
+  placeholderSpacing?: number
 }
 
 export const TextAreaNonProps = [
@@ -30,7 +30,7 @@ export const TextAreaNonProps = [
   'placeholderColor',
   'placeholderTransform',
   'placeholderSpacing'
-].concat(CardNonProps);
+].concat(CardNonProps)
 
 export const TextArea = styled(Card.withComponent('textarea'), {
   shouldForwardProp: (prop) => !TextAreaNonProps.includes(prop)
@@ -55,4 +55,4 @@ export const TextArea = styled(Card.withComponent('textarea'), {
     textTransform: props.placeholderTransform,
     letterSpacing: pxValue(props.placeholderSpacing)
   }
-}));
+}))

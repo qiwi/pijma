@@ -31,14 +31,6 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
     })
   }
 
-  /* componentDidUpdate(nextProps: TextAreaFieldControlProps):void {
-    if (nextProps.value && nextProps.value.length > this.props.value.length) {
-      this.setState({
-        rows: 1
-      })
-    }
-  } */
-
   private onChange: React.ChangeEventHandler<HTMLTextAreaElement> = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     e.preventDefault()
     if (this.props.onChange) {
@@ -90,5 +82,4 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
       onKeyUp: this.onKeyUp,
     })
   }
-
 }
