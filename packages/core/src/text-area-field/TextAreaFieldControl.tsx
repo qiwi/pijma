@@ -1,20 +1,26 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 
 import TextAreaFieldControlProps from './TextAreaFieldControlProps'
 import TextAreaFieldControlState from './TextAreaFieldControlState'
 
-export default class TextAreaFieldControl extends React.Component<TextAreaFieldControlProps, TextAreaFieldControlState> {
-
-  constructor(props: TextAreaFieldControlProps) {
-    super(props)
-
-    this.state = {
-      focused: false,
-      rows: 1
-    }
+export default class TextAreaFieldControl extends React.Component<
+  TextAreaFieldControlProps,
+  TextAreaFieldControlState
+> {
+  state = {
+    focused: false,
+    rows: 1
   }
 
-  private resize(element: HTMLTextAreaElement): void {
+  public componentDidMount(): void {
+    this.resize()
+  }
+
+  private resize(): void {
+    const element = (ReactDOM.findDOMNode(this) as HTMLElement).querySelector(
+      'textarea'
+    ) as HTMLTextAreaElement
 
     element.style.height = '0px'
 
@@ -31,14 +37,18 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
     })
   }
 
-  private onChange: React.ChangeEventHandler<HTMLTextAreaElement> = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  private onChange: React.ChangeEventHandler<HTMLTextAreaElement> = (
+    e: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     e.preventDefault()
     if (this.props.onChange) {
       this.props.onChange(e.currentTarget.value)
     }
   }
 
-  private onFocus: React.FocusEventHandler<HTMLTextAreaElement> = (event: React.FocusEvent<HTMLTextAreaElement>) => {
+  private onFocus: React.FocusEventHandler<HTMLTextAreaElement> = (
+    event: React.FocusEvent<HTMLTextAreaElement>
+  ) => {
     this.setState({
       focused: true
     })
@@ -48,7 +58,9 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
     }
   }
 
-  private onBlur: React.FocusEventHandler<HTMLTextAreaElement> = (e: React.FocusEvent<HTMLTextAreaElement>) => {
+  private onBlur: React.FocusEventHandler<HTMLTextAreaElement> = (
+    e: React.FocusEvent<HTMLTextAreaElement>
+  ) => {
     this.setState({
       focused: false
     })
@@ -58,14 +70,18 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
     }
   }
 
-  private onKeyDown: React.KeyboardEventHandler<HTMLTextAreaElement> = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    this.resize(event.currentTarget)
+  private onKeyDown: React.KeyboardEventHandler<HTMLTextAreaElement> = (
+    event: React.KeyboardEvent<HTMLTextAreaElement>
+  ) => {
+    this.resize()
     if (this.props.onKeyDown && this.props.onKeyDown(event)) {
       event.preventDefault()
     }
   }
 
-  private onKeyUp: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
+  private onKeyUp: React.KeyboardEventHandler = (
+    event: React.KeyboardEvent
+  ) => {
     if (this.props.onKeyUp && this.props.onKeyUp(event)) {
       event.preventDefault()
     }
@@ -79,7 +95,7 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
       onFocus: this.onFocus,
       onBlur: this.onBlur,
       onKeyDown: this.onKeyDown,
-      onKeyUp: this.onKeyUp,
+      onKeyUp: this.onKeyUp
     })
   }
 }
