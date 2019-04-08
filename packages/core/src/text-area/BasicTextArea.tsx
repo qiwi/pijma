@@ -22,6 +22,7 @@ interface BasicTextAreaProps {
   disabled?: boolean
   error: boolean
   focused: boolean
+  innerRef: (ref: HTMLTextAreaElement) => void
   onChange?: ChangeEventHandler
   onFocus?: FocusEventHandler
   onBlur?: FocusEventHandler
@@ -61,6 +62,7 @@ const BasicTextArea: FunctionComponent<BasicTextAreaProps> = (props) => {
       transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
       value={props.value}
       name={props.name}
+      ref={props.innerRef}
       autoComplete={props.autoComplete ? 'on' : 'off'}
       autoFocus={props.autoFocus}
       placeholder={props.placeholder}

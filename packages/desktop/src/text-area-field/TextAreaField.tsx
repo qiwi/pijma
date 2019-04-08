@@ -41,8 +41,9 @@ const TextAreaField: FunctionComponent<TextAreaFieldProps> = ({
             error={!!props.error}
             focused={renderProps.focused}
             maxLength={props.maxLength}
-            rows={rows > minRows ? (rows <= maxRows ? rows : maxRows) : minRows}
+            rows={rows <= minRows ? minRows : rows >= maxRows ? maxRows : rows}
             overflowed={rows >= maxRows}
+            innerRef={renderProps.innerRef}
             onChange={renderProps.onChange}
             onFocus={renderProps.onFocus}
             onBlur={renderProps.onBlur}

@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 
 import TextAreaFieldControlProps from './TextAreaFieldControlProps'
 import TextAreaFieldControlState from './TextAreaFieldControlState'
@@ -13,6 +12,8 @@ export default class TextAreaFieldControl extends React.Component<
     rows: 1
   }
 
+  private field!: HTMLTextAreaElement
+
   public componentDidMount(): void {
     this.resize()
   }
@@ -24,9 +25,7 @@ export default class TextAreaFieldControl extends React.Component<
   }
 
   private resize(): void {
-    const element = (ReactDOM.findDOMNode(this) as HTMLElement).querySelector(
-      'textarea'
-    ) as HTMLTextAreaElement
+    const element = this.field
 
     element.style.height = '0px'
 
@@ -95,6 +94,7 @@ export default class TextAreaFieldControl extends React.Component<
   public render() {
     return this.props.children({
       rows: this.state.rows,
+      innerRef: (ref: HTMLTextAreaElement) => {this.field = ref},
       focused: this.state.focused,
       onChange: this.onChange,
       onFocus: this.onFocus,

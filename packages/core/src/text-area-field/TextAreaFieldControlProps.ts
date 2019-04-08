@@ -12,6 +12,7 @@ export default interface TextAreaFieldControlProps {
   children: RenderChild<{
     rows: number
     focused: boolean
+    innerRef: (ref: HTMLTextAreaElement) => void
     onChange: React.ChangeEventHandler
     onFocus: React.FocusEventHandler
     onBlur: React.FocusEventHandler
