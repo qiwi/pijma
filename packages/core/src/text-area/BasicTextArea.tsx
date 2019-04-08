@@ -1,36 +1,36 @@
 import React, {
-  FunctionComponent,
   ChangeEventHandler,
   FocusEventHandler,
-  KeyboardEventHandler
-} from 'react'
+  KeyboardEventHandler,
+  forwardRef,
+  Ref
+} from 'react';
 
-import { TextArea } from '../primitive'
+import { TextArea } from '../primitive';
 
 interface BasicTextAreaProps {
-  rows: number
-  overflowed: boolean
-  value: string
-  tabIndex?: number
-  name?: string
-  height?: number
-  autoComplete?: boolean
-  autoFocus?: boolean
-  placeholder?: string
-  maxLength?: number
-  padded: boolean
-  disabled?: boolean
-  error: boolean
-  focused: boolean
-  innerRef: (ref: HTMLTextAreaElement) => void
-  onChange?: ChangeEventHandler
-  onFocus?: FocusEventHandler
-  onBlur?: FocusEventHandler
-  onKeyDown?: KeyboardEventHandler
-  onKeyUp?: KeyboardEventHandler
+  rows: number;
+  overflowed: boolean;
+  value: string;
+  tabIndex?: number;
+  name?: string;
+  height?: number;
+  autoComplete?: boolean;
+  autoFocus?: boolean;
+  placeholder?: string;
+  maxLength?: number;
+  padded: boolean;
+  disabled?: boolean;
+  error: boolean;
+  focused: boolean;
+  onChange?: ChangeEventHandler;
+  onFocus?: FocusEventHandler;
+  onBlur?: FocusEventHandler;
+  onKeyDown?: KeyboardEventHandler;
+  onKeyUp?: KeyboardEventHandler;
 }
 
-const BasicTextArea: FunctionComponent<BasicTextAreaProps> = (props) => {
+const BasicTextArea = forwardRef((props: BasicTextAreaProps, ref?: Ref<HTMLTextAreaElement>) => {
   return (
     <TextArea
       width={1}
@@ -62,7 +62,7 @@ const BasicTextArea: FunctionComponent<BasicTextAreaProps> = (props) => {
       transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
       value={props.value}
       name={props.name}
-      ref={props.innerRef}
+      ref={ref}
       autoComplete={props.autoComplete ? 'on' : 'off'}
       autoFocus={props.autoFocus}
       placeholder={props.placeholder}
@@ -74,11 +74,11 @@ const BasicTextArea: FunctionComponent<BasicTextAreaProps> = (props) => {
       onKeyDown={props.onKeyDown}
       onKeyUp={props.onKeyUp}
     />
-  )
-}
+  );
+});
 
 BasicTextArea.defaultProps = {
   tabIndex: 0
-}
+};
 
-export default BasicTextArea
+export default BasicTextArea;

@@ -12,7 +12,9 @@ export default class TextAreaFieldControl extends React.Component<
     rows: 1
   }
 
-  private field!: HTMLTextAreaElement
+  private field: React.RefObject<HTMLTextAreaElement> = React.createRef<
+    HTMLTextAreaElement
+  >()
 
   public componentDidMount(): void {
     this.resize()
@@ -25,7 +27,7 @@ export default class TextAreaFieldControl extends React.Component<
   }
 
   private resize(): void {
-    const element = this.field
+    const element = this.field.current!
 
     element.style.height = '0px'
 
@@ -94,7 +96,7 @@ export default class TextAreaFieldControl extends React.Component<
   public render() {
     return this.props.children({
       rows: this.state.rows,
-      innerRef: (ref: HTMLTextAreaElement) => {this.field = ref},
+      ref: this.field,
       focused: this.state.focused,
       onChange: this.onChange,
       onFocus: this.onFocus,
