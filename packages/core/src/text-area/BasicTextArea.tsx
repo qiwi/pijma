@@ -4,30 +4,30 @@ import React, {
   KeyboardEventHandler,
   forwardRef,
   Ref
-} from 'react';
+} from 'react'
 
-import { TextArea } from '../primitive';
+import { TextArea } from '../primitive'
 
 interface BasicTextAreaProps {
-  rows: number;
-  overflowed: boolean;
-  value: string;
-  tabIndex?: number;
-  name?: string;
-  height?: number;
-  autoComplete?: boolean;
-  autoFocus?: boolean;
-  placeholder?: string;
-  maxLength?: number;
-  padded: boolean;
-  disabled?: boolean;
-  error: boolean;
-  focused: boolean;
-  onChange?: ChangeEventHandler;
-  onFocus?: FocusEventHandler;
-  onBlur?: FocusEventHandler;
-  onKeyDown?: KeyboardEventHandler;
-  onKeyUp?: KeyboardEventHandler;
+  rows: number
+  overflowed: boolean
+  value: string
+  tabIndex?: number
+  name?: string
+  height?: number
+  autoComplete?: boolean
+  autoFocus?: boolean
+  placeholder?: string
+  maxLength?: number
+  padded: boolean
+  disabled?: boolean
+  error: boolean
+  focused: boolean
+  onChange?: ChangeEventHandler
+  onFocus?: FocusEventHandler
+  onBlur?: FocusEventHandler
+  onKeyDown?: KeyboardEventHandler
+  onKeyUp?: KeyboardEventHandler
 }
 
 const BasicTextArea = forwardRef((props: BasicTextAreaProps, ref?: Ref<HTMLTextAreaElement>) => {
@@ -74,11 +74,11 @@ const BasicTextArea = forwardRef((props: BasicTextAreaProps, ref?: Ref<HTMLTextA
       onKeyDown={props.onKeyDown}
       onKeyUp={props.onKeyUp}
     />
-  );
-});
+  )
+})
 
 BasicTextArea.defaultProps = {
   tabIndex: 0
-};
+}
 
-export default BasicTextArea;
+export default BasicTextArea

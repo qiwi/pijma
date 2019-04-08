@@ -23,6 +23,8 @@ export const TextAreaNonProps = [
   'valueSize',
   'valueWeight',
   'valueColor',
+  'valueHeight',
+  'placeholderHeight',
   'valueTransform',
   'valueSpacing',
   'placeholderSize',
