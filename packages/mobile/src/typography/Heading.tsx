@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo, Stub, Box} from '@qiwi/pijma-core'
+import {Typo, Stub} from '@qiwi/pijma-core'
 
 export interface HeadingProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -60,13 +60,13 @@ export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'de
   if (stub) {
     const offset = StubOffset[size]
     return (
-      <Box pt={offset.top} pb={offset.bottom}>
-        <Stub
-          width={50}
-          height={StubHeight[size]}
-          color={color === undefined ? undefined : HeadingColor[color]}
-        />
-      </Box>
+      <Stub
+        pt={offset.top}
+        pb={offset.bottom}
+        width={50}
+        height={StubHeight[size]}
+        bg={color === undefined ? undefined : HeadingColor[color]}
+      />
     )
   }
   return (

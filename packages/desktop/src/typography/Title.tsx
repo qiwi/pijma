@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo, Box, Stub} from '@qiwi/pijma-core'
+import {Typo, Stub} from '@qiwi/pijma-core'
 
 export interface TitleProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -48,13 +48,13 @@ export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'defaul
   if (stub) {
     const offset = StubOffset[size]
     return (
-      <Box pt={offset.top} pb={offset.bottom}>
-        <Stub
-          height={StubHeight[size]}
-          width={50}
-          color={color === 'inverse' ? TitleColor.inverse : TitleColor.default}
-        />
-      </Box>
+      <Stub
+        pt={offset.top}
+        pb={offset.bottom}
+        height={StubHeight[size]}
+        width={50}
+        bg={color === 'inverse' ? TitleColor.inverse : TitleColor.default}
+      />
     )
   }
   return (

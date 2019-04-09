@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo, TypoProps, Stub, Box} from '@qiwi/pijma-core'
+import {Typo, TypoProps, Stub} from '@qiwi/pijma-core'
 
 export interface TextProps {
   display?: 'block' | 'inline' | 'inline-block'
@@ -63,9 +63,7 @@ export const Text: FunctionComponent<TextProps> = ({display, compact, size, bold
     const offset = compact ? StubOffsetCompact[stubSize] : StubOffset[stubSize]
     const stubColor = color === 'inverse' ? TextColor.inverse : TextColor.default
     return (
-      <Box pt={offset.top} pb={offset.bottom}>
-        <Stub height={StubHeight[stubSize]} width={75} color={stubColor}/>
-      </Box>
+      <Stub pt={offset.top} pb={offset.bottom} height={StubHeight[stubSize]} width={75} bg={stubColor}/>
     )
   }
   return (

@@ -9,11 +9,6 @@ export default interface Theme {
       heavy: number
     }
   }
-  stub: {
-    color: string
-    animation: string
-    radius: number
-  },
   color: {
     brand: string
     white: string

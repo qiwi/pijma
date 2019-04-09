@@ -59,15 +59,9 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold =
     const stubColor = color === 'inverse' ? ParagraphColor['inverse'] : ParagraphColor['default']
     return (
       <Box>
-        <Box pt={offset.top} pb={offset.bottom}>
-          <Stub height={StubHeight[size]} width={75} color={stubColor}/>
-        </Box>
-        <Box pt={offset.top} pb={offset.bottom}>
-          <Stub height={StubHeight[size]} width={88} color={stubColor}/>
-        </Box>
-        <Box pt={offset.top} pb={offset.bottom}>
-          <Stub height={StubHeight[size]} width={62} color={stubColor}/>
-        </Box>
+        <Stub pt={offset.top} pb={offset.bottom} height={StubHeight[size]} width={75} bg={stubColor}/>
+        <Stub pt={offset.top} pb={offset.bottom} height={StubHeight[size]} width={88} bg={stubColor}/>
+        <Stub pt={offset.top} pb={offset.bottom} height={StubHeight[size]} width={62} bg={stubColor}/>
       </Box>
     )
   }

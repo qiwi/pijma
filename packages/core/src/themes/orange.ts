@@ -1,17 +1,4 @@
 import Theme from '../Theme'
-import {keyframes} from 'emotion'
-
-const stub = keyframes({
-  '0%': {
-    opacity: 0.04,
-  },
-  '50%': {
-    opacity: 0.10,
-  },
-  '100%': {
-    opacity: 0.04,
-  },
-})
 
 export const orange: Theme = {
   scale: 4,
@@ -37,10 +24,5 @@ export const orange: Theme = {
     },
     error: '#d0021b',
     success: '#4bbd5c',
-  },
-  stub: {
-    color: '#000',
-    radius: 1,
-    animation: `${stub} 1800ms ease-in-out infinite`,
   },
 }
