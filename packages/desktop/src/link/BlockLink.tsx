@@ -20,7 +20,7 @@ export interface BlockLinkProps {
   }>
 }
 
-const CardLnk = Card.withComponent(Lnk)
+const CardLink = Card.withComponent(Lnk)
 
 export const BlockLink: FC<BlockLinkProps> = (props) => (
   <LinkControl
@@ -32,10 +32,11 @@ export const BlockLink: FC<BlockLinkProps> = (props) => (
     download={props.download}
     rel={props.rel}
     children={(renderProps) => (
-      <CardLnk
+      <CardLink
         display="block"
         overflow="hidden"
         bg="#fff"
+        cursor="pointer"
         r={10}
         s={renderProps.hover || renderProps.focus || renderProps.active ? '0 10px 24px 0 rgba(0,0,0,0.08)' : '0 1px 2px 0 rgba(0,0,0,0.12)'}
         transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
