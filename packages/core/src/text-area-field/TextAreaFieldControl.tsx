@@ -27,23 +27,25 @@ export default class TextAreaFieldControl extends React.Component<
   }
 
   private resize(): void {
-    if (this.field.current) {
-      const element = this.field.current
-
-      element.style.height = '0px'
-
-      const style = getComputedStyle(element)
-      const lineHeight = parseInt(style.lineHeight || '0', 10)
-      const scrollHeight = element.scrollHeight
-
-      element.style.height = 'auto'
-
-      const rows = Math.ceil(scrollHeight / lineHeight)
-
-      this.setState({
-        rows
-      })
+    if (!this.field.current) {
+      return
     }
+  
+    const element = this.field.current
+
+    element.style.height = '0px'
+
+    const style = getComputedStyle(element)
+    const lineHeight = parseInt(style.lineHeight || '0', 10)
+    const scrollHeight = element.scrollHeight
+
+    element.style.height = 'auto'
+
+    const rows = Math.ceil(scrollHeight / lineHeight)
+
+    this.setState({
+      rows
+    })
   }
 
   private onChange: React.ChangeEventHandler<HTMLTextAreaElement> = (
