@@ -14,7 +14,7 @@ export const LinedBlock: FC = ({children}) => {
         <Card
           key={key}
           children={child}
-          bt={key === 0 ? undefined : '1px solid #eee' }
+          bt={key === 0 ? undefined : '1px solid #eee'}
         />
       ))}
     </Block>

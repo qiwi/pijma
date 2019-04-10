@@ -5,10 +5,18 @@
   ],
   "scripts": {
     "clean": "lerna clean --yes && lerna run clean",
-    "build": "yarn clean && lerna run --stream build",
+    "build": "yarn clean && yarn lint && lerna run --stream build",
     "watch": "lerna run --parallel watch",
+    "lint": "lerna run --no-bail --parallel lint",
+    "lint:fix": "lerna run --no-bail --parallel lint:fix",
     "guide": "lerna run --concurrency=1 guide",
     "guide_ci": "lerna run --concurrency=1 guide_ci"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn lint"
+    }
   },
   "devDependencies": {
     "@semantic-release/changelog": "3.0.2",

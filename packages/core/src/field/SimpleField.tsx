@@ -24,7 +24,7 @@ export const SimpleField: FC<SimpleFieldProps> = ({input, error, action, help}) 
       )}
       {action ? (
         <FlexItem pl={6} ml="auto">
-          <Typo display="block" nowrap weight={300} size={3.5} height={4} children={action}/>
+          <Typo display="block" nowrap={true} weight={300} size={3.5} height={4} children={action}/>
         </FlexItem>
       ) : (
         null

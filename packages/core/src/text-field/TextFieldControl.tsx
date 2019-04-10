@@ -8,7 +8,6 @@ export default class TextFieldControl extends React.Component<TextFieldControlPr
   public state: TextFieldControlState = {
     focused: false,
   }
-
   private onChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
     if (this.props.onChange) {

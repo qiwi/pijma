@@ -21,7 +21,7 @@ export const cssValue = (value: Value | undefined, scale: number = 1, relative: 
   if (typeof value === 'string') {
     return value
   }
-  if (typeof value !== 'number' || isNaN(value)) {
+  if (isNaN(value)) {
     return undefined
   }
   if (!relative || value === 0 || Math.abs(value) > 1) {
