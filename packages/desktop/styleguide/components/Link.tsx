@@ -6,9 +6,7 @@ import {Link, LinkProps} from '@qiwi/pijma-desktop'
 
 const LinkRenderer: FC<LinkProps> = (props) => (
   <ThemeProvider theme={themes.orange}>
-    <Link href={props.href}>
-      {props.children}
-    </Link>
+    <Link {...props}/>
   </ThemeProvider>
 )
 
