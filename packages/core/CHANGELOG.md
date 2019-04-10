@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.37.0](https://github.com/qiwi/pijma/compare/v1.36.1...v1.37.0) (2019-04-10)
+
+
+### Features
+
+* link ([b28e20f](https://github.com/qiwi/pijma/commit/b28e20f))
+
 # [@qiwi/pijma-core-v1.35.0](https://github.com/qiwi/pijma/compare/v1.34.0...v1.35.0) (2019-02-11)
 
 
