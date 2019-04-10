@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo, Stub} from '@qiwi/pijma-core'
+import {Typo, Stub, Box} from '@qiwi/pijma-core'
 
 export interface HeadingProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -41,12 +41,20 @@ const HeadingWeight: { [size in HeadingProps['size']]: number } = {
   5: 700,
 }
 
-const StubOffset: { [size in HeadingProps['size']]: {top: number, bottom: number} } = {
-  1: {top: 3, bottom: 2},
-  2: {top: 3, bottom: 1},
-  3: {top: 2, bottom: 1},
-  4: {top: 2, bottom: 1},
-  5: {top: 1, bottom: 1},
+const StubOffsetTop: { [size in HeadingProps['size']]: number } = {
+  1: 3,
+  2: 3,
+  3: 2,
+  4: 2,
+  5: 1,
+}
+
+const StubOffsetBottom: { [size in HeadingProps['size']]: number } = {
+  1: 2,
+  2: 1,
+  3: 1,
+  4: 1,
+  5: 1,
 }
 
 const StubHeight: { [size in HeadingProps['size']]: number } = {
@@ -67,20 +75,16 @@ const StubColor: { [color in NonNullable<HeadingProps['color']>]: string } = {
   inverse: '#fff',
 }
 
-export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'default', stub, children}) => {
-  if (stub) {
-    const offset = StubOffset[size]
-    return (
+export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'default', stub, children}) => (
+  stub ? (
+    <Box pt={StubOffsetTop[size]} pb={StubOffsetBottom[size]}>
       <Stub
-        pt={offset.top}
-        pb={offset.bottom}
         width={50}
         height={StubHeight[size]}
-        bg={color === undefined ? undefined : StubColor[color]}
+        bg={StubColor[color]}
       />
-    )
-  }
-  return (
+    </Box>
+  ) : (
     <Typo
       as={tag ? tag : HeadingTag[size]}
       display="block"
@@ -91,7 +95,7 @@ export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'de
       children={children}
     />
   )
-}
+)
 
 Heading.defaultProps = {
   color: 'default',

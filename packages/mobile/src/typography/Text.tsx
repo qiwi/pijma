@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo, TypoProps, Stub} from '@qiwi/pijma-core'
+import {Typo, TypoProps, Stub, Box} from '@qiwi/pijma-core'
 
 export interface TextProps {
   display?: 'block' | 'inline' | 'inline-block'
@@ -30,16 +30,28 @@ const TextHeightCompact: { [size in NonNullable<TextProps['size']>]: number } = 
   l: 7,
 }
 
-const StubOffset: { [size in NonNullable<TextProps['size']>]: {top: number, bottom: number} } = {
-  s: {top: 2, bottom: 1},
-  m: {top: 1, bottom: 2},
-  l: {top: 3, bottom: 2},
+const StubOffsetTop: { [size in NonNullable<TextProps['size']>]: number } = {
+  s: 2,
+  m: 1,
+  l: 3,
 }
 
-const StubOffsetCompact: { [size in NonNullable<TextProps['size']>]: {top: number, bottom: number} } = {
-  s: {top: 1, bottom: 1},
-  m: {top: 1, bottom: 1},
-  l: {top: 3, bottom: 1},
+const StubOffsetBottom: { [size in NonNullable<TextProps['size']>]: number } = {
+  s: 1,
+  m: 2,
+  l: 2,
+}
+
+const StubOffsetCompactTop: { [size in NonNullable<TextProps['size']>]: number } = {
+  s: 1,
+  m: 1,
+  l: 3,
+}
+
+const StubOffsetCompactBottom: { [size in NonNullable<TextProps['size']>]: number } = {
+  s: 1,
+  m: 1,
+  l: 1,
 }
 
 const StubHeight: { [size in NonNullable<TextProps['size']>]: number } = {
@@ -57,16 +69,28 @@ const TextColor: { [color in NonNullable<TextProps['color']>]: string } = {
   warning: '#ff8c00',
 }
 
-export const Text: FunctionComponent<TextProps> = ({display, compact, size, bold, color, transform, stub, children}) => {
-  if (stub) {
-    const stubSize = size || 'm'
-    const offset = compact ? StubOffsetCompact[stubSize] : StubOffset[stubSize]
-    const stubColor = color === 'inverse' ? TextColor.inverse : TextColor.default
-    return (
-      <Stub pt={offset.top} pb={offset.bottom} height={StubHeight[stubSize]} width={75} bg={stubColor}/>
-    )
-  }
-  return (
+const StubColor: { [color in NonNullable<TextProps['color']>]: string } = {
+  default: '#000',
+  support: '#000',
+  inverse: '#fff',
+  success: '#000',
+  failure: '#000',
+  warning: '#000',
+}
+
+export const Text: FunctionComponent<TextProps> = ({display, compact, size, bold, color, transform, stub, children}) => (
+  stub ? (
+    <Box
+      pt={compact ? StubOffsetCompactTop[size || 'm'] : StubOffsetTop[size || 'm']}
+      pb={compact ? StubOffsetCompactBottom[size || 'm'] : StubOffsetBottom[size || 'm']}
+    >
+      <Stub
+        height={StubHeight[size || 'm']}
+        width={75}
+        bg={color === undefined ? StubColor.default : StubColor[color]}
+      />
+    </Box>
+  ) : (
     <Typo
       as="span"
       display={display}
@@ -78,4 +102,4 @@ export const Text: FunctionComponent<TextProps> = ({display, compact, size, bold
       children={children}
     />
   )
-}
+)

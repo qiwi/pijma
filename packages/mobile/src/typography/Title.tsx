@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo, Stub} from '@qiwi/pijma-core'
+import {Typo, Stub, Box} from '@qiwi/pijma-core'
 
 export interface TitleProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -29,9 +29,14 @@ const TitleWeight: { [size in TitleProps['size']]: number } = {
   2: 900,
 }
 
-const StubOffset: { [size in TitleProps['size']]: {top: number, bottom: number} } = {
-  1: {top: 4, bottom: 3},
-  2: {top: 3, bottom: 2},
+const StubOffsetTop: { [size in TitleProps['size']]: number } = {
+  1: 4,
+  2: 3,
+}
+
+const StubOffsetBottom: { [size in TitleProps['size']]: number } = {
+  1: 3,
+  2: 2,
 }
 
 const StubHeight: { [size in TitleProps['size']]: number } = {
@@ -44,20 +49,21 @@ const TitleColor: { [color in NonNullable<TitleProps['color']>]: string } = {
   inverse: '#fff',
 }
 
-export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'default', stub, children}) => {
-  if (stub) {
-    const offset = StubOffset[size]
-    return (
+const StubColor: { [color in NonNullable<TitleProps['color']>]: string } = {
+  default: '#000',
+  inverse: '#fff',
+}
+
+export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'default', stub, children}) => (
+  stub ? (
+    <Box pt={StubOffsetTop[size]} pb={StubOffsetBottom[size]}>
       <Stub
-        pt={offset.top}
-        pb={offset.bottom}
         height={StubHeight[size]}
         width={50}
-        bg={color === 'inverse' ? TitleColor.inverse : TitleColor.default}
+        bg={StubColor[color]}
       />
-    )
-  }
-  return (
+    </Box>
+  ) : (
     <Typo
       as={tag ? tag : TitleTag[size]}
       display="block"
@@ -68,7 +74,7 @@ export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'defaul
       children={children}
     />
   )
-}
+)
 
 Title.defaultProps = {
   color: 'default',

@@ -29,16 +29,28 @@ const ParagraphHeightCompact: { [size in NonNullable<ParagraphProps['size']>]: n
   l: 7,
 }
 
-const StubOffset: { [size in NonNullable<ParagraphProps['size']>]: {top: number, bottom: number} } = {
-  s: {top: 2, bottom: 1},
-  m: {top: 1, bottom: 2},
-  l: {top: 3, bottom: 2},
+const StubOffsetTop: { [size in NonNullable<ParagraphProps['size']>]: number } = {
+  s: 2,
+  m: 1,
+  l: 3,
 }
 
-const StubOffsetCompact: { [size in NonNullable<ParagraphProps['size']>]: {top: number, bottom: number} } = {
-  s: {top: 1, bottom: 1},
-  m: {top: 1, bottom: 1},
-  l: {top: 3, bottom: 1},
+const StubOffsetBottom: { [size in NonNullable<ParagraphProps['size']>]: number } = {
+  s: 1,
+  m: 2,
+  l: 2,
+}
+
+const StubOffsetCompactTop: { [size in NonNullable<ParagraphProps['size']>]: number } = {
+  s: 1,
+  m: 1,
+  l: 3,
+}
+
+const StubOffsetCompactBottom: { [size in NonNullable<ParagraphProps['size']>]: number } = {
+  s: 1,
+  m: 1,
+  l: 1,
 }
 
 const StubHeight: { [size in NonNullable<ParagraphProps['size']>]: number } = {
@@ -53,19 +65,29 @@ const ParagraphColor: { [color in NonNullable<ParagraphProps['color']>]: string 
   inverse: '#fff',
 }
 
-export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold = false, compact = false, color = 'default', transform, stub, children}) => {
-  if (stub) {
-    const offset = compact ? StubOffsetCompact[size] : StubOffset[size]
-    const stubColor = color === 'inverse' ? ParagraphColor['inverse'] : ParagraphColor['default']
-    return (
-      <Box>
-        <Stub pt={offset.top} pb={offset.bottom} height={StubHeight[size]} width={75} bg={stubColor}/>
-        <Stub pt={offset.top} pb={offset.bottom} height={StubHeight[size]} width={88} bg={stubColor}/>
-        <Stub pt={offset.top} pb={offset.bottom} height={StubHeight[size]} width={62} bg={stubColor}/>
-      </Box>
-    )
-  }
-  return (
+const StubColor: { [color in NonNullable<ParagraphProps['color']>]: string } = {
+  default: '#000',
+  support: '#000',
+  inverse: '#fff',
+}
+
+export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold = false, compact = false, color = 'default', transform, stub, children}) => (
+  stub ? (
+    <Box>
+      {[75, 88, 62].map((width: number) => (
+        <Box
+          pt={compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}
+          pb={compact ? StubOffsetCompactBottom[size] : StubOffsetBottom[size]}
+        >
+          <Stub
+            height={StubHeight[size]}
+            width={width}
+            bg={StubColor[color]}
+          />
+        </Box>
+      ))}
+    </Box>
+  ) : (
     <Typo
       as="p"
       display="block"
@@ -77,7 +99,7 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold =
       children={children}
     />
   )
-}
+)
 
 Paragraph.defaultProps = {
   size: 'm',
