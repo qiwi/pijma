@@ -59,6 +59,7 @@ export const Link: FC<LinkProps> = (props) => (
         color={renderProps.hover || renderProps.focus ? '#FF8C00' : '#0055BB'}
         transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         cursor="pointer"
+        decoration="none"
         target={props.target}
         download={props.download}
         rel={props.rel}
