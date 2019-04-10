@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo} from '@qiwi/pijma-core'
+import {Typo, TypoProps} from '@qiwi/pijma-core'
 
 export interface TextProps {
   display?: 'block' | 'inline' | 'inline-block'
@@ -8,7 +8,7 @@ export interface TextProps {
   bold?: boolean
   compact?: boolean
   color?: 'default' | 'support' | 'inverse' | 'failure' | 'success' | 'warning'
-  transform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
+  transform?: TypoProps['transform']
 }
 
 const TextSize: { [size in NonNullable<TextProps['size']>]: number } = {
