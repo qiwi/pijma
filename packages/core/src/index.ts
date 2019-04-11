@@ -10,14 +10,7 @@ import * as themes from './themes'
 
 export * from './styled'
 
-export {
-  styled,
-  Theme,
-  RenderChild,
-  themes,
-  reset,
-  fonts,
-}
+export {styled, Theme, RenderChild, themes, reset, fonts}
 
 export * from './primitive'
 export * from './spacer'
@@ -40,3 +33,4 @@ export * from './block'
 export * from './recaptcha'
 export * from './recaptcha-field'
 export * from './link'
+export * from './switch'
