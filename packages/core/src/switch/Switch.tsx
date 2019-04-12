@@ -37,7 +37,7 @@ export const Switch: FunctionComponent<SwitchProps> = props => (
       y="4"
       rx="6"
       filter="url(#filter-2)"
-      fill-opacity={props.disabled
+      fillOpacity={props.disabled
         ? '0'
         : '1'}
     />

@@ -4,6 +4,7 @@
 <Switcher
   disabled={false}
   checked={true}
+  label={'Выбранный переключатель'}
 />
 ```
 
@@ -11,6 +12,7 @@
 <Switcher
   disabled={true}
   checked={true}
+  label={'Выбранный заблокированный'}
 />
 ```
 
@@ -18,6 +20,7 @@
 <Switcher
   disabled={false}
   checked={false}
+  label={'Невыбранный переключатель'}
 />
 ```
 
@@ -25,5 +28,6 @@
 <Switcher
   disabled={true}
   checked={false}
+  label={'Невыбранный заблокированный'}
 />
 ```

@@ -2,15 +2,22 @@ import React, {FunctionComponent} from 'react'
 
 import {
   Switch,
+  SwitchField,
 } from '@qiwi/pijma-core'
 
 import SwitcherProps from './SwitcherProps'
 
 const Switcher: FunctionComponent<SwitcherProps> = props => (
-  <Switch
+  <SwitchField
+    onClick={props.onClick}
+    onMouseEnter={props.onMouseEnter}
+    label={props.label}
     disabled={props.disabled}
-    checked={props.checked}
-    focused={props.focused}
+    switcher={<Switch
+      disabled={props.disabled}
+      checked={props.checked}
+      focused={props.focused}
+    />}
   />
 )
 
