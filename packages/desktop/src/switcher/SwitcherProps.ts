@@ -6,5 +6,5 @@ export default interface SwitcherProps {
   checked?: boolean
   label: string
   onClick: MouseEventHandler
-  onMouseEnter: MouseEventHandler
+  onMouseEnter?: MouseEventHandler
 }

@@ -1,9 +1,10 @@
 Переключатель
 
 ```jsx
+initialState = {checked: true};
 <Switcher
-  disabled={false}
-  checked={true}
+  onClick={() => setState({checked: !state.checked})}
+  checked={state.checked}
   label={'Выбранный переключатель'}
 />
 ```
@@ -17,9 +18,10 @@
 ```
 
 ```jsx
+initialState = {checked: false};
 <Switcher
-  disabled={false}
-  checked={false}
+  onClick={() => setState({checked: !state.checked})}
+  checked={state.checked}
   label={'Невыбранный переключатель'}
 />
 ```
