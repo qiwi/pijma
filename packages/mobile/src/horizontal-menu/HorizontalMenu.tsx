@@ -1,25 +1,17 @@
-import {BaseMenuItem, ButtonControl, styled} from '@qiwi/pijma-core'
+import {BaseMenuItem, styled, Flex, Card} from '@qiwi/pijma-core'
 import React from 'react'
 
 import {HorizontalMenuItem} from './HorizontalMenuItem'
 
 // @see https://iamsteve.me/blog/entry/using-flexbox-for-horizontal-scrolling-navigation
-export const HorizontalMenuContainer = styled('nav')(({theme}) => ({
-  display: 'flex',
-  flexWrap: 'nowrap',
+const ScrollableFlex = styled(Flex)({
   overflowX: 'auto',
   webkitOverflowScrolling: 'auto',
   msOverflowStyle: '-ms-autohiding-scrollbar',
   '&::-webkit-scrollbar': {
     display: 'none',
   },
-  '&:last-child': {
-    marginRight: 0,
-  },
-  paddingLeft: '16px',
-  paddingRight: '16px',
-  borderBottom: '1px solid ' + theme.color.gray.light,
-}))
+})
 
 export interface HorizontalMenuProps<Item extends BaseMenuItem = BaseMenuItem> {
   /**
@@ -40,21 +32,26 @@ export const HorizontalMenu = <Item extends BaseMenuItem>({
   selected,
   id,
 }: HorizontalMenuProps<Item>) => (
-  <HorizontalMenuContainer
+  <Card
     id={id}
-    children={items.map(item => (
-      <ButtonControl
-        key={item.id}
-        onClick={onSelect.bind(null, item)}
-        children={renderProps => (
+    bb="1px solid #e6e6e6"
+    children={
+      <ScrollableFlex
+        id={`${id}-wrap`}
+        as="nav"
+        wrap="nowrap"
+        px={4}
+        children={items.map((item, index) => (
           <HorizontalMenuItem
             id={`${id}-${item.id}`}
             active={selected === item.id}
-            onClick={renderProps.onClick}
+            key={item.id}
+            isLast={index === items.length - 1}
+            onClick={onSelect.bind(null, item)}
             children={item.title}
           />
-        )}
+        ))}
       />
-    ))}
+    }
   />
 )

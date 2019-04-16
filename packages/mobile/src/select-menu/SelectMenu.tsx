@@ -1,11 +1,4 @@
-import {
-  BaseMenuItem,
-  ButtonControl,
-  Card,
-  Flex,
-  FlexItem,
-  Icon,
-} from '@qiwi/pijma-core'
+import {BaseMenuItem, Card, Flex, FlexItem, Icon} from '@qiwi/pijma-core'
 import React, {Component} from 'react'
 
 import {SelectMenuItem} from './SelectMenuItem'
@@ -31,6 +24,7 @@ export interface SelectMenuState {
 export class SelectMenu<
   Item extends BaseMenuItem = BaseMenuItem
 > extends Component<SelectMenuProps<Item>, SelectMenuState> {
+
   state: SelectMenuState = {
     expanded: false,
   }
@@ -78,22 +72,18 @@ export class SelectMenu<
             direction="column"
             children={items.map(item =>
               item.id === selected ? null : (
-                <ButtonControl
+                <SelectMenuItem
                   key={item.id}
+                  id={`${id}-item-${item.id}`}
                   onClick={toggle.bind(this, item)}
-                  children={renderProps => (
-                    <SelectMenuItem
-                      id={`${id}-item-${item.id}`}
-                      onClick={renderProps.onClick}
-                      children={item.title}
-                    />
-                  )}
+                  children={item.title}
                 />
-              )
+              ),
             )}
           />
         )}
       </Card>
     )
   }
+
 }

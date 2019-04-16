@@ -1,29 +1,48 @@
-import {styled} from '@qiwi/pijma-core'
+import {Card, LinkControl, Lnk, Typo} from '@qiwi/pijma-core'
+import React from 'react'
 
 export interface SelectMenuItemProps {
   id: string
   href?: string
   target?: string
   reverse?: boolean
-  onClick?: (e: React.MouseEvent) => void
+  onClick?: () => void
 }
 
-export const SelectMenuItem = styled('a')<
-  SelectMenuItemProps
->(({theme}) => ({
-  cursor: 'pointer',
-  fontFamily: theme.font.family,
-  fontWeight: theme.font.weight.normal,
-  fontSize: '16px',
-  textDecoration: 'none',
-  color: theme.color.black,
-  flexShrink: 0,
-  flexGrow: 0,
-  whiteSpace: 'nowrap',
-  lineHeight: '21px',
-  padding: '8px 16px',
-  '&:hover, &:active, &:focus': {
-    textDecoration: 'none',
-    backgroundColor: theme.color.gray.lightest,
-  },
-}))
+const CardLink = Card.withComponent(Lnk)
+
+export const SelectMenuItem: React.FC<SelectMenuItemProps> = props => (
+  <LinkControl
+    onClick={props.onClick}
+    target={props.target}
+    children={renderProps => (
+      <CardLink
+        id={props.id}
+        href={props.href}
+        target={props.target}
+        onClick={renderProps.onClick}
+        onFocus={renderProps.onFocus}
+        onBlur={renderProps.onBlur}
+        onMouseEnter={renderProps.onMouseEnter}
+        onMouseLeave={renderProps.onMouseLeave}
+        onMouseUp={renderProps.onMouseUp}
+        onMouseDown={renderProps.onMouseDown}
+        cursor="pointer"
+        px={4}
+        py={2}
+        bg={`${renderProps.hover ? '#f5f5f5' : 'transparent'}`}
+        children={
+          <Typo
+            id={`${props.id}-text`}
+            weight={300}
+            as="span"
+            cursor="pointer"
+            size={4}
+            height={6}
+            children={props.children}
+          />
+        }
+      />
+    )}
+  />
+)

@@ -15,6 +15,7 @@ export type MenuLevel<Item extends BaseMenuItem> = {
 } | undefined
 
 export class MenuLevelBuilder<Item extends BaseMenuItem> {
+
   constructor(protected items: MenuTree<Item>[]) {}
 
   protected buildLevels(
@@ -22,7 +23,7 @@ export class MenuLevelBuilder<Item extends BaseMenuItem> {
     items: MenuTree<Item>[],
     levels: MenuLevel<Item>[],
     depth = 0,
-    parentActive = false
+    parentActive = false,
   ): boolean {
     if (levels.length <= depth) levels.push(undefined)
     let activeItem: MenuTree<Item> | undefined
@@ -36,7 +37,7 @@ export class MenuLevelBuilder<Item extends BaseMenuItem> {
               sub,
               levels,
               depth + 1,
-              currentActive || parentActive
+              currentActive || parentActive,
             )
           : false
       if (currentActive) activeItem = item
@@ -46,7 +47,7 @@ export class MenuLevelBuilder<Item extends BaseMenuItem> {
     if (activeItem || parentActive) {
       levels[depth] = {
         items,
-        selected: activeItem ? activeItem.id : items[0].id
+        selected: activeItem ? activeItem.id : items[0].id,
       }
     }
 
@@ -64,4 +65,5 @@ export class MenuLevelBuilder<Item extends BaseMenuItem> {
     this.buildLevels(selected, this.items, result)
     return result
   }
+
 }

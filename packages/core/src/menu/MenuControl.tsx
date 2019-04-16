@@ -14,10 +14,12 @@ export interface MenuControlProps<Item extends BaseMenuItem> {
 export class MenuControl<Item extends BaseMenuItem> extends PureComponent<
   MenuControlProps<Item>
 > {
+
   render() {
     const {props} = this
     return props.children({
       levels: new MenuLevelBuilder(props.items).levels(props.selected),
     })
   }
+
 }
