@@ -62,6 +62,7 @@ export type IconName =
   'question' |
   'receipt' |
   'refund' |
+  'reject' |
   'repeat' |
   'search' |
   'send' |
