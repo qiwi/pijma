@@ -74,8 +74,9 @@ const StubColor: { [color in NonNullable<ParagraphProps['color']>]: string } = {
 export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold = false, compact = false, color = 'default', transform, stub, children}) => (
   stub ? (
     <Box>
-      {[75, 88, 62].map((width: number) => (
+      {[75, 88, 62].map((width: number, id: number) => (
         <Box
+          key={id}
           pt={compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}
           pb={compact ? StubOffsetCompactBottom[size] : StubOffsetBottom[size]}
         >
