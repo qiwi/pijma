@@ -4,6 +4,7 @@ import {Box, Pos, Typo} from '../primitive'
 
 export interface SwitchFieldProps {
   disabled?: boolean
+  reverse?: boolean
   icon?: ReactNode
   children: ReactNode
   label: ReactNode
@@ -17,6 +18,7 @@ export const SwitchField: React.FunctionComponent<SwitchFieldProps> = ({
   children,
   icon,
   label,
+  reverse,
   description,
   onClick,
   onMouseEnter,
@@ -28,7 +30,14 @@ export const SwitchField: React.FunctionComponent<SwitchFieldProps> = ({
     onClick={onClick}
     onMouseEnter={onMouseEnter}
   >
-    <Box display="flex" css={{alignItems: 'baseline'}}>
+    <Box
+      display="flex"
+      css={{
+        alignItems: 'baseline',
+        flexDirection: reverse ? 'row-reverse' : 'row',
+        justifyContent: reverse ? 'flex-end' : 'space-between',
+      }}
+    >
       {icon ? (
         <Pos
           type="absolute"
@@ -47,7 +56,13 @@ export const SwitchField: React.FunctionComponent<SwitchFieldProps> = ({
         color={disabled ? '#666' : '#000'}
         children={label}
       />
-      <Box ml={3} width={10} height={5} children={children} />
+      <Box
+        ml={reverse ? 0 : 3}
+        mr={reverse ? 3 : 0}
+        width={10}
+        height={5}
+        children={children}
+      />
     </Box>
     {description ? (
       <Box mt={1}>

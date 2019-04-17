@@ -2,13 +2,13 @@ import React, {FunctionComponent} from 'react'
 
 import {Svg, Rect} from '../primitive'
 
-export interface SwitchProps {
+export interface TumblerProps {
   disabled?: boolean
   focused?: boolean
   checked?: boolean
 }
 
-export const Switch: FunctionComponent<SwitchProps> = props => (
+export const Tumbler: FunctionComponent<TumblerProps> = props => (
   <Svg viewBox="0 0 40 20" width="40" height="20">
     <defs>
         <filter x="-45.8%" y="-29.2%" width="191.7%" height="191.7%" filterUnits="objectBoundingBox" id="filter-2">
