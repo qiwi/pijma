@@ -1,13 +1,13 @@
-Переключатели - это элементы управления, которые по смыслу включают или выключают какую-нибудь опцию, то есть являются метафорой действия.
+Единичный чекбокс
 
-#### Состояния переключателя
+#### Состояния чекбоксов
 ```jsx
 initialState = {checked: true};
 <Box width={80}>
   <Checkbox
     onClick={() => setState({checked: !state.checked})}
     checked={state.checked}
-    label={'Выбранный переключатель'}
+    label={'Выбранный чекбокс'}
   />
   <Box mt={4}>
     <Checkbox
@@ -23,15 +23,4 @@ initialState = {checked: true};
     />
   </Box>
 </Box>
-```
-#### Переключатель с инвертированным порядком
-
-```jsx
-initialState = {checked: false};
-<Checkbox
-  reverse={true}
-  onClick={() => setState({checked: !state.checked})}
-  checked={state.checked}
-  label={'Невыбранный переключатель'}
-/>
 ```

@@ -12,11 +12,18 @@ const Checkbox: FunctionComponent<CheckboxProps> = props => (
     children={renderProps => (
       <OptionFieldItem
         disabled={props.disabled}
-        icon={<Check disabled={props.disabled} checked={props.checked} focused={renderProps.focused}/>}
+        icon={
+          <Check
+            disabled={props.disabled}
+            checked={props.checked}
+            focused={renderProps.focused}
+          />
+        }
         label={props.label}
         description={props.description}
         onClick={props.onClick}
         onMouseEnter={renderProps.onMouseEnter}
+        onMouseLeave={renderProps.onMouseLeave}
       />
     )}
   />

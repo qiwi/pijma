@@ -19,24 +19,26 @@ export default class SwitchControl extends React.Component<
   private onMouseEnter: React.MouseEventHandler<HTMLElement> = (
     event: React.MouseEvent<HTMLElement>,
   ) => {
-    if (this.props.disabled || !this.props.onMouseEnter) {
-      return
-    }
     this.setState({
       focused: true,
     })
+    if (this.props.disabled || !this.props.onMouseEnter) {
+      return
+    }
+
     this.props.onMouseEnter(event)
   }
 
   private onMouseLeave: React.MouseEventHandler<HTMLElement> = (
     event: React.MouseEvent<HTMLElement>,
   ) => {
-    if (this.props.disabled || !this.props.onMouseLeave) {
-      return
-    }
     this.setState({
       focused: false,
     })
+    if (this.props.disabled || !this.props.onMouseLeave) {
+      return
+    }
+
     this.props.onMouseLeave(event)
   }
 

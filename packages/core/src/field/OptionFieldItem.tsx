@@ -9,10 +9,11 @@ export interface OptionFieldItemProps {
   description?: ReactNode
   onClick: MouseEventHandler
   onMouseEnter: MouseEventHandler
+  onMouseLeave?: MouseEventHandler
 }
 
-export const OptionFieldItem: React.FunctionComponent<OptionFieldItemProps> = ({disabled, icon, label, description, onClick, onMouseEnter}) => (
-  <Pos type="relative" pl={9} cursor={disabled ? 'not-allowed' : 'pointer'} onClick={onClick} onMouseEnter={onMouseEnter}>
+export const OptionFieldItem: React.FunctionComponent<OptionFieldItemProps> = ({disabled, icon, label, description, onClick, onMouseEnter, onMouseLeave}) => (
+  <Pos type="relative" pl={9} cursor={disabled ? 'not-allowed' : 'pointer'} onClick={onClick} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
     <Pos type="absolute" top={0} left={0} width={6} height={6} children={icon}/>
     <Typo display="block" weight={300} size={4} height={6} color={disabled ? '#666' : '#000'} children={label}/>
     {description ? (
