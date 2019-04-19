@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo, Stub, Box} from '@qiwi/pijma-core'
+import {Typo, Stub} from '@qiwi/pijma-core'
 
 export interface HeadingProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -63,20 +63,15 @@ const HeadingColor: { [color in NonNullable<HeadingProps['color']>]: string } = 
   inverse: '#fff',
 }
 
-const StubColor: { [color in NonNullable<HeadingProps['color']>]: string } = {
-  default: '#000',
-  inverse: '#fff',
-}
-
 export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'default', stub, children}) => (
   stub ? (
-    <Box pt={StubOffsetTop[size]} pb={StubOffsetBottom[size]}>
-      <Stub
-        width={50}
-        height={StubHeight[size]}
-        bg={StubColor[color]}
-      />
-    </Box>
+    <Stub
+      top={StubOffsetTop[size]}
+      bottom={StubOffsetBottom[size]}
+      width={50}
+      height={StubHeight[size]}
+      inverse={color === 'inverse'}
+    />
   ) : (
     <Typo
       as={tag ? tag : HeadingTag[size]}

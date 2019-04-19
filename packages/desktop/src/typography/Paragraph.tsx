@@ -65,27 +65,18 @@ const ParagraphColor: { [color in NonNullable<ParagraphProps['color']>]: string 
   inverse: '#fff',
 }
 
-const StubColor: { [color in NonNullable<ParagraphProps['color']>]: string } = {
-  default: '#000',
-  support: '#000',
-  inverse: '#fff',
-}
-
 export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold = false, compact = false, color = 'default', transform, stub, children}) => (
   stub ? (
     <Box>
       {[75, 88, 62].map((width: number, id: number) => (
-        <Box
+        <Stub
           key={id}
-          pt={compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}
-          pb={compact ? StubOffsetCompactBottom[size] : StubOffsetBottom[size]}
-        >
-          <Stub
-            height={StubHeight[size]}
-            width={width}
-            bg={StubColor[color]}
-          />
-        </Box>
+          top={compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}
+          bottom={compact ? StubOffsetCompactBottom[size] : StubOffsetBottom[size]}
+          height={StubHeight[size]}
+          width={width}
+          inverse={color === 'inverse'}
+        />
       ))}
     </Box>
   ) : (

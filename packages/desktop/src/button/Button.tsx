@@ -1,6 +1,6 @@
 import React, {FunctionComponent, ReactNode, Fragment} from 'react'
 
-import {ButtonControl, Spinner, Pos, Flex, FlexItem, Typo, Btn} from '@qiwi/pijma-core'
+import {ButtonControl, Spinner, Pos, Flex, FlexItem, Typo, Btn, Stub} from '@qiwi/pijma-core'
 
 export interface ButtonProps {
   onClick?: () => void
@@ -14,6 +14,7 @@ export interface ButtonProps {
   text?: string
   icon?: ReactNode
   loading?: boolean
+  stub?: boolean
 }
 
 const buttonBackground: { [kind in ButtonProps['kind']]: string } = {
@@ -86,34 +87,70 @@ const hoverShadow: { [kind in ButtonProps['kind']]: string } = {
   simple: '0 25px 50px -10px rgba(0, 0, 0, 0.15)',
 }
 
+const stubHeight: { [size in ButtonProps['size']]: number } = {
+  accent: 3,
+  normal: 2,
+  minor: 2,
+}
+
+const stubWidth: { [size in ButtonProps['size']]: number } = {
+  accent: 23,
+  normal: 21,
+  minor: 19,
+}
+
 export const Button: FunctionComponent<ButtonProps> = (props) => (
   <ButtonControl
-    onClick={props.onClick}
-    onFocus={props.onFocus}
-    onBlur={props.onBlur}
+    onClick={props.stub ? undefined : props.onClick}
+    onFocus={props.stub ? undefined : props.onFocus}
+    onBlur={props.stub ? undefined : props.onBlur}
     children={(renderProps) => (
       <Btn
-        disabled={props.disabled}
-        type={props.type}
+        disabled={props.stub ? false : props.disabled}
+        type={props.stub ? 'button' : props.type}
         width={!props.icon || props.text ? 1 : buttonSize[props.size]}
         height={buttonSize[props.size]}
-        minWidth={buttonMinWith[props.size]}
-        bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? buttonHoverBackground[props.kind] : props.size === 'accent' ? accentButtonBackground[props.kind] : buttonBackground[props.kind]}
-        b={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? buttonHoverBorder[props.kind] : buttonBorder[props.kind]}
+        minWidth={props.text ? buttonMinWith[props.size] : 1}
+        bg={props.stub ? (
+          buttonBackground.simple
+        ) : props.disabled ? (
+          '#e6e6e6'
+        ) : renderProps.hover || renderProps.focus ? (
+          buttonHoverBackground[props.kind]
+        ) : props.size === 'accent' ? (
+          accentButtonBackground[props.kind]
+        ) : (
+          buttonBackground[props.kind]
+        )}
+        b={props.stub ? (
+          buttonBorder.simple
+        ) : props.disabled ? (
+          'none'
+        ) : renderProps.hover || renderProps.focus ? (
+          buttonHoverBorder[props.kind]
+        ) : (
+          buttonBorder[props.kind]
+        )}
         r={buttonRadius[props.size]}
-        s={props.disabled ? 'none' : (renderProps.hover || renderProps.focus) && props.size === 'accent' ? hoverShadow[props.kind] : props.size === 'accent' ? shadow[props.kind] : 'none'}
-        transition="box-shadow 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-        onClick={renderProps.onClick}
-        onFocus={renderProps.onFocus}
-        onBlur={renderProps.onFocus}
-        onMouseEnter={renderProps.onMouseEnter}
-        onMouseLeave={renderProps.onMouseLeave}
+        s={props.disabled || props.stub ? (
+          'none'
+        ) : props.size === 'accent' && (renderProps.hover || renderProps.focus) ? (
+          hoverShadow[props.kind]
+        ) : (
+          props.size === 'accent' ? shadow[props.kind] : 'none'
+        )}
+        transition={props.stub ? 'none' : 'box-shadow 300ms cubic-bezier(0.4, 0.0, 0.2, 1)'}
+        onClick={props.stub ? undefined : renderProps.onClick}
+        onFocus={props.stub ? undefined : renderProps.onFocus}
+        onBlur={props.stub ? undefined : renderProps.onFocus}
+        onMouseEnter={props.stub ? undefined : renderProps.onMouseEnter}
+        onMouseLeave={props.stub ? undefined : renderProps.onMouseLeave}
         children={(
           <Pos
             type="relative"
             width={1}
             height={1}
-            cursor={props.disabled ? 'not-allowed' : 'pointer'}
+            cursor={props.stub ? 'default' : props.disabled ? 'not-allowed' : 'pointer'}
             children={(
               <Flex
                 align="center"
@@ -121,7 +158,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
                 width={1}
                 height={1}
                 px={props.icon && !props.text ? 0 : contextPaddingX[props.size]}
-                transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+                transition={props.stub ? 'none' : 'all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)'}
                 children={(
                   <Fragment>
                     <Pos
@@ -151,25 +188,57 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
                     {props.icon ? (
                       <FlexItem
                         shrink={0}
-                        opacity={props.loading ? 0 : renderProps.hover || renderProps.active || renderProps.focus ? 0.9 : 1}
+                        opacity={props.stub ? (
+                          1
+                        ) : props.loading ? (
+                          0
+                        ) : renderProps.hover || renderProps.active || renderProps.focus ? (
+                          0.9
+                        ) : (
+                          1
+                        )}
                         mr={props.text ? 3 : 0}
                         width={6}
                         height={6}
-                        transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+                        transition={props.stub ? 'none' : 'all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)'}
                         css={{
                           fill: props.disabled ? '#666' : props.kind === 'brand' ? '#fff' : '#000',
                         }}
-                        children={props.icon}
+                        children={props.stub ? (
+                          <Stub
+                            top={0.5}
+                            right={0.5}
+                            bottom={0.5}
+                            left={0.5}
+                            width={5}
+                            height={5}
+                          />
+                        ) : (
+                          props.icon
+                        )}
                       />
                     ) : (
                       null
                     )}
                     {props.text || !props.icon ? (
                       <FlexItem
-                        opacity={props.loading ? 0 : renderProps.hover || renderProps.active || renderProps.focus ? 0.9 : 1}
+                        opacity={props.stub ? (
+                          1
+                        ) : props.loading ? (
+                          0
+                        ) : renderProps.hover || renderProps.active || renderProps.focus ? (
+                          0.9
+                        ) : (
+                          1
+                        )}
                         overflow="hidden"
-                        transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-                        children={(
+                        transition={props.stub ? 'none' : 'all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)'}
+                        children={props.stub ? (
+                          <Stub
+                            width={stubWidth[props.size] - (props.icon ? 9 : 0)}
+                            height={stubHeight[props.size]}
+                          />
+                        ) : (
                           <Typo
                             nowrap={true}
                             display="block"

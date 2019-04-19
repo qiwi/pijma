@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo, Stub, Box} from '@qiwi/pijma-core'
+import {Typo, Stub} from '@qiwi/pijma-core'
 
 export interface CaptionProps {
   color?: 'default' | 'support' | 'inverse'
@@ -13,21 +13,14 @@ const CaptionColor: { [color in NonNullable<CaptionProps['color']>]: string } = 
   inverse: '#fff',
 }
 
-const StubColor: { [color in NonNullable<CaptionProps['color']>]: string } = {
-  default: '#000',
-  support: '#666',
-  inverse: '#fff',
-}
-
 export const Caption: FunctionComponent<CaptionProps> = ({color = 'support', stub, children}) => (
   stub ? (
-    <Box pt={1} pb={1}>
-      <Stub
-        width={50}
-        height={3}
-        bg={StubColor[color]}
-      />
-    </Box>
+    <Stub
+      top={1}
+      bottom={1}
+      width={50}
+      height={3}
+    />
   ) : (
     <Typo
       as="h6"

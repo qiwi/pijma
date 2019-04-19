@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo, TypoProps, Stub, Box} from '@qiwi/pijma-core'
+import {Typo, TypoProps, Stub} from '@qiwi/pijma-core'
 
 export interface TextProps {
   display?: 'block' | 'inline' | 'inline-block'
@@ -71,27 +71,15 @@ const TextColor: { [color in NonNullable<TextProps['color']>]: string } = {
   warning: '#ff8c00',
 }
 
-const StubColor: { [color in NonNullable<TextProps['color']>]: string } = {
-  default: '#000',
-  support: '#000',
-  inverse: '#fff',
-  success: '#000',
-  failure: '#000',
-  warning: '#000',
-}
-
 export const Text: FunctionComponent<TextProps> = ({display, compact, size, bold, color, decoration, transform, transition, stub, children}) => (
   stub ? (
-    <Box
-      pt={compact ? StubOffsetCompactTop[size || 'm'] : StubOffsetTop[size || 'm']}
-      pb={compact ? StubOffsetCompactBottom[size || 'm'] : StubOffsetBottom[size || 'm']}
-    >
-      <Stub
-        height={StubHeight[size || 'm']}
-        width={75}
-        bg={color === undefined ? StubColor.default : StubColor[color]}
-      />
-    </Box>
+    <Stub
+      top={compact ? StubOffsetCompactTop[size || 'm'] : StubOffsetTop[size || 'm']}
+      bottom={compact ? StubOffsetCompactBottom[size || 'm'] : StubOffsetBottom[size || 'm']}
+      height={StubHeight[size || 'm']}
+      width={75}
+      inverse={color === 'inverse'}
+    />
   ) : (
     <Typo
       as="span"
