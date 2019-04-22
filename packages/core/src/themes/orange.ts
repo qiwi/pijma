@@ -25,4 +25,41 @@ export const orange: Theme = {
     error: '#d0021b',
     success: '#4bbd5c',
   },
+  breakpoints: {
+    xxl: {
+      width: 1920,
+      indents: 370,
+      content: 1180,
+    },
+    xl: {
+      width: 1440,
+      indents: 130,
+      content: 1180,
+    },
+    l: {
+      width: 1280,
+      indents: 50,
+      content: 1180,
+    },
+    m: {
+      width: 1024,
+      indents: 40,
+      content: 944,
+    },
+    s: {
+      width: 600,
+      indents: 36,
+      content: 528,
+    },
+    xs: {
+      width: 360,
+      indents: 16,
+      content: 328,
+    },
+    xxs: {
+      width: 320,
+      indents: 0,
+      content: 320,
+    },
+  },
 }

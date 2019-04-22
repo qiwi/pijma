@@ -23,4 +23,11 @@ export default interface Theme {
     error: string
     success: string
   }
+  breakpoints: {
+    [key: string] : {
+      width: number
+      indents: number
+      content: number
+    }
+  }
 }
