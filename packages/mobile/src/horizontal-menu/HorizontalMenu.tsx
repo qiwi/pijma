@@ -1,4 +1,4 @@
-import {BaseMenuItem, styled, Flex, Card} from '@qiwi/pijma-core'
+import {BaseMenuItem, styled, Flex, Card, Box} from '@qiwi/pijma-core'
 import React from 'react'
 
 import {HorizontalMenuItem} from './HorizontalMenuItem'
@@ -42,13 +42,18 @@ export const HorizontalMenu = <Item extends BaseMenuItem>({
         wrap="nowrap"
         px={4}
         children={items.map((item, index) => (
-          <HorizontalMenuItem
-            id={`${id}-${item.id}`}
-            active={selected === item.id}
+          <Box
             key={item.id}
-            isLast={index === items.length - 1}
-            onClick={onSelect.bind(null, item)}
-            children={item.title}
+            id={`${id}-${item.id}-wrap`}
+            mr={index === items.length - 1 ? 0 : 6}
+            children={
+              <HorizontalMenuItem
+                id={`${id}-${item.id}`}
+                active={selected === item.id}
+                onClick={onSelect.bind(null, item)}
+                children={item.title}
+              />
+            }
           />
         ))}
       />

@@ -1,5 +1,7 @@
-import {Card, LinkControl, Lnk, Typo} from '@qiwi/pijma-core'
+import {Card, LinkControl, Lnk} from '@qiwi/pijma-core'
 import React from 'react'
+
+import {Text} from '../typography'
 
 export interface SelectMenuItemProps {
   id: string
@@ -28,20 +30,11 @@ export const SelectMenuItem: React.FC<SelectMenuItemProps> = props => (
         onMouseUp={renderProps.onMouseUp}
         onMouseDown={renderProps.onMouseDown}
         cursor="pointer"
+        display="block"
         px={4}
         py={2}
         bg={`${renderProps.hover ? '#f5f5f5' : 'transparent'}`}
-        children={
-          <Typo
-            id={`${props.id}-text`}
-            weight={300}
-            as="span"
-            cursor="pointer"
-            size={4}
-            height={6}
-            children={props.children}
-          />
-        }
+        children={<Text bold={false} size="m" children={props.children} />}
       />
     )}
   />

@@ -1,5 +1,7 @@
-import {Card, LinkControl, Lnk, Typo} from '@qiwi/pijma-core'
+import {Card, LinkControl, Lnk} from '@qiwi/pijma-core'
 import React from 'react'
+
+import {Text} from '../typography'
 
 export interface HorizontalMenuItemProps {
   active: boolean
@@ -7,7 +9,6 @@ export interface HorizontalMenuItemProps {
   href?: string
   target?: string
   reverse?: boolean
-  isLast?: boolean
   onClick?: () => void
 }
 
@@ -30,22 +31,12 @@ export const HorizontalMenuItem: React.FC<HorizontalMenuItemProps> = props => (
         onMouseUp={renderProps.onMouseUp}
         onMouseDown={renderProps.onMouseDown}
         cursor="pointer"
-        mr={props.isLast ? 0 : 6}
+        display="block"
         pb={1}
         bb={`4px solid ${
           renderProps.hover || props.active ? '#ff8c00' : 'transparent'
         }`}
-        children={
-          <Typo
-            id={`${props.id}-text`}
-            as="span"
-            cursor="pointer"
-            size={4}
-            height={6}
-            weight={500}
-            children={props.children}
-          />
-        }
+        children={<Text bold size="m" children={props.children} />}
       />
     )}
   />
