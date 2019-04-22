@@ -11,7 +11,9 @@ import {
 import CheckboxFieldProps from './CheckboxFieldProps'
 import CheckboxFieldOptionModel from './CheckboxFieldOptionModel'
 
-const CheckboxField: FunctionComponent<CheckboxFieldProps<CheckboxFieldOptionModel<any>, any>> = (props) => (
+const CheckboxField: FunctionComponent<
+  CheckboxFieldProps<CheckboxFieldOptionModel<any>, any>
+> = props => (
   <CheckboxControl<CheckboxFieldOptionModel<any>, any>
     tabIndex={props.tabIndex}
     options={props.options}
@@ -20,7 +22,7 @@ const CheckboxField: FunctionComponent<CheckboxFieldProps<CheckboxFieldOptionMod
     onChange={props.onChange}
     onFocus={props.onFocus}
     onBlur={props.onBlur}
-    children={(renderProps) => (
+    children={renderProps => (
       <OptionField
         title={props.title}
         hint={props.hint}
@@ -31,25 +33,33 @@ const CheckboxField: FunctionComponent<CheckboxFieldProps<CheckboxFieldOptionMod
         onBlur={renderProps.onBlur}
         onKeyDown={renderProps.onKeyDown}
         onMouseLeave={renderProps.onMouseLeave}
-        children={renderProps.options.map((option, index) => (
-          <OptionControl<any>
-            key={index}
-            disabled={option.disabled}
-            value={option.value}
-            onClick={option.onClick}
-            onMouseEnter={option.onMouseEnter}
-            children={(renderOptionProps) => (
-              <OptionFieldItem
-                disabled={option.disabled}
-                icon={<Check disabled={option.disabled} checked={option.checked} focused={option.focused}/>}
-                label={option.label}
-                description={option.description}
-                onClick={renderOptionProps.onClick}
-                onMouseEnter={renderOptionProps.onMouseEnter}
-              />
-            )}
-          />
-        ))}
+        children={renderProps.options ? renderProps.options.map(
+          (option, index) => (
+            <OptionControl<any>
+              key={index}
+              disabled={option.disabled}
+              value={option.value}
+              onClick={option.onClick}
+              onMouseEnter={option.onMouseEnter}
+              children={renderOptionProps => (
+                <OptionFieldItem
+                  disabled={option.disabled}
+                  icon={
+                    <Check
+                      disabled={option.disabled}
+                      checked={option.checked}
+                      focused={option.focused}
+                    />
+                  }
+                  label={option.label}
+                  description={option.description}
+                  onClick={renderOptionProps.onClick}
+                  onMouseEnter={renderOptionProps.onMouseEnter}
+                />
+              )}
+            />
+          ),
+        ) : null}
       />
     )}
   />

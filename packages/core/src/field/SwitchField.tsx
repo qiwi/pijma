@@ -1,6 +1,6 @@
 import React, {ReactNode, MouseEventHandler} from 'react'
 
-import {Box, Pos, Typo} from '../primitive'
+import {Box, Pos, Typo, Flex} from '../primitive'
 
 export interface SwitchFieldProps {
   disabled?: boolean
@@ -30,13 +30,11 @@ export const SwitchField: React.FunctionComponent<SwitchFieldProps> = ({
     onClick={onClick}
     onMouseEnter={onMouseEnter}
   >
-    <Box
+    <Flex
       display="flex"
-      css={{
-        alignItems: 'baseline',
-        flexDirection: reverse ? 'row-reverse' : 'row',
-        justifyContent: reverse ? 'flex-end' : 'space-between',
-      }}
+      direction={reverse ? 'row-reverse' : 'row'}
+      justify={reverse ? 'flex-end' : 'space-between'}
+      align="baseline"
     >
       {icon ? (
         <Pos
@@ -63,7 +61,7 @@ export const SwitchField: React.FunctionComponent<SwitchFieldProps> = ({
         height={5}
         children={children}
       />
-    </Box>
+    </Flex>
     {description ? (
       <Box mt={1}>
         <Typo

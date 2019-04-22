@@ -4,11 +4,11 @@ import RenderChild from '../RenderChild'
 
 export default interface SwitchControlProps {
   disabled?: boolean
-  onMouseEnter?: React.MouseEventHandler
-  onMouseLeave?: React.MouseEventHandler
+  onFocus?: React.FocusEventHandler
+  onBlur?: React.FocusEventHandler
   children: RenderChild<{
-    onMouseEnter: React.MouseEventHandler
-    onMouseLeave: React.MouseEventHandler
+    onFocus: React.FocusEventHandler
+    onBlur: React.FocusEventHandler
     focused: boolean
   }>
 }

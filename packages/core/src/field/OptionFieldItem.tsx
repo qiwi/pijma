@@ -8,7 +8,7 @@ export interface OptionFieldItemProps {
   label: ReactNode
   description?: ReactNode
   onClick: MouseEventHandler
-  onMouseEnter: MouseEventHandler
+  onMouseEnter?: MouseEventHandler
   onMouseLeave?: MouseEventHandler
 }
 
