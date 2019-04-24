@@ -56,6 +56,9 @@ export default class SwitchControl extends React.Component<
   }
 
   private onClick = () => {
+    if (this.props.disabled) {
+      return
+    }
     this.setState({
       checked: !this.state.checked,
     })

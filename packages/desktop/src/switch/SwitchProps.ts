@@ -1,9 +1,11 @@
-import {MouseEventHandler} from 'react'
+import {ReactNode} from 'react'
 
 export default interface SwitchProps {
   disabled?: boolean
   checked: boolean
   reverse?: boolean
+  tabIndex?: number
+  description?: ReactNode
   label: string
-  onChange: MouseEventHandler
+  onChange: () => void
 }

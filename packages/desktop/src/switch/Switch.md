@@ -3,7 +3,7 @@
 #### Состояния переключателя
 ```jsx
 initialState = {checked: true};
-<Box width={80}>
+<Box width={120}>
   <Switch
     onClick={() => setState({checked: !state.checked})}
     checked={state.checked}
@@ -24,14 +24,16 @@ initialState = {checked: true};
   </Box>
 </Box>
 ```
-#### Переключатель с инвертированным порядком
+#### Инвертированный переключатель
 
 ```jsx
 initialState = {checked: false};
-<Switch
-  reverse={true}
-  onClick={() => setState({checked: !state.checked})}
-  checked={state.checked}
-  label={'Невыбранный переключатель'}
-/>
+<Box width={80}>
+  <Switch
+    reverse={true}
+    onClick={() => setState({checked: !state.checked})}
+    checked={state.checked}
+    label={'Невыбранный переключатель'}
+  />
+</Box>
 ```

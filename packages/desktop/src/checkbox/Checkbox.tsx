@@ -13,6 +13,7 @@ const Checkbox: FunctionComponent<CheckboxProps> = props => (
   <SwitchControl
     disabled={props.disabled}
     checked={props.checked}
+    onChange={props.onChange}
     children={renderProps => (
       <OptionField
         tabIndex={props.tabIndex}
@@ -23,16 +24,16 @@ const Checkbox: FunctionComponent<CheckboxProps> = props => (
           <OptionFieldItem
             onMouseEnter={renderProps.onMouseEnter}
             disabled={props.disabled}
+            label={props.label}
+            description={props.description}
+            onClick={renderProps.onClick}
             icon={
               <Check
                 disabled={props.disabled}
-                checked={props.checked}
+                checked={renderProps.checked}
                 focused={renderProps.focused}
               />
             }
-            label={props.label}
-            description={props.description}
-            onClick={props.onClick}
           />
         }
       />
