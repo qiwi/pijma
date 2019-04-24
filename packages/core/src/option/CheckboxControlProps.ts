@@ -6,9 +6,8 @@ import OptionModel from './OptionModel'
 
 export default interface CheckboxControlProps<O extends OptionModel<V>, V> {
   tabIndex?: number
-  checked?: boolean
-  options?: O[]
-  values?: V[]
+  options: O[]
+  values: V[]
   equals?: (a: V, b: V) => boolean
   onChange?: (values: V[]) => void
   onFocus?: () => void
@@ -17,13 +16,9 @@ export default interface CheckboxControlProps<O extends OptionModel<V>, V> {
     tabIndex?: number
     onFocus: React.FocusEventHandler
     onBlur: React.FocusEventHandler
-    onKeyDown?: React.KeyboardEventHandler
+    onKeyDown: React.KeyboardEventHandler
     onMouseLeave: React.MouseEventHandler
-    onChange?: React.MouseEventHandler
-    onMouseEnter?: React.MouseEventHandler
-    checked?: boolean
-    focused?: boolean
-    options?: Array<O & {
+    options: Array<O & {
       checked: boolean
       focused: boolean
       onClick: (value: V) => void

@@ -4,15 +4,10 @@ import OptionModel from './OptionModel'
 import CheckboxControlProps from './CheckboxControlProps'
 import CheckboxControlState from './CheckboxControlState'
 
-export default class CheckboxControl<
-  O extends OptionModel<V>,
-  V
-> extends React.Component<CheckboxControlProps<O, V>, CheckboxControlState> {
+export default class CheckboxControl<O extends OptionModel<V>, V> extends React.Component<CheckboxControlProps<O, V>, CheckboxControlState> {
 
   public state: CheckboxControlState = {
     focused: -1,
-    singleFocused: false,
-    checked: this.props.checked,
   }
 
   private equals(a: V, b: V): boolean {
@@ -20,7 +15,7 @@ export default class CheckboxControl<
   }
 
   private onChange = (value: V) => {
-    if (this.props.onChange && this.props.values) {
+    if (this.props.onChange) {
       this.props.onChange(
         this.props.values.includes(value)
           ? this.props.values.filter(v => !this.equals(v, value))
@@ -29,21 +24,10 @@ export default class CheckboxControl<
     }
   }
 
-  private onSingleChange = () => {
-    this.setState({
-      checked: !this.state.checked,
-    })
-  }
-
   private onFocus: React.FocusEventHandler<HTMLElement> = () => {
-    if (this.props.options && this.state.focused === -1) {
+    if (this.state.focused === -1) {
       this.setState({
         focused: this.props.options.findIndex(option => !option.disabled),
-      })
-    }
-    else {
-      this.setState({
-        singleFocused: true,
       })
     }
     if (this.props.onFocus) {
@@ -52,27 +36,15 @@ export default class CheckboxControl<
   }
 
   private onBlur: React.FocusEventHandler<HTMLElement> = () => {
-    if (this.props.options) {
-      this.setState({
-        focused: -1,
-      })
-    }
-    else {
-      this.setState({
-        singleFocused: false,
-      })
-    }
+    this.setState({
+      focused: -1,
+    })
     if (this.props.onBlur) {
       this.props.onBlur()
     }
   }
 
-  private onKeyDown: React.KeyboardEventHandler<HTMLElement> = (
-    event: React.KeyboardEvent<HTMLElement>,
-  ) => {
-    if (!this.props.options) {
-      return
-    }
+  private onKeyDown: React.KeyboardEventHandler<HTMLElement> = (event: React.KeyboardEvent<HTMLElement>) => {
     switch (event.key) {
       case 'ArrowDown':
         event.preventDefault()
@@ -92,13 +64,9 @@ export default class CheckboxControl<
       case 'ArrowUp':
         event.preventDefault()
         event.stopPropagation()
-        let prev =
-          this.state.focused === -1
-            ? this.props.options.length - 1
-            : this.state.focused
+        let prev = this.state.focused === -1 ? this.props.options.length - 1 : this.state.focused
         while (true) {
-          prev =
-            (prev + this.props.options.length - 1) % this.props.options.length
+          prev = (prev + this.props.options.length - 1) % this.props.options.length
           if (this.props.options[prev].disabled) {
             continue
           }
@@ -120,81 +88,38 @@ export default class CheckboxControl<
   }
 
   private onMouseLeave = () => {
-    if (this.props.options) {
-      this.setState({
-        focused: -1,
-      })
-    }
-    else {
-      this.setState({
-        singleFocused: false,
-      })
-    }
-  }
-
-  private onOptionClick = (value: V) => {
-    if (this.props.options) {
-      this.setState({
-        focused: this.props.options.findIndex(option =>
-          this.equals(option.value, value),
-        ),
-      })
-      this.onChange(value)
-    }
-  }
-
-  private onOptionMouseEnter = (value: V) => {
-    if (!this.props.options) {
-      return
-    }
     this.setState({
-      focused: this.props.options.findIndex(option =>
-        this.equals(option.value, value),
-      ),
+      focused: -1,
     })
   }
 
-  private onSingleMouseEnter = () => {
+  private onOptionClick = (value: V) => {
     this.setState({
-      singleFocused: true,
+      focused: this.props.options.findIndex(option => this.equals(option.value, value)),
+    })
+    this.onChange(value)
+  }
+
+  private onOptionMouseEnter = (value: V) => {
+    this.setState({
+      focused: this.props.options.findIndex(option => this.equals(option.value, value)),
     })
   }
 
   public render() {
-    if (this.props.options) {
-      return this.props.children({
-        tabIndex:
-          this.props.options.filter(option => option.disabled).length ===
-          this.props.options.length
-            ? undefined
-            : this.props.tabIndex || 0,
-        onFocus: this.onFocus,
-        onBlur: this.onBlur,
-        onKeyDown: this.onKeyDown,
-        onMouseLeave: this.onMouseLeave,
-        options: this.props.options.map((option, index) => ({
-          ...option,
-          checked: this.props.values
-            ? this.props.values.findIndex(value =>
-                this.equals(value, option.value),
-              ) !== -1
-            : false,
-          focused: index === this.state.focused,
-          onClick: this.onOptionClick,
-          onMouseEnter: this.onOptionMouseEnter,
-        })),
-      })
-    }
-
     return this.props.children({
-      tabIndex: this.props.tabIndex,
-      focused: this.state.singleFocused,
-      checked: this.state.checked,
+      tabIndex: this.props.options.filter(option => option.disabled).length === this.props.options.length ? undefined : this.props.tabIndex || 0,
       onFocus: this.onFocus,
       onBlur: this.onBlur,
-      onChange: this.onSingleChange,
+      onKeyDown: this.onKeyDown,
       onMouseLeave: this.onMouseLeave,
-      onMouseEnter: this.onSingleMouseEnter,
+      options: this.props.options.map((option, index) => ({
+        ...option,
+        checked: this.props.values.findIndex(value => this.equals(value, option.value)) !== -1,
+        focused: index === this.state.focused,
+        onClick: this.onOptionClick,
+        onMouseEnter: this.onOptionMouseEnter,
+      })),
     })
   }
 
