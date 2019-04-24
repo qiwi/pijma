@@ -11,6 +11,7 @@ import SwitchProps from './SwitchProps'
 
 const Switch: FunctionComponent<SwitchProps> = props => (
   <SwitchControl
+    checked={props.checked}
     disabled={props.disabled}
     children={renderProps => (
       <OptionField
@@ -18,14 +19,14 @@ const Switch: FunctionComponent<SwitchProps> = props => (
         onBlur={renderProps.onBlur}
         children={
           <SwitchField
-            onClick={props.onClick}
+            onClick={renderProps.onClick}
             label={props.label}
             reverse={props.reverse}
             disabled={props.disabled}
             children={
               <Tumbler
                 disabled={props.disabled}
-                checked={props.checked}
+                checked={renderProps.checked}
                 focused={renderProps.focused}
               />
             }

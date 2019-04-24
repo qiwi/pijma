@@ -12,13 +12,16 @@ import CheckboxProps from './CheckboxProps'
 const Checkbox: FunctionComponent<CheckboxProps> = props => (
   <SwitchControl
     disabled={props.disabled}
+    checked={props.checked}
     children={renderProps => (
       <OptionField
         tabIndex={props.tabIndex}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
+        onMouseLeave={renderProps.onMouseLeave}
         children={
           <OptionFieldItem
+            onMouseEnter={renderProps.onMouseEnter}
             disabled={props.disabled}
             icon={
               <Check

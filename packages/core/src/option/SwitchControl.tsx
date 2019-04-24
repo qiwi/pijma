@@ -13,6 +13,7 @@ export default class SwitchControl extends React.Component<
 
     this.state = {
       focused: false,
+      checked: props.checked,
     }
   }
 
@@ -42,11 +43,37 @@ export default class SwitchControl extends React.Component<
     this.props.onBlur(event)
   }
 
+  private onMouseEnter = () => {
+    this.setState({
+      focused: true,
+    })
+  }
+
+  private onMouseLeave = () => {
+    this.setState({
+      focused: false,
+    })
+  }
+
+  private onClick = () => {
+    this.setState({
+      checked: !this.state.checked,
+    })
+    if (this.props.onChange) {
+      this.props.onChange()
+    }
+  }
+
   public render() {
     return this.props.children({
+      tabIndex: this.props.tabIndex,
+      focused: this.state.focused,
+      checked: this.state.checked,
       onFocus: this.onFocus,
       onBlur: this.onBlur,
-      focused: this.state.focused,
+      onClick: this.onClick,
+      onMouseLeave: this.onMouseLeave,
+      onMouseEnter: this.onMouseEnter,
     })
   }
 

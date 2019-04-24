@@ -2,7 +2,7 @@ import {MouseEventHandler} from 'react'
 
 export default interface CheckboxProps {
   disabled?: boolean
-  checked?: boolean
+  checked: boolean
   label: string
   tabIndex: number
   description?: string
