@@ -30,7 +30,7 @@ const Switch: FunctionComponent<SwitchProps> = props => (
             description={props.description}
             disabled={props.disabled}
             icon={
-              <Box width={10} pt={0.5}>
+              <Box width={10}>
                 <Tumbler
                   disabled={props.disabled}
                   checked={renderProps.checked}

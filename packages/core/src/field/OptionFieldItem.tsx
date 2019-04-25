@@ -36,13 +36,17 @@ export const OptionFieldItem: React.FunctionComponent<OptionFieldItemProps> = ({
       justify={reverse ? 'space-between' : 'flex-start'}
       align="flex-start"
     >
-      <Box
+      <Flex
+        display="flex"
+        align="center"
         ml={reverse ? 3 : 0}
         mr={reverse ? 0 : 3}
-        minWidth={6}
         height={6}
-        children={icon}
-      />
+      >
+        <Box minWidth={6}>
+          {icon}
+        </Box>
+      </Flex>
 
       <Flex display="flex" direction="column">
         <Typo
