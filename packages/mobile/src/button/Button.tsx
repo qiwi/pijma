@@ -29,6 +29,16 @@ const buttonBackground: { [kind in ButtonProps['kind']]: string } = {
 
 const buttonHoverBackground: { [kind in ButtonProps['kind']]: string } = {
   brand: '#ff8200',
+  simple: '#F5F5F5 padding-box',
+}
+
+const buttonClickBackground: { [kind in ButtonProps['kind']]: string } = {
+  brand: '#FF7600',
+  simple: '#e6e6e6 padding-box',
+}
+
+const accentButtonBackground: { [kind in ButtonProps['kind']]: string } = {
+  brand: 'linear-gradient(to bottom, #ff9810, #ff8300)',
   simple: '#fff padding-box',
 }
 
@@ -39,7 +49,7 @@ const buttonBorder: { [kind in ButtonProps['kind']]: string } = {
 
 const buttonHoverBorder: { [kind in ButtonProps['kind']]: string } = {
   brand: 'none',
-  simple: '1px solid rgba(0, 0, 0, 0.28)',
+  simple: '1px solid rgba(0, 0, 0, 0.22)',
 }
 
 const buttonRadius: { [size in ButtonProps['size']]: number } = {
@@ -88,15 +98,17 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
         type={props.type}
         width={!props.icon || props.text ? 1 : buttonSize[props.size]}
         height={buttonSize[props.size]}
-        bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? buttonHoverBackground[props.kind] : buttonBackground[props.kind]}
+        bg={props.disabled ? '#e6e6e6' : renderProps.active ? buttonClickBackground[props.kind] : renderProps.hover || renderProps.focus ? buttonHoverBackground[props.kind] : props.size === 'accent' ? accentButtonBackground[props.kind] : buttonBackground[props.kind]}
         b={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? buttonHoverBorder[props.kind] : buttonBorder[props.kind]}
         r={buttonRadius[props.size]}
         transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
-        onBlur={renderProps.onFocus}
+        onBlur={renderProps.onBlur}
         onMouseEnter={renderProps.onMouseEnter}
         onMouseLeave={renderProps.onMouseLeave}
+        onMouseDown={renderProps.onMouseDown}
+        onMouseUp={renderProps.onMouseUp}
         children={(
           <Pos
             type="relative"
