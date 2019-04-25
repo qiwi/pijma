@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
-import {keyframes} from 'emotion'
 
+import {keyframes} from '../styled'
 import {Card, Box, Pos, Value} from '../primitive'
 
 const stubKeyframes = keyframes({
@@ -60,7 +60,3 @@ export const Stub: FC<StubProps> = (props) => (
     </CardPos>
   </Box>
 )
-
-Stub.defaultProps = {
-
-}

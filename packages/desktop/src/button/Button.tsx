@@ -140,11 +140,11 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
           props.size === 'accent' ? shadow[props.kind] : 'none'
         )}
         transition={props.stub ? 'none' : 'box-shadow 300ms cubic-bezier(0.4, 0.0, 0.2, 1)'}
-        onClick={props.stub ? undefined : renderProps.onClick}
-        onFocus={props.stub ? undefined : renderProps.onFocus}
-        onBlur={props.stub ? undefined : renderProps.onFocus}
-        onMouseEnter={props.stub ? undefined : renderProps.onMouseEnter}
-        onMouseLeave={props.stub ? undefined : renderProps.onMouseLeave}
+        onClick={renderProps.onClick}
+        onFocus={renderProps.onFocus}
+        onBlur={renderProps.onFocus}
+        onMouseEnter={renderProps.onMouseEnter}
+        onMouseLeave={renderProps.onMouseLeave}
         children={(
           <Pos
             type="relative"
