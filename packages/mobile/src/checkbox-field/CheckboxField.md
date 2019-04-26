@@ -57,3 +57,10 @@ initialState = {values: ['selected']};
   onChange={(values) => setState({values})}
 />
 ```
+
+```jsx
+initialState = {values: ['selected']};
+<CheckboxField
+  stub
+/>
+```

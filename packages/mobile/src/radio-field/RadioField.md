@@ -59,3 +59,10 @@ initialState = {value: 'selected'};
   onChange={(value) => setState({value})}
 />
 ```
+
+```jsx
+initialState = {values: ['selected']};
+<RadioField
+  stub
+/>
+```
