@@ -38,7 +38,7 @@ const buttonClickBackground: { [kind in ButtonProps['kind']]: string } = {
 }
 
 const accentButtonBackground: { [kind in ButtonProps['kind']]: string } = {
-  brand: 'linear-gradient(to bottom, #ff9810, #ff8300)',
+  brand: '#ff8c00',
   simple: '#fff padding-box',
 }
 
