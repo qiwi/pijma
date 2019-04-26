@@ -31,6 +31,11 @@ const buttonClickBackground: { [kind in ButtonProps['kind']]: string } = {
   simple: '#e6e6e6 padding-box',
 }
 
+const buttonFocusBackground: { [kind in ButtonProps['kind']]: string } = {
+  brand: '#ff8c00',
+  simple: '#fff padding-box',
+}
+
 const accentButtonBackground: { [kind in ButtonProps['kind']]: string } = {
   brand: 'linear-gradient(to bottom, #ff9810, #ff8300)',
   simple: '#fff padding-box',
@@ -44,6 +49,11 @@ const buttonBorder: { [kind in ButtonProps['kind']]: string } = {
 const buttonHoverBorder: { [kind in ButtonProps['kind']]: string } = {
   brand: 'none',
   simple: '1px solid rgba(0, 0, 0, 0.22)',
+}
+
+const buttonFocusBorder: { [kind in ButtonProps['kind']]: string } = {
+  brand: '1px solid rgba(197, 108, 0, 1.0)',
+  simple: '1px solid rgba(0, 0, 0, 0.30)',
 }
 
 const buttonRadius: { [size in ButtonProps['size']]: number } = {
@@ -103,8 +113,8 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
         width={!props.icon || props.text ? 1 : buttonSize[props.size]}
         height={buttonSize[props.size]}
         minWidth={!props.icon || props.text ? buttonMinWith[props.size] : buttonSize[props.size]}
-        bg={props.disabled ? '#e6e6e6' : renderProps.active ? buttonClickBackground[props.kind] : renderProps.hover || renderProps.focus ? buttonHoverBackground[props.kind] : props.size === 'accent' ? accentButtonBackground[props.kind] : buttonBackground[props.kind]}
-        b={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? buttonHoverBorder[props.kind] : buttonBorder[props.kind]}
+        bg={props.disabled ? '#e6e6e6' : renderProps.focus ? buttonFocusBackground[props.kind] : renderProps.active ? buttonClickBackground[props.kind] : renderProps.hover ? buttonHoverBackground[props.kind] : props.size === 'accent' ? accentButtonBackground[props.kind] : buttonBackground[props.kind]}
+        b={props.disabled ? 'none' : renderProps.hover ? buttonHoverBorder[props.kind] : renderProps.focus ? buttonFocusBorder[props.kind] : buttonBorder[props.kind]}
         r={buttonRadius[props.size]}
         s={props.disabled ? 'none' : (renderProps.hover || renderProps.focus) && props.size === 'accent' ? hoverShadow[props.kind] : props.size === 'accent' ? shadow[props.kind] : 'none'}
         transition="box-shadow 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"

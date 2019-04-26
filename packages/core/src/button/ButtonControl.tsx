@@ -22,7 +22,7 @@ export default class ButtonControl extends React.Component<ButtonControlProps, B
     this.setState({
 //      active: false,
       hover: false,
-//      focus: false,
+      focus: false,
     })
   }
 
