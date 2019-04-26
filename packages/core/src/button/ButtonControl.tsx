@@ -41,10 +41,6 @@ export default class ButtonControl extends React.Component<ButtonControlProps, B
   }
 
   private onClick: React.MouseEventHandler = (e: React.MouseEvent) => {
-    this.setState({
-      active: true,
-      focus: true,
-    })
     e.preventDefault()
     e.stopPropagation()
     if (this.props.onClick) {
@@ -64,7 +60,6 @@ export default class ButtonControl extends React.Component<ButtonControlProps, B
 
   private onBlur: React.FocusEventHandler = (e: React.FocusEvent) => {
     this.setState({
-      active: false,
       focus: false,
     })
     e.preventDefault()
