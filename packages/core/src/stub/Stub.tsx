@@ -13,13 +13,13 @@ const stubKeyframes = keyframes({
 })
 
 export interface StubProps {
+  width: Value
+  height: Value
   inverse?: boolean
   top?: Value
   bottom?: Value
   left?: Value
   right?: Value
-  width?: Value
-  height?: Value
 }
 
 const CardPos = Card.withComponent(Pos)
