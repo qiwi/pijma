@@ -9,6 +9,7 @@ export default interface RadioFieldProps<O extends OptionModel<V>, V> {
   tabIndex?: number
   autoFocus?: boolean
   stub?: boolean
+  stubLines?: number[]
   options: O[]
   value: V
   equals?: (a: V, b: V) => boolean

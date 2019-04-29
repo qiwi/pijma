@@ -9,6 +9,7 @@ export interface ParagraphProps {
   color?: 'default' | 'support' | 'inverse'
   transform?: TypoProps['transform']
   stub?: boolean
+  stubLines?: number[]
 }
 
 const ParagraphSize: { [size in NonNullable<ParagraphProps['size']>]: number } = {
@@ -65,10 +66,10 @@ const ParagraphColor: { [color in NonNullable<ParagraphProps['color']>]: string 
   inverse: '#fff',
 }
 
-export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold = false, compact = false, color = 'default', transform, stub, children}) => (
+export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold = false, compact = false, color = 'default', stubLines = [75, 88, 62], transform, stub, children}) => (
   stub ? (
     <Box>
-      {[75, 88, 62].map((width: number, id: number) => (
+      {stubLines.map((width: number, id: number) => (
         <Stub
           key={id}
           top={compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}

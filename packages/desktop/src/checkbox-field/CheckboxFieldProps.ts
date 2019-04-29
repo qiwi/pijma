@@ -9,6 +9,7 @@ export default interface CheckboxFieldProps<O extends OptionModel<V>, V> {
   tabIndex?: number
   autoFocus?: boolean
   stub?: boolean
+  stubLines?: number[]
   options: O[]
   values: V[]
   equals?: (a: V, b: V) => boolean

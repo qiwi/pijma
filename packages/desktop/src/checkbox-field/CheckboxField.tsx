@@ -20,7 +20,7 @@ const CheckboxField: FunctionComponent<CheckboxFieldProps<CheckboxFieldOptionMod
     <Box>
       <Stub width={24} height={3} top={2} bottom={4}/>
       <Spacer size="s">
-        {[33, 38, 30].map((width: number, id: number) => (
+        {(props.stubLines || [33, 38, 30]).map((width: number, id: number) => (
           <Flex key={id} align="center">
             <Stub width={5} height={5} right={3} left={0.5}/>
             <Stub width={width} height={2} top={2} bottom={2}/>
