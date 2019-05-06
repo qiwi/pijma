@@ -22,6 +22,12 @@
     children={
       <Spacer size="xl">
         <Heading size="2">Удалить из избранного?</Heading>
+          <ReCaptchaField
+            siteKey="6Le0iiETAAAAAPNu6albLuW5O2Zz7FO8N95lisA1"
+            value={state.value1}
+            action={state.value1 ? <a href="javascript:void(0)" onClick={() => setState({value1: undefined})}>Сбросить</a> : null}
+            onChange={(value1) => setState({value1})}
+          />
         <Actions size="normal">
           <Button
             kind="brand"
