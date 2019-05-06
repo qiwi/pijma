@@ -15,7 +15,7 @@
   </Actions>
   <SimpleModal
     show={state.delete}
-    size={'m'}
+    size="m"
     closable
     backdropClose
     onHide={() => setState({delete: false})}
@@ -53,27 +53,27 @@
       kind="simple"
       size="normal"
       type="button"
-      text="S"
+      text="s"
       onClick={() => setState({s: true})}
     />
     <Button
       kind="simple"
       size="normal"
       type="button"
-      text="M"
+      text="m"
       onClick={() => setState({m: true})}
     />
     <Button
       kind="simple"
       size="normal"
       type="button"
-      text="L"
+      text="l"
       onClick={() => setState({l: true})}
     />
   </Actions>
   <SimpleModal
     show={state.s}
-    size={'s'}
+    size="s"
     closable
     onHide={() => setState({s: false})}
     children={
@@ -85,7 +85,7 @@
   />
   <SimpleModal
     show={state.m}
-    size={'m'}
+    size="m"
     closable
     onHide={() => setState({m: false})}
     children={
@@ -97,7 +97,7 @@
   />
   <SimpleModal
     show={state.l}
-    size={'l'}
+    size="l"
     closable
     onHide={() => setState({l: false})}
     children={
@@ -174,7 +174,7 @@
   </Actions>
   <SimpleModal
     show={state.email}
-    size={'m'}
+    size="m"
     closable
     backdropClose
     onHide={() => setState({email: false})}
