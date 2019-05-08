@@ -109,7 +109,6 @@ export const DropUp: FunctionComponent<DropUpProps> = (props) => (
       <FlexPosCard
         display="flex"
         direction="column"
-        align="stretch"
         width={1}
         maxHeight="calc(100% - 44px)"
         bg="#fff"
@@ -132,11 +131,11 @@ export const DropUp: FunctionComponent<DropUpProps> = (props) => (
             </Box>
           </Flex>
         </Card>
-        <Flex width={1} css={{display: 'flex', align: 'stretch', flexGrow: 1}}>
-          <FlexItem grow={1} overflow="auto">
+        <FlexItem display="flex" grow={1} width={1} minHeight={0}>
+          <FlexItem grow={1} minHeight={0} overflow="auto">
             {props.children}
           </FlexItem>
-        </Flex>
+        </FlexItem>
         {props.footer ? (
           <Box p={4} width={1}>
             {props.footer}
