@@ -93,7 +93,7 @@ const FlexPosCard = styled(Flex.withComponent(Pos).withComponent(Card), {
   shouldForwardProp: (prop) => !FlexPosCardNonProps.includes(prop),
 })<PosProps & CardProps & FlexProps>()
 
-const DropUp: FunctionComponent<DropUpProps> = (props) => (
+export const DropUp: FunctionComponent<DropUpProps> = (props) => (
   <StyledModal
     show={props.show}
     onShow={props.onShow}
@@ -114,7 +114,8 @@ const DropUp: FunctionComponent<DropUpProps> = (props) => (
         maxHeight="calc(100% - 44px)"
         bg="#fff"
         type="absolute"
-        bottom={0} s="0px 0px 64px 0px rgba(0, 0, 0, 0.16)"
+        bottom={0}
+        s="0px 0px 64px 0px rgba(0, 0, 0, 0.16)"
       >
         <Card width={1} px={6} py={4} s="0 1px 2px 0 rgba(0, 0, 0, 0.12)">
           <Flex width={1} align="center">
@@ -147,5 +148,3 @@ const DropUp: FunctionComponent<DropUpProps> = (props) => (
     }
   />
 )
-
-export {DropUp}
