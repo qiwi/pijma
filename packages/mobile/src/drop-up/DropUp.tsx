@@ -1,7 +1,7 @@
 import React, {FunctionComponent, ReactNode} from 'react'
-import {css} from 'emotion'
 
 import {
+  css,
   Modal,
   ModalProps,
   SimpleTransition,
