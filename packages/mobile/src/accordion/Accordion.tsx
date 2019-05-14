@@ -16,7 +16,7 @@ export interface AccordionItemModel {
 const Accordion: FunctionComponent<
   AccordionProps<AccordionItemModel>
 > = props => (
-  <Card r={10} bg="#fff" s="0 1px 2px 0 rgba(0, 0, 0, 0.12)" py={3}>
+  <Card r={10} bg="#fff" s="0 1px 2px 0 rgba(0, 0, 0, 0.12)" py={2}>
     <AccordionControl<AccordionItemModel>
       items={props.items}
       children={renderProps => (
@@ -27,11 +27,11 @@ const Accordion: FunctionComponent<
               key={index}
               openedIcon={<Icon name="angle-small-up" />}
               closedIcon={<Icon name="angle-small-down" />}
-              px={8}
+              px={4}
               py={4}
-              titlePb={2}
+              titlePb={1}
               title={
-                <Paragraph bold size="m">
+                <Paragraph bold size="s">
                   {item.title}
                 </Paragraph>
               }

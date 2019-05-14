@@ -1,6 +1,6 @@
 import React, {ReactNode} from 'react'
 
-import {Flex, Box, FlexItem, Card} from '../primitive'
+import {Flex, Box, FlexItem, Card, Value} from '../primitive'
 
 interface AccordionItemProps {
   openedIcon: ReactNode
@@ -13,6 +13,9 @@ interface AccordionItemProps {
   index: number
   onClick: (index: number) => void
   onMouseEnter: (index: number) => void
+  px: Value
+  py: Value
+  titlePb: Value
 }
 
 export default class AccordionItem extends React.Component<AccordionItemProps> {
@@ -37,11 +40,18 @@ export default class AccordionItem extends React.Component<AccordionItemProps> {
       isOpened,
       isHovered,
       isNextHovered,
+      px,
+      py,
+      titlePb,
     } = this.props
     return (
       <Card
         onMouseEnter={this.onMouseEnter}
-        bb={isHovered || isNextHovered ? '1px solid transparent' : '1px solid #e6e6e6'}
+        bb={
+          isHovered || isNextHovered
+            ? '1px solid transparent'
+            : '1px solid #e6e6e6'
+        }
         s={isHovered ? '0 0 16px 0 rgba(0, 0, 0, 0.12)' : undefined}
         transition="box-shadow 3ms, border-bottom-color 100ms"
       >
@@ -49,25 +59,19 @@ export default class AccordionItem extends React.Component<AccordionItemProps> {
           onClick={this.onClick}
           wrap="nowrap"
           justify="space-between"
-          align="center"
+          align="start"
           css={{cursor: 'pointer', userSelect: 'none'}}
-          px={8}
-          pt={4}
-          pb={isOpened ? 2 : 4}
+          px={px}
+          pt={py}
+          pb={isOpened ? titlePb : py}
         >
           {title}
-          {isOpened ? (
-            <FlexItem shrink={0} width={6} height={6}>
-              {openedIcon}
-            </FlexItem>
-          ) : (
-            <FlexItem shrink={0} width={6} height={6}>
-              {closedIcon}
-            </FlexItem>
-          )}
+          <FlexItem shrink={0} width={6} height={6} ml={3}>
+            {isOpened ? openedIcon : closedIcon}
+          </FlexItem>
         </Flex>
         {isOpened ? (
-          <Box px={8} pb={4}>
+          <Box px={px} pb={py}>
             {content}
           </Box>
         ) : null}

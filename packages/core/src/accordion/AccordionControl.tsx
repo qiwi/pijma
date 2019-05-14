@@ -18,7 +18,6 @@ export default class AccordionControl<I> extends React.Component<AccordionContro
 
   private onItemClick = (index: number) => {
     this.setState(({opened}: AccordionControlState) => ({
-      hovered: index,
       opened: opened.includes(index)
         ? opened.filter(i => i !== index)
         : opened.concat(index),
