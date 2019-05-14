@@ -1,4 +1,4 @@
-import React, {ReactNode, FocusEventHandler, KeyboardEventHandler, MouseEventHandler} from 'react'
+import React, {ReactNode, FocusEventHandler, KeyboardEventHandler} from 'react'
 
 import styled from '../styled'
 import {Typo, Box, Flex, FlexItem, BoxProps} from '../primitive'
@@ -13,7 +13,6 @@ export interface OptionFieldProps {
   onFocus: FocusEventHandler
   onBlur: FocusEventHandler
   onKeyDown?: KeyboardEventHandler
-  onMouseLeave?: MouseEventHandler
 }
 
 const Input = styled(Box, {
@@ -37,7 +36,6 @@ export const OptionField: React.FunctionComponent<OptionFieldProps> = (props) =>
         onFocus={props.onFocus}
         onBlur={props.onBlur}
         onKeyDown={props.onKeyDown}
-        onMouseLeave={props.onMouseLeave}
         children={<Spacer size="s" children={props.children}/>}
       />
       {props.help ? (

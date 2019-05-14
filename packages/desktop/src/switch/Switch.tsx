@@ -20,9 +20,9 @@ export const Switch: FunctionComponent<SwitchProps> = props => (
         tabIndex={props.tabIndex}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
-        onMouseLeave={renderProps.onMouseLeave}
         children={
           <OptionFieldItem
+            onMouseLeave={renderProps.onMouseLeave}
             onMouseEnter={renderProps.onMouseEnter}
             onClick={renderProps.onClick}
             label={props.label}
