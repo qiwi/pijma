@@ -10,7 +10,7 @@ import {
 
 import SwitchProps from './SwitchProps'
 
-const Switch: FunctionComponent<SwitchProps> = props => (
+export const Switch: FunctionComponent<SwitchProps> = props => (
   <SwitchControl
     checked={props.checked}
     disabled={props.disabled}
@@ -43,5 +43,3 @@ const Switch: FunctionComponent<SwitchProps> = props => (
     )}
   />
 )
-
-export default Switch

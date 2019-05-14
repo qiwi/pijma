@@ -8,7 +8,7 @@ export default interface SwitchControlProps {
   checked: boolean
   onFocus?: React.FocusEventHandler
   onBlur?: React.FocusEventHandler
-  onChange?: () => void
+  onChange?: (value: boolean) => void
   children: RenderChild<{
     onFocus: React.FocusEventHandler
     onBlur: React.FocusEventHandler

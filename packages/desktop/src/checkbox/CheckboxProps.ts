@@ -6,6 +6,4 @@ export default interface CheckboxProps {
   description?: string
   autoFocus?: boolean
   onChange: () => void
-  onFocus?: () => void
-  onBlur?: () => void
 }

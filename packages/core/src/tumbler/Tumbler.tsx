@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from 'react'
+import React, {FC} from 'react'
 
 import {Svg, Rect} from '../primitive'
 
@@ -8,7 +8,7 @@ export interface TumblerProps {
   checked?: boolean
 }
 
-export const Tumbler: FunctionComponent<TumblerProps> = props => (
+export const Tumbler: FC<TumblerProps> = props => (
   <Svg viewBox="0 0 40 20" width="40" height="20">
     <defs>
       <filter
@@ -40,7 +40,7 @@ export const Tumbler: FunctionComponent<TumblerProps> = props => (
       y="0"
       rx="10"
       fill={
-        props.checked ? (props.disabled ? '#e6e6e6' : '#ff8c00') : '#e6e6e6'
+        props.checked && !props.disabled ? '#ff8c00' : '#e6e6e6'
       }
       transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
     />
@@ -62,11 +62,7 @@ export const Tumbler: FunctionComponent<TumblerProps> = props => (
       y="4"
       rx="6"
       fill={
-        props.checked
-          ? props.disabled
-            ? '#ccc'
-            : '#fff'
-          : props.disabled
+        props.disabled
           ? '#ccc'
           : '#fff'
       }

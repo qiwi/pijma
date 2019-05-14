@@ -8,13 +8,9 @@ export default class SwitchControl extends React.Component<
   SwitchControlState
 > {
 
-  constructor(props: SwitchControlProps) {
-    super(props)
-
-    this.state = {
-      focused: false,
-      checked: props.checked,
-    }
+  public state: SwitchControlState = {
+    focused: false,
+    checked: this.props.checked,
   }
 
   private onFocus: React.FocusEventHandler<HTMLElement> = (
@@ -59,11 +55,12 @@ export default class SwitchControl extends React.Component<
     if (this.props.disabled) {
       return
     }
+    const checked = !this.state.checked
     this.setState({
-      checked: !this.state.checked,
+      checked,
     })
     if (this.props.onChange) {
-      this.props.onChange()
+      this.props.onChange(checked)
     }
   }
 

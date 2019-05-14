@@ -4,24 +4,22 @@
 ```jsx
 initialState = {checked: true};
 <Box width={120}>
-  <Switch
-    onClick={() => setState({checked: !state.checked})}
-    checked={state.checked}
-    label={'Выбранный переключатель'}
-  />
-  <Box mt={4}>
+  <Spacer size="xxs">
+    <Switch
+      onChange={checked => setState({checked})}
+      checked={state.checked}
+      label="Выбранный переключатель"
+    />
     <Switch
       disabled={true}
       checked={true}
-      label={'Выбранный заблокированный'}
+      label="Выбранный заблокированный"
     />
-  </Box>
-  <Box mt={4}>
     <Switch
       disabled={true}
-      label={'Невыбранный заблокированный'}
+      label="Невыбранный заблокированный"
     />
-  </Box>
+  </Spacer>
 </Box>
 ```
 #### Инвертированный переключатель
@@ -31,9 +29,9 @@ initialState = {checked: false};
 <Box width={80}>
   <Switch
     reverse={true}
-    onClick={() => setState({checked: !state.checked})}
+    onChange={checked => setState({checked})}
     checked={state.checked}
-    label={'Невыбранный переключатель'}
+    label="Невыбранный переключатель"
   />
 </Box>
 ```
