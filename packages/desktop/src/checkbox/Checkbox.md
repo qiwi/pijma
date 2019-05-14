@@ -7,7 +7,7 @@ initialState = {checked: true};
   <Spacer size="xxs">
     <Checkbox
       tabIndex={1}
-      onChange={() => setState({checked: !state.checked})}
+      onChange={checked => setState({checked})}
       checked={state.checked}
       label={'Выбранный чекбокс'}
     />

@@ -15,6 +15,7 @@ export default interface SwitchControlProps {
     onClick: React.MouseEventHandler
     onMouseLeave: React.MouseEventHandler
     onMouseEnter: React.MouseEventHandler
+    onKeyDown: React.KeyboardEventHandler
     focused: boolean
     tabIndex?: number
     checked: boolean

@@ -19,6 +19,7 @@ const Checkbox: FunctionComponent<CheckboxProps> = props => (
         tabIndex={props.tabIndex}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
+        onKeyDown={renderProps.onKeyDown}
         children={
           <OptionFieldItem
             onMouseEnter={renderProps.onMouseEnter}

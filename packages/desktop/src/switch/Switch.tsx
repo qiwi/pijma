@@ -20,6 +20,7 @@ export const Switch: FunctionComponent<SwitchProps> = props => (
         tabIndex={props.tabIndex}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
+        onKeyDown={renderProps.onKeyDown}
         children={
           <OptionFieldItem
             onMouseLeave={renderProps.onMouseLeave}

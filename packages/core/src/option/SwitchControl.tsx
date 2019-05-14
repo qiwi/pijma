@@ -64,6 +64,21 @@ export default class SwitchControl extends React.Component<
     }
   }
 
+  private onKeyDown: React.KeyboardEventHandler<HTMLElement> = (
+    event: React.KeyboardEvent<HTMLElement>,
+  ) => {
+    switch (event.key) {
+      case 'Enter':
+      case ' ':
+        event.preventDefault()
+        event.stopPropagation()
+        if (this.state.focused) {
+          this.onClick()
+        }
+        break
+    }
+  }
+
   public render() {
     return this.props.children({
       tabIndex: this.props.tabIndex,
@@ -74,6 +89,7 @@ export default class SwitchControl extends React.Component<
       onClick: this.onClick,
       onMouseLeave: this.onMouseLeave,
       onMouseEnter: this.onMouseEnter,
+      onKeyDown: this.onKeyDown,
     })
   }
 
