@@ -1,6 +1,6 @@
 import React, {FC, isValidElement, ReactNode} from 'react'
 import {Flex, FlexItem, Icon, Spacer} from '@qiwi/pijma-core'
-import {Heading, Paragraph} from '@qiwi/pijma-desktop'
+import {Heading, Paragraph} from '@qiwi/pijma-mobile'
 import {IconName} from '@qiwi/pijma-media'
 
 export interface NoticeProps {
@@ -27,7 +27,7 @@ export const Notice: FC<NoticeProps> = ({icon, title, children}) => (
         <Spacer size="xs">
           {typeof title === 'string' ? (
             <Heading
-              size="4"
+              size="3"
               children={title}
             />
           ) : isValidElement(title) ? (
