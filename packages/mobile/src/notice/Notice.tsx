@@ -39,9 +39,11 @@ export const Notice: FC<NoticeProps> = ({icon, title, children}) => (
             <Spacer size="xs">
               <Paragraph
                 children={children.split('\n').reduce<Array<string | ReactNode>>(
-                  (currentArray, currentChild, index) => (
-                    currentArray.concat([currentChild, <br key={index}/>])
-                  ), [])}
+                  (currentArray, currentChild, index, childrenArray) => {
+                    currentArray.push(currentChild)
+                    if (index !== childrenArray.length - 1) currentArray.push(<br key={index}/>)
+                    return currentArray
+                  }, [])}
               />
             </Spacer>
           ) : isValidElement(children) ? (
