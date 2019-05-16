@@ -9,7 +9,7 @@ export interface TumblerProps {
 }
 
 export const Tumbler: FC<TumblerProps> = props => (
-  <Svg viewBox="0 0 40 20" width="40" height="20">
+  <Svg viewBox="0 0 44 24" width="44" height="24">
     <defs>
       <filter
         x="-45.8%"
@@ -32,24 +32,31 @@ export const Tumbler: FC<TumblerProps> = props => (
         />
       </filter>
     </defs>
-
+    <Rect
+      width="44"
+      height="24"
+      x="0"
+      y="0"
+      rx="12"
+      fill={props.checked ? '#e8860e' : '#ccc'}
+      fillOpacity={props.focused && !props.disabled ? '0.6' : '0'}
+      transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+    />
     <Rect
       width="40"
       height="20"
-      x="0"
-      y="0"
+      x="2"
+      y="2"
       rx="10"
-      fill={
-        props.checked && !props.disabled ? '#ff8c00' : '#e6e6e6'
-      }
+      fill={props.checked && !props.disabled ? '#ff8c00' : '#e6e6e6'}
       transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
     />
 
     <Rect
       width="12"
       height="12"
-      x={props.checked ? '24' : '4'}
-      y="4"
+      x={props.checked ? '26' : '6'}
+      y="6"
       rx="6"
       filter="url(#filter-2)"
       fillOpacity={props.disabled ? '0' : '1'}
@@ -58,14 +65,10 @@ export const Tumbler: FC<TumblerProps> = props => (
     <Rect
       width="12"
       height="12"
-      x={props.checked ? '24' : '4'}
-      y="4"
+      x={props.checked ? '26' : '6'}
+      y="6"
       rx="6"
-      fill={
-        props.disabled
-          ? '#ccc'
-          : '#fff'
-      }
+      fill={props.disabled ? '#ccc' : '#fff'}
       transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
     />
   </Svg>
