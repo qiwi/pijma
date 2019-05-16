@@ -1,9 +1,32 @@
 import React from 'react'
+import RenderChild from '../RenderChild'
 
-import SwitchControlProps from './SwitchControlProps'
-import SwitchControlState from './SwitchControlState'
+export interface SwitchControlProps {
+  disabled?: boolean
+  tabIndex?: number
+  checked: boolean
+  onFocus?: React.FocusEventHandler
+  onBlur?: React.FocusEventHandler
+  onChange?: (value: boolean) => void
+  children: RenderChild<{
+    focused: boolean
+    tabIndex?: number
+    checked: boolean
+    onFocus: React.FocusEventHandler
+    onBlur: React.FocusEventHandler
+    onClick: React.MouseEventHandler
+    onMouseLeave: React.MouseEventHandler
+    onMouseEnter: React.MouseEventHandler
+    onKeyDown: React.KeyboardEventHandler
+  }>
+}
 
-export default class SwitchControl extends React.Component<
+export interface SwitchControlState {
+  focused: boolean
+  checked: boolean
+}
+
+export class SwitchControl extends React.Component<
   SwitchControlProps,
   SwitchControlState
 > {
