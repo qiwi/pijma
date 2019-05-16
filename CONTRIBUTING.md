@@ -54,7 +54,7 @@ export class ComponentControl extends React.Component<ComponentControlProps, Com
 ```
 
 ## Commit Message Guidelines
-
+Relies on [conventional commits](https://www.conventionalcommits.org) contract:
 ```
 <type>(<scope>): <subject>
 ```
@@ -72,6 +72,7 @@ Must be one of the following:
 * **refactor**: A code change that neither fixes a bug nor adds a feature
 * **style**: Changes that do not affect the meaning of the code
 * **test**: Adding missing tests or correcting existing tests
+* **chore**: Routine: releases, tech commits, minor tweak ups, etc.
 
 ### Scope
 
