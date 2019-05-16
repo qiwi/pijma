@@ -24,7 +24,7 @@ export const Component: React.FC<ComponentProps> = (props) => (
 )
 ```
 
-`ComponentControl` is a React class component (`React.Component`, `React.PureCompoent`)
+`ComponentControl` is a React class component (`React.Component`, `React.PureCompoment`)
 
 ```jsx
 export interface ComponentControlProps {
@@ -54,7 +54,9 @@ export class ComponentControl extends React.Component<ComponentControlProps, Com
 ```
 
 ## Commit Message Guidelines
+
 Relies on [conventional commits](https://www.conventionalcommits.org) contract:
+
 ```
 <type>(<scope>): <subject>
 ```
