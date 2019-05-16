@@ -9,8 +9,8 @@ export interface OptionFieldItemProps {
   label: ReactNode
   description?: ReactNode
   onClick: MouseEventHandler
-  onMouseEnter?: MouseEventHandler
-  onMouseLeave?: MouseEventHandler
+  onMouseEnter: MouseEventHandler
+  onMouseLeave: MouseEventHandler
 }
 
 export const OptionFieldItem: React.FunctionComponent<OptionFieldItemProps> = ({
@@ -47,7 +47,6 @@ export const OptionFieldItem: React.FunctionComponent<OptionFieldItemProps> = ({
           {icon}
         </Box>
       </Flex>
-
       <Flex display="flex" direction="column">
         <Typo
           display="block"
@@ -57,7 +56,6 @@ export const OptionFieldItem: React.FunctionComponent<OptionFieldItemProps> = ({
           color={disabled ? '#666' : '#000'}
           children={label}
         />
-
         {description ? (
           <Box mt={1}>
             <Typo

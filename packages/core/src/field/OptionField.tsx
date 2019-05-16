@@ -12,7 +12,7 @@ export interface OptionFieldProps {
   autoFocus?: boolean
   onFocus: FocusEventHandler
   onBlur: FocusEventHandler
-  onKeyDown?: KeyboardEventHandler
+  onKeyDown: KeyboardEventHandler
 }
 
 const Input = styled(Box, {
