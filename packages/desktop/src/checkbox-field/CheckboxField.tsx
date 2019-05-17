@@ -39,6 +39,7 @@ const CheckboxField: FunctionComponent<
             value={option.value}
             onClick={option.onClick}
             onMouseEnter={option.onMouseEnter}
+            onMouseLeave={renderProps.onMouseLeave}
             children={(renderOptionProps) => (
               <OptionFieldItem
                 disabled={option.disabled}
@@ -52,7 +53,7 @@ const CheckboxField: FunctionComponent<
                 label={option.label}
                 description={option.description}
                 onClick={renderOptionProps.onClick}
-                onMouseLeave={renderProps.onMouseLeave}
+                onMouseLeave={renderOptionProps.onMouseLeave}
                 onMouseEnter={renderOptionProps.onMouseEnter}
               />
             )}
