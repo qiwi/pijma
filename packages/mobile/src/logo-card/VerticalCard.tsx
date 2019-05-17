@@ -1,5 +1,5 @@
 import React, {FC, ReactNode} from 'react'
-import {Flex, FlexItem, Box} from '@qiwi/pijma-core'
+import {Box} from '@qiwi/pijma-core'
 import {BlockLink, BlockLinkProps} from '../link'
 import {Text} from '../typography'
 
@@ -13,16 +13,14 @@ export interface VerticalCardProps extends BlockLinkProps {
 export const VerticalCard: FC<VerticalCardProps> = ({title, icon, description, contoured, ...props}) => (
   <BlockLink {...props}>
     {() => (
-      <Flex
+      <Box
         p={3}
         minHeight={56}
         minWidth={45}
-        align="center"
-        direction="column"
       >
         {contoured ? (
-          <FlexItem
-            shrink={0}
+          <Box
+            mx="auto"
             width={18}
             height={18}
             mt={8}
@@ -32,13 +30,13 @@ export const VerticalCard: FC<VerticalCardProps> = ({title, icon, description, c
             <Box width={8} height={8} m="auto">
               {typeof icon === 'string' ? <img src={icon} alt={title} /> : icon}
             </Box>
-          </FlexItem>
+          </Box>
         ) : (
-          <FlexItem shrink={0} width={16} height={16} mt={9}>
+          <Box mx="auto" width={16} height={16} mt={9}>
             {typeof icon === 'string' ? <img src={icon} alt={title} /> : icon}
-          </FlexItem>
+          </Box>
         )}
-        <FlexItem mt={6}>
+        <Box mt={6} mx="auto" css={{textAlign: 'center'}}>
           <Text
             color="default"
             decoration="none"
@@ -46,9 +44,9 @@ export const VerticalCard: FC<VerticalCardProps> = ({title, icon, description, c
             bold
             children={title}
           />
-        </FlexItem>
+        </Box>
         {description ? (
-          <FlexItem mt={1}>
+          <Box mt={1} mx="auto" css={{textAlign: 'center'}}>
             <Text
               color="support"
               decoration="none"
@@ -56,9 +54,9 @@ export const VerticalCard: FC<VerticalCardProps> = ({title, icon, description, c
               bold={false}
               children={description}
             />
-          </FlexItem>
+          </Box>
         ) : null}
-      </Flex>
+      </Box>
     )}
   </BlockLink>
 )
