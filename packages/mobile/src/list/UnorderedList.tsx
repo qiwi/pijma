@@ -15,10 +15,10 @@ export const UnorderedList: FunctionComponent<
 > = props => (
   <BoxUl>
     {props.items.map((item, index) => (
-      <FlexLi key={index} mb={index + 1 === props.items.length ? undefined : 4} display="flex">
+      <FlexLi key={index} mb={index + 1 === props.items.length ? undefined : 3} display="flex">
         <Card
           mr={3}
-          my="9px"
+          my="7px"
           width="6px"
           minWidth="6px"
           height="6px"
@@ -26,7 +26,7 @@ export const UnorderedList: FunctionComponent<
           r="50%"
         />
         {typeof item === 'string' ? (
-          <Paragraph size="m">{item}</Paragraph>
+          <Paragraph size="s">{item}</Paragraph>
         ) : (
           item
         )}
