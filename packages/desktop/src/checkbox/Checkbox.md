@@ -9,16 +9,16 @@ initialState = {checked: true};
       tabIndex={1}
       onChange={checked => setState({checked})}
       checked={state.checked}
-      label={'Выбранный чекбокс'}
+      label="Выбранный чекбокс"
     />
     <Checkbox
       disabled={true}
       checked={true}
-      label={'Выбранный заблокированный'}
+      label="Выбранный заблокированный"
     />
     <Checkbox
       disabled={true}
-      label={'Невыбранный заблокированный'}
+      label="Невыбранный заблокированный"
     />
   </Spacer>
 </Box>
