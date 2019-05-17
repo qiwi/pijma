@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react'
-import {BlockLink, BlockLinkProps} from '../link'
 import {Flex, FlexItem, Box} from '@qiwi/pijma-core'
+import {BlockLink, BlockLinkProps} from '../link'
 import {Text} from '../typography'
 
 export interface VerticalCardProps extends BlockLinkProps {
@@ -43,8 +43,8 @@ export const VerticalCard: FC<VerticalCardProps> = ({title, icon, description, c
             color="default"
             decoration="none"
             size="m"
-            children={title}
             bold
+            children={title}
           />
         </FlexItem>
         {description ? (
@@ -53,8 +53,8 @@ export const VerticalCard: FC<VerticalCardProps> = ({title, icon, description, c
               color="support"
               decoration="none"
               size="s"
-              children={description}
               bold={false}
+              children={description}
             />
           </FlexItem>
         ) : null}
