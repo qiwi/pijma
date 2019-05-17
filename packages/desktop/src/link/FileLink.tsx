@@ -19,11 +19,24 @@ export interface FileLinkProps {
   rel?: string
   title?: string
   color?: 'default' | 'support'
+  size?: 's' | 'm' | 'l'
 }
 
-const LinkColor: { [color in NonNullable<FileLinkProps['color']>]: string } = {
+const LinkColor: {[color in NonNullable<FileLinkProps['color']>]: string} = {
   default: '#000',
   support: '#666',
+}
+
+const LinkSize: {[size in NonNullable<FileLinkProps['size']>]: number} = {
+  s: 3.5,
+  m: 4,
+  l: 5,
+}
+
+const LinkHeight: {[size in NonNullable<FileLinkProps['size']>]: number} = {
+  s: 5,
+  m: 6,
+  l: 8,
 }
 
 const TypoLink = Typo.withComponent(Lnk)
@@ -48,18 +61,35 @@ export const FileLink: FC<FileLinkProps> = props => (
         onMouseLeave={renderProps.onMouseLeave}
         onMouseUp={renderProps.onMouseUp}
         onMouseDown={renderProps.onMouseDown}
-        color={props.color === undefined ? LinkColor.default : LinkColor[props.color]}
+        color={
+          props.color === undefined ? LinkColor.default : LinkColor[props.color]
+        }
         cursor="pointer"
         decoration="none"
         target={props.target}
         download={props.download}
         rel={props.rel}
         title={props.title}
-        size={4}
-        height={6}
+        size={props.size === undefined ? undefined : LinkSize[props.size]}
+        height={props.size === undefined ? undefined : LinkHeight[props.size]}
         children={
           <>
-            <Box display="inline-block" width={6} height={6} mr={2} css={{fill: props.color === undefined ? LinkColor.default : LinkColor[props.color]}}>
+            <Box
+              display="inline-block"
+              width={
+                props.size === undefined ? undefined : LinkHeight[props.size]
+              }
+              height={
+                props.size === undefined ? undefined : LinkHeight[props.size]
+              }
+              mr={2}
+              css={{
+                fill:
+                  props.color === undefined
+                    ? LinkColor.default
+                    : LinkColor[props.color],
+              }}
+            >
               <Icon name="file" />
             </Box>
             {props.children}
