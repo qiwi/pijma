@@ -19,21 +19,17 @@ export const UnorderedList: FunctionComponent<
         <Card
           mr={3}
           my="9px"
-          display="inline-block"
           width="6px"
           minWidth="6px"
           height="6px"
           bg="#000"
           r="50%"
-          css={{verticalAlign: 'middle'}}
         />
-        <Box display="inline-block" css={{verticalAlign: 'middle'}}>
-          {typeof item === 'string' ? (
-            <Paragraph size="m">{item}</Paragraph>
-          ) : (
-            item
-          )}
-        </Box>
+        {typeof item === 'string' ? (
+          <Paragraph size="m">{item}</Paragraph>
+        ) : (
+          item
+        )}
       </FlexLi>
     ))}
   </BoxUl>
