@@ -8,6 +8,7 @@ export * from './radio-field'
 export * from './typography'
 export * from './link'
 export * from './switch'
+export * from './breadcrumbs'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'
