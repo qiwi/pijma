@@ -5,5 +5,5 @@ export default interface CheckboxProps {
   tabIndex?: number
   description?: string
   autoFocus?: boolean
-  onChange: () => void
+  onChange: (value?: boolean) => void
 }

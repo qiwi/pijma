@@ -22,7 +22,7 @@ const CheckboxField: FunctionComponent<
     onChange={props.onChange}
     onFocus={props.onFocus}
     onBlur={props.onBlur}
-    children={renderProps => (
+    children={(renderProps) => (
       <OptionField
         title={props.title}
         hint={props.hint}
@@ -39,16 +39,16 @@ const CheckboxField: FunctionComponent<
             value={option.value}
             onClick={option.onClick}
             onMouseEnter={option.onMouseEnter}
-            children={renderOptionProps => (
+            children={(renderOptionProps) => (
               <OptionFieldItem
                 disabled={option.disabled}
-                icon={
+                icon={(
                   <Check
                     disabled={option.disabled}
                     checked={option.checked}
                     focused={option.focused}
                   />
-                }
+                )}
                 label={option.label}
                 description={option.description}
                 onClick={renderOptionProps.onClick}

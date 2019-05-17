@@ -15,31 +15,32 @@ export const Switch: FunctionComponent<SwitchProps> = props => (
     checked={props.checked}
     disabled={props.disabled}
     onChange={props.onChange}
-    children={renderProps => (
+    children={(renderProps) => (
       <OptionField
         tabIndex={props.tabIndex}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
         onKeyDown={renderProps.onKeyDown}
-        children={
+        children={(
           <OptionFieldItem
-            onMouseLeave={renderProps.onMouseLeave}
-            onMouseEnter={renderProps.onMouseEnter}
-            onClick={renderProps.onClick}
             label={props.label}
             reverse={props.reverse}
             description={props.description}
             disabled={props.disabled}
-            icon={
+            icon={(
               <Box width={10}>
                 <Tumbler
                   disabled={props.disabled}
                   checked={renderProps.checked}
                   focused={renderProps.focused}
                 />
-              </Box>}
+              </Box>
+            )}
+            onMouseLeave={renderProps.onMouseLeave}
+            onMouseEnter={renderProps.onMouseEnter}
+            onClick={renderProps.onClick}
           />
-        }
+        )}
       />
     )}
   />

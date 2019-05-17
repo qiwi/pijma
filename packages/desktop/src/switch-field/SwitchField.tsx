@@ -23,7 +23,7 @@ const SwitchField: FunctionComponent<
     onChange={props.onChange}
     onFocus={props.onFocus}
     onBlur={props.onBlur}
-    children={renderProps => (
+    children={(renderProps) => (
       <OptionField
         title={props.title}
         hint={props.hint}
@@ -40,18 +40,18 @@ const SwitchField: FunctionComponent<
             value={option.value}
             onClick={option.onClick}
             onMouseEnter={option.onMouseEnter}
-            children={renderOptionProps => (
+            children={(renderOptionProps) => (
               <OptionFieldItem
                 disabled={option.disabled}
                 reverse={props.reverse}
-                icon={
+                icon={(
                   <Box width={10}>
                     <Tumbler
                       disabled={option.disabled}
                       checked={option.checked}
                       focused={option.focused}
                     />
-                  </Box>}
+                  </Box>)}
                 label={option.label}
                 description={option.description}
                 onClick={renderOptionProps.onClick}
