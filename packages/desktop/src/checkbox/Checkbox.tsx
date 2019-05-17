@@ -5,6 +5,7 @@ import {
   OptionFieldItem,
   SwitchControl,
   OptionField,
+  Box,
 } from '@qiwi/pijma-core'
 
 import CheckboxProps from './CheckboxProps'
@@ -26,11 +27,13 @@ const Checkbox: FunctionComponent<CheckboxProps> = props => (
             label={props.label}
             description={props.description}
             icon={(
-              <Check
-                disabled={props.disabled}
-                checked={renderProps.checked}
-                focused={renderProps.focused}
-              />
+              <Box width={6}>
+                <Check
+                  disabled={props.disabled}
+                  checked={renderProps.checked}
+                  focused={renderProps.focused}
+                />
+              </Box>
             )}
             onClick={renderProps.onClick}
             onMouseEnter={renderProps.onMouseEnter}

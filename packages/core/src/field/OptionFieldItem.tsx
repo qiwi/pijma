@@ -43,9 +43,7 @@ export const OptionFieldItem: React.FunctionComponent<OptionFieldItemProps> = ({
         mr={reverse ? 0 : 3}
         height={6}
       >
-        <Box minWidth={6}>
-          {icon}
-        </Box>
+        {icon}
       </Flex>
       <Flex display="flex" direction="column">
         <Typo

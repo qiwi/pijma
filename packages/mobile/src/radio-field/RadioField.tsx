@@ -6,6 +6,7 @@ import {
   Radio,
   OptionField,
   OptionFieldItem,
+  Box,
 } from '@qiwi/pijma-core'
 
 import RadioFieldProps from './RadioFieldProps'
@@ -44,11 +45,13 @@ const RadioField: FunctionComponent<
               <OptionFieldItem
                 disabled={option.disabled}
                 icon={(
-                  <Radio
-                    disabled={option.disabled}
-                    checked={option.checked}
-                    focused={option.focused}
-                  />
+                  <Box width={6}>
+                    <Radio
+                      disabled={option.disabled}
+                      checked={option.checked}
+                      focused={option.focused}
+                    />
+                  </Box>
                 )}
                 label={option.label}
                 description={option.description}

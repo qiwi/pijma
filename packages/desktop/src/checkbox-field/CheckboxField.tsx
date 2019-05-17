@@ -6,6 +6,7 @@ import {
   Check,
   OptionField,
   OptionFieldItem,
+  Box,
 } from '@qiwi/pijma-core'
 
 import CheckboxFieldProps from './CheckboxFieldProps'
@@ -44,11 +45,13 @@ const CheckboxField: FunctionComponent<
               <OptionFieldItem
                 disabled={option.disabled}
                 icon={(
-                  <Check
-                    disabled={option.disabled}
-                    checked={option.checked}
-                    focused={option.focused}
-                  />
+                  <Box width={6}>
+                    <Check
+                      disabled={option.disabled}
+                      checked={option.checked}
+                      focused={option.focused}
+                    />
+                  </Box>
                 )}
                 label={option.label}
                 description={option.description}
