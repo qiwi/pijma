@@ -5,11 +5,13 @@ const newLineRegex = /(\r\n|\r|\n)/g
 export const Breaker: FC = ({children}) => (
   <Fragment>
     {typeof children === 'string' ? (
-      children.split(newLineRegex).map((child, key) => child.match(newLineRegex) ? (
-        <br key={key}/>
-      ) : (
-        child
-      ))
+      children.split(newLineRegex).map(
+        (child, key) => (
+          child.match(newLineRegex) ? (
+            <br key={key}/>
+          ) : (
+            child
+          )))
     ) : (
       children
     )}
