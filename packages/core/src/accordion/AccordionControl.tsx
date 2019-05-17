@@ -42,7 +42,7 @@ export class AccordionControl<I> extends React.Component<
     }))
   }
 
-  private onItemMouseEnter = (index: number) => () => {
+  private onItemMouseEnter = (index: number) => {
     this.setState({
       hovered: index,
     })
@@ -50,13 +50,13 @@ export class AccordionControl<I> extends React.Component<
 
   public render() {
     return this.props.children({
-      onMouseLeave: this.onItemMouseEnter(-1),
+      onMouseLeave: () => this.onItemMouseEnter(-1),
       items: this.props.items.map((item, index) => ({
         ...item,
         opened: this.state.opened.findIndex(i => i === index) !== -1,
         hovered: index === this.state.hovered,
         onClick: this.onItemClick(index),
-        onMouseEnter: this.onItemMouseEnter(index),
+        onMouseEnter: () => this.onItemMouseEnter(index),
       })),
     })
   }
