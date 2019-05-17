@@ -30,12 +30,12 @@ export const VerticalCard: FC<VerticalCardProps> = ({title, icon, description, c
             css={{border: '1px solid #E6E6E6', borderRadius: '50%'}}
           >
             <Box width={8} height={8} m="auto">
-              {icon}
+              {typeof icon === 'string' ? <img src={icon} alt={title}/> : icon}
             </Box>
           </FlexItem>
         ) : (
           <FlexItem shrink={0} width={16} height={16} mt={9}>
-            {icon}
+            {typeof icon === 'string' ? <img src={icon} alt={title}/> : icon}
           </FlexItem>
         )}
         <FlexItem mt={6}>
