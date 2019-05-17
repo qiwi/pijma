@@ -5,7 +5,6 @@
       <FileLink
         href="https://static.qiwi.com/img/qiwi_com/header/qiwi-wallet-logo.svg"
         download
-        color="#000"
       >
         Ссылка на файл
       </FileLink>

@@ -18,7 +18,12 @@ export interface FileLinkProps {
   download?: string | boolean
   rel?: string
   title?: string
-  color?: string
+  color?: 'default' | 'support'
+}
+
+const LinkColor: { [color in NonNullable<FileLinkProps['color']>]: string } = {
+  default: '#000',
+  support: '#666',
 }
 
 const TypoLink = Typo.withComponent(Lnk)
@@ -43,7 +48,7 @@ export const FileLink: FC<FileLinkProps> = props => (
         onMouseLeave={renderProps.onMouseLeave}
         onMouseUp={renderProps.onMouseUp}
         onMouseDown={renderProps.onMouseDown}
-        color={props.color}
+        color={props.color === undefined ? LinkColor.default : LinkColor[props.color]}
         cursor="pointer"
         decoration="none"
         target={props.target}
@@ -54,7 +59,7 @@ export const FileLink: FC<FileLinkProps> = props => (
         height={6}
         children={
           <>
-            <Box display="inline-block" width={6} height={6} mr={2}>
+            <Box display="inline-block" width={6} height={6} mr={2} css={{fill: props.color === undefined ? LinkColor.default : LinkColor[props.color]}}>
               <Icon name="file" />
             </Box>
             {props.children}
