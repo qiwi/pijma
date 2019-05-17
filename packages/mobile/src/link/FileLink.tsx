@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {LinkControl, Lnk, Typo, Box} from '@qiwi/pijma-core'
+import {LinkControl, Lnk, Typo, FlexItem, Flex} from '@qiwi/pijma-core'
 import {Icon} from '@qiwi/pijma-media'
 
 export interface FileLinkProps {
@@ -40,6 +40,7 @@ const LinkHeight: {[size in NonNullable<FileLinkProps['size']>]: number} = {
 }
 
 const TypoLink = Typo.withComponent(Lnk)
+const FlexItemLink = FlexItem.withComponent(Lnk)
 
 export const FileLink: FC<FileLinkProps> = props => (
   <LinkControl
@@ -51,51 +52,62 @@ export const FileLink: FC<FileLinkProps> = props => (
     download={props.download}
     rel={props.rel}
     children={renderProps => (
-      <TypoLink
-        tabIndex={props.tabIndex}
-        href={props.href}
-        onClick={renderProps.onClick}
-        onFocus={renderProps.onFocus}
-        onBlur={renderProps.onBlur}
-        onMouseEnter={renderProps.onMouseEnter}
-        onMouseLeave={renderProps.onMouseLeave}
-        onMouseUp={renderProps.onMouseUp}
-        onMouseDown={renderProps.onMouseDown}
-        color={
-          props.color === undefined ? LinkColor.default : LinkColor[props.color]
-        }
-        cursor="pointer"
-        decoration="none"
-        target={props.target}
-        download={props.download}
-        rel={props.rel}
-        title={props.title}
-        size={props.size === undefined ? undefined : LinkSize[props.size]}
-        height={props.size === undefined ? undefined : LinkHeight[props.size]}
-        children={
-          <>
-            <Box
-              display="inline-block"
-              width={
-                props.size === undefined ? undefined : LinkHeight[props.size]
-              }
-              height={
-                props.size === undefined ? undefined : LinkHeight[props.size]
-              }
-              mr={2}
-              css={{
-                fill:
-                  props.color === undefined
-                    ? LinkColor.default
-                    : LinkColor[props.color],
-              }}
-            >
-              <Icon name="file" />
-            </Box>
-            {props.children}
-          </>
-        }
-      />
+      <Flex>
+        <FlexItemLink
+          tabIndex={props.tabIndex}
+          href={props.href}
+          onClick={renderProps.onClick}
+          onFocus={renderProps.onFocus}
+          onBlur={renderProps.onBlur}
+          onMouseEnter={renderProps.onMouseEnter}
+          onMouseLeave={renderProps.onMouseLeave}
+          onMouseUp={renderProps.onMouseUp}
+          onMouseDown={renderProps.onMouseDown}
+          cursor="pointer"
+          target={props.target}
+          download={props.download}
+          rel={props.rel}
+          title={props.title}
+          display="inline-block"
+          width={props.size === undefined ? undefined : LinkHeight[props.size]}
+          height={props.size === undefined ? undefined : LinkHeight[props.size]}
+          mr={2}
+          shrink={0}
+          css={{
+            fill:
+              props.color === undefined
+                ? LinkColor.default
+                : LinkColor[props.color],
+          }}
+        >
+          <Icon name="file" />
+        </FlexItemLink>
+        <TypoLink
+          tabIndex={props.tabIndex}
+          href={props.href}
+          onClick={renderProps.onClick}
+          onFocus={renderProps.onFocus}
+          onBlur={renderProps.onBlur}
+          onMouseEnter={renderProps.onMouseEnter}
+          onMouseLeave={renderProps.onMouseLeave}
+          onMouseUp={renderProps.onMouseUp}
+          onMouseDown={renderProps.onMouseDown}
+          color={
+            props.color === undefined
+              ? LinkColor.default
+              : LinkColor[props.color]
+          }
+          cursor="pointer"
+          decoration="none"
+          target={props.target}
+          download={props.download}
+          rel={props.rel}
+          title={props.title}
+          size={props.size === undefined ? undefined : LinkSize[props.size]}
+          height={props.size === undefined ? undefined : LinkHeight[props.size]}
+          children={props.children}
+        />
+      </Flex>
     )}
   />
 )
