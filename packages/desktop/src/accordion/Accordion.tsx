@@ -6,7 +6,7 @@ import {Paragraph} from '../typography'
 
 export interface AccordionProps<I> {
   items: I[]
-  bg: string
+  bg?: string
   px?: 's' | 'm' | 'l'
 }
 
@@ -25,16 +25,16 @@ const AccordionPx: {
 
 const Accordion: FunctionComponent<
   AccordionProps<AccordionItemModel>
-> = props => (
+> = ({items, bg = '#fff', px = 'm'}) => (
   <AccordionControl<AccordionItemModel>
-    items={props.items}
+    items={items}
     children={renderProps => (
       <Box py={3}>
         <Box onMouseLeave={renderProps.onMouseLeave}>
           {renderProps.items.map((item, index) => (
             <Card
               key={index}
-              bg={item.hovered ? props.bg : undefined}
+              bg={item.hovered ? bg : undefined}
               s={
                 item.hovered
                   ? '0 0 16px 0 rgba(0, 0, 0, 0.12)'
@@ -50,9 +50,7 @@ const Accordion: FunctionComponent<
                 justify="space-between"
                 align="start"
                 cursor="pointer"
-                px={
-                  props.px === undefined ? AccordionPx.s : AccordionPx[props.px]
-                }
+                px={AccordionPx[px]}
                 pt={4}
                 pb={item.opened ? 2 : 4}
                 onClick={item.onClick}
@@ -73,11 +71,7 @@ const Accordion: FunctionComponent<
               </Flex>
               {item.opened ? (
                 <Box
-                  px={
-                    props.px === undefined
-                      ? AccordionPx.s
-                      : AccordionPx[props.px]
-                  }
+                  px={AccordionPx[px]}
                   pb={4}
                 >
                   {typeof item.content === 'string' ? (

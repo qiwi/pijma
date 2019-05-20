@@ -11,14 +11,13 @@ export interface AccordionProps<I> {
 export interface AccordionItemModel {
   title: string
   content: ReactNode
-  bg: string
 }
 
 const Accordion: FunctionComponent<
   AccordionProps<AccordionItemModel>
-> = props => (
+> = ({items}) => (
   <AccordionControl<AccordionItemModel>
-    items={props.items}
+    items={items}
     children={renderProps => (
       <Box py={2}>
         <Box onMouseLeave={renderProps.onMouseLeave}>
