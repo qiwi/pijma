@@ -75,7 +75,9 @@ export const FileLink: FC<FileLinkProps> = props => (
           shrink={0}
           css={{
             fill:
-              props.color === undefined
+              renderProps.hover || renderProps.focus
+                ? '#FF8C00'
+                : props.color === undefined
                 ? LinkColor.default
                 : LinkColor[props.color],
           }}
@@ -93,7 +95,9 @@ export const FileLink: FC<FileLinkProps> = props => (
           onMouseUp={renderProps.onMouseUp}
           onMouseDown={renderProps.onMouseDown}
           color={
-            props.color === undefined
+            renderProps.hover || renderProps.focus
+              ? '#FF8C00'
+              : props.color === undefined
               ? LinkColor.default
               : LinkColor[props.color]
           }
