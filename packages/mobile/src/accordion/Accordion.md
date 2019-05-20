@@ -5,7 +5,7 @@
       Меню-аккордеон
     </Heading>
   </Box>
-  <Card r={10} bg="#fff" s="0 1px 2px 0 rgba(0, 0, 0, 0.12)" py={2}>
+  <Card r={10} bg="#fff" s="0 1px 2px 0 rgba(0, 0, 0, 0.12)">
     <Accordion
       bg="#fff"
       items={[
