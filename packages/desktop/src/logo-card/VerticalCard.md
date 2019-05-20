@@ -15,10 +15,10 @@
 <Card bg="#f5f5f5" p={4}>
   <Flex>
     <FlexItem pr={5}>
-      <VerticalCard accent href="//qiwi.com" target="_blank" title="Перейти на главную" description="Примечание" icon={<Icon name="passport"/>} contoured/>
+      <VerticalCard accent href="//qiwi.com" target="_blank" title="Перейти на главную" description="Примечание" icon={<Icon name="passport"/>} iconSize="l"/>
     </FlexItem>
     <FlexItem pr={5}>
-      <VerticalCard accent href="//qiwi.com" target="_blank" title="Перейти на главную" description="Примечание" icon={<Icon name="passport"/>} contoured/>
+      <VerticalCard accent href="//qiwi.com" target="_blank" title="Перейти на главную" description="Примечание" icon={<Icon name="passport"/>} iconSize="l"/>
     </FlexItem>
   </Flex>
 </Card>
