@@ -1,13 +1,28 @@
 import React, {FC, ReactNode} from 'react'
-import {Box} from '@qiwi/pijma-core'
-import {BlockLink, BlockLinkProps} from '../link'
+import {Box, RenderChild} from '@qiwi/pijma-core'
+import {BlockLink} from '../link'
 import {Paragraph} from '../typography'
 
-export interface LogoCardProps extends BlockLinkProps {
-  title: string
+export interface LogoCardProps {
   description?: string
   icon: ReactNode
   iconSize?: 's' | 'l'
+
+  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
+  onFocus?: () => void
+  onBlur?: () => void
+  tabIndex?: number
+  href?: string
+  target?: string
+  download?: string | boolean
+  rel?: string
+  title?: string
+  accent?: boolean
+  children: RenderChild<{
+    active: boolean
+    focus: boolean
+    hover: boolean
+  }>
 }
 
 const IconSize: { [size in NonNullable<LogoCardProps['iconSize']>]: number} = {
