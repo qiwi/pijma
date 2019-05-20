@@ -3,19 +3,19 @@ import {Box} from '@qiwi/pijma-core'
 import {BlockLink, BlockLinkProps} from '../link'
 import {Paragraph} from '../typography'
 
-export interface VerticalCardProps extends BlockLinkProps {
+export interface LogoCardProps extends BlockLinkProps {
   title: string
   description?: string
   icon: ReactNode
   iconSize?: 's' | 'l'
 }
 
-const IconSize: { [size in NonNullable<VerticalCardProps['iconSize']>]: number} = {
+const IconSize: { [size in NonNullable<LogoCardProps['iconSize']>]: number} = {
   s: 16,
   l: 18,
 }
 
-export const VerticalCard: FC<VerticalCardProps> = ({title, icon, description, iconSize = 's', ...props}) => (
+export const LogoCard: FC<LogoCardProps> = ({title, icon, description, iconSize = 's', ...props}) => (
   <BlockLink {...props}>
     {() => (
       <Box

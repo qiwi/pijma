@@ -1,1 +1,1 @@
-export * from './VerticalCard'
+export * from './LogoCard'
