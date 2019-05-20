@@ -39,8 +39,7 @@ const LinkHeight: {[size in NonNullable<FileLinkProps['size']>]: number} = {
   l: 8,
 }
 
-const TypoLink = Typo.withComponent(Lnk)
-const FlexItemLink = FlexItem.withComponent(Lnk)
+const FlexLink = Flex.withComponent(Lnk)
 
 export const FileLink: FC<FileLinkProps> = props => (
   <LinkControl
@@ -52,10 +51,16 @@ export const FileLink: FC<FileLinkProps> = props => (
     download={props.download}
     rel={props.rel}
     children={renderProps => (
-      <Flex>
-        <FlexItemLink
+      <FlexLink
+        href={props.href}
+        target={props.target}
+        download={props.download}
+        rel={props.rel}
+        title={props.title}
+        display="flex"
+      >
+        <FlexItem
           tabIndex={props.tabIndex}
-          href={props.href}
           onClick={renderProps.onClick}
           onFocus={renderProps.onFocus}
           onBlur={renderProps.onBlur}
@@ -64,10 +69,6 @@ export const FileLink: FC<FileLinkProps> = props => (
           onMouseUp={renderProps.onMouseUp}
           onMouseDown={renderProps.onMouseDown}
           cursor="pointer"
-          target={props.target}
-          download={props.download}
-          rel={props.rel}
-          title={props.title}
           display="inline-block"
           width={props.size === undefined ? undefined : LinkHeight[props.size]}
           height={props.size === undefined ? undefined : LinkHeight[props.size]}
@@ -83,10 +84,9 @@ export const FileLink: FC<FileLinkProps> = props => (
           }}
         >
           <Icon name="file" />
-        </FlexItemLink>
-        <TypoLink
+        </FlexItem>
+        <Typo
           tabIndex={props.tabIndex}
-          href={props.href}
           onClick={renderProps.onClick}
           onFocus={renderProps.onFocus}
           onBlur={renderProps.onBlur}
@@ -103,15 +103,11 @@ export const FileLink: FC<FileLinkProps> = props => (
           }
           cursor="pointer"
           decoration="none"
-          target={props.target}
-          download={props.download}
-          rel={props.rel}
-          title={props.title}
           size={props.size === undefined ? undefined : LinkSize[props.size]}
           height={props.size === undefined ? undefined : LinkHeight[props.size]}
           children={props.children}
         />
-      </Flex>
+      </FlexLink>
     )}
   />
 )
