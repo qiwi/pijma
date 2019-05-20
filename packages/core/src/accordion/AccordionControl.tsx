@@ -48,9 +48,15 @@ export class AccordionControl<I> extends React.Component<
     })
   }
 
+  private onItemMouseLeave = () => {
+    this.setState({
+      hovered: -1,
+    })
+  }
+
   public render() {
     return this.props.children({
-      onMouseLeave: () => this.onItemMouseEnter(-1),
+      onMouseLeave: this.onItemMouseLeave,
       items: this.props.items.map((item, index) => ({
         ...item,
         opened: this.state.opened.findIndex(i => i === index) !== -1,
