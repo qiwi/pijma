@@ -30,7 +30,7 @@ const Accordion: FunctionComponent<
                   ? undefined
                   : '0 1px 0 #e6e6e6'
               }
-              transition="box-shadow 3ms, border-bottom-color 100ms"
+              transition="box-shadow 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
               onMouseEnter={item.onMouseEnter}
             >
               <Flex
