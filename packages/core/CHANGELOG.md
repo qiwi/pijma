@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.40.0](https://github.com/qiwi/pijma/compare/v1.39.0...v1.40.0) (2019-05-21)
+
+
+### Features
+
+* breaker ([10bc3c0](https://github.com/qiwi/pijma/commit/10bc3c0))
+
 # [@qiwi/pijma-core-v1.39.0](https://github.com/qiwi/pijma/compare/v1.38.0...v1.39.0) (2019-05-13)
 
 
