@@ -31,22 +31,26 @@ export const LogoCard: FC<LogoCardProps> = ({title, icon, description, ...props}
           mt={9}
           mx="auto"
         >
-          {typeof icon === 'string' ? <img src={icon} alt={title}/> : icon}
+          {typeof icon === 'string'
+            ? <img src={icon} alt={title}/>
+            : icon}
         </Box>
-        <Box mt={6} mx="auto" css={{textAlign: 'center'}}>
+        <Box mt={6} mx="auto">
           <Paragraph
             color="default"
             size="m"
             bold
             children={title}
+            align="center"
           />
         </Box>
         {description ? (
-          <Box mt={1} mx="auto" css={{textAlign: 'center'}}>
+          <Box mt={1} mx="auto">
             <Paragraph
               color="support"
               size="s"
               children={description}
+              align="center"
             />
           </Box>
         ) : null}
