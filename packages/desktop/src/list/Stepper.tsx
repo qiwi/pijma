@@ -7,18 +7,17 @@ export interface StepperProps {
   children: ReactNode[]
 }
 
-const FlexOl = Flex.withComponent('ol')
-const PosLi = Pos.withComponent('li')
 const CardFlex = Card.withComponent(Flex)
 
 export const Stepper: FunctionComponent<StepperProps> = props => (
-  <FlexOl>
+  <Box as="ol">
     {props.children.map((item, index) => (
-      <PosLi
+      <Pos
         key={index}
         mt={index > 0 ? 4 : undefined}
         display="flex"
         type="relative"
+        as="li"
       >
         <CardFlex
           mr={5}
@@ -52,7 +51,7 @@ export const Stepper: FunctionComponent<StepperProps> = props => (
             item
           )}
         </Box>
-      </PosLi>
+      </Pos>
     ))}
-  </FlexOl>
+  </Box>
 )

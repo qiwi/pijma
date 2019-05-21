@@ -6,17 +6,13 @@ import {Paragraph} from '../typography'
 export interface OrderedListProps {
   children: ReactNode[]
 }
-
-const BoxUl = Flex.withComponent('ol')
-const FlexLi = Box.withComponent('li')
-
 export const OrderedList: FunctionComponent<OrderedListProps> = props => (
-  <BoxUl>
+  <Box as="ol">
     {props.children.map((item, index) => (
-      <FlexLi
+      <Flex
         key={index}
         mt={index > 0 ? 4 : undefined}
-        display="flex"
+        as="li"
       >
         <Box mr={3}>
           <Paragraph size="m">{index + 1}.</Paragraph>
@@ -26,7 +22,7 @@ export const OrderedList: FunctionComponent<OrderedListProps> = props => (
         ) : (
           item
         )}
-      </FlexLi>
+      </Flex>
     ))}
-  </BoxUl>
+  </Box>
 )

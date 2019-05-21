@@ -7,16 +7,13 @@ export interface UnorderedListProps {
   children: ReactNode[]
 }
 
-const BoxUl = Flex.withComponent('ul')
-const FlexLi = Box.withComponent('li')
-
 export const UnorderedList: FunctionComponent<UnorderedListProps> = props => (
-  <BoxUl>
+  <Box as="ul">
     {props.children.map((item, index) => (
-      <FlexLi
+      <Flex
         key={index}
         mt={index > 0 ? 4 : undefined}
-        display="flex"
+        as="li"
       >
         <Card
           mr={3}
@@ -32,7 +29,7 @@ export const UnorderedList: FunctionComponent<UnorderedListProps> = props => (
         ) : (
           item
         )}
-      </FlexLi>
+      </Flex>
     ))}
-  </BoxUl>
+  </Box>
 )
