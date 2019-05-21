@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo, TypoProps} from '@qiwi/pijma-core'
+import {Breaker, Typo, TypoProps} from '@qiwi/pijma-core'
 
 export interface ParagraphProps {
   size?: 's' | 'm' | 'l'
@@ -43,7 +43,7 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold =
     weight={bold ? 500 : 300}
     color={ParagraphColor[color]}
     transform={transform}
-    children={children}
+    children={<Breaker children={children}/>}
   />
 )
 
