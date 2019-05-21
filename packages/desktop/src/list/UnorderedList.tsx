@@ -3,19 +3,21 @@ import React, {FunctionComponent, ReactNode} from 'react'
 import {Box, Flex, Card} from '@qiwi/pijma-core'
 import {Paragraph} from '../typography'
 
-export interface UnorderedListProps<I> {
-  items: I[]
+export interface UnorderedListProps {
+  children: ReactNode[]
 }
 
 const BoxUl = Flex.withComponent('ul')
 const FlexLi = Box.withComponent('li')
 
-export const UnorderedList: FunctionComponent<
-  UnorderedListProps<ReactNode>
-> = props => (
+export const UnorderedList: FunctionComponent<UnorderedListProps> = props => (
   <BoxUl>
-    {props.items.map((item, index) => (
-      <FlexLi key={index} mb={index + 1 === props.items.length ? undefined : 4} display="flex">
+    {props.children.map((item, index) => (
+      <FlexLi
+        key={index}
+        mb={index + 1 === props.children.length ? undefined : 4}
+        display="flex"
+      >
         <Card
           mr={3}
           my="9px"

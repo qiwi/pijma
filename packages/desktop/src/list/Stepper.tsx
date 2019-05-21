@@ -3,20 +3,20 @@ import React, {FunctionComponent, ReactNode} from 'react'
 import {Box, Flex, Card, Pos} from '@qiwi/pijma-core'
 import {Paragraph} from '../typography'
 
-export interface StepperProps<I> {
-  items: I[]
+export interface StepperProps {
+  children: ReactNode[]
 }
 
 const FlexOl = Flex.withComponent('ol')
 const PosLi = Pos.withComponent('li')
 const CardFlex = Card.withComponent(Flex)
 
-export const Stepper: FunctionComponent<StepperProps<ReactNode>> = props => (
+export const Stepper: FunctionComponent<StepperProps> = props => (
   <FlexOl>
-    {props.items.map((item, index) => (
+    {props.children.map((item, index) => (
       <PosLi
         key={index}
-        mb={index + 1 === props.items.length ? undefined : 4}
+        mb={index + 1 === props.children.length ? undefined : 4}
         display="flex"
         type="relative"
       >
@@ -35,7 +35,7 @@ export const Stepper: FunctionComponent<StepperProps<ReactNode>> = props => (
             {index + 1}
           </Paragraph>
         </CardFlex>
-        {index + 1 === props.items.length ? null : (
+        {index + 1 === props.children.length ? null : (
           <Pos
             type="absolute"
             width="3px"

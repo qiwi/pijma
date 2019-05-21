@@ -3,21 +3,19 @@ import React, {FunctionComponent, ReactNode} from 'react'
 import {Box, Flex} from '@qiwi/pijma-core'
 import {Paragraph} from '../typography'
 
-export interface OrderedListProps<I> {
-  items: I[]
+export interface OrderedListProps {
+  children: ReactNode[]
 }
 
 const BoxUl = Flex.withComponent('ol')
 const FlexLi = Box.withComponent('li')
 
-export const OrderedList: FunctionComponent<
-  OrderedListProps<ReactNode>
-> = props => (
+export const OrderedList: FunctionComponent<OrderedListProps> = props => (
   <BoxUl>
-    {props.items.map((item, index) => (
+    {props.children.map((item, index) => (
       <FlexLi
         key={index}
-        mb={index + 1 === props.items.length ? undefined : 4}
+        mb={index + 1 === props.children.length ? undefined : 4}
         display="flex"
       >
         <Box mr={3}>
