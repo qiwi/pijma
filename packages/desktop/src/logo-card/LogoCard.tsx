@@ -6,7 +6,6 @@ import {Paragraph} from '../typography'
 export interface LogoCardProps {
   description?: string
   icon: ReactNode
-  iconSize?: 's' | 'l'
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
   onFocus?: () => void
   onBlur?: () => void
@@ -18,12 +17,7 @@ export interface LogoCardProps {
   title?: string
 }
 
-const IconSize: { [size in NonNullable<LogoCardProps['iconSize']>]: number} = {
-  s: 16,
-  l: 18,
-}
-
-export const LogoCard: FC<LogoCardProps> = ({title, icon, description, iconSize = 's', ...props}) => (
+export const LogoCard: FC<LogoCardProps> = ({title, icon, description, ...props}) => (
   <BlockLink {...props} accent>
     {() => (
       <Box
@@ -32,8 +26,8 @@ export const LogoCard: FC<LogoCardProps> = ({title, icon, description, iconSize 
         minWidth={45}
       >
         <Box
-          width={IconSize[iconSize]}
-          height={IconSize[iconSize]}
+          width={18}
+          height={18}
           mt={9}
           mx="auto"
         >
