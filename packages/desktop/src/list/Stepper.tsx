@@ -1,13 +1,13 @@
 import React, {FunctionComponent, ReactNode} from 'react'
 
-import {Box, Flex, Card, Pos} from '@qiwi/pijma-core'
+import {Box, FlexItem, Card, Pos} from '@qiwi/pijma-core'
 import {Paragraph} from '../typography'
 
 export interface StepperProps {
   children: ReactNode[]
 }
 
-const CardFlex = Card.withComponent(Flex)
+const CardFlexItem = Card.withComponent(FlexItem)
 
 export const Stepper: FunctionComponent<StepperProps> = props => (
   <Box as="ol">
@@ -19,21 +19,21 @@ export const Stepper: FunctionComponent<StepperProps> = props => (
         type="relative"
         as="li"
       >
-        <CardFlex
+        <CardFlexItem
           mr={5}
           height={10}
           width={10}
-          minWidth={10}
+          shrink={0}
           display="flex"
           bg="#F5F5F5"
           r="50%"
-          align="center"
-          justify="center"
         >
-          <Paragraph size="l" bold>
-            {index + 1}
-          </Paragraph>
-        </CardFlex>
+          <Box m="auto">
+            <Paragraph size="l" bold>
+              {index + 1}
+            </Paragraph>
+          </Box>
+        </CardFlexItem>
         {index + 1 === props.children.length ? null : (
           <Pos
             type="absolute"
