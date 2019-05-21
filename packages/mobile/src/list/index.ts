@@ -1,3 +1,1 @@
-export * from './UnorderedList'
-export * from './OrderedList'
-export * from './Stepper'
+export * from './List'
