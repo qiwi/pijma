@@ -16,7 +16,7 @@ export const Stepper: FunctionComponent<StepperProps> = props => (
     {props.children.map((item, index) => (
       <PosLi
         key={index}
-        mb={index + 1 === props.children.length ? undefined : 4}
+        mt={index > 0 ? 4 : undefined}
         display="flex"
         type="relative"
       >

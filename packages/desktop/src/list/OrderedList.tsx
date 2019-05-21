@@ -15,7 +15,7 @@ export const OrderedList: FunctionComponent<OrderedListProps> = props => (
     {props.children.map((item, index) => (
       <FlexLi
         key={index}
-        mb={index + 1 === props.children.length ? undefined : 4}
+        mt={index > 0 ? 4 : undefined}
         display="flex"
       >
         <Box mr={3}>
