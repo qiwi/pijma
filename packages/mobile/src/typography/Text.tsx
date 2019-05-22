@@ -9,8 +9,8 @@ export interface TextProps {
   compact?: boolean
   color?: 'default' | 'support' | 'inverse' | 'failure' | 'success' | 'warning'
   decoration?: TypoProps['decoration']
-  transition?: TypoProps['transition']
   transform?: TypoProps['transform']
+  transition?: TypoProps['transition']
   align?: TypoProps['align']
 }
 

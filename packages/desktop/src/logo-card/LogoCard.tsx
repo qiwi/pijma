@@ -20,20 +20,11 @@ export interface LogoCardProps {
 export const LogoCard: FC<LogoCardProps> = ({title, icon, description, ...props}) => (
   <BlockLink {...props} accent>
     {() => (
-      <Box
-        p={3}
-        minHeight={56}
-        minWidth={45}
-      >
-        <Box
-          width={18}
-          height={18}
-          mt={9}
-          mx="auto"
-        >
-          {typeof icon === 'string'
-            ? <img src={icon} alt={title}/>
-            : icon}
+      <Box p={3} minHeight={56} minWidth={45} css={{textAlign: 'center'}}>
+        <Box width={18} height={18} mt={9} mx="auto">
+          {typeof icon === 'string' ? (
+            <img src={icon} alt={title} />
+          ) : icon}
         </Box>
         <Box mt={6} mx="auto">
           <Paragraph
@@ -41,7 +32,6 @@ export const LogoCard: FC<LogoCardProps> = ({title, icon, description, ...props}
             size="m"
             bold
             children={title}
-            align="center"
           />
         </Box>
         {description ? (
@@ -50,7 +40,6 @@ export const LogoCard: FC<LogoCardProps> = ({title, icon, description, ...props}
               color="support"
               size="s"
               children={description}
-              align="center"
             />
           </Box>
         ) : null}
