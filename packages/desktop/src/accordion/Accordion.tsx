@@ -7,7 +7,7 @@ import {Paragraph} from '../typography'
 export interface AccordionProps<I> {
   items: I[]
   bg?: string
-  px?: 's' | 'm' | 'l'
+  indent?: 's' | 'm' | 'l'
 }
 
 export interface AccordionItemModel {
@@ -15,8 +15,8 @@ export interface AccordionItemModel {
   content: ReactNode
 }
 
-const AccordionPx: {
-  [size in NonNullable<AccordionProps<AccordionItemModel>['px']>]: number
+const AccordionIndent: {
+  [size in NonNullable<AccordionProps<AccordionItemModel>['indent']>]: number
 } = {
   s: 8,
   m: 11,
@@ -25,7 +25,7 @@ const AccordionPx: {
 
 const Accordion: FunctionComponent<
   AccordionProps<AccordionItemModel>
-> = ({items, bg = '#fff', px = 'm'}) => (
+> = ({items, bg = '#fff', indent = 'm'}) => (
   <AccordionControl<AccordionItemModel>
     items={items}
     children={renderProps => (
@@ -50,7 +50,7 @@ const Accordion: FunctionComponent<
                 justify="space-between"
                 align="start"
                 cursor="pointer"
-                px={AccordionPx[px]}
+                px={AccordionIndent[indent]}
                 pt={4}
                 pb={item.opened ? 2 : 4}
                 onClick={item.onClick}
@@ -71,7 +71,7 @@ const Accordion: FunctionComponent<
               </Flex>
               {item.opened ? (
                 <Box
-                  px={AccordionPx[px]}
+                  px={AccordionIndent[indent]}
                   pb={4}
                 >
                   {typeof item.content === 'string' ? (
