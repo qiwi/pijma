@@ -8,6 +8,7 @@ export interface ParagraphProps {
   compact?: boolean
   color?: 'default' | 'support' | 'inverse'
   transform?: TypoProps['transform']
+  align?: 'center' | 'justify' | 'left' | 'right'
 }
 
 const ParagraphSize: { [size in NonNullable<ParagraphProps['size']>]: number } = {
@@ -34,7 +35,7 @@ const ParagraphColor: { [color in NonNullable<ParagraphProps['color']>]: string 
   inverse: '#fff',
 }
 
-export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold = false, compact = false, color = 'default', transform, children}) => (
+export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold = false, compact = false, color = 'default', transform, children, align}) => (
   <Typo
     as="p"
     display="block"
@@ -43,6 +44,7 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold =
     weight={bold ? 500 : 300}
     color={ParagraphColor[color]}
     transform={transform}
+    align={align}
     children={<Breaker children={children}/>}
   />
 )
