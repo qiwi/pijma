@@ -4,13 +4,13 @@ import RenderChild from '../RenderChild'
 export interface AccordionControlProps<I> {
   items: I[]
   children: RenderChild<{
-    onMouseLeave: React.MouseEventHandler
     items: Array<
       I & {
         opened: boolean
         hovered: boolean
         onClick: (event: React.MouseEvent<HTMLElement>) => void
         onMouseEnter: () => void
+        onMouseLeave: React.MouseEventHandler
       }
     >
   }>
@@ -56,13 +56,13 @@ export class AccordionControl<I> extends React.Component<
 
   public render() {
     return this.props.children({
-      onMouseLeave: this.onItemMouseLeave,
       items: this.props.items.map((item, index) => ({
         ...item,
         opened: this.state.opened.findIndex(i => i === index) !== -1,
         hovered: index === this.state.hovered,
         onClick: this.onItemClick(index),
         onMouseEnter: () => this.onItemMouseEnter(index),
+        onMouseLeave: this.onItemMouseLeave,
       })),
     })
   }

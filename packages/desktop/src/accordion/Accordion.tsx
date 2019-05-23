@@ -29,7 +29,7 @@ export const Accordion: FunctionComponent<
   <AccordionControl<AccordionItemModel>
     items={items}
     children={renderProps => (
-      <Box py={3} onMouseLeave={renderProps.onMouseLeave}>
+      <Box py={3}>
         {renderProps.items.map((item, index) => (
           <Card
             key={index}
@@ -43,6 +43,7 @@ export const Accordion: FunctionComponent<
             }
             transition="box-shadow 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
             onMouseEnter={item.onMouseEnter}
+            onMouseLeave={item.onMouseLeave}
           >
             <Flex
               wrap="nowrap"
@@ -83,3 +84,8 @@ export const Accordion: FunctionComponent<
     )}
   />
 )
+
+Accordion.defaultProps = {
+  bg: '#fff',
+  indent: 'm',
+}
