@@ -8,7 +8,7 @@ export interface ListProps {
   type: 'step' | 'number' | 'bullet'
 }
 const ListType: {
-  [size in NonNullable<ListProps['type']>]: keyof JSX.IntrinsicElements
+  [type in NonNullable<ListProps['type']>]: keyof JSX.IntrinsicElements
 } = {
   step: 'ol',
   number: 'ol',
@@ -16,7 +16,7 @@ const ListType: {
 }
 
 const ListItemTopMargin: {
-  [size in NonNullable<ListProps['type']>]: number
+  [type in NonNullable<ListProps['type']>]: number
 } = {
   step: 2,
   number: 0,
