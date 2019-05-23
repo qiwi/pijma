@@ -1,7 +1,8 @@
 import React, {FC} from 'react'
 
-import {LinkControl, Lnk, Typo, FlexItem, Flex} from '@qiwi/pijma-core'
+import {LinkControl, Lnk, FlexItem, Flex, IconWrapper, Box} from '@qiwi/pijma-core'
 import {Icon} from '@qiwi/pijma-media'
+import {Text} from '../typography'
 
 export interface FileLinkProps {
   onClick?: (
@@ -27,12 +28,6 @@ const LinkColor: {[color in NonNullable<FileLinkProps['color']>]: string} = {
   support: '#666',
 }
 
-const LinkSize: {[size in NonNullable<FileLinkProps['size']>]: number} = {
-  s: 3.5,
-  m: 4,
-  l: 5,
-}
-
 const LinkHeight: {[size in NonNullable<FileLinkProps['size']>]: number} = {
   s: 5,
   m: 6,
@@ -41,7 +36,7 @@ const LinkHeight: {[size in NonNullable<FileLinkProps['size']>]: number} = {
 
 const FlexLink = Flex.withComponent(Lnk)
 
-export const FileLink: FC<FileLinkProps> = props => (
+export const FileLink: FC<FileLinkProps> = (props) => (
   <LinkControl
     onClick={props.onClick}
     onFocus={props.onFocus}
@@ -58,9 +53,9 @@ export const FileLink: FC<FileLinkProps> = props => (
         rel={props.rel}
         title={props.title}
         display="flex"
+        tabIndex={props.tabIndex}
       >
         <FlexItem
-          tabIndex={props.tabIndex}
           onClick={renderProps.onClick}
           onFocus={renderProps.onFocus}
           onBlur={renderProps.onBlur}
@@ -74,19 +69,20 @@ export const FileLink: FC<FileLinkProps> = props => (
           height={props.size === undefined ? undefined : LinkHeight[props.size]}
           mr={2}
           shrink={0}
-          css={{
-            fill:
+        >
+          <IconWrapper
+            color={
               renderProps.hover || renderProps.focus
                 ? '#FF8C00'
                 : props.color === undefined
                 ? LinkColor.default
-                : LinkColor[props.color],
-          }}
-        >
-          <Icon name="file" />
+                : LinkColor[props.color]
+            }
+          >
+            <Icon name="file" />
+          </IconWrapper>
         </FlexItem>
-        <Typo
-          tabIndex={props.tabIndex}
+        <Box
           onClick={renderProps.onClick}
           onFocus={renderProps.onFocus}
           onBlur={renderProps.onBlur}
@@ -94,19 +90,14 @@ export const FileLink: FC<FileLinkProps> = props => (
           onMouseLeave={renderProps.onMouseLeave}
           onMouseUp={renderProps.onMouseUp}
           onMouseDown={renderProps.onMouseDown}
-          color={
-            renderProps.hover || renderProps.focus
-              ? '#FF8C00'
-              : props.color === undefined
-              ? LinkColor.default
-              : LinkColor[props.color]
-          }
           cursor="pointer"
-          decoration="none"
-          size={props.size === undefined ? undefined : LinkSize[props.size]}
-          height={props.size === undefined ? undefined : LinkHeight[props.size]}
-          children={props.children}
-        />
+        >
+          <Text
+            color={renderProps.hover || renderProps.focus ? 'warning' : props.color || 'default'}
+            size={props.size}
+            children={props.children}
+          />
+        </Box>
       </FlexLink>
     )}
   />
