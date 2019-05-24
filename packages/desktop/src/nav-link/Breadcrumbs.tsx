@@ -16,6 +16,18 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({children}) => (
   <Box>
     {children.map((item, i) => (
       <Box display="inline-block" key={i}>
+        {i > 0 ? (
+          <Card mx={2} width={2} display="inline-block" css={{verticalAlign: 'middle'}}>
+            <Typo
+              color="#666"
+              decoration="none"
+              size={3.5}
+              height={5}
+              align="center"
+              children="&#8226;"
+            />
+          </Card>
+        ) : null}
         <LinkControl
           href={item.href}
           children={renderProps => (
@@ -40,18 +52,6 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({children}) => (
             />
           )}
         />
-        {i + 1 === children.length ? null : (
-          <Card
-            my={0}
-            mx={2}
-            display="inline-block"
-            width="4px"
-            height="4px"
-            bg="#666"
-            r="50%"
-            css={{verticalAlign: 'middle'}}
-          />
-        )}
       </Box>
     ))}
   </Box>
