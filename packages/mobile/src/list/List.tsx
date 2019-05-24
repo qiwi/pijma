@@ -26,7 +26,7 @@ export const List: FunctionComponent<ListProps> = props => (
     {props.children.map((item, index) => (
       <Flex key={index} mt={index > 0 ? 4 : undefined} as="li">
         {props.type === 'number' ? (
-          <Box mr={3}>
+          <Box mr={3} width={String(props.children.length).length * 2 + 1}>
             <Paragraph size="s">{index + 1}.</Paragraph>
           </Box>
         ) : props.type === 'bullet' ? (
