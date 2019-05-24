@@ -22,20 +22,24 @@ export const Notice: FC<NoticeProps> = ({icon, title, children}) => (
     ) : (
       null
     )}
-    {title || children ? (
-      <FlexItem>
+    <FlexItem>
+      {title ? (
         <Box mb={2}>
           <Heading
             size="4"
             children={title}
           />
         </Box>
+      ) : (
+        null
+      )}
+      {children ? (
         <Paragraph
           children={children}
         />
-      </FlexItem>
-    ) : (
-      null
-    )}
+      ) : (
+        null
+      )}
+    </FlexItem>
   </Flex>
 )
