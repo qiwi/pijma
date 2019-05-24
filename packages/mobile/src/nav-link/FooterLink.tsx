@@ -12,34 +12,14 @@ export interface FooterLinkProps {
   onFocus?: () => void
   onBlur?: () => void
   tabIndex?: number
-  compact?: boolean
   href?: string
   target?: string
   download?: string | boolean
   rel?: string
   title?: string
-  size?: 's' | 'm' | 'l'
 }
 
-const LinkSize: { [size in NonNullable<FooterLinkProps['size']>]: number } = {
-  s: 3.5,
-  m: 4,
-  l: 5,
-}
-
-const LinkHeight: { [size in NonNullable<FooterLinkProps['size']>]: number } = {
-  s: 5,
-  m: 6,
-  l: 8,
-}
-
-const LinkHeightCompact: { [size in NonNullable<FooterLinkProps['size']>]: number } = {
-  s: 4,
-  m: 5,
-  l: 7,
-}
-
-const TypoLink = Typo.withComponent(Lnk)
+const NavLink = Typo.withComponent(Lnk)
 
 export const FooterLink: FC<FooterLinkProps> = (props) => (
   <LinkControl
@@ -51,7 +31,7 @@ export const FooterLink: FC<FooterLinkProps> = (props) => (
     download={props.download}
     rel={props.rel}
     children={(renderProps) => (
-      <TypoLink
+      <NavLink
         tabIndex={props.tabIndex}
         href={props.href}
         onClick={renderProps.onClick}
@@ -69,8 +49,8 @@ export const FooterLink: FC<FooterLinkProps> = (props) => (
         download={props.download}
         rel={props.rel}
         title={props.title}
-        size={props.size === undefined ? undefined : props.compact ? LinkHeightCompact[props.size] : LinkSize[props.size]}
-        height={props.size === undefined ? undefined : LinkHeight[props.size]}
+        size={3.5}
+        height={4}
         children={props.children}
       />
     )}
