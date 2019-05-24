@@ -8,7 +8,6 @@ export interface AccordionProps<I> {
   items: I[]
   opened?: number[]
   onChange?: (opened: number[]) => void
-  bg?: string
   indent?: 's' | 'm' | 'l'
   tabIndex: number
 }
@@ -28,7 +27,7 @@ const AccordionIndent: {
 
 export const Accordion: FunctionComponent<
   AccordionProps<AccordionItemModel>
-> = ({items, bg = '#fff', indent = 'm', tabIndex, opened, onChange}) => (
+> = ({items, indent = 'm', tabIndex, opened, onChange}) => (
   <AccordionControl<AccordionItemModel>
     items={items}
     opened={opened}
@@ -38,11 +37,10 @@ export const Accordion: FunctionComponent<
         {renderProps.items.map((item, index) => (
           <Card
             key={index}
-            bg={item.hovered ? bg : undefined}
             s={
               item.hovered
                 ? '0 0 16px 0 rgba(0, 0, 0, 0.12)'
-                : index + 1 === renderProps.items.length
+                : index + 1 === renderProps.items.length || (renderProps.items[index + 1] && renderProps.items[index + 1].hovered)
                 ? undefined
                 : '0 1px 0 #e6e6e6'
             }
@@ -91,6 +89,5 @@ export const Accordion: FunctionComponent<
 )
 
 Accordion.defaultProps = {
-  bg: '#fff',
   indent: 'm',
 }
