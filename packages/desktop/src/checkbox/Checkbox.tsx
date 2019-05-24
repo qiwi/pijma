@@ -45,4 +45,8 @@ const Checkbox: FunctionComponent<CheckboxProps> = props => (
   />
 )
 
+Checkbox.defaultProps = {
+  tabIndex: 0,
+}
+
 export default Checkbox

@@ -68,4 +68,8 @@ const SwitchField: FunctionComponent<
   />
 )
 
+SwitchField.defaultProps = {
+  tabIndex: 0,
+}
+
 export default SwitchField

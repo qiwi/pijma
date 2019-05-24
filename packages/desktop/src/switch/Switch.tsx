@@ -45,3 +45,7 @@ export const Switch: FunctionComponent<SwitchProps> = props => (
     )}
   />
 )
+
+Switch.defaultProps = {
+  tabIndex: 0,
+}
