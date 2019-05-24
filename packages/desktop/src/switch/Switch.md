@@ -6,7 +6,6 @@ initialState = {checked: true};
 <Box width={120}>
   <Spacer size="xxs">
     <Switch
-      tabIndex={1}
       onChange={checked => setState({checked})}
       checked={state.checked}
       label="Выбранный переключатель"
@@ -29,7 +28,6 @@ initialState = {checked: true};
 initialState = {checked: false};
 <Box width={80}>
   <Switch
-    tabIndex={2}
     reverse={true}
     onChange={checked => setState({checked})}
     checked={state.checked}
