@@ -21,8 +21,6 @@ const ListItemTopMargin: {[type in NonNullable<ListProps['type']>]: number} = {
   bullet: 0,
 }
 
-const CardFlexItem = Card.withComponent(FlexItem)
-
 export const List: FunctionComponent<ListProps> = props => (
   <Box as={ListType[props.type]}>
     {props.children.map((item, index) => (
@@ -32,15 +30,9 @@ export const List: FunctionComponent<ListProps> = props => (
             <Paragraph size="s">{index + 1}.</Paragraph>
           </Box>
         ) : props.type === 'bullet' ? (
-          <CardFlexItem
-            mr={3}
-            my="7px"
-            width="6px"
-            height="6px"
-            bg="#000"
-            r="50%"
-            shrink={0}
-          />
+          <Box mr={3} width={2}>
+            <Paragraph size="s">&#8226;</Paragraph>
+          </Box>
         ) : props.type === 'step' ? (
           <FlexItem mr={3} height="auto" width={10} shrink={0}>
             <Card display="flex" bg="#F5F5F5" r="50%" height={10} width={10}>
