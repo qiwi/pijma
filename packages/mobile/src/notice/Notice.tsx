@@ -1,5 +1,5 @@
 import React, {FC, isValidElement, ReactNode} from 'react'
-import {Flex, FlexItem, Icon, Spacer} from '@qiwi/pijma-core'
+import {Box, Flex, FlexItem, Icon} from '@qiwi/pijma-core'
 import {Heading, Paragraph} from '@qiwi/pijma-mobile'
 import {IconName} from '@qiwi/pijma-media'
 
@@ -14,7 +14,7 @@ export const Notice: FC<NoticeProps> = ({icon, title, children}) => (
       <FlexItem
         shrink={0}
         basis={6}
-        mr={2}
+        mr={title ? 4 : 2}
         children={<Icon name={icon as IconName}/>}
       />
     ) : isValidElement(icon) ? (
@@ -24,34 +24,15 @@ export const Notice: FC<NoticeProps> = ({icon, title, children}) => (
     )}
     {title || children ? (
       <FlexItem>
-        <Spacer size="xs">
-          {typeof title === 'string' ? (
-            <Heading
-              size="3"
-              children={title}
-            />
-          ) : isValidElement(title) ? (
-            title
-          ) : (
-            null
-          )}
-          {typeof children === 'string' ? (
-            <Spacer size="xs">
-              <Paragraph
-                children={children.split('\n').reduce<Array<string | ReactNode>>(
-                  (currentArray, currentChild, index, childrenArray) => {
-                    currentArray.push(currentChild)
-                    if (index !== childrenArray.length - 1) currentArray.push(<br key={index}/>)
-                    return currentArray
-                  }, [])}
-              />
-            </Spacer>
-          ) : isValidElement(children) ? (
-            children
-          ) : (
-            null
-          )}
-        </Spacer>
+        <Box mb={2}>
+          <Heading
+            size="3"
+            children={title}
+          />
+        </Box>
+        <Paragraph
+          children={children}
+        />
       </FlexItem>
     ) : (
       null
