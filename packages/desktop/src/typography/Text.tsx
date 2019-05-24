@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo, TypoProps} from '@qiwi/pijma-core'
+import {Breaker, Typo, TypoProps} from '@qiwi/pijma-core'
 
 export interface TextProps {
   display?: 'block' | 'inline' | 'inline-block'
@@ -51,6 +51,6 @@ export const Text: FunctionComponent<TextProps> = ({display, compact, size, bold
     decoration={decoration}
     transform={transform}
     transition={transition}
-    children={children}
+    children={<Breaker children={children}/>}
   />
 )

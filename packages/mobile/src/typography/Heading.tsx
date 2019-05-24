@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo} from '@qiwi/pijma-core'
+import {Breaker, Typo} from '@qiwi/pijma-core'
 
 export interface HeadingProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -49,7 +49,7 @@ export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'de
     height={HeadingHeight[size]}
     weight={HeadingWeight[size]}
     color={HeadingColor[color]}
-    children={children}
+    children={<Breaker children={children}/>}
   />
 )
 

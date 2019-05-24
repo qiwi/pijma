@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.40.0](https://github.com/qiwi/pijma/compare/v1.39.0...v1.40.0) (2019-05-21)
+
+
+### Features
+
+* breaker ([10bc3c0](https://github.com/qiwi/pijma/commit/10bc3c0))
+
 # [@qiwi/pijma-desktop-v1.37.0](https://github.com/qiwi/pijma/compare/v1.36.1...v1.37.0) (2019-04-10)
 
 
