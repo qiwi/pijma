@@ -20,18 +20,11 @@ export interface FileLinkProps {
   rel?: string
   title?: string
   color?: 'default' | 'support'
-  size?: 's' | 'm' | 'l'
 }
 
 const LinkColor: {[color in NonNullable<FileLinkProps['color']>]: string} = {
   default: '#000',
   support: '#666',
-}
-
-const LinkHeight: {[size in NonNullable<FileLinkProps['size']>]: number} = {
-  s: 5,
-  m: 6,
-  l: 8,
 }
 
 const FlexLink = Flex.withComponent(Lnk)
@@ -65,8 +58,8 @@ export const FileLink: FC<FileLinkProps> = (props) => (
           onMouseDown={renderProps.onMouseDown}
           cursor="pointer"
           display="inline-block"
-          width={props.size === undefined ? undefined : LinkHeight[props.size]}
-          height={props.size === undefined ? undefined : LinkHeight[props.size]}
+          width={6}
+          height={6}
           mr={2}
           shrink={0}
         >
@@ -95,7 +88,7 @@ export const FileLink: FC<FileLinkProps> = (props) => (
           <Text
             color={renderProps.hover || renderProps.focus ? 'warning' : props.color || 'default'}
             decoration="none"
-            size={props.size}
+            size="m"
             children={props.children}
           />
         </Box>
