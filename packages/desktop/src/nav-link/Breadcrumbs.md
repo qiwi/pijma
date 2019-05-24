@@ -1,7 +1,7 @@
 ```jsx
 <Spacer size="xl">
   <Breadcrumbs
-    breadcrumbs={[
+    children={[
       {href: 'https://qiwi.com/', title: 'Главная'},
       {href: 'https://qiwi.com/support/', title: 'Помощь'},
       {
