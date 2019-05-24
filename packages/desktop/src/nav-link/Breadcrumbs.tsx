@@ -13,7 +13,7 @@ interface BreadcrumbsProps {
 const NavLink = Typo.withComponent(Lnk)
 
 export const Breadcrumbs: FC<BreadcrumbsProps> = ({children}) => (
-  <Box mb={1} m={0} p={0}>
+  <Box>
     {children.map((item, i) => (
       <Box display="inline-block" key={i}>
         <LinkControl
