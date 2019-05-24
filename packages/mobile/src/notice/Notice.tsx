@@ -1,5 +1,5 @@
 import React, {FC, isValidElement, ReactNode} from 'react'
-import {Box, Flex, FlexItem, Icon} from '@qiwi/pijma-core'
+import {Flex, FlexItem, Icon, Spacer} from '@qiwi/pijma-core'
 import {Heading, Paragraph} from '@qiwi/pijma-mobile'
 import {IconName} from '@qiwi/pijma-media'
 
@@ -22,24 +22,28 @@ export const Notice: FC<NoticeProps> = ({icon, title, children}) => (
     ) : (
       null
     )}
-    <FlexItem>
-      {title ? (
-        <Box mb={2}>
-          <Heading
-            size="3"
-            children={title}
-          />
-        </Box>
-      ) : (
-        null
-      )}
-      {children ? (
-        <Paragraph
-          children={children}
-        />
-      ) : (
-        null
-      )}
-    </FlexItem>
+    {title || children ? (
+      <FlexItem>
+        <Spacer size="xs">
+          {title ? (
+            <Heading
+              size="3"
+              children={title}
+            />
+          ) : (
+            null
+          )}
+          {children ? (
+            <Paragraph
+              children={children}
+            />
+          ) : (
+            null
+          )}
+        </Spacer>
+      </FlexItem>
+    ) : (
+      null
+    )}
   </Flex>
 )
