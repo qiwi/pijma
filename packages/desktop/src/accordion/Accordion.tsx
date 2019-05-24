@@ -6,8 +6,11 @@ import {Paragraph} from '../typography'
 
 export interface AccordionProps<I> {
   items: I[]
+  opened?: number[]
+  onChange?: (opened: number[]) => void
   bg?: string
   indent?: 's' | 'm' | 'l'
+  tabIndex: number
 }
 
 export interface AccordionItemModel {
@@ -25,11 +28,13 @@ const AccordionIndent: {
 
 export const Accordion: FunctionComponent<
   AccordionProps<AccordionItemModel>
-> = ({items, bg = '#fff', indent = 'm'}) => (
+> = ({items, bg = '#fff', indent = 'm', tabIndex, opened, onChange}) => (
   <AccordionControl<AccordionItemModel>
     items={items}
+    opened={opened}
+    onChange={onChange}
     children={renderProps => (
-      <Box py={3}>
+      <Box py={3} tabIndex={tabIndex || 0} onKeyDown={renderProps.onKeyDown}>
         {renderProps.items.map((item, index) => (
           <Card
             key={index}

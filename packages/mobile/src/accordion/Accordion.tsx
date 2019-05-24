@@ -6,6 +6,9 @@ import {Paragraph} from '../typography'
 
 export interface AccordionProps<I> {
   items: I[]
+  opened?: number[]
+  onChange?: (opened: number[]) => void
+  tabIndex: number
 }
 
 export interface AccordionItemModel {
@@ -15,11 +18,13 @@ export interface AccordionItemModel {
 
 export const Accordion: FunctionComponent<
   AccordionProps<AccordionItemModel>
-> = ({items}) => (
+> = ({items, tabIndex, opened, onChange}) => (
   <AccordionControl<AccordionItemModel>
     items={items}
+    opened={opened}
+    onChange={onChange}
     children={renderProps => (
-      <Box py={2}>
+      <Box py={2} tabIndex={tabIndex || 0} onKeyDown={renderProps.onKeyDown}>
         {renderProps.items.map((item, index) => (
           <Card
             key={index}
