@@ -46,7 +46,6 @@ export const FileLink: FC<FileLinkProps> = (props) => (
         rel={props.rel}
         title={props.title}
         display="flex"
-        tabIndex={props.tabIndex}
       >
         <FlexItem
           onClick={renderProps.onClick}
@@ -56,6 +55,7 @@ export const FileLink: FC<FileLinkProps> = (props) => (
           onMouseLeave={renderProps.onMouseLeave}
           onMouseUp={renderProps.onMouseUp}
           onMouseDown={renderProps.onMouseDown}
+          tabIndex={props.tabIndex}
           cursor="pointer"
           display="inline-block"
           width={6}
