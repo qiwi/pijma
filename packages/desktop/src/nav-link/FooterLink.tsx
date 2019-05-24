@@ -41,7 +41,7 @@ export const FooterLink: FC<FooterLinkProps> = (props) => (
         onMouseLeave={renderProps.onMouseLeave}
         onMouseUp={renderProps.onMouseUp}
         onMouseDown={renderProps.onMouseDown}
-        color={renderProps.hover || renderProps.focus ? '#333' : '#666'}
+        color={renderProps.hover || renderProps.focus ? '#000' : '#666'}
         transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         cursor="pointer"
         decoration="none"
