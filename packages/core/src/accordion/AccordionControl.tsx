@@ -4,7 +4,7 @@ import RenderChild from '../RenderChild'
 export interface AccordionControlProps<I> {
   items: I[]
   opened: number[]
-  onChange?: (opened: number[]) => void
+  onChange: (opened: number[]) => void
   tabIndex?: number
   children: RenderChild<{
     onKeyDown: React.KeyboardEventHandler
@@ -57,9 +57,7 @@ export class AccordionControl<I> extends React.Component<
     const newOpened = opened.includes(index)
         ? opened.filter(i => i !== index)
         : opened.concat(index)
-    if (this.props.onChange) {
-      this.props.onChange(newOpened)
-    }
+    this.props.onChange(newOpened)
   }
 
   private onItemClick = (index: number) => (
