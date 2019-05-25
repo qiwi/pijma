@@ -32,21 +32,29 @@ export const Accordion: FunctionComponent<
     items={items}
     opened={opened}
     onChange={onChange}
+    tabIndex={tabIndex}
     children={renderProps => (
-      <Box py={3} tabIndex={tabIndex || 0} onKeyDown={renderProps.onKeyDown}>
+      <Box py={3}>
         {renderProps.items.map((item, index) => (
           <Card
             key={index}
             s={
-              item.hovered
+              item.hovered || item.focused
                 ? '0 0 16px 0 rgba(0, 0, 0, 0.12)'
-                : index + 1 === renderProps.items.length || (renderProps.items[index + 1] && renderProps.items[index + 1].hovered)
+                : index + 1 === renderProps.items.length ||
+                  (renderProps.items[index + 1] &&
+                    (renderProps.items[index + 1].hovered ||
+                      renderProps.items[index + 1].focused))
                 ? undefined
                 : '0 1px 0 #e6e6e6'
             }
             transition="box-shadow 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
             onMouseEnter={item.onMouseEnter}
             onMouseLeave={item.onMouseLeave}
+            onFocus={item.onFocus}
+            onBlur={item.onBlur}
+            onKeyDown={renderProps.onKeyDown}
+            tabIndex={renderProps.tabIndex}
           >
             <Flex
               wrap="nowrap"
