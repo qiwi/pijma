@@ -3,7 +3,7 @@ import RenderChild from '../RenderChild'
 
 export interface AccordionControlProps<I> {
   items: I[]
-  opened?: number[]
+  opened: number[]
   onChange?: (opened: number[]) => void
   tabIndex?: number
   children: RenderChild<{
@@ -14,7 +14,7 @@ export interface AccordionControlProps<I> {
         opened: boolean
         hovered: boolean
         focused: boolean
-        onClick: (event: React.MouseEvent<HTMLElement>) => void
+        onClick: React.MouseEventHandler
         onMouseEnter: React.MouseEventHandler
         onMouseLeave: React.MouseEventHandler
         tabIndex?: number
@@ -53,7 +53,7 @@ export class AccordionControl<I> extends React.Component<
   }
 
   private onChange = (index: number) => {
-    const {opened = []} = this.props
+    const {opened} = this.props
     const newOpened = opened.includes(index)
         ? opened.filter(i => i !== index)
         : opened.concat(index)
@@ -114,7 +114,7 @@ export class AccordionControl<I> extends React.Component<
       tabIndex: this.props.tabIndex || 0,
       items: this.props.items.map((item, index) => ({
         ...item,
-        opened: (this.props.opened || []).findIndex(i => i === index) !== -1,
+        opened: this.props.opened.findIndex(i => i === index) !== -1,
         hovered: index === this.state.hovered,
         focused: index === this.state.focused,
         onClick: this.onItemClick(index),

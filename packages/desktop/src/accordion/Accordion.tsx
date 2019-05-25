@@ -6,7 +6,7 @@ import {Paragraph} from '../typography'
 
 export interface AccordionProps<I> {
   items: I[]
-  opened?: number[]
+  opened: number[]
   onChange?: (opened: number[]) => void
   indent?: 's' | 'm' | 'l'
   tabIndex: number
