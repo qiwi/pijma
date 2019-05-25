@@ -28,7 +28,6 @@ export interface AccordionControlProps<I> {
 export interface AccordionControlState {
   hovered: number
   focused: number
-  opened: number[]
 }
 
 export class AccordionControl<I> extends React.Component<
@@ -39,13 +38,6 @@ export class AccordionControl<I> extends React.Component<
   public state: AccordionControlState = {
     hovered: -1,
     focused: -1,
-    opened: this.props.opened || [],
-  }
-
-  componentDidUpdate(prevProps: AccordionControlProps<I>) {
-    if (this.props.opened && this.props.opened !== prevProps.opened) {
-      this.setState({opened: this.props.opened})
-    }
   }
 
   private onFocus = (index: number) => {
@@ -61,15 +53,13 @@ export class AccordionControl<I> extends React.Component<
   }
 
   private onChange = (index: number) => {
-    this.setState(({opened}) => ({
-      opened: opened.includes(index)
+    const {opened = []} = this.props
+    const newOpened = opened.includes(index)
         ? opened.filter(i => i !== index)
-        : opened.concat(index),
-    }), () => {
-      if (this.props.onChange) {
-        this.props.onChange(this.state.opened)
-      }
-    })
+        : opened.concat(index)
+    if (this.props.onChange) {
+      this.props.onChange(newOpened)
+    }
   }
 
   private onItemClick = (index: number) => (
@@ -124,7 +114,7 @@ export class AccordionControl<I> extends React.Component<
       tabIndex: this.props.tabIndex || 0,
       items: this.props.items.map((item, index) => ({
         ...item,
-        opened: this.state.opened.findIndex(i => i === index) !== -1,
+        opened: (this.props.opened || []).findIndex(i => i === index) !== -1,
         hovered: index === this.state.hovered,
         focused: index === this.state.focused,
         onClick: this.onItemClick(index),
