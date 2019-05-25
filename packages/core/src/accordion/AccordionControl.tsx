@@ -36,13 +36,10 @@ export class AccordionControl<I> extends React.Component<
   AccordionControlState
 > {
 
-  constructor(props: AccordionControlProps<I>) {
-    super(props)
-    this.state = {
-      hovered: -1,
-      focused: -1,
-      opened: props.opened || [],
-    }
+  public state: AccordionControlState = {
+    hovered: -1,
+    focused: -1,
+    opened: this.props.opened || [],
   }
 
   componentDidUpdate(prevProps: AccordionControlProps<I>) {

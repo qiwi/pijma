@@ -37,10 +37,6 @@ export const Accordion: FunctionComponent<
             transition="box-shadow 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
             onMouseEnter={item.onMouseEnter}
             onMouseLeave={item.onMouseLeave}
-            onFocus={item.onFocus}
-            onBlur={item.onBlur}
-            onKeyDown={renderProps.onKeyDown}
-            tabIndex={renderProps.tabIndex}
           >
             <Flex
               wrap="nowrap"
@@ -51,6 +47,10 @@ export const Accordion: FunctionComponent<
               pt={4}
               pb={item.opened ? 1 : 4}
               onClick={item.onClick}
+              onFocus={item.onFocus}
+              onBlur={item.onBlur}
+              onKeyDown={renderProps.onKeyDown}
+              tabIndex={renderProps.tabIndex}
             >
               <Paragraph bold size="s">
                 {item.title}
