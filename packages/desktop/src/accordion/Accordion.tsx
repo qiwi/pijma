@@ -18,7 +18,7 @@ export interface AccordionItemModel {
 }
 
 const AccordionIndent: {
-  [size in NonNullable<AccordionProps<AccordionItemModel>['indent']>]: number
+  [indent in NonNullable<AccordionProps<AccordionItemModel>['indent']>]: number
 } = {
   s: 8,
   m: 11,
@@ -27,7 +27,7 @@ const AccordionIndent: {
 
 export const Accordion: FunctionComponent<
   AccordionProps<AccordionItemModel>
-> = ({items, indent = 'm', tabIndex, opened, onChange}) => (
+> = ({items, indent = 'm', tabIndex = 0, opened, onChange}) => (
   <AccordionControl<AccordionItemModel>
     items={items}
     opened={opened}
@@ -41,12 +41,11 @@ export const Accordion: FunctionComponent<
             s={
               item.hovered || item.focused
                 ? '0 0 16px 0 rgba(0, 0, 0, 0.12)'
-                : index + 1 === renderProps.items.length ||
-                  (renderProps.items[index + 1] &&
-                    (renderProps.items[index + 1].hovered ||
-                      renderProps.items[index + 1].focused))
-                ? undefined
-                : '0 1px 0 #e6e6e6'
+                : index > 0 &&
+                  (!renderProps.items[index - 1].hovered &&
+                      !renderProps.items[index - 1].focused)
+                ? '0 -1px 0 #e6e6e6'
+                : undefined
             }
             transition="box-shadow 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
             onMouseEnter={item.onMouseEnter}
@@ -64,7 +63,7 @@ export const Accordion: FunctionComponent<
               onFocus={item.onFocus}
               onBlur={item.onBlur}
               onKeyDown={renderProps.onKeyDown}
-              tabIndex={renderProps.tabIndex}
+              tabIndex={item.tabIndex}
             >
               <Paragraph bold size="m">
                 {item.title}

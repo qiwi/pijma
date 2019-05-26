@@ -5,10 +5,9 @@ export interface AccordionControlProps<I> {
   items: I[]
   opened: number[]
   onChange: (opened: number[]) => void
-  tabIndex?: number
+  tabIndex: number
   children: RenderChild<{
     onKeyDown: React.KeyboardEventHandler
-    tabIndex: number
     items: Array<
       I & {
         opened: boolean
@@ -17,7 +16,7 @@ export interface AccordionControlProps<I> {
         onClick: React.MouseEventHandler
         onMouseEnter: React.MouseEventHandler
         onMouseLeave: React.MouseEventHandler
-        tabIndex?: number
+        tabIndex: number
         onFocus: React.FocusEventHandler
         onBlur: React.FocusEventHandler
       }
@@ -109,7 +108,6 @@ export class AccordionControl<I> extends React.Component<
   public render() {
     return this.props.children({
       onKeyDown: this.onKeyDown,
-      tabIndex: this.props.tabIndex || 0,
       items: this.props.items.map((item, index) => ({
         ...item,
         opened: this.props.opened.findIndex(i => i === index) !== -1,
@@ -120,6 +118,7 @@ export class AccordionControl<I> extends React.Component<
         onMouseLeave: this.onItemMouseLeave,
         onFocus: () => this.onFocus(index),
         onBlur: this.onBlur,
+        tabIndex: this.props.tabIndex + index,
       })),
     })
   }

@@ -18,7 +18,7 @@ export interface AccordionItemModel {
 
 export const Accordion: FunctionComponent<
   AccordionProps<AccordionItemModel>
-> = ({items, tabIndex, opened, onChange}) => (
+> = ({items, tabIndex = 0, opened, onChange}) => (
   <AccordionControl<AccordionItemModel>
     items={items}
     opened={opened}
@@ -30,9 +30,9 @@ export const Accordion: FunctionComponent<
           <Card
             key={index}
             s={
-              index + 1 === renderProps.items.length
-                ? undefined
-                : '0 1px 0 #e6e6e6'
+              index > 0
+                ? '0 -1px 0 #e6e6e6'
+                : undefined
             }
             transition="box-shadow 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
             onMouseEnter={item.onMouseEnter}
@@ -50,7 +50,7 @@ export const Accordion: FunctionComponent<
               onFocus={item.onFocus}
               onBlur={item.onBlur}
               onKeyDown={renderProps.onKeyDown}
-              tabIndex={renderProps.tabIndex}
+              tabIndex={item.tabIndex}
             >
               <Paragraph bold size="s">
                 {item.title}
