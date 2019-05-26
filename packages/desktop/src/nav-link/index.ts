@@ -1,2 +1,1 @@
-export * from './Breadcrumbs'
-export * from './FooterLink'
+export * from './NavLink'

@@ -1,13 +1,7 @@
-// const FooterLink = styled(Anchor)(({theme}) => ({
-//   fontWeight: 300,
-//   display: 'inline-block',
-// }))
-
 import React, {FC} from 'react'
-
 import {LinkControl, Lnk, Typo} from '@qiwi/pijma-core'
 
-export interface FooterLinkProps {
+export interface NavLinkProps {
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
   onFocus?: () => void
   onBlur?: () => void
@@ -19,9 +13,9 @@ export interface FooterLinkProps {
   title?: string
 }
 
-const NavLink = Typo.withComponent(Lnk)
+const TypoLink = Typo.withComponent(Lnk)
 
-export const FooterLink: FC<FooterLinkProps> = (props) => (
+export const NavLink: FC<NavLinkProps> = (props) => (
   <LinkControl
     onClick={props.onClick}
     onFocus={props.onFocus}
@@ -31,7 +25,7 @@ export const FooterLink: FC<FooterLinkProps> = (props) => (
     download={props.download}
     rel={props.rel}
     children={(renderProps) => (
-      <NavLink
+      <TypoLink
         tabIndex={props.tabIndex}
         href={props.href}
         onClick={renderProps.onClick}
