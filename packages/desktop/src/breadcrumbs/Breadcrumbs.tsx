@@ -1,14 +1,9 @@
 import React, {FC} from 'react'
 import {Box} from '@qiwi/pijma-core'
-import {NavLink} from '../nav-link'
+import {NavLink, NavLinkProps} from '../nav-link'
 import {Text} from '../typography'
 
-interface NavLinkProps {
-  href: string
-  title: string
-}
-
-interface BreadcrumbsProps {
+export interface BreadcrumbsProps {
   children: NavLinkProps[]
 }
 
@@ -25,7 +20,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({children}) => (
             children="&nbsp;&#8226;&nbsp;"
           />
         ) : null}
-        <NavLink href={item.href} children={item.title}/>
+        <NavLink {...item}/>
       </Box>
     ))}
   </Box>
