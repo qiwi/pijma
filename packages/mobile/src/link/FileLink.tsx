@@ -40,28 +40,28 @@ export const FileLink: FC<FileLinkProps> = (props) => (
     rel={props.rel}
     children={renderProps => (
       <FlexLink
+        tabIndex={props.tabIndex}
         href={props.href}
         target={props.target}
         download={props.download}
         rel={props.rel}
         title={props.title}
         display="flex"
+        onFocus={renderProps.onFocus}
+        onBlur={renderProps.onBlur}
       >
         <FlexItem
-          onClick={renderProps.onClick}
-          onFocus={renderProps.onFocus}
-          onBlur={renderProps.onBlur}
-          onMouseEnter={renderProps.onMouseEnter}
-          onMouseLeave={renderProps.onMouseLeave}
-          onMouseUp={renderProps.onMouseUp}
-          onMouseDown={renderProps.onMouseDown}
-          tabIndex={props.tabIndex}
           cursor="pointer"
           display="inline-block"
           width={5}
           height={5}
           mr={2}
           shrink={0}
+          onClick={renderProps.onClick}
+          onMouseEnter={renderProps.onMouseEnter}
+          onMouseLeave={renderProps.onMouseLeave}
+          onMouseUp={renderProps.onMouseUp}
+          onMouseDown={renderProps.onMouseDown}
         >
           <IconWrapper
             color={
@@ -76,14 +76,12 @@ export const FileLink: FC<FileLinkProps> = (props) => (
           </IconWrapper>
         </FlexItem>
         <Box
+          cursor="pointer"
           onClick={renderProps.onClick}
-          onFocus={renderProps.onFocus}
-          onBlur={renderProps.onBlur}
           onMouseEnter={renderProps.onMouseEnter}
           onMouseLeave={renderProps.onMouseLeave}
           onMouseUp={renderProps.onMouseUp}
           onMouseDown={renderProps.onMouseDown}
-          cursor="pointer"
         >
           <Text
             color={renderProps.hover || renderProps.focus ? 'warning' : props.color || 'default'}
