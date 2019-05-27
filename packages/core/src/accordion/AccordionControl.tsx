@@ -37,7 +37,7 @@ export class AccordionControl<I> extends React.Component<
     focused: -1,
   }
 
-  private onFocus = (index: number) => {
+  private onFocus = (index: number) => () => {
     this.setState({
       focused: index,
     })
@@ -51,10 +51,9 @@ export class AccordionControl<I> extends React.Component<
 
   private onChange = (index: number) => {
     const {opened} = this.props
-    const newOpened = opened.includes(index)
-        ? opened.filter(i => i !== index)
-        : opened.concat(index)
-    this.props.onChange(newOpened)
+    this.props.onChange(opened.includes(index)
+    ? opened.filter(i => i !== index)
+    : opened.concat(index))
   }
 
   private onItemClick = (index: number) => (
@@ -64,7 +63,7 @@ export class AccordionControl<I> extends React.Component<
     this.onChange(index)
   }
 
-  private onItemMouseEnter = (index: number) => {
+  private onItemMouseEnter = (index: number) => () => {
     this.setState({
       hovered: index,
     })
@@ -112,9 +111,9 @@ export class AccordionControl<I> extends React.Component<
         hovered: index === this.state.hovered,
         focused: index === this.state.focused,
         onClick: this.onItemClick(index),
-        onMouseEnter: () => this.onItemMouseEnter(index),
+        onMouseEnter: this.onItemMouseEnter(index),
         onMouseLeave: this.onItemMouseLeave,
-        onFocus: () => this.onFocus(index),
+        onFocus: this.onFocus(index),
         onBlur: this.onBlur,
       })),
     })
