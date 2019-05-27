@@ -9,7 +9,7 @@ export interface AccordionProps<I> {
   opened: number[]
   onChange: (opened: number[]) => void
   indent?: 's' | 'm' | 'l'
-  tabIndex: number
+  tabIndex?: number
 }
 
 export interface AccordionItemModel {
@@ -32,7 +32,6 @@ export const Accordion: FunctionComponent<
     items={items}
     opened={opened}
     onChange={onChange}
-    tabIndex={tabIndex}
     children={renderProps => (
       <Box py={3}>
         {renderProps.items.map((item, index) => (
@@ -63,7 +62,7 @@ export const Accordion: FunctionComponent<
               onFocus={item.onFocus}
               onBlur={item.onBlur}
               onKeyDown={renderProps.onKeyDown}
-              tabIndex={item.tabIndex}
+              tabIndex={tabIndex}
             >
               <Paragraph bold size="m">
                 {item.title}
@@ -97,4 +96,5 @@ export const Accordion: FunctionComponent<
 
 Accordion.defaultProps = {
   indent: 'm',
+  tabIndex: 0,
 }
