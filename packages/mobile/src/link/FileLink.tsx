@@ -19,12 +19,6 @@ export interface FileLinkProps {
   download?: string | boolean
   rel?: string
   title?: string
-  color?: 'default' | 'support'
-}
-
-const LinkColor: {[color in NonNullable<FileLinkProps['color']>]: string} = {
-  default: '#000',
-  support: '#666',
 }
 
 const FlexLink = Flex.withComponent(Lnk)
@@ -63,15 +57,7 @@ export const FileLink: FC<FileLinkProps> = (props) => (
           onMouseUp={renderProps.onMouseUp}
           onMouseDown={renderProps.onMouseDown}
         >
-          <IconWrapper
-            color={
-              renderProps.hover || renderProps.focus
-                ? '#FF8C00'
-                : props.color === undefined
-                ? LinkColor.default
-                : LinkColor[props.color]
-            }
-          >
+          <IconWrapper color={renderProps.hover || renderProps.focus ? '#FF8C00' : '#000'}>
             <Icon name="file" />
           </IconWrapper>
         </FlexItem>
@@ -84,7 +70,7 @@ export const FileLink: FC<FileLinkProps> = (props) => (
           onMouseDown={renderProps.onMouseDown}
         >
           <Text
-            color={renderProps.hover || renderProps.focus ? 'warning' : props.color || 'default'}
+            color={renderProps.hover || renderProps.focus ? 'warning' : 'default'}
             size="s"
             children={props.children}
           />
