@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {PaginationControl, PageControl, Card, Box} from '@qiwi/pijma-core'
+import {PaginationControl, PageControl, Card, Box, Flex} from '@qiwi/pijma-core'
 import {Icon} from '@qiwi/pijma-media'
 import {Text} from '../typography'
 
@@ -20,7 +20,7 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
     pageRangeDisplayed={props.pageRangeDisplayed}
     activePage={props.activePage}
     children={renderProps => (
-      <Box>
+      <Flex>
         {props.withStartButton ? (
           <PageControl
             pageNumber={1}
@@ -227,7 +227,7 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
             )}
           />
         </Card>
-      </Box>
+      </Flex>
     )}
   />
 )

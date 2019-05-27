@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {PaginationControl, PageControl, Card, Box} from '@qiwi/pijma-core'
+import {PaginationControl, PageControl, Card, Box, Flex} from '@qiwi/pijma-core'
 import {Icon} from '@qiwi/pijma-media'
 import {Text} from '../typography'
 
@@ -20,7 +20,7 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
     pageRangeDisplayed={props.pageRangeDisplayed}
     activePage={props.activePage}
     children={renderProps => (
-      <Box>
+      <Flex>
         {props.withStartButton ? (
           <PageControl
             pageNumber={1}
@@ -32,18 +32,18 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
               <Card
                 onMouseEnter={renderPageProps.onMouseEnter}
                 onClick={renderPageProps.onClick}
-                height={12}
-                width={27}
+                height={16}
+                width={36}
                 display="inline-flex"
                 cursor="pointer"
                 bg={renderPageProps.hovered ? '#f5f5f5' : '#fff'}
                 s="0 1px 2px 0 rgba(0, 0, 0, 0.12)"
-                mr={5}
+                mr={6}
                 r="10px"
                 onMouseLeave={renderProps.onMouseLeave}
               >
                 <Box m="auto">
-                  <Text bold={false} size="s">
+                  <Text bold={false} size="m">
                     В начало
                   </Text>
                 </Box>
@@ -54,7 +54,7 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
         <Card
           bg="#fff"
           s="0 1px 2px 0 rgba(0, 0, 0, 0.12)"
-          height={12}
+          height={16}
           display="inline-flex"
           r="10px"
           onMouseLeave={renderProps.onMouseLeave}
@@ -70,8 +70,8 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
               <Card
                 onMouseEnter={renderPageProps.onMouseEnter}
                 onClick={renderPageProps.onClick}
-                height={12}
-                width={18}
+                height={16}
+                width={24}
                 display="inline-flex"
                 cursor={renderPageProps.disabled ? 'default' : 'pointer'}
                 bg={
@@ -83,8 +83,8 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
               >
                 <Box
                   m="auto"
-                  width={5}
-                  height={5}
+                  width={6}
+                  height={6}
                   css={{fill: renderPageProps.disabled ? '#ccc' : '#000'}}
                 >
                   <Icon name="angle-double-left" />
@@ -103,8 +103,8 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
               <Card
                 onMouseEnter={renderPageProps.onMouseEnter}
                 onClick={renderPageProps.onClick}
-                height={12}
-                width={12}
+                height={16}
+                width={16}
                 display="inline-flex"
                 cursor={renderPageProps.disabled ? 'default' : 'pointer'}
                 bg={
@@ -116,8 +116,8 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
               >
                 <Box
                   m="auto"
-                  width={5}
-                  height={5}
+                  width={6}
+                  height={6}
                   css={{fill: renderPageProps.disabled ? '#ccc' : '#000'}}
                 >
                   <Icon name="angle-left" />
@@ -137,8 +137,8 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
                 <Card
                   onMouseEnter={renderPageProps.onMouseEnter}
                   onClick={renderPageProps.onClick}
-                  height={12}
-                  width={12}
+                  height={16}
+                  width={16}
                   display="inline-flex"
                   cursor="pointer"
                   bg={renderPageProps.hovered ? '#f5f5f5' : undefined}
@@ -147,7 +147,7 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
                   <Box m="auto">
                     <Text
                       bold={false}
-                      size="m"
+                      size="l"
                       color={
                         renderProps.currentPage === pageNumber
                           ? 'warning'
@@ -172,8 +172,8 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
               <Card
                 onMouseEnter={renderPageProps.onMouseEnter}
                 onClick={renderPageProps.onClick}
-                height={12}
-                width={12}
+                height={16}
+                width={16}
                 display="inline-flex"
                 cursor={renderPageProps.disabled ? 'default' : 'pointer'}
                 bg={
@@ -185,8 +185,8 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
               >
                 <Box
                   m="auto"
-                  width={5}
-                  height={5}
+                  width={6}
+                  height={6}
                   css={{fill: renderPageProps.disabled ? '#ccc' : '#000'}}
                 >
                   <Icon name="angle-right" />
@@ -205,8 +205,8 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
               <Card
                 onMouseEnter={renderPageProps.onMouseEnter}
                 onClick={renderPageProps.onClick}
-                height={12}
-                width={18}
+                height={16}
+                width={24}
                 display="inline-flex"
                 cursor={renderPageProps.disabled ? 'default' : 'pointer'}
                 bg={
@@ -217,8 +217,8 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
               >
                 <Box
                   m="auto"
-                  width={5}
-                  height={5}
+                  width={6}
+                  height={6}
                   css={{fill: renderPageProps.disabled ? '#ccc' : '#000'}}
                 >
                   <Icon name="angle-double-right" />
@@ -227,7 +227,7 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
             )}
           />
         </Card>
-      </Box>
+      </Flex>
     )}
   />
 )
