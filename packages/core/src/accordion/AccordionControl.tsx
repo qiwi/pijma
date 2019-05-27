@@ -79,18 +79,6 @@ export class AccordionControl<I> extends React.Component<
     event: React.KeyboardEvent<HTMLElement>,
   ) => {
     switch (event.key) {
-      case 'Tab':
-        event.preventDefault()
-        event.stopPropagation()
-        const next =
-          this.state.focused === -1 ||
-          this.state.focused === this.props.items.length - 1
-            ? 0
-            : this.state.focused + 1
-        this.setState({
-          focused: next,
-        })
-        break
       case 'Enter':
       case ' ':
         event.preventDefault()
