@@ -7,8 +7,8 @@ import {Paragraph} from '../typography'
 export interface AccordionProps<I> {
   items: I[]
   opened: number[]
-  onChange: (opened: number[]) => void
   tabIndex?: number
+  onChange: (opened: number[]) => void
 }
 
 export interface AccordionItemModel {
@@ -38,6 +38,7 @@ export const Accordion: FunctionComponent<
             onMouseLeave={item.onMouseLeave}
           >
             <Flex
+              tabIndex={tabIndex}
               wrap="nowrap"
               justify="space-between"
               align="start"
@@ -49,7 +50,6 @@ export const Accordion: FunctionComponent<
               onFocus={item.onFocus}
               onBlur={item.onBlur}
               onKeyDown={renderProps.onKeyDown}
-              tabIndex={tabIndex}
             >
               <Paragraph bold size="s">
                 {item.title}
