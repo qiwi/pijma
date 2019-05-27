@@ -1,6 +1,7 @@
 import React, {FC} from 'react'
-import {Typo, Box, Card} from '@qiwi/pijma-core'
+import {Box} from '@qiwi/pijma-core'
 import {NavLink} from '../nav-link/NavLink'
+import {Text} from '../typography'
 
 interface NavLinkProps {
   href: string
@@ -16,16 +17,12 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({children}) => (
     {children.map((item, i) => (
       <Box display="inline-flex" key={i}>
         {i > 0 ? (
-          <Card mx={2} width={2} height={5}>
-            <Typo
-              color="#666"
-              decoration="none"
-              size={3.5}
-              height={4}
-              align="center"
-              children="&#8226;"
-            />
-          </Card>
+          <Text
+            color="support"
+            size="s"
+            compact
+            children="&nbsp;&#8226;&nbsp;"
+          />
         ) : null}
         <NavLink children={item.title} href={item.href}/>
       </Box>
