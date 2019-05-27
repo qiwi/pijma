@@ -26,13 +26,13 @@ export const List: FunctionComponent<ListProps> = props => (
     {props.children.map((item, index) => (
       <Flex key={index} mt={index > 0 ? 4 : undefined} as="li">
         {props.type === 'number' ? (
-          <Box width={String(props.children.length).length * 2 + 3}>
+          <FlexItem width={String(props.children.length).length * 2 + 3} shrink={0}>
             <Paragraph size="m">{index + 1}.</Paragraph>
-          </Box>
+          </FlexItem>
         ) : props.type === 'bullet' ? (
-          <Box width={5}>
+          <FlexItem width={5} shrink={0}>
             <Paragraph size="m">&#8226;</Paragraph>
-          </Box>
+          </FlexItem>
         ) : props.type === 'step' ? (
           <FlexItem mr={4} height="auto" width={10} shrink={0}>
             <Card display="flex" bg="#F5F5F5" r="50%" height={10} width={10}>
