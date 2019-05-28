@@ -2,8 +2,7 @@
 initialState = {activePage: 1};
 <Card bg="#eee" p={4}>
   <Pagination
-    totalItemsCount={100}
-    itemsCountPerPage={10}
+    totalPages={10}
     pageRangeDisplayed={3}
     activePage={state.activePage}
     onClick={(activePage) => setState({activePage})}
@@ -15,8 +14,7 @@ initialState = {activePage: 1};
 initialState = {activePage: 1};
 <Card bg="#eee" p={4}>
   <Pagination
-    totalItemsCount={100}
-    itemsCountPerPage={10}
+    totalPages={10}
     pageRangeDisplayed={3}
     activePage={state.activePage}
     withStartButton={true}

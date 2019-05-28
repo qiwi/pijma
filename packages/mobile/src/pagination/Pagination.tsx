@@ -5,8 +5,7 @@ import {Icon} from '@qiwi/pijma-media'
 import {Text} from '../typography'
 
 export interface PaginationProps {
-  totalItemsCount: number
-  itemsCountPerPage: number
+  totalPages: number
   pageRangeDisplayed: number
   activePage: number
   withStartButton?: boolean
@@ -15,8 +14,7 @@ export interface PaginationProps {
 
 export const Pagination: FunctionComponent<PaginationProps> = props => (
   <PaginationControl
-    totalItemsCount={props.totalItemsCount}
-    itemsCountPerPage={props.itemsCountPerPage}
+    totalPages={props.totalPages}
     pageRangeDisplayed={props.pageRangeDisplayed}
     activePage={props.activePage}
     children={renderProps => (

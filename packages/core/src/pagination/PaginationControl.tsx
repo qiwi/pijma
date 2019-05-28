@@ -2,8 +2,7 @@ import React from 'react'
 import RenderChild from '../RenderChild'
 
 export interface PaginationControlProps {
-  totalItemsCount: number
-  itemsCountPerPage: number
+  totalPages: number
   pageRangeDisplayed: number
   activePage: number
   children: RenderChild<{
@@ -41,12 +40,10 @@ export class PaginationControl extends React.Component<PaginationControlProps, P
   }
   private buildPages = () => {
     const {
-      itemsCountPerPage,
+      totalPages,
       pageRangeDisplayed: length,
-      totalItemsCount,
       activePage,
     } = this.props
-    const totalPages = Math.ceil(totalItemsCount / itemsCountPerPage)
     const currentPage = Math.min(Math.max(Math.ceil(activePage), 1), totalPages)
 
     let firstPage = Math.max(1, currentPage - Math.floor(length / 2))
