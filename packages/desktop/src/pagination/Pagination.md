@@ -5,7 +5,7 @@ initialState = {activePage: 1};
     totalPages={10}
     pageRangeDisplayed={3}
     activePage={state.activePage}
-    onClick={(activePage) => setState({activePage})}
+    onChange={(activePage) => setState({activePage})}
   />
 </Card>
 ```
@@ -18,7 +18,7 @@ initialState = {activePage: 1};
     pageRangeDisplayed={3}
     activePage={state.activePage}
     withStartButton={true}
-    onClick={(activePage) => setState({activePage})}
+    onChange={(activePage) => setState({activePage})}
   />
 </Card>
 ```

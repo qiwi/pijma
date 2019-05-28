@@ -9,7 +9,7 @@ export interface PaginationProps {
   pageRangeDisplayed: number
   activePage: number
   withStartButton?: boolean
-  onClick?: (index: number) => void
+  onChange?: (index: number) => void
 }
 
 export const Pagination: FunctionComponent<PaginationProps> = props => (
@@ -24,7 +24,7 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
             pageNumber={1}
             hovered={renderProps.hovered}
             id={`start_button`}
-            onClick={props.onClick}
+            onClick={props.onChange}
             onMouseEnter={renderProps.onMouseEnter}
             children={renderPageProps => (
               <Card
@@ -62,7 +62,7 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
             hovered={renderProps.hovered}
             disabled={renderProps.currentPage === 1}
             id="start"
-            onClick={props.onClick}
+            onClick={props.onChange}
             onMouseEnter={renderProps.onMouseEnter}
             children={renderPageProps => (
               <Card
@@ -95,7 +95,7 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
             hovered={renderProps.hovered}
             disabled={!renderProps.hasPreviousPage}
             id="prev"
-            onClick={props.onClick}
+            onClick={props.onChange}
             onMouseEnter={renderProps.onMouseEnter}
             children={renderPageProps => (
               <Card
@@ -129,7 +129,7 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
               pageNumber={pageNumber}
               hovered={renderProps.hovered}
               id={`page_${index}`}
-              onClick={props.onClick}
+              onClick={props.onChange}
               onMouseEnter={renderProps.onMouseEnter}
               children={renderPageProps => (
                 <Card
@@ -164,7 +164,7 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
             hovered={renderProps.hovered}
             disabled={!renderProps.hasNextPage}
             id="next"
-            onClick={props.onClick}
+            onClick={props.onChange}
             onMouseEnter={renderProps.onMouseEnter}
             children={renderPageProps => (
               <Card
@@ -197,7 +197,7 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
             hovered={renderProps.hovered}
             disabled={renderProps.currentPage === renderProps.totalPages}
             id="end"
-            onClick={props.onClick}
+            onClick={props.onChange}
             onMouseEnter={renderProps.onMouseEnter}
             children={renderPageProps => (
               <Card
