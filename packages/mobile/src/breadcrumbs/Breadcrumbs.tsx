@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
-import {Box} from '@qiwi/pijma-core'
-import {NavLink, NavLinkProps} from '../nav-link/NavLink'
+import {Box, Flex} from '@qiwi/pijma-core'
+import {NavLink, NavLinkProps} from '../nav-link'
 import {Text} from '../typography'
 
 export interface BreadcrumbsProps {
@@ -8,19 +8,21 @@ export interface BreadcrumbsProps {
 }
 
 export const Breadcrumbs: FC<BreadcrumbsProps> = ({children}) => (
-  <Box>
+  <Flex>
     {children.map((item, i) => (
-      <Box display="inline-flex" key={i}>
+      <Flex display="inline-flex" align="center" key={i}>
         {i > 0 ? (
-          <Text
-            color="support"
-            size="s"
-            compact
-            children="&nbsp;&#8226;&nbsp;"
-          />
+          <Box mx={2}>
+            <Text
+              color="support"
+              size="s"
+              compact
+              children="&#8226;"
+            />
+          </Box>
         ) : null}
-        <NavLink {...item}/>
-      </Box>
+        <NavLink {...item} />
+      </Flex>
     ))}
-  </Box>
+  </Flex>
 )
