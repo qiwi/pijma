@@ -7,7 +7,7 @@ export interface SwitchControlProps {
   checked: boolean
   onFocus?: React.FocusEventHandler
   onBlur?: React.FocusEventHandler
-  onChange?: (value: boolean) => void
+  onChange: (value: boolean) => void
   children: RenderChild<{
     focused: boolean
     tabIndex?: number
