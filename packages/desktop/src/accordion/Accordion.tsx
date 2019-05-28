@@ -78,15 +78,13 @@ export const Accordion: FunctionComponent<
                 <Icon name="angle-small-down" />
               </FlexItem>
             </Flex>
-            {item.opened ? (
-              <Box px={AccordionIndent[indent]} pb={4}>
-                {typeof item.content === 'string' ? (
-                  <Paragraph size="m">{item.content}</Paragraph>
-                ) : (
-                  item.content
-                )}
-              </Box>
-            ) : null}
+            <Box px={AccordionIndent[indent]} pb={4} display={item.opened ? 'block' : 'none'}>
+              {typeof item.content === 'string' ? (
+                <Paragraph size="m">{item.content}</Paragraph>
+              ) : (
+                item.content
+              )}
+            </Box>
           </Card>
         ))}
       </Box>
