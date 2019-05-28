@@ -34,20 +34,22 @@ export const List: FunctionComponent<ListProps> = props => (
             <Text size="m" bold={false}>&#8226;</Text>
           </FlexItem>
         ) : props.type === 'step' ? (
-          <FlexItem mr={4} height="auto" width={10} shrink={0}>
-            <Card display="flex" bg="#F5F5F5" r="50%" height={10} width={10}>
-              <Box m="auto">
-                <Text size="m" bold>
-                  {index + 1}
-                </Text>
-              </Box>
-            </Card>
+          <Flex direction="column" height="auto" mr={4}>
+            <FlexItem shrink={0}>
+              <Card bg="#F5F5F5" r="50%" height={10} width={10}>
+                <Flex align="center" justify="center" height={1} width={1}>
+                  <Text size="m" bold>
+                    {index + 1}
+                  </Text>
+                </Flex>
+              </Card>
+            </FlexItem>
             {index + 1 === props.children.length ? null : (
-              <Box width="4px" height="calc(100% - 40px)" mx="auto" mt={2}>
-                <Card bg="#F5F5F5" width={1} height={1} />
-              </Box>
+              <FlexItem height={1} align="center" justify="center">
+                <Card bg="#F5F5F5" height={1} width="4px" mt={2} />
+              </FlexItem>
             )}
-          </FlexItem>
+          </Flex>
         ) : null}
         <Box mt={ListItemTopMargin[props.type]}>
           {typeof item === 'string' ? (
