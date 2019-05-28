@@ -1,7 +1,7 @@
 import React, {FunctionComponent, ReactNode} from 'react'
 
 import {Box, Card, Flex, FlexItem} from '@qiwi/pijma-core'
-import {Paragraph} from '../typography'
+import {Paragraph, Text} from '../typography'
 
 export interface ListProps {
   children: ReactNode[]
@@ -27,19 +27,19 @@ export const List: FunctionComponent<ListProps> = props => (
       <Flex key={index} mt={index > 0 ? 4 : undefined} as="li">
         {props.type === 'number' ? (
           <FlexItem width={String(props.children.length).length * 2 + 3} shrink={0}>
-            <Paragraph size="m">{index + 1}.</Paragraph>
+            <Text size="m" bold={false}>{index + 1}.</Text>
           </FlexItem>
         ) : props.type === 'bullet' ? (
           <FlexItem width={5} shrink={0}>
-            <Paragraph size="m">&#8226;</Paragraph>
+            <Text size="m" bold={false}>&#8226;</Text>
           </FlexItem>
         ) : props.type === 'step' ? (
           <FlexItem mr={4} height="auto" width={10} shrink={0}>
             <Card display="flex" bg="#F5F5F5" r="50%" height={10} width={10}>
               <Box m="auto">
-                <Paragraph size="m" bold>
+                <Text size="m" bold>
                   {index + 1}
-                </Paragraph>
+                </Text>
               </Box>
             </Card>
             {index + 1 === props.children.length ? null : (
