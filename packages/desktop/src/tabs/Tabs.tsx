@@ -1,9 +1,7 @@
 import React, {FC} from 'react'
 
-import {TabList} from '@qiwi/pijma-core'
+import {TabsControl} from '@qiwi/pijma-core'
 
-export interface TabsProps {
-  vertical?: boolean
-}
-
-export const Tabs: FC<TabsProps> = (props) => <TabList {...props} />
+export const Tabs: FC<{}> = props => (
+  <TabsControl {...props}/>
+)
