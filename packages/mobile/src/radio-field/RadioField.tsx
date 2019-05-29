@@ -6,12 +6,15 @@ import {
   Radio,
   OptionField,
   OptionFieldItem,
+  Box,
 } from '@qiwi/pijma-core'
 
 import RadioFieldProps from './RadioFieldProps'
 import RadioFieldOptionModel from './RadioFieldOptionModel'
 
-const RadioField: FunctionComponent<RadioFieldProps<RadioFieldOptionModel<any>, any>> = (props) => (
+const RadioField: FunctionComponent<
+  RadioFieldProps<RadioFieldOptionModel<any>, any>
+> = props => (
   <RadioControl<RadioFieldOptionModel<any>, any>
     tabIndex={props.tabIndex}
     options={props.options}
@@ -30,7 +33,6 @@ const RadioField: FunctionComponent<RadioFieldProps<RadioFieldOptionModel<any>, 
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
         onKeyDown={renderProps.onKeyDown}
-        onMouseLeave={renderProps.onMouseLeave}
         children={renderProps.options.map((option, index) => (
           <OptionControl<any>
             key={index}
@@ -38,14 +40,24 @@ const RadioField: FunctionComponent<RadioFieldProps<RadioFieldOptionModel<any>, 
             value={option.value}
             onClick={option.onClick}
             onMouseEnter={option.onMouseEnter}
+            onMouseLeave={renderProps.onMouseLeave}
             children={(renderOptionProps) => (
               <OptionFieldItem
                 disabled={option.disabled}
-                icon={<Radio disabled={option.disabled} checked={option.checked} focused={option.focused}/>}
+                icon={(
+                  <Box width={6}>
+                    <Radio
+                      disabled={option.disabled}
+                      checked={option.checked}
+                      focused={option.focused}
+                    />
+                  </Box>
+                )}
                 label={option.label}
                 description={option.description}
                 onClick={renderOptionProps.onClick}
                 onMouseEnter={renderOptionProps.onMouseEnter}
+                onMouseLeave={renderOptionProps.onMouseLeave}
               />
             )}
           />

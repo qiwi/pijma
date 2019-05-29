@@ -3,19 +3,19 @@ import React, {FunctionComponent} from 'react'
 import {
   CheckboxControl,
   OptionControl,
-  Check,
   OptionField,
   OptionFieldItem,
   Box,
+  Tumbler,
 } from '@qiwi/pijma-core'
 
-import CheckboxFieldProps from './CheckboxFieldProps'
-import CheckboxFieldOptionModel from './CheckboxFieldOptionModel'
+import SwitchFieldProps from './SwitchFieldProps'
+import SwitchFieldOptionModel from './SwitchFieldOptionModel'
 
-const CheckboxField: FunctionComponent<
-  CheckboxFieldProps<CheckboxFieldOptionModel<any>, any>
+const SwitchField: FunctionComponent<
+  SwitchFieldProps<SwitchFieldOptionModel<any>, any>
 > = props => (
-  <CheckboxControl<CheckboxFieldOptionModel<any>, any>
+  <CheckboxControl<SwitchFieldOptionModel<any>, any>
     tabIndex={props.tabIndex}
     options={props.options}
     values={props.values}
@@ -44,9 +44,10 @@ const CheckboxField: FunctionComponent<
             children={(renderOptionProps) => (
               <OptionFieldItem
                 disabled={option.disabled}
+                reverse={props.reverse}
                 icon={(
-                  <Box width={6}>
-                    <Check
+                  <Box width={10}>
+                    <Tumbler
                       disabled={option.disabled}
                       checked={option.checked}
                       focused={option.focused}
@@ -56,8 +57,8 @@ const CheckboxField: FunctionComponent<
                 label={option.label}
                 description={option.description}
                 onClick={renderOptionProps.onClick}
-                onMouseEnter={renderOptionProps.onMouseEnter}
                 onMouseLeave={renderOptionProps.onMouseLeave}
+                onMouseEnter={renderOptionProps.onMouseEnter}
               />
             )}
           />
@@ -67,4 +68,8 @@ const CheckboxField: FunctionComponent<
   />
 )
 
-export default CheckboxField
+SwitchField.defaultProps = {
+  tabIndex: 0,
+}
+
+export default SwitchField
