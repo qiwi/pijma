@@ -8,9 +8,9 @@ export interface BreadcrumbsProps {
 }
 
 export const Breadcrumbs: FC<BreadcrumbsProps> = ({children}) => (
-  <Flex>
+  <Box>
     {children.map((item, i) => (
-      <Flex display="inline-flex" align="center" key={i}>
+      <Flex display="inline-flex" align="center" key={i} height={4} css={{verticalAlign: 'middle'}}>
         {i > 0 ? (
           <Box mx={2}>
             <Text
@@ -24,5 +24,5 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({children}) => (
         <NavLink {...item} />
       </Flex>
     ))}
-  </Flex>
+  </Box>
 )
