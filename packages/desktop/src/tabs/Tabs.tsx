@@ -2,6 +2,8 @@ import React, {FC} from 'react'
 
 import {TabsControl} from '@qiwi/pijma-core'
 
-export const Tabs: FC<{}> = props => (
-  <TabsControl {...props}/>
-)
+export interface TabsProps {
+  children: React.ReactNode
+}
+
+export const Tabs: FC<TabsProps> = props => <TabsControl {...props} />
