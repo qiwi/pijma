@@ -19,7 +19,3 @@ export const Striper: FunctionComponent = ({children}) => {
     </Fragment>
   )
 }
-
-Striper.defaultProps = {
-  size: 'm',
-}
