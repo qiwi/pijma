@@ -24,7 +24,7 @@ const ListItemTopMargin: {[type in NonNullable<ListProps['type']>]: number} = {
 export const List: FunctionComponent<ListProps> = props => (
   <Box as={ListType[props.type]}>
     {props.children.map((item, index) => (
-      <Flex key={index} mt={index > 0 ? 4 : undefined} as="li">
+      <Flex key={index} as="li">
         {props.type === 'number' ? (
           <FlexItem width={String(props.children.length).length * 2 + 3} shrink={0}>
             <Text size="m" bold={false}>{index + 1}.</Text>
@@ -34,7 +34,7 @@ export const List: FunctionComponent<ListProps> = props => (
             <Text size="m" bold={false}>&#8226;</Text>
           </FlexItem>
         ) : props.type === 'step' ? (
-          <Flex direction="column" height="auto" mr={4}>
+          <Flex direction="column" height="auto" mr={5}>
             <FlexItem shrink={0}>
               <Card bg="#F5F5F5" r="50%" height={10} width={10}>
                 <Flex align="center" justify="center" height={1} width={1}>
@@ -45,13 +45,13 @@ export const List: FunctionComponent<ListProps> = props => (
               </Card>
             </FlexItem>
             {index + 1 === props.children.length ? null : (
-              <FlexItem height={1} align="center" justify="center">
-                <Card bg="#F5F5F5" height={1} width="4px" mt={2} />
+              <FlexItem height={1} minHeight={3} align="center" justify="center" my={3}>
+                <Card bg="#F5F5F5" height={1} width="4px"/>
               </FlexItem>
             )}
           </Flex>
         ) : null}
-        <Box mt={ListItemTopMargin[props.type]}>
+        <Box mt={ListItemTopMargin[props.type]} mb={index + 1 === props.children.length ? undefined : 4}>
           {typeof item === 'string' ? (
             <Paragraph size="m">{item}</Paragraph>
           ) : (
