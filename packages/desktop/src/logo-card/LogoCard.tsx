@@ -18,15 +18,27 @@ export interface LogoCardProps {
 }
 
 export const LogoCard: FC<LogoCardProps> = ({title, icon, description, ...props}) => (
-  <BlockLink {...props} accent>
+  <BlockLink
+    accent
+    tabIndex={props.tabIndex}
+    href={props.href}
+    target={props.target}
+    download={props.download}
+    rel={props.rel}
+    onClick={props.onClick}
+    onFocus={props.onFocus}
+    onBlur={props.onBlur}
+  >
     {() => (
-      <Box p={3} minHeight={56} minWidth={45} css={{textAlign: 'center'}}>
-        <Box width={18} height={18} mt={9} mx="auto">
+      <Box p={4} pt={0} minHeight={64} minWidth={55} css={{textAlign: 'center'}}>
+        <Box width={16} height={16} mt={11} mx="auto">
           {typeof icon === 'string' ? (
             <img src={icon} alt={title} />
-          ) : icon}
+          ) : (
+            icon
+          )}
         </Box>
-        <Box mt={6} mx="auto">
+        <Box mt={5} mx="auto">
           <Paragraph
             color="default"
             size="m"
