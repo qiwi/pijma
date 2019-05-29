@@ -5,6 +5,7 @@ import {Box, Flex} from '../primitive'
 export interface TabProps {
   vertical?: boolean
   index: number
+  selected?: boolean
   onSelect?: (selected: number) => void
 }
 
@@ -24,10 +25,7 @@ export class Tab extends React.Component<TabProps, {}> {
       return null
     }
     return (
-      <Flex
-        direction={vertical ? 'column' : 'row'}
-        onClick={this.onClick}
-      >
+      <Flex direction={vertical ? 'column' : 'row'} onClick={this.onClick}>
         {Children.map(elements, (child: ReactNode, key: number) => (
           <Box key={key} children={child} />
         ))}

@@ -4,6 +4,7 @@ import {Box, Flex} from '../primitive'
 
 export interface TabPanelProps {
   vertical?: boolean
+  selected?: boolean
 }
 
 export class TabPanel extends React.Component<TabPanelProps, {}> {

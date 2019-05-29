@@ -37,19 +37,21 @@ export class TabsControl extends React.Component<
         if (!element) {
           return null
         }
-        if (isTabList(element)) {
-          return React.Children.map(element, (element: React.ReactNode) => {
+        if (React.isValidElement(element) && isTabList(element)) {
+          return React.Children.map(element, element => {
             if (isTab(element)) {
               return React.cloneElement(element, {
-                selected: this.state.selected,
+                selected: !!this.state.selected,
                 onSelect: this.onSelect,
               })
             }
+
+            return null
           })
         }
-        if (isTabPanel(element)) {
+        if (React.isValidElement(element) && isTabPanel(element)) {
           return React.cloneElement(element, {
-            selected: this.state.selected,
+            selected: !!this.state.selected,
           })
         }
       },
