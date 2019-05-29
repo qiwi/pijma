@@ -8,53 +8,36 @@ export interface PaginationProps {
   totalPages: number
   pageRangeDisplayed: number
   activePage: number
-  withStartButton?: boolean
   onChange?: (index: number) => void
+  type?: 'bordered' | 'shadowed'
 }
 
-export const Pagination: FunctionComponent<PaginationProps> = props => (
+const PaginationType: {
+  [type in NonNullable<PaginationProps['type']>]: string
+} = {
+  shadowed: '0 1px 2px 0 rgba(0, 0, 0, 0.12)',
+  bordered: '0 0 0 1px #e6e6e6',
+}
+
+export const Pagination: FunctionComponent<PaginationProps> = ({
+  totalPages,
+  pageRangeDisplayed,
+  activePage,
+  onChange,
+  type = 'shadowed',
+}) => (
   <PaginationControl
-    totalPages={props.totalPages}
-    pageRangeDisplayed={props.pageRangeDisplayed}
-    activePage={props.activePage}
+    totalPages={totalPages}
+    pageRangeDisplayed={pageRangeDisplayed}
+    activePage={activePage}
     children={renderProps => (
       <Flex>
-        {props.withStartButton ? (
-          <PageControl
-            pageNumber={1}
-            hovered={renderProps.hovered}
-            id={`start_button`}
-            onClick={props.onChange}
-            onMouseEnter={renderProps.onMouseEnter}
-            children={renderPageProps => (
-              <Card
-                height={12}
-                width={27}
-                display="inline-flex"
-                cursor="pointer"
-                bg={renderPageProps.hovered ? '#f5f5f5' : '#fff'}
-                s="0 1px 2px 0 rgba(0, 0, 0, 0.12)"
-                mr={5}
-                r="10px"
-                onMouseEnter={renderPageProps.onMouseEnter}
-                onClick={renderPageProps.onClick}
-                onMouseLeave={renderProps.onMouseLeave}
-              >
-                <Box m="auto">
-                  <Text bold={false} size="s">
-                    В начало
-                  </Text>
-                </Box>
-              </Card>
-            )}
-          />
-        ) : null}
         <Card
           bg="#fff"
-          s="0 1px 2px 0 rgba(0, 0, 0, 0.12)"
+          s={PaginationType[type]}
           height={12}
           display="inline-flex"
-          r="10px"
+          r={10}
           onMouseLeave={renderProps.onMouseLeave}
         >
           <PageControl
@@ -62,7 +45,7 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
             hovered={renderProps.hovered}
             disabled={renderProps.currentPage === 1}
             id="start"
-            onClick={props.onChange}
+            onClick={onChange}
             onMouseEnter={renderProps.onMouseEnter}
             children={renderPageProps => (
               <Card
@@ -72,8 +55,8 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
                 cursor={renderPageProps.disabled ? 'default' : 'pointer'}
                 bg={
                   renderPageProps.hovered && !renderPageProps.disabled
-                  ? '#f5f5f5'
-                  : undefined
+                    ? '#f5f5f5'
+                    : undefined
                 }
                 s="1px 0 0 #e6e6e6"
                 onMouseEnter={renderPageProps.onMouseEnter}
@@ -95,7 +78,7 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
             hovered={renderProps.hovered}
             disabled={!renderProps.hasPreviousPage}
             id="prev"
-            onClick={props.onChange}
+            onClick={onChange}
             onMouseEnter={renderProps.onMouseEnter}
             children={renderPageProps => (
               <Card
@@ -105,8 +88,8 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
                 cursor={renderPageProps.disabled ? 'default' : 'pointer'}
                 bg={
                   renderPageProps.hovered && !renderPageProps.disabled
-                  ? '#f5f5f5'
-                  : undefined
+                    ? '#f5f5f5'
+                    : undefined
                 }
                 s="1px 0 0 #e6e6e6"
                 onMouseEnter={renderPageProps.onMouseEnter}
@@ -129,7 +112,7 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
               pageNumber={pageNumber}
               hovered={renderProps.hovered}
               id={`page_${index}`}
-              onClick={props.onChange}
+              onClick={onChange}
               onMouseEnter={renderProps.onMouseEnter}
               children={renderPageProps => (
                 <Card
@@ -164,7 +147,7 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
             hovered={renderProps.hovered}
             disabled={!renderProps.hasNextPage}
             id="next"
-            onClick={props.onChange}
+            onClick={onChange}
             onMouseEnter={renderProps.onMouseEnter}
             children={renderPageProps => (
               <Card
@@ -197,7 +180,7 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
             hovered={renderProps.hovered}
             disabled={renderProps.currentPage === renderProps.totalPages}
             id="end"
-            onClick={props.onChange}
+            onClick={onChange}
             onMouseEnter={renderProps.onMouseEnter}
             children={renderPageProps => (
               <Card
@@ -229,3 +212,7 @@ export const Pagination: FunctionComponent<PaginationProps> = props => (
     )}
   />
 )
+
+Pagination.defaultProps = {
+  type: 'shadowed',
+}
