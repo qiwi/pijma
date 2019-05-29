@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.42.0](https://github.com/qiwi/pijma/compare/v1.41.0...v1.42.0) (2019-05-29)
+
+
+### Features
+
+* add switch ([e956066](https://github.com/qiwi/pijma/commit/e956066))
+
 # [@qiwi/pijma-desktop-v1.40.0](https://github.com/qiwi/pijma/compare/v1.39.0...v1.40.0) (2019-05-21)
 
 
