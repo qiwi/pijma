@@ -5,11 +5,11 @@ import {Icon} from '@qiwi/pijma-media'
 import {Text} from '../typography'
 
 export interface PaginationProps {
-  totalPages: number
-  pageRangeDisplayed: number
-  activePage: number
-  onChange?: (index: number) => void
+  total: number
+  active: number
+  count?: number
   type?: 'bordered' | 'shadowed'
+  onChange?: (index: number) => void
 }
 
 const PaginationType: {
@@ -20,16 +20,16 @@ const PaginationType: {
 }
 
 export const Pagination: FunctionComponent<PaginationProps> = ({
-  totalPages,
-  pageRangeDisplayed,
-  activePage,
+  total,
+  count = 5,
+  active,
   onChange,
   type = 'shadowed',
 }) => (
   <PaginationControl
-    totalPages={totalPages}
-    pageRangeDisplayed={pageRangeDisplayed}
-    activePage={activePage}
+    total={total}
+    count={count}
+    active={active}
     children={renderProps => (
       <Flex>
         <Card
@@ -215,4 +215,5 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
 
 Pagination.defaultProps = {
   type: 'shadowed',
+  count: 5,
 }

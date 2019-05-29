@@ -2,9 +2,8 @@
 initialState = {activePage: 1};
 <Card bg="#eee" p={4}>
   <Pagination
-    totalPages={10}
-    pageRangeDisplayed={3}
-    activePage={state.activePage}
+    total={10}
+    active={state.activePage}
     onChange={(activePage) => setState({activePage})}
   />
 </Card>
@@ -14,9 +13,8 @@ initialState = {activePage: 1};
 initialState = {activePage: 1};
 <Card bg="#fff" p={4}>
   <Pagination
-    totalPages={10}
-    pageRangeDisplayed={3}
-    activePage={state.activePage}
+    total={10}
+    active={state.activePage}
     type="bordered"
     onChange={(activePage) => setState({activePage})}
   />
