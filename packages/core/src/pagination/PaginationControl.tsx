@@ -6,38 +6,16 @@ export interface PaginationControlProps {
   active: number
   count: number
   children: RenderChild<{
-    hasPreviousPage: boolean
     previousPage: number
-    hasNextPage: boolean
     nextPage: number
     pages: number[]
     currentPage: number
     totalPages: number
-    onMouseEnter: (id: string) => void
-    onMouseLeave: () => void
-    hovered: string
   }>
 }
 
-export interface PaginationControlState {
-  hovered: string
-}
+export class PaginationControl extends React.Component<PaginationControlProps> {
 
-export class PaginationControl extends React.Component<PaginationControlProps, PaginationControlState> {
-
-  public state: PaginationControlState = {
-    hovered: '',
-  }
-  private onPageMouseEnter = (id: string) => {
-    this.setState({
-      hovered: id,
-    })
-  }
-  private onPageMouseLeave = () => {
-    this.setState({
-      hovered: '',
-    })
-  }
   private buildPages = () => {
     const {total, count, active} = this.props
     const totalPages = Math.max(Math.ceil(total), 1)
@@ -68,18 +46,13 @@ export class PaginationControl extends React.Component<PaginationControlProps, P
     }
 
     return {
-      hasPreviousPage: currentPage > 1,
       previousPage: currentPage - 1,
-      hasNextPage: currentPage < totalPages,
       nextPage: currentPage + 1,
       currentPage,
       totalPages,
       pages: new Array(lastPage - firstPage + 1)
         .fill(0)
         .map((_, i) => firstPage + i),
-      onMouseEnter: this.onPageMouseEnter,
-      onMouseLeave: this.onPageMouseLeave,
-      hovered: this.state.hovered,
     }
   }
   public render() {
