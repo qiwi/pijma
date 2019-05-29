@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.43.0](https://github.com/qiwi/pijma/compare/v1.42.0...v1.43.0) (2019-05-29)
+
+
+### Features
+
+* add mobile switch ([11190ea](https://github.com/qiwi/pijma/commit/11190ea))
+
 # [@qiwi/pijma-mobile-v1.42.0](https://github.com/qiwi/pijma/compare/v1.41.0...v1.42.0) (2019-05-29)
 
 
