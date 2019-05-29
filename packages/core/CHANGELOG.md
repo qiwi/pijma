@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.41.0](https://github.com/qiwi/pijma/compare/v1.40.0...v1.41.0) (2019-05-29)
+
+
+### Features
+
+* striper ([caf2af8](https://github.com/qiwi/pijma/commit/caf2af8))
+
 # [@qiwi/pijma-core-v1.40.0](https://github.com/qiwi/pijma/compare/v1.39.0...v1.40.0) (2019-05-21)
 
 
