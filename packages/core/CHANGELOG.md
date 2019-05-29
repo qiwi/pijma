@@ -1,3 +1,24 @@
+# [@qiwi/pijma-core-v1.41.0](https://github.com/qiwi/pijma/compare/v1.40.0...v1.41.0) (2019-05-29)
+
+
+### Features
+
+* striper ([caf2af8](https://github.com/qiwi/pijma/commit/caf2af8))
+
+# [@qiwi/pijma-core-v1.40.0](https://github.com/qiwi/pijma/compare/v1.39.0...v1.40.0) (2019-05-21)
+
+
+### Features
+
+* breaker ([10bc3c0](https://github.com/qiwi/pijma/commit/10bc3c0))
+
+# [@qiwi/pijma-core-v1.39.0](https://github.com/qiwi/pijma/compare/v1.38.0...v1.39.0) (2019-05-13)
+
+
+### Features
+
+* drop up ([58e91ad](https://github.com/qiwi/pijma/commit/58e91ad))
+
 # [@qiwi/pijma-core-v1.37.0](https://github.com/qiwi/pijma/compare/v1.36.1...v1.37.0) (2019-04-10)
 
 

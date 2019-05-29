@@ -61,6 +61,7 @@ import QuestionIcon from './QuestionIcon'
 import QiwiIcon from './QiwiIcon'
 import ReceiptIcon from './ReceiptIcon'
 import RefundIcon from './RefundIcon'
+import RejectIcon from './RejectIcon'
 import RepeatIcon from './RepeatIcon'
 import SearchIcon from './SearchIcon'
 import SendIcon from './SendIcon'
@@ -144,6 +145,7 @@ export {
   QiwiIcon,
   ReceiptIcon,
   RefundIcon,
+  RejectIcon,
   RepeatIcon,
   SearchIcon,
   SendIcon,

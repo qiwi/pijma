@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo} from '@qiwi/pijma-core'
+import {Breaker, Typo} from '@qiwi/pijma-core'
 
 export interface CaptionProps {
   color?: 'default' | 'support' | 'inverse'
@@ -22,7 +22,7 @@ export const Caption: FunctionComponent<CaptionProps> = ({color = 'support', chi
     color={CaptionColor[color]}
     transform="uppercase"
     spacing={1.5}
-    children={children}
+    children={<Breaker children={children}/>}
   />
 )
 

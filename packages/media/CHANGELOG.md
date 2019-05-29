@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.38.0](https://github.com/qiwi/pijma/compare/v1.37.0...v1.38.0) (2019-04-16)
+
+
+### Features
+
+* **media:** add reject icon and some fixes ([2ad7983](https://github.com/qiwi/pijma/commit/2ad7983))
+
 # [@qiwi/pijma-media-v1.36.1](https://github.com/qiwi/pijma/compare/v1.36.0...v1.36.1) (2019-03-05)
 
 
