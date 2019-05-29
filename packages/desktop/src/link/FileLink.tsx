@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {LinkControl, Lnk, FlexItem, Flex, IconWrapper, Box} from '@qiwi/pijma-core'
+import {LinkControl, Lnk, FlexItem, Flex, IconWrapper} from '@qiwi/pijma-core'
 import {Icon} from '@qiwi/pijma-media'
 import {Text} from '../typography'
 
@@ -32,7 +32,7 @@ export const FileLink: FC<FileLinkProps> = (props) => (
     target={props.target}
     download={props.download}
     rel={props.rel}
-    children={renderProps => (
+    children={(renderProps) => (
       <FlexLink
         tabIndex={props.tabIndex}
         href={props.href}
@@ -40,12 +40,12 @@ export const FileLink: FC<FileLinkProps> = (props) => (
         download={props.download}
         rel={props.rel}
         title={props.title}
-        display="flex"
+        display="inline-flex"
+        cursor="pointer"
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
       >
         <FlexItem
-          cursor="pointer"
           display="inline-block"
           width={6}
           height={6}
@@ -57,12 +57,17 @@ export const FileLink: FC<FileLinkProps> = (props) => (
           onMouseUp={renderProps.onMouseUp}
           onMouseDown={renderProps.onMouseDown}
         >
-          <IconWrapper color={renderProps.hover || renderProps.focus ? '#FF8C00' : '#000'}>
+          <IconWrapper
+            color={
+              renderProps.hover || renderProps.focus || renderProps.active
+                ? '#FF8C00'
+                : '#000'
+            }
+          >
             <Icon name="file" />
           </IconWrapper>
         </FlexItem>
-        <Box
-          cursor="pointer"
+        <FlexItem
           onClick={renderProps.onClick}
           onMouseEnter={renderProps.onMouseEnter}
           onMouseLeave={renderProps.onMouseLeave}
@@ -70,12 +75,15 @@ export const FileLink: FC<FileLinkProps> = (props) => (
           onMouseDown={renderProps.onMouseDown}
         >
           <Text
-            color={renderProps.hover || renderProps.focus ? 'warning' : 'default'}
+            color={
+              renderProps.hover || renderProps.focus || renderProps.active ? 'warning' : 'default'
+            }
             decoration="none"
             size="m"
+            bold={false}
             children={props.children}
           />
-        </Box>
+        </FlexItem>
       </FlexLink>
     )}
   />
