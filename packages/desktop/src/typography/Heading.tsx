@@ -1,11 +1,12 @@
 import React, {FunctionComponent} from 'react'
 
-import {Breaker, Typo} from '@qiwi/pijma-core'
+import {Breaker, Typo, TypoProps} from '@qiwi/pijma-core'
 
 export interface HeadingProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   size: '1' | '2' | '3' | '4' | '5'
   color?: 'default' | 'inverse'
+  align?: TypoProps['align']
 }
 
 const HeadingSize: { [size in HeadingProps['size']]: number } = {
@@ -45,7 +46,7 @@ const HeadingColor: { [color in NonNullable<HeadingProps['color']>]: string } = 
   inverse: '#fff',
 }
 
-export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'default', children}) => (
+export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'default', align, children}) => (
   <Typo
     as={tag ? tag : HeadingTag[size]}
     display="block"
@@ -53,6 +54,7 @@ export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'de
     height={HeadingHeight[size]}
     weight={HeadingWeight[size]}
     color={HeadingColor[color]}
+    align={align}
     children={<Breaker children={children}/>}
   />
 )
