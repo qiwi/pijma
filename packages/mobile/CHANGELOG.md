@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.44.0](https://github.com/qiwi/pijma/compare/v1.43.0...v1.44.0) (2019-05-30)
+
+
+### Features
+
+* add props to paragraph and text ([5f218ab](https://github.com/qiwi/pijma/commit/5f218ab))
+
 # [@qiwi/pijma-mobile-v1.43.0](https://github.com/qiwi/pijma/compare/v1.42.0...v1.43.0) (2019-05-29)
 
 
