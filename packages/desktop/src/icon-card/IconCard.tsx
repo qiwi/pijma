@@ -3,7 +3,7 @@ import {Box} from '@qiwi/pijma-core'
 import {BlockLink} from '../link'
 import {Paragraph} from '../typography'
 
-export interface LogoCardProps {
+export interface IconCardProps {
   description?: string
   icon: ReactNode
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
@@ -17,7 +17,7 @@ export interface LogoCardProps {
   title?: string
 }
 
-export const LogoCard: FC<LogoCardProps> = ({title, icon, description, ...props}) => (
+export const IconCard: FC<IconCardProps> = ({title, icon, description, ...props}) => (
   <BlockLink
     accent
     tabIndex={props.tabIndex}
