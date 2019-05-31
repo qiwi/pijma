@@ -30,7 +30,7 @@ export const LogoCard: FC<LogoCardProps> = ({title, icon, description, ...props}
     onBlur={props.onBlur}
   >
     {() => (
-      <Box p={4} pt={0} minHeight={64} minWidth={55} css={{textAlign: 'center'}}>
+      <Box p={4} pt={0} minHeight={55} css={{textAlign: 'center'}}>
         <Box width={16} height={16} mt={11} mx="auto">
           {typeof icon === 'string' ? (
             <img src={icon} alt={title} />
