@@ -45,6 +45,11 @@ export const FileLink: FC<FileLinkProps> = (props) => (
         align="center"
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
+        onClick={renderProps.onClick}
+        onMouseEnter={renderProps.onMouseEnter}
+        onMouseLeave={renderProps.onMouseLeave}
+        onMouseUp={renderProps.onMouseUp}
+        onMouseDown={renderProps.onMouseDown}
       >
         <FlexItem
           display="inline-block"
@@ -52,11 +57,6 @@ export const FileLink: FC<FileLinkProps> = (props) => (
           height={6}
           mr={2}
           shrink={0}
-          onClick={renderProps.onClick}
-          onMouseEnter={renderProps.onMouseEnter}
-          onMouseLeave={renderProps.onMouseLeave}
-          onMouseUp={renderProps.onMouseUp}
-          onMouseDown={renderProps.onMouseDown}
         >
           <IconWrapper
             color={
@@ -68,14 +68,7 @@ export const FileLink: FC<FileLinkProps> = (props) => (
             <Icon name="file" />
           </IconWrapper>
         </FlexItem>
-        <FlexItem
-          onClick={renderProps.onClick}
-          onMouseEnter={renderProps.onMouseEnter}
-          onMouseLeave={renderProps.onMouseLeave}
-          onMouseUp={renderProps.onMouseUp}
-          onMouseDown={renderProps.onMouseDown}
-          height={5}
-        >
+        <FlexItem height={5}>
           <Text
             color={
               renderProps.hover || renderProps.focus || renderProps.active ? 'warning' : 'default'
