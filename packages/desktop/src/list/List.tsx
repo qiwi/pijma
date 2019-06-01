@@ -33,18 +33,18 @@ export const List: FunctionComponent<ListProps> = props => (
       <Flex key={index} as="li" mt={index > 0 ? ItemIndent[props.type] : 0}>
         {props.type === 'number' ? (
           <FlexItem width={String(props.children.length).length * 2 + 3} shrink={0}>
-            <Text size="m" bold={false}>{index + 1}.</Text>
+            <Text size="m" bold={false} compact>{index + 1}.</Text>
           </FlexItem>
         ) : props.type === 'bullet' ? (
           <FlexItem width={5} shrink={0}>
-            <Text size="m" bold={false}>&#8226;</Text>
+            <Text size="m" bold={false} compact>&#8226;</Text>
           </FlexItem>
         ) : props.type === 'step' ? (
           <Flex direction="column" height="auto" mr={5}>
             <FlexItem shrink={0}>
               <Card bg="#F5F5F5" r="50%" height={10} width={10}>
                 <Flex align="center" justify="center" height={1} width={1}>
-                  <Text size="m" bold>
+                  <Text size="m" bold compact>
                     {index + 1}
                   </Text>
                 </Flex>
@@ -59,7 +59,7 @@ export const List: FunctionComponent<ListProps> = props => (
         ) : null}
         <Box my={ListItemYMargin[props.type]}>
           {typeof item === 'string' ? (
-            <Paragraph size="m">{item}</Paragraph>
+            <Paragraph size="m" compact>{item}</Paragraph>
           ) : (
             item
           )}
