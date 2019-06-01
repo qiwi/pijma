@@ -95,7 +95,7 @@ export class AccordionControl<I> extends React.Component<
       onKeyDown: this.onKeyDown,
       items: this.props.items.map((item, index) => ({
         ...item,
-        opened: this.props.opened.findIndex(i => i === index) !== -1,
+        opened: this.props.opened.includes(index),
         hovered: index === this.state.hovered,
         focused: index === this.state.focused,
         onClick: this.onItemClick(index),
