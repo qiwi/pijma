@@ -30,7 +30,7 @@ export const IconCard: FC<IconCardProps> = ({title, icon, description, ...props}
     onBlur={props.onBlur}
   >
     {() => (
-      <Box p={4} pt={0} minHeight={55} css={{textAlign: 'center'}}>
+      <Box p={4} pt={0} minHeight={55}>
         <Box width={16} height={16} mt={11} mx="auto">
           {typeof icon === 'string' ? (
             <img src={icon} alt={title} />
@@ -44,6 +44,7 @@ export const IconCard: FC<IconCardProps> = ({title, icon, description, ...props}
             size="m"
             bold
             children={title}
+            align="center"
           />
         </Box>
         {description ? (
@@ -52,6 +53,7 @@ export const IconCard: FC<IconCardProps> = ({title, icon, description, ...props}
               color="support"
               size="s"
               children={description}
+              align="center"
             />
           </Box>
         ) : null}
