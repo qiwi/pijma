@@ -1,7 +1,7 @@
 import React, {FC, isValidElement, ReactNode} from 'react'
 import {Flex, FlexItem, Icon, Spacer} from '@qiwi/pijma-core'
-import {Heading, Paragraph} from '@qiwi/pijma-desktop'
 import {IconName} from '@qiwi/pijma-media'
+import {Heading, Paragraph} from '../typography/'
 
 export interface NoticeProps {
   icon: ReactNode
