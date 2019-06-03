@@ -4,8 +4,8 @@ import {Heading, Paragraph} from '@qiwi/pijma-desktop'
 import {IconName} from '@qiwi/pijma-media'
 
 export interface NoticeProps {
-  icon: ReactNode | IconName
-  title?: string | ReactNode
+  icon: ReactNode
+  title?: ReactNode
 }
 
 export const Notice: FC<NoticeProps> = ({icon, title, children}) => (
@@ -18,7 +18,10 @@ export const Notice: FC<NoticeProps> = ({icon, title, children}) => (
         children={<Icon name={icon as IconName}/>}
       />
     ) : isValidElement(icon) ? (
-      icon
+      <FlexItem shrink={0}
+                basis={6}
+                mr={title ? 4 : 2}
+                children={icon} />
     ) : (
       null
     )}
