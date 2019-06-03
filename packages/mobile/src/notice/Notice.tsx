@@ -18,10 +18,12 @@ export const Notice: FC<NoticeProps> = ({icon, title, children}) => (
         children={<Icon name={icon as IconName}/>}
       />
     ) : isValidElement(icon) ? (
-      <FlexItem shrink={0}
-                basis={6}
-                mr={title ? 4 : 2}
-                children={icon} />
+      <FlexItem
+        shrink={0}
+        basis={6}
+        mr={title ? 4 : 2}
+        children={icon}
+      />
     ) : (
       null
     )}
