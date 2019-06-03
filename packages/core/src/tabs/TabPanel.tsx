@@ -1,27 +1,21 @@
 import React, {ReactNode, Children} from 'react'
 
-import {Box, Flex} from '../primitive'
+import {Box} from '../primitive'
 
-export interface TabPanelProps {
-  vertical?: boolean
-  selected?: boolean
-}
+export class TabPanel extends React.Component<{}, {}> {
 
-export class TabPanel extends React.Component<TabPanelProps, {}> {
-
-  public tabsRole: string = 'TabPanel'
   public render() {
-    const {vertical, children} = this.props
+    const {children} = this.props
     const elements = Children.toArray(children).filter(child => !!child)
     if (elements.length === 0) {
       return null
     }
     return (
-      <Flex direction={vertical ? 'column' : 'row'}>
+      <Box>
         {Children.map(elements, (child: ReactNode, key: number) => (
           <Box key={key} children={child} />
         ))}
-      </Flex>
+      </Box>
     )
   }
 

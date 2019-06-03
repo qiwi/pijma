@@ -10,6 +10,7 @@ export interface TabsControlProps {
 
 export interface TabsControlState {
   selected: number
+  focused: number
 }
 
 export class TabsControl extends React.Component<
@@ -19,6 +20,7 @@ export class TabsControl extends React.Component<
 
   public state: TabsControlState = {
     selected: this.props.selected || 0,
+    focused: -1,
   }
 
   private onSelect = (selected: number) => {
@@ -28,6 +30,18 @@ export class TabsControl extends React.Component<
     if (this.props.onSelect) {
       this.props.onSelect(selected)
     }
+  }
+
+  private onMouseLeave = () => {
+    this.setState({
+      focused: -1,
+    })
+  }
+
+  private onMouseEnter = (value: number) => {
+    this.setState({
+      focused: value,
+    })
   }
 
   private renderChild: () => React.ReactNode = () => {
@@ -44,8 +58,11 @@ export class TabsControl extends React.Component<
               (element: React.ReactNode, index: number) => {
                 if (React.isValidElement(element) && isTab(element)) {
                   return React.cloneElement(element, {
-                    selected: !!this.state.selected,
+                    selected: this.state.selected === index,
+                    focused: this.state.focused === index,
                     onSelect: () => this.onSelect(index),
+                    onMouseEnter: () => this.onMouseEnter(index),
+                    onMouseLeave: this.onMouseLeave,
                   })
                 }
 
@@ -59,7 +76,10 @@ export class TabsControl extends React.Component<
             children: React.Children.map(
               element.props.children,
               (element: React.ReactNode, index: number) => {
-                if (React.isValidElement(element) && index === this.state.selected) {
+                if (
+                  React.isValidElement(element) &&
+                  index === this.state.selected
+                ) {
                   return element
                 }
 
