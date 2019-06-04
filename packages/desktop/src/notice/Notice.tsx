@@ -1,10 +1,9 @@
 import React, {FC, ReactNode} from 'react'
-import {Flex, FlexItem, Icon, Spacer} from '@qiwi/pijma-core'
-import {IconName} from '@qiwi/pijma-media'
+import {Flex, FlexItem, Spacer} from '@qiwi/pijma-core'
 import {Heading, Paragraph} from '../typography/'
 
 export interface NoticeProps {
-  icon: IconName
+  icon: ReactNode
   title?: ReactNode
 }
 
@@ -14,7 +13,7 @@ export const Notice: FC<NoticeProps> = ({icon, title, children}) => (
       shrink={0}
       basis={6}
       mr={title ? 4 : 2}
-      children={<Icon name={icon}/>}
+      children={icon}
     />
     {title || children ? (
       <FlexItem>

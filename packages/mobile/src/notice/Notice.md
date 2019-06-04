@@ -3,7 +3,7 @@
   <Block>
     <Card p={7}>
       <Notice 
-        icon="attention"
+        icon={<IconWrapper color="#ff0000"><Icon name="attention"/></IconWrapper>}
         title="Заголовок какого-нибудь алерта"
         children={"Заголовок какого-нибудь алерта \n Заголовок какого-нибудь алерта"}
       />
@@ -16,7 +16,7 @@
   <Block>
     <Card p={7}>
       <Notice 
-        icon="attention"
+        icon={<Icon name="attention"/>}
         children={"Заголовок какого-нибудь алерта \n Заголовок какого-нибудь алерта"}
       />
     </Card>
