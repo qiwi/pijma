@@ -39,6 +39,7 @@ export class Tab extends React.Component<TabProps, {}> {
 
     return (
       <Box
+        maxWidth={38}
         mr={6.5}
         cursor="pointer"
         onMouseEnter={onMouseEnter}
@@ -47,15 +48,27 @@ export class Tab extends React.Component<TabProps, {}> {
         <Pos type="relative" width={1} height={1}>
           <Flex
             direction={vertical ? 'column' : 'row'}
+            justify={vertical ? 'center' : 'flex-start'}
             onClick={this.onClick}
-            pb={4}
+            pb={vertical ? 6 : 4}
           >
-            {icon ? <Box children={icon} height="6" /> : null}
+            {icon ? (
+              <Flex
+                children={icon}
+                pr={vertical ? 0 : 1}
+                pb={vertical ? 3 : 0}
+                justify={vertical ? 'center' : 'flex-start'}
+                css={{
+                  fill: selected ? '#ff8c00' : focused ? '#ff8c00' : '#666',
+                }}
+              />
+            ) : null}
             <Typo
               display="block"
+              align={vertical ? 'center' : 'left'}
               color={selected ? '#000' : focused ? '#ff8c00' : '#666'}
               weight={500}
-              size={4}
+              size={vertical ? 3.5 : 4}
               height={6}
               children={children}
             />

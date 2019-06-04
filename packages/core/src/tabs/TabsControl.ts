@@ -52,12 +52,15 @@ export class TabsControl extends React.Component<
           return null
         }
         if (React.isValidElement(element) && isTabList(element)) {
-          return React.cloneElement(element, {
+          const tabList = element
+          return React.cloneElement(tabList, {
             children: React.Children.map(
-              element.props.children,
+              tabList.props.children,
               (element: React.ReactNode, index: number) => {
                 if (React.isValidElement(element) && isTab(element)) {
                   return React.cloneElement(element, {
+                    icon: element.props.icon,
+                    vertical: tabList.props.vertical,
                     selected: this.state.selected === index,
                     focused: this.state.focused === index,
                     onSelect: () => this.onSelect(index),

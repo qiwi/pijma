@@ -1,6 +1,6 @@
 import React, {ReactNode, Children} from 'react'
 
-import {Box} from '../primitive'
+import {Box, Typo} from '../primitive'
 
 export class TabPanel extends React.Component<{}, {}> {
 
@@ -13,7 +13,15 @@ export class TabPanel extends React.Component<{}, {}> {
     return (
       <Box>
         {Children.map(elements, (child: ReactNode, key: number) => (
-          <Box key={key} children={child} />
+          <Typo
+            key={key}
+            display="block"
+            color="#000"
+            weight={300}
+            size={4}
+            height={6}
+            children={child}
+          />
         ))}
       </Box>
     )
