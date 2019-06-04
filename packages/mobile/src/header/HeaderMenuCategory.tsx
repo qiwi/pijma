@@ -1,7 +1,7 @@
 import React, {FC, Fragment} from 'react'
 
 import {Flex} from '@qiwi/pijma-core'
-import {Caption} from '@qiwi/pijma-mobile'
+import {Caption} from '../typography'
 
 interface HeaderMenuCategoryProps {
   title: string

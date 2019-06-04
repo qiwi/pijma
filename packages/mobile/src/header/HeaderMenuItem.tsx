@@ -1,7 +1,7 @@
 import React, {FC, ReactNode} from 'react'
 
 import {Flex, FlexItem, styled} from '@qiwi/pijma-core'
-import {Paragraph} from '@qiwi/pijma-mobile'
+import {Paragraph} from '../typography'
 
 export interface HeaderMenuItemProps {
   text: string
