@@ -30,10 +30,10 @@ export const IconCard: FC<IconCardProps> = ({title, icon, description, ...props}
     onBlur={props.onBlur}
   >
     {() => (
-      <Box p={4} minHeight={55}>
-        <Box width={16} height={16} mt={7} mx="auto">
+      <Box p={4}>
+        <Box mt={7} mx="auto" maxWidth={16} maxHeight={16}>
           {typeof icon === 'string' ? (
-            <img src={icon} alt={title} width={64} />
+            <img src={icon} alt={title}/>
           ) : (
             icon
           )}
@@ -43,8 +43,8 @@ export const IconCard: FC<IconCardProps> = ({title, icon, description, ...props}
             color="default"
             size="m"
             bold
-            children={title}
             align="center"
+            children={title}
           />
         </Box>
         {description ? (
@@ -52,11 +52,13 @@ export const IconCard: FC<IconCardProps> = ({title, icon, description, ...props}
             <Paragraph
               color="support"
               size="s"
-              children={description}
               align="center"
+              children={description}
             />
           </Box>
-        ) : null}
+        ) : (
+          null
+        )}
       </Box>
     )}
   </BlockLink>
