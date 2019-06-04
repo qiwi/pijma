@@ -17,6 +17,8 @@ export interface IconCardProps {
   title?: string
 }
 
+const Img = Box.withComponent('img')
+
 export const IconCard: FC<IconCardProps> = ({title, icon, description, ...props}) => (
   <BlockLink
     accent
@@ -31,9 +33,9 @@ export const IconCard: FC<IconCardProps> = ({title, icon, description, ...props}
   >
     {() => (
       <Box p={4} height={1} minHeight={55}>
-        <Box mt={7} mx="auto" maxWidth={16} maxHeight={16}>
+        <Box width={16} height={16} mt={7} mx="auto">
           {typeof icon === 'string' ? (
-            <img src={icon} alt={title}/>
+            <Img src={icon} alt={title} maxWidth={16} maxHeight={16}/>
           ) : (
             icon
           )}
