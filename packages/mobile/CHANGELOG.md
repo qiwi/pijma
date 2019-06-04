@@ -1,3 +1,24 @@
+# [@qiwi/pijma-mobile-v1.44.0](https://github.com/qiwi/pijma/compare/v1.43.0...v1.44.0) (2019-05-30)
+
+
+### Features
+
+* add props to paragraph and text ([5f218ab](https://github.com/qiwi/pijma/commit/5f218ab))
+
+# [@qiwi/pijma-mobile-v1.43.0](https://github.com/qiwi/pijma/compare/v1.42.0...v1.43.0) (2019-05-29)
+
+
+### Features
+
+* add mobile switch ([11190ea](https://github.com/qiwi/pijma/commit/11190ea))
+
+# [@qiwi/pijma-mobile-v1.42.0](https://github.com/qiwi/pijma/compare/v1.41.0...v1.42.0) (2019-05-29)
+
+
+### Features
+
+* add switch ([e956066](https://github.com/qiwi/pijma/commit/e956066))
+
 # [@qiwi/pijma-mobile-v1.40.0](https://github.com/qiwi/pijma/compare/v1.39.0...v1.40.0) (2019-05-21)
 
 
