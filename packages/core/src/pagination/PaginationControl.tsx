@@ -41,7 +41,10 @@ export class PaginationControl extends React.Component<PaginationControlProps> {
     }
   }
   public render() {
-    return this.props.children(this.buildPages())
+    const {total, count, active} = this.props
+    const isValidProps: boolean = (active <= total) && (active <= count) && (count <= total)
+
+    return isValidProps ? this.props.children(this.buildPages()) : null
   }
 
 }

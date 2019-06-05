@@ -1,12 +1,14 @@
 import React, {FC} from 'react'
 
-import {LinkControl, Lnk, Card, Value, RenderChild} from '@qiwi/pijma-core'
+import {LinkControl, Lnk, Card, Value, RenderChild, Box} from '@qiwi/pijma-core'
 
 export interface PageLinkProps {
   pageNumber: number
   disabled?: boolean
   height?: Value
   width?: Value
+  boxWidth?: Value
+  boxHeight?: Value
   s?: string
   onClick?: (index: number) => void
   children: RenderChild<{
@@ -18,7 +20,7 @@ export interface PageLinkProps {
 
 const CardLink = Card.withComponent(Lnk)
 
-export const PageLink: FC<PageLinkProps> = props => (
+export const PaginationLink: FC<PageLinkProps> = props => (
   <LinkControl
     onClick={() =>
       !props.disabled && props.onClick && props.onClick(props.pageNumber)
@@ -43,12 +45,18 @@ export const PageLink: FC<PageLinkProps> = props => (
         onMouseLeave={renderProps.onMouseLeave}
         onMouseUp={renderProps.onMouseUp}
         onMouseDown={renderProps.onMouseDown}
-        children={props.children({
-          disabled: props.disabled || false,
-          hover: renderProps.hover,
-          focus: renderProps.focus,
-        })}
-      />
+      >
+        <Box
+          m="auto"
+          width={props.boxWidth}
+          height={props.boxHeight}
+          children={props.children({
+            disabled: props.disabled || false,
+            hover: renderProps.hover,
+            focus: renderProps.focus,
+          })}
+        />
+      </CardLink>
     )}
   />
 )
