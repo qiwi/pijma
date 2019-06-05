@@ -1,7 +1,7 @@
 import React from 'react'
 import RenderChild from '../RenderChild'
 
-export interface AccordionControlProps<I> {
+export interface BlockAccordionControlProps<I> {
   items: I[]
   opened: number[]
   onChange: (opened: number[]) => void
@@ -22,17 +22,17 @@ export interface AccordionControlProps<I> {
   }>
 }
 
-export interface AccordionControlState {
+export interface BlockAccordionControlState {
   hovered: number
   focused: number
 }
 
-export class AccordionControl<I> extends React.Component<
-  AccordionControlProps<I>,
-  AccordionControlState
+export class BlockAccordionControl<I> extends React.Component<
+  BlockAccordionControlProps<I>,
+  BlockAccordionControlState
 > {
 
-  public state: AccordionControlState = {
+  public state: BlockAccordionControlState = {
     hovered: -1,
     focused: -1,
   }

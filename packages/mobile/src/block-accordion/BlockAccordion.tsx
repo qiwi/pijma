@@ -1,48 +1,35 @@
 import React, {FunctionComponent, ReactNode} from 'react'
 
-import {AccordionControl, Box, Card, Flex, FlexItem} from '@qiwi/pijma-core'
+import {BlockAccordionControl, Box, Card, Flex, FlexItem} from '@qiwi/pijma-core'
 import {Icon} from '@qiwi/pijma-media'
 import {Paragraph} from '../typography'
 
-export interface AccordionProps<I> {
+export interface BlockAccordionProps<I> {
   items: I[]
   opened: number[]
-  indent?: 's' | 'm' | 'l'
   tabIndex?: number
   onChange: (opened: number[]) => void
 }
 
-export interface AccordionItemModel {
+export interface BlockAccordionItemModel {
   title: string
   content: ReactNode
 }
 
-const AccordionIndent: {
-  [indent in NonNullable<AccordionProps<AccordionItemModel>['indent']>]: number
-} = {
-  s: 8,
-  m: 11,
-  l: 17,
-}
-
-export const Accordion: FunctionComponent<
-  AccordionProps<AccordionItemModel>
-> = ({items, indent = 'm', tabIndex = 0, opened, onChange}) => (
-  <AccordionControl<AccordionItemModel>
+export const BlockAccordion: FunctionComponent<
+  BlockAccordionProps<BlockAccordionItemModel>
+> = ({items, tabIndex = 0, opened, onChange}) => (
+  <BlockAccordionControl<BlockAccordionItemModel>
     items={items}
     opened={opened}
     onChange={onChange}
     children={renderProps => (
-      <Box py={3}>
+      <Box py={2}>
         {renderProps.items.map((item, index) => (
           <Card
             key={index}
             s={
-              item.hovered || item.focused
-                ? '0 0 16px 0 rgba(0, 0, 0, 0.12)'
-                : index > 0 &&
-                  !(renderProps.items[index - 1].hovered ||
-                      renderProps.items[index - 1].focused)
+              index > 0
                 ? '0 -1px 0 #e6e6e6'
                 : undefined
             }
@@ -56,15 +43,15 @@ export const Accordion: FunctionComponent<
               justify="space-between"
               align="start"
               cursor="pointer"
-              px={AccordionIndent[indent]}
+              px={4}
               pt={4}
-              pb={item.opened ? 2 : 4}
+              pb={item.opened ? 1 : 4}
               onClick={item.onClick}
               onFocus={item.onFocus}
               onBlur={item.onBlur}
               onKeyDown={renderProps.onKeyDown}
             >
-              <Paragraph bold size="m">
+              <Paragraph bold size="s">
                 {item.title}
               </Paragraph>
               <FlexItem
@@ -78,9 +65,9 @@ export const Accordion: FunctionComponent<
                 <Icon name="angle-small-down" />
               </FlexItem>
             </Flex>
-            <Box px={AccordionIndent[indent]} pb={4} display={item.opened ? 'block' : 'none'}>
+            <Box px={4} pb={4} display={item.opened ? 'block' : 'none'}>
               {typeof item.content === 'string' ? (
-                <Paragraph size="m">{item.content}</Paragraph>
+                <Paragraph size="s">{item.content}</Paragraph>
               ) : (
                 item.content
               )}
@@ -92,7 +79,6 @@ export const Accordion: FunctionComponent<
   />
 )
 
-Accordion.defaultProps = {
-  indent: 'm',
+BlockAccordion.defaultProps = {
   tabIndex: 0,
 }
