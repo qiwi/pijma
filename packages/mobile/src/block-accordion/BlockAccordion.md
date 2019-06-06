@@ -1,12 +1,7 @@
 ```jsx
 initialState = {opened: []};
 <Card bg="#f5f5f5" p={4}>
-  <Box mb={6}>
-    <Heading tag="h3" size="3">
-      Меню-аккордеон
-    </Heading>
-  </Box>
-  <Card r={10} bg="#fff" s="0 1px 2px 0 rgba(0, 0, 0, 0.12)">
+  <Block>
     <BlockAccordion
       opened={state.opened}
       onChange={(opened) => setState({opened})}
@@ -28,6 +23,6 @@ initialState = {opened: []};
         },
       ]}
     />
-  </Card>
+  </Block>
 </Card>
 ```
