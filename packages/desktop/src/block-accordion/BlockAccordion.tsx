@@ -1,6 +1,6 @@
 import React, {FunctionComponent, ReactNode} from 'react'
 
-import {BlockAccordionControl, Box, Card, Flex, FlexItem} from '@qiwi/pijma-core'
+import {AccordionControl, Box, Card, Flex, FlexItem} from '@qiwi/pijma-core'
 import {Icon} from '@qiwi/pijma-media'
 import {Paragraph} from '../typography'
 
@@ -28,7 +28,7 @@ const BlockAccordionIndent: {
 export const BlockAccordion: FunctionComponent<
   BlockAccordionProps<BlockAccordionItemModel>
 > = ({items, indent = 'm', tabIndex = 0, opened, onChange}) => (
-  <BlockAccordionControl<BlockAccordionItemModel>
+  <AccordionControl<BlockAccordionItemModel>
     items={items}
     opened={opened}
     onChange={onChange}
