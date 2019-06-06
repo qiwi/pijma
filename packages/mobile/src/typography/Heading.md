@@ -1,4 +1,3 @@
-
 ## H1
 
 ```css static
@@ -9,22 +8,16 @@ font-weight: 900
 ```
 
 ```jsx
-<Flex>
-  <FlexItem>
+<Block>
+  <BlockContent>
     <Spacer size="m">
       <Heading size="1">
         Заголовок страницы
       </Heading>
+      <Heading size="1" stub/>
     </Spacer>
-  </FlexItem>
-  <FlexItem>
-    <Box ml={5}>
-      <Spacer size="m">
-        <Heading size="1" stub/>
-      </Spacer>
-    </Box>
-  </FlexItem>
-</Flex>
+  </BlockContent>
+</Block>
 ```
 
 ## H2
@@ -37,22 +30,16 @@ font-weight: 900
 ```
 
 ```jsx
-<Flex>
-  <FlexItem>
+<Block>
+  <BlockContent>
     <Spacer size="m">
       <Heading size="2">
         Заголовок раздела
       </Heading>
+      <Heading size="2" stub/>
     </Spacer>
-  </FlexItem>
-  <FlexItem>
-    <Box ml={5}>
-      <Spacer size="m">
-        <Heading size="2" stub/>
-      </Spacer>
-    </Box>
-  </FlexItem>
-</Flex>
+  </BlockContent>
+</Block>
 ```
 
 ## H3
@@ -65,22 +52,16 @@ font-weight: 900
 ```
 
 ```jsx
-<Flex>
-  <FlexItem>
+<Block>
+  <BlockContent>
     <Spacer size="m">
       <Heading size="3">
         Заголовок подраздела
       </Heading>
+      <Heading size="3" stub/>
     </Spacer>
-  </FlexItem>
-  <FlexItem>
-    <Box ml={5}>
-      <Spacer size="m">
-        <Heading size="3" stub/>
-      </Spacer>
-    </Box>
-  </FlexItem>
-</Flex>
+  </BlockContent>
+</Block>
 ```
 
 ## H4
@@ -93,20 +74,14 @@ font-weight: 700
 ```
 
 ```jsx
-<Flex>
-  <FlexItem>
+<Block>
+  <BlockContent>
     <Spacer size="m">
       <Heading size="4">
         Заголовок блока
       </Heading>
+      <Heading size="4" stub/>
     </Spacer>
-  </FlexItem>
-  <FlexItem>
-    <Box ml={5}>
-      <Spacer size="m">
-        <Heading size="4" stub/>
-      </Spacer>
-    </Box>
-  </FlexItem>
-</Flex>
+  </BlockContent>
+</Block>
 ```

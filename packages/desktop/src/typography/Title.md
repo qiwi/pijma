@@ -3,20 +3,18 @@
 Применяются в качестве заголовков
 
 ```jsx
-<Flex>
-  <FlexItem>
-    <Spacer size="m">
-      <Title size="1">Title H1</Title>
-    </Spacer>
-  </FlexItem>
-  <FlexItem>
-    <Box ml={10}>
-      <Spacer size="m">
+<Block>
+  <BlockContent>
+    <Flex>
+      <FlexItem>
+        <Title size="1">Title H1</Title>
+      </FlexItem>
+      <FlexItem ml={10}>
         <Title size="1" stub/>
-      </Spacer>
-    </Box>
-  </FlexItem>
-</Flex>
+      </FlexItem>
+    </Flex>
+  </BlockContent>
+</Block>
 ```
 
 ```css static
@@ -31,20 +29,18 @@ font-weight: 900
 Применяются в качестве подзаголовков на лендингах.
 
 ```jsx
-<Flex>
-  <FlexItem>
-    <Spacer size="m">
-      <Title size="2">Title H2</Title>
-    </Spacer>
-  </FlexItem>
-  <FlexItem>
-    <Box ml={10}>
-      <Spacer size="m">
+<Block>
+  <BlockContent>
+    <Flex>
+      <FlexItem>
+        <Title size="2">Title H2</Title>
+      </FlexItem>
+      <FlexItem ml={10}>
         <Title size="2" stub/>
-      </Spacer>
-    </Box>
-  </FlexItem>
-</Flex>
+      </FlexItem>
+    </Flex>
+  </BlockContent>
+</Block>
 ```
 
 ```css static

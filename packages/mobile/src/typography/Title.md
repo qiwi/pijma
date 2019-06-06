@@ -10,20 +10,14 @@ font-weight: 900
 ```
 
 ```jsx
-<Flex>
-  <FlexItem>
+<Block>
+  <BlockContent>
     <Spacer size="m">
       <Title size="1">Title H1</Title>
+      <Title size="1" stub/>
     </Spacer>
-  </FlexItem>
-  <FlexItem>
-    <Box ml={5}>
-      <Spacer size="m">
-        <Title size="1" stub/>
-      </Spacer>
-    </Box>
-  </FlexItem>
-</Flex>
+  </BlockContent>
+</Block>
 ```
 
 ## Title 2
@@ -36,18 +30,12 @@ font-weight: 900
 ```
 
 ```jsx
-<Flex>
-  <FlexItem>
+<Block>
+  <BlockContent>
     <Spacer size="m">
       <Title size="2">Title H2</Title>
+      <Title size="2" stub/>
     </Spacer>
-  </FlexItem>
-  <FlexItem>
-    <Box ml={5}>
-      <Spacer size="m">
-        <Title size="2" stub/>
-      </Spacer>
-    </Box>
-  </FlexItem>
-</Flex>
+  </BlockContent>
+</Block>
 ```

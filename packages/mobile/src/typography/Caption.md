@@ -7,20 +7,13 @@ letter-spacing: 1.5
 ```
 
 ```jsx
-<Flex>
-  <FlexItem>
+<Block>
+  <BlockContent>
     <Spacer size="m">
       <Caption>Caption Gray</Caption>
       <Caption color="default">Caption Black</Caption>
+      <Caption stub/>
     </Spacer>
-  </FlexItem>
-  <FlexItem>
-    <Box ml={5}>
-      <Spacer size="m">
-        <Caption stub/>
-        <Caption stub/>
-      </Spacer>
-    </Box>
-  </FlexItem>
-</Flex>
+  </BlockContent>
+</Block>
 ```
