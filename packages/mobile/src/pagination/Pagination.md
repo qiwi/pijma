@@ -15,7 +15,7 @@ initialState = {activePage: 1};
   <Pagination
     total={10}
     active={state.activePage}
-    type="bordered"
+    outsided={false}
     onChange={(activePage) => setState({activePage})}
   />
 </Card>
