@@ -54,7 +54,13 @@ export class Tab extends React.Component<TabProps, {}> {
           >
             {icon ? (
               <Flex
-                children={icon}
+                children={
+                  <Box
+                    children={icon}
+                    height={vertical ? 11 : 6}
+                    width={vertical ? 11 : 6}
+                  />
+                }
                 pr={vertical ? 0 : 1}
                 pb={vertical ? 3 : 0}
                 justify={vertical ? 'center' : 'flex-start'}
