@@ -9,6 +9,7 @@ export * from './typography'
 export * from './link'
 export * from './switch'
 export * from './notice'
+export * from './block-accordion'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'
