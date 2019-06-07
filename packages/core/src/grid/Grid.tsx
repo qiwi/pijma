@@ -16,31 +16,24 @@ export const Grid: FC<GridProps> = ({gutter = 20, columns = 12, layout = columns
   const layoutArr: number[] = Array.isArray(layout) ? layout : [layout]
   const layoutSum: number = arrSum(layoutArr)
 
-  const isValidLayout: boolean = columns % layoutSum === 0
-  if (elements.length === 0 || !isValidLayout) {
+  if (elements.length === 0 || columns % layoutSum !== 0) {
     return null
   }
 
   const layoutLength: number = layoutArr.length
-  const rowBlocksCount: number = layoutLength > 1
-    ? columns / layoutSum * layoutLength
-    : columns / layoutSum
+  const rowBlocksCount: number = columns / layoutSum * layoutLength
 
   return (
     <Flex wrap="wrap">
-      {Children.map(elements, (child: ReactNode, index: number) => {
-        const blockLayout: number = layoutArr[index % layoutLength]
-        const columnWidth: string = `calc((100% + ${gutter}px) * ${blockLayout / columns} - ${gutter}px)`
-        return (
-          <FlexItem
-            key={index}
-            width={columnWidth}
-            mt={index >= rowBlocksCount ? `${gutter}px` : 0}
-            ml={index % rowBlocksCount !== 0 ? `${gutter}px` : 0}
-            children={child}
-          />
-        )
-      })}
+      {Children.map(elements, (child: ReactNode, index: number) => (
+        <FlexItem
+          key={index}
+          width={`calc((100% + ${gutter}px) * ${layoutArr[index % layoutLength] / columns} - ${gutter}px)`}
+          mt={index >= rowBlocksCount ? `${gutter}px` : 0}
+          ml={index % rowBlocksCount !== 0 ? `${gutter}px` : 0}
+          children={child}
+        />
+      ))}
     </Flex>
   )
 }
