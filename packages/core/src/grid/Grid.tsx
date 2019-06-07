@@ -40,6 +40,7 @@ export const Grid: FC<GridProps> = ({gutter = 20, columns = 12, layout = columns
 
         return (
           <FlexItem
+            key={index}
             width={columnWidth}
             mt={index >= rowBlocksCount ? gutter : 0}
             ml={index % rowBlocksCount !== 0 ? gutter : 0}
