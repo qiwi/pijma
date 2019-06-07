@@ -22,7 +22,6 @@ export const Grid: FC<GridProps> = ({gutter = 20, columns = 12, layout = columns
   }
 
   const layoutLength: number = layoutArr.length
-  const gutterValue: number = gutter * 4
   const gutterInRowCount: number = columns - 1
   const rowBlocksCount: number = layoutLength > 1
     ? columns / layoutSum * layoutLength
@@ -33,17 +32,18 @@ export const Grid: FC<GridProps> = ({gutter = 20, columns = 12, layout = columns
       {Children.map(elements, (child: ReactNode, index: number) => {
         const blockLayout: number = layoutArr[index % layoutLength]
 
-        const oneColumnWidth: number = 100 / columns * blockLayout
-        const oneColumnGutter: number = gutterInRowCount * gutterValue / columns * blockLayout
-        const gutterIncludesInColumn: number = (blockLayout - 1) * gutterValue
+        const oneColumnWidth: number = 100 * blockLayout / columns
+        const oneColumnGutter: number = gutterInRowCount * gutter * blockLayout / columns
+        console.log(oneColumnGutter)
+        const gutterIncludesInColumn: number = (blockLayout - 1) * gutter
         const columnWidth: string = `calc(${oneColumnWidth}% - ${oneColumnGutter}px + ${gutterIncludesInColumn}px)`
 
         return (
           <FlexItem
             key={index}
             width={columnWidth}
-            mt={index >= rowBlocksCount ? gutter : 0}
-            ml={index % rowBlocksCount !== 0 ? gutter : 0}
+            mt={index >= rowBlocksCount ? `${gutter}px` : 0}
+            ml={index % rowBlocksCount !== 0 ? `${gutter}px` : 0}
             children={child}
           />
         )
