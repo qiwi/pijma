@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.47.0](https://github.com/qiwi/pijma/compare/v1.46.0...v1.47.0) (2019-06-10)
+
+
+### Features
+
+* grid ([45e60f4](https://github.com/qiwi/pijma/commit/45e60f4))
+
 # [@qiwi/pijma-core-v1.46.0](https://github.com/qiwi/pijma/compare/v1.45.0...v1.46.0) (2019-06-06)
 
 
