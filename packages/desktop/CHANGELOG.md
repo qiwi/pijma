@@ -1,3 +1,17 @@
+# [@qiwi/pijma-desktop-v1.46.0](https://github.com/qiwi/pijma/compare/v1.45.0...v1.46.0) (2019-06-06)
+
+
+### Features
+
+* add accordion ([bc30234](https://github.com/qiwi/pijma/commit/bc30234))
+
+# [@qiwi/pijma-desktop-v1.45.0](https://github.com/qiwi/pijma/compare/v1.44.0...v1.45.0) (2019-06-04)
+
+
+### Features
+
+* notice ([dac01e7](https://github.com/qiwi/pijma/commit/dac01e7))
+
 # [@qiwi/pijma-desktop-v1.44.0](https://github.com/qiwi/pijma/compare/v1.43.0...v1.44.0) (2019-05-30)
 
 

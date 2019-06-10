@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.46.0](https://github.com/qiwi/pijma/compare/v1.45.0...v1.46.0) (2019-06-06)
+
+
+### Features
+
+* add accordion ([bc30234](https://github.com/qiwi/pijma/commit/bc30234))
+
 # [@qiwi/pijma-core-v1.42.0](https://github.com/qiwi/pijma/compare/v1.41.0...v1.42.0) (2019-05-29)
 
 
