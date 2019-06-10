@@ -1,11 +1,10 @@
-import React, {FC, Children, ReactNode, ReactChildren} from 'react'
+import React, {FC, Children, ReactNode} from 'react'
 import {Flex, FlexItem} from '../primitive'
 
 export interface GridProps {
   gutter?: number
   columns?: number
   layout?: number | number[]
-  children?: ReactChildren
 }
 
 const arrSum = (arr: number[]) => arr.reduce((a: number, b: number) => a + b, 0)
