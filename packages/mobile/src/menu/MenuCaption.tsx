@@ -8,7 +8,7 @@ interface MenuCaptionProps {
 }
 
 export const MenuCaption: FC<MenuCaptionProps> = ({text}) => (
-  <Flex px={4} height={9} align="center">
+  <Flex px={4} minHeight={9} align="center">
     <Caption>
       {text}
     </Caption>

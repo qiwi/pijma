@@ -5,13 +5,13 @@ import {Heading} from '../typography'
 
 interface MenuHeaderProps {
   title: string
-  onBackClick: () => void
+  onClick: () => void
 }
 
 export const MenuHeader: FC<MenuHeaderProps> = (props) => (
   <Flex align="center" height={1}>
     <FlexItem shrink={0}>
-      <Box width={6} height={6} mx={4} onClick={props.onBackClick}>
+      <Box width={6} height={6} mx={4} onClick={props.onClick}>
         <AngleLeftIcon/>
       </Box>
     </FlexItem>

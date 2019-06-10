@@ -25,23 +25,30 @@
       from="top"
       children={(
         <Striper>
-          <Box pb={2}>
-            {Array.from(Array(5).keys()).map((key) => (
-              <MenuItem
-                key={key}
-                text={`Menu item ${key + 1}`}
-                hasSubmenu
-                onClick={() => setState({showSubmenu: true})}
-              />
-            ))}
-          </Box>
-          <Box pt={2}>
+          <MenuContainer>
             <MenuItem
-              text="other link"
+              text="Components"
+              notes="List of pijma components"
+              submenu
+              onClick={() => setState({showSubmenu: true})}
+            />
+            <MenuItem
+              text="link"
+              notes="with notes"
+              href="https://qiwi.com"
+            />
+            <MenuItem
+              text="link"
+              href="https://qiwi.com"
+            />
+          </MenuContainer>
+          <MenuContainer>
+            <MenuItem
+              text="link with icon"
               href="https://qiwi.com"
               icon={<LoginIcon/>}
             />
-          </Box>
+          </MenuContainer>
         </Striper>
       )}
     />
@@ -49,31 +56,119 @@
       show={state.showSubmenu}
       from="right"
       zIndex={10006}
-      header={(<MenuHeader title="Sub-menu" onBackClick={() => setState({showSubmenu: false})}/>)}
+      header={(<MenuHeader title="Sub-menu" onClick={() => setState({showSubmenu: false})}/>)}
     >
       <Spacer size="l">
-        <Box>
-          <MenuCaption text="Category 1"/>
-          {Array.from(Array(10).keys()).map((key) => (
-            <MenuItem
-              key={key}
-              text={`Sub menu item ${key + 1}`}
-              notes="subtitle"
-              onClick={() => setState({showSubmenu: true})}
-            />
-          ))}
-        </Box>
-        <Box>
-          <MenuCaption text="Category 2"/>
-          {Array.from(Array(3).keys()).map((key) => (
-            <MenuItem
-              key={key}
-              text={`Sub menu item ${key + 1}`}
-              notes="subtitle"
-              onClick={() => setState({showSubmenu: true})}
-            />
-          ))}
-        </Box>
+        <React.Fragment>
+          <MenuCaption text="Typography"/>
+          <MenuItem
+            text="BlockLink"
+            href="/#/Компоненты/BlockLink"
+          />
+          <MenuItem
+            text="Link"
+            href="/#/Компоненты/Link"
+          />
+          <MenuItem
+            text="Notice"
+            href="/#/Компоненты/Notice"
+          />
+          <MenuItem
+            text="Caption"
+            href="/#/Компоненты/Caption"
+          />
+          <MenuItem
+            text="Heading"
+            href="/#/Компоненты/Heading"
+          />
+          <MenuItem
+            text="Paragraph"
+            href="/#/Компоненты/Paragraph"
+          />
+          <MenuItem
+            text="Text"
+            href="/#/Компоненты/Text"
+          />
+          <MenuItem
+            text="Title"
+            href="/#/Компоненты/Title"
+          />
+        </React.Fragment>
+        <React.Fragment>
+          <MenuCaption text="Other"/>
+          <MenuItem
+            text="Block"
+            href="/#/Компоненты/Block"
+          />
+          <MenuItem
+            text="Breaker"
+            href="/#/Компоненты/Breaker"
+          />
+          <MenuItem
+            text="Card"
+            href="/#/Компоненты/Card"
+          />
+          <MenuItem
+            text="Flex"
+            href="/#/Компоненты/Flex"
+          />
+          <MenuItem
+            text="ReCaptchaField"
+            href="/#/Компоненты/ReCaptchaField"
+          />
+          <MenuItem
+            text="Striper"
+            href="/#/Компоненты/Striper"
+          />
+          <MenuItem
+            text="Icon"
+            href="/#/Компоненты/Icon"
+          />
+          <MenuItem
+            text="WeakIcon"
+            href="/#/Компоненты/WeakIcon"
+          />
+          <MenuItem
+            text="Actions"
+            href="/#/Компоненты/Actions"
+          />
+          <MenuItem
+            text="BlockAccordion"
+            href="/#/Компоненты/BlockAccordion"
+          />
+          <MenuItem
+            text="Button"
+            href="/#/Компоненты/Button"
+          />
+          <MenuItem
+            text="ChackboxField"
+            href="/#/Компоненты/CheckboxField"
+          />
+          <MenuItem
+            text="Checkbox"
+            href="/#/Компоненты/Checkbox"
+          />
+          <MenuItem
+            text="DropUp"
+            href="/#/Компоненты/DropUp"
+          />
+          <MenuItem
+            text="Header"
+            href="/#/Компоненты/Header"
+          />
+          <MenuItem
+            text="RadioField"
+            href="/#/Компоненты/RadioField"
+          />
+          <MenuItem
+            text="SwitchField"
+            href="/#/Компоненты/SwitchField"
+          />
+          <MenuItem
+            text="Switch"
+            href="/#/Компоненты/Switch"
+          />
+        </React.Fragment>
       </Spacer>
     </Menu>
   </Header>

@@ -8,17 +8,16 @@ export interface MenuItemProps {
   text: string
   notes: string
   icon?: ReactNode
-  hasSubmenu?: boolean
-  onClick?: LinkControlProps['onClick']
-  onFocus?: LinkControlProps['onFocus']
-  onBlur?: LinkControlProps['onBlur']
+  submenu?: boolean
   tabIndex?: number
   href?: string
   target?: string
   download?: string | boolean
   rel?: string
   title?: string
-  accent?: boolean
+  onClick?: LinkControlProps['onClick']
+  onFocus?: LinkControlProps['onFocus']
+  onBlur?: LinkControlProps['onBlur']
   children: RenderChild<{
     active: boolean
     focus: boolean
@@ -30,13 +29,13 @@ const CardLink = Card.withComponent(Lnk)
 
 export const MenuItem: FC<MenuItemProps> = (props) => (
   <LinkControl
-    onClick={props.onClick}
-    onFocus={props.onFocus}
-    onBlur={props.onBlur}
     href={props.href}
     target={props.target}
     download={props.download}
     rel={props.rel}
+    onClick={props.onClick}
+    onFocus={props.onFocus}
+    onBlur={props.onBlur}
     children={(renderProps) => (
       <CardLink
         bg={renderProps.hover || renderProps.focus || renderProps.active ? '#f5f5f5' : undefined}
@@ -48,6 +47,10 @@ export const MenuItem: FC<MenuItemProps> = (props) => (
         transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         tabIndex={props.tabIndex}
         href={props.href}
+        title={props.title}
+        target={props.target}
+        download={props.download}
+        rel={props.rel}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
@@ -55,8 +58,6 @@ export const MenuItem: FC<MenuItemProps> = (props) => (
         onMouseLeave={renderProps.onMouseLeave}
         onMouseUp={renderProps.onMouseUp}
         onMouseDown={renderProps.onMouseDown}
-        target={props.target}
-        download={props.download}
       >
         <Flex align="center" minHeight={14}>
           {props.icon ? (
@@ -78,7 +79,7 @@ export const MenuItem: FC<MenuItemProps> = (props) => (
               )}
             </Flex>
           </FlexItem>
-          {props.hasSubmenu ? (
+          {props.submenu ? (
             <FlexItem shrink={0} width={6} height={6} ml={3}>
               <AngleRightIcon/>
             </FlexItem>
