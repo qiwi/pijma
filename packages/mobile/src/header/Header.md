@@ -1,18 +1,24 @@
 ### Header menu
 
 ```jsx
+initialState = {menuCollapsed: true};
 <Pos type="fixed" top={0} left={0} width={1} zIndex={10002}>
-  <Header menuVisible={state.menuVisible}>
+  <Header menuCollapsed={state.menuCollapsed}>
     <Flex height={1} align="center" justify="space-between">
       <FlexItem width={0.25} shrink={0}>
-        <Box width={6} height={6} onClick={() => setState({menuVisible: !state.menuVisible, showMenu: !state.menuVisible})}>
-          <CrossBurger active={state.menuVisible}/>
+        <Box width={6} height={6} onClick={() => setState({menuCollapsed: !state.menuCollapsed, showMenu: state.menuCollapsed})}>
+          <CrossBurger active={!state.menuCollapsed}/>
         </Box>
       </FlexItem>
       <FlexItem width={37} height={7} shrink={0} align="center">
         <Typo size={6} align="center">LOGO</Typo>
       </FlexItem>
-      <FlexItem width={0.25} shrink={0} opacity={state.menuVisible ? 0 : 1} transition={state.menuVisible ? 'all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)' : 'all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)'}>
+      <FlexItem
+        width={0.25}
+        shrink={1}
+        opacity={state.menuCollapsed? 1 : 0}
+        transition={state.menuCollapsed? 'all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)' : 'all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)'}
+      >
         <Flex justify="flex-end">
           <Box display="inline-block">
             <Button type="button" kind="simple" size="minor" text="Войти"/>
@@ -56,7 +62,20 @@
       show={state.showSubmenu}
       from="right"
       zIndex={10006}
-      header={(<MenuHeader title="Sub-menu" onClick={() => setState({showSubmenu: false})}/>)}
+      header={(
+        <Flex align="center" height={1}>
+          <FlexItem shrink={1}>
+            <Box width={6} height={6} mx={4} onClick={() => setState({showSubmenu: false})}>
+              <AngleLeftIcon/>
+            </Box>
+          </FlexItem>
+          <FlexItem>
+            <Typo size={5} weight={300} height={6}>
+              Sub-menu
+            </Typo>
+          </FlexItem>
+        </Flex>
+      )}
     >
       <Spacer size="l">
         <React.Fragment>

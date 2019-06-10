@@ -1,5 +1,4 @@
 export * from './Menu'
 export * from './MenuCaption'
 export * from './MenuContainer'
-export * from './MenuHeader'
 export * from './MenuItem'

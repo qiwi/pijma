@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Flex} from '@qiwi/pijma-core'
+import {Box} from '@qiwi/pijma-core'
 import {Caption} from '../typography'
 
 interface MenuCaptionProps {
@@ -8,9 +8,9 @@ interface MenuCaptionProps {
 }
 
 export const MenuCaption: FC<MenuCaptionProps> = ({text}) => (
-  <Flex px={4} minHeight={9} align="center">
+  <Box px={4} py={2}>
     <Caption>
       {text}
     </Caption>
-  </Flex>
+  </Box>
 )

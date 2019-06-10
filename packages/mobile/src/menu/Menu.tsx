@@ -110,14 +110,16 @@ export const Menu: FC<MenuProps> = ({show, zIndex, header, from, onShow, onHide,
               height={1}
               s="0 8px 16px 0 rgba(0, 0, 0, 0.12)"
             >
-              <Card
-                minHeight={15}
-                s={renderProps.scrolled ? '0 1px 2px 0 rgba(0, 0, 0, 0.12)' : undefined}
-                transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-                children={header}
-              />
+              <FlexItem height={15} shrink={1}>
+                <Card
+                  height={1}
+                  s={renderProps.scrolled ? '0 1px 2px 0 rgba(0, 0, 0, 0.12)' : undefined}
+                  transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+                  children={header}
+                />
+              </FlexItem>
               <FlexItem grow={1} height={1} overflow="auto">
-                <Card ref={menu} width={1} py={2}>
+                <Card ref={menu} width={1}>
                   <Waypoint
                     scrollableAncestor={menu.current}
                     topOffset={-8}
