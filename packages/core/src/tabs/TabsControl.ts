@@ -6,6 +6,7 @@ export interface TabsControlProps {
   selected?: number
   onSelect?: (selected: number) => void
   children: React.ReactNode
+  size?: 's' | 'm' | 'l'
 }
 
 export interface TabsControlState {
@@ -53,18 +54,23 @@ export class TabsControl extends React.Component<
         }
         if (React.isValidElement(element) && isTabList(element)) {
           const tabList = element
+
           return React.cloneElement(tabList, {
+            size: this.props.size,
             children: React.Children.map(
               tabList.props.children,
               (element: React.ReactNode, index: number) => {
                 if (React.isValidElement(element) && isTab(element)) {
+                  const onSelect = () => this.onSelect(index)
+                  const onMouseEnter = () => this.onMouseEnter(index)
+
                   return React.cloneElement(element, {
                     icon: element.props.icon,
                     vertical: tabList.props.vertical,
                     selected: this.state.selected === index,
                     focused: this.state.focused === index,
-                    onSelect: () => this.onSelect(index),
-                    onMouseEnter: () => this.onMouseEnter(index),
+                    onSelect,
+                    onMouseEnter,
                     onMouseLeave: this.onMouseLeave,
                   })
                 }

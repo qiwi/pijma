@@ -9,39 +9,39 @@ export interface TabsSpacerProps {
 
 const SpacerSize: {
   [size in NonNullable<TabsSpacerProps['size']>]: {
-    pt: number
-    pl: number
-    pr: number
-    pb: number
+    t: number
+    l: number
+    r: number
+    b: number
   }
 } = {
   s: {
-    pt: 8,
-    pl: 8,
-    pr: 8,
-    pb: 8,
+    t: 8,
+    l: 8,
+    r: 8,
+    b: 8,
   },
   m: {
-    pt: 11,
-    pl: 11,
-    pr: 11,
-    pb: 12,
+    t: 11,
+    l: 11,
+    r: 11,
+    b: 12,
   },
   l: {
-    pt: 11,
-    pl: 17,
-    pr: 17,
-    pb: 12,
+    t: 11,
+    l: 17,
+    r: 17,
+    b: 12,
   },
 }
 
 export const TabsSpacer: FC<TabsSpacerProps> = ({size, children}) => {
   return (
     <Box
-      pt={size ? SpacerSize[size].pt : 0}
-      pl={size ? SpacerSize[size].pl : 0}
-      pr={size ? SpacerSize[size].pr : 0}
-      pb={size ? SpacerSize[size].pb : 0}
+      pt={size ? SpacerSize[size].t : 0}
+      pl={size ? SpacerSize[size].l : 0}
+      pr={size ? SpacerSize[size].r : 0}
+      pb={size ? SpacerSize[size].b : 0}
       children={children}
     />
   )
