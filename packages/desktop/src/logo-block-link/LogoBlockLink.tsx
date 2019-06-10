@@ -4,23 +4,24 @@ import {BlockLink} from '../link'
 import {Paragraph} from '../typography'
 
 export interface LogoBlockLinkProps {
-  description?: string
   icon: ReactNode
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
-  onFocus?: () => void
-  onBlur?: () => void
+  title: string
+  description?: string
   tabIndex?: number
   href?: string
   target?: string
   download?: string | boolean
   rel?: string
-  title: string
+  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
+  onFocus?: () => void
+  onBlur?: () => void
 }
 
 const Img = Box.withComponent('img')
 
 export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description, ...props}) => (
   <BlockLink
+    title={title}
     accent
     tabIndex={props.tabIndex}
     href={props.href}
@@ -32,11 +33,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
     onBlur={props.onBlur}
   >
     {() => (
-      <Box
-        p={4}
-        height={description ? 60 : 55}
-        minHeight={55}
-      >
+      <Box p={4} height={description ? 60 : 55}>
         <Box width={16} height={16} mt={7} mx="auto">
           {typeof icon === 'string' ? (
             <Img src={icon} alt={title} maxWidth={16} maxHeight={16}/>
