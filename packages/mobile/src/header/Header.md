@@ -3,8 +3,8 @@
 ```jsx
 initialState = {menuCollapsed: true};
 <Pos type="fixed" top={0} left={0} width={1} zIndex={10002}>
-  <Header menuCollapsed={state.menuCollapsed}>
-    <Flex height={1} align="center" justify="space-between">
+  <Header active={!state.menuCollapsed}>
+    <Flex height={1} px={4} align="center" justify="space-between">
       <FlexItem width={0.25} shrink={0}>
         <Box width={6} height={6} onClick={() => setState({menuCollapsed: !state.menuCollapsed, showMenu: state.menuCollapsed})}>
           <CrossBurger active={!state.menuCollapsed}/>

@@ -3,14 +3,14 @@ import React, {FC} from 'react'
 import {Card, Pos} from '@qiwi/pijma-core'
 
 interface HeaderProps {
-  menuCollapsed?: boolean
+  active?: boolean
   zIndex?: number
 }
 
-export const Header: FC<HeaderProps> = ({zIndex = 10002, menuCollapsed = true, children}) => (
+export const Header: FC<HeaderProps> = ({zIndex = 10002, active, children}) => (
   <Pos
     as="header"
-    type={menuCollapsed ? 'relative' : 'fixed'}
+    type={active ? 'fixed' : 'relative'}
     top={0}
     left={0}
     width={1}
@@ -21,8 +21,7 @@ export const Header: FC<HeaderProps> = ({zIndex = 10002, menuCollapsed = true, c
       bg="#fff"
       width={1}
       height={1}
-      px={4}
-      s={menuCollapsed ? '0 1px 2px 0 rgba(0, 0, 0, 0.12)' : undefined}
+      s={active ? undefined : '0 1px 2px 0 rgba(0, 0, 0, 0.12)'}
       transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
       children={children}
     />
