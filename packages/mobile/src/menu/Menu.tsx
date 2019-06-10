@@ -11,7 +11,6 @@ import {
   Flex,
   FlexItem,
   Card,
-  Waypoint,
   ScrollControl,
 } from '@qiwi/pijma-core'
 
@@ -89,7 +88,6 @@ MenuModal.defaultProps = {
 const FlexCard = Flex.withComponent(Card)
 
 export const Menu: FC<MenuProps> = ({show, zIndex, header, from, onShow, onHide, children}) => {
-  const menu: React.RefObject<HTMLDivElement> = React.createRef()
   return (
     <ScrollControl
       children={(renderProps) => (
@@ -119,15 +117,9 @@ export const Menu: FC<MenuProps> = ({show, zIndex, header, from, onShow, onHide,
                 />
               </FlexItem>
               <FlexItem grow={1} height={1} overflow="auto">
-                <Card ref={menu} width={1}>
-                  <Waypoint
-                    scrollableAncestor={menu.current}
-                    topOffset={-8}
-                    onEnter={renderProps.onScrollReset}
-                    onLeave={renderProps.onScrollStart}
-                  />
+                <renderProps.scrollableCard>
                   {children}
-                </Card>
+                </renderProps.scrollableCard>
               </FlexItem>
             </FlexCard>
           )}
