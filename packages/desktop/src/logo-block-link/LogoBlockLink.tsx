@@ -3,7 +3,7 @@ import {Box} from '@qiwi/pijma-core'
 import {BlockLink} from '../link'
 import {Paragraph} from '../typography'
 
-export interface IconCardProps {
+export interface LogoBlockLinkProps {
   description?: string
   icon: ReactNode
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
@@ -14,12 +14,12 @@ export interface IconCardProps {
   target?: string
   download?: string | boolean
   rel?: string
-  title?: string
+  title: string
 }
 
 const Img = Box.withComponent('img')
 
-export const IconCard: FC<IconCardProps> = ({title, icon, description, ...props}) => (
+export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description, ...props}) => (
   <BlockLink
     accent
     tabIndex={props.tabIndex}
@@ -32,7 +32,11 @@ export const IconCard: FC<IconCardProps> = ({title, icon, description, ...props}
     onBlur={props.onBlur}
   >
     {() => (
-      <Box p={4} height={1} minHeight={55}>
+      <Box
+        p={4}
+        height={description ? 60 : 55}
+        minHeight={55}
+      >
         <Box width={16} height={16} mt={7} mx="auto">
           {typeof icon === 'string' ? (
             <Img src={icon} alt={title} maxWidth={16} maxHeight={16}/>
@@ -40,7 +44,7 @@ export const IconCard: FC<IconCardProps> = ({title, icon, description, ...props}
             icon
           )}
         </Box>
-        <Box mt={5} mx="auto">
+        <Box mt={5} mx="auto" maxHeight={description ? 12 : 18} overflow="hidden">
           <Paragraph
             color="default"
             size="m"
@@ -50,7 +54,7 @@ export const IconCard: FC<IconCardProps> = ({title, icon, description, ...props}
           />
         </Box>
         {description ? (
-          <Box mt={1} mx="auto">
+          <Box mt={1} mx="auto" maxHeight={10} overflow="hidden">
             <Paragraph
               color="support"
               size="s"
