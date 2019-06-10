@@ -11,6 +11,7 @@ import {
   Flex,
   FlexItem,
   Card,
+  Box,
   ScrollControl,
 } from '@qiwi/pijma-core'
 
@@ -117,9 +118,10 @@ export const Menu: FC<MenuProps> = ({show, zIndex, header, from, onShow, onHide,
                 />
               </FlexItem>
               <FlexItem grow={1} height={1} overflow="auto">
-                <renderProps.scrollableCard>
+                <Box ref={renderProps.ref}>
+                  {renderProps.waypoint}
                   {children}
-                </renderProps.scrollableCard>
+                </Box>
               </FlexItem>
             </FlexCard>
           )}
