@@ -3,22 +3,22 @@ import React, {FC} from 'react'
 import {Box} from '../primitive'
 
 export interface BlockContentProps {
-  size?: 's' | 'm' | 'l'
+  indent?: 's' | 'm' | 'l'
 }
 
-const BlockContentSize: { [size in NonNullable<BlockContentProps['size']>]: string | number } = {
+const BlockContentIdent: { [indent in NonNullable<BlockContentProps['indent']>]: string | number } = {
   s: 8,
   m: '44px 44px 48px',
   l: '44px 68px 48px',
 }
 
-export const BlockContent: FC<BlockContentProps> = ({size = 'm', children}) => (
+export const BlockContent: FC<BlockContentProps> = ({indent = 'm', children}) => (
   <Box
-    p={BlockContentSize[size]}
+    p={BlockContentIdent[indent]}
     children={children}
   />
 )
 
 BlockContent.defaultProps = {
-  size: 'm',
+  indent: 'm',
 }
