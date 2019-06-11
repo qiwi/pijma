@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.48.0](https://github.com/qiwi/pijma/compare/v1.47.0...v1.48.0) (2019-06-10)
+
+
+### Features
+
+* block content ([622fda5](https://github.com/qiwi/pijma/commit/622fda5))
+
 # [@qiwi/pijma-core-v1.47.0](https://github.com/qiwi/pijma/compare/v1.46.0...v1.47.0) (2019-06-10)
 
 
