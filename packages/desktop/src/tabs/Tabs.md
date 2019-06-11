@@ -5,7 +5,7 @@ Taбы – или вкладки это компонент, который пр�
 ```jsx
 <Card r={10} bg="#fff" s="0 8px 16px 0 rgba(0, 0, 0, 0.12)">
   <Tabs size="m">
-    <TabList>
+    <TabList tab="long">
       <Tab icon={
         <Icon name="star"/>
       }>

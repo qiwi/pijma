@@ -5,6 +5,7 @@ import {Flex, Card} from '../primitive'
 export interface TabListProps {
   center?: boolean
   border?: 'long' | 'short'
+  tab?: 'long' | 'short'
   vertical?: boolean
   bottom?: number
   size?: 's' | 'm' | 'l'

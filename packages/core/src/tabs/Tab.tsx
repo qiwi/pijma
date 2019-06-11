@@ -9,6 +9,7 @@ export interface TabProps {
   selected?: boolean
   focused?: boolean
   active?: boolean
+  tab?: 'long' | 'short'
   icon?: ReactNode
   onSelect?: (selected: number) => void
   onMouseEnter?: () => void
@@ -31,6 +32,7 @@ export class Tab extends React.Component<TabProps, {}> {
       vertical,
       children,
       icon,
+      tab,
       selected,
       focused,
       onMouseEnter,
@@ -39,7 +41,7 @@ export class Tab extends React.Component<TabProps, {}> {
 
     return (
       <Box
-        maxWidth={38}
+        maxWidth={tab === 'long' ? 47 : 38}
         mr={6.5}
         cursor="pointer"
         onMouseEnter={onMouseEnter}
@@ -51,6 +53,8 @@ export class Tab extends React.Component<TabProps, {}> {
             justify={vertical ? 'center' : 'flex-start'}
             onClick={this.onClick}
             pb={vertical ? 6 : 4}
+            pr={tab === 'long' ? 4.5 : 0}
+            pl={tab === 'long' ? 4.5 : 0}
           >
             {icon ? (
               <Flex

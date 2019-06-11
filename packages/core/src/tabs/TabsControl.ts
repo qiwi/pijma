@@ -65,6 +65,7 @@ export class TabsControl extends React.Component<
                   const onMouseEnter = () => this.onMouseEnter(index)
 
                   return React.cloneElement(element, {
+                    tab: tabList.props.tab,
                     icon: element.props.icon,
                     vertical: tabList.props.vertical,
                     selected: this.state.selected === index,

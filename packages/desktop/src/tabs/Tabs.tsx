@@ -8,10 +8,12 @@ export interface TabsProps {
 }
 
 export const Tabs: FC<TabsProps> = (props) => {
+
   return (
     <TabsSpacer
       size={props.size}
       children={<TabsControl {...props} />}
     />
   )
+
 }
