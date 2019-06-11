@@ -26,7 +26,7 @@ initialState = {menuCollapsed: true};
         </Flex>
       </FlexItem>
     </Flex>
-    <Menu
+    <HeaderMenu
       show={state.showMenu}
       from="top"
       children={(
@@ -58,7 +58,7 @@ initialState = {menuCollapsed: true};
         </Striper>
       )}
     />
-    <Menu
+    <HeaderMenu
       show={state.showSubmenu}
       from="right"
       zIndex={10006}
@@ -189,7 +189,7 @@ initialState = {menuCollapsed: true};
           />
         </React.Fragment>
       </Spacer>
-    </Menu>
+    </HeaderMenu>
   </Header>
 </Pos>
 ```

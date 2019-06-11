@@ -11,10 +11,11 @@ import {
   Flex,
   FlexItem,
   Card,
-  ScrollControl,
+  Box,
+  HeaderMenuControl,
 } from '@qiwi/pijma-core'
 
-interface MenuProps {
+interface HeaderMenuProps {
   show: boolean
   zIndex?: number
   header?: ReactNode
@@ -23,7 +24,7 @@ interface MenuProps {
   onHide?: () => void
 }
 
-interface MenuModalProps extends ModalProps {
+interface HeaderMenuModalProps extends ModalProps {
   zIndex?: number
 }
 
@@ -31,14 +32,14 @@ const containerClassName = css({
   position: 'fixed',
 })
 
-const translate3d: { [direction in MenuProps['from']]: string } = {
+const translate3d: { [direction in HeaderMenuProps['from']]: string } = {
   top: '0, -100%, 0',
   right: '100%, 0, 0',
   bottom: '0, 100%, 0',
   left: '-100%, 0, 0',
 }
 
-const defaultProps = (direction: MenuProps['from']) => ({
+const defaultProps = (direction: HeaderMenuProps['from']) => ({
   timeout: {
     enter: 300,
     exit: 100,
@@ -63,16 +64,16 @@ contentTransitionRight.defaultProps = defaultProps('right')
 contentTransitionBottom.defaultProps = defaultProps('bottom')
 contentTransitionLeft.defaultProps = defaultProps('left')
 
-const contentTransition: { [direction in MenuProps['from']]: FC<SimpleTransitionProps> } = {
+const contentTransition: { [direction in HeaderMenuProps['from']]: FC<SimpleTransitionProps> } = {
   top: contentTransitionTop,
   right: contentTransitionRight,
   bottom: contentTransitionBottom,
   left: contentTransitionLeft,
 }
 
-const MenuModal = styled(Modal, {
+const HeaderMenuModal = styled(Modal, {
   shouldForwardProp: (prop) => !['zIndex'].includes(prop),
-})<MenuModalProps>(({theme, ...props}) => ({
+})<HeaderMenuModalProps>(({theme, ...props}) => ({
   position: 'fixed',
   zIndex: props.zIndex,
   top: cssValue(0, theme.scale),
@@ -81,18 +82,17 @@ const MenuModal = styled(Modal, {
   right: cssValue(0, theme.scale),
 }))
 
-MenuModal.defaultProps = {
+HeaderMenuModal.defaultProps = {
   zIndex: 9999,
 }
 
 const FlexCard = Flex.withComponent(Card)
 
-export const Menu: FC<MenuProps> = ({show, zIndex, header, from, onShow, onHide, children}) => {
+export const HeaderMenu: FC<HeaderMenuProps> = ({show, zIndex, header, from, onShow, onHide, children}) => {
   return (
-    <ScrollControl
-      scrollContent={children}
+    <HeaderMenuControl
       children={(renderProps) => (
-        <MenuModal
+        <HeaderMenuModal
           autoFocus
           show={show}
           zIndex={zIndex}
@@ -118,7 +118,10 @@ export const Menu: FC<MenuProps> = ({show, zIndex, header, from, onShow, onHide,
                 />
               </FlexItem>
               <FlexItem grow={1} height={1} overflow="auto">
-                {renderProps.scrollContent}
+                <Box ref={renderProps.ref}>
+                  {renderProps.waypoint}
+                  {children}
+                </Box>
               </FlexItem>
             </FlexCard>
           )}
