@@ -41,7 +41,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
             icon
           )}
         </Box>
-        <Box mt={5} mx="auto" maxHeight={description ? 12 : 18} overflow="hidden">
+        <Box mt={6} mx="auto" maxHeight={description ? 12 : 18} overflow="hidden">
           <Paragraph
             color="default"
             size="m"
