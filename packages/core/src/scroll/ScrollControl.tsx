@@ -1,13 +1,14 @@
 import React, {RefObject, Component, createRef, ReactNode} from 'react'
 import {Waypoint} from '../waypoint'
+import {Box} from '../primitive'
 
 import RenderChild from '../RenderChild'
 
 export interface ScrollControlProps {
+  scrollContent: ReactNode
   children: RenderChild<{
     scrolled: boolean
-    ref: RefObject<HTMLDivElement>
-    waypoint: ReactNode
+    scrollContent: ReactNode
   }>
 }
 
@@ -37,20 +38,20 @@ export class ScrollControl extends Component<ScrollControlProps, ScrollControlSt
     })
   }
 
-  private waypoint: ReactNode = (
-    <Waypoint
-      scrollableAncestor={this.ref.current}
-      topOffset={-8}
-      onEnter={this.onScrollReset}
-      onLeave={this.onScrollStart}
-    />
-  )
-
   public render() {
     return this.props.children({
       scrolled: this.state.scrolled,
-      ref: this.ref,
-      waypoint: this.waypoint,
+      scrollContent: (
+        <Box ref={this.ref}>
+          <Waypoint
+            scrollableAncestor={this.ref.current}
+            topOffset={-8}
+            onEnter={this.onScrollReset}
+            onLeave={this.onScrollStart}
+          />
+          {this.props.scrollContent}
+        </Box>
+      ),
     })
   }
 

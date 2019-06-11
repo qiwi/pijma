@@ -11,7 +11,6 @@ import {
   Flex,
   FlexItem,
   Card,
-  Box,
   ScrollControl,
 } from '@qiwi/pijma-core'
 
@@ -91,6 +90,7 @@ const FlexCard = Flex.withComponent(Card)
 export const Menu: FC<MenuProps> = ({show, zIndex, header, from, onShow, onHide, children}) => {
   return (
     <ScrollControl
+      scrollContent={children}
       children={(renderProps) => (
         <MenuModal
           autoFocus
@@ -118,10 +118,7 @@ export const Menu: FC<MenuProps> = ({show, zIndex, header, from, onShow, onHide,
                 />
               </FlexItem>
               <FlexItem grow={1} height={1} overflow="auto">
-                <Box ref={renderProps.ref}>
-                  {renderProps.waypoint}
-                  {children}
-                </Box>
+                {renderProps.scrollContent}
               </FlexItem>
             </FlexCard>
           )}
