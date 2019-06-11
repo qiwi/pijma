@@ -3,7 +3,6 @@ import {Waypoint} from '../waypoint'
 import RenderChild from '../RenderChild'
 
 export interface HeaderMenuControlProps {
-  scrollContent: ReactNode
   children: RenderChild<{
     scrolled: boolean
     ref: RefObject<HTMLDivElement>
