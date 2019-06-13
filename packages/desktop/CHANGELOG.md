@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.49.0](https://github.com/qiwi/pijma/compare/v1.48.0...v1.49.0) (2019-06-11)
+
+
+### Features
+
+* **desktop:** logo block link ([e6e3d26](https://github.com/qiwi/pijma/commit/e6e3d26))
+
 # [@qiwi/pijma-desktop-v1.46.0](https://github.com/qiwi/pijma/compare/v1.45.0...v1.46.0) (2019-06-06)
 
 
