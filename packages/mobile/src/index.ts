@@ -8,6 +8,7 @@ export * from './checkbox-field'
 export * from './radio-field'
 export * from './typography'
 export * from './link'
+export * from './block-accordion'
 export * from './list'
 
 export {TextField as MaskTextField} from './text-field'
