@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.51.0](https://github.com/qiwi/pijma/compare/v1.50.0...v1.51.0) (2019-06-14)
+
+
+### Features
+
+* breadcrumbs ([ca04379](https://github.com/qiwi/pijma/commit/ca04379))
+
 # [@qiwi/pijma-desktop-v1.50.0](https://github.com/qiwi/pijma/compare/v1.49.0...v1.50.0) (2019-06-14)
 
 
