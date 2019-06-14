@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.53.0](https://github.com/qiwi/pijma/compare/v1.52.0...v1.53.0) (2019-06-14)
+
+
+### Features
+
+* file link ([2026e18](https://github.com/qiwi/pijma/commit/2026e18))
+
 # [@qiwi/pijma-mobile-v1.52.0](https://github.com/qiwi/pijma/compare/v1.51.0...v1.52.0) (2019-06-14)
 
 
