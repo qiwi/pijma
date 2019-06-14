@@ -8,6 +8,8 @@ export * from './checkbox-field'
 export * from './radio-field'
 export * from './typography'
 export * from './link'
+export * from './block-accordion'
+export * from './block-content'
 export * from './nav-link'
 export * from './breadcrumbs'
 
