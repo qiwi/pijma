@@ -9,6 +9,7 @@ export * from './radio-field'
 export * from './typography'
 export * from './link'
 export * from './block-accordion'
+export * from './block-content'
 export * from './list'
 
 export {TextField as MaskTextField} from './text-field'

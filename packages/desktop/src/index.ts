@@ -11,6 +11,7 @@ export * from './switch'
 export * from './notice'
 export * from './block-accordion'
 export * from './logo-block-link'
+export * from './block-content'
 export * from './list'
 
 export {TextField as MaskTextField} from './text-field'
