@@ -43,7 +43,7 @@
     "gh-pages": "2.0.1",
     "husky": "2.3.0",
     "react-docgen-typescript": "1.12.4",
-    "react-styleguidist": "8.0.6",
+    "react-styleguidist": "9.1.7",
     "ts-loader": "6.0.2",
     "tslint": "5.17.0",
     "tslint-config-qiwi": "1.0.1",
