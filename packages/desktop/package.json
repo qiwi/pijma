@@ -41,7 +41,7 @@
     "@types/webpack-env": "1.13.9",
     "file-loader": "3.0.1",
     "gh-pages": "2.0.1",
-    "husky": "2.3.0",
+    "husky": "2.4.1",
     "react-docgen-typescript": "1.12.4",
     "react-styleguidist": "8.0.6",
     "ts-loader": "6.0.2",

@@ -37,7 +37,7 @@
     "tslib": "^1.9.3"
   },
   "devDependencies": {
-    "husky": "2.3.0",
+    "husky": "2.4.1",
     "tslint": "5.17.0",
     "tslint-config-qiwi": "1.0.1",
     "typescript": "3.5.1"
