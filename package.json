@@ -19,14 +19,14 @@
     }
   },
   "devDependencies": {
-    "@semantic-release/changelog": "3.0.2",
-    "@semantic-release/commit-analyzer": "6.1.0",
-    "@semantic-release/git": "7.0.8",
-    "@semantic-release/github": "5.2.10",
-    "@semantic-release/npm": "5.1.7",
-    "@semantic-release/release-notes-generator": "7.1.4",
+    "@semantic-release/changelog": "3.0.4",
+    "@semantic-release/commit-analyzer": "6.2.0",
+    "@semantic-release/git": "7.0.12",
+    "@semantic-release/github": "5.4.0",
+    "@semantic-release/npm": "5.1.9",
+    "@semantic-release/release-notes-generator": "7.2.0",
     "lerna": "3.14.1",
-    "semantic-release": "15.13.12",
+    "semantic-release": "15.13.16",
     "semantic-release-monorepo": "6.1.1",
     "semantic-release-monorepo-hooks": "2.9.2",
     "semantic-release-plugin-decorators": "2.0.0"
