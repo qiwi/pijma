@@ -49,6 +49,6 @@
     "tslint-config-qiwi": "1.0.1",
     "tslint-loader": "3.5.4",
     "typescript": "3.5.1",
-    "webpack": "4.32.2"
+    "webpack": "4.34.0"
   }
 }
