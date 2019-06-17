@@ -9,7 +9,9 @@ export interface BlockPaginationProps {
   total: number
   active: number
   count?: number
+  hrefTemplate?: (page: number) => string
   onChange?: (index: number) => void
+  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
 }
 
 // const shadowedStyle: string = '0 1px 2px 0 rgba(0, 0, 0, 0.12)'
@@ -18,7 +20,9 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
   total,
   count = 5,
   active,
+  hrefTemplate,
   onChange,
+  onClick,
 }) => (
   <Box display="inline-block">
     <Block>
@@ -44,7 +48,9 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               s="1px 0 0 #e6e6e6"
               sHover="0px -1px 0 1px #e6e6e6"
               mtHover="1px"
-              onClick={onChange}
+              hrefTemplate={hrefTemplate}
+              onChange={onChange}
+              onClick={onClick}
               children={({disabled}) => (
                 <IconWrapper color={disabled ? '#ccc' : '#000'}>
                   <Icon name="angle-double-left-small" />
@@ -62,7 +68,9 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               sHover="0px -1px 0 1px #e6e6e6"
               ml="1px"
               mtHover="1px"
-              onClick={onChange}
+              hrefTemplate={hrefTemplate}
+              onChange={onChange}
+              onClick={onClick}
               children={({disabled}) => (
                 <IconWrapper color={disabled ? '#ccc' : '#000'}>
                   <Icon name="angle-small-left" />
@@ -79,7 +87,9 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
                 sHover="0px -1px 0 1px #e6e6e6"
                 ml="1px"
                 mtHover="1px"
-                onClick={onChange}
+                hrefTemplate={hrefTemplate}
+                onChange={onChange}
+                onClick={onClick}
                 children={() => (
                   <Text
                     bold={false}
@@ -106,7 +116,9 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               sHover="0px -1px 0 1px #e6e6e6"
               ml="1px"
               mtHover="1px"
-              onClick={onChange}
+              hrefTemplate={hrefTemplate}
+              onChange={onChange}
+              onClick={onClick}
               children={({disabled}) => (
                 <IconWrapper color={disabled ? '#ccc' : '#000'}>
                   <Icon name="angle-small-right" />
@@ -123,7 +135,9 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               sHover="0px -1px 0 1px #e6e6e6"
               ml="1px"
               mtHover="1px"
-              onClick={onChange}
+              hrefTemplate={hrefTemplate}
+              onChange={onChange}
+              onClick={onClick}
               children={({disabled}) => (
                 <IconWrapper color={disabled ? '#ccc' : '#000'}>
                   <Icon name="angle-double-right-small" />

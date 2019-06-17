@@ -9,14 +9,18 @@ export interface PaginationProps {
   total: number
   active: number
   count?: number
+  hrefTemplate?: (page: number) => string
   onChange?: (index: number) => void
+  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
 }
 
 export const Pagination: FunctionComponent<PaginationProps> = ({
   total,
   count = 5,
   active,
+  hrefTemplate,
   onChange,
+  onClick,
 }) => (
   <PaginationControl
     total={total}
@@ -39,7 +43,9 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           boxWidth={5}
           boxHeight={5}
           s="1px 0 0 #e6e6e6"
-          onClick={onChange}
+          hrefTemplate={hrefTemplate}
+          onChange={onChange}
+          onClick={onClick}
           children={({disabled}) => (
             <IconWrapper color={disabled ? '#ccc' : '#000'}>
               <Icon name="angle-double-left-small" />
@@ -55,7 +61,9 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           boxHeight={5}
           s="1px 0 0 #e6e6e6"
           ml="1px"
-          onClick={onChange}
+          hrefTemplate={hrefTemplate}
+          onChange={onChange}
+          onClick={onClick}
           children={({disabled}) => (
             <IconWrapper color={disabled ? '#ccc' : '#000'}>
               <Icon name="angle-small-left" />
@@ -70,7 +78,9 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
             width={12}
             s="1px 0 0 #e6e6e6"
             ml="1px"
-            onClick={onChange}
+            hrefTemplate={hrefTemplate}
+            onChange={onChange}
+            onClick={onClick}
             children={() => (
               <Text
                 bold={false}
@@ -95,7 +105,9 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           boxHeight={5}
           s="1px 0 0 #e6e6e6"
           ml="1px"
-          onClick={onChange}
+          hrefTemplate={hrefTemplate}
+          onChange={onChange}
+          onClick={onClick}
           children={({disabled}) => (
             <IconWrapper color={disabled ? '#ccc' : '#000'}>
               <Icon name="angle-small-right" />
@@ -110,7 +122,9 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           boxWidth={5}
           boxHeight={5}
           ml="1px"
-          onClick={onChange}
+          hrefTemplate={hrefTemplate}
+          onChange={onChange}
+          onClick={onClick}
           children={({disabled}) => (
             <IconWrapper color={disabled ? '#ccc' : '#000'}>
               <Icon name="angle-double-right-small" />

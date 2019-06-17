@@ -8,3 +8,13 @@ initialState = {activePage: 1};
   />
 </Card>
 ```
+
+```jsx
+<Card bg="#eee" p={4}>
+  <Pagination
+    total={10}
+    active={2}
+    hrefTemplate={(page) => `${location.href}?page=${page}`}
+  />
+</Card>
+```
