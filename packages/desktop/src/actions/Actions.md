@@ -1,27 +1,27 @@
 ## Расположение
 
-Кнопки могут располагаться вертикально или горизонтально.
+Кнопки могут располагаться как вертикально, так и горизонтально относительно друг друга.
 
-#### Горизонтальное
+#### Горизонтальная группа
 
 ```jsx
 <Actions size="accent">
   <Button
     kind="brand"
     size="accent"
-    text="Кнопка"
+    text="Нажать"
   />
   <Button
     kind="simple"
     size="accent"
-    text="Кнопка"
+    text="Нажать"
   />
 </Actions>
 ```
 
-#### Вертикальное
+#### Вертикальная группа
 
-При использовании такого расположения все кнопки становятся одной ширины и равны самой большой.
+При вертикальном расположении ширина всех кнопок одинакова. За основу берется ширина кнопки с самым большим содержимым.
 
 ```jsx
 <Actions
@@ -29,19 +29,22 @@
   <Button
     kind="brand"
     size="accent"
-    text="Кнопка"
+    text="Нажать красивую кнопку"
   />
   <Button
     kind="simple"
     size="accent"
-    text="Кнопка"
+    text="Нажать"
   />
 </Actions>
 ```
 
 ## Размеры
 
-В зависимости от размера кнопок прописывается размер разделителей
+Отступ между кнопками зависит от их размера.
+Accent — 24px;
+Normal — 20px;
+Minor — 16px.
 
 #### Accent
 
@@ -50,12 +53,12 @@
   <Button
     kind="brand"
     size="accent"
-    text="Кнопка"
+    text="Нажать"
   />
   <Button
     kind="simple"
     size="accent"
-    text="Кнопка"
+    text="Нажать"
   />
 </Actions>
 ```
@@ -67,12 +70,12 @@
   <Button
     kind="brand"
     size="normal"
-    text="Кнопка"
+    text="Нажать"
   />
   <Button
     kind="simple"
     size="normal"
-    text="Кнопка"
+    text="Нажать"
   />
 </Actions>
 ```
@@ -84,12 +87,12 @@
   <Button
     kind="brand"
     size="minor"
-    text="Кнопка"
+    text="Нажать"
   />
   <Button
     kind="simple"
     size="minor"
-    text="Кнопка"
+    text="Нажать"
   />
 </Actions>
 ```

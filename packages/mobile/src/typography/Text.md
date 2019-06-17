@@ -1,50 +1,61 @@
-## L
+Для отображения предупреждений, сообщений об ошибках и успешных действиях используйте следующие текстовые стили.
+
+## Text L
 
 ```css static
 font-family: Museo Sans
 font-size: 20px
 line-height: 32px
+font-weight: 500, 300
 ```
 
 ```jsx
-<Spacer size="m">
-  <Paragraph size="l">Paragraph L <Text bold>Dark 500</Text></Paragraph>
-  <Paragraph size="l">Paragraph L <Text bold><Text color="failure">Error</Text> 500</Text></Paragraph>
-  <Paragraph size="l">Paragraph L <Text color="success">Success</Text> 300</Paragraph>
-  <Paragraph size="l" color="support">Paragraph L <Text color="warning">Warning</Text> 300</Paragraph>
+<Spacer size="l">
+  <Paragraph size="l"><Text bold><Text color="failure">Paragraph L Error 500</Text></Text></Paragraph>
+  <Paragraph size="l"><Text color="failure">Paragraph L Error 300</Text></Paragraph>
+  <Paragraph size="l"><Text bold><Text color="warning">Paragraph L Warning 500</Text></Text></Paragraph>
+  <Paragraph size="l"><Text color="warning">Paragraph L Warning 300</Text></Paragraph>
+  <Paragraph size="l"><Text bold><Text color="success">Paragraph L Success 500</Text></Text></Paragraph>
+  <Paragraph size="l"><Text color="success">Paragraph L Success 300</Text></Paragraph>
 </Spacer>
 ```
 
-## M
+## Text M
 
 ```css static
 font-family: Museo Sans
 font-size: 16px
 line-height: 24px
+font-weight: 500, 300
 ```
 
 ```jsx
 <Spacer size="m">
-  <Paragraph size="m">Paragraph M <Text bold>Dark 500</Text></Paragraph>
-  <Paragraph size="m">Paragraph M <Text bold><Text color="failure">Error</Text> 500</Text></Paragraph>
-  <Paragraph size="m">Paragraph M <Text color="success">Success</Text> 300</Paragraph>
-  <Paragraph size="m" color="support">Paragraph M <Text color="warning">Warning</Text> 300</Paragraph>
+  <Paragraph size="m"><Text bold><Text color="failure">Paragraph M Error 500</Text></Text></Paragraph>
+  <Paragraph size="m"><Text color="failure">Paragraph M Error 300</Text></Paragraph>
+  <Paragraph size="m"><Text bold><Text color="warning">Paragraph M Warning 500</Text></Text></Paragraph>
+  <Paragraph size="m"><Text color="warning">Paragraph M Warning 300</Text></Paragraph>
+  <Paragraph size="m"><Text bold><Text color="success">Paragraph M Success 500</Text></Text></Paragraph>
+  <Paragraph size="m"><Text color="success">Paragraph M Success 300</Text></Paragraph>
 </Spacer>
 ```
 
-## S
+## Text S
 
 ```css static
 font-family: Museo Sans
 font-size: 14px
 line-height: 20px
+font-weight: 500, 300
 ```
 
 ```jsx
 <Spacer size="m">
-  <Paragraph size="s">Paragraph S <Text bold>Dark 500</Text></Paragraph>
-  <Paragraph size="s">Paragraph S <Text bold><Text color="failure">Error</Text> 500</Text></Paragraph>
-  <Paragraph size="s">Paragraph S <Text color="success">Success</Text> 300</Paragraph>
-  <Paragraph size="s" color="support">Paragraph S <Text color="warning">Warning</Text> 300</Paragraph>
+  <Paragraph size="s"><Text bold><Text color="failure">Paragraph S Error 500</Text></Text></Paragraph>
+  <Paragraph size="s"><Text color="failure">Paragraph S Error 300</Text></Paragraph>
+  <Paragraph size="s"><Text bold><Text color="warning">Paragraph S Warning 500</Text></Text></Paragraph>
+  <Paragraph size="s"><Text color="warning">Paragraph S Warning 300</Text></Paragraph>
+  <Paragraph size="s"><Text bold><Text color="success">Paragraph S Success 500</Text></Text></Paragraph>
+  <Paragraph size="s"><Text color="success">Paragraph S Success 300</Text></Paragraph>
 </Spacer>
 ```

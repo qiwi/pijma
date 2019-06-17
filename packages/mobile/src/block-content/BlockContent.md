@@ -1,11 +1,13 @@
-## L
+## Padding L
+
+Используются в мобильной версии в качестве увеличенных отступов в контентных блоках.
 
 ```css static
 padding: 24px
 ```
 
 ```jsx
-<Card bg="#eee" p={7}>
+<Card bg="#f5f5f5" p={7}>
     <Block>
       <BlockContent indent="l">
         <Paragraph size="m">
@@ -16,14 +18,16 @@ padding: 24px
 </Card>
 ```
 
-## M
+## Padding M
+
+Используются в мобильной версии в качестве стандартных отступов в контентных блоках.
 
 ```css static
 padding: 16px
 ```
 
 ```jsx
-<Card bg="#eee" p={7}>
+<Card bg="#f5f5f5" p={7}>
     <Block>
       <BlockContent indent="m">
         <Paragraph size="m">

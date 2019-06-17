@@ -1,9 +1,11 @@
-Переключатели — это элементы управления, которые позволяют выбрать несколько вариантов из списка. Используйте в одном списке не более 7 переключателей. Для остальных случаев применяйте выпадающие списки.
+Переключатели - это элементы управления, которые включают или выключают ту или иную опцию. Подходят для случаев, когда у элемента может быть только два состояния.
+
+Рекомендуем располагать в одном списке не более семи переключателей.
 
 ```jsx
 initialState = {values: ['selected']};
 <SwitchField
-  title="Группа переключателей"
+  title="Переключатели слева"
   hint={<QuestionIcon/>}
   options={[{
     label: 'Выбранный переключатель',
@@ -29,36 +31,38 @@ initialState = {values: ['selected']};
 
 ```jsx
 initialState = {values: ['selected']};
-<SwitchField
-  title="Группа инвертированных переключателей"
-  hint={<QuestionIcon/>}
-  reverse={true}
-  options={[{
-    label: 'Выбранный переключатель',
-    value: 'selected',
-    disabled: false,
-  }, {
-    label: 'Невыбранный переключатель',
-    value: 'normal',
-    disabled: false,
-  }, {
-    label: 'Заблокированный выбранный переключатель',
-    value: 'selected-disabled',
-    disabled: true,
-  }, {
-    label: 'Заблокированный переключатель',
-    value: 'disabled',
-    disabled: true,
-  }]}
-  values={state.values}
-  onChange={(values) => setState({values})}
-/>
+<Box width={100}>
+  <SwitchField
+    title="Переключатели справа"
+    hint={<QuestionIcon/>}
+    reverse={true}
+    options={[{
+      label: 'Выбранный переключатель',
+      value: 'selected',
+      disabled: false,
+    }, {
+      label: 'Невыбранный переключатель',
+      value: 'normal',
+      disabled: false,
+    }, {
+      label: 'Заблокированный выбранный переключатель',
+      value: 'selected-disabled',
+      disabled: true,
+    }, {
+      label: 'Заблокированный переключатель',
+      value: 'disabled',
+      disabled: true,
+    }]}
+    values={state.values}
+    onChange={(values) => setState({values})}
+  />
+</Box>
 ```
 
 ```jsx
 initialState = {values: ['selected']};
 <SwitchField
-  title="Группа переключателей с примечаниями"
+  title="Переключатели с примечаниями"
   hint={<QuestionIcon/>}
   options={[{
     label: 'Выбранный переключатель',

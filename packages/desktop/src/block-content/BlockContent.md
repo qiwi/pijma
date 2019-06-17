@@ -1,11 +1,13 @@
-## L
+## Padding L
+
+Используются на десктопной версии сайта в контентных блоках шириной от 580px.
 
 ```css static
 padding: 44px 68px 48px
 ```
 
 ```jsx
-<Card bg="#eee" p={7}>
+<Card bg="#f5f5f5" p={7}>
     <Block>
       <BlockContent indent="l">
         <Spacer size="m">
@@ -21,14 +23,16 @@ padding: 44px 68px 48px
 </Card>
 ```
 
-## M
+## Padding M
+
+Используются на десктопной версии сайта в контентных блоках шириной 580px и менее.
 
 ```css static
 padding: 44px 44px 48px
 ```
 
 ```jsx
-<Card bg="#eee" p={7}>
+<Card bg="#f5f5f5" p={7}>
     <Block>
       <BlockContent indent="m">
         <Spacer size="m">
@@ -43,14 +47,16 @@ padding: 44px 44px 48px
     </Block>
 </Card>
 ```
-## S
+## Padding S
+
+ Используются в десктопной версии в b2b-продуктах в качестве уменьшенной версии отступов.
 
 ```css static
 padding: 32px
 ```
 
 ```jsx
-<Card bg="#eee" p={7}>
+<Card bg="#f5f5f5" p={7}>
     <Block>
       <BlockContent indent="s">
         <Spacer size="m">

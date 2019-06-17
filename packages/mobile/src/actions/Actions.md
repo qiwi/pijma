@@ -1,25 +1,25 @@
 ## Расположение
 
-Кнопки могут располагаться только вертикально.
+Кнопки могут располагаться только друг под другом. В мобильной версии кнопки обычно занимают всю ширину контентного блока или экрана с учетом внутренних отступов.
 
 ```jsx
 <Actions size="accent">
   <Button
     kind="brand"
     size="accent"
-    text="Кнопка"
+    text="Нажать красивую кнопку"
   />
   <Button
     kind="simple"
     size="accent"
-    text="Кнопка"
+    text="Нажать"
   />
 </Actions>
 ```
 
 ## Размеры
 
-В зависимости от размера кнопок прописывается размер разделителей
+Отступ между кнопками фиксированный — 16px.
 
 #### Accent
 
@@ -28,12 +28,12 @@
   <Button
     kind="brand"
     size="accent"
-    text="Кнопка"
+    text="Нажать"
   />
   <Button
     kind="simple"
     size="accent"
-    text="Кнопка"
+    text="Нажать"
   />
 </Actions>
 ```
@@ -45,12 +45,12 @@
   <Button
     kind="brand"
     size="normal"
-    text="Кнопка"
+    text="Нажать"
   />
   <Button
     kind="simple"
     size="normal"
-    text="Кнопка"
+    text="Нажать"
   />
 </Actions>
 ```
@@ -62,12 +62,12 @@
   <Button
     kind="brand"
     size="minor"
-    text="Кнопка"
+    text="Нажать"
   />
   <Button
     kind="simple"
     size="minor"
-    text="Кнопка"
+    text="Нажать"
   />
 </Actions>
 ```

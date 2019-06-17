@@ -1,10 +1,11 @@
-Единичный чекбокс
+Могут использоваться в единственном числе для отображения добавочного действия.
+Чаще используются группы чекбоксов.
 
-#### Состояния чекбоксов
+## Состояния
 ```jsx
 initialState = {checked: true};
 <Box width={80}>
-  <Spacer size="xxs">
+  <Spacer size="s">
     <Checkbox
       onChange={checked => setState({checked})}
       checked={state.checked}

@@ -1,47 +1,53 @@
-## L
+## Paragraph L 
 
 ```css static
 font-family: Museo Sans
 font-size: 20px
 line-height: 32px
-font-weight: 300
+font-weight: 500, 300
 ```
 
 ```jsx
 <Spacer size="m">
-  <Paragraph size="l">Paragraph L Black</Paragraph>
-  <Paragraph size="l" color="support">Paragraph 20px Gray</Paragraph>
+  <Paragraph size="l"><Text bold>Paragraph L 500 Default</Text></Paragraph>
+  <Paragraph size="l" color="support"><Text bold>Paragraph L 500 Support</Text></Paragraph>
+  <Paragraph size="l">Paragraph L 300 Default</Paragraph>
+  <Paragraph size="l" color="support">Paragraph L 300 Support</Paragraph>
 </Spacer>
 ```
 
-## M
+## Paragraph M
 
 ```css static
 font-family: Museo Sans
 font-size: 16px
 line-height: 24px
-font-weight: 300
+font-weight: 500, 300
 ```
 
 ```jsx
 <Spacer size="m">
-  <Paragraph size="m">Paragraph M Black</Paragraph>
-  <Paragraph size="m" color="support">Paragraph M Gray</Paragraph>
+  <Paragraph size="m"><Text bold>Paragraph M 500 Default</Text></Paragraph>
+  <Paragraph size="m" color="support"><Text bold>Paragraph M 500 Support</Text></Paragraph>
+  <Paragraph size="m">Paragraph M 300 Default</Paragraph>
+  <Paragraph size="m" color="support">Paragraph M 300 Support</Paragraph>
 </Spacer>
 ```
 
-## S
+## Paragraph S
 
 ```css static
 font-family: Museo Sans
 font-size: 14px
 line-height: 20px
-font-weight: 300
+font-weight: 500, 300
 ```
 
 ```jsx
 <Spacer size="m">
-  <Paragraph size="s">Paragraph S Black</Paragraph>
-  <Paragraph size="s" color="support">Paragraph S Gray</Paragraph>
+  <Paragraph size="s"><Text bold>Paragraph S 500 Default</Text></Paragraph>
+  <Paragraph size="s" color="support"><Text bold>Paragraph S 500 Support</Text></Paragraph>
+  <Paragraph size="s">Paragraph S 300 Default</Paragraph>
+  <Paragraph size="s" color="support">Paragraph S 300 Support</Paragraph>
 </Spacer>
 ```

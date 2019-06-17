@@ -4,7 +4,7 @@
 <Box width={64}>
   <PasswordField
     name="password"
-    title="Пароль"
+    title="Введите пароль"
     viewed={false}
     value={state.text}
     onChange={text => setState({text})}
@@ -12,13 +12,13 @@
 </Box>
 ```
 
-#### С кнопкой показать пароль
+#### С возможностью показать пароль
 
 ```jsx
 <Box width={64}>
   <PasswordField
     name="password"
-    title="Пароль"
+    title="Введите пароль"
     viewed
     value={state.text}
     onChange={text => setState({text})}
@@ -26,28 +26,28 @@
 </Box>
 ```
 
-#### Поле ввода с кнопкой
+#### С текстовой кнопкой справа
 
 ```jsx
 <Box width={64}>
   <PasswordField
     name="password"
-    title="Пароль"
+    title="Введите пароль"
     viewed
-    action={<a href="#/Fields/TextField">Сылка-кнопка</a>}
+    action={<Link size="s" href="https://qiwi.com">Нажать кнопку</Link>}
     value={state.text}
     onChange={text => setState({text})}
   />
 </Box>
 ```
 
-#### Ошибка
+#### С ошибкой
 
 ```jsx
 <Box width={64}>
   <PasswordField
     name="password"
-    title="Пароль"
+    title="Введите пароль"
     error="Подсказка"
     viewed
     value={state.text}
@@ -56,25 +56,25 @@
 </Box>
 ```
 
-#### Выключенное поле
+#### Неактивное поле
 
 ```jsx
 <Box width={64}>
   <PasswordField
     name="password"
-    title="Пароль"
+    title="Введите пароль"
     disabled={true}
   />
 </Box>
 ```
 
-#### Поле с хинтом
+#### С подсказкой
 
 ```jsx
 <Box width={64}>
   <PasswordField
     name="password"
-    title="Пароль"
+    title="Введите пароль"
     viewed={false}
     hint={<QuestionIcon />}
     value={state.text}
@@ -83,13 +83,13 @@
 </Box>
 ```
 
-#### Поле ввода с ограниченным количеством символов
+#### С ограничением количества символов
 
 ```jsx
 <Box width={64}>
   <PasswordField
     name="password"
-    title="Пароль"
+    title="Введите пароль"
     maxLength={3}
     value={state.text}
     onChange={text => setState({text})}
