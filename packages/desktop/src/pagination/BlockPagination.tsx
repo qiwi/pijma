@@ -42,6 +42,8 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               boxWidth={5}
               boxHeight={5}
               s="1px 0 0 #e6e6e6"
+              sHover="0px -1px 0 1px #e6e6e6"
+              mtHover="1px"
               onClick={onChange}
               children={({disabled}) => (
                 <IconWrapper color={disabled ? '#ccc' : '#000'}>
@@ -57,6 +59,9 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               boxWidth={5}
               boxHeight={5}
               s="1px 0 0 #e6e6e6"
+              sHover="0px -1px 0 1px #e6e6e6"
+              ml="1px"
+              mtHover="1px"
               onClick={onChange}
               children={({disabled}) => (
                 <IconWrapper color={disabled ? '#ccc' : '#000'}>
@@ -71,6 +76,9 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
                 height={12}
                 width={12}
                 s="1px 0 0 #e6e6e6"
+                sHover="0px -1px 0 1px #e6e6e6"
+                ml="1px"
+                mtHover="1px"
                 onClick={onChange}
                 children={() => (
                   <Text
@@ -95,6 +103,9 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               boxWidth={5}
               boxHeight={5}
               s="1px 0 0 #e6e6e6"
+              sHover="0px -1px 0 1px #e6e6e6"
+              ml="1px"
+              mtHover="1px"
               onClick={onChange}
               children={({disabled}) => (
                 <IconWrapper color={disabled ? '#ccc' : '#000'}>
@@ -109,6 +120,9 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               width={18}
               boxWidth={5}
               boxHeight={5}
+              sHover="0px -1px 0 1px #e6e6e6"
+              ml="1px"
+              mtHover="1px"
               onClick={onChange}
               children={({disabled}) => (
                 <IconWrapper color={disabled ? '#ccc' : '#000'}>

@@ -54,6 +54,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           boxWidth={5}
           boxHeight={5}
           s="1px 0 0 #e6e6e6"
+          ml="1px"
           onClick={onChange}
           children={({disabled}) => (
             <IconWrapper color={disabled ? '#ccc' : '#000'}>
@@ -68,6 +69,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
             height={12}
             width={12}
             s="1px 0 0 #e6e6e6"
+            ml="1px"
             onClick={onChange}
             children={() => (
               <Text
@@ -92,6 +94,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           boxWidth={5}
           boxHeight={5}
           s="1px 0 0 #e6e6e6"
+          ml="1px"
           onClick={onChange}
           children={({disabled}) => (
             <IconWrapper color={disabled ? '#ccc' : '#000'}>
@@ -106,6 +109,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           width={18}
           boxWidth={5}
           boxHeight={5}
+          ml="1px"
           onClick={onChange}
           children={({disabled}) => (
             <IconWrapper color={disabled ? '#ccc' : '#000'}>

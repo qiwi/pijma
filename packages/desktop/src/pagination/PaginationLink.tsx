@@ -10,6 +10,9 @@ export interface PageLinkProps {
   boxWidth?: Value
   boxHeight?: Value
   s?: string
+  sHover?: string
+  ml?: Value
+  mtHover?: Value
   onClick?: (index: number) => void
   children: RenderChild<{
     disabled: boolean
@@ -37,7 +40,17 @@ export const PaginationLink: FC<PageLinkProps> = props => (
             ? '#f5f5f5'
             : undefined
         }
-        s={props.s}
+        s={
+          (renderProps.hover || renderProps.focus) && !props.disabled
+            ? props.sHover || props.s
+            : props.s
+        }
+        ml={props.ml}
+        mt={
+          (renderProps.hover || renderProps.focus) && !props.disabled
+            ? props.mtHover
+            : undefined
+        }
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
