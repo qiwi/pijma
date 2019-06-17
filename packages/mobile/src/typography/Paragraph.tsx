@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo, TypoProps} from '@qiwi/pijma-core'
+import {Breaker, Typo, TypoProps} from '@qiwi/pijma-core'
 
 export interface ParagraphProps {
   size?: 's' | 'm' | 'l'
@@ -8,6 +8,7 @@ export interface ParagraphProps {
   compact?: boolean
   color?: 'default' | 'support' | 'inverse'
   transform?: TypoProps['transform']
+  align?: TypoProps['align']
 }
 
 const ParagraphSize: { [size in NonNullable<ParagraphProps['size']>]: number } = {
@@ -34,7 +35,7 @@ const ParagraphColor: { [color in NonNullable<ParagraphProps['color']>]: string 
   inverse: '#fff',
 }
 
-export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold = false, compact = false, color = 'default', transform, children}) => (
+export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold = false, compact = false, color = 'default', transform, align, children}) => (
   <Typo
     as="p"
     display="block"
@@ -43,7 +44,8 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold =
     weight={bold ? 500 : 300}
     color={ParagraphColor[color]}
     transform={transform}
-    children={children}
+    align={align}
+    children={<Breaker children={children}/>}
   />
 )
 
