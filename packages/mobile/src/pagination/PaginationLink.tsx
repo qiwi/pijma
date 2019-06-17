@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 import {LinkControl, Lnk, Card, Value, RenderChild, Box} from '@qiwi/pijma-core'
 
-export interface PaginationLinkProps {
+export interface PageLinkProps {
   pageNumber: number
   disabled?: boolean
   height?: Value
@@ -10,7 +10,9 @@ export interface PaginationLinkProps {
   boxWidth?: Value
   boxHeight?: Value
   s?: string
-  onClick?: (index: number) => void
+  hrefTemplate?: (page: number) => string
+  onChange?: (index: number) => void
+  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
   children: RenderChild<{
     disabled: boolean
     hover: boolean
@@ -20,10 +22,12 @@ export interface PaginationLinkProps {
 
 const CardLink = Card.withComponent(Lnk)
 
-export const PaginationLink: FC<PaginationLinkProps> = props => (
+export const PaginationLink: FC<PageLinkProps> = props => (
   <LinkControl
-    onClick={() =>
-      !props.disabled && props.onClick && props.onClick(props.pageNumber)
+    href={props.hrefTemplate && props.hrefTemplate(props.pageNumber)}
+    onClick={props.hrefTemplate
+      ? props.onClick
+      : () => !props.disabled && props.onChange && props.onChange(props.pageNumber)
     }
     children={renderProps => (
       <CardLink
@@ -32,12 +36,8 @@ export const PaginationLink: FC<PaginationLinkProps> = props => (
         width={props.width}
         display="inline-flex"
         cursor={props.disabled ? 'default' : 'pointer'}
-        bg={
-          (renderProps.hover || renderProps.focus) && !props.disabled
-            ? '#f5f5f5'
-            : undefined
-        }
         s={props.s}
+        href={props.hrefTemplate && props.hrefTemplate(props.pageNumber)}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
