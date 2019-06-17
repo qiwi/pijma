@@ -9,19 +9,14 @@ export interface PaginationProps {
   total: number
   active: number
   count?: number
-  outsided?: boolean
   onChange?: (index: number) => void
 }
-
-const shadowedStyle: string = '0 1px 2px 0 rgba(0, 0, 0, 0.12)'
-const borderedStyle: string = '0 0 0 1px #e6e6e6'
 
 export const Pagination: FunctionComponent<PaginationProps> = ({
   total,
   count = 5,
   active,
   onChange,
-  outsided = true,
 }) => (
   <PaginationControl
     total={total}
@@ -30,10 +25,11 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
     children={renderProps => (
       <Card
         bg="#fff"
-        s={outsided ? shadowedStyle : borderedStyle}
+        s="0 0 0 1px #e6e6e6"
         height={12}
         display="inline-flex"
         r={10}
+        overflow="hidden"
       >
         <PaginationLink
           pageNumber={1}
@@ -124,5 +120,4 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
 
 Pagination.defaultProps = {
   count: 5,
-  outsided: true,
 }
