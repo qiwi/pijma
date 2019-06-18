@@ -39,7 +39,6 @@ export const MenuItem: FC<MenuItemProps> = (props) => (
     children={(renderProps) => (
       <CardLink
         bg={renderProps.hover || renderProps.focus || renderProps.active ? '#f5f5f5' : undefined}
-        color="inherit"
         cursor="pointer"
         display="block"
         r={10}
