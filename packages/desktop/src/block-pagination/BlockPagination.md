@@ -11,7 +11,7 @@ initialState = {activePage: 1};
 
 ```jsx
 <Card bg="#eee" p={4}>
-  <Pagination
+  <BlockPagination
     total={10}
     active={2}
     href={(page) => `${location.href}?page=${page}`}
