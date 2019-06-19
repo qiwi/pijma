@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 import {LinkControl, Lnk, Card, Value, RenderChild, Box} from '@qiwi/pijma-core'
 
-export interface PaginationLinkProps {
+export interface BlockPaginationLinkProps {
   pageNumber: number
   disabled?: boolean
   height?: Value
@@ -10,7 +10,9 @@ export interface PaginationLinkProps {
   boxWidth?: Value
   boxHeight?: Value
   s?: string
+  sHover?: string
   ml?: Value
+  mtHover?: Value
   hrefTemplate?: (page: number) => string
   onChange?: (index: number) => void
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
@@ -23,7 +25,7 @@ export interface PaginationLinkProps {
 
 const CardLink = Card.withComponent(Lnk)
 
-export const PaginationLink: FC<PaginationLinkProps> = props => (
+export const BlockPaginationLink: FC<BlockPaginationLinkProps> = props => (
   <LinkControl
     href={props.hrefTemplate && props.hrefTemplate(props.pageNumber)}
     onClick={props.hrefTemplate
@@ -42,8 +44,17 @@ export const PaginationLink: FC<PaginationLinkProps> = props => (
             ? '#f5f5f5'
             : undefined
         }
-        s={props.s}
+        s={
+          (renderProps.hover || renderProps.focus) && !props.disabled
+            ? props.sHover || props.s
+            : props.s
+        }
         ml={props.ml}
+        mt={
+          (renderProps.hover || renderProps.focus) && !props.disabled
+            ? props.mtHover
+            : undefined
+        }
         href={props.hrefTemplate && props.hrefTemplate(props.pageNumber)}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}

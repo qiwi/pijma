@@ -3,7 +3,7 @@ import React, {FunctionComponent} from 'react'
 import {PaginationControl, Card, IconWrapper, Box, Block} from '@qiwi/pijma-core'
 import {Icon} from '@qiwi/pijma-media'
 import {Text} from '../typography'
-import {PaginationLink} from './PaginationLink'
+import {BlockPaginationLink} from './BlockPaginationLink'
 
 export interface BlockPaginationProps {
   total: number
@@ -36,7 +36,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
             r={10}
             overflow="hidden"
           >
-            <PaginationLink
+            <BlockPaginationLink
               pageNumber={1}
               disabled={renderProps.pages.includes(1)}
               height={12}
@@ -55,7 +55,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
                 </IconWrapper>
               )}
             />
-            <PaginationLink
+            <BlockPaginationLink
               pageNumber={renderProps.previousPage}
               disabled={renderProps.pages.includes(1)}
               height={12}
@@ -76,7 +76,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               )}
             />
             {renderProps.pages.map(pageNumber => (
-              <PaginationLink
+              <BlockPaginationLink
                 key={pageNumber}
                 pageNumber={pageNumber}
                 height={12}
@@ -103,7 +103,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
                 )}
               />
             ))}
-            <PaginationLink
+            <BlockPaginationLink
               pageNumber={renderProps.nextPage}
               disabled={renderProps.pages.includes(renderProps.totalPages)}
               height={12}
@@ -123,7 +123,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
                 </IconWrapper>
               )}
             />
-            <PaginationLink
+            <BlockPaginationLink
               pageNumber={renderProps.totalPages}
               disabled={renderProps.pages.includes(renderProps.totalPages)}
               height={12}
