@@ -42,61 +42,42 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
             <BlockPaginationLink
               pageNumber={1}
               disabled={renderProps.pages.includes(1)}
-              height={12}
               width={18}
-              boxWidth={5}
-              boxHeight={5}
-              s="1px 0 0 #e6e6e6"
-              sHover="0px -1px 0 1px #e6e6e6"
-              mtHover="1px"
+              ml={0}
               href={href}
               onClick={renderProps.onPageClick}
               children={({disabled}) => (
-                <IconWrapper color={disabled ? '#ccc' : '#000'}>
-                  <Icon name="angle-double-left-small" />
-                </IconWrapper>
+                <Box width={5} height={5}>
+                  <IconWrapper color={disabled ? '#ccc' : '#000'}>
+                    <Icon name="angle-double-left-small" />
+                  </IconWrapper>
+                </Box>
               )}
             />
             <BlockPaginationLink
               pageNumber={renderProps.previousPage}
               disabled={renderProps.pages.includes(1)}
-              height={12}
-              width={12}
-              boxWidth={5}
-              boxHeight={5}
-              s="1px 0 0 #e6e6e6"
-              sHover="0px -1px 0 1px #e6e6e6"
-              ml="1px"
-              mtHover="1px"
               href={href}
               onClick={renderProps.onPageClick}
               children={({disabled}) => (
-                <IconWrapper color={disabled ? '#ccc' : '#000'}>
-                  <Icon name="angle-small-left" />
-                </IconWrapper>
+                <Box width={5} height={5}>
+                  <IconWrapper color={disabled ? '#ccc' : '#000'}>
+                    <Icon name="angle-small-left" />
+                  </IconWrapper>
+                </Box>
               )}
             />
             {renderProps.pages.map(pageNumber => (
               <BlockPaginationLink
                 key={pageNumber}
                 pageNumber={pageNumber}
-                height={12}
-                width={12}
-                s="1px 0 0 #e6e6e6"
-                sHover="0px -1px 0 1px #e6e6e6"
-                ml="1px"
-                mtHover="1px"
                 href={href}
                 onClick={renderProps.onPageClick}
                 children={() => (
                   <Text
                     bold={false}
                     size="m"
-                    color={
-                      renderProps.currentPage === pageNumber
-                        ? 'warning'
-                        : 'default'
-                    }
+                    color={renderProps.currentPage === pageNumber ? 'warning' : 'default'}
                   >
                     {pageNumber}
                   </Text>
@@ -106,38 +87,28 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
             <BlockPaginationLink
               pageNumber={renderProps.nextPage}
               disabled={renderProps.pages.includes(renderProps.totalPages)}
-              height={12}
-              width={12}
-              boxWidth={5}
-              boxHeight={5}
-              s="1px 0 0 #e6e6e6"
-              sHover="0px -1px 0 1px #e6e6e6"
-              ml="1px"
-              mtHover="1px"
               href={href}
               onClick={renderProps.onPageClick}
               children={({disabled}) => (
-                <IconWrapper color={disabled ? '#ccc' : '#000'}>
-                  <Icon name="angle-small-right" />
-                </IconWrapper>
+                <Box width={5} height={5}>
+                  <IconWrapper color={disabled ? '#ccc' : '#000'}>
+                    <Icon name="angle-small-right" />
+                  </IconWrapper>
+                </Box>
               )}
             />
             <BlockPaginationLink
               pageNumber={renderProps.totalPages}
               disabled={renderProps.pages.includes(renderProps.totalPages)}
-              height={12}
               width={18}
-              boxWidth={5}
-              boxHeight={5}
-              sHover="0px -1px 0 1px #e6e6e6"
-              ml="1px"
-              mtHover="1px"
               href={href}
               onClick={renderProps.onPageClick}
               children={({disabled}) => (
-                <IconWrapper color={disabled ? '#ccc' : '#000'}>
-                  <Icon name="angle-double-right-small" />
-                </IconWrapper>
+                <Box width={5} height={5}>
+                  <IconWrapper color={disabled ? '#ccc' : '#000'}>
+                    <Icon name="angle-double-right-small" />
+                  </IconWrapper>
+                </Box>
               )}
             />
           </Card>

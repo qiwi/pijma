@@ -1,18 +1,15 @@
 import React, {FC} from 'react'
 
-import {LinkControl, Lnk, Card, Value, RenderChild, Box} from '@qiwi/pijma-core'
+import {LinkControl, Lnk, Card, Value, RenderChild, Flex} from '@qiwi/pijma-core'
 
 export interface BlockPaginationLinkProps {
   pageNumber: number
   disabled?: boolean
   height?: Value
   width?: Value
-  boxWidth?: Value
-  boxHeight?: Value
   s?: string
   sHover?: string
   ml?: Value
-  mtHover?: Value
   href?: (page: number) => string
   onClick?: (index: number, disabled: boolean) => void
   children: RenderChild<{
@@ -42,13 +39,13 @@ export const BlockPaginationLink: FC<BlockPaginationLinkProps> = props => (
         }
         s={
           (renderProps.hover || renderProps.focus) && !props.disabled
-            ? props.sHover || props.s
+            ? props.sHover
             : props.s
         }
         ml={props.ml}
         mt={
           (renderProps.hover || renderProps.focus) && !props.disabled
-            ? props.mtHover
+            ? '1px'
             : undefined
         }
         href={props.href && props.href(props.pageNumber)}
@@ -60,10 +57,11 @@ export const BlockPaginationLink: FC<BlockPaginationLinkProps> = props => (
         onMouseUp={renderProps.onMouseUp}
         onMouseDown={renderProps.onMouseDown}
       >
-        <Box
-          m="auto"
-          width={props.boxWidth}
-          height={props.boxHeight}
+        <Flex
+          align="center"
+          justify="center"
+          width={1}
+          height={1}
           children={props.children({
             disabled: props.disabled || false,
             hover: renderProps.hover,
@@ -74,3 +72,11 @@ export const BlockPaginationLink: FC<BlockPaginationLinkProps> = props => (
     )}
   />
 )
+
+BlockPaginationLink.defaultProps = {
+  width: 12,
+  height: 12,
+  s: '1px 0 0 #e6e6e6',
+  sHover: '0px -1px 0 1px #e6e6e6',
+  ml: '1px',
+}

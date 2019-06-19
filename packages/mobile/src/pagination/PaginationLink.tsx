@@ -1,14 +1,12 @@
 import React, {FC} from 'react'
 
-import {LinkControl, Lnk, Card, Value, RenderChild, Box} from '@qiwi/pijma-core'
+import {LinkControl, Lnk, Card, Value, RenderChild, Flex} from '@qiwi/pijma-core'
 
 export interface PaginationLinkProps {
   pageNumber: number
   disabled?: boolean
   height?: Value
   width?: Value
-  boxWidth?: Value
-  boxHeight?: Value
   s?: string
   href?: (page: number) => string
   onClick?: (index: number, disabled: boolean) => void
@@ -42,10 +40,11 @@ export const PaginationLink: FC<PaginationLinkProps> = props => (
         onMouseUp={renderProps.onMouseUp}
         onMouseDown={renderProps.onMouseDown}
       >
-        <Box
-          m="auto"
-          width={props.boxWidth}
-          height={props.boxHeight}
+        <Flex
+          align="center"
+          justify="center"
+          width={1}
+          height={1}
           children={props.children({
             disabled: props.disabled || false,
             hover: renderProps.hover,
@@ -56,3 +55,9 @@ export const PaginationLink: FC<PaginationLinkProps> = props => (
     )}
   />
 )
+
+PaginationLink.defaultProps = {
+  width: 12,
+  height: 12,
+  s: '1px 0 0 #e6e6e6',
+}
