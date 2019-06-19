@@ -13,7 +13,7 @@ export interface BlockPaginationLinkProps {
   sHover?: string
   ml?: Value
   mtHover?: Value
-  hrefTemplate?: (page: number) => string
+  href?: (page: number) => string
   onChange?: (index: number) => void
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
   children: RenderChild<{
@@ -27,8 +27,8 @@ const CardLink = Card.withComponent(Lnk)
 
 export const BlockPaginationLink: FC<BlockPaginationLinkProps> = props => (
   <LinkControl
-    href={props.hrefTemplate && props.hrefTemplate(props.pageNumber)}
-    onClick={props.hrefTemplate
+    href={props.href && props.href(props.pageNumber)}
+    onClick={props.href
       ? props.onClick
       : () => !props.disabled && props.onChange && props.onChange(props.pageNumber)
     }
@@ -55,7 +55,7 @@ export const BlockPaginationLink: FC<BlockPaginationLinkProps> = props => (
             ? props.mtHover
             : undefined
         }
-        href={props.hrefTemplate && props.hrefTemplate(props.pageNumber)}
+        href={props.href && props.href(props.pageNumber)}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}

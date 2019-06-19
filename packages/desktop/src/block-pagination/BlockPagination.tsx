@@ -9,7 +9,7 @@ export interface BlockPaginationProps {
   total: number
   active: number
   count?: number
-  hrefTemplate?: (page: number) => string
+  href?: (page: number) => string
   onChange?: (index: number) => void
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
 }
@@ -18,7 +18,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
   total,
   count = 5,
   active,
-  hrefTemplate,
+  href,
   onChange,
   onClick,
 }) => (
@@ -46,7 +46,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               s="1px 0 0 #e6e6e6"
               sHover="0px -1px 0 1px #e6e6e6"
               mtHover="1px"
-              hrefTemplate={hrefTemplate}
+              href={href}
               onChange={onChange}
               onClick={onClick}
               children={({disabled}) => (
@@ -66,7 +66,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               sHover="0px -1px 0 1px #e6e6e6"
               ml="1px"
               mtHover="1px"
-              hrefTemplate={hrefTemplate}
+              href={href}
               onChange={onChange}
               onClick={onClick}
               children={({disabled}) => (
@@ -85,7 +85,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
                 sHover="0px -1px 0 1px #e6e6e6"
                 ml="1px"
                 mtHover="1px"
-                hrefTemplate={hrefTemplate}
+                href={href}
                 onChange={onChange}
                 onClick={onClick}
                 children={() => (
@@ -114,7 +114,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               sHover="0px -1px 0 1px #e6e6e6"
               ml="1px"
               mtHover="1px"
-              hrefTemplate={hrefTemplate}
+              href={href}
               onChange={onChange}
               onClick={onClick}
               children={({disabled}) => (
@@ -133,7 +133,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               sHover="0px -1px 0 1px #e6e6e6"
               ml="1px"
               mtHover="1px"
-              hrefTemplate={hrefTemplate}
+              href={href}
               onChange={onChange}
               onClick={onClick}
               children={({disabled}) => (

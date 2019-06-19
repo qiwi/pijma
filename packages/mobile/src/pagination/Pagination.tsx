@@ -9,7 +9,7 @@ export interface PaginationProps {
   total: number
   active: number
   count?: number
-  hrefTemplate?: (page: number) => string
+  href?: (page: number) => string
   onChange?: (index: number) => void
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
 }
@@ -18,7 +18,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
   total,
   count = 3,
   active,
-  hrefTemplate,
+  href,
   onChange,
   onClick,
 }) => (
@@ -43,7 +43,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           boxWidth={5}
           boxHeight={5}
           s="1px 0 0 #e6e6e6"
-          hrefTemplate={hrefTemplate}
+          href={href}
           onChange={onChange}
           onClick={onClick}
           children={({disabled}) => (
@@ -59,7 +59,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
             height={12}
             width={12}
             s="1px 0 0 #e6e6e6"
-            hrefTemplate={hrefTemplate}
+            href={href}
             onChange={onChange}
             onClick={onClick}
             children={() => (
@@ -85,7 +85,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           boxWidth={5}
           boxHeight={5}
           s="1px 0 0 #e6e6e6"
-          hrefTemplate={hrefTemplate}
+          href={href}
           onChange={onChange}
           onClick={onClick}
           children={({disabled}) => (
