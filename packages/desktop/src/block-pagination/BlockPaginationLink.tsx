@@ -14,8 +14,7 @@ export interface BlockPaginationLinkProps {
   ml?: Value
   mtHover?: Value
   href?: (page: number) => string
-  onChange?: (index: number) => void
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
+  onClick?: (index: number, disabled: boolean) => void
   children: RenderChild<{
     disabled: boolean
     hover: boolean
@@ -28,10 +27,7 @@ const CardLink = Card.withComponent(Lnk)
 export const BlockPaginationLink: FC<BlockPaginationLinkProps> = props => (
   <LinkControl
     href={props.href && props.href(props.pageNumber)}
-    onClick={props.href
-      ? props.onClick
-      : () => !props.disabled && props.onChange && props.onChange(props.pageNumber)
-    }
+    onClick={() => props.onClick && props.onClick(props.pageNumber, !!props.disabled)}
     children={renderProps => (
       <CardLink
         transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"

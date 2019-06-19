@@ -26,6 +26,9 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
     total={total}
     count={count}
     active={active}
+    href={href}
+    onChange={onChange}
+    onClick={onClick}
     children={renderProps => (
       <Card
         bg="#fff"
@@ -44,8 +47,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           boxHeight={5}
           s="1px 0 0 #e6e6e6"
           href={href}
-          onChange={onChange}
-          onClick={onClick}
+          onClick={renderProps.onPageClick}
           children={({disabled}) => (
             <IconWrapper color={disabled ? '#ccc' : '#000'}>
               <Icon name="angle-small-left" />
@@ -60,8 +62,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
             width={12}
             s="1px 0 0 #e6e6e6"
             href={href}
-            onChange={onChange}
-            onClick={onClick}
+            onClick={renderProps.onPageClick}
             children={() => (
               <Text
                 bold={false}
@@ -86,8 +87,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           boxHeight={5}
           s="1px 0 0 #e6e6e6"
           href={href}
-          onChange={onChange}
-          onClick={onClick}
+          onClick={renderProps.onPageClick}
           children={({disabled}) => (
             <IconWrapper color={disabled ? '#ccc' : '#000'}>
               <Icon name="angle-small-right" />

@@ -14,7 +14,7 @@ initialState = {activePage: 1};
   <Pagination
     total={10}
     active={2}
-    hrefTemplate={(page) => `${location.href}?page=${page}`}
+    href={(page) => `${location.href}?page=${page}`}
   />
 </Card>
 ```

@@ -28,6 +28,9 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
         total={total}
         count={count}
         active={active}
+        href={href}
+        onChange={onChange}
+        onClick={onClick}
         children={renderProps => (
           <Card
             bg="#fff"
@@ -47,8 +50,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               sHover="0px -1px 0 1px #e6e6e6"
               mtHover="1px"
               href={href}
-              onChange={onChange}
-              onClick={onClick}
+              onClick={renderProps.onPageClick}
               children={({disabled}) => (
                 <IconWrapper color={disabled ? '#ccc' : '#000'}>
                   <Icon name="angle-double-left-small" />
@@ -67,8 +69,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               ml="1px"
               mtHover="1px"
               href={href}
-              onChange={onChange}
-              onClick={onClick}
+              onClick={renderProps.onPageClick}
               children={({disabled}) => (
                 <IconWrapper color={disabled ? '#ccc' : '#000'}>
                   <Icon name="angle-small-left" />
@@ -86,8 +87,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
                 ml="1px"
                 mtHover="1px"
                 href={href}
-                onChange={onChange}
-                onClick={onClick}
+                onClick={renderProps.onPageClick}
                 children={() => (
                   <Text
                     bold={false}
@@ -115,8 +115,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               ml="1px"
               mtHover="1px"
               href={href}
-              onChange={onChange}
-              onClick={onClick}
+              onClick={renderProps.onPageClick}
               children={({disabled}) => (
                 <IconWrapper color={disabled ? '#ccc' : '#000'}>
                   <Icon name="angle-small-right" />
@@ -134,8 +133,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               ml="1px"
               mtHover="1px"
               href={href}
-              onChange={onChange}
-              onClick={onClick}
+              onClick={renderProps.onPageClick}
               children={({disabled}) => (
                 <IconWrapper color={disabled ? '#ccc' : '#000'}>
                   <Icon name="angle-double-right-small" />
