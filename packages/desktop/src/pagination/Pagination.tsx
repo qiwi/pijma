@@ -42,7 +42,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           page={1}
           disabled={renderProps.pages.includes(1)}
           width={18}
-          href={href}
+          href={href ? href(1) : undefined}
           onClick={renderProps.onPageClick}
           children={({disabled}) => (
             <Box width={5} height={5}>
@@ -55,7 +55,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
         <PaginationLink
           page={renderProps.previousPage}
           disabled={renderProps.pages.includes(1)}
-          href={href}
+          href={href ? href(renderProps.previousPage) : undefined}
           onClick={renderProps.onPageClick}
           children={({disabled}) => (
             <Box width={5} height={5}>
@@ -69,7 +69,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           <PaginationLink
             key={page}
             page={page}
-            href={href}
+            href={href ? href(page) : undefined}
             onClick={renderProps.onPageClick}
             children={() => (
               <Text
@@ -85,7 +85,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
         <PaginationLink
           page={renderProps.nextPage}
           disabled={renderProps.pages.includes(renderProps.totalPages)}
-          href={href}
+          href={href ? href(renderProps.nextPage) : undefined}
           onClick={renderProps.onPageClick}
           children={({disabled}) => (
             <Box width={5} height={5}>
@@ -99,7 +99,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           page={renderProps.totalPages}
           disabled={renderProps.pages.includes(renderProps.totalPages)}
           width={18}
-          href={href}
+          href={href ? href(renderProps.totalPages) : undefined}
           onClick={renderProps.onPageClick}
           children={({disabled}) => (
             <Box width={5} height={5}>

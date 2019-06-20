@@ -6,7 +6,7 @@ export interface PaginationLinkProps {
   page: number
   disabled?: boolean
   width?: Value
-  href?: (page: number) => string
+  href?: string
   onClick?: (index: number, disabled: boolean) => void
   children: RenderChild<{
     disabled: boolean
@@ -19,7 +19,7 @@ const CardLink = Card.withComponent(Lnk)
 
 export const PaginationLink: FC<PaginationLinkProps> = props => (
   <LinkControl
-    href={props.href && props.href(props.page)}
+    href={props.href}
     onClick={() => props.onClick && props.onClick(props.page, !!props.disabled)}
     children={renderProps => (
       <CardLink
@@ -30,7 +30,7 @@ export const PaginationLink: FC<PaginationLinkProps> = props => (
         cursor={props.disabled ? 'default' : 'pointer'}
         bg={(renderProps.hover || renderProps.focus) && !props.disabled ? '#f5f5f5' : undefined}
         s={(renderProps.hover || renderProps.focus) && !props.disabled ? '0px -1px 0 1px #e6e6e6' : '1px 0 0 #e6e6e6'}
-        href={props.href && props.href(props.page)}
+        href={props.href}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}

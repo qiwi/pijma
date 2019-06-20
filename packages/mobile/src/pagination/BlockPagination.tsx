@@ -42,7 +42,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
             <PaginationLink
               page={renderProps.previousPage}
               disabled={renderProps.pages.includes(1)}
-              href={href}
+              href={href ? href(renderProps.previousPage) : undefined}
               onClick={renderProps.onPageClick}
               children={({disabled}) => (
                 <Box width={5} height={5}>
@@ -56,7 +56,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               <PaginationLink
                 key={page}
                 page={page}
-                href={href}
+                href={href ? href(page) : undefined}
                 onClick={renderProps.onPageClick}
                 children={() => (
                   <Text
@@ -72,7 +72,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
             <PaginationLink
               page={renderProps.nextPage}
               disabled={renderProps.pages.includes(renderProps.totalPages)}
-              href={href}
+              href={href ? href(renderProps.nextPage) : undefined}
               onClick={renderProps.onPageClick}
               children={({disabled}) => (
                 <Box width={5} height={5}>
