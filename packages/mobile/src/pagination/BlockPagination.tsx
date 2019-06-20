@@ -43,7 +43,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               page={renderProps.previousPage}
               disabled={renderProps.pages.includes(1)}
               href={href ? href(renderProps.previousPage) : undefined}
-              onClick={renderProps.onPageClick}
+              onClick={renderProps.onPageClick(renderProps.previousPage, renderProps.pages.includes(1))}
               children={({disabled}) => (
                 <Box width={5} height={5}>
                   <IconWrapper color={disabled ? '#ccc' : '#000'}>
@@ -57,7 +57,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
                 key={page}
                 page={page}
                 href={href ? href(page) : undefined}
-                onClick={renderProps.onPageClick}
+                onClick={renderProps.onPageClick(page)}
                 children={() => (
                   <Text
                     bold={false}
@@ -73,7 +73,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               page={renderProps.nextPage}
               disabled={renderProps.pages.includes(renderProps.totalPages)}
               href={href ? href(renderProps.nextPage) : undefined}
-              onClick={renderProps.onPageClick}
+              onClick={renderProps.onPageClick(renderProps.nextPage, renderProps.pages.includes(renderProps.totalPages))}
               children={({disabled}) => (
                 <Box width={5} height={5}>
                   <IconWrapper color={disabled ? '#ccc' : '#000'}>

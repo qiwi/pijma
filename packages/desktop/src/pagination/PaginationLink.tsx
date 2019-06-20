@@ -7,7 +7,7 @@ export interface PaginationLinkProps {
   disabled?: boolean
   width?: Value
   href?: string
-  onClick?: (index: number, disabled: boolean) => void
+  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
   children: RenderChild<{
     disabled: boolean
     hover: boolean
@@ -20,7 +20,7 @@ const CardLink = Card.withComponent(Lnk)
 export const PaginationLink: FC<PaginationLinkProps> = props => (
   <LinkControl
     href={props.href}
-    onClick={() => props.onClick && props.onClick(props.page, !!props.disabled)}
+    onClick={props.onClick}
     children={renderProps => (
       <CardLink
         transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"

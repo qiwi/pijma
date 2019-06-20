@@ -43,7 +43,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           disabled={renderProps.pages.includes(1)}
           width={18}
           href={href ? href(1) : undefined}
-          onClick={renderProps.onPageClick}
+          onClick={renderProps.onPageClick(1, renderProps.pages.includes(1))}
           children={({disabled}) => (
             <Box width={5} height={5}>
               <IconWrapper color={disabled ? '#ccc' : '#000'}>
@@ -56,7 +56,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           page={renderProps.previousPage}
           disabled={renderProps.pages.includes(1)}
           href={href ? href(renderProps.previousPage) : undefined}
-          onClick={renderProps.onPageClick}
+          onClick={renderProps.onPageClick(renderProps.previousPage, renderProps.pages.includes(1))}
           children={({disabled}) => (
             <Box width={5} height={5}>
               <IconWrapper color={disabled ? '#ccc' : '#000'}>
@@ -70,7 +70,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
             key={page}
             page={page}
             href={href ? href(page) : undefined}
-            onClick={renderProps.onPageClick}
+            onClick={renderProps.onPageClick(page)}
             children={() => (
               <Text
                 bold={false}
@@ -86,7 +86,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           page={renderProps.nextPage}
           disabled={renderProps.pages.includes(renderProps.totalPages)}
           href={href ? href(renderProps.nextPage) : undefined}
-          onClick={renderProps.onPageClick}
+          onClick={renderProps.onPageClick(renderProps.nextPage, renderProps.pages.includes(renderProps.totalPages))}
           children={({disabled}) => (
             <Box width={5} height={5}>
               <IconWrapper color={disabled ? '#ccc' : '#000'}>
@@ -100,7 +100,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           disabled={renderProps.pages.includes(renderProps.totalPages)}
           width={18}
           href={href ? href(renderProps.totalPages) : undefined}
-          onClick={renderProps.onPageClick}
+          onClick={renderProps.onPageClick(renderProps.totalPages, renderProps.pages.includes(renderProps.totalPages))}
           children={({disabled}) => (
             <Box width={5} height={5}>
               <IconWrapper color={disabled ? '#ccc' : '#000'}>
