@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {Flex, Card} from '../primitive'
+import {Flex, Card, CardProps} from '../primitive'
 
 export interface TabListProps {
   center?: boolean
@@ -9,6 +9,7 @@ export interface TabListProps {
   vertical?: boolean
   bottom?: number
   size?: 's' | 'm' | 'l'
+  onKeyDown?: React.KeyboardEventHandler
 }
 
 const SpacerSize: {[size in NonNullable<TabListProps['size']>]: number} = {
@@ -17,10 +18,10 @@ const SpacerSize: {[size in NonNullable<TabListProps['size']>]: number} = {
   l: 17,
 }
 
-export class TabList extends React.Component<TabListProps, {}> {
+export class TabList extends React.Component<TabListProps & CardProps, {}> {
 
   public render() {
-    const {center, children, border, size, bottom} = this.props
+    const {center, children, border, size, bottom, ...props} = this.props
 
     const gap = border === 'long' && size ? SpacerSize[size] : 0
 
@@ -34,6 +35,7 @@ export class TabList extends React.Component<TabListProps, {}> {
         ml={gap * -1}
         pr={gap}
         pl={gap}
+        {...props}
       >
         <Flex justify={center ? 'center' : 'flex-start'}>{children}</Flex>
       </Card>

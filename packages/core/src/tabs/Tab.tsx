@@ -18,7 +18,7 @@ export interface TabProps {
 
 export class Tab extends React.Component<TabProps, {}> {
 
-  defaultProps = {
+  static defaultProps = {
     tabIndex: 0,
   }
 
@@ -29,6 +29,7 @@ export class Tab extends React.Component<TabProps, {}> {
   }
   public render() {
     const {
+      tabIndex,
       vertical,
       children,
       icon,
@@ -43,6 +44,7 @@ export class Tab extends React.Component<TabProps, {}> {
       <Box
         maxWidth={tab === 'long' ? 47 : 38}
         mr={6.5}
+        tabIndex={tabIndex}
         cursor="pointer"
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}

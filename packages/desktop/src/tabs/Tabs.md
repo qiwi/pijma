@@ -3,8 +3,13 @@
 Taбы – или вкладки это компонент, который предназначен для отображения большого количества контента в пределах небольшой области переключая его с помощью ярлычков, вкладок и панелей.
 
 ```jsx
+initialState = {value: 0};
 <Card r={10} bg="#fff" s="0 8px 16px 0 rgba(0, 0, 0, 0.12)">
-  <Tabs size="m">
+  <Tabs
+    size="m"
+    selected={state.value}
+    onSelect={value => setState({value})}
+  >
     <TabList tab="long">
       <Tab icon={
         <Icon name="star"/>
@@ -31,7 +36,11 @@ Taбы – или вкладки это компонент, который пр�
 </Card>
 ```
 ```jsx
-<Tabs>
+initialState = {value: 1};
+<Tabs
+  selected={state.value}
+  onSelect={value => setState({value})}
+>
   <TabList bottom={6}>
     <Tab>Первый таб</Tab>
     <Tab>Второй таб</Tab>
@@ -46,7 +55,12 @@ Taбы – или вкладки это компонент, который пр�
 ```
 
 ```jsx
-<Tabs size="s">
+initialState = {value: 0};
+<Tabs
+  size="s"
+  selected={state.value}
+  onSelect={value => setState({value})}
+>
   <TabList border="short">
     <Tab>Первый таб</Tab>
     <Tab>Второй таб</Tab>
@@ -61,8 +75,13 @@ Taбы – или вкладки это компонент, который пр�
 ```
 
 ```jsx
+initialState = {value: 0};
 <Card r={10} bg="#fff" s="0 8px 16px 0 rgba(0, 0, 0, 0.12)">
-  <Tabs size="m">
+  <Tabs
+    size="m"
+    selected={state.value}
+    onSelect={value => setState({value})}
+  >
     <TabList border="long">
       <Tab>Первый таб</Tab>
       <Tab>Второй таб</Tab>
@@ -78,11 +97,16 @@ Taбы – или вкладки это компонент, который пр�
 ```
 
 ```jsx
+initialState = {value: 0};
 <Card r={10} bg="#fff" s="0 8px 16px 0 rgba(0, 0, 0, 0.12)">
-  <Tabs size="l">
+  <Tabs
+    size="l"
+    selected={state.value}
+    onSelect={value => setState({value})}
+  >
     <TabList
-      vertical={true}
-      center={true}
+      vertical
+      center
       border="long"
     >
       <Tab icon={
