@@ -5,10 +5,7 @@ import {LinkControl, Lnk, Card, Value, RenderChild, Flex} from '@qiwi/pijma-core
 export interface PaginationLinkProps {
   pageNumber: number
   disabled?: boolean
-  height?: Value
   width?: Value
-  s?: string
-  sHover?: string
   href?: (page: number) => string
   onClick?: (index: number, disabled: boolean) => void
   children: RenderChild<{
@@ -27,12 +24,12 @@ export const PaginationLink: FC<PaginationLinkProps> = props => (
     children={renderProps => (
       <CardLink
         transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-        height={props.height}
+        height={12}
         width={props.width}
         display="inline-flex"
         cursor={props.disabled ? 'default' : 'pointer'}
         bg={(renderProps.hover || renderProps.focus) && !props.disabled ? '#f5f5f5' : undefined}
-        s={(renderProps.hover || renderProps.focus) && !props.disabled ? props.sHover : props.s}
+        s={(renderProps.hover || renderProps.focus) && !props.disabled ? '0px -1px 0 1px #e6e6e6' : '1px 0 0 #e6e6e6'}
         href={props.href && props.href(props.pageNumber)}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
@@ -60,7 +57,4 @@ export const PaginationLink: FC<PaginationLinkProps> = props => (
 
 PaginationLink.defaultProps = {
   width: 12,
-  height: 12,
-  s: '1px 0 0 #e6e6e6',
-  sHover: '0px -1px 0 1px #e6e6e6',
 }
