@@ -42,7 +42,6 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           pageNumber={1}
           disabled={renderProps.pages.includes(1)}
           width={18}
-          ml={0}
           href={href}
           onClick={renderProps.onPageClick}
           children={({disabled}) => (

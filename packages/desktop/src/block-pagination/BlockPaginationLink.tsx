@@ -9,7 +9,6 @@ export interface BlockPaginationLinkProps {
   width?: Value
   s?: string
   sHover?: string
-  ml?: Value
   href?: (page: number) => string
   onClick?: (index: number, disabled: boolean) => void
   children: RenderChild<{
@@ -42,7 +41,6 @@ export const BlockPaginationLink: FC<BlockPaginationLinkProps> = props => (
             ? props.sHover
             : props.s
         }
-        ml={props.ml}
         mt={
           (renderProps.hover || renderProps.focus) && !props.disabled
             ? '1px'
@@ -78,5 +76,4 @@ BlockPaginationLink.defaultProps = {
   height: 12,
   s: '1px 0 0 #e6e6e6',
   sHover: '0px -1px 0 1px #e6e6e6',
-  ml: '1px',
 }
