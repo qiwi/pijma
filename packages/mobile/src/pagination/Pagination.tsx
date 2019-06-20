@@ -39,7 +39,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
         overflow="hidden"
       >
         <PaginationLink
-          pageNumber={renderProps.previousPage}
+          page={renderProps.previousPage}
           disabled={renderProps.pages.includes(1)}
           href={href}
           onClick={renderProps.onPageClick}
@@ -51,25 +51,25 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
             </Box>
           )}
         />
-        {renderProps.pages.map(pageNumber => (
+        {renderProps.pages.map(page => (
           <PaginationLink
-            key={pageNumber}
-            pageNumber={pageNumber}
+            key={page}
+            page={page}
             href={href}
             onClick={renderProps.onPageClick}
             children={() => (
               <Text
                 bold={false}
                 size="m"
-                color={renderProps.currentPage === pageNumber ? 'warning' : 'default'}
+                color={renderProps.currentPage === page ? 'warning' : 'default'}
               >
-                {pageNumber}
+                {page}
               </Text>
             )}
           />
         ))}
         <PaginationLink
-          pageNumber={renderProps.nextPage}
+          page={renderProps.nextPage}
           disabled={renderProps.pages.includes(renderProps.totalPages)}
           href={href}
           onClick={renderProps.onPageClick}

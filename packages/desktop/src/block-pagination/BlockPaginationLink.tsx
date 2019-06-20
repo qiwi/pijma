@@ -3,7 +3,7 @@ import React, {FC} from 'react'
 import {LinkControl, Lnk, Card, Value, RenderChild, Flex} from '@qiwi/pijma-core'
 
 export interface BlockPaginationLinkProps {
-  pageNumber: number
+  page: number
   disabled?: boolean
   width?: Value
   href?: (page: number) => string
@@ -19,8 +19,8 @@ const CardLink = Card.withComponent(Lnk)
 
 export const BlockPaginationLink: FC<BlockPaginationLinkProps> = props => (
   <LinkControl
-    href={props.href && props.href(props.pageNumber)}
-    onClick={() => props.onClick && props.onClick(props.pageNumber, !!props.disabled)}
+    href={props.href && props.href(props.page)}
+    onClick={() => props.onClick && props.onClick(props.page, !!props.disabled)}
     children={renderProps => (
       <CardLink
         transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
@@ -31,7 +31,7 @@ export const BlockPaginationLink: FC<BlockPaginationLinkProps> = props => (
         bg={(renderProps.hover || renderProps.focus) && !props.disabled ? '#f5f5f5' : undefined}
         s={(renderProps.hover || renderProps.focus) && !props.disabled ? '0px -1px 0 1px #e6e6e6' : '1px 0 0 #e6e6e6'}
         mt={(renderProps.hover || renderProps.focus) && !props.disabled ? '1px' : undefined}
-        href={props.href && props.href(props.pageNumber)}
+        href={props.href && props.href(props.page)}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
