@@ -52,7 +52,7 @@ initialState = {menuCollapsed: true};
             <MenuItem
               text="link with icon"
               href="https://qiwi.com"
-              icon={<LoginIcon/>}
+              icon={<Icon name="login"/>}
             />
           </MenuContainer>
         </Striper>
@@ -66,7 +66,7 @@ initialState = {menuCollapsed: true};
         <Flex align="center" height={1}>
           <FlexItem shrink={1}>
             <Box width={6} height={6} mx={4} onClick={() => setState({showSubmenu: false})}>
-              <AngleLeftIcon/>
+              <Icon name="angle-left"/>
             </Box>
           </FlexItem>
           <FlexItem>

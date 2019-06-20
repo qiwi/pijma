@@ -1,7 +1,7 @@
 import React, {FC, ReactNode} from 'react'
 
 import {Flex, FlexItem, Lnk, Card, LinkControl, LinkControlProps, RenderChild} from '@qiwi/pijma-core'
-import {AngleRightIcon} from '@qiwi/pijma-media'
+import {Icon} from '@qiwi/pijma-media'
 import {Paragraph} from '../typography'
 
 export interface MenuItemProps {
@@ -80,7 +80,7 @@ export const MenuItem: FC<MenuItemProps> = (props) => (
           </FlexItem>
           {props.submenu ? (
             <FlexItem shrink={0} width={6} height={6} ml={3}>
-              <AngleRightIcon/>
+              <Icon name="angle-right"/>
             </FlexItem>
           ) : (
             null
