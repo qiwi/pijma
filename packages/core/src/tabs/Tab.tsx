@@ -1,6 +1,6 @@
 import React, {ReactNode} from 'react'
 
-import {Box, Flex, Typo, Pos, Card} from '../primitive'
+import {Box, BoxProps, Flex, Typo, Pos, Card} from '../primitive'
 
 export interface TabProps {
   vertical?: boolean
@@ -16,7 +16,7 @@ export interface TabProps {
   onMouseLeave?: () => void
 }
 
-export class Tab extends React.Component<TabProps, {}> {
+export class Tab extends React.Component<TabProps & BoxProps, {}> {
 
   static defaultProps = {
     tabIndex: 0,
@@ -36,6 +36,7 @@ export class Tab extends React.Component<TabProps, {}> {
       tab,
       selected,
       focused,
+      width,
       onMouseEnter,
       onMouseLeave,
     } = this.props
@@ -43,6 +44,7 @@ export class Tab extends React.Component<TabProps, {}> {
     return (
       <Box
         maxWidth={tab === 'long' ? 47 : 38}
+        width={width}
         mr={6.5}
         tabIndex={tabIndex}
         cursor="pointer"

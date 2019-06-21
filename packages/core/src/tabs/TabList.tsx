@@ -8,11 +8,12 @@ export interface TabListProps {
   tab?: 'long' | 'short'
   vertical?: boolean
   bottom?: number
-  size?: 's' | 'm' | 'l'
+  size?: 'xs' | 's' | 'm' | 'l'
   onKeyDown?: React.KeyboardEventHandler
 }
 
 const SpacerSize: {[size in NonNullable<TabListProps['size']>]: number} = {
+  xs: 4,
   s: 8,
   m: 11,
   l: 17,
@@ -21,7 +22,7 @@ const SpacerSize: {[size in NonNullable<TabListProps['size']>]: number} = {
 export class TabList extends React.Component<TabListProps & CardProps, {}> {
 
   public render() {
-    const {center, children, border, size, bottom, ...props} = this.props
+    const {center, children, border, size, bottom, tab, ...props} = this.props
 
     const gap = border === 'long' && size ? SpacerSize[size] : 0
 
@@ -35,6 +36,7 @@ export class TabList extends React.Component<TabListProps & CardProps, {}> {
         ml={gap * -1}
         pr={gap}
         pl={gap}
+        overflow={'auto'}
         {...props}
       >
         <Flex justify={center ? 'center' : 'flex-start'}>{children}</Flex>

@@ -4,7 +4,7 @@ import {Box} from '@qiwi/pijma-core'
 
 export interface TabsSpacerProps {
   children: React.ReactNode
-  size?: 's' | 'm' | 'l'
+  size?: 'xs' | 's' | 'm' | 'l'
 }
 
 const SpacerSize: {
@@ -15,6 +15,12 @@ const SpacerSize: {
     b: number
   }
 } = {
+  xs: {
+    t: 4,
+    l: 4,
+    r: 4,
+    b: 4,
+  },
   s: {
     t: 8,
     l: 8,
