@@ -1,7 +1,7 @@
 import React, {ReactNode, Children} from 'react'
 
 import {Card, Typo} from '../primitive'
-import {TabsSpacer, TabsSpacerProps} from '@qiwi/pijma-core'
+import {TabsSpacer, TabsSpacerProps} from './TabsSpacer'
 
 export class TabPanel extends React.Component<{} & TabsSpacerProps, {}> {
 

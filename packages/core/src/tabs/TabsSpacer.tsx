@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Box} from '@qiwi/pijma-core'
+import {Box} from '../primitive'
 
 export interface TabsSpacerProps {
   children: React.ReactNode
