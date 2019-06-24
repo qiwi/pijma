@@ -12,7 +12,6 @@ export interface HeaderMenuItemProps {
   onFocus?: () => void
   onBlur?: () => void
   tabIndex?: number
-  compact?: boolean
   href?: string
   target?: string
   download?: string | boolean
