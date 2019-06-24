@@ -1,3 +1,73 @@
+# [@qiwi/pijma-desktop-v1.53.0](https://github.com/qiwi/pijma/compare/v1.52.0...v1.53.0) (2019-06-14)
+
+
+### Features
+
+* file link ([2026e18](https://github.com/qiwi/pijma/commit/2026e18))
+
+# [@qiwi/pijma-desktop-v1.52.0](https://github.com/qiwi/pijma/compare/v1.51.0...v1.52.0) (2019-06-14)
+
+
+### Features
+
+* list ([cfc9c5c](https://github.com/qiwi/pijma/commit/cfc9c5c))
+
+# [@qiwi/pijma-desktop-v1.51.0](https://github.com/qiwi/pijma/compare/v1.50.0...v1.51.0) (2019-06-14)
+
+
+### Features
+
+* breadcrumbs ([ca04379](https://github.com/qiwi/pijma/commit/ca04379))
+
+# [@qiwi/pijma-desktop-v1.50.0](https://github.com/qiwi/pijma/compare/v1.49.0...v1.50.0) (2019-06-14)
+
+
+### Features
+
+* block-content ([74af5fd](https://github.com/qiwi/pijma/commit/74af5fd))
+
+# [@qiwi/pijma-desktop-v1.49.0](https://github.com/qiwi/pijma/compare/v1.48.0...v1.49.0) (2019-06-11)
+
+
+### Features
+
+* **desktop:** logo block link ([e6e3d26](https://github.com/qiwi/pijma/commit/e6e3d26))
+
+# [@qiwi/pijma-desktop-v1.46.0](https://github.com/qiwi/pijma/compare/v1.45.0...v1.46.0) (2019-06-06)
+
+
+### Features
+
+* add accordion ([bc30234](https://github.com/qiwi/pijma/commit/bc30234))
+
+# [@qiwi/pijma-desktop-v1.45.0](https://github.com/qiwi/pijma/compare/v1.44.0...v1.45.0) (2019-06-04)
+
+
+### Features
+
+* notice ([dac01e7](https://github.com/qiwi/pijma/commit/dac01e7))
+
+# [@qiwi/pijma-desktop-v1.44.0](https://github.com/qiwi/pijma/compare/v1.43.0...v1.44.0) (2019-05-30)
+
+
+### Features
+
+* add props to paragraph and text ([5f218ab](https://github.com/qiwi/pijma/commit/5f218ab))
+
+# [@qiwi/pijma-desktop-v1.42.0](https://github.com/qiwi/pijma/compare/v1.41.0...v1.42.0) (2019-05-29)
+
+
+### Features
+
+* add switch ([e956066](https://github.com/qiwi/pijma/commit/e956066))
+
+# [@qiwi/pijma-desktop-v1.40.0](https://github.com/qiwi/pijma/compare/v1.39.0...v1.40.0) (2019-05-21)
+
+
+### Features
+
+* breaker ([10bc3c0](https://github.com/qiwi/pijma/commit/10bc3c0))
+
 # [@qiwi/pijma-desktop-v1.37.0](https://github.com/qiwi/pijma/compare/v1.36.1...v1.37.0) (2019-04-10)
 
 
