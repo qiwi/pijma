@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 
 import {Flex} from '@qiwi/pijma-core'
-import {HeaderLink} from './HeaderLink'
+import {HeaderMenuItem} from './HeaderMenuItem'
 
 interface MenuItem {
   href: string
@@ -24,7 +24,7 @@ export interface HeaderMenuProps {
 export const HeaderMenu: FC<HeaderMenuProps> = props => (
   <Flex height={1} width={1} justify="flex-start">
     {props.items.map((item, i) => (
-      <HeaderLink
+      <HeaderMenuItem
         {...item}
         active={Boolean(props.active) && props.active === item.href}
         key={i}
@@ -32,7 +32,7 @@ export const HeaderMenu: FC<HeaderMenuProps> = props => (
         onClick={props.onChange}
       >
         {item.title}
-      </HeaderLink>
+      </HeaderMenuItem>
     ))}
   </Flex>
 )

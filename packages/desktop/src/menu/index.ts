@@ -1,2 +1,2 @@
-export * from './HeaderLink'
+export * from './HeaderMenuItem'
 export * from './HeaderMenu'

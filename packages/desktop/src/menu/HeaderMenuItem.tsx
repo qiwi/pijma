@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 import {LinkControl, Lnk, Typo, Flex, Value, Pos, Card} from '@qiwi/pijma-core'
 
-export interface HeaderLinkProps {
+export interface HeaderMenuItemProps {
   onClick?: (
     href?: string,
     target?: string,
@@ -24,7 +24,7 @@ export interface HeaderLinkProps {
 
 const TypoLink = Typo.withComponent(Lnk)
 
-export const HeaderLink: FC<HeaderLinkProps> = props => (
+export const HeaderMenuItem: FC<HeaderMenuItemProps> = props => (
   <LinkControl
     onClick={props.onClick}
     onFocus={props.onFocus}
