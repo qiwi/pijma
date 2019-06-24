@@ -4,12 +4,7 @@ import {LinkControl, Lnk, Flex, Value, Pos, Card} from '@qiwi/pijma-core'
 import {Text} from '@qiwi/pijma-desktop'
 
 export interface HeaderMenuItemProps {
-  onClick?: (
-    href?: string,
-    target?: string,
-    download?: string | boolean,
-    rel?: string,
-  ) => void
+  onClick?: (id: number) => void
   onFocus?: () => void
   onBlur?: () => void
   tabIndex?: number
@@ -20,13 +15,22 @@ export interface HeaderMenuItemProps {
   title?: string
   ml?: Value
   active: boolean
+  id: number
 }
 
 const PosLink = Pos.withComponent(Lnk)
 
+const onHeaderMenuItemClick = (id: number, onClick?: (id: number) => void) => {
+  if (onClick) {
+    return () => onClick(id)
+  }
+  else {
+    return undefined
+  }
+}
+
 export const HeaderMenuItem: FC<HeaderMenuItemProps> = props => (
   <LinkControl
-    onClick={props.onClick}
     onFocus={props.onFocus}
     onBlur={props.onBlur}
     href={props.href}
@@ -40,7 +44,7 @@ export const HeaderMenuItem: FC<HeaderMenuItemProps> = props => (
         ml={props.ml}
         tabIndex={props.tabIndex}
         href={props.href}
-        onClick={renderProps.onClick}
+        onClick={onHeaderMenuItemClick(props.id, props.onClick)}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
         onMouseEnter={renderProps.onMouseEnter}

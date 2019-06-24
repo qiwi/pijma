@@ -4,21 +4,17 @@ import {Flex} from '@qiwi/pijma-core'
 import {HeaderMenuItem} from './HeaderMenuItem'
 
 interface MenuItem {
-  href: string
+  id: number
+  href?: string
   title: string
   target?: string
   rel?: string
 }
 
 export interface HeaderMenuProps {
-  onChange?: (
-    href?: string,
-    target?: string,
-    download?: string | boolean,
-    rel?: string,
-  ) => void
+  onChange?: (id: number) => void
   items: MenuItem[]
-  active?: string
+  active?: number
 }
 
 export const HeaderMenu: FC<HeaderMenuProps> = props => (
@@ -26,8 +22,9 @@ export const HeaderMenu: FC<HeaderMenuProps> = props => (
     {props.items.map((item, i) => (
       <HeaderMenuItem
         {...item}
-        active={Boolean(props.active) && props.active === item.href}
-        key={i}
+        active={Boolean(props.active) && props.active === item.id}
+        key={item.id}
+        id={item.id}
         ml={i > 0 ? 6 : 0}
         onClick={props.onChange}
       >
