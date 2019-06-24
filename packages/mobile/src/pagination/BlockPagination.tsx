@@ -11,7 +11,6 @@ export interface BlockPaginationProps {
   count?: number
   href?: (page: number) => string
   onChange?: (index: number) => void
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
 }
 
 export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
@@ -20,7 +19,6 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
   active,
   href,
   onChange,
-  onClick,
 }) => (
   <Box display="inline-block">
     <Block>
@@ -30,7 +28,6 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
         active={active}
         href={href}
         onChange={onChange}
-        onClick={onClick}
         children={renderProps => (
           <Card
             bg="#fff"
@@ -56,6 +53,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
               <PaginationLink
                 key={page}
                 page={page}
+                disabled={false}
                 href={href ? href(page) : undefined}
                 onClick={renderProps.onPageClick(page)}
                 children={() => (

@@ -4,7 +4,7 @@ import {LinkControl, Lnk, Card, Value, RenderChild, Flex} from '@qiwi/pijma-core
 
 export interface PaginationLinkProps {
   page: number
-  disabled?: boolean
+  disabled: boolean
   width?: Value
   href?: string
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void

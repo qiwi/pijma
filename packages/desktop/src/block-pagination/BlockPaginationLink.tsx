@@ -4,7 +4,7 @@ import {LinkControl, Lnk, Card, Value, RenderChild, Flex} from '@qiwi/pijma-core
 
 export interface BlockPaginationLinkProps {
   page: number
-  disabled?: boolean
+  disabled: boolean
   width?: Value
   href?: string
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
@@ -20,7 +20,6 @@ const CardLink = Card.withComponent(Lnk)
 export const BlockPaginationLink: FC<BlockPaginationLinkProps> = props => (
   <LinkControl
     href={props.href}
-    // onClick={() => props.onClick && props.onClick(props.page, !!props.disabled)}
     onClick={props.onClick}
     children={renderProps => (
       <CardLink

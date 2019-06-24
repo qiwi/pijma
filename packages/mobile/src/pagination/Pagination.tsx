@@ -11,7 +11,6 @@ export interface PaginationProps {
   count?: number
   href?: (page: number) => string
   onChange?: (index: number) => void
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
 }
 
 export const Pagination: FunctionComponent<PaginationProps> = ({
@@ -20,7 +19,6 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
   active,
   href,
   onChange,
-  onClick,
 }) => (
   <PaginationControl
     total={total}
@@ -28,7 +26,6 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
     active={active}
     href={href}
     onChange={onChange}
-    onClick={onClick}
     children={renderProps => (
       <Card
         bg="#fff"
@@ -55,6 +52,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           <PaginationLink
             key={page}
             page={page}
+            disabled={false}
             href={href ? href(page) : undefined}
             onClick={renderProps.onPageClick(page)}
             children={() => (

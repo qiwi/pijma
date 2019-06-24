@@ -7,7 +7,6 @@ export interface PaginationControlProps {
   count: number
   href?: (page: number) => string
   onChange?: (index: number) => void
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
   children: RenderChild<{
     previousPage: number
     nextPage: number
@@ -20,9 +19,14 @@ export interface PaginationControlProps {
 
 export class PaginationControl extends React.Component<PaginationControlProps> {
 
-  private onPageClick = (page: number, disabled?: boolean) => this.props.href
-    ? undefined
-    : () => !disabled && this.props.onChange && this.props.onChange(page)
+  private onPageClick = (page: number, disabled?: boolean) => {
+    if (this.props.href || disabled || !this.props.onChange) {
+      return undefined
+    }
+    else {
+      return () => this.props.onChange && this.props.onChange(page)
+    }
+  }
 
   public render() {
     const {total, count, active} = this.props
