@@ -3,17 +3,11 @@ import React, {FC} from 'react'
 import {Flex} from '@qiwi/pijma-core'
 import {HeaderMenuItem} from './HeaderMenuItem'
 
-interface MenuItem {
-  id: number
-  href?: string
-  title: string
-  target?: string
-  rel?: string
-}
+import {HeaderMenuItemProps} from './HeaderMenuItemProps'
 
 export interface HeaderMenuProps {
   onChange?: (id: number) => void
-  items: MenuItem[]
+  items: HeaderMenuItemProps[]
   active?: number
 }
 

@@ -1,22 +1,9 @@
 import React, {FC} from 'react'
 
-import {LinkControl, Lnk, Flex, Value, Pos, Card} from '@qiwi/pijma-core'
+import {LinkControl, Lnk, Flex, Pos, Card} from '@qiwi/pijma-core'
 import {Text} from '@qiwi/pijma-desktop'
 
-export interface HeaderMenuItemProps {
-  onClick?: (id: number) => void
-  onFocus?: () => void
-  onBlur?: () => void
-  tabIndex?: number
-  href?: string
-  target?: string
-  download?: string | boolean
-  rel?: string
-  title?: string
-  ml?: Value
-  active: boolean
-  id: number
-}
+import {HeaderMenuItemProps} from './HeaderMenuItemProps'
 
 const PosLink = Pos.withComponent(Lnk)
 
