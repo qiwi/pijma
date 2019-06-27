@@ -24,7 +24,7 @@ const DropDownExample = () => {
         show={show}
         target={() => button.current}
         onHide={() => setShow(false)}
-        topOffset={64}
+        offset={16}
         children={
           <Spacer>
             <Paragraph size="m" bold>я содержимое дропдауна</Paragraph>

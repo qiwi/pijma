@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Overlay, OverlayProps, Card} from '@qiwi/pijma-core'
+import {Overlay, OverlayProps, Card, Pos} from '@qiwi/pijma-core'
 
 export interface DropDownProps {
   show: boolean
@@ -8,7 +8,7 @@ export interface DropDownProps {
   container: OverlayProps['container']
   children: React.ReactElement
   onHide: () => void
-  topOffset?: number
+  offset?: number
 }
 
 export const DropDown: FC<DropDownProps> = (props) => {
@@ -20,26 +20,17 @@ export const DropDown: FC<DropDownProps> = (props) => {
       container={props.container}
       rootClose={false}
       onHide={props.onHide}
-      children={(renderProps) => {
-        return <div
-          style={{
-            ...renderProps.props.style,
-            opacity: 1,
-            zIndex: 9999,
-            position: 'absolute',
-            top: props.topOffset,
-            transition: 'transform 0.3s ease-in-out',
-          }}
-        >
+      children={() => (
+        <Pos type="absolute" top={props.offset} transition="transform 0.3s ease-in-out">
           <Card s="0 28px 52px 0 rgba(0, 0, 0, 0.16)" bg="#fff" r={10} pt={3} pb={3}>
             {props.children}
           </Card>
-        </div>
-      }}
+        </Pos>
+      )}
     />
   )
 }
 
 DropDown.defaultProps = {
-  topOffset: 0,
+  offset: 0,
 }
