@@ -13,13 +13,13 @@ export interface PaginationControlProps {
     pages: number[]
     active: number
     total: number
-    onPageClick: (page: number, disabled?: boolean) => ((href?: string, target?: string, download?: string | boolean, rel?: string) => void) | undefined
+    onPageClick: (page: number, disabled: boolean) => ((href?: string, target?: string, download?: string | boolean, rel?: string) => void) | undefined
   }>
 }
 
 export class PaginationControl extends React.Component<PaginationControlProps> {
 
-  private onPageClick = (page: number, disabled?: boolean) => {
+  private onPageClick = (page: number, disabled: boolean) => {
     if (this.props.href || disabled || !this.props.onChange) {
       return undefined
     }

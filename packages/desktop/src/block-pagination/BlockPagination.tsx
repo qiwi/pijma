@@ -69,7 +69,7 @@ export const BlockPagination: FunctionComponent<BlockPaginationProps> = ({
                 page={page}
                 disabled={false}
                 href={href ? href(page) : undefined}
-                onClick={renderProps.onPageClick(page)}
+                onClick={renderProps.onPageClick(page, false)}
                 children={() => (
                   <Text
                     bold={false}
