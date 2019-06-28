@@ -29,8 +29,11 @@ export const BlockPaginationLink: FC<BlockPaginationLinkProps> = props => (
         display="inline-flex"
         cursor={props.disabled ? 'default' : 'pointer'}
         bg={(renderProps.hover || renderProps.focus) && !props.disabled ? '#f5f5f5' : undefined}
-        s={(renderProps.hover || renderProps.focus) && !props.disabled ? '0px -1px 0 1px #e6e6e6' : '1px 0 0 #e6e6e6'}
-        mt={(renderProps.hover || renderProps.focus) && !props.disabled ? '1px' : undefined}
+        s={
+          (renderProps.hover || renderProps.focus) && !props.disabled
+            ? 'inset 0 1px 0 0 #e6e6e6, 0 -1px 0 1px #e6e6e6'
+            : '1px 0 0 #e6e6e6'
+        }
         href={props.href}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
