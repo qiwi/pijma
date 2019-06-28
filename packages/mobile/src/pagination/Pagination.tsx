@@ -9,6 +9,7 @@ export interface PaginationProps {
   total: number
   active: number
   count?: number
+  shadowed?: boolean
   href?: (page: number) => string
   onChange?: (index: number) => void
 }
@@ -16,6 +17,7 @@ export interface PaginationProps {
 export const Pagination: FunctionComponent<PaginationProps> = ({
   total,
   count = 3,
+  shadowed = false,
   active,
   href,
   onChange,
@@ -29,7 +31,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
     children={renderProps => (
       <Card
         bg="#fff"
-        s="0 0 0 1px #e6e6e6"
+        s={shadowed ? '0 1px 2px 0 rgba(0,0,0,0.12)' : '0 0 0 1px #e6e6e6'}
         height={12}
         display="inline-flex"
         r={10}
@@ -85,5 +87,6 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
 )
 
 Pagination.defaultProps = {
+  shadowed: false,
   count: 3,
 }
