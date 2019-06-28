@@ -44,18 +44,20 @@ export class PaginationControl extends React.Component<PaginationControlProps> {
       ),
     )
 
-    return isValidProps
-      ? this.props.children({
-        prev: currentPage - 1,
-        next: currentPage + 1,
-        active: currentPage,
-        total: totalPages,
-        pages: new Array(Math.min(visiblePages, totalPages))
-          .fill(0)
-          .map((_, i) => firstPage + i),
-        onPageClick: this.onPageClick,
-      })
-      : null
+    if (!isValidProps) {
+      return null
+    }
+
+    return this.props.children({
+      prev: currentPage - 1,
+      next: currentPage + 1,
+      active: currentPage,
+      total: totalPages,
+      pages: new Array(Math.min(visiblePages, totalPages))
+        .fill(0)
+        .map((_, i) => firstPage + i),
+      onPageClick: this.onPageClick,
+    })
   }
 
 }
