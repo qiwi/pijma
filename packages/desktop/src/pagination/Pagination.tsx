@@ -50,10 +50,10 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           )}
         />
         <PaginationLink
-          page={renderProps.previousPage}
+          page={renderProps.prev}
           disabled={renderProps.pages.includes(1)}
-          href={href ? href(renderProps.previousPage) : undefined}
-          onClick={renderProps.onPageClick(renderProps.previousPage, renderProps.pages.includes(1))}
+          href={href ? href(renderProps.prev) : undefined}
+          onClick={renderProps.onPageClick(renderProps.prev, renderProps.pages.includes(1))}
           children={({disabled}) => (
             <Box width={5} height={5}>
               <IconWrapper color={disabled ? '#ccc' : '#000'}>
@@ -73,7 +73,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
               <Text
                 bold={false}
                 size="m"
-                color={renderProps.currentPage === page ? 'warning' : 'default'}
+                color={renderProps.active === page ? 'warning' : 'default'}
               >
                 {page}
               </Text>
@@ -81,10 +81,10 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           />
         ))}
         <PaginationLink
-          page={renderProps.nextPage}
-          disabled={renderProps.pages.includes(renderProps.totalPages)}
-          href={href ? href(renderProps.nextPage) : undefined}
-          onClick={renderProps.onPageClick(renderProps.nextPage, renderProps.pages.includes(renderProps.totalPages))}
+          page={renderProps.next}
+          disabled={renderProps.pages.includes(renderProps.total)}
+          href={href ? href(renderProps.next) : undefined}
+          onClick={renderProps.onPageClick(renderProps.next, renderProps.pages.includes(renderProps.total))}
           children={({disabled}) => (
             <Box width={5} height={5}>
               <IconWrapper color={disabled ? '#ccc' : '#000'}>
@@ -94,11 +94,11 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           )}
         />
         <PaginationLink
-          page={renderProps.totalPages}
-          disabled={renderProps.pages.includes(renderProps.totalPages)}
+          page={renderProps.total}
+          disabled={renderProps.pages.includes(renderProps.total)}
           width={18}
-          href={href ? href(renderProps.totalPages) : undefined}
-          onClick={renderProps.onPageClick(renderProps.totalPages, renderProps.pages.includes(renderProps.totalPages))}
+          href={href ? href(renderProps.total) : undefined}
+          onClick={renderProps.onPageClick(renderProps.total, renderProps.pages.includes(renderProps.total))}
           children={({disabled}) => (
             <Box width={5} height={5}>
               <IconWrapper color={disabled ? '#ccc' : '#000'}>

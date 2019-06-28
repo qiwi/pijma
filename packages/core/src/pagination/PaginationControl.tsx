@@ -8,11 +8,11 @@ export interface PaginationControlProps {
   href?: (page: number) => string
   onChange?: (index: number) => void
   children: RenderChild<{
-    previousPage: number
-    nextPage: number
+    prev: number
+    next: number
     pages: number[]
-    currentPage: number
-    totalPages: number
+    active: number
+    total: number
     onPageClick: (page: number, disabled?: boolean) => ((href?: string, target?: string, download?: string | boolean, rel?: string) => void) | undefined
   }>
 }
@@ -46,10 +46,10 @@ export class PaginationControl extends React.Component<PaginationControlProps> {
 
     return isValidProps
       ? this.props.children({
-        previousPage: currentPage - 1,
-        nextPage: currentPage + 1,
-        currentPage,
-        totalPages,
+        prev: currentPage - 1,
+        next: currentPage + 1,
+        active: currentPage,
+        total: totalPages,
         pages: new Array(Math.min(visiblePages, totalPages))
           .fill(0)
           .map((_, i) => firstPage + i),
