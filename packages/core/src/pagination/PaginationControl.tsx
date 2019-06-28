@@ -23,9 +23,8 @@ export class PaginationControl extends React.Component<PaginationControlProps> {
     if (this.props.href || disabled || !this.props.onChange) {
       return undefined
     }
-    else {
-      return () => this.props.onChange && this.props.onChange(page)
-    }
+
+    return () => this.props.onChange && this.props.onChange(page)
   }
 
   public render() {
