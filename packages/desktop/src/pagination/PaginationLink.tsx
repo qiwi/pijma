@@ -7,6 +7,7 @@ export interface PaginationLinkProps {
   disabled: boolean
   width?: Value
   href?: string
+  sHover?: string
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
   children: RenderChild<{
     disabled: boolean
@@ -29,7 +30,7 @@ export const PaginationLink: FC<PaginationLinkProps> = props => (
         display="inline-flex"
         cursor={props.disabled ? 'default' : 'pointer'}
         bg={(renderProps.hover || renderProps.focus) && !props.disabled ? '#f5f5f5' : undefined}
-        s={(renderProps.hover || renderProps.focus) && !props.disabled ? '0px -1px 0 1px #e6e6e6' : '1px 0 0 #e6e6e6'}
+        s={(renderProps.hover || renderProps.focus) && !props.disabled ? props.sHover : '1px 0 0 #e6e6e6'}
         href={props.href}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
@@ -56,5 +57,6 @@ export const PaginationLink: FC<PaginationLinkProps> = props => (
 )
 
 PaginationLink.defaultProps = {
+  sHover: '0px -1px 0 1px #e6e6e6',
   width: 12,
 }
