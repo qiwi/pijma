@@ -41,7 +41,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           page={1}
           disabled={renderProps.pages.includes(1)}
           width={18}
-          sHover={shadowed ? 'inset 0 1px 0 0 #e6e6e6, 0 -1px 0 1px #e6e6e6' : '0px -1px 0 1px #e6e6e6'}
+          shadowed={shadowed}
           href={href ? href(1) : undefined}
           onClick={renderProps.onPageClick(1, renderProps.pages.includes(1))}
           children={({disabled}) => (
@@ -55,7 +55,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
         <PaginationLink
           page={renderProps.prev}
           disabled={renderProps.pages.includes(1)}
-          sHover={shadowed ? 'inset 0 1px 0 0 #e6e6e6, 0 -1px 0 1px #e6e6e6' : '0px -1px 0 1px #e6e6e6'}
+          shadowed={shadowed}
           href={href ? href(renderProps.prev) : undefined}
           onClick={renderProps.onPageClick(renderProps.prev, renderProps.pages.includes(1))}
           children={({disabled}) => (
@@ -71,7 +71,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
             key={page}
             page={page}
             disabled={false}
-            sHover={shadowed ? 'inset 0 1px 0 0 #e6e6e6, 0 -1px 0 1px #e6e6e6' : '0px -1px 0 1px #e6e6e6'}
+            shadowed={shadowed}
             href={href ? href(page) : undefined}
             onClick={renderProps.onPageClick(page, false)}
             children={() => (
@@ -88,7 +88,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
         <PaginationLink
           page={renderProps.next}
           disabled={renderProps.pages.includes(renderProps.total)}
-          sHover={shadowed ? 'inset 0 1px 0 0 #e6e6e6, 0 -1px 0 1px #e6e6e6' : '0px -1px 0 1px #e6e6e6'}
+          shadowed={shadowed}
           href={href ? href(renderProps.next) : undefined}
           onClick={renderProps.onPageClick(renderProps.next, renderProps.pages.includes(renderProps.total))}
           children={({disabled}) => (
@@ -103,7 +103,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           page={renderProps.total}
           disabled={renderProps.pages.includes(renderProps.total)}
           width={18}
-          sHover={shadowed ? 'inset 0 1px 0 0 #e6e6e6, 0 -1px 0 1px #e6e6e6' : '0px -1px 0 1px #e6e6e6'}
+          shadowed={shadowed}
           href={href ? href(renderProps.total) : undefined}
           onClick={renderProps.onPageClick(renderProps.total, renderProps.pages.includes(renderProps.total))}
           children={({disabled}) => (
