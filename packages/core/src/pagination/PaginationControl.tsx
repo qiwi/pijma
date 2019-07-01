@@ -20,11 +20,16 @@ export interface PaginationControlProps {
 export class PaginationControl extends React.Component<PaginationControlProps> {
 
   private onPageClick = (page: number, disabled: boolean) => {
-    if (this.props.href || disabled || !this.props.onChange) {
+    if (this.props.href || disabled) {
       return undefined
     }
+    return this.onPageChange(page)
+  }
 
-    return () => this.props.onChange && this.props.onChange(page)
+  private onPageChange = (page: number) => () => {
+    if (this.props.onChange) {
+      this.props.onChange(page)
+    }
   }
 
   public render() {
