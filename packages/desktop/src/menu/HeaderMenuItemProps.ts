@@ -1,5 +1,3 @@
-import {Value} from '@qiwi/pijma-core'
-
 export interface HeaderMenuItemProps {
   onClick?: (id: number) => void
   onFocus?: () => void
@@ -10,7 +8,6 @@ export interface HeaderMenuItemProps {
   download?: string | boolean
   rel?: string
   title?: string
-  ml?: Value
   active: boolean
   id: number
 }

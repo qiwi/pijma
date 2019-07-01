@@ -7,15 +7,6 @@ import {HeaderMenuItemProps} from './HeaderMenuItemProps'
 
 const PosLink = Pos.withComponent(Lnk)
 
-const onHeaderMenuItemClick = (id: number, onClick?: (id: number) => void) => {
-  if (onClick) {
-    return () => onClick(id)
-  }
-  else {
-    return undefined
-  }
-}
-
 export const HeaderMenuItem: FC<HeaderMenuItemProps> = props => (
   <LinkControl
     onFocus={props.onFocus}
@@ -28,10 +19,9 @@ export const HeaderMenuItem: FC<HeaderMenuItemProps> = props => (
       <PosLink
         height={1}
         type="relative"
-        ml={props.ml}
         tabIndex={props.tabIndex}
         href={props.href}
-        onClick={onHeaderMenuItemClick(props.id, props.onClick)}
+        onClick={() => props.onClick && props.onClick(props.id)}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
         onMouseEnter={renderProps.onMouseEnter}
@@ -42,6 +32,8 @@ export const HeaderMenuItem: FC<HeaderMenuItemProps> = props => (
         target={props.target}
         download={props.download}
         cursor="pointer"
+        ml={3}
+        mr={3}
       >
         <Flex height={1} direction="column" align="middle" justify="center">
           <Text
