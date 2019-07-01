@@ -15,7 +15,9 @@ import {
 import CheckboxFieldProps from './CheckboxFieldProps'
 import CheckboxFieldOptionModel from './CheckboxFieldOptionModel'
 
-const CheckboxField: FunctionComponent<CheckboxFieldProps<CheckboxFieldOptionModel<any>, any>> = (props) => (
+const CheckboxField: FunctionComponent<
+  CheckboxFieldProps<CheckboxFieldOptionModel<any>, any>
+> = props => (
   props.stub ? (
     <Box>
       <Stub width={24} height={3} top={2} bottom={4}/>
@@ -47,7 +49,6 @@ const CheckboxField: FunctionComponent<CheckboxFieldProps<CheckboxFieldOptionMod
           onFocus={renderProps.onFocus}
           onBlur={renderProps.onBlur}
           onKeyDown={renderProps.onKeyDown}
-          onMouseLeave={renderProps.onMouseLeave}
           children={renderProps.options.map((option, index) => (
             <OptionControl<any>
               key={index}
@@ -55,13 +56,23 @@ const CheckboxField: FunctionComponent<CheckboxFieldProps<CheckboxFieldOptionMod
               value={option.value}
               onClick={option.onClick}
               onMouseEnter={option.onMouseEnter}
+              onMouseLeave={renderProps.onMouseLeave}
               children={(renderOptionProps) => (
                 <OptionFieldItem
                   disabled={option.disabled}
-                  icon={<Check disabled={option.disabled} checked={option.checked} focused={option.focused}/>}
+                  icon={(
+                    <Box width={6}>
+                      <Check
+                        disabled={option.disabled}
+                        checked={option.checked}
+                        focused={option.focused}
+                      />
+                    </Box>
+                  )}
                   label={option.label}
                   description={option.description}
                   onClick={renderOptionProps.onClick}
+                  onMouseLeave={renderOptionProps.onMouseLeave}
                   onMouseEnter={renderOptionProps.onMouseEnter}
                 />
               )}

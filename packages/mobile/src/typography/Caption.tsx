@@ -1,9 +1,10 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo, Stub} from '@qiwi/pijma-core'
+import {Breaker, Typo, TypoProps, Stub} from '@qiwi/pijma-core'
 
 export interface CaptionProps {
   color?: 'default' | 'support' | 'inverse'
+  align?: TypoProps['align']
   stub?: boolean
 }
 
@@ -13,7 +14,7 @@ const CaptionColor: { [color in NonNullable<CaptionProps['color']>]: string } = 
   inverse: '#fff',
 }
 
-export const Caption: FunctionComponent<CaptionProps> = ({color = 'support', stub, children}) => (
+export const Caption: FunctionComponent<CaptionProps> = ({color = 'support', align, stub, children}) => (
   stub ? (
     <Stub
       top={1}
@@ -26,12 +27,13 @@ export const Caption: FunctionComponent<CaptionProps> = ({color = 'support', stu
       as="h6"
       display="block"
       size={3.5}
-      height={5}
+      height={4}
       weight={500}
       color={CaptionColor[color]}
       transform="uppercase"
       spacing={1.5}
-      children={children}
+      align={align}
+      children={<Breaker children={children}/>}
     />
   )
 )

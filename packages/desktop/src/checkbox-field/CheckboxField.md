@@ -15,7 +15,7 @@ initialState = {values: ['selected']};
     disabled: false,
   }, {
     label: 'Заблокированный выбранный чекбокс',
-    value: 'selected',
+    value: 'selected-disabled',
     disabled: true,
   }, {
     label: 'Заблокированный чекбокс',
@@ -45,7 +45,7 @@ initialState = {values: ['selected']};
   }, {
     label: 'Заблокированный выбранный чекбокс',
     description:'Примечание к чекбоксу',
-    value: 'selected',
+    value: 'selected-disabled',
     disabled: true,
   }, {
     label: 'Заблокированный чекбокс',

@@ -1,12 +1,13 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo, Stub} from '@qiwi/pijma-core'
+import {Breaker, Typo, TypoProps, Stub} from '@qiwi/pijma-core'
 
 export interface TitleProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   size: '1' | '2'
   color?: 'default' | 'inverse'
   stub?: boolean
+  align?: TypoProps['align']
 }
 
 const TitleSize: { [size in TitleProps['size']]: number } = {
@@ -49,7 +50,7 @@ const TitleColor: { [color in NonNullable<TitleProps['color']>]: string } = {
   inverse: '#fff',
 }
 
-export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'default', stub, children}) => (
+export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'default', align, stub, children}) => (
   stub ? (
     <Stub
       top={StubOffsetTop[size]}
@@ -66,7 +67,8 @@ export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'defaul
       height={TitleHeight[size]}
       weight={TitleWeight[size]}
       color={TitleColor[color]}
-      children={children}
+      align={align}
+      children={<Breaker children={children}/>}
     />
   )
 )
