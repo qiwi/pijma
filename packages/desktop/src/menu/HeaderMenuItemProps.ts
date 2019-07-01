@@ -1,5 +1,5 @@
 export interface HeaderMenuItemProps {
-  onClick?: (id: number) => void
+  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
   onFocus?: () => void
   onBlur?: () => void
   tabIndex?: number
@@ -8,6 +8,5 @@ export interface HeaderMenuItemProps {
   download?: string | boolean
   rel?: string
   title?: string
-  active: boolean
-  id: number
+  active?: boolean
 }

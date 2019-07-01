@@ -9,31 +9,32 @@ const PosLink = Pos.withComponent(Lnk)
 
 export const HeaderMenuItem: FC<HeaderMenuItemProps> = props => (
   <LinkControl
-    onFocus={props.onFocus}
-    onBlur={props.onBlur}
     href={props.href}
     target={props.target}
     download={props.download}
     rel={props.rel}
+    onClick={props.onClick}
+    onFocus={props.onFocus}
+    onBlur={props.onBlur}
     children={renderProps => (
       <PosLink
         height={1}
         type="relative"
+        cursor="pointer"
+        ml={3}
+        mr={3}
         tabIndex={props.tabIndex}
         href={props.href}
-        onClick={() => props.onClick && props.onClick(props.id)}
+        target={props.target}
+        download={props.download}
+        rel={props.rel}
+        onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
         onMouseEnter={renderProps.onMouseEnter}
         onMouseLeave={renderProps.onMouseLeave}
         onMouseUp={renderProps.onMouseUp}
         onMouseDown={renderProps.onMouseDown}
-        rel={props.rel}
-        target={props.target}
-        download={props.download}
-        cursor="pointer"
-        ml={3}
-        mr={3}
       >
         <Flex height={1} direction="column" align="middle" justify="center">
           <Text
@@ -53,3 +54,7 @@ export const HeaderMenuItem: FC<HeaderMenuItemProps> = props => (
     )}
   />
 )
+
+HeaderMenuItem.defaultProps = {
+  active: false,
+}
