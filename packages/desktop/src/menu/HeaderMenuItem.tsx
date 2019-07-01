@@ -20,9 +20,8 @@ export const HeaderMenuItem: FC<HeaderMenuItemProps> = props => (
       <PosLink
         height={1}
         type="relative"
+        display="block"
         cursor="pointer"
-        ml={3}
-        mr={3}
         tabIndex={props.tabIndex}
         href={props.href}
         target={props.target}
