@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.54.0](https://github.com/qiwi/pijma/compare/v1.53.0...v1.54.0) (2019-07-01)
+
+
+### Features
+
+* pagination ([044c308](https://github.com/qiwi/pijma/commit/044c308))
+
 # [@qiwi/pijma-core-v1.50.0](https://github.com/qiwi/pijma/compare/v1.49.0...v1.50.0) (2019-06-14)
 
 
