@@ -15,6 +15,7 @@ export * from './block-content'
 export * from './nav-link'
 export * from './breadcrumbs'
 export * from './list'
+export * from './pagination'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'
