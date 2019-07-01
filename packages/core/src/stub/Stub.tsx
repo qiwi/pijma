@@ -5,10 +5,10 @@ import {Card, Box, Pos, Value} from '../primitive'
 
 const stubKeyframes = keyframes({
   '0%': {
-    transform: 'translateX(0)',
+    backgroundPositionX: '-200px',
   },
   '100%': {
-    transform: 'translateX(120vw)',
+    backgroundPositionX: '360px',
   },
 })
 
@@ -33,25 +33,26 @@ export const Stub: FC<StubProps> = (props) => (
   >
     <CardPos
       type="relative"
+      r={props.width === props.height ? '50%' : '4px'}
       overflow="hidden"
-      zIndex={1}
-      r={props.width === props.height ? '50%' : 4}
+      bg={props.inverse ? 'rgba(255, 255, 255, 0.14)' : 'rgba(0, 0, 0, 0.04)'}
       width={props.width}
       height={props.height}
     >
       <CardPos
-        type="fixed"
-        top={0}
-        right={0}
-        bottom={0}
-        zIndex={0}
-        width="220vw"
+        width="100%"
         height="100%"
-        bg={props.inverse ? (
-          'linear-gradient(to right, rgba(255,255,255,0.14), rgba(255,255,255,0.14) 100vw, rgba(255,255,255,0.2) 110vw, rgba(255,255,255,0.14) 120vw, rgba(255,255,255,0.14))'
-        ) : (
-          'linear-gradient(to right, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 100vw, rgba(0,0,0,0.1) 110vw, rgba(0,0,0,0.04) 120vw, rgba(0,0,0,0.04))'
-        )}
+        bg={`
+          linear-gradient(
+            to right,
+            transparent 0,
+            ${props.inverse ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.1)'}  80px,
+            transparent 160px,
+            transparent 560px
+          )
+          0 0 / 560px 100%
+          repeat
+        `}
         animation={`${stubKeyframes} 1400ms linear infinite`}
         css={{
           pointerEvents: 'none',
