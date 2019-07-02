@@ -1,9 +1,7 @@
 import React, {FC} from 'react'
 
 import {Flex, FlexItem} from '@qiwi/pijma-core'
-import {HeaderMenuItem} from './HeaderMenuItem'
-
-import {HeaderMenuItemProps} from './HeaderMenuItemProps'
+import {HeaderMenuItem, HeaderMenuItemProps} from './HeaderMenuItem'
 
 export interface HeaderMenuProps {
   items: HeaderMenuItemProps[]
