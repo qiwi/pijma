@@ -57,7 +57,7 @@ export const HeaderMenuItem: FC<HeaderMenuItemProps> = (props) => (
         </Flex>
         {props.active ? (
           <Pos type="absolute" height="4px" bottom={0} right={0} left={0}>
-            <Card bg="#ff8c00" height={1} width={1} rtr="4px" rtl="4px" />
+            <Card bg="#ff8c00" height={1} width={1} rtr={4} rtl={4} />
           </Pos>
         ) : null}
       </PosLink>
