@@ -15,6 +15,7 @@ export * from './breadcrumbs'
 export * from './list'
 export * from './header'
 export * from './menu'
+export * from './pagination'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'
