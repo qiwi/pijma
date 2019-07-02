@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 
 import {LinkControl, Lnk, Flex, Pos, Card} from '@qiwi/pijma-core'
-import {Text} from '@qiwi/pijma-desktop'
+import {Text} from '../typography/Text'
 
 export interface HeaderMenuItemProps {
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
