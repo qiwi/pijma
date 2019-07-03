@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.56.0](https://github.com/qiwi/pijma/compare/v1.55.0...v1.56.0) (2019-07-03)
+
+
+### Features
+
+* **mobile:** header ([68ff1a9](https://github.com/qiwi/pijma/commit/68ff1a9))
+
 # [@qiwi/pijma-mobile-v1.54.0](https://github.com/qiwi/pijma/compare/v1.53.0...v1.54.0) (2019-07-01)
 
 
