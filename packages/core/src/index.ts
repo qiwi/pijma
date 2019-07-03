@@ -9,6 +9,7 @@ import fonts from './fonts'
 import * as themes from './themes'
 
 export * from './styled'
+export * from './waypoint'
 
 export {styled, Theme, RenderChild, themes, reset, fonts}
 
@@ -38,4 +39,5 @@ export * from './breaker'
 export * from './striper'
 export * from './accordion'
 export * from './grid'
+export * from './offset-scroll'
 export * from './pagination'

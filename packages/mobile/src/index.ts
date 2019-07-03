@@ -13,6 +13,8 @@ export * from './block-content'
 export * from './nav-link'
 export * from './breadcrumbs'
 export * from './list'
+export * from './header'
+export * from './menu'
 export * from './pagination'
 
 export {TextField as MaskTextField} from './text-field'
