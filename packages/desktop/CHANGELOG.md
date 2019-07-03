@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.55.0](https://github.com/qiwi/pijma/compare/v1.54.0...v1.55.0) (2019-07-03)
+
+
+### Features
+
+* **desktop:** header ([65f663c](https://github.com/qiwi/pijma/commit/65f663c))
+
 # [@qiwi/pijma-desktop-v1.54.0](https://github.com/qiwi/pijma/compare/v1.53.0...v1.54.0) (2019-07-01)
 
 
