@@ -1,12 +1,42 @@
 import React from 'react'
 
-import {isTab, isTabList, isTabPanel} from './helpers'
+import RenderChild from '../RenderChild'
 
 export interface TabsControlProps {
   selected?: number
+  vertical?: boolean
+  border?: 'long' | 'short'
+  tab?: 'long' | 'short'
+  center?: boolean
   onSelect?: (selected: number) => void
-  children: React.ReactNode
+  children: RenderChild<{
+    tabs: {
+      tab?: 'long' | 'short'
+      icon?: React.ReactNode
+      title: React.ReactNode
+      content: React.ReactNode
+      vertical?: boolean
+      selected: boolean
+      focused: boolean
+      onSelect: (selected: number) => void
+      onMouseEnter: () => void
+      onMouseLeave: () => void
+    }[]
+    tabList: {
+      size?: 's' | 'm' | 'l'
+      border?: 'long' | 'short'
+      center?: boolean
+      vertical?: boolean
+      onKeyDown: React.KeyboardEventHandler
+    }
+    content: React.ReactNode
+  }>
   size?: 's' | 'm' | 'l'
+  items: {
+    icon?: React.ReactNode
+    title: React.ReactNode
+    content: React.ReactNode
+  }[]
 }
 
 export interface TabsControlState {
@@ -82,7 +112,7 @@ export class TabsControl extends React.Component<
     }
   }
 
-  private renderChild: () => React.ReactNode = () => {
+  /* private renderChild: () => React.ReactNode = () => {
     const self = this
     const children: React.ReactNode = React.Children.map(
       this.props.children,
@@ -149,10 +179,48 @@ export class TabsControl extends React.Component<
     )
 
     return children
-  }
+  } */
 
   public render() {
-    return this.renderChild()
+    /* return this.renderChild() */
+    return this.props.children({
+      tabList: {
+        onKeyDown: this.onKeyDown,
+        size: this.props.size,
+        border: this.props.border,
+        vertical: this.props.vertical,
+        center: this.props.center,
+      },
+      content: this.props.items[this.state.selected].content,
+      tabs: this.props.items.map(
+        (
+          item: {
+            icon?: React.ReactNode
+            title: React.ReactNode
+            content: React.ReactNode
+          },
+          index: number,
+        ) => {
+          const onSelect = () => this.onSelect(index)
+          const onMouseEnter = () => this.onMouseEnter(index)
+
+          ++this.tabsCount
+
+          return {
+            tab: this.props.tab,
+            icon: item.icon,
+            title: item.title,
+            content: item.content,
+            vertical: this.props.vertical,
+            selected: this.state.selected === index,
+            focused: this.state.focused === index,
+            onSelect,
+            onMouseEnter,
+            onMouseLeave: this.onMouseLeave,
+          }
+        },
+      ),
+    })
   }
 
 }
