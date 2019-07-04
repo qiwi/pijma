@@ -20,6 +20,7 @@ export interface StubProps {
   bottom?: Value
   left?: Value
   right?: Value
+  r?: Value
 }
 
 const CardPos = Card.withComponent(Pos)
@@ -33,7 +34,7 @@ export const Stub: FC<StubProps> = (props) => (
   >
     <CardPos
       type="relative"
-      r={props.width === props.height ? '50%' : '4px'}
+      r={props.r}
       overflow="hidden"
       bg={props.inverse ? 'rgba(255, 255, 255, 0.14)' : 'rgba(0, 0, 0, 0.04)'}
       width={props.width}
@@ -54,10 +55,11 @@ export const Stub: FC<StubProps> = (props) => (
           repeat
         `}
         animation={`${stubKeyframes} 1400ms linear infinite`}
-        css={{
-          pointerEvents: 'none',
-        }}
       />
     </CardPos>
   </Box>
 )
+
+Stub.defaultProps = {
+  r: 4,
+}
