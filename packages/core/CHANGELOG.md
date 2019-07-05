@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.57.0](https://github.com/qiwi/pijma/compare/v1.56.0...v1.57.0) (2019-07-04)
+
+
+### Features
+
+* stub ([80d9793](https://github.com/qiwi/pijma/commit/80d9793))
+
 # [@qiwi/pijma-core-v1.56.0](https://github.com/qiwi/pijma/compare/v1.55.0...v1.56.0) (2019-07-03)
 
 
