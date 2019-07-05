@@ -59,8 +59,7 @@ initialState = {values: ['selected']};
 ```
 
 ```jsx
-initialState = {values: ['selected']};
 <CheckboxField
-  stub
+  stub options={[]} values={[]} onChange={() => {}}
 />
 ```
