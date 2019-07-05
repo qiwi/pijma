@@ -53,6 +53,29 @@
       />
     </FlexItem>
   </Flex>
+  <Flex align="flex-start">
+    <FlexItem pr={4}>
+      <Button
+        size="accent"
+        stub
+        text
+      />
+    </FlexItem>
+    <FlexItem pr={4}>
+      <Button
+        size="normal"
+        stub
+        text
+      />
+    </FlexItem>
+    <FlexItem pr={4}>
+      <Button
+        size="minor"
+        stub
+        text
+      />
+    </FlexItem>
+  </Flex>
 </Spacer>
 ```
 
@@ -108,6 +131,29 @@
         kind="simple"
         size="minor"
         text="Нажать"
+      />
+    </FlexItem>
+  </Flex>
+  <Flex align="flex-start">
+    <FlexItem pr={4}>
+      <Button
+        size="accent"
+        stub
+        text
+      />
+    </FlexItem>
+    <FlexItem pr={4}>
+      <Button
+        size="normal"
+        stub
+        text
+      />
+    </FlexItem>
+    <FlexItem pr={4}>
+      <Button
+        size="minor"
+        stub
+        text
       />
     </FlexItem>
   </Flex>
@@ -172,6 +218,29 @@
       />
     </FlexItem>
   </Flex>
+  <Flex align="flex-start">
+    <FlexItem pr={4}>
+      <Button
+        size="accent"
+        stub
+        text
+      />
+    </FlexItem>
+    <FlexItem pr={4}>
+      <Button
+        size="normal"
+        stub
+        text
+      />
+    </FlexItem>
+    <FlexItem pr={4}>
+      <Button
+        size="minor"
+        stub
+        text
+      />
+    </FlexItem>
+  </Flex>
 </Spacer>
 ```
 
@@ -233,6 +302,32 @@
       />
     </FlexItem>
   </Flex>
+  <Flex align="flex-start">
+    <FlexItem pr={4}>
+      <Button
+        size="accent"
+        stub
+        icon
+        text
+      />
+    </FlexItem>
+    <FlexItem pr={4}>
+      <Button
+        size="normal"
+        stub
+        icon
+        text
+      />
+    </FlexItem>
+    <FlexItem pr={4}>
+      <Button
+        size="minor"
+        stub
+        icon
+        text
+      />
+    </FlexItem>
+  </Flex>
 </Spacer>
 ```
 
@@ -283,6 +378,29 @@
         kind="simple"
         size="minor"
         icon={<StarIcon/>}
+      />
+    </FlexItem>
+  </Flex>
+  <Flex align="flex-start">
+    <FlexItem pr={4}>
+      <Button
+        size="accent"
+        stub
+        icon
+      />
+    </FlexItem>
+    <FlexItem pr={4}>
+      <Button
+        size="normal"
+        stub
+        icon
+      />
+    </FlexItem>
+    <FlexItem pr={4}>
+      <Button
+        size="minor"
+        stub
+        icon
       />
     </FlexItem>
   </Flex>
