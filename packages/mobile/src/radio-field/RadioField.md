@@ -59,3 +59,9 @@ initialState = {value: 'selected'};
   onChange={(value) => setState({value})}
 />
 ```
+
+```jsx
+<RadioField
+  stub options={[]} value={null} onChange={() => {}}
+/>
+```
