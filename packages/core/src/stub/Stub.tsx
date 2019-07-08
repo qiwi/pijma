@@ -38,7 +38,7 @@ export const Stub: FC<StubProps> = (props) => (
       overflow="hidden"
       bg={props.inverse ? 'rgba(255, 255, 255, 0.14)' : 'rgba(0, 0, 0, 0.04)'}
       width={props.width}
-      maxWidth="100%"
+      maxWidth={1}
       height={props.height}
     >
       <CardPos
