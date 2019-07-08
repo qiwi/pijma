@@ -2,38 +2,10 @@
 
 ```jsx
 initialState = {values: ['selected']};
-<SwitchField
-  title="Группа переключателей"
-  hint={<QuestionIcon/>}
-  options={[{
-    label: 'Выбранный переключатель',
-    value: 'selected',
-    disabled: false,
-  }, {
-    label: 'Невыбранный переключатель',
-    value: 'normal',
-    disabled: false,
-  }, {
-    label: 'Заблокированный выбранный переключатель',
-    value: 'selected-disabled',
-    disabled: true,
-  }, {
-    label: 'Заблокированный переключатель',
-    value: 'disabled',
-    disabled: true,
-  }]}
-  values={state.values}
-  onChange={(values) => setState({values})}
-/>
-```
-
-```jsx
-initialState = {values: ['selected']};
-<Box width={110}>
+<Spacer size="l">
   <SwitchField
-    title="Группа инвертированных переключателей"
+    title="Группа переключателей"
     hint={<QuestionIcon/>}
-    reverse={true}
     options={[{
       label: 'Выбранный переключатель',
       value: 'selected',
@@ -54,6 +26,40 @@ initialState = {values: ['selected']};
     values={state.values}
     onChange={(values) => setState({values})}
   />
+  <SwitchField stub options={[]} values={[]} onChange={() => {}}/>
+</Spacer>
+```
+
+```jsx
+initialState = {values: ['selected']};
+<Box width={110}>
+  <Spacer size="l">
+    <SwitchField
+      title="Группа инвертированных переключателей"
+      hint={<QuestionIcon/>}
+      reverse={true}
+      options={[{
+        label: 'Выбранный переключатель',
+        value: 'selected',
+        disabled: false,
+      }, {
+        label: 'Невыбранный переключатель',
+        value: 'normal',
+        disabled: false,
+      }, {
+        label: 'Заблокированный выбранный переключатель',
+        value: 'selected-disabled',
+        disabled: true,
+      }, {
+        label: 'Заблокированный переключатель',
+        value: 'disabled',
+        disabled: true,
+      }]}
+      values={state.values}
+      onChange={(values) => setState({values})}
+    />
+    <SwitchField stub reverse options={[]} values={[]} onChange={() => {}}/>
+  </Spacer>
 </Box>
 ```
 

@@ -19,6 +19,7 @@ initialState = {checked: true};
       disabled={true}
       label="Невыбранный заблокированный"
     />
+    <Switch stub/>
   </Spacer>
 </Box>
 ```
@@ -27,11 +28,14 @@ initialState = {checked: true};
 ```jsx
 initialState = {checked: false};
 <Box width={80}>
-  <Switch
-    reverse={true}
-    onChange={checked => setState({checked})}
-    checked={state.checked}
-    label="Невыбранный переключатель"
-  />
+  <Spacer size="xxs">
+    <Switch
+      reverse={true}
+      onChange={checked => setState({checked})}
+      checked={state.checked}
+      label="Невыбранный переключатель"
+    />
+    <Switch stub reverse/>
+  </Spacer>
 </Box>
 ```
