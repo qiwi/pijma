@@ -70,11 +70,12 @@ export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'de
       ml={align === 'center' || align === 'right' ? 'auto' : 'none'}
       mr={align === 'center' ? 'auto' : 'none'}
       width={50}
+      maxWidth={1}
     >
       <Stub
         top={StubOffsetTop[size]}
         bottom={StubOffsetBottom[size]}
-        width={50}
+        width={1}
         height={StubHeight[size]}
         inverse={color === 'inverse'}
       />

@@ -8,8 +8,8 @@ export interface ParagraphProps {
   compact?: boolean
   color?: 'default' | 'support' | 'inverse'
   transform?: TypoProps['transform']
-  stub?: boolean
   align?: TypoProps['align']
+  stub?: boolean
 }
 
 const ParagraphSize: { [size in NonNullable<ParagraphProps['size']>]: number } = {
