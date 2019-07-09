@@ -57,22 +57,28 @@
     <FlexItem pr={4}>
       <Button
         size="accent"
+        kind="brand"
+        type="button"
+        text="if you need button stub put any corrent content here"
         stub
-        text
       />
     </FlexItem>
     <FlexItem pr={4}>
       <Button
         size="normal"
+        kind="brand"
+        type="button"
+        text="if you need button stub put any corrent content here"
         stub
-        text
       />
     </FlexItem>
     <FlexItem pr={4}>
       <Button
         size="minor"
+        kind="brand"
+        type="button"
+        text="if you need button stub put any corrent content here"
         stub
-        text
       />
     </FlexItem>
   </Flex>
@@ -138,22 +144,28 @@
     <FlexItem pr={4}>
       <Button
         size="accent"
+        kind="brand"
+        type="button"
+        text="if you need button stub put any corrent content here"
         stub
-        text
       />
     </FlexItem>
     <FlexItem pr={4}>
       <Button
         size="normal"
+        kind="brand"
+        type="button"
+        text="if you need button stub put any corrent content here"
         stub
-        text
       />
     </FlexItem>
     <FlexItem pr={4}>
       <Button
         size="minor"
+        kind="brand"
+        type="button"
+        text="if you need button stub put any corrent content here"
         stub
-        text
       />
     </FlexItem>
   </Flex>
@@ -215,29 +227,6 @@
         kind="simple"
         size="minor"
         text="Нажать"
-      />
-    </FlexItem>
-  </Flex>
-  <Flex align="flex-start">
-    <FlexItem pr={4}>
-      <Button
-        size="accent"
-        stub
-        text
-      />
-    </FlexItem>
-    <FlexItem pr={4}>
-      <Button
-        size="normal"
-        stub
-        text
-      />
-    </FlexItem>
-    <FlexItem pr={4}>
-      <Button
-        size="minor"
-        stub
-        text
       />
     </FlexItem>
   </Flex>
@@ -306,25 +295,31 @@
     <FlexItem pr={4}>
       <Button
         size="accent"
-        stub
+        kind="brand"
+        type="button"
+        text="if you need button stub put any corrent content here"
         icon
-        text
+        stub
       />
     </FlexItem>
     <FlexItem pr={4}>
       <Button
         size="normal"
-        stub
+        kind="brand"
+        type="button"
+        text="if you need button stub put any corrent content here"
         icon
-        text
+        stub
       />
     </FlexItem>
     <FlexItem pr={4}>
       <Button
         size="minor"
-        stub
+        kind="brand"
+        type="button"
+        text="if you need button stub put any corrent content here"
         icon
-        text
+        stub
       />
     </FlexItem>
   </Flex>
@@ -385,22 +380,28 @@
     <FlexItem pr={4}>
       <Button
         size="accent"
-        stub
+        kind="brand"
+        type="button"
         icon
+        stub
       />
     </FlexItem>
     <FlexItem pr={4}>
       <Button
         size="normal"
-        stub
+        kind="brand"
+        type="button"
         icon
+        stub
       />
     </FlexItem>
     <FlexItem pr={4}>
       <Button
         size="minor"
-        stub
+        kind="brand"
+        type="button"
         icon
+        stub
       />
     </FlexItem>
   </Flex>
