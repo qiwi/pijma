@@ -17,9 +17,10 @@ const CaptionColor: { [color in NonNullable<CaptionProps['color']>]: string } = 
 export const Caption: FunctionComponent<CaptionProps> = ({color = 'support', align, stub, children}) => (
   stub ? (
     <Box
-      ml={align === 'center' || align === 'right' ? 'auto' : 'none'}
-      mr={align === 'center' ? 'auto' : 'none'}
+      ml={align === 'center' || align === 'right' ? 'auto' : undefined}
+      mr={align === 'center' ? 'auto' : undefined}
       width={50}
+      maxWidth={1}
     >
       <Stub
         top={1}
