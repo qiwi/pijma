@@ -8,11 +8,11 @@ export interface TabListProps {
   tab?: 'long' | 'short'
   vertical?: boolean
   bottom?: number
-  size?: 'xs' | 's' | 'm' | 'l'
+  indent?: 'xs' | 's' | 'm' | 'l'
   onKeyDown?: React.KeyboardEventHandler
 }
 
-const SpacerSize: {[size in NonNullable<TabListProps['size']>]: number} = {
+const SpacerSize: {[indent in NonNullable<TabListProps['indent']>]: number} = {
   xs: 4,
   s: 8,
   m: 11,
@@ -22,11 +22,11 @@ const SpacerSize: {[size in NonNullable<TabListProps['size']>]: number} = {
 export class TabList extends React.Component<TabListProps & CardProps, {}> {
 
   public render() {
-    const {center, children, border, size, bottom, tab, ...props} = this.props
+    const {center, children, border, indent, bottom, tab, ...props} = this.props
 
-    const gap = border === 'long' && size ? SpacerSize[size] : 0
+    const gap = border === 'long' && indent ? SpacerSize[indent] : 0
 
-    const mb = (size ? SpacerSize[size] : SpacerSize['s']) / 2
+    const mb = (indent ? SpacerSize[indent] : SpacerSize['s']) / 2
 
     return (
       <Card

@@ -1,42 +1,27 @@
-import React, {ReactNode, Children} from 'react'
+import React, {FC} from 'react'
 
-import {Card, Typo} from '../primitive'
-import {TabsSpacer, TabsSpacerProps} from './TabsSpacer'
+import {Block} from '@qiwi/pijma-core'
+import {BlockContent, BlockContentProps} from './BlockContent'
 
-export class TabPanel extends React.Component<{} & TabsSpacerProps, {}> {
+export interface TabPanelProps {
+  block?: boolean
+}
 
-  public render() {
-    const {children, size, ...props} = this.props
-    const elements = Children.toArray(children).filter(child => !!child)
-    if (elements.length === 0) {
-      return null
-    }
+export const TabPanel: FC<TabPanelProps & BlockContentProps> = ({children, block, indent}) => {
+  const component = (
+    <BlockContent
+      indent={indent}
+      children={children}
+    />
+  )
+
+  if (block) {
     return (
-      <Card {...props}>
-        <TabsSpacer
-          size={size}
-          children={Children.map(elements, (child: ReactNode, key: number) => (
-            <Typo
-              key={key}
-              display="block"
-              color="#000"
-              weight={300}
-              size={4}
-              height={6}
-              children={child}
-            />
-          ))}
-        />
-      </Card>
+      <Block>
+        {component}
+      </Block>
     )
   }
 
+  return component
 }
-
-/* export const TabList: FC<{}> = ({center, children, border}) => {
-  return (
-    <Card bb={border ? '1px solid #e6e6e6' : ''} mb={4}>
-        <Flex justify={center ? 'center' : 'flex-start'}>{children}</Flex>
-      </Card>
-  )
-} */

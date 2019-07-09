@@ -2,13 +2,13 @@ import React, {FC} from 'react'
 
 import {Box} from '../primitive'
 
-export interface TabsSpacerProps {
+export interface BlockContentProps {
   children: React.ReactNode
-  size?: 'xs' | 's' | 'm' | 'l'
+  indent?: 'xs' | 's' | 'm' | 'l'
 }
 
-const SpacerSize: {
-  [size in NonNullable<TabsSpacerProps['size']>]: {
+const Sizes: {
+  [indent in NonNullable<BlockContentProps['indent']>]: {
     t: number
     l: number
     r: number
@@ -41,13 +41,13 @@ const SpacerSize: {
   },
 }
 
-export const TabsSpacer: FC<TabsSpacerProps> = ({size, children}) => {
+export const BlockContent: FC<BlockContentProps> = ({indent, children}) => {
   return (
     <Box
-      pt={size ? SpacerSize[size].t : 0}
-      pl={size ? SpacerSize[size].l : 0}
-      pr={size ? SpacerSize[size].r : 0}
-      pb={size ? SpacerSize[size].b : 0}
+      pt={indent ? Sizes[indent].t : 0}
+      pl={indent ? Sizes[indent].l : 0}
+      pr={indent ? Sizes[indent].r : 0}
+      pb={indent ? Sizes[indent].b : 0}
       children={children}
     />
   )

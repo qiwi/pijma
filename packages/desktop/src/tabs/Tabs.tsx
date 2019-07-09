@@ -1,29 +1,32 @@
 import React, {FC} from 'react'
 
-import {TabsControl, TabsSpacer, Tab, TabList, TabPanel} from '@qiwi/pijma-core'
+import {TabsControl, BlockContent, Tab, TabList, TabPanel, Block} from '@qiwi/pijma-core'
 
 export interface TabsProps {
-  size?: 's' | 'm' | 'l'
+  indent?: 's' | 'm' | 'l'
+  contentIndent?: 's' | 'm' | 'l'
   selected?: number
   border?: 'long' | 'short'
   vertical?: boolean
+  bottom?: number
+  block?: boolean
   onSelect?: (selected: number) => void
-  children: React.ReactNode
-  items: {
+  children: {
     icon?: React.ReactNode
     title: React.ReactNode
     content: React.ReactNode
   }[]
 }
 
-export const Tabs: FC<TabsProps> = props => {
-  return (
-    <TabsSpacer
-      size={props.size}
+export const Tabs: FC<TabsProps> = ({children, block, contentIndent, ...props}) => {
+  const component = (
+    <BlockContent
+      indent={props.indent}
       children={
         <TabsControl
+          items={children}
           {...props}
-          children={rendreProps => {
+          children={(rendreProps) => {
             return (
               <>
                 <TabList {...rendreProps.tabList}>
@@ -33,7 +36,7 @@ export const Tabs: FC<TabsProps> = props => {
                     </Tab>
                   ))}
                 </TabList>
-                <TabPanel>{rendreProps.content}</TabPanel>
+                <TabPanel block={!block} indent={contentIndent}>{rendreProps.content}</TabPanel>
               </>
             )
           }}
@@ -41,4 +44,14 @@ export const Tabs: FC<TabsProps> = props => {
       }
     />
   )
+
+  if (block) {
+    return (
+      <Block>
+        {component}
+      </Block>
+    )
+  }
+
+  return component
 }

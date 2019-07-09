@@ -8,6 +8,7 @@ export interface TabsControlProps {
   border?: 'long' | 'short'
   tab?: 'long' | 'short'
   center?: boolean
+  bottom?: number
   onSelect?: (selected: number) => void
   children: RenderChild<{
     tabs: {
@@ -23,15 +24,16 @@ export interface TabsControlProps {
       onMouseLeave: () => void
     }[]
     tabList: {
-      size?: 's' | 'm' | 'l'
+      indent?: 's' | 'm' | 'l'
       border?: 'long' | 'short'
       center?: boolean
       vertical?: boolean
+      bottom?: number
       onKeyDown: React.KeyboardEventHandler
     }
     content: React.ReactNode
   }>
-  size?: 's' | 'm' | 'l'
+  indent?: 's' | 'm' | 'l'
   items: {
     icon?: React.ReactNode
     title: React.ReactNode
@@ -112,84 +114,15 @@ export class TabsControl extends React.Component<
     }
   }
 
-  /* private renderChild: () => React.ReactNode = () => {
-    const self = this
-    const children: React.ReactNode = React.Children.map(
-      this.props.children,
-      (element: React.ReactNode) => {
-        if (!element) {
-          return null
-        }
-        if (React.isValidElement(element) && isTabList(element)) {
-          const tabList = element
-
-          self.tabsCount = 0
-
-          return React.cloneElement(tabList, {
-            ...tabList.props,
-            onKeyDown: this.onKeyDown,
-            size: this.props.size,
-            children: React.Children.map(
-              tabList.props.children,
-              (element: React.ReactNode, index: number) => {
-                if (React.isValidElement(element) && isTab(element)) {
-                  const tab = element
-                  const onSelect = () => this.onSelect(index)
-                  const onMouseEnter = () => this.onMouseEnter(index)
-
-                  ++self.tabsCount
-
-                  return React.cloneElement(tab, {
-                    ...tab.props,
-                    tab: tabList.props.tab,
-                    icon: tab.props.icon,
-                    vertical: tabList.props.vertical,
-                    selected: this.state.selected === index,
-                    focused: this.state.focused === index,
-                    onSelect,
-                    onMouseEnter,
-                    onMouseLeave: this.onMouseLeave,
-                  })
-                }
-
-                return null
-              },
-            ),
-          })
-        }
-        if (React.isValidElement(element) && isTabPanel(element)) {
-          return React.cloneElement(element, {
-            ...element.props,
-            children: React.Children.map(
-              element.props.children,
-              (element: React.ReactNode, index: number) => {
-                if (
-                  React.isValidElement(element) &&
-                  index === this.state.selected
-                ) {
-                  return element
-                }
-
-                return null
-              },
-            ),
-          })
-        }
-      },
-    )
-
-    return children
-  } */
-
   public render() {
-    /* return this.renderChild() */
     return this.props.children({
       tabList: {
         onKeyDown: this.onKeyDown,
-        size: this.props.size,
+        indent: this.props.indent,
         border: this.props.border,
         vertical: this.props.vertical,
         center: this.props.center,
+        bottom: this.props.bottom,
       },
       content: this.props.items[this.state.selected].content,
       tabs: this.props.items.map(
