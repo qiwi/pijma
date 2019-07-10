@@ -16,7 +16,7 @@
   "files": [
     "README.md",
     "CHANGELOG.md",
-    "lib/"
+    "lib"
   ],
   "dependencies": {
     "@emotion/core": "^10.0.14",

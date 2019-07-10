@@ -7,7 +7,7 @@
   "files": [
     "README.md",
     "CHANGELOG.md",
-    "lib/"
+    "lib"
   ],
   "scripts": {
     "clean": "rm -rf lib",
