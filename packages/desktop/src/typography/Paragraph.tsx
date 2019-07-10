@@ -78,7 +78,7 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
 }) => (
   stub ? (
     <Fragment>
-      {[0.86, 0.90, 0.82].map((width: number, id: number) => (
+      {[0.8, 0.9, 0.7].map((width: number, id: number) => (
         <Stub
           key={id}
           top={compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}
