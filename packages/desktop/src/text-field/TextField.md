@@ -36,8 +36,8 @@
   <TextField
     stub
     title="if you need title stub put any corrent content here"
-    help="1"
-    hint="1"
+    help="if you need help stub put any corrent content here"
+    hint="if you need hint stub put any corrent content here"
     value=""
   />
 </Box>
