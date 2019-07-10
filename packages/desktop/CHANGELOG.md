@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.58.0](https://github.com/qiwi/pijma/compare/v1.57.0...v1.58.0) (2019-07-10)
+
+
+### Features
+
+* stub typography ([13300bf](https://github.com/qiwi/pijma/commit/13300bf))
+
 # [@qiwi/pijma-desktop-v1.55.0](https://github.com/qiwi/pijma/compare/v1.54.0...v1.55.0) (2019-07-03)
 
 
