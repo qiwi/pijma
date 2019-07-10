@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.59.0](https://github.com/qiwi/pijma/compare/v1.58.0...v1.59.0) (2019-07-10)
+
+
+### Features
+
+* stub button ([ccc59e1](https://github.com/qiwi/pijma/commit/ccc59e1))
+
 # [@qiwi/pijma-mobile-v1.58.0](https://github.com/qiwi/pijma/compare/v1.57.0...v1.58.0) (2019-07-10)
 
 
