@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Breaker, Typo, TypoProps, Stub, Box} from '@qiwi/pijma-core'
+import {Breaker, Typo, TypoProps, Stub} from '@qiwi/pijma-core'
 
 export interface ParagraphProps {
   size?: 's' | 'm' | 'l'
@@ -77,8 +77,8 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
   children,
 }) => (
   stub ? (
-    <Box maxWidth={1}>
-      {[75, 88, 62].map((width: number, id: number) => (
+    <React.Fragment>
+      {[0.82, 0.90, 0.74].map((width: number, id: number) => (
         <Stub
           key={id}
           top={compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}
@@ -88,7 +88,7 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
           inverse={color === 'inverse'}
         />
       ))}
-    </Box>
+    </React.Fragment>
   ) : (
     <Typo
       as="p"
