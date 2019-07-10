@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.60.0](https://github.com/qiwi/pijma/compare/v1.59.0...v1.60.0) (2019-07-10)
+
+
+### Features
+
+* stub text field ([9a3cb71](https://github.com/qiwi/pijma/commit/9a3cb71))
+
 # [@qiwi/pijma-mobile-v1.59.0](https://github.com/qiwi/pijma/compare/v1.58.0...v1.59.0) (2019-07-10)
 
 
