@@ -36,18 +36,19 @@ export const Stub: FC<StubProps> = (props) => (
       type="relative"
       r={props.r}
       overflow="hidden"
-      bg={props.inverse ? 'rgba(255, 255, 255, 0.14)' : 'rgba(0, 0, 0, 0.04)'}
+      bg={props.inverse ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.015)'}
       width={props.width}
       height={props.height}
+      maxWidth={1}
     >
       <CardPos
-        width="100%"
-        height="100%"
+        width={1}
+        height={1}
         bg={`
           linear-gradient(
             to right,
             transparent 0,
-            ${props.inverse ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.1)'}  80px,
+            ${props.inverse ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.03)'} 80px,
             transparent 160px,
             transparent 560px
           )

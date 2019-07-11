@@ -1,3 +1,17 @@
+# [@qiwi/pijma-core-v1.60.1](https://github.com/qiwi/pijma/compare/v1.60.0...v1.60.1) (2019-07-10)
+
+
+### Performance Improvements
+
+* up deps ([a7bcce6](https://github.com/qiwi/pijma/commit/a7bcce6))
+
+# [@qiwi/pijma-core-v1.58.0](https://github.com/qiwi/pijma/compare/v1.57.0...v1.58.0) (2019-07-10)
+
+
+### Features
+
+* stub typography ([13300bf](https://github.com/qiwi/pijma/commit/13300bf))
+
 # [@qiwi/pijma-core-v1.57.0](https://github.com/qiwi/pijma/compare/v1.56.0...v1.57.0) (2019-07-04)
 
 

@@ -19,6 +19,7 @@ export default interface TextFieldProps {
   maxLength?: number
   mask?: Mask
   pipe?: Pipe
+  stub?: boolean
   onChange?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void
