@@ -19,13 +19,30 @@ const CheckboxField: FunctionComponent<
   CheckboxFieldProps<CheckboxFieldOptionModel<any>, any>
 > = props => (
   props.stub ? (
-    <Box>
-      <Stub width={24} height={3} top={2} bottom={4}/>
+    <Box maxWidth={1}>
+      <Stub
+        width={24}
+        height={3}
+        top={2}
+        bottom={4}
+      />
       <Spacer size="s">
         {[33, 38, 30].map((width: number, id: number) => (
           <Flex key={id} align="center">
-            <Stub width={5} height={5} right={3} left={0.5}/>
-            <Stub width={width} height={2} top={2} bottom={2}/>
+            <Stub
+              width={5}
+              height={5}
+              right={3}
+              left={0.5}
+            />
+            <Box width={width} maxWidth={1}>
+              <Stub
+                width={1}
+                height={2}
+                top={2}
+                bottom={2}
+              />
+            </Box>
           </Flex>
         ))}
       </Spacer>
