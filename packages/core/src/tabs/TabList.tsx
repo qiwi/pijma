@@ -4,7 +4,7 @@ import {Flex, Card, CardProps} from '../primitive'
 
 export interface TabListProps {
   center?: boolean
-  border?: 'long' | 'short'
+  border?: boolean
   tab?: 'long' | 'short'
   vertical?: boolean
   bottom?: number
@@ -24,7 +24,7 @@ export class TabList extends React.Component<TabListProps & CardProps, {}> {
   public render() {
     const {center, children, border, indent, bottom, tab, ...props} = this.props
 
-    const gap = border === 'long' && indent ? SpacerSize[indent] : 0
+    const gap = border && indent ? SpacerSize[indent] : 0
 
     const mb = (indent ? SpacerSize[indent] : SpacerSize['s']) / 2
 

@@ -5,7 +5,7 @@ import RenderChild from '../RenderChild'
 export interface TabsControlProps {
   selected?: number
   vertical?: boolean
-  border?: 'long' | 'short'
+  border?: boolean
   tab?: 'long' | 'short'
   center?: boolean
   bottom?: number
@@ -25,7 +25,7 @@ export interface TabsControlProps {
     }[]
     tabList: {
       indent?: 's' | 'm' | 'l'
-      border?: 'long' | 'short'
+      border?: boolean
       center?: boolean
       vertical?: boolean
       bottom?: number
