@@ -20,8 +20,13 @@ const SwitchField: FunctionComponent<
   SwitchFieldProps<SwitchFieldOptionModel<any>, any>
 > = props => (
   props.stub ? (
-    <Box>
-      <Stub width={24} height={3} top={2} bottom={4}/>
+    <Box maxWidth={1}>
+      <Stub
+        width={24}
+        height={3}
+        top={2}
+        bottom={4}
+      />
       <Spacer size="s">
         {[33, 38, 30].map((width, index) => (
           <Flex
@@ -43,8 +48,13 @@ const SwitchField: FunctionComponent<
                 r={10}
               />
             </FlexItem>
-            <FlexItem>
-              <Stub width={width} height={2} top={2} bottom={2}/>
+            <FlexItem width={width} maxWidth={1}>
+              <Stub
+                width={1}
+                height={2}
+                top={2}
+                bottom={2}
+              />
             </FlexItem>
           </Flex>
         ))}

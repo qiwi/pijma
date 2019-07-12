@@ -19,7 +19,12 @@ initialState = {checked: true};
       disabled={true}
       label="Невыбранный заблокированный"
     />
-    <Switch stub/>
+    <Switch
+      stub
+      checked={true}
+      label=""
+      onChange={() => {}}
+    />
   </Spacer>
 </Box>
 ```
@@ -35,7 +40,13 @@ initialState = {checked: false};
       checked={state.checked}
       label="Невыбранный переключатель"
     />
-    <Switch stub reverse/>
+    <Switch
+      stub
+      reverse
+      checked={true}
+      label=""
+      onChange={() => {}}
+    />
   </Spacer>
 </Box>
 ```

@@ -33,8 +33,8 @@ export const Switch: FunctionComponent<SwitchProps> = props => (
           r={10}
         />
       </FlexItem>
-      <FlexItem>
-        <Stub width={33} height={2} top={2} bottom={2}/>
+      <FlexItem width={33} maxWidth={1}>
+        <Stub width={1} height={2} top={2} bottom={2}/>
       </FlexItem>
     </Flex>
   ) : (

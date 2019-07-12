@@ -26,7 +26,12 @@ initialState = {values: ['selected']};
     values={state.values}
     onChange={(values) => setState({values})}
   />
-  <SwitchField stub options={[]} values={[]} onChange={() => {}}/>
+  <SwitchField
+    stub
+    options={[]}
+    values={[]}
+    onChange={() => {}}
+  />
 </Spacer>
 ```
 
@@ -58,7 +63,13 @@ initialState = {values: ['selected']};
       values={state.values}
       onChange={(values) => setState({values})}
     />
-    <SwitchField stub reverse options={[]} values={[]} onChange={() => {}}/>
+    <SwitchField
+      stub
+      reverse
+      options={[]}
+      values={[]}
+      onChange={() => {}}
+    />
   </Spacer>
 </Box>
 ```
