@@ -62,6 +62,10 @@ initialState = {value: 'selected'};
 
 ```jsx
 <RadioField
-  stub options={[]} value={null} onChange={() => {}}
+  stub
+    options={[]}
+    value={null}
+    onChange={() => {}
+  }
 />
 ```
