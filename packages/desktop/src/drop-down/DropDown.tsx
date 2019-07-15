@@ -1,6 +1,7 @@
-import React, {FC} from 'react'
+import React, {FunctionComponent} from 'react'
+import {css} from 'emotion'
 
-import {Overlay, OverlayProps, Card, Pos} from '@qiwi/pijma-core'
+import {Overlay, OverlayProps, Card, Pos, SimpleTransition, SimpleTransitionProps} from '@qiwi/pijma-core'
 
 export interface DropDownProps {
   show: boolean
@@ -11,7 +12,26 @@ export interface DropDownProps {
   offset?: number
 }
 
-export const DropDown: FC<DropDownProps> = (props) => {
+const transition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+
+transition.defaultProps = {
+  appear: true,
+  timeout: {
+    enter: 370,
+    exit: 250,
+  },
+  enterClassName: (timeout: number) => css({
+    opacity: 1,
+    transition: `opacity ${timeout}ms ease`,
+  }),
+  exitClassName: (timeout: number) => css({
+    opacity: 0,
+    transition: `opacity ${timeout}ms ease`,
+  }),
+}
+
+export const DropDown: FunctionComponent<DropDownProps> = (props) => {
+  console.log(props)
   return (
     <Overlay
       show={props.show}
@@ -20,8 +40,9 @@ export const DropDown: FC<DropDownProps> = (props) => {
       container={props.container}
       rootClose={false}
       onHide={props.onHide}
+      transition={transition}
       children={() => (
-        <Pos type="absolute" top={props.offset} transition="transform 0.3s ease-in-out">
+        <Pos type="absolute" top={props.offset}>
           <Card s="0 28px 52px 0 rgba(0, 0, 0, 0.16)" bg="#fff" r={10} pt={3} pb={3}>
             {props.children}
           </Card>
