@@ -38,8 +38,8 @@
     "tslib": "^1.10.0"
   },
   "devDependencies": {
-    "@types/webpack-env": "1.13.9",
-    "file-loader": "4.0.0",
+    "@types/webpack-env": "1.14.0",
+    "file-loader": "4.1.0",
     "gh-pages": "2.0.1",
     "husky": "3.0.0",
     "react-docgen-typescript": "1.12.5",
@@ -49,6 +49,6 @@
     "tslint-config-qiwi": "1.1.0",
     "tslint-loader": "3.5.4",
     "typescript": "3.5.3",
-    "webpack": "4.35.3"
+    "webpack": "4.36.1"
   }
 }
