@@ -45,7 +45,7 @@ export class Tab extends React.Component<TabProps & BoxProps, {}> {
       <Box
         maxWidth={tab === 'long' ? 47 : 38}
         width={width}
-        mr={6.5}
+        mr={5}
         tabIndex={tabIndex}
         cursor="pointer"
         onMouseEnter={onMouseEnter}

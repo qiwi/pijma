@@ -22,7 +22,7 @@ const SpacerSize: {[indent in NonNullable<TabListProps['indent']>]: number} = {
 export class TabList extends React.Component<TabListProps & CardProps, {}> {
 
   public render() {
-    const {center, children, border, indent, bottom, tab, ...props} = this.props
+    const {center, children, border = true, indent, bottom, tab, ...props} = this.props
 
     const gap = border && indent ? SpacerSize[indent] : 0
 

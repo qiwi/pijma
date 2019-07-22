@@ -5,7 +5,6 @@ import {TabsControl, Tab, TabList, TabPanel} from '@qiwi/pijma-core'
 export interface TabsProps {
   contentIndent?: 's' | 'm' | 'l'
   selected?: number
-  border?: boolean
   vertical?: boolean
   bottom?: number
   onSelect?: (selected: number) => void
@@ -16,9 +15,10 @@ export interface TabsProps {
   }[]
 }
 
-export const Tabs: FC<TabsProps> = ({children, contentIndent, ...props}) => {
+export const Tabs: FC<TabsProps> = ({children, contentIndent,...props}) => {
   return (
     <TabsControl
+      border={false}
       items={children}
       {...props}
       children={(rendreProps) => {
