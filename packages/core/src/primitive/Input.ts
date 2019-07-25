@@ -24,6 +24,10 @@ export interface InputProps extends CardProps {
   placeholderSpacing?: number
 }
 
+// const Inp = forwardRef<HTMLInputElement, {}>(props, ref) => (
+//   <input ref={ref} {...props}/>
+// )
+
 export const InputNonProps = [
   'valueSize', 'valueWeight', 'valueColor', 'valueTransform', 'valueSpacing',
   'placeholderSize', 'placeholderWeight', 'placeholderColor', 'placeholderTransform', 'placeholderSpacing',

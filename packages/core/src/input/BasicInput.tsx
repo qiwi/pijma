@@ -1,4 +1,5 @@
-import React, {FunctionComponent, ChangeEventHandler, FocusEventHandler, KeyboardEventHandler} from 'react'
+import React, {ChangeEventHandler, FocusEventHandler, KeyboardEventHandler, RefObject, forwardRef} from 'react'
+import MaskedInput from 'react-text-mask'
 
 import {MaskInput, Input} from '../primitive'
 import {isMaskDigital, Mask, Pipe} from '../mask'
@@ -13,6 +14,7 @@ export interface BasicInputProps {
   placeholder?: string
   maxLength?: number
   padded: boolean
+  paddedLeft?: boolean
   disabled?: boolean
   error: boolean
   focused: boolean
@@ -25,13 +27,14 @@ export interface BasicInputProps {
   onKeyUp?: KeyboardEventHandler
 }
 
-export const BasicInput: FunctionComponent<BasicInputProps> = (props) => {
+export const BasicInput = forwardRef<HTMLInputElement | MaskedInput, BasicInputProps>((props, ref) => {
   const common = {
     width: 1,
     height: 7,
     m: 0,
     p: 0,
     pr: props.padded ? 7 : undefined,
+    pl: props.paddedLeft ? 9 : undefined,
     r: 0,
     b: 'none',
     bb: props.disabled ? '1px dotted #999' : props.error ? '2px solid #d0021b' : props.focused ? '2px solid #ff8c00' : '1px solid rgba(0, 0, 0, 0.2)',
@@ -59,6 +62,7 @@ export const BasicInput: FunctionComponent<BasicInputProps> = (props) => {
     props.mask ? (
       <MaskInput
         {...common}
+        ref={ref as RefObject<MaskedInput>}
         type={props.type === undefined ? (isMaskDigital(props.mask) ? 'tel' : 'text') : (['text', 'password', 'tel'].includes(props.type) ? props.type : 'text')}
         mask={props.mask}
         pipe={props.pipe}
@@ -69,11 +73,12 @@ export const BasicInput: FunctionComponent<BasicInputProps> = (props) => {
     ) : (
       <Input
         {...common}
+        ref={ref as RefObject<HTMLInputElement>}
         type={props.type === undefined ? 'text' : props.type}
       />
     )
   )
-}
+})
 
 BasicInput.defaultProps = {
   tabIndex: 0,

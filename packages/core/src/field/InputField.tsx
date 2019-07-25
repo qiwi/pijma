@@ -8,12 +8,13 @@ export interface FieldProps {
   padded: boolean
   input: ReactNode
   hint?: ReactNode
+  icon?: ReactNode
   error?: ReactNode
   action?: ReactNode
   help?: ReactNode
 }
 
-export const InputField: FunctionComponent<FieldProps> = ({title, active, padded, input, hint, error, action, help}) => (
+export const InputField: FunctionComponent<FieldProps> = ({title, active, padded, input, hint, icon, error, action, help}) => (
   <Pos type="relative" width={1}>
     <Pos type="relative" height={4}>
       <Pos type="absolute" top={active ? 0 : 4} left={0} maxWidth={1} transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)" pr={padded ? 7 : 0}>
@@ -23,6 +24,7 @@ export const InputField: FunctionComponent<FieldProps> = ({title, active, padded
     <Pos type="relative">
       <Flex align="center">
         {input}
+        <Pos type="absolute" zIndex={1} left={0} width={6} height={6} children={icon}/>
         <Pos type="absolute" zIndex={1} right={0} width={6} height={6} children={hint}/>
       </Flex>
     </Pos>
