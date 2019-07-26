@@ -1,6 +1,6 @@
 import React, {ReactNode} from 'react'
 
-import {Box, BoxProps, Flex, Typo, Pos, Card} from '../primitive'
+import {Box, BoxProps, Flex, Typo, Pos, Card, FlexItem} from '../primitive'
 
 export interface TabProps {
   vertical?: boolean
@@ -9,7 +9,7 @@ export interface TabProps {
   selected?: boolean
   focused?: boolean
   active?: boolean
-  tab?: 'long' | 'short'
+  small?: boolean
   icon?: ReactNode
   onSelect?: (selected: number) => void
   onMouseEnter?: () => void
@@ -33,17 +33,20 @@ export class Tab extends React.Component<TabProps & BoxProps, {}> {
       vertical,
       children,
       icon,
-      tab,
       selected,
       focused,
       width,
+      small,
       onMouseEnter,
       onMouseLeave,
     } = this.props
 
     return (
-      <Box
-        maxWidth={tab === 'long' ? 47 : 38}
+      <FlexItem
+        grow={0}
+        shrink={0}
+        basis="auto"
+        maxWidth={38}
         width={width}
         mr={5}
         tabIndex={tabIndex}
@@ -56,9 +59,9 @@ export class Tab extends React.Component<TabProps & BoxProps, {}> {
             direction={vertical ? 'column' : 'row'}
             justify={vertical ? 'center' : 'flex-start'}
             onClick={this.onClick}
-            pb={vertical ? 6 : 4}
-            pr={tab === 'long' ? 4.5 : 0}
-            pl={tab === 'long' ? 4.5 : 0}
+            pb={small ? 2 : vertical ? 6 : 4}
+            pr={0}
+            pl={0}
           >
             {icon ? (
               <Flex
@@ -70,7 +73,7 @@ export class Tab extends React.Component<TabProps & BoxProps, {}> {
                   />
                 }
                 pr={vertical ? 0 : 1}
-                pb={vertical ? 3 : 0}
+                pb={vertical ? small ? 1.5 : 3 : 0}
                 justify={vertical ? 'center' : 'flex-start'}
                 css={{
                   fill: selected ? '#ff8c00' : focused ? '#ff8c00' : '#666',
@@ -93,7 +96,7 @@ export class Tab extends React.Component<TabProps & BoxProps, {}> {
             </Pos>
           ) : null}
         </Pos>
-      </Box>
+      </FlexItem>
     )
   }
 

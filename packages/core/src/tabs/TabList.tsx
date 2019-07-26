@@ -5,9 +5,7 @@ import {Flex, Card, CardProps} from '../primitive'
 export interface TabListProps {
   center?: boolean
   border?: boolean
-  tab?: 'long' | 'short'
   vertical?: boolean
-  bottom?: number
   indent?: 'xs' | 's' | 'm' | 'l'
   onKeyDown?: React.KeyboardEventHandler
 }
@@ -22,7 +20,7 @@ const SpacerSize: {[indent in NonNullable<TabListProps['indent']>]: number} = {
 export class TabList extends React.Component<TabListProps & CardProps, {}> {
 
   public render() {
-    const {center, children, border = true, indent, bottom, tab, ...props} = this.props
+    const {center, children, border = true, indent, ...props} = this.props
 
     const gap = border && indent ? SpacerSize[indent] : 0
 
@@ -31,15 +29,16 @@ export class TabList extends React.Component<TabListProps & CardProps, {}> {
     return (
       <Card
         bb={border ? '1px solid #e6e6e6' : ''}
-        mb={bottom ? bottom : mb}
+        mb={mb}
         mr={gap * -1}
         ml={gap * -1}
         pr={gap}
         pl={gap}
-        overflow={'auto'}
         {...props}
       >
-        <Flex justify={center ? 'center' : 'flex-start'}>{children}</Flex>
+        <Flex justify={center ? 'center' : 'flex-start'} overflow={'auto'}>
+          {children}
+        </Flex>
       </Card>
     )
   }

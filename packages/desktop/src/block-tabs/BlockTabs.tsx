@@ -33,7 +33,7 @@ export const BlockTabs: FC<BlockTabsProps> = ({children, contentIndent,...props}
           <TabsControl
             items={children}
             {...props}
-            children={rendreProps => {
+            children={(rendreProps) => {
               return (
                 <>
                   <TabList {...rendreProps.tabList}>

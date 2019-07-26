@@ -33,12 +33,12 @@ export const BlockTabs: FC<BlockTabsProps> = ({children, contentIndent,...props}
           <TabsControl
             items={children}
             {...props}
-            children={rendreProps => {
+            children={(rendreProps) => {
               return (
                 <>
                   <TabList {...rendreProps.tabList}>
                     {rendreProps.tabs.map(({title, ...tabProps}, index) => (
-                      <Tab key={index} index={index} {...tabProps}>
+                      <Tab key={index} index={index} small={true} {...tabProps}>
                         {title}
                       </Tab>
                     ))}

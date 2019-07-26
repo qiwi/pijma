@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Block} from '@qiwi/pijma-core'
+import {Block} from '../block'
 import {BlockContent, BlockContentProps} from './BlockContent'
 
 export interface TabPanelProps {
