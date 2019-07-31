@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {PaginationControl, Card, IconWrapper, Box} from '@qiwi/pijma-core'
+import {Box, Card, IconWrapper, PaginationControl} from '@qiwi/pijma-core'
 import {Icon} from '@qiwi/pijma-media'
 import {Text} from '../typography'
 import {PaginationLink} from './PaginationLink'
@@ -30,6 +30,8 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
     onChange={onChange}
     children={renderProps => (
       <Card
+        role="toolbar"
+        aria-label="pagination"
         bg="#fff"
         s={shadowed ? '0 1px 2px 0 rgba(0,0,0,0.12)' : '0 0 0 1px #e6e6e6'}
         height={12}

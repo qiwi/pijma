@@ -1,13 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {
-  CheckboxControl,
-  OptionControl,
-  Check,
-  OptionField,
-  OptionFieldItem,
-  Box,
-} from '@qiwi/pijma-core'
+import {Box, Check, CheckboxControl, OptionControl, OptionField, OptionFieldItem} from '@qiwi/pijma-core'
 
 import CheckboxFieldProps from './CheckboxFieldProps'
 import CheckboxFieldOptionModel from './CheckboxFieldOptionModel'
@@ -43,6 +36,7 @@ const CheckboxField: FunctionComponent<
             onMouseLeave={renderProps.onMouseLeave}
             children={(renderOptionProps) => (
               <OptionFieldItem
+                checked={option.checked}
                 disabled={option.disabled}
                 icon={(
                   <Box width={6}>

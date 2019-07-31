@@ -1,8 +1,9 @@
-import React, {ReactNode, MouseEventHandler} from 'react'
+import React, {MouseEventHandler, ReactNode} from 'react'
 
-import {Box, Pos, Typo, Flex} from '../primitive'
+import {Box, Flex, Pos, Typo} from '../primitive'
 
 export interface OptionFieldItemProps {
+  checked?: boolean
   disabled?: boolean
   reverse?: boolean
   icon: ReactNode
@@ -14,6 +15,7 @@ export interface OptionFieldItemProps {
 }
 
 export const OptionFieldItem: React.FunctionComponent<OptionFieldItemProps> = ({
+  checked,
   disabled,
   icon,
   label,
@@ -24,6 +26,9 @@ export const OptionFieldItem: React.FunctionComponent<OptionFieldItemProps> = ({
   reverse,
 }) => (
   <Pos
+    role="menuitemcheckbox"
+    aria-checked={checked ? 'true' : 'false'}
+    aria-label={typeof label === 'string' ? label : undefined}
     type="relative"
     cursor={disabled ? 'not-allowed' : 'pointer'}
     onClick={onClick}

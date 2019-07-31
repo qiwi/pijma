@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {LinkControl, Lnk, FlexItem, Flex, IconWrapper} from '@qiwi/pijma-core'
+import {Flex, FlexItem, IconWrapper, LinkControl, Lnk} from '@qiwi/pijma-core'
 import {Icon} from '@qiwi/pijma-media'
 import {Text} from '../typography'
 
@@ -36,6 +36,8 @@ export const FileLink: FC<FileLinkProps> = (props) => (
       <FlexLink
         tabIndex={props.tabIndex}
         href={props.href}
+        role="link"
+        aria-label="file"
         target={props.target}
         download={props.download}
         rel={props.rel}

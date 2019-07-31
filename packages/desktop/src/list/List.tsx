@@ -28,9 +28,9 @@ const ItemIndent: {[type in NonNullable<ListProps['type']>]: number} = {
 }
 
 export const List: FunctionComponent<ListProps> = props => (
-  <Box as={ListType[props.type]}>
+  <Box as={ListType[props.type]} role="list">
     {props.children.map((item, index) => (
-      <Flex key={index} as="li" mt={index > 0 ? ItemIndent[props.type] : 0}>
+      <Flex key={index} as="li" mt={index > 0 ? ItemIndent[props.type] : 0} role="listitem">
         {props.type === 'number' ? (
           <FlexItem width={String(props.children.length).length * 2 + 3} shrink={0}>
             <Text size="m" bold={false}>{index + 1}.</Text>

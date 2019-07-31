@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {LinkControl, RenderChild, Lnk, Card} from '@qiwi/pijma-core'
+import {Card, LinkControl, Lnk, RenderChild} from '@qiwi/pijma-core'
 
 export interface BlockLinkProps {
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
@@ -33,6 +33,8 @@ export const BlockLink: FC<BlockLinkProps> = (props) => (
     rel={props.rel}
     children={(renderProps) => (
       <CardLink
+        role="link"
+        aria-label="blockLink"
         display="block"
         overflow="hidden"
         bg="#fff"
