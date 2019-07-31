@@ -1,21 +1,12 @@
 import React, {FC} from 'react'
 
-import {
-  TabsControl,
-  BlockContent,
-  Tab,
-  TabList,
-  TabPanel,
-  Block,
-} from '@qiwi/pijma-core'
+import {TabsControl, BlockContent, Tab, TabList, Block} from '@qiwi/pijma-core'
 
 export interface BlockTabsProps {
   indent?: 's' | 'm' | 'l'
-  contentIndent?: 's' | 'm' | 'l'
   selected?: number
   border?: boolean
   vertical?: boolean
-  bottom?: number
   onSelect?: (selected: number) => void
   children: {
     icon?: React.ReactNode
@@ -24,7 +15,7 @@ export interface BlockTabsProps {
   }[]
 }
 
-export const BlockTabs: FC<BlockTabsProps> = ({children, contentIndent,...props}) => {
+export const BlockTabs: FC<BlockTabsProps> = ({children, ...props}) => {
   return (
     <Block>
       <BlockContent
@@ -37,15 +28,11 @@ export const BlockTabs: FC<BlockTabsProps> = ({children, contentIndent,...props}
               return (
                 <>
                   <TabList {...rendreProps.tabList}>
-                    {rendreProps.tabs.map(({title, ...tabProps}, index) => (
-                      <Tab key={index} index={index} {...tabProps}>
-                        {title}
-                      </Tab>
+                    {rendreProps.tabs.map((tabProps, index) => (
+                      <Tab key={index} {...tabProps} />
                     ))}
                   </TabList>
-                  <TabPanel indent={contentIndent}>
-                    {rendreProps.content}
-                  </TabPanel>
+                  {rendreProps.content}
                 </>
               )
             }}

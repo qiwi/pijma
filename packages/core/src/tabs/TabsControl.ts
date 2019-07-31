@@ -2,43 +2,26 @@ import React from 'react'
 
 import RenderChild from '../RenderChild'
 
+import {TabProps} from './Tab'
+import {TabListProps} from './TabList'
+
 export interface TabsControlProps {
   selected?: number
   vertical?: boolean
   border?: boolean
-  tab?: 'long' | 'short'
   center?: boolean
-  bottom?: number
-  onSelect?: (selected: number) => void
-  children: RenderChild<{
-    tabs: {
-      tab?: 'long' | 'short'
-      icon?: React.ReactNode
-      title: React.ReactNode
-      content: React.ReactNode
-      vertical?: boolean
-      selected: boolean
-      focused: boolean
-      onSelect: (selected: number) => void
-      onMouseEnter: () => void
-      onMouseLeave: () => void
-    }[]
-    tabList: {
-      indent?: 's' | 'm' | 'l'
-      border?: boolean
-      center?: boolean
-      vertical?: boolean
-      bottom?: number
-      onKeyDown: React.KeyboardEventHandler
-    }
-    content: React.ReactNode
-  }>
   indent?: 's' | 'm' | 'l'
   items: {
     icon?: React.ReactNode
     title: React.ReactNode
     content: React.ReactNode
   }[]
+  onSelect?: (selected: number) => void
+  children: RenderChild<{
+    tabs: TabProps[]
+    tabList: TabListProps
+    content: React.ReactNode
+  }>
 }
 
 export interface TabsControlState {
@@ -50,8 +33,6 @@ export class TabsControl extends React.Component<
   TabsControlProps,
   TabsControlState
 > {
-
-  private tabsCount: number = 0
 
   public state: TabsControlState = {
     selected: this.props.selected || 0,
@@ -91,7 +72,7 @@ export class TabsControl extends React.Component<
         }
 
         let next =
-          this.state.selected + 1 < this.tabsCount
+          this.state.selected + 1 < this.props.items.length
             ? this.state.selected + 1
             : this.state.selected
 
@@ -115,17 +96,20 @@ export class TabsControl extends React.Component<
   }
 
   public render() {
-    return this.props.children({
+    const {children, indent, border, vertical, center, items} = this.props
+
+    const content = items[this.state.selected].content
+      ? items[this.state.selected].content
+      : null
+
+    return children({
       tabList: {
         onKeyDown: this.onKeyDown,
-        indent: this.props.indent,
-        border: this.props.border,
-        vertical: this.props.vertical,
-        center: this.props.center,
-        bottom: this.props.bottom,
+        indent,
+        border,
+        center,
       },
-      content: this.props.items[this.state.selected].content,
-      tabs: this.props.items.map(
+      tabs: items.map(
         (
           item: {
             icon?: React.ReactNode
@@ -134,17 +118,14 @@ export class TabsControl extends React.Component<
           },
           index: number,
         ) => {
+          const {icon, title} = item
           const onSelect = () => this.onSelect(index)
           const onMouseEnter = () => this.onMouseEnter(index)
 
-          ++this.tabsCount
-
           return {
-            tab: this.props.tab,
-            icon: item.icon,
-            title: item.title,
-            content: item.content,
-            vertical: this.props.vertical,
+            icon,
+            children: title,
+            vertical,
             selected: this.state.selected === index,
             focused: this.state.focused === index,
             onSelect,
@@ -153,6 +134,7 @@ export class TabsControl extends React.Component<
           }
         },
       ),
+      content,
     })
   }
 
