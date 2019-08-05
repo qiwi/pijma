@@ -1,10 +1,11 @@
 ```jsx
-<Card bg="#eee" p={7}>
+<Card p={5}>
   <Section>
-    <Typo as="p" display="block" size="4" height="15" weight="300">
-      <Breaker>{'Example section'}</Breaker>
-    </Typo>
+    <Box p={7}>
+      <Typo as="p" display="block" size="4" weight="300">
+        <Breaker>{'Example section'}</Breaker>
+      </Typo>
+    </Box>
   </Section>
 </Card>
 ```
-
