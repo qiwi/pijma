@@ -1,7 +1,7 @@
 import React, {FC, ReactNode} from 'react'
 
-import {Flex, FlexItem, Lnk, Card, LinkControl, LinkControlProps, RenderChild} from '@qiwi/pijma-core'
-import {Icon} from '@qiwi/pijma-media'
+import {Flex, FlexItem, Lnk, Card, LinkControl, LinkControlProps, RenderChild, Icon} from '@qiwi/pijma-core'
+
 import {Paragraph} from '../typography'
 
 export interface MenuItemProps {

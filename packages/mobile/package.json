@@ -22,7 +22,6 @@
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
     "@qiwi/pijma-core": "^1.x.x",
-    "@qiwi/pijma-media": "^1.x.x",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
     "@types/react-overlays": "^1.1.3",

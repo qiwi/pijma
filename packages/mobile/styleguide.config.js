@@ -46,6 +46,9 @@ module.exports = {
   getComponentPathLine(componentPath) {
     return `import {${path.basename(componentPath, path.extname(componentPath))}} from '${Object.keys(alias).find(key => path.resolve(componentPath).startsWith(alias[key]))}'`
   },
+  getExampleFilename(componentPath) {
+    return path.resolve(path.dirname(componentPath), `${path.basename(componentPath, path.extname(componentPath))}.md`)
+  },
   pagePerSection: true,
   sections: [
     {
@@ -57,7 +60,6 @@ module.exports = {
       name: 'Компоненты',
       components: [
         `${alias['@qiwi/pijma-core']}/**/*.{js,jsx,ts,tsx}`,
-        `${alias['@qiwi/pijma-media']}/**/*.{js,jsx,ts,tsx}`,
         `${alias['@qiwi/pijma-mobile']}/**/*.{js,jsx,ts,tsx}`,
       ],
       sectionDepth: Number.MAX_VALUE,
