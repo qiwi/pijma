@@ -1,9 +1,9 @@
 ```jsx
 <Card bg="#eee" p={7}>
   <Section>
-    <Card p={7}>
-      <Paragraph size="m">Example section</Paragraph>
-    </Card>
+    <Typo as="p" display="block" size="4" height="15" weight="300">
+      <Breaker>{'Example section'}</Breaker>
+    </Typo>
   </Section>
 </Card>
 ```
