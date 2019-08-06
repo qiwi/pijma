@@ -156,7 +156,8 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
       children={(renderProps) => (
         <Btn
           role="button"
-          aria-label={props.kind}
+          aria-label={props.text}
+          aria-labelledby={props.kind}
           disabled={props.disabled}
           type={props.type}
           width={!props.icon || props.text ? 1 : buttonSize[props.size]}
