@@ -68,6 +68,7 @@ export const BasicInput: FunctionComponent<BasicInputProps> = (props) => {
       />
     ) : (
       <Input
+        role="textbox"
         {...common}
         type={props.type === undefined ? 'text' : props.type}
       />

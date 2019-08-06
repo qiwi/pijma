@@ -23,7 +23,7 @@ export const Grid: FC<GridProps> = ({gutter = 20, columns = 12, layout = columns
   const rowBlocksCount: number = columns / layoutSum * layoutLength
 
   return (
-    <Flex wrap="wrap">
+    <Flex wrap="wrap" role="section" aria-label="grid">
       {Children.map(elements, (child: ReactNode, index: number) => (
         <FlexItem
           key={index}
