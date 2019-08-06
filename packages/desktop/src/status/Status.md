@@ -1,31 +1,24 @@
 ```jsx
 <Card bg="#eee" p={7}>
-  <Block>
-    <Card width={200} p={7}>
-      <Status
-        textButton={'Отправить'}
-        icon={<IconWrapper color="#ff0000"><Icon name="attention"/></IconWrapper>}
-        title="Заголовок статуса"
-        children="Текст статуса \n Текст статуса"
-      />
-    </Card>
-  </Block>
+  <Status
+     textButton={'Отправить'}
+     icon={<IconWrapper color="#ff0000"><Icon name="attention"/></IconWrapper>}
+     title="Заголовок"
+     children="Текст Текст"
+  />
 </Card>
 ```
 
 Статус без кнопки
 
 ```jsx
-<Card bg="#eee" p={7}>
-  <Block>
-    <Card p={7}>
-      <Status
-        icon={<IconWrapper color="#4bbd5c"><Icon name="success"/></IconWrapper>}
-        title="Заголовок статуса"
-        children="Текст статуса \n Текст статуса"
-      />
-    </Card>
-  </Block>
+<Card bg="#ffffff" p={7}>
+  <Status
+     icon={<IconWrapper color="#4bbd5c"><Icon name="success"/></IconWrapper>}
+     title="Заголовок"
+     children="Без \n кнопки"
+     bg="#f5f5f5"
+  />
 </Card>
 ```
 
@@ -33,14 +26,22 @@
 
 ```jsx
 <Card bg="#eee" p={7}>
-  <Block>
-    <Card p={7}>
-      <Status
-        textButton={'Отправить'}
-        title="Заголовок статуса"
-        children="Текст статуса \n Текст статуса"
-      />
-    </Card>
-  </Block>
+  <Status
+     textButton={'Отправить'}
+     title="Заголовок"
+     children="Без иконки"
+  />
+</Card>
+```
+
+Статус без заголовка
+
+```jsx
+<Card bg="#eee" p={7}>
+  <Status
+     textButton={'Отправить'}
+     icon={<IconWrapper color="#ff0000"><Icon name="attention"/></IconWrapper>}
+     children="Без заголовка"
+  />
 </Card>
 ```

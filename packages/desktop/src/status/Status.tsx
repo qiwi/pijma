@@ -6,16 +6,17 @@ import {Heading} from '../typography/'
 export interface StatusProps {
   icon?: ReactNode,
   title?: ReactNode,
-  textButton?: string
+  textButton?: string,
+  bg?: '#FFFFFF' | '#F5F5F5'
 }
 
-export const Status: FC<StatusProps> = ({icon, title, textButton, children}) => (
-  <Card pb={4} pt={4} r={10} bg="white">
+export const Status: FC<StatusProps> = ({icon, title, textButton, children, bg}) => (
+  <Card width={170} pb={11} pt={11} r={10} bg={bg ? bg : '#ffffff'}>
     <Flex align="center" direction="column">
       {icon ? (
         <FlexItem
           width={11}
-          mb={6}
+          mb={7}
           children={icon}
         />
       ) : (
