@@ -26,6 +26,7 @@ initialState = {color: '#000', size: 6};
   <Icon name="bank" size={state.size} color={state.color}/>
   <Icon name="calendar" size={state.size} color={state.color}/>
   <Icon name="card" size={state.size} color={state.color}/>
+  <Icon name="case" size={state.size} color={state.color}/>
   <Icon name="check" size={state.size} color={state.color}/>
   <Icon name="clock" size={state.size} color={state.color}/>
   <Icon name="cross" size={state.size} color={state.color}/>
@@ -61,6 +62,7 @@ initialState = {color: '#000', size: 6};
   <Icon name="star" size={state.size} color={state.color}/>
   <Icon name="terminal" size={state.size} color={state.color}/>
   <Icon name="terminal-client" size={state.size} color={state.color}/>
+  <Icon name="transfer" size={state.size} color={state.color}/>
   <Icon name="user" size={state.size} color={state.color}/>
   <Icon name="security" size={state.size} color={state.color}/>
   <Icon name="success" size={state.size} color={state.color}/>
