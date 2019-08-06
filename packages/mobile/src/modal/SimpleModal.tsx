@@ -86,7 +86,7 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = (props) => (
     )}
     children={(
       <Pos type="relative" width={1} height={1}>
-        <Card role="dialog" aria-label="popup" bg="#fff" p={6} width={1} height={1} overflow="auto">
+        <Card role="alertdialog" bg="#fff" p={6} width={1} height={1} overflow="auto">
           <Fragment>
             {props.closable && props.onHide ? (
               <Pos
