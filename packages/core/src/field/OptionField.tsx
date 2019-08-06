@@ -8,6 +8,7 @@ export interface OptionFieldProps {
   title?: ReactNode
   hint?: ReactNode
   help?: ReactNode
+  role?: string
   tabIndex?: number
   autoFocus?: boolean
   onFocus: FocusEventHandler
@@ -33,7 +34,7 @@ export const OptionField: React.FunctionComponent<OptionFieldProps> = (props) =>
       <Input
         tabIndex={props.tabIndex}
         autoFocus={props.autoFocus}
-        role="checkbox"
+        role={props.role}
         aria-label={typeof props.title === 'string' ? props.title : undefined}
         onFocus={props.onFocus}
         onBlur={props.onBlur}

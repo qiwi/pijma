@@ -23,6 +23,7 @@ const Checkbox: FunctionComponent<CheckboxProps> = props => (
         onKeyDown={renderProps.onKeyDown}
         children={(
           <OptionFieldItem
+            role="menuitemcheckbox"
             disabled={props.disabled}
             label={props.label}
             description={props.description}

@@ -18,6 +18,7 @@ const CheckboxField: FunctionComponent<
     onBlur={props.onBlur}
     children={(renderProps) => (
       <OptionField
+        role="checkbox"
         title={props.title}
         hint={props.hint}
         help={props.help}
@@ -36,6 +37,7 @@ const CheckboxField: FunctionComponent<
             onMouseLeave={renderProps.onMouseLeave}
             children={(renderOptionProps) => (
               <OptionFieldItem
+                role="menuitemcheckbox"
                 checked={option.checked}
                 disabled={option.disabled}
                 icon={(

@@ -25,6 +25,7 @@ const SwitchField: FunctionComponent<
     onBlur={props.onBlur}
     children={(renderProps) => (
       <OptionField
+        role="switch"
         title={props.title}
         hint={props.hint}
         help={props.help}
@@ -43,6 +44,7 @@ const SwitchField: FunctionComponent<
             onMouseLeave={renderProps.onMouseLeave}
             children={(renderOptionProps) => (
               <OptionFieldItem
+                role="menuitemradio"
                 disabled={option.disabled}
                 reverse={props.reverse}
                 icon={(

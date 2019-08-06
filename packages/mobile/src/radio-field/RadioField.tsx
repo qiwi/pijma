@@ -25,6 +25,7 @@ const RadioField: FunctionComponent<
     onBlur={props.onBlur}
     children={(renderProps) => (
       <OptionField
+        role="radio"
         title={props.title}
         hint={props.hint}
         help={props.help}
@@ -43,6 +44,7 @@ const RadioField: FunctionComponent<
             onMouseLeave={renderProps.onMouseLeave}
             children={(renderOptionProps) => (
               <OptionFieldItem
+                role="menuitemradio"
                 disabled={option.disabled}
                 icon={(
                   <Box width={6}>
