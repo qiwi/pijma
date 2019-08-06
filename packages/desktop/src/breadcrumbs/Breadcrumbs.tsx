@@ -13,7 +13,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({children}) => (
       <Fragment key={i} >
         {i > 0 ? (
           <Fragment>
-            <Box as="span" mx={2} display="inline">
+            <Box as="span" mx={2} display="inline" role="section">
               &#8226;
             </Box>
             &shy;
