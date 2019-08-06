@@ -34,7 +34,7 @@ export const Status: FC<StatusProps> = ({icon, title, textButton, children, bg})
         null
       )}
       {children ? (
-        <Box mb={textButton ? 4 : 0}>
+        <Box pl={20} pr={20} mb={textButton ? 4 : 0}>
           <Typo as="p" display="block" size={4} weight={300}>
             <Breaker
               children={children}

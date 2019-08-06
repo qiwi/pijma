@@ -16,7 +16,7 @@
   <Status
      icon={<IconWrapper color="#4bbd5c"><Icon name="success"/></IconWrapper>}
      title="Заголовок"
-     children="Без \n кнопки"
+     children="Text \n text"
      bg="#f5f5f5"
   />
 </Card>
@@ -29,7 +29,7 @@
   <Status
      textButton={'Отправить'}
      title="Заголовок"
-     children="Без иконки"
+     children="Без иконки длинный текст очент длинный текст текст текст еще слово"
   />
 </Card>
 ```
