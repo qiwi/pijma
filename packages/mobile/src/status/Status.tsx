@@ -8,12 +8,12 @@ export interface StatusProps {
 }
 
 export const Status: FC<StatusProps> = ({icon, title, children}) => (
-  <Card pb={11} pt={11}>
+  <Card pb={8} pt={8}>
     <Flex align="center" direction="column">
       {icon ? (
         <FlexItem
           width={12}
-          mb={8}
+          mb={6}
           children={icon}
         />
       ) : (

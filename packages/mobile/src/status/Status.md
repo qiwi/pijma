@@ -1,5 +1,5 @@
 ```jsx
-<Card width={180} bg="#eee" p={7}>
+<Card width={85} bg="#eee" p={7}>
   <Block>
     <Status
       icon={<IconWrapper color="#ff0000"><Icon name="attention"/></IconWrapper>}
@@ -7,7 +7,7 @@
       children={
         <Flex align="center" direction="column">
           <Box mb={4}><Paragraph>Какой-то текст статуса</Paragraph></Box>
-          <FlexItem><Button text="Send" type="submit" kind="simple" size="normal"/></FlexItem>
+          <FlexItem><Button text="Обновить" type="submit" kind="simple" size="normal"/></FlexItem>
         </Flex>
       }
     />
@@ -18,14 +18,14 @@
 Статус без иконки
 
 ```jsx
-<Card width={180} bg="#eee" p={7}>
+<Card width={85} bg="#eee" p={7}>
   <Block>
     <Status
       title="Заголовок"
       children={
         <Flex align="center" direction="column">
-          <Box mb={4}><Paragraph>Text</Paragraph></Box>
-          <FlexItem><Button text="Send" type="submit" kind="simple" size="normal"/></FlexItem>
+          <Box mb={4}><Paragraph>Текст</Paragraph></Box>
+          <FlexItem><Button text="Обновить" type="submit" kind="simple" size="normal"/></FlexItem>
         </Flex>
       }
     />
@@ -36,7 +36,7 @@
 Статус без кнопки
 
 ```jsx
-<Card width={180} bg="#eee" p={7}>
+<Card width={85} bg="#eee" p={7}>
   <Block>
     <Status
       icon={<IconWrapper color="#ff0000"><Icon name="attention"/></IconWrapper>}
@@ -52,7 +52,7 @@
 Две кнопки
 
 ```jsx
-<Card width={180} bg="#eee" p={7}>
+<Card width={85} bg="#eee" p={7}>
   <Block>
     <Status
       icon={<IconWrapper color="#ff0000"><Icon name="attention"/></IconWrapper>}
