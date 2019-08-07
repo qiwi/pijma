@@ -31,7 +31,10 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
         )}
         <Card bb="1px solid rgba(0, 0, 0, 0.2)" height={7}>
           <Flex align="center" justify="space-between" height={1}>
-            <FlexItem>
+            <FlexItem shrink={1} mr={3}>
+              <Stub width={6} height={4} top={1} bottom={1} r={0}/>
+            </FlexItem>
+            <FlexItem grow={1}>
               <Stub width={38} height={3} top={1} bottom={1}/>
             </FlexItem>
             {props.hint ? (
