@@ -3,8 +3,8 @@ import MaskedInput from 'react-text-mask'
 
 import RenderChild from '../RenderChild'
 
-import CountryCode from './CountryCode'
 import Country from './Country'
+import {CountryCode} from '../flag'
 import {maskArray} from '../mask'
 
 export default interface PhoneFieldControlProps {

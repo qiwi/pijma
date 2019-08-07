@@ -1,4 +1,4 @@
-import CountryCode from './CountryCode'
+import {CountryCode} from '../flag'
 
 export default interface PhoneFieldControlState {
   countryCode: CountryCode

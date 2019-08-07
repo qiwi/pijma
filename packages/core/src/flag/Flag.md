@@ -69,5 +69,8 @@
   <FlexItem shrink={0} width={6} height={4} m={3}>
     <Flag code="JP"/>
   </FlexItem>
+  <FlexItem shrink={0} width={6} height={4} m={3}>
+    <Flag code="US"/>
+  </FlexItem>
 </Flex>
 ```
