@@ -1,5 +1,1 @@
-import PhoneField from './PhoneField'
-
-export {
-  PhoneField as TextField,
-}
+export * from './PhoneField'

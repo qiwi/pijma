@@ -33,7 +33,6 @@ export default interface PhoneFieldControlProps {
     countryCode: CountryCode
     options: Country[]
     value: string
-    mask: (value: string) => maskArray
     onChange: React.ChangeEventHandler
     onFocus: React.FocusEventHandler
     onBlur: React.FocusEventHandler
@@ -41,6 +40,7 @@ export default interface PhoneFieldControlProps {
     onKeyUp: React.KeyboardEventHandler
     onFlagClick: React.MouseEventHandler
     onFlagMouseDown: React.MouseEventHandler
+    getMask: (value: string) => maskArray
     onCountryEnter: (countryCode: CountryCode) => void
     onCountryLeave: (countryCode: CountryCode) => void
     selectCountry: (countryCode: CountryCode) => void

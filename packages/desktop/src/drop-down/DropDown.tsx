@@ -55,31 +55,8 @@ export const DropDown: FunctionComponent<DropDownProps> = (props) => (
           boxSizing="content-box"
           overflow="auto"
           ml={-6}
-          css={{
-            '&::-webkit-scrollbar': {
-              cursor: 'pointer',
-              width: 24,
-              background: 'none',
-            },
-            '&::-webkit-scrollbar-thumb': {
-              backgroundColor: 'rgba(0, 0, 0, 0.2)',
-              borderRadius: 24,
-              backgroundClip: 'padding-box',
-              border: '8px solid transparent',
-            },
-            '&::-webkit-scrollbar-thumb:hover': {
-              backgroundColor: 'rgba(0, 0, 0, 0.4)',
-            },
-            '&::-webkit-scrollbar-button:single-button': {
-              pointerEvents: 'none',
-              display: 'block',
-              height: 4,
-              width: 4,
-            },
-          }}
-        >
-          {props.children}
-        </Card>
+          children={props.children}
+        />
       </Pos>
     )}
   />

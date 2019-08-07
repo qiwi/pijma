@@ -82,7 +82,7 @@ const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
                 type="tel"
                 value={renderProps.value}
                 name={props.name}
-                mask={renderProps.mask}
+                mask={renderProps.getMask}
                 autoComplete={props.autoComplete}
                 autoFocus={props.autoFocus}
                 placeholder={props.placeholder}

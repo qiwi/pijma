@@ -253,7 +253,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
       showCountries: this.state.showCountries,
       options: countries,
       value: this.props.value || '',
-      mask: this.getMask,
+      getMask: this.getMask,
       onFlagClick: this.onFlagClick,
       onFlagMouseDown: this.onFlagMouseDown,
       selectCountry: this.selectCountry,
