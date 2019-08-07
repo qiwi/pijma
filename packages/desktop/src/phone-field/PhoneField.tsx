@@ -108,7 +108,8 @@ const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
                 ref={flag}
                 cursor="pointer"
                 width={6}
-                height={6}
+                height={4}
+                my={1}
                 onClick={renderProps.onFlagClick}
                 onMouseDown={renderProps.onFlagMouseDown}
                 children={(<Flag code={renderProps.countryCode}/>)}
@@ -151,7 +152,7 @@ const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
                   >
                     <Flex py={3} align="center">
                       <FlexItem shrink={1} mr={3}>
-                        <Box width={5} height={5}>
+                        <Box width={6} height={4} my={1}>
                           <Flag code={option.code}/>
                         </Box>
                       </FlexItem>
