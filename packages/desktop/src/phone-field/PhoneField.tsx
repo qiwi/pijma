@@ -20,7 +20,7 @@ import {Paragraph} from '../typography'
 import {DropDown} from '../drop-down'
 import PhoneFieldProps from './PhoneFieldProps'
 
-const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
+export const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
   if (props.stub) {
     return (
       <Box>
@@ -179,5 +179,3 @@ const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
 PhoneField.defaultProps = {
   tabIndex: 0,
 }
-
-export default PhoneField
