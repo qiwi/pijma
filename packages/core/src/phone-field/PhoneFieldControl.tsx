@@ -5,7 +5,7 @@ import PhoneFieldControlProps from './PhoneFieldControlProps'
 import PhoneFieldControlState from './PhoneFieldControlState'
 
 import Country from './Country'
-import CountryCode from './CountryCode'
+import {CountryCode} from '../flag'
 import {maskArray} from '../mask'
 
 export default class PhoneFieldControl extends React.Component<PhoneFieldControlProps, PhoneFieldControlState> {

@@ -1,4 +1,4 @@
-import CountryCode from './CountryCode'
+import {CountryCode} from '../flag'
 
 interface Country {
   name: string
