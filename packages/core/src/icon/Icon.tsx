@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Svg, Path} from '../primitive'
+import {Svg, Path, Value} from '../primitive'
 
 export type IconName =
   'angle-right' | 'angle-left' | 'angle-up' | 'angle-down' |
@@ -68,7 +68,7 @@ export type IconName =
 
 export interface IconProps {
   name: IconName
-  size?: number
+  size?: Value
   color?: string
 }
 

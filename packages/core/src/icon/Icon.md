@@ -86,9 +86,15 @@ initialState = {color: '#000', size: 6};
 
 ```jsx
 <Grid columns={12} layout={[1]}>
-  <QuestionIcon/>
-  <FilterIcon/>
-  <FilterIcon active/>
+  <Box width={6} height={6} cursor="pointer">
+    <QuestionIcon/>
+  </Box>
+  <Box width={6} height={6} cursor="pointer" onClick={() => setState({filterIconActive: !state.filterIconActive})}>
+    <FilterIcon active={state.filterIconActive}/>
+  </Box>
+  <Box width={6} height={6} cursor="pointer" onClick={() => setState({crossBurgerActive: !state.crossBurgerActive})}>
+    <CrossBurger active={state.crossBurgerActive}/>
+  </Box>
 </Grid>
 ```
 
