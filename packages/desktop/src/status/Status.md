@@ -1,19 +1,53 @@
 ```jsx
-<Card bg="#eee" p={7}>
-  <Block>
-    <BlockContent indent="m">
-      <Status
-        icon={<IconWrapper color="#ff0000"><Icon name="attention"/></IconWrapper>}
-        title="Заголовок"
-        children={
-          <Flex align="center" direction="column">
-            <Box mb={4}><Paragraph>Какой-то текст</Paragraph></Box>
-            <FlexItem><Button text="Обновить" type="submit" kind="simple" size="normal"/></FlexItem>
-          </Flex>
-        }
-      />
-    </BlockContent>
-  </Block>
+<Card bg="#e6e6e6" p={7}>
+  <Grid column={2} layout={6}>
+    <Block>
+      <BlockContent indent="m">
+        <Status
+          icon={
+            <IconWrapper color="#ff0000">
+              <Icon name="attention"/>
+            </IconWrapper>
+          }
+          title="Не удалось найти информацию о никнейме"
+          content="Наверное кто-то пролил кофе на сервер. \n  Попробуйте обновить страницу"
+          actions={
+            <Actions size="normal">
+              <Button 
+                text="Обновить страницу" 
+                type="submit" 
+                kind="simple" 
+                size="normal"
+              />
+            </Actions>
+          }
+        />
+      </BlockContent>
+    </Block>
+    <Section>
+      <Box p={11}>
+        <Status
+          icon={
+            <IconWrapper color="#ff0000">
+              <Icon name="attention"/>
+            </IconWrapper>
+          }
+          title="Не удалось найти информацию о никнейме"
+          content="Наверное кто-то пролил кофе на сервер. \n  Попробуйте обновить страницу"
+          actions={
+            <Actions size="normal">
+              <Button 
+                text="Обновить страницу" 
+                type="submit" 
+                kind="simple" 
+                size="normal"
+              />
+            </Actions>
+          }
+        />
+      </Box>
+    </Section>
+  </Grid>
 </Card>
 ```
 
@@ -24,15 +58,20 @@
   <Block>
     <BlockContent indent="m">
       <Status
-        title="Заголовок"
-        children={
-          <Flex align="center" direction="column">
-            <Box mb={4}><Paragraph>Text</Paragraph></Box>
-            <FlexItem><Button text="Send" type="submit" kind="simple" size="normal"/></FlexItem>
-          </Flex>
+        title="Не удалось найти информацию о никнейме"
+        content="Наверное кто-то пролил кофе на сервер. \n  Попробуйте обновить страницу"
+        actions={
+          <Actions size="normal">
+            <Button 
+              text="Обновить страницу" 
+              type="submit" 
+              kind="simple" 
+              size="normal"
+            />
+          </Actions>
         }
       />
-    </BlockContent>  
+    </BlockContent>
   </Block>
 </Card>
 ```
@@ -42,37 +81,56 @@
 ```jsx
 <Card p={7}>
   <Section>
-    <Box pt={11} pb={12}>
-      <Status
-        icon={<IconWrapper color="#ff0000"><Icon name="attention"/></IconWrapper>}
-        title="Заголовок"
-        children={'Передаем только текст'}
-      />
+    <Box p={11}>
+        <Status
+          icon={
+            <IconWrapper color="#ff0000">
+              <Icon name="attention"/>
+            </IconWrapper>
+          }
+          title="Не удалось найти информацию о никнейме"
+          content="Наверное кто-то пролил кофе на сервер. \n  Попробуйте обновить страницу"
+        />
     </Box> 
   </Section>
 </Card>
 ```
 
-Две кнопки
+Дополнительное произвольное содержимое
 
 ```jsx
 <Card bg="#eee" p={7}>
   <Block>
     <BlockContent indent="m">
       <Status
-        icon={<IconWrapper color="#ff0000"><Icon name="attention"/></IconWrapper>}
-        title="Заголовок"
-        children={
-          <Spacer>
-            <Paragraph align="center">Какой-то текст статуса</Paragraph>
-            <Actions size="normal">
-              <Button text="Закрыть" type="submit" kind="simple" size="normal"/>
-              <Button text="Обновить" type="submit" kind="simple" size="normal"/>
-            </Actions>
-          </Spacer>
+        icon={
+          <IconWrapper color="#4bbd5c">
+            <Icon name="success"/>
+          </IconWrapper>
         }
+        title="Платеж проведен"
+        content="Платеж №6384589229966 на 100 р"
+        actions={
+          <Actions size="normal">
+            <Button
+              icon={<StarIcon/>} 
+              text="Сохранить в избранном" 
+              type="submit" 
+              kind="simple" 
+              size="normal"
+            />
+          </Actions>
+        }
+      children={
+        <Spacer size="m">
+          <Paragraph align="center"><Link size="l" href="#">Прислать квитанцию на почту</Link></Paragraph>
+          <Paragraph align="center">
+            {'Чек о совершенном платеже и подробные реквизиты \n платежа вы найдете в истории платежей'} 
+          </Paragraph>
+        </Spacer>
+      }
       />
-    </BlockContent> 
+    </BlockContent>
   </Block>
 </Card>
 ```

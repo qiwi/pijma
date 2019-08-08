@@ -1,20 +1,21 @@
 import React, {FC, ReactNode} from 'react'
 import {Flex, FlexItem, Card, Box} from '@qiwi/pijma-core'
-import {Heading} from '../typography/'
-import {Paragraph} from '@qiwi/pijma-desktop/typography'
+import {Heading, Paragraph} from '../typography/'
 
 export interface StatusProps {
-  icon?: ReactNode,
+  icon?: ReactNode
   title?: string
+  actions?: ReactNode
+  content?: ReactNode
 }
 
-export const Status: FC<StatusProps> = ({icon, title, children}) => (
+export const Status: FC<StatusProps> = ({icon, title, actions, content, children}) => (
   <Card>
     <Flex align="center" direction="column">
       {icon ? (
         <FlexItem
-          width={12}
           height={12}
+          width={12}
           mb={6}
           children={icon}
         />
@@ -23,20 +24,41 @@ export const Status: FC<StatusProps> = ({icon, title, children}) => (
       )}
       {title ? (
         <Heading
+          align="center"
           size="4"
           children={title}
         />
       ) : (
         null
       )}
-      {children ? (
-        <Box mt={2}>
-          {typeof children === 'string' ? (
-            <Paragraph size="m">{children}</Paragraph>
+      {content ? (
+        <Box mt={title ? 2 : 0}>
+          {typeof content === 'string' ? (
+            <Paragraph
+              align="center"
+              size="m"
+              children={content}
+            />
           ) : (
             children
           )}
         </Box>
+      ) : (
+        null
+      )}
+      {actions ? (
+        <Box
+          mt={content || title ? 4 : 0}
+          children={actions}
+        />
+      ) : (
+        null
+      )}
+      {children ? (
+        <Box
+          mt={2}
+          children={children}
+        />
       ) : (
         null
       )}
