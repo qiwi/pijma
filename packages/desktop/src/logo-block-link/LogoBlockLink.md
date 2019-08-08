@@ -6,28 +6,28 @@
         target="_blank"
         title="Перейти на главную"
         description="Примечание"
-        icon={<Icon name="passport"/>}
+        icon={<Icon name="case" size={16}/>}
       />
       <LogoBlockLink
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
         description="Примечание"
-        icon={<Icon name="passport"/>}
+        icon={<Icon name="transfer" size={16}/>}
       />
       <LogoBlockLink
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
         description="Примечание"
-        icon={<Icon name="passport"/>}
+        icon={<Icon name="bank" size={16}/>}
       />
       <LogoBlockLink
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
         description="Примечание"
-        icon={<Icon name="passport"/>}
+        icon={<Icon name="qiwi" size={16}/>}
       />
   </Grid>
 </Card>
@@ -40,25 +40,25 @@
       href="//qiwi.com"
       target="_blank"
       title="Перейти на главную"
-      icon={<Icon name="passport"/>}
+      icon={<Icon name="case" size={16}/>}
     />
     <LogoBlockLink
       href="//qiwi.com"
       target="_blank"
       title="Перейти на главную"
-      icon={<Icon name="passport"/>}
+      icon={<Icon name="transfer" size={16}/>}
     />
     <LogoBlockLink
       href="//qiwi.com"
       target="_blank"
       title="Перейти на главную"
-      icon={<Icon name="passport"/>}
+      icon={<Icon name="bank" size={16}/>}
     />
     <LogoBlockLink
       href="//qiwi.com"
       target="_blank"
       title="Перейти на главную"
-      icon={<Icon name="passport"/>}
+      icon={<Icon name="qiwi" size={16}/>}
     />
   </Grid>
 </Card>

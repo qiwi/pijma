@@ -3,19 +3,17 @@ import React, {FC} from 'react'
 import {Value, Svg, Path} from '../primitive'
 
 export interface CrossBurgerProps {
-  width?: Value
-  height?: Value
+  size?: Value
   color?: string
   active?: boolean
 }
 
 export const CrossBurger: FC<CrossBurgerProps> = ({
-  width = 6,
-  height = 6,
+  size = 6,
   color = '#000',
   active = false,
 }) => (
-  <Svg viewBox="0 0 24 24" width={width} height={height}>
+  <Svg viewBox="0 0 24 24" width={size} height={size}>
     <Path
       d="M1,7 L23,7 C23.5522847,7 24,6.55228475 24,6 C24,5.44771525 23.5522847,5 23,5 L1,5 C0.44771525,5 0,5.44771525 0,6 C0,6.55228475 0.44771525,7 1,7 Z"
       fill={color}
@@ -40,8 +38,7 @@ export const CrossBurger: FC<CrossBurgerProps> = ({
 )
 
 CrossBurger.defaultProps = {
-  width: 6,
-  height: 6,
+  size: 6,
   color: '#000',
   active: false,
 }
