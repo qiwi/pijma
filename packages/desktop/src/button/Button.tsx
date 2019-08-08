@@ -1,4 +1,4 @@
-import React, {FunctionComponent, ReactNode, Fragment} from 'react'
+import React, {FunctionComponent, ReactElement, Fragment} from 'react'
 
 import {
   ButtonControl,
@@ -22,7 +22,7 @@ export interface ButtonProps {
   size: 'accent' | 'normal' | 'minor'
   type: 'button' | 'submit'
   text?: string
-  icon?: ReactNode
+  icon?: ReactElement
   loading?: boolean
   stub?: boolean
 }
@@ -228,10 +228,9 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
                           width={6}
                           height={6}
                           transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-                          css={{
-                            fill: props.disabled ? '#666' : props.kind === 'brand' ? '#fff' : '#000',
-                          }}
-                          children={props.icon}
+                          children={React.cloneElement(props.icon, {
+                            color: props.disabled ? '#666' : props.kind === 'brand' ? '#fff' : '#000',
+                          })}
                         />
                       ) : (
                         null
