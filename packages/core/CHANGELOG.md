@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.61.0](https://github.com/qiwi/pijma/compare/v1.60.2...v1.61.0) (2019-08-06)
+
+
+### Features
+
+* add section ([0d79f8c](https://github.com/qiwi/pijma/commit/0d79f8c))
+
 # [@qiwi/pijma-core-v1.60.2](https://github.com/qiwi/pijma/compare/v1.60.1...v1.60.2) (2019-07-18)
 
 
