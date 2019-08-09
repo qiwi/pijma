@@ -34,9 +34,9 @@ margin: 24px 0
 
 ```jsx
 <Spacer size="l">
-  <Paragraph size="l">Paragraph 1</Paragraph>
-  <Paragraph size="l" color="support">Paragraph 2</Paragraph>
-  <Paragraph size="l" stub/>
+  <Paragraph size="m">Paragraph 1</Paragraph>
+  <Paragraph size="m" color="support">Paragraph 2</Paragraph>
+  <Paragraph size="m" stub/>
 </Spacer>
 ```
 
@@ -48,9 +48,9 @@ margin: 16px 0
 
 ```jsx
 <Spacer size="m">
-  <Paragraph size="l">Paragraph 1</Paragraph>
-  <Paragraph size="l" color="support">Paragraph 2</Paragraph>
-  <Paragraph size="l" stub/>
+  <Paragraph size="m">Paragraph 1</Paragraph>
+  <Paragraph size="m" color="support">Paragraph 2</Paragraph>
+  <Paragraph size="m" stub/>
 </Spacer>
 ```
 
@@ -62,9 +62,9 @@ margin: 12px 0
 
 ```jsx
 <Spacer size="s">
-  <Paragraph size="l">Paragraph 1</Paragraph>
-  <Paragraph size="l" color="support">Paragraph 2</Paragraph>
-  <Paragraph size="l" stub/>
+  <Paragraph size="m">Paragraph 1</Paragraph>
+  <Paragraph size="m" color="support">Paragraph 2</Paragraph>
+  <Paragraph size="m" stub/>
 </Spacer>
 ```
 
@@ -76,9 +76,9 @@ margin: 8px 0
 
 ```jsx
 <Spacer size="xs">
-  <Paragraph size="l">Paragraph 1</Paragraph>
-  <Paragraph size="l" color="support">Paragraph 2</Paragraph>
-  <Paragraph size="l" stub/>
+  <Paragraph size="s">Paragraph 1</Paragraph>
+  <Paragraph size="s" color="support">Paragraph 2</Paragraph>
+  <Paragraph size="s" stub/>
 </Spacer>
 ```
 
@@ -90,8 +90,8 @@ margin: 4px 0
 
 ```jsx
 <Spacer size="xxs">
-  <Paragraph size="l">Paragraph 1</Paragraph>
-  <Paragraph size="l" color="support">Paragraph 2</Paragraph>
-  <Paragraph size="l" stub/>
+  <Paragraph size="s">Paragraph 1</Paragraph>
+  <Paragraph size="s" color="support">Paragraph 2</Paragraph>
+  <Paragraph size="s" stub/>
 </Spacer>
 ```
