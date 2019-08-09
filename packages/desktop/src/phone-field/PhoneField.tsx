@@ -160,11 +160,11 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
                         </Box>
                       </FlexItem>
                       <FlexItem width={16} shrink={1}>
-                        <Paragraph>
+                        <Paragraph bold>
                           {`+${option.mask.replace(/\D/g, '')}`}
                         </Paragraph>
                       </FlexItem>
-                      <Paragraph>
+                      <Paragraph bold>
                         {option.name}
                       </Paragraph>
                     </Flex>
