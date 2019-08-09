@@ -10,6 +10,15 @@ import {maskArray} from '../mask'
 
 export default class PhoneFieldControl extends React.Component<PhoneFieldControlProps, PhoneFieldControlState> {
 
+  public componentDidUpdate(_props: PhoneFieldControlProps, state: PhoneFieldControlState) {
+    if (state.countryCode !== this.state.countryCode) {
+      const countryMask = this.getMaskByCountry(this.state.countryCode)
+      if (this.props.value && this.props.value.length === countryMask.length + 1) {
+        this.inputCursorEnd()
+      }
+    }
+  }
+
   public state: PhoneFieldControlState = {
     focused: false,
     showCountries: false,
@@ -66,12 +75,15 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     }
   }
 
+  private getMaskByCountry: (countryCode: CountryCode) => string = (countryCode) => {
+    const country = this.props.countries.find(country => country.code === countryCode)
+    return country ? country.mask.replace(/\D/g, '') : ''
+  }
+
   private selectCountry: (countryCode: CountryCode) => void = (countryCode) => {
-    const {countries, value = ''} = this.props
-    const currentCountry = countries.find(country => country.code === this.state.countryCode)
-    const newCountry = countries.find(country => country.code === countryCode)
-    const currentCountryMask = currentCountry ? currentCountry.mask.replace(/\D/g, '') : ''
-    const newCountryMask = newCountry ? newCountry.mask.replace(/\D/g, '') : ''
+    const {value = ''} = this.props
+    const currentCountryMask = this.getMaskByCountry(this.state.countryCode)
+    const newCountryMask = this.getMaskByCountry(countryCode)
     if (this.props.onChange) {
       const newValue = `+${newCountryMask}${value.replace(/\D/g, '').substr(currentCountryMask.length)}`
       this.props.onChange(newValue)
@@ -81,6 +93,14 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
       showCountries: false,
     })
     this.focusInput()
+  }
+
+  private inputCursorEnd: () => void = () => {
+    const {value = ''} = this.props
+    if (this.inputField !== null) {
+      const len = value.length * 2
+      this.inputField.setSelectionRange(len, len)
+    }
   }
 
   private onCountriesShow: () => void = () => {
