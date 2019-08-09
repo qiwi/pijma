@@ -5,9 +5,11 @@
       <BlockContent indent="m">
         <Status
           icon={(
-            <IconWrapper color="#ff0000">
-              <Icon name="attention"/>
-            </IconWrapper>
+            <Icon
+              name="attention"
+              color="#ff0000"
+              size={1}
+            />
           )}
           title="Не удалось найти информацию о никнейме"
           content="Наверное кто-то пролил кофе на сервер. \n  Попробуйте обновить страницу"
@@ -28,9 +30,11 @@
       <Box p={11}>
         <Status
           icon={(
-            <IconWrapper color="#ff0000">
-              <Icon name="attention"/>
-            </IconWrapper>
+            <Icon
+              name="attention"
+              color="#ff0000"
+              size={1}
+            />
           )}
           title="Не удалось найти информацию о никнейме"
           content="Наверное кто-то пролил кофе на сервер. \n  Попробуйте обновить страницу"
@@ -84,9 +88,11 @@
     <Box p={11}>
         <Status
           icon={(
-            <IconWrapper color="#ff0000">
-              <Icon name="attention"/>
-            </IconWrapper>
+            <Icon
+              name="attention"
+              color="#ff0000"
+              size={1}
+            />
           )}
           title="Не удалось найти информацию о никнейме"
           content="Наверное кто-то пролил кофе на сервер. \n  Попробуйте обновить страницу"
@@ -104,16 +110,18 @@
     <BlockContent indent="m">
       <Status
         icon={(
-          <IconWrapper color="#4bbd5c">
-            <Icon name="success"/>
-          </IconWrapper>
+          <Icon
+            name="success"
+            color="#4bbd5c"
+            size={1}
+          />
         )}
         title="Платеж проведен"
         content="Платеж №6384589229966 на 100 р"
         actions={(
           <Actions size="normal">
             <Button
-              icon={<StarIcon/>} 
+              icon={<Icon name="star"/>}
               text="Сохранить в избранном" 
               type="submit" 
               kind="simple" 
