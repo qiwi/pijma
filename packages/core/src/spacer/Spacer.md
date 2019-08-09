@@ -1,5 +1,95 @@
+## XXL
+
+```css static
+margin: 48px 0
+```
+
+```jsx
+<Spacer size="xxl">
+  <Paragraph size="l">Paragraph 1</Paragraph>
+  <Paragraph size="l" color="support">Paragraph 2</Paragraph>
+  <Paragraph size="l" stub/>
+</Spacer>
+```
+
+## XL
+
+```css static
+margin: 36px 0
+```
+
+```jsx
+<Spacer size="xl">
+  <Paragraph size="l">Paragraph 1</Paragraph>
+  <Paragraph size="l" color="support">Paragraph 2</Paragraph>
+  <Paragraph size="l" stub/>
+</Spacer>
+```
+
+## L
+
+```css static
+margin: 24px 0
+```
+
+```jsx
+<Spacer size="l">
+  <Paragraph size="l">Paragraph 1</Paragraph>
+  <Paragraph size="l" color="support">Paragraph 2</Paragraph>
+  <Paragraph size="l" stub/>
+</Spacer>
+```
+
+## M
+
+```css static
+margin: 16px 0
+```
+
 ```jsx
 <Spacer size="m">
+  <Paragraph size="l">Paragraph 1</Paragraph>
+  <Paragraph size="l" color="support">Paragraph 2</Paragraph>
+  <Paragraph size="l" stub/>
+</Spacer>
+```
+
+## S
+
+```css static
+margin: 12px 0
+```
+
+```jsx
+<Spacer size="s">
+  <Paragraph size="l">Paragraph 1</Paragraph>
+  <Paragraph size="l" color="support">Paragraph 2</Paragraph>
+  <Paragraph size="l" stub/>
+</Spacer>
+```
+
+## XS
+
+```css static
+margin: 8px 0
+```
+
+```jsx
+<Spacer size="xs">
+  <Paragraph size="l">Paragraph 1</Paragraph>
+  <Paragraph size="l" color="support">Paragraph 2</Paragraph>
+  <Paragraph size="l" stub/>
+</Spacer>
+```
+
+## XXS
+
+```css static
+margin: 4px 0
+```
+
+```jsx
+<Spacer size="xxs">
   <Paragraph size="l">Paragraph 1</Paragraph>
   <Paragraph size="l" color="support">Paragraph 2</Paragraph>
   <Paragraph size="l" stub/>
