@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.62.0](https://github.com/qiwi/pijma/compare/v1.61.0...v1.62.0) (2019-08-09)
+
+
+### Features
+
+* status ([fdff013](https://github.com/qiwi/pijma/commit/fdff013))
+
 # [@qiwi/pijma-desktop-v1.60.2](https://github.com/qiwi/pijma/compare/v1.60.1...v1.60.2) (2019-07-18)
 
 
