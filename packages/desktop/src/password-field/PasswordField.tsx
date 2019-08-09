@@ -27,7 +27,7 @@ const PasswordField: FunctionComponent<PasswordFieldProps> = (props) => (
             autoFocus={props.autoFocus}
             placeholder={props.placeholder}
             disabled={props.disabled}
-            padded={!!props.hint}
+            pr={props.hint ? 7 : undefined}
             error={!!props.error}
             focused={renderProps.focused}
             maxLength={props.maxLength}

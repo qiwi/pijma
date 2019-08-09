@@ -92,8 +92,8 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
                 autoFocus={props.autoFocus}
                 placeholder={props.placeholder}
                 disabled={props.disabled}
-                padded={!!props.hint}
-                paddedLeft
+                pr={props.hint ? 7 : undefined}
+                pl={9}
                 error={!!props.error}
                 focused={renderProps.focused}
                 maxLength={props.maxLength}
