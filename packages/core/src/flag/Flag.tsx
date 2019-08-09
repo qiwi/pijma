@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Svg, Path} from '../primitive'
+import {Svg, Path, Value} from '../primitive'
 
 export type CountryCode =
   'AM' | 'AZ' | 'BY' | 'EE' | 'GB' | 'GE' | 'IL' | 'IN' |
@@ -9,6 +9,8 @@ export type CountryCode =
 
 export interface FlagProps {
   code: CountryCode
+  width?: Value
+  height?: Value
 }
 
 const flags: {[code in CountryCode]: [string, string][]} = {
@@ -131,11 +133,16 @@ const flags: {[code in CountryCode]: [string, string][]} = {
   ],
 }
 
-export const Flag: FC<FlagProps> = ({code = 'RU'}) => (
-  <Svg width={6} height={4} viewBox="0 0 24 16" focusable="false">
+export const Flag: FC<FlagProps> = ({code = 'RU', width = 6, height = 4}) => (
+  <Svg width={width} height={height} viewBox="0 0 24 16" focusable="false">
     {flags[code].map((flag, i) => (
       <Path key={i} fill={flag[0]} d={flag[1]}/>
     ))}
     <Path fill="none" stroke="#000000" strokeOpacity="0.1" d="m0.5 0.5v14h20v-14h-20z" />
   </Svg>
 )
+
+Flag.defaultProps = {
+  width: 6,
+  height: 4
+}
