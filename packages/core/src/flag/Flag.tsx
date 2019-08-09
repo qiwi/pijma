@@ -144,5 +144,5 @@ export const Flag: FC<FlagProps> = ({code = 'RU', width = 6, height = 4}) => (
 
 Flag.defaultProps = {
   width: 6,
-  height: 4
+  height: 4,
 }
