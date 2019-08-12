@@ -3,7 +3,7 @@ import React, {FC} from 'react'
 export const MirIcon: FC = () => (
   <svg viewBox="0 0 48 24" focusable="false">
     <defs>
-      <linearGradient id="mirIconGradient" x1="0%" x2="100%" y1="50%" y2="50%">
+      <linearGradient id="mir-icon-gradient" x1="0%" x2="100%" y1="50%" y2="50%">
         <stop offset="0%" stopColor="#5BAAE3"/>
         <stop offset="33%" stopColor="#58A1DC"/>
         <stop offset="87%" stopColor="#4F89C8"/>
@@ -23,7 +23,7 @@ export const MirIcon: FC = () => (
       d="M31.82 11.91v5.91h3.64v-3.63H39a3.56 3.56 0 0 0 3.42-2.27l-10.6-.01z"
     />
     <path
-      fill="url(#mirIconGradient)"
+      fill="url(#mir-icon-gradient)"
       d="M34 .91h-7.5a5.26 5.26 0 0 0 5.2 4.55h5.82a7.49 7.49 0 0 0 .07-.82A3.71 3.71 0 0 0 34 .91z"
       transform="translate(5 6)"
     />
