@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.65.0](https://github.com/qiwi/pijma/compare/v1.64.0...v1.65.0) (2019-08-12)
+
+
+### Features
+
+* stub radio field ([cc57271](https://github.com/qiwi/pijma/commit/cc57271))
+
 # [@qiwi/pijma-mobile-v1.64.0](https://github.com/qiwi/pijma/compare/v1.63.0...v1.64.0) (2019-08-12)
 
 
