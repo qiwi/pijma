@@ -8,6 +8,7 @@ export default interface CheckboxFieldProps<O extends OptionModel<V>, V> {
   help?: ReactNode
   tabIndex?: number
   autoFocus?: boolean
+  stub?: boolean
   options: O[]
   values: V[]
   equals?: (a: V, b: V) => boolean
