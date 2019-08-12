@@ -1,18 +1,17 @@
 import styled from '../styled'
 
-import { Card, CardProps, CardNonProps } from './Card'
-import { pxValue } from './Value'
+import {Card, CardProps, CardNonProps} from './Card'
+import {pxValue} from './Value'
 
 export interface TextAreaProps extends CardProps {
   valueSize?: number
+  valueHeight?: number
   valueWeight?: number
-  overflow: 'auto' | 'hidden'
   valueColor?: string
   valueTransform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
   valueSpacing?: number
-  valueHeight?: number
-  placeholderHeight?: number
   placeholderSize?: number
+  placeholderHeight?: number
   placeholderWeight?: number
   placeholderColor?: string
   placeholderTransform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
@@ -24,10 +23,10 @@ export const TextAreaNonProps = [
   'valueWeight',
   'valueColor',
   'valueHeight',
-  'placeholderHeight',
   'valueTransform',
   'valueSpacing',
   'placeholderSize',
+  'placeholderHeight',
   'placeholderWeight',
   'placeholderColor',
   'placeholderTransform',
@@ -47,7 +46,6 @@ export const TextArea = styled(Card.withComponent('textarea'), {
   letterSpacing: pxValue(props.valueSpacing),
   outline: 'none',
   resize: 'none',
-  overflowY: props.overflow,
   MozAppearance: 'textfield',
   '&::placeholder': {
     fontSize: pxValue(props.placeholderSize, theme.scale),
@@ -55,6 +53,6 @@ export const TextArea = styled(Card.withComponent('textarea'), {
     lineHeight: pxValue(props.placeholderHeight, theme.scale),
     color: props.placeholderColor,
     textTransform: props.placeholderTransform,
-    letterSpacing: pxValue(props.placeholderSpacing)
-  }
+    letterSpacing: pxValue(props.placeholderSpacing),
+  },
 }))

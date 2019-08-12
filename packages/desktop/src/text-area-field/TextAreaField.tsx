@@ -1,18 +1,30 @@
-import React, { FunctionComponent } from 'react'
+import React, {FC, KeyboardEvent, ReactNode} from 'react'
 
-import {
-  TextAreaFieldControl,
-  InputField,
-  BasicTextArea
-} from '@qiwi/pijma-core'
+import {TextAreaFieldControl, InputField, BasicTextArea} from '@qiwi/pijma-core'
 
-import TextAreaFieldProps from './TextAreaFieldProps'
+export interface TextAreaFieldProps {
+  value: string
+  tabIndex?: number
+  name?: string
+  title?: string
+  error?: ReactNode
+  action?: ReactNode
+  help?: ReactNode
+  hint?: ReactNode
+  autoFocus?: boolean
+  placeholder?: string
+  disabled?: boolean
+  maxLength?: number
+  minRows?: number
+  maxRows?: number
+  onChange?: (value: string) => void
+  onFocus?: () => void
+  onBlur?: () => void
+  onKeyDown?: (event: KeyboardEvent) => boolean
+  onKeyUp?: (event: KeyboardEvent) => boolean
+}
 
-const TextAreaField: FunctionComponent<TextAreaFieldProps> = ({
-  minRows = 1,
-  maxRows = 4,
-  ...props
-}) => (
+export const TextAreaField: FC<TextAreaFieldProps> = (props) => (
   <TextAreaFieldControl
     onChange={props.onChange}
     onFocus={props.onFocus}
@@ -20,17 +32,12 @@ const TextAreaField: FunctionComponent<TextAreaFieldProps> = ({
     onKeyDown={props.onKeyDown}
     onKeyUp={props.onKeyUp}
     value={props.value}
-    children={({ rows, ...renderProps }) => (
+    children={(renderProps) => (
       <InputField
         title={props.title}
-        active={
-          minRows > 1 ||
-          renderProps.focused ||
-          !!props.value ||
-          !!props.placeholder
-        }
+        active={renderProps.focused || !!props.value || !!props.placeholder || !!props.minRows}
         padded={!!props.hint}
-        input={
+        input={(
           <BasicTextArea
             value={props.value}
             name={props.name}
@@ -41,16 +48,17 @@ const TextAreaField: FunctionComponent<TextAreaFieldProps> = ({
             error={!!props.error}
             focused={renderProps.focused}
             maxLength={props.maxLength}
-            rows={rows <= minRows ? minRows : rows >= maxRows ? maxRows : rows}
-            overflowed={rows >= maxRows}
             ref={renderProps.ref}
+            rows={props.maxRows && renderProps.rows > props.maxRows ? props.maxRows : props.minRows && renderProps.rows < props.minRows ? props.minRows : renderProps.rows}
+            overflow={props.maxRows && renderProps.rows > props.maxRows ? 'auto' : 'hidden'}
+            transition={renderProps.animate ? 'all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)' : undefined}
             onChange={renderProps.onChange}
             onFocus={renderProps.onFocus}
             onBlur={renderProps.onBlur}
             onKeyDown={renderProps.onKeyDown}
             onKeyUp={renderProps.onKeyUp}
           />
-        }
+        )}
         hint={props.hint}
         error={props.error}
         help={props.help}
@@ -62,8 +70,4 @@ const TextAreaField: FunctionComponent<TextAreaFieldProps> = ({
 
 TextAreaField.defaultProps = {
   tabIndex: 0,
-  minRows: 1,
-  maxRows: 4
 }
-
-export default TextAreaField

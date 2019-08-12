@@ -12,7 +12,8 @@ export default interface TextAreaFieldControlProps {
   children: RenderChild<{
     rows: number
     focused: boolean
-    ref?: React.RefObject<HTMLTextAreaElement>
+    animate: boolean
+    ref: React.RefObject<HTMLTextAreaElement>
     onChange: React.ChangeEventHandler
     onFocus: React.FocusEventHandler
     onBlur: React.FocusEventHandler

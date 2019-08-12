@@ -1,3 +1,1 @@
-import BasicTextArea from './BasicTextArea'
-
-export {BasicTextArea}
+export * from './BasicTextArea'
