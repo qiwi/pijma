@@ -183,7 +183,7 @@
         <Spacer size="l">
           <Heading size="2">Куда отправить квитанцию?</Heading>
             <TextField
-              title="Адрес элктронной почты"
+              title="Адрес электронной почты"
               type="text"
               value={state.text}
               onChange={text => setState({text})}
@@ -229,7 +229,7 @@ initialState = {values: ['selected']};
         <Spacer size="l">
           <Heading size="2">Привязка почты к QIWI Кошельку</Heading>
             <TextField
-              title="Адрес элктронной почты"
+              title="Адрес электронной почты"
               type="text"
               value={state.text}
               onChange={text => setState({text})}
