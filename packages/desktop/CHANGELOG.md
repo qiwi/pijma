@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.64.0](https://github.com/qiwi/pijma/compare/v1.63.0...v1.64.0) (2019-08-12)
+
+
+### Features
+
+* stub switch field ([dfe681c](https://github.com/qiwi/pijma/commit/dfe681c))
+
 # [@qiwi/pijma-desktop-v1.63.0](https://github.com/qiwi/pijma/compare/v1.62.0...v1.63.0) (2019-08-12)
 
 
