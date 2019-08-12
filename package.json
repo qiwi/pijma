@@ -28,7 +28,7 @@
     "lerna": "3.15.0",
     "semantic-release": "15.13.18",
     "semantic-release-monorepo": "6.1.1",
-    "semantic-release-monorepo-hooks": "2.9.4",
+    "semantic-release-monorepo-hooks": "2.9.5",
     "semantic-release-plugin-decorators": "2.0.0"
   },
   "name": "pijma",
