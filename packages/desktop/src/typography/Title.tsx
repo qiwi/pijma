@@ -1,11 +1,13 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo} from '@qiwi/pijma-core'
+import {Breaker, Box, Stub, Typo, TypoProps} from '@qiwi/pijma-core'
 
 export interface TitleProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   size: '1' | '2'
   color?: 'default' | 'inverse'
+  align?: TypoProps['align']
+  stub?: boolean
 }
 
 const TitleSize: { [size in TitleProps['size']]: number } = {
@@ -28,21 +30,53 @@ const TitleWeight: { [size in TitleProps['size']]: number } = {
   2: 900,
 }
 
+const StubOffsetTop: { [size in TitleProps['size']]: number } = {
+  1: 4,
+  2: 4,
+}
+
+const StubOffsetBottom: { [size in TitleProps['size']]: number } = {
+  1: 3,
+  2: 2,
+}
+
+const StubHeight: { [size in TitleProps['size']]: number } = {
+  1: 7,
+  2: 6,
+}
+
 const TitleColor: { [color in NonNullable<TitleProps['color']>]: string } = {
   default: '#000',
   inverse: '#fff',
 }
 
-export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'default', children}) => (
-  <Typo
-    as={tag ? tag : TitleTag[size]}
-    display="block"
-    size={TitleSize[size]}
-    height={TitleHeight[size]}
-    weight={TitleWeight[size]}
-    color={TitleColor[color]}
-    children={children}
-  />
+export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'default', align, stub, children}) => (
+  stub ? (
+    <Box
+      ml={align === 'center' || align === 'right' ? 'auto' : 'none'}
+      mr={align === 'center' ? 'auto' : 'none'}
+      width={50}
+    >
+      <Stub
+        top={StubOffsetTop[size]}
+        bottom={StubOffsetBottom[size]}
+        height={StubHeight[size]}
+        width={50}
+        inverse={color === 'inverse'}
+      />
+    </Box>
+  ) : (
+    <Typo
+      as={tag ? tag : TitleTag[size]}
+      display="block"
+      size={TitleSize[size]}
+      height={TitleHeight[size]}
+      weight={TitleWeight[size]}
+      color={TitleColor[color]}
+      align={align}
+      children={<Breaker children={children}/>}
+    />
+  )
 )
 
 Title.defaultProps = {

@@ -1,11 +1,13 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo} from '@qiwi/pijma-core'
+import {Breaker, Box, Stub, Typo, TypoProps} from '@qiwi/pijma-core'
 
 export interface HeadingProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   size: '1' | '2' | '3' | '4' | '5'
   color?: 'default' | 'inverse'
+  align?: TypoProps['align']
+  stub?: boolean
 }
 
 const HeadingSize: { [size in HeadingProps['size']]: number } = {
@@ -40,21 +42,63 @@ const HeadingWeight: { [size in HeadingProps['size']]: number } = {
   5: 700,
 }
 
+const StubOffsetTop: { [size in HeadingProps['size']]: number } = {
+  1: 3,
+  2: 3,
+  3: 2,
+  4: 2,
+  5: 1,
+}
+
+const StubOffsetBottom: { [size in HeadingProps['size']]: number } = {
+  1: 2,
+  2: 1,
+  3: 1,
+  4: 1,
+  5: 1,
+}
+
+const StubHeight: { [size in HeadingProps['size']]: number } = {
+  1: 4,
+  2: 4,
+  3: 4,
+  4: 3,
+  5: 3,
+}
+
 const HeadingColor: { [color in NonNullable<HeadingProps['color']>]: string } = {
   default: '#000',
   inverse: '#fff',
 }
 
-export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'default', children}) => (
-  <Typo
-    as={tag ? tag : HeadingTag[size]}
-    display="block"
-    size={HeadingSize[size]}
-    height={HeadingHeight[size]}
-    weight={HeadingWeight[size]}
-    color={HeadingColor[color]}
-    children={children}
-  />
+export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'default', align, stub, children}) => (
+  stub ? (
+    <Box
+      ml={align === 'center' || align === 'right' ? 'auto' : 'none'}
+      mr={align === 'center' ? 'auto' : 'none'}
+      width={50}
+      maxWidth={1}
+    >
+      <Stub
+        top={StubOffsetTop[size]}
+        bottom={StubOffsetBottom[size]}
+        width={1}
+        height={StubHeight[size]}
+        inverse={color === 'inverse'}
+      />
+    </Box>
+  ) : (
+    <Typo
+      as={tag ? tag : HeadingTag[size]}
+      display="block"
+      size={HeadingSize[size]}
+      height={HeadingHeight[size]}
+      weight={HeadingWeight[size]}
+      color={HeadingColor[color]}
+      align={align}
+      children={<Breaker children={children}/>}
+    />
+  )
 )
 
 Heading.defaultProps = {
