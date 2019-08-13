@@ -5,7 +5,7 @@ import {pxValue} from './Value'
 export interface TypoProps {
   as?: keyof JSX.IntrinsicElements
   css?: CSSObject
-  display?: 'block' | 'inline' | 'inline-block'
+  display?: 'block' | 'inline' | 'inline-block' | '-webkit-box'
   size?: number
   height?: number
   weight?: number
@@ -17,6 +17,7 @@ export interface TypoProps {
   decoration?: 'line-through' | 'overline' | 'underline' | 'none'
   align?: 'center' | 'justify' | 'left' | 'right'
   cursor?: string
+  lines?: number
 }
 
 export const TypoNonProps = ['as', 'css', 'innerRef', 'ref', 'display', 'size', 'height', 'weight', 'color', 'transform', 'nowrap', 'spacing', 'transition', 'decoration', 'cursor', 'align']
@@ -40,4 +41,6 @@ export const Typo = styled('div', {
   textDecoration: props.decoration,
   textAlign: props.align,
   cursor: props.cursor,
+  '-webkitLineClamp': props.lines ? `${props.lines}` : '',
+  '-webkitBoxOrient': props.lines ? 'vertical' : '',
 }), (props) => props.css)

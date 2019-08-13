@@ -10,6 +10,7 @@ export interface ParagraphProps {
   transform?: TypoProps['transform']
   align?: TypoProps['align']
   stub?: boolean
+  lines?: number
 }
 
 const ParagraphSize: { [size in NonNullable<ParagraphProps['size']>]: number } = {
@@ -74,6 +75,7 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
   transform,
   align,
   stub,
+  lines,
   children,
 }) => (
   stub ? (
@@ -92,7 +94,8 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
   ) : (
     <Typo
       as="p"
-      display="block"
+      lines={lines}
+      display={lines && 'WebkitBoxFlex' in document.documentElement.style ? '-webkit-box' : 'block'}
       size={ParagraphSize[size]}
       height={compact ? ParagraphHeightCompact[size] : ParagraphHeight[size]}
       weight={bold ? 500 : 300}

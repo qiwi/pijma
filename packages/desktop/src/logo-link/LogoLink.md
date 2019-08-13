@@ -9,46 +9,7 @@
       <LogoLink
         href="//qiwi.com"
         target="_blank"
-        title="На главную"
-        icon={<Icon name="qiwi"/>}
-      />
-      <LogoLink
-        href="//qiwi.com"
-        target="_blank"
-        title="Перейти на главную"
-        icon={<Icon name="qiwi"/>}
-      />
-      <LogoLink
-        href="//qiwi.com"
-        target="_blank"
-        title="Перейти на главную"
-        icon={<Icon name="qiwi"/>}
-      />
-      <LogoLink
-        href="//qiwi.com"
-        target="_blank"
-        title="Перейти на главную"
-        icon={<Icon name="qiwi"/>}
-      />
-      <LogoLink
-        href="//qiwi.com"
-        target="_blank"
-        title="Перейти на главную"
-        description="Примечание"
-        icon={<Icon name="qiwi"/>}
-      />
-      <LogoLink
-        href="//qiwi.com"
-        target="_blank"
-        title="Перейти на главную"
-        description="Примечание"
-        icon={<Icon name="qiwi"/>}
-      />
-      <LogoLink
-        href="//qiwi.com"
-        target="_blank"
-        title="Перейти на главную"
-        description="Примечание"
+        title="Уральский Банк Реконструкции и Развития"
         icon={<Icon name="qiwi"/>}
       />
       <LogoLink
@@ -92,16 +53,28 @@
         horizontal
         href="//qiwi.com"
         target="_blank"
-        title="Перейти на главную"
-        description="Примечание"
+        title="Уральский Банк Реконструкции и Развития"
         icon={<Icon name="qiwi"/>}
       />
-      <LogoLink
+<LogoLink
         horizontal
         href="//qiwi.com"
         target="_blank"
-        title="Перейти на главную"
-        description="Примечание"
+        title="Уральский Банк Реконструкции и Развития"
+        icon={<Icon name="qiwi"/>}
+      />
+<LogoLink
+        horizontal
+        href="//qiwi.com"
+        target="_blank"
+        title="Уральский Банк"
+        icon={<Icon name="qiwi"/>}
+      />
+<LogoLink
+        horizontal
+        href="//qiwi.com"
+        target="_blank"
+        title="Уральский Банк Реконструкции"
         icon={<Icon name="qiwi"/>}
       />
   </Grid>

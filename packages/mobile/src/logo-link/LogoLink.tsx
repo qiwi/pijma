@@ -11,7 +11,7 @@ export interface LogoLinkProps {
   target?: string
   download?: string | boolean
   rel?: string
-  horizontal?: boolean
+  vertical?: boolean
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
   onFocus?: () => void
   onBlur?: () => void
@@ -20,7 +20,7 @@ export interface LogoLinkProps {
 const CardLink = Card.withComponent(Lnk)
 const Img = Box.withComponent('img')
 
-export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizontal, ...props}) => (
+export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, vertical, ...props}) => (
   <LinkControl
     onClick={props.onClick}
     onFocus={props.onFocus}
@@ -49,7 +49,7 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizonta
         target={props.target}
         download={props.download}
       >
-        {horizontal ? (
+        {!vertical ? (
           <Box p={4}>
             <Flex align="baseline">
               <FlexItem
@@ -69,9 +69,9 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizonta
                   icon
                 )}
               </FlexItem>
-              <FlexItem maxHeight={12} overflow="hidden" align="center">
+              <FlexItem maxHeight={18} overflow="hidden" align="center">
                 <Spacer size="xxs">
-                  <Box maxHeight={12} overflow="hidden">
+                  <Box maxHeight={18} overflow="hidden">
                     <Paragraph
                       lines={2}
                       color="default"
@@ -80,42 +80,43 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizonta
                       children={title}
                     />
                   </Box>
-                  {description ? (
-                    <Box maxHeight={6} overflow="hidden">
-                      <Paragraph
-                        lines={1}
-                        color="support"
-                        size="s"
-                        children={description}
-                      />
-                    </Box>
-                  ) : (
-                    null
-                  )
+                  {
+                    description ? (
+                      <Box maxHeight={10} overflow="hidden">
+                        <Paragraph
+                          lines={1}
+                          color="support"
+                          size="s"
+                          children={description}
+                        />
+                      </Box>
+                    ) : (
+                      null
+                    )
                   }
                 </Spacer>
               </FlexItem>
             </Flex>
           </Box>
         ) : (
-          <Box p={4} height={description ? 53 : 48}>
-            <Box width={16} height={16} mx="auto">
+          <Box p={4} height={38}>
+            <Box width={14} height={14} mx="auto">
               {typeof icon === 'string' ? (
                 <Img
                   src={icon}
                   alt={title}
-                  maxWidth={16}
-                  maxHeight={16}
+                  maxWidth={14}
+                  maxHeight={14}
                 />
               ) : (
                 icon
               )}
             </Box>
-            <Box mt={6} maxHeight={description ? 12 : 18} overflow="hidden">
+            <Box mt={3} maxHeight={description ? 10 : 15} overflow="hidden">
               <Paragraph
                 lines={3}
                 color="default"
-                size="m"
+                size="s"
                 bold
                 align="center"
                 children={title}
