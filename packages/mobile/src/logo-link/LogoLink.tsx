@@ -33,7 +33,7 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, vertical,
       <CardLink
         display="block"
         overflow="hidden"
-        bg={renderProps.hover || renderProps.focus || renderProps.active ? '#f5f5f5' : ''}
+        bg={renderProps.hover || renderProps.focus || renderProps.active ? '#f5f5f5' : undefined}
         cursor="pointer"
         r={10}
         transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
@@ -80,8 +80,7 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, vertical,
                       children={title}
                     />
                   </Box>
-                  {
-                    description ? (
+                  {description ? (
                       <Box maxHeight={10} overflow="hidden">
                         <Paragraph
                           lines={1}
@@ -114,7 +113,7 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, vertical,
             </Box>
             <Box mt={3} maxHeight={description ? 10 : 15} overflow="hidden">
               <Paragraph
-                lines={3}
+                lines={description ? 2 : 3}
                 color="default"
                 size="s"
                 bold

@@ -25,7 +25,7 @@ export const TypoNonProps = ['as', 'css', 'innerRef', 'ref', 'display', 'size', 
 export const Typo = styled('div', {
   shouldForwardProp: (prop) => !TypoNonProps.includes(prop),
 })<TypoProps>(({theme, ...props}) => ({
-  display: props.display,
+  display: [`${props.display}`, props.lines ? '-webkit-box' : 'undefined'],
   fontFamily: theme.font.family,
   fontSize: pxValue(props.size, theme.scale),
   fontWeight: props.weight,
@@ -41,6 +41,6 @@ export const Typo = styled('div', {
   textDecoration: props.decoration,
   textAlign: props.align,
   cursor: props.cursor,
-  '-webkitLineClamp': props.lines ? `${props.lines}` : '',
-  '-webkitBoxOrient': props.lines ? 'vertical' : '',
+  WebkitLineClamp: props.lines ? props.lines : undefined,
+  WebkitBoxOrient: props.lines ? 'vertical' : undefined,
 }), (props) => props.css)

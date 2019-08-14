@@ -95,7 +95,7 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
     <Typo
       as="p"
       lines={lines}
-      display={lines && 'WebkitBoxFlex' in document.documentElement.style ? '-webkit-box' : 'block'}
+      display="block"
       size={ParagraphSize[size]}
       height={compact ? ParagraphHeightCompact[size] : ParagraphHeight[size]}
       weight={bold ? 500 : 300}

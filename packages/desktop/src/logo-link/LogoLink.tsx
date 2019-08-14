@@ -33,7 +33,7 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizonta
       <CardLink
         display="block"
         overflow="hidden"
-        bg={renderProps.hover || renderProps.focus || renderProps.active ? '#f5f5f5' : ''}
+        bg={renderProps.hover || renderProps.focus || renderProps.active ? '#f5f5f5' : undefined}
         cursor="pointer"
         r={10}
         transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
