@@ -1,3 +1,31 @@
+# [@qiwi/pijma-media-v1.60.1](https://github.com/qiwi/pijma/compare/v1.60.0...v1.60.1) (2019-07-10)
+
+
+### Performance Improvements
+
+* up deps ([a7bcce6](https://github.com/qiwi/pijma/commit/a7bcce6))
+
+# [@qiwi/pijma-media-v1.38.0](https://github.com/qiwi/pijma/compare/v1.37.0...v1.38.0) (2019-04-16)
+
+
+### Features
+
+* **media:** add reject icon and some fixes ([2ad7983](https://github.com/qiwi/pijma/commit/2ad7983))
+
+# [@qiwi/pijma-media-v1.36.1](https://github.com/qiwi/pijma/compare/v1.36.0...v1.36.1) (2019-03-05)
+
+
+### Bug Fixes
+
+* **media:** repair backward & forward icons exports ([0f6f920](https://github.com/qiwi/pijma/commit/0f6f920))
+
+# [@qiwi/pijma-media-v1.36.0](https://github.com/qiwi/pijma/compare/v1.35.0...v1.36.0) (2019-03-01)
+
+
+### Features
+
+* **media:** add forward, backward icons ([3067b5b](https://github.com/qiwi/pijma/commit/3067b5b))
+
 # [@qiwi/pijma-media-v1.34.0](https://github.com/qiwi/pijma/compare/v1.33.0...v1.34.0) (2019-02-01)
 
 

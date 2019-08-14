@@ -53,6 +53,35 @@
       />
     </FlexItem>
   </Flex>
+  <Flex align="flex-start">
+    <FlexItem pr={4}>
+      <Button
+        size="accent"
+        kind="brand"
+        type="button"
+        text="if you need button stub put any corrent content here"
+        stub
+      />
+    </FlexItem>
+    <FlexItem pr={4}>
+      <Button
+        size="normal"
+        kind="brand"
+        type="button"
+        text="if you need button stub put any corrent content here"
+        stub
+      />
+    </FlexItem>
+    <FlexItem pr={4}>
+      <Button
+        size="minor"
+        kind="brand"
+        type="button"
+        text="if you need button stub put any corrent content here"
+        stub
+      />
+    </FlexItem>
+  </Flex>
 </Spacer>
 ```
 
@@ -108,6 +137,35 @@
         kind="simple"
         size="minor"
         text="Нажать"
+      />
+    </FlexItem>
+  </Flex>
+  <Flex align="flex-start">
+    <FlexItem pr={4}>
+      <Button
+        size="accent"
+        kind="brand"
+        type="button"
+        text="if you need button stub put any corrent content here"
+        stub
+      />
+    </FlexItem>
+    <FlexItem pr={4}>
+      <Button
+        size="normal"
+        kind="brand"
+        type="button"
+        text="if you need button stub put any corrent content here"
+        stub
+      />
+    </FlexItem>
+    <FlexItem pr={4}>
+      <Button
+        size="minor"
+        kind="brand"
+        type="button"
+        text="if you need button stub put any corrent content here"
+        stub
       />
     </FlexItem>
   </Flex>
@@ -233,6 +291,38 @@
       />
     </FlexItem>
   </Flex>
+  <Flex align="flex-start">
+    <FlexItem pr={4}>
+      <Button
+        size="accent"
+        kind="brand"
+        type="button"
+        text="if you need button stub put any corrent content here"
+        icon
+        stub
+      />
+    </FlexItem>
+    <FlexItem pr={4}>
+      <Button
+        size="normal"
+        kind="brand"
+        type="button"
+        text="if you need button stub put any corrent content here"
+        icon
+        stub
+      />
+    </FlexItem>
+    <FlexItem pr={4}>
+      <Button
+        size="minor"
+        kind="brand"
+        type="button"
+        text="if you need button stub put any corrent content here"
+        icon
+        stub
+      />
+    </FlexItem>
+  </Flex>
 </Spacer>
 ```
 
@@ -283,6 +373,35 @@
         kind="simple"
         size="minor"
         icon={<StarIcon/>}
+      />
+    </FlexItem>
+  </Flex>
+  <Flex align="flex-start">
+    <FlexItem pr={4}>
+      <Button
+        size="accent"
+        kind="brand"
+        type="button"
+        icon
+        stub
+      />
+    </FlexItem>
+    <FlexItem pr={4}>
+      <Button
+        size="normal"
+        kind="brand"
+        type="button"
+        icon
+        stub
+      />
+    </FlexItem>
+    <FlexItem pr={4}>
+      <Button
+        size="minor"
+        kind="brand"
+        type="button"
+        icon
+        stub
       />
     </FlexItem>
   </Flex>

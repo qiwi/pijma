@@ -1,3 +1,157 @@
+# [@qiwi/pijma-desktop-v1.65.0](https://github.com/qiwi/pijma/compare/v1.64.0...v1.65.0) (2019-08-12)
+
+
+### Features
+
+* stub radio field ([cc57271](https://github.com/qiwi/pijma/commit/cc57271))
+
+# [@qiwi/pijma-desktop-v1.64.0](https://github.com/qiwi/pijma/compare/v1.63.0...v1.64.0) (2019-08-12)
+
+
+### Features
+
+* stub switch field ([dfe681c](https://github.com/qiwi/pijma/commit/dfe681c))
+
+# [@qiwi/pijma-desktop-v1.63.0](https://github.com/qiwi/pijma/compare/v1.62.0...v1.63.0) (2019-08-12)
+
+
+### Features
+
+* stub checkbox field ([04ceef9](https://github.com/qiwi/pijma/commit/04ceef9))
+
+# [@qiwi/pijma-desktop-v1.62.0](https://github.com/qiwi/pijma/compare/v1.61.0...v1.62.0) (2019-08-09)
+
+
+### Features
+
+* status ([fdff013](https://github.com/qiwi/pijma/commit/fdff013))
+
+# [@qiwi/pijma-desktop-v1.60.2](https://github.com/qiwi/pijma/compare/v1.60.1...v1.60.2) (2019-07-18)
+
+
+### Bug Fixes
+
+* **package:** up lodash version [security] ([f83c8f2](https://github.com/qiwi/pijma/commit/f83c8f2))
+
+# [@qiwi/pijma-desktop-v1.60.1](https://github.com/qiwi/pijma/compare/v1.60.0...v1.60.1) (2019-07-10)
+
+
+### Performance Improvements
+
+* up deps ([a7bcce6](https://github.com/qiwi/pijma/commit/a7bcce6))
+
+# [@qiwi/pijma-desktop-v1.60.0](https://github.com/qiwi/pijma/compare/v1.59.0...v1.60.0) (2019-07-10)
+
+
+### Features
+
+* stub text field ([9a3cb71](https://github.com/qiwi/pijma/commit/9a3cb71))
+
+# [@qiwi/pijma-desktop-v1.59.0](https://github.com/qiwi/pijma/compare/v1.58.0...v1.59.0) (2019-07-10)
+
+
+### Features
+
+* stub button ([ccc59e1](https://github.com/qiwi/pijma/commit/ccc59e1))
+
+# [@qiwi/pijma-desktop-v1.58.0](https://github.com/qiwi/pijma/compare/v1.57.0...v1.58.0) (2019-07-10)
+
+
+### Features
+
+* stub typography ([13300bf](https://github.com/qiwi/pijma/commit/13300bf))
+
+# [@qiwi/pijma-desktop-v1.55.0](https://github.com/qiwi/pijma/compare/v1.54.0...v1.55.0) (2019-07-03)
+
+
+### Features
+
+* **desktop:** header ([65f663c](https://github.com/qiwi/pijma/commit/65f663c))
+
+# [@qiwi/pijma-desktop-v1.54.0](https://github.com/qiwi/pijma/compare/v1.53.0...v1.54.0) (2019-07-01)
+
+
+### Features
+
+* pagination ([044c308](https://github.com/qiwi/pijma/commit/044c308))
+
+# [@qiwi/pijma-desktop-v1.53.0](https://github.com/qiwi/pijma/compare/v1.52.0...v1.53.0) (2019-06-14)
+
+
+### Features
+
+* file link ([2026e18](https://github.com/qiwi/pijma/commit/2026e18))
+
+# [@qiwi/pijma-desktop-v1.52.0](https://github.com/qiwi/pijma/compare/v1.51.0...v1.52.0) (2019-06-14)
+
+
+### Features
+
+* list ([cfc9c5c](https://github.com/qiwi/pijma/commit/cfc9c5c))
+
+# [@qiwi/pijma-desktop-v1.51.0](https://github.com/qiwi/pijma/compare/v1.50.0...v1.51.0) (2019-06-14)
+
+
+### Features
+
+* breadcrumbs ([ca04379](https://github.com/qiwi/pijma/commit/ca04379))
+
+# [@qiwi/pijma-desktop-v1.50.0](https://github.com/qiwi/pijma/compare/v1.49.0...v1.50.0) (2019-06-14)
+
+
+### Features
+
+* block-content ([74af5fd](https://github.com/qiwi/pijma/commit/74af5fd))
+
+# [@qiwi/pijma-desktop-v1.49.0](https://github.com/qiwi/pijma/compare/v1.48.0...v1.49.0) (2019-06-11)
+
+
+### Features
+
+* **desktop:** logo block link ([e6e3d26](https://github.com/qiwi/pijma/commit/e6e3d26))
+
+# [@qiwi/pijma-desktop-v1.46.0](https://github.com/qiwi/pijma/compare/v1.45.0...v1.46.0) (2019-06-06)
+
+
+### Features
+
+* add accordion ([bc30234](https://github.com/qiwi/pijma/commit/bc30234))
+
+# [@qiwi/pijma-desktop-v1.45.0](https://github.com/qiwi/pijma/compare/v1.44.0...v1.45.0) (2019-06-04)
+
+
+### Features
+
+* notice ([dac01e7](https://github.com/qiwi/pijma/commit/dac01e7))
+
+# [@qiwi/pijma-desktop-v1.44.0](https://github.com/qiwi/pijma/compare/v1.43.0...v1.44.0) (2019-05-30)
+
+
+### Features
+
+* add props to paragraph and text ([5f218ab](https://github.com/qiwi/pijma/commit/5f218ab))
+
+# [@qiwi/pijma-desktop-v1.42.0](https://github.com/qiwi/pijma/compare/v1.41.0...v1.42.0) (2019-05-29)
+
+
+### Features
+
+* add switch ([e956066](https://github.com/qiwi/pijma/commit/e956066))
+
+# [@qiwi/pijma-desktop-v1.40.0](https://github.com/qiwi/pijma/compare/v1.39.0...v1.40.0) (2019-05-21)
+
+
+### Features
+
+* breaker ([10bc3c0](https://github.com/qiwi/pijma/commit/10bc3c0))
+
+# [@qiwi/pijma-desktop-v1.37.0](https://github.com/qiwi/pijma/compare/v1.36.1...v1.37.0) (2019-04-10)
+
+
+### Features
+
+* link ([b28e20f](https://github.com/qiwi/pijma/commit/b28e20f))
+
 # [@qiwi/pijma-desktop-v1.27.1](https://github.com/qiwi/pijma/compare/v1.27.0...v1.27.1) (2019-01-11)
 
 

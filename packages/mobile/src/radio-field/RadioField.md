@@ -17,7 +17,7 @@ initialState = {value: 'selected'};
     disabled: false,
   }, {
     label: 'Заблокированная выбранная радиокнопка',
-    value: 'selected',
+    value: 'selected-disabled',
     disabled: true,
   }, {
     label: 'Заблокированная радиокнопка',
@@ -47,7 +47,7 @@ initialState = {value: 'selected'};
   }, {
     label: 'Заблокированная выбранная радиокнопка',
     description: 'Примечание к радиокнопке',
-    value: 'selected',
+    value: 'selected-disabled',
     disabled: true,
   }, {
     label: 'Заблокированная радиокнопка',
@@ -57,5 +57,14 @@ initialState = {value: 'selected'};
   }]}
   value={state.value}
   onChange={(value) => setState({value})}
+/>
+```
+
+```jsx
+<RadioField
+  stub
+  options={[]}
+  value={null}
+  onChange={() => {}}
 />
 ```

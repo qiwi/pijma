@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {themes, reset, fonts, injectGlobal, ThemeProvider} from '@qiwi/pijma-core'
+import {themes, reset, fonts, injectGlobal, ThemeProvider, applyDefaultClickHandler} from '@qiwi/pijma-core'
 
 injectGlobal(fonts, reset, {
   body: {
@@ -9,6 +9,8 @@ injectGlobal(fonts, reset, {
     // lineHeight: 1,
   },
 })
+
+applyDefaultClickHandler((href, target) => window.open(href, target || '_self'))
 
 const Wrapper: FC = (props) => (
   <ThemeProvider theme={themes.orange}>

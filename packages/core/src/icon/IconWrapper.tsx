@@ -5,5 +5,5 @@ export interface IconWrapperProps {
 }
 
 export const IconWrapper = styled('span')<IconWrapperProps>(({color}) => ({
-  fill: color
+  fill: color,
 }))

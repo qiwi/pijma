@@ -15,6 +15,7 @@ import ArrowSmallUpIcon from './ArrowSmallUpIcon'
 import ArrowSmallRightIcon from './ArrowSmallRightIcon'
 import ArrowSmallLeftIcon from './ArrowSmallLeftIcon'
 import AttentionIcon from './AttentionIcon'
+import BackwardIcon from './BackwardIcon'
 import BankIcon from './BankIcon'
 import CalendarIcon from './CalendarIcon'
 import CardIcon from './CardIcon'
@@ -35,6 +36,7 @@ import FacebookIcon from './FacebookIcon'
 import FileIcon from './FileIcon'
 import FilterIcon from './FilterIcon'
 import FilterActiveIcon from './FilterActiveIcon'
+import ForwardIcon from './ForwardIcon'
 import HamburgerIcon from './HamburgerIcon'
 import InstagramIcon from './IntagramIcon'
 import LocationIcon from './LocationIcon'
@@ -59,6 +61,7 @@ import QuestionIcon from './QuestionIcon'
 import QiwiIcon from './QiwiIcon'
 import ReceiptIcon from './ReceiptIcon'
 import RefundIcon from './RefundIcon'
+import RejectIcon from './RejectIcon'
 import RepeatIcon from './RepeatIcon'
 import SearchIcon from './SearchIcon'
 import SendIcon from './SendIcon'
@@ -100,6 +103,7 @@ export {
   ArrowSmallRightIcon,
   ArrowSmallLeftIcon,
   AttentionIcon,
+  BackwardIcon,
   BankIcon,
   CalendarIcon,
   CardIcon,
@@ -116,6 +120,7 @@ export {
   FileIcon,
   FilterIcon,
   FilterActiveIcon,
+  ForwardIcon,
   HamburgerIcon,
   InstagramIcon,
   LocationIcon,
@@ -140,6 +145,7 @@ export {
   QiwiIcon,
   ReceiptIcon,
   RefundIcon,
+  RejectIcon,
   RepeatIcon,
   SearchIcon,
   SendIcon,

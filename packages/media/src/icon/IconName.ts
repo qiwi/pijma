@@ -20,6 +20,7 @@ export type IconName =
   'arrow-small-up' |
   'arrow-small-down' |
   'attention' |
+  'backward' |
   'bank' |
   'calendar' |
   'card' |
@@ -36,6 +37,7 @@ export type IconName =
   'file' |
   'filter' |
   'filter-active' |
+  'forward' |
   'hamburger' |
   'instagram' |
   'location' |
@@ -60,6 +62,7 @@ export type IconName =
   'question' |
   'receipt' |
   'refund' |
+  'reject' |
   'repeat' |
   'search' |
   'send' |

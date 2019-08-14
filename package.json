@@ -5,22 +5,30 @@
   ],
   "scripts": {
     "clean": "lerna clean --yes && lerna run clean",
-    "build": "yarn clean && lerna run --stream build",
+    "build": "yarn clean && yarn lint && lerna run --stream build",
     "watch": "lerna run --parallel watch",
+    "lint": "lerna run --no-bail --parallel lint",
+    "lint:fix": "lerna run --no-bail --parallel lint:fix",
     "guide": "lerna run --concurrency=1 guide",
     "guide_ci": "lerna run --concurrency=1 guide_ci"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn lint"
+    }
+  },
   "devDependencies": {
-    "@semantic-release/changelog": "3.0.1",
-    "@semantic-release/commit-analyzer": "6.1.0",
-    "@semantic-release/git": "7.0.5",
-    "@semantic-release/github": "5.2.5",
-    "@semantic-release/npm": "5.1.1",
-    "@semantic-release/release-notes-generator": "7.1.4",
-    "lerna": "3.5.1",
-    "semantic-release": "15.12.4",
+    "@semantic-release/changelog": "3.0.4",
+    "@semantic-release/commit-analyzer": "6.2.0",
+    "@semantic-release/git": "7.0.16",
+    "@semantic-release/github": "5.4.2",
+    "@semantic-release/npm": "5.1.13",
+    "@semantic-release/release-notes-generator": "7.2.1",
+    "lerna": "3.15.0",
+    "semantic-release": "15.13.18",
     "semantic-release-monorepo": "6.1.1",
-    "semantic-release-monorepo-hooks": "2.9.1",
+    "semantic-release-monorepo-hooks": "2.9.5",
     "semantic-release-plugin-decorators": "2.0.0"
   },
   "name": "pijma",

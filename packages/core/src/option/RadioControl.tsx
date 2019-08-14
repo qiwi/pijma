@@ -109,7 +109,8 @@ export default class RadioControl<O extends OptionModel<V>, V> extends React.Com
       onBlur: this.onBlur,
       onKeyDown: this.onKeyDown,
       onMouseLeave: this.onMouseLeave,
-      options: this.props.options.map((option, index) => Object.assign({}, option, {
+      options: this.props.options.map((option, index) => ({
+        ...option,
         checked: this.equals(this.props.value, option.value),
         focused: index === this.state.focused,
         onClick: this.onOptionClick,

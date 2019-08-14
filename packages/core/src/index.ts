@@ -9,15 +9,9 @@ import fonts from './fonts'
 import * as themes from './themes'
 
 export * from './styled'
+export * from './waypoint'
 
-export {
-  styled,
-  Theme,
-  RenderChild,
-  themes,
-  reset,
-  fonts,
-}
+export {styled, Theme, RenderChild, themes, reset, fonts}
 
 export * from './primitive'
 export * from './spacer'
@@ -41,3 +35,13 @@ export * from './recaptcha'
 export * from './recaptcha-field'
 export * from './text-area'
 export * from './text-area-field'
+export * from './link'
+export * from './tumbler'
+export * from './breaker'
+export * from './striper'
+export * from './accordion'
+export * from './grid'
+export * from './offset-scroll'
+export * from './pagination'
+export * from './stub'
+export * from './section'

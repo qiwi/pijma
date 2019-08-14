@@ -29,6 +29,20 @@
 </Box>
 ```
 
+#### Плейсхолдер
+
+```jsx
+<Box width={64}>
+  <TextField
+    stub
+    title="if you need title stub put any corrent content here"
+    help="if you need help stub put any corrent content here"
+    hint="if you need hint stub put any corrent content here"
+    value=""
+  />
+</Box>
+```
+
 #### Поле с подсказкой
 
 ```jsx

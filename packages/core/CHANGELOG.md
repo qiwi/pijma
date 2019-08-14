@@ -1,3 +1,122 @@
+# [@qiwi/pijma-core-v1.63.0](https://github.com/qiwi/pijma/compare/v1.62.0...v1.63.0) (2019-08-12)
+
+
+### Features
+
+* stub checkbox field ([04ceef9](https://github.com/qiwi/pijma/commit/04ceef9))
+
+# [@qiwi/pijma-core-v1.61.0](https://github.com/qiwi/pijma/compare/v1.60.2...v1.61.0) (2019-08-06)
+
+
+### Features
+
+* add section ([0d79f8c](https://github.com/qiwi/pijma/commit/0d79f8c))
+
+# [@qiwi/pijma-core-v1.60.2](https://github.com/qiwi/pijma/compare/v1.60.1...v1.60.2) (2019-07-18)
+
+
+### Bug Fixes
+
+* **package:** up lodash version [security] ([f83c8f2](https://github.com/qiwi/pijma/commit/f83c8f2))
+
+# [@qiwi/pijma-core-v1.60.1](https://github.com/qiwi/pijma/compare/v1.60.0...v1.60.1) (2019-07-10)
+
+
+### Performance Improvements
+
+* up deps ([a7bcce6](https://github.com/qiwi/pijma/commit/a7bcce6))
+
+# [@qiwi/pijma-core-v1.58.0](https://github.com/qiwi/pijma/compare/v1.57.0...v1.58.0) (2019-07-10)
+
+
+### Features
+
+* stub typography ([13300bf](https://github.com/qiwi/pijma/commit/13300bf))
+
+# [@qiwi/pijma-core-v1.57.0](https://github.com/qiwi/pijma/compare/v1.56.0...v1.57.0) (2019-07-04)
+
+
+### Features
+
+* stub ([80d9793](https://github.com/qiwi/pijma/commit/80d9793))
+
+# [@qiwi/pijma-core-v1.56.0](https://github.com/qiwi/pijma/compare/v1.55.0...v1.56.0) (2019-07-03)
+
+
+### Features
+
+* **mobile:** header ([68ff1a9](https://github.com/qiwi/pijma/commit/68ff1a9))
+
+# [@qiwi/pijma-core-v1.54.0](https://github.com/qiwi/pijma/compare/v1.53.0...v1.54.0) (2019-07-01)
+
+
+### Features
+
+* pagination ([044c308](https://github.com/qiwi/pijma/commit/044c308))
+
+# [@qiwi/pijma-core-v1.50.0](https://github.com/qiwi/pijma/compare/v1.49.0...v1.50.0) (2019-06-14)
+
+
+### Features
+
+* block-content ([74af5fd](https://github.com/qiwi/pijma/commit/74af5fd))
+
+# [@qiwi/pijma-core-v1.48.0](https://github.com/qiwi/pijma/compare/v1.47.0...v1.48.0) (2019-06-10)
+
+
+### Features
+
+* block content ([622fda5](https://github.com/qiwi/pijma/commit/622fda5))
+
+# [@qiwi/pijma-core-v1.47.0](https://github.com/qiwi/pijma/compare/v1.46.0...v1.47.0) (2019-06-10)
+
+
+### Features
+
+* grid ([45e60f4](https://github.com/qiwi/pijma/commit/45e60f4))
+
+# [@qiwi/pijma-core-v1.46.0](https://github.com/qiwi/pijma/compare/v1.45.0...v1.46.0) (2019-06-06)
+
+
+### Features
+
+* add accordion ([bc30234](https://github.com/qiwi/pijma/commit/bc30234))
+
+# [@qiwi/pijma-core-v1.42.0](https://github.com/qiwi/pijma/compare/v1.41.0...v1.42.0) (2019-05-29)
+
+
+### Features
+
+* add switch ([e956066](https://github.com/qiwi/pijma/commit/e956066))
+
+# [@qiwi/pijma-core-v1.41.0](https://github.com/qiwi/pijma/compare/v1.40.0...v1.41.0) (2019-05-29)
+
+
+### Features
+
+* striper ([caf2af8](https://github.com/qiwi/pijma/commit/caf2af8))
+
+# [@qiwi/pijma-core-v1.40.0](https://github.com/qiwi/pijma/compare/v1.39.0...v1.40.0) (2019-05-21)
+
+
+### Features
+
+* breaker ([10bc3c0](https://github.com/qiwi/pijma/commit/10bc3c0))
+
+# [@qiwi/pijma-core-v1.39.0](https://github.com/qiwi/pijma/compare/v1.38.0...v1.39.0) (2019-05-13)
+
+
+### Features
+
+* drop up ([58e91ad](https://github.com/qiwi/pijma/commit/58e91ad))
+
+# [@qiwi/pijma-core-v1.37.0](https://github.com/qiwi/pijma/compare/v1.36.1...v1.37.0) (2019-04-10)
+
+
+### Features
+
+* link ([b28e20f](https://github.com/qiwi/pijma/commit/b28e20f))
+
 # [@qiwi/pijma-core-v1.35.0](https://github.com/qiwi/pijma/compare/v1.34.0...v1.35.0) (2019-02-11)
 
 

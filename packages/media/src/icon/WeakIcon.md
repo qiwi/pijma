@@ -189,10 +189,19 @@
     <WeakIcon name="success"/>
   </FlexItem>
   <FlexItem shrink={0} width={6} height={6} m={3}>
+    <WeakIcon name="reject"/>
+  </FlexItem>
+  <FlexItem shrink={0} width={6} height={6} m={3}>
     <WeakIcon name="attention"/>
   </FlexItem>
   <FlexItem shrink={0} width={6} height={6} m={3}>
     <WeakIcon name="waiting"/>
+  </FlexItem>
+  <FlexItem shrink={0} width={6} height={6} m={3}>
+    <WeakIcon name="backward"/>
+  </FlexItem>
+  <FlexItem shrink={0} width={6} height={6} m={3}>
+    <Icon name="forward"/>
   </FlexItem>
   <FlexItem shrink={0} width={6} height={6} m={3}>
     <WeakIcon name="sort-asc"/>

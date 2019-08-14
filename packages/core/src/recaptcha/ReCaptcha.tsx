@@ -43,15 +43,15 @@ export class ReCaptcha extends PureComponent<ReCaptchaProps> {
       return
     }
     wrapper.style.height = 'auto'
-    wrapper.style.transform = wrapper.style.webkitTransform = 'scale(1)'
+    wrapper.style.transform = 'scale(1)'
     const size = wrapper.getBoundingClientRect()
     const scale = size.width / width
     if (scale >= 1) {
       return
     }
     wrapper.style.height = `${height * scale}px`
-    wrapper.style.transform = wrapper.style.webkitTransform = `scale(${scale})`
-    wrapper.style.transformOrigin = wrapper.style.webkitTransformOrigin = '0 0'
+    wrapper.style.transform = `scale(${scale})`
+    wrapper.style.transformOrigin = '0 0'
   }
 
   public componentDidMount() {
