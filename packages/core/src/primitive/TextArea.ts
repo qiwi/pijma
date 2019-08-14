@@ -30,12 +30,12 @@ export const TextAreaNonProps = [
   'placeholderWeight',
   'placeholderColor',
   'placeholderTransform',
-  'placeholderSpacing'
+  'placeholderSpacing',
 ].concat(CardNonProps)
 
 export const TextArea = styled(Card.withComponent('textarea'), {
-  shouldForwardProp: (prop) => !TextAreaNonProps.includes(prop)
-})<TextAreaProps>(({ theme, ...props }) => ({
+  shouldForwardProp: (prop) => !TextAreaNonProps.includes(prop),
+})<TextAreaProps>(({theme, ...props}) => ({
   fontFamily: theme.font.family,
   fontSize: pxValue(props.valueSize, theme.scale),
   fontWeight: props.valueWeight,
