@@ -18,11 +18,6 @@ export interface MenuItemProps {
   onClick?: LinkControlProps['onClick']
   onFocus?: LinkControlProps['onFocus']
   onBlur?: LinkControlProps['onBlur']
-  children?: RenderChild<{
-    active: boolean
-    focus: boolean
-    hover: boolean
-  }>
 }
 
 const CardLink = Card.withComponent(Lnk)
