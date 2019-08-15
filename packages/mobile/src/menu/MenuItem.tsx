@@ -6,7 +6,7 @@ import {Paragraph} from '../typography'
 
 export interface MenuItemProps {
   text: string
-  notes: string
+  notes?: string
   icon?: ReactNode
   submenu?: boolean
   tabIndex?: number
@@ -18,7 +18,7 @@ export interface MenuItemProps {
   onClick?: LinkControlProps['onClick']
   onFocus?: LinkControlProps['onFocus']
   onBlur?: LinkControlProps['onBlur']
-  children: RenderChild<{
+  children?: RenderChild<{
     active: boolean
     focus: boolean
     hover: boolean
