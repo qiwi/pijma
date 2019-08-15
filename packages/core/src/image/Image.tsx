@@ -36,9 +36,9 @@ export const Image: FC<ImageProps> = ({
   const imageRef: RefObject<HTMLImageElement> = createRef()
   if (!stub) {
     return (
-      <Box width={width} height={height}>
+      <Box width={width} height={height} display={display}>
         <Img
-          display={display}
+          display="block"
           cursor={cursor}
           ref={imageRef}
           src={src}
@@ -85,8 +85,6 @@ export const Image: FC<ImageProps> = ({
             <Card opacity={typeof stub === 'string' || renderProps.loaded ? 1 : 0}>
               <Img
                 display="block"
-                width={1}
-                height={1}
                 ref={imageRef}
                 src={renderProps.src}
                 srcSet={renderProps.srcSet}
