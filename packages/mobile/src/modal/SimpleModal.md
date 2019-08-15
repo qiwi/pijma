@@ -44,71 +44,7 @@
 </Box>
 ```
 
-#### Размеры окон
 
-```jsx
-<Box>
-  <Actions size="normal">
-    <Button
-      kind="simple"
-      size="normal"
-      type="button"
-      text="s"
-      onClick={() => setState({s: true})}
-    />
-    <Button
-      kind="simple"
-      size="normal"
-      type="button"
-      text="m"
-      onClick={() => setState({m: true})}
-    />
-    <Button
-      kind="simple"
-      size="normal"
-      type="button"
-      text="l"
-      onClick={() => setState({l: true})}
-    />
-  </Actions>
-  <SimpleModal
-    show={state.s}
-    size="s"
-    closable
-    onHide={() => setState({s: false})}
-    children={
-      <Spacer size="m">
-        <Heading size="2">Малое окно</Heading>
-        <Paragraph size="m">Используется на форме авторизации</Paragraph>
-      </Spacer>
-    }
-  />
-  <SimpleModal
-    show={state.m}
-    size="m"
-    closable
-    onHide={() => setState({m: false})}
-    children={
-      <Spacer size="m">
-        <Heading size="2">Среднее окно</Heading>
-        <Paragraph size="m">Используется на форме авторизации</Paragraph>
-      </Spacer>
-    }
-  />
-  <SimpleModal
-    show={state.l}
-    size="l"
-    closable
-    onHide={() => setState({l: false})}
-    children={
-      <Spacer size="m">
-        <Heading size="2">Большое окно</Heading>
-        <Paragraph size="m">Используется на форме авторизации</Paragraph>
-      </Spacer>
-    }
-  />
-</Box>
-```
 
 ## Примеры окон
 
@@ -127,7 +63,7 @@
   </Actions>
   <SimpleModal
     show={state.notification}
-    size={'m'}
+    size="m"
     closable
     backdropClose
     onHide={() => setState({notification: false})}
@@ -183,7 +119,7 @@
         <Spacer size="l">
           <Heading size="2">Куда отправить квитанцию?</Heading>
             <TextField
-              title="Адрес электронной почты"
+              title="Адрес элктронной почты"
               type="text"
               value={state.text}
               onChange={text => setState({text})}
@@ -220,7 +156,7 @@ initialState = {values: ['selected']};
   </Actions>
   <SimpleModal
     show={state.snapping}
-    size={'m'}
+    size="m"
     closable
     backdropClose
     onHide={() => setState({snapping: false})}
@@ -229,7 +165,7 @@ initialState = {values: ['selected']};
         <Spacer size="l">
           <Heading size="2">Привязка почты к QIWI Кошельку</Heading>
             <TextField
-              title="Адрес электронной почты"
+              title="Адрес элктронной почты"
               type="text"
               value={state.text}
               onChange={text => setState({text})}

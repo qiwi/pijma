@@ -19,8 +19,8 @@ const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <
 
 contentTransition.defaultProps = {
   timeout: {
-    enter: 370,
-    exit: 250,
+    enter: 300,
+    exit: 150,
   },
   enterClassName: (timeout: number) => css({
     opacity: 1,
@@ -29,7 +29,7 @@ contentTransition.defaultProps = {
   }),
   exitClassName: (timeout: number) => css({
     opacity: 0,
-    transform: 'translate3d(0, -100%, 0)',
+    transform: 'translate3d(0, 100%, 0)',
     transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
   }),
 }
@@ -38,8 +38,8 @@ const backdropTransition: FunctionComponent<SimpleTransitionProps> = (props) => 
 
 backdropTransition.defaultProps = {
   timeout: {
-    enter: 370,
-    exit: 250,
+    enter: 200,
+    exit: 200,
   },
   enterClassName: (timeout: number) => css({
     opacity: 1,
