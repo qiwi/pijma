@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react'
 
-import {Flex, FlexItem, Lnk, Card, LinkControl, LinkControlProps, RenderChild} from '@qiwi/pijma-core'
+import {Flex, FlexItem, Lnk, Card, LinkControl, LinkControlProps} from '@qiwi/pijma-core'
 import {Icon} from '@qiwi/pijma-media'
 import {Paragraph} from '../typography'
 
