@@ -25,7 +25,7 @@ export const TypoNonProps = ['as', 'css', 'innerRef', 'ref', 'display', 'size', 
 export const Typo = styled('div', {
   shouldForwardProp: (prop) => !TypoNonProps.includes(prop),
 })<TypoProps>(({theme, ...props}) => ({
-  display: [props.display].concat(props.lines !== undefined ? '-webkit-box' : undefined) as [],
+  display: ([] as string[]).concat(props.display || [], props.lines ? '-webkit-box' : []),
   fontFamily: theme.font.family,
   fontSize: pxValue(props.size, theme.scale),
   fontWeight: props.weight,
