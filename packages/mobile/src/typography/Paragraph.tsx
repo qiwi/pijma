@@ -10,7 +10,7 @@ export interface ParagraphProps {
   transform?: TypoProps['transform']
   align?: TypoProps['align']
   stub?: boolean
-  lines?: number
+  clamp?: number
 }
 
 const ParagraphSize: { [size in NonNullable<ParagraphProps['size']>]: number } = {
@@ -75,7 +75,7 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
   transform,
   align,
   stub,
-  lines,
+  clamp,
   children,
 }) => (
   stub ? (
@@ -94,7 +94,7 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
   ) : (
     <Typo
       as="p"
-      lines={lines}
+      clamp={clamp}
       display="block"
       size={ParagraphSize[size]}
       height={compact ? ParagraphHeightCompact[size] : ParagraphHeight[size]}

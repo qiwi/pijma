@@ -5,7 +5,7 @@ import {pxValue} from './Value'
 export interface TypoProps {
   as?: keyof JSX.IntrinsicElements
   css?: CSSObject
-  display?: 'block' | 'inline' | 'inline-block' | '-webkit-box'
+  display?: 'block' | 'inline' | 'inline-block'
   size?: number
   height?: number
   weight?: number
@@ -17,7 +17,7 @@ export interface TypoProps {
   decoration?: 'line-through' | 'overline' | 'underline' | 'none'
   align?: 'center' | 'justify' | 'left' | 'right'
   cursor?: string
-  lines?: number
+  clamp?: number
 }
 
 export const TypoNonProps = ['as', 'css', 'innerRef', 'ref', 'display', 'size', 'height', 'weight', 'color', 'transform', 'nowrap', 'spacing', 'transition', 'decoration', 'cursor', 'align']
@@ -25,7 +25,7 @@ export const TypoNonProps = ['as', 'css', 'innerRef', 'ref', 'display', 'size', 
 export const Typo = styled('div', {
   shouldForwardProp: (prop) => !TypoNonProps.includes(prop),
 })<TypoProps>(({theme, ...props}) => ({
-  display: ([] as string[]).concat(props.display || [], props.lines ? '-webkit-box' : []),
+  display: ([] as string[]).concat(props.display || [], props.clamp !== undefined && props.display === 'block' && props.height !== undefined ? '-webkit-box' : []),
   fontFamily: theme.font.family,
   fontSize: pxValue(props.size, theme.scale),
   fontWeight: props.weight,
@@ -41,6 +41,7 @@ export const Typo = styled('div', {
   textDecoration: props.decoration,
   textAlign: props.align,
   cursor: props.cursor,
-  WebkitLineClamp: props.lines ? props.lines : undefined,
-  WebkitBoxOrient: props.lines ? 'vertical' : undefined,
+  maxHeight: props.clamp !== undefined && props.height !== undefined && props.display === 'block' ? pxValue(props.height * props.clamp, theme.scale) : undefined,
+  WebkitLineClamp: props.clamp !== undefined && props.height !== undefined && props.display === 'block' ? props.clamp : undefined,
+  WebkitBoxOrient: props.clamp !== undefined && props.height !== undefined && props.display === 'block' ? 'vertical' : undefined,
 }), (props) => props.css)

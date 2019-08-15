@@ -7,7 +7,8 @@ export interface HeadingProps {
   size: '1' | '2' | '3' | '4' | '5'
   color?: 'default' | 'inverse'
   align?: TypoProps['align']
-  stub?: boolean
+  stub?: boolean,
+  clamp?: number
 }
 
 const HeadingSize: { [size in HeadingProps['size']]: number } = {
@@ -71,7 +72,7 @@ const HeadingColor: { [color in NonNullable<HeadingProps['color']>]: string } = 
   inverse: '#fff',
 }
 
-export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'default', align, stub, children}) => (
+export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'default', align, stub, clamp, children}) => (
   stub ? (
     <Box
       ml={align === 'center' || align === 'right' ? 'auto' : 'none'}
@@ -89,6 +90,7 @@ export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'de
     </Box>
   ) : (
     <Typo
+      clamp={clamp}
       as={tag ? tag : HeadingTag[size]}
       display="block"
       size={HeadingSize[size]}
