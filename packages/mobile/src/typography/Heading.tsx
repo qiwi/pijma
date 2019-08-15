@@ -7,8 +7,8 @@ export interface HeadingProps {
   size: '1' | '2' | '3' | '4'
   color?: 'default' | 'inverse'
   align?: TypoProps['align']
-  stub?: boolean,
   clamp?: number
+  stub?: boolean
 }
 
 const HeadingSize: { [size in HeadingProps['size']]: number } = {
@@ -83,7 +83,6 @@ export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'de
     </Box>
   ) : (
     <Typo
-      clamp={clamp}
       as={tag ? tag : HeadingTag[size]}
       display="block"
       size={HeadingSize[size]}
@@ -91,6 +90,7 @@ export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'de
       weight={HeadingWeight[size]}
       color={HeadingColor[color]}
       align={align}
+      clamp={clamp}
       children={<Breaker children={children}/>}
     />
   )

@@ -7,8 +7,8 @@ export interface TitleProps {
   size: '1' | '2'
   color?: 'default' | 'inverse'
   align?: TypoProps['align']
-  stub?: boolean,
   clamp?: number
+  stub?: boolean
 }
 
 const TitleSize: { [size in TitleProps['size']]: number } = {
@@ -68,7 +68,6 @@ export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'defaul
     </Box>
   ) : (
     <Typo
-      clamp={clamp}
       as={tag ? tag : TitleTag[size]}
       display="block"
       size={TitleSize[size]}
@@ -76,6 +75,7 @@ export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'defaul
       weight={TitleWeight[size]}
       color={TitleColor[color]}
       align={align}
+      clamp={clamp}
       children={<Breaker children={children}/>}
     />
   )

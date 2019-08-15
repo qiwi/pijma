@@ -9,8 +9,8 @@ export interface ParagraphProps {
   color?: 'default' | 'support' | 'inverse'
   transform?: TypoProps['transform']
   align?: TypoProps['align']
-  stub?: boolean
   clamp?: number
+  stub?: boolean
 }
 
 const ParagraphSize: { [size in NonNullable<ParagraphProps['size']>]: number } = {
@@ -94,7 +94,6 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
   ) : (
     <Typo
       as="p"
-      clamp={clamp}
       display="block"
       size={ParagraphSize[size]}
       height={compact ? ParagraphHeightCompact[size] : ParagraphHeight[size]}
@@ -102,6 +101,7 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
       color={ParagraphColor[color]}
       transform={transform}
       align={align}
+      clamp={clamp}
       children={<Breaker children={children}/>}
     />
   )

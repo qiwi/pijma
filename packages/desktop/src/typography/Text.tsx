@@ -11,7 +11,7 @@ export interface TextProps {
   decoration?: TypoProps['decoration']
   transition?: TypoProps['transition']
   transform?: TypoProps['transform']
-  align?: TypoProps['align'],
+  align?: TypoProps['align']
   clamp?: number
 }
 
@@ -45,7 +45,6 @@ const TextColor: { [color in NonNullable<TextProps['color']>]: string } = {
 export const Text: FunctionComponent<TextProps> = ({display, compact, size, bold, color, decoration, transform, transition, align, clamp, children}) => (
   <Typo
     as="span"
-    clamp={clamp}
     display={display}
     size={size === undefined ? undefined : TextSize[size]}
     height={size === undefined ? undefined : compact ? TextHeightCompact[size] : TextHeight[size]}
@@ -55,6 +54,7 @@ export const Text: FunctionComponent<TextProps> = ({display, compact, size, bold
     transform={transform}
     transition={transition}
     align={align}
+    clamp={clamp}
     children={<Breaker children={children}/>}
   />
 )
