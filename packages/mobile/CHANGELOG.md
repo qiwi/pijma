@@ -1,3 +1,18 @@
+# [@qiwi/pijma-mobile-v1.66.1](https://github.com/qiwi/pijma/compare/v1.66.0...v1.66.1) (2019-08-16)
+
+
+### Bug Fixes
+
+* **mobile:** file link min height ([#203](https://github.com/qiwi/pijma/issues/203)) ([34cf648](https://github.com/qiwi/pijma/commit/34cf648))
+* **mobile:** menu item required props ([42f17a3](https://github.com/qiwi/pijma/commit/42f17a3))
+
+# [@qiwi/pijma-mobile-v1.66.0](https://github.com/qiwi/pijma/compare/v1.65.0...v1.66.0) (2019-08-16)
+
+
+### Features
+
+* multi ellipsis ([9d6c7b0](https://github.com/qiwi/pijma/commit/9d6c7b0))
+
 # [@qiwi/pijma-mobile-v1.65.0](https://github.com/qiwi/pijma/compare/v1.64.0...v1.65.0) (2019-08-12)
 
 
