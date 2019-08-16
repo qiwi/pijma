@@ -69,10 +69,10 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, vertical,
                   icon
                 )}
               </FlexItem>
-              <FlexItem maxHeight={18} overflow="hidden" align="center">
+              <FlexItem maxHeight={12} overflow="hidden" align="center">
                 <Spacer size="xxs">
                   <Paragraph
-                    clamp={description ? 1 : 2}
+                    clamp={2}
                     color="default"
                     size="m"
                     bold
@@ -87,8 +87,7 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, vertical,
                     />
                   ) : (
                     null
-                  )
-                  }
+                  )}
                 </Spacer>
               </FlexItem>
             </Flex>
@@ -131,8 +130,7 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, vertical,
               null
             )}
           </Box>
-        )
-        }
+        )}
       </CardLink>
     )}
   />

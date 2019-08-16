@@ -87,8 +87,7 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizonta
                     />
                   ) : (
                     null
-                  )
-                  }
+                  )}
                 </Spacer>
               </FlexItem>
             </Flex>
@@ -107,14 +106,16 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizonta
                 icon
               )}
             </Box>
-            <Paragraph
-              clamp={description ? 2 : 3}
-              color="default"
-              size="m"
-              bold
-              align="center"
-              children={title}
-            />
+            <Box mt={6}>
+              <Paragraph
+                clamp={description ? 2 : 3}
+                color="default"
+                size="m"
+                bold
+                align="center"
+                children={title}
+              />
+            </Box>
             {description ? (
               <Box mt={1} mx="auto">
                 <Paragraph
@@ -129,8 +130,7 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizonta
               null
             )}
           </Box>
-        )
-        }
+        )}
       </CardLink>
     )}
   />
