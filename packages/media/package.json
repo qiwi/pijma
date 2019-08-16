@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-media",
-  "version": "1.60.1",
+  "version": "1.67.0",
   "license": "MIT",
   "main": "lib/es5/index.js",
   "types": "lib/es5/index.d.ts",
@@ -23,9 +23,9 @@
     "tslib": "^1.10.0"
   },
   "devDependencies": {
-    "husky": "3.0.0",
+    "husky": "3.0.3",
     "tslint": "5.18.0",
-    "tslint-config-qiwi": "1.1.0",
+    "tslint-config-qiwi": "1.1.1",
     "typescript": "3.5.3"
   }
 }

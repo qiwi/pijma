@@ -1,67 +1,75 @@
 #### Без описания
 
 ```jsx
-<Grid columns={5} layout={[1]}>
-  <LogoLink
-    href="//qiwi.com"
-    target="_blank"
-    title="Альфа-Банк"
-    icon={<Icon name="qiwi"/>}
-  />
-  <LogoLink
-    href="//qiwi.com"
-    target="_blank"
-    title="Ренессанс Кредит Банк"
-    icon={<Icon name="qiwi"/>}
-  />
-  <LogoLink
-    href="//qiwi.com"
-    target="_blank"
-    title="Филиал Московский №2 ПАО Банк 'ФК Открытие'"
-    icon={<Icon name="qiwi"/>}
-  />
-  <LogoLink
-    href="//qiwi.com"
-    target="_blank"
-    title="Кредитные карты Platinum и Black"
-    icon={<Icon name="qiwi"/>}
-  />
-</Grid>
+<Block>
+  <BlockContent>
+    <Grid columns={4} layout={[1]}>
+      <LogoLink
+        href="//qiwi.com"
+        target="_blank"
+        title="Перейти на главную"
+        icon={<Icon name="qiwi"/>}
+      />
+      <LogoLink
+        href="//qiwi.com"
+        target="_blank"
+        title="Перейти на главную"
+        icon={<Icon name="qiwi"/>}
+      />
+      <LogoLink
+        href="//qiwi.com"
+        target="_blank"
+        title="Перейти на главную"
+        icon={<Icon name="qiwi"/>}
+      />
+      <LogoLink
+        href="//qiwi.com"
+        target="_blank"
+        title="Перейти на главную"
+        icon={<Icon name="qiwi"/>}
+      />
+    </Grid>
+  </BlockContent>
+</Block>
 ```
 
 #### С описанием
 
 ```jsx
-<Grid columns={5} layout={[1]}>
-  <LogoLink
-     href="//qiwi.com"
-     target="_blank"
-     title="Альфа-Банк"
-     description="Примечание"
-     icon={<Icon name="qiwi"/>}
-  />
-  <LogoLink
-     href="//qiwi.com"
-     target="_blank"
-     title="Ренессанс Кредит Банк"
-     description="Примечание"
-     icon={<Icon name="qiwi"/>}
-  />
-  <LogoLink
-     href="//qiwi.com"
-     target="_blank"
-     title="Филиал Московский №2 ПАО Банк 'ФК Открытие'"
-     description="Примечание"
-     icon={<Icon name="qiwi"/>}
-  />
-  <LogoLink
-     href="//qiwi.com"
-     target="_blank"
-     title="Кредитные карты Platinum и Black"
-     description="Примечание"
-     icon={<Icon name="qiwi"/>}
-  />
-</Grid>
+<Block>
+  <BlockContent>
+    <Grid columns={4} layout={[1]}>
+      <LogoLink
+         href="//qiwi.com"
+         target="_blank"
+         title="Перейти на главную"
+         description="Примечание"
+         icon={<Icon name="qiwi"/>}
+      />
+      <LogoLink
+         href="//qiwi.com"
+         target="_blank"
+         title="Перейти на главную"
+         description="Примечание"
+         icon={<Icon name="qiwi"/>}
+      />
+      <LogoLink
+         href="//qiwi.com"
+         target="_blank"
+         title="Перейти на главную"
+         description="Примечание"
+         icon={<Icon name="qiwi"/>}
+      />
+      <LogoLink
+         href="//qiwi.com"
+         target="_blank"
+         title="Перейти на главную"
+         description="Примечание"
+         icon={<Icon name="qiwi"/>}
+      />
+    </Grid>
+  </BlockContent>
+</Block>
 ```
 
 ## Horizontal
@@ -69,74 +77,82 @@
 #### Без описания
 
 ```jsx
-<Grid columns={3} layout={[1]}>
-  <LogoLink
-    horizontal
-    href="//qiwi.com"
-    target="_blank"
-    title="Альфа-Банк"
-    icon={<Icon name="qiwi"/>}
-  />
-  <LogoLink
-    horizontal
-    href="//qiwi.com"
-    target="_blank"
-    title="Ренессанс Кредит Банк"
-    icon={<Icon name="qiwi"/>}
-  />
-  <LogoLink
-    horizontal
-    href="//qiwi.com"
-    target="_blank"
-    title="Филиал Московский №2 ПАО Банк 'ФК Открытие'"
-    icon={<Icon name="qiwi"/>}
-  />
-  <LogoLink
-    horizontal
-    href="//qiwi.com"
-    target="_blank"
-    title="Кредитные карты Platinum и Black"
-    icon={<Icon name="qiwi"/>}
-  />
-</Grid>
+<Block>
+  <BlockContent>
+    <Grid columns={3} layout={[1]}>
+      <LogoLink
+        horizontal
+        href="//qiwi.com"
+        target="_blank"
+        title="Перейти на главную"
+        icon={<Icon name="qiwi"/>}
+      />
+      <LogoLink
+        horizontal
+        href="//qiwi.com"
+        target="_blank"
+        title="Перейти на главную"
+        icon={<Icon name="qiwi"/>}
+      />
+      <LogoLink
+        horizontal
+        href="//qiwi.com"
+        target="_blank"
+        title="Перейти на главную"
+        icon={<Icon name="qiwi"/>}
+      />
+      <LogoLink
+        horizontal
+        href="//qiwi.com"
+        target="_blank"
+        title="Перейти на главную"
+        icon={<Icon name="qiwi"/>}
+      />
+    </Grid>
+  </BlockContent>
+</Block>
 ```
 
 #### С описанием
 
 ```jsx
-<Grid columns={3} layout={[1]}>
-  <LogoLink
-     horizontal
-     href="//qiwi.com"
-     target="_blank"
-     title="Альфа-Банк"
-     description="Примечание"
-     icon={<Icon name="qiwi"/>}
-  />
-  <LogoLink
-     horizontal
-     href="//qiwi.com"
-     target="_blank"
-     title="Ренессанс Кредит Банк"
-     description="Примечание"
-     icon={<Icon name="qiwi"/>}
-  />
-  <LogoLink
-     horizontal
-     href="//qiwi.com"
-     target="_blank"
-     title="Филиал Московский №2 ПАО Банк 'ФК Открытие'"
-     description="Примечание"
-     icon={<Icon name="qiwi"/>}
-  />
-  <LogoLink
-     horizontal
-     href="//qiwi.com"
-     target="_blank"
-     title="Кредитные карты Platinum и Black"
-     description="Примечание"
-     icon={<Icon name="qiwi"/>}
-  />
-</Grid>
+<Block>
+  <BlockContent>
+    <Grid columns={3} layout={[1]}>
+      <LogoLink
+         horizontal
+         href="//qiwi.com"
+         target="_blank"
+         title="На главную"
+         description="Примечание"
+         icon={<Icon name="qiwi"/>}
+      />
+      <LogoLink
+         horizontal
+         href="//qiwi.com"
+         target="_blank"
+         title="На главную"
+         description="Примечание"
+         icon={<Icon name="qiwi"/>}
+      />
+      <LogoLink
+         horizontal
+         href="//qiwi.com"
+         target="_blank"
+         title="На главную"
+         description="Примечание"
+         icon={<Icon name="qiwi"/>}
+      />
+      <LogoLink
+         horizontal
+         href="//qiwi.com"
+         target="_blank"
+         title="На главную"
+         description="Примечание"
+         icon={<Icon name="qiwi"/>}
+      />
+    </Grid>
+  </BlockContent>
+</Block>
 ```
 

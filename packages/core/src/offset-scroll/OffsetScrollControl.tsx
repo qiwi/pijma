@@ -51,29 +51,27 @@ export class OffsetScrollControl extends Component<OffsetScrollControlProps, Off
     })
   }
 
-  private children: ReactNode = (
-    <div ref={this.ref}>
-      <Waypoint
-        scrollableAncestor={this.ref.current}
-        topOffset={this.props.top}
-        onEnter={this.onTopEnter}
-        onLeave={this.onTopLeave}
-      />
-      {this.props.content}
-      <Waypoint
-        scrollableAncestor={this.ref.current}
-        topOffset={this.props.bottom}
-        onEnter={this.onBottomEnter}
-        onLeave={this.onBottomLeave}
-      />
-    </div>
-  )
-
   public render() {
     return this.props.children({
       top: this.state.top,
       bottom: this.state.bottom,
-      children: this.children,
+      children: (
+        <div ref={this.ref}>
+          <Waypoint
+            scrollableAncestor={this.ref.current}
+            topOffset={this.props.top}
+            onEnter={this.onTopEnter}
+            onLeave={this.onTopLeave}
+          />
+          {this.props.content}
+          <Waypoint
+            scrollableAncestor={this.ref.current}
+            topOffset={this.props.bottom}
+            onEnter={this.onBottomEnter}
+            onLeave={this.onBottomLeave}
+          />
+        </div>
+      ),
     })
   }
 
