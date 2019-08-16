@@ -1,6 +1,6 @@
 ### Header menu
 
-```jsx
+```jsx static
 initialState = {menuCollapsed: true};
 <Pos type="fixed" top={0} left={0} width={1} zIndex={10002}>
   <Header active={!state.menuCollapsed}>
