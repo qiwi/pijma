@@ -11,7 +11,7 @@ export interface LogoLinkProps {
   target?: string
   download?: string | boolean
   rel?: string
-  vertical?: boolean
+  horizontal?: boolean
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
   onFocus?: () => void
   onBlur?: () => void
@@ -20,7 +20,7 @@ export interface LogoLinkProps {
 const CardLink = Card.withComponent(Lnk)
 const Img = Box.withComponent('img')
 
-export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, vertical, ...props}) => (
+export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizontal, ...props}) => (
   <LinkControl
     onClick={props.onClick}
     onFocus={props.onFocus}
@@ -49,7 +49,7 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, vertical,
         target={props.target}
         download={props.download}
       >
-        {!vertical ? (
+        {horizontal ? (
           <Box p={4}>
             <Flex align="baseline">
               <FlexItem

@@ -1,3 +1,5 @@
+## Horizontal
+
 #### Без описания
 
 ```jsx
@@ -5,18 +7,21 @@
   <BlockContent>
     <Grid columns={1} layout={[1]}>
       <LogoLink
+        horizontal
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
         icon={<Icon name="qiwi"/>}
       />
       <LogoLink
+        horizontal
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
         icon={<Icon name="qiwi"/>}
       />
       <LogoLink
+        horizontal
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
@@ -34,6 +39,7 @@
   <BlockContent>
     <Grid columns={1} layout={[1]}>
       <LogoLink
+         horizontal
          href="//qiwi.com"
          target="_blank"
          title="На главную"
@@ -41,6 +47,7 @@
          icon={<Icon name="qiwi"/>}
       />
       <LogoLink
+         horizontal
          href="//qiwi.com"
          target="_blank"
          title="На главную"
@@ -48,6 +55,7 @@
          icon={<Icon name="qiwi"/>}
       />
       <LogoLink
+         horizontal
          href="//qiwi.com"
          target="_blank"
          title="На главную"
@@ -68,28 +76,24 @@
   <BlockContent>
     <Grid columns={2} layout={[1]}>
       <LogoLink
-        vertical
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
         icon={<Icon name="qiwi"/>}
       />
       <LogoLink
-        vertical
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
         icon={<Icon name="qiwi"/>}
       />
       <LogoLink
-        vertical
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
         icon={<Icon name="qiwi"/>}
       />
       <LogoLink
-        vertical
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
@@ -107,7 +111,6 @@
   <BlockContent>
     <Grid columns={2} layout={[1]}>
       <LogoLink
-         vertical
          href="//qiwi.com"
          target="_blank"
          title="Перейти на главную"
@@ -115,7 +118,6 @@
          icon={<Icon name="qiwi"/>}
       />
       <LogoLink
-         vertical
          href="//qiwi.com"
          target="_blank"
          title="Перейти на главную"
@@ -123,7 +125,6 @@
          icon={<Icon name="qiwi"/>}
       />
       <LogoLink
-         vertical
          href="//qiwi.com"
          target="_blank"
          title="Перейти на главную"
@@ -131,7 +132,6 @@
          icon={<Icon name="qiwi"/>}
       />
       <LogoLink
-         vertical
          href="//qiwi.com"
          target="_blank"
          title="Перейти на главную"
