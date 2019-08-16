@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.66.0](https://github.com/qiwi/pijma/compare/v1.65.0...v1.66.0) (2019-08-16)
+
+
+### Features
+
+* multi ellipsis ([9d6c7b0](https://github.com/qiwi/pijma/commit/9d6c7b0))
+
 # [@qiwi/pijma-desktop-v1.65.0](https://github.com/qiwi/pijma/compare/v1.64.0...v1.65.0) (2019-08-12)
 
 
