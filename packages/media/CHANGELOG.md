@@ -1,3 +1,10 @@
+# [@qiwi/pijma-media-v1.67.0](https://github.com/qiwi/pijma/compare/v1.66.1...v1.67.0) (2019-08-16)
+
+
+### Features
+
+* gh-pages redesign ([4810142](https://github.com/qiwi/pijma/commit/4810142))
+
 # [@qiwi/pijma-media-v1.60.1](https://github.com/qiwi/pijma/compare/v1.60.0...v1.60.1) (2019-07-10)
 
 
