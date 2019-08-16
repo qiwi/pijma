@@ -1,11 +1,11 @@
 import React, {FC} from 'react'
 
 // @ts-ignore
-import MdFullscreen from 'react-icons/lib/md/fullscreen'
-// @ts-ignore
-import MdFullscreenExit from 'react-icons/lib/md/fullscreen-exit'
+import {MdFullscreen, MdFullscreenExit} from 'react-icons/md'
+
 // @ts-ignore
 import ToolbarButton from 'rsg-components/ToolbarButton'
+
 // @ts-ignore
 import getUrl from 'react-styleguidist/lib/client/utils/getUrl'
 
