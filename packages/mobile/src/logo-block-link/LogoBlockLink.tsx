@@ -33,19 +33,19 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
     onBlur={props.onBlur}
   >
     {() => (
-      <Box p={4} height={description ? 60 : 55}>
-        <Box width={16} height={16} mt={7} mx="auto">
+      <Box p={4} height={description ? 43 : 42}>
+        <Box width={14} height={14} mt={2} mx="auto">
           {typeof icon === 'string' ? (
-            <Img src={icon} alt={title} maxWidth={16} maxHeight={16}/>
+            <Img src={icon} alt={title} maxWidth={14} maxHeight={14}/>
           ) : (
             icon
           )}
         </Box>
-        <Box mt={6} mx="auto">
+        <Box mt={3} mx="auto">
           <Paragraph
             clamp={description ? 2 : 3}
             color="default"
-            size="m"
+            size="s"
             bold
             align="center"
             children={title}
