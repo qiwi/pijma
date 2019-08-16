@@ -71,27 +71,23 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, vertical,
               </FlexItem>
               <FlexItem maxHeight={18} overflow="hidden" align="center">
                 <Spacer size="xxs">
-                  <Box maxHeight={18} overflow="hidden">
-                    <Paragraph
-                      lines={2}
-                      color="default"
-                      size="m"
-                      bold
-                      children={title}
-                    />
-                  </Box>
+                  <Paragraph
+                    clamp={description ? 1 : 2}
+                    color="default"
+                    size="m"
+                    bold
+                    children={title}
+                  />
                   {description ? (
-                      <Box maxHeight={10} overflow="hidden">
-                        <Paragraph
-                          lines={1}
-                          color="support"
-                          size="s"
-                          children={description}
-                        />
-                      </Box>
-                    ) : (
-                      null
-                    )
+                    <Paragraph
+                      clamp={1}
+                      color="support"
+                      size="s"
+                      children={description}
+                    />
+                  ) : (
+                    null
+                  )
                   }
                 </Spacer>
               </FlexItem>
@@ -111,9 +107,9 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, vertical,
                 icon
               )}
             </Box>
-            <Box mt={3} maxHeight={description ? 10 : 15} overflow="hidden">
+            <Box mt={3}>
               <Paragraph
-                lines={description ? 2 : 3}
+                clamp={description ? 2 : 3}
                 color="default"
                 size="s"
                 bold
@@ -122,14 +118,9 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, vertical,
               />
             </Box>
             {description ? (
-              <Box
-                mt={1}
-                mx="auto"
-                maxHeight={10}
-                overflow="hidden"
-              >
+              <Box mt={1} mx="auto">
                 <Paragraph
-                  lines={1}
+                  clamp={1}
                   color="support"
                   size="s"
                   align="center"

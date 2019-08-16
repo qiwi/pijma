@@ -71,24 +71,20 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizonta
               </FlexItem>
               <FlexItem maxHeight={12} overflow="hidden" align="center">
                 <Spacer size="xxs">
-                  <Box maxHeight={12} overflow="hidden">
-                    <Paragraph
-                      lines={2}
-                      color="default"
-                      size="m"
-                      bold
-                      children={title}
-                    />
-                  </Box>
+                  <Paragraph
+                    clamp={2}
+                    color="default"
+                    size="m"
+                    bold
+                    children={title}
+                  />
                   {description ? (
-                    <Box maxHeight={6} overflow="hidden">
-                      <Paragraph
-                        lines={1}
-                        color="support"
-                        size="s"
-                        children={description}
-                      />
-                    </Box>
+                    <Paragraph
+                      clamp={1}
+                      color="support"
+                      size="s"
+                      children={description}
+                    />
                   ) : (
                     null
                   )
@@ -111,25 +107,18 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizonta
                 icon
               )}
             </Box>
-            <Box mt={6} maxHeight={description ? 12 : 18} overflow="hidden">
-              <Paragraph
-                lines={3}
-                color="default"
-                size="m"
-                bold
-                align="center"
-                children={title}
-              />
-            </Box>
+            <Paragraph
+              clamp={description ? 2 : 3}
+              color="default"
+              size="m"
+              bold
+              align="center"
+              children={title}
+            />
             {description ? (
-              <Box
-                mt={1}
-                mx="auto"
-                maxHeight={10}
-                overflow="hidden"
-              >
+              <Box mt={1} mx="auto">
                 <Paragraph
-                  lines={1}
+                  clamp={1}
                   color="support"
                   size="s"
                   align="center"
