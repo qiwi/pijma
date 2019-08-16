@@ -5,6 +5,7 @@ import {Breaker, Box, Stub, Typo, TypoProps} from '@qiwi/pijma-core'
 export interface CaptionProps {
   color?: 'default' | 'support' | 'inverse'
   align?: TypoProps['align']
+  clamp?: number
   stub?: boolean
 }
 
@@ -14,7 +15,7 @@ const CaptionColor: { [color in NonNullable<CaptionProps['color']>]: string } = 
   inverse: '#fff',
 }
 
-export const Caption: FunctionComponent<CaptionProps> = ({color = 'support', align, stub, children}) => (
+export const Caption: FunctionComponent<CaptionProps> = ({color = 'support', align, stub, clamp, children}) => (
   stub ? (
     <Box
       ml={align === 'center' || align === 'right' ? 'auto' : undefined}
@@ -40,6 +41,7 @@ export const Caption: FunctionComponent<CaptionProps> = ({color = 'support', ali
       transform="uppercase"
       spacing={1.5}
       align={align}
+      clamp={clamp}
       children={<Breaker children={children}/>}
     />
   )

@@ -1,3 +1,31 @@
+# [@qiwi/pijma-mobile-v1.66.0](https://github.com/qiwi/pijma/compare/v1.65.0...v1.66.0) (2019-08-16)
+
+
+### Features
+
+* multi ellipsis ([9d6c7b0](https://github.com/qiwi/pijma/commit/9d6c7b0))
+
+# [@qiwi/pijma-mobile-v1.65.0](https://github.com/qiwi/pijma/compare/v1.64.0...v1.65.0) (2019-08-12)
+
+
+### Features
+
+* stub radio field ([cc57271](https://github.com/qiwi/pijma/commit/cc57271))
+
+# [@qiwi/pijma-mobile-v1.64.0](https://github.com/qiwi/pijma/compare/v1.63.0...v1.64.0) (2019-08-12)
+
+
+### Features
+
+* stub switch field ([dfe681c](https://github.com/qiwi/pijma/commit/dfe681c))
+
+# [@qiwi/pijma-mobile-v1.63.0](https://github.com/qiwi/pijma/compare/v1.62.0...v1.63.0) (2019-08-12)
+
+
+### Features
+
+* stub checkbox field ([04ceef9](https://github.com/qiwi/pijma/commit/04ceef9))
+
 # [@qiwi/pijma-mobile-v1.62.0](https://github.com/qiwi/pijma/compare/v1.61.0...v1.62.0) (2019-08-09)
 
 
