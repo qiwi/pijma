@@ -48,3 +48,11 @@ line-height: 20px
   <Paragraph size="s" color="support">Paragraph S <Text color="warning">Warning</Text> 300</Paragraph>
 </Spacer>
 ```
+
+Задать максимальное количество видимых строк
+
+```jsx
+<Text size="m" display="block" clamp={4}>
+    В типографических элементах есть возможность задавать максимальное количество видимых строк через свойство clamp. Если текст выходит за заданные рамки, в конце текста будет добавлено многоточие
+</Text>
+```
