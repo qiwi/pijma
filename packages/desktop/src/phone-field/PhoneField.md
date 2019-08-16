@@ -20,27 +20,35 @@
 
 ```jsx
 import {countries} from '@qiwi/pijma-core';
-<Box width={64}>
-  <PhoneField
-    countries={countries}
-    value={state.phoneNumber}
-    onChange={phoneNumber => {
-      setState({phoneNumber})
-    }}
-  />
-</Box>
+<Block>
+  <BlockContent>
+    <Box width={64}>
+      <PhoneField
+        countries={countries}
+        value={state.phoneNumber}
+        onChange={phoneNumber => {
+          setState({phoneNumber})
+        }}
+      />
+    </Box>
+  </BlockContent>
+</Block>
 ```
 
 #### Плейсхолдер
 
 ```jsx
-<Box width={64}>
-  <PhoneField
-    stub
-    title="if you need title stub put any corrent content here"
-    help="if you need help stub put any corrent content here"
-    hint="if you need hint stub put any corrent content here"
-    value=""
-  />
-</Box>
+<Block>
+  <BlockContent>
+    <Box width={64}>
+      <PhoneField
+        stub
+        title="if you need title stub put any corrent content here"
+        help="if you need help stub put any corrent content here"
+        hint="if you need hint stub put any corrent content here"
+        value=""
+      />
+    </Box>
+  </BlockContent>
+</Block>
 ```

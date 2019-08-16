@@ -12,10 +12,14 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
 
   public componentDidUpdate(_props: PhoneFieldControlProps, state: PhoneFieldControlState) {
     if (state.countryCode !== this.state.countryCode) {
-      const countryMask = this.getMaskByCountry(this.state.countryCode)
-      if (this.props.value && this.props.value.length === countryMask.length + 1) {
-        this.inputCursorEnd()
-      }
+      const oldMaskLength = this.getMaskByCountry(state.countryCode).length
+      const newMaskLength = this.getMaskByCountry(this.state.countryCode).length
+      const cursorPosition = (this.props.value && this.props.value.length === newMaskLength + 1) ? (
+        this.props.value.length * 2
+      ) : (
+        (this.inputField && this.inputField.selectionStart || 0) + (newMaskLength - oldMaskLength)
+      )
+      this.setCursorPosition(cursorPosition)
     }
   }
 
@@ -95,11 +99,9 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     this.focusInput()
   }
 
-  private inputCursorEnd: () => void = () => {
-    const {value = ''} = this.props
+  private setCursorPosition: (position: number) => void = (position) => {
     if (this.inputField !== null) {
-      const len = value.length * 2
-      this.inputField.setSelectionRange(len, len)
+      this.inputField.setSelectionRange(position, position)
     }
   }
 
