@@ -37,6 +37,7 @@ export const Typo = styled('div', {
   overflow: 'hidden',
   whiteSpace: props.nowrap ? 'nowrap' : undefined,
   wordWrap: 'break-word',
+  overflowWrap: 'break-word',
   transition: props.transition,
   textDecoration: props.decoration,
   textAlign: props.align,
