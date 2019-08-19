@@ -12,6 +12,7 @@ export interface LogoBlockLinkProps {
   target?: string
   download?: string | boolean
   rel?: string
+  horizontal?: boolean
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
   onFocus?: () => void
   onBlur?: () => void
@@ -19,7 +20,7 @@ export interface LogoBlockLinkProps {
 
 const Img = Box.withComponent('img')
 
-export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description, ...props}) => (
+export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description, horizontal, ...props}) => (
   <BlockLink
     title={title}
     accent

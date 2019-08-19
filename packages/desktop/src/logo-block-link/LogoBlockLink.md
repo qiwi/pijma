@@ -1,3 +1,5 @@
+#### С описанием
+
 ```jsx {"separated": true}
 <Grid columns={5} layout={1}>
   <LogoBlockLink
@@ -37,6 +39,8 @@
   />
 </Grid>
 ```
+
+#### Без описания
 
 ```jsx {"separated": true}
 <Grid columns={4} layout={[1]}>
