@@ -34,36 +34,42 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
     onBlur={props.onBlur}
   >
     {() => (
-      <Box p={4} height={description ? 60 : 55}>
-        <Box width={16} height={16} mt={7} mx="auto">
-          {typeof icon === 'string' ? (
-            <Img src={icon} alt={title} maxWidth={16} maxHeight={16}/>
-          ) : (
-            icon
-          )}
-        </Box>
-        <Box mt={6} mx="auto">
-          <Paragraph
-            clamp={description ? 2 : 3}
-            color="default"
-            size="m"
-            bold
-            align="center"
-            children={title}
-          />
-        </Box>
-        {description ? (
-          <Box mt={1} mx="auto">
-            <Paragraph
-              clamp={1}
-              color="support"
-              size="s"
-              align="center"
-              children={description}
-            />
-          </Box>
-        ) : (
+      <Box>
+        {horizontal ? (
           null
+        ) : (
+          <Box p={4} height={description ? 60 : 55}>
+            <Box width={16} height={16} mt={7} mx="auto">
+              {typeof icon === 'string' ? (
+                <Img src={icon} alt={title} maxWidth={16} maxHeight={16}/>
+              ) : (
+                icon
+              )}
+            </Box>
+            <Box mt={6} mx="auto">
+              <Paragraph
+                clamp={description ? 2 : 3}
+                color="default"
+                size="m"
+                bold
+                align="center"
+                children={title}
+              />
+            </Box>
+            {description ? (
+              <Box mt={1} mx="auto">
+                <Paragraph
+                  clamp={1}
+                  color="support"
+                  size="s"
+                  align="center"
+                  children={description}
+                />
+              </Box>
+            ) : (
+              null
+            )}
+          </Box>
         )}
       </Box>
     )}
