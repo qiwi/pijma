@@ -9,6 +9,7 @@ export interface ParagraphProps {
   color?: 'default' | 'support' | 'inverse'
   transform?: TypoProps['transform']
   align?: TypoProps['align']
+  clamp?: number
   stub?: boolean
 }
 
@@ -74,6 +75,7 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
   transform,
   align,
   stub,
+  clamp,
   children,
 }) => (
   stub ? (
@@ -99,6 +101,7 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
       color={ParagraphColor[color]}
       transform={transform}
       align={align}
+      clamp={clamp}
       children={<Breaker children={children}/>}
     />
   )

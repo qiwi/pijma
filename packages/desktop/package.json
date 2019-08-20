@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-desktop",
-  "version": "1.62.0",
+  "version": "1.67.0",
   "main": "lib/es5/index.js",
   "types": "lib/es5/index.d.ts",
   "license": "MIT",
@@ -19,8 +19,8 @@
     "lib"
   ],
   "dependencies": {
-    "@emotion/core": "^10.0.14",
-    "@emotion/styled": "^10.0.14",
+    "@emotion/core": "^10.0.16",
+    "@emotion/styled": "^10.0.15",
     "@qiwi/pijma-core": "^1.x.x",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
@@ -38,16 +38,16 @@
   },
   "devDependencies": {
     "@types/webpack-env": "1.14.0",
-    "file-loader": "4.1.0",
-    "gh-pages": "2.0.1",
-    "husky": "3.0.0",
+    "file-loader": "4.2.0",
+    "gh-pages": "2.1.1",
+    "husky": "3.0.3",
     "react-docgen-typescript": "1.12.5",
-    "react-styleguidist": "9.1.11",
+    "react-styleguidist": "9.1.14",
     "ts-loader": "6.0.4",
     "tslint": "5.18.0",
-    "tslint-config-qiwi": "1.1.0",
+    "tslint-config-qiwi": "1.1.1",
     "tslint-loader": "3.5.4",
     "typescript": "3.5.3",
-    "webpack": "4.36.1"
+    "webpack": "4.39.2"
   }
 }

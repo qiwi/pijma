@@ -1,12 +1,12 @@
 import React, {FC, ReactNode} from 'react'
 
-import {Flex, FlexItem, Lnk, Card, LinkControl, LinkControlProps, RenderChild, Icon} from '@qiwi/pijma-core'
+import {Flex, FlexItem, Lnk, Card, LinkControl, LinkControlProps, Icon} from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
 
 export interface MenuItemProps {
   text: string
-  notes: string
+  notes?: string
   icon?: ReactNode
   submenu?: boolean
   tabIndex?: number
@@ -18,11 +18,6 @@ export interface MenuItemProps {
   onClick?: LinkControlProps['onClick']
   onFocus?: LinkControlProps['onFocus']
   onBlur?: LinkControlProps['onBlur']
-  children: RenderChild<{
-    active: boolean
-    focus: boolean
-    hover: boolean
-  }>
 }
 
 const CardLink = Card.withComponent(Lnk)

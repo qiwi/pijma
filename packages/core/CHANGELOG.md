@@ -1,3 +1,24 @@
+# [@qiwi/pijma-core-v1.67.0](https://github.com/qiwi/pijma/compare/v1.66.1...v1.67.0) (2019-08-16)
+
+
+### Features
+
+* gh-pages redesign ([4810142](https://github.com/qiwi/pijma/commit/4810142))
+
+# [@qiwi/pijma-core-v1.66.0](https://github.com/qiwi/pijma/compare/v1.65.0...v1.66.0) (2019-08-16)
+
+
+### Features
+
+* multi ellipsis ([9d6c7b0](https://github.com/qiwi/pijma/commit/9d6c7b0))
+
+# [@qiwi/pijma-core-v1.63.0](https://github.com/qiwi/pijma/compare/v1.62.0...v1.63.0) (2019-08-12)
+
+
+### Features
+
+* stub checkbox field ([04ceef9](https://github.com/qiwi/pijma/commit/04ceef9))
+
 # [@qiwi/pijma-core-v1.61.0](https://github.com/qiwi/pijma/compare/v1.60.2...v1.61.0) (2019-08-06)
 
 

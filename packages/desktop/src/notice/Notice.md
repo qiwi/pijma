@@ -1,25 +1,22 @@
 ```jsx
-<Card bg="#eee" p={7}>
-  <Block>
-    <Card p={7}>
-      <Notice 
-        icon={<Icon name="attention" color="#ff0000"/>}
-        title="Заголовок какого-нибудь алерта"
-        children={"Заголовок какого-нибудь алерта \n Заголовок какого-нибудь алерта"}
-      />
-    </Card>
-  </Block>
-</Card>
+<Block>
+  <BlockContent>
+    <Notice 
+      icon={<Icon name="attention" color="#ff0000"/>}
+      title="Заголовок какого-нибудь алерта"
+      children={"Заголовок какого-нибудь алерта \n Заголовок какого-нибудь алерта"}
+    />
+  </BlockContent>
+</Block>
 ```
+
 ```jsx
-<Card bg="#eee" p={7}>
-  <Block>
-    <Card p={7}>
-      <Notice 
-        icon={<Icon name="attention"/>}
-        children={"Заголовок какого-нибудь алерта \n Заголовок какого-нибудь алерта"}
-      />
-    </Card>
-  </Block>
-</Card>
+<Block>
+  <BlockContent>
+    <Notice 
+      icon={<Icon name="attention"/>}
+      children={"Заголовок какого-нибудь алерта \n Заголовок какого-нибудь алерта"}
+    />
+  </BlockContent>
+</Block>
 ```

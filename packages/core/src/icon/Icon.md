@@ -1,73 +1,93 @@
 ```jsx noeditor
-<Grid columns={8} layout={1} gutter={24}>
-  {Object.keys(IconPaths).map((name, i) => (
-    <Flex key={i} direction="column" align="center" mb={6}>
-      <FlexItem mb={4} shrink={0}>
-        <Icon name={name}/>
-      </FlexItem>
-      <FlexItem>
-        <Paragraph size="s" align="center">
-          {name}
-        </Paragraph>
-      </FlexItem>
+<Block>
+  <BlockContent>
+    <Flex wrap="wrap">
+      {Object.keys(IconPaths).map((name, i) => (
+        <Flex width={25} key={i} direction="column" align="center" my={3} mx={5}>
+          <FlexItem mb={4} shrink={0}>
+            <Icon name={name}/>
+          </FlexItem>
+          <FlexItem>
+            <Paragraph size="s" align="center">
+              {name}
+            </Paragraph>
+          </FlexItem>
+        </Flex>
+      ))}
     </Flex>
-  ))}
-</Grid>
+  </BlockContent>
+</Block>
 ```
 
 ### Icon
 
 ```jsx
-<Icon name="qiwi"/>
+<Block>
+  <BlockContent>
+    <Icon name="qiwi"/>
+  </BlockContent>
+</Block>
 ```
 
 ### Special
 
 ```jsx
-<Grid columns={12} layout={[1]}>
-  <Box width={6} height={6} cursor="pointer">
-    <QuestionIcon/>
-  </Box>
-  <Box width={6} height={6} cursor="pointer" onClick={() => setState({filterIconActive: !state.filterIconActive})}>
-    <FilterIcon active={state.filterIconActive}/>
-  </Box>
-  <Box width={6} height={6} cursor="pointer" onClick={() => setState({crossBurgerActive: !state.crossBurgerActive})}>
-    <CrossBurger active={state.crossBurgerActive}/>
-  </Box>
-</Grid>
+<Block>
+  <BlockContent>
+    <Flex>
+      <FlexItem width={6} height={6} mr={6} cursor="pointer">
+        <QuestionIcon/>
+      </FlexItem>
+      <FlexItem width={6} height={6} mr={6} cursor="pointer" onClick={() => setState({filterIconActive: !state.filterIconActive})}>
+        <FilterIcon active={state.filterIconActive}/>
+      </FlexItem>
+      <FlexItem width={6} height={6} cursor="pointer" onClick={() => setState({crossBurgerActive: !state.crossBurgerActive})}>
+        <CrossBurger active={state.crossBurgerActive}/>
+      </FlexItem>
+    </Flex>
+  </BlockContent>
+</Block>
 ```
 
 ### Payment systems
 
 ```jsx
-<Grid columns={8} layout={[1]}>
-  <Box width={12} height={6}>
-    <MastercardIcon/>
-  </Box>
-  <Box width={12} height={6}>
-    <MirIcon/>
-  </Box>
-  <Box width={12} height={6}>
-    <VisaIcon/>
-  </Box>
-</Grid>
+<Block>
+  <BlockContent>
+    <Flex>
+      <FlexItem width={12} height={6} mr={6}>
+        <MastercardIcon/>
+      </FlexItem>
+      <FlexItem width={12} height={6} mr={6}>
+        <MirIcon/>
+      </FlexItem>
+      <FlexItem width={12} height={6}>
+        <VisaIcon/>
+      </FlexItem>
+    </Flex>
+  </BlockContent>
+</Block>
 ```
 
 ### Security badges
 
 ```jsx
-<Grid columns={8} layout={[1]}>
-  <Box width={16} height={6}>
-    <PciDssIcon/>
-  </Box>
-  <Box width={16} height={6}>
-    <MirAcceptIcon/>
-  </Box>
-  <Box width={16} height={6}>
-    <VisaVerifiedIcon/>
-  </Box>
-  <Box width={16} height={6}>
-    <McscIcon/>
-  </Box>
-</Grid>
+<Block>
+  <BlockContent>
+    <Flex>
+      <FlexItem width={16} height={6} mr={2}>
+        <PciDssIcon/>
+      </FlexItem>
+      <FlexItem width={16} height={6} mr={2}>
+        <MirAcceptIcon/>
+      </FlexItem>
+      <FlexItem width={16} height={6} mr={2}>
+        <VisaVerifiedIcon/>
+      </FlexItem>
+      <FlexItem width={16} height={6}>
+        <McscIcon/>
+      </FlexItem>
+    </Flex>
+  </BlockContent>
+</Block>
 ```
