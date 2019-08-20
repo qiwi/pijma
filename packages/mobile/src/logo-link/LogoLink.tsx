@@ -69,7 +69,7 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizonta
                   icon
                 )}
               </FlexItem>
-              <FlexItem overflow="hidden" align="center">
+              <FlexItem align="center">
                 <Spacer size="xxs">
                   <Paragraph
                     clamp={description ? 1 : 2}
