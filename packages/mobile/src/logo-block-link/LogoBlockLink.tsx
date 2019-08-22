@@ -21,7 +21,7 @@ export interface LogoBlockLinkProps {
 
 const Img = Box.withComponent('img')
 
-export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description, horizontal, actions, ...props}) => (
+export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description, actions, ...props}) => (
   <BlockLink
     title={title}
     accent
@@ -35,7 +35,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
     onBlur={props.onBlur}
   >
     {() => (
-      horizontal ? (
+      props.horizontal ? (
         <Box p={4}>
           <Flex align="baseline">
             <FlexItem
@@ -77,7 +77,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
               </Spacer>
             </FlexItem>
             {actions ? (
-              (actions as ReactNode[]).map((action: ReactNode, index) => (
+              actions.map((action, index) => (
                 <FlexItem
                   pl={index === 0 ? 2 : undefined}
                   align="center"
@@ -128,7 +128,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
           )}
           {actions ? (
             <Flex mt={3} mx="auto" align="baseline" justify="center">
-              {(actions as ReactNode[]).map((action: ReactNode, index) => (
+              {actions.map((action, index) => (
                 <FlexItem
                   ml={index !== 0 ? 3 : undefined}
                   key={index}
