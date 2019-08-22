@@ -1,4 +1,4 @@
-#### С описанием
+### С описанием
 
 ```jsx {"separated": true}
 <Grid columns={5} layout={1}>
@@ -40,7 +40,75 @@
 </Grid>
 ```
 
-#### Без описания
+#### С событиями
+
+```jsx {"separated": true}
+<Grid columns={4} layout={1}>
+  <LogoBlockLink
+    href="//qiwi.com"
+    target="_blank"
+    title="Перейти на главную"
+    description="Примечание"
+    icon={<Icon name="passport"/>}
+    actions={[
+      <Button
+        kind="simple"
+        size="normal"
+        icon={<StarIcon/>}
+      />
+    ]}
+  />
+  <LogoBlockLink
+    href="//qiwi.com"
+    target="_blank"
+    title="Перейти на главную"
+    description="Примечание"
+    icon={<Icon name="passport"/>}
+    actions={[
+      <Button
+        kind="simple"
+        size="normal"
+        icon={<StarIcon/>}
+      />,
+      <Button
+        kind="simple"
+        size="normal"
+        icon={<StarIcon/>}
+      />
+    ]}
+  />
+  <LogoBlockLink
+    href="//qiwi.com"
+    target="_blank"
+    title="Перейти на главную"
+    description="Примечание"
+    icon={<Icon name="passport"/>}
+    actions={[
+      <Button
+        kind="simple"
+        size="normal"
+        icon={<StarIcon/>}
+      />
+    ]}
+  />
+  <LogoBlockLink
+    href="//qiwi.com"
+    target="_blank"
+    title="Перейти на главную"
+    description="Примечание"
+    icon={<Icon name="passport"/>}
+    actions={[
+      <Button
+        kind="simple"
+        size="normal"
+        icon={<StarIcon/>}
+      />
+    ]}
+  />
+</Grid>
+```
+
+### Без описания
 
 ```jsx {"separated": true}
 <Grid columns={4} layout={[1]}>
@@ -71,9 +139,73 @@
 </Grid>
 ```
 
+#### С событиями
+
+```jsx {"separated": true}
+<Grid columns={4} layout={[1]}>
+  <LogoBlockLink
+    href="//qiwi.com"
+    target="_blank"
+    title="Перейти на главную"
+    icon={<Icon name="passport"/>}
+    actions={[
+      <Button
+        kind="simple"
+        size="normal"
+        icon={<StarIcon/>}
+      />
+    ]}
+  />
+  <LogoBlockLink
+    href="//qiwi.com"
+    target="_blank"
+    title="Перейти на главную"
+    icon={<Icon name="passport"/>}
+    actions={[
+      <Button
+        kind="simple"
+        size="normal"
+        icon={<StarIcon/>}
+      />,
+      <Button
+        kind="simple"
+        size="normal"
+        icon={<StarIcon/>}
+      />
+    ]}
+  />
+  <LogoBlockLink
+    href="//qiwi.com"
+    target="_blank"
+    title="Перейти на главную"
+    icon={<Icon name="passport"/>}
+    actions={[
+      <Button
+        kind="simple"
+        size="normal"
+        icon={<StarIcon/>}
+      />
+    ]}
+  />
+  <LogoBlockLink
+    href="//qiwi.com"
+    target="_blank"
+    title="Перейти на главную"
+    icon={<Icon name="passport"/>}
+    actions={[
+      <Button
+        kind="simple"
+        size="normal"
+        icon={<StarIcon/>}
+      />
+    ]}
+  />
+</Grid>
+```
+
 ## Horizontal
 
-#### С описанием
+### С описанием
 
 ```jsx {"separated": true}
 <Grid columns={3} layout={1}>
@@ -84,20 +216,49 @@
     title="Перейти на главную"
     description="Примечание"
     icon={<Icon name="passport"/>}
-    actions={(
-      <Actions size="minor">
-        <Button
-          kind="simple"
-          size="minor"
-          icon={<StarIcon/>}
-        />
-        <Button
-          kind="simple"
-          size="minor"
-          icon={<StarIcon/>}
-        />
-      </Actions>
-    )}
+  />
+  <LogoBlockLink
+    horizontal
+    href="//qiwi.com"
+    target="_blank"
+    title="Перейти на главную"
+    description="Примечание"
+    icon={<Icon name="passport"/>}
+  />
+  <LogoBlockLink
+    horizontal
+    href="//qiwi.com"
+    target="_blank"
+    title="Перейти на главную"
+    description="Примечание"
+    icon={<Icon name="passport"/>}
+  />
+</Grid>
+```
+
+#### С событиями
+
+```jsx {"separated": true}
+<Grid columns={3} layout={1}>
+  <LogoBlockLink
+    horizontal
+    href="//qiwi.com"
+    target="_blank"
+    title="Перейти на главную"
+    description="Примечание"
+    icon={<Icon name="passport"/>}
+    actions={[
+      <Button
+        kind="simple"
+        size="minor"
+        icon={<StarIcon/>}
+      />,
+      <Button
+        kind="simple"
+        size="minor"
+        icon={<StarIcon/>}
+      />
+    ]}
   />
   <LogoBlockLink
     horizontal
@@ -137,7 +298,7 @@
 </Grid>
 ```
 
-#### Без описания
+### Без описания
 
 ```jsx {"separated": true}
 <Grid columns={3} layout={[1]}>
@@ -147,20 +308,46 @@
     target="_blank"
     title="Перейти на главную"
     icon={<Icon name="passport"/>}
-    actions={(
-      <Actions size="minor">
-        <Button
-          kind="simple"
-          size="minor"
-          icon={<StarIcon/>}
-        />
-        <Button
-          kind="simple"
-          size="minor"
-          icon={<StarIcon/>}
-        />
-      </Actions>
-    )}
+  />
+  <LogoBlockLink
+    horizontal
+    href="//qiwi.com"
+    target="_blank"
+    title="Перейти на главную"
+    icon={<Icon name="passport"/>}
+  />
+  <LogoBlockLink
+    horizontal
+    href="//qiwi.com"
+    target="_blank"
+    title="Перейти на главную"
+    icon={<Icon name="passport"/>}
+  />
+</Grid>
+```
+
+#### С событиями
+
+```jsx {"separated": true}
+<Grid columns={3} layout={[1]}>
+  <LogoBlockLink
+    horizontal
+    href="//qiwi.com"
+    target="_blank"
+    title="Перейти на главную"
+    icon={<Icon name="passport"/>}
+    actions={[
+      <Button
+        kind="simple"
+        size="minor"
+        icon={<StarIcon/>}
+      />,
+      <Button
+        kind="simple"
+        size="minor"
+        icon={<StarIcon/>}
+      />
+    ]}
   />
   <LogoBlockLink
     horizontal

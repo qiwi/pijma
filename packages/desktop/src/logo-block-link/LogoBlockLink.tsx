@@ -1,5 +1,5 @@
-import React, {FC, ReactNode} from 'react'
-import {Box, Flex, FlexItem, Spacer} from '@qiwi/pijma-core'
+import React, {FC, ReactElement, ReactNode} from 'react'
+import {Box, Flex, FlexItem, Spacer, Pos, Card} from '@qiwi/pijma-core'
 import {BlockLink} from '../link'
 import {Paragraph} from '../typography'
 
@@ -7,7 +7,7 @@ export interface LogoBlockLinkProps {
   icon: ReactNode
   title: string
   description?: string
-  actions?: ReactNode
+  actions?: ReactElement[]
   tabIndex?: number
   href?: string
   target?: string
@@ -35,66 +35,80 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
     onBlur={props.onBlur}
   >
     {({active, focus, hover}) => (
-      <Box>
-        {horizontal ? (
-          <Box p={4}>
-            <Flex align="baseline">
-              <FlexItem
-                shrink={0}
-                mr={4}
-                width={12}
-                height={12}
-              >
-                {typeof icon === 'string' ? (
-                  <Img
-                    src={icon}
-                    alt={title}
-                    maxWidth={12}
-                    maxHeight={12}
-                  />
-                ) : (
-                  icon
-                )}
-              </FlexItem>
-              <FlexItem maxHeight={12} overflow="hidden" align="center">
-                <Spacer size="xxs">
-                  <Paragraph
-                    clamp={description ? 1 : 2}
-                    color="default"
-                    size="m"
-                    bold
-                    children={title}
-                  />
-                  {description ? (
-                    <Paragraph
-                      clamp={1}
-                      color="support"
-                      size="s"
-                      children={description}
-                    />
-                  ) : (
-                    null
-                  )}
-                </Spacer>
-              </FlexItem>
-              {actions && (active || focus || hover) ? (
-                Array.isArray(actions) ? (
-                  <Box css={{position: 'absolute', right: 0}}>
-                    <Flex justify="center" align="baseline">
-                    {(actions as ReactNode[]).map(function(action: ReactNode, index) {
-                      return <FlexItem align="center" mr={index === actions.length - 1 ? 4 : undefined} ml={index !== 0 ? 3 : 'auto'} key={index} children={action}/>
-                    })}
-                    </Flex>
-                  </Box>
-                ) : (
-                  <FlexItem ml="auto" align="center" children={actions}/>
-                )
+      horizontal ? (
+        <Box p={4}>
+          <Flex align="baseline">
+            <FlexItem
+              shrink={0}
+              mr={4}
+              width={12}
+              height={12}
+            >
+              {typeof icon === 'string' ? (
+                <Img
+                  src={icon}
+                  alt={title}
+                  maxWidth={12}
+                  maxHeight={12}
+                />
               ) : (
-                null
+                icon
               )}
-            </Flex>
-          </Box>
-        ) : (
+            </FlexItem>
+            <FlexItem align="center">
+              <Spacer size="xxs">
+                <Paragraph
+                  clamp={description ? 1 : 2}
+                  color="default"
+                  size="m"
+                  bold
+                  children={title}
+                />
+                {description ? (
+                  <Paragraph
+                    clamp={1}
+                    color="support"
+                    size="s"
+                    children={description}
+                  />
+                ) : (
+                  null
+                )}
+              </Spacer>
+            </FlexItem>
+            {actions ? (
+              <Pos
+                opacity={active || focus || hover ? 1 : 0}
+                transition="opacity 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+                type="absolute"
+                top={0}
+                bottom={0}
+                right={0}
+              >
+                <Card
+                  display="flex"
+                  height="100%"
+                  bg="linear-gradient(to right, rgba(255, 255, 255, 0), #fff 48px)"
+                >
+                  <Flex pl={12} align="center">
+                    {(actions as ReactNode[]).map((action: ReactNode, index) => (
+                      <FlexItem
+                        mr={index === actions.length - 1 ? 4 : undefined}
+                        ml={index !== 0 ? 3 : 'auto'}
+                        key={index}
+                        children={action}
+                      />
+                    ))}
+                  </Flex>
+                </Card>
+              </Pos>
+            ) : (
+              null
+            )}
+          </Flex>
+        </Box>
+      ) : (
+        <Pos type="relative">
           <Box p={4} height={description ? 60 : 55}>
             <Box width={16} height={16} mt={7} mx="auto">
               {typeof icon === 'string' ? (
@@ -116,7 +130,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
             {description ? (
               <Box mt={1} mx="auto">
                 <Paragraph
-                  clamp={1}
+                  clamp={2}
                   color="support"
                   size="s"
                   align="center"
@@ -126,14 +140,34 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
             ) : (
               null
             )}
-            {actions && (active || focus || hover) ? (
-              <Box children={actions}/>
+            {actions ? (
+              <Pos
+                height={description ? 27 : 22}
+                left={0}
+                right={0}
+                bottom={0}
+                opacity={active || focus || hover ? 1 : 0}
+                transition="opacity 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+                type="absolute"
+              >
+                <Card height="100%" bg="#fff">
+                  <Flex pt={description ? 2 : undefined} justify="center" align="center">
+                    {(actions as ReactNode[]).map((action: ReactNode, index) => (
+                      <FlexItem
+                        ml={index !== 0 ? 3 : undefined}
+                        key={index}
+                        children={action}
+                      />
+                    ))}
+                  </Flex>
+                </Card>
+              </Pos>
             ) : (
               null
             )}
           </Box>
-        )}
-      </Box>
+        </Pos>
+      )
     )}
   </BlockLink>
 )
