@@ -1,6 +1,7 @@
 import React, {ReactNode, FC} from 'react'
 
 import {Box, BoxProps, Flex, Typo, Pos, Card, FlexItem} from '../primitive'
+import {IconWrapper} from '../icon'
 
 export interface TabProps {
   vertical?: boolean
@@ -28,7 +29,6 @@ export const Tab: FC<TabProps & BoxProps> = ({
   onMouseEnter,
   onMouseLeave,
 }) => {
-
   return (
     <FlexItem
       grow={0}
@@ -55,17 +55,21 @@ export const Tab: FC<TabProps & BoxProps> = ({
             <Flex
               children={
                 <Box
-                  children={icon}
+                  children={
+                    <IconWrapper
+                      color={
+                        selected ? '#ff8c00' : focused ? '#ff8c00' : '#666'
+                      }
+                      children={icon}
+                    />
+                  }
                   height={vertical ? 11 : 6}
                   width={vertical ? 11 : 6}
                 />
               }
               pr={vertical ? 0 : 1}
-              pb={vertical ? small ? 1.5 : 3 : 0}
+              pb={vertical ? (small ? 1.5 : 3) : 0}
               justify={vertical ? 'center' : 'flex-start'}
-              css={{
-                fill: selected ? '#ff8c00' : focused ? '#ff8c00' : '#666',
-              }}
             />
           ) : null}
           <Typo
