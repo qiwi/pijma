@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {TabsControl, BlockContent, Tab, TabList, Block} from '@qiwi/pijma-core'
+import {TabsControl, BlockContent, Tab, TabList, Block, Box} from '@qiwi/pijma-core'
 
 export interface BlockTabsProps {
   indent?: 's' | 'm' | 'l'
@@ -32,7 +32,13 @@ export const BlockTabs: FC<BlockTabsProps> = ({children, ...props}) => {
                       <Tab key={index} {...tabProps} />
                     ))}
                   </TabList>
-                  {rendreProps.content}
+                  {rendreProps.tabs.map(({content, selected}, index) => (
+                    <Box
+                      key={index}
+                      display={selected ? 'block' : 'none'}
+                      children={content}
+                    />
+                  ))}
                 </>
               )
             }}

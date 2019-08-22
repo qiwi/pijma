@@ -18,9 +18,8 @@ export interface TabsControlProps {
   }[]
   onSelect?: (selected: number) => void
   children: RenderChild<{
-    tabs: TabProps[]
+    tabs: (TabProps & {content: React.ReactNode})[]
     tabList: TabListProps
-    content: React.ReactNode
   }>
 }
 
@@ -98,10 +97,6 @@ export class TabsControl extends React.Component<
   public render() {
     const {children, indent, border, vertical, center, items} = this.props
 
-    const content = items[this.state.selected].content
-      ? items[this.state.selected].content
-      : null
-
     return children({
       tabList: {
         onKeyDown: this.onKeyDown,
@@ -118,12 +113,13 @@ export class TabsControl extends React.Component<
           },
           index: number,
         ) => {
-          const {icon, title} = item
+          const {icon, title, content} = item
           const onSelect = () => this.onSelect(index)
           const onMouseEnter = () => this.onMouseEnter(index)
 
           return {
             icon,
+            content,
             children: title,
             vertical,
             selected: this.state.selected === index,
@@ -134,7 +130,6 @@ export class TabsControl extends React.Component<
           }
         },
       ),
-      content,
     })
   }
 

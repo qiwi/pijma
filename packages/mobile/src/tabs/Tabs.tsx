@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {TabsControl, Tab, TabList} from '@qiwi/pijma-core'
+import {TabsControl, Tab, TabList, Box} from '@qiwi/pijma-core'
 
 export interface TabsProps {
   selected?: number
@@ -19,7 +19,7 @@ export const Tabs: FC<TabsProps> = ({children, ...props}) => {
       border={false}
       items={children}
       {...props}
-      children={(rendreProps) => {
+      children={rendreProps => {
         return (
           <>
             <TabList {...rendreProps.tabList}>
@@ -27,7 +27,13 @@ export const Tabs: FC<TabsProps> = ({children, ...props}) => {
                 <Tab key={index} small {...tabProps} />
               ))}
             </TabList>
-            {rendreProps.content}
+            {rendreProps.tabs.map(({content, selected}, index) => (
+              <Box
+                key={index}
+                display={selected ? 'block' : 'none'}
+                children={content}
+              />
+            ))}
           </>
         )
       }}

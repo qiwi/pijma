@@ -6,6 +6,7 @@ import {
   Tab,
   TabList,
   Block,
+  Box,
 } from '@qiwi/pijma-core'
 
 export interface BlockTabsProps {
@@ -38,7 +39,13 @@ export const BlockTabs: FC<BlockTabsProps> = ({children,...props}) => {
                       <Tab key={index} small {...tabProps} />
                     ))}
                   </TabList>
-                  {rendreProps.content}
+                  {rendreProps.tabs.map(({content, selected}, index) => (
+                    <Box
+                      key={index}
+                      display={selected ? 'block' : 'none'}
+                      children={content}
+                    />
+                  ))}
                 </>
               )
             }}
