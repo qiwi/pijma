@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.69.0](https://github.com/qiwi/pijma/compare/v1.68.0...v1.69.0) (2019-08-22)
+
+
+### Features
+
+* logo block link improvements ([6006c08](https://github.com/qiwi/pijma/commit/6006c08))
+
 # [@qiwi/pijma-mobile-v1.68.0](https://github.com/qiwi/pijma/compare/v1.67.0...v1.68.0) (2019-08-20)
 
 
