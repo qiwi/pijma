@@ -1,6 +1,6 @@
 ### С описанием
 
-```jsx {"separated": true}
+```jsx
 <Grid columns={2} layout={1}>
   <LogoBlockLink
     href="//qiwi.com"
@@ -35,7 +35,7 @@
 
 #### С действиями
 
-```jsx {"separated": true}
+```jsx
 <Grid columns={2} layout={1}>
   <LogoBlockLink
     href="//qiwi.com"
@@ -70,7 +70,7 @@
 
 ### Без описания
 
-```jsx {"separated": true}
+```jsx
 <Grid columns={2} layout={[1]}>
   <LogoBlockLink
     href="//qiwi.com"
@@ -101,7 +101,7 @@
 
 #### С действиями
 
-```jsx {"separated": true}
+```jsx
 <Grid columns={2} layout={[1]}>
   <LogoBlockLink
     href="//qiwi.com"
@@ -136,7 +136,7 @@
 
 ### С описанием
 
-```jsx {"separated": true}
+```jsx
 <Grid columns={1} layout={1}>
   <LogoBlockLink
     horizontal
@@ -159,7 +159,7 @@
 
 #### С действиями
 
-```jsx {"separated": true}
+```jsx
 <Grid columns={1} layout={1}>
   <LogoBlockLink
     horizontal
@@ -196,7 +196,7 @@
 
 ### Без описания
 
-```jsx {"separated": true}
+```jsx
 <Grid columns={1} layout={[1]}>
   <LogoBlockLink
     horizontal
@@ -217,7 +217,7 @@
 
 #### С действиями
 
-```jsx {"separated": true}
+```jsx
 <Grid columns={1} layout={[1]}>
   <LogoBlockLink
     horizontal
