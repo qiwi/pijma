@@ -1,6 +1,7 @@
 import React, {FC} from 'react'
 
-import {TabsControl, BlockContent, Tab, TabList, Block, Box} from '@qiwi/pijma-core'
+import {TabsControl, Tab, TabList, Block, Box} from '@qiwi/pijma-core'
+import {BlockContent} from '../block-content'
 
 export interface BlockTabsProps {
   indent?: 's' | 'm' | 'l'
