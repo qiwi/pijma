@@ -2,7 +2,7 @@
 <Block>
   <BlockContent>
     <Notice 
-      icon={<IconWrapper color="#ff0000"><Icon name="attention"/></IconWrapper>}
+      icon={<Icon name="attention" color="#ff0000"/>}
       title="Заголовок какого-нибудь алерта"
       children={"Заголовок какого-нибудь алерта \n Заголовок какого-нибудь алерта"}
     />
