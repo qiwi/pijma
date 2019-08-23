@@ -1,7 +1,7 @@
 import React, {FunctionComponent, ReactNode} from 'react'
 
-import {AccordionControl, Box, Card, Flex, FlexItem} from '@qiwi/pijma-core'
-import {Icon} from '@qiwi/pijma-media'
+import {AccordionControl, Box, Card, Flex, FlexItem, Icon} from '@qiwi/pijma-core'
+
 import {Paragraph} from '../typography'
 
 export interface BlockAccordionProps<I> {
@@ -16,9 +16,7 @@ export interface BlockAccordionItemModel {
   content: ReactNode
 }
 
-export const BlockAccordion: FunctionComponent<
-  BlockAccordionProps<BlockAccordionItemModel>
-> = ({items, tabIndex = 0, opened, onChange}) => (
+export const BlockAccordion: FunctionComponent<BlockAccordionProps<BlockAccordionItemModel>> = ({items, tabIndex = 0, opened, onChange}) => (
   <AccordionControl<BlockAccordionItemModel>
     items={items}
     opened={opened}
@@ -62,7 +60,7 @@ export const BlockAccordion: FunctionComponent<
                 transform={`rotate(${item.opened ? 180 : 0}deg)`}
                 transition="transform 0.3s ease-in-out"
               >
-                <Icon name="angle-small-down" />
+                <Icon name="angle-small-down"/>
               </FlexItem>
             </Flex>
             <Box px={4} pb={4} display={item.opened ? 'block' : 'none'}>

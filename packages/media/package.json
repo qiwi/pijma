@@ -1,31 +1,5 @@
 {
   "name": "@qiwi/pijma-media",
-  "version": "1.67.0",
-  "license": "MIT",
-  "main": "lib/es5/index.js",
-  "types": "lib/es5/index.d.ts",
-  "files": [
-    "README.md",
-    "CHANGELOG.md",
-    "lib"
-  ],
-  "scripts": {
-    "clean": "rm -rf lib",
-    "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json",
-    "lint": "tslint -p tsconfig.build.json src/**/*.ts{,x}",
-    "lint:fix": "tslint -p tsconfig.build.json --fix src/**/*.ts{,x}"
-  },
-  "dependencies": {
-    "@types/react": "^16.8.23",
-    "@types/react-dom": "^16.8.4",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "tslib": "^1.10.0"
-  },
-  "devDependencies": {
-    "husky": "3.0.3",
-    "tslint": "5.18.0",
-    "tslint-config-qiwi": "1.1.1",
-    "typescript": "3.5.3"
-  }
+  "version": "1.60.1",
+  "license": "MIT"
 }
