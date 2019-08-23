@@ -1,5 +1,8 @@
 import {InView} from 'react-intersection-observer'
+import {Box} from './primitive'
+
+const StyledInView = Box.withComponent(InView)
 
 export {
-  InView,
+  StyledInView as InView,
 }

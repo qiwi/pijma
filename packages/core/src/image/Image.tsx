@@ -1,11 +1,10 @@
 import React, {FC, ReactNode, Children, isValidElement} from 'react'
-import {Img, Box, Card, Pos, Value} from '../primitive'
+import {Img, Card, Pos, Value} from '../primitive'
 import {InView} from '../inView'
 import {Stub} from '../stub'
 import {ImageControl} from './ImageControl'
 
 interface ImageProps {
-  display?: 'block' | 'inline-block'
   width: Value
   height: Value
   src: string
@@ -19,7 +18,6 @@ interface ImageProps {
 }
 
 export const Image: FC<ImageProps> = ({
-  display,
   width,
   height,
   cursor,
@@ -34,7 +32,6 @@ export const Image: FC<ImageProps> = ({
   if (!stub) {
     return (
       <Img
-        display={display}
         width={width}
         height={height}
         cursor={cursor}
@@ -56,12 +53,16 @@ export const Image: FC<ImageProps> = ({
       onEnter={onEnter}
       onLoad={onLoad}
       children={(renderProps) => (
-        <InView onChange={(inView) => inView ? renderProps.onEnter() : renderProps.onLeave()}>
-          <Box display={display} cursor={cursor} width={width} height={height}>
+        <InView
+          width={width}
+          height={height}
+          onChange={(inView) => inView ? renderProps.onEnter() : renderProps.onLeave()}
+        >
+          <Pos type="relative" cursor={cursor} width={width} height={height}>
             {!renderProps.loaded ? (
               <Pos type="absolute" width={width} height={height}>
                 {typeof stub === 'boolean' && stub ? (
-                  <Stub width={width} height={height} r={width === height ? '100%' : undefined}/>
+                  <Stub top={10} bottom={10} left={10} right={10} width={width} height={height} r={width === height ? '100%' : undefined}/>
                 ) : isValidElement(stub) && Children.only(stub) ? (
                   stub
                 ) : (
@@ -73,7 +74,6 @@ export const Image: FC<ImageProps> = ({
             )}
             <Card opacity={typeof stub === 'string' || renderProps.loaded ? 1 : 0}>
               <Img
-                display="block"
                 width={width}
                 height={height}
                 src={renderProps.src}
@@ -83,7 +83,7 @@ export const Image: FC<ImageProps> = ({
                 onLoad={renderProps.onLoad}
               />
             </Card>
-          </Box>
+          </Pos>
         </InView>
       )}
     />

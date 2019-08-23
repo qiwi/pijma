@@ -35,7 +35,9 @@ export const Stub: FC<StubProps> = (props) => (
     height={props.height}
     maxWidth={1}
     maxHeight={1}
-    boxSizing="content-box"
+    css={{
+      boxSizing: 'content-box',
+    }}
   >
     <CardPos
       type="relative"
