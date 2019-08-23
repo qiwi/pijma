@@ -35,6 +35,7 @@
     "react-overlays": "^1.2.0",
     "react-text-mask": "^5.4.3",
     "react-transition-group": "^4.2.1",
+    "react-waypoint": "^9.0.2",
     "tslib": "^1.10.0"
   },
   "devDependencies": {

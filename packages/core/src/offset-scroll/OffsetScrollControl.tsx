@@ -1,5 +1,5 @@
 import React, {RefObject, Component, createRef, ReactNode} from 'react'
-import {InView} from '../inView'
+import {InView} from '../InView'
 import {Box} from '../primitive'
 import RenderChild from '../RenderChild'
 

@@ -9,7 +9,8 @@ import fonts from './fonts'
 import * as themes from './themes'
 
 export * from './styled'
-export * from './inView'
+export * from './InView'
+export * from './waypoint'
 
 export {styled, Theme, RenderChild, themes, reset, fonts}
 
