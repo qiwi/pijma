@@ -128,7 +128,6 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
               src="https://cataas.com/cat/gif?width=300&height=300&hash=7"
               width={75}
               height={75}
-              horizontal
               stub
             />
           </Box>
@@ -137,7 +136,6 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
               src="https://cataas.com/cat/gif?width=300&height=300&hash=8"
               width={75}
               height={75}
-              horizontal
               stub
             />
           </Box>
@@ -146,7 +144,6 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
               src="https://cataas.com/cat/gif?width=300&height=300&hash=9"
               width={75}
               height={75}
-              horizontal
               stub
             />
           </Box>
@@ -155,7 +152,6 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
               src="https://cataas.com/cat/gif?width=300&height=300&hash=10"
               width={75}
               height={75}
-              horizontal
               stub
             />
           </Box>
@@ -164,7 +160,6 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
               src="https://cataas.com/cat/gif?width=300&height=300&hash=11"
               width={75}
               height={75}
-              horizontal
               stub
             />
           </Box>
@@ -173,7 +168,6 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
               src="https://cataas.com/cat/gif?width=300&height=300&hash=12"
               width={75}
               height={75}
-              horizontal
               stub
             />
           </Box>
@@ -182,7 +176,6 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
               src="https://cataas.com/cat/gif?width=300&height=300&hash=13"
               width={75}
               height={75}
-              horizontal
               stub
             />
           </Box>

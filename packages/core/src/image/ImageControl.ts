@@ -1,4 +1,4 @@
-import {Component, RefObject, ReactNode} from 'react'
+import {Component, ReactNode} from 'react'
 import {Value} from '../primitive'
 import RenderChild from '../RenderChild'
 
@@ -7,16 +7,17 @@ export interface ImageControlProps {
   height: Value
   src: string
   srcSet?: string
-  display?: 'block' | 'inline-block'
   stub?: string | ReactNode
+  delay?: number
   onEnter?: () => void
+  onLeave?: () => void
   onLoad?: () => void
-  imageRef: () => RefObject<HTMLImageElement>
   children: RenderChild<{
     src: string | undefined
     srcSet: string | undefined
     loaded: boolean
     onEnter: () => void
+    onLeave: () => void
     onLoad: () => void
   }>
 }
@@ -28,26 +29,43 @@ export interface ImageControlState {
 
 export class ImageControl extends Component<ImageControlProps, ImageControlState> {
 
+  public static defaultProps = {
+    delay: 1000,
+  }
+
   public state: ImageControlState = {
     shown: false,
     loaded: false,
   }
 
+  private delayTimer: number | undefined
+
   private onLoad: () => void = () => {
     this.setState({
       loaded: true,
     })
-    if (typeof this.props.onLoad === 'function') {
+    if (this.props.onLoad) {
       this.props.onLoad()
     }
   }
 
   private onEnter: () => void = () => {
-    this.setState({
-      shown: true,
-    })
-    if (typeof this.props.onEnter === 'function') {
-      this.props.onEnter()
+    this.delayTimer = setTimeout(() => {
+      this.setState({
+        shown: true,
+      })
+      if (this.props.onEnter) {
+        this.props.onEnter()
+      }
+    }, this.props.delay)
+  }
+
+  private onLeave: () => void = () => {
+    if (this.delayTimer) {
+      clearTimeout(this.delayTimer)
+    }
+    if (this.props.onLeave) {
+      this.props.onLeave()
     }
   }
 
@@ -60,11 +78,8 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
   }
 
   private get srcSet(): string | undefined {
-    const {stub, srcSet} = this.props
-    if (this.state.shown) {
-      return srcSet
-    }
-    return typeof stub === 'string' ? stub : undefined
+    const {srcSet} = this.props
+    return this.state.shown ? srcSet : undefined
   }
 
   public render() {
@@ -73,6 +88,7 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
       srcSet: this.srcSet,
       loaded: this.state.loaded,
       onEnter: this.onEnter,
+      onLeave: this.onLeave,
       onLoad: this.onLoad,
     })
   }

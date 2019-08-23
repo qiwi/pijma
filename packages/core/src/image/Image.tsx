@@ -1,6 +1,6 @@
-import React, {FC, RefObject, createRef, ReactNode, Children, isValidElement} from 'react'
+import React, {FC, ReactNode, Children, isValidElement} from 'react'
 import {Img, Box, Card, Pos, Value} from '../primitive'
-import {Waypoint} from '../waypoint'
+import {InView} from '../inView'
 import {Stub} from '../stub'
 import {ImageControl} from './ImageControl'
 
@@ -14,7 +14,6 @@ interface ImageProps {
   sizes?: string
   alt?: string
   stub?: string | boolean | ReactNode
-  horizontal?: boolean
   onEnter?: () => void
   onLoad?: () => void
 }
@@ -29,46 +28,36 @@ export const Image: FC<ImageProps> = ({
   sizes,
   alt,
   stub,
-  horizontal,
   onEnter,
   onLoad,
 }) => {
-  const imageRef: RefObject<HTMLImageElement> = createRef()
   if (!stub) {
     return (
-      <Box width={width} height={height} display={display}>
-        <Img
-          display="block"
-          cursor={cursor}
-          ref={imageRef}
-          src={src}
-          srcSet={srcSet}
-          sizes={sizes}
-          alt={alt}
-          onLoad={onLoad}
-        />
-      </Box>
+      <Img
+        display={display}
+        width={width}
+        height={height}
+        cursor={cursor}
+        src={src}
+        srcSet={srcSet}
+        sizes={sizes}
+        alt={alt}
+        onLoad={onLoad}
+      />
     )
   }
   return (
     <ImageControl
       width={width}
       height={height}
-      display={display}
       src={src}
       srcSet={srcSet}
       stub={stub}
-      imageRef={() => imageRef}
       onEnter={onEnter}
       onLoad={onLoad}
       children={(renderProps) => (
-        <Waypoint
-          topOffset={-40}
-          bottomOffset={-40}
-          onEnter={() => renderProps.onEnter()}
-          horizontal={horizontal}
-        >
-          <Box display={display} width={width} height={height} cursor={cursor}>
+        <InView onChange={(inView) => inView ? renderProps.onEnter() : renderProps.onLeave()}>
+          <Box display={display} cursor={cursor} width={width} height={height}>
             {!renderProps.loaded ? (
               <Pos type="absolute" width={width} height={height}>
                 {typeof stub === 'boolean' && stub ? (
@@ -85,7 +74,8 @@ export const Image: FC<ImageProps> = ({
             <Card opacity={typeof stub === 'string' || renderProps.loaded ? 1 : 0}>
               <Img
                 display="block"
-                ref={imageRef}
+                width={width}
+                height={height}
                 src={renderProps.src}
                 srcSet={renderProps.srcSet}
                 sizes={sizes}
@@ -94,7 +84,7 @@ export const Image: FC<ImageProps> = ({
               />
             </Card>
           </Box>
-        </Waypoint>
+        </InView>
       )}
     />
   )

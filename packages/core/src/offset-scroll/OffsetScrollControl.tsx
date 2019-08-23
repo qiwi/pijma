@@ -1,11 +1,12 @@
 import React, {RefObject, Component, createRef, ReactNode} from 'react'
-import {Waypoint} from '../waypoint'
+import {InView} from '../inView'
+import {Box} from '../primitive'
 import RenderChild from '../RenderChild'
 
 export interface OffsetScrollControlProps {
   content: ReactNode
-  top: string | number
-  bottom: string | number
+  top?: string
+  bottom?: string
   children: RenderChild<{
     top: boolean
     bottom: boolean
@@ -56,21 +57,21 @@ export class OffsetScrollControl extends Component<OffsetScrollControlProps, Off
       top: this.state.top,
       bottom: this.state.bottom,
       children: (
-        <div ref={this.ref}>
-          <Waypoint
-            scrollableAncestor={this.ref.current}
-            topOffset={this.props.top}
-            onEnter={this.onTopEnter}
-            onLeave={this.onTopLeave}
+        <Box height={1} overflow="auto" ref={this.ref}>
+          <InView
+            root={this.ref.current}
+            rootMargin={`${this.props.top || '0px'} 0px 0px 0px`}
+            onChange={(inView) => inView ? this.onTopEnter() : this.onTopLeave()}
+            children={({ref}) => (<div ref={ref}/>)}
           />
           {this.props.content}
-          <Waypoint
-            scrollableAncestor={this.ref.current}
-            topOffset={this.props.bottom}
-            onEnter={this.onBottomEnter}
-            onLeave={this.onBottomLeave}
+          <InView
+            root={this.ref.current}
+            rootMargin={`0px 0px ${this.props.bottom || '0px'} 0px`}
+            onChange={(inView) => inView ? this.onBottomEnter() : this.onBottomLeave()}
+            children={({ref}) => (<div ref={ref}/>)}
           />
-        </div>
+        </Box>
       ),
     })
   }
