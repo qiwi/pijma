@@ -3,12 +3,6 @@
   "compilerOptions": {
     "baseUrl": "./packages",
     "paths": {
-      "@qiwi/pijma-app": [
-        "./app/src"
-      ],
-      "@qiwi/pijma-app/*": [
-        "./app/src/*"
-      ],
       "@qiwi/pijma-core": [
         "./core/src"
       ],
@@ -20,18 +14,6 @@
       ],
       "@qiwi/pijma-desktop/*": [
         "./desktop/src/*"
-      ],
-      "@qiwi/pijma-landing": [
-        "./landing/src"
-      ],
-      "@qiwi/pijma-landing/*": [
-        "./landing/src/*"
-      ],
-      "@qiwi/pijma-media": [
-        "./media/src"
-      ],
-      "@qiwi/pijma-media/*": [
-        "./media/src/*"
       ],
       "@qiwi/pijma-mobile": [
         "./mobile/src"

@@ -36,7 +36,7 @@ export const Stub: FC<StubProps> = (props) => (
       type="relative"
       r={props.r}
       overflow="hidden"
-      bg={props.inverse ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.015)'}
+      bg={props.inverse ? 'rgba(255, 255, 255, 0.14)' : '#E6E6E6'}
       width={props.width}
       height={props.height}
       maxWidth={1}

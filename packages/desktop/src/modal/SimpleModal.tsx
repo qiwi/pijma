@@ -9,11 +9,8 @@ import {
   ModalProps,
   SimpleTransition,
   SimpleTransitionProps,
+  Icon,
 } from '@qiwi/pijma-core'
-
-import {
-  CrossIcon,
-} from '@qiwi/pijma-media'
 
 const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
 
@@ -113,8 +110,7 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = (props) => (
                 height={6}
                 cursor="pointer"
                 onClick={props.onHide}
-                css={{fill: '#000'}}
-                children={<CrossIcon/>}
+                children={<Icon name="cross" color="#000"/>}
               />
             ) : (
               null

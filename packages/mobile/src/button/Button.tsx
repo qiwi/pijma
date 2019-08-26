@@ -1,6 +1,16 @@
-import React, {Fragment, FunctionComponent, ReactNode} from 'react'
+import React, {FunctionComponent, ReactNode, Fragment} from 'react'
 
-import {Btn, ButtonControl, Card, Flex, FlexItem, Pos, Spinner, Stub, Typo} from '@qiwi/pijma-core'
+import {
+  ButtonControl,
+  Spinner,
+  Card,
+  Pos,
+  Flex,
+  FlexItem,
+  Typo,
+  Btn,
+  Stub,
+} from '@qiwi/pijma-core'
 
 export interface ButtonProps {
   onClick?: () => void
@@ -145,9 +155,6 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
       onBlur={props.onBlur}
       children={(renderProps) => (
         <Btn
-          role="button"
-          aria-label={props.text}
-          aria-labelledby={props.kind}
           disabled={props.disabled}
           type={props.type}
           width={!props.icon || props.text ? 1 : buttonSize[props.size]}
