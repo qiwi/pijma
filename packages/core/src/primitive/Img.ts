@@ -9,15 +9,14 @@ export interface ImgProps {
   height?: Value
   minHeight?: Value
   maxHeight?: Value
-  css?: CSSObject
-  cursor?: string
   srcSet?: string
   sizes?: string
   alt?: string
+  css?: CSSObject
 }
 
 export const ImgNonProps = [
-  'css', 'innerRef', 'ref', 'display', 'cursor',
+  'css', 'innerRef', 'ref', 'display',
   'width', 'minWidth', 'maxWidth',
   'height', 'minHeight', 'maxHeight',
 ]
@@ -26,7 +25,6 @@ export const Img = styled('img', {
   shouldForwardProp: (prop) => !ImgNonProps.includes(prop),
 })<ImgProps>(({theme, ...props}) => ({
   display: 'block',
-  cursor: props.cursor,
   width: cssValue(props.width, theme.scale),
   minWidth: cssValue(props.minWidth, theme.scale),
   maxWidth: cssValue(props.maxWidth, theme.scale),
