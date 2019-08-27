@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Spacer, Icon, IconWrapper} from '@qiwi/pijma-core'
+import {Spacer, Icon} from '@qiwi/pijma-core'
 import {TextField} from '@qiwi/pijma-desktop'
 
 interface TableOfContentsRendererProps {
@@ -13,7 +13,7 @@ const TableOfContentsRenderer: FC<TableOfContentsRendererProps> = (props) => (
     <TextField
       value={props.searchTerm}
       placeholder="Поиск"
-      hint={<IconWrapper color="#666"><Icon name="search"/></IconWrapper>}
+      hint={<Icon name="search" color="#666"/>}
       onChange={props.onSearchTermChange}
     />
     {props.children}

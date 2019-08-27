@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-core",
-  "version": "1.67.0",
+  "version": "1.70.0",
   "main": "lib/es5/index.js",
   "types": "lib/es5/index.d.ts",
   "license": "MIT",
@@ -18,7 +18,6 @@
   "dependencies": {
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
-    "@qiwi/pijma-media": "^1.x.x",
     "@types/dom-helpers": "^3.4.1",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",

@@ -1,5 +1,7 @@
 ## Brand Button
 
+В размерах Normal и Minor используется для приоритетных или завершающих действий. В размере Accent — в качестве основной кнопки в промо-коммуникациях и на платежных формах.
+
 ```jsx
 <Block>
   <BlockContent>
@@ -256,7 +258,7 @@
           <Button
             kind="brand"
             size="accent"
-            icon={<StarIcon/>}
+            icon={<Icon name="star"/>}
             text="Нажать"
           />
         </FlexItem>
@@ -264,7 +266,7 @@
           <Button
             kind="brand"
             size="normal"
-            icon={<StarIcon/>}
+            icon={<Icon name="star"/>}
             text="Нажать"
           />
         </FlexItem>
@@ -272,7 +274,7 @@
           <Button
             kind="brand"
             size="minor"
-            icon={<StarIcon/>}
+            icon={<Icon name="star"/>}
             text="Нажать"
           />
         </FlexItem>
@@ -282,7 +284,7 @@
           <Button
             kind="simple"
             size="accent"
-            icon={<StarIcon/>}
+            icon={<Icon name="star"/>}
             text="Нажать"
           />
         </FlexItem>
@@ -290,7 +292,7 @@
           <Button
             kind="simple"
             size="normal"
-            icon={<StarIcon/>}
+            icon={<Icon name="star"/>}
             text="Нажать"
           />
         </FlexItem>
@@ -298,7 +300,7 @@
           <Button
             kind="simple"
             size="minor"
-            icon={<StarIcon/>}
+            icon={<Icon name="star"/>}
             text="Нажать"
           />
         </FlexItem>
@@ -351,21 +353,21 @@
           <Button
             kind="brand"
             size="accent"
-            icon={<StarIcon/>}
+            icon={<Icon name="star"/>}
           />
         </FlexItem>
         <FlexItem pr={4}>
           <Button
             kind="brand"
             size="normal"
-            icon={<StarIcon/>}
+            icon={<Icon name="star"/>}
           />
         </FlexItem>
         <FlexItem>
           <Button
             kind="brand"
             size="minor"
-            icon={<StarIcon/>}
+            icon={<Icon name="star"/>}
           />
         </FlexItem>
       </Flex>
@@ -374,21 +376,21 @@
           <Button
             kind="simple"
             size="accent"
-            icon={<StarIcon/>}
+            icon={<Icon name="star"/>}
           />
         </FlexItem>
         <FlexItem pr={4}>
           <Button
             kind="simple"
             size="normal"
-            icon={<StarIcon/>}
+            icon={<Icon name="star"/>}
           />
         </FlexItem>
         <FlexItem pr={4}>
           <Button
             kind="simple"
             size="minor"
-            icon={<StarIcon/>}
+            icon={<Icon name="star"/>}
           />
         </FlexItem>
       </Flex>

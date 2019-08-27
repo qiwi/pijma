@@ -1,6 +1,6 @@
 import React, {FC, useState} from 'react'
 
-import {Box, Flex, FlexItem, CrossBurger, Icon, IconWrapper} from '@qiwi/pijma-core'
+import {Box, Flex, FlexItem, CrossBurger, Icon} from '@qiwi/pijma-core'
 import {Header, HeaderMenu, MenuContainer, TextField} from '@qiwi/pijma-mobile'
 
 interface TableOfContentsRendererProps {
@@ -22,9 +22,7 @@ const TableOfContentsRenderer: FC<TableOfContentsRendererProps> = (props) => {
           />
         </FlexItem>
         <FlexItem width={8} height={8} shrink={0} align="center">
-          <IconWrapper color="#ff8c00">
-            <Icon name="qiwi"/>
-          </IconWrapper>
+          <Icon name="qiwi" color="#ff8c00" size={1}/>
         </FlexItem>
         <FlexItem
           width={0.25}
@@ -40,7 +38,7 @@ const TableOfContentsRenderer: FC<TableOfContentsRendererProps> = (props) => {
               <TextField
                 value={props.searchTerm}
                 placeholder="Поиск"
-                hint={<IconWrapper color="#666"><Icon name="search"/></IconWrapper>}
+                hint={<Icon name="search" color="#666"/>}
                 onChange={props.onSearchTermChange}
               />
             </Box>

@@ -1,6 +1,38 @@
 import React, {FC, ReactNode} from 'react'
 
-import {themes, ThemeProvider, Flex, FlexItem, Card, Box, IconWrapper, Icon} from '@qiwi/pijma-core'
+import {themes, ThemeProvider, Flex, FlexItem, Card, Box, Icon, injectGlobal, fonts, reset, applyDefaultClickHandler} from '@qiwi/pijma-core'
+
+injectGlobal(fonts, reset, {
+  '#rsg-root': {
+    height: '100%',
+    minHeight: '100%',
+  },
+  html: {
+    height: '100%',
+    minHeight: '100%',
+  },
+  body: {
+    minWidth: '1024px !important',
+    overflowY: 'scroll',
+    height: '100%',
+    minHeight: '100%',
+  },
+})
+
+applyDefaultClickHandler((href, target, download) => {
+  if (download && href) {
+    const a = document.createElement('a')
+    a.download = typeof download === 'string' ? download : ''
+    a.href = href
+    a.target = target || '_blank'
+    document.body.appendChild(a)
+    a.click()
+    a.remove()
+  }
+  else {
+    window.open(href, target || '_self')
+  }
+})
 
 interface StyleGuideRendererProps {
   title: ReactNode
@@ -16,9 +48,7 @@ const StyleGuideRenderer: FC<StyleGuideRendererProps> = (props) => (
           <Card width={1} height={1} bg="#fff">
             <Box width={80} ml="auto" py={15} pr={15}>
               <Box width={13} height={13} mb={10}>
-                <IconWrapper color="#ff8c00">
-                  <Icon name="qiwi"/>
-                </IconWrapper>
+                <Icon name="qiwi" color="#ff8c00" size={1}/>
               </Box>
               {props.toc}
             </Box>

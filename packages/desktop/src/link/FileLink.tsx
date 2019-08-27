@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 
-import {LinkControl, Lnk, FlexItem, Flex, IconWrapper} from '@qiwi/pijma-core'
-import {Icon} from '@qiwi/pijma-media'
+import {LinkControl, Lnk, FlexItem, Flex, Icon} from '@qiwi/pijma-core'
+
 import {Text} from '../typography'
 
 export interface FileLinkProps {
@@ -57,21 +57,11 @@ export const FileLink: FC<FileLinkProps> = (props) => (
           mr={2}
           shrink={0}
         >
-          <IconWrapper
-            color={
-              renderProps.hover || renderProps.focus || renderProps.active
-                ? '#FF8C00'
-                : '#000'
-            }
-          >
-            <Icon name="file" />
-          </IconWrapper>
+          <Icon name="file" color={renderProps.hover || renderProps.focus || renderProps.active ? '#FF8C00' : '#000'}/>
         </FlexItem>
         <FlexItem>
           <Text
-            color={
-              renderProps.hover || renderProps.focus || renderProps.active ? 'warning' : 'default'
-            }
+            color={renderProps.hover || renderProps.focus || renderProps.active ? 'warning' : 'default'}
             decoration="none"
             size="m"
             bold={false}
