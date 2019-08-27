@@ -38,8 +38,5 @@
         "yarn run guide_ci"
       ]
     }
-  },
-  "dependencies": {
-    "@types/markdown-to-jsx": "^6.9.0"
   }
 }
