@@ -80,6 +80,10 @@ const strong: FC<SizeProps> = ({children}) => (
   <Text bold children={children}/>
 )
 
+const del: FC<SizeProps> = ({children}) => (
+  <Text decoration="line-through" children={children}/>
+)
+
 const li: FC<SizeProps> = ({size, children}) => (
   <React.Fragment>
     {React.Children.map(children, (child, i) => (
@@ -96,13 +100,13 @@ const li: FC<SizeProps> = ({size, children}) => (
 
 const ul: FC<SizeProps> = ({size, children}) => (
   <MarkdownBox mt={SizeMargin[size]}>
-    <List type="bullet" children={Children.toArray(children)}/>
+    <List size={size} type="bullet" children={Children.toArray(children)}/>
   </MarkdownBox>
 )
 
 const ol: FC<SizeProps> = ({size, children}) => (
   <MarkdownBox mt={SizeMargin[size]}>
-    <List type="number" children={Children.toArray(children)}/>
+    <List size={size} type="number" children={Children.toArray(children)}/>
   </MarkdownBox>
 )
 
@@ -118,6 +122,7 @@ const overrides: {[tag: string]: FC<SizeProps>} = {
   ol,
   li,
   strong,
+  del,
 }
 
 export const Markdown: FC<MarkdownProps> = ({size, children}) => (
