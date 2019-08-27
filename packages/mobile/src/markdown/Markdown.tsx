@@ -16,7 +16,7 @@ const MarkdownBox = styled(Box)({
   },
 })
 
-const SizeMargin: { [size in NonNullable<MarkdownProps['size']>]: number } = {
+const SizeMargin: { [size in NonNullable<SizeProps['size']>]: number } = {
   s: 3,
   m: 3,
   l: 3,
@@ -118,7 +118,7 @@ const overrides: {[tag: string]: FC<SizeProps>} = {
   del,
 }
 
-export const Markdown: FC<MarkdownProps> = ({size, children}) => (
+export const Markdown: FC<MarkdownProps> = ({size = 'm', children}) => (
   <MarkdownComponent
     children={children}
     options={{
