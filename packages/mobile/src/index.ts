@@ -18,6 +18,7 @@ export * from './menu'
 export * from './pagination'
 export * from './status'
 export * from './logo-link'
+export * from './markdown'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'
