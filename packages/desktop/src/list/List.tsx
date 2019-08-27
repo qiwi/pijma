@@ -31,7 +31,13 @@ const ItemIndent: {[type in NonNullable<ListProps['type']>]: number} = {
 const SpaceSize: {[size in NonNullable<ListProps['size']>]: number} = {
   s: 2,
   m: 3,
-  l: 5,
+  l: 4,
+}
+
+const LetterSize: {[size in NonNullable<ListProps['size']>]: number} = {
+  s: 2,
+  m: 2.5,
+  l: 3,
 }
 
 export const List: FunctionComponent<ListProps> = ({type, size = 'm', children}) => (
@@ -39,7 +45,7 @@ export const List: FunctionComponent<ListProps> = ({type, size = 'm', children})
     {children.map((item, index) => (
       <Flex key={index} as="li" mt={index > 0 ? ItemIndent[type] : 0}>
         {type === 'number' ? (
-          <FlexItem width={String(children.length).length * 2 + SpaceSize[size]} shrink={0}>
+          <FlexItem width={String(children.length).length * LetterSize[size] + SpaceSize[size]} shrink={0}>
             <Text size={size} bold={false}>{index + 1}.</Text>
           </FlexItem>
         ) : type === 'bullet' ? (
