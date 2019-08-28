@@ -8,7 +8,7 @@ export interface ImageControlProps {
   src: string
   srcSet?: string
   stub?: string | ReactNode
-  delay?: number
+  viewedDelay?: number
   onLoad?: () => void
   onReady?: () => void
   children: RenderChild<{
@@ -22,15 +22,15 @@ export interface ImageControlProps {
 }
 
 export interface ImageControlState {
-  entered: boolean
-  inViewport: boolean
+  viewed: boolean
+  marked: boolean
   loaded: boolean
 }
 
 export class ImageControl extends Component<ImageControlProps, ImageControlState> {
 
   public static defaultProps = {
-    delay: 1000,
+    viewedDelay: 1000,
   }
 
   public componentDidUpdate: () => void = () => {
@@ -40,35 +40,35 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
   }
 
   public componentWillUnmount: () => void = () => {
-    if (this.delayTimer) {
-      clearTimeout(this.delayTimer)
-      this.delayTimer = undefined
+    if (this.viewedTimer) {
+      clearTimeout(this.viewedTimer)
+      this.viewedTimer = undefined
     }
   }
 
   public state: ImageControlState = {
-    entered: false,
-    inViewport: false,
+    viewed: false,
+    marked: false,
     loaded: false,
   }
 
-  private delayTimer: number | undefined
+  private viewedTimer: number | undefined
 
   private onChange: (inView: boolean, entry: IntersectionObserverEntry) => void = (inView, entry) => {
     if (!inView) {
-      clearTimeout(this.delayTimer)
-      this.delayTimer = undefined
+      clearTimeout(this.viewedTimer)
+      this.viewedTimer = undefined
       return
     }
-    if (!this.delayTimer && !this.state.entered) {
-      this.delayTimer = setTimeout(() => {
+    if (!this.viewedTimer && !this.state.viewed) {
+      this.viewedTimer = setTimeout(() => {
         this.setState({
-          entered: true,
+          viewed: true,
         })
-      }, this.props.delay)
+      }, this.props.viewedDelay)
     }
     this.setState({
-      inViewport: entry.intersectionRatio > 0.8,
+      marked: entry.intersectionRatio > 0.8,
     })
   }
 
@@ -83,7 +83,7 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
 
   private get src(): string | undefined {
     const {stub, src} = this.props
-    if (this.state.entered) {
+    if (this.state.viewed) {
       return src
     }
     if (typeof stub === 'string') {
@@ -94,13 +94,13 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
 
   private get srcSet(): string | undefined {
     const {srcSet} = this.props
-    if (this.state.entered) {
+    if (this.state.viewed) {
       return srcSet
     }
   }
 
   private get ready(): boolean {
-    return this.state.loaded && this.state.inViewport
+    return this.state.loaded && this.state.marked
   }
 
   public render() {
