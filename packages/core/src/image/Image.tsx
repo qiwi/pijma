@@ -16,6 +16,8 @@ interface ImageProps {
   onReady?: () => void
 }
 
+const THRESHOLD = [0, 0.8]
+
 export const Image: FC<ImageProps> = ({
   width,
   height,
@@ -40,7 +42,6 @@ export const Image: FC<ImageProps> = ({
       />
     )
   }
-  const threshold = [0, 0.8]
   return (
     <ImageControl
       width={width}
@@ -63,8 +64,8 @@ export const Image: FC<ImageProps> = ({
           />
         ) : (
           <InView
-            threshold={threshold}
-            onChange={(inView, {intersectionRatio}) => renderProps.onIntersect(inView, intersectionRatio)}
+            threshold={THRESHOLD}
+            onChange={renderProps.onChange}
             children={({ref}) => (
               <Pos ref={ref} type="relative" width={width} height={height}>
                 {typeof stub === 'boolean' && stub && !renderProps.loaded ? (

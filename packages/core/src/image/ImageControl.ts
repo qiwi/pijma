@@ -16,15 +16,14 @@ export interface ImageControlProps {
     srcSet: string | undefined
     loaded: boolean
     ready: boolean
-    onIntersect: (inView: boolean, intersectionRatio: number) => void
+    onChange: (inView: boolean, entry: IntersectionObserverEntry) => void
     onLoad: () => void
   }>
 }
 
 export interface ImageControlState {
   entered: boolean
-  shown: boolean
-  viewed: boolean
+  inViewport: boolean
   loaded: boolean
 }
 
@@ -34,90 +33,74 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
     delay: 1000,
   }
 
+  public componentDidUpdate: () => void = () => {
+    if (this.ready && this.props.onReady) {
+      this.props.onReady()
+    }
+  }
+
   public componentWillUnmount: () => void = () => {
     if (this.delayTimer) {
       clearTimeout(this.delayTimer)
+      this.delayTimer = undefined
     }
   }
 
   public state: ImageControlState = {
     entered: false,
-    shown: false,
-    viewed: false,
+    inViewport: false,
     loaded: false,
   }
 
   private delayTimer: number | undefined
 
-  private onIntersect: (inView: boolean, intersectionRatio: number) => void = (inView, intersectionRatio) => {
+  private onChange: (inView: boolean, entry: IntersectionObserverEntry) => void = (inView, entry) => {
     if (!inView) {
-      this.onLeave()
+      clearTimeout(this.delayTimer)
+      this.delayTimer = undefined
       return
     }
-    if (!this.state.entered) {
-      this.onEnter()
+    if (!this.delayTimer && !this.state.entered) {
+      this.delayTimer = setTimeout(() => {
+        this.setState({
+          entered: true,
+        })
+      }, this.props.delay)
     }
-    this.onViewedChanged(intersectionRatio > 0.8)
-  }
-
-  private onEnter: () => void = () => {
     this.setState({
-      entered: true,
+      inViewport: entry.intersectionRatio > 0.8,
     })
-    this.delayTimer = setTimeout(() => {
-      this.setState({
-        shown: true,
-      })
-    }, this.props.delay)
   }
 
   private onLoad: () => void = () => {
     if (this.props.onLoad) {
       this.props.onLoad()
     }
-    if (this.state.viewed && this.props.onReady) {
-      this.props.onReady()
-    }
     this.setState({
       loaded: true,
     })
   }
 
-  private onViewedChanged: (inside: boolean) => void = (inside) => {
-    if (inside && this.state.loaded && this.props.onReady) {
-      this.props.onReady()
-    }
-    this.setState({
-      viewed: inside,
-    })
-  }
-
-  private onLeave: () => void = () => {
-    this.setState({
-      entered: false,
-    })
-    clearTimeout(this.delayTimer)
-  }
-
   private get src(): string | undefined {
     const {stub, src} = this.props
-    if (this.state.shown) {
+    if (this.state.entered) {
       return src
     }
     if (typeof stub === 'string') {
       return stub
     }
+    return undefined
   }
 
   private get srcSet(): string | undefined {
     const {srcSet} = this.props
-    if (this.state.shown) {
+    if (this.state.entered) {
       return srcSet
     }
   }
 
   private get ready(): boolean {
-    return this.state.loaded && this.state.viewed
+    return this.state.loaded && this.state.inViewport
   }
 
   public render() {
@@ -126,7 +109,7 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
       srcSet: this.srcSet,
       loaded: this.state.loaded,
       ready: this.ready,
-      onIntersect: this.onIntersect,
+      onChange: this.onChange,
       onLoad: this.onLoad,
     })
   }
