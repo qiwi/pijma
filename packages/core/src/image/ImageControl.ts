@@ -8,7 +8,7 @@ export interface ImageControlProps {
   src: string
   srcSet?: string
   stub?: string | ReactNode
-  viewedDelay?: number
+  delay?: number
   onLoad?: () => void
   onReady?: () => void
   children: RenderChild<{
@@ -33,6 +33,14 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
     viewedDelay: 1000,
   }
 
+  public state: ImageControlState = {
+    viewed: false,
+    marked: false,
+    loaded: false,
+  }
+
+  private viewedTimer: number | undefined
+
   public componentDidUpdate: () => void = () => {
     if (this.ready && this.props.onReady) {
       this.props.onReady()
@@ -46,14 +54,6 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
     }
   }
 
-  public state: ImageControlState = {
-    viewed: false,
-    marked: false,
-    loaded: false,
-  }
-
-  private viewedTimer: number | undefined
-
   private onChange: (inView: boolean, entry: IntersectionObserverEntry) => void = (inView, entry) => {
     if (!inView) {
       clearTimeout(this.viewedTimer)
@@ -65,7 +65,7 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
         this.setState({
           viewed: true,
         })
-      }, this.props.viewedDelay)
+      }, this.props.delay)
     }
     this.setState({
       marked: entry.intersectionRatio > 0.8,
@@ -93,10 +93,11 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
   }
 
   private get srcSet(): string | undefined {
-    const {srcSet} = this.props
-    if (this.state.viewed) {
-      return srcSet
+    if (!this.state.viewed) {
+      return undefined
     }
+    const {srcSet} = this.props
+    return srcSet
   }
 
   private get ready(): boolean {
