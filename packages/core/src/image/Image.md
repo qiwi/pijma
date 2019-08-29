@@ -8,19 +8,16 @@
         src={require('./media/cat_1.gif')}
         width={75}
         height={52}
-        stub
       />
       <Image
         src={require('./media/cat_2.gif')}
         width={75}
         height={52}
-        stub
       />
       <Image
         src={require('./media/cat_3.gif')}
         width={75}
         height={52}
-        stub
       />
     </Spacer>
   </BlockContent>
@@ -37,19 +34,16 @@
         src={require('./media/cat_11.gif')}
         width={75}
         height={75}
-        stub
       />
       <Image
         src={require('./media/cat_12.gif')}
         width={75}
         height={75}
-        stub
       />
       <Image
         src={require('./media/cat_13.gif')}
         width={75}
         height={75}
-        stub
       />
     </Spacer>
   </BlockContent>
@@ -128,7 +122,6 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
               src={require('./media/cat_41.gif')}
               width={75}
               height={75}
-              stub
             />
           </Box>
           <Box ml={5} mr={5}>
@@ -136,7 +129,6 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
               src={require('./media/cat_42.gif')}
               width={75}
               height={75}
-              stub
             />
           </Box>
           <Box ml={5} mr={5}>
@@ -144,7 +136,6 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
               src={require('./media/cat_43.gif')}
               width={75}
               height={75}
-              stub
             />
           </Box>
           <Box ml={5} mr={5}>
@@ -152,7 +143,6 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
               src={require('./media/cat_44.gif')}
               width={75}
               height={75}
-              stub
             />
           </Box>
           <Box ml={5} mr={5}>
@@ -160,7 +150,6 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
               src={require('./media/cat_45.gif')}
               width={75}
               height={75}
-              stub
             />
           </Box>
           <Box ml={5} mr={5}>
@@ -168,7 +157,6 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
               src={require('./media/cat_46.gif')}
               width={75}
               height={75}
-              stub
             />
           </Box>
           <Box ml={5}>
@@ -176,7 +164,6 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
               src={require('./media/cat_47.gif')}
               width={75}
               height={75}
-              stub
             />
           </Box>
         </Flex>
@@ -196,16 +183,19 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
         src={require('./media/cat_51.gif')}
         width={75}
         height={75}
+        stub={false}
       />
       <Image
         src={require('./media/cat_52.gif')}
         width={75}
         height={75}
+        stub={false}
       />
       <Image
         src={require('./media/cat_53.gif')}
         width={75}
         height={75}
+        stub={false}
       />
     </Spacer>
   </BlockContent>
