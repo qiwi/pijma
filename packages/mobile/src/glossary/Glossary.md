@@ -1,41 +1,11 @@
-## Vertical
-
 ```jsx
 <Block>
   <BlockContent>
-    <Spacer size="m">
-      <Glossary title="Title" text="Text"/>
-      <Glossary title="Title" text="Text"/>
-      <Glossary title="Title" text="Text"/>
-    </Spacer>
-  </BlockContent>
-</Block>
-```
-
-## Horizontal
-
-```jsx
-<Block>
-  <BlockContent>
-    <Spacer size="m">
-      <Glossary type="horizontal" title="Title" text="Text"/>
-      <Glossary type="horizontal" title="Title" text="Text"/>
-      <Glossary type="horizontal" title="Title" text="Text"/>
-    </Spacer>
-  </BlockContent>
-</Block>
-```
-
-## Border
-
-```jsx
-<Block>
-  <BlockContent>
-    <Spacer size="m">
-      <Glossary type="border" title="Title" text="Text"/>
-      <Glossary type="border" title="Title" text="Text"/>
-      <Glossary type="border" title="Title" text="Text"/>
-    </Spacer>
+    <Glossary children={[
+      {title: 'Title 1', content: 'Text 1'}, 
+      {title: 'Title 2', content: 'Text 2'}, 
+      {title: 'Title 3', content: 'Text 3'}
+    ]}/>
   </BlockContent>
 </Block>
 ```
