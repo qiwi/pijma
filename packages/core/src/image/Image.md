@@ -5,19 +5,19 @@
   <BlockContent>
     <Spacer size="xxl">
       <Image
-        src="https://cataas.com/cat/gif?width=300&height=200&hash=1"
+        src={require('./media/cat_1.gif')}
         width={75}
         height={52}
         stub
       />
       <Image
-        src="https://cataas.com/cat/gif?width=300&height=200&hash=2"
+        src={require('./media/cat_2.gif')}
         width={75}
         height={52}
         stub
       />
       <Image
-        src="https://cataas.com/cat/gif?width=300&height=200&hash=3"
+        src={require('./media/cat_3.gif')}
         width={75}
         height={52}
         stub
@@ -34,19 +34,19 @@
   <BlockContent>
     <Spacer size="xxl">
       <Image
-        src="https://cataas.com/cat/gif?width=300&height=300&hash=11"
+        src={require('./media/cat_11.gif')}
         width={75}
         height={75}
         stub
       />
       <Image
-        src="https://cataas.com/cat/gif?width=300&height=300&hash=12"
+        src={require('./media/cat_12.gif')}
         width={75}
         height={75}
         stub
       />
       <Image
-        src="https://cataas.com/cat/gif?width=300&height=300&hash=13"
+        src={require('./media/cat_13.gif')}
         width={75}
         height={75}
         stub
@@ -63,19 +63,19 @@
   <BlockContent>
     <Spacer size="xxl">
       <Image
-        src="https://cataas.com/cat/gif?width=300&height=300&hash=21"
+        src={require('./media/cat_21.gif')}
         width={75}
         height={75}
         stub={(<Stub width={75} height={75} r={52}/>)}
       />
       <Image
-        src="https://cataas.com/cat/gif?width=300&height=300&hash=22"
+        src={require('./media/cat_22.gif')}
         width={75}
         height={75}
         stub={(<Stub width={75} height={75} r={52}/>)}
       />
       <Image
-        src="https://cataas.com/cat/gif?width=300&height=300&hash=23"
+        src={require('./media/cat_23.gif')}
         width={75}
         height={75}
         stub={(<Stub width={75} height={75} r={52}/>)}
@@ -93,19 +93,19 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
   <BlockContent>
     <Spacer size="xxl">
       <Image
-        src="https://cataas.com/cat/gif?width=300&height=300&hash=31"
+        src={require('./media/cat_31.gif')}
         width={75}
         height={75}
         stub={dataImage}
       />
       <Image
-        src="https://cataas.com/cat/gif?width=300&height=300&hash=32"
+        src={require('./media/cat_32.gif')}
         width={75}
         height={75}
         stub={dataImage}
       />
       <Image
-        src="https://cataas.com/cat/gif?width=300&height=300&hash=33"
+        src={require('./media/cat_33.gif')}
         width={75}
         height={75}
         stub={dataImage}
@@ -125,7 +125,7 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
         <Flex>
           <Box mr={5}>
             <Image
-              src="https://cataas.com/cat/gif?width=300&height=300&hash=41"
+              src={require('./media/cat_41.gif')}
               width={75}
               height={75}
               stub
@@ -133,7 +133,7 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
           </Box>
           <Box ml={5} mr={5}>
             <Image
-              src="https://cataas.com/cat/gif?width=300&height=300&hash=42"
+              src={require('./media/cat_42.gif')}
               width={75}
               height={75}
               stub
@@ -141,7 +141,7 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
           </Box>
           <Box ml={5} mr={5}>
             <Image
-              src="https://cataas.com/cat/gif?width=300&height=300&hash=43"
+              src={require('./media/cat_43.gif')}
               width={75}
               height={75}
               stub
@@ -149,7 +149,7 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
           </Box>
           <Box ml={5} mr={5}>
             <Image
-              src="https://cataas.com/cat/gif?width=300&height=300&hash=44"
+              src={require('./media/cat_44.gif')}
               width={75}
               height={75}
               stub
@@ -157,7 +157,7 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
           </Box>
           <Box ml={5} mr={5}>
             <Image
-              src="https://cataas.com/cat/gif?width=300&height=300&hash=45"
+              src={require('./media/cat_45.gif')}
               width={75}
               height={75}
               stub
@@ -165,7 +165,7 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
           </Box>
           <Box ml={5} mr={5}>
             <Image
-              src="https://cataas.com/cat/gif?width=300&height=300&hash=46"
+              src={require('./media/cat_46.gif')}
               width={75}
               height={75}
               stub
@@ -173,7 +173,7 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
           </Box>
           <Box ml={5}>
             <Image
-              src="https://cataas.com/cat/gif?width=300&height=300&hash=47"
+              src={require('./media/cat_47.gif')}
               width={75}
               height={75}
               stub
@@ -193,17 +193,17 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
   <BlockContent>
     <Spacer size="xxl">
       <Image
-        src="https://cataas.com/cat/gif?width=300&height=300&hash=51"
+        src={require('./media/cat_51.gif')}
         width={75}
         height={75}
       />
       <Image
-        src="https://cataas.com/cat/gif?width=300&height=300&hash=52"
+        src={require('./media/cat_52.gif')}
         width={75}
         height={75}
       />
       <Image
-        src="https://cataas.com/cat/gif?width=300&height=300&hash=53"
+        src={require('./media/cat_53.gif')}
         width={75}
         height={75}
       />
