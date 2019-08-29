@@ -8,22 +8,19 @@ export interface ImageControlProps {
   src: string
   srcSet?: string
   stub?: string | ReactNode
-  delay?: number
+  viewedDelay?: number
   onLoad?: () => void
-  onReady?: () => void
   children: RenderChild<{
     src: string | undefined
     srcSet: string | undefined
     loaded: boolean
-    ready: boolean
-    onChange: (inView: boolean, entry: IntersectionObserverEntry) => void
+    onChange: (inView: boolean) => void
     onLoad: () => void
   }>
 }
 
 export interface ImageControlState {
   viewed: boolean
-  marked: boolean
   loaded: boolean
 }
 
@@ -35,41 +32,24 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
 
   public state: ImageControlState = {
     viewed: false,
-    marked: false,
     loaded: false,
   }
 
   private viewedTimer: number | undefined
 
-  public componentDidUpdate: () => void = () => {
-    if (this.ready && this.props.onReady) {
-      this.props.onReady()
-    }
-  }
-
   public componentWillUnmount: () => void = () => {
-    if (this.viewedTimer) {
-      clearTimeout(this.viewedTimer)
-      this.viewedTimer = undefined
-    }
+    clearTimeout(this.viewedTimer)
   }
 
-  private onChange: (inView: boolean, entry: IntersectionObserverEntry) => void = (inView, entry) => {
-    if (!inView) {
-      clearTimeout(this.viewedTimer)
-      this.viewedTimer = undefined
-      return
-    }
-    if (!this.viewedTimer && !this.state.viewed) {
+  private onChange: (inView: boolean) => void = (inView) => {
+    clearTimeout(this.viewedTimer)
+    if (inView) {
       this.viewedTimer = setTimeout(() => {
         this.setState({
           viewed: true,
         })
-      }, this.props.delay)
+      }, this.props.viewedDelay)
     }
-    this.setState({
-      marked: entry.intersectionRatio > 0.8,
-    })
   }
 
   private onLoad: () => void = () => {
@@ -96,12 +76,7 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
     if (!this.state.viewed) {
       return undefined
     }
-    const {srcSet} = this.props
-    return srcSet
-  }
-
-  private get ready(): boolean {
-    return this.state.loaded && this.state.marked
+    return this.props.srcSet
   }
 
   public render() {
@@ -109,7 +84,6 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
       src: this.src,
       srcSet: this.srcSet,
       loaded: this.state.loaded,
-      ready: this.ready,
       onChange: this.onChange,
       onLoad: this.onLoad,
     })

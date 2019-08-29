@@ -13,10 +13,7 @@ interface ImageProps {
   alt?: string
   stub?: string | boolean | ReactNode
   onLoad?: () => void
-  onReady?: () => void
 }
-
-const THRESHOLD = [0, 0.8]
 
 export const Image: FC<ImageProps> = ({
   width,
@@ -27,7 +24,6 @@ export const Image: FC<ImageProps> = ({
   alt,
   stub,
   onLoad,
-  onReady,
 }) => {
   if (!stub) {
     return (
@@ -50,9 +46,8 @@ export const Image: FC<ImageProps> = ({
       srcSet={srcSet}
       stub={stub}
       onLoad={onLoad}
-      onReady={onReady}
       children={(renderProps) => (
-        renderProps.ready ? (
+        renderProps.loaded ? (
           <Img
             key={src}
             width={width}
@@ -64,22 +59,21 @@ export const Image: FC<ImageProps> = ({
           />
         ) : (
           <InView
-            threshold={THRESHOLD}
             onChange={renderProps.onChange}
             children={({ref}) => (
               <Pos ref={ref} type="relative" width={width} height={height}>
-                {typeof stub === 'boolean' && stub && !renderProps.loaded ? (
+                {typeof stub === 'boolean' && stub ? (
                   <Pos type="absolute" width={width} height={height}>
                     <Stub width={width} height={height} r={width === height ? '100%' : undefined}/>
                   </Pos>
-                ) : isValidElement(stub) && Children.only(stub) && !renderProps.loaded ? (
+                ) : isValidElement(stub) && Children.only(stub) ? (
                   <Pos type="absolute" width={width} height={height}>
                     {stub}
                   </Pos>
                 ) : (
                   null
                 )}
-                <Box opacity={typeof stub === 'string' || renderProps.loaded ? 1 : 0}>
+                <Box opacity={typeof stub === 'string' ? 1 : 0}>
                   <Img
                     width={width}
                     height={height}
