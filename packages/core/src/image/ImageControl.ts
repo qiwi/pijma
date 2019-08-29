@@ -53,6 +53,9 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
   }
 
   private onLoad: () => void = () => {
+    if (!this.state.viewed) {
+      return
+    }
     if (this.props.onLoad) {
       this.props.onLoad()
     }
