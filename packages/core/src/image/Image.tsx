@@ -22,7 +22,7 @@ export const Image: FC<ImageProps> = ({
   srcSet,
   sizes,
   alt,
-  stub,
+  stub = true,
   onLoad,
 }) => (
   stub ? (
