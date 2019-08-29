@@ -1,3 +1,31 @@
+# [@qiwi/pijma-desktop-v1.70.0](https://github.com/qiwi/pijma/compare/v1.69.1...v1.70.0) (2019-08-23)
+
+
+### Features
+
+* icons refactoring ([a9d82ad](https://github.com/qiwi/pijma/commit/a9d82ad))
+
+# [@qiwi/pijma-desktop-v1.69.1](https://github.com/qiwi/pijma/compare/v1.69.0...v1.69.1) (2019-08-22)
+
+
+### Bug Fixes
+
+* **desktop:** logo block link ([3f9040e](https://github.com/qiwi/pijma/commit/3f9040e))
+
+# [@qiwi/pijma-desktop-v1.69.0](https://github.com/qiwi/pijma/compare/v1.68.0...v1.69.0) (2019-08-22)
+
+
+### Features
+
+* logo block link improvements ([6006c08](https://github.com/qiwi/pijma/commit/6006c08))
+
+# [@qiwi/pijma-desktop-v1.68.0](https://github.com/qiwi/pijma/compare/v1.67.0...v1.68.0) (2019-08-20)
+
+
+### Features
+
+* logo link ([94d01e6](https://github.com/qiwi/pijma/commit/94d01e6))
+
 # [@qiwi/pijma-desktop-v1.67.0](https://github.com/qiwi/pijma/compare/v1.66.1...v1.67.0) (2019-08-16)
 
 

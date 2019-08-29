@@ -195,19 +195,19 @@
     <Button
       kind="brand"
       size="accent"
-      icon={<StarIcon/>}
+      icon={<Icon name="star"/>}
       text="Нажать"
     />
     <Button
       kind="brand"
       size="normal"
-      icon={<StarIcon/>}
+      icon={<Icon name="star"/>}
       text="Нажать"
     />
     <Button
       kind="brand"
       size="minor"
-      icon={<StarIcon/>}
+      icon={<Icon name="star"/>}
       text="Нажать"
     />
   </Spacer>
@@ -215,19 +215,19 @@
     <Button
       kind="simple"
       size="accent"
-      icon={<StarIcon/>}
+      icon={<Icon name="star"/>}
       text="Нажать"
     />
     <Button
       kind="simple"
       size="normal"
-      icon={<StarIcon/>}
+      icon={<Icon name="star"/>}
       text="Нажать"
     />
     <Button
       kind="simple"
       size="minor"
-      icon={<StarIcon/>}
+      icon={<Icon name="star"/>}
       text="Нажать"
     />
   </Spacer>
@@ -269,21 +269,21 @@
       <Button
         kind="brand"
         size="accent"
-        icon={<StarIcon/>}
+        icon={<Icon name="star"/>}
       />
     </FlexItem>
     <FlexItem pr={4}>
       <Button
         kind="brand"
         size="normal"
-        icon={<StarIcon/>}
+        icon={<Icon name="star"/>}
       />
     </FlexItem>
     <FlexItem>
       <Button
         kind="brand"
         size="minor"
-        icon={<StarIcon/>}
+        icon={<Icon name="star"/>}
       />
     </FlexItem>
   </Flex>
@@ -292,21 +292,21 @@
       <Button
         kind="simple"
         size="accent"
-        icon={<StarIcon/>}
+        icon={<Icon name="star"/>}
       />
     </FlexItem>
     <FlexItem pr={4}>
       <Button
         kind="simple"
         size="normal"
-        icon={<StarIcon/>}
+        icon={<Icon name="star"/>}
       />
     </FlexItem>
     <FlexItem pr={4}>
       <Button
         kind="simple"
         size="minor"
-        icon={<StarIcon/>}
+        icon={<Icon name="star"/>}
       />
     </FlexItem>
   </Flex>

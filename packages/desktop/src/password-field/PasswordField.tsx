@@ -1,7 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {PasswordFieldControl, Box, InputField, BasicInput} from '@qiwi/pijma-core'
-import {EyeClosedIcon, EyeOpenedIcon} from '@qiwi/pijma-media'
+import {PasswordFieldControl, Box, InputField, BasicInput, Icon} from '@qiwi/pijma-core'
 
 import PasswordFieldProps from './PasswordFieldProps'
 
@@ -47,8 +46,12 @@ const PasswordField: FunctionComponent<PasswordFieldProps> = (props) => (
               width={1}
               height={1}
               onClick={renderProps.onToggle}
-              css={{fill: props.disabled ? '#666' : undefined}}
-              children={renderProps.hidden ? <EyeClosedIcon/> : <EyeOpenedIcon/>}
+              children={(
+                <Icon
+                  name={renderProps.hidden ? 'eye-closed' : 'eye-opened'}
+                  color={props.disabled ? '#666' : '#000'}
+                />
+              )}
             />
           ) : props.hint ? (
             props.hint
