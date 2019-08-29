@@ -24,21 +24,8 @@ export const Image: FC<ImageProps> = ({
   alt,
   stub,
   onLoad,
-}) => {
-  if (!stub) {
-    return (
-      <Img
-        width={width}
-        height={height}
-        src={src}
-        srcSet={srcSet}
-        sizes={sizes}
-        alt={alt}
-        onLoad={onLoad}
-      />
-    )
-  }
-  return (
+}) => (
+  stub ? (
     <ImageControl
       width={width}
       height={height}
@@ -90,5 +77,15 @@ export const Image: FC<ImageProps> = ({
         )
       )}
     />
+  ) : (
+    <Img
+      width={width}
+      height={height}
+      src={src}
+      srcSet={srcSet}
+      sizes={sizes}
+      alt={alt}
+      onLoad={onLoad}
+    />
   )
-}
+)
