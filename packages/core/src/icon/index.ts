@@ -1,2 +1,13 @@
-export {Icon} from '@qiwi/pijma-media'
-export * from './IconWrapper'
+export * from './Icon'
+
+export * from './QuestionIcon'
+export * from './FilterIcon'
+
+export * from './MastercardIcon'
+export * from './MirIcon'
+export * from './VisaIcon'
+
+export * from './McscIcon'
+export * from './MirAcceptIcon'
+export * from './PciDssIcon'
+export * from './VisaVerifiedIcon'

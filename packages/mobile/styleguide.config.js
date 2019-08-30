@@ -73,7 +73,6 @@ module.exports = {
       name: 'Компоненты',
       components: [
         `${alias['@qiwi/pijma-core']}/**/*.{js,jsx,ts,tsx}`,
-        `${alias['@qiwi/pijma-media']}/**/*.{js,jsx,ts,tsx}`,
         `${alias['@qiwi/pijma-mobile']}/**/*.{js,jsx,ts,tsx}`,
       ],
       sectionDepth: Number.MAX_VALUE,

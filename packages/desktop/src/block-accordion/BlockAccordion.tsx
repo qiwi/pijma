@@ -1,7 +1,7 @@
 import React, {FunctionComponent, ReactNode} from 'react'
 
-import {AccordionControl, Box, Card, Flex, FlexItem} from '@qiwi/pijma-core'
-import {Icon} from '@qiwi/pijma-media'
+import {AccordionControl, Box, Card, Flex, FlexItem, Icon} from '@qiwi/pijma-core'
+
 import {Paragraph} from '../typography'
 
 export interface BlockAccordionProps<I> {
@@ -25,9 +25,7 @@ const BlockAccordionIndent: {
   l: 17,
 }
 
-export const BlockAccordion: FunctionComponent<
-  BlockAccordionProps<BlockAccordionItemModel>
-> = ({items, indent = 'm', tabIndex = 0, opened, onChange}) => (
+export const BlockAccordion: FunctionComponent<BlockAccordionProps<BlockAccordionItemModel>> = ({items, indent = 'm', tabIndex = 0, opened, onChange}) => (
   <AccordionControl<BlockAccordionItemModel>
     items={items}
     opened={opened}
@@ -41,8 +39,8 @@ export const BlockAccordion: FunctionComponent<
               item.hovered || item.focused
                 ? '0 0 16px 0 rgba(0, 0, 0, 0.12)'
                 : index > 0 &&
-                  !(renderProps.items[index - 1].hovered ||
-                      renderProps.items[index - 1].focused)
+                !(renderProps.items[index - 1].hovered ||
+                  renderProps.items[index - 1].focused)
                 ? '0 -1px 0 #e6e6e6'
                 : undefined
             }
@@ -75,7 +73,7 @@ export const BlockAccordion: FunctionComponent<
                 transform={`rotate(${item.opened ? 180 : 0}deg)`}
                 transition="transform 0.3s ease-in-out"
               >
-                <Icon name="angle-small-down" />
+                <Icon name="angle-small-down"/>
               </FlexItem>
             </Flex>
             <Box px={BlockAccordionIndent[indent]} pb={4} display={item.opened ? 'block' : 'none'}>

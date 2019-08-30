@@ -1,7 +1,7 @@
 import React, {FunctionComponent} from 'react'
 
-import {PaginationControl, Card, IconWrapper, Box} from '@qiwi/pijma-core'
-import {Icon} from '@qiwi/pijma-media'
+import {PaginationControl, Card, Icon} from '@qiwi/pijma-core'
+
 import {Text} from '../typography'
 import {PaginationLink} from './PaginationLink'
 
@@ -43,11 +43,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           href={href ? href(renderProps.prev) : undefined}
           onClick={renderProps.onPageClick(renderProps.prev, renderProps.pages.includes(1))}
           children={({disabled}) => (
-            <Box width={5} height={5}>
-              <IconWrapper color={disabled ? '#ccc' : '#000'}>
-                <Icon name="angle-small-left" />
-              </IconWrapper>
-            </Box>
+            <Icon name="angle-small-left" color={disabled ? '#ccc' : '#000'}/>
           )}
         />
         {renderProps.pages.map(page => (
@@ -62,9 +58,8 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
                 bold={false}
                 size="m"
                 color={renderProps.active === page ? 'warning' : 'default'}
-              >
-                {page}
-              </Text>
+                children={page}
+              />
             )}
           />
         ))}
@@ -74,11 +69,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           href={href ? href(renderProps.next) : undefined}
           onClick={renderProps.onPageClick(renderProps.next, renderProps.pages.includes(renderProps.total))}
           children={({disabled}) => (
-            <Box width={5} height={5}>
-              <IconWrapper color={disabled ? '#ccc' : '#000'}>
-                <Icon name="angle-small-right" />
-              </IconWrapper>
-            </Box>
+            <Icon name="angle-small-right" color={disabled ? '#ccc' : '#000'}/>
           )}
         />
       </Card>

@@ -18,9 +18,9 @@ import {
   FlexNonProps,
   PosNonProps,
   CardNonProps,
+  Icon,
 } from '@qiwi/pijma-core'
 
-import {Icon} from '@qiwi/pijma-media'
 import {Paragraph} from '../typography'
 
 const contentTransitionVertical: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>

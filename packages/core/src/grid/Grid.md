@@ -1,4 +1,4 @@
-```jsx {"separated": true}
+```jsx
 <Grid layout={[2, 6, 4]}>
   <Block>
     <Box width={1} height={20}/>
@@ -12,7 +12,7 @@
 </Grid>
 ```
 
-```jsx {"separated": true}
+```jsx
 <Grid layout={[2]}>
   <Block>
     <Box width={1} height={20}/>
@@ -47,7 +47,7 @@
 </Grid>
 ```
 
-```jsx {"separated": true}
+```jsx
 <Grid columns={5} layout={[1]}>
   <Block>
     <Box width={1} height={20}/>
@@ -67,7 +67,7 @@
 </Grid>
 ```
 
-```jsx {"separated": true}
+```jsx
 <Grid layout={[6]}>
   <Block>
     <Box width={1} height={20}/>
