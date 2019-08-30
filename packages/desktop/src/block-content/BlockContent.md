@@ -4,7 +4,7 @@
 padding: 44px 68px 48px
 ```
 
-```jsx {"separated": true}
+```jsx
 <Block>
   <BlockContent indent="l">
     <Spacer size="m">
@@ -25,7 +25,7 @@ padding: 44px 68px 48px
 padding: 44px 44px 48px
 ```
 
-```jsx {"separated": true}
+```jsx
 <Block>
   <BlockContent indent="m">
     <Spacer size="m">
@@ -46,7 +46,7 @@ padding: 44px 44px 48px
 padding: 32px
 ```
 
-```jsx {"separated": true}
+```jsx
 <Block>
   <BlockContent indent="s">
     <Spacer size="m">

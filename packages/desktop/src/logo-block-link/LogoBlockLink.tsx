@@ -73,7 +73,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
                   />
                 ) : (
                   null
-                )}git
+                )}
               </Spacer>
             </FlexItem>
             {actions ? (
