@@ -1,67 +1,88 @@
-import React, {FunctionComponent, ReactNode, RefObject} from 'react'
-import {css} from 'emotion'
+import React, {FC} from 'react'
 
-import {Card, Overlay, Pos, SimpleTransition, SimpleTransitionProps} from '@qiwi/pijma-core'
+import {Overlay, OverlayProps, SimpleTransition, SimpleTransitionProps, styled, css, cssValue} from '@qiwi/pijma-core'
 
 export interface DropDownProps {
   show: boolean
-  target?: Overlay.OverlayProps['target']
-  contentRef?: RefObject<HTMLDivElement>
-  container: Overlay.OverlayProps['container']
-  children: ReactNode
-  onHide: () => void
+  placement?: OverlayProps['placement']
   offset?: number
-  zIndex?: number
+  target: OverlayProps['target']
+  container: OverlayProps['container']
+  children: React.ReactElement
+  onHide: () => void
 }
 
-const transition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const transition: FC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
 
 transition.defaultProps = {
-  appear: true,
   timeout: {
-    enter: 370,
-    exit: 250,
+    enter: 300,
+    exit: 200,
   },
   enterClassName: (timeout: number) => css({
     opacity: 1,
-    transition: `opacity ${timeout}ms ease`,
+    transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
   }),
   exitClassName: (timeout: number) => css({
     opacity: 0,
-    transition: `opacity ${timeout}ms ease`,
+    transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
   }),
 }
 
-export const DropDown: FunctionComponent<DropDownProps> = (props) => (
+interface OverlayPosProps {
+  placement?: 'top' | 'right' | 'bottom' | 'left'
+  offset?: number
+  positionTop?: number
+  positionLeft?: number
+  arrowOffsetTop?: number
+  arrowOffsetLeft?: number
+}
+
+const OverlayPosNonProps = [
+  'style', 'placement', 'offset',
+  'positionTop', 'positionLeft',
+  'arrowOffsetTop', 'arrowOffsetLeft',
+]
+
+const OverlayPos = styled('div', {
+  shouldForwardProp: (prop) => !OverlayPosNonProps.includes(prop),
+})<OverlayPosProps>(({
+  theme,
+  placement,
+  offset,
+  positionTop,
+  positionLeft,
+}) => ({
+  display: 'inline-table',
+  position: 'absolute',
+  zIndex: 999,
+  top: positionTop,
+  left: positionLeft,
+  marginTop: cssValue((offset === undefined ? undefined : placement === 'bottom' ? offset : placement === 'top' ? -1 * offset : undefined), theme.scale, false),
+  marginLeft: cssValue((offset === undefined ? undefined : placement === 'right' ? offset : placement === 'left' ? -1 * offset : undefined), theme.scale, false),
+}))
+
+export const DropDown: FC<DropDownProps> = ({
+  show,
+  placement = 'bottom',
+  offset,
+  target,
+  container,
+  onHide,
+  children,
+}) => (
   <Overlay
-    show={props.show}
-    placement="bottom"
-    target={props.target}
-    container={props.container}
+    show={show}
+    placement={placement}
+    target={target}
+    container={container}
     rootClose={true}
-    onHide={props.onHide}
+    onHide={onHide}
     transition={transition}
-    children={() => (
-      <Pos type="absolute" top={props.offset} zIndex={props.zIndex} width={1}>
-        <Card
-          ref={props.contentRef}
-          s="0 28px 52px 0 rgba(0, 0, 0, 0.16)"
-          bg="#fff"
-          r={10}
-          px={6}
-          py={3}
-          width={1}
-          maxHeight={104}
-          boxSizing="content-box"
-          overflow="auto"
-          ml={-6}
-          children={props.children}
-        />
-      </Pos>
+    children={(
+      <OverlayPos offset={offset}>
+        {children}
+      </OverlayPos>
     )}
   />
 )
-
-DropDown.defaultProps = {
-  offset: 0,
-}

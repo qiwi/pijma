@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-mobile",
-  "version": "1.70.0",
+  "version": "1.71.0",
   "main": "lib/es5/index.js",
   "types": "lib/es5/index.d.ts",
   "license": "MIT",
@@ -24,16 +24,16 @@
     "@qiwi/pijma-core": "^1.x.x",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
-    "@types/react-overlays": "^1.1.3",
+    "@types/react-overlays": "0.8.5",
     "@types/react-text-mask": "^5.4.6",
-    "@types/react-transition-group": "^2.9.2",
+    "@types/react-transition-group": "4.2.2",
     "emotion": "^10.0.14",
     "emotion-theming": "^10.0.14",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-overlays": "^1.2.0",
+    "react-overlays": "0.8.3",
     "react-text-mask": "^5.4.3",
-    "react-transition-group": "^4.2.1",
+    "react-transition-group": "4.2.2",
     "tslib": "^1.10.0"
   },
   "devDependencies": {
