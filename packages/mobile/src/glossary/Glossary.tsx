@@ -1,5 +1,5 @@
 import React, {FC} from 'react'
-import {Spacer} from '@qiwi/pijma-core'
+import {Box} from '@qiwi/pijma-core'
 import {Paragraph, Text} from '../typography'
 
 export interface GlossaryProps {
@@ -7,12 +7,14 @@ export interface GlossaryProps {
 }
 
 export const Glossary: FC<GlossaryProps> = ({children}) => (
-  <Spacer size="s">
+  <Box>
     {children.map((item, i) => (
-      <Spacer key={i} size="xxs">
-        <Text bold={false} compact size="s" color="support" children={item['title']}/>
-        <Paragraph compact size="l" children={item['content']}/>
-      </Spacer>
+      <Box key={i} mt={i === 0 ? undefined : 3}>
+        <Text bold={false} compact size="s" color="support" children={item.title}/>
+        <Box mt={1}>
+          <Paragraph compact size="l" children={item.content}/>
+        </Box>
+      </Box>
     ))}
-  </Spacer>
+  </Box>
 )
