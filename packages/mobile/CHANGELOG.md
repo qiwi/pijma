@@ -1,3 +1,53 @@
+# [@qiwi/pijma-mobile-v1.71.0](https://github.com/qiwi/pijma/compare/v1.70.0...v1.71.0) (2019-09-02)
+
+
+### Features
+
+* image ([1968616](https://github.com/qiwi/pijma/commit/1968616))
+
+# [@qiwi/pijma-mobile-v1.70.0](https://github.com/qiwi/pijma/compare/v1.69.1...v1.70.0) (2019-08-23)
+
+
+### Features
+
+* icons refactoring ([a9d82ad](https://github.com/qiwi/pijma/commit/a9d82ad))
+
+# [@qiwi/pijma-mobile-v1.69.0](https://github.com/qiwi/pijma/compare/v1.68.0...v1.69.0) (2019-08-22)
+
+
+### Features
+
+* logo block link improvements ([6006c08](https://github.com/qiwi/pijma/commit/6006c08))
+
+# [@qiwi/pijma-mobile-v1.68.0](https://github.com/qiwi/pijma/compare/v1.67.0...v1.68.0) (2019-08-20)
+
+
+### Features
+
+* logo link ([94d01e6](https://github.com/qiwi/pijma/commit/94d01e6))
+
+# [@qiwi/pijma-mobile-v1.67.0](https://github.com/qiwi/pijma/compare/v1.66.1...v1.67.0) (2019-08-16)
+
+
+### Features
+
+* gh-pages redesign ([4810142](https://github.com/qiwi/pijma/commit/4810142))
+
+# [@qiwi/pijma-mobile-v1.66.1](https://github.com/qiwi/pijma/compare/v1.66.0...v1.66.1) (2019-08-16)
+
+
+### Bug Fixes
+
+* **mobile:** file link min height ([#203](https://github.com/qiwi/pijma/issues/203)) ([34cf648](https://github.com/qiwi/pijma/commit/34cf648))
+* **mobile:** menu item required props ([42f17a3](https://github.com/qiwi/pijma/commit/42f17a3))
+
+# [@qiwi/pijma-mobile-v1.66.0](https://github.com/qiwi/pijma/compare/v1.65.0...v1.66.0) (2019-08-16)
+
+
+### Features
+
+* multi ellipsis ([9d6c7b0](https://github.com/qiwi/pijma/commit/9d6c7b0))
+
 # [@qiwi/pijma-mobile-v1.65.0](https://github.com/qiwi/pijma/compare/v1.64.0...v1.65.0) (2019-08-12)
 
 

@@ -39,7 +39,7 @@ export const Tumbler: FC<TumblerProps> = props => (
       y="0"
       rx="12"
       fill={props.checked ? '#e8860e' : '#ccc'}
-      fillOpacity={props.focused && !props.disabled ? '0.6' : '0'}
+      fillOpacity={props.focused && !props.disabled ? 0.6 : 0}
       transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
     />
     <Rect
@@ -59,7 +59,7 @@ export const Tumbler: FC<TumblerProps> = props => (
       y="6"
       rx="6"
       filter="url(#filter-2)"
-      fillOpacity={props.disabled ? '0' : '1'}
+      fillOpacity={props.disabled ? 0 : 1}
       transition="all 50ms cubic-bezier(0.4, 0.0, 0.2, 1)"
     />
     <Rect
