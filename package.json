@@ -38,5 +38,8 @@
         "yarn run guide_ci"
       ]
     }
+  },
+  "resolutions": {
+    "react-transition-group": "*"
   }
 }
