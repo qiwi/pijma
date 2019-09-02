@@ -17,7 +17,7 @@ const MarkdownBox = styled(Box)({
 })
 
 const SizeMargin: { [size in NonNullable<SizeProps['size']>]: number } = {
-  s: 3,
+  s: 2,
   m: 3,
   l: 3,
 }
