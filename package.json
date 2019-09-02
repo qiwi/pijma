@@ -40,6 +40,7 @@
     }
   },
   "resolutions": {
-    "react-transition-group": "*"
+    "react-transition-group": "^4.2.2",
+    "@types/react-transition-group": "^4.2.2"
   }
 }
