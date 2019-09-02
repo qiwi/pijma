@@ -56,3 +56,23 @@
   </BlockContent>
 </Block>
 ```
+
+## Width
+
+Рекомендуется указывать один параметр ширины содержимого (либо titleWidth, либо contentWidth)
+
+```jsx
+<Block>
+  <BlockContent>
+    <Details titleWidth={75} dots children={[
+      {title: <Text bold={false} size="m" children="Допустимый остаток на балансе:"/>, content: 'До 15 000 ₽'}, 
+      {title: <Text bold={false} size="m" children="Платежи и переводы:"/>, content: 'До 40 000 ₽ в месяц'}, 
+      {content: 'Из них не более 5 000 ₽ на банковские карты, счета и кошельки других систем'},
+      {content: 'Не более 15 000 ₽ на другие QIWI Кошельки'}, 
+      {content: 'И не более 5 000 ₽ в месяц на платежи иностранным компаниям'},
+      {title: <Text bold={false} size="m" children="Допустимая сумма на одну операцию:"/>, content: 'До 15 000 ₽'},
+      {title: <Text bold={false} size="m" children="Снятие наличных с карт QIWI:"/>, content: 'До 5 000 ₽ в день \n До 5 000 ₽ в месяц'}
+    ]}/>
+  </BlockContent>
+</Block>
+```
