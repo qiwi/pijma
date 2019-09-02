@@ -11,7 +11,7 @@ export interface BlockTabsProps {
   center?: boolean
   onChange?: (selected: number) => void
   items: {
-    icon?: React.ReactNode
+    icon?: React.ReactElement
     title: React.ReactNode
     content: React.ReactNode
   }[]

@@ -10,7 +10,7 @@ export interface TabHeaderProps {
   indent?: 'xs' | 's' | 'm' | 'l'
   vertical?: boolean
   items: {
-    icon?: React.ReactNode
+    icon?: React.ReactElement
     title: React.ReactNode
     content: React.ReactNode
   }[]

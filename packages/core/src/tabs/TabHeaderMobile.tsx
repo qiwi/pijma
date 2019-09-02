@@ -10,7 +10,7 @@ export interface TabHeaderMobileProps {
   indent?: 'm' | 'l'
   vertical?: boolean
   items: {
-    icon?: React.ReactNode
+    icon?: React.ReactElement
     title: React.ReactNode
     content: React.ReactNode
   }[]

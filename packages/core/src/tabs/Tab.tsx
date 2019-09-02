@@ -1,7 +1,6 @@
-import React, {ReactNode, FC} from 'react'
+import React, {ReactNode, ReactElement, FC} from 'react'
 
 import {Box, BoxProps, Flex, Typo, Pos, Card, FlexItem} from '../primitive'
-import {IconWrapper} from '../icon'
 
 export interface TabProps {
   vertical?: boolean
@@ -11,7 +10,7 @@ export interface TabProps {
   active?: boolean
   small?: boolean
   border?: boolean
-  icon?: ReactNode
+  icon?: ReactElement
   title: ReactNode
   onChange: React.MouseEventHandler
   onMouseEnter: React.MouseEventHandler
@@ -59,14 +58,9 @@ export const Tab: FC<TabProps & BoxProps> = ({
             <Flex
               children={
                 <Box
-                  children={
-                    <IconWrapper
-                      color={
-                        selected ? '#ff8c00' : focused ? '#ff8c00' : '#666'
-                      }
-                      children={icon}
-                    />
-                  }
+                  children={React.cloneElement(icon, {
+                    color: selected ? '#ff8c00' : focused ? '#ff8c00' : '#666',
+                  })}
                   height={vertical ? 8 : 6}
                   width={vertical ? 8 : 6}
                 />
