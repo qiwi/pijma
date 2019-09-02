@@ -9,6 +9,7 @@ export default interface SwitchFieldProps<O extends OptionModel<V>, V> {
   tabIndex?: number
   autoFocus?: boolean
   reverse?: boolean
+  stub?: boolean
   options: O[]
   values: V[]
   equals?: (a: V, b: V) => boolean

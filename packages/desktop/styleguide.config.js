@@ -10,16 +10,13 @@ const alias = Object.keys(tsConfig.compilerOptions.paths).reduce((p, c) => Objec
   [c.replace(/\/\*$/, '')]: path.resolve(__dirname, '..', '..', tsConfig.compilerOptions.baseUrl, tsConfig.compilerOptions.paths[c][0].replace(/\/\*$/, '')),
 }), {})
 
-const readFiles = (dir) => {
-  return fs
-    .readdirSync(dir)
-    .filter((file) => file !== '.' && file !== '..')
-    .map((file) => path.resolve(dir, file))
-    .reduce((files, file) => files.concat(fs.statSync(file).isDirectory() ? readFiles(file) : file), [])
-}
+const readFiles = (dir) => fs
+  .readdirSync(dir)
+  .filter((file) => file !== '.' && file !== '..')
+  .map((file) => path.resolve(dir, file))
+  .reduce((files, file) => files.concat(fs.statSync(file).isDirectory() ? readFiles(file) : file), [])
 
 module.exports = {
-  resolver: docgen.resolver,
   propsParser: docgen.parse,
   serverPort: 6060,
   styleguideDir: path.resolve(styleguide, 'lib'),
@@ -27,14 +24,30 @@ module.exports = {
     .reduce((components, file) => Object.assign(components, {
       [path.relative(path.resolve(styleguide, 'components'), file).slice(0, -1 * path.extname(file).length)]: file,
     }), {}),
+  styles: {
+    Editor: {
+      root: {
+        '& .cm-s-base16-light.CodeMirror': {
+          isolate: false,
+          background: 'none',
+          border: '1px solid #e6e6e6',
+          borderRadius: '10px',
+        },
+      },
+    },
+  },
   theme: {
     borderRadius: '10px',
     fontFamily: {
       base: '\'Museo Sans\', \'Helvetica Neue\', \'Helvetica\', \'Arial\', sans-serif',
+      monospace: 'monospace',
     },
     mq: {
       small: '@media (max-width: 0px)',
     },
+    color: {
+      codeBackground: '#fff',
+    }
   },
   require: [
     path.resolve(styleguide, 'require.js'),
@@ -43,8 +56,14 @@ module.exports = {
     '**/*/index.{js,jsx,ts,tsx}',
   ],
   skipComponentsWithoutExample: true,
-  getComponentPathLine(componentPath) {
-    return `import {${path.basename(componentPath, path.extname(componentPath))}} from '${Object.keys(alias).find(key => path.resolve(componentPath).startsWith(alias[key]))}'`
+  getComponentPathLine(file) {
+    return `import {${path.basename(file, path.extname(file))}} from '${Object.keys(alias).find(key => path.resolve(file).startsWith(alias[key]))}'`
+  },
+  getExampleFilename(componentPath) {
+    return path.resolve(path.dirname(componentPath), `${path.basename(componentPath, path.extname(componentPath))}.md`)
+  },
+  getExampleFilename(componentPath) {
+    return path.resolve(path.dirname(componentPath), `${path.basename(componentPath, path.extname(componentPath))}.md`)
   },
   pagePerSection: true,
   sections: [
@@ -57,7 +76,6 @@ module.exports = {
       name: 'Компоненты',
       components: [
         `${alias['@qiwi/pijma-core']}/**/*.{js,jsx,ts,tsx}`,
-        `${alias['@qiwi/pijma-media']}/**/*.{js,jsx,ts,tsx}`,
         `${alias['@qiwi/pijma-desktop']}/**/*.{js,jsx,ts,tsx}`,
       ],
       sectionDepth: Number.MAX_VALUE,

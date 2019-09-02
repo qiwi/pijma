@@ -18,6 +18,8 @@ export * from './list'
 export * from './pagination'
 export * from './header-menu'
 export * from './header'
+export * from './status'
+export * from './logo-link'
 export * from './drop-down'
 
 export {TextField as MaskTextField} from './text-field'

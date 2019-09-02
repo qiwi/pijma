@@ -31,15 +31,21 @@ export const Stub: FC<StubProps> = (props) => (
     pb={props.bottom}
     pl={props.left}
     pr={props.right}
+    width={props.width}
+    height={props.height}
+    maxWidth={1}
+    maxHeight={1}
+    css={{
+      boxSizing: 'content-box',
+    }}
   >
     <CardPos
       type="relative"
       r={props.r}
       overflow="hidden"
-      bg={props.inverse ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.015)'}
-      width={props.width}
-      height={props.height}
-      maxWidth={1}
+      bg={props.inverse ? 'rgba(255, 255, 255, 0.14)' : '#E6E6E6'}
+      width={1}
+      height={1}
     >
       <CardPos
         width={1}
