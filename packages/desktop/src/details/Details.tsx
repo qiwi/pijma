@@ -10,8 +10,8 @@ export interface DetailsProps {
   size?: 's' | 'm' | 'l'
 }
 
-const indent: { [size in NonNullable<DetailsProps['size']>]: string } = {
-  s: '7px',
+const indentDots: { [size in NonNullable<DetailsProps['size']>]: string } = {
+  s: '6px',
   m: '8px',
   l: '8px',
 }
@@ -24,10 +24,11 @@ const bottomDots: { [size in NonNullable<DetailsProps['size']>]: string } = {
 
 export const Details: FC<DetailsProps> = ({children, dots, titleWidth, contentWidth, size = 'm'}) => (
   !dots ? (
-    <Box width="100%" display="table">
+    <Box as="dl" width="100%" display="table">
       {children.map((item, i) => (
         <Box css={{display: 'table-row'}} key={i}>
           <Box
+            as="dt"
             width={titleWidth ? titleWidth : undefined}
             pt={i !== 0 ? 3 : undefined}
             css={{
@@ -47,6 +48,7 @@ export const Details: FC<DetailsProps> = ({children, dots, titleWidth, contentWi
             )}
           </Box>
           <Box
+            as="dd"
             width={contentWidth ? contentWidth : undefined}
             pl={4}
             pt={i !== 0 ? 3 : undefined}
@@ -69,13 +71,13 @@ export const Details: FC<DetailsProps> = ({children, dots, titleWidth, contentWi
       ))}
     </Box>
   ) : (
-    <Box width="100%" display="table">
+    <Box as="dl" width="100%" display="table">
       {children.map((item, i) => (
         <Box css={{display: 'table-row'}} key={i}>
           <Box
+            as="dt"
             width={titleWidth ? titleWidth : undefined}
             pt={i !== 0 ? 3 : undefined}
-            minWidth={50}
             css={{
               display: 'table-cell',
               verticalAlign: 'bottom',
@@ -92,7 +94,7 @@ export const Details: FC<DetailsProps> = ({children, dots, titleWidth, contentWi
                     bottom: bottomDots[size],
                     borderBottom: 'dashed 1px #e6e6e6',
                     width: '100%',
-                    marginLeft: indent[size],
+                    marginLeft: indentDots[size],
                   },
                 }}
               >
@@ -112,14 +114,14 @@ export const Details: FC<DetailsProps> = ({children, dots, titleWidth, contentWi
             )}
           </Box>
           <Box
+            as="dd"
             width={contentWidth ? contentWidth : undefined}
             pt={i !== 0 ? 3 : undefined}
             css={{
               display: 'table-cell',
               verticalAlign: 'bottom',
             }}
-            pl={indent[size]}
-            minWidth={50}
+            pl={indentDots[size]}
           >
             {typeof item.content === 'string' ? (
               <Text
