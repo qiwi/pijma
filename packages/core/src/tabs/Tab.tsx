@@ -6,29 +6,33 @@ import {IconWrapper} from '../icon'
 export interface TabProps {
   vertical?: boolean
   tabIndex?: number
-  selected?: boolean
-  focused?: boolean
+  selected: boolean
+  focused: boolean
   active?: boolean
   small?: boolean
+  border?: boolean
   icon?: ReactNode
-  onSelect?: () => void
-  onMouseEnter?: () => void
-  onMouseLeave?: () => void
+  title: ReactNode
+  onChange: React.MouseEventHandler
+  onMouseEnter: React.MouseEventHandler
+  onMouseLeave: React.MouseEventHandler
 }
 
 export const Tab: FC<TabProps & BoxProps> = ({
   tabIndex,
   vertical,
-  children,
+  title,
   icon,
   selected,
   focused,
   width,
   small,
-  onSelect,
+  border,
+  onChange,
   onMouseEnter,
   onMouseLeave,
 }) => {
+  const pb = small ? 2 : vertical ? 5 : 4
   return (
     <FlexItem
       grow={0}
@@ -39,6 +43,7 @@ export const Tab: FC<TabProps & BoxProps> = ({
       mr={5}
       tabIndex={tabIndex}
       cursor="pointer"
+      onClick={onChange}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -46,8 +51,7 @@ export const Tab: FC<TabProps & BoxProps> = ({
         <Flex
           direction={vertical ? 'column' : 'row'}
           justify={vertical ? 'center' : 'flex-start'}
-          onClick={onSelect}
-          pb={small ? 2 : vertical ? 6 : 4}
+          pb={border ? pb - 0.25 : pb}
           pr={0}
           pl={0}
         >
@@ -63,12 +67,12 @@ export const Tab: FC<TabProps & BoxProps> = ({
                       children={icon}
                     />
                   }
-                  height={vertical ? 11 : 6}
-                  width={vertical ? 11 : 6}
+                  height={vertical ? 8 : 6}
+                  width={vertical ? 8 : 6}
                 />
               }
               pr={vertical ? 0 : 1}
-              pb={vertical ? (small ? 1.5 : 3) : 0}
+              pb={vertical ? (small ? 1.5 : 4) : 0}
               justify={vertical ? 'center' : 'flex-start'}
             />
           ) : null}
@@ -79,7 +83,7 @@ export const Tab: FC<TabProps & BoxProps> = ({
             weight={500}
             size={vertical ? 3.5 : 4}
             height={6}
-            children={children}
+            children={title}
           />
         </Flex>
         {selected ? (

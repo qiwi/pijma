@@ -1,12 +1,6 @@
 import React, {FC} from 'react'
 
-import {
-  TabsControl,
-  Tab,
-  TabList,
-  Block,
-  Box,
-} from '@qiwi/pijma-core'
+import {TabsControl, TabHeaderMobile, Block, Box} from '@qiwi/pijma-core'
 import {BlockContent} from '../block-content'
 
 export interface BlockTabsProps {
@@ -14,35 +8,54 @@ export interface BlockTabsProps {
   selected?: number
   border?: boolean
   vertical?: boolean
-  onSelect?: (selected: number) => void
-  children: {
+  center?: boolean
+  onChange?: (selected: number) => void
+  items: {
     icon?: React.ReactNode
     title: React.ReactNode
     content: React.ReactNode
   }[]
 }
 
-export const BlockTabs: FC<BlockTabsProps> = ({children, ...props}) => {
+export const BlockTabs: FC<BlockTabsProps> = ({
+  items,
+  border,
+  vertical,
+  indent,
+  center,
+  onChange,
+  selected,
+}) => {
   return (
     <Block>
       <BlockContent
-        indent={props.indent}
+        indent={indent}
         children={
           <TabsControl
-            items={children}
-            {...props}
-            children={rendreProps => {
+            selected={selected}
+            onChange={onChange}
+            children={(rendreProps) => {
               return (
                 <>
-                  <TabList {...rendreProps.tabList}>
-                    {rendreProps.tabs.map((tabProps, index) => (
-                      <Tab key={index} small {...tabProps} />
-                    ))}
-                  </TabList>
-                  {rendreProps.tabs.map(({content, selected}, index) => (
+                  <TabHeaderMobile
+                    border={border}
+                    onKeyDown={rendreProps.onKeyDown}
+                    onChange={rendreProps.onChange}
+                    onMouseEnter={rendreProps.onMouseEnter}
+                    onMouseLeave={rendreProps.onMouseLeave}
+                    indent={indent}
+                    center={center}
+                    selected={rendreProps.selected}
+                    focused={rendreProps.focused}
+                    vertical={vertical}
+                    items={items}
+                  />
+                  {items.map(({content}, index) => (
                     <Box
                       key={index}
-                      display={selected ? 'block' : 'none'}
+                      display={
+                        rendreProps.selected === index ? 'block' : 'none'
+                      }
                       children={content}
                     />
                   ))}

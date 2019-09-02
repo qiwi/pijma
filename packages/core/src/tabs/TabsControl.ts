@@ -2,24 +2,16 @@ import React from 'react'
 
 import RenderChild from '../RenderChild'
 
-import {TabProps} from './Tab'
-import {TabListProps} from './TabList'
-
 export interface TabsControlProps {
   selected?: number
-  vertical?: boolean
-  border?: boolean
-  center?: boolean
-  indent?: 's' | 'm' | 'l'
-  items: {
-    icon?: React.ReactNode
-    title: React.ReactNode
-    content: React.ReactNode
-  }[]
-  onSelect?: (selected: number) => void
+  onChange?: (selected: number) => void
   children: RenderChild<{
-    tabs: (TabProps & {content: React.ReactNode})[]
-    tabList: TabListProps
+    onKeyDown: React.KeyboardEventHandler
+    selected: number
+    focused: number
+    onChange: (selected: number) => void
+    onMouseEnter: (selected: number) => void
+    onMouseLeave: React.MouseEventHandler
   }>
 }
 
@@ -38,12 +30,12 @@ export class TabsControl extends React.Component<
     focused: -1,
   }
 
-  private onSelect = (selected: number) => {
+  private onChange = (selected: number) => {
     this.setState({
       selected,
     })
-    if (this.props.onSelect) {
-      this.props.onSelect(selected)
+    if (this.props.onChange) {
+      this.props.onChange(selected)
     }
   }
 
@@ -71,7 +63,7 @@ export class TabsControl extends React.Component<
         }
 
         let next =
-          this.state.selected + 1 < this.props.items.length
+          this.state.selected + 1 < event.currentTarget.children.length
             ? this.state.selected + 1
             : this.state.selected
 
@@ -95,41 +87,13 @@ export class TabsControl extends React.Component<
   }
 
   public render() {
-    const {children, indent, border, vertical, center, items} = this.props
-
-    return children({
-      tabList: {
-        onKeyDown: this.onKeyDown,
-        indent,
-        border,
-        center,
-      },
-      tabs: items.map(
-        (
-          item: {
-            icon?: React.ReactNode
-            title: React.ReactNode
-            content: React.ReactNode
-          },
-          index: number,
-        ) => {
-          const {icon, title, content} = item
-          const onSelect = () => this.onSelect(index)
-          const onMouseEnter = () => this.onMouseEnter(index)
-
-          return {
-            icon,
-            content,
-            children: title,
-            vertical,
-            selected: this.state.selected === index,
-            focused: this.state.focused === index,
-            onSelect,
-            onMouseEnter,
-            onMouseLeave: this.onMouseLeave,
-          }
-        },
-      ),
+    return this.props.children({
+      onKeyDown: this.onKeyDown,
+      selected: this.state.selected,
+      focused: this.state.focused,
+      onChange: this.onChange,
+      onMouseEnter: this.onMouseEnter,
+      onMouseLeave: this.onMouseLeave,
     })
   }
 

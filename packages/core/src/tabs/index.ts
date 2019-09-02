@@ -1,4 +1,4 @@
-export * from './TabList'
-export * from './TabListMobile'
+export * from './TabHeader'
+export * from './TabHeaderMobile'
 export * from './Tab'
 export * from './TabsControl'
