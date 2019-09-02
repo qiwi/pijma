@@ -76,3 +76,37 @@
   </BlockContent>
 </Block>
 ```
+
+## Small
+
+```jsx
+<Block>
+  <BlockContent>
+    <Details size="s" dots children={[
+      {title: 'Срок действия карты', content: '3 года'}, 
+      {title: 'Пополнение', content: 'бесплатно'}, 
+      {title: 'Обслуживание карты', content: 'бесплатно'},
+      {title: 'Комиссия при оплате в рублях в российских магазинах', content: '0%'},
+      {title: 'Комиссия при оплате в зарубежных магазинах', content: '2,5%'},
+      {title: 'Выдача наличных в любом банкомате', content: '2% + 50 ₽'},
+    ]}/>
+  </BlockContent>
+</Block>
+```
+
+## Large
+
+```jsx
+<Block>
+  <BlockContent>
+    <Details size="l" dots children={[
+      {title: 'Срок действия карты', content: '3 года'}, 
+      {title: 'Пополнение', content: 'бесплатно'}, 
+      {title: 'Обслуживание карты', content: 'бесплатно'},
+      {title: 'Комиссия при оплате в рублях в российских магазинах', content: '0%'},
+      {title: 'Комиссия при оплате в зарубежных магазинах', content: '2,5%'},
+      {title: 'Выдача наличных в любом банкомате', content: '2% + 50 ₽'},
+    ]}/>
+  </BlockContent>
+</Block>
+```

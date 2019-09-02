@@ -7,9 +7,22 @@ export interface DetailsProps {
   dots?: boolean
   titleWidth?: Value
   contentWidth?: Value
+  size?: 's' | 'm' | 'l'
 }
 
-export const Details: FC<DetailsProps> = ({children, dots, titleWidth, contentWidth}) => (
+const indent: { [size in NonNullable<DetailsProps['size']>]: string } = {
+  s: '7px',
+  m: '8px',
+  l: '8px',
+}
+
+const bottomDots: { [size in NonNullable<DetailsProps['size']>]: string } = {
+  s: '5px',
+  m: '7px',
+  l: '9px',
+}
+
+export const Details: FC<DetailsProps> = ({children, dots, titleWidth, contentWidth, size = 'm'}) => (
   !dots ? (
     <Box width="100%" display="table">
       {children.map((item, i) => (
@@ -25,7 +38,7 @@ export const Details: FC<DetailsProps> = ({children, dots, titleWidth, contentWi
             {typeof item.title === 'string' ? (
               <Text
                 bold={false}
-                size="m"
+                size={size}
                 color="support"
                 children={item.title}
               />
@@ -45,7 +58,7 @@ export const Details: FC<DetailsProps> = ({children, dots, titleWidth, contentWi
             {typeof item.content === 'string' ? (
               <Text
                 bold={false}
-                size="m"
+                size={size}
                 children={item.content}
               />
             ) : (
@@ -76,17 +89,17 @@ export const Details: FC<DetailsProps> = ({children, dots, titleWidth, contentWi
                   ':after': {
                     content: '""',
                     position: 'absolute',
-                    bottom: '7px',
+                    bottom: bottomDots[size],
                     borderBottom: 'dashed 1px #e6e6e6',
                     width: '100%',
-                    marginLeft: '8px',
+                    marginLeft: indent[size],
                   },
                 }}
               >
                 {typeof item.title === 'string' ? (
                   <Text
                     bold={false}
-                    size="m"
+                    size={size}
                     color="support"
                     children={item.title}
                   />
@@ -105,13 +118,13 @@ export const Details: FC<DetailsProps> = ({children, dots, titleWidth, contentWi
               display: 'table-cell',
               verticalAlign: 'bottom',
             }}
-            pl={2}
+            pl={indent[size]}
             minWidth={50}
           >
             {typeof item.content === 'string' ? (
               <Text
                 bold={false}
-                size="m"
+                size={size}
                 children={item.content}
               />
             ) : (
