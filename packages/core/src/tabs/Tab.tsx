@@ -1,6 +1,6 @@
 import React, {ReactNode, ReactElement, FC} from 'react'
 
-import {Box, BoxProps, Flex, Typo, Pos, Card, FlexItem} from '../primitive'
+import {BoxProps, Flex, Typo, Pos, Card, FlexItem} from '../primitive'
 
 export interface TabProps {
   vertical?: boolean
@@ -57,13 +57,10 @@ export const Tab: FC<TabProps & BoxProps> = ({
           {icon ? (
             <Flex
               children={
-                <Box
-                  children={React.cloneElement(icon, {
-                    color: selected ? '#ff8c00' : focused ? '#ff8c00' : '#666',
-                  })}
-                  height={vertical ? 8 : 6}
-                  width={vertical ? 8 : 6}
-                />
+                React.cloneElement(icon, {
+                  color: selected ? '#ff8c00' : focused ? '#ff8c00' : '#666',
+                  size: vertical ? 8 : 6,
+                })
               }
               pr={vertical ? 0 : 1}
               pb={vertical ? (small ? 1.5 : 4) : 0}
