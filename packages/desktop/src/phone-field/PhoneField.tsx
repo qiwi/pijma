@@ -124,7 +124,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
           />
           <DropDown
             offset={4}
-            container={() => container.current}
+            container={container.current}
             target={input.current}
             show={renderProps.showCountries}
             onHide={() => renderProps.onCountriesHide()}
@@ -134,13 +134,11 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
               s="0 28px 52px 0 rgba(0, 0, 0, 0.16)"
               bg="#fff"
               r={10}
-              px={6}
               py={3}
               minWidth={1}
-              maxHeight={104}
-              boxSizing="content-box"
+              maxHeight={110}
               overflow="auto"
-              ml={-6}
+              mx={-6}
             >
               {renderProps.options.map((option, index) => (
                 <OptionControl<CountryCode>
@@ -152,10 +150,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
                   children={(renderOptionProps) => (
                     <Card
                       ref={options.get(option.code)}
-                      ml={-6}
-                      width={1}
                       px={6}
-                      boxSizing="content-box"
                       cursor="pointer"
                       onClick={renderOptionProps.onClick}
                       onMouseEnter={renderOptionProps.onMouseEnter}
@@ -165,20 +160,22 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
                         '#F5F5F5' : '#FFF'
                       }
                     >
-                      <Flex py={3} align="center">
-                        <FlexItem shrink={1} mr={3}>
+                      <Flex py={3} align="center" wrap="nowrap">
+                        <FlexItem shrink={0} mr={3}>
                           <Box width={6} height={4} my={1}>
                             <Flag code={option.code}/>
                           </Box>
                         </FlexItem>
-                        <FlexItem width={16} shrink={1}>
+                        <FlexItem width={16} shrink={0}>
                           <Paragraph bold>
                             {`+${option.mask.replace(/\D/g, '')}`}
                           </Paragraph>
                         </FlexItem>
-                        <Paragraph bold>
-                          {option.name}
-                        </Paragraph>
+                        <FlexItem shrink={0}>
+                          <Paragraph bold>
+                            {option.name}
+                          </Paragraph>
+                        </FlexItem>
                       </Flex>
                     </Card>
                   )}

@@ -55,6 +55,7 @@ const OverlayPos = styled('div', {
 }) => ({
   display: 'inline-table',
   position: 'absolute',
+  width: '100%',
   zIndex: 999,
   top: positionTop,
   left: positionLeft,
