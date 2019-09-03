@@ -1,5 +1,5 @@
 ```
-const DropDownExample = ({placement}) => {
+const DropDownExample = () => {
   const [show, setShow] = React.useState(false)
   const container = React.useRef()
   const button = React.useRef()
@@ -11,14 +11,13 @@ const DropDownExample = ({placement}) => {
             kind="simple"
             size="normal"
             type="button"
-            text={`Показать дропдаун ${placement}`}
+            text="Показать дропдаун"
             onClick={() => setShow(!show)}
           />
         </Box> 
       </Actions>
       <DropDown
         show={show}
-        placement={placement}
         container={container.current}
         target={button.current}
         onHide={() => setShow(false)}
@@ -43,10 +42,7 @@ const DropDownExample = ({placement}) => {
 <Block>
   <BlockContent>
     <Spacer>
-      <DropDownExample placement="top"/>
-      <DropDownExample placement="right"/>
-      <DropDownExample placement="bottom"/>
-      <DropDownExample placement="left"/>
+      <DropDownExample/>
     </Spacer>
   </BlockContent>
 </Block>
