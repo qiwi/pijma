@@ -4,7 +4,6 @@ import {Overlay, OverlayProps, SimpleTransition, SimpleTransitionProps, styled, 
 
 export interface DropDownProps {
   show: boolean
-  placement?: OverlayProps['placement']
   offset?: number
   target: OverlayProps['target']
   container: OverlayProps['container']
@@ -30,7 +29,6 @@ transition.defaultProps = {
 }
 
 interface OverlayPosProps {
-  placement?: 'top' | 'right' | 'bottom' | 'left'
   offset?: number
   positionTop?: number
   positionLeft?: number
@@ -48,7 +46,6 @@ const OverlayPos = styled('div', {
   shouldForwardProp: (prop) => !OverlayPosNonProps.includes(prop),
 })<OverlayPosProps>(({
   theme,
-  placement,
   offset,
   positionTop,
   positionLeft,
@@ -59,13 +56,11 @@ const OverlayPos = styled('div', {
   zIndex: 999,
   top: positionTop,
   left: positionLeft,
-  marginTop: cssValue((offset === undefined ? undefined : placement === 'bottom' ? offset : placement === 'top' ? -1 * offset : undefined), theme.scale, false),
-  marginLeft: cssValue((offset === undefined ? undefined : placement === 'right' ? offset : placement === 'left' ? -1 * offset : undefined), theme.scale, false),
+  marginTop: cssValue((offset), theme.scale, false),
 }))
 
 export const DropDown: FC<DropDownProps> = ({
   show,
-  placement = 'bottom',
   offset,
   target,
   container,
@@ -74,7 +69,7 @@ export const DropDown: FC<DropDownProps> = ({
 }) => (
   <Overlay
     show={show}
-    placement={placement}
+    placement="bottom"
     target={target}
     container={container}
     rootClose={true}
