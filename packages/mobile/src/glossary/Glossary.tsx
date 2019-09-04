@@ -5,7 +5,7 @@ import {Text} from '../typography'
 type GlossaryText = ReactElement | string
 
 export interface GlossaryProps {
-  children: {title?: GlossaryText, content: GlossaryText | GlossaryText[]}[]
+  children: {title: GlossaryText, content: GlossaryText | GlossaryText[]}[]
 }
 
 export const Glossary: FC<GlossaryProps> = ({children}) => (
