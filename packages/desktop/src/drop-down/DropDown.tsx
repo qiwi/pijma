@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Overlay, OverlayProps, SimpleTransition, SimpleTransitionProps, styled, css, cssValue} from '@qiwi/pijma-core'
+import {Overlay, OverlayProps, SimpleTransition, SimpleTransitionProps, css, Pos} from '@qiwi/pijma-core'
 
 export interface DropDownProps {
   show: boolean
@@ -28,37 +28,6 @@ transition.defaultProps = {
   }),
 }
 
-interface OverlayPosProps {
-  offset?: number
-  positionTop?: number
-  positionLeft?: number
-  arrowOffsetTop?: number
-  arrowOffsetLeft?: number
-}
-
-const OverlayPosNonProps = [
-  'style', 'placement', 'offset',
-  'positionTop', 'positionLeft',
-  'arrowOffsetTop', 'arrowOffsetLeft',
-]
-
-const OverlayPos = styled('div', {
-  shouldForwardProp: (prop) => !OverlayPosNonProps.includes(prop),
-})<OverlayPosProps>(({
-  theme,
-  offset,
-  positionTop,
-  positionLeft,
-}) => ({
-  display: 'inline-table',
-  position: 'absolute',
-  width: '100%',
-  zIndex: 999,
-  top: positionTop,
-  left: positionLeft,
-  marginTop: cssValue((offset), theme.scale, false),
-}))
-
 export const DropDown: FC<DropDownProps> = ({
   show,
   offset,
@@ -75,10 +44,10 @@ export const DropDown: FC<DropDownProps> = ({
     rootClose={true}
     onHide={onHide}
     transition={transition}
-    children={(
-      <OverlayPos offset={offset}>
+    children={(renderProps) => (
+      <Pos type="absolute" zIndex={999} ref={renderProps.props.ref} mt={offset} css={renderProps.props.style}>
         {children}
-      </OverlayPos>
+      </Pos>
     )}
   />
 )
