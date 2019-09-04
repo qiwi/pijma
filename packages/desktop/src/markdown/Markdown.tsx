@@ -3,7 +3,7 @@ import MarkdownComponent from 'markdown-to-jsx'
 import {Paragraph, Heading, Text} from '../typography'
 import {Link} from '../link'
 import {List} from '../list'
-import {styled, Box} from '@qiwi/pijma-core'
+import {styled, Box, Image} from '@qiwi/pijma-core'
 
 export interface MarkdownProps {
   size: 's' | 'm' | 'l'
@@ -29,6 +29,17 @@ interface SizeProps {
 const p: FC<SizeProps> = ({children, size}) => (
   <MarkdownBox mt={SizeMargin[size]}>
     <Paragraph size={size} children={children}/>
+  </MarkdownBox>
+)
+
+interface ImgProps extends SizeProps {
+  alt?: string
+  src: string
+}
+
+const img: FC<ImgProps> = ({src, size, alt}) => (
+  <MarkdownBox mt={SizeMargin[size]}>
+    <Image src={src} alt={alt} width="auto" height="auto"/>
   </MarkdownBox>
 )
 
@@ -110,7 +121,7 @@ const ol: FC<SizeProps> = ({size, children}) => (
   </MarkdownBox>
 )
 
-const overrides: {[tag: string]: FC<SizeProps>} = {
+const overrides: {[tag: string]: FC<any>} = {
   p,
   h1,
   h2,
@@ -123,6 +134,7 @@ const overrides: {[tag: string]: FC<SizeProps>} = {
   li,
   strong,
   del,
+  img,
 }
 
 export const Markdown: FC<MarkdownProps> = ({size = 'm', children}) => (

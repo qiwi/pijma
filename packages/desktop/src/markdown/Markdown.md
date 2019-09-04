@@ -55,6 +55,8 @@
 **bold text**
 
 ~~Зачеркнутый текст~~
+
+![cat](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3G1SJ-ooC-nQb8K4gW3kUqxQ_99q2OefveVxhHca8AyqNWlD_lQ)
     `}</Markdown>
   </BlockContent>
 </Block>
