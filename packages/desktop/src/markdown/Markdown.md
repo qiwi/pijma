@@ -56,7 +56,8 @@
 
 ~~Зачеркнутый текст~~
 
-![cat](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3G1SJ-ooC-nQb8K4gW3kUqxQ_99q2OefveVxhHca8AyqNWlD_lQ)
+![bird](/src/markdown/media/kiwi.png)
+
     `}</Markdown>
   </BlockContent>
 </Block>
@@ -119,6 +120,8 @@
 **bold text**
 
 ~~Зачеркнутый текст~~
+
+
     `}</Markdown>
   </BlockContent>
 </Block>

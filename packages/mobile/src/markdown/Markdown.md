@@ -54,6 +54,9 @@
 **bold text**
 
 ~~Зачеркнутый текст~~
+
+![bird](/src/markdown/media/kiwi.png)
+
     `}</Markdown>
   </BlockContent>
 </Block>
