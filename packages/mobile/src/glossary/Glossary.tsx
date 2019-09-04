@@ -7,11 +7,13 @@ export interface GlossaryProps {
 }
 
 export const Glossary: FC<GlossaryProps> = ({children}) => (
-  <Box>
+  <Box as="dl">
     {children.map((item, i) => (
       <Box key={i} mt={i === 0 ? undefined : 3}>
-        <Text bold={false} compact size="s" color="support" children={item.title}/>
-        <Box mt={1}>
+        <Box as="dt">
+          <Text bold={false} compact size="s" color="support" children={item.title}/>
+        </Box>
+        <Box as="dd" mt={1}>
           <Paragraph compact size="l" children={item.content}/>
         </Box>
       </Box>
