@@ -32,12 +32,12 @@ const p: FC<SizeProps> = ({children, size}) => (
   </MarkdownBox>
 )
 
-interface ImgProps extends SizeProps {
+interface ImageProps extends SizeProps {
   alt?: string
   src: string
 }
 
-const img: FC<ImgProps> = ({src, size, alt}) => (
+const img: FC<ImageProps> = ({src, size, alt}) => (
   <MarkdownBox mt={SizeMargin[size]}>
     <Image src={src} alt={alt} width="auto" height="auto"/>
   </MarkdownBox>
