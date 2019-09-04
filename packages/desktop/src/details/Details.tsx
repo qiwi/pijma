@@ -27,11 +27,11 @@ const bottomDots: { [size in NonNullable<DetailsProps['size']>]: string } = {
 export const Details: FC<DetailsProps> = ({children, dots, titleWidth, contentWidth, size = 'm'}) => (
   <Box as="dl" width="100%" display="table">
     {children.map((item, i) => (
-      ([] as (string | ReactElement)[]).concat(item.content).map((value, index) => (
+      ([] as DetailsText[]).concat(item.content).map((value, index) => (
         <Box css={{display: 'table-row'}} key={index}>
           <Box
             as="dt"
-            width={titleWidth ? titleWidth : undefined}
+            width={titleWidth}
             pt={index !== 0 ? 2 : i !== 0 ? 4 : undefined}
             css={{
               display: 'table-cell',
@@ -75,7 +75,7 @@ export const Details: FC<DetailsProps> = ({children, dots, titleWidth, contentWi
           </Box>
           <Box
             as="dd"
-            width={contentWidth ? contentWidth : undefined}
+            width={contentWidth}
             pt={index !== 0 ? 2 : i !== 0 ? 4 : undefined}
             css={{
               display: 'table-cell',
