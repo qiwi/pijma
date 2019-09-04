@@ -122,7 +122,6 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
           />
           <DropUp
             title="Код страны"
-            autoFocus={false}
             show={renderProps.showCountries}
             onHide={() => renderProps.onCountriesHide()}
           >

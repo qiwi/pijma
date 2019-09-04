@@ -144,12 +144,16 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     }
   }
 
-  private onBlur: React.FocusEventHandler = (event: React.FocusEvent) => {
+  private onBlur: React.FocusEventHandler = (event: React.FocusEvent, hideOnBlur?: boolean) => {
     event.preventDefault()
     this.setState({
       focused: false,
-      showCountries: false,
     })
+    if (hideOnBlur) {
+      this.setState({
+        showCountries: false,
+      })
+    }
     if (this.props.onBlur) {
       this.props.onBlur()
     }

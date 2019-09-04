@@ -100,7 +100,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
                 pipe={props.pipe}
                 onChange={renderProps.onChange}
                 onFocus={renderProps.onFocus}
-                onBlur={renderProps.onBlur}
+                onBlur={(event: React.FocusEvent) => renderProps.onBlur(event, true)}
                 onKeyDown={renderProps.onKeyDown}
                 onKeyUp={renderProps.onKeyUp}
               />
