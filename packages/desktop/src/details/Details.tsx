@@ -2,8 +2,10 @@ import React, {FC, ReactElement} from 'react'
 import {Box, Pos, Value} from '@qiwi/pijma-core'
 import {Text} from '../typography'
 
+type DetailsText = ReactElement | string
+
 export interface DetailsProps {
-  children: {title?: ReactElement | string, content: ReactElement | string}[]
+  children: {title: DetailsText, content: DetailsText | DetailsText[]}[]
   dots?: boolean
   titleWidth?: Value
   contentWidth?: Value
@@ -23,20 +25,85 @@ const bottomDots: { [size in NonNullable<DetailsProps['size']>]: string } = {
 }
 
 export const Details: FC<DetailsProps> = ({children, dots, titleWidth, contentWidth, size = 'm'}) => (
-  dots ? (
-    <Box as="dl" width="100%" display="table">
-      {children.map((item, i) => (
+  <Box as="dl" width="100%" display="table">
+    {children.map((item, i) => (
+      Array.isArray(item.content) ? (
+        item.content.map((value, index) => (
+          <Box css={{display: 'table-row'}} key={index}>
+            <Box
+              as="dt"
+              width={titleWidth ? titleWidth : undefined}
+              pt={index !== 0 ? 2 : i !== 0 ? 4 : undefined}
+              css={{
+                display: 'table-cell',
+                verticalAlign: 'bottom',
+              }}
+            >
+              {index === 0 ? (
+                dots ? (
+                  <Pos
+                    type="relative"
+                    overflow="hidden"
+                    css={{
+                      ':after': {
+                        content: '""',
+                        position: 'absolute',
+                        bottom: bottomDots[size],
+                        borderBottom: 'dashed 1px #e6e6e6',
+                        width: '100%',
+                        marginLeft: indentDots[size],
+                      },
+                    }}
+                  >
+                    <Text
+                      bold={false}
+                      size={size}
+                      color="support"
+                      children={item.title}
+                    />
+                  </Pos>
+                ) : (
+                  <Text
+                    color="support"
+                    bold={false}
+                    size={size}
+                    children={item.title}
+                  />
+                )
+              ) : (
+                null
+              )}
+            </Box>
+            <Box
+              as="dd"
+              width={contentWidth ? contentWidth : undefined}
+              pt={index !== 0 ? 2 : i !== 0 ? 4 : undefined}
+              css={{
+                display: 'table-cell',
+                verticalAlign: 'bottom',
+              }}
+              pl={indentDots[size]}
+            >
+              <Text
+                bold={false}
+                size={size}
+                children={value}
+              />
+            </Box>
+          </Box>
+        ))
+      ) : (
         <Box css={{display: 'table-row'}} key={i}>
           <Box
             as="dt"
             width={titleWidth ? titleWidth : undefined}
-            pt={i !== 0 ? 3 : undefined}
+            pt={i !== 0 ? 4 : undefined}
             css={{
               display: 'table-cell',
               verticalAlign: 'bottom',
             }}
           >
-            {item.title ? (
+            {dots ? (
               <Pos
                 type="relative"
                 overflow="hidden"
@@ -51,90 +118,39 @@ export const Details: FC<DetailsProps> = ({children, dots, titleWidth, contentWi
                   },
                 }}
               >
-                {typeof item.title === 'string' ? (
-                  <Text
-                    bold={false}
-                    size={size}
-                    color="support"
-                    children={item.title}
-                  />
-                ) : (
-                  item.title
-                )}
+                <Text
+                  bold={false}
+                  size={size}
+                  color="support"
+                  children={item.title}
+                />
               </Pos>
             ) : (
-              null
+              <Text
+                color="support"
+                bold={false}
+                size={size}
+                children={item.title}
+              />
             )}
           </Box>
           <Box
             as="dd"
             width={contentWidth ? contentWidth : undefined}
-            pt={i !== 0 ? 3 : undefined}
+            pt={i !== 0 ? 4 : undefined}
             css={{
               display: 'table-cell',
               verticalAlign: 'bottom',
             }}
             pl={indentDots[size]}
           >
-            {typeof item.content === 'string' ? (
-              <Text
-                bold={false}
-                size={size}
-                children={item.content}
-              />
-            ) : (
-              item.content
-            )}
+            <Text
+              bold={false}
+              size={size}
+              children={item.content}
+            />
           </Box>
         </Box>
-      ))}
-    </Box>
-  ) : (
-    <Box as="dl" width="100%" display="table">
-      {children.map((item, i) => (
-        <Box css={{display: 'table-row'}} key={i}>
-          <Box
-            as="dt"
-            width={titleWidth ? titleWidth : undefined}
-            pt={i !== 0 ? 3 : undefined}
-            css={{
-              display: 'table-cell',
-              verticalAlign: 'bottom',
-            }}
-          >
-            {typeof item.title === 'string' ? (
-              <Text
-                bold={false}
-                size={size}
-                color="support"
-                children={item.title}
-              />
-            ) : (
-              item.title
-            )}
-          </Box>
-          <Box
-            as="dd"
-            width={contentWidth ? contentWidth : undefined}
-            pl={4}
-            pt={i !== 0 ? 3 : undefined}
-            css={{
-              display: 'table-cell',
-              verticalAlign: 'bottom',
-            }}
-          >
-            {typeof item.content === 'string' ? (
-              <Text
-                bold={false}
-                size={size}
-                children={item.content}
-              />
-            ) : (
-              item.content
-            )}
-          </Box>
-        </Box>
-      ))}
-    </Box>
-  )
+      )))}
+  </Box>
 )

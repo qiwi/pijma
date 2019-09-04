@@ -1,9 +1,9 @@
 import React, {FC} from 'react'
 import {Box} from '@qiwi/pijma-core'
-import {Paragraph, Text} from '../typography'
+import {Text} from '../typography'
 
 export interface GlossaryProps {
-  children: {title: string, content: string}[]
+  children: {title?: string, content: string}[]
 }
 
 export const Glossary: FC<GlossaryProps> = ({children}) => (
@@ -14,7 +14,7 @@ export const Glossary: FC<GlossaryProps> = ({children}) => (
           <Text bold={false} compact size="s" color="support" children={item.title}/>
         </Box>
         <Box as="dd" mt={1}>
-          <Paragraph compact size="l" children={item.content}/>
+          <Text bold={false} compact size="l" children={item.content}/>
         </Box>
       </Box>
     ))}
