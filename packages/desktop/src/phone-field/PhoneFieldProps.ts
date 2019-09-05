@@ -1,11 +1,11 @@
 import {ReactNode} from 'react'
 
-import {Country, Phone} from '@qiwi/pijma-core'
+import {PhoneFieldCountry, Phone} from '@qiwi/pijma-core'
 
 export default interface PhoneFieldProps {
   value: Phone
-  countries: Country[]
-  countryFallback?: Country
+  countries: PhoneFieldCountry[]
+  countryFallback?: PhoneFieldCountry
   tabIndex?: number
   name?: string
   title?: string

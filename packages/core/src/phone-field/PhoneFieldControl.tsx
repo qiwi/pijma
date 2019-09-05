@@ -4,7 +4,7 @@ import {findDOMNode} from 'react-dom'
 import PhoneFieldControlProps from './PhoneFieldControlProps'
 import PhoneFieldControlState from './PhoneFieldControlState'
 
-import Country from './Country'
+import PhoneFieldCountry from './PhoneFieldCountry'
 import Phone from './Phone'
 import {maskArray} from '../mask'
 
@@ -23,7 +23,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     selectedCountry: null,
   }
 
-  private onCountryEnter: (country: Country) => void = (country) => {
+  private onCountryEnter: (country: PhoneFieldCountry) => void = (country) => {
     this.setState({
       selectedCountry: country,
     })
@@ -32,7 +32,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     }
   }
 
-  private onCountryLeave: (country: Country) => void = (country) => {
+  private onCountryLeave: (country: PhoneFieldCountry) => void = (country) => {
     this.setState({
       selectedCountry: null,
     })
@@ -72,7 +72,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     }
   }
 
-  private selectCountry: (country: Country) => void = (country) => {
+  private selectCountry: (country: PhoneFieldCountry) => void = (country) => {
     const phoneNumber = this.props.value ? this.props.value.phoneNumber : ''
     const currentCountryMask = this.state.country.mask.replace(/\D/g, '')
     const newCountryMask = country.mask.replace(/\D/g, '')
@@ -217,14 +217,14 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     }
   }
 
-  private get nextCountry(): Country | null {
+  private get nextCountry(): PhoneFieldCountry | null {
     const {countries} = this.props
     const selectedId: number = countries.findIndex(country => this.state.selectedCountry === null ? country === this.state.country : country === this.state.selectedCountry)
     const nextId = selectedId + 1 >= countries.length ? 0 : selectedId + 1
     return countries[nextId]
   }
 
-  private get prevCountry(): Country | null {
+  private get prevCountry(): PhoneFieldCountry | null {
     const {countries} = this.props
     const selectedId: number = countries.findIndex(country => this.state.selectedCountry === null ? country === this.state.country : country === this.state.selectedCountry)
     const nextId = selectedId <= 0 ? countries.length - 1 : selectedId - 1

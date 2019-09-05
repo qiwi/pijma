@@ -1,6 +1,6 @@
-import Country from './Country'
+import PhoneFieldCountry from './PhoneFieldCountry'
 
-const countries: Country[] = [
+const countries: PhoneFieldCountry[] = [
   {
     name: 'Беларусь',
     code: 'BY',

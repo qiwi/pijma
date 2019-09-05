@@ -2,18 +2,18 @@ import React, {FC} from 'react'
 
 import {Svg, Path, Value} from '../primitive'
 
-export type CountryCode =
+type FlagCode =
   'AM' | 'AZ' | 'BY' | 'EE' | 'GB' | 'GE' | 'IL' | 'IN' |
   'JP' | 'KG' | 'KR' | 'KZ' | 'LT' | 'LV' | 'MD' | 'PA' |
   'RU' | 'TH' | 'TJ' | 'TR' | 'UA' | 'US' | 'UZ' | 'VN'
 
 export interface FlagProps {
-  code: CountryCode
+  code: FlagCode
   width?: Value
   height?: Value
 }
 
-const flags: {[code in CountryCode]: [string, string][]} = {
+const flags: {[code in FlagCode]: [string, string][]} = {
   'AM': [
     ['#F2B54A', 'M0 10H21V15H0z'],
     ['#1E4AA6', 'M0 5H21V10H0z'],

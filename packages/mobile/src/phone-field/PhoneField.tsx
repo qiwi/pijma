@@ -11,7 +11,7 @@ import {
   Card,
   Flex,
   FlexItem,
-  Country,
+  PhoneFieldCountry,
   Flag,
 } from '@qiwi/pijma-core'
 
@@ -64,7 +64,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
   const flag: RefObject<HTMLDivElement> = createRef()
   const container: RefObject<HTMLDivElement> = createRef()
   const input: RefObject<MaskedInput> = createRef()
-  const options: Map<Country, RefObject<HTMLDivElement>> = new Map(
+  const options: Map<PhoneFieldCountry, RefObject<HTMLDivElement>> = new Map(
     props.countries.map((country => [country, createRef()])),
   )
   return (

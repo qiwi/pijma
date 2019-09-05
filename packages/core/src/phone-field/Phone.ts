@@ -1,20 +1,20 @@
-import Country from './Country'
+import PhoneFieldCountry from './PhoneFieldCountry'
 
 export default class Phone {
 
-  constructor(phoneNumber: string, countries: Country[], countryFallback: Country) {
+  constructor(phoneNumber: string, countries: PhoneFieldCountry[], countryFallback: PhoneFieldCountry) {
     this.phoneNumber = phoneNumber
     this.countries = countries
     this.countryFallback = countryFallback
   }
 
-  private countries: Country[]
+  private countries: PhoneFieldCountry[]
 
-  private countryFallback: Country
+  private countryFallback: PhoneFieldCountry
 
   public phoneNumber: string
 
-  public get country(): Country {
+  public get country(): PhoneFieldCountry {
     const clearPhone = this.phoneNumber.replace(/\D/g, '')
     const country = this.countries
       .slice(0)
