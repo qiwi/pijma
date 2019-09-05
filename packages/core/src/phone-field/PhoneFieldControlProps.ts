@@ -36,7 +36,6 @@ export default interface PhoneFieldControlProps {
     onFocus: React.FocusEventHandler
     onBlur: (event: React.FocusEvent, hideOnBlur?: boolean) => void
     onKeyDown: React.KeyboardEventHandler
-    onKeyUp: React.KeyboardEventHandler
     onFlagClick: React.MouseEventHandler
     onFlagMouseDown: React.MouseEventHandler
     getMask: (phoneNumber: string) => maskArray

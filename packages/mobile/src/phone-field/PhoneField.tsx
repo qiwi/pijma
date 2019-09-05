@@ -75,10 +75,6 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
       onChange={props.onChange}
       onFocus={props.onFocus}
       onBlur={props.onBlur}
-      onKeyDown={props.onKeyDown}
-      onKeyUp={props.onKeyUp}
-      onCountryEnter={props.onCountryEnter}
-      onCountryLeave={props.onCountryLeave}
       inputRef={() => input}
       optionsRefs={options}
       children={(renderProps) => (
@@ -107,7 +103,6 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                 onFocus={renderProps.onFocus}
                 onBlur={renderProps.onBlur}
                 onKeyDown={renderProps.onKeyDown}
-                onKeyUp={renderProps.onKeyUp}
               />
             )}
             hint={props.hint}

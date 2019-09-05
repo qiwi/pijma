@@ -1,4 +1,4 @@
-import {ReactNode, KeyboardEvent} from 'react'
+import {ReactNode} from 'react'
 
 import {Country, Phone} from '@qiwi/pijma-core'
 
@@ -22,8 +22,4 @@ export default interface PhoneFieldProps {
   onChange?: (value: Phone) => void
   onFocus?: () => void
   onBlur?: () => void
-  onKeyDown?: (event: KeyboardEvent) => boolean
-  onKeyUp?: (event: KeyboardEvent) => boolean
-  onCountryEnter?: (contry: Country) => void
-  onCountryLeave?: (contry: Country) => void
 }

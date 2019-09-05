@@ -156,9 +156,6 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
   }
 
   private onKeyDown: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
-    if (this.props.onKeyDown && this.props.onKeyDown(event)) {
-      event.preventDefault()
-    }
     if (!this.state.showCountries && (event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
       event.preventDefault()
       this.onCountriesShow()
@@ -234,12 +231,6 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     return countries[nextId]
   }
 
-  private onKeyUp: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
-    if (this.props.onKeyUp && this.props.onKeyUp(event)) {
-      event.preventDefault()
-    }
-  }
-
   private getMask: (phoneNumber: string) => maskArray = (phoneNumber = '') => {
     const {countries} = this.props
     const clearMasks = countries
@@ -274,7 +265,6 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
       onFocus: this.onFocus,
       onBlur: this.onBlur,
       onKeyDown: this.onKeyDown,
-      onKeyUp: this.onKeyUp,
       onCountryEnter: this.onCountryEnter,
       onCountryLeave: this.onCountryLeave,
       selected: this.state.selectedCountry,
