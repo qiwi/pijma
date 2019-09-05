@@ -11,15 +11,8 @@ import {maskArray} from '../mask'
 export default class PhoneFieldControl extends React.Component<PhoneFieldControlProps, PhoneFieldControlState> {
 
   public componentDidUpdate(_props: PhoneFieldControlProps, state: PhoneFieldControlState) {
-    if (state.country !== this.state.country) {
-      const oldMaskLength = state.country.mask.replace(/\D/g, '').length
-      const newMaskLength = this.state.country.mask.replace(/\D/g, '').length
-      const cursorPosition = (this.props.value && this.props.value.phoneNumber.length === newMaskLength + 1) ? (
-        this.props.value.phoneNumber.length * 2
-      ) : (
-        (this.inputField && this.inputField.selectionStart || 0) + (newMaskLength - oldMaskLength)
-      )
-      this.setCursorPosition(cursorPosition)
+    if (state.country.mask !== this.state.country.mask && this.props.value) {
+      this.setCursorPosition(this.props.value.phoneNumber.length * 2)
     }
   }
 
