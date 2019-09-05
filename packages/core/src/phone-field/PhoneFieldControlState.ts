@@ -1,8 +1,8 @@
-import {CountryCode} from '../flag'
+import Country from './Country'
 
 export default interface PhoneFieldControlState {
-  countryCode: CountryCode
-  selectedCountry: CountryCode | null
+  country: Country
+  selectedCountry: Country | null
   showCountries: boolean
   focused: boolean
 }

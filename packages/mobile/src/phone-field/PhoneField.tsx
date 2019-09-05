@@ -3,7 +3,6 @@ import MaskedInput from 'react-text-mask'
 
 import {
   PhoneFieldControl,
-  OptionControl,
   InputField,
   BasicInput,
   Stub,
@@ -12,7 +11,7 @@ import {
   Card,
   Flex,
   FlexItem,
-  CountryCode,
+  Country,
   Flag,
 } from '@qiwi/pijma-core'
 
@@ -20,7 +19,15 @@ import {Paragraph} from '../typography'
 import {DropUp} from '../drop-up'
 import PhoneFieldProps from './PhoneFieldProps'
 
-export const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
+export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
+  tabIndex = 0,
+  countryFallback = {
+    name: 'Россия',
+    code: 'RU',
+    mask: '+7dddddddddd',
+  },
+  ...props
+}) => {
   if (props.stub) {
     return (
       <Box>
@@ -57,13 +64,14 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
   const flag: RefObject<HTMLDivElement> = createRef()
   const container: RefObject<HTMLDivElement> = createRef()
   const input: RefObject<MaskedInput> = createRef()
-  const options: Map<CountryCode, RefObject<HTMLDivElement>> = new Map(
-    props.countries.map((country => [country.code, createRef()])),
+  const options: Map<Country, RefObject<HTMLDivElement>> = new Map(
+    props.countries.map((country => [country, createRef()])),
   )
   return (
     <PhoneFieldControl
       value={props.value}
       countries={props.countries}
+      countryFallback={countryFallback}
       onChange={props.onChange}
       onFocus={props.onFocus}
       onBlur={props.onBlur}
@@ -83,7 +91,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
               <BasicInput
                 ref={input}
                 type="tel"
-                value={renderProps.value}
+                value={renderProps.value.phoneNumber}
                 name={props.name}
                 mask={renderProps.getMask}
                 autoComplete={props.autoComplete}
@@ -112,7 +120,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
                 my={1}
                 onClick={renderProps.onFlagClick}
                 onMouseDown={renderProps.onFlagMouseDown}
-                children={(<Flag code={renderProps.countryCode}/>)}
+                children={(<Flag code={renderProps.country.code}/>)}
               />
             )}
             error={props.error}
@@ -124,46 +132,38 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
             show={renderProps.showCountries}
             onHide={() => renderProps.onCountriesHide()}
           >
-            {renderProps.options.map((option, index) => (
-              <OptionControl<CountryCode>
+            {props.countries.map((country, index) => (
+              <Card
                 key={index}
-                value={option.code}
-                onClick={() => renderProps.selectCountry(option.code)}
-                onMouseEnter={() => renderProps.onCountryEnter(option.code)}
-                onMouseLeave={() => renderProps.onCountryLeave(option.code)}
-                children={(renderOptionProps) => (
-                  <Card
-                    ref={options.get(option.code)}
-                    width={1}
-                    px={6}
-                    boxSizing="content-box"
-                    cursor="pointer"
-                    onClick={renderOptionProps.onClick}
-                    onMouseEnter={renderOptionProps.onMouseEnter}
-                    onMouseLeave={renderOptionProps.onMouseLeave}
-                    bg={option.code === renderProps.countryCode ?
-                      '#E6E6E6' : option.code === renderProps.selected ?
-                      '#F5F5F5' : '#FFF'
-                    }
-                  >
-                    <Flex py={3} align="center">
-                      <FlexItem shrink={1} mr={3}>
-                        <Box width={6} height={4} my={1}>
-                          <Flag code={option.code}/>
-                        </Box>
-                      </FlexItem>
-                      <FlexItem width={16} shrink={1}>
-                        <Paragraph bold>
-                          {`+${option.mask.replace(/\D/g, '')}`}
-                        </Paragraph>
-                      </FlexItem>
-                      <Paragraph bold>
-                        {option.name}
-                      </Paragraph>
-                    </Flex>
-                  </Card>
-                )}
-              />
+                ref={options.get(country)}
+                width={1}
+                px={6}
+                boxSizing="content-box"
+                cursor="pointer"
+                onClick={() => renderProps.selectCountry(country)}
+                onMouseEnter={() => renderProps.onCountryEnter(country)}
+                onMouseLeave={() => renderProps.onCountryLeave(country)}
+                bg={country === renderProps.country ?
+                  '#E6E6E6' : country === renderProps.selected ?
+                  '#F5F5F5' : '#FFF'
+                }
+              >
+                <Flex py={3} align="center">
+                  <FlexItem shrink={1} mr={3}>
+                    <Box width={6} height={4} my={1}>
+                      <Flag code={country.code}/>
+                    </Box>
+                  </FlexItem>
+                  <FlexItem width={16} shrink={1}>
+                    <Paragraph bold>
+                      {`+${country.mask.replace(/\D/g, '')}`}
+                    </Paragraph>
+                  </FlexItem>
+                  <Paragraph bold>
+                    {country.name}
+                  </Paragraph>
+                </Flex>
+              </Card>
             ))}
           </DropUp>
         </Pos>
@@ -174,4 +174,9 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
 
 PhoneField.defaultProps = {
   tabIndex: 0,
+  countryFallback: {
+    name: 'Россия',
+    code: 'RU',
+    mask: '+7dddddddddd',
+  },
 }

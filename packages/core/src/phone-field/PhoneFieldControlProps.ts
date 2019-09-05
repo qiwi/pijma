@@ -4,17 +4,17 @@ import MaskedInput from 'react-text-mask'
 import RenderChild from '../RenderChild'
 
 import Country from './Country'
-import {CountryCode} from '../flag'
+import Phone from './Phone'
 import {maskArray} from '../mask'
 
 export default interface PhoneFieldControlProps {
   countries: Country[]
-  optionsRefs: Map<CountryCode, RefObject<HTMLDivElement> | null>
-  countryFallback: CountryCode
-  value?: string
+  optionsRefs: Map<Country, RefObject<HTMLDivElement> | null>
+  countryFallback: Country
+  value?: Phone
   inputRef?: () => RefObject<MaskedInput> | null
   dropdownRef?: () => RefObject<HTMLDivElement> | null
-  onChange?: (value: string) => void
+  onChange?: (value: Phone) => void
   onFocus?: () => void
   onBlur?: () => void
   onKeyDown?: (event: React.KeyboardEvent) => boolean
@@ -24,15 +24,14 @@ export default interface PhoneFieldControlProps {
   onSelectCountry?: () => void
   onCountriesShow?: () => void
   onCountriesHide?: () => void
-  onCountryEnter?: (contryCode: CountryCode) => void
-  onCountryLeave?: (contryCode: CountryCode) => void
+  onCountryEnter?: (contry: Country) => void
+  onCountryLeave?: (contry: Country) => void
   children: RenderChild<{
+    country: Country
     focused: boolean
-    selected: CountryCode | null
+    selected: Country | null
     showCountries: boolean
-    countryCode: CountryCode
-    options: Country[]
-    value: string
+    value: Phone
     onChange: React.ChangeEventHandler
     onFocus: React.FocusEventHandler
     onBlur: (event: React.FocusEvent, hideOnBlur?: boolean) => void
@@ -40,10 +39,10 @@ export default interface PhoneFieldControlProps {
     onKeyUp: React.KeyboardEventHandler
     onFlagClick: React.MouseEventHandler
     onFlagMouseDown: React.MouseEventHandler
-    getMask: (value: string) => maskArray
-    onCountryEnter: (countryCode: CountryCode) => void
-    onCountryLeave: (countryCode: CountryCode) => void
-    selectCountry: (countryCode: CountryCode) => void
+    getMask: (phoneNumber: string) => maskArray
+    onCountryEnter: (country: Country) => void
+    onCountryLeave: (country: Country) => void
+    selectCountry: (country: Country) => void
     onSelectCountry: () => void
     onCountriesShow: () => void
     onCountriesHide: () => void

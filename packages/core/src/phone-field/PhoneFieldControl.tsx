@@ -5,21 +5,17 @@ import PhoneFieldControlProps from './PhoneFieldControlProps'
 import PhoneFieldControlState from './PhoneFieldControlState'
 
 import Country from './Country'
-import {CountryCode} from '../flag'
+import Phone from './Phone'
 import {maskArray} from '../mask'
 
 export default class PhoneFieldControl extends React.Component<PhoneFieldControlProps, PhoneFieldControlState> {
 
-  public static defaultProps = {
-    countryFallback: 'RU',
-  }
-
   public componentDidUpdate(_props: PhoneFieldControlProps, state: PhoneFieldControlState) {
-    if (state.countryCode !== this.state.countryCode) {
-      const oldMaskLength = this.getMaskByCountry(state.countryCode).length
-      const newMaskLength = this.getMaskByCountry(this.state.countryCode).length
-      const cursorPosition = (this.props.value && this.props.value.length === newMaskLength + 1) ? (
-        this.props.value.length * 2
+    if (state.country !== this.state.country) {
+      const oldMaskLength = state.country.mask.replace(/\D/g, '').length
+      const newMaskLength = this.state.country.mask.replace(/\D/g, '').length
+      const cursorPosition = (this.props.value && this.props.value.phoneNumber.length === newMaskLength + 1) ? (
+        this.props.value.phoneNumber.length * 2
       ) : (
         (this.inputField && this.inputField.selectionStart || 0) + (newMaskLength - oldMaskLength)
       )
@@ -30,25 +26,25 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
   public state: PhoneFieldControlState = {
     focused: false,
     showCountries: false,
-    countryCode: this.props.countryFallback,
+    country: this.props.countryFallback,
     selectedCountry: null,
   }
 
-  private onCountryEnter: (countryCode: CountryCode) => void = (countryCode) => {
+  private onCountryEnter: (country: Country) => void = (country) => {
     this.setState({
-      selectedCountry: countryCode,
+      selectedCountry: country,
     })
     if (this.props.onCountryEnter) {
-      this.props.onCountryEnter(countryCode)
+      this.props.onCountryEnter(country)
     }
   }
 
-  private onCountryLeave: (countryCode: CountryCode) => void = (countryCode) => {
+  private onCountryLeave: (country: Country) => void = (country) => {
     this.setState({
       selectedCountry: null,
     })
     if (this.props.onCountryLeave) {
-      this.props.onCountryLeave(countryCode)
+      this.props.onCountryLeave(country)
     }
   }
 
@@ -83,21 +79,20 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     }
   }
 
-  private getMaskByCountry: (countryCode: CountryCode) => string = (countryCode) => {
-    const country = this.props.countries.find(country => country.code === countryCode)
-    return country ? country.mask.replace(/\D/g, '') : ''
-  }
-
-  private selectCountry: (countryCode: CountryCode) => void = (countryCode) => {
-    const {value = ''} = this.props
-    const currentCountryMask = this.getMaskByCountry(this.state.countryCode)
-    const newCountryMask = this.getMaskByCountry(countryCode)
+  private selectCountry: (country: Country) => void = (country) => {
+    const phoneNumber = this.props.value ? this.props.value.phoneNumber : ''
+    const currentCountryMask = this.state.country.mask.replace(/\D/g, '')
+    const newCountryMask = country.mask.replace(/\D/g, '')
     if (this.props.onChange) {
-      const newValue = `+${newCountryMask}${value.replace(/\D/g, '').substr(currentCountryMask.length)}`
+      const newValue = new Phone(
+        `+${newCountryMask}${phoneNumber.replace(/\D/g, '').substr(currentCountryMask.length)}`,
+        this.props.countries,
+        this.props.countryFallback,
+      )
       this.props.onChange(newValue)
     }
     this.setState({
-      countryCode,
+      country,
       showCountries: false,
     })
     this.focusInput()
@@ -129,12 +124,16 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
 
   private onChange: React.ChangeEventHandler<HTMLInputElement> = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault()
+    const value = new Phone(
+      event.currentTarget.value,
+      this.props.countries,
+      this.props.countryFallback,
+    )
     if (this.props.onChange) {
-      this.props.onChange(event.currentTarget.value)
+      this.props.onChange(value)
     }
-    const country = this.getCountryByPhone(event.currentTarget.value)
     this.setState({
-      countryCode: country !== undefined ? country.code : this.state.countryCode,
+      country: value.country,
     })
   }
 
@@ -177,7 +176,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
       this.setState({
         selectedCountry: this.nextCountry,
       })
-      const countryRef = this.props.optionsRefs.get(this.nextCountry || this.state.countryCode)
+      const countryRef = this.props.optionsRefs.get(this.nextCountry || this.state.country)
       if (!countryRef || !this.props.dropdownRef) {
         return
       }
@@ -192,7 +191,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
       this.setState({
         selectedCountry: this.prevCountry,
       })
-      const countryRef = this.props.optionsRefs.get(this.prevCountry || this.state.countryCode)
+      const countryRef = this.props.optionsRefs.get(this.prevCountry || this.state.country)
       if (!countryRef || !this.props.dropdownRef) {
         return
       }
@@ -204,7 +203,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     }
     if (this.state.showCountries && event.key === 'Enter') {
       event.preventDefault()
-      this.selectCountry(this.state.selectedCountry === null ? this.state.countryCode : this.state.selectedCountry)
+      this.selectCountry(this.state.selectedCountry === null ? this.state.country : this.state.selectedCountry)
     }
   }
 
@@ -228,34 +227,24 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     }
   }
 
-  private get nextCountry(): CountryCode | null {
+  private get nextCountry(): Country | null {
     const {countries} = this.props
-    const selectedId: number = countries.findIndex(country => this.state.selectedCountry === null ? country.code === this.state.countryCode : country.code === this.state.selectedCountry)
+    const selectedId: number = countries.findIndex(country => this.state.selectedCountry === null ? country === this.state.country : country === this.state.selectedCountry)
     const nextId = selectedId + 1 >= countries.length ? 0 : selectedId + 1
-    return countries[nextId].code
+    return countries[nextId]
   }
 
-  private get prevCountry(): CountryCode | null {
+  private get prevCountry(): Country | null {
     const {countries} = this.props
-    const selectedId: number = countries.findIndex(country => this.state.selectedCountry === null ? country.code === this.state.countryCode : country.code === this.state.selectedCountry)
+    const selectedId: number = countries.findIndex(country => this.state.selectedCountry === null ? country === this.state.country : country === this.state.selectedCountry)
     const nextId = selectedId <= 0 ? countries.length - 1 : selectedId - 1
-    return countries[nextId].code
+    return countries[nextId]
   }
 
   private onKeyUp: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
     if (this.props.onKeyUp && this.props.onKeyUp(event)) {
       event.preventDefault()
     }
-  }
-
-  private getCountryByPhone(phoneNumber: string): Country | undefined {
-    const {countries} = this.props
-    const clearPhone = phoneNumber.replace(/\D/g, '')
-    const country = countries
-      .slice(0)
-      .sort((a, b) => b.mask.replace(/\D/g, '').length - a.mask.replace(/\D/g, '').length)
-      .find((option) => clearPhone.indexOf(option.mask.replace(/\D/g, '')) === 0)
-    return country || countries.find(country => country.code === this.props.countryFallback)
   }
 
   private getMask: (phoneNumber: string) => maskArray = (phoneNumber = '') => {
@@ -276,13 +265,11 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
   }
 
   public render() {
-    const {countries} = this.props
     return this.props.children({
+      country: this.state.country,
       focused: this.state.focused,
-      countryCode: this.state.countryCode,
       showCountries: this.state.showCountries,
-      options: countries,
-      value: this.props.value || '',
+      value: this.props.value || new Phone('', this.props.countries, this.props.countryFallback),
       getMask: this.getMask,
       onFlagClick: this.onFlagClick,
       onFlagMouseDown: this.onFlagMouseDown,

@@ -1,10 +1,11 @@
 import {ReactNode, KeyboardEvent} from 'react'
 
-import {Country, CountryCode} from '@qiwi/pijma-core'
+import {Country, Phone} from '@qiwi/pijma-core'
 
 export default interface PhoneFieldProps {
-  value: string
+  value: Phone
   countries: Country[]
+  countryFallback?: Country
   tabIndex?: number
   name?: string
   title?: string
@@ -18,11 +19,11 @@ export default interface PhoneFieldProps {
   disabled?: boolean
   maxLength?: number
   stub?: boolean
-  onChange?: (value: string) => void
+  onChange?: (value: Phone) => void
   onFocus?: () => void
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean
   onKeyUp?: (event: KeyboardEvent) => boolean
-  onCountryEnter?: (contryCode: CountryCode) => void
-  onCountryLeave?: (contryCode: CountryCode) => void
+  onCountryEnter?: (contry: Country) => void
+  onCountryLeave?: (contry: Country) => void
 }
