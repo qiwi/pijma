@@ -37,10 +37,8 @@ interface ImageProps extends SizeProps {
   src: string
 }
 
-const img: FC<ImageProps> = ({src, size, alt}) => (
-  <MarkdownBox mt={SizeMargin[size]}>
-    <Image src={src} alt={alt} width="auto" height="auto"/>
-  </MarkdownBox>
+const img: FC<ImageProps> = ({src, alt}) => (
+  <Image src={src} alt={alt} width="auto" height="auto"/>
 )
 
 interface LinkProps extends SizeProps {

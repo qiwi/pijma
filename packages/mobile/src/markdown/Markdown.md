@@ -55,8 +55,7 @@
 
 ~~Зачеркнутый текст~~
 
-![bird](/src/markdown/media/kiwi.png)
-
+![bird](${require('./media/kiwi.png')})
     `}</Markdown>
   </BlockContent>
 </Block>
