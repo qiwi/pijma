@@ -1,6 +1,6 @@
 import {ReactNode, KeyboardEvent} from 'react'
 
-import {Pipe, Country, CountryCode} from '@qiwi/pijma-core'
+import {Country, CountryCode} from '@qiwi/pijma-core'
 
 export default interface PhoneFieldProps {
   value: string
@@ -17,7 +17,6 @@ export default interface PhoneFieldProps {
   placeholder?: string
   disabled?: boolean
   maxLength?: number
-  pipe?: Pipe
   stub?: boolean
   onChange?: (value: string) => void
   onFocus?: () => void

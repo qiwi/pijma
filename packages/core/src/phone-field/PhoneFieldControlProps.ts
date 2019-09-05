@@ -10,7 +10,7 @@ import {maskArray} from '../mask'
 export default interface PhoneFieldControlProps {
   countries: Country[]
   optionsRefs: Map<CountryCode, RefObject<HTMLDivElement> | null>
-  countryFallback?: CountryCode
+  countryFallback: CountryCode
   value?: string
   inputRef?: () => RefObject<MaskedInput> | null
   dropdownRef?: () => RefObject<HTMLDivElement> | null

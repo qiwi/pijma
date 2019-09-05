@@ -97,7 +97,6 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
                 error={!!props.error}
                 focused={renderProps.focused}
                 maxLength={props.maxLength}
-                pipe={props.pipe}
                 onChange={renderProps.onChange}
                 onFocus={renderProps.onFocus}
                 onBlur={(event: React.FocusEvent) => renderProps.onBlur(event, true)}
@@ -125,7 +124,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = (props) => {
           <DropDown
             offset={4}
             container={container.current}
-            target={input.current}
+            target={input.current!}
             show={renderProps.showCountries}
             onHide={() => renderProps.onCountriesHide()}
           >

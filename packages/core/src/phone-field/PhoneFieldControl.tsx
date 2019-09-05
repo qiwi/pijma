@@ -10,6 +10,10 @@ import {maskArray} from '../mask'
 
 export default class PhoneFieldControl extends React.Component<PhoneFieldControlProps, PhoneFieldControlState> {
 
+  public static defaultProps = {
+    countryFallback: 'RU',
+  }
+
   public componentDidUpdate(_props: PhoneFieldControlProps, state: PhoneFieldControlState) {
     if (state.countryCode !== this.state.countryCode) {
       const oldMaskLength = this.getMaskByCountry(state.countryCode).length
@@ -26,7 +30,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
   public state: PhoneFieldControlState = {
     focused: false,
     showCountries: false,
-    countryCode: this.props.countryFallback || 'RU',
+    countryCode: this.props.countryFallback,
     selectedCountry: null,
   }
 
