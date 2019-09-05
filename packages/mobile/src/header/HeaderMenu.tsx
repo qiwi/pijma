@@ -99,8 +99,7 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({show, zIndex, header, from, onS
   >
     <OffsetScrollControl
       content={children}
-      top={-8}
-      bottom={0}
+      top="8px"
       children={(renderProps) => (
         <FlexCard
           display="flex"
@@ -118,7 +117,7 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({show, zIndex, header, from, onS
               children={header}
             />
           </FlexItem>
-          <FlexItem grow={1} height={1} overflow="auto">
+          <FlexItem grow={1} height={1}>
             {renderProps.children}
           </FlexItem>
         </FlexCard>
