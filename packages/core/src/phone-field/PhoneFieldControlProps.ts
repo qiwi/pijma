@@ -9,11 +9,9 @@ import {maskArray} from '../mask'
 
 export default interface PhoneFieldControlProps {
   countries: PhoneFieldCountry[]
-  optionsRefs: Map<PhoneFieldCountry, RefObject<HTMLDivElement> | null>
   countryFallback: PhoneFieldCountry
   value?: Phone
-  inputRef?: () => RefObject<MaskedInput> | null
-  dropdownRef?: () => RefObject<HTMLDivElement> | null
+  hideOnBlur?: boolean
   onChange?: (value: Phone) => void
   onFocus?: () => void
   onBlur?: () => void
@@ -28,21 +26,29 @@ export default interface PhoneFieldControlProps {
   onCountryLeave?: (contry: PhoneFieldCountry) => void
   children: RenderChild<{
     country: PhoneFieldCountry
+    countries: Array<
+      PhoneFieldCountry & {
+        current: boolean
+        selected: boolean
+        onClick: React.MouseEventHandler
+        onMouseEnter: React.MouseEventHandler
+        onMouseLeave: React.MouseEventHandler
+      }
+    >
     focused: boolean
-    selected: PhoneFieldCountry | null
     showCountries: boolean
     value: Phone
+    containerRef: RefObject<HTMLDivElement>
+    inputRef: RefObject<MaskedInput>
+    dropdownRef: RefObject<HTMLDivElement>
+    optionsRefs: Map<PhoneFieldCountry, RefObject<HTMLDivElement>>
     onChange: React.ChangeEventHandler
     onFocus: React.FocusEventHandler
-    onBlur: (event: React.FocusEvent, hideOnBlur?: boolean) => void
+    onBlur: React.FocusEventHandler
     onKeyDown: React.KeyboardEventHandler
     onFlagClick: React.MouseEventHandler
     onFlagMouseDown: React.MouseEventHandler
     getMask: (phoneNumber: string) => maskArray
-    onCountryEnter: (country: PhoneFieldCountry) => void
-    onCountryLeave: (country: PhoneFieldCountry) => void
-    selectCountry: (country: PhoneFieldCountry) => void
-    onSelectCountry: () => void
     onCountriesShow: () => void
     onCountriesHide: () => void
   }>

@@ -1,5 +1,4 @@
-import React, {FunctionComponent, RefObject, createRef} from 'react'
-import MaskedInput from 'react-text-mask'
+import React, {FunctionComponent} from 'react'
 
 import {
   PhoneFieldControl,
@@ -11,7 +10,6 @@ import {
   Card,
   Flex,
   FlexItem,
-  PhoneFieldCountry,
   Flag,
 } from '@qiwi/pijma-core'
 
@@ -61,33 +59,24 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
       </Box>
     )
   }
-  const flag: RefObject<HTMLDivElement> = createRef()
-  const container: RefObject<HTMLDivElement> = createRef()
-  const input: RefObject<MaskedInput> = createRef()
-  const dropdown: RefObject<HTMLDivElement> = createRef()
-  const options: Map<PhoneFieldCountry, RefObject<HTMLDivElement>> = new Map(
-    props.countries.map((country => [country, createRef()])),
-  )
   return (
     <PhoneFieldControl
       value={props.value}
       countries={props.countries}
       countryFallback={countryFallback}
+      hideOnBlur={true}
       onChange={props.onChange}
       onFocus={props.onFocus}
       onBlur={props.onBlur}
-      inputRef={() => input}
-      dropdownRef={() => dropdown}
-      optionsRefs={options}
       children={(renderProps) => (
-        <Pos type="relative" ref={container}>
+        <Pos type="relative" ref={renderProps.containerRef}>
           <InputField
             title={props.title}
             active={renderProps.focused || !!props.value || !!props.placeholder}
             padded={!!props.hint}
             input={(
               <BasicInput
-                ref={input}
+                ref={renderProps.inputRef}
                 type="tel"
                 value={renderProps.value.phoneNumber}
                 name={props.name}
@@ -103,14 +92,13 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                 maxLength={props.maxLength}
                 onChange={renderProps.onChange}
                 onFocus={renderProps.onFocus}
-                onBlur={(event: React.FocusEvent) => renderProps.onBlur(event, true)}
+                onBlur={renderProps.onBlur}
                 onKeyDown={renderProps.onKeyDown}
               />
             )}
             hint={props.hint}
             icon={(
               <Box
-                ref={flag}
                 cursor="pointer"
                 width={6}
                 height={4}
@@ -126,13 +114,13 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
           />
           <DropDown
             offset={4}
-            container={container.current}
-            target={input.current!}
+            container={renderProps.containerRef.current}
+            target={renderProps.inputRef.current!}
             show={renderProps.showCountries}
             onHide={() => renderProps.onCountriesHide()}
           >
             <Card
-              ref={dropdown}
+              ref={renderProps.dropdownRef}
               s="0 28px 52px 0 rgba(0, 0, 0, 0.16)"
               bg="#fff"
               r={10}
@@ -142,17 +130,17 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
               overflow="auto"
               mx={-6}
             >
-              {props.countries.map((country, index) => (
+              {renderProps.countries.map((country, index) => (
                 <Card
                   key={index}
-                  ref={options.get(country)}
+                  ref={renderProps.optionsRefs.get(country)}
                   px={6}
                   cursor="pointer"
-                  onClick={() => renderProps.selectCountry(country)}
-                  onMouseEnter={() => renderProps.onCountryEnter(country)}
-                  onMouseLeave={() => renderProps.onCountryLeave(country)}
-                  bg={country === renderProps.country ?
-                    '#E6E6E6' : country === renderProps.selected ?
+                  onClick={country.onClick}
+                  onMouseEnter={country.onMouseEnter}
+                  onMouseLeave={country.onMouseLeave}
+                  bg={country.current ?
+                    '#E6E6E6' : country.selected ?
                     '#F5F5F5' : '#FFF'
                   }
                 >

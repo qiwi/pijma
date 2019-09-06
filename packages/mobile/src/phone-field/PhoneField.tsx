@@ -1,5 +1,4 @@
-import React, {FunctionComponent, RefObject, createRef} from 'react'
-import MaskedInput from 'react-text-mask'
+import React, {FunctionComponent} from 'react'
 
 import {
   PhoneFieldControl,
@@ -11,7 +10,6 @@ import {
   Card,
   Flex,
   FlexItem,
-  PhoneFieldCountry,
   Flag,
 } from '@qiwi/pijma-core'
 
@@ -61,12 +59,6 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
       </Box>
     )
   }
-  const flag: RefObject<HTMLDivElement> = createRef()
-  const container: RefObject<HTMLDivElement> = createRef()
-  const input: RefObject<MaskedInput> = createRef()
-  const options: Map<PhoneFieldCountry, RefObject<HTMLDivElement>> = new Map(
-    props.countries.map((country => [country, createRef()])),
-  )
   return (
     <PhoneFieldControl
       value={props.value}
@@ -75,17 +67,15 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
       onChange={props.onChange}
       onFocus={props.onFocus}
       onBlur={props.onBlur}
-      inputRef={() => input}
-      optionsRefs={options}
       children={(renderProps) => (
-        <Pos type="relative" ref={container}>
+        <Pos type="relative">
           <InputField
             title={props.title}
             active={renderProps.focused || !!props.value || !!props.placeholder}
             padded={!!props.hint}
             input={(
               <BasicInput
-                ref={input}
+                ref={renderProps.inputRef}
                 type="tel"
                 value={renderProps.value.phoneNumber}
                 name={props.name}
@@ -108,7 +98,6 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
             hint={props.hint}
             icon={(
               <Box
-                ref={flag}
                 cursor="pointer"
                 width={6}
                 height={4}
@@ -127,19 +116,19 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
             show={renderProps.showCountries}
             onHide={() => renderProps.onCountriesHide()}
           >
-            {props.countries.map((country, index) => (
+            {renderProps.countries.map((country, index) => (
               <Card
                 key={index}
-                ref={options.get(country)}
+                ref={renderProps.optionsRefs.get(country)}
                 width={1}
                 px={6}
                 boxSizing="content-box"
                 cursor="pointer"
-                onClick={() => renderProps.selectCountry(country)}
-                onMouseEnter={() => renderProps.onCountryEnter(country)}
-                onMouseLeave={() => renderProps.onCountryLeave(country)}
-                bg={country === renderProps.country ?
-                  '#E6E6E6' : country === renderProps.selected ?
+                onClick={country.onClick}
+                onMouseEnter={country.onMouseEnter}
+                onMouseLeave={country.onMouseLeave}
+                bg={country.current ?
+                  '#E6E6E6' : country.selected ?
                   '#F5F5F5' : '#FFF'
                 }
               >
