@@ -11,27 +11,32 @@ export interface GlossaryProps {
 export const Glossary: FC<GlossaryProps> = ({children}) => (
   <Box as="dl">
     {children.map((item, i) => (
-      ([] as GlossaryText[]).concat(item.content).map((value, index) => (
-        <Box key={index} mt={index !== 0 ? 2 : i === 0 ? undefined : 5}>
-          <Box as="dt">
-            <Text
-              bold={false}
-              compact
-              size="s"
-              color="support"
-              children={index === 0 ? item.title : null}
-            />
-          </Box>
-          <Box as="dd" mt={1}>
-            <Text
-              bold={false}
-              compact
-              size="m"
-              children={value}
-            />
-          </Box>
+      <Box
+        key={i}
+        mt={i === 0 ? undefined : 5}
+      >
+        <Box as="dt">
+          <Text
+            bold={false}
+            compact
+            size="s"
+            color="support"
+            children={item.title}
+          />
         </Box>
-      ))
+        <Box mt={1} as="dd">
+          {([] as GlossaryText[]).concat(item.content).map((content, j) => (
+            <Box key={`${i}.${j}`} mt={j === 0 ? undefined : 2}>
+              <Text
+                bold={false}
+                compact
+                size="m"
+                children={content}
+              />
+            </Box>
+          ))}
+        </Box>
+      </Box>
     ))}
   </Box>
 )
