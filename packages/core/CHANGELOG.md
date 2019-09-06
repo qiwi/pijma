@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.73.0](https://github.com/qiwi/pijma/compare/v1.72.0...v1.73.0) (2019-09-06)
+
+
+### Features
+
+* markdown ([1c0fd71](https://github.com/qiwi/pijma/commit/1c0fd71))
+
 # [@qiwi/pijma-core-v1.72.0](https://github.com/qiwi/pijma/compare/v1.71.0...v1.72.0) (2019-09-04)
 
 
