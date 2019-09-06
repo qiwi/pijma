@@ -96,7 +96,7 @@ const del: FC<SizeProps> = ({children}) => (
 const li: FC<SizeProps> = ({size, children}) => (
   <React.Fragment>
     {React.Children.map(children, (child, i) => (
-      <MarkdownBox mt={SizeMargin[size]}>
+      <MarkdownBox key={i} mt={SizeMargin[size]}>
         {typeof child === 'string' ? (
           <Paragraph key={i} size={size} children={child}/>
         ) : (
