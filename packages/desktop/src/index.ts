@@ -22,6 +22,7 @@ export * from './status'
 export * from './logo-link'
 export * from './glossary'
 export * from './details'
+export * from './markdown'
 export * from './drop-down'
 
 export {TextField as MaskTextField} from './text-field'
