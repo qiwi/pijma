@@ -30,19 +30,16 @@ const statusClassName = (status: string, props: SimpleTransitionProps): string |
   return undefined
 }
 
-const SimpleTransition: React.FunctionComponent<SimpleTransitionProps> = ({children, ...props}) => {
-  const child = children as React.ReactElement<{className?: string}>
-  return (
-    <Transition {...props}>
-      {React.isValidElement(children) && React.Children.only(child) ? (
-        (status) => React.cloneElement(child, {
-          className: cx(child.props.className, statusClassName(status, props)),
-        })
-      ) : (
-        children
-      )}
-    </Transition>
-  )
-}
+const SimpleTransition: React.FunctionComponent<SimpleTransitionProps> = ({children, ...props}) => (
+  <Transition {...props}>
+    {React.isValidElement(children) && React.Children.only(children) ? (
+      (status) => React.cloneElement(children, {
+        className: cx(children.props.className, statusClassName(status, props)),
+      })
+    ) : (
+      children
+    )}
+  </Transition>
+)
 
 export default SimpleTransition
