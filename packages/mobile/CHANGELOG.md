@@ -1,3 +1,24 @@
+# [@qiwi/pijma-mobile-v1.74.0](https://github.com/qiwi/pijma/compare/v1.73.0...v1.74.0) (2019-09-06)
+
+
+### Features
+
+* glossary and details ([112da84](https://github.com/qiwi/pijma/commit/112da84))
+
+# [@qiwi/pijma-mobile-v1.73.0](https://github.com/qiwi/pijma/compare/v1.72.0...v1.73.0) (2019-09-06)
+
+
+### Features
+
+* markdown ([1c0fd71](https://github.com/qiwi/pijma/commit/1c0fd71))
+
+# [@qiwi/pijma-mobile-v1.72.0](https://github.com/qiwi/pijma/compare/v1.71.0...v1.72.0) (2019-09-04)
+
+
+### Features
+
+* dropdown ([aa08958](https://github.com/qiwi/pijma/commit/aa08958))
+
 # [@qiwi/pijma-mobile-v1.71.0](https://github.com/qiwi/pijma/compare/v1.70.0...v1.71.0) (2019-09-02)
 
 
