@@ -39,7 +39,7 @@ const MardownHeadingRenderer: FC<HeadingRendererProps> = (props) => (
   <Box
     mt={LevelMarginTop[props.level]}
     mb={LevelMarginBottom[props.level]}
-    css={{'&:first-child': {marginTop: 0}, '&:last-child': {marginBottom: 0}}}
+    css={{'&:nth-child(1)': {marginTop: 0}, '&:last-child': {marginBottom: 0}}}
   >
     <Heading size={LevelSize[props.level]}>
       {props.children}

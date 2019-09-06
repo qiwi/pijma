@@ -11,7 +11,7 @@ export interface MarkdownProps {
 }
 
 const MarkdownBox = styled(Box)({
-  '&:first-child': {
+  '&:nth-child(1)': {
     marginTop: 0,
   },
 })

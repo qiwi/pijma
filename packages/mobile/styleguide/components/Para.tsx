@@ -13,7 +13,7 @@ const SizeMargin: { [size in NonNullable<ParagraphProps['size']>]: number } = {
 const ParagraphRenderer: FC = ({children}) => (
   <Box
     my={SizeMargin['m']}
-    css={{'&:first-child': {marginTop: 0}, '&:last-child': {marginBottom: 0}}}
+    css={{'&:nth-child(1)': {marginTop: 0}, '&:last-child': {marginBottom: 0}}}
   >
     <Paragraph size="m">
       {children}
