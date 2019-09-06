@@ -20,6 +20,8 @@ export * from './header-menu'
 export * from './header'
 export * from './status'
 export * from './logo-link'
+export * from './glossary'
+export * from './details'
 export * from './markdown'
 export * from './drop-down'
 
