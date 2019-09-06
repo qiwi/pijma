@@ -119,7 +119,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
             {renderProps.countries.map((country, index) => (
               <Card
                 key={index}
-                ref={renderProps.optionsRefs.get(country)}
+                ref={country.ref}
                 width={1}
                 px={6}
                 boxSizing="content-box"

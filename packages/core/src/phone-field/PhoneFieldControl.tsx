@@ -262,6 +262,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
       country: this.state.country,
       countries: this.props.countries.map((country) => ({
         ...country,
+        ref: this.optionsRefs.get(country)!,
         current: country === this.state.country,
         selected: country === this.state.selectedCountry,
         onClick: this.onCountryClick(country),
@@ -274,7 +275,6 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
       containerRef: this.containerRef,
       inputRef: this.inputRef,
       dropdownRef: this.dropdownRef,
-      optionsRefs: this.optionsRefs,
       getMask: this.getMask,
       onFlagClick: this.onFlagClick,
       onFlagMouseDown: this.onFlagMouseDown,

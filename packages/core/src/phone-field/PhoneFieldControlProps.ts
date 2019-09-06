@@ -28,6 +28,7 @@ export default interface PhoneFieldControlProps {
     country: PhoneFieldCountry
     countries: Array<
       PhoneFieldCountry & {
+        ref: RefObject<HTMLDivElement>
         current: boolean
         selected: boolean
         onClick: React.MouseEventHandler
@@ -41,7 +42,6 @@ export default interface PhoneFieldControlProps {
     containerRef: RefObject<HTMLDivElement>
     inputRef: RefObject<MaskedInput>
     dropdownRef: RefObject<HTMLDivElement>
-    optionsRefs: Map<PhoneFieldCountry, RefObject<HTMLDivElement>>
     onChange: React.ChangeEventHandler
     onFocus: React.FocusEventHandler
     onBlur: React.FocusEventHandler
