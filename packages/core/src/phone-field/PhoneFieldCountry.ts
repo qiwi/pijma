@@ -1,8 +1,8 @@
-import {Flag} from '../flag'
+import {FlagProps} from '../flag'
 
 interface PhoneFieldCountry {
   name: string
-  code: Flag['code']
+  code: FlagProps['code']
   mask: string
 }
 
