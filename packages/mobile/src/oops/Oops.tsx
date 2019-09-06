@@ -10,7 +10,7 @@ export interface ErrorPageProps {
   game?: ReactNode
 }
 
-export const ErrorPage: FC<ErrorPageProps> = ({icon, error, title, content, game}) => (
+export const Oops: FC<ErrorPageProps> = ({icon, error, title, content, game}) => (
   <Card pt={4} pb={6} px={6} minHeight="100%" bg="#fff">
     <Flex align="center" direction="column">
       <FlexItem
@@ -19,7 +19,7 @@ export const ErrorPage: FC<ErrorPageProps> = ({icon, error, title, content, game
         height={7}
         children={icon}
       />
-      <FlexItem mt={game ? 6 : 21} width={70} height={45}>
+      <FlexItem mt={game ? 6 : 21}>
         <Typo
           align="center"
           as="p"
