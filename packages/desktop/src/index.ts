@@ -20,6 +20,7 @@ export * from './header-menu'
 export * from './header'
 export * from './status'
 export * from './logo-link'
+export * from './error-page'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'
