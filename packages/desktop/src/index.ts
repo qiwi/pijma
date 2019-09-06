@@ -22,6 +22,7 @@ export * from './status'
 export * from './logo-link'
 export * from './glossary'
 export * from './details'
+export * from './drop-down'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'
