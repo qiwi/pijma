@@ -20,8 +20,8 @@ export default interface PhoneFieldControlProps {
     countries: Array<
       PhoneFieldCountry & {
         ref: RefObject<HTMLDivElement>
-        current: boolean
         selected: boolean
+        focused: boolean
         onClick: React.MouseEventHandler
         onMouseEnter: React.MouseEventHandler
         onMouseLeave: React.MouseEventHandler

@@ -103,7 +103,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                 width={6}
                 height={4}
                 my={1}
-                onMouseUp={renderProps.onFlagMouseUp}
+                onClick={renderProps.onFlagMouseUp}
                 onMouseDown={renderProps.onFlagMouseDown}
                 children={(<Flag code={renderProps.country.code}/>)}
               />
@@ -139,8 +139,8 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                   onClick={country.onClick}
                   onMouseEnter={country.onMouseEnter}
                   onMouseLeave={country.onMouseLeave}
-                  bg={country.current ?
-                    '#E6E6E6' : country.selected ?
+                  bg={country.selected ?
+                    '#E6E6E6' : country.focused ?
                     '#F5F5F5' : '#FFF'
                   }
                 >
