@@ -5,7 +5,7 @@ import RenderChild from '../RenderChild'
 
 import PhoneFieldCountry from './PhoneFieldCountry'
 import Phone from './Phone'
-import {maskArray} from '../mask'
+import {Mask} from '../mask'
 
 export default interface PhoneFieldControlProps {
   countries: PhoneFieldCountry[]
@@ -48,7 +48,7 @@ export default interface PhoneFieldControlProps {
     onKeyDown: React.KeyboardEventHandler
     onFlagClick: React.MouseEventHandler
     onFlagMouseDown: React.MouseEventHandler
-    getMask: (phoneNumber: string) => maskArray
+    mask: Mask
     onCountriesShow: () => void
     onCountriesHide: () => void
   }>

@@ -7,7 +7,7 @@ import PhoneFieldControlState from './PhoneFieldControlState'
 
 import PhoneFieldCountry from './PhoneFieldCountry'
 import Phone from './Phone'
-import {maskArray} from '../mask'
+import {createPhoneMask} from '../mask'
 
 export default class PhoneFieldControl extends React.Component<PhoneFieldControlProps, PhoneFieldControlState> {
 
@@ -240,23 +240,6 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     return countries[nextId]
   }
 
-  private getMask: (phoneNumber: string) => maskArray = (phoneNumber = '') => {
-    const {countries} = this.props
-    const clearMasks = countries
-      .map(country => country.mask.slice(1))
-      .sort((a, b) => b.length - a.length)
-    const mask: maskArray = ['+']
-    const clearValue = phoneNumber.replace(/\D/g, '')
-    if (clearValue === '') {
-      return mask
-    }
-    const selectedMask = clearMasks.find(clearMask => clearValue.startsWith(clearMask.replace(/\D/g, '').slice(0, clearValue.length)))
-    if (!selectedMask) {
-      return this.getMask(phoneNumber.slice(0, -1))
-    }
-    return mask.concat(selectedMask.split('').map(char => char === 'd' ? /\d/ : new RegExp(char)))
-  }
-
   public render() {
     return this.props.children({
       country: this.state.country,
@@ -275,7 +258,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
       containerRef: this.containerRef,
       inputRef: this.inputRef,
       dropdownRef: this.dropdownRef,
-      getMask: this.getMask,
+      mask: createPhoneMask(this.props.countries),
       onFlagClick: this.onFlagClick,
       onFlagMouseDown: this.onFlagMouseDown,
       onCountriesShow: this.onCountriesShow,
