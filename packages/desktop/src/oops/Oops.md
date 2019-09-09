@@ -3,7 +3,7 @@
   <BlockContent>
     <Flex justify="center" css={{transform: 'scale(0.6)'}}>
     <Oops
-      icon={<WalletLogo/>}
+      logo={<WalletLogo/>}
       title="Мы не нашли страницу, которую вы ищете"
       error="404"
       content={
@@ -23,7 +23,7 @@
   <BlockContent>
     <Flex justify="center" css={{transform: 'scale(0.6)'}}>
       <Oops 
-        icon={<WalletLogo/>}
+        logo={<WalletLogo/>}
         title="У вас отключен JavaScript"
         error="!JS"
         content="Для работы с сайтом необходима поддержка JavaScript"
@@ -38,7 +38,7 @@
   <BlockContent>
     <Flex justify="center" css={{transform: 'scale(0.6)'}}>
       <Oops 
-        icon={<WalletLogo/>}
+        logo={<WalletLogo/>}
         title="Ваш браузер больше не поддерживается"
         error="ОЙ!"
         content={

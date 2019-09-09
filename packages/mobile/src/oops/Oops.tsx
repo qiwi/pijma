@@ -3,23 +3,23 @@ import {Flex, FlexItem, Typo, Card} from '@qiwi/pijma-core'
 import {Paragraph, Heading} from '../typography'
 
 export interface ErrorPageProps {
-  icon: ReactNode
+  logo: ReactNode
   error: string
   title: string
   content: ReactNode
-  game?: ReactNode
+  footer?: ReactNode
 }
 
-export const Oops: FC<ErrorPageProps> = ({icon, error, title, content, game}) => (
+export const Oops: FC<ErrorPageProps> = ({logo, error, title, content, footer}) => (
   <Card pt={4} pb={6} px={6} minHeight="100%" bg="#fff">
     <Flex align="center" direction="column">
       <FlexItem
         shrink={0}
         width={37}
         height={7}
-        children={icon}
+        children={logo}
       />
-      <FlexItem mt={game ? 6 : 21}>
+      <FlexItem mt={footer ? 6 : 21}>
         <Typo
           align="center"
           as="p"
@@ -43,8 +43,8 @@ export const Oops: FC<ErrorPageProps> = ({icon, error, title, content, game}) =>
           content
         )}
       </FlexItem>
-      {game ? (
-        <FlexItem children={game}/>
+      {footer ? (
+        <FlexItem children={footer}/>
       ) : (
         null
       )}

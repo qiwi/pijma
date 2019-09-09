@@ -2,7 +2,7 @@
 <Block>
   <BlockContent>
     <Oops 
-      icon={<WalletLogo/>}
+      logo={<WalletLogo/>}
       title="Мы не нашли страницу, которую вы ищете"
       error="404"
       content={
@@ -27,7 +27,7 @@
 <Block>
   <BlockContent>
     <Oops 
-      icon={<WalletLogo/>}
+      logo={<WalletLogo/>}
       title="У вас отключен JavaScript"
       error="!JS"
       content="Для работы с сайтом необходима поддержка JavaScript"
@@ -40,7 +40,7 @@
 <Block>
   <BlockContent>
     <Oops 
-      icon={<WalletLogo/>}
+      logo={<WalletLogo/>}
       title="Ваш браузер больше не поддерживается"
       error="ОЙ!"
       content={

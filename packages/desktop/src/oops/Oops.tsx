@@ -3,22 +3,22 @@ import {Flex, FlexItem, Typo, Card} from '@qiwi/pijma-core'
 import {Title, Paragraph} from '../typography'
 
 export interface OopsProps {
-  icon: ReactNode
+  logo: ReactNode
   error: string
   title: string
   content: ReactNode
-  game?: ReactNode
+  footer?: ReactNode
 }
 
-export const Oops: FC<OopsProps> = ({icon, error, title, content, game}) => (
+export const Oops: FC<OopsProps> = ({logo, error, title, content, footer}) => (
   <Card minWidth={295} width="100%" pt={22} minHeight="100%" bg="#fff">
     <Flex mx="auto" width={235} direction="column">
       <FlexItem
         width={60}
         height={12}
-        children={icon}
+        children={logo}
       />
-      <FlexItem mt={game ? 9 : 30}>
+      <FlexItem mt={footer ? 9 : 30}>
         <Flex align="center">
           <FlexItem shrink={0}>
             <Typo
@@ -49,8 +49,8 @@ export const Oops: FC<OopsProps> = ({icon, error, title, content, game}) => (
           </FlexItem>
         </Flex>
       </FlexItem>
-      {game ? (
-        <FlexItem shrink={0} children={game}/>
+      {footer ? (
+        <FlexItem shrink={0} children={footer}/>
       ) : (
         null
       )}
