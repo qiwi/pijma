@@ -66,7 +66,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     }
   }
 
-  private onFlagClick: React.MouseEventHandler = (event: React.MouseEvent) => {
+  private onFlagMouseUp: React.MouseEventHandler = (event: React.MouseEvent) => {
     event.preventDefault()
     this.focusInput()
     this.onCountriesShow()
@@ -241,7 +241,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
       inputRef: this.inputRef,
       dropdownRef: this.dropdownRef,
       mask: createPhoneMask(this.props.countries),
-      onFlagClick: this.onFlagClick,
+      onFlagMouseUp: this.onFlagMouseUp,
       onFlagMouseDown: this.onFlagMouseDown,
       onCountriesShow: this.onCountriesShow,
       onCountriesHide: this.onCountriesHide,

@@ -102,7 +102,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                 width={6}
                 height={4}
                 my={1}
-                onClick={renderProps.onFlagClick}
+                onMouseUp={renderProps.onFlagMouseUp}
                 onMouseDown={renderProps.onFlagMouseDown}
                 children={(<Flag code={renderProps.country.code}/>)}
               />
