@@ -166,9 +166,6 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
         selectedCountry: this.nextCountry,
       })
       const countryRef = this.optionsRefs.get(this.nextCountry || this.state.country)
-      if (!countryRef || !this.dropdownRef) {
-        return
-      }
       if (countryRef && this.dropdownRef) {
         this.scrollToCountry(this.dropdownRef, countryRef)
       }
@@ -180,9 +177,6 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
         selectedCountry: this.prevCountry,
       })
       const countryRef = this.optionsRefs.get(this.prevCountry || this.state.country)
-      if (!countryRef || !this.dropdownRef) {
-        return
-      }
       if (countryRef && this.dropdownRef) {
         this.scrollToCountry(this.dropdownRef, countryRef)
       }
