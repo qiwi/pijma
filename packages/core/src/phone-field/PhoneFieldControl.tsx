@@ -44,19 +44,13 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     this.setState({
       selectedCountry: country,
     })
-    if (this.props.onCountryEnter) {
-      this.props.onCountryEnter(country)
-    }
   }
 
-  private onCountryLeave = (country: PhoneFieldCountry) => (event: React.MouseEvent) => {
+  private onCountryLeave = () => (event: React.MouseEvent) => {
     event.preventDefault()
     this.setState({
       selectedCountry: null,
     })
-    if (this.props.onCountryLeave) {
-      this.props.onCountryLeave(country)
-    }
   }
 
   private get inputField(): HTMLInputElement | null {
@@ -109,18 +103,12 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
   }
 
   private onCountriesShow: () => void = () => {
-    if (this.props.onCountriesShow) {
-      this.props.onCountriesShow()
-    }
     this.setState({
       showCountries: true,
     })
   }
 
   private onCountriesHide: () => void = () => {
-    if (this.props.onCountriesHide) {
-      this.props.onCountriesHide()
-    }
     this.setState({
       showCountries: false,
     })
@@ -250,7 +238,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
         selected: country === this.state.selectedCountry,
         onClick: this.onCountryClick(country),
         onMouseEnter: this.onCountryEnter(country),
-        onMouseLeave: this.onCountryLeave(country),
+        onMouseLeave: this.onCountryLeave(),
       })),
       focused: this.state.focused,
       showCountries: this.state.showCountries,

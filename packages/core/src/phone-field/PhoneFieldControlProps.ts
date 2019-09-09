@@ -15,15 +15,6 @@ export default interface PhoneFieldControlProps {
   onChange?: (value: Phone) => void
   onFocus?: () => void
   onBlur?: () => void
-  onKeyDown?: (event: React.KeyboardEvent) => boolean
-  onKeyUp?: (event: React.KeyboardEvent) => boolean
-  onFlagClick?: () => void
-  onFlagMouseDown?: () => void
-  onSelectCountry?: () => void
-  onCountriesShow?: () => void
-  onCountriesHide?: () => void
-  onCountryEnter?: (contry: PhoneFieldCountry) => void
-  onCountryLeave?: (contry: PhoneFieldCountry) => void
   children: RenderChild<{
     country: PhoneFieldCountry
     countries: Array<
