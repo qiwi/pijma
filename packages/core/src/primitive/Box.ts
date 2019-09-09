@@ -1,7 +1,6 @@
 import styled, {CSSObject} from '../styled'
 
 import {Value, cssValue} from './Value'
-import {BoxSizingProperty} from 'csstype'
 
 export type BoxDisplay = 'none' | 'inline' | 'block' | 'contents' | 'flex' | 'grid' | 'inline-block' | 'inline-flex' | 'table'
 
@@ -36,7 +35,6 @@ export interface BoxProps {
   cursor?: string
   opacity?: number
   overflow?: string
-  boxSizing?: BoxSizingProperty
 }
 
 export const BoxNonProps = [
@@ -47,7 +45,7 @@ export const BoxNonProps = [
   'width', 'minWidth', 'maxWidth',
   'height', 'minHeight', 'maxHeight',
   'cursor', 'opacity', 'overflow',
-  'transform', 'transformOrigin', 'boxSizing',
+  'transform', 'transformOrigin',
 ]
 
 export const Box = styled('div', {
@@ -70,7 +68,6 @@ export const Box = styled('div', {
   height: cssValue(props.height, theme.scale),
   minHeight: cssValue(props.minHeight, theme.scale),
   maxHeight: cssValue(props.maxHeight, theme.scale),
-  boxSizing: props.boxSizing,
   cursor: props.cursor,
   opacity: props.opacity,
   overflow: props.overflow,

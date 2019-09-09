@@ -122,7 +122,6 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                 ref={country.ref}
                 width={1}
                 px={6}
-                boxSizing="content-box"
                 cursor="pointer"
                 onClick={country.onClick}
                 onMouseEnter={country.onMouseEnter}
