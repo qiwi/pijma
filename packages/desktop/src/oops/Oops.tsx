@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react'
 import {Flex, FlexItem, Typo, Card} from '@qiwi/pijma-core'
-import {Title, Text} from '../typography'
+import {Title, Paragraph} from '../typography'
 
 export interface OopsProps {
   icon: ReactNode
@@ -11,8 +11,8 @@ export interface OopsProps {
 }
 
 export const Oops: FC<OopsProps> = ({icon, error, title, content, game}) => (
-  <Card width={235} mx="auto" pt={22} minHeight="100%" bg="#fff">
-    <Flex direction="column">
+  <Card minWidth={295} width="100%" pt={22} minHeight="100%" bg="#fff">
+    <Flex mx="auto" width={235} direction="column">
       <FlexItem
         width={60}
         height={12}
@@ -39,7 +39,11 @@ export const Oops: FC<OopsProps> = ({icon, error, title, content, game}) => (
                 <Title size="2" children={title}/>
               </FlexItem>
               <FlexItem mt={6}>
-                <Text bold size="m" children={content}/>
+                {typeof content === 'string' ? (
+                  <Paragraph bold size="m" children={content}/>
+                ) : (
+                  content
+                )}
               </FlexItem>
             </Flex>
           </FlexItem>

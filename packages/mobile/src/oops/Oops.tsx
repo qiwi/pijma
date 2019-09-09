@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react'
 import {Flex, FlexItem, Typo, Card} from '@qiwi/pijma-core'
-import {Text, Heading} from '../typography'
+import {Paragraph, Heading} from '../typography'
 
 export interface ErrorPageProps {
   icon: ReactNode
@@ -37,7 +37,11 @@ export const Oops: FC<ErrorPageProps> = ({icon, error, title, content, game}) =>
         <Heading align="center" size="1" children={title}/>
       </FlexItem>
       <FlexItem mt={4}>
-        <Text display="block" align="center" size="m" children={content}/>
+        {typeof content === 'string' ? (
+          <Paragraph align="center" bold size="m" children={content}/>
+        ) : (
+          content
+        )}
       </FlexItem>
       {game ? (
         <FlexItem children={game}/>
