@@ -18,6 +18,7 @@ export * from './menu'
 export * from './pagination'
 export * from './status'
 export * from './logo-link'
+export * from './oops'
 export * from './glossary'
 export * from './markdown'
 
