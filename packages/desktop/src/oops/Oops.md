@@ -1,7 +1,7 @@
 ```jsx
 <Block>
   <BlockContent>
-    <Flex justify="center" css={{transform: 'scale(0.6)'}}>
+    <Flex justify="center" transform="scale(0.6)">
     <Oops
       logo={<WalletLogo/>}
       title="Мы не нашли страницу, которую вы ищете"
@@ -21,7 +21,7 @@
 ```jsx
 <Block>
   <BlockContent>
-    <Flex justify="center" css={{transform: 'scale(0.6)'}}>
+    <Flex justify="center" transform="scale(0.6)">
     <Oops
       logo={<WalletLogo/>}
       title="Мы не нашли страницу, которую вы ищете"
@@ -44,7 +44,7 @@
 ```jsx
 <Block>
   <BlockContent>
-    <Flex justify="center" css={{transform: 'scale(0.6)'}}>
+    <Flex justify="center" transform="scale(0.6)">
       <Oops 
         logo={<WalletLogo/>}
         title="У вас отключен JavaScript"
@@ -59,7 +59,7 @@
 ```jsx
 <Block>
   <BlockContent>
-    <Flex justify="center" css={{transform: 'scale(0.6)'}}>
+    <Flex justify="center" transform="scale(0.6)">
       <Oops 
         logo={<WalletLogo/>}
         title="Ваш браузер больше не поддерживается"
