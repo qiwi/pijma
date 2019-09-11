@@ -19,11 +19,7 @@ import PhoneFieldProps from './PhoneFieldProps'
 
 export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
   tabIndex = 0,
-  countryFallback = {
-    name: 'Россия',
-    code: 'RU',
-    mask: '+7dddddddddd',
-  },
+  defaultCode = 'RU',
   ...props
 }) => {
   if (props.stub) {
@@ -63,7 +59,6 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
     <PhoneFieldControl
       value={props.value}
       countries={props.countries}
-      countryFallback={countryFallback}
       hideOnBlur={true}
       onChange={props.onChange}
       onFocus={props.onFocus}
@@ -78,7 +73,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
               <BasicInput
                 ref={renderProps.inputRef}
                 type="tel"
-                value={renderProps.value.phoneNumber}
+                value={renderProps.value}
                 name={props.name}
                 mask={renderProps.mask}
                 autoComplete={props.autoComplete}
@@ -105,7 +100,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                 my={1}
                 onClick={renderProps.onFlagMouseUp}
                 onMouseDown={renderProps.onFlagMouseDown}
-                children={(<Flag code={renderProps.country.code}/>)}
+                children={(<Flag code={renderProps.code || defaultCode}/>)}
               />
             )}
             error={props.error}
@@ -173,9 +168,5 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
 
 PhoneField.defaultProps = {
   tabIndex: 0,
-  countryFallback: {
-    name: 'Россия',
-    code: 'RU',
-    mask: '+7dddddddddd',
-  },
+  defaultCode: 'RU',
 }

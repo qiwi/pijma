@@ -25,9 +25,10 @@ import {countries} from '@qiwi/pijma-core';
     <Box width={64}>
       <PhoneField
         countries={countries}
-        value={state.phoneNumber}
-        onChange={phoneNumber => {
-          setState({phoneNumber})
+        value={state.phone}
+        action={state.code ? `Код страны: ${state.code}` : undefined}
+        onChange={(phone, code) => {
+          setState({phone, code})
         }}
       />
     </Box>

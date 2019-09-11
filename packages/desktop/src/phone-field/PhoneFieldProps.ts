@@ -1,11 +1,11 @@
 import {ReactNode} from 'react'
 
-import {PhoneFieldCountry, Phone} from '@qiwi/pijma-core'
+import {PhoneFieldCountry, FlagProps} from '@qiwi/pijma-core'
 
 export default interface PhoneFieldProps {
-  value: Phone
+  value: string
   countries: PhoneFieldCountry[]
-  countryFallback?: PhoneFieldCountry
+  defaultCode?: FlagProps['code']
   tabIndex?: number
   name?: string
   title?: string
@@ -19,7 +19,7 @@ export default interface PhoneFieldProps {
   disabled?: boolean
   maxLength?: number
   stub?: boolean
-  onChange?: (value: Phone) => void
+  onChange?: (phone: string, code: FlagProps['code'] | undefined) => void
   onFocus?: () => void
   onBlur?: () => void
 }

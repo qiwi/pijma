@@ -4,19 +4,19 @@ import MaskedInput from 'react-text-mask'
 import RenderChild from '../RenderChild'
 
 import PhoneFieldCountry from './PhoneFieldCountry'
-import Phone from './Phone'
+import {FlagProps} from '../flag'
 import {Mask} from '../mask'
 
 export default interface PhoneFieldControlProps {
   countries: PhoneFieldCountry[]
-  countryFallback: PhoneFieldCountry
-  value?: Phone
+  value?: string
   hideOnBlur?: boolean
-  onChange?: (value: Phone) => void
+  onChange?: (phone: string, code: FlagProps['code'] | undefined) => void
   onFocus?: () => void
   onBlur?: () => void
   children: RenderChild<{
-    country: PhoneFieldCountry
+    value: string
+    code: FlagProps['code'] | undefined
     countries: Array<
       PhoneFieldCountry & {
         ref: RefObject<HTMLDivElement>
@@ -29,7 +29,6 @@ export default interface PhoneFieldControlProps {
     >
     focused: boolean
     showCountries: boolean
-    value: Phone
     containerRef: RefObject<HTMLDivElement>
     inputRef: RefObject<MaskedInput>
     dropdownRef: RefObject<HTMLDivElement>

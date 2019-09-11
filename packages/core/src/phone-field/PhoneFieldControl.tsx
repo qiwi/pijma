@@ -6,14 +6,18 @@ import PhoneFieldControlProps from './PhoneFieldControlProps'
 import PhoneFieldControlState from './PhoneFieldControlState'
 
 import PhoneFieldCountry from './PhoneFieldCountry'
-import Phone from './Phone'
 import {createPhoneMask} from '../mask'
 
 export default class PhoneFieldControl extends React.Component<PhoneFieldControlProps, PhoneFieldControlState> {
 
   public componentDidUpdate(_props: PhoneFieldControlProps, state: PhoneFieldControlState) {
-    if (state.selectedCountry.mask !== this.state.selectedCountry.mask && this.props.value) {
-      const position = this.props.value.phoneNumber.length * 2
+    if (
+      state.selectedCountry &&
+      this.state.selectedCountry &&
+      state.selectedCountry.mask !== this.state.selectedCountry.mask &&
+      this.props.value
+    ) {
+      const position = this.props.value.length * 2
       this.inputField.setSelectionRange(position, position)
     }
   }
@@ -21,7 +25,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
   public state: PhoneFieldControlState = {
     focused: false,
     showCountries: false,
-    selectedCountry: this.props.countryFallback,
+    selectedCountry: null,
     focusedCountry: null,
   }
 
@@ -72,16 +76,14 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
   }
 
   private selectCountry: (country: PhoneFieldCountry) => void = (country) => {
-    const phoneNumber = this.props.value ? this.props.value.phoneNumber : ''
-    const currentCountryMask = this.state.selectedCountry.mask.replace(/\D/g, '')
+    const phoneNumber = this.props.value ? this.props.value : ''
+    const currentCountryMask = this.state.selectedCountry ? this.state.selectedCountry.mask.replace(/\D/g, '') : ''
     const newCountryMask = country.mask.replace(/\D/g, '')
     if (this.props.onChange) {
-      const newValue = new Phone(
+      this.props.onChange(
         `+${newCountryMask}${phoneNumber.replace(/\D/g, '').substr(currentCountryMask.length)}`,
-        this.props.countries,
-        this.props.countryFallback,
+        country.code,
       )
-      this.props.onChange(newValue)
     }
     this.inputField.focus()
     this.setState({
@@ -98,16 +100,15 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
 
   private onChange: React.ChangeEventHandler<HTMLInputElement> = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault()
-    const value = new Phone(
-      event.currentTarget.value,
-      this.props.countries,
-      this.props.countryFallback,
-    )
+    const country = this.getCountryByPhone(event.currentTarget.value)
     if (this.props.onChange) {
-      this.props.onChange(value)
+      this.props.onChange(
+        event.currentTarget.value,
+        country ? country.code : undefined,
+      )
     }
     this.setState({
-      selectedCountry: value.country,
+      selectedCountry: country ? country : null,
     })
   }
 
@@ -149,7 +150,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
       this.setState({
         focusedCountry: this.nextCountry,
       })
-      const countryRef = this.optionsRefs.get(this.nextCountry || this.state.selectedCountry)
+      const countryRef = this.optionsRefs.get(this.nextCountry || this.state.selectedCountry || this.props.countries[0])
       if (countryRef && this.dropdownRef) {
         this.scrollToCountry(countryRef)
       }
@@ -160,7 +161,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
       this.setState({
         focusedCountry: this.prevCountry,
       })
-      const countryRef = this.optionsRefs.get(this.prevCountry || this.state.selectedCountry)
+      const countryRef = this.optionsRefs.get(this.prevCountry || this.state.selectedCountry || this.props.countries[0])
       if (countryRef && this.dropdownRef) {
         this.scrollToCountry(countryRef)
       }
@@ -168,7 +169,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     }
     if (this.state.showCountries && event.key === 'Enter') {
       event.preventDefault()
-      this.selectCountry(this.state.focusedCountry === null ? this.state.selectedCountry : this.state.focusedCountry)
+      this.selectCountry(this.state.focusedCountry || this.state.selectedCountry || this.props.countries[0])
     }
   }
 
@@ -192,6 +193,15 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     }
   }
 
+  private getCountryByPhone(phoneNumber: string): PhoneFieldCountry | undefined {
+    const clearPhone = phoneNumber.replace(/\D/g, '')
+    const country = this.props.countries
+      .slice(0)
+      .sort((a, b) => b.mask.replace(/\D/g, '').length - a.mask.replace(/\D/g, '').length)
+      .find((option) => clearPhone.indexOf(option.mask.replace(/\D/g, '')) === 0)
+    return country
+  }
+
   private get nextCountry(): PhoneFieldCountry | null {
     const {countries} = this.props
     const focusedId: number = countries.findIndex(country => this.state.focusedCountry === null ? country === this.state.selectedCountry : country === this.state.focusedCountry)
@@ -208,7 +218,8 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
 
   public render() {
     return this.props.children({
-      country: this.state.selectedCountry,
+      value: this.props.value || '',
+      code: this.state.selectedCountry ? this.state.selectedCountry.code : undefined,
       countries: this.props.countries.map((country) => ({
         ...country,
         ref: this.optionsRefs.get(country)!,
@@ -220,7 +231,6 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
       })),
       focused: this.state.focused,
       showCountries: this.state.showCountries,
-      value: this.props.value || new Phone('', this.props.countries, this.props.countryFallback),
       containerRef: this.containerRef,
       inputRef: this.inputRef,
       dropdownRef: this.dropdownRef,
