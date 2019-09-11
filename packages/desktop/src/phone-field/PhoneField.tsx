@@ -19,7 +19,7 @@ import PhoneFieldProps from './PhoneFieldProps'
 
 export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
   tabIndex = 0,
-  defaultCode = 'RU',
+  defaultCode = 'ru',
   ...props
 }) => {
   if (props.stub) {
@@ -98,7 +98,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                 width={6}
                 height={4}
                 my={1}
-                onClick={renderProps.onFlagMouseUp}
+                onClick={renderProps.onFlagClick}
                 onMouseDown={renderProps.onFlagMouseDown}
                 children={(<Flag code={renderProps.code || defaultCode}/>)}
               />
@@ -168,5 +168,5 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
 
 PhoneField.defaultProps = {
   tabIndex: 0,
-  defaultCode: 'RU',
+  defaultCode: 'ru',
 }

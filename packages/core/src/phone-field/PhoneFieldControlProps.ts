@@ -36,7 +36,7 @@ export default interface PhoneFieldControlProps {
     onFocus: React.FocusEventHandler
     onBlur: React.FocusEventHandler
     onKeyDown: React.KeyboardEventHandler
-    onFlagMouseUp: React.MouseEventHandler
+    onFlagClick: React.MouseEventHandler
     onFlagMouseDown: React.MouseEventHandler
     mask: Mask
     onCountriesHide: () => void

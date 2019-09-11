@@ -62,7 +62,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     return findDOMNode(this.inputRef.current!) as HTMLInputElement
   }
 
-  private onFlagMouseUp: React.MouseEventHandler = (event: React.MouseEvent) => {
+  private onFlagClick: React.MouseEventHandler = (event: React.MouseEvent) => {
     event.preventDefault()
     this.inputField.focus()
     this.setState({
@@ -77,11 +77,11 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
 
   private selectCountry: (country: PhoneFieldCountry) => void = (country) => {
     const phoneNumber = this.props.value ? this.props.value : ''
-    const currentCountryMask = this.state.selectedCountry ? this.state.selectedCountry.mask.replace(/\D/g, '') : ''
-    const newCountryMask = country.mask.replace(/\D/g, '')
+    const currentCountryMask = this.state.selectedCountry ? this.clear(this.state.selectedCountry.mask) : ''
+    const newCountryMask = this.clear(country.mask)
     if (this.props.onChange) {
       this.props.onChange(
-        `+${newCountryMask}${phoneNumber.replace(/\D/g, '').substr(currentCountryMask.length)}`,
+        `+${newCountryMask}${this.clear(phoneNumber).substr(currentCountryMask.length)}`,
         country.code,
       )
     }
@@ -173,6 +173,10 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     }
   }
 
+  private clear(value: string): string {
+    return value.replace(/\D/g, '')
+  }
+
   private scrollToCountry: (country: RefObject<HTMLDivElement>) => void = (country) => {
     const containerElement = findDOMNode(this.containerRef.current) as HTMLDivElement
     const countryElement = findDOMNode(country.current) as HTMLDivElement
@@ -194,12 +198,11 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
   }
 
   private getCountryByPhone(phoneNumber: string): PhoneFieldCountry | undefined {
-    const clearPhone = phoneNumber.replace(/\D/g, '')
-    const country = this.props.countries
+    const clearPhone = this.clear(phoneNumber)
+    return this.props.countries
       .slice(0)
-      .sort((a, b) => b.mask.replace(/\D/g, '').length - a.mask.replace(/\D/g, '').length)
-      .find((option) => clearPhone.indexOf(option.mask.replace(/\D/g, '')) === 0)
-    return country
+      .sort((a, b) => this.clear(b.mask).length - this.clear(a.mask).length)
+      .find((option) => clearPhone.indexOf(this.clear(option.mask)) === 0)
   }
 
   private get nextCountry(): PhoneFieldCountry | null {
@@ -235,7 +238,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
       inputRef: this.inputRef,
       dropdownRef: this.dropdownRef,
       mask: createPhoneMask(this.props.countries.map(country => country.mask)),
-      onFlagMouseUp: this.onFlagMouseUp,
+      onFlagClick: this.onFlagClick,
       onFlagMouseDown: this.onFlagMouseDown,
       onCountriesHide: this.onCountriesHide,
       onChange: this.onChange,
