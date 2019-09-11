@@ -53,16 +53,16 @@ export const MenuItem: FC<MenuItemProps> = (props) => (
         onMouseUp={renderProps.onMouseUp}
         onMouseDown={renderProps.onMouseDown}
       >
-        <Flex align="center" minHeight={14}>
+        <Flex py={props.notes ? 2 : 1}>
           {props.icon ? (
-            <FlexItem shrink={0} width={6} height={6} mr={3}>
+            <FlexItem align={props.notes ? undefined : 'center'} shrink={0} mr={4}>
               {props.icon}
             </FlexItem>
           ) : (
             null
           )}
-          <FlexItem grow={1}>
-            <Flex direction="column">
+          <FlexItem align="center" grow={1}>
+            <Flex justify="center" height={12} direction="column">
               <Paragraph bold>{props.text}</Paragraph>
               {props.notes ? (
                 <Paragraph size="s" color="support">
@@ -74,7 +74,7 @@ export const MenuItem: FC<MenuItemProps> = (props) => (
             </Flex>
           </FlexItem>
           {props.submenu ? (
-            <FlexItem shrink={0} width={6} height={6} ml={3}>
+            <FlexItem align="center" shrink={0} width={6} height={6} ml={3}>
               <Icon name="angle-right"/>
             </FlexItem>
           ) : (
