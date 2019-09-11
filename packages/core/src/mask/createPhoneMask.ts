@@ -1,11 +1,10 @@
 import {Mask} from './Mask'
-import PhoneFieldCountry from '../phone-field/PhoneFieldCountry'
 
-export default function createPhoneMask(countries: PhoneFieldCountry[]): Mask {
+export default function createPhoneMask(masks: string[]): Mask {
 
   function phoneMask(value: string): (string | RegExp)[] {
-    const clearMasks = countries
-      .map(country => country.mask.slice(1))
+    const clearMasks = masks
+      .map(mask => mask.slice(1))
       .sort((a, b) => b.length - a.length)
     const mask: Mask = ['+']
     const clearValue = value.replace(/\D/g, '')

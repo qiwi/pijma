@@ -13,7 +13,8 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
 
   public componentDidUpdate(_props: PhoneFieldControlProps, state: PhoneFieldControlState) {
     if (state.selectedCountry.mask !== this.state.selectedCountry.mask && this.props.value) {
-      this.setCursorPosition(this.props.value.phoneNumber.length * 2)
+      const position = this.props.value.phoneNumber.length * 2
+      this.inputField.setSelectionRange(position, position)
     }
   }
 
@@ -53,28 +54,21 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     })
   }
 
-  private get inputField(): HTMLInputElement | null {
-    if (!this.inputRef.current) {
-      return null
-    }
-    return findDOMNode(this.inputRef.current) as HTMLInputElement
-  }
-
-  private focusInput() {
-    if (this.inputField !== null) {
-      this.inputField.focus()
-    }
+  private get inputField(): HTMLInputElement {
+    return findDOMNode(this.inputRef.current!) as HTMLInputElement
   }
 
   private onFlagMouseUp: React.MouseEventHandler = (event: React.MouseEvent) => {
     event.preventDefault()
-    this.focusInput()
-    this.onCountriesShow()
+    this.inputField.focus()
+    this.setState({
+      showCountries: true,
+    })
   }
 
   private onFlagMouseDown: React.MouseEventHandler = (event: React.MouseEvent) => {
     event.preventDefault()
-    this.focusInput()
+    this.inputField.focus()
   }
 
   private selectCountry: (country: PhoneFieldCountry) => void = (country) => {
@@ -89,22 +83,10 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
       )
       this.props.onChange(newValue)
     }
-    this.onCountriesHide()
-    this.focusInput()
+    this.inputField.focus()
     this.setState({
+      showCountries: false,
       selectedCountry: country,
-    })
-  }
-
-  private setCursorPosition: (position: number) => void = (position) => {
-    if (this.inputField !== null) {
-      this.inputField.setSelectionRange(position, position)
-    }
-  }
-
-  private onCountriesShow: () => void = () => {
-    this.setState({
-      showCountries: true,
     })
   }
 
@@ -157,7 +139,9 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
   private onKeyDown: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
     if (!this.state.showCountries && (event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
       event.preventDefault()
-      this.onCountriesShow()
+      this.setState({
+        showCountries: true,
+      })
       return
     }
     if (event.key === 'ArrowDown') {
@@ -167,7 +151,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
       })
       const countryRef = this.optionsRefs.get(this.nextCountry || this.state.selectedCountry)
       if (countryRef && this.dropdownRef) {
-        this.scrollToCountry(this.dropdownRef, countryRef)
+        this.scrollToCountry(countryRef)
       }
       return
     }
@@ -178,7 +162,7 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
       })
       const countryRef = this.optionsRefs.get(this.prevCountry || this.state.selectedCountry)
       if (countryRef && this.dropdownRef) {
-        this.scrollToCountry(this.dropdownRef, countryRef)
+        this.scrollToCountry(countryRef)
       }
       return
     }
@@ -188,8 +172,8 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     }
   }
 
-  private scrollToCountry: (container: RefObject<HTMLDivElement>, country: RefObject<HTMLDivElement>) => void = (container, country) => {
-    const containerElement = findDOMNode(container.current) as HTMLDivElement
+  private scrollToCountry: (country: RefObject<HTMLDivElement>) => void = (country) => {
+    const containerElement = findDOMNode(this.containerRef.current) as HTMLDivElement
     const countryElement = findDOMNode(country.current) as HTMLDivElement
     if (!containerElement || !countryElement) {
       return
@@ -240,10 +224,9 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
       containerRef: this.containerRef,
       inputRef: this.inputRef,
       dropdownRef: this.dropdownRef,
-      mask: createPhoneMask(this.props.countries),
+      mask: createPhoneMask(this.props.countries.map(country => country.mask)),
       onFlagMouseUp: this.onFlagMouseUp,
       onFlagMouseDown: this.onFlagMouseDown,
-      onCountriesShow: this.onCountriesShow,
       onCountriesHide: this.onCountriesHide,
       onChange: this.onChange,
       onFocus: this.onFocus,

@@ -40,7 +40,6 @@ export default interface PhoneFieldControlProps {
     onFlagMouseUp: React.MouseEventHandler
     onFlagMouseDown: React.MouseEventHandler
     mask: Mask
-    onCountriesShow: () => void
     onCountriesHide: () => void
   }>
 }

@@ -13,7 +13,7 @@ export interface FlagProps {
   height?: Value
 }
 
-const flags: {[code in FlagCode]: [string, string][]} = {
+export const FlagFillPaths: {[code in FlagCode]: [string, string][]} = {
   'AM': [
     ['#F2B54A', 'M0 10H21V15H0z'],
     ['#1E4AA6', 'M0 5H21V10H0z'],
@@ -135,7 +135,7 @@ const flags: {[code in FlagCode]: [string, string][]} = {
 
 export const Flag: FC<FlagProps> = ({code = 'RU', width = 6, height = 4}) => (
   <Svg width={width} height={height} viewBox="0 0 24 16" focusable="false">
-    {flags[code].map((flag, i) => (
+    {FlagFillPaths[code].map((flag, i) => (
       <Path key={i} fill={flag[0]} d={flag[1]}/>
     ))}
     <Path fill="none" stroke="#000000" strokeOpacity="0.1" d="m0.5 0.5v14h20v-14h-20z" />
