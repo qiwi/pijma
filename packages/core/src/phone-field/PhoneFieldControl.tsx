@@ -10,7 +10,7 @@ import {createPhoneMask} from '../mask'
 
 export default class PhoneFieldControl extends React.Component<PhoneFieldControlProps, PhoneFieldControlState> {
 
-  public componentDidUpdate(_props: PhoneFieldControlProps, state: PhoneFieldControlState) {
+  public componentDidUpdate(props: PhoneFieldControlProps, state: PhoneFieldControlState) {
     if (
       state.selectedCountry &&
       this.state.selectedCountry &&
@@ -19,6 +19,11 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
     ) {
       const position = this.props.value.length * 2
       this.inputField.setSelectionRange(position, position)
+    }
+    if (this.props.countries !== props.countries) {
+      this.optionsRefs = new Map(
+        this.props.countries.map((country => [country, createRef()])),
+      )
     }
   }
 
