@@ -178,22 +178,19 @@ export default class PhoneFieldControl extends React.Component<PhoneFieldControl
   }
 
   private scrollToCountry: (country: RefObject<HTMLDivElement>) => void = (country) => {
-    const containerElement = findDOMNode(this.containerRef.current) as HTMLDivElement
+    const dropdownElement = findDOMNode(this.dropdownRef.current) as HTMLDivElement
     const countryElement = findDOMNode(country.current) as HTMLDivElement
-    if (!containerElement || !countryElement) {
-      return
-    }
-    const containerBoundingRect = containerElement.getBoundingClientRect()
+    const containerBoundingRect = dropdownElement.getBoundingClientRect()
     const countryBoundingRect = countryElement.getBoundingClientRect()
     const countryOffset = countryElement.offsetTop
-    const scrollOffset = containerElement.scrollTop
+    const scrollOffset = dropdownElement.scrollTop
     const countryHeigher = countryOffset < scrollOffset
     const countryLower = countryOffset + countryBoundingRect.height > scrollOffset + containerBoundingRect.height
     if (countryHeigher) {
-      containerElement.scrollTo({top: countryOffset})
+      dropdownElement.scrollTo({top: countryOffset})
     }
     if (countryLower) {
-      containerElement.scrollTo({top: countryOffset + countryBoundingRect.height - containerBoundingRect.height})
+      dropdownElement.scrollTo({top: countryOffset + countryBoundingRect.height - containerBoundingRect.height})
     }
   }
 
