@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react'
 
-import {Flex, FlexItem, Lnk, Card, LinkControl, LinkControlProps, Icon} from '@qiwi/pijma-core'
+import {Flex, FlexItem, Lnk, Card, LinkControl, LinkControlProps, Icon, Box} from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
 
@@ -36,7 +36,6 @@ export const MenuItem: FC<MenuItemProps> = (props) => (
         bg={renderProps.hover || renderProps.focus || renderProps.active ? '#f5f5f5' : undefined}
         cursor="pointer"
         display="block"
-        r={10}
         px={4}
         transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         tabIndex={props.tabIndex}
@@ -53,28 +52,30 @@ export const MenuItem: FC<MenuItemProps> = (props) => (
         onMouseUp={renderProps.onMouseUp}
         onMouseDown={renderProps.onMouseDown}
       >
-        <Flex align="center" minHeight={14}>
+        <Flex py={2} minHeight={14}>
           {props.icon ? (
-            <FlexItem shrink={0} width={6} height={6} mr={3}>
+            <FlexItem align={props.notes ? undefined : 'center'} shrink={0} mr={4}>
               {props.icon}
             </FlexItem>
           ) : (
             null
           )}
-          <FlexItem grow={1}>
-            <Flex direction="column">
-              <Paragraph bold>{props.text}</Paragraph>
+          <FlexItem align="center" grow={1}>
+            <Flex justify="center" direction="column">
+              <Paragraph clamp={props.icon && !props.notes ? 2 : undefined} bold>{props.text}</Paragraph>
               {props.notes ? (
-                <Paragraph size="s" color="support">
-                  {props.notes}
-                </Paragraph>
+                <Box mt={1}>
+                  <Paragraph size="s" color="support">
+                    {props.notes}
+                  </Paragraph>
+                </Box>
               ) : (
                 null
               )}
             </Flex>
           </FlexItem>
           {props.submenu ? (
-            <FlexItem shrink={0} width={6} height={6} ml={3}>
+            <FlexItem align="center" shrink={0} width={6} height={6} ml={3}>
               <Icon name="angle-right"/>
             </FlexItem>
           ) : (
