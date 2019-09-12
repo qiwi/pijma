@@ -1,8 +1,9 @@
 ### Header menu
 
 ```jsx
+initialState = {menuCollapsed: true};
 <Header zIndex={0}>
-    <Flex height={1} px={4} align="center" justify="space-between">
+  <Flex height={1} px={4} align="center" justify="space-between">
      <FlexItem width={0.25} shrink={0}>
        <Box width={6} height={6} onClick={() => setState({menuCollapsed: !state.menuCollapsed, showMenu: state.menuCollapsed})}>
          <CrossBurger active={!state.menuCollapsed}/>
@@ -23,7 +24,7 @@
          </Box>
        </Flex>
      </FlexItem>
-   </Flex>
+  </Flex>
 </Header>
 ```
 
