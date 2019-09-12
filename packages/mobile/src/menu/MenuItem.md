@@ -3,21 +3,32 @@
   <BlockContent>
     <MenuItem
       icon={<Icon name="qiwi"/>}
-      text="Components"
-      notes="List of pijma components"
+      text="text"
     />
     <MenuItem
       icon={<Icon name="qiwi"/>}
-      text="link"
+      text="long text long text long text long text long text long text long text"
+    />
+    <MenuItem
+      icon={<Icon name="qiwi"/>}
+      text="long text long text long text long text long text long text long text"
+      notes="long notes long notes long notes long notes long notes long notes"
+    />
+    <MenuItem
+      icon={<Icon name="qiwi"/>}
+      text="long text long text long text long text long text long text long text"
+      notes="with notes"
     />
     <MenuItem
       submenu
       icon={<Icon name="qiwi"/>}
-      text="link"
+      text="text"
       notes="with notes"
     />
     <MenuItem
-      text="link"
+      submenu
+      icon={<Icon name="qiwi"/>}
+      text="text"
     />
   </BlockContent>
 </Block>
@@ -28,18 +39,67 @@
   <BlockContent>
     <MenuItem
       icon={<Icon size={12} name="qiwi"/>}
-      text="Components"
-      notes="List of pijma components"
+      text="text"
     />
     <MenuItem
       icon={<Icon size={12} name="qiwi"/>}
-      text="link"
+      text="long text long text long text long text long text long text long text"
+    />
+    <MenuItem
+      icon={<Icon size={12} name="qiwi"/>}
+      text="long text long text long text long text long text long text long text"
+      notes="long notes long notes long notes long notes long notes long notes"
+    />
+    <MenuItem
+      icon={<Icon size={12} name="qiwi"/>}
+      text="long text long text long text long text long text long text long text"
+      notes="with notes"
     />
     <MenuItem
       submenu
       icon={<Icon size={12} name="qiwi"/>}
-      text="link"
+      text="text"
       notes="with notes"
+    />
+    <MenuItem
+      submenu
+      icon={<Icon size={12} name="qiwi"/>}
+      text="text"
+    />
+  </BlockContent>
+</Block>
+```
+
+```jsx
+<Block>
+  <BlockContent>
+    <MenuItem
+      text="text"
+    />
+    <MenuItem
+      text="long text long text long text long text long text long text long text"
+    />
+    <MenuItem
+      text="long text long text long text long text long text long text long text"
+      notes="long notes long notes long notes long notes long notes long notes"
+    />
+    <MenuItem
+      text="long text long text long text long text long text long text long text"
+      notes="with notes"
+    />
+    <MenuItem
+      submenu
+      text="long text long text long text long text long text long text long text"
+      notes="with notes"
+    />
+    <MenuItem
+      submenu
+      text="text"
+      notes="with notes"
+    />
+    <MenuItem
+      submenu
+      text="text"
     />
   </BlockContent>
 </Block>

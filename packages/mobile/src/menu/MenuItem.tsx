@@ -53,7 +53,7 @@ export const MenuItem: FC<MenuItemProps> = (props) => (
         onMouseUp={renderProps.onMouseUp}
         onMouseDown={renderProps.onMouseDown}
       >
-        <Flex py={props.notes ? 2 : 1}>
+        <Flex py={2} minHeight={14}>
           {props.icon ? (
             <FlexItem align={props.notes ? undefined : 'center'} shrink={0} mr={4}>
               {props.icon}
@@ -62,8 +62,8 @@ export const MenuItem: FC<MenuItemProps> = (props) => (
             null
           )}
           <FlexItem align="center" grow={1}>
-            <Flex justify="center" minHeight={12} direction="column">
-              <Paragraph bold>{props.text}</Paragraph>
+            <Flex justify="center" direction="column">
+              <Paragraph clamp={props.icon && !props.notes ? 2 : undefined} bold>{props.text}</Paragraph>
               {props.notes ? (
                 <Box mt={1}>
                   <Paragraph size="s" color="support">
