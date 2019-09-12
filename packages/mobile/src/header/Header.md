@@ -1,5 +1,3 @@
-### Header menu
-
 ```jsx
 initialState = {menuCollapsed: true};
 <Header zIndex={0}>
@@ -32,16 +30,14 @@ initialState = {menuCollapsed: true};
 <Pos type="fixed" top={0} left={0} width={1} zIndex={10002}>
   <Header>
     {/*Header content*/}
-    <HeaderMenu
-      show={true}
-      from="right"
-      zIndex={10006}
-      header={(
-        {/*HeaderMenu content*/}
-      )}
-    >
-      {/*MenuItem content*/}
-    </HeaderMenu>
   </Header>
+  <HeaderMenu
+    show={true}
+    from="top"
+    zIndex={10006}
+    header="Header"
+  >
+    {/*HeaderMenu content*/}
+  </HeaderMenu>
 </Pos>
 ```

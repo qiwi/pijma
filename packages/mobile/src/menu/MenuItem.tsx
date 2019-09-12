@@ -36,7 +36,6 @@ export const MenuItem: FC<MenuItemProps> = (props) => (
         bg={renderProps.hover || renderProps.focus || renderProps.active ? '#f5f5f5' : undefined}
         cursor="pointer"
         display="block"
-        r={10}
         px={4}
         transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         tabIndex={props.tabIndex}
