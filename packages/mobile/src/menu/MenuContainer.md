@@ -1,7 +1,7 @@
 ```jsx
 <Block>
   <BlockContent>
-  <Striper>
+    <Striper>
       <MenuContainer>
         <MenuItem
           submenu
@@ -31,7 +31,7 @@
           text="link"
         />
       </MenuContainer>
-  </Striper>
+    </Striper>
   </BlockContent>
 </Block>
 ```
