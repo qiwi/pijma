@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react'
 
-import {Flex, FlexItem, Lnk, Card, LinkControl, LinkControlProps, Icon} from '@qiwi/pijma-core'
+import {Flex, FlexItem, Lnk, Card, LinkControl, LinkControlProps, Icon, Box} from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
 
@@ -62,12 +62,14 @@ export const MenuItem: FC<MenuItemProps> = (props) => (
             null
           )}
           <FlexItem align="center" grow={1}>
-            <Flex justify="center" height={12} direction="column">
+            <Flex justify="center" minHeight={12} direction="column">
               <Paragraph bold>{props.text}</Paragraph>
               {props.notes ? (
-                <Paragraph size="s" color="support">
-                  {props.notes}
-                </Paragraph>
+                <Box mt={1}>
+                  <Paragraph size="s" color="support">
+                    {props.notes}
+                  </Paragraph>
+                </Box>
               ) : (
                 null
               )}

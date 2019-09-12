@@ -1,7 +1,6 @@
 import React, {FC, ReactNode, Fragment} from 'react'
 
 import {MenuCaption, MenuItem} from '@qiwi/pijma-mobile'
-import {Icon} from '@qiwi/pijma-core/icon'
 
 interface ComponentsListRendererProps {
   items: Array<{
@@ -28,9 +27,7 @@ const ComponentsListRenderer: FC<ComponentsListRendererProps> = (props) => {
           </Fragment>
         ) : (
           <MenuItem
-            icon={<Icon size={12} name="attention"/>}
             key={i}
-            notes="lalal"
             href={href}
             target={shouldOpenInNewTab ? '_blank' : undefined}
             text={visibleName}
