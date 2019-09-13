@@ -10,20 +10,26 @@ interface HeaderProps {
 export const Header: FC<HeaderProps> = ({zIndex = 10002, active, children}) => (
   <Pos
     as="header"
-    type={active ? 'fixed' : 'relative'}
-    top={0}
-    left={0}
+    type="relative"
+    zIndex={zIndex}
     width={1}
     height={15}
-    zIndex={zIndex}
   >
-    <Card
-      bg="#fff"
+    <Pos
+      type={active ? 'fixed' : 'relative'}
+      top={0}
+      left={0}
       width={1}
-      height={1}
-      s={active ? undefined : '0 1px 2px 0 rgba(0, 0, 0, 0.12)'}
-      transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-      children={children}
-    />
+      height={15}
+    >
+      <Card
+        bg="#fff"
+        width={1}
+        height={1}
+        s={active ? undefined : '0 1px 2px 0 rgba(0, 0, 0, 0.12)'}
+        transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+        children={children}
+      />
+    </Pos>
   </Pos>
 )
