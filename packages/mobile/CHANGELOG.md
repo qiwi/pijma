@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.75.2](https://github.com/qiwi/pijma/compare/v1.75.1...v1.75.2) (2019-09-13)
+
+
+### Bug Fixes
+
+* weight for link and nav-link ([a9aca74](https://github.com/qiwi/pijma/commit/a9aca74))
+
 # [@qiwi/pijma-mobile-v1.75.1](https://github.com/qiwi/pijma/compare/v1.75.0...v1.75.1) (2019-09-12)
 
 
