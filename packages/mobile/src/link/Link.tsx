@@ -48,7 +48,6 @@ export const Link: FC<LinkProps> = (props) => (
     rel={props.rel}
     children={(renderProps) => (
       <TypoLink
-        weight={props.bold === undefined ? undefined : props.bold ? 500 : 300}
         tabIndex={props.tabIndex}
         href={props.href}
         onClick={renderProps.onClick}
@@ -68,6 +67,7 @@ export const Link: FC<LinkProps> = (props) => (
         title={props.title}
         size={props.size === undefined ? undefined : props.compact ? LinkHeightCompact[props.size] : LinkSize[props.size]}
         height={props.size === undefined ? undefined : LinkHeight[props.size]}
+        weight={props.bold === undefined ? undefined : props.bold ? 500 : 300}
         children={props.children}
       />
     )}

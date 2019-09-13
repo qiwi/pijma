@@ -26,7 +26,6 @@ export const NavLink: FC<NavLinkProps> = (props) => (
     rel={props.rel}
     children={(renderProps) => (
       <TypoLink
-        weight={300}
         tabIndex={props.tabIndex}
         href={props.href}
         onClick={renderProps.onClick}
@@ -46,6 +45,7 @@ export const NavLink: FC<NavLinkProps> = (props) => (
         title={props.title}
         size={3.5}
         height={5}
+        weight={300}
         children={props.children}
       />
     )}
