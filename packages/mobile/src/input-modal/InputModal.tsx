@@ -1,16 +1,20 @@
-import React, {FunctionComponent, Fragment} from 'react'
+import React, {FunctionComponent} from 'react'
 import {css} from 'emotion'
 
 import {
   styled,
-  Value,
   Pos,
   Card,
+  Box,
   Modal,
   ModalProps,
   SimpleTransition,
   SimpleTransitionProps,
   Icon,
+  Flex,
+  FlexItem,
+  IconProps,
+  Input,
 } from '@qiwi/pijma-core'
 
 const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
@@ -49,46 +53,36 @@ backdropTransition.defaultProps = {
   }),
 }
 
-interface SimpleModalProps {
+interface InputModalProps {
+  value: string
   show: boolean
-  closable?: boolean
-  zIndex?: number
-  p?: Value
   escapeClose?: boolean
   backdropClose?: boolean
-  restoreFocus?: boolean
+  submitIcon?: IconProps['name']
+  onSubmit?: () => void
+  onChange?: (value: string) => void
   onShow?: () => void
   onHide?: () => void
+  onBack?: () => void
 }
 
-interface StyledModalProps extends ModalProps {
-  zIndex?: number
-  p?: Value
-}
-
-const StyledModalNonProps = ['zIndex', 'position', 'top', 'bottom', 'left', 'right', 'height', 'overflow']
-
-const StyledModal = styled(Modal, {
-  shouldForwardProp: (prop) => !StyledModalNonProps.includes(prop),
-})<StyledModalProps>(({zIndex = 9999}) => ({
-  zIndex,
+const StyledModal = styled(Modal)<ModalProps>({
   position: 'fixed',
+  zIndex: 10050,
   top: 0,
   bottom: 0,
   left: 0,
   right: 0,
   height: '100%',
   overflow: 'auto',
-}))
+})
 
-const SimpleModal: FunctionComponent<SimpleModalProps> = ({p = 6, ...props}) => (
+const InputModal: FunctionComponent<InputModalProps> = (props) => (
   <StyledModal
     show={props.show}
-    zIndex={props.zIndex}
     keyboard={props.escapeClose}
     onShow={props.onShow}
     onHide={props.onHide}
-    restoreFocus={props.restoreFocus}
     transition={contentTransition}
     backdropTransition={backdropTransition}
     renderBackdrop={({onClick}) => (
@@ -98,33 +92,35 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = ({p = 6, ...props}) => 
     )}
     children={(
       <Pos type="relative" width={1} height={1}>
-        <Card bg="#fff" p={p} width={1} height={1} overflow="auto">
-          <Fragment>
-            {props.closable && props.onHide ? (
-              <Pos
-                type="absolute"
-                top={p}
-                right={p}
-                width={6}
-                height={6}
-                cursor="pointer"
-                onClick={() => props.onHide && props.onHide()}
-                children={<Icon name="cross" color="#000"/>}
-              />
-            ) : (
-              null
-            )}
+        <Card bg="#fff" width={1} height={1} overflow="auto">
+          <Card s="0 0 25px 0 rgba(0, 0, 0, 0.08)">
+            <Flex height={15} p={4} align="center">
+              {props.onBack ? (
+                <FlexItem shrink={0} mr={4}>
+                  <Icon name="arrow-left" color="#000"/>
+                </FlexItem>
+              ) : (
+                null
+              )}
+              <FlexItem grow={1} >
+                <Input value={props.value}/>
+              </FlexItem>
+              {props.submitIcon && props.onSubmit ? (
+                <FlexItem shrink={0} ml={4}>
+                  <Icon name={props.submitIcon}/>
+                </FlexItem>
+              ) : (
+                null
+              )}
+            </Flex>
+          </Card>
+          <Box p={4}>
             {props.children}
-          </Fragment>
+          </Box>
         </Card>
       </Pos>
     )}
   />
 )
 
-SimpleModal.defaultProps = {
-  p: 6,
-  zIndex: 9999,
-}
-
-export default SimpleModal
+export default InputModal
