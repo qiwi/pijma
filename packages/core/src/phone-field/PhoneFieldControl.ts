@@ -1,4 +1,4 @@
-import React, {RefObject, createRef} from 'react'
+import {Component, RefObject, createRef} from 'react'
 import MaskedInput from 'react-text-mask'
 import {findDOMNode} from 'react-dom'
 
@@ -8,7 +8,7 @@ import PhoneFieldControlState from './PhoneFieldControlState'
 import PhoneFieldCountry from './PhoneFieldCountry'
 import {createPhoneMask} from '../mask'
 
-export default class PhoneFieldControl extends React.Component<PhoneFieldControlProps, PhoneFieldControlState> {
+export default class PhoneFieldControl extends Component<PhoneFieldControlProps, PhoneFieldControlState> {
 
   public componentDidUpdate(props: PhoneFieldControlProps, state: PhoneFieldControlState) {
     if (
