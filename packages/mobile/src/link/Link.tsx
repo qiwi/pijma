@@ -14,6 +14,7 @@ export interface LinkProps {
   rel?: string
   title?: string
   size?: 's' | 'm' | 'l'
+  bold?: boolean
 }
 
 const LinkSize: { [size in NonNullable<LinkProps['size']>]: number } = {
@@ -47,6 +48,7 @@ export const Link: FC<LinkProps> = (props) => (
     rel={props.rel}
     children={(renderProps) => (
       <TypoLink
+        weight={props.bold === undefined ? undefined : props.bold ? 500 : 300}
         tabIndex={props.tabIndex}
         href={props.href}
         onClick={renderProps.onClick}
