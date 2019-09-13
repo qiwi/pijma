@@ -12,7 +12,7 @@ initialState = {menuCollapsed: true};
      </FlexItem>
      <FlexItem
        width={0.25}
-       shrink={1
+       shrink={1}
        opacity={state.menuCollapsed? 1 : 0}
        transition={state.menuCollapsed? 'all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)' : 'all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)'}
      >
