@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.75.3](https://github.com/qiwi/pijma/compare/v1.75.2...v1.75.3) (2019-09-13)
+
+
+### Bug Fixes
+
+* **mobile:** header ([5e0d65a](https://github.com/qiwi/pijma/commit/5e0d65a))
+
 # [@qiwi/pijma-mobile-v1.75.2](https://github.com/qiwi/pijma/compare/v1.75.1...v1.75.2) (2019-09-13)
 
 
