@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.75.4](https://github.com/qiwi/pijma/compare/v1.75.3...v1.75.4) (2019-09-16)
+
+
+### Bug Fixes
+
+* **mobile:** header active z-index ([027d321](https://github.com/qiwi/pijma/commit/027d321))
+
 # [@qiwi/pijma-mobile-v1.75.3](https://github.com/qiwi/pijma/compare/v1.75.2...v1.75.3) (2019-09-13)
 
 
