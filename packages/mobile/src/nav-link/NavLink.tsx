@@ -47,6 +47,7 @@ export const NavLink: FC<NavLinkProps> = (props) => (
         title={props.title}
         size={3.5}
         height={5}
+        weight={300}
         children={props.children}
       />
     )}

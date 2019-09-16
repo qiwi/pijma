@@ -1,3 +1,52 @@
+# [@qiwi/pijma-mobile-v1.75.4](https://github.com/qiwi/pijma/compare/v1.75.3...v1.75.4) (2019-09-16)
+
+
+### Bug Fixes
+
+* **mobile:** header active z-index ([027d321](https://github.com/qiwi/pijma/commit/027d321))
+
+# [@qiwi/pijma-mobile-v1.75.3](https://github.com/qiwi/pijma/compare/v1.75.2...v1.75.3) (2019-09-13)
+
+
+### Bug Fixes
+
+* **mobile:** header ([5e0d65a](https://github.com/qiwi/pijma/commit/5e0d65a))
+
+# [@qiwi/pijma-mobile-v1.75.2](https://github.com/qiwi/pijma/compare/v1.75.1...v1.75.2) (2019-09-13)
+
+
+### Bug Fixes
+
+* weight for link and nav-link ([a9aca74](https://github.com/qiwi/pijma/commit/a9aca74))
+
+# [@qiwi/pijma-mobile-v1.75.1](https://github.com/qiwi/pijma/compare/v1.75.0...v1.75.1) (2019-09-12)
+
+
+### Bug Fixes
+
+* header components ([b618388](https://github.com/qiwi/pijma/commit/b618388))
+
+# [@qiwi/pijma-mobile-v1.75.0](https://github.com/qiwi/pijma/compare/v1.74.0...v1.75.0) (2019-09-09)
+
+
+### Features
+
+* oops ([ec7434b](https://github.com/qiwi/pijma/commit/ec7434b))
+
+# [@qiwi/pijma-mobile-v1.74.0](https://github.com/qiwi/pijma/compare/v1.73.0...v1.74.0) (2019-09-06)
+
+
+### Features
+
+* glossary and details ([112da84](https://github.com/qiwi/pijma/commit/112da84))
+
+# [@qiwi/pijma-mobile-v1.73.0](https://github.com/qiwi/pijma/compare/v1.72.0...v1.73.0) (2019-09-06)
+
+
+### Features
+
+* markdown ([1c0fd71](https://github.com/qiwi/pijma/commit/1c0fd71))
+
 # [@qiwi/pijma-mobile-v1.72.0](https://github.com/qiwi/pijma/compare/v1.71.0...v1.72.0) (2019-09-04)
 
 

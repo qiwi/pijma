@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-desktop",
-  "version": "1.72.0",
+  "version": "1.75.2",
   "main": "lib/es5/index.js",
   "types": "lib/es5/index.d.ts",
   "license": "MIT",
@@ -22,6 +22,7 @@
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
     "@qiwi/pijma-core": "^1.x.x",
+    "@types/markdown-to-jsx": "^6.9.0",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
     "@types/react-overlays": "^1.1.3",
@@ -29,6 +30,7 @@
     "@types/react-transition-group": "^4.2.2",
     "emotion": "^10.0.14",
     "emotion-theming": "^10.0.14",
+    "markdown-to-jsx": "^6.10.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-overlays": "^1.2.0",

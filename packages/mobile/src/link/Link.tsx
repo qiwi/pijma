@@ -14,6 +14,7 @@ export interface LinkProps {
   rel?: string
   title?: string
   size?: 's' | 'm' | 'l'
+  bold?: boolean
 }
 
 const LinkSize: { [size in NonNullable<LinkProps['size']>]: number } = {
@@ -67,6 +68,7 @@ export const Link: FC<LinkProps> = (props) => (
         title={props.title}
         size={props.size === undefined ? undefined : props.compact ? LinkHeightCompact[props.size] : LinkSize[props.size]}
         height={props.size === undefined ? undefined : LinkHeight[props.size]}
+        weight={props.bold === undefined ? undefined : props.bold ? 500 : 300}
         children={props.children}
       />
     )}
