@@ -11,7 +11,7 @@ export const Header: FC<HeaderProps> = ({zIndex = 10002, active, children}) => (
   <Pos
     as="header"
     type="relative"
-    zIndex={zIndex}
+    zIndex={active ? zIndex : undefined}
     width={1}
     height={15}
   >
