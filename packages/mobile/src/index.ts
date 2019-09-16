@@ -21,6 +21,7 @@ export * from './logo-link'
 export * from './oops'
 export * from './glossary'
 export * from './markdown'
+export * from './footer-nav'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'
