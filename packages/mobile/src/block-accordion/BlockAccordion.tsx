@@ -26,7 +26,7 @@ export const BlockAccordion: FunctionComponent<BlockAccordionProps<BlockAccordio
         {renderProps.items.map((item, index) => (
           <Card
             key={index}
-            role="article"
+            role="region"
             aria-label={typeof item.title === 'string' ? item.title : undefined}
             s={
               index > 0
