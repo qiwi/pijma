@@ -11,7 +11,7 @@ export interface OopsProps {
 }
 
 export const Oops: FC<OopsProps> = ({logo, error, title, content, footer}) => (
-  <Card minWidth={295} width="100%" pt={22} minHeight="100%" bg="#fff">
+  <Card minWidth={295} width="100%" pt={22} minHeight="100%" bg="#fff" role="section" aria-label={title}>
     <Flex mx="auto" width={235} direction="column">
       <FlexItem
         width={60}
