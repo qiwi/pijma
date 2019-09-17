@@ -25,6 +25,8 @@ const CheckboxField: FunctionComponent<
     onBlur={props.onBlur}
     children={(renderProps) => (
       <OptionField
+        role="checkbox"
+        aria-label={props.title}
         title={props.title}
         hint={props.hint}
         help={props.help}

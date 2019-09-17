@@ -25,10 +25,9 @@ export const OptionFieldItem: React.FunctionComponent<OptionFieldItemProps> = ({
   onMouseEnter,
   onMouseLeave,
   reverse,
-  role,
 }) => (
   <Pos
-    role={role}
+    role="menuitemcheckbox"
     aria-checked={checked ? 'true' : 'false'}
     aria-label={typeof label === 'string' ? label : undefined}
     type="relative"
