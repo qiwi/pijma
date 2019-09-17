@@ -48,19 +48,19 @@ export const Image: FC<ImageProps> = ({
           <InView
             onChange={renderProps.onChange}
             children={({ref}) => (
-              <Pos ref={ref} type="relative" width={width} height={height}>
+              <Pos as="span" ref={ref} type="relative" width={width} height={height}>
                 {typeof stub === 'boolean' && stub ? (
-                  <Pos type="absolute" width={width} height={height}>
+                  <Pos as="span" type="absolute" width={width} height={height}>
                     <Stub width={width} height={height} r={width === height ? '100%' : undefined}/>
                   </Pos>
                 ) : isValidElement(stub) && Children.only(stub) ? (
-                  <Pos type="absolute" width={width} height={height}>
+                  <Pos as="span" type="absolute" width={width} height={height}>
                     {stub}
                   </Pos>
                 ) : (
                   null
                 )}
-                <Box opacity={typeof stub === 'string' ? 1 : 0}>
+                <Box as="span" opacity={typeof stub === 'string' ? 1 : 0}>
                   <Img
                     width={width}
                     height={height}
