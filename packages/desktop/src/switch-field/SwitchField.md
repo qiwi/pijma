@@ -2,43 +2,52 @@
 
 ```jsx
 initialState = {values: ['selected']};
-<Spacer size="l">
-  <SwitchField
-    title="Группа переключателей"
-    hint={<QuestionIcon/>}
-    options={[{
-      label: 'Выбранный переключатель',
-      value: 'selected',
-      disabled: false,
-    }, {
-      label: 'Невыбранный переключатель',
-      value: 'normal',
-      disabled: false,
-    }, {
-      label: 'Заблокированный выбранный переключатель',
-      value: 'selected-disabled',
-      disabled: true,
-    }, {
-      label: 'Заблокированный переключатель',
-      value: 'disabled',
-      disabled: true,
-    }]}
-    values={state.values}
-    onChange={(values) => setState({values})}
-  />
+<Block>
+  <BlockContent>
+    <SwitchField
+      title="Группа переключателей"
+      hint={<QuestionIcon/>}
+      options={[{
+        label: 'Выбранный переключатель',
+        value: 'selected',
+        disabled: false,
+      }, {
+        label: 'Невыбранный переключатель',
+        value: 'normal',
+        disabled: false,
+      }, {
+        label: 'Заблокированный выбранный переключатель',
+        value: 'selected-disabled',
+        disabled: true,
+      }, {
+        label: 'Заблокированный переключатель',
+        value: 'disabled',
+        disabled: true,
+      }]}
+      values={state.values}
+      onChange={(values) => setState({values})}
+    />
+  </BlockContent>
+</Block>
+```
+
+```jsx
+<Block>
+  <BlockContent>
   <SwitchField
     stub
     options={[]}
     values={[]}
     onChange={() => {}}
   />
-</Spacer>
+  </BlockContent>
+</Block>
 ```
 
 ```jsx
 initialState = {values: ['selected']};
-<Box width={110}>
-  <Spacer size="l">
+<Block>
+  <BlockContent>
     <SwitchField
       title="Группа инвертированных переключателей"
       hint={<QuestionIcon/>}
@@ -63,6 +72,13 @@ initialState = {values: ['selected']};
       values={state.values}
       onChange={(values) => setState({values})}
     />
+  </BlockContent>
+</Block>
+```
+
+```jsx
+<Block>
+  <BlockContent>
     <SwitchField
       stub
       reverse
@@ -70,37 +86,41 @@ initialState = {values: ['selected']};
       values={[]}
       onChange={() => {}}
     />
-  </Spacer>
-</Box>
+  </BlockContent>
+</Block>
 ```
 
 ```jsx
 initialState = {values: ['selected']};
-<SwitchField
-  title="Группа переключателей с примечаниями"
-  hint={<QuestionIcon/>}
-  options={[{
-    label: 'Выбранный переключатель',
-    description:'Примечание к переключателю',
-    value: 'selected',
-    disabled: false,
-  }, {
-    label: 'Невыбранный переключатель',
-    description:'Примечание к переключателю',
-    value: 'normal',
-    disabled: false,
-  }, {
-    label: 'Заблокированный выбранный переключатель',
-    description:'Примечание к переключателю',
-    value: 'selected-disabled',
-    disabled: true,
-  }, {
-    label: 'Заблокированный переключатель',
-    description:'Примечание к переключателю',
-    value: 'disabled',
-    disabled: true,
-  }]}
-  values={state.values}
-  onChange={(values) => setState({values})}
-/>
+<Block>
+  <BlockContent>
+    <SwitchField
+      title="Группа переключателей с примечаниями"
+      hint={<QuestionIcon/>}
+      options={[{
+        label: 'Выбранный переключатель',
+        description:'Примечание к переключателю',
+        value: 'selected',
+        disabled: false,
+      }, {
+        label: 'Невыбранный переключатель',
+        description:'Примечание к переключателю',
+        value: 'normal',
+        disabled: false,
+      }, {
+        label: 'Заблокированный выбранный переключатель',
+        description:'Примечание к переключателю',
+        value: 'selected-disabled',
+        disabled: true,
+      }, {
+        label: 'Заблокированный переключатель',
+        description:'Примечание к переключателю',
+        value: 'disabled',
+        disabled: true,
+      }]}
+      values={state.values}
+      onChange={(values) => setState({values})}
+    />
+  </BlockContent>
+</Block>
 ```

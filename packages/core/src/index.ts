@@ -9,6 +9,7 @@ import fonts from './fonts'
 import * as themes from './themes'
 
 export * from './styled'
+export * from './InView'
 export * from './waypoint'
 
 export {styled, Theme, RenderChild, themes, reset, fonts}
@@ -45,3 +46,5 @@ export * from './offset-scroll'
 export * from './pagination'
 export * from './stub'
 export * from './section'
+export * from './logo'
+export * from './image'

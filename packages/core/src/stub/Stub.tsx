@@ -27,21 +27,30 @@ const CardPos = Card.withComponent(Pos)
 
 export const Stub: FC<StubProps> = (props) => (
   <Box
+    as="span"
     pt={props.top}
     pb={props.bottom}
     pl={props.left}
     pr={props.right}
+    width={props.width}
+    height={props.height}
+    maxWidth={1}
+    maxHeight={1}
+    css={{
+      boxSizing: 'content-box',
+    }}
   >
     <CardPos
+      as="span"
       type="relative"
       r={props.r}
       overflow="hidden"
       bg={props.inverse ? 'rgba(255, 255, 255, 0.14)' : '#E6E6E6'}
-      width={props.width}
-      height={props.height}
-      maxWidth={1}
+      width={1}
+      height={1}
     >
       <CardPos
+        as="span"
         width={1}
         height={1}
         bg={`

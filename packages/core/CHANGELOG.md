@@ -1,3 +1,52 @@
+# [@qiwi/pijma-core-v1.75.0](https://github.com/qiwi/pijma/compare/v1.74.0...v1.75.0) (2019-09-09)
+
+
+### Features
+
+* oops ([ec7434b](https://github.com/qiwi/pijma/commit/ec7434b))
+
+# [@qiwi/pijma-core-v1.73.0](https://github.com/qiwi/pijma/compare/v1.72.0...v1.73.0) (2019-09-06)
+
+
+### Features
+
+* markdown ([1c0fd71](https://github.com/qiwi/pijma/commit/1c0fd71))
+
+# [@qiwi/pijma-core-v1.72.0](https://github.com/qiwi/pijma/compare/v1.71.0...v1.72.0) (2019-09-04)
+
+
+### Features
+
+* dropdown ([aa08958](https://github.com/qiwi/pijma/commit/aa08958))
+
+# [@qiwi/pijma-core-v1.71.0](https://github.com/qiwi/pijma/compare/v1.70.0...v1.71.0) (2019-09-02)
+
+
+### Features
+
+* image ([1968616](https://github.com/qiwi/pijma/commit/1968616))
+
+# [@qiwi/pijma-core-v1.70.0](https://github.com/qiwi/pijma/compare/v1.69.1...v1.70.0) (2019-08-23)
+
+
+### Features
+
+* icons refactoring ([a9d82ad](https://github.com/qiwi/pijma/commit/a9d82ad))
+
+# [@qiwi/pijma-core-v1.67.0](https://github.com/qiwi/pijma/compare/v1.66.1...v1.67.0) (2019-08-16)
+
+
+### Features
+
+* gh-pages redesign ([4810142](https://github.com/qiwi/pijma/commit/4810142))
+
+# [@qiwi/pijma-core-v1.66.0](https://github.com/qiwi/pijma/compare/v1.65.0...v1.66.0) (2019-08-16)
+
+
+### Features
+
+* multi ellipsis ([9d6c7b0](https://github.com/qiwi/pijma/commit/9d6c7b0))
+
 # [@qiwi/pijma-core-v1.63.0](https://github.com/qiwi/pijma/compare/v1.62.0...v1.63.0) (2019-08-12)
 
 

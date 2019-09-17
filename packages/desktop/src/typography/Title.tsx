@@ -7,6 +7,7 @@ export interface TitleProps {
   size: '1' | '2'
   color?: 'default' | 'inverse'
   align?: TypoProps['align']
+  clamp?: number
   stub?: boolean
 }
 
@@ -50,7 +51,7 @@ const TitleColor: { [color in NonNullable<TitleProps['color']>]: string } = {
   inverse: '#fff',
 }
 
-export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'default', align, stub, children}) => (
+export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'default', align, stub, clamp, children}) => (
   stub ? (
     <Box
       ml={align === 'center' || align === 'right' ? 'auto' : 'none'}
@@ -74,6 +75,7 @@ export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'defaul
       weight={TitleWeight[size]}
       color={TitleColor[color]}
       align={align}
+      clamp={clamp}
       children={<Breaker children={children}/>}
     />
   )
