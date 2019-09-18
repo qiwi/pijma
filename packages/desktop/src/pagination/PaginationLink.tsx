@@ -25,7 +25,6 @@ export const PaginationLink: FC<PaginationLinkProps> = props => (
     children={renderProps => (
       <CardLink
         role="link"
-        aria-label="pagination"
         transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         height={12}
         width={props.width}

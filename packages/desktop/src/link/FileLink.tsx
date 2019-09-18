@@ -56,20 +56,11 @@ export const FileLink: FC<FileLinkProps> = (props) => (
           mr={2}
           shrink={0}
         >
-          <Icon
-            name="file"
-            color={
-              renderProps.hover || renderProps.focus || renderProps.active
-                ? '#FF8C00'
-                : '#000'
-            }
-          />
+          <Icon name="file" color={renderProps.hover || renderProps.focus || renderProps.active ? '#FF8C00' : '#000'}/>
         </FlexItem>
         <FlexItem>
           <Text
-            color={
-              renderProps.hover || renderProps.focus || renderProps.active ? 'warning' : 'default'
-            }
+            color={renderProps.hover || renderProps.focus || renderProps.active ? 'warning' : 'default'}
             decoration="none"
             size="m"
             bold={false}
