@@ -6,7 +6,7 @@ import TextFieldProps from './TextFieldProps'
 
 const TextField: FunctionComponent<TextFieldProps> = (props) => (
   props.stub ? (
-    <Box role="textbox">
+    <Box>
       {props.title ? (
         <Stub width={15} height={2} top={1} bottom={1}/>
       ) : (
