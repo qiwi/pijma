@@ -12,6 +12,7 @@ export interface FooterIconLinksProps {
     target?: string,
     download?: string | boolean,
     rel?: string,
+    title?: string,
     icon: IconProps['name'],
     onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void,
     onFocus?: () => void,
@@ -24,13 +25,13 @@ export const FooterIconLinks: FC<FooterIconLinksProps> = ({children}) => (
     {children.map((item, i) => (
       <FlexItem key={i} width={10} height={10} shrink={0} align="center" justify="center">
         <LinkControl
-          onClick={item.onClick}
-          onFocus={item.onFocus}
-          onBlur={item.onBlur}
           href={item.href}
           target={item.target}
           download={item.download}
           rel={item.rel}
+          onClick={item.onClick}
+          onFocus={item.onFocus}
+          onBlur={item.onBlur}
           children={(renderProps) => (
             <CardLink
               display="block"
@@ -38,6 +39,10 @@ export const FooterIconLinks: FC<FooterIconLinksProps> = ({children}) => (
               p={2}
               s={renderProps.hover || renderProps.focus || renderProps.active ? '0 0 0 1px #000' : '0 0 0 1px #ccc'}
               href={item.href}
+              rel={item.rel}
+              target={item.target}
+              title={item.title}
+              download={item.download}
               onClick={renderProps.onClick}
               onFocus={renderProps.onFocus}
               onBlur={renderProps.onBlur}
@@ -45,11 +50,13 @@ export const FooterIconLinks: FC<FooterIconLinksProps> = ({children}) => (
               onMouseLeave={renderProps.onMouseLeave}
               onMouseUp={renderProps.onMouseUp}
               onMouseDown={renderProps.onMouseDown}
-              target={item.target}
-              download={item.download}
-            >
-              <Icon color={renderProps.hover || renderProps.focus || renderProps.active ? '#000' : '#999'} name={item.icon}/>
-            </CardLink>
+              children={
+                <Icon
+                  name={item.icon}
+                  color={renderProps.hover || renderProps.focus || renderProps.active ? '#000' : '#999'}
+                />
+              }
+            />
           )}
         />
       </FlexItem>
