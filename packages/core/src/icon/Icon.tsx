@@ -200,7 +200,7 @@ export const Icon: FC<IconProps> = ({
   size = 6,
   color = '#000',
 }) => (
-  <Svg width={size} height={size} viewBox="0 0 24 24" focusable="false" role="img">
+  <Svg width={size} height={size} viewBox="0 0 24 24" focusable="false" role="img" alt={{name}}>
     <Path d={IconPaths[name]} fill={color}/>
   </Svg>
 )
