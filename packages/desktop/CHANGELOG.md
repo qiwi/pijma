@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.76.0](https://github.com/qiwi/pijma/compare/v1.75.4...v1.76.0) (2019-09-18)
+
+
+### Features
+
+* footer icon link, footer nav, mobile apps icons ([f15853b](https://github.com/qiwi/pijma/commit/f15853b))
+
 # [@qiwi/pijma-desktop-v1.75.2](https://github.com/qiwi/pijma/compare/v1.75.1...v1.75.2) (2019-09-13)
 
 
