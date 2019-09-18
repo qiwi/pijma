@@ -35,8 +35,7 @@ export const FileLink: FC<FileLinkProps> = (props) => (
       <FlexLink
         tabIndex={props.tabIndex}
         href={props.href}
-        role="link"
-        aria-label="file"
+        aria-label={props.title}
         target={props.target}
         download={props.download}
         rel={props.rel}

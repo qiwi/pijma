@@ -33,8 +33,7 @@ export const BlockLink: FC<BlockLinkProps> = (props) => (
     rel={props.rel}
     children={(renderProps) => (
       <CardLink
-        role="link"
-        aria-label="blockLink"
+        aria-label={props.title}
         display="block"
         overflow="hidden"
         bg="#fff"
