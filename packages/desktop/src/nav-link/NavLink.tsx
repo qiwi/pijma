@@ -29,8 +29,6 @@ export const NavLink: FC<NavLinkProps> = (props) => (
       <TypoLink
         tabIndex={props.tabIndex}
         href={props.href}
-        role="link"
-        aria-label="navigation"
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
