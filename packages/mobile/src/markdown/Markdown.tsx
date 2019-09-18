@@ -6,7 +6,7 @@ import {List} from '../list'
 import {styled, Box, Image} from '@qiwi/pijma-core'
 
 export interface MarkdownProps {
-  size: 's' | 'm' | 'l'
+  size?: 's' | 'm' | 'l'
   children: string
 }
 
@@ -107,9 +107,17 @@ const ul: FC<SizeProps> = ({size, children}) => (
   </MarkdownBox>
 )
 
-const ol: FC<SizeProps> = ({size, children}) => (
+interface NumericListProps extends SizeProps {
+  start: number
+}
+
+const ol: FC<NumericListProps> = ({size, start, children}) => (
   <MarkdownBox mt={SizeMargin[size]}>
-    <List size={size} type="number" children={Children.toArray(children)}/>
+    <List
+      size={size}
+      type={start < 1000 ? 'number' : 'step'}
+      children={Children.toArray(children)}
+    />
   </MarkdownBox>
 )
 
