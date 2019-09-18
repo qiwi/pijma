@@ -54,11 +54,11 @@ export const BasicInput: FunctionComponent<BasicInputProps> = (props) => {
     onBlur: props.onBlur,
     onKeyDown: props.onKeyDown,
     onKeyUp: props.onKeyUp,
+    role: 'textbox',
   }
   return (
     props.mask ? (
       <MaskInput
-        role="textbox"
         {...common}
         type={props.type === undefined ? (isMaskDigital(props.mask) ? 'tel' : 'text') : (['text', 'password', 'tel'].includes(props.type) ? props.type : 'text')}
         mask={props.mask}
@@ -69,7 +69,6 @@ export const BasicInput: FunctionComponent<BasicInputProps> = (props) => {
       />
     ) : (
       <Input
-        role="textbox"
         {...common}
         type={props.type === undefined ? 'text' : props.type}
       />
