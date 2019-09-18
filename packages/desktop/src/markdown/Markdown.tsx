@@ -113,9 +113,17 @@ const ul: FC<SizeProps> = ({size, children}) => (
   </MarkdownBox>
 )
 
-const ol: FC<SizeProps> = ({size, children}) => (
+interface NumericListProps extends SizeProps {
+  start: number
+}
+
+const ol: FC<NumericListProps> = ({size, start, children}) => (
   <MarkdownBox mt={SizeMargin[size]}>
-    <List size={size} type="number" children={Children.toArray(children)}/>
+    <List
+      size={size}
+      type={start < 1000 ? 'number' : 'step'}
+      children={Children.toArray(children)}
+    />
   </MarkdownBox>
 )
 
