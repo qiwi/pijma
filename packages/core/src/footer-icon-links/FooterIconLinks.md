@@ -1,7 +1,7 @@
 ```jsx
 <Block>
   <BlockContent>
-    <FooterIconLink children={[
+    <FooterIconLinks children={[
       {href: '//vk.com/qiwirussia', target: '_blank', icon: 'vk'},
       {href: '//ok.ru/qiwirussia', target: '_blank', icon: 'ok'},
       {href: '//youtube.com/user/QiwiRussia', target: '_blank', icon: 'youtube'},
