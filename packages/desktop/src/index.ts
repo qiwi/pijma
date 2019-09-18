@@ -25,6 +25,7 @@ export * from './glossary'
 export * from './details'
 export * from './markdown'
 export * from './drop-down'
+export * from './footer-icon-links'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'

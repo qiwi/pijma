@@ -1,8 +1,6 @@
 import React, {FC} from 'react'
 
-import {LinkControl} from '../link'
-import {Icon, IconProps} from '../icon'
-import {Flex, FlexItem, Lnk, Card} from '../primitive'
+import {Flex, FlexItem, Lnk, Card, Icon, IconProps, LinkControl} from '@qiwi/pijma-core'
 
 const CardLink = Card.withComponent(Lnk)
 
