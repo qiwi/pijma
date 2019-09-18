@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {LinkControl} from '@qiwi/pijma-core'
+import {LinkControl} from '../link'
 import {Icon, IconProps} from '../icon'
 import {Flex, FlexItem, Lnk, Card} from '../primitive'
 
