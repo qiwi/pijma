@@ -6,7 +6,7 @@ import {List} from '../list'
 import {styled, Box, Image} from '@qiwi/pijma-core'
 
 export interface MarkdownProps {
-  size: 's' | 'm' | 'l'
+  size?: 's' | 'm' | 'l'
   children: string
 }
 
