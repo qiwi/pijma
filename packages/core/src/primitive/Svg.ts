@@ -9,6 +9,7 @@ interface SvgProps {
   transition?: string
   transform?: string
   transformOrigin?: string
+  alt?: string
 }
 
 export const SvgNonProps = ['width', 'height', 'animation', 'transition', 'transform', 'transformOrigin']
