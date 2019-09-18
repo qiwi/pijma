@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.77.0](https://github.com/qiwi/pijma/compare/v1.76.0...v1.77.0) (2019-09-18)
+
+
+### Features
+
+* markdown with step list, optional size, export fix ([e6438db](https://github.com/qiwi/pijma/commit/e6438db))
+
 # [@qiwi/pijma-desktop-v1.76.0](https://github.com/qiwi/pijma/compare/v1.75.4...v1.76.0) (2019-09-18)
 
 
