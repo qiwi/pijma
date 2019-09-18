@@ -155,7 +155,6 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
       onBlur={props.onBlur}
       children={(renderProps) => (
         <Btn
-          role="button"
           aria-label={props.text}
           aria-labelledby={props.kind}
           disabled={props.disabled}
