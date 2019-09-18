@@ -36,6 +36,7 @@ export const HeaderMenuItem: FC<HeaderMenuItemProps> = (props) => (
         tabIndex={props.tabIndex}
         href={props.href}
         role="menuitem"
+        aria-label={props.title}
         target={props.target}
         download={props.download}
         rel={props.rel}
