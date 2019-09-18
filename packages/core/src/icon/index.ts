@@ -11,3 +11,6 @@ export * from './McscIcon'
 export * from './MirAcceptIcon'
 export * from './PciDssIcon'
 export * from './VisaVerifiedIcon'
+
+export * from './AppStoreIcon'
+export * from './GooglePlayIcon'
