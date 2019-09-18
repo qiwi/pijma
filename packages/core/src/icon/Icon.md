@@ -91,3 +91,20 @@
   </BlockContent>
 </Block>
 ```
+
+### Mobile apps
+
+```jsx
+<Block>
+  <BlockContent>
+    <Flex>
+      <FlexItem width={36} height={11} mr={6}>
+        <GooglePlayIcon/>
+      </FlexItem>
+      <FlexItem width={36} height={11}>
+        <AppStoreIcon/>
+      </FlexItem>
+    </Flex>
+  </BlockContent>
+</Block>
+```
