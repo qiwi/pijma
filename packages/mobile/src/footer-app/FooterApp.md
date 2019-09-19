@@ -3,7 +3,7 @@
   <BlockContent>
     <FooterApp children={[
       {
-        href: '//play.google.com/store/apps/details?id=ru.mw&referrer=utm_source%3Dmqr%26utm_medium%3Ddownload', 
+        href: 'https://s.qiwi.com/2m3_GW1_z3V', 
         target: '_blank', 
         icon: <GooglePlayIcon/>,
       },
