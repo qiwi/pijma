@@ -3,7 +3,7 @@
   <BlockContent>
     <FooterApp children={[
       {
-        href: 'https://s.qiwi.com/2m3_GW1_z3V', 
+        href: '//s.qiwi.com/2m3_GW1_z3V', 
         target: '_blank', 
         icon: <GooglePlayIcon/>,
       },
