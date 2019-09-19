@@ -8,7 +8,7 @@ export interface OptionFieldItemProps {
   reverse?: boolean
   role?: string
   icon: ReactNode
-  label: ReactNode
+  label: string
   description?: ReactNode
   onClick: MouseEventHandler
   onMouseEnter: MouseEventHandler
@@ -29,7 +29,7 @@ export const OptionFieldItem: React.FunctionComponent<OptionFieldItemProps> = ({
   <Pos
     role="menuitemcheckbox"
     aria-checked={checked ? 'true' : 'false'}
-    aria-label={typeof label === 'string' ? label : undefined}
+    aria-label={label}
     type="relative"
     cursor={disabled ? 'not-allowed' : 'pointer'}
     onClick={onClick}
