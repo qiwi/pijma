@@ -4,7 +4,7 @@ import {Lnk, Card, Icon, IconProps, LinkControl, Flex} from '@qiwi/pijma-core'
 
 const CardLink = Card.withComponent(Lnk)
 
-interface FooterIconLinkProps {
+interface FooterOutLinkProps {
   href: string
   target?: string
   download?: string | boolean
@@ -16,7 +16,7 @@ interface FooterIconLinkProps {
   onBlur?: () => void
 }
 
-const FooterIconLink: FC<FooterIconLinkProps> = (props) => (
+const FooterOutLink: FC<FooterOutLinkProps> = (props) => (
   <LinkControl
     href={props.href}
     target={props.target}
@@ -57,13 +57,13 @@ const FooterIconLink: FC<FooterIconLinkProps> = (props) => (
 )
 
 export interface FooterOutProps {
-  children: FooterIconLinkProps[]
+  children: FooterOutLinkProps[]
 }
 
 export const FooterOut: FC<FooterOutProps> = ({children}) => (
   <Flex justify="space-between" maxWidth={children.length * 15 - 5}>
     {children.map((item, i) => (
-      <FooterIconLink
+      <FooterOutLink
         key={i}
         href={item.href}
         icon={item.icon}
