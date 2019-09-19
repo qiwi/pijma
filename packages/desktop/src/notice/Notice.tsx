@@ -8,7 +8,7 @@ export interface NoticeProps {
 }
 
 export const Notice: FC<NoticeProps> = ({icon, title, children}) => (
-  <Flex>
+  <Flex role="alertdialog" aria-label="notice">
     <FlexItem
       shrink={0}
       basis={6}

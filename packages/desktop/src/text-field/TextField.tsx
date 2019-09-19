@@ -1,15 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {
-  TextFieldControl,
-  InputField,
-  BasicInput,
-  Stub,
-  Box,
-  Card,
-  Flex,
-  FlexItem,
-} from '@qiwi/pijma-core'
+import {BasicInput, Box, Card, Flex, FlexItem, InputField, Stub, TextFieldControl} from '@qiwi/pijma-core'
 
 import TextFieldProps from './TextFieldProps'
 

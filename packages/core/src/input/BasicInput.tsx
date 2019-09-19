@@ -54,6 +54,7 @@ export const BasicInput: FunctionComponent<BasicInputProps> = (props) => {
     onBlur: props.onBlur,
     onKeyDown: props.onKeyDown,
     onKeyUp: props.onKeyUp,
+    role: 'textbox',
   }
   return (
     props.mask ? (

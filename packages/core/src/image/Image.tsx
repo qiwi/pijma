@@ -36,6 +36,7 @@ export const Image: FC<ImageProps> = ({
       children={(renderProps) => (
         renderProps.loaded ? (
           <Img
+            role="img"
             key={src}
             width={width}
             height={height}

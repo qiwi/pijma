@@ -97,10 +97,12 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = (props) => (
     )}
     children={(
       <Pos type="relative" display="inline-block" p={12} css={{verticalAlign: 'middle', textAlign: 'left'}}>
-        <Card s="0 20px 64px 8px rgba(0, 0, 0, 0.16)" r={10} bg="#fff" pt={11} pb={12} px={11} width={ModalWidth[props.size]}>
+        <Card role="alertdialog" s="0 20px 64px 8px rgba(0, 0, 0, 0.16)" r={10} bg="#fff" pt={11} pb={12} px={11} width={ModalWidth[props.size]}>
           <Fragment>
             {props.closable && props.onHide ? (
               <Pos
+                role="button"
+                aria-label="exit"
                 type="absolute"
                 top={16}
                 right={16}

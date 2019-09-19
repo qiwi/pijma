@@ -1,7 +1,6 @@
 import React, {FC} from 'react'
 
 import {LinkControl, Lnk, FlexItem, Flex, Icon} from '@qiwi/pijma-core'
-
 import {Text} from '../typography'
 
 export interface FileLinkProps {

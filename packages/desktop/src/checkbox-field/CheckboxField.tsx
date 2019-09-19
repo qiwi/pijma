@@ -17,7 +17,7 @@ import CheckboxFieldOptionModel from './CheckboxFieldOptionModel'
 
 const CheckboxField: FunctionComponent<
   CheckboxFieldProps<CheckboxFieldOptionModel<any>, any>
-> = props => (
+  > = props => (
   props.stub ? (
     <Box maxWidth={1}>
       <Stub
@@ -58,6 +58,8 @@ const CheckboxField: FunctionComponent<
       onBlur={props.onBlur}
       children={(renderProps) => (
         <OptionField
+          role="checkbox"
+          aria-label={props.title}
           title={props.title}
           hint={props.hint}
           help={props.help}

@@ -11,7 +11,7 @@ export interface ErrorPageProps {
 }
 
 export const Oops: FC<ErrorPageProps> = ({logo, error, title, content, footer}) => (
-  <Card pt={4} pb={6} px={6} minHeight="100%" bg="#fff">
+  <Card pt={4} pb={6} px={6} minHeight="100%" bg="#fff" role="section" aria-label={title}>
     <Flex align="center" direction="column">
       <FlexItem
         shrink={0}

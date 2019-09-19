@@ -27,6 +27,7 @@ const BlockAccordionIndent: {
 
 export const BlockAccordion: FunctionComponent<BlockAccordionProps<BlockAccordionItemModel>> = ({items, indent = 'm', tabIndex = 0, opened, onChange}) => (
   <AccordionControl<BlockAccordionItemModel>
+
     items={items}
     opened={opened}
     onChange={onChange}
@@ -35,6 +36,8 @@ export const BlockAccordion: FunctionComponent<BlockAccordionProps<BlockAccordio
         {renderProps.items.map((item, index) => (
           <Card
             key={index}
+            role="region"
+            aria-label={typeof item.title === 'string' ? item.title : undefined}
             s={
               item.hovered || item.focused
                 ? '0 0 16px 0 rgba(0, 0, 0, 0.12)'

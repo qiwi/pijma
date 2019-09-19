@@ -50,6 +50,7 @@ export const Switch: FunctionComponent<SwitchProps> = props => (
           onKeyDown={renderProps.onKeyDown}
           children={(
             <OptionFieldItem
+              role="switch"
               label={props.label}
               reverse={props.reverse}
               description={props.description}

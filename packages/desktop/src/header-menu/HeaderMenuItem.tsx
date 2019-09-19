@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {LinkControl, Lnk, Flex, Pos, Card} from '@qiwi/pijma-core'
+import {Card, Flex, LinkControl, Lnk, Pos} from '@qiwi/pijma-core'
 import {Text} from '../typography/Text'
 
 export interface HeaderMenuItemProps {
@@ -35,6 +35,8 @@ export const HeaderMenuItem: FC<HeaderMenuItemProps> = (props) => (
         cursor="pointer"
         tabIndex={props.tabIndex}
         href={props.href}
+        role="menuitem"
+        aria-label={props.title}
         target={props.target}
         download={props.download}
         rel={props.rel}

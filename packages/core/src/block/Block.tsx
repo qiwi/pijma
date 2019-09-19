@@ -13,6 +13,8 @@ export interface BlockProps {
 
 export const Block: FC<BlockProps> = (props) => (
   <Card
+    role="section"
+    aria-label="block"
     r={10}
     tabIndex={props.tabIndex}
     s={props.hover || props.focus || props.active ? '0 10px 24px 0 rgba(0,0,0,0.08)' : '0 1px 2px 0 rgba(0,0,0,0.12)'}

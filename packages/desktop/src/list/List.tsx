@@ -41,7 +41,7 @@ const LetterSize: {[size in NonNullable<ListProps['size']>]: number} = {
 }
 
 export const List: FunctionComponent<ListProps> = ({type, size = 'm', children}) => (
-  <Box as={ListType[type]}>
+  <Box as={ListType[type]} role="list">
     {children.map((item, index) => (
       <Flex key={index} as="li" mt={index > 0 ? ItemIndent[type] : 0}>
         {type === 'number' ? (

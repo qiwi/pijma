@@ -14,6 +14,8 @@ const BlockContentIdent: { [indent in NonNullable<BlockContentProps['indent']>]:
 
 export const BlockContent: FC<BlockContentProps> = ({indent = 'm', children}) => (
   <Box
+    role="section"
+    aria-label="content"
     p={BlockContentIdent[indent]}
     children={children}
   />

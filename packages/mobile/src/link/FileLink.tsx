@@ -1,7 +1,6 @@
 import React, {FC} from 'react'
 
 import {LinkControl, Lnk, FlexItem, Flex, Icon} from '@qiwi/pijma-core'
-
 import {Text} from '../typography'
 
 export interface FileLinkProps {
@@ -36,6 +35,7 @@ export const FileLink: FC<FileLinkProps> = (props) => (
       <FlexLink
         tabIndex={props.tabIndex}
         href={props.href}
+        aria-label={props.title}
         target={props.target}
         download={props.download}
         rel={props.rel}
@@ -58,11 +58,20 @@ export const FileLink: FC<FileLinkProps> = (props) => (
           mr={2}
           shrink={0}
         >
-          <Icon name="file" color={renderProps.hover || renderProps.focus || renderProps.active ? '#FF8C00' : '#000'}/>
+          <Icon
+            name="file"
+            color={
+              renderProps.hover || renderProps.focus || renderProps.active
+                ? '#FF8C00'
+                : '#000'
+            }
+          />
         </FlexItem>
-        <FlexItem>
+        <FlexItem height={5}>
           <Text
-            color={renderProps.hover || renderProps.focus || renderProps.active ? 'warning' : 'default'}
+            color={
+              renderProps.hover || renderProps.focus || renderProps.active ? 'warning' : 'default'
+            }
             size="s"
             bold={false}
             children={props.children}

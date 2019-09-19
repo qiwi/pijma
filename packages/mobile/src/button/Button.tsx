@@ -1,4 +1,4 @@
-import React, {FunctionComponent, ReactElement, Fragment} from 'react'
+import React, {FunctionComponent, Fragment, ReactElement} from 'react'
 
 import {
   ButtonControl,
@@ -155,6 +155,8 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
       onBlur={props.onBlur}
       children={(renderProps) => (
         <Btn
+          aria-label={props.text}
+          aria-labelledby={props.kind}
           disabled={props.disabled}
           type={props.type}
           width={!props.icon || props.text ? 1 : buttonSize[props.size]}

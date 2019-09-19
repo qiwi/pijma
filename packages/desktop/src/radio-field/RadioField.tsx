@@ -77,6 +77,7 @@ const RadioField: FunctionComponent<
               onMouseLeave={renderProps.onMouseLeave}
               children={(renderOptionProps) => (
                 <OptionFieldItem
+                  role="menuitemradio"
                   disabled={option.disabled}
                   icon={(
                     <Box width={6}>

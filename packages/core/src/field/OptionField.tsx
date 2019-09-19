@@ -1,13 +1,14 @@
-import React, {ReactNode, FocusEventHandler, KeyboardEventHandler} from 'react'
+import React, {FocusEventHandler, KeyboardEventHandler, ReactNode} from 'react'
 
 import styled from '../styled'
-import {Typo, Box, Flex, FlexItem, BoxProps} from '../primitive'
+import {Box, BoxProps, Flex, FlexItem, Typo} from '../primitive'
 import {Spacer} from '../spacer'
 
 export interface OptionFieldProps {
   title?: ReactNode
   hint?: ReactNode
   help?: ReactNode
+  role?: string
   tabIndex?: number
   autoFocus?: boolean
   onFocus: FocusEventHandler
@@ -33,6 +34,8 @@ export const OptionField: React.FunctionComponent<OptionFieldProps> = (props) =>
       <Input
         tabIndex={props.tabIndex}
         autoFocus={props.autoFocus}
+        role={props.role}
+        aria-label={typeof props.title === 'string' ? props.title : undefined}
         onFocus={props.onFocus}
         onBlur={props.onBlur}
         onKeyDown={props.onKeyDown}

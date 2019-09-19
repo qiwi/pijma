@@ -50,6 +50,7 @@ export const Link: FC<LinkProps> = (props) => (
       <TypoLink
         tabIndex={props.tabIndex}
         href={props.href}
+        aria-label={props.title}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
