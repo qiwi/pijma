@@ -28,6 +28,7 @@ export const BlockLink: FC<BlockLinkProps> = (props) => (
     onFocus={props.onFocus}
     onBlur={props.onBlur}
     href={props.href}
+    title={props.title}
     target={props.target}
     download={props.download}
     rel={props.rel}

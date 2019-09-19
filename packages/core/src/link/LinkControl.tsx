@@ -7,6 +7,7 @@ export interface LinkControlProps {
   onFocus?: () => void
   onBlur?: () => void
   href?: string
+  title?: string
   target?: string
   download?: string | boolean
   rel?: string
