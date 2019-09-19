@@ -1,4 +1,4 @@
-import React, {FC, ReactNode} from 'react'
+import React, {FC, ReactElement} from 'react'
 
 import {Box, Lnk, LinkControl, Flex, FlexItem} from '@qiwi/pijma-core'
 
@@ -10,7 +10,7 @@ interface FooterAppLinkProps {
   download?: string | boolean
   rel?: string
   title?: string
-  icon: ReactNode
+  icon: ReactElement
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
   onFocus?: () => void
   onBlur?: () => void
