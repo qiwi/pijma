@@ -1,22 +1,22 @@
-import React, {FC} from 'react'
+import React, {FC, ReactNode} from 'react'
 
-import {Lnk, Card, Icon, IconProps, LinkControl, Flex, FlexItem} from '@qiwi/pijma-core'
+import {Box, Lnk, LinkControl, Flex, FlexItem} from '@qiwi/pijma-core'
 
-const CardLink = Card.withComponent(Lnk)
+const BoxLink = Box.withComponent(Lnk)
 
-interface FooterOutLinkProps {
+interface FooterAppLinkProps {
   href: string
   target?: string
   download?: string | boolean
   rel?: string
   title?: string
-  icon: IconProps['name']
+  icon: ReactNode
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
   onFocus?: () => void
   onBlur?: () => void
 }
 
-const FooterOutLink: FC<FooterOutLinkProps> = (props) => (
+const FooterAppLink: FC<FooterAppLinkProps> = (props) => (
   <LinkControl
     href={props.href}
     target={props.target}
@@ -26,18 +26,14 @@ const FooterOutLink: FC<FooterOutLinkProps> = (props) => (
     onFocus={props.onFocus}
     onBlur={props.onBlur}
     children={(renderProps) => (
-      <CardLink
-        display="block"
-        width={10}
-        height={10}
-        r={40}
-        p={2}
-        s={renderProps.hover || renderProps.focus || renderProps.active ? '0 0 0 1px #000' : '0 0 0 1px #ccc'}
+      <BoxLink
         href={props.href}
         rel={props.rel}
         target={props.target}
         title={props.title}
         download={props.download}
+        width={1}
+        height={1}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
@@ -45,27 +41,27 @@ const FooterOutLink: FC<FooterOutLinkProps> = (props) => (
         onMouseLeave={renderProps.onMouseLeave}
         onMouseUp={renderProps.onMouseUp}
         onMouseDown={renderProps.onMouseDown}
-        children={
-          <Icon
-            name={props.icon}
-            color={renderProps.hover || renderProps.focus || renderProps.active ? '#000' : '#999'}
-          />
-        }
+        children={props.icon}
       />
     )}
   />
 )
 
-export interface FooterOutProps {
-  children: FooterOutLinkProps[]
+export interface FooterAppProps {
+  children: FooterAppLinkProps[]
 }
 
-export const FooterOut: FC<FooterOutProps> = ({children}) => (
-  <Flex justify="space-between" maxWidth={children.length * 15 - 5}>
+export const FooterApp: FC<FooterAppProps> = ({children}) => (
+  <Flex justify="space-between" maxWidth={children.length * 45 - 6}>
     {children.map((item, i) => (
-      <FlexItem key={i}>
-        <FooterOutLink {...item}/>
-      </FlexItem>
+      <FlexItem
+        key={i}
+        shrink={1}
+        maxWidth={39}
+        maxHeight={11.5}
+        ml={i === 0 ? undefined : 6}
+        children={<FooterAppLink {...item}/>}
+      />
     ))}
   </Flex>
 )

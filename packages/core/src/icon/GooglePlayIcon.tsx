@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 
 export const GooglePlayIcon: FC = () => (
-  <svg viewBox="0 0 156 46" focusable="false">
+  <svg viewBox="0 0 156 46" width="100%" height="100%" focusable="false">
     <defs>
       <linearGradient id="a" x1="91.495%" x2="-38.237%" y1="4.946%" y2="71.879%">
         <stop offset="0%" stopColor="#00A0FF"/>
