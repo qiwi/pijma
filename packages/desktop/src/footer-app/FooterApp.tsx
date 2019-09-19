@@ -52,14 +52,14 @@ export interface FooterAppProps {
 }
 
 export const FooterApp: FC<FooterAppProps> = ({children}) => (
-  <Flex justify="space-between" maxWidth={children.length * 45 - 6}>
+  <Flex justify="space-between">
     {children.map((item, i) => (
       <FlexItem
         key={i}
         shrink={1}
-        maxWidth={39}
-        maxHeight={11.5}
-        ml={i === 0 ? undefined : 6}
+        maxWidth={42}
+        maxHeight={12.4}
+        ml={i === 0 ? undefined : 4}
         children={<FooterAppLink {...item}/>}
       />
     ))}

@@ -61,9 +61,9 @@ export interface FooterOutProps {
 }
 
 export const FooterOut: FC<FooterOutProps> = ({children}) => (
-  <Flex justify="space-between" maxWidth={children.length * 15 - 5}>
+  <Flex wrap="wrap" justify="space-between" m={-1.5}>
     {children.map((item, i) => (
-      <FlexItem key={i} ml={i === 0 ? undefined : 2}>
+      <FlexItem key={i} m={1.5}>
         <FooterOutLink {...item}/>
       </FlexItem>
     ))}
