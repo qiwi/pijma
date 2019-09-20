@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.78.2](https://github.com/qiwi/pijma/compare/v1.78.1...v1.78.2) (2019-09-20)
+
+
+### Bug Fixes
+
+* footer components overflow ([1b07c66](https://github.com/qiwi/pijma/commit/1b07c66))
+
 # [@qiwi/pijma-desktop-v1.78.1](https://github.com/qiwi/pijma/compare/v1.78.0...v1.78.1) (2019-09-20)
 
 
