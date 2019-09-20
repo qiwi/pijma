@@ -27,6 +27,7 @@ export * from './markdown'
 export * from './drop-down'
 export * from './footer-out'
 export * from './footer-nav'
+export * from './footer-app'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'
