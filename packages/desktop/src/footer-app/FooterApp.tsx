@@ -27,6 +27,7 @@ const FooterAppLink: FC<FooterAppLinkProps> = (props) => (
     onBlur={props.onBlur}
     children={(renderProps) => (
       <BoxLink
+        display="block"
         href={props.href}
         rel={props.rel}
         target={props.target}
@@ -52,14 +53,14 @@ export interface FooterAppProps {
 }
 
 export const FooterApp: FC<FooterAppProps> = ({children}) => (
-  <Flex justify="space-between">
+  <Flex justify="space-between" m={-2}>
     {children.map((item, i) => (
       <FlexItem
         key={i}
         shrink={1}
         maxWidth={42}
         maxHeight={12.4}
-        ml={i === 0 ? undefined : 4}
+        m={2}
         children={<FooterAppLink {...item}/>}
       />
     ))}

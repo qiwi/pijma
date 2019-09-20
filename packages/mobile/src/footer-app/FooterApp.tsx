@@ -27,6 +27,7 @@ const FooterAppLink: FC<FooterAppLinkProps> = (props) => (
     onBlur={props.onBlur}
     children={(renderProps) => (
       <BoxLink
+        display="block"
         href={props.href}
         rel={props.rel}
         target={props.target}
