@@ -18,6 +18,7 @@ export default interface ContentSearchProps {
   onShow?: () => void
   onHide?: () => void
   onCancel?: () => void
+  onSubmit?: (item: SearchItem) => void
   onItemClick?: (item: SearchItem) => void
   onChange?: (value: string) => void
   onFocus?: () => void

@@ -3,19 +3,33 @@ import {findDOMNode} from 'react-dom'
 import MenuControlProps from './MenuControlProps'
 import MenuControlState from './MenuControlState'
 
-export default class MenuControl<I> extends Component<MenuControlProps<I>, MenuControlState<I>> {
+export default class MenuControl<I extends {id: string}> extends Component<MenuControlProps<I>, MenuControlState<I>> {
 
-  public componentDidUpdate(props: MenuControlProps<I>, _state: MenuControlState<I>) {
+  public componentDidUpdate(props: MenuControlProps<I>) {
     if (props.items !== this.props.items) {
       this.itemsRefs = new Map(
         this.props.items.map((item => [item, createRef()])),
       )
+      this.setState({
+        selectedItem: this.props.items.find(item => this.state.selectedItem && this.state.selectedItem.id === item.id),
+        focusedItem: this.props.items.find(item => this.state.selectedItem && this.state.selectedItem.id === item.id),
+      })
+    }
+    if (
+      props.show !== this.props.show &&
+      this.props.show &&
+      (this.state.selectedItem || this.state.focusedItem)
+    ) {
+      const itemRef = this.itemsRefs.get(this.state.focusedItem! || this.state.selectedItem!)
+      if (itemRef) {
+        this.scrollToItem(itemRef)
+      }
     }
   }
 
   public state: MenuControlState<I> = {
-    selectedItem: null,
-    focusedItem: null,
+    selectedItem: undefined,
+    focusedItem: undefined,
   }
 
   private itemsRefs: Map<I, RefObject<HTMLDivElement>> = new Map(
@@ -42,7 +56,7 @@ export default class MenuControl<I> extends Component<MenuControlProps<I>, MenuC
   private onItemLeave = () => (event: React.MouseEvent) => {
     event.preventDefault()
     this.setState({
-      focusedItem: null,
+      focusedItem: undefined,
     })
   }
 
@@ -73,13 +87,9 @@ export default class MenuControl<I> extends Component<MenuControlProps<I>, MenuC
   }
 
   private onKeyDown: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
-    // if (!this.state.showCountries && (event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
-    //   event.preventDefault()
-    //   this.setState({
-    //     showCountries: true,
-    //   })
-    //   return
-    // }
+    if (this.props.onKeyDown) {
+      this.props.onKeyDown(event)
+    }
     if (event.key === 'ArrowDown') {
       event.preventDefault()
       const nextItem = this.nextItem
@@ -105,22 +115,34 @@ export default class MenuControl<I> extends Component<MenuControlProps<I>, MenuC
     }
     if (event.key === 'Enter') {
       event.preventDefault()
-      this.selectItem(this.state.focusedItem || this.state.selectedItem || this.props.items[0])
+      const item = this.state.focusedItem || this.state.selectedItem || this.props.items[0]
+      this.selectItem(item)
+      if (this.props.onSubmit) {
+        this.props.onSubmit(item)
+      }
     }
   }
 
-  private get nextItem(): I | null {
+  private get nextItem(): I | undefined {
     const {items} = this.props
-    const focusedId: number = items.findIndex(item => this.state.focusedItem === null ? item === this.state.selectedItem : item === this.state.focusedItem)
-    const nextId = focusedId + 1 >= items.length ? 0 : focusedId + 1
-    return items[nextId]
+    if (!this.state.focusedItem && !this.state.selectedItem) {
+      return items[0]
+    }
+    const focusedId: number = items.findIndex(({id}) => (
+      this.state.focusedItem ? id === this.state.focusedItem.id : id === this.state.selectedItem!.id
+    ))
+    return items[focusedId + 1 >= items.length ? 0 : focusedId + 1]
   }
 
-  private get prevItem(): I | null {
+  private get prevItem(): I | undefined {
     const {items} = this.props
-    const focusedId: number = items.findIndex(item => this.state.focusedItem === null ? item === this.state.selectedItem : item === this.state.focusedItem)
-    const prevId = focusedId <= 0 ? items.length - 1 : focusedId - 1
-    return items[prevId]
+    if (!this.state.focusedItem && !this.state.selectedItem) {
+      return items[items.length - 1]
+    }
+    const focusedId: number = items.findIndex(({id}) => (
+      this.state.focusedItem ? id === this.state.focusedItem.id : id === this.state.selectedItem!.id
+    ))
+    return items[focusedId === 0 ? items.length - 1 : focusedId - 1]
   }
 
   public render() {
@@ -128,8 +150,8 @@ export default class MenuControl<I> extends Component<MenuControlProps<I>, MenuC
       items: this.props.items.map((item) => ({
         ...item,
         ref: this.itemsRefs.get(item)!,
-        selected: item === this.state.selectedItem,
-        focused: item === this.state.focusedItem,
+        selected: !!this.state.selectedItem && this.state.selectedItem.id === item.id,
+        focused: !!this.state.focusedItem && this.state.focusedItem.id === item.id,
         onClick: this.onItemClick(item),
         onMouseEnter: this.onItemEnter(item),
         onMouseLeave: this.onItemLeave(),

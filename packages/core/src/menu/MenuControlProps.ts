@@ -1,13 +1,12 @@
-import {RefObject} from 'react'
+import {RefObject, KeyboardEventHandler} from 'react'
 import RenderChild from '../RenderChild'
 
-export default interface MenuControlProps<I> {
+export default interface MenuControlProps<I extends {id: string}> {
   items: I[]
-  // onChange?: (value: string) => void
-  // onFocus?: () => void
-  // onBlur?: () => void
-  // onHide?: () => void
+  show?: boolean
   onItemClick?: (item: I) => void
+  onSubmit?: (item: I) => void
+  onKeyDown?: KeyboardEventHandler
   children: RenderChild<{
     items: Array<
       I & {
@@ -21,14 +20,5 @@ export default interface MenuControlProps<I> {
     >
     containerRef: RefObject<HTMLDivElement>
     onKeyDown: React.KeyboardEventHandler
-  //   focused: boolean
-  //   hovered: boolean
-  //   show: boolean
-  //   onChange: React.ChangeEventHandler
-  //   onFocus: React.FocusEventHandler
-  //   onBlur: React.FocusEventHandler
-  //   onMouseEnter: React.MouseEventHandler
-  //   onMouseLeave: React.MouseEventHandler
-  //   onHide: () => void
   }>
 }

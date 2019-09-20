@@ -58,12 +58,8 @@ export const ContentSearch: FunctionComponent<ContentSearchProps> = (props) => (
         >
           <MenuControl<SearchItem>
             items={props.items}
-            onItemClick={(item) => {
-              if (props.onItemClick) {
-                props.onItemClick(item)
-              }
-              renderProps.onHide()
-            }}
+            onSubmit={props.onSubmit}
+            onItemClick={props.onItemClick}
             children={(menuRenderProps) => (
               <Card
                 width={1}
