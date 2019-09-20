@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.78.0](https://github.com/qiwi/pijma/compare/v1.77.0...v1.78.0) (2019-09-20)
+
+
+### Features
+
+* footer-app, footer-out ([366ba15](https://github.com/qiwi/pijma/commit/366ba15))
+
 # [@qiwi/pijma-desktop-v1.77.0](https://github.com/qiwi/pijma/compare/v1.76.0...v1.77.0) (2019-09-18)
 
 
