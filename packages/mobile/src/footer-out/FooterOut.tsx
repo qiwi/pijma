@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Lnk, Card, Icon, IconProps, LinkControl, Flex, FlexItem} from '@qiwi/pijma-core'
+import {Lnk, Card, Icon, IconProps, LinkControl, Flex, FlexItem, Box} from '@qiwi/pijma-core'
 
 const CardLink = Card.withComponent(Lnk)
 
@@ -31,8 +31,8 @@ const FooterOutLink: FC<FooterOutLinkProps> = (props) => (
         width={10}
         height={10}
         r={40}
-        p={2}
-        s={renderProps.hover || renderProps.focus || renderProps.active ? '0 0 0 1px #000' : '0 0 0 1px #ccc'}
+        p={1.75}
+        b={renderProps.hover || renderProps.focus || renderProps.active ? 'solid 1px #000' : 'solid 1px #ccc'}
         href={props.href}
         rel={props.rel}
         target={props.target}
@@ -61,11 +61,13 @@ export interface FooterOutProps {
 }
 
 export const FooterOut: FC<FooterOutProps> = ({children}) => (
-  <Flex wrap="wrap" justify="space-between" m={-1.5}>
-    {children.map((item, i) => (
-      <FlexItem key={i} m={1.5}>
-        <FooterOutLink {...item}/>
-      </FlexItem>
-    ))}
-  </Flex>
+  <Box overflow="hidden">
+    <Flex wrap="wrap" justify="space-between" m={-1.5}>
+      {children.map((item, i) => (
+        <FlexItem key={i} m={1.5}>
+          <FooterOutLink {...item}/>
+        </FlexItem>
+      ))}
+    </Flex>
+  </Box>
 )
