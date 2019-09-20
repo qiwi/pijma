@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.78.1](https://github.com/qiwi/pijma/compare/v1.78.0...v1.78.1) (2019-09-20)
+
+
+### Bug Fixes
+
+* export footer-app ([cde9e35](https://github.com/qiwi/pijma/commit/cde9e35))
+
 # [@qiwi/pijma-desktop-v1.78.0](https://github.com/qiwi/pijma/compare/v1.77.0...v1.78.0) (2019-09-20)
 
 
