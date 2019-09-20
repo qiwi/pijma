@@ -1,22 +1,22 @@
 import React, {FC} from 'react'
 
-import {Lnk, Card, Icon, IconProps, LinkControl} from '@qiwi/pijma-core'
+import {Lnk, Card, Icon, IconProps, LinkControl, Flex, FlexItem} from '@qiwi/pijma-core'
 
 const CardLink = Card.withComponent(Lnk)
 
-export interface FooterIconLinkProps {
-  href: string,
-  target?: string,
-  download?: string | boolean,
-  rel?: string,
-  title?: string,
-  icon: IconProps['name'],
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void,
-  onFocus?: () => void,
+interface FooterOutLinkProps {
+  href: string
+  target?: string
+  download?: string | boolean
+  rel?: string
+  title?: string
+  icon: IconProps['name']
+  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
+  onFocus?: () => void
   onBlur?: () => void
 }
 
-export const FooterIconLink: FC<FooterIconLinkProps> = (props) => (
+const FooterOutLink: FC<FooterOutLinkProps> = (props) => (
   <LinkControl
     href={props.href}
     target={props.target}
@@ -54,4 +54,18 @@ export const FooterIconLink: FC<FooterIconLinkProps> = (props) => (
       />
     )}
   />
+)
+
+export interface FooterOutProps {
+  children: FooterOutLinkProps[]
+}
+
+export const FooterOut: FC<FooterOutProps> = ({children}) => (
+  <Flex wrap="wrap" justify="space-between" m={-1.5}>
+    {children.map((item, i) => (
+      <FlexItem key={i} m={1.5}>
+        <FooterOutLink {...item}/>
+      </FlexItem>
+    ))}
+  </Flex>
 )

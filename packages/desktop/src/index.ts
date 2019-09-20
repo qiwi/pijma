@@ -25,7 +25,7 @@ export * from './glossary'
 export * from './details'
 export * from './markdown'
 export * from './drop-down'
-export * from './footer-icon-link'
+export * from './footer-out'
 export * from './footer-nav'
 
 export {TextField as MaskTextField} from './text-field'
