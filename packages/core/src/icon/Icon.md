@@ -84,8 +84,25 @@
       <FlexItem width={16} height={6} mr={2}>
         <VisaVerifiedIcon/>
       </FlexItem>
+      <FlexItem width={16} height={6} mr={2}>
+        <MscIdIcon/>
+      </FlexItem>
       <FlexItem width={16} height={6}>
         <McscIcon/>
+      </FlexItem>
+    </Flex>
+    <Flex mt={4}>
+      <FlexItem width={16} height={6} mr={2}>
+        <PciDssIcon gray={false}/>
+      </FlexItem>
+      <FlexItem width={16} height={6} mr={2}>
+        <MirAcceptIcon gray={false}/>
+      </FlexItem>
+      <FlexItem width={16} height={6} mr={2}>
+        <VisaVerifiedIcon gray={false}/>
+      </FlexItem>
+      <FlexItem width={16} height={6}>
+        <MscIdIcon gray={false}/>
       </FlexItem>
     </Flex>
   </BlockContent>
