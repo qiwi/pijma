@@ -15,4 +15,6 @@ export * from './MastercardIdIcon'
 export * from './AppStoreIcon'
 export * from './GooglePlayIcon'
 
+export * from './PaymentSecurityIcon'
+
 export {MastercardSCIcon as McscIcon} from './MastercardSCIcon'
