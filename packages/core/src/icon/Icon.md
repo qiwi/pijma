@@ -69,6 +69,37 @@
 </Block>
 ```
 
+### Payment systems new
+
+```jsx
+<Block>
+  <BlockContent>
+    <Flex>
+      <FlexItem width={12} height={6} mr={6}>
+        <PaymentSystemIcon name="mastercard"/>
+      </FlexItem>
+      <FlexItem width={12} height={6} mr={6}>
+        <PaymentSystemIcon name="mir"/>
+      </FlexItem>
+      <FlexItem width={12} height={6}>
+        <PaymentSystemIcon name="visa"/>
+      </FlexItem>
+    </Flex>
+    <Flex mt={6}>
+      <FlexItem width={12} height={6} mr={6}>
+        <PaymentSystemIcon name="mastercard" gray/>
+      </FlexItem>
+      <FlexItem width={12} height={6} mr={6}>
+        <PaymentSystemIcon name="mir" gray/>
+      </FlexItem>
+      <FlexItem width={12} height={6}>
+        <PaymentSystemIcon name="visa" gray/>
+      </FlexItem>
+    </Flex>
+  </BlockContent>
+</Block>
+```
+
 ### Security badges
 
 ```jsx
