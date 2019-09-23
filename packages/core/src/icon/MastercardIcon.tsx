@@ -1,7 +1,7 @@
 import React, {FC} from 'react'
 
 export const MastercardIcon: FC = () => (
-  <svg viewBox="0 0 48 24" focusable="false">
+  <svg width="100%" height="100%" viewBox="0 0 48 24" focusable="false">
     <path
       fill="#FC9F3A"
       d="M14.82 7.62c0 4.076-3.298 7.38-7.366 7.38S.088 11.696.088 7.62C.088 3.544 3.386.24 7.454.24s7.366 3.304 7.366 7.38z"

@@ -5,7 +5,7 @@ export interface VisaVerifiedIcon {
 }
 
 export const VisaVerifiedIcon: FC<VisaVerifiedIcon> = ({gray = true}) => (
-  <svg viewBox="0 0 64 24" focusable="false">
+  <svg width="100%" height="100%" viewBox="0 0 64 24" focusable="false">
     <path
       fill={gray ? '#999' : '#1a1f71'}
       fillRule="evenodd"

@@ -5,7 +5,7 @@ export interface MastercardIdIconProps {
 }
 
 export const MastercardIdIcon: FC<MastercardIdIconProps> = ({gray = true}) => (
-  <svg viewBox="0 0 64 24" focusable="false">
+  <svg width="100%" height="100%" viewBox="0 0 64 24" focusable="false">
     <path
       fill={gray ? '#999' : '#000'}
       fillRule="nonzero"
