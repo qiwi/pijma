@@ -56,26 +56,6 @@
   <BlockContent>
     <Flex>
       <FlexItem width={12} height={6} mr={6}>
-        <MastercardIcon/>
-      </FlexItem>
-      <FlexItem width={12} height={6} mr={6}>
-        <MirIcon/>
-      </FlexItem>
-      <FlexItem width={12} height={6}>
-        <VisaIcon/>
-      </FlexItem>
-    </Flex>
-  </BlockContent>
-</Block>
-```
-
-### Payment systems new
-
-```jsx
-<Block>
-  <BlockContent>
-    <Flex>
-      <FlexItem width={12} height={6} mr={6}>
         <PaymentSystemIcon name="mastercard"/>
       </FlexItem>
       <FlexItem width={12} height={6} mr={6}>
