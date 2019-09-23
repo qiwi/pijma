@@ -16,9 +16,21 @@ const MastercardIcon: FC<IconProps> = ({gray}) => (
     viewBox="0 0 48 24"
     focusable="false"
   >
-    <path fill={gray ? '#999' : '#F46B3E'} fillRule="evenodd" d="M20 4h8v16h-8z"/>
-    <path fill={gray ? '#666' : '#F14840'} fillRule="evenodd" d="M20.22 12c0-3.07 1.4-5.97 3.78-7.86a9.81 9.81 0 0 0-13.38 1.08 10.08 10.08 0 0 0 0 13.56A9.81 9.81 0 0 0 24 19.86 10.02 10.02 0 0 1 20.22 12z"/>
-    <path fill={gray ? '#ccc' : '#FC9F3A'} fillRule="evenodd" d="M40 12a10 10 0 0 1-5.57 9A9.8 9.8 0 0 1 24 19.85a10.04 10.04 0 0 0 0-15.72A9.8 9.8 0 0 1 34.43 3 10 10 0 0 1 40 12z"/>
+    <path
+      fill={gray ? '#999' : '#F46B3E'}
+      fillRule="evenodd"
+      d="M20 4h8v16h-8z"
+    />
+    <path
+      fill={gray ? '#666' : '#F14840'}
+      fillRule="evenodd"
+      d="M20.22 12c0-3.07 1.4-5.97 3.78-7.86a9.81 9.81 0 0 0-13.38 1.08 10.08 10.08 0 0 0 0 13.56A9.81 9.81 0 0 0 24 19.86 10.02 10.02 0 0 1 20.22 12z"
+    />
+    <path
+      fill={gray ? '#ccc' : '#FC9F3A'}
+      fillRule="evenodd"
+      d="M40 12a10 10 0 0 1-5.57 9A9.8 9.8 0 0 1 24 19.85a10.04 10.04 0 0 0 0-15.72A9.8 9.8 0 0 1 34.43 3 10 10 0 0 1 40 12z"
+    />
   </svg>
 )
 
@@ -29,24 +41,15 @@ const MirIcon: FC<IconProps> = ({gray}) => (
     viewBox="0 0 48 24"
     focusable="false"
   >
-    {gray ? undefined : (
-      <defs>
-        <linearGradient id="a" x1=".01%" y1="50%" y2="50%">
-          <stop offset="30%" stop-color="#00B4E6"/>
-          <stop offset="100%" stop-color="#088CCB"/>
-        </linearGradient>
-      </defs>
-    )}
     <path
       fill={gray ? '#999' : '#4DB45E'}
       fillRule="evenodd"
       d="M12.93 5s-1.87 0-2.37 1.84l-1.78 6.47h-.35S7.1 8.55 6.65 6.83C6.15 5 4.27 5 4.27 5H0v14h4.27v-8.31h.36L7.12 19h2.97l2.49-8.3h.35V19h4.28V5h-4.28zM28.54 5s-1.25.12-1.84 1.47l-3.03 6.84h-.35V5h-4.27v14h4.03s1.31-.12 1.9-1.47l2.97-6.84h.35V19h4.27V5h-4.03zM34.47 11.36V19h4.27v-4.46h4.63a4.63 4.63 0 0 0 4.36-3.18H34.47z"
     />
     <path
-      fill={gray ? '#999' : 'url(#a)'}
+      fill={gray ? '#999' : '#00A9E4'}
       fillRule="evenodd"
-      transform="translate(33.82 5)"
-      d="M9.55 0H.05a6.95 6.95 0 0 0 4.93 5.5c.57.16 1.17.25 1.78.25h7.33c.06-.32.09-.65.09-.98A4.7 4.7 0 0 0 9.55 0z"
+      d="M43.37 5h-9.5a6.95 6.95 0 0 0 4.93 5.5c.57.16 1.17.25 1.78.25h7.33c.06-.32.09-.65.09-.98A4.7 4.7 0 0 0 43.37 5z"
     />
   </svg>
 )
