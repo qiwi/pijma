@@ -7,11 +7,11 @@ export * from './MastercardIcon'
 export * from './MirIcon'
 export * from './VisaIcon'
 
-export * from './McscIcon'
+export {MastercardSCIcon as McscIcon} from './MastercardSCIcon'
 export * from './MirAcceptIcon'
 export * from './PciDssIcon'
 export * from './VisaVerifiedIcon'
-export * from './MscIdIcon'
+export * from './MastercardIdIcon'
 
 export * from './AppStoreIcon'
 export * from './GooglePlayIcon'

@@ -85,7 +85,7 @@
         <VisaVerifiedIcon/>
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <MscIdIcon/>
+        <MastercardIdIcon/>
       </FlexItem>
       <FlexItem width={16} height={6}>
         <McscIcon/>
@@ -102,7 +102,7 @@
         <VisaVerifiedIcon gray={false}/>
       </FlexItem>
       <FlexItem width={16} height={6}>
-        <MscIdIcon gray={false}/>
+        <MastercardIdIcon gray={false}/>
       </FlexItem>
     </Flex>
   </BlockContent>

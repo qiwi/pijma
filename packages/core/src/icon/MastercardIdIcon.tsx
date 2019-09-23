@@ -1,10 +1,10 @@
 import React, {FC} from 'react'
 
-export interface MscIdIconProps {
+export interface MastercardIdIconProps {
   gray?: boolean
 }
 
-export const MscIdIcon: FC<MscIdIconProps> = ({gray = true}) => (
+export const MastercardIdIcon: FC<MastercardIdIconProps> = ({gray = true}) => (
   <svg viewBox="0 0 64 24" focusable="false">
     <path
       fill={gray ? '#999' : '#000'}
