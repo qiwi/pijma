@@ -1,3 +1,38 @@
+# [@qiwi/pijma-desktop-v1.78.2](https://github.com/qiwi/pijma/compare/v1.78.1...v1.78.2) (2019-09-20)
+
+
+### Bug Fixes
+
+* footer components overflow ([1b07c66](https://github.com/qiwi/pijma/commit/1b07c66))
+
+# [@qiwi/pijma-desktop-v1.78.1](https://github.com/qiwi/pijma/compare/v1.78.0...v1.78.1) (2019-09-20)
+
+
+### Bug Fixes
+
+* export footer-app ([cde9e35](https://github.com/qiwi/pijma/commit/cde9e35))
+
+# [@qiwi/pijma-desktop-v1.78.0](https://github.com/qiwi/pijma/compare/v1.77.0...v1.78.0) (2019-09-20)
+
+
+### Features
+
+* footer-app, footer-out ([366ba15](https://github.com/qiwi/pijma/commit/366ba15))
+
+# [@qiwi/pijma-desktop-v1.77.0](https://github.com/qiwi/pijma/compare/v1.76.0...v1.77.0) (2019-09-18)
+
+
+### Features
+
+* markdown with step list, optional size, export fix ([e6438db](https://github.com/qiwi/pijma/commit/e6438db))
+
+# [@qiwi/pijma-desktop-v1.76.0](https://github.com/qiwi/pijma/compare/v1.75.4...v1.76.0) (2019-09-18)
+
+
+### Features
+
+* footer icon link, footer nav, mobile apps icons ([f15853b](https://github.com/qiwi/pijma/commit/f15853b))
+
 # [@qiwi/pijma-desktop-v1.75.2](https://github.com/qiwi/pijma/compare/v1.75.1...v1.75.2) (2019-09-13)
 
 
