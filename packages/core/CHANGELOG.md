@@ -1,3 +1,17 @@
+# [@qiwi/pijma-core-v1.78.0](https://github.com/qiwi/pijma/compare/v1.77.0...v1.78.0) (2019-09-20)
+
+
+### Features
+
+* footer-app, footer-out ([366ba15](https://github.com/qiwi/pijma/commit/366ba15))
+
+# [@qiwi/pijma-core-v1.76.0](https://github.com/qiwi/pijma/compare/v1.75.4...v1.76.0) (2019-09-18)
+
+
+### Features
+
+* footer icon link, footer nav, mobile apps icons ([f15853b](https://github.com/qiwi/pijma/commit/f15853b))
+
 # [@qiwi/pijma-core-v1.75.0](https://github.com/qiwi/pijma/compare/v1.74.0...v1.75.0) (2019-09-09)
 
 
