@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.80.0](https://github.com/qiwi/pijma/compare/v1.79.0...v1.80.0) (2019-09-24)
+
+
+### Features
+
+* **mobile:** footer-app ([a72c3e5](https://github.com/qiwi/pijma/commit/a72c3e5))
+
 # [@qiwi/pijma-mobile-v1.78.2](https://github.com/qiwi/pijma/compare/v1.78.1...v1.78.2) (2019-09-20)
 
 
