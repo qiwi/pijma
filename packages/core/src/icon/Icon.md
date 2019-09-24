@@ -56,13 +56,24 @@
   <BlockContent>
     <Flex>
       <FlexItem width={12} height={6} mr={6}>
-        <MastercardIcon/>
+        <PaymentSystemIcon name="mastercard"/>
       </FlexItem>
       <FlexItem width={12} height={6} mr={6}>
-        <MirIcon/>
+        <PaymentSystemIcon name="mir"/>
       </FlexItem>
       <FlexItem width={12} height={6}>
-        <VisaIcon/>
+        <PaymentSystemIcon name="visa"/>
+      </FlexItem>
+    </Flex>
+    <Flex mt={6}>
+      <FlexItem width={12} height={6} mr={6}>
+        <PaymentSystemIcon name="mastercard" gray/>
+      </FlexItem>
+      <FlexItem width={12} height={6} mr={6}>
+        <PaymentSystemIcon name="mir" gray/>
+      </FlexItem>
+      <FlexItem width={12} height={6}>
+        <PaymentSystemIcon name="visa" gray/>
       </FlexItem>
     </Flex>
   </BlockContent>
@@ -76,16 +87,30 @@
   <BlockContent>
     <Flex>
       <FlexItem width={16} height={6} mr={2}>
-        <PciDssIcon/>
+        <PaymentSecurityIcon name="pci-dss"/>
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <MirAcceptIcon/>
+        <PaymentSecurityIcon name="mir-accept"/>
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <VisaVerifiedIcon/>
+        <PaymentSecurityIcon name="visa-verified"/>
       </FlexItem>
       <FlexItem width={16} height={6}>
-        <McscIcon/>
+        <PaymentSecurityIcon name="mastercard-id-check"/>
+      </FlexItem>
+    </Flex>
+    <Flex mt={6}>
+      <FlexItem width={16} height={6} mr={2}>
+        <PaymentSecurityIcon name="pci-dss" gray/>
+      </FlexItem>
+      <FlexItem width={16} height={6} mr={2}>
+        <PaymentSecurityIcon name="mir-accept" gray/>
+      </FlexItem>
+      <FlexItem width={16} height={6} mr={2}>
+        <PaymentSecurityIcon name="visa-verified" gray/>
+      </FlexItem>
+      <FlexItem width={16} height={6}>
+        <PaymentSecurityIcon name="mastercard-id-check" gray/>
       </FlexItem>
     </Flex>
   </BlockContent>
@@ -99,10 +124,10 @@
   <BlockContent>
     <Flex>
       <FlexItem width={36} height={11} mr={6}>
-        <GooglePlayIcon/>
+        <MobileAppIcon name="google"/>
       </FlexItem>
       <FlexItem width={36} height={11}>
-        <AppStoreIcon/>
+        <MobileAppIcon name="apple"/>
       </FlexItem>
     </Flex>
   </BlockContent>
