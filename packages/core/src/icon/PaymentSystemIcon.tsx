@@ -53,12 +53,7 @@ const IconPath: { [name in PaymentSystemIconProps['name']]: [string, string, str
 }
 
 export const PaymentSystemIcon: FC<PaymentSystemIconProps> = ({name, gray = false}) => (
-  <Svg
-    width={1}
-    height={1}
-    viewBox="0 0 48 24"
-    focusable="false"
-  >
+  <Svg width={1} height={1} viewBox="0 0 48 24" focusable="false">
     {IconPath[name].map((path, i) => (
       <Path key={i} fill={gray ? path[2] : path[0]} d={path[1]} fillRule={path[3]}/>
     ))}
