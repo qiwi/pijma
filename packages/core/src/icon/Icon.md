@@ -95,11 +95,8 @@
       <FlexItem width={16} height={6} mr={2}>
         <PaymentSecurityIcon name="visa"/>
       </FlexItem>
-      <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="mastercardId"/>
-      </FlexItem>
       <FlexItem width={16} height={6}>
-        <PaymentSecurityIcon name="mastercardSC"/>
+        <PaymentSecurityIcon name="mastercard"/>
       </FlexItem>
     </Flex>
     <Flex mt={6}>
@@ -112,11 +109,8 @@
       <FlexItem width={16} height={6} mr={2}>
         <PaymentSecurityIcon name="visa" gray={false}/>
       </FlexItem>
-      <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="mastercardId" gray={false}/>
-      </FlexItem>
       <FlexItem width={16} height={6}>
-        <PaymentSecurityIcon name="mastercardSC" gray={false}/>
+        <PaymentSecurityIcon name="mastercard" gray={false}/>
       </FlexItem>
     </Flex>
   </BlockContent>
