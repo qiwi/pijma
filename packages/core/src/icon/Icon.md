@@ -124,10 +124,10 @@
   <BlockContent>
     <Flex>
       <FlexItem width={36} height={11} mr={6}>
-        <GooglePlayIcon/>
+        <MobileAppIcon name="googlePlay"/>
       </FlexItem>
       <FlexItem width={36} height={11}>
-        <AppStoreIcon/>
+        <MobileAppIcon name="appStore"/>
       </FlexItem>
     </Flex>
   </BlockContent>
