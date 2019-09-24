@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.79.0](https://github.com/qiwi/pijma/compare/v1.78.2...v1.79.0) (2019-09-24)
+
+
+### Features
+
+* payment system, payment security and mobile app icons ([00e105d](https://github.com/qiwi/pijma/commit/00e105d))
+
 # [@qiwi/pijma-core-v1.78.0](https://github.com/qiwi/pijma/compare/v1.77.0...v1.78.0) (2019-09-20)
 
 
