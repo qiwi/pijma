@@ -34,6 +34,7 @@ export const ContentSearch: FunctionComponent<ContentSearchProps> = (props) => (
     onShow={props.onShow}
     onHide={props.onHide}
     onCancel={props.onCancel}
+    onSubmit={props.onSubmit}
     children={(renderProps) => (
       <Pos type="relative">
         <ContentInput
@@ -58,8 +59,8 @@ export const ContentSearch: FunctionComponent<ContentSearchProps> = (props) => (
         >
           <MenuControl<SearchItem>
             items={props.items}
-            onSubmit={props.onSubmit}
-            onItemClick={props.onItemClick}
+            onItemSelect={props.onItemSelect}
+            onSubmit={renderProps.onSubmit}
             children={(menuRenderProps) => (
               <Card
                 width={1}
@@ -93,7 +94,7 @@ export const ContentSearch: FunctionComponent<ContentSearchProps> = (props) => (
                         onChange={renderProps.onChange}
                       />
                     </FlexItem>
-                    <FlexItem shrink={0} ml={4}>
+                    <FlexItem shrink={0} ml={4} onClick={renderProps.onSubmit}>
                       {props.loading ? (
                         <Spinner color="#ff8c00" width={6} height={6}/>
                       ) : (

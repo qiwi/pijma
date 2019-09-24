@@ -41,9 +41,6 @@ export default class MenuControl<I extends {id: string}> extends Component<MenuC
   private onItemClick = (item: I) => (event: React.MouseEvent) => {
     event.preventDefault()
     this.selectItem(item)
-    if (this.props.onItemClick) {
-      this.props.onItemClick(item)
-    }
   }
 
   private onItemEnter = (item: I) => (event: React.MouseEvent) => {
@@ -64,6 +61,9 @@ export default class MenuControl<I extends {id: string}> extends Component<MenuC
     this.setState({
       selectedItem: item,
     })
+    if (this.props.onItemSelect) {
+      this.props.onItemSelect(item)
+    }
   }
 
   private scrollToItem: (item: RefObject<HTMLDivElement>) => void = (item) => {
@@ -115,11 +115,19 @@ export default class MenuControl<I extends {id: string}> extends Component<MenuC
     }
     if (event.key === 'Enter') {
       event.preventDefault()
-      const item = this.state.focusedItem || this.state.selectedItem || this.props.items[0]
-      this.selectItem(item)
-      if (this.props.onSubmit) {
-        this.props.onSubmit(item)
+      const item = this.state.focusedItem || this.state.selectedItem
+      if (item) {
+        this.selectItem(item)
       }
+      else {
+        this.onSubmit()
+      }
+    }
+  }
+
+  private onSubmit: () => void = () => {
+    if (this.props.onSubmit) {
+      this.props.onSubmit()
     }
   }
 

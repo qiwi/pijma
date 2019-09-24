@@ -4,9 +4,9 @@ import RenderChild from '../RenderChild'
 export default interface MenuControlProps<I extends {id: string}> {
   items: I[]
   show?: boolean
-  onItemClick?: (item: I) => void
-  onSubmit?: (item: I) => void
   onKeyDown?: KeyboardEventHandler
+  onItemSelect?: (item: I) => void
+  onSubmit?: () => void
   children: RenderChild<{
     items: Array<
       I & {

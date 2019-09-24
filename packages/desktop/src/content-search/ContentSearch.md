@@ -95,7 +95,6 @@ const banks = [
 ];
 const initialState = {
   value: '',
-  show: false,
   loading: false,
   banks: [],
 };
@@ -117,10 +116,9 @@ const getBanks = (value) => {
   });
 }
 const selectItem = (item) => setState({
-  show: false,
   loading: false,
   value: item.title,
-  banks: filterBanks(item.title),
+  banks: [],
 });
 <Block>
   <BlockContent>
@@ -128,32 +126,19 @@ const selectItem = (item) => setState({
       <ContentSearch
         value={state.value}
         items={state.banks}
-        show={state.show}
         loading={state.loading}
         error={state.value === ''}
-        onShow={() => setState({show: true})}
-        onHide={() => setState({show: false})}
         onCancel={() => setState(initialState)}
-        onSubmit={() => setState({show: false})}
+        onSubmit={() => setState({banks: []})}
         onItemSelect={selectItem}
         onChange={(value) => {
           setState({value});
           getBanks(value).then((banks) => setState({banks}));
         }}
-        result={state.banks.length > 0 ? (
-          <Link onClick={() => setState({show: false})}>
+        result={(
+          <Link onClick={() => setState({banks: []})}>
             Показать все
           </Link>
-        ) : (
-          <Paragraph>
-            Ничего не найдено, попробуйте
-            <Link onClick={() => {
-              setState({value: 'Сбербанк'});
-              getBanks('Сбербанк').then((banks) => setState({banks}));
-            }}>
-              Сбербанк
-            </Link>
-          </Paragraph>
         )}
       />
     </Box>

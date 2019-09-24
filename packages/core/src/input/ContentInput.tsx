@@ -18,6 +18,7 @@ export interface ContentInputProps {
   pr?: Value
   error: boolean
   focused: boolean
+  expanded?: boolean
   hovered: boolean
   mask?: Mask
   pipe?: Pipe
@@ -36,7 +37,7 @@ export const ContentInput = forwardRef<HTMLInputElement | MaskedInput, ContentIn
     pr: props.pr ? props.pr : 4,
     pl: props.pl ? props.pl : 4,
     py: 3,
-    r: 10,
+    r: props.expanded ? '10px 10px 0 0' : 10,
     b: 'none',
     bb: props.error ? '2px solid #d0021b' : 'none',
     valueSize: 5,
