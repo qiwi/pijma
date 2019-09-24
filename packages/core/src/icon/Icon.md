@@ -101,16 +101,16 @@
     </Flex>
     <Flex mt={6}>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="pci" gray={false}/>
+        <PaymentSecurityIcon name="pci" gray/>
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="mir" gray={false}/>
+        <PaymentSecurityIcon name="mir" gray/>
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="visa" gray={false}/>
+        <PaymentSecurityIcon name="visa" gray/>
       </FlexItem>
       <FlexItem width={16} height={6}>
-        <PaymentSecurityIcon name="mastercard" gray={false}/>
+        <PaymentSecurityIcon name="mastercard" gray/>
       </FlexItem>
     </Flex>
   </BlockContent>
