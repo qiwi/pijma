@@ -87,30 +87,30 @@
   <BlockContent>
     <Flex>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="pci"/>
+        <PaymentSecurityIcon name="pci-dss"/>
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="mir"/>
+        <PaymentSecurityIcon name="mir-accept"/>
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="visa"/>
+        <PaymentSecurityIcon name="visa-verified"/>
       </FlexItem>
       <FlexItem width={16} height={6}>
-        <PaymentSecurityIcon name="mastercard"/>
+        <PaymentSecurityIcon name="mastercard-id-check"/>
       </FlexItem>
     </Flex>
     <Flex mt={6}>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="pci" gray/>
+        <PaymentSecurityIcon name="pci-dss" gray/>
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="mir" gray/>
+        <PaymentSecurityIcon name="mir-accept" gray/>
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="visa" gray/>
+        <PaymentSecurityIcon name="visa-verified" gray/>
       </FlexItem>
       <FlexItem width={16} height={6}>
-        <PaymentSecurityIcon name="mastercard" gray/>
+        <PaymentSecurityIcon name="mastercard-id-check" gray/>
       </FlexItem>
     </Flex>
   </BlockContent>
