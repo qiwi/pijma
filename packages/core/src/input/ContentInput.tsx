@@ -1,4 +1,11 @@
-import React, {ChangeEventHandler, FocusEventHandler, KeyboardEventHandler, RefObject, forwardRef} from 'react'
+import React, {
+  ChangeEventHandler,
+  FocusEventHandler,
+  MouseEventHandler,
+  KeyboardEventHandler,
+  RefObject,
+  forwardRef,
+} from 'react'
 import MaskedInput from 'react-text-mask'
 
 import {MaskInput, Input, Value} from '../primitive'
@@ -25,6 +32,8 @@ export interface ContentInputProps {
   onChange?: ChangeEventHandler
   onFocus?: FocusEventHandler
   onBlur?: FocusEventHandler
+  onMouseEnter?: MouseEventHandler
+  onMouseLeave?: MouseEventHandler
   onKeyDown?: KeyboardEventHandler
   onKeyUp?: KeyboardEventHandler
 }
@@ -45,7 +54,7 @@ export const ContentInput = forwardRef<HTMLInputElement | MaskedInput, ContentIn
     valueColor: '#000',
     placeholderColor: '#666',
     cursor: 'text',
-    bg: props.focused ? '#fff' : '#e6e6e6',
+    bg: props.focused ? '#fff' : props.hovered ? 'rgba(224, 224, 224, 0.65)' : '#e6e6e6',
     s: props.focused ? '0 20px 64px 0 rgba(0, 0, 0, 0.16)' : 'none',
     transition: 'all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)',
     value: props.value,
@@ -60,11 +69,8 @@ export const ContentInput = forwardRef<HTMLInputElement | MaskedInput, ContentIn
     onBlur: props.onBlur,
     onKeyDown: props.onKeyDown,
     onKeyUp: props.onKeyUp,
-    css: {
-      ':hover': {
-        backgroundColor: props.focused ? '#fff' : 'rgba(224, 224, 224, 0.65)',
-      },
-    },
+    onMouseEnter: props.onMouseEnter,
+    onMouseLeave: props.onMouseLeave,
   }
   return (
     props.mask ? (

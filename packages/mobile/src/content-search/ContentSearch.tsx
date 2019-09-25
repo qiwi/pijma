@@ -37,19 +37,25 @@ export const ContentSearch: FunctionComponent<ContentSearchProps> = (props) => (
     onSubmit={props.onSubmit}
     children={(renderProps) => (
       <Pos type="relative">
-        <ContentInput
-          value={props.value}
-          type="search"
-          pr={14}
-          error={false}
-          focused={renderProps.focused}
-          hovered={renderProps.hovered}
-          onChange={renderProps.onChange}
-          onFocus={renderProps.onFocus}
-        />
-        <Pos type="absolute" right={4} top={3} onClick={renderProps.onShow}>
-          <Icon name="search" color="#666"/>
-        </Pos>
+        <Box
+          width={1}
+          onMouseEnter={renderProps.onMouseEnter}
+          onMouseLeave={renderProps.onMouseLeave}
+        >
+          <ContentInput
+            value={props.value}
+            type="search"
+            pr={14}
+            error={false}
+            focused={renderProps.focused}
+            hovered={renderProps.hovered}
+            onChange={renderProps.onChange}
+            onFocus={renderProps.onFocus}
+          />
+          <Pos type="absolute" right={4} top={3} onClick={renderProps.onShow}>
+            <Icon name="search" color="#666"/>
+          </Pos>
+        </Box>
         <SimpleModal
           zIndex={10003}
           show={renderProps.show}

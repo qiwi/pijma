@@ -41,32 +41,38 @@ export const ContentSearch: FunctionComponent<ContentSearchProps> = (props) => (
         onSubmit={renderProps.onSubmit}
         children={(menuRenderProps) => (
           <Pos type="relative" ref={dropDownContainerRef} width={1}>
-            <ContentInput
-              value={props.value}
-              ref={renderProps.inputRef}
-              type="search"
-              pr={14}
-              error={false}
-              focused={renderProps.focused}
-              expanded={renderProps.show}
-              hovered={renderProps.hovered}
-              onChange={renderProps.onChange}
-              onFocus={renderProps.onFocus}
-              onBlur={renderProps.onBlur}
-              onKeyDown={menuRenderProps.onKeyDown}
-            />
-            <Pos
-              type="absolute"
-              cursor="pointer"
-              right={4}
-              top={3}
-              onClick={renderProps.onSubmit}
-              children={props.loading ? (
-                <Spinner color="#ff8c00" width={6} height={6}/>
-              ) : (
-                <Icon name="search" color="#666"/>
-              )}
-            />
+            <Box
+              width={1}
+              onMouseEnter={renderProps.onMouseEnter}
+              onMouseLeave={renderProps.onMouseLeave}
+            >
+              <ContentInput
+                value={props.value}
+                ref={renderProps.inputRef}
+                type="search"
+                pr={14}
+                error={false}
+                focused={renderProps.focused}
+                expanded={renderProps.show}
+                hovered={renderProps.hovered}
+                onChange={renderProps.onChange}
+                onFocus={renderProps.onFocus}
+                onBlur={renderProps.onBlur}
+                onKeyDown={menuRenderProps.onKeyDown}
+              />
+              <Pos
+                type="absolute"
+                cursor="pointer"
+                right={4}
+                top={3}
+                onClick={renderProps.onSubmit}
+                children={props.loading ? (
+                  <Spinner color="#ff8c00" width={6} height={6}/>
+                ) : (
+                  <Icon name="search" color="#666"/>
+                )}
+              />
+            </Box>
             <DropDown
               show={renderProps.show}
               rootClose={false}
