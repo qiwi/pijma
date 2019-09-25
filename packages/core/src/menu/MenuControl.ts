@@ -66,6 +66,12 @@ export default class MenuControl<I extends {id: string}> extends Component<MenuC
     }
   }
 
+  private submit: () => void = () => {
+    if (this.props.onSubmit) {
+      this.props.onSubmit()
+    }
+  }
+
   private scrollToItem: (item: RefObject<HTMLDivElement>) => void = (item) => {
     const containerElement = findDOMNode(this.containerRef.current) as HTMLDivElement
     const itemElement = findDOMNode(item.current) as HTMLDivElement
@@ -120,14 +126,8 @@ export default class MenuControl<I extends {id: string}> extends Component<MenuC
         this.selectItem(item)
       }
       else {
-        this.onSubmit()
+        this.submit()
       }
-    }
-  }
-
-  private onSubmit: () => void = () => {
-    if (this.props.onSubmit) {
-      this.props.onSubmit()
     }
   }
 

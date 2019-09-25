@@ -33,17 +33,17 @@ export default class ModalInputControl extends Component<ModalInputControlProps,
     }
   }
 
-  private onModalInputBlur: React.FocusEventHandler = (event: React.FocusEvent) => {
-    event.preventDefault()
-    if (this.modalInputRef && this.modalInputRef.current) {
-      this.modalInputRef.current.focus()
-    }
-  }
-
   private onBlur: React.FocusEventHandler = (event: React.FocusEvent) => {
     event.preventDefault()
     if (this.props.onBlur) {
       this.props.onBlur()
+    }
+  }
+
+  private onModalInputBlur: React.FocusEventHandler = (event: React.FocusEvent) => {
+    event.preventDefault()
+    if (this.modalInputRef && this.modalInputRef.current) {
+      this.modalInputRef.current.focus()
     }
   }
 
