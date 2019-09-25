@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.80.1](https://github.com/qiwi/pijma/compare/v1.80.0...v1.80.1) (2019-09-25)
+
+
+### Bug Fixes
+
+* payment-security-icon ([1795d13](https://github.com/qiwi/pijma/commit/1795d13))
+
 # [@qiwi/pijma-core-v1.79.0](https://github.com/qiwi/pijma/compare/v1.78.2...v1.79.0) (2019-09-24)
 
 
