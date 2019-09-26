@@ -118,23 +118,6 @@ initialState = {text: 'Многострочный текст превышающ�
 </Block>
 ```
 
-#### Поле с хинтом
-
-```jsx
-<Block>
-  <BlockContent>
-    <Box width={64}>
-      <TextAreaField
-        title="Поле ввода"
-        hint={<QuestionIcon />}
-        value={state.text}
-        onChange={text => setState({text})}
-      />
-    </Box>
-  </BlockContent>
-</Block>
-```
-
 #### Поле ввода с ограниченным количеством символов и количеством полей
 
 ```jsx

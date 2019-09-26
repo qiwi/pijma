@@ -14,7 +14,6 @@ export interface BasicTextAreaProps {
   placeholder?: string
   maxLength?: number
   transition?: string
-  padded: boolean
   disabled?: boolean
   error: boolean
   focused: boolean
@@ -35,7 +34,6 @@ export const BasicTextArea = forwardRef((props: BasicTextAreaProps, ref: Ref<HTM
     overflow={props.overflow}
     m={0}
     p={0}
-    pr={props.padded ? 7 : undefined}
     r={0}
     b="none"
     pb={props.disabled ? '1px' : props.error ? '0px' : props.focused ? '0px' : '1px'}

@@ -10,7 +10,6 @@ export interface TextAreaFieldProps {
   error?: ReactNode
   action?: ReactNode
   help?: ReactNode
-  hint?: ReactNode
   autoFocus?: boolean
   placeholder?: string
   disabled?: boolean
@@ -36,7 +35,6 @@ export const TextAreaField: FC<TextAreaFieldProps> = (props) => (
       <InputField
         title={props.title}
         active={renderProps.focused || !!props.value || !!props.placeholder}
-        padded={!!props.hint}
         input={(
           <BasicTextArea
             value={props.value}
@@ -44,7 +42,6 @@ export const TextAreaField: FC<TextAreaFieldProps> = (props) => (
             autoFocus={props.autoFocus}
             placeholder={props.placeholder}
             disabled={props.disabled}
-            padded={!!props.hint}
             error={!!props.error}
             focused={renderProps.focused}
             maxLength={props.maxLength}
@@ -59,7 +56,6 @@ export const TextAreaField: FC<TextAreaFieldProps> = (props) => (
             onKeyUp={renderProps.onKeyUp}
           />
         )}
-        hint={props.hint}
         error={props.error}
         help={props.help}
         action={props.action}
