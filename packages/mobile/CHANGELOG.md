@@ -1,3 +1,319 @@
+# [@qiwi/pijma-mobile-v1.80.2](https://github.com/qiwi/pijma/compare/v1.80.1...v1.80.2) (2019-09-25)
+
+
+### Bug Fixes
+
+* footer-out hover color ([4be360a](https://github.com/qiwi/pijma/commit/4be360a))
+
+# [@qiwi/pijma-mobile-v1.80.0](https://github.com/qiwi/pijma/compare/v1.79.0...v1.80.0) (2019-09-24)
+
+
+### Features
+
+* **mobile:** footer-app ([a72c3e5](https://github.com/qiwi/pijma/commit/a72c3e5))
+
+# [@qiwi/pijma-mobile-v1.78.2](https://github.com/qiwi/pijma/compare/v1.78.1...v1.78.2) (2019-09-20)
+
+
+### Bug Fixes
+
+* footer components overflow ([1b07c66](https://github.com/qiwi/pijma/commit/1b07c66))
+
+# [@qiwi/pijma-mobile-v1.78.1](https://github.com/qiwi/pijma/compare/v1.78.0...v1.78.1) (2019-09-20)
+
+
+### Bug Fixes
+
+* export footer-app ([cde9e35](https://github.com/qiwi/pijma/commit/cde9e35))
+
+# [@qiwi/pijma-mobile-v1.78.0](https://github.com/qiwi/pijma/compare/v1.77.0...v1.78.0) (2019-09-20)
+
+
+### Features
+
+* footer-app, footer-out ([366ba15](https://github.com/qiwi/pijma/commit/366ba15))
+
+# [@qiwi/pijma-mobile-v1.77.0](https://github.com/qiwi/pijma/compare/v1.76.0...v1.77.0) (2019-09-18)
+
+
+### Features
+
+* markdown with step list, optional size, export fix ([e6438db](https://github.com/qiwi/pijma/commit/e6438db))
+
+# [@qiwi/pijma-mobile-v1.76.0](https://github.com/qiwi/pijma/compare/v1.75.4...v1.76.0) (2019-09-18)
+
+
+### Features
+
+* footer icon link, footer nav, mobile apps icons ([f15853b](https://github.com/qiwi/pijma/commit/f15853b))
+
+# [@qiwi/pijma-mobile-v1.75.4](https://github.com/qiwi/pijma/compare/v1.75.3...v1.75.4) (2019-09-16)
+
+
+### Bug Fixes
+
+* **mobile:** header active z-index ([027d321](https://github.com/qiwi/pijma/commit/027d321))
+
+# [@qiwi/pijma-mobile-v1.75.3](https://github.com/qiwi/pijma/compare/v1.75.2...v1.75.3) (2019-09-13)
+
+
+### Bug Fixes
+
+* **mobile:** header ([5e0d65a](https://github.com/qiwi/pijma/commit/5e0d65a))
+
+# [@qiwi/pijma-mobile-v1.75.2](https://github.com/qiwi/pijma/compare/v1.75.1...v1.75.2) (2019-09-13)
+
+
+### Bug Fixes
+
+* weight for link and nav-link ([a9aca74](https://github.com/qiwi/pijma/commit/a9aca74))
+
+# [@qiwi/pijma-mobile-v1.75.1](https://github.com/qiwi/pijma/compare/v1.75.0...v1.75.1) (2019-09-12)
+
+
+### Bug Fixes
+
+* header components ([b618388](https://github.com/qiwi/pijma/commit/b618388))
+
+# [@qiwi/pijma-mobile-v1.75.0](https://github.com/qiwi/pijma/compare/v1.74.0...v1.75.0) (2019-09-09)
+
+
+### Features
+
+* oops ([ec7434b](https://github.com/qiwi/pijma/commit/ec7434b))
+
+# [@qiwi/pijma-mobile-v1.74.0](https://github.com/qiwi/pijma/compare/v1.73.0...v1.74.0) (2019-09-06)
+
+
+### Features
+
+* glossary and details ([112da84](https://github.com/qiwi/pijma/commit/112da84))
+
+# [@qiwi/pijma-mobile-v1.73.0](https://github.com/qiwi/pijma/compare/v1.72.0...v1.73.0) (2019-09-06)
+
+
+### Features
+
+* markdown ([1c0fd71](https://github.com/qiwi/pijma/commit/1c0fd71))
+
+# [@qiwi/pijma-mobile-v1.72.0](https://github.com/qiwi/pijma/compare/v1.71.0...v1.72.0) (2019-09-04)
+
+
+### Features
+
+* dropdown ([aa08958](https://github.com/qiwi/pijma/commit/aa08958))
+
+# [@qiwi/pijma-mobile-v1.71.0](https://github.com/qiwi/pijma/compare/v1.70.0...v1.71.0) (2019-09-02)
+
+
+### Features
+
+* image ([1968616](https://github.com/qiwi/pijma/commit/1968616))
+
+# [@qiwi/pijma-mobile-v1.70.0](https://github.com/qiwi/pijma/compare/v1.69.1...v1.70.0) (2019-08-23)
+
+
+### Features
+
+* icons refactoring ([a9d82ad](https://github.com/qiwi/pijma/commit/a9d82ad))
+
+# [@qiwi/pijma-mobile-v1.69.0](https://github.com/qiwi/pijma/compare/v1.68.0...v1.69.0) (2019-08-22)
+
+
+### Features
+
+* logo block link improvements ([6006c08](https://github.com/qiwi/pijma/commit/6006c08))
+
+# [@qiwi/pijma-mobile-v1.68.0](https://github.com/qiwi/pijma/compare/v1.67.0...v1.68.0) (2019-08-20)
+
+
+### Features
+
+* logo link ([94d01e6](https://github.com/qiwi/pijma/commit/94d01e6))
+
+# [@qiwi/pijma-mobile-v1.67.0](https://github.com/qiwi/pijma/compare/v1.66.1...v1.67.0) (2019-08-16)
+
+
+### Features
+
+* gh-pages redesign ([4810142](https://github.com/qiwi/pijma/commit/4810142))
+
+# [@qiwi/pijma-mobile-v1.66.1](https://github.com/qiwi/pijma/compare/v1.66.0...v1.66.1) (2019-08-16)
+
+
+### Bug Fixes
+
+* **mobile:** file link min height ([#203](https://github.com/qiwi/pijma/issues/203)) ([34cf648](https://github.com/qiwi/pijma/commit/34cf648))
+* **mobile:** menu item required props ([42f17a3](https://github.com/qiwi/pijma/commit/42f17a3))
+
+# [@qiwi/pijma-mobile-v1.66.0](https://github.com/qiwi/pijma/compare/v1.65.0...v1.66.0) (2019-08-16)
+
+
+### Features
+
+* multi ellipsis ([9d6c7b0](https://github.com/qiwi/pijma/commit/9d6c7b0))
+
+# [@qiwi/pijma-mobile-v1.65.0](https://github.com/qiwi/pijma/compare/v1.64.0...v1.65.0) (2019-08-12)
+
+
+### Features
+
+* stub radio field ([cc57271](https://github.com/qiwi/pijma/commit/cc57271))
+
+# [@qiwi/pijma-mobile-v1.64.0](https://github.com/qiwi/pijma/compare/v1.63.0...v1.64.0) (2019-08-12)
+
+
+### Features
+
+* stub switch field ([dfe681c](https://github.com/qiwi/pijma/commit/dfe681c))
+
+# [@qiwi/pijma-mobile-v1.63.0](https://github.com/qiwi/pijma/compare/v1.62.0...v1.63.0) (2019-08-12)
+
+
+### Features
+
+* stub checkbox field ([04ceef9](https://github.com/qiwi/pijma/commit/04ceef9))
+
+# [@qiwi/pijma-mobile-v1.62.0](https://github.com/qiwi/pijma/compare/v1.61.0...v1.62.0) (2019-08-09)
+
+
+### Features
+
+* status ([fdff013](https://github.com/qiwi/pijma/commit/fdff013))
+
+# [@qiwi/pijma-mobile-v1.60.2](https://github.com/qiwi/pijma/compare/v1.60.1...v1.60.2) (2019-07-18)
+
+
+### Bug Fixes
+
+* **package:** up lodash version [security] ([f83c8f2](https://github.com/qiwi/pijma/commit/f83c8f2))
+
+# [@qiwi/pijma-mobile-v1.60.1](https://github.com/qiwi/pijma/compare/v1.60.0...v1.60.1) (2019-07-10)
+
+
+### Performance Improvements
+
+* up deps ([a7bcce6](https://github.com/qiwi/pijma/commit/a7bcce6))
+
+# [@qiwi/pijma-mobile-v1.60.0](https://github.com/qiwi/pijma/compare/v1.59.0...v1.60.0) (2019-07-10)
+
+
+### Features
+
+* stub text field ([9a3cb71](https://github.com/qiwi/pijma/commit/9a3cb71))
+
+# [@qiwi/pijma-mobile-v1.59.0](https://github.com/qiwi/pijma/compare/v1.58.0...v1.59.0) (2019-07-10)
+
+
+### Features
+
+* stub button ([ccc59e1](https://github.com/qiwi/pijma/commit/ccc59e1))
+
+# [@qiwi/pijma-mobile-v1.58.0](https://github.com/qiwi/pijma/compare/v1.57.0...v1.58.0) (2019-07-10)
+
+
+### Features
+
+* stub typography ([13300bf](https://github.com/qiwi/pijma/commit/13300bf))
+
+# [@qiwi/pijma-mobile-v1.56.0](https://github.com/qiwi/pijma/compare/v1.55.0...v1.56.0) (2019-07-03)
+
+
+### Features
+
+* **mobile:** header ([68ff1a9](https://github.com/qiwi/pijma/commit/68ff1a9))
+
+# [@qiwi/pijma-mobile-v1.54.0](https://github.com/qiwi/pijma/compare/v1.53.0...v1.54.0) (2019-07-01)
+
+
+### Features
+
+* pagination ([044c308](https://github.com/qiwi/pijma/commit/044c308))
+
+# [@qiwi/pijma-mobile-v1.53.0](https://github.com/qiwi/pijma/compare/v1.52.0...v1.53.0) (2019-06-14)
+
+
+### Features
+
+* file link ([2026e18](https://github.com/qiwi/pijma/commit/2026e18))
+
+# [@qiwi/pijma-mobile-v1.52.0](https://github.com/qiwi/pijma/compare/v1.51.0...v1.52.0) (2019-06-14)
+
+
+### Features
+
+* list ([cfc9c5c](https://github.com/qiwi/pijma/commit/cfc9c5c))
+
+# [@qiwi/pijma-mobile-v1.51.0](https://github.com/qiwi/pijma/compare/v1.50.0...v1.51.0) (2019-06-14)
+
+
+### Features
+
+* breadcrumbs ([ca04379](https://github.com/qiwi/pijma/commit/ca04379))
+
+# [@qiwi/pijma-mobile-v1.50.0](https://github.com/qiwi/pijma/compare/v1.49.0...v1.50.0) (2019-06-14)
+
+
+### Features
+
+* block-content ([74af5fd](https://github.com/qiwi/pijma/commit/74af5fd))
+
+# [@qiwi/pijma-mobile-v1.49.0](https://github.com/qiwi/pijma/compare/v1.48.0...v1.49.0) (2019-06-11)
+
+
+### Features
+
+* **desktop:** logo block link ([e6e3d26](https://github.com/qiwi/pijma/commit/e6e3d26))
+
+# [@qiwi/pijma-mobile-v1.46.0](https://github.com/qiwi/pijma/compare/v1.45.0...v1.46.0) (2019-06-06)
+
+
+### Features
+
+* add accordion ([bc30234](https://github.com/qiwi/pijma/commit/bc30234))
+
+# [@qiwi/pijma-mobile-v1.45.0](https://github.com/qiwi/pijma/compare/v1.44.0...v1.45.0) (2019-06-04)
+
+
+### Features
+
+* notice ([dac01e7](https://github.com/qiwi/pijma/commit/dac01e7))
+
+# [@qiwi/pijma-mobile-v1.44.0](https://github.com/qiwi/pijma/compare/v1.43.0...v1.44.0) (2019-05-30)
+
+
+### Features
+
+* add props to paragraph and text ([5f218ab](https://github.com/qiwi/pijma/commit/5f218ab))
+
+# [@qiwi/pijma-mobile-v1.43.0](https://github.com/qiwi/pijma/compare/v1.42.0...v1.43.0) (2019-05-29)
+
+
+### Features
+
+* add mobile switch ([11190ea](https://github.com/qiwi/pijma/commit/11190ea))
+
+# [@qiwi/pijma-mobile-v1.42.0](https://github.com/qiwi/pijma/compare/v1.41.0...v1.42.0) (2019-05-29)
+
+
+### Features
+
+* add switch ([e956066](https://github.com/qiwi/pijma/commit/e956066))
+
+# [@qiwi/pijma-mobile-v1.40.0](https://github.com/qiwi/pijma/compare/v1.39.0...v1.40.0) (2019-05-21)
+
+
+### Features
+
+* breaker ([10bc3c0](https://github.com/qiwi/pijma/commit/10bc3c0))
+
+# [@qiwi/pijma-mobile-v1.39.0](https://github.com/qiwi/pijma/compare/v1.38.0...v1.39.0) (2019-05-13)
+
+
+### Features
+
+* drop up ([58e91ad](https://github.com/qiwi/pijma/commit/58e91ad))
+
 # [@qiwi/pijma-mobile-v1.37.0](https://github.com/qiwi/pijma/compare/v1.36.1...v1.37.0) (2019-04-10)
 
 

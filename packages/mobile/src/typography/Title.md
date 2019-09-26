@@ -10,9 +10,14 @@ font-weight: 900
 ```
 
 ```jsx
-<Spacer size="m">
-  <Title size="1">Title H1</Title>
-</Spacer>
+<Block>
+  <BlockContent>
+    <Spacer size="m">
+      <Title size="1">Title H1</Title>
+      <Title size="1" stub/>
+    </Spacer>
+  </BlockContent>
+</Block>
 ```
 
 ## Title 2
@@ -25,7 +30,24 @@ font-weight: 900
 ```
 
 ```jsx
-<Spacer size="m">
-  <Title size="2">Title H2</Title>
-</Spacer>
+<Block>
+  <BlockContent>
+    <Spacer size="m">
+      <Title size="2">Title H2</Title>
+      <Title size="2" stub/>
+    </Spacer>
+  </BlockContent>
+</Block>
+```
+
+Задать максимальное количество видимых строк
+
+```jsx
+<Block>
+  <BlockContent>
+    <Title size="2" clamp={4}>
+      В типографических элементах есть возможность задавать максимальное количество видимых строк через свойство clamp. Если текст выходит за заданные рамки, в конце текста будет добавлено многоточие
+    </Title>
+  </BlockContent>
+</Block>
 ```

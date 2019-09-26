@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Typo, TypoProps} from '@qiwi/pijma-core'
+import {Box, Breaker, Typo, TypoProps, Stub} from '@qiwi/pijma-core'
 
 export interface ParagraphProps {
   size?: 's' | 'm' | 'l'
@@ -8,6 +8,9 @@ export interface ParagraphProps {
   compact?: boolean
   color?: 'default' | 'support' | 'inverse'
   transform?: TypoProps['transform']
+  align?: TypoProps['align']
+  clamp?: number
+  stub?: boolean
 }
 
 const ParagraphSize: { [size in NonNullable<ParagraphProps['size']>]: number } = {
@@ -28,23 +31,80 @@ const ParagraphHeightCompact: { [size in NonNullable<ParagraphProps['size']>]: n
   l: 7,
 }
 
+const StubOffsetTop: { [size in NonNullable<ParagraphProps['size']>]: number } = {
+  s: 2,
+  m: 1,
+  l: 3,
+}
+
+const StubOffsetBottom: { [size in NonNullable<ParagraphProps['size']>]: number } = {
+  s: 1,
+  m: 2,
+  l: 2,
+}
+
+const StubOffsetCompactTop: { [size in NonNullable<ParagraphProps['size']>]: number } = {
+  s: 1,
+  m: 1,
+  l: 3,
+}
+
+const StubOffsetCompactBottom: { [size in NonNullable<ParagraphProps['size']>]: number } = {
+  s: 1,
+  m: 1,
+  l: 1,
+}
+
+const StubHeight: { [size in NonNullable<ParagraphProps['size']>]: number } = {
+  s: 2,
+  m: 3,
+  l: 3,
+}
+
 const ParagraphColor: { [color in NonNullable<ParagraphProps['color']>]: string } = {
   default: '#000',
   support: '#666',
   inverse: '#fff',
 }
 
-export const Paragraph: FunctionComponent<ParagraphProps> = ({size = 'm', bold = false, compact = false, color = 'default', transform, children}) => (
-  <Typo
-    as="p"
-    display="block"
-    size={ParagraphSize[size]}
-    height={compact ? ParagraphHeightCompact[size] : ParagraphHeight[size]}
-    weight={bold ? 500 : 300}
-    color={ParagraphColor[color]}
-    transform={transform}
-    children={children}
-  />
+export const Paragraph: FunctionComponent<ParagraphProps> = ({
+  size = 'm',
+  bold = false,
+  compact = false,
+  color = 'default',
+  transform,
+  align,
+  stub,
+  clamp,
+  children,
+}) => (
+  stub ? (
+    <Box>
+      {[0.8, 0.9, 0.7].map((width: number, id: number) => (
+        <Stub
+          key={id}
+          top={compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}
+          bottom={compact ? StubOffsetCompactBottom[size] : StubOffsetBottom[size]}
+          height={StubHeight[size]}
+          width={width}
+          inverse={color === 'inverse'}
+        />
+      ))}
+    </Box>
+  ) : (
+    <Typo
+      as="p"
+      display="block"
+      size={ParagraphSize[size]}
+      height={compact ? ParagraphHeightCompact[size] : ParagraphHeight[size]}
+      weight={bold ? 500 : 300}
+      color={ParagraphColor[color]}
+      transform={transform}
+      align={align}
+      clamp={clamp}
+      children={<Breaker children={children}/>}
+    />
+  )
 )
 
 Paragraph.defaultProps = {

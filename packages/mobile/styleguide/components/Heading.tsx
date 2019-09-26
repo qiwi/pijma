@@ -1,7 +1,5 @@
 import React, {FC} from 'react'
 
-import {themes, ThemeProvider} from '@qiwi/pijma-core'
-
 import {Heading, HeadingProps} from '@qiwi/pijma-mobile'
 
 interface HeadingRendererProps {
@@ -18,11 +16,9 @@ const LevelSize: { [level in HeadingRendererProps['level']]: HeadingProps['size'
 }
 
 const HeadingRenderer: FC<HeadingRendererProps> = (props) => (
-  <ThemeProvider theme={themes.orange}>
-    <Heading size={LevelSize[props.level]}>
-      {props.children}
-    </Heading>
-  </ThemeProvider>
+  <Heading size={LevelSize[props.level]}>
+    {props.children}
+  </Heading>
 )
 
 export default HeadingRenderer
