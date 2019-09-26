@@ -36,7 +36,7 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
     cloned.style.transition = 'none'
     cloned.style.width = `${this.field.current.getBoundingClientRect().width}px`
     cloned.style.height = `${lineHeight}px`
-    cloned.value = cloned.value
+    cloned.value = cloned.value + '¯\_(ツ)_/¯'
     const scrollHeight = cloned.scrollHeight - paddingTop - paddingBottom
     cloned.remove()
     this.setState({
