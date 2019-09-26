@@ -15,6 +15,7 @@ export default interface ContentSearchProps {
   error?: boolean
   loading?: boolean
   result?: ReactNode
+  equals?: (a: SearchItem, b: SearchItem) => boolean
   onShow?: () => void
   onHide?: () => void
   onCancel?: () => void

@@ -3,7 +3,7 @@ import {findDOMNode} from 'react-dom'
 import MenuControlProps from './MenuControlProps'
 import MenuControlState from './MenuControlState'
 
-export default class MenuControl<I extends {id: string}> extends Component<MenuControlProps<I>, MenuControlState<I>> {
+export default class MenuControl<I> extends Component<MenuControlProps<I>, MenuControlState<I>> {
 
   public componentDidUpdate(props: MenuControlProps<I>) {
     if (props.items !== this.props.items) {
@@ -11,8 +11,8 @@ export default class MenuControl<I extends {id: string}> extends Component<MenuC
         this.props.items.map((item => [item, createRef()])),
       )
       this.setState({
-        selectedItem: this.props.items.find(item => this.state.selectedItem && this.state.selectedItem.id === item.id),
-        focusedItem: this.props.items.find(item => this.state.selectedItem && this.state.selectedItem.id === item.id),
+        selectedItem: this.props.items.find(item => this.state.selectedItem && this.equals(this.state.selectedItem, item)),
+        focusedItem: this.props.items.find(item => this.state.selectedItem && this.equals(this.state.selectedItem, item)),
       })
     }
     if (
@@ -64,6 +64,10 @@ export default class MenuControl<I extends {id: string}> extends Component<MenuC
     if (this.props.onItemSelect) {
       this.props.onItemSelect(item)
     }
+  }
+
+  private equals(a: I, b: I): boolean {
+    return this.props.equals ? this.props.equals(a, b) : a === b
   }
 
   private submit: () => void = () => {
@@ -136,8 +140,8 @@ export default class MenuControl<I extends {id: string}> extends Component<MenuC
     if (!this.state.focusedItem && !this.state.selectedItem) {
       return items[0]
     }
-    const focusedId: number = items.findIndex(({id}) => (
-      this.state.focusedItem ? id === this.state.focusedItem.id : id === this.state.selectedItem!.id
+    const focusedId: number = items.findIndex(item => (
+      this.state.focusedItem ? this.equals(this.state.focusedItem, item) : this.equals(this.state.selectedItem!, item)
     ))
     return items[focusedId + 1 >= items.length ? 0 : focusedId + 1]
   }
@@ -147,8 +151,8 @@ export default class MenuControl<I extends {id: string}> extends Component<MenuC
     if (!this.state.focusedItem && !this.state.selectedItem) {
       return items[items.length - 1]
     }
-    const focusedId: number = items.findIndex(({id}) => (
-      this.state.focusedItem ? id === this.state.focusedItem.id : id === this.state.selectedItem!.id
+    const focusedId: number = items.findIndex(item => (
+      this.state.focusedItem ? this.equals(this.state.focusedItem, item) : this.equals(this.state.selectedItem!, item)
     ))
     return items[focusedId === 0 ? items.length - 1 : focusedId - 1]
   }
@@ -158,8 +162,8 @@ export default class MenuControl<I extends {id: string}> extends Component<MenuC
       items: this.props.items.map((item) => ({
         ...item,
         ref: this.itemsRefs.get(item)!,
-        selected: !!this.state.selectedItem && this.state.selectedItem.id === item.id,
-        focused: !!this.state.focusedItem && this.state.focusedItem.id === item.id,
+        selected: !!this.state.selectedItem && this.equals(this.state.selectedItem, item),
+        focused: !!this.state.focusedItem && this.equals(this.state.focusedItem, item),
         onClick: this.onItemClick(item),
         onMouseEnter: this.onItemEnter(item),
         onMouseLeave: this.onItemLeave(),

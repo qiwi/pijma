@@ -37,6 +37,7 @@ export const ContentSearch: FunctionComponent<ContentSearchProps> = (props) => (
     children={(renderProps) => (
       <MenuControl<SearchItem>
         items={props.items}
+        equals={props.equals}
         onItemSelect={props.onItemSelect}
         onSubmit={renderProps.onSubmit}
         children={(menuRenderProps) => (
