@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.81.0](https://github.com/qiwi/pijma/compare/v1.80.2...v1.81.0) (2019-09-26)
+
+
+### Features
+
+* textarea ([58e4d7c](https://github.com/qiwi/pijma/commit/58e4d7c))
+
 # [@qiwi/pijma-desktop-v1.80.2](https://github.com/qiwi/pijma/compare/v1.80.1...v1.80.2) (2019-09-25)
 
 
