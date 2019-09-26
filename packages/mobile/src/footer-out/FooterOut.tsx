@@ -32,7 +32,7 @@ const FooterOutLink: FC<FooterOutLinkProps> = (props) => (
         height={10}
         r={40}
         p={1.75}
-        b={renderProps.hover || renderProps.focus || renderProps.active ? 'solid 1px #000' : 'solid 1px #ccc'}
+        b={renderProps.hover || renderProps.focus || renderProps.active ? 'solid 1px #999' : 'solid 1px #ccc'}
         href={props.href}
         rel={props.rel}
         target={props.target}
@@ -48,7 +48,7 @@ const FooterOutLink: FC<FooterOutLinkProps> = (props) => (
         children={
           <Icon
             name={props.icon}
-            color={renderProps.hover || renderProps.focus || renderProps.active ? '#000' : '#999'}
+            color={renderProps.hover || renderProps.focus || renderProps.active ? '#666' : '#999'}
           />
         }
       />

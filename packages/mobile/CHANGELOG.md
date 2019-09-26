@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.80.2](https://github.com/qiwi/pijma/compare/v1.80.1...v1.80.2) (2019-09-25)
+
+
+### Bug Fixes
+
+* footer-out hover color ([4be360a](https://github.com/qiwi/pijma/commit/4be360a))
+
 # [@qiwi/pijma-mobile-v1.80.0](https://github.com/qiwi/pijma/compare/v1.79.0...v1.80.0) (2019-09-24)
 
 
