@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, {forwardRef, Ref} from 'react'
 
 import {LinkControl, Lnk, Flex, Pos, Card} from '@qiwi/pijma-core'
 import {Text} from '../typography/Text'
@@ -14,12 +14,11 @@ export interface HeaderMenuItemProps {
   rel?: string
   title?: string
   active?: boolean
-  ref?: React.RefObject<HTMLAnchorElement>
 }
 
 const PosLink = Pos.withComponent(Lnk)
 
-export const HeaderMenuItem: FC<HeaderMenuItemProps> = (props) => (
+export const HeaderMenuItem = forwardRef((props: HeaderMenuItemProps, ref: Ref<HTMLAnchorElement>) => (
   <LinkControl
     href={props.href}
     target={props.target}
@@ -30,7 +29,7 @@ export const HeaderMenuItem: FC<HeaderMenuItemProps> = (props) => (
     onBlur={props.onBlur}
     children={renderProps => (
       <PosLink
-        ref={props.ref}
+        ref={ref}
         height={1}
         type="relative"
         display="block"
@@ -65,7 +64,7 @@ export const HeaderMenuItem: FC<HeaderMenuItemProps> = (props) => (
       </PosLink>
     )}
   />
-)
+))
 
 HeaderMenuItem.defaultProps = {
   active: false,
