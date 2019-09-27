@@ -5,7 +5,7 @@ import {Typo, Pos, Flex, FlexItem} from '../primitive'
 export interface FieldProps {
   title?: ReactNode
   active: boolean
-  padded: boolean
+  padded?: boolean
   input: ReactNode
   hint?: ReactNode
   icon?: ReactNode

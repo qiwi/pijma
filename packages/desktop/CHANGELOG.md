@@ -1,3 +1,66 @@
+# [@qiwi/pijma-desktop-v1.81.0](https://github.com/qiwi/pijma/compare/v1.80.2...v1.81.0) (2019-09-26)
+
+
+### Features
+
+* textarea ([58e4d7c](https://github.com/qiwi/pijma/commit/58e4d7c))
+
+# [@qiwi/pijma-desktop-v1.80.2](https://github.com/qiwi/pijma/compare/v1.80.1...v1.80.2) (2019-09-25)
+
+
+### Bug Fixes
+
+* footer-out hover color ([4be360a](https://github.com/qiwi/pijma/commit/4be360a))
+
+# [@qiwi/pijma-desktop-v1.79.0](https://github.com/qiwi/pijma/compare/v1.78.2...v1.79.0) (2019-09-24)
+
+
+### Features
+
+* payment system, payment security and mobile app icons ([00e105d](https://github.com/qiwi/pijma/commit/00e105d))
+
+# [@qiwi/pijma-desktop-v1.78.2](https://github.com/qiwi/pijma/compare/v1.78.1...v1.78.2) (2019-09-20)
+
+
+### Bug Fixes
+
+* footer components overflow ([1b07c66](https://github.com/qiwi/pijma/commit/1b07c66))
+
+# [@qiwi/pijma-desktop-v1.78.1](https://github.com/qiwi/pijma/compare/v1.78.0...v1.78.1) (2019-09-20)
+
+
+### Bug Fixes
+
+* export footer-app ([cde9e35](https://github.com/qiwi/pijma/commit/cde9e35))
+
+# [@qiwi/pijma-desktop-v1.78.0](https://github.com/qiwi/pijma/compare/v1.77.0...v1.78.0) (2019-09-20)
+
+
+### Features
+
+* footer-app, footer-out ([366ba15](https://github.com/qiwi/pijma/commit/366ba15))
+
+# [@qiwi/pijma-desktop-v1.77.0](https://github.com/qiwi/pijma/compare/v1.76.0...v1.77.0) (2019-09-18)
+
+
+### Features
+
+* markdown with step list, optional size, export fix ([e6438db](https://github.com/qiwi/pijma/commit/e6438db))
+
+# [@qiwi/pijma-desktop-v1.76.0](https://github.com/qiwi/pijma/compare/v1.75.4...v1.76.0) (2019-09-18)
+
+
+### Features
+
+* footer icon link, footer nav, mobile apps icons ([f15853b](https://github.com/qiwi/pijma/commit/f15853b))
+
+# [@qiwi/pijma-desktop-v1.75.2](https://github.com/qiwi/pijma/compare/v1.75.1...v1.75.2) (2019-09-13)
+
+
+### Bug Fixes
+
+* weight for link and nav-link ([a9aca74](https://github.com/qiwi/pijma/commit/a9aca74))
+
 # [@qiwi/pijma-desktop-v1.75.0](https://github.com/qiwi/pijma/compare/v1.74.0...v1.75.0) (2019-09-09)
 
 
