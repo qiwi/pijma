@@ -14,6 +14,7 @@ export interface HeaderMenuItemProps {
   rel?: string
   title?: string
   active?: boolean
+  ref?: React.RefObject<HTMLAnchorElement>
 }
 
 const PosLink = Pos.withComponent(Lnk)
@@ -29,6 +30,7 @@ export const HeaderMenuItem: FC<HeaderMenuItemProps> = (props) => (
     onBlur={props.onBlur}
     children={renderProps => (
       <PosLink
+        ref={props.ref}
         height={1}
         type="relative"
         display="block"
