@@ -38,7 +38,7 @@ export const DropDown: FC<DropDownProps> = ({
 }) => (
   <Overlay
     show={show}
-    placement="bottom"
+    placement="bottom-start"
     target={target}
     container={container}
     rootClose={true}

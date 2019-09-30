@@ -14,6 +14,7 @@ export interface HeaderMenuItemProps {
   rel?: string
   title?: string
   active?: boolean
+  ref?: Ref<HTMLAnchorElement>
 }
 
 const PosLink = Pos.withComponent(Lnk)
