@@ -19,16 +19,17 @@ export interface CardProps extends BoxProps {
 
 export const CardNonProps = ['bg', 'b', 'bt', 'br', 'bb', 'bl', 'r', 'rtr', 'rtl', 'btr', 'btl', 's'].concat(BoxNonProps)
 
-const customScroll = (function() {
+const customScroll = (() => {
   try {
     const element = document.createElement('div')
     document.body.appendChild(element)
     element.style.overflow = 'scroll'
+    const result = element.offsetWidth !== element.clientWidth
     document.body.removeChild(element)
-    return element.offsetWidth !== element.clientWidth
+    return result
   }
   catch (e) {
-    return false
+    return undefined
   }
 })()
 
@@ -68,6 +69,11 @@ export const Card = styled(Box, {
       display: 'block',
       height: `calc(${cssValue(props.py || props.pt || props.p, theme.scale) || '8px'} - 8px)`,
       width: `calc(${cssValue(props.px || props.pl || props.p, theme.scale) || '8px'} - 8px)`,
+    },
+  } : customScroll === undefined ? {
+    '&::-webkit-scrollbar': {
+      width: 0,
+      height: 0,
     },
   } : {}),
 }))
