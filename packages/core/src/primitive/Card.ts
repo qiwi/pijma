@@ -2,7 +2,6 @@ import styled from '../styled'
 
 import {Value, cssValue} from './Value'
 import {Box, BoxNonProps, BoxProps} from './Box'
-
 export interface CardProps extends BoxProps {
   bg?: string
   s?: string
@@ -20,6 +19,19 @@ export interface CardProps extends BoxProps {
 
 export const CardNonProps = ['bg', 'b', 'bt', 'br', 'bb', 'bl', 'r', 'rtr', 'rtl', 'btr', 'btl', 's'].concat(BoxNonProps)
 
+const customScroll = (function() {
+  try {
+    const element = document.createElement('div')
+    document.body.appendChild(element)
+    element.style.overflow = 'scroll'
+    document.body.removeChild(element)
+    return element.offsetWidth !== element.clientWidth
+  }
+  catch (e) {
+    return false
+  }
+})()
+
 export const Card = styled(Box, {
   shouldForwardProp: (prop) => !CardNonProps.includes(prop),
 })<CardProps>(({theme, ...props}) => ({
@@ -35,7 +47,7 @@ export const Card = styled(Box, {
   borderBottomRightRadius: cssValue(props.rbr, 1, false),
   borderBottomLeftRadius: cssValue(props.rbl, 1, false),
   boxShadow: props.s,
-  ...(navigator.platform.match('Win') || navigator.platform.match('Linux') ? {
+  ...(customScroll ? {
     '&::-webkit-scrollbar': {
       cursor: 'pointer',
       width: 24,
