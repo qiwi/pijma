@@ -25,7 +25,7 @@ export const MenuItem: FC<MenuItemProps> = (props) => (
     onFocus={props.onFocus}
     onBlur={props.onBlur}
   >
-    <Flex py={2} minHeight={14}>
+    <Flex px={4} py={2} minHeight={14}>
       {props.icon ? (
         <FlexItem align={props.notes ? undefined : 'center'} shrink={0} mr={4}>
           {props.icon}
