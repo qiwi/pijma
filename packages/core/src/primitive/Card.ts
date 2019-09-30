@@ -2,6 +2,7 @@ import styled from '../styled'
 
 import {Value, cssValue} from './Value'
 import {Box, BoxNonProps, BoxProps} from './Box'
+
 export interface CardProps extends BoxProps {
   bg?: string
   s?: string
