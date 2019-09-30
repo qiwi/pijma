@@ -27,7 +27,7 @@ export const MenuLink: FC<MenuLinkProps> = (props) => (
     onBlur={props.onBlur}
     children={(renderProps) => (
       <CardLink
-        bg={renderProps.hover || renderProps.focus || renderProps.active ? '#f5f5f5' : undefined}
+        bg={renderProps.active ? '#e6e6e6' : renderProps.hover || renderProps.focus ? '#f5f5f5' : undefined}
         cursor="pointer"
         display="block"
         transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
