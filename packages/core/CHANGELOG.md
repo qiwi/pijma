@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.82.0](https://github.com/qiwi/pijma/compare/v1.81.0...v1.82.0) (2019-09-30)
+
+
+### Features
+
+* custom scrollbar ([0abb3ac](https://github.com/qiwi/pijma/commit/0abb3ac))
+
 # [@qiwi/pijma-core-v1.81.0](https://github.com/qiwi/pijma/compare/v1.80.2...v1.81.0) (2019-09-26)
 
 

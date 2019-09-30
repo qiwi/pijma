@@ -23,6 +23,14 @@
 </Card>
 ```
 
+### Scroll
+
+```jsx
+<Card height={80} m={5} r={10} bg="#fff" s="0 1px 2px 0 rgba(0, 0, 0, 0.12)" overflow="auto">
+  <Box height={200} width={1000}/>
+</Card>
+```
+
 ### Hints
 
 ```jsx
