@@ -1,4 +1,10 @@
-import React, {FunctionComponent} from 'react'
+import React, {
+  FunctionComponent,
+  ChangeEventHandler,
+  KeyboardEventHandler,
+  RefObject,
+  FocusEventHandler,
+} from 'react'
 import {css} from 'emotion'
 
 import {
@@ -15,6 +21,7 @@ import {
   FlexItem,
   IconProps,
   Input,
+  Spinner,
 } from '@qiwi/pijma-core'
 
 const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
@@ -36,31 +43,20 @@ contentTransition.defaultProps = {
   }),
 }
 
-const backdropTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
-
-backdropTransition.defaultProps = {
-  timeout: {
-    enter: 370,
-    exit: 250,
-  },
-  enterClassName: (timeout: number) => css({
-    opacity: 1,
-    transition: `opacity ${timeout}ms ease`,
-  }),
-  exitClassName: (timeout: number) => css({
-    opacity: 0,
-    transition: `opacity ${timeout}ms ease`,
-  }),
-}
-
 interface InputModalProps {
   value: string
   show: boolean
-  escapeClose?: boolean
-  backdropClose?: boolean
+  inputType?: string
+  inputRef?: RefObject<HTMLInputElement>
+  contentRef?: RefObject<HTMLDivElement>
+  error?: boolean
+  loading?: boolean
   submitIcon?: IconProps['name']
+  onChange?: ChangeEventHandler
+  onKeyDown?: KeyboardEventHandler
+  onFocus?: FocusEventHandler
+  onBlur?: FocusEventHandler
   onSubmit?: () => void
-  onChange?: (value: string) => void
   onShow?: () => void
   onHide?: () => void
   onBack?: () => void
@@ -77,48 +73,77 @@ const StyledModal = styled(Modal)<ModalProps>({
   overflow: 'auto',
 })
 
+const CardPos = Card.withComponent(Pos)
+const CardFlex = Card.withComponent(Flex)
+const BoxPos = Box.withComponent(Pos)
+
 const InputModal: FunctionComponent<InputModalProps> = (props) => (
   <StyledModal
     show={props.show}
-    keyboard={props.escapeClose}
     onShow={props.onShow}
     onHide={props.onHide}
     transition={contentTransition}
-    backdropTransition={backdropTransition}
-    renderBackdrop={({onClick}) => (
-      <Pos type="fixed" zIndex="auto" top={0} right={0} bottom={0} left={0}>
-        <Card bg="rgba(255, 255, 255, 0.96)" width={1} height={1} onClick={props.backdropClose ? onClick : undefined}/>
-      </Pos>
-    )}
+    restoreFocus={false}
     children={(
-      <Pos type="relative" width={1} height={1}>
-        <Card bg="#fff" width={1} height={1} overflow="auto">
-          <Card s="0 0 25px 0 rgba(0, 0, 0, 0.08)">
-            <Flex height={15} p={4} align="center">
-              {props.onBack ? (
-                <FlexItem shrink={0} mr={4}>
-                  <Icon name="arrow-left" color="#000"/>
-                </FlexItem>
-              ) : (
-                null
-              )}
-              <FlexItem grow={1} >
-                <Input value={props.value}/>
+      <Card
+        width={1}
+        height={1}
+        bg="#fff"
+      >
+        <CardPos
+          type="relative"
+          transition="all"
+          s="0 0 25px 0 rgba(0, 0, 0, 0.08)"
+        >
+          <CardFlex
+            height={15}
+            align="center"
+            p={4}
+            transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+            bb={props.error ? 'solid 2px #d0021b' : 'solid 2px transparent'}
+          >
+            {props.onBack ? (
+              <FlexItem shrink={0} mr={4} onClick={props.onBack}>
+                <Icon name="arrow-left" color="#000"/>
               </FlexItem>
-              {props.submitIcon && props.onSubmit ? (
-                <FlexItem shrink={0} ml={4}>
-                  <Icon name={props.submitIcon}/>
-                </FlexItem>
-              ) : (
-                null
-              )}
-            </Flex>
-          </Card>
-          <Box p={4}>
-            {props.children}
-          </Box>
-        </Card>
-      </Pos>
+            ) : (
+              null
+            )}
+            <FlexItem grow={1}>
+              <Input
+                value={props.value}
+                type={props.inputType}
+                ref={props.inputRef}
+                width={1}
+                autoFocus={true}
+                onFocus={props.onFocus}
+                onBlur={props.onBlur}
+                onKeyDown={props.onKeyDown}
+                onChange={props.onChange}
+              />
+            </FlexItem>
+            {props.submitIcon ? (
+              <FlexItem shrink={0} ml={4} onClick={props.onSubmit}>
+                {props.loading ? (
+                  <Spinner color="#ff8c00" width={6} height={6}/>
+                ) : (
+                  <Icon name={props.submitIcon} color="#666"/>
+                )}
+              </FlexItem>
+            ) : (
+              null
+            )}
+          </CardFlex>
+        </CardPos>
+        <BoxPos
+          ref={props.contentRef}
+          overflow="auto"
+          type="relative"
+          pt={3}
+          height="calc(100% - 60px)"
+          children={props.children}
+        />
+      </Card>
     )}
   />
 )

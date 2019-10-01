@@ -5,25 +5,19 @@ import {
   Image,
   MenuControl,
   Card,
-  Input,
   Icon,
   Flex,
   FlexItem,
-  Spinner,
   ContentInput,
   Spacer,
   Pos,
   Box,
 } from '@qiwi/pijma-core'
-import {SimpleModal} from '../modal'
 import {Text} from '../typography'
+import {InputModal} from '../input-modal'
 
 import ContentSearchProps from './ContentSearchProps'
 import SearchItem from './SearchItem'
-
-const CardPos = Card.withComponent(Pos)
-const CardFlex = Card.withComponent(Flex)
-const BoxPos = Box.withComponent(Pos)
 
 export const ContentSearch: FunctionComponent<ContentSearchProps> = (props) => (
   <ModalInputControl
@@ -56,103 +50,64 @@ export const ContentSearch: FunctionComponent<ContentSearchProps> = (props) => (
             <Icon name="search" color="#666"/>
           </Pos>
         </Box>
-        <SimpleModal
-          zIndex={10003}
-          show={renderProps.show}
-          onHide={renderProps.onHide}
-          restoreFocus={false}
-          p={0}
-        >
-          <MenuControl<SearchItem>
-            items={props.items}
-            equals={props.equals}
-            onItemSelect={props.onItemSelect}
-            onSubmit={renderProps.onSubmit}
-            children={(menuRenderProps) => (
-              <Card
-                width={1}
-                height={1}
-                bg="#fff"
-              >
-                <CardPos
-                  type="relative"
-                  transition="all"
-                  s="0 0 25px 0 rgba(0, 0, 0, 0.08)"
+        <MenuControl<SearchItem>
+          items={props.items}
+          equals={props.equals}
+          onItemSelect={props.onItemSelect}
+          onSubmit={renderProps.onSubmit}
+          children={(menuRenderProps) => (
+            <InputModal
+              value={props.value}
+              show={renderProps.show}
+              inputType="search"
+              inputRef={renderProps.modalInputRef}
+              contentRef={menuRenderProps.containerRef}
+              error={props.error}
+              loading={props.loading}
+              submitIcon="search"
+              onChange={renderProps.onChange}
+              onKeyDown={menuRenderProps.onKeyDown}
+              onFocus={renderProps.onFocus}
+              onBlur={renderProps.onModalInputBlur}
+              onSubmit={renderProps.onSubmit}
+              onShow={renderProps.onShow}
+              onHide={renderProps.onHide}
+              onBack={renderProps.onCancel}
+            >
+              {menuRenderProps.items.map((item, key) => (
+                <Card
+                  key={key}
+                  ref={item.ref}
+                  px={4}
+                  py={2}
+                  bg={item.selected ? '#E6E6E6' : item.focused ? '#F5F5F5' : '#FFF'}
+                  onClick={item.onClick}
+                  onMouseEnter={item.onMouseEnter}
+                  onMouseLeave={item.onMouseLeave}
                 >
-                  <CardFlex
-                    height={15}
-                    align="center"
-                    p={4}
-                    transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-                    bb={props.error ? 'solid 2px #d0021b' : 'solid 2px transparent'}
-                  >
-                    <FlexItem shrink={0} mr={4} onClick={renderProps.onCancel}>
-                      <Icon name="arrow-left"/>
+                  <Flex>
+                    <FlexItem shrink={0} mr={3}>
+                      <Image width={6} height={6} src={item.logo}/>
                     </FlexItem>
                     <FlexItem grow={1}>
-                      <Input
-                        value={props.value}
-                        ref={renderProps.modalInputRef}
-                        type="search"
-                        width={1}
-                        autoFocus={true}
-                        onBlur={renderProps.onModalInputBlur}
-                        onKeyDown={menuRenderProps.onKeyDown}
-                        onChange={renderProps.onChange}
-                      />
+                      <Spacer size="xxs">
+                        <Text bold>{item.title}</Text>
+                        <Text color="support">{item.description}</Text>
+                      </Spacer>
                     </FlexItem>
-                    <FlexItem shrink={0} ml={4} onClick={renderProps.onSubmit}>
-                      {props.loading ? (
-                        <Spinner color="#ff8c00" width={6} height={6}/>
-                      ) : (
-                        <Icon name="search" color="#666"/>
-                      )}
-                    </FlexItem>
-                  </CardFlex>
-                </CardPos>
-                <BoxPos
-                  ref={menuRenderProps.containerRef}
-                  overflow="auto"
-                  type="relative"
-                  pt={3}
-                  height="calc(100% - 60px)"
-                >
-                  {menuRenderProps.items.map((item, key) => (
-                    <Card
-                      key={key}
-                      ref={item.ref}
-                      px={4}
-                      py={2}
-                      bg={item.selected ? '#E6E6E6' : item.focused ? '#F5F5F5' : '#FFF'}
-                      onClick={item.onClick}
-                      onMouseEnter={item.onMouseEnter}
-                      onMouseLeave={item.onMouseLeave}
-                    >
-                      <Flex>
-                        <FlexItem shrink={0} mr={3}>
-                          <Image width={6} height={6} src={item.logo}/>
-                        </FlexItem>
-                        <FlexItem grow={1}>
-                          <Spacer size="xxs">
-                            <Text bold>{item.title}</Text>
-                            <Text color="support">{item.description}</Text>
-                          </Spacer>
-                        </FlexItem>
-                      </Flex>
-                    </Card>
-                  ))}
-                  {props.result ? (
-                    <Box px={4} py={2}>
-                      {props.result}
-                    </Box>
-                  ) : (
-                    null
-                  )}
-                </BoxPos>
-              </Card>
-            )}
-          />
-        </SimpleModal>
+                  </Flex>
+                </Card>
+              ))}
+              {props.result ? (
+                <Box px={4} py={2}>
+                  {props.result}
+                </Box>
+              ) : (
+                null
+              )}
+            </InputModal>
+          )}
+        />
       </Pos>
     )}
   />

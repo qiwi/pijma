@@ -105,7 +105,7 @@ const selectItem = (item) => setState({
 });
 <Block>
   <BlockContent>
-    <Box width={64}>
+    <Box width={128}>
       <ContentSearch
         value={state.value}
         items={state.banks}
