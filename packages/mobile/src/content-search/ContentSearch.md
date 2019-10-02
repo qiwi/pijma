@@ -3,73 +3,87 @@
 ```jsx
 const banks = [
   {
-    logo: require('./media/sber.png'),
+    value: 'Сбербанк',
     title: 'Сбербанк',
+    logo: require('./media/sber.png'),
     description: 'ПАО «Сбербанк России»',
   },
   {
-    logo: require('./media/alpha.png'),
+    value: 'Альфа-Банк',
     title: 'Альфа-Банк',
+    logo: require('./media/alpha.png'),
     description: 'АО «Альфа-Банк»',
   },
   {
-    logo: require('./media/open.png'),
+    value: 'Банк «Открытие»',
     title: 'Банк «Открытие»',
+    logo: require('./media/open.png'),
     description: 'ПАО Банк «ФК Открытие»',
   },
   {
-    logo: require('./media/vtb.png'),
+    value: 'Банк ВТБ',
     title: 'Банк ВТБ',
+    logo: require('./media/vtb.png'),
     description: 'Банк ВТБ (ПАО)',
   },
   {
-    logo: require('./media/mdm.png'),
+    value: 'МДМ Банк',
     title: 'МДМ Банк',
+    logo: require('./media/mdm.png'),
     description: 'ПАО «МДМ Банк»',
   },
   {
-    logo: require('./media/delta.png'),
+    value: 'DeltaCredit Банк',
     title: 'DeltaCredit Банк',
+    logo: require('./media/delta.png'),
     description: 'АО КБ ДЕЛЬТАКРЕДИТ',
   },
   {
-    logo: require('./media/otp.png'),
+    value: 'ОТП Банк',
     title: 'ОТП Банк',
+    logo: require('./media/otp.png'),
     description: 'АО «ОТП-Банк»',
   },
   {
-    logo: require('./media/pb.png'),
+    value: 'Почта Банк',
     title: 'Почта Банк',
+    logo: require('./media/pb.png'),
     description: 'ПАО «Почта Банк»',
   },
   {
-    logo: require('./media/psb.png'),
+    value: 'Промсвязьбанк',
     title: 'Промсвязьбанк',
+    logo: require('./media/psb.png'),
     description: 'ПАО «ПРОМСВЯЗЬБАНК»',
   },
   {
-    logo: require('./media/rai.png'),
+    value: 'Райффайзенбанк',
     title: 'Райффайзенбанк',
+    logo: require('./media/rai.png'),
     description: 'АО «Райффайзенбанк»',
   },
   {
-    logo: require('./media/rkb.png'),
+    value: 'Ренессанс Кредит Банк',
     title: 'Ренессанс Кредит Банк',
+    logo: require('./media/rkb.png'),
     description: 'КБ "Ренессанс Кредит" (ООО)',
   },
   {
-    logo: require('./media/roket.png'),
+    value: 'РокетБанк',
     title: 'РокетБанк',
+    logo: require('./media/roket.png'),
     description: 'ФИЛИАЛ РОКЕТБАНК КИВИ БАНК (АКЦИОНЕРНОЕ ОБЩЕСТВО)',
   },
   {
-    logo: require('./media/sov.png'),
+    value: 'Совкомбанк',
     title: 'Совкомбанк',
+    logo: require('./media/sov.png'),
     description: 'Публичное акционерное общество «Совкомбанк»',
   },
   {
-    logo: require('./media/std.png'),
+    value: 'Русский Стандарт',
     title: 'Русский Стандарт',
+    logo: require('./media/std.png'),
     description: 'АО «Банк Русский Стандарт»',
   },
 ];
@@ -80,12 +94,7 @@ const initialState = {
   banks: [],
 };
 const filterBanks = (value) => banks.filter(bank => {
-  return (
-    value !== '' && (
-      bank.description.toLowerCase().indexOf(value.toLowerCase()) !== -1
-      || bank.title.toLowerCase().indexOf(value.toLowerCase()) !== -1
-    )
-  );
+  return value !== '' && bank.value.toLowerCase().indexOf(value.toLowerCase()) !== -1;
 });
 const getBanks = (value) => {
   setState({loading: true})
@@ -97,12 +106,12 @@ const getBanks = (value) => {
   });
 }
 const equals = (a, b) => {
-  return a.title === b.title
+  return a.value === b.value
 };
 const selectItem = (item) => setState({
   show: false,
   loading: false,
-  value: item.title,
+  value: item.value,
   banks: filterBanks(item.title),
 });
 <Block>

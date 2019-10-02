@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from 'react'
+import React from 'react'
 
 import {
   ModalInputControl,
@@ -17,9 +17,9 @@ import {Text} from '../typography'
 import {InputModal} from '../input-modal'
 
 import ContentSearchProps from './ContentSearchProps'
-import SearchItem from './SearchItem'
+import SearchItemOptionModel from './SearchItemOptionModel'
 
-export const ContentSearch: FunctionComponent<ContentSearchProps> = (props) => (
+export const ContentSearch = <P extends {}>(props: ContentSearchProps<SearchItemOptionModel<P>, P>) => (
   <ModalInputControl
     show={props.show}
     onChange={props.onChange}
@@ -50,7 +50,7 @@ export const ContentSearch: FunctionComponent<ContentSearchProps> = (props) => (
             <Icon name="search" color="#666"/>
           </Pos>
         </Box>
-        <MenuControl<SearchItem>
+        <MenuControl<SearchItemOptionModel<P>>
           items={props.items}
           equals={props.equals}
           onItemSelect={props.onItemSelect}

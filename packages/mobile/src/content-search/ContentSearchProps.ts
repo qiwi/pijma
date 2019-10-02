@@ -1,10 +1,10 @@
 import {ReactNode} from 'react'
 
-import SearchItem from './SearchItem'
+import SearchItemOptionModel from './SearchItemOptionModel'
 
-export default interface ContentSearchProps {
+export default interface ContentSearchProps<O extends SearchItemOptionModel<V>, V> {
   value: string
-  items: SearchItem[]
+  items: O[]
   tabIndex: number
   autoComplete?: boolean
   autoFocus?: boolean
@@ -15,12 +15,12 @@ export default interface ContentSearchProps {
   error?: boolean
   loading?: boolean
   result?: ReactNode
-  equals?: (a: SearchItem, b: SearchItem) => boolean
+  equals?: (a: O, b: O) => boolean
   onShow?: () => void
   onHide?: () => void
   onCancel?: () => void
   onSubmit?: () => void
-  onItemSelect?: (item: SearchItem) => void
+  onItemSelect?: (item: O) => void
   onChange?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void

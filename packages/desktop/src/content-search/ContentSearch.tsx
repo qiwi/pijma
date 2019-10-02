@@ -1,4 +1,4 @@
-import React, {FunctionComponent, RefObject, createRef} from 'react'
+import React, {RefObject, createRef} from 'react'
 
 import {
   SuggestControl,
@@ -18,14 +18,14 @@ import {DropDown} from '../drop-down'
 import {Text} from '../typography'
 
 import ContentSearchProps from './ContentSearchProps'
-import SearchItem from './SearchItem'
+import SearchItemOptionModel from './SearchItemOptionModel'
 
 const CardPos = Card.withComponent(Pos)
 
 const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
 
-export const ContentSearch: FunctionComponent<ContentSearchProps> = (props) => (
-  <SuggestControl<SearchItem>
+export const ContentSearch = <P extends {}>(props: ContentSearchProps<SearchItemOptionModel<P>, P>) => (
+  <SuggestControl<SearchItemOptionModel<P>>
     show={props.show}
     items={props.items}
     onChange={props.onChange}
@@ -35,7 +35,7 @@ export const ContentSearch: FunctionComponent<ContentSearchProps> = (props) => (
     onHide={props.onHide}
     onSubmit={props.onSubmit}
     children={(renderProps) => (
-      <MenuControl<SearchItem>
+      <MenuControl<SearchItemOptionModel<P>>
         items={props.items}
         equals={props.equals}
         onItemSelect={props.onItemSelect}
