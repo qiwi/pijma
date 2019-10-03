@@ -85,7 +85,7 @@
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
-        icon={<Icon name="qiwi"/>}
+        icon={<Icon name="qiwi" size={12}/>}
       />
       <LogoLink
         horizontal

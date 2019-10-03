@@ -1,31 +1,39 @@
 import React, {FC, ReactNode} from 'react'
 
-import {Flex, FlexItem, Icon, Box} from '@qiwi/pijma-core'
-
-import {MenuLink, MenuLinkProps} from './MenuLink'
+import {Flex, FlexItem, Icon, Box, LinkControlProps} from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
+import {SectionLink} from '../link'
 
-export interface MenuItemProps extends MenuLinkProps {
+export interface MenuItemProps {
   text: string
   notes?: string
   icon?: ReactNode
   submenu?: boolean
+  tabIndex?: number
+  href?: string
+  target?: string
+  download?: string | boolean
+  rel?: string
+  title?: string
+  onClick?: LinkControlProps['onClick']
+  onFocus?: LinkControlProps['onFocus']
+  onBlur?: LinkControlProps['onBlur']
+  flat?: boolean
 }
 
 export const MenuItem: FC<MenuItemProps> = (props) => (
-  <MenuLink
-    tabIndex={props.tabIndex}
+  <SectionLink
     href={props.href}
     target={props.target}
     download={props.download}
     rel={props.rel}
-    title={props.title}
     onClick={props.onClick}
     onFocus={props.onFocus}
     onBlur={props.onBlur}
+    flat={props.flat}
   >
-    <Flex px={4} py={2} minHeight={14}>
+    <Flex px={6} py={2} minHeight={14}>
       {props.icon ? (
         <FlexItem align={props.notes ? undefined : 'center'} shrink={0} mr={4}>
           {props.icon}
@@ -55,5 +63,5 @@ export const MenuItem: FC<MenuItemProps> = (props) => (
         null
       )}
     </Flex>
-  </MenuLink>
+  </SectionLink>
 )
