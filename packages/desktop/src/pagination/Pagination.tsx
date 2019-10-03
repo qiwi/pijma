@@ -39,21 +39,21 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
       >
         <PaginationLink
           page={1}
-          disabled={renderProps.pages.includes(1)}
+          disabled={renderProps.active === 1}
           width={18}
           shadowed={shadowed}
           href={href ? href(1) : undefined}
-          onClick={renderProps.onPageClick(1, renderProps.pages.includes(1))}
+          onClick={renderProps.onPageClick(1, renderProps.active === 1)}
           children={({disabled}) => (
             <Icon name="angle-double-left-small" color={disabled ? '#ccc' : '#000'}/>
           )}
         />
         <PaginationLink
           page={renderProps.prev}
-          disabled={renderProps.pages.includes(1)}
+          disabled={renderProps.active === 1}
           shadowed={shadowed}
           href={href ? href(renderProps.prev) : undefined}
-          onClick={renderProps.onPageClick(renderProps.prev, renderProps.pages.includes(1))}
+          onClick={renderProps.onPageClick(renderProps.prev, renderProps.active === 1)}
           children={({disabled}) => (
             <Icon name="angle-small-left" color={disabled ? '#ccc' : '#000'}/>
           )}
@@ -78,21 +78,21 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
         ))}
         <PaginationLink
           page={renderProps.next}
-          disabled={renderProps.pages.includes(renderProps.total)}
+          disabled={renderProps.active === renderProps.total}
           shadowed={shadowed}
           href={href ? href(renderProps.next) : undefined}
-          onClick={renderProps.onPageClick(renderProps.next, renderProps.pages.includes(renderProps.total))}
+          onClick={renderProps.onPageClick(renderProps.next, renderProps.active === renderProps.total)}
           children={({disabled}) => (
             <Icon name="angle-small-right" color={disabled ? '#ccc' : '#000'}/>
           )}
         />
         <PaginationLink
           page={renderProps.total}
-          disabled={renderProps.pages.includes(renderProps.total)}
+          disabled={renderProps.active === renderProps.total}
           width={18}
           shadowed={shadowed}
           href={href ? href(renderProps.total) : undefined}
-          onClick={renderProps.onPageClick(renderProps.total, renderProps.pages.includes(renderProps.total))}
+          onClick={renderProps.onPageClick(renderProps.total, renderProps.active === renderProps.total)}
           children={({disabled}) => (
             <Icon name="angle-double-right-small" color={disabled ? '#ccc' : '#000'}/>
           )}
