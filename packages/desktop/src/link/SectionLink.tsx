@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 import styled from '@emotion/styled'
 
-import {Lnk, LinkControl, LinkControlProps, Card, Section} from '@qiwi/pijma-core'
+import {Lnk, LinkControl, LinkControlProps, Section} from '@qiwi/pijma-core'
 
 export interface SectionLinkProps {
   tabIndex?: number
@@ -18,7 +18,7 @@ export interface SectionLinkProps {
   flat?: boolean
 }
 
-const SectionLnk = styled(Card.withComponent(Lnk))().withComponent(Section)
+const SectionLnk = styled(Lnk)().withComponent(Section)
 
 export const SectionLink: FC<SectionLinkProps> = (props) => (
   <LinkControl
