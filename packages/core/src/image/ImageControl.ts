@@ -94,8 +94,8 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
       const image = document.createElement('img')
       image.src = this.props.src
       const complete = image.complete
-    	image.src = ''
-    	return complete
+      image.src = ''
+      return complete
     }
     catch (e) {
       return false
