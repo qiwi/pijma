@@ -1,3 +1,52 @@
+# [@qiwi/pijma-core-v1.82.4](https://github.com/qiwi/pijma/compare/v1.82.3...v1.82.4) (2019-10-07)
+
+
+### Bug Fixes
+
+* **core:** card scroll corner ([118483f](https://github.com/qiwi/pijma/commit/118483f))
+
+# [@qiwi/pijma-core-v1.82.3](https://github.com/qiwi/pijma/compare/v1.82.2...v1.82.3) (2019-10-07)
+
+
+### Bug Fixes
+
+* **core:** image cache ([13bd3b4](https://github.com/qiwi/pijma/commit/13bd3b4))
+
+# [@qiwi/pijma-core-v1.82.2](https://github.com/qiwi/pijma/compare/v1.82.1...v1.82.2) (2019-10-04)
+
+
+### Bug Fixes
+
+* edge grid ([1a68aa8](https://github.com/qiwi/pijma/commit/1a68aa8))
+
+# [@qiwi/pijma-core-v1.82.0](https://github.com/qiwi/pijma/compare/v1.81.0...v1.82.0) (2019-09-30)
+
+
+### Features
+
+* custom scrollbar ([0abb3ac](https://github.com/qiwi/pijma/commit/0abb3ac))
+
+# [@qiwi/pijma-core-v1.81.0](https://github.com/qiwi/pijma/compare/v1.80.2...v1.81.0) (2019-09-26)
+
+
+### Features
+
+* textarea ([58e4d7c](https://github.com/qiwi/pijma/commit/58e4d7c))
+
+# [@qiwi/pijma-core-v1.80.1](https://github.com/qiwi/pijma/compare/v1.80.0...v1.80.1) (2019-09-25)
+
+
+### Bug Fixes
+
+* payment-security-icon ([1795d13](https://github.com/qiwi/pijma/commit/1795d13))
+
+# [@qiwi/pijma-core-v1.79.0](https://github.com/qiwi/pijma/compare/v1.78.2...v1.79.0) (2019-09-24)
+
+
+### Features
+
+* payment system, payment security and mobile app icons ([00e105d](https://github.com/qiwi/pijma/commit/00e105d))
+
 # [@qiwi/pijma-core-v1.78.0](https://github.com/qiwi/pijma/compare/v1.77.0...v1.78.0) (2019-09-20)
 
 

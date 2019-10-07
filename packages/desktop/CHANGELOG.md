@@ -1,3 +1,31 @@
+# [@qiwi/pijma-desktop-v1.82.1](https://github.com/qiwi/pijma/compare/v1.82.0...v1.82.1) (2019-10-03)
+
+
+### Bug Fixes
+
+* pagination prev/next buttons disables ([b0e050f](https://github.com/qiwi/pijma/commit/b0e050f))
+
+# [@qiwi/pijma-desktop-v1.81.0](https://github.com/qiwi/pijma/compare/v1.80.2...v1.81.0) (2019-09-26)
+
+
+### Features
+
+* textarea ([58e4d7c](https://github.com/qiwi/pijma/commit/58e4d7c))
+
+# [@qiwi/pijma-desktop-v1.80.2](https://github.com/qiwi/pijma/compare/v1.80.1...v1.80.2) (2019-09-25)
+
+
+### Bug Fixes
+
+* footer-out hover color ([4be360a](https://github.com/qiwi/pijma/commit/4be360a))
+
+# [@qiwi/pijma-desktop-v1.79.0](https://github.com/qiwi/pijma/compare/v1.78.2...v1.79.0) (2019-09-24)
+
+
+### Features
+
+* payment system, payment security and mobile app icons ([00e105d](https://github.com/qiwi/pijma/commit/00e105d))
+
 # [@qiwi/pijma-desktop-v1.78.2](https://github.com/qiwi/pijma/compare/v1.78.1...v1.78.2) (2019-09-20)
 
 
