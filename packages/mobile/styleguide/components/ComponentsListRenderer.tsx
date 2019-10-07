@@ -27,7 +27,6 @@ const ComponentsListRenderer: FC<ComponentsListRendererProps> = (props) => {
           </Fragment>
         ) : (
           <MenuItem
-            flat
             key={i}
             href={href}
             target={shouldOpenInNewTab ? '_blank' : undefined}

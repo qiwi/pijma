@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 
 import styled from '@emotion/styled'
 
-import {Lnk, LinkControl, LinkControlProps, Section} from '@qiwi/pijma-core'
+import {Lnk, LinkControl, LinkControlProps, Section, RenderChild} from '@qiwi/pijma-core'
 
 export interface SectionLinkProps {
   tabIndex?: number
@@ -16,6 +16,11 @@ export interface SectionLinkProps {
   onBlur?: LinkControlProps['onBlur']
   select?: boolean
   flat?: boolean
+  children: RenderChild<{
+    active: boolean
+    focus: boolean
+    hover: boolean
+  }>
 }
 
 const SectionLnk = styled(Lnk)().withComponent(Section)
@@ -49,7 +54,11 @@ export const SectionLink: FC<SectionLinkProps> = (props) => (
         onMouseLeave={renderProps.onMouseLeave}
         onMouseUp={renderProps.onMouseUp}
         onMouseDown={renderProps.onMouseDown}
-        children={props.children}
+        children={props.children({
+          active: renderProps.active,
+          focus: renderProps.focus,
+          hover: renderProps.hover,
+        })}
       />
     )}
   />

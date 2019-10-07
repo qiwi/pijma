@@ -2,9 +2,11 @@
 <Block>
   <BlockContent>
     <SectionLink href="//qiwi.com" target="_blank">
-      <Box p={2}>
-        <Paragraph children="href"/>
-      </Box>
+      {({active, focus, hover}) => (
+        <Box p={2}>
+          <Paragraph children="href"/>
+        </Box>
+      )}
     </SectionLink>
   </BlockContent>
 </Block>
@@ -16,21 +18,11 @@
 <Block>
   <BlockContent>
     <SectionLink select href="//qiwi.com" target="_blank">
-      <Box p={2}>
-        <Paragraph children="href"/>
-      </Box>
-    </SectionLink>
-  </BlockContent>
-</Block>
-```
-
-```jsx
-<Block>
-  <BlockContent>
-    <SectionLink select flat href="//qiwi.com" target="_blank">
-      <Box p={2}>
-        <Paragraph children="href"/>
-      </Box>
+      {({active, focus, hover}) => (
+        <Box p={2}>
+          <Paragraph children="href"/>
+        </Box>
+      )}
     </SectionLink>
   </BlockContent>
 </Block>
