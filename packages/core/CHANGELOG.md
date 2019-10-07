@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.82.4](https://github.com/qiwi/pijma/compare/v1.82.3...v1.82.4) (2019-10-07)
+
+
+### Bug Fixes
+
+* **core:** card scroll corner ([118483f](https://github.com/qiwi/pijma/commit/118483f))
+
 # [@qiwi/pijma-core-v1.82.3](https://github.com/qiwi/pijma/compare/v1.82.2...v1.82.3) (2019-10-07)
 
 
