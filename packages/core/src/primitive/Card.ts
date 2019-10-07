@@ -61,7 +61,6 @@ export const Card = styled(Box, {
       borderRadius: 24,
       backgroundClip: 'padding-box',
       border: '8px solid transparent',
-      transition: 'all 500ms cubic-bezier(0.4, 0.0, 0.2, 1)',
     },
     '&::-webkit-scrollbar-thumb:hover': {
       backgroundColor: 'rgba(0, 0, 0, 0.4)',
@@ -71,9 +70,6 @@ export const Card = styled(Box, {
       display: 'block',
       height: `calc(${cssValue(props.py || props.pt || props.p, theme.scale) || '8px'} - 8px)`,
       width: `calc(${cssValue(props.px || props.pl || props.p, theme.scale) || '8px'} - 8px)`,
-    },
-    '&::-webkit-scrollbar-corner': {
-      backgroundColor: 'transparent',
     },
   } : customScroll === undefined ? {
     '&::-webkit-scrollbar': {
