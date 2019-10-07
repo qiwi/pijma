@@ -43,13 +43,20 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
 
   private onChange: (inView: boolean) => void = (inView) => {
     clearTimeout(this.viewedTimer)
-    if (inView) {
-      this.viewedTimer = setTimeout(() => {
-        this.setState({
-          viewed: true,
-        })
-      }, this.props.viewedDelay)
+    if (!inView) {
+      return
     }
+    if (this.isCached) {
+      this.setState({
+        viewed: true,
+      })
+      return
+    }
+    this.viewedTimer = setTimeout(() => {
+      this.setState({
+        viewed: true,
+      })
+    }, this.props.viewedDelay)
   }
 
   private onLoad: () => void = () => {
@@ -80,6 +87,19 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
       return undefined
     }
     return this.props.srcSet
+  }
+
+  private get isCached(): boolean {
+    try {
+      const image = document.createElement('img')
+      image.src = this.props.src
+      const complete = image.complete
+      image.src = ''
+      return complete
+    }
+    catch (e) {
+      return false
+    }
   }
 
   public render() {
