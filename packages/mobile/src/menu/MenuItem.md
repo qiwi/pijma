@@ -1,30 +1,30 @@
 ```jsx
 <Card bg="#fff" py={4}>
-  <MenuItem
+  <MenuLink
     icon={<Icon name="qiwi"/>}
     text="text"
   />
-  <MenuItem
+  <MenuLink
     icon={<Icon name="qiwi"/>}
     text="long text long text long text long text long text long text long text"
   />
-  <MenuItem
+  <MenuLink
     icon={<Icon name="qiwi"/>}
     text="long text long text long text long text long text long text long text"
     notes="long notes long notes long notes long notes long notes long notes"
   />
-  <MenuItem
+  <MenuLink
     icon={<Icon name="qiwi"/>}
     text="long text long text long text long text long text long text long text"
     notes="with notes"
   />
-  <MenuItem
+  <MenuLink
     submenu
     icon={<Icon name="qiwi"/>}
     text="text"
     notes="with notes"
   />
-  <MenuItem
+  <MenuLink
     submenu
     icon={<Icon name="qiwi"/>}
     text="text"
@@ -34,31 +34,31 @@
 
 ```jsx
 <Card bg="#fff" py={4}>
-  <MenuItem
+  <MenuLink
     icon={<Icon size={12} name="qiwi"/>}
     text="text"
   />
-  <MenuItem
+  <MenuLink
     icon={<Icon size={12} name="qiwi"/>}
     text="long text long text long text long text long text long text long text"
   />
-  <MenuItem
+  <MenuLink
     icon={<Icon size={12} name="qiwi"/>}
     text="long text long text long text long text long text long text long text"
     notes="long notes long notes long notes long notes long notes long notes"
   />
-  <MenuItem
+  <MenuLink
     icon={<Icon size={12} name="qiwi"/>}
     text="long text long text long text long text long text long text long text"
     notes="with notes"
   />
-  <MenuItem
+  <MenuLink
     submenu
     icon={<Icon size={12} name="qiwi"/>}
     text="text"
     notes="with notes"
   />
-  <MenuItem
+  <MenuLink
     submenu
     icon={<Icon size={12} name="qiwi"/>}
     text="text"
@@ -68,31 +68,31 @@
 
 ```jsx
 <Card bg="#fff" py={4}>
-  <MenuItem
+  <MenuLink
     text="text"
   />
-  <MenuItem
+  <MenuLink
     text="long text long text long text long text long text long text long text"
   />
-  <MenuItem
+  <MenuLink
     text="long text long text long text long text long text long text long text"
     notes="long notes long notes long notes long notes long notes long notes"
   />
-  <MenuItem
+  <MenuLink
     text="long text long text long text long text long text long text long text"
     notes="with notes"
   />
-  <MenuItem
+  <MenuLink
     submenu
     text="long text long text long text long text long text long text long text"
     notes="with notes"
   />
-  <MenuItem
+  <MenuLink
     submenu
     text="text"
     notes="with notes"
   />
-  <MenuItem
+  <MenuLink
     submenu
     text="text"
   />

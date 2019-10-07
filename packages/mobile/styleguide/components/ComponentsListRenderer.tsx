@@ -1,6 +1,6 @@
 import React, {FC, ReactNode, Fragment} from 'react'
 
-import {MenuCaption, MenuItem} from '@qiwi/pijma-mobile'
+import {MenuCaption, MenuLink} from '@qiwi/pijma-mobile'
 
 interface ComponentsListRendererProps {
   items: Array<{
@@ -26,7 +26,7 @@ const ComponentsListRenderer: FC<ComponentsListRendererProps> = (props) => {
             {content}
           </Fragment>
         ) : (
-          <MenuItem
+          <MenuLink
             key={i}
             href={href}
             target={shouldOpenInNewTab ? '_blank' : undefined}
