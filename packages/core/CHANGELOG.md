@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.82.3](https://github.com/qiwi/pijma/compare/v1.82.2...v1.82.3) (2019-10-07)
+
+
+### Bug Fixes
+
+* **core:** image cache ([13bd3b4](https://github.com/qiwi/pijma/commit/13bd3b4))
+
 # [@qiwi/pijma-core-v1.82.2](https://github.com/qiwi/pijma/compare/v1.82.1...v1.82.2) (2019-10-04)
 
 
