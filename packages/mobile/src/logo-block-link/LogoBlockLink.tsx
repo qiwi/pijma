@@ -1,5 +1,5 @@
 import React, {FC, ReactElement, ReactNode} from 'react'
-import {Box, Flex, FlexItem, Spacer} from '@qiwi/pijma-core'
+import {Box, Flex, FlexItem, Spacer, Image} from '@qiwi/pijma-core'
 import {BlockLink} from '../link'
 import {Paragraph} from '../typography'
 
@@ -18,8 +18,6 @@ export interface LogoBlockLinkProps {
   onFocus?: () => void
   onBlur?: () => void
 }
-
-const Img = Box.withComponent('img')
 
 export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description, actions, ...props}) => (
   <BlockLink
@@ -45,11 +43,11 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
               height={12}
             >
               {typeof icon === 'string' ? (
-                <Img
+                <Image
                   src={icon}
                   alt={title}
-                  maxWidth={12}
-                  maxHeight={12}
+                  width={12}
+                  height={12}
                 />
               ) : (
                 icon
@@ -98,7 +96,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
         >
           <Box width={14} height={14} mt={2} mx="auto">
             {typeof icon === 'string' ? (
-              <Img src={icon} alt={title} maxWidth={14} maxHeight={14}/>
+              <Image src={icon} alt={title} width={14} height={14}/>
             ) : (
               icon
             )}
