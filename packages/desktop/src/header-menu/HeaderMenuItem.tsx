@@ -1,12 +1,9 @@
-import React, {FC} from 'react'
+import React, {forwardRef, Ref} from 'react'
 
 import {LinkControl, Lnk, Flex, Pos, Card} from '@qiwi/pijma-core'
 import {Text} from '../typography/Text'
 
 export interface HeaderMenuItemProps {
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
-  onFocus?: () => void
-  onBlur?: () => void
   tabIndex?: number
   href?: string
   target?: string
@@ -14,11 +11,15 @@ export interface HeaderMenuItemProps {
   rel?: string
   title?: string
   active?: boolean
+  ref?: Ref<HTMLAnchorElement>
+  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
+  onFocus?: () => void
+  onBlur?: () => void
 }
 
 const PosLink = Pos.withComponent(Lnk)
 
-export const HeaderMenuItem: FC<HeaderMenuItemProps> = (props) => (
+export const HeaderMenuItem = forwardRef((props: HeaderMenuItemProps, ref: Ref<HTMLAnchorElement>) => (
   <LinkControl
     href={props.href}
     target={props.target}
@@ -30,6 +31,7 @@ export const HeaderMenuItem: FC<HeaderMenuItemProps> = (props) => (
     children={renderProps => (
       <PosLink
         as={props.href ? 'a' : undefined}
+        ref={ref}
         height={1}
         type="relative"
         display="block"
@@ -60,13 +62,13 @@ export const HeaderMenuItem: FC<HeaderMenuItemProps> = (props) => (
         </Flex>
         {props.active ? (
           <Pos type="absolute" height="4px" bottom={0} right={0} left={0}>
-            <Card bg="#ff8c00" height={1} width={1} rtr={4} rtl={4} />
+            <Card bg="#ff8c00" height={1} width={1} rtr={4} rtl={4}/>
           </Pos>
         ) : null}
       </PosLink>
     )}
   />
-)
+))
 
 HeaderMenuItem.defaultProps = {
   active: false,
