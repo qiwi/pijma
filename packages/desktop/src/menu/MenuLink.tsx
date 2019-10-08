@@ -20,7 +20,7 @@ export interface MenuLinkProps {
   onBlur?: LinkControlProps['onBlur']
 }
 
-const MenuItemLink = styled(Lnk)().withComponent(MenuItem)
+const MenuItemLnk = styled(Lnk)().withComponent(MenuItem)
 
 export const MenuLink: FC<MenuLinkProps> = (props) => (
   <LinkControl
@@ -32,7 +32,7 @@ export const MenuLink: FC<MenuLinkProps> = (props) => (
     onFocus={props.onFocus}
     onBlur={props.onBlur}
     children={(renderProps) => (
-      <MenuItemLink
+      <MenuItemLnk
         as={props.href ? 'a' : undefined}
         notes={props.notes}
         icon={props.icon}
