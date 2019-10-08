@@ -14,7 +14,7 @@ export interface SectionLinkProps {
   onClick?: LinkControlProps['onClick']
   onFocus?: LinkControlProps['onFocus']
   onBlur?: LinkControlProps['onBlur']
-  select?: boolean
+  selected?: boolean
   flat?: boolean
   children: RenderChild<{
     active: boolean
@@ -38,7 +38,7 @@ export const SectionLink: FC<SectionLinkProps> = (props) => (
       <SectionLnk
         as="a"
         flat={props.flat}
-        active={props.select ? props.select : renderProps.active}
+        active={props.selected !== undefined ? props.selected : renderProps.active}
         hover={renderProps.hover}
         focus={renderProps.focus}
         tabIndex={props.tabIndex}
