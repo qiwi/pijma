@@ -5,7 +5,7 @@ import {Flex, FlexItem, Icon, Box, Section} from '@qiwi/pijma-core'
 import {Paragraph} from '../typography'
 
 export interface MenuItemProps {
-  text: string
+  title: string
   notes?: string
   icon?: ReactNode
   submenu?: boolean
@@ -33,7 +33,7 @@ export const MenuItem: FC<MenuItemProps> = (props) => (
       )}
       <FlexItem align="center" grow={1}>
         <Flex justify="center" direction="column">
-          <Paragraph clamp={props.icon && !props.notes ? 2 : undefined} bold>{props.text}</Paragraph>
+          <Paragraph clamp={props.icon && !props.notes ? 2 : undefined} bold>{props.title}</Paragraph>
           {props.notes ? (
             <Box mt={1}>
               <Paragraph size="s" color="support">

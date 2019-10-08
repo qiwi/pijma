@@ -1,9 +1,9 @@
 ```jsx
 <Block>
   <BlockContent>
-    <MenuLink href="/" text="Проверить платеж по квитанции"/>
-    <MenuLink href="/" text="Обратиться в поддержку"/>
-    <MenuLink href="/" text="Вопросы и ответы"/> 
+    <MenuLink active href="/" title="Проверить платеж по квитанции"/>
+    <MenuLink href="/" title="Обратиться в поддержку"/>
+    <MenuLink href="/" title="Вопросы и ответы"/> 
   </BlockContent>
 </Block>
 ```

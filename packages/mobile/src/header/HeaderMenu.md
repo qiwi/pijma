@@ -16,26 +16,22 @@ initialState = {showMenu: false};
       <Striper>
         <MenuContainer>
           <MenuLink
-            flat
             text="Components"
             notes="List of pijma components"
             submenu
           />
           <MenuLink
-            flat
             text="link"
             notes="with notes"
             href="https://qiwi.com"
           />
           <MenuLink
-            flat
             text="link"
             href="https://qiwi.com"
           />
         </MenuContainer>
         <MenuContainer>
           <MenuLink
-            flat
             text="Закрыть меню"
             href="https://qiwi.com"
             onClick={() => setState({showMenu: false})}

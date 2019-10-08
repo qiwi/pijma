@@ -48,6 +48,7 @@ export const HeaderMenuItem: FC<HeaderMenuItemProps> = (props) => (
       >
         <Flex height={1} direction="column" align="middle" justify="center">
           <Text
+            bold
             color={renderProps.hover || renderProps.focus ? 'warning' : 'default'}
             transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
             decoration="none"

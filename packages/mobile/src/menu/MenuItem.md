@@ -1,100 +1,118 @@
 ```jsx
 <Card bg="#fff" py={4}>
-  <MenuLink
+  <MenuItem
     icon={<Icon name="qiwi"/>}
-    text="text"
+    title="text"
+    focus={false}
   />
-  <MenuLink
+  <MenuItem
     icon={<Icon name="qiwi"/>}
-    text="long text long text long text long text long text long text long text"
+    title="long text long text long text long text long text long text long text"
+    active
   />
-  <MenuLink
+  <MenuItem
     icon={<Icon name="qiwi"/>}
-    text="long text long text long text long text long text long text long text"
+    title="long text long text long text long text long text long text long text"
     notes="long notes long notes long notes long notes long notes long notes"
+    focus={false}
   />
-  <MenuLink
+  <MenuItem
     icon={<Icon name="qiwi"/>}
-    text="long text long text long text long text long text long text long text"
+    title="long text long text long text long text long text long text long text"
     notes="with notes"
+    focus={false}
   />
-  <MenuLink
+  <MenuItem
     submenu
     icon={<Icon name="qiwi"/>}
-    text="text"
+    title="text"
     notes="with notes"
   />
-  <MenuLink
+  <MenuItem
     submenu
     icon={<Icon name="qiwi"/>}
-    text="text"
+    title="text"
+    focus={false}
   />
 </Card>
 ```
 
 ```jsx
 <Card bg="#fff" py={4}>
-  <MenuLink
+  <MenuItem
     icon={<Icon size={12} name="qiwi"/>}
-    text="text"
+    title="text"
+    focus={false}
   />
-  <MenuLink
+  <MenuItem
     icon={<Icon size={12} name="qiwi"/>}
-    text="long text long text long text long text long text long text long text"
+    title="long text long text long text long text long text long text long text"
+    focus={false}
   />
-  <MenuLink
+  <MenuItem
     icon={<Icon size={12} name="qiwi"/>}
-    text="long text long text long text long text long text long text long text"
+    title="long text long text long text long text long text long text long text"
     notes="long notes long notes long notes long notes long notes long notes"
+    focus={false}
   />
-  <MenuLink
+  <MenuItem
     icon={<Icon size={12} name="qiwi"/>}
-    text="long text long text long text long text long text long text long text"
+    title="long text long text long text long text long text long text long text"
     notes="with notes"
+    focus={false}
   />
-  <MenuLink
+  <MenuItem
     submenu
     icon={<Icon size={12} name="qiwi"/>}
-    text="text"
+    title="text"
     notes="with notes"
+    focus={false}
   />
-  <MenuLink
+  <MenuItem
     submenu
     icon={<Icon size={12} name="qiwi"/>}
-    text="text"
+    title="text"
+    focus={false}
   />
 </Card>
 ```
 
 ```jsx
 <Card bg="#fff" py={4}>
-  <MenuLink
-    text="text"
+  <MenuItem
+    title="text"
+    focus={false}
   />
-  <MenuLink
-    text="long text long text long text long text long text long text long text"
+  <MenuItem
+    title="long text long text long text long text long text long text long text"
+    focus={false}
   />
-  <MenuLink
-    text="long text long text long text long text long text long text long text"
+  <MenuItem
+    title="long text long text long text long text long text long text long text"
     notes="long notes long notes long notes long notes long notes long notes"
+    focus={false}
   />
-  <MenuLink
-    text="long text long text long text long text long text long text long text"
+  <MenuItem
+    title="long text long text long text long text long text long text long text"
     notes="with notes"
+    focus={false}
   />
-  <MenuLink
+  <MenuItem
     submenu
-    text="long text long text long text long text long text long text long text"
+    title="long text long text long text long text long text long text long text"
     notes="with notes"
+    focus={false}
   />
-  <MenuLink
+  <MenuItem
     submenu
-    text="text"
+    title="text"
     notes="with notes"
+    focus={false}
   />
-  <MenuLink
+  <MenuItem
     submenu
-    text="text"
+    title="text"
+    focus={false}
   />
 </Card>
 ```

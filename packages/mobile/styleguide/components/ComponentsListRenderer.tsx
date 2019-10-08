@@ -30,7 +30,7 @@ const ComponentsListRenderer: FC<ComponentsListRendererProps> = (props) => {
             key={i}
             href={href}
             target={shouldOpenInNewTab ? '_blank' : undefined}
-            text={visibleName}
+            title={visibleName}
           />
         )
       ))}

@@ -6,15 +6,15 @@ import {Lnk, LinkControl, LinkControlProps, Section, RenderChild} from '@qiwi/pi
 
 export interface SectionLinkProps {
   tabIndex?: number
-  href?: string
-  target?: string
-  download?: string | boolean
-  rel?: string
+  href?: LinkControlProps['href']
+  target?: LinkControlProps['target']
+  download?: LinkControlProps['download']
+  rel?: LinkControlProps['rel']
   title?: string
   onClick?: LinkControlProps['onClick']
   onFocus?: LinkControlProps['onFocus']
   onBlur?: LinkControlProps['onBlur']
-  selected?: boolean
+  active?: boolean
   flat?: boolean
   children: RenderChild<{
     active: boolean
@@ -38,7 +38,7 @@ export const SectionLink: FC<SectionLinkProps> = (props) => (
       <SectionLnk
         as="a"
         flat={props.flat}
-        active={props.selected !== undefined ? props.selected : renderProps.active}
+        active={props.active ? props.active : renderProps.active}
         hover={renderProps.hover}
         focus={renderProps.focus}
         tabIndex={props.tabIndex}

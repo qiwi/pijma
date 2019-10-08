@@ -5,18 +5,16 @@ import {LinkControl, LinkControlProps, Lnk, styled} from '@qiwi/pijma-core'
 import {MenuItem} from '../menu'
 
 export interface MenuLinkProps {
-  text: string
+  title: string
   notes?: string
-  hover?: boolean
   icon?: ReactNode
   submenu?: boolean
-  round?: boolean
+  active?: boolean
   tabIndex?: number
-  href?: string
-  target?: string
-  download?: string | boolean
-  rel?: string
-  title?: string
+  href?: LinkControlProps['href']
+  target?: LinkControlProps['target']
+  download?: LinkControlProps['download']
+  rel?: LinkControlProps['rel']
   onClick?: LinkControlProps['onClick']
   onFocus?: LinkControlProps['onFocus']
   onBlur?: LinkControlProps['onBlur']
@@ -35,16 +33,16 @@ export const MenuLink: FC<MenuLinkProps> = (props) => (
     onBlur={props.onBlur}
     children={(renderProps) => (
       <MenuItemLink
-        text={props.text}
+        as={props.href ? 'a' : undefined}
         notes={props.notes}
         icon={props.icon}
         submenu={props.submenu}
-        round={props.round}
-        active={renderProps.active}
+        active={props.active ? props.active : renderProps.active}
         hover={renderProps.hover}
         focus={renderProps.focus}
         tabIndex={props.tabIndex}
         href={props.href}
+        title={props.title}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
