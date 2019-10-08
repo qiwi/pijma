@@ -43,6 +43,8 @@ export const MenuLink: FC<MenuLinkProps> = (props) => (
         tabIndex={props.tabIndex}
         href={props.href}
         title={props.title}
+        target={props.target}
+        download={props.download}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
@@ -50,8 +52,6 @@ export const MenuLink: FC<MenuLinkProps> = (props) => (
         onMouseLeave={renderProps.onMouseLeave}
         onMouseUp={renderProps.onMouseUp}
         onMouseDown={renderProps.onMouseDown}
-        target={props.target}
-        download={props.download}
       />
     )}
   />
