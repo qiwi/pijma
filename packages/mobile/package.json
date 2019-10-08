@@ -19,7 +19,8 @@
     "lib"
   ],
   "dependencies": {
-    "@emotion/core": "^10.0.16",
+    "@emotion/core": "^10.0.21",
+    "@emotion/style": "^0.8.0",
     "@emotion/styled": "^10.0.15",
     "@qiwi/pijma-core": "^1.x.x",
     "@types/markdown-to-jsx": "^6.9.0",

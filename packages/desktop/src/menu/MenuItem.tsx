@@ -1,4 +1,4 @@
-import React, {FC, ReactNode} from 'react'
+import React, {forwardRef, ReactNode, Ref} from 'react'
 
 import {Flex, FlexItem, Icon, Box, Section} from '@qiwi/pijma-core'
 
@@ -15,7 +15,7 @@ export interface MenuItemProps {
   focus?: boolean
 }
 
-export const MenuItem: FC<MenuItemProps> = ({
+export const MenuItem = forwardRef(({
   notes,
   icon,
   submenu,
@@ -24,8 +24,9 @@ export const MenuItem: FC<MenuItemProps> = ({
   active,
   focus,
   ...props
-}) => (
+}: MenuItemProps, ref: Ref<HTMLDivElement>) => (
   <Section
+    ref={ref}
     active={active}
     focus={focus}
     hover={hover}
@@ -63,4 +64,4 @@ export const MenuItem: FC<MenuItemProps> = ({
       )}
     </Flex>
   </Section>
-)
+))
