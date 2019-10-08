@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react'
 
-import {Box, Flex, FlexItem, Spacer} from '@qiwi/pijma-core'
+import {Box, Flex, FlexItem, Spacer, Image} from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
 import {SectionLink} from '../link'
@@ -19,8 +19,6 @@ export interface LogoLinkProps {
   onFocus?: () => void
   onBlur?: () => void
 }
-
-const Img = Box.withComponent('img')
 
 export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizontal, ...props}) => (
   <SectionLink
@@ -43,11 +41,11 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizonta
               height={12}
             >
               {typeof icon === 'string' ? (
-                <Img
+                <Image
                   src={icon}
                   alt={title}
-                  maxWidth={12}
-                  maxHeight={12}
+                  width={12}
+                  height={12}
                 />
               ) : (
                 icon
@@ -80,11 +78,11 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizonta
         <Box p={4} height={description ? 53 : 48}>
           <Box width={16} height={16} mx="auto">
             {typeof icon === 'string' ? (
-              <Img
+              <Image
                 src={icon}
                 alt={title}
-                maxWidth={16}
-                maxHeight={16}
+                width={16}
+                height={16}
               />
             ) : (
               icon
