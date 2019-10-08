@@ -39,6 +39,7 @@ export const HeaderMenuItem: FC<HeaderMenuItemProps> = (props) => (
         target={props.target}
         download={props.download}
         rel={props.rel}
+        title={props.title}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
