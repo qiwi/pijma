@@ -29,6 +29,7 @@ export const HeaderMenuItem: FC<HeaderMenuItemProps> = (props) => (
     onBlur={props.onBlur}
     children={renderProps => (
       <PosLink
+        as={props.href ? 'a' : undefined}
         height={1}
         type="relative"
         display="block"
