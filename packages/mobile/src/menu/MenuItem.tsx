@@ -15,29 +15,38 @@ export interface MenuItemProps {
   focus?: boolean
 }
 
-export const MenuItem: FC<MenuItemProps> = (props) => (
+export const MenuItem: FC<MenuItemProps> = ({
+  notes,
+  icon,
+  submenu,
+  round,
+  hover,
+  active,
+  focus,
+  ...props
+}) => (
   <Section
-    active={props.active}
-    focus={props.focus}
-    hover={props.hover}
-    flat={!props.round}
+    active={active}
+    focus={focus}
+    hover={hover}
+    flat={!round}
     {...props}
   >
     <Flex px={6} py={2} minHeight={14}>
-      {props.icon ? (
-        <FlexItem align={props.notes ? undefined : 'center'} shrink={0} mr={4}>
-          {props.icon}
+      {icon ? (
+        <FlexItem align={notes ? undefined : 'center'} shrink={0} mr={4}>
+          {icon}
         </FlexItem>
       ) : (
         null
       )}
       <FlexItem align="center" grow={1}>
         <Flex justify="center" direction="column">
-          <Paragraph clamp={props.icon && !props.notes ? 2 : undefined} bold>{props.title}</Paragraph>
-          {props.notes ? (
+          <Paragraph clamp={icon && !notes ? 2 : undefined} bold>{props.title}</Paragraph>
+          {notes ? (
             <Box mt={1}>
               <Paragraph size="s" color="support">
-                {props.notes}
+                {notes}
               </Paragraph>
             </Box>
           ) : (
@@ -45,7 +54,7 @@ export const MenuItem: FC<MenuItemProps> = (props) => (
           )}
         </Flex>
       </FlexItem>
-      {props.submenu ? (
+      {submenu ? (
         <FlexItem align="center" shrink={0} width={6} height={6} ml={3}>
           <Icon name="angle-right"/>
         </FlexItem>

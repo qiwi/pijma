@@ -10,7 +10,7 @@ export interface LogoLinkProps {
   title: string
   description?: string
   tabIndex?: number
-  href?: string
+  href: string
   target?: string
   download?: string | boolean
   rel?: string

@@ -9,7 +9,7 @@ export interface LogoBlockLinkProps {
   description?: string
   actions?: ReactElement[]
   tabIndex?: number
-  href?: string
+  href: string
   target?: string
   download?: string | boolean
   rel?: string

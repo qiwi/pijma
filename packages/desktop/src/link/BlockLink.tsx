@@ -5,7 +5,7 @@ import {RenderChild, LinkControl, LinkControlProps, Card, Lnk, Block, styled} fr
 export interface BlockLinkProps {
   tabIndex?: number
   accent?: boolean
-  href?: LinkControlProps['href']
+  href: LinkControlProps['href']
   target?: LinkControlProps['target']
   download?: LinkControlProps['download']
   rel?: LinkControlProps['rel']
@@ -33,12 +33,14 @@ export const BlockLink: FC<BlockLinkProps> = (props) => (
     rel={props.rel}
     children={(renderProps) => (
       <BlockLnk
+        as="a"
         accent={props.accent}
         hover={renderProps.hover}
         focus={renderProps.focus}
         active={renderProps.active}
         tabIndex={props.tabIndex}
         href={props.href}
+        title={props.title}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
