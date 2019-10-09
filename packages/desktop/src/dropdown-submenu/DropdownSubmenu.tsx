@@ -81,6 +81,7 @@ export const DropdownSubmenu: FC<DropdownSubmenuProps> = ({
             top={7}
             right={7}
             cursor="pointer"
+            onClick={onHide}
           >
             <Icon name="cross" color="#666"/>
           </Pos>
