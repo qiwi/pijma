@@ -38,26 +38,28 @@
   <FlexItem pb={4}>
     <BlockLink href="//qiwi.com" target="_blank">
       {({active, focus, hover}) => (
-        <Box
-          as="img"
-          src="https://static.qiwi.com/img/qiwi_com/promo/main/banner/new/132/b.jpg"
-          srcSet="https://static.qiwi.com/img/qiwi_com/promo/main/banner/new/132/b@2x.jpg 2x, https://static.qiwi.com/img/qiwi_com/promo/main/banner/new/132/b@3x.jpg 3x"
-          width={1}
-          height="auto"
-        />
+        <Card r={10} overflow="hidden">
+          <Image
+            src="https://static.qiwi.com/img/qiwi_com/promo/main/banner/new/132/b.jpg"
+            srcSet="https://static.qiwi.com/img/qiwi_com/promo/main/banner/new/132/b@2x.jpg 2x, https://static.qiwi.com/img/qiwi_com/promo/main/banner/new/132/b@3x.jpg 3x"
+            width={95}
+            height={136}
+          />
+        </Card>
       )}
     </BlockLink>
   </FlexItem>
   <FlexItem>
     <BlockLink href="//qiwi.com" target="_blank" accent>
       {({active, focus, hover}) => (
-        <Box
-          as="img"
-          src="https://static.qiwi.com/img/qiwi_com/promo/main/banner/new/132/b.jpg"
-          srcSet="https://static.qiwi.com/img/qiwi_com/promo/main/banner/new/132/b@2x.jpg 2x, https://static.qiwi.com/img/qiwi_com/promo/main/banner/new/132/b@3x.jpg 3x"
-          width={1}
-          height="auto"
-        />
+       <Card r={10} overflow="hidden">
+          <Image
+            src="https://static.qiwi.com/img/qiwi_com/promo/main/banner/new/132/b.jpg"
+            srcSet="https://static.qiwi.com/img/qiwi_com/promo/main/banner/new/132/b@2x.jpg 2x, https://static.qiwi.com/img/qiwi_com/promo/main/banner/new/132/b@3x.jpg 3x"
+            width={95}
+            height={136}
+          />
+        </Card>
       )}
     </BlockLink>
   </FlexItem>

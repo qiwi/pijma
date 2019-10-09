@@ -1,0 +1,119 @@
+```jsx
+<Card bg="#fff" py={4}>
+  <MenuLink
+    icon={<Icon name="qiwi"/>}
+    title="text"
+    href="/"
+  />
+  <MenuLink
+    icon={<Icon name="qiwi"/>}
+    title="long text long text long text long text long text long text long text"
+    href="/"
+  />
+  <MenuLink
+    icon={<Icon name="qiwi"/>}
+    title="long text long text long text long text long text long text long text"
+    notes="long notes long notes long notes long notes long notes long notes"
+    href="/"
+  />
+  <MenuLink
+    icon={<Icon name="qiwi"/>}
+    title="long text long text long text long text long text long text long text"
+    notes="with notes"
+    href="/"
+  />
+  <MenuLink
+    submenu
+    icon={<Icon name="qiwi"/>}
+    title="text"
+    notes="with notes"
+    href="/"
+  />
+  <MenuLink
+    submenu
+    icon={<Icon name="qiwi"/>}
+    title="text"
+    href="/"
+  />
+</Card>
+```
+
+```jsx
+<Card bg="#fff" py={4}>
+  <MenuLink
+    icon={<Icon size={12} name="qiwi"/>}
+    title="text"
+    href="/"
+  />
+  <MenuLink
+    icon={<Icon size={12} name="qiwi"/>}
+    title="long text long text long text long text long text long text long text"
+    href="/"
+  />
+  <MenuLink
+    icon={<Icon size={12} name="qiwi"/>}
+    title="long text long text long text long text long text long text long text"
+    notes="long notes long notes long notes long notes long notes long notes"
+    href="/"
+  />
+  <MenuLink
+    icon={<Icon size={12} name="qiwi"/>}
+    title="long text long text long text long text long text long text long text"
+    notes="with notes"
+    href="/"
+  />
+  <MenuLink
+    submenu
+    icon={<Icon size={12} name="qiwi"/>}
+    title="text"
+    notes="with notes"
+    href="/"
+  />
+  <MenuLink
+    submenu
+    icon={<Icon size={12} name="qiwi"/>}
+    title="text"
+    href="/"
+  />
+</Card>
+```
+
+```jsx
+<Card bg="#fff" py={4}>
+  <MenuLink
+    title="text"
+    href="/"
+  />
+  <MenuLink
+    title="long text long text long text long text long text long text long text"
+    href="/"
+  />
+  <MenuLink
+    title="long text long text long text long text long text long text long text"
+    notes="long notes long notes long notes long notes long notes long notes"
+    href="/"
+  />
+  <MenuLink
+    title="long text long text long text long text long text long text long text"
+    notes="with notes"
+    href="/"
+  />
+  <MenuLink
+    submenu
+    title="long text long text long text long text long text long text long text"
+    notes="with notes"
+    href="/"
+  />
+  <MenuLink
+    submenu
+    title="text"
+    notes="with notes"
+    href="/"
+  />
+  <MenuLink
+    submenu
+    title="text"
+    href="/"
+  />
+</Card>
+```
