@@ -25,8 +25,8 @@ const transition: FC<SimpleTransitionProps> = (props) => <SimpleTransition {...p
 
 transition.defaultProps = {
   timeout: {
-    enter: 120,
-    exit: 120,
+    enter: 1200,
+    exit: 1200,
   },
   enterClassName: (timeout: number) => css({
     transform: 'translateY(0)',

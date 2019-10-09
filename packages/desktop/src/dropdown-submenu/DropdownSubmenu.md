@@ -4,30 +4,29 @@ const DropdownSubmenuExample = () => {
   const container = React.useRef()
   const item = React.useRef()
   return (
-    <Pos display="inline-block" type="relative" ref={container}>
-      <HeaderMenu
-        ref={item}
-        children={[
-          {href: `${location.href}?menu=1`, title: 'Платежи', active: true},
-          {href: `${location.href}?menu=2`, title: 'Переводы'},
-          {title: 'Пополнение кошелька', onClick: () => alert('Пополение')},
-        ]}
-      />
-      <DropdownSubmenu 
-        show={show}
-        target={item.current}
-        container={container.current}
-        onHide={() => setShow(false)}
-      >
-        <Paragraph children="text"/>
-      </DropdownSubmenu>
+    <React.Fragment>
+    <Pos display="inline-block" type="relative" zIndex={1000} ref={container}>
+      <Header>
+        <HeaderMenu
+          children={[
+            {href: '', title: 'Платежи', active: {show}, onClick: () => setShow(!show), ref: {item}},
+            {href: '', title: 'Переводы'},
+            {title: 'Пополнение кошелька', onClick: () => alert('Пополение')},
+          ]}
+        />
+      </Header>
     </Pos>
+    <DropdownSubmenu 
+      show={show}
+      target={item.current}
+      container={container.current}
+      onHide={() => setShow(false)}
+    >
+      <Paragraph children="text"/>
+    </DropdownSubmenu>
+    </React.Fragment>
   )
 }
 
-<Block>
-  <BlockContent>
-    <DropdownSubmenuExample/>
-  </BlockContent>
-</Block>
+<DropdownSubmenuExample/>
 ```
