@@ -1,4 +1,4 @@
-import React, {forwardRef, ReactNode} from 'react'
+import React, {forwardRef, PropsWithChildren} from 'react'
 
 import {Card} from '../primitive'
 
@@ -7,12 +7,11 @@ export interface SectionProps {
   active?: boolean
   focus?: boolean
   flat?: boolean
-  children: ReactNode
 }
 
-export const Section = forwardRef<HTMLDivElement, SectionProps>(({
-  hover,
-  active,
+export const Section = forwardRef<HTMLDivElement, PropsWithChildren<SectionProps>>(({
+  hover = false,
+  active = false,
   focus = true,
   flat,
   ...props

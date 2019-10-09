@@ -17,7 +17,7 @@
 ```jsx
 <Block>
   <BlockContent>
-    <SectionLink selected href="//qiwi.com" target="_blank">
+    <SectionLink active href="//qiwi.com" target="_blank">
       {({active, focus, hover}) => (
         <Box p={2}>
           <Paragraph children="href"/>

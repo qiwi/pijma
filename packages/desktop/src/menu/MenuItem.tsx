@@ -20,9 +20,9 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(({
   icon,
   submenu,
   round,
-  hover,
-  active,
-  focus,
+  hover = false,
+  active = false,
+  focus = false,
   ...props
 }, ref) => (
   <Section
