@@ -16,6 +16,7 @@ export interface MenuItemProps {
 }
 
 export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(({
+  text,
   notes,
   icon,
   submenu = false,
@@ -43,7 +44,7 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(({
       )}
       <FlexItem align="center" grow={1}>
         <Flex justify="center" direction="column">
-          <Paragraph clamp={icon && !notes ? 2 : undefined} bold>{props.text}</Paragraph>
+          <Paragraph clamp={icon && !notes ? 2 : undefined} bold>{text}</Paragraph>
           {notes ? (
             <Box mt={1}>
               <Paragraph size="s" color="support">
