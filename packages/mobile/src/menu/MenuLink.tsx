@@ -43,8 +43,9 @@ export const MenuLink: FC<MenuLinkProps> = (props) => (
         tabIndex={props.tabIndex}
         href={props.href}
         title={props.title}
-        target={props.target}
-        download={props.download}
+        target={props.href ? props.target : undefined}
+        download={props.href ? props.download : undefined}
+        rel={props.href ? props.rel : undefined}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}

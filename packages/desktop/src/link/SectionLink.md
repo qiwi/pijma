@@ -1,29 +1,26 @@
 ```jsx
 <Block>
   <BlockContent>
-    <SectionLink href="//qiwi.com" target="_blank">
-      {({active, focus, hover}) => (
-        <Box p={2}>
-          <Paragraph children="href"/>
-        </Box>
-      )}
-    </SectionLink>
-  </BlockContent>
-</Block>
-```
-
-### Select
-
-```jsx
-<Block>
-  <BlockContent>
-    <SectionLink active href="//qiwi.com" target="_blank">
-      {({active, focus, hover}) => (
-        <Box p={2}>
-          <Paragraph children="href"/>
-        </Box>
-      )}
-    </SectionLink>
+    <Flex align="baseline">
+      <FlexItem pr={4}>
+        <SectionLink href="//qiwi.com" target="_blank">
+          {({active, focus, hover}) => (
+            <Box p={2}>
+              <Paragraph children="href"/>
+            </Box>
+          )}
+        </SectionLink>
+      </FlexItem>
+      <FlexItem>
+        <SectionLink active href="//qiwi.com" target="_blank">
+          {({active, focus, hover}) => (
+            <Box p={2}>
+              <Paragraph children="href"/>
+            </Box>
+          )}
+        </SectionLink>
+      </FlexItem>
+    </Flex>
   </BlockContent>
 </Block>
 ```

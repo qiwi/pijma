@@ -13,7 +13,7 @@ export const Section = forwardRef<HTMLDivElement, PropsWithChildren<SectionProps
   hover = false,
   active = false,
   focus = true,
-  flat,
+  flat = false,
   ...props
 }, ref) => (
   <Card

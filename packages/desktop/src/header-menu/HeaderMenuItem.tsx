@@ -1,20 +1,21 @@
 import React, {forwardRef, Ref} from 'react'
 
-import {LinkControl, Lnk, Flex, Pos, Card} from '@qiwi/pijma-core'
-import {Text} from '../typography/Text'
+import {LinkControl, Lnk, Flex, Pos, Card, LinkControlProps} from '@qiwi/pijma-core'
+
+import {Text} from '../typography'
 
 export interface HeaderMenuItemProps {
   tabIndex?: number
-  href?: string
-  target?: string
-  download?: string | boolean
-  rel?: string
+  href?: LinkControlProps['href']
+  target?: LinkControlProps['target']
+  download?: LinkControlProps['target']
+  rel?: LinkControlProps['rel']
   title?: string
   active?: boolean
   ref?: Ref<HTMLAnchorElement>
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
-  onFocus?: () => void
-  onBlur?: () => void
+  onClick?: LinkControlProps['onClick']
+  onFocus?: LinkControlProps['onFocus']
+  onBlur?: LinkControlProps['onBlur']
 }
 
 const PosLink = Pos.withComponent(Lnk)
@@ -38,9 +39,9 @@ export const HeaderMenuItem = forwardRef<HTMLAnchorElement, HeaderMenuItemProps>
         cursor="pointer"
         tabIndex={props.tabIndex}
         href={props.href}
-        target={props.target}
-        download={props.download}
-        rel={props.rel}
+        target={props.href ? props.target : undefined}
+        download={props.href ? props.download : undefined}
+        rel={props.href ? props.rel : undefined}
         title={props.title}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}

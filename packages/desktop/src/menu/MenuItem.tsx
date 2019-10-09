@@ -18,8 +18,8 @@ export interface MenuItemProps {
 export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(({
   notes,
   icon,
-  submenu,
-  round,
+  submenu = false,
+  round = false,
   hover = false,
   active = false,
   focus = false,
