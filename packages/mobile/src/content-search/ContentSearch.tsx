@@ -4,20 +4,21 @@ import {
   ModalInputControl,
   Image,
   MenuControl,
-  Card,
   Icon,
-  Flex,
-  FlexItem,
   ContentInput,
-  Spacer,
   Pos,
   Box,
+  Card,
+  styled,
 } from '@qiwi/pijma-core'
-import {Text} from '../typography'
+
+import {MenuItem} from '../menu'
 import {InputModal} from '../input-modal'
 
 import ContentSearchProps from './ContentSearchProps'
 import SearchItemOptionModel from './SearchItemOptionModel'
+
+const CardItem = styled(Card)().withComponent(MenuItem)
 
 export const ContentSearch = <P extends {}>(props: ContentSearchProps<SearchItemOptionModel<P>, P>) => (
   <ModalInputControl
@@ -75,28 +76,20 @@ export const ContentSearch = <P extends {}>(props: ContentSearchProps<SearchItem
               onBack={renderProps.onCancel}
             >
               {menuRenderProps.items.map((item, key) => (
-                <Card
+                <CardItem
                   key={key}
                   ref={item.ref}
-                  px={4}
-                  py={2}
-                  bg={item.selected ? '#E6E6E6' : item.focused ? '#F5F5F5' : '#FFF'}
                   onClick={item.onClick}
                   onMouseEnter={item.onMouseEnter}
                   onMouseLeave={item.onMouseLeave}
-                >
-                  <Flex>
-                    <FlexItem shrink={0} mr={3}>
-                      <Image width={6} height={6} src={item.logo}/>
-                    </FlexItem>
-                    <FlexItem grow={1}>
-                      <Spacer size="xxs">
-                        <Text bold>{item.title}</Text>
-                        <Text color="support">{item.description}</Text>
-                      </Spacer>
-                    </FlexItem>
-                  </Flex>
-                </Card>
+                  cursor="pointer"
+                  text={item.title}
+                  notes={item.description}
+                  icon={<Image width={6} height={6} src={item.logo}/>}
+                  hover={item.focused}
+                  active={item.selected}
+                  focus={item.selected}
+                />
               ))}
               {props.result ? (
                 <Box px={4} py={2}>
