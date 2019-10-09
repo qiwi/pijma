@@ -3,29 +3,29 @@
   <BlockContent>
     <Striper>
       <MenuContainer>
-        <MenuItem
+        <MenuLink
           submenu
           icon={<Icon size={12} name="qiwi"/>}
           text="Components"
         />
-        <MenuItem
+        <MenuLink
           submenu
           icon={<Icon size={12} name="qiwi"/>}
           text="link"
         />
-        <MenuItem
+        <MenuLink
           submenu
           icon={<Icon size={12} name="qiwi"/>}
           text="link"
         />
       </MenuContainer>
       <MenuContainer>
-        <MenuItem
+        <MenuLink
           submenu
           icon={<Icon size={12} name="qiwi"/>}
           text="link"
         />
-        <MenuItem
+        <MenuLink
           submenu
           icon={<Icon size={12} name="qiwi"/>}
           text="link"
