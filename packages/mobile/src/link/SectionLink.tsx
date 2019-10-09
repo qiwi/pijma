@@ -1,8 +1,6 @@
 import React, {FC} from 'react'
 
-import styled from '@emotion/styled'
-
-import {Lnk, LinkControl, LinkControlProps, Section, RenderChild} from '@qiwi/pijma-core'
+import {Lnk, LinkControl, LinkControlProps, Section, RenderChild, styled} from '@qiwi/pijma-core'
 
 export interface SectionLinkProps {
   tabIndex?: number
