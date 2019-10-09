@@ -1,4 +1,4 @@
-import React, {forwardRef, ReactNode, Ref} from 'react'
+import React, {forwardRef, ReactNode} from 'react'
 
 import {Card} from '../primitive'
 
@@ -10,13 +10,13 @@ export interface SectionProps {
   children: ReactNode
 }
 
-export const Section = forwardRef(({
+export const Section = forwardRef<HTMLDivElement, SectionProps>(({
   hover,
   active,
   focus = true,
   flat,
   ...props
-}: SectionProps, ref: Ref<HTMLDivElement>) => (
+}, ref) => (
   <Card
     ref={ref}
     r={flat ? undefined : 10}
