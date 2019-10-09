@@ -19,7 +19,7 @@ const DropdownSubmenuExample = () => {
         container={container.current}
         onHide={() => setShow(false)}
       >
-        
+        <Paragraph children="text"/>
       </DropdownSubmenu>
     </Pos>
   )
