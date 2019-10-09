@@ -4,7 +4,7 @@ import {Lnk, LinkControl, LinkControlProps, Section, RenderChild, styled} from '
 
 export interface SectionLinkProps {
   tabIndex?: number
-  href?: LinkControlProps['href']
+  href: LinkControlProps['href']
   target?: LinkControlProps['target']
   download?: LinkControlProps['download']
   rel?: LinkControlProps['rel']
