@@ -19,7 +19,7 @@ export interface HeaderMenuItemProps {
 
 const PosLink = Pos.withComponent(Lnk)
 
-export const HeaderMenuItem = forwardRef((props: HeaderMenuItemProps, ref: Ref<HTMLAnchorElement>) => (
+export const HeaderMenuItem = forwardRef<HTMLAnchorElement, HeaderMenuItemProps>((props, ref) => (
   <LinkControl
     href={props.href}
     target={props.target}
