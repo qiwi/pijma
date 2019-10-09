@@ -35,6 +35,7 @@ export const MenuLink: FC<MenuLinkProps> = (props) => (
       <MenuItemLnk
         as={props.href ? 'a' : undefined}
         notes={props.notes}
+        text={props.title}
         icon={props.icon}
         submenu={props.submenu}
         active={props.active ? props.active : renderProps.active}
@@ -42,7 +43,7 @@ export const MenuLink: FC<MenuLinkProps> = (props) => (
         focus={renderProps.focus}
         tabIndex={props.tabIndex}
         href={props.href}
-        title={props.title}
+        title={props.href ? props.title : undefined}
         target={props.href ? props.target : undefined}
         download={props.href ? props.download : undefined}
         rel={props.href ? props.rel : undefined}
