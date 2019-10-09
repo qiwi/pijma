@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react'
 
-import {Box, Flex, FlexItem, Spacer, Image} from '@qiwi/pijma-core'
+import {Box, Flex, FlexItem, Spacer, Image, LinkControlProps} from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
 import {SectionLink} from '../link'
@@ -10,14 +10,14 @@ export interface LogoLinkProps {
   title: string
   description?: string
   tabIndex?: number
-  href: string
-  target?: string
-  download?: string | boolean
-  rel?: string
+  href: LinkControlProps['href']
+  target?: LinkControlProps['target']
+  download?: LinkControlProps['download']
+  rel?: LinkControlProps['rel']
   horizontal?: boolean
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
-  onFocus?: () => void
-  onBlur?: () => void
+  onClick?: LinkControlProps['onClick']
+  onFocus?: LinkControlProps['onFocus']
+  onBlur?: LinkControlProps['onBlur']
 }
 
 export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizontal, ...props}) => (
