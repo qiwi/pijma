@@ -1,0 +1,75 @@
+```jsx
+const HeaderDropDownExample = () => {
+  const [show1, setShow1] = React.useState(false)
+  const [show2, setShow2] = React.useState(false)
+  const container = React.useRef()
+  const target = React.useRef()
+  return (
+    <Pos ref={container} type="relative">
+      <Pos type="relative" ref={target} zIndex={1000}>
+        <Header>
+          <HeaderMenu
+            children={[
+              {href: '', title: 'Платежи', active: show1, onClick: () => setShow1(true)},
+              {href: '', title: 'Переводы', active: show2, onClick: () => setShow2(true)},
+              {title: 'Пополнение кошелька', onClick: () => alert('Пополение')},
+            ]}
+          />
+        </Header>
+      </Pos>
+      <HeaderDropDown 
+        show={show1}
+        target={target.current}
+        container={container.current}
+        animate={!show2}
+        onHide={() => setShow1(false)}
+      >
+        <Paragraph children="text 1"/>
+      </HeaderDropDown>
+      <HeaderDropDown 
+        show={show2}
+        target={target.current}
+        container={container.current}
+        animate={!show1}
+        onHide={() => setShow2(false)}
+      >
+        <Flex direction="row" pb={12}>
+          <FlexItem>
+            <Caption children="Пластиковые карты qiwi"/>
+            <Flex direction="row" px={4} mt={4}>
+              <FlexItem mr={12}>
+                <PayCardLink 
+                  href="/cards/qvp-gold" 
+                  srcImg="https://static.qiwi.com/img/qiwi_com/cards/gold/list.png"
+                  text="Карта QIWI payWave +"
+                />
+              </FlexItem>
+              <FlexItem>
+                <PayCardLink 
+                  href="/cards/qvp-gold" 
+                  srcImg="https://static.qiwi.com/img/qiwi_com/cards/chip/list.png"
+                  text="Карта QIWI payWave"
+                />
+              </FlexItem>
+            </Flex>
+          </FlexItem>
+          <FlexItem>
+            <Caption children="Виртуальные карты "/>
+            <LogoLink
+              horizontal
+              href="/cards/qvc" 
+              title="Виртуальная карта QIWI" 
+              icon={<Image width={12} height={12} src="https://static.qiwi.com/img/providers/v2/categories/card.svg"/>}
+            />
+          </FlexItem>
+        </Flex>
+        <Card pt={5} bt="1px solid #d8d8d8">
+          <Link href="/cards" target="_self" children="Все карты"/>
+        </Card>
+      </HeaderDropDown>
+    </Pos>
+  )
+}
+
+<HeaderDropDownExample/>
+```

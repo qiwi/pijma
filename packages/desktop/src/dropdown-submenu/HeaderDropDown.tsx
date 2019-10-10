@@ -13,10 +13,11 @@ import {
   css,
 } from '@qiwi/pijma-core'
 
-export interface DropdownSubmenuProps {
+export interface HeaderDropDownProps {
   show: boolean
   target: OverlayProps['target']
   container: OverlayProps['container']
+  animate?: boolean
   children: React.ReactElement
   onHide: () => void
 }
@@ -25,25 +26,24 @@ const transition: FC<SimpleTransitionProps> = (props) => <SimpleTransition {...p
 
 transition.defaultProps = {
   timeout: {
-    enter: 1200,
-    exit: 1200,
+    enter: 300,
+    exit: 200,
   },
   enterClassName: (timeout: number) => css({
-    transform: 'translateY(0)',
     opacity: 1,
-    transition: `all ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+    transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
   }),
   exitClassName: (timeout: number) => css({
-    transform: 'translateY(-100%)',
     opacity: 0,
-    transition: `all ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+    transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
   }),
 }
 
-export const DropdownSubmenu: FC<DropdownSubmenuProps> = ({
+export const HeaderDropDown: FC<HeaderDropDownProps> = ({
   show,
   target,
   container,
+  animate = false,
   onHide,
   children,
 }) => (
@@ -54,7 +54,8 @@ export const DropdownSubmenu: FC<DropdownSubmenuProps> = ({
     container={container}
     rootClose={true}
     onHide={onHide}
-    transition={transition}
+    transition={animate ? transition : undefined}
+    popperConfig={{modifiers: {preventOverflow: {enabled: false}}}}
     children={(renderProps) => (
       <Pos type="absolute" zIndex={999} ref={renderProps.props.ref} width={1} css={renderProps.props.style}>
         <Pos type="relative">
@@ -63,7 +64,7 @@ export const DropdownSubmenu: FC<DropdownSubmenuProps> = ({
             bt="1px solid #d8d8d8"
             s="0 15px 40px 0 rgba(0,0,0,0.15)"
             width={1}
-            pt={8}
+            pt={12}
             px={12}
             pb={12}
           >
