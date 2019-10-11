@@ -15,23 +15,23 @@ initialState = {showMenu: false};
     children={(
       <Striper>
         <MenuContainer>
-          <MenuItem
+          <MenuLink
             text="Components"
             notes="List of pijma components"
             submenu
           />
-          <MenuItem
+          <MenuLink
             text="link"
             notes="with notes"
             href="https://qiwi.com"
           />
-          <MenuItem
+          <MenuLink
             text="link"
             href="https://qiwi.com"
           />
         </MenuContainer>
         <MenuContainer>
-          <MenuItem
+          <MenuLink
             text="Закрыть меню"
             href="https://qiwi.com"
             onClick={() => setState({showMenu: false})}

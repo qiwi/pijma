@@ -9,17 +9,17 @@
  ```
 
 ```jsx
-<Block hover>
+<Block active>
   <Box p={6}>
-    <Typo as="p" display="block" size="4" height="6" weight="300" color="#000">hover</Typo>
+    <Typo as="p" display="block" size="4" height="6" weight="300" color="#000">active</Typo>
   </Box>
 </Block>
 ```
 
 ```jsx
-<Block hover accent>
+<Block active accent>
   <Box p={6}>
-    <Typo as="p" display="block" size="4" height="6" weight="300" color="#000">hover accent</Typo>
+    <Typo as="p" display="block" size="4" height="6" weight="300" color="#000">active accent</Typo>
   </Box>
 </Block>
 ```

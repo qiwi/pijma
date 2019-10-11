@@ -2,28 +2,28 @@
 <Block>
   <BlockContent>
     <MenuCaption text="Typography"/>
-    <MenuItem
+    <MenuLink
       text="BlockLink"
       href="/#/Компоненты/BlockLink"
     />
-    <MenuItem
+    <MenuLink
       text="Link"
       href="/#/Компоненты/Link"
     />
-    <MenuItem
+    <MenuLink
       text="Notice"
       href="/#/Компоненты/Notice"
     />
-    <MenuItem
+    <MenuLink
       text="Caption"
       href="/#/Компоненты/Caption"
     />
     <MenuCaption text="Components"/>
-    <MenuItem
+    <MenuLink
       text="Caption"
       href="/#/Компоненты/Caption"
     />  
-    <MenuItem
+    <MenuLink
       text="Caption"
       href="/#/Компоненты/Caption"
     /> 
