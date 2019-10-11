@@ -57,6 +57,12 @@ export default class ModalInputControl extends Component<ModalInputControlProps,
     this.setState({hovered: false})
   }
 
+  private onKeyDown: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
+    if (this.props.onSubmit && event.key === 'Enter') {
+      this.submit()
+    }
+  }
+
   private show: () => void = () => {
     this.setState({
       show: true,
@@ -88,8 +94,8 @@ export default class ModalInputControl extends Component<ModalInputControlProps,
     this.setState({
       show: false,
     })
-    if (this.props.onSubmit) {
-      this.props.onSubmit()
+    if (this.props.onSubmit && this.modalInputRef.current) {
+      this.props.onSubmit(this.modalInputRef.current.value)
     }
   }
 
@@ -105,6 +111,7 @@ export default class ModalInputControl extends Component<ModalInputControlProps,
       onModalInputBlur: this.onModalInputBlur,
       onMouseEnter: this.onMouseEnter,
       onMouseLeave: this.onMouseLeave,
+      onKeyDown: this.onKeyDown,
       onShow: this.show,
       onHide: this.hide,
       onCancel: this.cancel,

@@ -9,7 +9,7 @@ export default interface ModalInputControlProps {
   onShow?: () => void
   onHide?: () => void
   onCancel?: () => void
-  onSubmit?: () => void
+  onSubmit?: (value: string) => void
   children: RenderChild<{
     focused: boolean
     hovered: boolean
@@ -21,6 +21,7 @@ export default interface ModalInputControlProps {
     onModalInputBlur: React.FocusEventHandler
     onMouseEnter: React.MouseEventHandler
     onMouseLeave: React.MouseEventHandler
+    onKeyDown: React.KeyboardEventHandler
     onShow: () => void
     onHide: () => void
     onCancel: () => void

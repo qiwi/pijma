@@ -24,22 +24,22 @@ const CardItem = styled(Card)().withComponent(MenuItem)
 
 const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
 
-export const ContentSearch = <P extends {}>(props: ContentSearchProps<SearchItemOptionModel<P>, P>) => (
-  <SuggestControl<SearchItemOptionModel<P>>
-    show={props.show}
+export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItemOptionModel<V>, V>) => (
+  <SuggestControl<SearchItemOptionModel<V>>
     items={props.items}
     onChange={props.onChange}
     onBlur={props.onBlur}
     onFocus={props.onFocus}
-    onShow={props.onShow}
-    onHide={props.onHide}
     onSubmit={props.onSubmit}
     children={(renderProps) => (
-      <MenuControl<SearchItemOptionModel<P>>
-        items={props.items}
+      <MenuControl<V>
+        items={props.items.map(item => item.value)}
+        selected={props.selected}
         equals={props.equals}
-        onItemSelect={props.onItemSelect}
-        onSubmit={renderProps.onSubmit}
+        onItemSelect={value => {
+          props.onItemSelect(value)
+          renderProps.onHide()
+        }}
         children={(menuRenderProps) => (
           <Pos type="relative" ref={dropDownContainerRef} width={1}>
             <Box
@@ -59,14 +59,20 @@ export const ContentSearch = <P extends {}>(props: ContentSearchProps<SearchItem
                 onChange={renderProps.onChange}
                 onFocus={renderProps.onFocus}
                 onBlur={renderProps.onBlur}
-                onKeyDown={menuRenderProps.onKeyDown}
+                onKeyDown={(e) => {
+                  menuRenderProps.onKeyDown(e)
+                  if (menuRenderProps.focused === undefined && menuRenderProps.selected === undefined) {
+                    renderProps.onKeyDown(e)
+                  }
+                }}
               />
               <Pos
                 type="absolute"
                 cursor="pointer"
                 right={4}
                 top={3}
-                onClick={renderProps.onSubmit}
+                onMouseDown={renderProps.onSearchMouseDown}
+                onClick={renderProps.onSearchClick}
                 children={props.loading ? (
                   <Spinner color="#ff8c00" width={6} height={6}/>
                 ) : (
@@ -102,9 +108,9 @@ export const ContentSearch = <P extends {}>(props: ContentSearchProps<SearchItem
                     onMouseEnter={item.onMouseEnter}
                     onMouseLeave={item.onMouseLeave}
                     cursor="pointer"
-                    text={item.title}
-                    notes={item.description}
-                    icon={<Image width={6} height={6} src={item.logo}/>}
+                    text={props.items[key].title}
+                    notes={props.items[key].description}
+                    icon={<Image width={6} height={6} src={props.items[key].logo}/>}
                     hover={item.focused}
                     active={item.selected}
                     focus={item.selected}
@@ -112,7 +118,11 @@ export const ContentSearch = <P extends {}>(props: ContentSearchProps<SearchItem
                 ))}
                 {props.result ? (
                   <Box px={4} py={2}>
-                    {props.result}
+                    {props.result({
+                      focused: menuRenderProps.focused,
+                      selected: menuRenderProps.selected,
+                      hide: renderProps.onHide,
+                    })}
                   </Box>
                 ) : (
                   null

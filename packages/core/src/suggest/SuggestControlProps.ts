@@ -3,14 +3,13 @@ import {RefObject} from 'react'
 import RenderChild from '../RenderChild'
 
 export default interface SuggestControlProps<I> {
-  show?: boolean
   items: I[]
   onChange?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void
   onShow?: () => void
   onHide?: () => void
-  onSubmit?: () => void
+  onSubmit?: (value: string) => void
   children: RenderChild<{
     focused: boolean
     hovered: boolean
@@ -19,9 +18,11 @@ export default interface SuggestControlProps<I> {
     onChange: React.ChangeEventHandler
     onFocus: React.FocusEventHandler
     onBlur: React.FocusEventHandler
+    onSearchMouseDown: React.MouseEventHandler
+    onSearchClick: React.MouseEventHandler
     onMouseEnter: React.MouseEventHandler
     onMouseLeave: React.MouseEventHandler
-    onShow: () => void
+    onKeyDown: React.KeyboardEventHandler
     onHide: () => void
     onSubmit: () => void
   }>

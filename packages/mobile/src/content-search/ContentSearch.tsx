@@ -20,14 +20,11 @@ import SearchItemOptionModel from './SearchItemOptionModel'
 
 const CardItem = styled(Card)().withComponent(MenuItem)
 
-export const ContentSearch = <P extends {}>(props: ContentSearchProps<SearchItemOptionModel<P>, P>) => (
+export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItemOptionModel<V>, V>) => (
   <ModalInputControl
-    show={props.show}
     onChange={props.onChange}
     onBlur={props.onBlur}
     onFocus={props.onFocus}
-    onShow={props.onShow}
-    onHide={props.onHide}
     onCancel={props.onCancel}
     onSubmit={props.onSubmit}
     children={(renderProps) => (
@@ -51,11 +48,14 @@ export const ContentSearch = <P extends {}>(props: ContentSearchProps<SearchItem
             <Icon name="search" color="#666"/>
           </Pos>
         </Box>
-        <MenuControl<SearchItemOptionModel<P>>
-          items={props.items}
+        <MenuControl<V>
+          items={props.items.map(item => item.value)}
+          selected={props.selected}
           equals={props.equals}
-          onItemSelect={props.onItemSelect}
-          onSubmit={renderProps.onSubmit}
+          onItemSelect={value => {
+            props.onItemSelect(value)
+            renderProps.onHide()
+          }}
           children={(menuRenderProps) => (
             <InputModal
               value={props.value}
@@ -67,7 +67,12 @@ export const ContentSearch = <P extends {}>(props: ContentSearchProps<SearchItem
               loading={props.loading}
               submitIcon="search"
               onChange={renderProps.onChange}
-              onKeyDown={menuRenderProps.onKeyDown}
+              onKeyDown={(e) => {
+                menuRenderProps.onKeyDown(e)
+                if (menuRenderProps.focused === undefined && menuRenderProps.selected === undefined) {
+                  renderProps.onKeyDown(e)
+                }
+              }}
               onFocus={renderProps.onFocus}
               onBlur={renderProps.onModalInputBlur}
               onSubmit={renderProps.onSubmit}
@@ -83,9 +88,9 @@ export const ContentSearch = <P extends {}>(props: ContentSearchProps<SearchItem
                   onMouseEnter={item.onMouseEnter}
                   onMouseLeave={item.onMouseLeave}
                   cursor="pointer"
-                  text={item.title}
-                  notes={item.description}
-                  icon={<Image width={6} height={6} src={item.logo}/>}
+                  text={props.items[key].title}
+                  notes={props.items[key].description}
+                  icon={<Image width={6} height={6} src={props.items[key].logo}/>}
                   hover={item.focused}
                   active={item.selected}
                   focus={item.selected}
@@ -93,7 +98,11 @@ export const ContentSearch = <P extends {}>(props: ContentSearchProps<SearchItem
               ))}
               {props.result ? (
                 <Box px={4} py={2}>
-                  {props.result}
+                  {props.result({
+                    focused: menuRenderProps.focused,
+                    selected: menuRenderProps.selected,
+                    hide: renderProps.onHide,
+                  })}
                 </Box>
               ) : (
                 null

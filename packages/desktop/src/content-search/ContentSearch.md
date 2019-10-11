@@ -3,133 +3,177 @@
 ```jsx
 const banks = [
   {
-    value: 'Сбербанк',
+    value: {
+      id: 1,
+    },
     title: 'Сбербанк',
     logo: require('./media/sber.png'),
     description: 'ПАО «Сбербанк России»',
   },
   {
-    value: 'Альфа-Банк',
+    value: {
+      id: 2,
+    },
     title: 'Альфа-Банк',
     logo: require('./media/alpha.png'),
     description: 'АО «Альфа-Банк»',
   },
   {
-    value: 'Банк «Открытие»',
+    value: {
+      id: 3,
+    },
     title: 'Банк «Открытие»',
     logo: require('./media/open.png'),
     description: 'ПАО Банк «ФК Открытие»',
   },
   {
-    value: 'Банк ВТБ',
+    value: {
+      id: 4,
+    },
     title: 'Банк ВТБ',
     logo: require('./media/vtb.png'),
     description: 'Банк ВТБ (ПАО)',
   },
   {
-    value: 'МДМ Банк',
+    value: {
+      id: 5,
+    },
     title: 'МДМ Банк',
     logo: require('./media/mdm.png'),
     description: 'ПАО «МДМ Банк»',
   },
   {
-    value: 'DeltaCredit Банк',
+    value: {
+      id: 6,
+    },
     title: 'DeltaCredit Банк',
     logo: require('./media/delta.png'),
     description: 'АО КБ ДЕЛЬТАКРЕДИТ',
   },
   {
-    value: 'ОТП Банк',
+    value: {
+      id: 7,
+    },
     title: 'ОТП Банк',
     logo: require('./media/otp.png'),
     description: 'АО «ОТП-Банк»',
   },
   {
-    value: 'Почта Банк',
+    value: {
+      id: 8,
+    },
     title: 'Почта Банк',
     logo: require('./media/pb.png'),
     description: 'ПАО «Почта Банк»',
   },
   {
-    value: 'Промсвязьбанк',
+    value: {
+      id: 9,
+    },
     title: 'Промсвязьбанк',
     logo: require('./media/psb.png'),
     description: 'ПАО «ПРОМСВЯЗЬБАНК»',
   },
   {
-    value: 'Райффайзенбанк',
+    value: {
+      id: 10,
+    },
     title: 'Райффайзенбанк',
     logo: require('./media/rai.png'),
     description: 'АО «Райффайзенбанк»',
   },
   {
-    value: 'Ренессанс Кредит Банк',
+    value: {
+      id: 11,
+    },
     title: 'Ренессанс Кредит Банк',
     logo: require('./media/rkb.png'),
     description: 'КБ "Ренессанс Кредит" (ООО)',
   },
   {
-    value: 'РокетБанк',
+    value: {
+      id: 12,
+    },
     title: 'РокетБанк',
     logo: require('./media/roket.png'),
     description: 'ФИЛИАЛ РОКЕТБАНК КИВИ БАНК (АКЦИОНЕРНОЕ ОБЩЕСТВО)',
   },
   {
-    value: 'Совкомбанк',
+    value: {
+      id: 13,
+    },
     title: 'Совкомбанк',
     logo: require('./media/sov.png'),
     description: 'Публичное акционерное общество «Совкомбанк»',
   },
   {
-    value: 'Русский Стандарт',
+    value: {
+      id: 14,
+    },
     title: 'Русский Стандарт',
     logo: require('./media/std.png'),
     description: 'АО «Банк Русский Стандарт»',
   },
 ];
+
 const initialState = {
   value: '',
   loading: false,
   banks: [],
 };
-const filterBanks = (value) => banks.filter(bank => {
-  return value !== '' && bank.value.toLowerCase().indexOf(value.toLowerCase()) !== -1;
+
+const filterBanks = (title) => banks.filter(bank => {
+  return bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1;
 });
+
 const getBanks = (value) => {
-  setState({loading: true})
+  setState({loading: true});
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       setState({loading: false});
       resolve(filterBanks(value));
     }, 1000);
   });
-}
-const equals = (a, b) => {
-  return a.value === b.value
 };
-const selectItem = (item) => setState({
-  loading: false,
-  value: item.value,
-  banks: [],
-});
+
+const selectItem = (value) => {
+  const title = getBankByValue(value).title;
+  setState({
+    value: title,
+    selected: value,
+    loading: false,
+    banks: filterBanks(title),
+  });
+  submit(value);
+};
+
+const equals = (a, b) => a.id === b.id;
+
+const submit = (value) => {
+  console.log('SUBMIT', getBankByValue(value));
+};
+
+const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
+
 <Block>
   <BlockContent>
     <Box width={128}>
       <ContentSearch
+        tabIndex
         value={state.value}
         items={state.banks}
+        selected={state.selected}
         loading={state.loading}
         error={state.value === ''}
         onCancel={() => setState(initialState)}
-        onSubmit={() => setState({banks: []})}
+        onSubmit={submit}
         onItemSelect={selectItem}
-        equals={equals}
         onChange={(value) => {
           setState({value});
           getBanks(value).then((banks) => setState({banks}));
         }}
-        result={(
-          <Link onClick={() => setState({banks: []})}>
+        result={({focused, selected, hide}) => (
+          <Link onClick={hide}>
             Показать все
           </Link>
         )}

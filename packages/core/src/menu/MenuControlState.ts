@@ -1,4 +1,3 @@
-export default interface SuggestControlState<I> {
-  selectedItem: I | undefined
-  focusedItem: I | undefined
+export default interface SuggestControlState<V> {
+  focused: V | undefined
 }
