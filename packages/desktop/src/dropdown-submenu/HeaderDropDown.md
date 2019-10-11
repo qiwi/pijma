@@ -35,7 +35,9 @@ const HeaderDropDownExample = () => {
       >
         <Flex direction="row" pb={12}>
           <FlexItem>
-            <Caption children="Пластиковые карты qiwi"/>
+            <Box mb={5}>
+              <Caption children="Пластиковые карты qiwi"/>
+            </Box>
             <Flex direction="row" px={4} mt={4}>
               <FlexItem mr={12}>
                 <PayCardLink 
@@ -54,7 +56,9 @@ const HeaderDropDownExample = () => {
             </Flex>
           </FlexItem>
           <FlexItem>
-            <Caption children="Виртуальные карты "/>
+            <Box mb={5}>
+              <Caption children="Виртуальные карты "/>
+            </Box>
             <LogoLink
               horizontal
               href="/cards/qvc" 

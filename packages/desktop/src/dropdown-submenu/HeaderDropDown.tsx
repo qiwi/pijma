@@ -55,7 +55,16 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
     rootClose={true}
     onHide={onHide}
     transition={animate ? transition : undefined}
-    popperConfig={{modifiers: {preventOverflow: {enabled: false}}}}
+    popperConfig={{
+      modifiers: {
+        preventOverflow: {
+          enabled: false,
+        },
+        hide: {
+          enabled: false,
+        },
+      },
+    }}
     children={(renderProps) => (
       <Pos type="absolute" zIndex={999} ref={renderProps.props.ref} width={1} css={renderProps.props.style}>
         <Pos type="relative">
