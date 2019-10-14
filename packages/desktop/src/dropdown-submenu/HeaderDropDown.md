@@ -6,8 +6,9 @@ const HeaderDropDownExample = () => {
   const target = React.useRef()
   return (
     <Pos ref={container} type="relative">
-      <Pos type="relative" ref={target} zIndex={1000}>
-        <Header>
+      <Pos type="relative" ref={target}>
+        <Header underline={show1 || show2}>
+          <Flex px={4} justify="center" height={1}>
           <HeaderMenu
             children={[
               {href: '', title: 'Платежи', active: show1, onClick: () => setShow1(true)},
@@ -15,13 +16,13 @@ const HeaderDropDownExample = () => {
               {title: 'Пополнение кошелька', onClick: () => alert('Пополение')},
             ]}
           />
+          </Flex>
         </Header>
       </Pos>
       <HeaderDropDown 
         show={show1}
         target={target.current}
         container={container.current}
-        animate={!show2}
         onHide={() => setShow1(false)}
       >
         <Paragraph children="text 1"/>
@@ -30,7 +31,6 @@ const HeaderDropDownExample = () => {
         show={show2}
         target={target.current}
         container={container.current}
-        animate={!show1}
         onHide={() => setShow2(false)}
       >
         <Flex direction="row" pb={12}>

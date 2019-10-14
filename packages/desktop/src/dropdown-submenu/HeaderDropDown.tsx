@@ -17,7 +17,6 @@ export interface HeaderDropDownProps {
   show: boolean
   target: OverlayProps['target']
   container: OverlayProps['container']
-  animate?: boolean
   children: React.ReactElement
   onHide: () => void
 }
@@ -43,7 +42,6 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
   show,
   target,
   container,
-  animate = false,
   onHide,
   children,
 }) => (
@@ -54,7 +52,7 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
     container={container}
     rootClose={true}
     onHide={onHide}
-    transition={animate ? transition : undefined}
+    transition={transition}
     popperConfig={{
       modifiers: {
         preventOverflow: {
@@ -66,12 +64,10 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
       },
     }}
     children={(renderProps) => (
-      <Pos type="absolute" zIndex={999} ref={renderProps.props.ref} width={1} css={renderProps.props.style}>
+      <Pos type="absolute" ref={renderProps.props.ref} width={1} css={renderProps.props.style}>
         <Pos type="relative">
           <Card
             bg="#fff"
-            bt="1px solid #d8d8d8"
-            s="0 15px 40px 0 rgba(0,0,0,0.15)"
             width={1}
             pt={12}
             px={12}
@@ -94,6 +90,9 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
             onClick={onHide}
           >
             <Icon name="cross" color="#666"/>
+          </Pos>
+          <Pos type="absolute" bottom={0} width={1} height="50%">
+            <Card height={1} s="0 15px 32px -12px rgba(0,0,0,0.15)"/>
           </Pos>
         </Pos>
       </Pos>
