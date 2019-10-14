@@ -29,7 +29,7 @@ export * from './drop-down'
 export * from './footer-out'
 export * from './footer-nav'
 export * from './footer-app'
-export * from './dropdown-submenu'
+export * from './header-drop-down'
 export * from './menu'
 export * from './pay-card-link'
 

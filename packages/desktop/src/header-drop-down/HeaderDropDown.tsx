@@ -74,12 +74,12 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
           <Card
             bg="#fff"
             width={1}
+            px={4}
             pt={12}
-            px={12}
             pb={12}
           >
             <Flex justify="center" width={1}>
-              <FlexItem width={295}>
+              <FlexItem width={303}>
                 {children}
               </FlexItem>
             </Flex>
