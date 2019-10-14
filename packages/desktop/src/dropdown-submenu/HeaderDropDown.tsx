@@ -64,7 +64,12 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
       },
     }}
     children={(renderProps) => (
-      <Pos type="absolute" ref={renderProps.props.ref} width={1} css={renderProps.props.style}>
+      <Pos
+        type="absolute"
+        ref={renderProps.props.ref}
+        width={1}
+        css={renderProps.props.style}
+      >
         <Pos type="relative">
           <Card
             bg="#fff"
@@ -91,7 +96,13 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
           >
             <Icon name="cross" color="#666"/>
           </Pos>
-          <Pos type="absolute" bottom={0} width={1} height={1}>
+          <Pos
+            type="absolute"
+            width={1}
+            height={1}
+            zIndex={-1}
+            bottom={0}
+          >
             <Card height={1} s="0 15px 32px -12px rgba(0,0,0,0.15)"/>
           </Pos>
         </Pos>
