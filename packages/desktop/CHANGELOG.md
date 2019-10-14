@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.83.1](https://github.com/qiwi/pijma/compare/v1.83.0...v1.83.1) (2019-10-14)
+
+
+### Bug Fixes
+
+* logo-link clamp ([6b5a3cd](https://github.com/qiwi/pijma/commit/6b5a3cd))
+
 # [@qiwi/pijma-desktop-v1.83.0](https://github.com/qiwi/pijma/compare/v1.82.4...v1.83.0) (2019-10-09)
 
 
