@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Card, Flex, LinkControl, LinkControlProps, Lnk, Image, styled} from '@qiwi/pijma-core'
+import {Card, LinkControl, LinkControlProps, Lnk, Image, styled, Box} from '@qiwi/pijma-core'
 
 import {Text} from '../typography'
 
@@ -18,7 +18,7 @@ export interface HeaderBankCardLinkProps {
   onBlur?: LinkControlProps['onBlur']
 }
 
-const FlexLnk = styled(Flex.withComponent(Lnk))()
+const BoxLnk = styled(Box.withComponent(Lnk))()
 
 export const HeaderBankCardLink: FC<HeaderBankCardLinkProps> = (props) => (
   <LinkControl
@@ -30,10 +30,7 @@ export const HeaderBankCardLink: FC<HeaderBankCardLinkProps> = (props) => (
     download={props.download}
     rel={props.rel}
     children={(renderProps) => (
-      <FlexLnk
-        direction="column"
-        align="center"
-        display="flex"
+      <BoxLnk
         tabIndex={props.tabIndex}
         href={props.href}
         onClick={renderProps.onClick}
@@ -61,11 +58,13 @@ export const HeaderBankCardLink: FC<HeaderBankCardLinkProps> = (props) => (
         </Card>
         <Text
           bold
+          display="block"
+          align="center"
           color={renderProps.hover || renderProps.active || renderProps.focus ? 'warning' : 'default'}
           transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
           children={props.text}
         />
-      </FlexLnk>
+      </BoxLnk>
     )}
   />
 )
