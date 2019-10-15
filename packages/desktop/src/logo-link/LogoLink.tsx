@@ -101,7 +101,7 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizonta
           {description ? (
             <Box mt={1} mx="auto">
               <Paragraph
-                clamp={1}
+                clamp={2}
                 color="support"
                 size="s"
                 align="center"
