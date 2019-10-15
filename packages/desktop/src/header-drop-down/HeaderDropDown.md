@@ -25,7 +25,9 @@ const HeaderDropDownExample = () => {
         container={container.current}
         onHide={() => setShow1(false)}
       >
-        <Paragraph children="text 1"/>
+        <Box width={200} mx="auto" px={2}>
+          <Paragraph children="text 1"/>
+        </Box>
       </HeaderDropDown>
       <HeaderDropDown 
         show={show2}
@@ -33,6 +35,7 @@ const HeaderDropDownExample = () => {
         container={container.current}
         onHide={() => setShow2(false)}
       >
+          <Box width={200} mx="auto" px={2}>
         <Flex direction="row" pb={12}>
           <FlexItem>
             <Box mb={5}>
@@ -70,6 +73,7 @@ const HeaderDropDownExample = () => {
         <Card pt={5} bt="1px solid #d8d8d8">
           <Link href="/cards" target="_self" children="Все карты"/>
         </Card>
+        </Box>
       </HeaderDropDown>
     </Pos>
   )

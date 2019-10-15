@@ -4,8 +4,6 @@ import {
   SimpleTransition,
   SimpleTransitionProps,
   Card,
-  Flex,
-  FlexItem,
   Pos,
   OverlayProps,
   Icon,
@@ -66,6 +64,7 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
     children={(renderProps) => (
       <Pos
         type="absolute"
+        zIndex={600}
         ref={renderProps.props.ref}
         width={1}
         css={renderProps.props.style}
@@ -74,23 +73,18 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
           <Card
             bg="#fff"
             width={1}
-            px={4}
             pt={12}
             pb={12}
           >
-            <Flex justify="center" width={1}>
-              <FlexItem width={303}>
-                {children}
-              </FlexItem>
-            </Flex>
+            {children}
           </Card>
           <Pos
             mb="auto"
             type="absolute"
             width={6}
             height={6}
-            top={7}
-            right={7}
+            top={6}
+            right={6}
             cursor="pointer"
             onClick={onHide}
           >
