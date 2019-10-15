@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.83.2](https://github.com/qiwi/pijma/compare/v1.83.1...v1.83.2) (2019-10-15)
+
+
+### Bug Fixes
+
+* grid nil gutter ([10048ba](https://github.com/qiwi/pijma/commit/10048ba))
+
 # [@qiwi/pijma-core-v1.83.1](https://github.com/qiwi/pijma/compare/v1.83.0...v1.83.1) (2019-10-14)
 
 
