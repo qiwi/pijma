@@ -26,10 +26,14 @@ export const Grid: FC<GridProps> = ({gutter = 20, columns = 12, layout = columns
     <Flex wrap="wrap">
       {Children.map(elements, (child: ReactNode, index: number) => {
         const oneColumnPercent = layoutArr[index % layoutLength] / columns
+        const width = gutter !== 0
+          ? `calc(${100 * oneColumnPercent}% + ${gutter * oneColumnPercent - gutter}px)`
+          : `${100 * oneColumnPercent}%`
+
         return (
           <FlexItem
             key={index}
-            width={`calc(${100 * oneColumnPercent}% + ${gutter * oneColumnPercent - gutter}px)`}
+            width={width}
             mt={index >= rowBlocksCount ? `${gutter}px` : 0}
             ml={index % rowBlocksCount !== 0 ? `${gutter}px` : 0}
             children={child}
