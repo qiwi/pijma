@@ -31,7 +31,7 @@ export * from './footer-nav'
 export * from './footer-app'
 export * from './header-drop-down'
 export * from './menu'
-export * from './pay-card-link'
+export * from './header-bank-card-link'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'

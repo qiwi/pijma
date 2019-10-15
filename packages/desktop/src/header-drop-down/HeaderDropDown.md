@@ -43,14 +43,14 @@ const HeaderDropDownExample = () => {
               </Box>
               <Flex direction="row" px={4} mt={4}>
                 <FlexItem mr={12}>
-                  <PayCardLink 
+                  <HeaderBankCardLink 
                     href="/cards/qvp-gold" 
                     srcImg="https://static.qiwi.com/img/qiwi_com/cards/gold/list.png"
                     text="Карта QIWI payWave +"
                   />
                 </FlexItem>
                 <FlexItem>
-                  <PayCardLink 
+                  <HeaderBankCardLink 
                     href="/cards/qvp-gold" 
                     srcImg="https://static.qiwi.com/img/qiwi_com/cards/chip/list.png"
                     text="Карта QIWI payWave"
