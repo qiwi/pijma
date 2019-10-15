@@ -6,7 +6,7 @@ const HeaderDropDownExample = () => {
   const target = React.useRef()
   return (
     <Pos ref={container} type="relative">
-      <Pos type="relative" ref={target}>
+      <Pos type="relative" ref={target} zIndex={999}>
         <Header underline={show1 || show2}>
           <Flex px={4} justify="center" height={1}>
             <HeaderMenu

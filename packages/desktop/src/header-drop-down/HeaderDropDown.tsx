@@ -75,6 +75,7 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
             width={1}
             pt={12}
             pb={12}
+            s="0 0 16px 0 rgba(0, 0, 0, 0.12)"
           >
             {children}
           </Card>
@@ -89,15 +90,6 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
             onClick={onHide}
           >
             <Icon name="cross" color="#666"/>
-          </Pos>
-          <Pos
-            type="absolute"
-            width={1}
-            height={1}
-            zIndex={-1}
-            bottom={0}
-          >
-            <Card height={1} s="0 15px 32px -12px rgba(0,0,0,0.15)"/>
           </Pos>
         </Pos>
       </Pos>

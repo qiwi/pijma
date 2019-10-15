@@ -50,7 +50,7 @@ export const HeaderBankCardLink: FC<HeaderBankCardLinkProps> = (props) => (
           width={59}
           transform={renderProps.hover || renderProps.active || renderProps.focus ? 'translateY(-4px)' : undefined}
           transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-          s={renderProps.hover || renderProps.active || renderProps.focus ? '0 16px 32px 4px rgba(0, 0, 0, 0.16)' : '0 20px 64px 8px rgba(0, 0, 0, 0.16)'}
+          s={renderProps.hover || renderProps.active || renderProps.focus ? '0 8px 16px 0 rgba(0, 0, 0, 0.12)' : '0 0 16px 0 rgba(0, 0, 0, 0.12)'}
         >
           <Image
             width={59}
