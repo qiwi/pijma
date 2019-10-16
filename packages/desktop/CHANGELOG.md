@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.84.0](https://github.com/qiwi/pijma/compare/v1.83.2...v1.84.0) (2019-10-16)
+
+
+### Features
+
+* header-drop-down, header-bank-card-link ([af8509a](https://github.com/qiwi/pijma/commit/af8509a))
+
 # [@qiwi/pijma-desktop-v1.83.1](https://github.com/qiwi/pijma/compare/v1.83.0...v1.83.1) (2019-10-14)
 
 
