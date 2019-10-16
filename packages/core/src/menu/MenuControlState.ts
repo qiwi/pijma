@@ -1,3 +1,3 @@
-export default interface SuggestControlState<V> {
-  focused: V | undefined
+export default interface SuggestControlState {
+  focused: number | undefined
 }

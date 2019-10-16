@@ -48,12 +48,11 @@ export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItem
             <Icon name="search" color="#666"/>
           </Pos>
         </Box>
-        <MenuControl<V>
-          items={props.items.map(item => item.value)}
+        <MenuControl
+          itemsLength={props.items.length}
           selected={props.selected}
-          equals={props.equals}
-          onItemSelect={value => {
-            props.onItemSelect(value)
+          onItemSelect={index => {
+            props.onItemSelect(props.items[index]!.value)
             renderProps.onHide()
           }}
           children={(menuRenderProps) => (
@@ -99,8 +98,8 @@ export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItem
               {props.result ? (
                 <Box px={4} py={2}>
                   {props.result({
-                    focused: menuRenderProps.focused,
-                    selected: menuRenderProps.selected,
+                    focused: menuRenderProps.focused !== undefined ? props.items[menuRenderProps.focused].value : undefined,
+                    selected: menuRenderProps.selected !== undefined ? props.items[menuRenderProps.selected].value : undefined,
                     hide: renderProps.onHide,
                   })}
                 </Box>

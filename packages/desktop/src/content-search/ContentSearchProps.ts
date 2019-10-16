@@ -5,7 +5,7 @@ import SearchItemOptionModel from './SearchItemOptionModel'
 export default interface ContentSearchProps<O extends SearchItemOptionModel<V>, V> {
   value: string
   items: O[]
-  selected?: V
+  selected?: number
   tabIndex?: number
   autoComplete?: boolean
   autoFocus?: boolean
@@ -25,5 +25,4 @@ export default interface ContentSearchProps<O extends SearchItemOptionModel<V>, 
   onFocus?: () => void
   onBlur?: () => void
   onSubmit?: (value: string) => void
-  equals?: (a: V, b: V) => boolean
 }

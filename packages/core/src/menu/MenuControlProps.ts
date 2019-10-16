@@ -1,12 +1,11 @@
 import {RefObject, KeyboardEventHandler} from 'react'
 import RenderChild from '../RenderChild'
 
-export default interface MenuControlProps<V> {
-  items: V[]
-  selected?: V
+export default interface MenuControlProps {
+  itemsLength: number
+  selected?: number | undefined
   onKeyDown?: KeyboardEventHandler
-  onItemSelect?: (item: V) => void
-  equals?: (a: V, b: V) => boolean
+  onItemSelect?: (index: number) => void
   children: RenderChild<{
     items: Array<{
       ref: RefObject<HTMLDivElement>
@@ -16,8 +15,8 @@ export default interface MenuControlProps<V> {
       onMouseEnter: React.MouseEventHandler
       onMouseLeave: React.MouseEventHandler
     }>
-    focused: V | undefined
-    selected: V | undefined
+    focused: number | undefined
+    selected: number | undefined
     containerRef: RefObject<HTMLDivElement>
     onKeyDown: React.KeyboardEventHandler
   }>

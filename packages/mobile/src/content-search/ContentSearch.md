@@ -140,7 +140,6 @@ const selectItem = (value) => {
   const title = getBankByValue(value).title;
   setState({
     value: title,
-    selected: value,
     loading: false,
     banks: filterBanks(title),
   });
@@ -161,7 +160,6 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
       <ContentSearch
         value={state.value}
         items={state.banks}
-        selected={state.selected}
         loading={state.loading}
         error={state.value === ''}
         equals={equals}
