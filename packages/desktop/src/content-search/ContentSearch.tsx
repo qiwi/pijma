@@ -54,7 +54,7 @@ export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItem
                 pr={14}
                 error={false}
                 focused={renderProps.focused}
-                expanded={renderProps.show}
+                norb={renderProps.show}
                 hovered={renderProps.hovered}
                 onChange={renderProps.onChange}
                 onFocus={renderProps.onFocus}
@@ -85,7 +85,7 @@ export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItem
               rootClose={false}
               container={dropDownContainerRef.current}
               target={renderProps.inputRef.current!}
-              onHide={() => renderProps.onHide()}
+              onHide={renderProps.onHide}
             >
               <CardPos
                 minWidth={1}
