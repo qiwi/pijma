@@ -2,7 +2,7 @@ import {Component, RefObject, createRef} from 'react'
 import SuggestControlProps from './SuggestControlProps'
 import SuggestControlState from './SuggestControlState'
 
-export default class SuggestControl<I> extends Component<SuggestControlProps<I>, SuggestControlState> {
+export default class SuggestControl<V> extends Component<SuggestControlProps<V>, SuggestControlState> {
 
   public state: SuggestControlState = {
     show: this.props.items.length > 0,
@@ -12,17 +12,27 @@ export default class SuggestControl<I> extends Component<SuggestControlProps<I>,
 
   private inputRef: RefObject<HTMLInputElement> = createRef()
 
-  public componentDidUpdate(props: SuggestControlProps<I>) {
-    if (props.items !== this.props.items) {
+  public componentDidUpdate(props: SuggestControlProps<V>) {
+    if (
+      props.items.length !== this.props.items.length
+      || props.items.some((item, index) => !this.equals(item, this.props.items[index]))
+    ) {
       this.setState({show: this.props.items.length > 0})
     }
   }
 
-  private onChange: React.ChangeEventHandler<HTMLInputElement> = (event: React.ChangeEvent<HTMLInputElement>) => {
+  private onRequest: React.ChangeEventHandler<HTMLInputElement> = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault()
-    if (this.props.onChange) {
-      this.props.onChange(event.currentTarget.value)
+    if (this.props.onRequest) {
+      this.props.onRequest(event.currentTarget.value)
     }
+  }
+
+  private onChange: (index: number) => void = (index: number) => {
+    if (this.props.onChange) {
+      this.props.onChange(this.props.items[index])
+    }
+    this.hide()
   }
 
   private onFocus: React.FocusEventHandler = (event: React.FocusEvent) => {
@@ -77,6 +87,23 @@ export default class SuggestControl<I> extends Component<SuggestControlProps<I>,
     this.hide()
   }
 
+  private equals: (a: V, b: V) => boolean = (a, b) => {
+    if (this.props.equals) {
+      return this.props.equals(a, b)
+    }
+    return a === b
+  }
+
+  private get selected(): number | undefined {
+    const index = this.props.items.findIndex(item => {
+      if (this.props.equals && this.props.value) {
+        return this.props.equals(item, this.props.value)
+      }
+      return item === this.props.value
+    })
+    return index !== -1 ? index : undefined
+  }
+
   private hide: () => void = () => {
     this.setState({
       show: false,
@@ -87,9 +114,11 @@ export default class SuggestControl<I> extends Component<SuggestControlProps<I>,
     return this.props.children({
       focused: this.state.focused,
       hovered: this.state.hovered,
+      selected: this.selected,
       show: this.state.show,
       inputRef: this.inputRef,
       onChange: this.onChange,
+      onRequest: this.onRequest,
       onFocus: this.onFocus,
       onBlur: this.onBlur,
       onSearchMouseDown: this.onSearchMouseDown,

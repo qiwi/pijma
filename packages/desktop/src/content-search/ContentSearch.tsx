@@ -25,20 +25,21 @@ const CardItem = styled(Card)().withComponent(MenuItem)
 const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
 
 export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItemOptionModel<V>, V>) => (
-  <SuggestControl<SearchItemOptionModel<V>>
-    items={props.items}
+  <SuggestControl<V>
+    value={props.value}
+    items={props.items.map(item => item.value)}
+    equals={props.equals}
+    onRequest={props.onRequest}
     onChange={props.onChange}
     onBlur={props.onBlur}
     onFocus={props.onFocus}
     onSubmit={props.onSubmit}
     children={(renderProps) => (
       <MenuControl
-        itemsLength={props.items.length}
-        selected={props.selected}
-        onItemSelect={index => {
-          props.onItemSelect(props.items[index]!.value)
-          renderProps.onHide()
-        }}
+        count={props.items.length}
+        selected={renderProps.selected}
+        onItemSelect={renderProps.onChange}
+        onKeyDown={renderProps.onKeyDown}
         children={(menuRenderProps) => (
           <Pos type="relative" ref={dropDownContainerRef} width={1}>
             <Box
@@ -47,7 +48,7 @@ export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItem
               onMouseLeave={renderProps.onMouseLeave}
             >
               <ContentInput
-                value={props.value}
+                value={props.suggest}
                 ref={renderProps.inputRef}
                 type="search"
                 pr={14}
@@ -55,15 +56,10 @@ export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItem
                 focused={renderProps.focused}
                 norb={renderProps.show}
                 hovered={renderProps.hovered}
-                onChange={renderProps.onChange}
+                onChange={renderProps.onRequest}
                 onFocus={renderProps.onFocus}
                 onBlur={renderProps.onBlur}
-                onKeyDown={(e) => {
-                  menuRenderProps.onKeyDown(e)
-                  if (menuRenderProps.focused === undefined && menuRenderProps.selected === undefined) {
-                    renderProps.onKeyDown(e)
-                  }
-                }}
+                onKeyDown={menuRenderProps.onKeyDown}
               />
               <Pos
                 type="absolute"
@@ -80,6 +76,7 @@ export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItem
               />
             </Box>
             <DropDown
+              minWidth={1}
               show={renderProps.show}
               rootClose={false}
               container={dropDownContainerRef.current}

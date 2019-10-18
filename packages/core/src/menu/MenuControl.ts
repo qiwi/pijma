@@ -7,12 +7,12 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
 
   public static getDerivedStateFromProps(nextProps: MenuControlProps, prevState: MenuControlState): Partial<MenuControlState> {
     const {focused} = prevState
-    const {itemsLength} = nextProps
+    const {count} = nextProps
     return {
-      focused: itemsLength === 0 ? (
+      focused: count === 0 ? (
         undefined
-      ) : focused !== undefined && itemsLength <= focused ? (
-        itemsLength - 1
+      ) : focused !== undefined && count <= focused ? (
+        count - 1
       ) : (
         focused
       ),
@@ -20,10 +20,8 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
   }
 
   public componentDidUpdate(prevProps: MenuControlProps) {
-    if (prevProps.itemsLength !== this.props.itemsLength) {
-      this.itemsRefs = new Map(
-        Array(this.props.itemsLength).fill(1).map((_value, index) => [index, createRef()]),
-      )
+    if (prevProps.count !== this.props.count) {
+      this.itemsRefs = Array(this.props.count).fill(1).map(() => createRef())
     }
   }
 
@@ -31,9 +29,7 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
     focused: undefined,
   }
 
-  private itemsRefs: Map<number, RefObject<HTMLDivElement>> = new Map(
-    Array(this.props.itemsLength).fill(1).map((_value, index) => [index, createRef()]),
-  )
+  private itemsRefs: RefObject<HTMLDivElement>[] = Array(this.props.count).fill(1).map(() => createRef())
 
   private containerRef: RefObject<HTMLDivElement> = createRef()
 
@@ -87,19 +83,16 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
 
   private onKeyDown: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
     const {focused} = this.state
-    if (this.props.onKeyDown) {
-      this.props.onKeyDown(event)
-    }
     if (event.key === 'ArrowDown') {
       event.preventDefault()
-      const nextItem = this.nextItem
-      if (nextItem === undefined) {
+      const next = this.next
+      if (next === undefined) {
         return
       }
       this.setState({
-        focused: nextItem,
+        focused: next,
       })
-      const itemRef = this.itemsRefs.get(nextItem)
+      const itemRef = this.itemsRefs[next]
       if (itemRef) {
         this.scrollToItem(itemRef)
       }
@@ -107,14 +100,14 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
     }
     if (event.key === 'ArrowUp') {
       event.preventDefault()
-      const prevItem = this.prevItem
-      if (prevItem === undefined) {
+      const prev = this.prev
+      if (prev === undefined) {
         return
       }
       this.setState({
-        focused: prevItem,
+        focused: prev,
       })
-      const itemRef = this.itemsRefs.get(prevItem)
+      const itemRef = this.itemsRefs[prev]
       if (itemRef) {
         this.scrollToItem(itemRef)
       }
@@ -124,39 +117,42 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
       event.preventDefault()
       const item = focused !== undefined ? focused : this.props.selected
       if (item !== undefined) {
-        this.selectItem(item)
+        return this.selectItem(item)
       }
+    }
+    if (this.props.onKeyDown) {
+      this.props.onKeyDown(event)
     }
   }
 
-  private get nextItem(): number | undefined {
-    const {itemsLength} = this.props
+  private get next(): number | undefined {
+    const {count} = this.props
     const {focused} = this.state
     const {selected} = this.props
     if (focused === undefined && selected === undefined) {
       return 0
     }
-    const currentId = focused !== undefined ? focused : selected!
-    return currentId + 1 >= itemsLength ? 0 : currentId + 1
+    const current = focused !== undefined ? focused : selected!
+    return current + 1 >= count ? 0 : current + 1
   }
 
-  private get prevItem(): number | undefined {
-    const {itemsLength} = this.props
+  private get prev(): number | undefined {
+    const {count} = this.props
     const {focused} = this.state
     const {selected} = this.props
     if (focused === undefined && selected === undefined) {
-      return itemsLength - 1
+      return count - 1
     }
-    const currentId = focused !== undefined ? focused : selected!
-    return currentId === 0 ? itemsLength - 1 : currentId - 1
+    const current = focused !== undefined ? focused : selected!
+    return current === 0 ? count - 1 : current - 1
   }
 
   public render() {
     const {focused} = this.state
-    const {selected, itemsLength} = this.props
+    const {selected, count} = this.props
     return this.props.children({
-      items: Array(itemsLength).fill(1).map((_item, index) => ({
-        ref: this.itemsRefs.get(index)!,
+      items: Array(count).fill(1).map((_item, index) => ({
+        ref: this.itemsRefs[index],
         focused: focused !== undefined ? focused === index : false,
         selected: selected !== undefined ? selected === index : false,
         onClick: this.onItemClick(index),

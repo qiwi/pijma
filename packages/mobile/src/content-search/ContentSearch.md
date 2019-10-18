@@ -117,39 +117,41 @@ const banks = [
 ];
 
 const initialState = {
-  value: '',
+  suggest: '',
   loading: false,
   banks: [],
+  timer: undefined,
 };
 
 const filterBanks = (title) => banks.filter(bank => {
-  return bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1;
+  return title !== '' && bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1;
 });
 
-const getBanks = (value) => {
+const getBanks = (suggest) => {
   setState({loading: true});
+  clearTimeout(state.timer);
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
+    setState({timer: setTimeout(() => {
       setState({loading: false});
-      resolve(filterBanks(value));
-    }, 1000);
+      resolve(filterBanks(suggest));
+    }, 1000)});
   });
 };
 
 const selectItem = (value) => {
   const title = getBankByValue(value).title;
   setState({
-    value: title,
+    suggest: title,
     loading: false,
     banks: filterBanks(title),
   });
-  submit(value);
+  console.log('SELECT ITEM', value)
 };
 
 const equals = (a, b) => a.id === b.id;
 
-const submit = (value) => {
-  console.log('SUBMIT', getBankByValue(value));
+const submit = (suggest) => {
+  console.log('SUBMIT', suggest);
 };
 
 const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
@@ -160,15 +162,16 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
       <ContentSearch
         value={state.value}
         items={state.banks}
+        suggest={state.suggest}
         loading={state.loading}
         error={state.value === ''}
         equals={equals}
         onCancel={() => setState(initialState)}
         onSubmit={submit}
-        onItemSelect={selectItem}
-        onChange={(value) => {
-          setState({value});
-          getBanks(value).then((banks) => setState({banks}));
+        onChange={selectItem}
+        onRequest={(suggest) => {
+          setState({suggest});
+          getBanks(suggest).then((banks) => setState({banks}));
         }}
         result={({focused, selected, hide}) => state.banks.length > 0 ? (
           <Link onClick={hide}>
@@ -178,7 +181,7 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
           <Paragraph>
             Ничего не найдено, попробуйте
             <Link onClick={() => {
-              setState({value: 'Сбербанк'});
+              setState({suggest: 'Сбербанк'});
               getBanks('Сбербанк').then((banks) => setState({banks}));
             }}>
               Сбербанк

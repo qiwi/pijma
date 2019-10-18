@@ -1,10 +1,10 @@
 import {Component, RefObject, createRef} from 'react'
-import ModalInputControlProps from './ModalInputControlProps'
-import ModalInputControlState from './ModalInputControlState'
+import ModalSuggestControlProps from './ModalSuggestControlProps'
+import ModalSuggestControlState from './ModalSuggestControlState'
 
-export default class ModalInputControl extends Component<ModalInputControlProps, ModalInputControlState> {
+export default class ModalSuggestControl<V> extends Component<ModalSuggestControlProps<V>, ModalSuggestControlState> {
 
-  public state: ModalInputControlState = {
+  public state: ModalSuggestControlState = {
     show: !!this.props.show,
     focused: false,
     hovered: false,
@@ -12,16 +12,23 @@ export default class ModalInputControl extends Component<ModalInputControlProps,
 
   private modalInputRef: RefObject<HTMLInputElement> = createRef()
 
-  public componentDidUpdate(props: ModalInputControlProps) {
+  public componentDidUpdate(props: ModalSuggestControlProps<V>) {
     if (props.show !== this.props.show) {
       this.setState({show: !!this.props.show})
     }
   }
 
-  private onChange: React.ChangeEventHandler<HTMLInputElement> = (event: React.ChangeEvent<HTMLInputElement>) => {
+  private onRequest: React.ChangeEventHandler<HTMLInputElement> = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault()
+    if (this.props.onRequest) {
+      this.props.onRequest(event.currentTarget.value)
+    }
+  }
+
+  private onChange: (index: number) => void = (index: number) => {
+    this.hide()
     if (this.props.onChange) {
-      this.props.onChange(event.currentTarget.value)
+      this.props.onChange(this.props.items[index])
     }
   }
 
@@ -99,12 +106,31 @@ export default class ModalInputControl extends Component<ModalInputControlProps,
     }
   }
 
+  private equals: (a: V, b: V) => boolean = (a, b) => {
+    if (this.props.equals) {
+      return this.props.equals(a, b)
+    }
+    return a === b
+  }
+
+  private get selected(): number | undefined {
+    const index = this.props.items.findIndex(item => {
+      if (this.props.value) {
+        return this.equals(item, this.props.value)
+      }
+      return item === this.props.value
+    })
+    return index !== -1 ? index : undefined
+  }
+
   public render() {
     return this.props.children({
       focused: this.state.focused,
       hovered: this.state.hovered,
+      selected: this.selected,
       show: this.state.show,
       modalInputRef: this.modalInputRef,
+      onRequest: this.onRequest,
       onChange: this.onChange,
       onFocus: this.onFocus,
       onBlur: this.onBlur,

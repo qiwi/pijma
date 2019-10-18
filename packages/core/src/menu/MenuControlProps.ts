@@ -2,7 +2,7 @@ import {RefObject, KeyboardEventHandler} from 'react'
 import RenderChild from '../RenderChild'
 
 export default interface MenuControlProps {
-  itemsLength: number
+  count: number
   selected?: number | undefined
   onKeyDown?: KeyboardEventHandler
   onItemSelect?: (index: number) => void

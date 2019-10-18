@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {
-  ModalInputControl,
+  ModalSuggestControl,
   Image,
   MenuControl,
   Icon,
@@ -21,7 +21,11 @@ import SearchItemOptionModel from './SearchItemOptionModel'
 const CardItem = styled(Card)().withComponent(MenuItem)
 
 export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItemOptionModel<V>, V>) => (
-  <ModalInputControl
+  <ModalSuggestControl<V>
+    value={props.value}
+    items={props.items.map(item => item.value)}
+    equals={props.equals}
+    onRequest={props.onRequest}
     onChange={props.onChange}
     onBlur={props.onBlur}
     onFocus={props.onFocus}
@@ -35,13 +39,13 @@ export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItem
           onMouseLeave={renderProps.onMouseLeave}
         >
           <ContentInput
-            value={props.value}
+            value={props.suggest}
             type="search"
             pr={14}
             error={false}
             focused={renderProps.focused}
             hovered={renderProps.hovered}
-            onChange={renderProps.onChange}
+            onChange={renderProps.onRequest}
             onFocus={renderProps.onFocus}
           />
           <Pos type="absolute" right={4} top={3} onClick={renderProps.onShow}>
@@ -49,15 +53,13 @@ export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItem
           </Pos>
         </Box>
         <MenuControl
-          itemsLength={props.items.length}
-          selected={props.selected}
-          onItemSelect={index => {
-            props.onItemSelect(props.items[index]!.value)
-            renderProps.onHide()
-          }}
+          count={props.items.length}
+          selected={renderProps.selected}
+          onItemSelect={renderProps.onChange}
+          onKeyDown={renderProps.onKeyDown}
           children={(menuRenderProps) => (
             <InputModal
-              value={props.value}
+              value={props.suggest}
               show={renderProps.show}
               inputType="search"
               inputRef={renderProps.modalInputRef}
@@ -65,13 +67,8 @@ export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItem
               error={props.error}
               loading={props.loading}
               submitIcon="search"
-              onChange={renderProps.onChange}
-              onKeyDown={(e) => {
-                menuRenderProps.onKeyDown(e)
-                if (menuRenderProps.focused === undefined && menuRenderProps.selected === undefined) {
-                  renderProps.onKeyDown(e)
-                }
-              }}
+              onChange={renderProps.onRequest}
+              onKeyDown={menuRenderProps.onKeyDown}
               onFocus={renderProps.onFocus}
               onBlur={renderProps.onModalInputBlur}
               onSubmit={renderProps.onSubmit}
