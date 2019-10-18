@@ -2,12 +2,12 @@
 <Block>
   <BlockContent>
     <Spacer>
-        <ProgressBar value={0}></ProgressBar>
-        <ProgressBar value={0.25}></ProgressBar>
-        <ProgressBar value={0.5}></ProgressBar>
-        <ProgressBar value={0.75}></ProgressBar>
-        <ProgressBar value={1}></ProgressBar>
-        <ProgressBar value={0.5} disabled></ProgressBar>
+        <ProgressBar value={0}/>
+        <ProgressBar value={0.25}/>
+        <ProgressBar value={0.5}/>
+        <ProgressBar value={0.75}/>
+        <ProgressBar value={1}/>
+        <ProgressBar value={0.5} disabled/>
     </Spacer>
   </BlockContent>
 </Block>

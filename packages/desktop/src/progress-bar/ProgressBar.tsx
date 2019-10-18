@@ -2,11 +2,11 @@ import React, {FC} from 'react'
 import {Card} from '@qiwi/pijma-core'
 
 export interface ProgressBarProps {
-  disabled?: boolean
   value: number
+  disabled?: boolean
 }
 
-export const ProgressBar: FC<ProgressBarProps> = ({value, disabled}) => (
+export const ProgressBar: FC<ProgressBarProps> = ({value, disabled = false}) => (
   <Card bg="#f5f5f5" height={10} r={24} p={2}>
     <Card
       bg={disabled ? '#ccc' : 'linear-gradient(268deg, #ff8c00 99%, #ff7700)'}
