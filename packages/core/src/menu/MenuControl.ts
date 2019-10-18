@@ -126,9 +126,8 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
   }
 
   private get next(): number | undefined {
-    const {count} = this.props
+    const {count, selected} = this.props
     const {focused} = this.state
-    const {selected} = this.props
     if (focused === undefined && selected === undefined) {
       return 0
     }
@@ -137,9 +136,8 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
   }
 
   private get prev(): number | undefined {
-    const {count} = this.props
+    const {count, selected} = this.props
     const {focused} = this.state
-    const {selected} = this.props
     if (focused === undefined && selected === undefined) {
       return count - 1
     }
