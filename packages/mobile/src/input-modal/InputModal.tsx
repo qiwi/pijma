@@ -45,6 +45,10 @@ contentTransition.defaultProps = {
 
 interface InputModalProps {
   value: string
+  tabIndex?: number
+  autoComplete?: boolean
+  placeholder?: string
+  maxLength?: number
   show: boolean
   inputType?: string
   inputRef?: RefObject<HTMLInputElement>
@@ -112,6 +116,10 @@ const InputModal: FunctionComponent<InputModalProps> = (props) => (
               ref={props.inputRef}
               width={1}
               autoFocus={true}
+              tabIndex={props.tabIndex}
+              placeholder={props.placeholder}
+              maxLength={props.maxLength}
+              autoComplete={props.autoComplete ? 'on' : 'off'}
               onFocus={props.onFocus}
               onBlur={props.onBlur}
               onKeyDown={props.onKeyDown}

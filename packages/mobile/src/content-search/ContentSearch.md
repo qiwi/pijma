@@ -143,6 +143,7 @@ const selectItem = (value) => {
   setState({
     suggest: title,
     loading: false,
+    error: false,
     banks: filterBanks(title),
   });
   console.log('SELECT ITEM', value)
@@ -164,13 +165,13 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
         items={state.banks}
         suggest={state.suggest}
         loading={state.loading}
-        error={state.value === ''}
+        error={state.error}
         equals={equals}
         onCancel={() => setState(initialState)}
         onSubmit={submit}
         onChange={selectItem}
         onRequest={(suggest) => {
-          setState({suggest});
+          setState({suggest, error: suggest === ''});
           getBanks(suggest).then((banks) => setState({banks}));
         }}
         result={({focused, selected, hide}) => state.banks.length > 0 ? (
@@ -181,7 +182,7 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
           <Paragraph>
             Ничего не найдено, попробуйте
             <Link onClick={() => {
-              setState({suggest: 'Сбербанк'});
+              setState({suggest: 'Сбербанк', error: false});
               getBanks('Сбербанк').then((banks) => setState({banks}));
             }}>
               Сбербанк

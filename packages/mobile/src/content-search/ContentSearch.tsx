@@ -41,8 +41,13 @@ export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItem
           <ContentInput
             value={props.suggest}
             type="search"
-            pr={14}
             error={false}
+            tabIndex={props.tabIndex}
+            autoComplete={props.autoComplete}
+            autoFocus={props.autoFocus}
+            placeholder={props.placeholder}
+            maxLength={props.maxLength}
+            pr={14}
             focused={renderProps.focused}
             hovered={renderProps.hovered}
             onChange={renderProps.onRequest}
@@ -60,6 +65,10 @@ export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItem
           children={(menuRenderProps) => (
             <InputModal
               value={props.suggest}
+              tabIndex={props.tabIndex}
+              autoComplete={props.autoComplete}
+              placeholder={props.placeholder}
+              maxLength={props.maxLength}
               show={renderProps.show}
               inputType="search"
               inputRef={renderProps.modalInputRef}

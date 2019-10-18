@@ -119,6 +119,7 @@ const banks = [
 const initialState = {
   suggest: '',
   loading: false,
+  error: false,
   banks: [],
   timer: undefined,
 };
@@ -163,13 +164,13 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
         items={state.banks}
         suggest={state.suggest}
         loading={state.loading}
-        error={state.value === ''}
+        error={state.error}
         equals={equals}
         onCancel={() => setState(initialState)}
         onSubmit={submit}
         onChange={selectItem}
         onRequest={(suggest) => {
-          setState({suggest});
+          setState({suggest, error: suggest === ''});
           getBanks(suggest).then((banks) => setState({banks}));
         }}
         result={({focused, selected, hide}) => (

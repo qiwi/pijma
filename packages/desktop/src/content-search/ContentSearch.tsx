@@ -49,10 +49,15 @@ export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItem
             >
               <ContentInput
                 value={props.suggest}
-                ref={renderProps.inputRef}
                 type="search"
+                tabIndex={props.tabIndex}
+                autoComplete={props.autoComplete}
+                autoFocus={props.autoFocus}
+                placeholder={props.placeholder}
+                maxLength={props.maxLength}
+                ref={renderProps.inputRef}
                 pr={14}
-                error={false}
+                error={!!props.error}
                 focused={renderProps.focused}
                 norb={renderProps.show}
                 hovered={renderProps.hovered}
