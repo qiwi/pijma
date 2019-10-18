@@ -19,7 +19,6 @@ export default interface ContentSearchProps<O extends SearchItemOptionModel<V>, 
     selected: V | undefined
     hide: () => void
   }>
-  onItemSelect: (item: V) => void
   onCancel?: () => void
   onChange?: (value: V) => void
   onRequest?: (value: string) => void
