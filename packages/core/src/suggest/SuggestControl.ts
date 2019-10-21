@@ -88,12 +88,10 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<V>,
   }
 
   private get selected(): number | undefined {
-    const index = this.props.items.findIndex(item => {
-      if (this.props.value) {
-        return this.props.equals(item, this.props.value)
-      }
-      return item === this.props.value
-    })
+    if (!this.props.value) {
+      return undefined
+    }
+    const index = this.props.items.findIndex(item => this.props.equals(item, this.props.value!))
     return index !== -1 ? index : undefined
   }
 
