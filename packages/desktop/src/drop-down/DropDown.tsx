@@ -5,6 +5,7 @@ import {Overlay, OverlayProps, SimpleTransition, SimpleTransitionProps, css, Pos
 export interface DropDownProps {
   show: boolean
   offset?: number
+  rootClose?: boolean
   target: OverlayProps['target']
   container: OverlayProps['container']
   children: React.ReactElement
@@ -31,6 +32,7 @@ transition.defaultProps = {
 export const DropDown: FC<DropDownProps> = ({
   show,
   offset,
+  rootClose = true,
   target,
   container,
   onHide,
@@ -41,13 +43,17 @@ export const DropDown: FC<DropDownProps> = ({
     placement="bottom"
     target={target}
     container={container}
-    rootClose={true}
+    rootClose={rootClose}
     onHide={onHide}
     transition={transition}
     children={(renderProps) => (
-      <Pos type="absolute" zIndex={999} ref={renderProps.props.ref} mt={offset} css={renderProps.props.style}>
+      <Pos type="absolute" width={1} zIndex={999} ref={renderProps.props.ref} mt={offset} css={renderProps.props.style}>
         {children}
       </Pos>
     )}
   />
 )
+
+DropDown.defaultProps = {
+  rootClose: true,
+}
