@@ -1,4 +1,4 @@
-#### ContentSearch
+#### ContentSuggest
 
 ```jsx
 const banks = [
@@ -148,6 +148,10 @@ const selectItem = (value) => {
   console.log('SELECT ITEM', bank)
 };
 
+const onHide = () => setState({
+  banks: [],
+})
+
 const equals = (a, b) => a.id === b.id;
 
 const submit = (suggest) => {
@@ -159,7 +163,7 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
 <Block>
   <BlockContent>
     <Box width={128}>
-      <ContentSearch
+      <ContentSuggest
         value={state.value}
         items={state.banks}
         suggest={state.suggest}

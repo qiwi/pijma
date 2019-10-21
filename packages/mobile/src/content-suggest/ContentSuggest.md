@@ -1,4 +1,4 @@
-#### ContentSearch
+#### ContentSuggest
 
 ```jsx
 const banks = [
@@ -160,7 +160,7 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
 <Block>
   <BlockContent>
     <Box width={64}>
-      <ContentSearch
+      <ContentSuggest
         value={state.value}
         items={state.banks}
         suggest={state.suggest}

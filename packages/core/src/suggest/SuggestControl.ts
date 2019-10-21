@@ -15,7 +15,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<V>,
   public componentDidUpdate(props: SuggestControlProps<V>) {
     if (
       props.items.length !== this.props.items.length
-      || props.items.some((item, index) => !this.equals(item, this.props.items[index]))
+      || props.items.some((item, index) => !this.props.equals(item, this.props.items[index]))
     ) {
       this.setState({show: this.props.items.length > 0})
     }
@@ -87,16 +87,9 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<V>,
     this.hide()
   }
 
-  private equals: (a: V, b: V) => boolean = (a, b) => {
-    if (this.props.equals) {
-      return this.props.equals(a, b)
-    }
-    return a === b
-  }
-
   private get selected(): number | undefined {
     const index = this.props.items.findIndex(item => {
-      if (this.props.equals && this.props.value) {
+      if (this.props.value) {
         return this.props.equals(item, this.props.value)
       }
       return item === this.props.value
@@ -105,6 +98,9 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<V>,
   }
 
   private hide: () => void = () => {
+    if (this.props.onHide) {
+      this.props.onHide()
+    }
     this.setState({
       show: false,
     })

@@ -16,24 +16,28 @@ import {
 import {DropDown} from '../drop-down'
 import {MenuItem} from '../menu'
 
-import ContentSearchProps from './ContentSearchProps'
-import SearchItemOptionModel from './SearchItemOptionModel'
+import ContentSuggestProps from './ContentSuggestProps'
+import ContentSuggestOptionsModel from './ContentSuggestOptionModel'
 
 const CardPos = Card.withComponent(Pos)
 const CardItem = styled(Card)().withComponent(MenuItem)
 
 const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
 
-export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItemOptionModel<V>, V>) => (
+export const ContentSuggest = <V extends {}>({
+    equals = (a: V, b: V) => a === b,
+    ...props
+  }: ContentSuggestProps<ContentSuggestOptionsModel<V>, V>) => (
   <SuggestControl<V>
     value={props.value}
     items={props.items.map(item => item.value)}
-    equals={props.equals}
+    equals={equals}
     onRequest={props.onRequest}
     onChange={props.onChange}
     onBlur={props.onBlur}
     onFocus={props.onFocus}
     onSubmit={props.onSubmit}
+    onHide={props.onHide}
     children={(renderProps) => (
       <MenuControl
         count={props.items.length}
@@ -136,3 +140,7 @@ export const ContentSearch = <V extends {}>(props: ContentSearchProps<SearchItem
     )}
   />
 )
+
+ContentSuggest.defaultProps = {
+  equals: (a: any, b: any) => a === b,
+}

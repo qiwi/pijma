@@ -106,17 +106,10 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
     }
   }
 
-  private equals: (a: V, b: V) => boolean = (a, b) => {
-    if (this.props.equals) {
-      return this.props.equals(a, b)
-    }
-    return a === b
-  }
-
   private get selected(): number | undefined {
     const index = this.props.items.findIndex(item => {
       if (this.props.value) {
-        return this.equals(item, this.props.value)
+        return this.props.equals(item, this.props.value)
       }
       return item === this.props.value
     })

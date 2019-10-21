@@ -1,8 +1,8 @@
 import {RenderChild} from '@qiwi/pijma-core'
 
-import SearchItemOptionModel from './SearchItemOptionModel'
+import ContentSuggestOptionModel from './ContentSuggestOptionModel'
 
-export default interface ContentSearchProps<O extends SearchItemOptionModel<V>, V> {
+export default interface ContentSuggestProps<O extends ContentSuggestOptionModel<V>, V> {
   value?: V
   suggest: string
   items: O[]
@@ -19,11 +19,11 @@ export default interface ContentSearchProps<O extends SearchItemOptionModel<V>, 
     selected: V | undefined
     hide: () => void
   }>
+  onSubmit?: (value: string) => void
   onCancel?: () => void
   onChange?: (value: V) => void
   onRequest?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void
-  onSubmit?: (value: string) => void
   equals?: (a: V, b: V) => boolean
 }

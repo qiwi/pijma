@@ -5,7 +5,7 @@ export default interface ModalSuggestControlProps<V> {
   items: V[]
   value?: V
   show?: boolean
-  equals?: (a: V, b: V) => boolean
+  equals: (a: V, b: V) => boolean
   onChange?: (value: V) => void
   onRequest?: (suggest: string) => void
   onFocus?: () => void
