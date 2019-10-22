@@ -13,7 +13,7 @@ export const ProgressBar: FC<ProgressBarProps> = ({value, disabled = false}) => 
       height={6}
       width={value}
       minWidth={6}
-      r={16}
+      r={12}
     />
   </Card>
 )
