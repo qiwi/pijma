@@ -1,8 +1,7 @@
 import {Component, RefObject, createRef} from 'react'
 import SuggestControlProps from './SuggestControlProps'
 import SuggestControlState from './SuggestControlState'
-
-import {OptionModel} from '@qiwi/pijma-core'
+import {OptionModel} from '../option'
 
 export default class SuggestControl<V> extends Component<SuggestControlProps<OptionModel<V>, V>, SuggestControlState> {
 

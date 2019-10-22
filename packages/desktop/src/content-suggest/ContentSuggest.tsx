@@ -41,7 +41,6 @@ export const ContentSuggest = <V extends {}>({
       <MenuControl
         count={props.items.length}
         selected={renderProps.selected}
-        show={renderProps.show}
         onItemSelect={renderProps.onChange}
         onKeyDown={renderProps.onKeyDown}
         children={(menuRenderProps) => (

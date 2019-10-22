@@ -1,7 +1,6 @@
 import {RefObject} from 'react'
+import {OptionModel} from '../option'
 import RenderChild from '../RenderChild'
-
-import {OptionModel} from '@qiwi/pijma-core'
 
 export default interface SuggestControlProps <O extends OptionModel<V>, V> {
   items: O[]
