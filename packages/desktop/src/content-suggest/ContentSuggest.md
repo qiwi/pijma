@@ -142,15 +142,12 @@ const getBanks = (suggest) => {
 const selectItem = (value) => {
   const bank = getBankByValue(value)
   setState({
+    value: value,
     suggest: bank.title,
     loading: false,
   });
   console.log('SELECT ITEM', bank)
 };
-
-const onHide = () => setState({
-  banks: [],
-})
 
 const equals = (a, b) => a.id === b.id;
 

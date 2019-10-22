@@ -94,7 +94,6 @@ export const ContentSuggest = <V extends {}>({
                   ref={item.ref}
                   onClick={item.onClick}
                   onMouseEnter={item.onMouseEnter}
-                  onMouseLeave={item.onMouseLeave}
                   cursor="pointer"
                   text={props.items[key].title}
                   notes={props.items[key].description}

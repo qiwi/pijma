@@ -16,20 +16,26 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
       ) : (
         focused
       ),
+      refs: Array(count).fill(1).map(() => createRef()),
     }
   }
 
   public componentDidUpdate(prevProps: MenuControlProps) {
-    if (prevProps.count !== this.props.count) {
-      this.itemsRefs = Array(this.props.count).fill(1).map(() => createRef())
+    const {selected, count} = this.props
+    const {focused, refs} = this.state
+    if (
+      (prevProps.count !== count)
+      && selected !== undefined
+      && focused === undefined
+    ) {
+      this.scrollToItem(refs[selected])
     }
   }
 
   public state: MenuControlState = {
+    refs: Array(this.props.count).fill(1).map(() => createRef()),
     focused: undefined,
   }
-
-  private itemsRefs: RefObject<HTMLDivElement>[] = Array(this.props.count).fill(1).map(() => createRef())
 
   private containerRef: RefObject<HTMLDivElement> = createRef()
 
@@ -45,19 +51,12 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
     })
   }
 
-  private onItemLeave = () => (event: React.MouseEvent) => {
-    event.preventDefault()
-    this.setState({
-      focused: undefined,
-    })
-  }
-
-  private selectItem: (index: number) => void = (item) => {
+  private selectItem: (index: number) => void = (index) => {
     this.setState({
       focused: undefined,
     })
     if (this.props.onItemSelect) {
-      this.props.onItemSelect(item)
+      this.props.onItemSelect(index)
     }
   }
 
@@ -92,7 +91,7 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
       this.setState({
         focused: next,
       })
-      const itemRef = this.itemsRefs[next]
+      const itemRef = this.state.refs[next]
       if (itemRef) {
         this.scrollToItem(itemRef)
       }
@@ -107,7 +106,7 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
       this.setState({
         focused: prev,
       })
-      const itemRef = this.itemsRefs[prev]
+      const itemRef = this.state.refs[prev]
       if (itemRef) {
         this.scrollToItem(itemRef)
       }
@@ -150,12 +149,11 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
     const {selected, count} = this.props
     return this.props.children({
       items: Array(count).fill(1).map((_item, index) => ({
-        ref: this.itemsRefs[index],
+        ref: this.state.refs[index],
         focused: focused !== undefined ? focused === index : false,
         selected: selected !== undefined ? selected === index : false,
         onClick: this.onItemClick(index),
         onMouseEnter: this.onItemEnter(index),
-        onMouseLeave: this.onItemLeave(),
       })),
       focused,
       selected,

@@ -56,7 +56,6 @@ export const ContentInput = forwardRef<HTMLInputElement | MaskedInput, ContentIn
     placeholderColor: '#666',
     cursor: 'text',
     bg: props.focused ? '#fff' : props.hovered ? 'rgba(224, 224, 224, 0.65)' : '#e6e6e6',
-    s: props.focused ? '0 20px 64px 0 rgba(0, 0, 0, 0.16)' : 'none',
     transition: 'all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)',
     value: props.value,
     name: props.name,

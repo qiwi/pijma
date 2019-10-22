@@ -25,6 +25,5 @@ export default interface ContentSuggestProps<O extends ContentSuggestOptionModel
   onFocus?: () => void
   onBlur?: () => void
   onSubmit?: (value: string) => void
-  onHide?: () => void
   equals?: (a: V, b: V) => boolean
 }

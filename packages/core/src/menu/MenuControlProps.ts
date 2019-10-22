@@ -13,7 +13,6 @@ export default interface MenuControlProps {
       focused: boolean
       onClick: React.MouseEventHandler
       onMouseEnter: React.MouseEventHandler
-      onMouseLeave: React.MouseEventHandler
     }>
     focused: number | undefined
     selected: number | undefined

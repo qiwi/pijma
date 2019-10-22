@@ -142,6 +142,7 @@ const selectItem = (value) => {
   const title = getBankByValue(value).title;
   setState({
     suggest: title,
+    value: value,
     loading: false,
     error: false,
     banks: filterBanks(title),

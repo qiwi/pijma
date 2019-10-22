@@ -2,21 +2,20 @@ import {Component, RefObject, createRef} from 'react'
 import SuggestControlProps from './SuggestControlProps'
 import SuggestControlState from './SuggestControlState'
 
-export default class SuggestControl<V> extends Component<SuggestControlProps<V>, SuggestControlState> {
+import {OptionModel} from '@qiwi/pijma-core'
+
+export default class SuggestControl<V> extends Component<SuggestControlProps<OptionModel<V>, V>, SuggestControlState> {
 
   public state: SuggestControlState = {
-    show: this.props.items.length > 0,
+    show: false,
     focused: false,
     hovered: false,
   }
 
   private inputRef: RefObject<HTMLInputElement> = createRef()
 
-  public componentDidUpdate(props: SuggestControlProps<V>) {
-    if (
-      props.items.length !== this.props.items.length
-      || props.items.some((item, index) => !this.props.equals(item, this.props.items[index]))
-    ) {
+  public componentDidUpdate(props: SuggestControlProps<OptionModel<V>, V>) {
+    if (props.items !== this.props.items) {
       this.setState({show: this.props.items.length > 0})
     }
   }
@@ -30,7 +29,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<V>,
 
   private onChange: (index: number) => void = (index: number) => {
     if (this.props.onChange) {
-      this.props.onChange(this.props.items[index])
+      this.props.onChange(this.props.items[index].value)
     }
     this.hide()
   }
@@ -91,11 +90,11 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<V>,
     if (!this.props.value) {
       return undefined
     }
-    const index = this.props.items.findIndex(item => this.props.equals(item, this.props.value!))
+    const index = this.props.items.findIndex(item => this.props.equals(item.value, this.props.value!))
     return index !== -1 ? index : undefined
   }
 
-  private hide: () => void = () => {
+  private hide = () => {
     if (this.props.onHide) {
       this.props.onHide()
     }

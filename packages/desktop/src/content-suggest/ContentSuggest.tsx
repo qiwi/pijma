@@ -30,22 +30,29 @@ export const ContentSuggest = <V extends {}>({
   }: ContentSuggestProps<ContentSuggestOptionsModel<V>, V>) => (
   <SuggestControl<V>
     value={props.value}
-    items={props.items.map(item => item.value)}
+    items={props.items}
     equals={equals}
     onRequest={props.onRequest}
     onChange={props.onChange}
     onBlur={props.onBlur}
     onFocus={props.onFocus}
     onSubmit={props.onSubmit}
-    onHide={props.onHide}
     children={(renderProps) => (
       <MenuControl
         count={props.items.length}
         selected={renderProps.selected}
+        show={renderProps.show}
         onItemSelect={renderProps.onChange}
         onKeyDown={renderProps.onKeyDown}
         children={(menuRenderProps) => (
-          <Pos type="relative" ref={dropDownContainerRef} width={1}>
+          <CardPos
+            type="relative"
+            ref={dropDownContainerRef}
+            width={1}
+            transition={`box-shadow ${renderProps.show ? 300 : 200}ms cubic-bezier(0.4, 0.0, 0.2, 1)`}
+            s={renderProps.focused && !renderProps.show ? '0 20px 64px 0 rgba(0, 0, 0, 0.16)' : 'none'}
+            r={10}
+          >
             <Box
               width={1}
               onMouseEnter={renderProps.onMouseEnter}
@@ -93,48 +100,56 @@ export const ContentSuggest = <V extends {}>({
               onHide={renderProps.onHide}
             >
               <CardPos
-                minWidth={1}
-                maxHeight={110}
-                bg="#fff"
-                r="0 0 10px 10px"
-                s="0 20px 64px 0 rgba(0, 0, 0, 0.16)"
-                bt="solid 1px #e6e6e6"
-                ref={menuRenderProps.containerRef}
-                overflow="auto"
-                height={1}
                 type="relative"
-                pt={3}
+                height={1}
+                minWidth={1}
+                r="10px"
+                s="0 20px 64px 0 rgba(0, 0, 0, 0.16)"
+                pt={12}
+                top={-12}
               >
-                {menuRenderProps.items.map((item, key) => (
-                  <CardItem
-                    key={key}
-                    ref={item.ref}
-                    onClick={item.onClick}
-                    onMouseEnter={item.onMouseEnter}
-                    onMouseLeave={item.onMouseLeave}
-                    cursor="pointer"
-                    text={props.items[key].title}
-                    notes={props.items[key].description}
-                    icon={<Image width={6} height={6} src={props.items[key].logo}/>}
-                    hover={item.focused}
-                    active={item.selected}
-                    focus={item.selected}
-                  />
-                ))}
-                {props.result ? (
-                  <Box px={4} py={2}>
-                    {props.result({
-                      focused: menuRenderProps.focused !== undefined ? props.items[menuRenderProps.focused].value : undefined,
-                      selected: menuRenderProps.selected !== undefined ? props.items[menuRenderProps.selected].value : undefined,
-                      hide: renderProps.onHide,
-                    })}
-                  </Box>
-                ) : (
-                  null
-                )}
+                <CardPos
+                  type="relative"
+                  width={1}
+                  height={1}
+                  maxHeight={98}
+                  bg="#fff"
+                  r="0 0 10px 10px"
+                  bt="solid 1px #e6e6e6"
+                  ref={menuRenderProps.containerRef}
+                  overflow="auto"
+                  pt={3}
+                >
+                  {menuRenderProps.items.map((item, key) => (
+                    <CardItem
+                      key={key}
+                      ref={item.ref}
+                      onClick={item.onClick}
+                      onMouseEnter={item.onMouseEnter}
+                      cursor="pointer"
+                      text={props.items[key].title}
+                      notes={props.items[key].description}
+                      icon={<Image width={6} height={6} src={props.items[key].logo}/>}
+                      hover={item.focused}
+                      active={item.selected}
+                      focus={item.selected}
+                    />
+                  ))}
+                  {props.result ? (
+                    <Box px={4} py={2}>
+                      {props.result({
+                        focused: menuRenderProps.focused !== undefined ? props.items[menuRenderProps.focused].value : undefined,
+                        selected: menuRenderProps.selected !== undefined ? props.items[menuRenderProps.selected].value : undefined,
+                        hide: renderProps.onHide,
+                      })}
+                    </Box>
+                  ) : (
+                    null
+                  )}
+                </CardPos>
               </CardPos>
             </DropDown>
-          </Pos>
+          </CardPos>
         )}
       />
     )}

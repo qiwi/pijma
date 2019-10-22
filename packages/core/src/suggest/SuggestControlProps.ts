@@ -1,9 +1,10 @@
-
 import {RefObject} from 'react'
 import RenderChild from '../RenderChild'
 
-export default interface SuggestControlProps<V> {
-  items: V[]
+import {OptionModel} from '@qiwi/pijma-core'
+
+export default interface SuggestControlProps <O extends OptionModel<V>, V> {
+  items: O[]
   value?: V
   show?: boolean
   equals: (a: V, b: V) => boolean
@@ -11,7 +12,6 @@ export default interface SuggestControlProps<V> {
   onRequest?: (suggest: string) => void
   onFocus?: () => void
   onBlur?: () => void
-  onShow?: () => void
   onHide?: () => void
   onSubmit?: (value: string) => void
   children: RenderChild<{
