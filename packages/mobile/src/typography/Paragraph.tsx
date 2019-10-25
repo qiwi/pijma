@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from 'react'
+import React, {FunctionComponent, Fragment} from 'react'
 
 import {Box, Breaker, Typo, TypoProps, Stub} from '@qiwi/pijma-core'
 
@@ -79,18 +79,24 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
   children,
 }) => (
   stub ? (
-    <Box>
-      {[0.8, 0.9, 0.7].map((width: number, id: number) => (
-        <Stub
+    <Fragment>
+      {Array(clamp !== undefined ? clamp : 3).fill(1).map((v, i) => i % 3 === 0 ? v - 0.2 : i % 3 === 1 ? v - 0.1 : v - 0.3).map((width: number, id: number) => (
+        <Box
           key={id}
-          top={compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}
-          bottom={compact ? StubOffsetCompactBottom[size] : StubOffsetBottom[size]}
-          height={StubHeight[size]}
           width={width}
-          inverse={color === 'inverse'}
-        />
+          ml={align === 'center' || align === 'right' ? 'auto' : undefined}
+          mr={align === 'center' || align === 'left' ? 'auto' : undefined}
+        >
+          <Stub
+            top={compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}
+            bottom={compact ? StubOffsetCompactBottom[size] : StubOffsetBottom[size]}
+            height={StubHeight[size]}
+            width={1}
+            inverse={color === 'inverse'}
+          />
+        </Box>
       ))}
-    </Box>
+    </Fragment>
   ) : (
     <Typo
       as="p"
