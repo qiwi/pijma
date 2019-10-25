@@ -80,7 +80,7 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
 }) => (
   stub ? (
     <Fragment>
-      {Array(clamp !== undefined ? clamp : 3).fill(1).map((v, i) => i % 3 === 0 ? v - 0.2 : i % 3 === 1 ? v - 0.1 : v - 0.3).map((width: number, id: number) => (
+      {Array(clamp === undefined ? 3 : clamp).fill(1).map((v, i) => i % 3 === 0 ? v - 0.2 : i % 3 === 1 ? v - 0.1 : v - 0.3).map((width: number, id: number) => (
         <Box
           key={id}
           width={width}
