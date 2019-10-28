@@ -20,14 +20,10 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
     }
   }
 
-  public componentDidUpdate(prevProps: MenuControlProps) {
-    const {selected, count} = this.props
+  public componentDidUpdate() {
+    const {selected} = this.props
     const {focused, refs} = this.state
-    if (
-      (prevProps.count !== count)
-      && selected !== undefined
-      && focused === undefined
-    ) {
+    if (selected !== undefined && focused === undefined) {
       this.scrollToItem(refs[selected])
     }
   }
@@ -66,6 +62,7 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
     if (!containerElement || !itemElement) {
       return
     }
+    console.log('SCROLL TO ITEM')
     const containerBoundingRect = containerElement.getBoundingClientRect()
     const itemBoundingRect = itemElement.getBoundingClientRect()
     const itemOffset = itemElement.offsetTop
