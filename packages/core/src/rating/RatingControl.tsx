@@ -1,5 +1,5 @@
 import React from 'react'
-import RenderChild from '@qiwi/pijma-core/RenderChild'
+import RenderChild from '../RenderChild'
 
 export interface RatingControlProps<I> {
   value: number
