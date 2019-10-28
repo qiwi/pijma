@@ -62,7 +62,6 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
     if (!containerElement || !itemElement) {
       return
     }
-    console.log('SCROLL TO ITEM')
     const containerBoundingRect = containerElement.getBoundingClientRect()
     const itemBoundingRect = itemElement.getBoundingClientRect()
     const itemOffset = itemElement.offsetTop
