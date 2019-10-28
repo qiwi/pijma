@@ -38,7 +38,7 @@ export const HeaderSearch = <V extends {}>(props: HeaderSearchProps<SearchItemOp
           children={(menuRenderProps) => (
             <InputModal
               value={props.value}
-              show={true}
+              show={props.show}
               inputType="search"
               inputRef={renderProps.modalInputRef}
               contentRef={menuRenderProps.containerRef}
@@ -61,22 +61,24 @@ export const HeaderSearch = <V extends {}>(props: HeaderSearchProps<SearchItemOp
             >
               {menuRenderProps.items.map((item, key) => (
                 <CardItem
+                  mt={key === 0 ? 4 : undefined}
                   key={key}
                   ref={item.ref}
-                  onClick={item.onClick}
-                  onMouseEnter={item.onMouseEnter}
-                  onMouseLeave={item.onMouseLeave}
                   cursor="pointer"
                   text={props.items[key].title}
                   notes={props.items[key].description}
                   icon={<Image width={6} height={6} src={props.items[key].logo}/>}
+                  round
                   hover={item.focused}
                   active={item.selected}
                   focus={item.selected}
+                  onClick={item.onClick}
+                  onMouseEnter={item.onMouseEnter}
+                  onMouseLeave={item.onMouseLeave}
                 />
               ))}
               {props.result ? (
-                <Box px={4} py={2}>
+                <Box px={4}>
                   {props.result({
                     focused: menuRenderProps.focused,
                     selected: menuRenderProps.selected,

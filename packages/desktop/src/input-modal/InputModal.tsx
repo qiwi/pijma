@@ -11,7 +11,6 @@ import {
   styled,
   Pos,
   Card,
-  Box,
   Modal,
   ModalProps,
   SimpleTransition,
@@ -21,7 +20,7 @@ import {
   FlexItem,
   IconProps,
   Input,
-  Spinner,
+  Spinner, Box,
 } from '@qiwi/pijma-core'
 
 const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
@@ -73,7 +72,7 @@ const StyledModal = styled(Modal)<ModalProps>({
   overflow: 'auto',
 })
 
-const BoxPos = Box.withComponent(Pos)
+const CardPos = Card.withComponent(Pos)
 const PosFlexCard = styled(Card.withComponent(Pos))().withComponent(Flex)
 
 const InputModal: FunctionComponent<InputModalProps> = (props) => (
@@ -86,56 +85,64 @@ const InputModal: FunctionComponent<InputModalProps> = (props) => (
     children={(
       <Card
         width={1}
-        height={1}
         bg="#fff"
+        transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+        bb={props.error ? 'solid 2px #d0021b' : 'solid 2px transparent'}
+        s="0 0 25px 0 rgba(0, 0, 0, 0.08)"
       >
-        <PosFlexCard
-          type="relative"
-          align="center"
-          height={20}
-          p={4}
-          transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-          bb={props.error ? 'solid 2px #d0021b' : 'solid 2px transparent'}
-          s="0 0 25px 0 rgba(0, 0, 0, 0.08)"
+        <Box
+          width={295}
+          mx="auto"
         >
-          {props.onBack ? (
-            <FlexItem shrink={0} mr={4} onClick={props.onBack}>
-              <Icon name="arrow-left" color="#000"/>
+          <PosFlexCard
+            type="relative"
+            align="center"
+            height={20}
+            py={4}
+          >
+            {props.onBack ? (
+              <FlexItem shrink={0} mr={4} onClick={props.onBack}>
+                <Icon name="arrow-left" color="#000"/>
+              </FlexItem>
+            ) : (
+              null
+            )}
+            <FlexItem grow={1}>
+              <Input
+                value={props.value}
+                type={props.inputType}
+                ref={props.inputRef}
+                width={1}
+                autoFocus={true}
+                placeholder="Текстовое поле"
+                placeholderSize={5}
+                placeholderWeight={300}
+                onFocus={props.onFocus}
+                onBlur={props.onBlur}
+                onKeyDown={props.onKeyDown}
+                onChange={props.onChange}
+              />
             </FlexItem>
-          ) : (
-            null
-          )}
-          <FlexItem grow={1}>
-            <Input
-              value={props.value}
-              type={props.inputType}
-              ref={props.inputRef}
-              width={1}
-              autoFocus={true}
-              onFocus={props.onFocus}
-              onBlur={props.onBlur}
-              onKeyDown={props.onKeyDown}
-              onChange={props.onChange}
-            />
-          </FlexItem>
-          {props.submitIcon ? (
-            <FlexItem shrink={0} ml={4} onClick={props.onSubmit}>
-              {props.loading ? (
-                <Spinner color="#ff8c00" width={6} height={6}/>
-              ) : (
-                <Icon name={props.submitIcon} color="#666"/>
-              )}
-            </FlexItem>
-          ) : (
-            null
-          )}
-        </PosFlexCard>
-        <BoxPos
+            {props.submitIcon ? (
+              <FlexItem shrink={0} ml={4} onClick={props.onSubmit}>
+                {props.loading ? (
+                  <Spinner color="#ff8c00" width={6} height={6}/>
+                ) : (
+                  <Icon name={props.submitIcon} color="#666"/>
+                )}
+              </FlexItem>
+            ) : (
+              null
+            )}
+          </PosFlexCard>
+        </Box>
+        <CardPos
           ref={props.contentRef}
+          s="0 0 16px 0 rgba(0, 0, 0, 0.12)"
           overflow="auto"
           type="relative"
-          pt={3}
-          height="calc(100% - 60px)"
+          width={1}
+          bg="#fff"
           children={props.children}
         />
       </Card>

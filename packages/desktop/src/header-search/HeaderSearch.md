@@ -163,7 +163,7 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
       text="Нажать"
       onClick={() => setState({show: true})}
     />
-    <Box width={64}>
+    <Box>
       <HeaderSearch
         show={state.show}
         value={state.value}
@@ -172,7 +172,10 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
         loading={state.loading}
         error={state.value === ''}
         equals={equals}
-        onCancel={() => setState(initialState)}
+        onCancel={() => {
+          setState({show: false})
+          setState(initialState)
+        }}
         onSubmit={submit}
         onItemSelect={selectItem}
         onChange={(value) => {
@@ -180,9 +183,11 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
           getBanks(value).then((banks) => setState({banks}));
         }}
         result={({focused, selected, hide}) => state.banks.length > 0 ? (
-          <Link onClick={hide}>
-            Показать все
-          </Link>
+          <Box py={4}>
+            <Link onClick={hide}>
+              Показать все
+            </Link>
+          </Box>
         ) : (
           undefined
         )}
