@@ -183,8 +183,8 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
           getBanks(value).then((banks) => setState({banks}));
         }}
         result={({focused, selected, hide}) => state.banks.length > 0 ? (
-          <Box py={4}>
-            <Link onClick={hide}>
+          <Box pt={2} pb={6}>
+            <Link onClick={() => setState({show: false})}>
               Показать все
             </Link>
           </Box>

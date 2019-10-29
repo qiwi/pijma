@@ -87,7 +87,7 @@ const InputModal: FunctionComponent<InputModalProps> = (props) => (
         width={1}
         bg="#fff"
         transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-        bb={props.error ? 'solid 2px #d0021b' : 'solid 2px transparent'}
+        bb={props.error ? 'solid 2px #d0021b' : 'none'}
         s="0 0 25px 0 rgba(0, 0, 0, 0.08)"
       >
         <Box
@@ -99,9 +99,10 @@ const InputModal: FunctionComponent<InputModalProps> = (props) => (
             align="center"
             height={20}
             py={4}
+            px={6}
           >
             {props.onBack ? (
-              <FlexItem shrink={0} mr={4} onClick={props.onBack}>
+              <FlexItem cursor="pointer" shrink={0} mr={4} onClick={props.onBack}>
                 <Icon name="arrow-left" color="#000"/>
               </FlexItem>
             ) : (
@@ -109,11 +110,13 @@ const InputModal: FunctionComponent<InputModalProps> = (props) => (
             )}
             <FlexItem grow={1}>
               <Input
-                value={props.value}
-                type={props.inputType}
                 ref={props.inputRef}
+                type={props.inputType}
+                value={props.value}
+                valueWeight={300}
                 width={1}
                 autoFocus={true}
+                valueSize={5}
                 placeholder="Текстовое поле"
                 placeholderSize={5}
                 placeholderWeight={300}
@@ -143,8 +146,9 @@ const InputModal: FunctionComponent<InputModalProps> = (props) => (
           type="relative"
           width={1}
           bg="#fff"
-          children={props.children}
-        />
+        >
+          <Box width={295} mx="auto">{props.children}</Box>
+        </CardPos>
       </Card>
     )}
   />

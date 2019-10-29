@@ -78,7 +78,7 @@ export const HeaderSearch = <V extends {}>(props: HeaderSearchProps<SearchItemOp
                 />
               ))}
               {props.result ? (
-                <Box px={4}>
+                <Box px={6}>
                   {props.result({
                     focused: menuRenderProps.focused,
                     selected: menuRenderProps.selected,
