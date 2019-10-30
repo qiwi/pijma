@@ -26,7 +26,7 @@ export const ContentSuggest = <V extends {}>({
 }: ContentSuggestProps<ContentSuggestOptionModel<V>, V>) => (
   <ModalSuggestControl<V>
     value={props.value}
-    items={props.items.map(item => item.value)}
+    items={props.items}
     equals={equals}
     onRequest={props.onRequest}
     onChange={props.onChange}
@@ -34,6 +34,7 @@ export const ContentSuggest = <V extends {}>({
     onFocus={props.onFocus}
     onCancel={props.onCancel}
     onSubmit={props.onSubmit}
+    onShow={props.onShow}
     children={(renderProps) => (
       <Pos type="relative">
         <Box

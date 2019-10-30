@@ -5,7 +5,6 @@ import RenderChild from '../RenderChild'
 export default interface SuggestControlProps <O extends OptionModel<V>, V> {
   items: O[]
   value?: V
-  show?: boolean
   equals: (a: V, b: V) => boolean
   onChange?: (value: V) => void
   onRequest?: (suggest: string) => void

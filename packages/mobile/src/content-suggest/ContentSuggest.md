@@ -171,6 +171,10 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
         onCancel={() => setState(initialState)}
         onSubmit={submit}
         onChange={selectItem}
+        onShow={() => {
+          setState({banks: []});
+          getBanks(state.suggest).then((banks) => setState({banks}));
+        }}
         onRequest={(suggest) => {
           setState({suggest, error: suggest === ''});
           getBanks(suggest).then((banks) => setState({banks}));

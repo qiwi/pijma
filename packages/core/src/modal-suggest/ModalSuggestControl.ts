@@ -1,22 +1,17 @@
 import {Component, RefObject, createRef} from 'react'
 import ModalSuggestControlProps from './ModalSuggestControlProps'
 import ModalSuggestControlState from './ModalSuggestControlState'
+import {OptionModel} from '../option'
 
-export default class ModalSuggestControl<V> extends Component<ModalSuggestControlProps<V>, ModalSuggestControlState> {
+export default class ModalSuggestControl<V> extends Component<ModalSuggestControlProps<OptionModel<V>, V>, ModalSuggestControlState> {
 
   public state: ModalSuggestControlState = {
-    show: !!this.props.show,
+    show: false,
     focused: false,
     hovered: false,
   }
 
   private modalInputRef: RefObject<HTMLInputElement> = createRef()
-
-  public componentDidUpdate(props: ModalSuggestControlProps<V>) {
-    if (props.show !== this.props.show) {
-      this.setState({show: !!this.props.show})
-    }
-  }
 
   private onRequest: React.ChangeEventHandler<HTMLInputElement> = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault()
@@ -28,13 +23,15 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
   private onChange: (index: number) => void = (index: number) => {
     this.hide()
     if (this.props.onChange) {
-      this.props.onChange(this.props.items[index])
+      this.props.onChange(this.props.items[index].value)
     }
   }
 
   private onFocus: React.FocusEventHandler = (event: React.FocusEvent) => {
     event.preventDefault()
-    this.show()
+    this.setState({
+      show: true,
+    })
     if (this.props.onFocus) {
       this.props.onFocus()
     }
@@ -109,9 +106,9 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
   private get selected(): number | undefined {
     const index = this.props.items.findIndex(item => {
       if (this.props.value) {
-        return this.props.equals(item, this.props.value)
+        return this.props.equals(item.value, this.props.value)
       }
-      return item === this.props.value
+      return item.value === this.props.value
     })
     return index !== -1 ? index : undefined
   }

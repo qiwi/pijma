@@ -19,6 +19,7 @@ export default interface ContentSuggestProps<O extends ContentSuggestOptionModel
     selected: V | undefined
     hide: () => void
   }>
+  onShow?: () => void
   onSubmit?: (value: string) => void
   onCancel?: () => void
   onChange?: (value: V) => void
