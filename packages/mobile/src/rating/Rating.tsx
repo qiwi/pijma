@@ -1,50 +1,51 @@
 import React, {FC} from 'react'
-import {Flex, FlexItem, Icon, RatingControl} from '@qiwi/pijma-core/'
+import {Flex, FlexItem, Icon, RatingControl} from '@qiwi/pijma-core'
 
 export interface RatingProps {
   value: number
+  onChange: (value: number) => void
   size?: 's' | 'm'
-  statical?: boolean
+  disabled?: boolean
   count?: number
 }
 
-const RatingSize: {
-  [size in NonNullable<RatingProps['size']>]: number
-} = {
+const RatingSize: Record<NonNullable<RatingProps['size']>, number> = {
   s: 6,
   m: 12,
 }
 
-const RatingIndent: {
-  [size in NonNullable<RatingProps['size']>]: number
-} = {
-  s: 1,
-  m: 2.5,
+const RatingIndent: Record<NonNullable<RatingProps['size']>, number> = {
+  s: 2,
+  m: 5,
 }
 
-export const Rating: FC<RatingProps> = ({value, size = 'm', statical = false, count = 5}) => (
+export const Rating: FC<RatingProps> = ({
+  value,
+  size = 'm',
+  disabled = false,
+  count = 5,
+  onChange,
+}) => (
   <RatingControl
+    onChange={onChange}
     value={value}
     count={count}
-    statical={statical}
+    disabled={disabled}
     children={renderProps => (
       <Flex>
         {renderProps.items.map((item, index) => (
-          value = renderProps.change,
-            <FlexItem
+          <FlexItem
+            key={index}
+            onClick={item.onClick}
+            mr={index === (renderProps.items.length - 1) ? 0 : RatingIndent[size]}
+          >
+            <Icon
               key={index}
-              onClick={item.onClick}
-              cursor={statical ? undefined : 'pointer'}
-              mr={index === (renderProps.items.length - 1) ? 0 : RatingIndent[size]}
-              ml={index === 0 ? 0 : RatingIndent[size]}
-            >
-              <Icon
-                key={index}
-                name="star-solid"
-                size={RatingSize[size]}
-                color={item.active ? '#ff8c00' : '#cccccc'}
-              />
-            </FlexItem>
+              name="star-solid"
+              size={RatingSize[size]}
+              color={item.active ? '#ff8c00' : '#cccccc'}
+            />
+          </FlexItem>
         ))}
       </Flex>
     )}
@@ -53,6 +54,6 @@ export const Rating: FC<RatingProps> = ({value, size = 'm', statical = false, co
 
 Rating.defaultProps = {
   size: 'm',
-  statical: false,
+  disabled: false,
   count: 5,
 }

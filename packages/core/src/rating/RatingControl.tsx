@@ -1,47 +1,64 @@
 import React from 'react'
 import RenderChild from '../RenderChild'
 
-export interface RatingControlProps<I> {
+export interface RatingControlProps {
   value: number
   count: number
-  statical: boolean
+  onChange: (value: number) => void
+  disabled?: boolean
   children: RenderChild<{
-    change: number
-    items: Array<I & {
+    items: Array<& {
       onClick: React.MouseEventHandler
+      onMouseEnter: React.MouseEventHandler
+      onMouseLeave: React.MouseEventHandler
       active: boolean
+      hovered: boolean
     }>
   }>
 }
 
 export interface RatingControlState {
-  value: number
+  hovered: number
 }
 
-export class RatingControl<I> extends React.Component<RatingControlProps<I>,
-  RatingControlState> {
+export class RatingControl extends React.Component<RatingControlProps, RatingControlState> {
 
   public state: RatingControlState = {
-    value: this.props.value,
+    hovered: -1,
   }
 
-  private onItemClick = (index: number) => (
-    event: React.MouseEvent<HTMLElement>,
-  ) => {
+  private onChange = (index: number) => {
+    this.props.onChange(index + 1)
+  }
+
+  private onItemMouseLeave = () => {
+    this.setState({
+      hovered: -1,
+    })
+  }
+
+  private onItemClick = (index: number) => (event: React.MouseEvent<HTMLElement>) => {
+    event.preventDefault()
+    this.onChange(index)
+  }
+
+  private onItemMouseEnter = (index: number) => (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault()
     this.setState({
-      value: index + 1,
+      hovered: index,
     })
   }
 
   public render() {
     let item: any
     return this.props.children({
-      change: this.state.value,
       items: Array.from(Array(this.props.count).keys()).map((_item, index) => ({
         ...item,
-        active: this.state.value >= (index + 1),
-        onClick: this.props.statical ? undefined : this.onItemClick(index),
+        active: (this.props.value >= (index + 1)) && ((index + 1) <= (this.state.hovered) || this.state.hovered === -1),
+        hovered: this.state.hovered >= index,
+        onClick: this.props.disabled ? undefined : this.onItemClick(index),
+        onMouseEnter: this.props.disabled ? undefined : this.onItemMouseEnter(index),
+        onMouseLeave: this.props.disabled ? undefined : this.onItemMouseLeave,
       })),
     })
   }

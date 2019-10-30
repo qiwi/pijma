@@ -203,7 +203,7 @@ export const Icon: FC<IconProps> = ({
   color = '#000',
 }) => (
   <Svg width={size} height={size} viewBox="0 0 24 24" focusable="false">
-    <Path d={IconPaths[name]} fill={color}/>x
+    <Path d={IconPaths[name]} fill={color}/>
   </Svg>
 )
 
