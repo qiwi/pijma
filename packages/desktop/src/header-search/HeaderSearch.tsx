@@ -52,11 +52,10 @@ export const HeaderSearch = <V extends {}>(props: HeaderSearchProps<SearchItemOp
                   renderProps.onKeyDown(e)
                 }
               }}
+              onHide={renderProps.onCancel}
               onFocus={renderProps.onFocus}
               onBlur={renderProps.onModalInputBlur}
               onSubmit={renderProps.onSubmit}
-              onShow={renderProps.onShow}
-              onHide={renderProps.onHide}
               onBack={renderProps.onCancel}
             >
               {menuRenderProps.items.map((item, key) => (
