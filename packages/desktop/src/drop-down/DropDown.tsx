@@ -47,7 +47,7 @@ export const DropDown: FC<DropDownProps> = ({
     onHide={onHide}
     transition={transition}
     children={(renderProps) => (
-      <Pos type="absolute" width={1} zIndex={999} ref={renderProps.props.ref} mt={offset} css={renderProps.props.style}>
+      <Pos type="absolute" minWidth={1} zIndex={999} ref={renderProps.props.ref} mt={offset} css={renderProps.props.style}>
         {children}
       </Pos>
     )}

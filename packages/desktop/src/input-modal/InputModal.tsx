@@ -28,7 +28,7 @@ const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <
 contentTransition.defaultProps = {
   timeout: {
     enter: 150,
-    exit: 0,
+    exit: 100,
   },
   enterClassName: (timeout: number) => css({
     opacity: 1,
@@ -69,7 +69,7 @@ const InputModalOverlay: FunctionComponent<InputModalProps> = (props) => (
     rootClose={true}
     transition={contentTransition}
     children={() => (
-      <React.Fragment>
+      <Box>
         <Pos
           type="absolute"
           zIndex={10050}
@@ -148,7 +148,7 @@ const InputModalOverlay: FunctionComponent<InputModalProps> = (props) => (
         >
           <Box width={295} mx="auto">{props.children}</Box>
         </CardPos>
-      </React.Fragment>
+      </Box>
     )}
   />
 )
