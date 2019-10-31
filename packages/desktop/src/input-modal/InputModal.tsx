@@ -62,7 +62,7 @@ interface InputModalProps {
 const CardPos = Card.withComponent(Pos)
 const PosFlexCard = styled(Card.withComponent(Pos))().withComponent(Flex)
 
-const InputModalOverlay: FunctionComponent<InputModalProps> = (props) => (
+export const InputModal: FunctionComponent<InputModalProps> = (props) => (
   <Overlay
     show={props.show}
     onHide={props.onHide}
@@ -152,5 +152,3 @@ const InputModalOverlay: FunctionComponent<InputModalProps> = (props) => (
     )}
   />
 )
-
-export default InputModalOverlay
