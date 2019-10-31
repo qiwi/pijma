@@ -27,17 +27,19 @@ export const Rating: FC<RatingProps> = ({
   onChange,
 }) => (
   <RatingControl
-    onChange={onChange}
     value={value}
     count={count}
     disabled={disabled}
+    onChange={onChange}
     children={renderProps => (
       <Flex>
         {renderProps.items.map((item, index) => (
           <FlexItem
             key={index}
+            ml={index === 0 ? 0 : RatingIndent[size]}
             onClick={item.onClick}
-            mr={index === (renderProps.items.length - 1) ? 0 : RatingIndent[size]}
+            onMouseMove={item.onMouseEnter}
+            onMouseOut={item.onMouseLeave}
           >
             <Icon
               key={index}

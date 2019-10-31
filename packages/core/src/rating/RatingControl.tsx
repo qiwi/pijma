@@ -7,12 +7,11 @@ export interface RatingControlProps {
   onChange: (value: number) => void
   disabled?: boolean
   children: RenderChild<{
-    items: Array<& {
+    items: Array<{
       onClick: React.MouseEventHandler
       onMouseEnter: React.MouseEventHandler
       onMouseLeave: React.MouseEventHandler
       active: boolean
-      hovered: boolean
     }>
   }>
 }
@@ -50,12 +49,10 @@ export class RatingControl extends React.Component<RatingControlProps, RatingCon
   }
 
   public render() {
-    let item: any
     return this.props.children({
-      items: Array.from(Array(this.props.count).keys()).map((_item, index) => ({
+      items: Array(this.props.count).fill(0).map((item, index) => ({
         ...item,
-        active: (this.props.value >= (index + 1)) && ((index + 1) <= (this.state.hovered) || this.state.hovered === -1),
-        hovered: this.state.hovered >= index,
+        active: (this.state.hovered >= index) || (this.props.value >= (index + 1) && this.state.hovered === -1),
         onClick: this.props.disabled ? undefined : this.onItemClick(index),
         onMouseEnter: this.props.disabled ? undefined : this.onItemMouseEnter(index),
         onMouseLeave: this.props.disabled ? undefined : this.onItemMouseLeave,
