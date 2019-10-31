@@ -28,7 +28,7 @@ const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <
 contentTransition.defaultProps = {
   timeout: {
     enter: 150,
-    exit: 100,
+    exit: 150,
   },
   enterClassName: (timeout: number) => css({
     opacity: 1,

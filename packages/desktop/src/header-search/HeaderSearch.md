@@ -173,7 +173,6 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
         error={state.value === ''}
         equals={equals}
         onCancel={() => {
-          setState(initialState)
           setState({show: false, selected: false})
         }}
         onSubmit={submit}
