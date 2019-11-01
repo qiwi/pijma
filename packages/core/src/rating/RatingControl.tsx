@@ -26,13 +26,9 @@ export class RatingControl extends React.Component<RatingControlProps, RatingCon
     hovered: -1,
   }
 
-  private onChange = (index: number) => {
-    this.props.onChange(index + 1)
-  }
-
-  private onItemClick = (index: number) => (event: React.MouseEvent<HTMLElement>) => {
+  private onItemClick: (index: number) => React.MouseEventHandler = (index) => (event) => {
     event.preventDefault()
-    this.onChange(index)
+    this.props.onChange(index + 1)
   }
 
   private onItemMouseLeave: React.MouseEventHandler = () => {
@@ -41,7 +37,7 @@ export class RatingControl extends React.Component<RatingControlProps, RatingCon
     })
   }
 
-  private onItemMouseEnter = (index: number) => () => {
+  private onItemMouseEnter: (index: number) => React.MouseEventHandler = (index) => () => {
     this.setState({
       hovered: index,
     })
@@ -50,7 +46,7 @@ export class RatingControl extends React.Component<RatingControlProps, RatingCon
   public render() {
     return this.props.children({
       items: Array(this.props.count).fill(0).map((_item, index) => ({
-        active: this.state.hovered === -1 ? (this.props.value >= (index + 1)) : (this.state.hovered >= index),
+        active: this.state.hovered === -1 ? this.props.value >= (index + 1) : this.state.hovered >= index,
         onClick: this.props.disabled ? undefined : this.onItemClick(index),
         onMouseEnter: this.props.disabled ? undefined : this.onItemMouseEnter(index),
         onMouseLeave: this.props.disabled ? undefined : this.onItemMouseLeave,
