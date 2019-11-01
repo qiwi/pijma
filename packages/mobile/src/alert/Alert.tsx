@@ -70,17 +70,23 @@ export const Alert: FC<AlertProps> = ({type = 'general', text, onHide}) => (
             justify="flex-end"
             ml={4}
           >
-            {onHide ? (<FlexItem
-              mr={4}
-              cursor="pointer"
-              onClick={renderProps.onClick}
-            >
-              <Icon
-                size={6}
-                name="cross"
-                color={AlertIconColor[type]}
-              />
-            </FlexItem>) : (
+            {onHide ? (
+              <FlexItem
+                mr={4}
+                cursor="pointer"
+                opacity={renderProps.hovered ? 0.7 : 1}
+                transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+                onClick={renderProps.onClick}
+                onMouseMove={renderProps.onMouseEnter}
+                onMouseOut={renderProps.onMouseLeave}
+              >
+                <Icon
+                  size={6}
+                  name="cross"
+                  color={AlertIconColor[type]}
+                />
+              </FlexItem>
+            ) : (
               null
             )}
           </Flex>
