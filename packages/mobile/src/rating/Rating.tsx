@@ -3,10 +3,10 @@ import {Flex, FlexItem, Icon, RatingControl} from '@qiwi/pijma-core'
 
 export interface RatingProps {
   value: number
-  onChange: (value: number) => void
   size?: 's' | 'm'
   disabled?: boolean
   count?: number
+  onChange: (value: number) => void
 }
 
 const RatingSize: Record<NonNullable<RatingProps['size']>, number> = {
@@ -42,7 +42,6 @@ export const Rating: FC<RatingProps> = ({
             onMouseOut={item.onMouseLeave}
           >
             <Icon
-              key={index}
               name="star-solid"
               size={RatingSize[size]}
               color={item.active ? '#ff8c00' : '#cccccc'}

@@ -3,10 +3,10 @@ initialState = {value: 0};
 <Block>
   <BlockContent>
     <Spacer size="l">
-      <Paragraph align="center" size="l"><Text bold>Оцените работу нашего сайта</Text></Paragraph>
+      <Paragraph align="center" size="l" bold>Оцените работу нашего сайта</Paragraph>
       <Paragraph align="center" size="m">Мы хотим стать лучше для вас</Paragraph>
-      <Flex align="center" justify="center" >
-        <Rating onChange={(value) => setState({value})} value={state.value} size="m"/>
+      <Flex justify="center">
+        <Rating value={state.value} size="m" onChange={(value) => setState({value})}/>
       </Flex>
       <Paragraph align="center" size="m">Удовлетворительно</Paragraph>
     </Spacer>
@@ -18,7 +18,7 @@ initialState = {value: 0};
 <Block>
   <BlockContent>
     <Spacer size="s">
-      <Paragraph size="m"><Text bold>Максим Сибирский</Text></Paragraph>
+      <Paragraph size="m" bold>Максим Сибирский</Paragraph>
       <Paragraph size="s" color="support">15 июня 2018</Paragraph>
       <Rating value={4} size="s" disabled/>
       <Paragraph size="m">

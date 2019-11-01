@@ -4,14 +4,14 @@ import RenderChild from '../RenderChild'
 export interface RatingControlProps {
   value: number
   count: number
-  onChange: (value: number) => void
   disabled?: boolean
+  onChange: (value: number) => void
   children: RenderChild<{
     items: Array<{
-      onClick: React.MouseEventHandler
-      onMouseEnter: React.MouseEventHandler
-      onMouseLeave: React.MouseEventHandler
       active: boolean
+      onClick?: React.MouseEventHandler
+      onMouseEnter?: React.MouseEventHandler
+      onMouseLeave?: React.MouseEventHandler
     }>
   }>
 }
@@ -30,19 +30,18 @@ export class RatingControl extends React.Component<RatingControlProps, RatingCon
     this.props.onChange(index + 1)
   }
 
-  private onItemMouseLeave = () => {
-    this.setState({
-      hovered: -1,
-    })
-  }
-
   private onItemClick = (index: number) => (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault()
     this.onChange(index)
   }
 
-  private onItemMouseEnter = (index: number) => (event: React.MouseEvent<HTMLElement>) => {
-    event.preventDefault()
+  private onItemMouseLeave: React.MouseEventHandler = () => {
+    this.setState({
+      hovered: -1,
+    })
+  }
+
+  private onItemMouseEnter = (index: number) => () => {
     this.setState({
       hovered: index,
     })
@@ -50,9 +49,8 @@ export class RatingControl extends React.Component<RatingControlProps, RatingCon
 
   public render() {
     return this.props.children({
-      items: Array(this.props.count).fill(0).map((item, index) => ({
-        ...item,
-        active: (this.state.hovered >= index) || (this.props.value >= (index + 1) && this.state.hovered === -1),
+      items: Array(this.props.count).fill(0).map((_item, index) => ({
+        active: this.state.hovered === -1 ? (this.props.value >= (index + 1)) : (this.state.hovered >= index),
         onClick: this.props.disabled ? undefined : this.onItemClick(index),
         onMouseEnter: this.props.disabled ? undefined : this.onItemMouseEnter(index),
         onMouseLeave: this.props.disabled ? undefined : this.onItemMouseLeave,
