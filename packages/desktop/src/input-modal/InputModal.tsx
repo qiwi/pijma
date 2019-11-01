@@ -136,10 +136,10 @@ export const InputModal: FunctionComponent<InputModalProps> = (props) => (
           </Box>
         </Card>
         <Card
+          ref={props.contentRef}
           overflow="auto"
           maxHeight={84}
-          ref={props.contentRef}
-          s="0 0 16px 0 rgba(0, 0, 0, 0.12)"
+          s="0 0 25px 0 rgba(0, 0, 0, 0.08)"
           width={1}
           bg="#fff"
         >
