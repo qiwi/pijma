@@ -173,7 +173,7 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
         error={state.value === ''}
         equals={equals}
         onCancel={() => {
-          setState({show: false, selected: false})
+          setState({show: false, selected: false, ...initialState})
         }}
         onSubmit={submit}
         onItemSelect={selectItem}
@@ -182,11 +182,13 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
           getBanks(value).then((banks) => setState({banks}));
         }}
         result={({focused, selected, hide}) => state.banks.length > 0 ? (
-          <Box pt={2} pb={6}>
+          <Pos type="absolute" bottom={0} zIndex={1051} width={1}>
+          <Card px={6} pt={2} pb={6} bg="#fff">
             <Link onClick={() => setState({show: false})}>
               Показать все
             </Link>
-          </Box>
+          </Card>
+          </Pos>
         ) : (
           undefined
         )}

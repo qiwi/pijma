@@ -59,7 +59,7 @@ interface InputModalProps {
   onShow?: () => void
 }
 
-const CardPos = Card.withComponent(Pos)
+// const CardPos = Card.withComponent(Pos)
 const PosFlexCard = styled(Card.withComponent(Pos))().withComponent(Flex)
 
 export const InputModal: FunctionComponent<InputModalProps> = (props) => (
@@ -69,86 +69,83 @@ export const InputModal: FunctionComponent<InputModalProps> = (props) => (
     rootClose={true}
     transition={contentTransition}
     children={() => (
-      <Box>
-        <Pos
-          type="absolute"
-          zIndex={10050}
-          top={0}
-          bottom={0}
-          left={0}
-          right={0}
+      <Pos
+        type="absolute"
+        height="max-content"
+        zIndex={10050}
+        top={0}
+        bottom={0}
+        left={0}
+        right={0}
+      >
+        <Card
+          width={1}
           height={20}
+          bg="#fff"
+          bb={props.error ? 'solid 2px #d0021b' : 'none'}
+          s="0 0 25px 0 rgba(0, 0, 0, 0.08)"
         >
-          <Card
-            width={1}
-            bg="#fff"
-            bb={props.error ? 'solid 2px #d0021b' : 'none'}
-            s="0 0 25px 0 rgba(0, 0, 0, 0.08)"
+          <Box
+            width={295}
+            mx="auto"
           >
-            <Box
-              width={295}
-              mx="auto"
+            <PosFlexCard
+              type="relative"
+              align="center"
+              height={20}
+              py={4}
+              px={6}
             >
-              <PosFlexCard
-                type="relative"
-                align="center"
-                height={20}
-                py={4}
-                px={6}
-              >
-                {props.onBack ? (
-                  <FlexItem cursor="pointer" shrink={0} mr={4} onClick={props.onBack}>
-                    <Icon name="arrow-left" color="#000"/>
-                  </FlexItem>
-                ) : (
-                  null
-                )}
-                <FlexItem grow={1}>
-                  <Input
-                    ref={props.inputRef}
-                    type={props.inputType}
-                    value={props.value}
-                    valueWeight={300}
-                    width={1}
-                    autoFocus={true}
-                    valueSize={5}
-                    placeholder="Текстовое поле"
-                    placeholderSize={5}
-                    placeholderWeight={300}
-                    onFocus={props.onFocus}
-                    onBlur={props.onBlur}
-                    onKeyDown={props.onKeyDown}
-                    onChange={props.onChange}
-                  />
+              {props.onBack ? (
+                <FlexItem cursor="pointer" shrink={0} mr={4} onClick={props.onBack}>
+                  <Icon name="arrow-left" color="#000"/>
                 </FlexItem>
-                {props.submitIcon ? (
-                  <FlexItem shrink={0} ml={4} onClick={props.onSubmit}>
-                    {props.loading ? (
-                      <Spinner color="#ff8c00" width={6} height={6}/>
-                    ) : (
-                      <Icon name={props.submitIcon} color="#666"/>
-                    )}
-                  </FlexItem>
-                ) : (
-                  null
-                )}
-              </PosFlexCard>
-            </Box>
-          </Card>
-        </Pos>
-        <CardPos
-          ref={props.contentRef}
-          zIndex={10050}
-          s="0 0 16px 0 rgba(0, 0, 0, 0.12)"
+              ) : (
+                null
+              )}
+              <FlexItem grow={1}>
+                <Input
+                  ref={props.inputRef}
+                  type={props.inputType}
+                  value={props.value}
+                  valueWeight={300}
+                  width={1}
+                  autoFocus={true}
+                  valueSize={5}
+                  placeholder="Текстовое поле"
+                  placeholderSize={5}
+                  placeholderWeight={300}
+                  onFocus={props.onFocus}
+                  onBlur={props.onBlur}
+                  onKeyDown={props.onKeyDown}
+                  onChange={props.onChange}
+                />
+              </FlexItem>
+              {props.submitIcon ? (
+                <FlexItem shrink={0} ml={4} onClick={props.onSubmit}>
+                  {props.loading ? (
+                    <Spinner color="#ff8c00" width={6} height={6}/>
+                  ) : (
+                    <Icon name={props.submitIcon} color="#666"/>
+                  )}
+                </FlexItem>
+              ) : (
+                null
+              )}
+            </PosFlexCard>
+          </Box>
+        </Card>
+        <Card
           overflow="auto"
-          type="absolute"
-          top={20}
+          maxHeight={84}
+          ref={props.contentRef}
+          s="0 0 16px 0 rgba(0, 0, 0, 0.12)"
           width={1}
           bg="#fff"
         >
           <Box width={295} mx="auto">{props.children}</Box>
-        </CardPos>
-      </Box>
+        </Card>
+      </Pos>
     )}
   />
 )
