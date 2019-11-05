@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.84.1](https://github.com/qiwi/pijma/compare/v1.84.0...v1.84.1) (2019-10-29)
+
+
+### Bug Fixes
+
+* paragraph clamp and align stub ([08078dc](https://github.com/qiwi/pijma/commit/08078dc))
+
 # [@qiwi/pijma-mobile-v1.83.0](https://github.com/qiwi/pijma/compare/v1.82.4...v1.83.0) (2019-10-09)
 
 
