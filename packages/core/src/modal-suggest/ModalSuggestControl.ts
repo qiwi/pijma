@@ -1,9 +1,9 @@
 import {Component, RefObject, createRef} from 'react'
 import ModalSuggestControlProps from './ModalSuggestControlProps'
 import ModalSuggestControlState from './ModalSuggestControlState'
-import {OptionModel} from '../option'
+import ModalSuggestOptionModel from './ModalSuggestOptionModel'
 
-export default class ModalSuggestControl<V> extends Component<ModalSuggestControlProps<OptionModel<V>, V>, ModalSuggestControlState> {
+export default class ModalSuggestControl<V> extends Component<ModalSuggestControlProps<ModalSuggestOptionModel<V>, V>, ModalSuggestControlState> {
 
   public state: ModalSuggestControlState = {
     show: false,
@@ -15,15 +15,19 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
 
   private onRequest: React.ChangeEventHandler<HTMLInputElement> = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault()
-    if (this.props.onRequest) {
+    this.setState({show: true})
+    if (this.state.show && this.props.onRequest) {
       this.props.onRequest(event.currentTarget.value)
     }
   }
 
   private onChange: (index: number) => void = (index: number) => {
-    this.hide()
+    const item = this.props.items[index]
+    if (!item.suggest) {
+      this.hide()
+    }
     if (this.props.onChange) {
-      this.props.onChange(this.props.items[index].value)
+      this.props.onChange(this.props.items[index].value, item.suggest)
     }
   }
 
@@ -71,8 +75,8 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
     this.setState({
       show: true,
     })
-    if (this.props.onShow) {
-      this.props.onShow()
+    if (this.props.onRequest && this.props.suggest && this.props.suggest !== '') {
+      this.props.onRequest(this.props.suggest)
     }
   }
 
@@ -104,12 +108,10 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
   }
 
   private get selected(): number | undefined {
-    const index = this.props.items.findIndex(item => {
-      if (this.props.value) {
-        return this.props.equals(item.value, this.props.value)
-      }
-      return item.value === this.props.value
-    })
+    if (!this.props.value) {
+      return undefined
+    }
+    const index = this.props.items.findIndex(item => this.props.equals(item.value, this.props.value!))
     return index !== -1 ? index : undefined
   }
 

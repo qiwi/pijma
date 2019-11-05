@@ -35,6 +35,11 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
 
   private containerRef: RefObject<HTMLDivElement> = createRef()
 
+  private onItemMouseDown = () => (event: React.MouseEvent) => {
+    event.preventDefault()
+    event.stopPropagation()
+  }
+
   private onItemClick = (index: number) => (event: React.MouseEvent) => {
     event.preventDefault()
     this.selectItem(index)
@@ -149,6 +154,7 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
         focused: focused !== undefined ? focused === index : false,
         selected: selected !== undefined ? selected === index : false,
         onClick: this.onItemClick(index),
+        onMouseDown: this.onItemMouseDown(),
         onMouseEnter: this.onItemEnter(index),
       })),
       focused,

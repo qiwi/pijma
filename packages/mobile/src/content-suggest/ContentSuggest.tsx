@@ -26,6 +26,7 @@ export const ContentSuggest = <V extends {}>({
 }: ContentSuggestProps<ContentSuggestOptionModel<V>, V>) => (
   <ModalSuggestControl<V>
     value={props.value}
+    suggest={props.suggest}
     items={props.items}
     equals={equals}
     onRequest={props.onRequest}
@@ -34,7 +35,6 @@ export const ContentSuggest = <V extends {}>({
     onFocus={props.onFocus}
     onCancel={props.onCancel}
     onSubmit={props.onSubmit}
-    onShow={props.onShow}
     children={(renderProps) => (
       <Pos type="relative">
         <Box
@@ -78,7 +78,6 @@ export const ContentSuggest = <V extends {}>({
               inputRef={renderProps.modalInputRef}
               contentRef={menuRenderProps.containerRef}
               error={props.error}
-              loading={props.loading}
               submitIcon="search"
               onChange={renderProps.onRequest}
               onKeyDown={menuRenderProps.onKeyDown}
@@ -89,7 +88,9 @@ export const ContentSuggest = <V extends {}>({
               onHide={renderProps.onHide}
               onBack={renderProps.onCancel}
             >
-              {menuRenderProps.items.map((item, key) => (
+              {props.loading ? Array(4).fill(1).map((_item, key) => (
+                <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
+              )) : menuRenderProps.items.map((item, key) => (
                 <CardItem
                   key={key}
                   ref={item.ref}

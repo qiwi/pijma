@@ -21,7 +21,6 @@ import {
   FlexItem,
   IconProps,
   Input,
-  Spinner,
 } from '@qiwi/pijma-core'
 
 const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
@@ -54,7 +53,6 @@ interface InputModalProps {
   inputRef?: RefObject<HTMLInputElement>
   contentRef?: RefObject<HTMLDivElement>
   error?: boolean
-  loading?: boolean
   submitIcon?: IconProps['name']
   onChange?: ChangeEventHandler
   onKeyDown?: KeyboardEventHandler
@@ -126,13 +124,9 @@ const InputModal: FunctionComponent<InputModalProps> = (props) => (
               onChange={props.onChange}
             />
           </FlexItem>
-          {props.submitIcon ? (
+          {props.onSubmit ? (
             <FlexItem shrink={0} ml={4} onClick={props.onSubmit}>
-              {props.loading ? (
-                <Spinner color="#ff8c00" width={6} height={6}/>
-              ) : (
-                <Icon name={props.submitIcon} color="#666"/>
-              )}
+              <Icon name="search" color="#666"/>
             </FlexItem>
           ) : (
             null

@@ -15,6 +15,7 @@ const banks = [
       id: 2,
     },
     title: 'Альфа-Банк',
+    suggest: 'ф',
     logo: require('./media/alpha.png'),
     description: 'АО «Альфа-Банк»',
   },
@@ -140,11 +141,14 @@ const getBanks = (suggest) => {
 };
 
 const selectItem = (value) => {
-  const bank = getBankByValue(value)
+  const bank = getBankByValue(value);
+  const {title, suggest} = bank
+  if (suggest) {
+    getBanks(suggest).then((banks) => setState({banks}))
+  }
   setState({
     value: value,
-    suggest: bank.title,
-    loading: false,
+    suggest: title,
   });
   console.log('SELECT ITEM', bank)
 };
@@ -174,10 +178,12 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
           setState({suggest, error: suggest === ''});
           getBanks(suggest).then((banks) => setState({banks}));
         }}
-        result={({focused, selected, hide}) => (
+        result={({focused, selected, hide}) => !state.loading ? (
           <Link onClick={hide}>
             Показать все
           </Link>
+        ) : (
+          null
         )}
       />
     </Box>

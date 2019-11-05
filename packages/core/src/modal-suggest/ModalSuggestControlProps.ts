@@ -1,12 +1,13 @@
 import {RefObject} from 'react'
-import {OptionModel} from '../option'
+import ModalSuggestOptionModel from './ModalSuggestOptionModel'
 import RenderChild from '../RenderChild'
 
-export default interface ModalSuggestControlProps<O extends OptionModel<V>, V> {
+export default interface ModalSuggestControlProps<O extends ModalSuggestOptionModel<V>, V> {
   items: O[]
   value?: V
+  suggest?: string
   equals: (a: V, b: V) => boolean
-  onChange?: (value: V) => void
+  onChange?: (value: V, suggest?: string) => void
   onRequest?: (suggest: string) => void
   onFocus?: () => void
   onBlur?: () => void

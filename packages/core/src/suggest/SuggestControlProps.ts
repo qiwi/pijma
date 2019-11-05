@@ -1,8 +1,8 @@
 import {RefObject} from 'react'
-import {OptionModel} from '../option'
 import RenderChild from '../RenderChild'
+import SuggestOptionModel from './SuggestOptionModel'
 
-export default interface SuggestControlProps <O extends OptionModel<V>, V> {
+export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V> {
   items: O[]
   value?: V
   equals: (a: V, b: V) => boolean

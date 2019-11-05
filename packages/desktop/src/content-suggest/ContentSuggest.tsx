@@ -5,7 +5,6 @@ import {
   Image,
   MenuControl,
   Icon,
-  Spinner,
   ContentInput,
   Pos,
   Box,
@@ -83,11 +82,7 @@ export const ContentSuggest = <V extends {}>({
                 top={3}
                 onMouseDown={renderProps.onSearchMouseDown}
                 onClick={renderProps.onSearchClick}
-                children={props.loading ? (
-                  <Spinner color="#ff8c00" width={6} height={6}/>
-                ) : (
-                  <Icon name="search" color="#666"/>
-                )}
+                children={<Icon name="search" color="#666"/>}
               />
             </Box>
             <DropDown
@@ -119,11 +114,14 @@ export const ContentSuggest = <V extends {}>({
                   overflow="auto"
                   pt={3}
                 >
-                  {menuRenderProps.items.map((item, key) => (
+                  {props.loading ? Array(4).fill(1).map((_item, key) => (
+                    <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
+                  )) : menuRenderProps.items.map((item, key) => (
                     <CardItem
                       key={key}
                       ref={item.ref}
                       onClick={item.onClick}
+                      onMouseDown={item.onMouseDown}
                       onMouseEnter={item.onMouseEnter}
                       cursor="pointer"
                       text={props.items[key].title}

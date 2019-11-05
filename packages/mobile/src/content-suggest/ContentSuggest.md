@@ -15,6 +15,7 @@ const banks = [
       id: 2,
     },
     title: 'Альфа-Банк',
+    suggest: 'ф',
     logo: require('./media/alpha.png'),
     description: 'АО «Альфа-Банк»',
   },
@@ -138,23 +139,33 @@ const getBanks = (suggest) => {
   });
 };
 
-const selectItem = (value) => {
-  const title = getBankByValue(value).title;
+const onRequest = (suggest) => {
+  setState({suggest, error: suggest === ''});
+  getBanks(suggest).then((banks) => setState({banks}));
+};
+
+const onCancel = () => setState(initialState);
+
+const onChange = (value, suggest) => {
+  const {title} = getBankByValue(value);
   setState({
-    suggest: title,
     value: value,
+    suggest: suggest || title,
     loading: false,
     error: false,
-    banks: filterBanks(title),
+    banks: suggest ? state.banks : [],
   });
-  console.log('SELECT ITEM', value)
+  if (suggest) {
+    getBanks(suggest).then((banks) => setState({banks}));
+  };
+  console.log('SELECT ITEM', value, suggest);
+};
+
+const onSubmit = (suggest) => {
+  console.log('SUBMIT', suggest);
 };
 
 const equals = (a, b) => a.id === b.id;
-
-const submit = (suggest) => {
-  console.log('SUBMIT', suggest);
-};
 
 const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
 
@@ -168,18 +179,13 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
         loading={state.loading}
         error={state.error}
         equals={equals}
-        onCancel={() => setState(initialState)}
-        onSubmit={submit}
-        onChange={selectItem}
-        onShow={() => {
-          setState({banks: []});
-          getBanks(state.suggest).then((banks) => setState({banks}));
-        }}
-        onRequest={(suggest) => {
-          setState({suggest, error: suggest === ''});
-          getBanks(suggest).then((banks) => setState({banks}));
-        }}
-        result={({focused, selected, hide}) => state.banks.length > 0 ? (
+        onCancel={onCancel}
+        onSubmit={onSubmit}
+        onChange={onChange}
+        onRequest={onRequest}
+        result={({focused, selected, hide}) => state.loading ? (
+          null
+        ) : state.banks.length > 0 ? (
           <Link onClick={hide}>
             Показать все
           </Link>

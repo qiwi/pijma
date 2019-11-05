@@ -1,9 +1,9 @@
 import {Component, RefObject, createRef} from 'react'
 import SuggestControlProps from './SuggestControlProps'
 import SuggestControlState from './SuggestControlState'
-import {OptionModel} from '../option'
+import SuggestOptionModel from './SuggestOptionModel'
 
-export default class SuggestControl<V> extends Component<SuggestControlProps<OptionModel<V>, V>, SuggestControlState> {
+export default class SuggestControl<V> extends Component<SuggestControlProps<SuggestOptionModel<V>, V>, SuggestControlState> {
 
   public state: SuggestControlState = {
     show: false,
@@ -13,7 +13,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Opt
 
   private inputRef: RefObject<HTMLInputElement> = createRef()
 
-  public componentDidUpdate(props: SuggestControlProps<OptionModel<V>, V>) {
+  public componentDidUpdate(props: SuggestControlProps<SuggestOptionModel<V>, V>) {
     if (props.items !== this.props.items) {
       this.setState({show: this.props.items.length > 0})
     }
@@ -27,10 +27,16 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Opt
   }
 
   private onChange: (index: number) => void = (index: number) => {
+    const item = this.props.items[index]
+    if (!item.suggest) {
+      this.hide()
+    }
     if (this.props.onChange) {
       this.props.onChange(this.props.items[index].value)
     }
-    this.hide()
+    if (this.inputRef.current) {
+      this.inputRef.current.focus({preventScroll: true})
+    }
   }
 
   private onFocus: React.FocusEventHandler = (event: React.FocusEvent) => {
@@ -43,6 +49,10 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Opt
 
   private onBlur: React.FocusEventHandler = (event: React.FocusEvent) => {
     event.preventDefault()
+    console.log('BLUR', event)
+    // if (this.inputRef.current) {
+    //   this.inputRef.current.focus()
+    // }
     this.hide()
     this.setState({focused: false})
     if (this.props.onBlur) {
@@ -61,6 +71,9 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Opt
   }
 
   private onKeyDown: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
+    if (event.key === 'Tab' && this.inputRef.current) {
+      this.inputRef.current.blur()
+    }
     if (this.props.onSubmit && event.key === 'Enter') {
       this.submit()
     }
@@ -74,7 +87,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Opt
   private onSearchMouseDown: React.MouseEventHandler = (event: React.MouseEvent) => {
     event.preventDefault()
     if (this.inputRef.current) {
-      this.inputRef.current.focus()
+      this.inputRef.current.focus({preventScroll: true})
     }
   }
 
