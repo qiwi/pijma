@@ -122,6 +122,9 @@ const initialState = {
   banks: [],
 };
 
+const container = React.useRef()
+const target = React.useRef()
+
 const filterBanks = (title) => banks.filter(bank => {
   return bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1;
 });
@@ -155,43 +158,78 @@ const submit = (value) => {
 
 const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
 
-<Block>
-  <BlockContent>
-    <Button
-      kind="simple"
-      size="accent"
-      text="Нажать"
-      onClick={() => setState({show: true})}
-    />
-    <Box>
-      <HeaderSearch
-        show={state.show}
-        value={state.value}
-        items={state.banks}
-        selected={state.selected}
-        loading={state.loading}
-        error={state.value === ''}
-        equals={equals}
-        onCancel={() => {
-          setState({show: false, selected: false, ...initialState})
-        }}
-        onSubmit={submit}
-        onItemSelect={selectItem}
-        onChange={(value) => {
-          setState({value});
-          getBanks(value).then((banks) => setState({banks}));
-        }}
-        result={({focused, selected, hide}) => state.banks.length > 0 ? (
-          <Card px={6} pt={2} pb={6} bg="#fff">
-            <Link onClick={() => setState({show: false})}>
-              Показать все
-            </Link>
-          </Card>
-        ) : (
-          undefined
-        )}
-      />
-    </Box>
-  </BlockContent>
-</Block>
+<Pos type="relative" ref={target}>
+  <Header>
+    <Flex width={1} height={1} justify="space-between">
+      <FlexItem ml={6}>
+        <Flex height={1}>
+          <FlexItem align="center" shrink={0} mr={11}>
+            <Lnk href={window.location.href}>
+              <Box
+                as="img"
+                src="https://static.qiwi.com/img/qiwi_com/header/qiwi-wallet-logo.svg"
+                width={24}
+                height={12}
+              />
+            </Lnk>
+          </FlexItem>
+          <FlexItem shrink={0} mr={6}>
+            <HeaderMenu
+              children={[
+                {href: `${location.href}?menu=1`, title: 'Платежи', active: true},
+                {href: `${location.href}?menu=2`, title: 'Переводы'},
+              ]}
+            />
+          </FlexItem>
+          <FlexItem align="center" shrink={0} width={6} height={6} cursor="pointer" onClick={() => setState({show: true})}>
+            <Icon name="search"/>
+          </FlexItem>
+        </Flex>
+      </FlexItem>
+      <FlexItem align="center" shrink={0} ml={11} mr={6}>
+        <Actions size="minor">
+          <Button
+            kind="simple"
+            size="minor"
+            text="Создать кошелек"
+          />
+          <Button
+            kind="brand"
+            size="minor"
+            text="Войти"
+          />
+        </Actions>
+      </FlexItem>
+    </Flex>
+  </Header>
+  <HeaderSearch
+    show={state.show}
+    value={state.value}
+    items={state.banks}
+    selected={state.selected}
+    loading={state.loading}
+    error={state.value === ''}
+    equals={equals}
+    target={target.current}
+    container={target.current}
+    onCancel={() => {
+      setState({show: false, selected: false})
+    }}
+    onSubmit={submit}
+    onItemSelect={selectItem}
+    onChange={(value) => {
+      setState({value});
+      getBanks(value).then((banks) => setState({banks}));
+    }}
+    result={({focused, selected, hide}) => state.banks.length > 0 ? (
+      <Card px={6} pt={2} pb={6} bg="#fff">
+        <Link onClick={() => setState({show: false})}>
+          Показать все
+        </Link>
+      </Card>
+    ) : (
+      undefined
+    )}
+  />
+</Pos>
 ```

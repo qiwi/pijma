@@ -19,7 +19,7 @@ import {
   IconProps,
   Input,
   Spinner,
-  Box,
+  Box, OverlayProps,
 } from '@qiwi/pijma-core'
 import {Overlay} from 'react-overlays'
 
@@ -49,6 +49,8 @@ interface InputModalProps {
   error?: boolean
   loading?: boolean
   submitIcon?: IconProps['name']
+  target: OverlayProps['target']
+  container: OverlayProps['container']
   onChange?: ChangeEventHandler
   onKeyDown?: KeyboardEventHandler
   onFocus?: FocusEventHandler
@@ -59,7 +61,6 @@ interface InputModalProps {
   onShow?: () => void
 }
 
-// const CardPos = Card.withComponent(Pos)
 const PosFlexCard = styled(Card.withComponent(Pos))().withComponent(Flex)
 
 export const InputModal: FunctionComponent<InputModalProps> = (props) => (
@@ -67,19 +68,13 @@ export const InputModal: FunctionComponent<InputModalProps> = (props) => (
     show={props.show}
     onHide={props.onHide}
     rootClose={true}
+    placement="top"
+    target={props.target}
+    container={props.container}
     transition={contentTransition}
     children={() => (
-      <Pos
-        type="absolute"
-        height="max-content"
-        zIndex={10050}
-        top={0}
-        bottom={0}
-        left={0}
-        right={0}
-      >
+      <Pos mt={-20} type="absolute" zIndex={10050}>
         <Card
-          width={1}
           height={20}
           bg="#fff"
           bb={props.error ? 'solid 2px #d0021b' : 'none'}
@@ -140,7 +135,6 @@ export const InputModal: FunctionComponent<InputModalProps> = (props) => (
           overflow="auto"
           maxHeight={84}
           s="0 0 25px 0 rgba(0, 0, 0, 0.08)"
-          width={1}
           bg="#fff"
         >
           <Box width={295} mx="auto">{props.children}</Box>

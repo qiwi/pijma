@@ -1,4 +1,4 @@
-import {RenderChild} from '@qiwi/pijma-core'
+import {OverlayProps, RenderChild} from '@qiwi/pijma-core'
 
 import SearchItemOptionModel from './SearchItemOptionModel'
 
@@ -15,6 +15,8 @@ export default interface HeaderSearchProps<O extends SearchItemOptionModel<V>, V
   stub?: boolean
   error?: boolean
   loading?: boolean
+  target: OverlayProps['target']
+  container: OverlayProps['container']
   result?: RenderChild<{
     focused: V | undefined
     selected: V | undefined
