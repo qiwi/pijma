@@ -158,8 +158,8 @@ const submit = (value) => {
 
 const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
 
-<Flex transform="scale(0.7)" width={295}>
-<Pos type="relative" ref={target} width={1}>
+<Box transform="scale(0.7)" transformOrigin="left" width={295}>
+<Pos type="relative" ref={target}>
   <Header>
     <Flex height={1} justify="space-between">
       <FlexItem ml={6}>
@@ -233,5 +233,5 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
     )}
   />
 </Pos>
-</Flex>
+</Box>
 ```

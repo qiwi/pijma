@@ -73,7 +73,7 @@ export const InputModal: FunctionComponent<InputModalProps> = (props) => (
     container={props.container}
     transition={contentTransition}
     children={() => (
-      <Pos mt={-20} type="absolute" zIndex={10050}>
+      <Pos mt={-20} type="absolute" zIndex={10050} width={1}>
         <Card
           height={20}
           bg="#fff"
