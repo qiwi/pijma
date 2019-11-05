@@ -58,7 +58,7 @@ export const Alert: FC<AlertProps> = ({type = 'general', text, onHide}) => (
               color={AlertIconColor[type]}
             />
           </FlexItem>
-          <FlexItem mr={onHide ? 4 : 12}>
+          <FlexItem mr={onHide ? 4 : 12} overflow="hidden">
             <Paragraph
               color={AlertColorText[type]}
               children={text}
