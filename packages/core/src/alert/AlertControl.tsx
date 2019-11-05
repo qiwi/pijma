@@ -4,7 +4,7 @@ import RenderChild from '../RenderChild'
 export interface AlertControlProps {
   onHide?: () => void
   children: RenderChild<{
-    hovered: boolean
+    hover: boolean
     onClick: React.MouseEventHandler
     onMouseEnter: React.MouseEventHandler
     onMouseLeave: React.MouseEventHandler
@@ -12,13 +12,13 @@ export interface AlertControlProps {
 }
 
 export interface AlertControlState {
-  hovered: boolean
+  hover: boolean
 }
 
 export class AlertControl extends React.Component<AlertControlProps> {
 
   public state: AlertControlState = {
-    hovered: false,
+    hover: false,
   }
 
   private onClick: React.MouseEventHandler = (event) => {
@@ -30,19 +30,19 @@ export class AlertControl extends React.Component<AlertControlProps> {
 
   private onItemMouseEnter: React.MouseEventHandler = () => {
     this.setState({
-      hovered: true,
+      hover: true,
     })
   }
 
   private onItemMouseLeave: React.MouseEventHandler = () => {
     this.setState({
-      hovered: false,
+      hover: false,
     })
   }
 
   public render() {
     return this.props.children({
-      hovered: this.state.hovered,
+      hover: this.state.hover,
       onClick: this.onClick,
       onMouseEnter: this.onItemMouseEnter,
       onMouseLeave: this.onItemMouseLeave,
