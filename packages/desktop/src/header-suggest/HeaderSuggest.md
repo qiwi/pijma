@@ -158,9 +158,10 @@ const submit = (value) => {
 
 const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
 
-<Pos type="relative" ref={target}>
+<Flex transform="scale(0.7)" width={295}>
+<Pos type="relative" ref={target} width={1}>
   <Header>
-    <Flex width={1} height={1} justify="space-between">
+    <Flex height={1} justify="space-between">
       <FlexItem ml={6}>
         <Flex height={1}>
           <FlexItem align="center" shrink={0} mr={11}>
@@ -202,7 +203,7 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
       </FlexItem>
     </Flex>
   </Header>
-  <HeaderSearch
+  <HeaderSuggest
     show={state.show}
     value={state.value}
     items={state.banks}
@@ -232,4 +233,5 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
     )}
   />
 </Pos>
+</Flex>
 ```

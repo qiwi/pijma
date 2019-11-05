@@ -2,7 +2,7 @@ import {OverlayProps, RenderChild} from '@qiwi/pijma-core'
 
 import SearchItemOptionModel from './SearchItemOptionModel'
 
-export default interface HeaderSearchProps<O extends SearchItemOptionModel<V>, V> {
+export default interface HeaderSuggestProps<O extends SearchItemOptionModel<V>, V> {
   show: boolean
   value: string
   items: O[]

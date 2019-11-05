@@ -1,4 +1,4 @@
-export * from './HeaderSearch'
+export * from './HeaderSuggest'
 
 import SearchItemOptionModel from './SearchItemOptionModel'
 

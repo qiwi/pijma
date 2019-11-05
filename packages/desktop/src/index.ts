@@ -33,7 +33,7 @@ export * from './footer-app'
 export * from './header-drop-down'
 export * from './menu'
 export * from './header-bank-card-link'
-export * from './header-search'
+export * from './header-suggest'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'

@@ -12,12 +12,12 @@ import {
 import {MenuItem} from '../menu'
 import {InputModal} from '../input-modal'
 
-import HeaderSearchProps from './HeaderSearchProps'
+import HeaderSuggestProps from './HeaderSuggestProps'
 import SearchItemOptionModel from './SearchItemOptionModel'
 
 const CardItem = styled(Card)().withComponent(MenuItem)
 
-export const HeaderSearch = <V extends {}>(props: HeaderSearchProps<SearchItemOptionModel<V>, V>) => (
+export const HeaderSuggest = <V extends {}>(props: HeaderSuggestProps<SearchItemOptionModel<V>, V>) => (
   <ModalInputControl
     onChange={props.onChange}
     onBlur={props.onBlur}
