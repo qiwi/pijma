@@ -46,7 +46,7 @@ export class RatingControl extends React.Component<RatingControlProps, RatingCon
   public render() {
     return this.props.children({
       items: Array(this.props.count).fill(0).map((_item, index) => ({
-        active: this.state.hovered === -1 ? this.props.value >= (index + 1) : this.state.hovered >= index,
+        active: this.state.hovered === -1 ? this.props.value >= index + 1 : this.state.hovered >= index,
         onClick: this.props.disabled ? undefined : this.onItemClick(index),
         onMouseEnter: this.props.disabled ? undefined : this.onItemMouseEnter(index),
         onMouseLeave: this.props.disabled ? undefined : this.onItemMouseLeave,
