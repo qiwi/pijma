@@ -44,52 +44,46 @@ export const Alert: FC<AlertProps> = ({type = 'general', text, onHide}) => (
         <Flex
           minHeight={16}
           align="center"
+          justify="flex-start"
           pt={2}
           pb={2}
         >
-          <Flex mr="auto">
+          <FlexItem
+            ml={12}
+            mr={4}
+          >
+            <Icon
+              size={6}
+              name={AlertIconName[type]}
+              color={AlertIconColor[type]}
+            />
+          </FlexItem>
+          <FlexItem mr={onHide ? 4 : 12}>
+            <Paragraph
+              color={AlertColorText[type]}
+              children={text}
+            />
+          </FlexItem>
+          {onHide ? (
             <FlexItem
-              ml={12}
-              mr={4}
-              align="center"
+              ml="auto"
+              mr={12}
+              cursor="pointer"
+              opacity={renderProps.hover ? 0.7 : 1}
+              transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+              onClick={renderProps.onClick}
+              onMouseMove={renderProps.onMouseEnter}
+              onMouseOut={renderProps.onMouseLeave}
             >
               <Icon
                 size={6}
-                name={AlertIconName[type]}
+                name="cross"
                 color={AlertIconColor[type]}
               />
             </FlexItem>
-            <FlexItem align="center">
-              <Paragraph
-                color={AlertColorText[type]}
-                children={text}
-              />
-            </FlexItem>
-          </Flex>
-          <Flex
-            justify="flex-end"
-            ml={4}
-          >
-            {onHide ? (
-              <FlexItem
-                mr={12}
-                cursor="pointer"
-                opacity={renderProps.hovered ? 0.7 : 1}
-                transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-                onClick={renderProps.onClick}
-                onMouseMove={renderProps.onMouseEnter}
-                onMouseOut={renderProps.onMouseLeave}
-              >
-                <Icon
-                  size={6}
-                  name="cross"
-                  color={AlertIconColor[type]}
-                />
-              </FlexItem>
-            ) : (
-              null
-            )}
-          </Flex>
+          ) : (
+            null
+          )}
         </Flex>
       </Card>
     )}
