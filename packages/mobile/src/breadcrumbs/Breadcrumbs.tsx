@@ -8,12 +8,11 @@ export interface BreadcrumbsProps {
   stub?: boolean
 }
 
-export const Breadcrumbs: FC<BreadcrumbsProps> = ({stub, children}) => (
+export const Breadcrumbs: FC<BreadcrumbsProps> = ({stub = true, children}) => (
   stub ? (
-    <Stub
-      height={2}
-      width={12}
-    />
+    <Paragraph size="m">
+      <Stub height={2} width={12}/>
+    </Paragraph>
   ) : (
     <Paragraph size="s" color="support">
       {children.map((item, i) => (
