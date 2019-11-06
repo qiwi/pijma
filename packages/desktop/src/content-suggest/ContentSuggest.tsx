@@ -58,7 +58,6 @@ export const ContentSuggest = <V extends {}>({
             >
               <ContentInput
                 value={props.suggest}
-                type="search"
                 tabIndex={props.tabIndex}
                 autoComplete={props.autoComplete}
                 autoFocus={props.autoFocus}
