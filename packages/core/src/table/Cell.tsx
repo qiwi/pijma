@@ -1,11 +1,11 @@
 import styled from '../styled'
 
-import {Box, BoxNonProps, BoxProps} from '../primitive'
+import {Card, CardNonProps, CardProps} from '../primitive'
 
-export interface CellProps extends BoxProps {}
+export interface CellProps extends CardProps {}
 
-export const CellNonProps = BoxNonProps.concat([])
+export const CellNonProps = CardNonProps.concat([])
 
-export const Cell = styled(Box.withComponent('td'), {
+export const Cell = styled(Card.withComponent('td'), {
   shouldForwardProp: prop => !CellNonProps.includes(prop),
 })<CellProps>(() => ({}))

@@ -8,7 +8,7 @@ export interface TableProps {
 }
 
 export const Table: FC<TableProps> = ({titles, data}) => (
-  <table>
+  <table style={{width: '100%'}}>
     <Thead titles={titles} />
     <Tbody data={data} />
   </table>
