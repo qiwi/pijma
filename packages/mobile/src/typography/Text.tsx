@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react'
 
-import {Breaker, Typo, TypoProps} from '@qiwi/pijma-core'
+import {Box, Breaker, Stub, Typo, TypoProps} from '@qiwi/pijma-core'
 
 export interface TextProps {
   display?: 'block' | 'inline' | 'inline-block'
@@ -13,6 +13,7 @@ export interface TextProps {
   transition?: TypoProps['transition']
   align?: TypoProps['align']
   clamp?: number
+  stub?: boolean
 }
 
 const TextSize: { [size in NonNullable<TextProps['size']>]: number } = {
@@ -42,19 +43,63 @@ const TextColor: { [color in NonNullable<TextProps['color']>]: string } = {
   warning: '#ff8c00',
 }
 
-export const Text: FunctionComponent<TextProps> = ({display, compact, size, bold, color, decoration, transform, transition, align, clamp, children}) => (
-  <Typo
-    as="span"
-    display={display}
-    size={size === undefined ? undefined : TextSize[size]}
-    height={size === undefined ? undefined : compact ? TextHeightCompact[size] : TextHeight[size]}
-    weight={bold === undefined ? undefined : bold ? 500 : 300}
-    color={color === undefined ? undefined : TextColor[color]}
-    decoration={decoration}
-    transform={transform}
-    transition={transition}
-    align={align}
-    clamp={clamp}
-    children={<Breaker children={children}/>}
-  />
+const StubHeight: Record<NonNullable<TextProps['size']>, number> = {
+  s: 2,
+  m: 3,
+  l: 3,
+}
+const StubOffsetTop: Record<NonNullable<TextProps['size']>, number> = {
+  s: 2,
+  m: 1,
+  l: 3,
+}
+
+const StubOffsetBottom: Record<NonNullable<TextProps['size']>, number> = {
+  s: 1,
+  m: 2,
+  l: 2,
+}
+
+const StubOffsetCompactTop: Record<NonNullable<TextProps['size']>, number> = {
+  s: 1,
+  m: 1,
+  l: 2,
+}
+
+const StubOffsetCompactBottom: Record<NonNullable<TextProps['size']>, number> = {
+  s: 1,
+  m: 1,
+  l: 2,
+}
+
+export const Text: FunctionComponent<TextProps> = ({stub, display, compact, size, bold, color, decoration, transform, transition, align, clamp, children}) => (
+  stub ? (
+    <Box display={display}>
+      {Array(clamp).fill(1).map((width: number, index: number) => (
+        <Stub
+          key={index}
+          height={size === undefined ? undefined : StubHeight[size]}
+          width={width}
+          top={size === undefined ? undefined : compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}
+          bottom={size === undefined ? undefined : compact ? StubOffsetCompactBottom[size] : StubOffsetBottom[size]}
+        />
+      ))}
+    </Box>
+  ) : (
+    <Typo
+      as="span"
+      display={display}
+      size={size === undefined ? undefined : TextSize[size]}
+      height={size === undefined ? undefined : compact ? TextHeightCompact[size] : TextHeight[size]}
+      weight={bold === undefined ? undefined : bold ? 500 : 300}
+      color={color === undefined ? undefined : TextColor[color]}
+      decoration={decoration}
+      transform={transform}
+      transition={transition}
+      align={align}
+      clamp={clamp}
+      children={<Breaker children={children}/>}
+    />
+  )
+
 )

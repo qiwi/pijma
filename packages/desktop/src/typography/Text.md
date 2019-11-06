@@ -9,7 +9,7 @@ line-height: 32px
 ```jsx
 <Block>
   <BlockContent>
-    <Spacer size="m">
+    <Spacer size="l">
       <Paragraph size="l">Paragraph L <Text bold>Dark 500</Text></Paragraph>
       <Paragraph size="l">Paragraph L <Text bold><Text color="failure">Error</Text> 500</Text></Paragraph>
       <Paragraph size="l">Paragraph L <Text color="success">Success</Text> 300</Paragraph>
@@ -69,6 +69,16 @@ line-height: 20px
     <Text display="block" size="l" clamp={2}>
       В типографических элементах есть возможность задавать максимальное количество видимых строк через свойство clamp. Если текст выходит за заданные рамки, в конце текста будет добавлено многоточие
     </Text>
+  </BlockContent>
+</Block>
+```
+
+Stub
+
+```jsx
+<Block>
+  <BlockContent>
+    <Text display="block" clamp={5} compact size="l" stub />
   </BlockContent>
 </Block>
 ```

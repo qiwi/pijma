@@ -72,3 +72,13 @@ line-height: 20px
   </BlockContent>
 </Block>
 ```
+
+Stub
+
+```jsx
+<Block>
+  <BlockContent>
+    <Text display="block" clamp={5} compact size="l" stub />
+  </BlockContent>
+</Block>
+```
