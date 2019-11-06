@@ -49,10 +49,6 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
 
   private onBlur: React.FocusEventHandler = (event: React.FocusEvent) => {
     event.preventDefault()
-    console.log('BLUR', event)
-    // if (this.inputRef.current) {
-    //   this.inputRef.current.focus()
-    // }
     this.hide()
     this.setState({focused: false})
     if (this.props.onBlur) {
