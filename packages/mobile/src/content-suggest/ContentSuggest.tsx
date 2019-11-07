@@ -92,21 +92,23 @@ export const ContentSuggest = <V extends {}>({
                 Array(4).fill(1).map((_item, key) => (
                   <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
                 ))
-              ) : menuRenderProps.items.map((item, key) => (
-                <CardItem
-                  key={key}
-                  ref={item.ref}
-                  onClick={item.onClick}
-                  onMouseEnter={item.onMouseEnter}
-                  cursor="pointer"
-                  text={props.items[key].title}
-                  notes={props.items[key].description}
-                  icon={<Image width={6} height={6} src={props.items[key].logo}/>}
-                  hover={item.focused}
-                  active={item.selected}
-                  focus={item.selected}
-                />
-              ))}
+              ) : (
+                menuRenderProps.items.map((item, key) => (
+                  <CardItem
+                    key={key}
+                    ref={item.ref}
+                    onClick={item.onClick}
+                    onMouseEnter={item.onMouseEnter}
+                    cursor="pointer"
+                    text={props.items[key].title}
+                    notes={props.items[key].description}
+                    icon={<Image width={6} height={6} src={props.items[key].logo}/>}
+                    hover={item.focused}
+                    active={item.selected}
+                    focus={item.selected}
+                  />
+                ))
+              )}
               {props.result ? (
                 <Box px={4} py={2}>
                   {props.result({

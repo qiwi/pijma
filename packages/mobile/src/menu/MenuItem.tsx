@@ -39,9 +39,9 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(({
     <Flex px={6} py={2} minHeight={14}>
       {icon ? (
         stub ? (
-          <Box mr={4}>
+          <FlexItem align={notes ? undefined : 'center'} shrink={0} mr={4}>
             <Stub r={12} width={6} height={6}/>
-          </Box>
+          </FlexItem>
         ) : (
           <FlexItem align={notes ? undefined : 'center'} shrink={0} mr={4}>
             {icon}
