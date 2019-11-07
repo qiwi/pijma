@@ -73,15 +73,18 @@ const StubOffsetCompactBottom: Record<NonNullable<TextProps['size']>, number> = 
 }
 
 export const Text: FunctionComponent<TextProps> = ({stub, display, compact, size, bold, color, decoration, transform, transition, align, clamp, children}) => (
-  stub ? (
-    <Box display={display}>
-      {Array(clamp).fill(1).map((width: number, index: number) => (
+  stub ? size === undefined ? null : (
+    <Box
+      as="span"
+      display={display}
+    >
+      {Array(clamp === undefined ? 1 : clamp).fill(1).map((width: number, index: number) => (
         <Stub
           key={index}
-          height={size === undefined ? undefined : StubHeight[size]}
+          height={StubHeight[size]}
           width={width}
-          top={size === undefined ? undefined : compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}
-          bottom={size === undefined ? undefined : compact ? StubOffsetCompactBottom[size] : StubOffsetBottom[size]}
+          top={compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}
+          bottom={compact ? StubOffsetCompactBottom[size] : StubOffsetBottom[size]}
         />
       ))}
     </Box>

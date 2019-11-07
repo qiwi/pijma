@@ -19,6 +19,16 @@ line-height: 32px
 </Block>
 ```
 
+Stub L
+
+```jsx
+<Block>
+  <BlockContent>
+    <Text clamp={5} size="l" stub/>
+  </BlockContent>
+</Block>
+```
+
 ## M
 
 ```css static
@@ -36,6 +46,16 @@ line-height: 24px
       <Paragraph size="m">Paragraph M <Text color="success">Success</Text> 300</Paragraph>
       <Paragraph size="m" color="support">Paragraph M <Text color="warning">Warning</Text> 300</Paragraph>
     </Spacer>
+  </BlockContent>
+</Block>
+```
+
+Stub M compact
+
+```jsx
+<Block>
+  <BlockContent>
+    <Text clamp={3} compact size="m" stub/>
   </BlockContent>
 </Block>
 ```
@@ -60,6 +80,15 @@ line-height: 20px
   </BlockContent>
 </Block>
 ```
+Stub S
+
+```jsx
+<Block>
+  <BlockContent>
+    <Text size="s" stub/>
+  </BlockContent>
+</Block>
+```
 
 Задать максимальное количество видимых строк
 
@@ -69,16 +98,6 @@ line-height: 20px
     <Text size="m" display="block" clamp={4}>
       В типографических элементах есть возможность задавать максимальное количество видимых строк через свойство clamp. Если текст выходит за заданные рамки, в конце текста будет добавлено многоточие
     </Text>
-  </BlockContent>
-</Block>
-```
-
-Stub
-
-```jsx
-<Block>
-  <BlockContent>
-    <Text display="block" clamp={5} compact size="l" stub />
   </BlockContent>
 </Block>
 ```
