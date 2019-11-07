@@ -113,9 +113,11 @@ export const ContentSuggest = <V extends {}>({
                   overflow="auto"
                   pt={3}
                 >
-                  {props.loading ? Array(4).fill(1).map((_item, key) => (
-                    <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
-                  )) : menuRenderProps.items.map((item, key) => (
+                  {props.loading ? (
+                    Array(4).fill(1).map((_item, key) => (
+                      <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
+                    ))
+                  ) : menuRenderProps.items.map((item, key) => (
                     <CardItem
                       key={key}
                       ref={item.ref}

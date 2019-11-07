@@ -15,7 +15,9 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
 
   public componentDidUpdate(props: SuggestControlProps<SuggestOptionModel<V>, V>) {
     if (props.items !== this.props.items) {
-      this.setState({show: this.props.items.length > 0})
+      this.setState({
+        show: this.props.items.length > 0,
+      })
     }
   }
 
@@ -41,7 +43,9 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
 
   private onFocus: React.FocusEventHandler = (event: React.FocusEvent) => {
     event.preventDefault()
-    this.setState({focused: true})
+    this.setState({
+      focused: true,
+    })
     if (this.props.onFocus) {
       this.props.onFocus()
     }
@@ -50,7 +54,9 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
   private onBlur: React.FocusEventHandler = (event: React.FocusEvent) => {
     event.preventDefault()
     this.hide()
-    this.setState({focused: false})
+    this.setState({
+      focused: false,
+    })
     if (this.props.onBlur) {
       this.props.onBlur()
     }
@@ -58,12 +64,16 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
 
   private onMouseEnter: React.MouseEventHandler = (event: React.MouseEvent) => {
     event.preventDefault()
-    this.setState({hovered: true})
+    this.setState({
+      hovered: true,
+    })
   }
 
   private onMouseLeave: React.MouseEventHandler = (event: React.MouseEvent) => {
     event.preventDefault()
-    this.setState({hovered: false})
+    this.setState({
+      hovered: false,
+    })
   }
 
   private onKeyDown: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {

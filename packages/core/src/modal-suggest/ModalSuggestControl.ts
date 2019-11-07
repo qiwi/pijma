@@ -15,7 +15,9 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
 
   private onRequest: React.ChangeEventHandler<HTMLInputElement> = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault()
-    this.setState({show: true})
+    this.setState({
+      show: true,
+    })
     if (this.state.show && this.props.onRequest) {
       this.props.onRequest(event.currentTarget.value)
     }
@@ -57,12 +59,16 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
 
   private onMouseEnter: React.MouseEventHandler = (event: React.MouseEvent) => {
     event.preventDefault()
-    this.setState({hovered: true})
+    this.setState({
+      hovered: true,
+    })
   }
 
   private onMouseLeave: React.MouseEventHandler = (event: React.MouseEvent) => {
     event.preventDefault()
-    this.setState({hovered: false})
+    this.setState({
+      hovered: false,
+    })
   }
 
   private onKeyDown: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
