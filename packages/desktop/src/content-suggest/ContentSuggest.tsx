@@ -72,7 +72,7 @@ export const ContentSuggest = <V extends {}>({
                 onChange={renderProps.onRequest}
                 onFocus={renderProps.onFocus}
                 onBlur={renderProps.onBlur}
-                onKeyDown={menuRenderProps.onKeyDown}
+                onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onKeyDown}
               />
               <Pos
                 type="absolute"
