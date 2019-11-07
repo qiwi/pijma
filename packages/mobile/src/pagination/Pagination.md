@@ -1,7 +1,6 @@
 ```jsx
 initialState = {activePage: 1};
 <Pagination
-  stub={false}
   total={10}
   active={state.activePage}
   shadowed
@@ -10,7 +9,7 @@ initialState = {activePage: 1};
 ```
 
 ```jsx
-<Pagination shadowed/>
+<Pagination shadowed stub/>
 ```
 
 ```jsx
@@ -18,7 +17,6 @@ initialState = {activePage: 1};
 <Block>
   <BlockContent>
     <Pagination
-      stub={false}
       total={10}
       active={state.activePage}
       onChange={(activePage) => setState({activePage})}
@@ -30,7 +28,7 @@ initialState = {activePage: 1};
 ```jsx
 <Block>
   <BlockContent>
-    <Pagination/>
+    <Pagination stub/>
   </BlockContent>
 </Block>
 ```

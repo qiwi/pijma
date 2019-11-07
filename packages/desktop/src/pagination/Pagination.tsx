@@ -21,7 +21,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
   shadowed = false,
   active,
   href,
-  stub = true,
+  stub = false,
   onChange,
 }) => (
   stub ? (
@@ -169,5 +169,5 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
 Pagination.defaultProps = {
   shadowed: false,
   count: 5,
-  stub: true,
+  stub: false,
 }
