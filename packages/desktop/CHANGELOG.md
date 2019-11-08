@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.85.1](https://github.com/qiwi/pijma/compare/v1.85.0...v1.85.1) (2019-11-08)
+
+
+### Bug Fixes
+
+* progress-bar stub ([8bafcdd](https://github.com/qiwi/pijma/commit/8bafcdd))
+
 # [@qiwi/pijma-desktop-v1.85.0](https://github.com/qiwi/pijma/compare/v1.84.1...v1.85.0) (2019-11-08)
 
 
