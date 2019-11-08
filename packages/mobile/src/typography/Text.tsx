@@ -34,30 +34,21 @@ const TextHeightCompact: { [size in NonNullable<TextProps['size']>]: number } = 
   l: 7,
 }
 
-const TextColor: { [color in NonNullable<TextProps['color']>]: string } = {
-  default: '#000',
-  support: '#666',
-  inverse: '#fff',
-  success: '#4bbd5c',
-  failure: '#d0021b',
-  warning: '#ff8c00',
-}
-
 const StubHeight: Record<NonNullable<TextProps['size']>, number> = {
   s: 2,
   m: 3,
   l: 3,
 }
 const StubOffsetTop: Record<NonNullable<TextProps['size']>, number> = {
-  s: 2,
-  m: 1,
-  l: 3,
+  s: 1.5,
+  m: 1.5,
+  l: 2.5,
 }
 
 const StubOffsetBottom: Record<NonNullable<TextProps['size']>, number> = {
-  s: 1,
-  m: 2,
-  l: 2,
+  s: 1.5,
+  m: 1.5,
+  l: 2.5,
 }
 
 const StubOffsetCompactTop: Record<NonNullable<TextProps['size']>, number> = {
@@ -70,6 +61,15 @@ const StubOffsetCompactBottom: Record<NonNullable<TextProps['size']>, number> = 
   s: 1,
   m: 1,
   l: 2,
+}
+
+const TextColor: { [color in NonNullable<TextProps['color']>]: string } = {
+  default: '#000',
+  support: '#666',
+  inverse: '#fff',
+  success: '#4bbd5c',
+  failure: '#d0021b',
+  warning: '#ff8c00',
 }
 
 export const Text: FunctionComponent<TextProps> = ({

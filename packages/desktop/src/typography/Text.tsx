@@ -40,27 +40,27 @@ const StubHeight: Record<NonNullable<TextProps['size']>, number> = {
   l: 3,
 }
 const StubOffsetTop: Record<NonNullable<TextProps['size']>, number> = {
-  s: 2,
-  m: 1,
-  l: 3,
+  s: 1.5,
+  m: 1.5,
+  l: 2.5,
 }
 
 const StubOffsetBottom: Record<NonNullable<TextProps['size']>, number> = {
-  s: 1,
-  m: 2,
-  l: 2,
+  s: 1.5,
+  m: 1.5,
+  l: 2.5,
 }
 
 const StubOffsetCompactTop: Record<NonNullable<TextProps['size']>, number> = {
   s: 1,
   m: 1,
-  l: 3,
+  l: 2,
 }
 
 const StubOffsetCompactBottom: Record<NonNullable<TextProps['size']>, number> = {
   s: 1,
   m: 1,
-  l: 1,
+  l: 2,
 }
 
 const TextColor: { [color in NonNullable<TextProps['color']>]: string } = {
