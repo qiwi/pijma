@@ -72,8 +72,8 @@ const TextColor: { [color in NonNullable<TextProps['color']>]: string } = {
   warning: '#ff8c00',
 }
 
-export const Text: FunctionComponent<TextProps> = ({stub, display, compact, size, bold, color, decoration, transform, transition, align, clamp, children}) => (
-  stub ?
+export const Text: FunctionComponent<TextProps> = ({stub = false, display, compact, size, bold, color, decoration, transform, transition, align, clamp, children}) => (
+  stub ? (
     size === undefined ? (
       null
     ) : (
@@ -91,21 +91,21 @@ export const Text: FunctionComponent<TextProps> = ({stub, display, compact, size
           />
         ))}
       </Box>
-    ) : (
-      <Typo
-        as="span"
-        display={display}
-        size={size === undefined ? undefined : TextSize[size]}
-        height={size === undefined ? undefined : compact ? TextHeightCompact[size] : TextHeight[size]}
-        weight={bold === undefined ? undefined : bold ? 500 : 300}
-        color={color === undefined ? undefined : TextColor[color]}
-        decoration={decoration}
-        transform={transform}
-        transition={transition}
-        align={align}
-        clamp={clamp}
-        children={<Breaker children={children}/>}
-      />
-    )
+    )) : (
+    <Typo
+      as="span"
+      display={display}
+      size={size === undefined ? undefined : TextSize[size]}
+      height={size === undefined ? undefined : compact ? TextHeightCompact[size] : TextHeight[size]}
+      weight={bold === undefined ? undefined : bold ? 500 : 300}
+      color={color === undefined ? undefined : TextColor[color]}
+      decoration={decoration}
+      transform={transform}
+      transition={transition}
+      align={align}
+      clamp={clamp}
+      children={<Breaker children={children}/>}
+    />
+  )
 
 )
