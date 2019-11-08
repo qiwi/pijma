@@ -72,7 +72,20 @@ const TextColor: { [color in NonNullable<TextProps['color']>]: string } = {
   warning: '#ff8c00',
 }
 
-export const Text: FunctionComponent<TextProps> = ({stub = false, display, compact, size, bold, color, decoration, transform, transition, align, clamp, children}) => (
+export const Text: FunctionComponent<TextProps> = ({
+  stub = false,
+  display,
+  compact,
+  size,
+  bold,
+  color,
+  decoration,
+  transform,
+  transition,
+  align,
+  clamp,
+  children,
+}) => (
   stub ? (
     size === undefined ? (
       null

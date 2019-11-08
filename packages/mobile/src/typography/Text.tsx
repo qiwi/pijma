@@ -72,7 +72,20 @@ const StubOffsetCompactBottom: Record<NonNullable<TextProps['size']>, number> = 
   l: 2,
 }
 
-export const Text: FunctionComponent<TextProps> = ({stub = false, display, compact, size, bold, color, decoration, transform, transition, align, clamp, children}) => (
+export const Text: FunctionComponent<TextProps> = ({
+  stub = false,
+  display,
+  compact,
+  size,
+  bold,
+  color,
+  decoration,
+  transform,
+  transition,
+  align,
+  clamp,
+  children,
+}) => (
   stub ? (
     size === undefined ? (
       null
