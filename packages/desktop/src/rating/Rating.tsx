@@ -15,8 +15,8 @@ const RatingSize: Record<NonNullable<RatingProps['size']>, number> = {
 }
 
 const RatingIndent: Record<NonNullable<RatingProps['size']>, number> = {
-  s: 2,
-  m: 5,
+  s: 1,
+  m: 2.5,
 }
 
 export const Rating: FC<RatingProps> = ({
@@ -37,7 +37,8 @@ export const Rating: FC<RatingProps> = ({
           <FlexItem
             key={index}
             cursor={disabled ? undefined : 'pointer'}
-            ml={index === 0 ? 0 : RatingIndent[size]}
+            pl={index === 0 ? 0 : RatingIndent[size]}
+            pr={index === count - 1 ? 0 : RatingIndent[size]}
             onClick={item.onClick}
             onMouseMove={item.onMouseEnter}
             onMouseOut={item.onMouseLeave}
