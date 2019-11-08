@@ -73,7 +73,6 @@ const TextColor: { [color in NonNullable<TextProps['color']>]: string } = {
 }
 
 export const Text: FunctionComponent<TextProps> = ({
-  stub = false,
   display,
   compact,
   size,
@@ -85,6 +84,7 @@ export const Text: FunctionComponent<TextProps> = ({
   align,
   clamp,
   children,
+  stub = false,
 }) => (
   stub ? (
     size === undefined ? (
@@ -104,7 +104,8 @@ export const Text: FunctionComponent<TextProps> = ({
           />
         ))}
       </Box>
-    )) : (
+    )
+  ) : (
     <Typo
       as="span"
       display={display}
