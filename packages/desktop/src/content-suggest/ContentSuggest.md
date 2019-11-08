@@ -123,6 +123,7 @@ const initialState = {
   error: false,
   banks: [],
   timer: undefined,
+  dialogText: undefined,
 };
 
 const filterBanks = (title) => banks.filter(bank => {
@@ -140,24 +141,38 @@ const getBanks = (suggest) => {
   });
 };
 
-const selectItem = (value) => {
-  const bank = getBankByValue(value);
-  const {title, suggest} = bank
-  if (suggest) {
-    getBanks(suggest).then((banks) => setState({banks}))
-  }
+const onRequest = (suggest) => {
+  setState({suggest, error: suggest === ''});
+  getBanks(suggest).then((banks) => setState({banks}));
+};
+
+const onCancel = () => setState(initialState);
+
+const onChange = (value, suggest) => {
+  const {title} = getBankByValue(value);
   setState({
     value: value,
     suggest: title,
   });
-  console.log('SELECT ITEM', bank)
+  if (suggest) {
+    return getBanks(suggest).then((banks) => setState({banks}))
+  }
+  setState({
+    dialogText: `Выбрано: ${title}`,
+  });
 };
+
+const onSubmit = (suggest) => {
+  setState({
+    dialogText: `Отправлено: ${suggest}`,
+  });
+};
+
+const hideDialog = () => setState({
+  dialogText: undefined,
+});
 
 const equals = (a, b) => a.id === b.id;
-
-const submit = (suggest) => {
-  console.log('SUBMIT', suggest);
-};
 
 const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
 
@@ -171,22 +186,36 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
         loading={state.loading}
         error={state.error}
         equals={equals}
-        onCancel={() => setState(initialState)}
-        onSubmit={submit}
-        onChange={selectItem}
-        onRequest={(suggest) => {
-          setState({suggest, error: suggest === ''});
-          getBanks(suggest).then((banks) => setState({banks}));
+        onCancel={onCancel}
+        onSubmit={onSubmit}
+        onChange={onChange}
+        onRequest={onRequest}
+        total={{
+          link: 'Показать все',
+          suggest: state.suggest,
         }}
-        result={({focused, selected, hide}) => !state.loading ? (
-          <Link onClick={hide}>
-            Показать все
-          </Link>
-        ) : (
-          null
-        )}
+        empty={state.error ? {
+          text: 'Ошибка,',
+          link: 'попробуйте ещё раз',
+          suggest: state.suggest,
+        } : {
+          text: 'Ничего не найдено, попробуйте',
+          link: 'Сбербанк',
+          suggest: 'Сбербанк',
+        }}
       />
     </Box>
+    <SimpleModal
+      show={state.dialogText !== undefined}
+      onHide={hideDialog}
+      size="m"
+      closable
+      backdropClose
+    >
+      <Heading size="2">
+        {state.dialogText}
+      </Heading>
+    </SimpleModal>
   </BlockContent>
 </Block>
 ```

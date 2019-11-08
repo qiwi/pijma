@@ -1,4 +1,4 @@
-import {RefObject, KeyboardEventHandler} from 'react'
+import {RefObject, KeyboardEventHandler, MouseEventHandler} from 'react'
 import RenderChild from '../RenderChild'
 
 export default interface MenuControlProps {
@@ -11,13 +11,13 @@ export default interface MenuControlProps {
       ref: RefObject<HTMLDivElement>
       selected: boolean
       focused: boolean
-      onClick: React.MouseEventHandler
-      onMouseDown: React.MouseEventHandler
-      onMouseEnter: React.MouseEventHandler
+      onClick: MouseEventHandler
+      onMouseDown: MouseEventHandler
+      onMouseEnter: MouseEventHandler
     }>
     focused: number | undefined
     selected: number | undefined
     containerRef: RefObject<HTMLDivElement>
-    onKeyDown: React.KeyboardEventHandler
+    onKeyDown: KeyboardEventHandler
   }>
 }

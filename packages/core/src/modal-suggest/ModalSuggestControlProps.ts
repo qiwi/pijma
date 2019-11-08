@@ -1,14 +1,17 @@
 import {RefObject} from 'react'
 import ModalSuggestOptionModel from './ModalSuggestOptionModel'
+import ModalSuggestResult from './ModalSuggestResult'
 import RenderChild from '../RenderChild'
 
 export default interface ModalSuggestControlProps<O extends ModalSuggestOptionModel<V>, V> {
   items: O[]
   value?: V
   suggest?: string
+  total?: ModalSuggestResult
+  empty?: ModalSuggestResult
   equals: (a: V, b: V) => boolean
-  onChange?: (value: V, suggest?: string) => void
-  onRequest?: (suggest: string) => void
+  onChange: (value: V, suggest?: string) => void
+  onRequest: (suggest: string) => void
   onFocus?: () => void
   onBlur?: () => void
   onShow?: () => void
@@ -29,6 +32,8 @@ export default interface ModalSuggestControlProps<O extends ModalSuggestOptionMo
     onKeyDown: React.KeyboardEventHandler
     onRequest: React.ChangeEventHandler
     onChange: (index: number) => void
+    onTotalClick: () => void
+    onEmptyClick: () => void
     onShow: () => void
     onHide: () => void
     onCancel: () => void

@@ -122,6 +122,7 @@ const initialState = {
   loading: false,
   banks: [],
   timer: undefined,
+  dialogText: undefined,
 };
 
 const filterBanks = (title) => banks.filter(bank => {
@@ -158,12 +159,20 @@ const onChange = (value, suggest) => {
   if (suggest) {
     getBanks(suggest).then((banks) => setState({banks}));
   };
-  console.log('SELECT ITEM', value, suggest);
+  setState({
+    dialogText: `Выбрано: ${title}`,
+  });
 };
 
 const onSubmit = (suggest) => {
-  console.log('SUBMIT', suggest);
+  setState({
+    dialogText: `Отправлено: ${suggest}`,
+  });
 };
+
+const hideDialog = () => setState({
+  dialogText: undefined,
+});
 
 const equals = (a, b) => a.id === b.id;
 
@@ -183,25 +192,32 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
         onSubmit={onSubmit}
         onChange={onChange}
         onRequest={onRequest}
-        result={({focused, selected, hide}) => state.loading ? (
-          null
-        ) : state.banks.length > 0 ? (
-          <Link onClick={hide}>
-            Показать все
-          </Link>
-        ) : (
-          <Paragraph>
-            Ничего не найдено, попробуйте
-            <Link onClick={() => {
-              setState({suggest: 'Сбербанк', error: false});
-              getBanks('Сбербанк').then((banks) => setState({banks}));
-            }}>
-              Сбербанк
-            </Link>
-          </Paragraph>
-        )}
+        total={{
+          link: 'Показать все',
+          suggest: state.suggest,
+        }}
+        empty={state.error ? {
+          text: 'Ошибка,',
+          link: 'попробуйте ещё раз',
+          suggest: state.suggest,
+        } : {
+          text: 'Ничего не найдено, попробуйте',
+          link: 'Сбербанк',
+          suggest: 'Сбербанк',
+        }}
       />
     </Box>
+    <SimpleModal
+      show={state.dialogText !== undefined}
+      onHide={hideDialog}
+      size="m"
+      closable
+      backdropClose
+    >
+      <Heading size="2">
+        {state.dialogText}
+      </Heading>
+    </SimpleModal>
   </BlockContent>
 </Block>
 ```

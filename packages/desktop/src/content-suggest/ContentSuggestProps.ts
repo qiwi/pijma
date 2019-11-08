@@ -1,5 +1,4 @@
-import {RenderChild} from '@qiwi/pijma-core'
-
+import {ModalSuggestResult} from '@qiwi/pijma-core'
 import ContentSuggestOptionModel from './ContentSuggestOptionModel'
 
 export default interface ContentSuggestProps<O extends ContentSuggestOptionModel<V>, V> {
@@ -14,14 +13,11 @@ export default interface ContentSuggestProps<O extends ContentSuggestOptionModel
   stub?: boolean
   error?: boolean
   loading?: boolean
-  result?: RenderChild<{
-    focused: V | undefined
-    selected: V | undefined
-    hide: () => void
-  }>
+  total?: ModalSuggestResult
+  empty?: ModalSuggestResult
+  onChange: (value: V) => void
+  onRequest: (value: string) => void
   onCancel?: () => void
-  onChange?: (value: V) => void
-  onRequest?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void
   onSubmit?: (value: string) => void

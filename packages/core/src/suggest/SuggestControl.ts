@@ -16,7 +16,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
   public componentDidUpdate(props: SuggestControlProps<SuggestOptionModel<V>, V>) {
     if (props.items !== this.props.items) {
       this.setState({
-        show: this.props.items.length > 0,
+        show: this.props.items.length > 0 || this.props.empty !== undefined,
       })
     }
   }
@@ -33,9 +33,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     if (!item.suggest) {
       this.hide()
     }
-    if (this.props.onChange) {
-      this.props.onChange(this.props.items[index].value)
-    }
+    this.props.onChange(this.props.items[index].value)
     if (this.inputRef.current) {
       this.inputRef.current.focus({preventScroll: true})
     }
@@ -77,11 +75,30 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
   }
 
   private onKeyDown: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
-    if (event.key === 'Tab' && this.inputRef.current) {
-      this.inputRef.current.blur()
-    }
     if (this.props.onSubmit && event.key === 'Enter') {
       this.submit()
+    }
+    if (event.key === 'Escape' && this.props.onCancel) {
+      this.hide()
+      this.props.onCancel()
+    }
+  }
+
+  private onResultMouseDown: React.MouseEventHandler = (event: React.MouseEvent) => {
+    event.preventDefault()
+    event.stopPropagation()
+  }
+
+  private onTotalClick: () => void = () => {
+    this.hide()
+    if (this.props.total && this.props.total.suggest && this.props.onSubmit) {
+      this.props.onSubmit(this.props.total.suggest)
+    }
+  }
+
+  private onEmptyClick: () => void = () => {
+    if (this.props.empty && this.props.empty.suggest) {
+      this.props.onRequest(this.props.empty.suggest)
     }
   }
 
@@ -139,6 +156,9 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
       onKeyDown: this.onKeyDown,
       onSubmit: this.submit,
       onHide: this.hide,
+      onTotalClick: this.onTotalClick,
+      onEmptyClick: this.onEmptyClick,
+      onResultMouseDown: this.onResultMouseDown,
     })
   }
 

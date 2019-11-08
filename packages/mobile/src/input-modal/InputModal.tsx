@@ -62,6 +62,7 @@ interface InputModalProps {
   onShow?: () => void
   onHide?: () => void
   onBack?: () => void
+  onEscapeDown?: () => void
 }
 
 const StyledModal = styled(Modal)<ModalProps>({
@@ -83,6 +84,7 @@ const InputModal: FunctionComponent<InputModalProps> = (props) => (
     show={props.show}
     onShow={props.onShow}
     onHide={props.onHide}
+    onEscapeKeyDown={props.onEscapeDown}
     transition={contentTransition}
     restoreFocus={false}
     children={(

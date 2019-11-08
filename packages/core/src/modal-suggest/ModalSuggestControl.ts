@@ -15,9 +15,6 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
 
   private onRequest: React.ChangeEventHandler<HTMLInputElement> = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault()
-    this.setState({
-      show: true,
-    })
     if (this.state.show && this.props.onRequest) {
       this.props.onRequest(event.currentTarget.value)
     }
@@ -74,6 +71,19 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
   private onKeyDown: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
     if (this.props.onSubmit && event.key === 'Enter') {
       this.submit()
+    }
+  }
+
+  private onTotalClick: () => void = () => {
+    this.hide()
+    if (this.props.total && this.props.total.suggest && this.props.onSubmit) {
+      this.props.onSubmit(this.props.total.suggest)
+    }
+  }
+
+  private onEmptyClick: () => void = () => {
+    if (this.props.empty && this.props.empty.suggest && this.props.onRequest) {
+      this.props.onRequest(this.props.empty.suggest)
     }
   }
 
@@ -140,6 +150,8 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
       onHide: this.hide,
       onCancel: this.cancel,
       onSubmit: this.submit,
+      onTotalClick: this.onTotalClick,
+      onEmptyClick: this.onEmptyClick,
     })
   }
 
