@@ -9,7 +9,7 @@ line-height: 32px
 ```jsx
 <Block>
   <BlockContent>
-    <Spacer size="l">
+    <Spacer size="m">
       <Paragraph size="l">Paragraph L <Text bold>Dark 500</Text></Paragraph>
       <Paragraph size="l">Paragraph L <Text bold><Text color="failure">Error</Text> 500</Text></Paragraph>
       <Paragraph size="l">Paragraph L <Text color="success">Success</Text> 300</Paragraph>
