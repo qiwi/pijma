@@ -13,11 +13,8 @@ import {
   styled,
 } from '@qiwi/pijma-core'
 
-import {
-  Paragraph,
-  Link,
-} from '@qiwi/pijma-mobile'
-
+import {Paragraph} from '../typography'
+import {Link} from '../link'
 import {MenuItem} from '../menu'
 import {InputModal} from '../input-modal'
 

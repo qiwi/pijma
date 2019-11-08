@@ -13,11 +13,8 @@ import {
   Spacer,
 } from '@qiwi/pijma-core'
 
-import {
-  Paragraph,
-  Link,
-} from '@qiwi/pijma-desktop'
-
+import {Paragraph} from '../typography'
+import {Link} from '../link'
 import {DropDown} from '../drop-down'
 import {MenuItem} from '../menu'
 
