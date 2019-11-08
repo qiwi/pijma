@@ -16,7 +16,7 @@ import {
 import {
   Paragraph,
   Link,
-} from '@qiwi/pijma-mobile'
+} from '@qiwi/pijma-desktop'
 
 import {DropDown} from '../drop-down'
 import {MenuItem} from '../menu'
