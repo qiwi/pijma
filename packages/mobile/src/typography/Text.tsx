@@ -73,36 +73,39 @@ const StubOffsetCompactBottom: Record<NonNullable<TextProps['size']>, number> = 
 }
 
 export const Text: FunctionComponent<TextProps> = ({stub, display, compact, size, bold, color, decoration, transform, transition, align, clamp, children}) => (
-  stub ? size === undefined ? null : (
-    <Box
-      as="span"
-      display={display}
-    >
-      {Array(clamp === undefined ? 1 : clamp).fill(1).map((width: number, index: number) => (
-        <Stub
-          key={index}
-          height={StubHeight[size]}
-          width={width}
-          top={compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}
-          bottom={compact ? StubOffsetCompactBottom[size] : StubOffsetBottom[size]}
-        />
-      ))}
-    </Box>
-  ) : (
-    <Typo
-      as="span"
-      display={display}
-      size={size === undefined ? undefined : TextSize[size]}
-      height={size === undefined ? undefined : compact ? TextHeightCompact[size] : TextHeight[size]}
-      weight={bold === undefined ? undefined : bold ? 500 : 300}
-      color={color === undefined ? undefined : TextColor[color]}
-      decoration={decoration}
-      transform={transform}
-      transition={transition}
-      align={align}
-      clamp={clamp}
-      children={<Breaker children={children}/>}
-    />
-  )
+  stub ?
+    size === undefined ? (
+      null
+    ) : (
+      <Box
+        as="span"
+        display={display}
+      >
+        {Array(clamp === undefined ? 1 : clamp).fill(1).map((width: number, index: number) => (
+          <Stub
+            key={index}
+            height={StubHeight[size]}
+            width={width}
+            top={compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}
+            bottom={compact ? StubOffsetCompactBottom[size] : StubOffsetBottom[size]}
+          />
+        ))}
+      </Box>
+    ) : (
+      <Typo
+        as="span"
+        display={display}
+        size={size === undefined ? undefined : TextSize[size]}
+        height={size === undefined ? undefined : compact ? TextHeightCompact[size] : TextHeight[size]}
+        weight={bold === undefined ? undefined : bold ? 500 : 300}
+        color={color === undefined ? undefined : TextColor[color]}
+        decoration={decoration}
+        transform={transform}
+        transition={transition}
+        align={align}
+        clamp={clamp}
+        children={<Breaker children={children}/>}
+      />
+    )
 
 )
