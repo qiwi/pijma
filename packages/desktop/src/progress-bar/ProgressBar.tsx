@@ -7,11 +7,13 @@ export interface ProgressBarProps {
   stub?: boolean
 }
 
-export const ProgressBar: FC<ProgressBarProps> = ({stub = false, value, disabled = false}) => (
+export const ProgressBar: FC<ProgressBarProps> = ({
+  value,
+  disabled = false,
+  stub = false,
+}) => (
   stub ? (
-    <Card>
-      <Stub height={10} width={1} r={20}/>
-    </Card>
+    <Stub height={10} width={1} r={20}/>
   ) : (
     <Card bg="#f5f5f5" height={10} r={20} p={2}>
       <Card
