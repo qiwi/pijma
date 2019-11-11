@@ -87,7 +87,7 @@ export const Text: FunctionComponent<TextProps> = ({
   stub = false,
 }) => (
   stub ? (
-    size === undefined ? (
+    size === undefined || display === undefined ? (
       null
     ) : (
       <Box
