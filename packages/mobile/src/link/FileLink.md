@@ -12,6 +12,10 @@
         download
         children="main.bundle.js"
       />
+      <FileLink
+        href=""
+        stub
+      />
     </Spacer>
   </BlockContent>
 </Block>

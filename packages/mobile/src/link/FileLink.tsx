@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {LinkControl, Lnk, FlexItem, Flex, Icon} from '@qiwi/pijma-core'
+import {LinkControl, Lnk, FlexItem, Flex, Icon, Stub} from '@qiwi/pijma-core'
 
 import {Text} from '../typography'
 
@@ -19,56 +19,81 @@ export interface FileLinkProps {
   download?: string | boolean
   rel?: string
   title?: string
+  stub?: boolean
 }
 
 const FlexLink = Flex.withComponent(Lnk)
 
 export const FileLink: FC<FileLinkProps> = (props) => (
-  <LinkControl
-    onClick={props.onClick}
-    onFocus={props.onFocus}
-    onBlur={props.onBlur}
-    href={props.href}
-    target={props.target}
-    download={props.download}
-    rel={props.rel}
-    children={(renderProps) => (
-      <FlexLink
-        tabIndex={props.tabIndex}
-        href={props.href}
-        target={props.target}
-        download={props.download}
-        rel={props.rel}
-        title={props.title}
-        display="inline-flex"
-        cursor="pointer"
-        align="center"
-        onFocus={renderProps.onFocus}
-        onBlur={renderProps.onBlur}
-        onClick={renderProps.onClick}
-        onMouseEnter={renderProps.onMouseEnter}
-        onMouseLeave={renderProps.onMouseLeave}
-        onMouseUp={renderProps.onMouseUp}
-        onMouseDown={renderProps.onMouseDown}
-      >
-        <FlexItem
-          display="inline-block"
-          width={6}
+  props.stub ? (
+    <Flex>
+      <FlexItem>
+        <Stub
           height={6}
-          mr={2}
-          shrink={0}
+          width={6}
+          r={12}
+        />
+      </FlexItem>
+      <FlexItem>
+        <Stub
+          height={2}
+          width={33}
+          top={2}
+          left={3}
+        />
+      </FlexItem>
+    </Flex>
+  ) : (
+    <LinkControl
+      onClick={props.onClick}
+      onFocus={props.onFocus}
+      onBlur={props.onBlur}
+      href={props.href}
+      target={props.target}
+      download={props.download}
+      rel={props.rel}
+      children={(renderProps) => (
+        <FlexLink
+          tabIndex={props.tabIndex}
+          href={props.href}
+          target={props.target}
+          download={props.download}
+          rel={props.rel}
+          title={props.title}
+          display="inline-flex"
+          cursor="pointer"
+          align="center"
+          onFocus={renderProps.onFocus}
+          onBlur={renderProps.onBlur}
+          onClick={renderProps.onClick}
+          onMouseEnter={renderProps.onMouseEnter}
+          onMouseLeave={renderProps.onMouseLeave}
+          onMouseUp={renderProps.onMouseUp}
+          onMouseDown={renderProps.onMouseDown}
         >
-          <Icon name="file" color={renderProps.hover || renderProps.focus || renderProps.active ? '#FF8C00' : '#000'}/>
-        </FlexItem>
-        <FlexItem>
-          <Text
-            color={renderProps.hover || renderProps.focus || renderProps.active ? 'warning' : 'default'}
-            size="s"
-            bold={false}
-            children={props.children}
-          />
-        </FlexItem>
-      </FlexLink>
-    )}
-  />
+          <FlexItem
+            display="inline-block"
+            width={6}
+            height={6}
+            mr={2}
+            shrink={0}
+          >
+            <Icon name="file" color={renderProps.hover || renderProps.focus || renderProps.active ? '#FF8C00' : '#000'}/>
+          </FlexItem>
+          <FlexItem>
+            <Text
+              color={renderProps.hover || renderProps.focus || renderProps.active ? 'warning' : 'default'}
+              size="s"
+              bold={false}
+              children={props.children}
+            />
+          </FlexItem>
+        </FlexLink>
+      )}
+    />
+  )
 )
+
+FileLink.defaultProps = {
+  stub: false,
+}
