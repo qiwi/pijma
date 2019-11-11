@@ -40,6 +40,7 @@ export const Image: FC<ImageProps> = ({
             width={width}
             height={height}
             maxWidth={1}
+            maxHeight={1}
             src={renderProps.src}
             srcSet={renderProps.srcSet}
             sizes={sizes}
