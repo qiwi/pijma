@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.87.1](https://github.com/qiwi/pijma/compare/v1.87.0...v1.87.1) (2019-11-11)
+
+
+### Bug Fixes
+
+* image 100% max width and height ([f68a1a9](https://github.com/qiwi/pijma/commit/f68a1a9))
+
 # [@qiwi/pijma-core-v1.86.0](https://github.com/qiwi/pijma/compare/v1.85.1...v1.86.0) (2019-11-11)
 
 
