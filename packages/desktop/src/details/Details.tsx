@@ -34,10 +34,9 @@ export const Details: FC<DetailsProps> = ({
   stub = false,
 }) => (
   stub ? (
-    <Box as="dl" width={1} display="table">
+    <Box as="dl" width="100%" display="table">
       {[{title: 0.2, content: 0.3}, {title: 0.3, content: 0.1}, {title: 0.2, content: 0.2}].map((item, i) => (
-        (Object.values(item).map((content, j) => (
-          console.log(content),
+        (Object.values(item).map((_content, j) => (
           <Box css={{display: 'table-row'}} key={`${i}.${j}`}>
             <Box
               as="dt"
@@ -64,10 +63,10 @@ export const Details: FC<DetailsProps> = ({
                       },
                     }}
                   >
-                    <Stub height={2} width={content}/>
+                    <Stub height={2} width={0.5}/>
                   </Pos>
                 ) : (
-                  <Stub height={2} width={content}/>
+                  <Stub height={2} width={0.5}/>
                 )
               ) : (
                 null
@@ -82,7 +81,7 @@ export const Details: FC<DetailsProps> = ({
               }}
               pl={indentDots[size]}
             >
-              <Stub height={2} width={content}/>
+              <Stub height={2} width={0.4}/>
             </Box>
           </Box>
         )))
