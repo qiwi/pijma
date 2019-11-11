@@ -1,4 +1,4 @@
-import {Component, RefObject, createRef, MouseEventHandler} from 'react'
+import {Component, RefObject, createRef} from 'react'
 import ModalSuggestControlProps from './ModalSuggestControlProps'
 import ModalSuggestControlState from './ModalSuggestControlState'
 import ModalSuggestOptionModel from './ModalSuggestOptionModel'
@@ -96,7 +96,7 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
     this.cancel()
   }
 
-  private onBack: MouseEventHandler = (event) => {
+  private onBack: React.MouseEventHandler = (event) => {
     event.preventDefault()
     this.cancel()
   }
