@@ -2,6 +2,7 @@ import React, {
   FunctionComponent,
   ChangeEventHandler,
   KeyboardEventHandler,
+  MouseEventHandler,
   RefObject,
   FocusEventHandler,
 } from 'react'
@@ -19,7 +20,6 @@ import {
   Icon,
   Flex,
   FlexItem,
-  IconProps,
   Input,
 } from '@qiwi/pijma-core'
 
@@ -49,20 +49,18 @@ interface InputModalProps {
   placeholder?: string
   maxLength?: number
   show: boolean
-  inputType?: string
   inputRef?: RefObject<HTMLInputElement>
   contentRef?: RefObject<HTMLDivElement>
   error?: boolean
-  submitIcon?: IconProps['name']
   onChange?: ChangeEventHandler
   onKeyDown?: KeyboardEventHandler
   onFocus?: FocusEventHandler
   onBlur?: FocusEventHandler
-  onSubmit?: () => void
+  onBack?: MouseEventHandler
+  onSubmit?: MouseEventHandler
   onShow?: () => void
   onHide?: () => void
-  onBack?: () => void
-  onEscapeDown?: () => void
+  onEscape?: () => void
 }
 
 const StyledModal = styled(Modal)<ModalProps>({
@@ -84,7 +82,7 @@ const InputModal: FunctionComponent<InputModalProps> = (props) => (
     show={props.show}
     onShow={props.onShow}
     onHide={props.onHide}
-    onEscapeKeyDown={props.onEscapeDown}
+    onEscapeKeyDown={props.onEscape}
     transition={contentTransition}
     restoreFocus={false}
     children={(
@@ -112,7 +110,7 @@ const InputModal: FunctionComponent<InputModalProps> = (props) => (
           <FlexItem grow={1}>
             <Input
               value={props.value}
-              type={props.inputType}
+              type="search"
               ref={props.inputRef}
               width={1}
               autoFocus={true}
@@ -135,10 +133,9 @@ const InputModal: FunctionComponent<InputModalProps> = (props) => (
           )}
         </PosFlexCard>
         <BoxPos
-          ref={props.contentRef}
           overflow="auto"
           type="relative"
-          pt={3}
+          py={3}
           height="calc(100% - 60px)"
           children={props.children}
         />

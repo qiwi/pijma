@@ -5,7 +5,7 @@ export default interface MenuControlProps {
   count: number
   selected?: number | undefined
   onKeyDown?: KeyboardEventHandler
-  onItemSelect?: (index: number) => void
+  onSelect?: (index: number) => void
   children: RenderChild<{
     items: Array<{
       ref: RefObject<HTMLDivElement>

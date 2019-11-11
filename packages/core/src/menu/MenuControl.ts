@@ -56,8 +56,8 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
     this.setState({
       focused: undefined,
     })
-    if (this.props.onItemSelect) {
-      this.props.onItemSelect(index)
+    if (this.props.onSelect) {
+      this.props.onSelect(index)
     }
   }
 

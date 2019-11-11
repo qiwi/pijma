@@ -1,16 +1,27 @@
 import {RefObject} from 'react'
 import ModalSuggestOptionModel from './ModalSuggestOptionModel'
-import ModalSuggestResult from './ModalSuggestResult'
 import RenderChild from '../RenderChild'
 
 export default interface ModalSuggestControlProps<O extends ModalSuggestOptionModel<V>, V> {
   items: O[]
   value?: V
   suggest?: string
-  total?: ModalSuggestResult
-  empty?: ModalSuggestResult
+  total?: {
+    text?: string
+    link?: {
+      text: string
+      suggest: string
+    }
+  }
+  empty?: {
+    text?: string
+    link?: {
+      text: string
+      suggest: string
+    }
+  }
   equals: (a: V, b: V) => boolean
-  onChange: (value: V, suggest?: string) => void
+  onChange: (value: V) => void
   onRequest: (suggest: string) => void
   onFocus?: () => void
   onBlur?: () => void
@@ -23,7 +34,7 @@ export default interface ModalSuggestControlProps<O extends ModalSuggestOptionMo
     hovered: boolean
     selected: number | undefined
     show: boolean
-    modalInputRef: RefObject<HTMLInputElement>
+    inputRef: RefObject<HTMLInputElement>
     onFocus: React.FocusEventHandler
     onBlur: React.FocusEventHandler
     onModalInputBlur: React.FocusEventHandler
@@ -31,12 +42,13 @@ export default interface ModalSuggestControlProps<O extends ModalSuggestOptionMo
     onMouseLeave: React.MouseEventHandler
     onKeyDown: React.KeyboardEventHandler
     onRequest: React.ChangeEventHandler
-    onChange: (index: number) => void
+    onBack: React.MouseEventHandler
+    onSearchClick: React.MouseEventHandler
+    onSelect: (index: number) => void
     onTotalClick: () => void
     onEmptyClick: () => void
     onShow: () => void
     onHide: () => void
-    onCancel: () => void
-    onSubmit: () => void
+    onEscape: () => void
   }>
 }

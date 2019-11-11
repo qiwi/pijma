@@ -1,14 +1,25 @@
 import {RefObject} from 'react'
 import RenderChild from '../RenderChild'
 import SuggestOptionModel from './SuggestOptionModel'
-import SuggestResult from './SuggestResult'
 
 export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V> {
   items: O[]
   value?: V
   suggest?: string
-  total?: SuggestResult
-  empty?: SuggestResult
+  total?: {
+    text?: string
+    link?: {
+      text: string
+      suggest: string
+    }
+  }
+  empty?: {
+    text?: string
+    link?: {
+      text: string
+      suggest: string
+    }
+  }
   equals: (a: V, b: V) => boolean
   onChange: (value: V) => void
   onRequest: (suggest: string) => void
@@ -32,10 +43,9 @@ export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V
     onKeyDown: React.KeyboardEventHandler
     onRequest: React.ChangeEventHandler
     onResultMouseDown: React.MouseEventHandler
-    onChange: (index: number) => void
+    onSelect: (index: number) => void
     onTotalClick: () => void
     onEmptyClick: () => void
     onHide: () => void
-    onSubmit: () => void
   }>
 }

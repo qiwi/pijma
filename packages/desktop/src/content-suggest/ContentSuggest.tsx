@@ -43,11 +43,12 @@ export const ContentSuggest = <V extends {}>({
     onFocus={props.onFocus}
     onSubmit={props.onSubmit}
     onCancel={props.onCancel}
+    onHide={props.onHide}
     children={(renderProps) => (
       <MenuControl
         count={props.items.length}
         selected={renderProps.selected}
-        onItemSelect={renderProps.onChange}
+        onSelect={renderProps.onSelect}
         onKeyDown={renderProps.onKeyDown}
         children={(menuRenderProps) => (
           <CardPos
@@ -64,7 +65,7 @@ export const ContentSuggest = <V extends {}>({
               onMouseLeave={renderProps.onMouseLeave}
             >
               <ContentInput
-                value={props.suggest}
+                value={props.suggest || ''}
                 tabIndex={props.tabIndex}
                 autoComplete={props.autoComplete}
                 autoFocus={props.autoFocus}
@@ -118,8 +119,7 @@ export const ContentSuggest = <V extends {}>({
                   bt="solid 1px #e6e6e6"
                   ref={menuRenderProps.containerRef}
                   overflow="auto"
-                  pt={3}
-                  pb={props.loading ? 2 : undefined}
+                  py={3}
                   onMouseDown={renderProps.onResultMouseDown}
                 >
                   {props.loading ? (
@@ -127,45 +127,61 @@ export const ContentSuggest = <V extends {}>({
                       <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
                     ))
                   ) : (
-                    <Spacer size="xs">
-                      <Fragment>
-                        {menuRenderProps.items.map((item, key) => (
-                          <CardItem
-                            key={key}
-                            ref={item.ref}
-                            onClick={item.onClick}
-                            onMouseDown={item.onMouseDown}
-                            onMouseEnter={item.onMouseEnter}
-                            cursor="pointer"
-                            text={props.items[key].title}
-                            notes={props.items[key].description}
-                            icon={<Image width={6} height={6} src={props.items[key].logo}/>}
-                            hover={item.focused}
-                            active={item.selected}
-                            focus={item.selected}
-                          />
-                        ))}
-                      </Fragment>
+                    <Spacer size="s">
+                      {menuRenderProps.items.length > 0 ? (
+                        <Fragment>
+                          {menuRenderProps.items.map((item, key) => (
+                            <CardItem
+                              key={key}
+                              ref={item.ref}
+                              onClick={item.onClick}
+                              onMouseDown={item.onMouseDown}
+                              onMouseEnter={item.onMouseEnter}
+                              cursor="pointer"
+                              text={props.items[key].title}
+                              notes={props.items[key].description}
+                              icon={<Image width={6} height={6} src={props.items[key].logo}/>}
+                              hover={item.focused}
+                              active={item.selected}
+                              focus={item.selected}
+                            />
+                          ))}
+                        </Fragment>
+                      ) : (
+                        null
+                      )}
                       {props.total && props.items.length > 0 ? (
-                        <Box px={4} pb={2}>
+                        <Box px={4}>
                           <Paragraph>
                             {props.total.text}
-                            {props.total.link ? ' ' : ''}
-                            <Link
-                              onClick={renderProps.onTotalClick}
-                              children={props.total.link}
-                            />
+                            {props.total.link ? (
+                              <Fragment>
+                                {' '}
+                                <Link
+                                  onClick={renderProps.onTotalClick}
+                                  children={props.total.link.text}
+                                />
+                              </Fragment>
+                            ) : (
+                              null
+                            )}
                           </Paragraph>
                         </Box>
                       ) : props.empty && props.items.length === 0 ? (
-                        <Box px={4} pb={2}>
+                        <Box px={4}>
                           <Paragraph>
                             {props.empty.text}
-                            {props.empty.link ? ' ' : ''}
-                            <Link
-                              onClick={renderProps.onEmptyClick}
-                              children={props.empty.link}
-                            />
+                            {props.empty.link ? (
+                              <Fragment>
+                                {' '}
+                                <Link
+                                  onClick={renderProps.onEmptyClick}
+                                  children={props.empty.link.text}
+                                />
+                              </Fragment>
+                            ) : (
+                              null
+                            )}
                           </Paragraph>
                         </Box>
                       ) : (

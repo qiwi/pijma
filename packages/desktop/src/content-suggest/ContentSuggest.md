@@ -148,15 +148,12 @@ const onRequest = (suggest) => {
 
 const onCancel = () => setState(initialState);
 
-const onChange = (value, suggest) => {
+const onChange = (value) => {
   const {title} = getBankByValue(value);
   setState({
     value: value,
     suggest: title,
   });
-  if (suggest) {
-    return getBanks(suggest).then((banks) => setState({banks}))
-  }
   setState({
     dialogText: `Выбрано: ${title}`,
   });
@@ -191,17 +188,23 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
         onChange={onChange}
         onRequest={onRequest}
         total={{
-          link: 'Показать все',
-          suggest: state.suggest,
+          link: {
+            text: 'Показать все',
+            suggest: state.suggest,
+          }
         }}
         empty={state.error ? {
           text: 'Ошибка,',
-          link: 'попробуйте ещё раз',
-          suggest: state.suggest,
+          link: {
+            text: 'попробуйте ещё раз',
+            suggest: state.suggest,
+          }
         } : {
           text: 'Ничего не найдено, попробуйте',
-          link: 'Сбербанк',
-          suggest: 'Сбербанк',
+          link: {
+            text: 'Сбербанк',
+            suggest: 'Сбербанк',
+          }
         }}
       />
     </Box>
