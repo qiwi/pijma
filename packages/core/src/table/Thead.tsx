@@ -1,31 +1,50 @@
 import React, {FunctionComponent} from 'react'
-import {Typo} from '../primitive'
+import {Typo, TypoProps} from '../primitive'
 
 import {Row} from './Row'
 import {Cell} from './Cell'
 
-export interface TheadTitleProps {
+export interface TheadTitleProps extends TypoProps {
   title: string
   id: string
-  align?: 'right' | 'left' | 'center'
+  group?: string
 }
 
 export interface TheadProps {
-  titles: TheadTitleProps[]
+  columns: TheadTitleProps[]
 }
 
-export const Thead: FunctionComponent<TheadProps> = ({titles}) => (
+export const Thead: FunctionComponent<TheadProps> = ({columns}) => (
   <thead>
-    <Row bb="1px solid #e6e6e6">
-      {titles.map(({title, align = 'left'}, index: number) => {
-        return (
-          <Cell as="th" pb={4} pr={index < titles.length - 1 ? 8 : 0} key={index}>
-            <Typo size={3.5} height={4} weight={300} align={align} color="#666">
-              {title}
-            </Typo>
-          </Cell>
-        )
-      })}
+    <Row>
+      <Cell width={11} />
+      {columns.map(
+        (
+          {title, align = 'left'},
+          index: number,
+        ) => {
+          return (
+            <Cell
+              as="th"
+              bb="1px solid #e6e6e6"
+              pb={4}
+              pl={index ? (align === 'left' ? 8 : 5) : 0}
+              key={`head-${index}`}
+            >
+              <Typo
+                size={3.5}
+                height={4}
+                weight={300}
+                align={align}
+                color={'#666'}
+              >
+                {title}
+              </Typo>
+            </Cell>
+          )
+        },
+      )}
+      <Cell width={11} />
     </Row>
   </thead>
 )
