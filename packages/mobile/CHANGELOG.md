@@ -1,3 +1,24 @@
+# [@qiwi/pijma-mobile-v1.86.0](https://github.com/qiwi/pijma/compare/v1.85.1...v1.86.0) (2019-11-11)
+
+
+### Features
+
+* content suggest ([d7780e2](https://github.com/qiwi/pijma/commit/d7780e2))
+
+# [@qiwi/pijma-mobile-v1.85.1](https://github.com/qiwi/pijma/compare/v1.85.0...v1.85.1) (2019-11-08)
+
+
+### Bug Fixes
+
+* progress-bar stub ([8bafcdd](https://github.com/qiwi/pijma/commit/8bafcdd))
+
+# [@qiwi/pijma-mobile-v1.85.0](https://github.com/qiwi/pijma/compare/v1.84.1...v1.85.0) (2019-11-08)
+
+
+### Features
+
+* progress-bar ([564c1d2](https://github.com/qiwi/pijma/commit/564c1d2))
+
 # [@qiwi/pijma-mobile-v1.84.1](https://github.com/qiwi/pijma/compare/v1.84.0...v1.84.1) (2019-10-29)
 
 

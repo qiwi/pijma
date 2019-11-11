@@ -3,55 +3,61 @@ import {findDOMNode} from 'react-dom'
 import MenuControlProps from './MenuControlProps'
 import MenuControlState from './MenuControlState'
 
-export default class MenuControl<V> extends Component<MenuControlProps<V>, MenuControlState<V>> {
+export default class MenuControl extends Component<MenuControlProps, MenuControlState> {
 
-  public componentDidUpdate(prevProps: MenuControlProps<V>) {
-    if (prevProps.items !== this.props.items) {
-      this.itemsRefs = new Map(
-        this.props.items.map((item => [item, createRef()])),
-      )
+  public static getDerivedStateFromProps(nextProps: MenuControlProps, prevState: MenuControlState): Partial<MenuControlState> {
+    const {focused} = prevState
+    const {count} = nextProps
+    return {
+      focused: count === 0 ? (
+        undefined
+      ) : focused !== undefined && count <= focused ? (
+        count - 1
+      ) : (
+        focused
+      ),
+      refs: Array(count).fill(1).map(() => createRef()),
     }
   }
 
-  public state: MenuControlState<V> = {
+  public componentDidUpdate() {
+    const {selected} = this.props
+    const {focused, refs} = this.state
+    if (selected !== undefined && focused === undefined) {
+      this.scrollToItem(refs[selected])
+    }
+  }
+
+  public state: MenuControlState = {
+    refs: Array(this.props.count).fill(1).map(() => createRef()),
     focused: undefined,
   }
 
-  private itemsRefs: Map<V, RefObject<HTMLDivElement>> = new Map(
-    this.props.items.map((item => [item, createRef()])),
-  )
-
   private containerRef: RefObject<HTMLDivElement> = createRef()
 
-  private equals = (a: V, b: V): boolean => {
-    if (this.props.equals) {
-      return (this.props.equals(a, b))
-    }
-    return a === b
-  }
-
-  private onItemClick = (item: V) => (event: React.MouseEvent) => {
+  private onItemMouseDown = (event: React.MouseEvent) => {
     event.preventDefault()
-    this.selectItem(item)
+    event.stopPropagation()
   }
 
-  private onItemEnter = (item: V) => (event: React.MouseEvent) => {
+  private onItemClick = (index: number) => (event: React.MouseEvent) => {
+    event.preventDefault()
+    this.selectItem(index)
+  }
+
+  private onItemEnter = (index: number) => (event: React.MouseEvent) => {
     event.preventDefault()
     this.setState({
-      focused: item,
+      focused: index,
     })
   }
 
-  private onItemLeave = () => (event: React.MouseEvent) => {
-    event.preventDefault()
+  private selectItem: (index: number) => void = (index) => {
     this.setState({
       focused: undefined,
     })
-  }
-
-  private selectItem: (item: V) => void = (item) => {
-    if (this.props.onItemSelect) {
-      this.props.onItemSelect(item)
+    if (this.props.onSelect) {
+      this.props.onSelect(index)
     }
   }
 
@@ -77,16 +83,16 @@ export default class MenuControl<V> extends Component<MenuControlProps<V>, MenuC
 
   private onKeyDown: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
     const {focused} = this.state
-    if (this.props.onKeyDown) {
-      this.props.onKeyDown(event)
-    }
     if (event.key === 'ArrowDown') {
       event.preventDefault()
-      const nextItem = this.nextItem
+      const next = this.next
+      if (next === undefined) {
+        return
+      }
       this.setState({
-        focused: nextItem,
+        focused: next,
       })
-      const itemRef = this.itemsRefs.get(nextItem)
+      const itemRef = this.state.refs[next]
       if (itemRef) {
         this.scrollToItem(itemRef)
       }
@@ -94,11 +100,14 @@ export default class MenuControl<V> extends Component<MenuControlProps<V>, MenuC
     }
     if (event.key === 'ArrowUp') {
       event.preventDefault()
-      const prevItem = this.prevItem
+      const prev = this.prev
+      if (prev === undefined) {
+        return
+      }
       this.setState({
-        focused: prevItem,
+        focused: prev,
       })
-      const itemRef = this.itemsRefs.get(prevItem)
+      const itemRef = this.state.refs[prev]
       if (itemRef) {
         this.scrollToItem(itemRef)
       }
@@ -108,46 +117,45 @@ export default class MenuControl<V> extends Component<MenuControlProps<V>, MenuC
       event.preventDefault()
       const item = focused !== undefined ? focused : this.props.selected
       if (item !== undefined) {
-        this.selectItem(item)
+        return this.selectItem(item)
       }
     }
+    if (this.props.onKeyDown) {
+      this.props.onKeyDown(event)
+    }
   }
 
-  private get nextItem(): V {
-    const {items} = this.props
+  private get next(): number | undefined {
+    const {count, selected} = this.props
     const {focused} = this.state
-    const {selected} = this.props
     if (focused === undefined && selected === undefined) {
-      return items[0]
+      return 0
     }
-    const currentId = this.props.items.findIndex(item => this.equals(item, focused || selected!))
-    const nextId = currentId + 1 >= items.length ? 0 : currentId + 1
-    return items[nextId]
+    const current = focused !== undefined ? focused : selected!
+    return current + 1 >= count ? 0 : current + 1
   }
 
-  private get prevItem(): V {
-    const {items} = this.props
+  private get prev(): number | undefined {
+    const {count, selected} = this.props
     const {focused} = this.state
-    const {selected} = this.props
     if (focused === undefined && selected === undefined) {
-      return items[items.length - 1]
+      return count - 1
     }
-    const currentId = this.props.items.findIndex(item => this.equals(item, focused || selected!))
-    const prevId = currentId === 0 ? items.length - 1 : currentId - 1
-    return items[prevId]
+    const current = focused !== undefined ? focused : selected!
+    return current === 0 ? count - 1 : current - 1
   }
 
   public render() {
     const {focused} = this.state
-    const {selected} = this.props
+    const {selected, count} = this.props
     return this.props.children({
-      items: this.props.items.map(item => ({
-        ref: this.itemsRefs.get(item)!,
-        focused: focused ? this.equals(item, focused) : false,
-        selected: selected ? this.equals(item, selected) : false,
-        onClick: this.onItemClick(item),
-        onMouseEnter: this.onItemEnter(item),
-        onMouseLeave: this.onItemLeave(),
+      items: Array(count).fill(1).map((_item, index) => ({
+        ref: this.state.refs[index],
+        focused: focused !== undefined ? focused === index : false,
+        selected: selected !== undefined ? selected === index : false,
+        onClick: this.onItemClick(index),
+        onMouseDown: this.onItemMouseDown,
+        onMouseEnter: this.onItemEnter(index),
       })),
       focused,
       selected,
