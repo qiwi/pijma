@@ -30,3 +30,19 @@ initialState = {value: 0};
   </BlockContent>
 </Block>
 ```
+
+```jsx
+<Block>
+  <BlockContent>
+    <Spacer size="s">
+      <Heading size="4" stub/>
+      <Rating stub size="s" disabled/>
+      <Paragraph stub size="m">
+        Получил маленький подарок в виде возврата 4% от суммы 
+        после получения товара! Если бы переводили из рублей в доллары 
+        по нормальной цене было бы ещё лучше.
+      </Paragraph>
+    </Spacer>
+  </BlockContent>
+</Block>
+```
