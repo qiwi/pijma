@@ -16,11 +16,6 @@ const RatingSize: Record<NonNullable<RatingProps['size']>, number> = {
 }
 
 const RatingIndent: Record<NonNullable<RatingProps['size']>, number> = {
-  s: 1,
-  m: 2.5,
-}
-
-const RatingStubIndent: Record<NonNullable<RatingProps['size']>, number> = {
   s: 2,
   m: 5,
 }
@@ -38,7 +33,7 @@ export const Rating: FC<RatingProps> = ({
       {Array(count).fill(1).map((_, index) => (
         <FlexItem
           key={index}
-          pl={index === 0 ? 0 : RatingStubIndent[size]}
+          pl={index === 0 ? 0 : RatingIndent[size]}
         >
           <Stub
             height={RatingSize[size]}
@@ -59,8 +54,8 @@ export const Rating: FC<RatingProps> = ({
           {renderProps.items.map((item, index) => (
             <FlexItem
               key={index}
-              pl={index === 0 ? 0 : RatingIndent[size]}
-              pr={index === count - 1 ? 0 : RatingIndent[size]}
+              pl={index === 0 ? 0 : RatingIndent[size] / 2}
+              pr={index === count - 1 ? 0 : RatingIndent[size] / 2}
               onClick={item.onClick}
               onMouseMove={item.onMouseEnter}
               onMouseOut={item.onMouseLeave}
@@ -84,5 +79,5 @@ Rating.defaultProps = {
   size: 'm',
   disabled: false,
   count: 5,
-  stub:  false,
+  stub: false,
 }
