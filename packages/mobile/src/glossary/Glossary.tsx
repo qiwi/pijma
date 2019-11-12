@@ -20,7 +20,7 @@ export const Glossary: FC<GlossaryProps> = ({children, stub = false}) => (
           stub
         />
       </Box>
-      <Box as="dd" width={38}>
+      <Box mt={1} as="dd" width={38}>
         <Text
           display="block"
           compact
