@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.87.0](https://github.com/qiwi/pijma/compare/v1.86.0...v1.87.0) (2019-11-11)
+
+
+### Features
+
+* stub text ([7f1fb93](https://github.com/qiwi/pijma/commit/7f1fb93))
+
 # [@qiwi/pijma-mobile-v1.86.0](https://github.com/qiwi/pijma/compare/v1.85.1...v1.86.0) (2019-11-11)
 
 
