@@ -1,42 +1,70 @@
 import React, {FC, ReactNode} from 'react'
-import {Flex, FlexItem, Spacer} from '@qiwi/pijma-core'
-import {Heading, Paragraph} from '../typography/'
+import {Box, Flex, FlexItem, Spacer, Stub} from '@qiwi/pijma-core'
+import {Heading, Paragraph, Text} from '../typography/'
 
 export interface NoticeProps {
   icon: ReactNode
   title?: ReactNode
+  stub?: boolean
 }
 
-export const Notice: FC<NoticeProps> = ({icon, title, children}) => (
-  <Flex>
-    <FlexItem
-      shrink={0}
-      basis={6}
-      mr={title ? 4 : 2}
-      children={icon}
-    />
-    {title || children ? (
-      <FlexItem>
+export const Notice: FC<NoticeProps> = ({icon, title, children, stub = false}) => (
+  stub ? (
+    <Flex>
+      <FlexItem mr={title ? 4 : 2}>
+        <Stub
+          height={6}
+          width={6}
+          r={12}
+        />
+      </FlexItem>
+      <FlexItem align="center">
         <Spacer size="xs">
           {title ? (
-            <Heading
-              size="3"
-              children={title}
-            />
+            <Box>
+              <Heading size="3" stub/>
+            </Box>
           ) : (
             null
           )}
-          {children ? (
-            <Paragraph
-              children={children}
-            />
-          ) : (
-            null
-          )}
+          <Box width={33}>
+            <Text display="block" size="s" stub/>
+          </Box>
         </Spacer>
       </FlexItem>
-    ) : (
-      null
-    )}
-  </Flex>
+    </Flex>
+  ) : (
+    <Flex>
+      <FlexItem
+        shrink={0}
+        basis={6}
+        mr={title ? 4 : 2}
+        children={icon}
+      />
+      {title || children ? (
+        <FlexItem>
+          <Spacer size="xs">
+            {title ? (
+              <Heading
+                size="3"
+                children={title}
+              />
+            ) : (
+              null
+            )}
+            {children ? (
+              <Paragraph
+                children={children}
+              />
+            ) : (
+              null
+            )}
+          </Spacer>
+        </FlexItem>
+      ) : (
+        null
+      )}
+    </Flex>
+    )
+
 )

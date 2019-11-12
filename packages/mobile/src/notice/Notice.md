@@ -20,3 +20,15 @@
   </BlockContent>
 </Block>
 ```
+
+```jsx
+<Block>
+  <BlockContent>
+    <Notice
+      title
+      children
+      stub
+    />
+  </BlockContent>
+</Block>
+```
