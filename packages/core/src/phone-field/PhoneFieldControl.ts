@@ -12,13 +12,14 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
 
   public componentDidUpdate(props: PhoneFieldControlProps, state: PhoneFieldControlState) {
     if (
-      state.selectedCountry &&
-      this.state.selectedCountry &&
-      state.selectedCountry.mask !== this.state.selectedCountry.mask &&
-      this.props.value
+      state.selectedCountry === null || (
+        state.selectedCountry &&
+        this.state.selectedCountry &&
+        state.selectedCountry.mask !== this.state.selectedCountry.mask &&
+        this.props.value
+      )
     ) {
-      const position = this.props.value.length * 2
-      this.inputField.setSelectionRange(position, position)
+      this.inputField.setSelectionRange(-1, -1)
     }
     if (this.props.countries !== props.countries) {
       this.optionsRefs = new Map(
@@ -44,9 +45,9 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
     this.props.countries.map((country => [country, createRef()])),
   )
 
-  private onCountryClick = (country: PhoneFieldCountry) => (event: React.MouseEvent) => {
+  private onCountryClick = (index: number) => (event: React.MouseEvent) => {
     event.preventDefault()
-    this.selectCountry(country)
+    this.selectCountry(index)
   }
 
   private onCountryEnter = (country: PhoneFieldCountry) => (event: React.MouseEvent) => {
@@ -80,7 +81,8 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
     this.inputField.focus()
   }
 
-  private selectCountry: (country: PhoneFieldCountry) => void = (country) => {
+  private selectCountry: (index: number) => void = (index) => {
+    const country = this.props.countries[index]
     const phoneNumber = this.props.value ? this.props.value : ''
     const currentCountryMask = this.state.selectedCountry ? this.clear(this.state.selectedCountry.mask) : ''
     const newCountryMask = this.clear(country.mask)
@@ -142,95 +144,28 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
     }
   }
 
-  private onKeyDown: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
-    if (!this.state.showCountries && (event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
-      event.preventDefault()
-      this.setState({
-        showCountries: true,
-      })
-      return
-    }
-    if (event.key === 'ArrowDown') {
-      event.preventDefault()
-      this.setState({
-        focusedCountry: this.nextCountry,
-      })
-      const countryRef = this.optionsRefs.get(this.nextCountry || this.state.selectedCountry || this.props.countries[0])
-      if (countryRef && this.dropdownRef) {
-        this.scrollToCountry(countryRef)
-      }
-      return
-    }
-    if (event.key === 'ArrowUp') {
-      event.preventDefault()
-      this.setState({
-        focusedCountry: this.prevCountry,
-      })
-      const countryRef = this.optionsRefs.get(this.prevCountry || this.state.selectedCountry || this.props.countries[0])
-      if (countryRef && this.dropdownRef) {
-        this.scrollToCountry(countryRef)
-      }
-      return
-    }
-    if (this.state.showCountries && event.key === 'Enter') {
-      event.preventDefault()
-      this.selectCountry(this.state.focusedCountry || this.state.selectedCountry || this.props.countries[0])
-    }
-  }
-
   private clear(value: string): string {
     return value.replace(/\D/g, '')
-  }
-
-  private scrollToCountry: (country: RefObject<HTMLDivElement>) => void = (country) => {
-    const dropdownElement = findDOMNode(this.dropdownRef.current) as HTMLDivElement
-    const countryElement = findDOMNode(country.current) as HTMLDivElement
-    const containerBoundingRect = dropdownElement.getBoundingClientRect()
-    const countryBoundingRect = countryElement.getBoundingClientRect()
-    const countryOffset = countryElement.offsetTop
-    const scrollOffset = dropdownElement.scrollTop
-    const countryHeigher = countryOffset < scrollOffset
-    const countryLower = countryOffset + countryBoundingRect.height > scrollOffset + containerBoundingRect.height
-    if (countryHeigher) {
-      dropdownElement.scrollTo({top: countryOffset})
-    }
-    if (countryLower) {
-      dropdownElement.scrollTo({top: countryOffset + countryBoundingRect.height - containerBoundingRect.height})
-    }
   }
 
   private getCountryByPhone(phoneNumber: string): PhoneFieldCountry | undefined {
     const clearPhone = this.clear(phoneNumber)
     return this.props.countries
-      .slice(0)
-      .sort((a, b) => this.clear(b.mask).length - this.clear(a.mask).length)
-      .find((option) => clearPhone.indexOf(this.clear(option.mask)) === 0)
-  }
-
-  private get nextCountry(): PhoneFieldCountry | null {
-    const {countries} = this.props
-    const focusedId: number = countries.findIndex(country => this.state.focusedCountry === null ? country === this.state.selectedCountry : country === this.state.focusedCountry)
-    const nextId = focusedId + 1 >= countries.length ? 0 : focusedId + 1
-    return countries[nextId]
-  }
-
-  private get prevCountry(): PhoneFieldCountry | null {
-    const {countries} = this.props
-    const focusedId: number = countries.findIndex(country => this.state.focusedCountry === null ? country === this.state.selectedCountry : country === this.state.focusedCountry)
-    const prevId = focusedId <= 0 ? countries.length - 1 : focusedId - 1
-    return countries[prevId]
+               .slice(0)
+               .sort((a, b) => this.clear(b.mask).length - this.clear(a.mask).length)
+               .find((option) => clearPhone.indexOf(this.clear(option.mask)) === 0)
   }
 
   public render() {
     return this.props.children({
       value: this.props.value || '',
       code: this.state.selectedCountry ? this.state.selectedCountry.code : undefined,
-      countries: this.props.countries.map((country) => ({
+      countries: this.props.countries.map((country, index) => ({
         ...country,
         ref: this.optionsRefs.get(country)!,
         selected: country === this.state.selectedCountry,
         focused: country === this.state.focusedCountry,
-        onClick: this.onCountryClick(country),
+        onClick: this.onCountryClick(index),
         onMouseEnter: this.onCountryEnter(country),
         onMouseLeave: this.onCountryLeave(),
       })),
@@ -246,7 +181,7 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
       onChange: this.onChange,
       onFocus: this.onFocus,
       onBlur: this.onBlur,
-      onKeyDown: this.onKeyDown,
+      onSelectCountry: this.selectCountry,
     })
   }
 

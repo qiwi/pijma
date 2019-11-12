@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from 'react'
+import React, {createRef, FunctionComponent, RefObject} from 'react'
 
 import {
   PhoneFieldControl,
@@ -10,12 +10,16 @@ import {
   Card,
   Flex,
   FlexItem,
-  Flag,
+  Flag, MenuControl,
 } from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
 import {DropUp} from '../drop-up'
 import PhoneFieldProps from './PhoneFieldProps'
+
+const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
+
+const PosCard = Card.withComponent(Pos)
 
 export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
   tabIndex = 0,
@@ -59,90 +63,100 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
     onFocus={props.onFocus}
     onBlur={props.onBlur}
     children={(renderProps) => (
-      <Pos type="relative">
-        <InputField
-          title={props.title}
-          active={renderProps.focused || !!props.value || !!props.placeholder}
-          padded={!!props.hint}
-          input={(
-            <BasicInput
-              ref={renderProps.inputRef}
-              type="tel"
-              value={renderProps.value}
-              name={props.name}
-              mask={renderProps.mask}
-              autoComplete={props.autoComplete}
-              autoFocus={props.autoFocus}
-              placeholder={props.placeholder}
-              disabled={props.disabled}
-              pr={props.hint ? 7 : undefined}
-              pl={9}
-              error={!!props.error}
-              focused={renderProps.focused}
-              maxLength={props.maxLength}
-              onChange={renderProps.onChange}
-              onFocus={renderProps.onFocus}
-              onBlur={renderProps.onBlur}
-              onKeyDown={renderProps.onKeyDown}
+      <MenuControl
+        count={props.countries.length}
+        onSelect={renderProps.onSelectCountry}
+        children={(menuRenderProps) => (
+          <Pos type="relative" ref={dropDownContainerRef}>
+            <InputField
+              title={props.title}
+              active={renderProps.focused || !!props.value || !!props.placeholder}
+              padded={!!props.hint}
+              input={(
+                <BasicInput
+                  ref={renderProps.inputRef}
+                  type="tel"
+                  value={renderProps.value}
+                  name={props.name}
+                  mask={renderProps.mask}
+                  autoComplete={props.autoComplete}
+                  autoFocus={props.autoFocus}
+                  placeholder={props.placeholder}
+                  disabled={props.disabled}
+                  pr={props.hint ? 7 : undefined}
+                  pl={9}
+                  error={!!props.error}
+                  focused={renderProps.focused}
+                  maxLength={props.maxLength}
+                  onChange={renderProps.onChange}
+                  onFocus={renderProps.onFocus}
+                  onBlur={renderProps.onBlur}
+                  onKeyDown={menuRenderProps.onKeyDown}
+                />
+              )}
+              hint={props.hint}
+              icon={(
+                <Box
+                  cursor="pointer"
+                  width={6}
+                  height={4}
+                  my={1}
+                  onClick={renderProps.onFlagClick}
+                  onMouseDown={renderProps.onFlagMouseDown}
+                  children={(<Flag code={renderProps.code || defaultCode}/>)}
+                />
+              )}
+              error={props.error}
+              help={props.help}
+              action={props.action}
             />
-          )}
-          hint={props.hint}
-          icon={(
-            <Box
-              cursor="pointer"
-              width={6}
-              height={4}
-              my={1}
-              onClick={renderProps.onFlagClick}
-              onMouseDown={renderProps.onFlagMouseDown}
-              children={(<Flag code={renderProps.code || defaultCode}/>)}
-            />
-          )}
-          error={props.error}
-          help={props.help}
-          action={props.action}
-        />
-        <DropUp
-          title="Код страны"
-          show={renderProps.showCountries}
-          onHide={() => renderProps.onCountriesHide()}
-        >
-          {renderProps.countries.map((country, index) => (
-            <Card
-              key={index}
-              ref={country.ref}
-              width={1}
-              px={6}
-              cursor="pointer"
-              onClick={country.onClick}
-              onMouseEnter={country.onMouseEnter}
-              onMouseLeave={country.onMouseLeave}
-              bg={country.selected ?
-                '#E6E6E6' : country.focused ?
-                '#F5F5F5' : '#FFF'
-              }
+            <DropUp
+              title="Код страны"
+              show={renderProps.showCountries}
+              autoFocus
+              onKeyDown={menuRenderProps.onKeyDown}
+              onHide={renderProps.onCountriesHide}
             >
-              <Flex py={3} align="center">
-                <FlexItem shrink={1} mr={3}>
-                  <Box width={6} height={4} my={1}>
-                    <Flag code={country.code}/>
-                  </Box>
-                </FlexItem>
-                <FlexItem width={16} shrink={1}>
-                  <Paragraph bold>
-                    {`+${country.mask.replace(/\D/g, '')}`}
-                  </Paragraph>
-                </FlexItem>
-                <Paragraph bold>
-                  {country.name}
-                </Paragraph>
-              </Flex>
-            </Card>
-          ))}
-        </DropUp>
-      </Pos>
+              <PosCard ref={menuRenderProps.containerRef} type="relative" height={1} overflow="auto">
+                {menuRenderProps.items.map((country, index) => (
+                  <Card
+                    key={index}
+                    ref={country.ref}
+                    width={1}
+                    px={6}
+                    cursor="pointer"
+                    bg={country.selected ?
+                      '#E6E6E6' : country.focused ?
+                        '#F5F5F5' : '#FFF'
+                    }
+                    onClick={country.onClick}
+                    onMouseEnter={country.onMouseEnter}
+                  >
+                    <Flex py={3} align="center">
+                      <FlexItem shrink={1} mr={3}>
+                        <Box width={6} height={4} my={1}>
+                          <Flag code={props.countries[index].code}/>
+                        </Box>
+                      </FlexItem>
+                      <FlexItem width={16} shrink={1}>
+                        <Paragraph bold>
+                          {`+${props.countries[index].mask.replace(/\D/g, '')}`}
+                        </Paragraph>
+                      </FlexItem>
+                      <Paragraph bold>
+                        {props.countries[index].name}
+                      </Paragraph>
+                    </Flex>
+                  </Card>
+                ))}
+              </PosCard>
+            </DropUp>
+          </Pos>
+        )}
+      />
     )}
   />
+
 )
 
 PhoneField.defaultProps = {
