@@ -1,4 +1,4 @@
-#### ContentSearch
+#### HeaderSuggest
 
 ```jsx
 const banks = [
@@ -15,6 +15,7 @@ const banks = [
       id: 2,
     },
     title: 'Альфа-Банк',
+    suggest: 'ф',
     logo: require('./media/alpha.png'),
     description: 'АО «Альфа-Банк»',
   },
@@ -117,49 +118,63 @@ const banks = [
 ];
 
 const initialState = {
-  value: '',
+  show: false,
+  suggest: '',
   loading: false,
   banks: [],
+  timer: undefined,
 };
 
 const container = React.useRef()
 const target = React.useRef()
 
 const filterBanks = (title) => banks.filter(bank => {
-  return bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1;
+  return title !== '' && bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1;
 });
 
-const getBanks = (value) => {
+const getBanks = (suggest) => {
   setState({loading: true});
+  clearTimeout(state.timer);
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
+    setState({timer: setTimeout(() => {
       setState({loading: false});
-      resolve(filterBanks(value));
-    }, 1000);
+      resolve(filterBanks(suggest));
+    }, 1000)});
   });
 };
 
-const selectItem = (value) => {
-  const title = getBankByValue(value).title;
+const onRequest = (suggest) => {
+  setState({suggest, error: suggest === ''});
+  getBanks(suggest).then((banks) => setState({banks}));
+};
+
+const onCancel = () => setState(initialState);
+
+const onChange = (value) => {
+  const {title} = getBankByValue(value);
   setState({
-    value: title,
-    selected: value,
-    loading: false,
-    banks: filterBanks(title),
+    value: value,
+    suggest: title,
+    banks: [],
   });
-  submit(value);
+  console.log('SELECT ITEM', value);
+};
+
+const onSubmit = (suggest) => {
+  console.log('SUBMIT', suggest);
 };
 
 const equals = (a, b) => a.id === b.id;
 
-const submit = (value) => {
-  console.log('SUBMIT', getBankByValue(value));
-};
-
 const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
 
-<Box transform="scale(0.7)" transformOrigin="left" width={295}>
-<Pos type="relative" ref={target}>
+<Pos 
+  ref={target}
+  type="relative" 
+  transform="scale(0.7)" 
+  transformOrigin="left" 
+  width={295}
+>
   <Header>
     <Flex height={1} justify="space-between">
       <FlexItem ml={6}>
@@ -207,31 +222,22 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
     show={state.show}
     value={state.value}
     items={state.banks}
-    selected={state.selected}
+    suggest={state.suggest}
     loading={state.loading}
     error={state.value === ''}
     equals={equals}
     target={target.current}
     container={target.current}
-    onCancel={() => {
-      setState({show: false, selected: false})
+    onCancel={onCancel}
+    onSubmit={onSubmit}
+    onChange={onChange}
+    onRequest={onRequest}
+    total={{
+      link: {
+        text: 'Показать все',
+        suggest: state.suggest,
+      }
     }}
-    onSubmit={submit}
-    onItemSelect={selectItem}
-    onChange={(value) => {
-      setState({value});
-      getBanks(value).then((banks) => setState({banks}));
-    }}
-    result={({focused, selected, hide}) => state.banks.length > 0 ? (
-      <Card px={6} pt={2} pb={6} bg="#fff">
-        <Link onClick={() => setState({show: false})}>
-          Показать все
-        </Link>
-      </Card>
-    ) : (
-      undefined
-    )}
   />
 </Pos>
-</Box>
 ```

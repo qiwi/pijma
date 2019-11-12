@@ -1,12 +1,14 @@
-import {OverlayProps, RenderChild} from '@qiwi/pijma-core'
+import {ModalSuggestControlProps, OverlayProps} from '@qiwi/pijma-core'
 
-import SearchItemOptionModel from './SearchItemOptionModel'
+import HeaderSuggestOptionModel from './HeaderSuggestOptionModel'
 
-export default interface HeaderSuggestProps<O extends SearchItemOptionModel<V>, V> {
+export default interface HeaderSuggestProps<O extends HeaderSuggestOptionModel<V>, V> {
+  value?: ModalSuggestControlProps<O, V>['value']
+  suggest: ModalSuggestControlProps<O, V>['suggest']
+  items: ModalSuggestControlProps<O, V>['items']
+  target: OverlayProps['target']
+  container: OverlayProps['container']
   show: boolean
-  value: string
-  items: O[]
-  selected?: V
   tabIndex?: number
   autoComplete?: boolean
   autoFocus?: boolean
@@ -15,18 +17,13 @@ export default interface HeaderSuggestProps<O extends SearchItemOptionModel<V>, 
   stub?: boolean
   error?: boolean
   loading?: boolean
-  target: OverlayProps['target']
-  container: OverlayProps['container']
-  result?: RenderChild<{
-    focused: V | undefined
-    selected: V | undefined
-    hide: () => void
-  }>
-  onItemSelect: (item: V) => void
-  onCancel?: () => void
-  onChange?: (value: string) => void
-  onFocus?: () => void
-  onBlur?: () => void
-  onSubmit?: (value: string) => void
-  equals?: (a: V, b: V) => boolean
+  total?: ModalSuggestControlProps<O, V>['total']
+  onChange: ModalSuggestControlProps<O, V>['onChange']
+  onRequest: ModalSuggestControlProps<O, V>['onRequest']
+  onCancel?: ModalSuggestControlProps<O, V>['onCancel']
+  onFocus?: ModalSuggestControlProps<O, V>['onFocus']
+  onBlur?: ModalSuggestControlProps<O, V>['onBlur']
+  onSubmit?: ModalSuggestControlProps<O, V>['onSubmit']
+  onHide?: ModalSuggestControlProps<O, V>['onHide']
+  equals?: ModalSuggestControlProps<O, V>['equals']
 }

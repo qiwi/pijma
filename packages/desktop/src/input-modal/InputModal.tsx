@@ -4,6 +4,7 @@ import React, {
   KeyboardEventHandler,
   RefObject,
   FocusEventHandler,
+  MouseEventHandler,
 } from 'react'
 import {css} from 'emotion'
 
@@ -19,7 +20,8 @@ import {
   IconProps,
   Input,
   Spinner,
-  Box, OverlayProps,
+  Box,
+  OverlayProps,
 } from '@qiwi/pijma-core'
 import {Overlay} from 'react-overlays'
 
@@ -43,9 +45,12 @@ contentTransition.defaultProps = {
 interface InputModalProps {
   value: string
   show: boolean
+  tabIndex?: number
   inputType?: string
+  autoComplete?: boolean
   inputRef?: RefObject<HTMLInputElement>
   contentRef?: RefObject<HTMLDivElement>
+  placeholder?: string
   error?: boolean
   loading?: boolean
   submitIcon?: IconProps['name']
@@ -55,38 +60,35 @@ interface InputModalProps {
   onKeyDown?: KeyboardEventHandler
   onFocus?: FocusEventHandler
   onBlur?: FocusEventHandler
-  onSubmit?: () => void
+  onBack?: MouseEventHandler
+  onSubmit?: MouseEventHandler
   onHide?: () => void
-  onBack?: () => void
-  onShow?: () => void
 }
 
 const PosFlexCard = styled(Card.withComponent(Pos))().withComponent(Flex)
 
-export const InputModal: FunctionComponent<InputModalProps> = (props) => (
+export const InputModal: FunctionComponent<InputModalProps> = ({placeholder = 'Текстовое поле', ...props}) => (
   <Overlay
-    show={props.show}
-    onHide={props.onHide}
-    rootClose={true}
-    placement="top"
     target={props.target}
     container={props.container}
+    show={props.show}
+    rootClose={true}
     transition={contentTransition}
+    onHide={props.onHide}
     children={() => (
-      <Pos mt={-20} type="absolute" zIndex={10050} width={1}>
+      <Pos type="absolute" top={0} zIndex={10050} width={1}>
         <Card
           height={20}
           bg="#fff"
           bb={props.error ? 'solid 2px #d0021b' : 'none'}
           s="0 0 25px 0 rgba(0, 0, 0, 0.08)"
         >
-          <Box
-            width={295}
-            mx="auto"
-          >
+          <Box width={295} mx="auto">
             <PosFlexCard
               type="relative"
               align="center"
+              width={295}
+              mx="auto"
               height={20}
               py={4}
               px={6}
@@ -101,13 +103,15 @@ export const InputModal: FunctionComponent<InputModalProps> = (props) => (
               <FlexItem grow={1}>
                 <Input
                   ref={props.inputRef}
+                  tabIndex={props.tabIndex}
                   type={props.inputType}
+                  autoComplete={props.autoComplete ? 'on' : 'off'}
                   value={props.value}
                   valueWeight={300}
                   width={1}
-                  autoFocus={true}
+                  autoFocus
                   valueSize={5}
-                  placeholder="Текстовое поле"
+                  placeholder={placeholder}
                   placeholderSize={5}
                   placeholderWeight={300}
                   onFocus={props.onFocus}
@@ -121,7 +125,9 @@ export const InputModal: FunctionComponent<InputModalProps> = (props) => (
                   {props.loading ? (
                     <Spinner color="#ff8c00" width={6} height={6}/>
                   ) : (
-                    <Icon name={props.submitIcon} color="#666"/>
+                    <Box cursor="pointer" width={6} height={6}>
+                      <Icon name={props.submitIcon} color="#666"/>
+                    </Box>
                   )}
                 </FlexItem>
               ) : (
@@ -137,7 +143,7 @@ export const InputModal: FunctionComponent<InputModalProps> = (props) => (
           s="0 0 25px 0 rgba(0, 0, 0, 0.08)"
           bg="#fff"
         >
-          <Box width={295} mx="auto">{props.children}</Box>
+          <Box width={295} mx="auto" children={props.children}/>
         </Card>
       </Pos>
     )}

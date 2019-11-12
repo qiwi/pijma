@@ -51,7 +51,7 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
   private onModalInputBlur: React.FocusEventHandler = (event) => {
     event.preventDefault()
     if (this.inputRef && this.inputRef.current) {
-      this.inputRef.current.focus()
+      this.inputRef.current.focus({preventScroll: true})
     }
   }
 
@@ -146,6 +146,7 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
     this.setState({
       show: false,
     })
+    console.log(value)
     this.props.onChange(value)
   }
 

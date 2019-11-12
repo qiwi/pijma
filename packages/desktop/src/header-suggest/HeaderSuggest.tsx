@@ -1,91 +1,120 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 
 import {
-  ModalInputControl,
+  ModalSuggestControl,
   Image,
   MenuControl,
   Box,
   Card,
-  styled,
+  styled, Spacer,
 } from '@qiwi/pijma-core'
 
 import {MenuItem} from '../menu'
 import {InputModal} from '../input-modal'
+import {Paragraph} from '../typography'
+import {Link} from '../link'
 
 import HeaderSuggestProps from './HeaderSuggestProps'
-import SearchItemOptionModel from './SearchItemOptionModel'
+import HeaderSuggestOptionModel from './HeaderSuggestOptionModel'
 
 const CardItem = styled(Card)().withComponent(MenuItem)
 
-export const HeaderSuggest = <V extends {}>(props: HeaderSuggestProps<SearchItemOptionModel<V>, V>) => (
-  <ModalInputControl
+export const HeaderSuggest = <V extends {}>({
+  equals = (a: V, b: V) => a === b,
+  ...props
+}: HeaderSuggestProps<HeaderSuggestOptionModel<V>, V>) => (
+  <ModalSuggestControl<V>
+    value={props.value}
+    suggest={props.suggest}
+    items={props.items}
+    total={props.total}
+    equals={equals}
+    onRequest={props.onRequest}
     onChange={props.onChange}
     onBlur={props.onBlur}
     onFocus={props.onFocus}
     onCancel={props.onCancel}
+    onHide={props.onCancel}
     onSubmit={props.onSubmit}
     children={(renderProps) => (
-      <MenuControl<V>
-        items={props.items.map(item => item.value)}
-        selected={props.selected}
-        equals={props.equals}
-        onItemSelect={value => {
-          props.onItemSelect(value)
-          renderProps.onHide()
-        }}
+      <MenuControl
+        count={props.items.length}
+        selected={renderProps.selected}
+        onSelect={renderProps.onSelect}
+        onKeyDown={renderProps.onKeyDown}
         children={(menuRenderProps) => (
           <InputModal
-            value={props.value}
             show={props.show}
+            value={props.suggest || ''}
             inputType="search"
-            inputRef={renderProps.modalInputRef}
+            tabIndex={props.tabIndex}
+            placeholder={props.placeholder}
+            autoComplete={props.autoComplete}
+            inputRef={renderProps.inputRef}
             contentRef={menuRenderProps.containerRef}
             error={props.error}
             loading={props.loading}
             submitIcon="search"
             target={props.target}
             container={props.container}
-            onChange={renderProps.onChange}
-            onKeyDown={(e) => {
-              menuRenderProps.onKeyDown(e)
-              if (menuRenderProps.focused === undefined && menuRenderProps.selected === undefined) {
-                renderProps.onKeyDown(e)
-              }
-            }}
-            onHide={renderProps.onCancel}
+            onChange={renderProps.onRequest}
+            onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onKeyDown}
+            onHide={renderProps.onHide}
             onFocus={renderProps.onFocus}
             onBlur={renderProps.onModalInputBlur}
-            onSubmit={renderProps.onSubmit}
-            onBack={renderProps.onCancel}
+            onSubmit={renderProps.onSearchClick}
+            onBack={renderProps.onBack}
           >
-            {menuRenderProps.items.map((item, key) => (
-              <CardItem
-                mt={key === 0 ? 4 : undefined}
-                key={key}
-                ref={item.ref}
-                cursor="pointer"
-                text={props.items[key].title}
-                notes={props.items[key].description}
-                icon={<Image width={6} height={6} src={props.items[key].logo}/>}
-                round
-                hover={item.focused}
-                active={item.selected}
-                focus={item.selected}
-                onClick={item.onClick}
-                onMouseEnter={item.onMouseEnter}
-                onMouseLeave={item.onMouseLeave}
-              />
-            ))}
-            {props.result ? (
-              <Box>
-                {props.result({
-                  focused: menuRenderProps.focused,
-                  selected: menuRenderProps.selected,
-                  hide: renderProps.onHide,
-                })}
-              </Box>
+            {props.loading ? (
+              Array(4).fill(1).map((_item, key) => (
+                <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
+              ))
             ) : (
-              null
+              <Spacer size="s">
+                {menuRenderProps.items.length > 0 ? (
+                  <Fragment>
+                    {menuRenderProps.items.map((item, key) => (
+                      <CardItem
+                        key={key}
+                        ref={item.ref}
+                        cursor="pointer"
+                        mt={key === 0 ? 4 : undefined}
+                        round
+                        text={props.items[key].title}
+                        notes={props.items[key].description}
+                        icon={<Image width={6} height={6} src={props.items[key].logo}/>}
+                        hover={item.focused}
+                        active={item.selected}
+                        focus={item.selected}
+                        onClick={item.onClick}
+                        onMouseEnter={item.onMouseEnter}
+                      />
+                    ))}
+                  </Fragment>
+                ) : (
+                  null
+                )}
+                {props.total && props.items.length > 0 ? (
+                  <Box px={4}>
+                    <Paragraph>
+                      {props.total.text}
+                      {props.total.link ? (
+                        <Fragment>
+                          {' '}
+                          <Link
+                            onClick={renderProps.onTotalClick}
+                            children={props.total.link.text}
+                          />
+                        </Fragment>
+                      ) : (
+                        null
+                      )}
+                    </Paragraph>
+                  </Box>
+                ) : (
+                  null
+                )}
+              </Spacer>
             )}
           </InputModal>
         )}
