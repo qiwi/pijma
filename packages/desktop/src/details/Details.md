@@ -127,6 +127,8 @@
 <Block>
   <BlockContent>
     <Details
+      size="s"
+      dots
       children={[]}
       stub
     />
