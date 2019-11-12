@@ -1,5 +1,5 @@
 import React, {FC, ReactElement, ReactNode} from 'react'
-import {Box, Flex, FlexItem, Spacer, Pos, Card} from '@qiwi/pijma-core'
+import {Box, Flex, FlexItem, Spacer, Pos, Card, Image, LinkControlProps} from '@qiwi/pijma-core'
 import {BlockLink} from '../link'
 import {Paragraph} from '../typography'
 
@@ -9,17 +9,15 @@ export interface LogoBlockLinkProps {
   description?: string
   actions?: ReactElement[]
   tabIndex?: number
-  href?: string
-  target?: string
-  download?: string | boolean
-  rel?: string
+  href: LinkControlProps['href']
+  target?: LinkControlProps['target']
+  download?: LinkControlProps['download']
+  rel?: LinkControlProps['rel']
   horizontal?: boolean
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
-  onFocus?: () => void
-  onBlur?: () => void
+  onClick?: LinkControlProps['onClick']
+  onFocus?: LinkControlProps['onFocus']
+  onBlur?: LinkControlProps['onBlur']
 }
-
-const Img = Box.withComponent('img')
 
 export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description, actions, ...props}) => (
   <BlockLink
@@ -45,11 +43,11 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
               height={12}
             >
               {typeof icon === 'string' ? (
-                <Img
+                <Image
                   src={icon}
                   alt={title}
-                  maxWidth={12}
-                  maxHeight={12}
+                  width={12}
+                  height={12}
                 />
               ) : (
                 icon
@@ -112,7 +110,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
           <Box p={4} height={description ? 60 : 55}>
             <Box width={16} height={16} mt={7} mx="auto">
               {typeof icon === 'string' ? (
-                <Img src={icon} alt={title} maxWidth={16} maxHeight={16}/>
+                <Image src={icon} alt={title} width={16} height={16}/>
               ) : (
                 icon
               )}

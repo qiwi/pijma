@@ -1,3 +1,59 @@
+# [@qiwi/pijma-core-v1.87.1](https://github.com/qiwi/pijma/compare/v1.87.0...v1.87.1) (2019-11-11)
+
+
+### Bug Fixes
+
+* image 100% max width and height ([f68a1a9](https://github.com/qiwi/pijma/commit/f68a1a9))
+
+# [@qiwi/pijma-core-v1.86.0](https://github.com/qiwi/pijma/compare/v1.85.1...v1.86.0) (2019-11-11)
+
+
+### Features
+
+* content suggest ([d7780e2](https://github.com/qiwi/pijma/commit/d7780e2))
+
+# [@qiwi/pijma-core-v1.83.2](https://github.com/qiwi/pijma/compare/v1.83.1...v1.83.2) (2019-10-15)
+
+
+### Bug Fixes
+
+* grid nil gutter ([10048ba](https://github.com/qiwi/pijma/commit/10048ba))
+
+# [@qiwi/pijma-core-v1.83.1](https://github.com/qiwi/pijma/compare/v1.83.0...v1.83.1) (2019-10-14)
+
+
+### Bug Fixes
+
+* logo-link clamp ([6b5a3cd](https://github.com/qiwi/pijma/commit/6b5a3cd))
+
+# [@qiwi/pijma-core-v1.83.0](https://github.com/qiwi/pijma/compare/v1.82.4...v1.83.0) (2019-10-09)
+
+
+### Features
+
+* links, links, links ([9bea179](https://github.com/qiwi/pijma/commit/9bea179))
+
+# [@qiwi/pijma-core-v1.82.4](https://github.com/qiwi/pijma/compare/v1.82.3...v1.82.4) (2019-10-07)
+
+
+### Bug Fixes
+
+* **core:** card scroll corner ([118483f](https://github.com/qiwi/pijma/commit/118483f))
+
+# [@qiwi/pijma-core-v1.82.3](https://github.com/qiwi/pijma/compare/v1.82.2...v1.82.3) (2019-10-07)
+
+
+### Bug Fixes
+
+* **core:** image cache ([13bd3b4](https://github.com/qiwi/pijma/commit/13bd3b4))
+
+# [@qiwi/pijma-core-v1.82.2](https://github.com/qiwi/pijma/compare/v1.82.1...v1.82.2) (2019-10-04)
+
+
+### Bug Fixes
+
+* edge grid ([1a68aa8](https://github.com/qiwi/pijma/commit/1a68aa8))
+
 # [@qiwi/pijma-core-v1.82.0](https://github.com/qiwi/pijma/compare/v1.81.0...v1.82.0) (2019-09-30)
 
 

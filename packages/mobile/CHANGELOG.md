@@ -1,3 +1,52 @@
+# [@qiwi/pijma-mobile-v1.87.0](https://github.com/qiwi/pijma/compare/v1.86.0...v1.87.0) (2019-11-11)
+
+
+### Features
+
+* stub text ([7f1fb93](https://github.com/qiwi/pijma/commit/7f1fb93))
+
+# [@qiwi/pijma-mobile-v1.86.0](https://github.com/qiwi/pijma/compare/v1.85.1...v1.86.0) (2019-11-11)
+
+
+### Features
+
+* content suggest ([d7780e2](https://github.com/qiwi/pijma/commit/d7780e2))
+
+# [@qiwi/pijma-mobile-v1.85.1](https://github.com/qiwi/pijma/compare/v1.85.0...v1.85.1) (2019-11-08)
+
+
+### Bug Fixes
+
+* progress-bar stub ([8bafcdd](https://github.com/qiwi/pijma/commit/8bafcdd))
+
+# [@qiwi/pijma-mobile-v1.85.0](https://github.com/qiwi/pijma/compare/v1.84.1...v1.85.0) (2019-11-08)
+
+
+### Features
+
+* progress-bar ([564c1d2](https://github.com/qiwi/pijma/commit/564c1d2))
+
+# [@qiwi/pijma-mobile-v1.84.1](https://github.com/qiwi/pijma/compare/v1.84.0...v1.84.1) (2019-10-29)
+
+
+### Bug Fixes
+
+* paragraph clamp and align stub ([08078dc](https://github.com/qiwi/pijma/commit/08078dc))
+
+# [@qiwi/pijma-mobile-v1.83.0](https://github.com/qiwi/pijma/compare/v1.82.4...v1.83.0) (2019-10-09)
+
+
+### Features
+
+* links, links, links ([9bea179](https://github.com/qiwi/pijma/commit/9bea179))
+
+# [@qiwi/pijma-mobile-v1.82.1](https://github.com/qiwi/pijma/compare/v1.82.0...v1.82.1) (2019-10-03)
+
+
+### Bug Fixes
+
+* pagination prev/next buttons disables ([b0e050f](https://github.com/qiwi/pijma/commit/b0e050f))
+
 # [@qiwi/pijma-mobile-v1.81.0](https://github.com/qiwi/pijma/compare/v1.80.2...v1.81.0) (2019-09-26)
 
 
