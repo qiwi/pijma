@@ -9,7 +9,6 @@
         children: 'Информация о кошельке',
       },
     ]}
-    stub={false}
   />
   <Breadcrumbs
     children={[]}
