@@ -6,8 +6,8 @@ export interface RatingProps {
   size?: 's' | 'm'
   disabled?: boolean
   count?: number
-  onChange: (value: number) => void
   stub?: boolean
+  onChange: (value: number) => void
 }
 
 const RatingSize: Record<NonNullable<RatingProps['size']>, number> = {
@@ -20,26 +20,30 @@ const RatingIndent: Record<NonNullable<RatingProps['size']>, number> = {
   m: 2.5,
 }
 
+const RatingStubIndent: Record<NonNullable<RatingProps['size']>, number> = {
+  s: 2,
+  m: 5,
+}
+
 export const Rating: FC<RatingProps> = ({
   value = 0,
   size = 'm',
   disabled = false,
   count = 5,
-  onChange,
   stub = false,
+  onChange,
 }) => (
   stub ? (
     <Flex>
-      {Array(count).fill(1).map((_width, index) => (
+      {Array(count).fill(1).map((_, index) => (
         <FlexItem
           key={index}
-          pl={index === 0 ? 0 : RatingIndent[size]}
-          pr={index === count - 1 ? 0 : RatingIndent[size]}
+          pl={index === 0 ? 0 : RatingStubIndent[size]}
         >
           <Stub
             height={RatingSize[size]}
             width={RatingSize[size]}
-            r={RatingSize[size] * 2}
+            r="50%"
           />
         </FlexItem>
       ))}
