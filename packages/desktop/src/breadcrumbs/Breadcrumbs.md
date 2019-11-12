@@ -13,6 +13,7 @@
   />
   <Breadcrumbs
     children={[]}
+    stub
   />
 </Spacer>
 ```
