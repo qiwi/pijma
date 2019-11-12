@@ -29,3 +29,11 @@
   </BlockContent>
 </Block>
 ```
+
+```jsx
+<Block>
+  <BlockContent>
+    <Glossary children={[]} stub/>
+  </BlockContent>
+</Block>
+```
