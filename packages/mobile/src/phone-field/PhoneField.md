@@ -157,6 +157,7 @@ const countries = [
         help="if you need help stub put any corrent content here"
         hint="if you need hint stub put any corrent content here"
         value=""
+        onChange={(phone, code) => setState({phone, code})}
       />
     </Box>
   </BlockContent>

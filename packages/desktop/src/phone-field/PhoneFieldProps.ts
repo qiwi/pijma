@@ -19,7 +19,7 @@ export default interface PhoneFieldProps {
   disabled?: boolean
   maxLength?: number
   stub?: boolean
-  onChange?: (phone: string, code: FlagProps['code'] | undefined) => void
+  onChange: (phone: string, code: FlagProps['code'] | undefined) => void
   onFocus?: () => void
   onBlur?: () => void
 }
