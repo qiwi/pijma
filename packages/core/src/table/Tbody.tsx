@@ -6,8 +6,23 @@ import {Row} from './Row'
 import {Cell} from './Cell'
 import {TheadTitleProps} from './Thead'
 
+interface CellContentColorProps {
+  state?: 'error' | 'warning' | 'success' | 'minor' | 'main'
+}
+
+const CellContentColor: {
+  [state in NonNullable<CellContentColorProps['state']>]: string
+} = {
+  error: '#D0021B',
+  warning: '#FF8C00',
+  success: '#4BBD5C',
+  minor: '#666',
+  main: '#000',
+}
+
 interface TbodyCell extends TheadTitleProps {
   cell: (column: ReactNode | ReactNode[]) => ReactNode
+  state?: (data: ReactNode | ReactNode[]) => CellContentColorProps['state']
 }
 
 interface TbodyOptions {
@@ -29,15 +44,21 @@ export const Tbody: FunctionComponent<TbodyProps> = ({
         <Row key={`body-${index}`} hover>
           <Cell width={11} />
           {row.map((cell: ReactNode | ReactNode[], index) => {
-            const align: TbodyCell['align'] = columns[index].align
-              ? columns[index].align
+            const column: TbodyCell = columns[index]
+            const align: TbodyCell['align'] = column.align
+              ? column.align
               : 'left'
-            const weight: TbodyCell['weight'] = columns[index].weight
-              ? columns[index].weight
+            const weight: TbodyCell['weight'] = column.weight
+              ? column.weight
               : 300
-            const color: TbodyCell['color'] = columns[index].color
-              ? columns[index].color
-              : '#000'
+            const colorState:
+              | CellContentColorProps['state']
+              | undefined = column.state ? column.state(cell) : undefined
+            const color: TbodyCell['color'] = column.color
+              ? column.color
+              : colorState
+              ? CellContentColor[colorState]
+              : CellContentColor['main']
 
             return (
               <Cell
@@ -53,7 +74,7 @@ export const Tbody: FunctionComponent<TbodyProps> = ({
                   align={align}
                   color={color}
                 >
-                  {columns[index].cell ? columns[index].cell(cell) : cell}
+                  {column.cell ? column.cell(cell) : cell}
                 </Typo>
               </Cell>
             )
