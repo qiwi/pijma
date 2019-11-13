@@ -46,7 +46,6 @@ interface InputModalProps {
   value: string
   show: boolean
   tabIndex?: number
-  inputType?: string
   autoComplete?: boolean
   inputRef?: RefObject<HTMLInputElement>
   contentRef?: RefObject<HTMLDivElement>
@@ -54,8 +53,8 @@ interface InputModalProps {
   error?: boolean
   loading?: boolean
   submitIcon?: IconProps['name']
-  target: OverlayProps['target']
-  container: OverlayProps['container']
+  target?: OverlayProps['target']
+  container?: OverlayProps['container']
   onChange?: ChangeEventHandler
   onKeyDown?: KeyboardEventHandler
   onFocus?: FocusEventHandler
@@ -104,7 +103,7 @@ export const InputModal: FunctionComponent<InputModalProps> = ({placeholder = 'Ð
                 <Input
                   ref={props.inputRef}
                   tabIndex={props.tabIndex}
-                  type={props.inputType}
+                  type="search"
                   autoComplete={props.autoComplete ? 'on' : 'off'}
                   value={props.value}
                   valueWeight={300}

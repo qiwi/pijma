@@ -6,7 +6,9 @@ import {
   MenuControl,
   Box,
   Card,
-  styled, Spacer,
+  styled,
+  Spacer,
+  Icon,
 } from '@qiwi/pijma-core'
 
 import {MenuItem} from '../menu'
@@ -37,88 +39,90 @@ export const HeaderSuggest = <V extends {}>({
     onHide={props.onCancel}
     onSubmit={props.onSubmit}
     children={(renderProps) => (
-      <MenuControl
-        count={props.items.length}
-        selected={renderProps.selected}
-        onSelect={renderProps.onSelect}
-        onKeyDown={renderProps.onKeyDown}
-        children={(menuRenderProps) => (
-          <InputModal
-            show={props.show}
-            value={props.suggest || ''}
-            inputType="search"
-            tabIndex={props.tabIndex}
-            placeholder={props.placeholder}
-            autoComplete={props.autoComplete}
-            inputRef={renderProps.inputRef}
-            contentRef={menuRenderProps.containerRef}
-            error={props.error}
-            loading={props.loading}
-            submitIcon="search"
-            target={props.target}
-            container={props.container}
-            onChange={renderProps.onRequest}
-            onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onKeyDown}
-            onHide={renderProps.onHide}
-            onFocus={renderProps.onFocus}
-            onBlur={renderProps.onModalInputBlur}
-            onSubmit={renderProps.onSearchClick}
-            onBack={renderProps.onBack}
-          >
-            {props.loading ? (
-              Array(4).fill(1).map((_item, key) => (
-                <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
-              ))
-            ) : (
-              <Spacer size="s">
-                {menuRenderProps.items.length > 0 ? (
-                  <Fragment>
-                    {menuRenderProps.items.map((item, key) => (
-                      <CardItem
-                        key={key}
-                        ref={item.ref}
-                        cursor="pointer"
-                        mt={key === 0 ? 4 : undefined}
-                        round
-                        text={props.items[key].title}
-                        notes={props.items[key].description}
-                        icon={<Image width={6} height={6} src={props.items[key].logo}/>}
-                        hover={item.focused}
-                        active={item.selected}
-                        focus={item.selected}
-                        onClick={item.onClick}
-                        onMouseEnter={item.onMouseEnter}
-                      />
-                    ))}
-                  </Fragment>
-                ) : (
-                  null
-                )}
-                {props.total && props.items.length > 0 ? (
-                  <Box px={4}>
-                    <Paragraph>
-                      {props.total.text}
-                      {props.total.link ? (
-                        <Fragment>
-                          {' '}
-                          <Link
-                            onClick={renderProps.onTotalClick}
-                            children={props.total.link.text}
-                          />
-                        </Fragment>
-                      ) : (
-                        null
-                      )}
-                    </Paragraph>
-                  </Box>
-                ) : (
-                  null
-                )}
-              </Spacer>
-            )}
-          </InputModal>
-        )}
-      />
+      <React.Fragment>
+        <Box width={6} height={6} onClick={renderProps.onClick}><Icon name="search"/></Box>
+        <MenuControl
+          count={props.items ? props.items.length : 0}
+          selected={renderProps.selected}
+          onSelect={renderProps.onSelect}
+          onKeyDown={renderProps.onKeyDown}
+          children={(menuRenderProps) => (
+            <InputModal
+              show={renderProps.show}
+              value={props.suggest || ''}
+              tabIndex={props.tabIndex}
+              placeholder={props.placeholder}
+              autoComplete={props.autoComplete}
+              inputRef={renderProps.inputRef}
+              contentRef={menuRenderProps.containerRef}
+              error={props.error}
+              loading={props.loading}
+              submitIcon="search"
+              target={props.target}
+              container={props.container}
+              onChange={renderProps.onRequest}
+              onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onKeyDown}
+              onHide={renderProps.onHide}
+              onFocus={renderProps.onFocus}
+              onBlur={renderProps.onModalInputBlur}
+              onSubmit={renderProps.onSearchClick}
+              onBack={renderProps.onBack}
+            >
+              {props.loading ? (
+                Array(4).fill(1).map((_item, key) => (
+                  <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
+                ))
+              ) : (
+                <Spacer size="s">
+                  {menuRenderProps.items.length > 0 ? (
+                    <Fragment>
+                      {menuRenderProps.items.map((item, key) => (
+                        <CardItem
+                          key={key}
+                          ref={item.ref}
+                          cursor="pointer"
+                          mt={key === 0 ? 4 : undefined}
+                          round
+                          text={props.items[key].title}
+                          notes={props.items[key].description}
+                          icon={<Image width={6} height={6} src={props.items[key].logo}/>}
+                          hover={item.focused}
+                          active={item.selected}
+                          focus={item.selected}
+                          onClick={item.onClick}
+                          onMouseEnter={item.onMouseEnter}
+                        />
+                      ))}
+                    </Fragment>
+                  ) : (
+                    null
+                  )}
+                  {props.total && props.items && props.items.length > 0 ? (
+                    <Box px={6} pb={4}>
+                      <Paragraph>
+                        {props.total.text}
+                        {props.total.link ? (
+                          <Fragment>
+                            {' '}
+                            <Link
+                              onClick={renderProps.onTotalClick}
+                              children={props.total.link.text}
+                            />
+                          </Fragment>
+                        ) : (
+                          null
+                        )}
+                      </Paragraph>
+                    </Box>
+                  ) : (
+                    null
+                  )}
+                </Spacer>
+              )}
+            </InputModal>
+          )}
+        />
+      </React.Fragment>
     )}
   />
 )

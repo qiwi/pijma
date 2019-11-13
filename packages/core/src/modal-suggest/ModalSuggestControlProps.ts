@@ -1,4 +1,4 @@
-import {RefObject} from 'react'
+import React, {RefObject} from 'react'
 import ModalSuggestOptionModel from './ModalSuggestOptionModel'
 import RenderChild from '../RenderChild'
 
@@ -37,6 +37,7 @@ export default interface ModalSuggestControlProps<O extends ModalSuggestOptionMo
     inputRef: RefObject<HTMLInputElement>
     onFocus: React.FocusEventHandler
     onBlur: React.FocusEventHandler
+    onClick: React.MouseEventHandler
     onModalInputBlur: React.FocusEventHandler
     onMouseEnter: React.MouseEventHandler
     onMouseLeave: React.MouseEventHandler

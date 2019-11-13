@@ -41,6 +41,13 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
     }
   }
 
+  private onClick: React.MouseEventHandler = (event) => {
+    event.preventDefault()
+    this.setState({
+      show: true,
+    })
+  }
+
   private onBlur: React.FocusEventHandler = (event) => {
     event.preventDefault()
     if (this.props.onBlur) {
@@ -146,7 +153,6 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
     this.setState({
       show: false,
     })
-    console.log(value)
     this.props.onChange(value)
   }
 
@@ -178,6 +184,7 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
       onSelect: this.onSelect,
       onFocus: this.onFocus,
       onBlur: this.onBlur,
+      onClick: this.onClick,
       onModalInputBlur: this.onModalInputBlur,
       onMouseEnter: this.onMouseEnter,
       onMouseLeave: this.onMouseLeave,

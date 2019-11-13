@@ -117,16 +117,15 @@ const banks = [
   },
 ];
 
+const container = React.useRef()
+const target = React.useRef()
+
 const initialState = {
-  show: false,
   suggest: '',
   loading: false,
   banks: [],
   timer: undefined,
 };
-
-const container = React.useRef()
-const target = React.useRef()
 
 const filterBanks = (title) => banks.filter(bank => {
   return title !== '' && bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1;
@@ -146,6 +145,7 @@ const getBanks = (suggest) => {
 const onRequest = (suggest) => {
   setState({suggest, error: suggest === ''});
   getBanks(suggest).then((banks) => setState({banks}));
+  console.log(suggest)
 };
 
 const onCancel = () => setState(initialState);
@@ -155,13 +155,12 @@ const onChange = (value) => {
   setState({
     value: value,
     suggest: title,
-    banks: [],
   });
   console.log('SELECT ITEM', value);
 };
 
 const onSubmit = (suggest) => {
-  console.log('SUBMIT', suggest);
+  console.log('SUBMIT', suggest)
 };
 
 const equals = (a, b) => a.id === b.id;
@@ -173,7 +172,7 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
   type="relative" 
   transform="scale(0.7)" 
   transformOrigin="left" 
-  width={295}
+  width={300}
 >
   <Header>
     <Flex height={1} justify="space-between">
@@ -197,8 +196,27 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
               ]}
             />
           </FlexItem>
-          <FlexItem align="center" shrink={0} width={6} height={6} cursor="pointer" onClick={() => setState({show: true})}>
-            <Icon name="search"/>
+          <FlexItem align="center" shrink={0} cursor="pointer">
+            <HeaderSuggest
+              value={state.value}
+              items={state.banks}
+              suggest={state.suggest}
+              loading={state.loading}
+              error={state.error}
+              equals={equals}
+              target={target.current}
+              container={target.current}
+              onCancel={onCancel}
+              onSubmit={onSubmit}
+              onChange={onChange}
+              onRequest={onRequest}
+              total={{
+                link: {
+                  text: 'Показать все',
+                  suggest: state.suggest,
+                }
+              }}
+            />
           </FlexItem>
         </Flex>
       </FlexItem>
@@ -218,26 +236,5 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
       </FlexItem>
     </Flex>
   </Header>
-  <HeaderSuggest
-    show={state.show}
-    value={state.value}
-    items={state.banks}
-    suggest={state.suggest}
-    loading={state.loading}
-    error={state.value === ''}
-    equals={equals}
-    target={target.current}
-    container={target.current}
-    onCancel={onCancel}
-    onSubmit={onSubmit}
-    onChange={onChange}
-    onRequest={onRequest}
-    total={{
-      link: {
-        text: 'Показать все',
-        suggest: state.suggest,
-      }
-    }}
-  />
 </Pos>
 ```

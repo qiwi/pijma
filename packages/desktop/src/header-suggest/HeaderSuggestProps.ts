@@ -6,9 +6,8 @@ export default interface HeaderSuggestProps<O extends HeaderSuggestOptionModel<V
   value?: ModalSuggestControlProps<O, V>['value']
   suggest: ModalSuggestControlProps<O, V>['suggest']
   items: ModalSuggestControlProps<O, V>['items']
-  target: OverlayProps['target']
-  container: OverlayProps['container']
-  show: boolean
+  target?: OverlayProps['target']
+  container?: OverlayProps['container']
   tabIndex?: number
   autoComplete?: boolean
   autoFocus?: boolean
