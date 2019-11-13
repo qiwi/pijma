@@ -67,6 +67,36 @@
 </Block>
 ```
 
+```jsx
+<Block>
+  <BlockContent>
+    <Grid columns={1} layout={[1]}>
+      <LogoLink
+        horizontal
+        href
+        title
+        icon
+        stub
+      />
+      <LogoLink
+        horizontal
+        href
+        title
+        icon
+        stub
+      />
+      <LogoLink
+        horizontal
+        href
+        title
+        icon
+        stub
+      />
+    </Grid>
+  </BlockContent>
+</Block>
+```
+
 ## Vertical
 
 #### Без описания
@@ -143,3 +173,35 @@
 </Block>
 ```
 
+```jsx
+<Block>
+  <BlockContent>
+    <Grid columns={2} layout={[1]}>
+      <LogoLink
+         href
+         title
+         icon
+         stub
+      />
+      <LogoLink
+         href
+         title
+         icon
+         stub
+      />
+      <LogoLink
+         href
+         title
+         icon
+         stub
+      />
+      <LogoLink
+         href
+         title
+         icon
+         stub
+      />
+    </Grid>
+  </BlockContent>
+</Block>
+```
