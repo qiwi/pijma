@@ -33,7 +33,7 @@ export const Oops: FC<OopsProps> = ({logo, error, title, content, footer}) => (
               children={error}
             />
           </FlexItem>
-          <FlexItem ml={11}>
+          <FlexItem ml={11} w={1}>
             <Flex direction="column">
               <FlexItem>
                 <Title size="2" children={title}/>
