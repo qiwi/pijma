@@ -2,9 +2,8 @@ import React, {FC, ReactNode} from 'react'
 
 import {Box, Flex, FlexItem, Spacer, Image, LinkControlProps, Stub} from '@qiwi/pijma-core'
 
-import {Paragraph} from '../typography'
+import {Paragraph, Text} from '../typography'
 import {SectionLink} from '../link'
-import {Text} from '@qiwi/pijma-desktop/typography'
 
 export interface LogoLinkProps {
   icon: ReactNode
