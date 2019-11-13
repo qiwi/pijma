@@ -18,6 +18,7 @@ export default interface PasswordFieldProps {
   maxLength?: number
   mask?: Mask
   pipe?: Pipe
+  stub?: boolean
   onChange?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void

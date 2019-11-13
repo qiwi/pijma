@@ -124,3 +124,19 @@
   </BlockContent>
 </Block>
 ```
+
+```jsx
+<Block>
+  <BlockContent>
+    <Box width={64}>
+      <PasswordField
+        stub
+        title="if you need title stub put any corrent content here"
+        error="if you need error stub put any corrent content here"
+        hint="if you need hint stub put any corrent content here"
+        value=""
+      />
+    </Box>
+  </BlockContent>
+</Block>
+```
