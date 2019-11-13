@@ -34,6 +34,8 @@ export * from './header-drop-down'
 export * from './menu'
 export * from './header-bank-card-link'
 export * from './rating'
+export * from './content-suggest'
+export * from './progress-bar'
 export * from './alert'
 
 export {TextField as MaskTextField} from './text-field'
