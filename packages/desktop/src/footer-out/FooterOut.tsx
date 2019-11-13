@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Lnk, Card, Icon, IconProps, LinkControl, Flex, FlexItem, Box} from '@qiwi/pijma-core'
+import {Lnk, Card, Icon, IconProps, LinkControl, Flex, FlexItem, Box, Stub} from '@qiwi/pijma-core'
 
 const CardLink = Card.withComponent(Lnk)
 
@@ -58,16 +58,31 @@ const FooterOutLink: FC<FooterOutLinkProps> = (props) => (
 
 export interface FooterOutProps {
   children: FooterOutLinkProps[]
+  stub?: boolean
 }
 
-export const FooterOut: FC<FooterOutProps> = ({children}) => (
-  <Box overflow="hidden">
-    <Flex wrap="wrap" justify="space-between" m={-1.5}>
-      {children.map((item, i) => (
-        <FlexItem key={i} m={1.5}>
-          <FooterOutLink {...item}/>
-        </FlexItem>
-      ))}
-    </Flex>
-  </Box>
+export const FooterOut: FC<FooterOutProps> = ({children, stub = false}) => (
+  stub ? (
+    <Box overflow="hidden">
+      <Flex wrap="wrap" justify="space-between" m={-1.5}>
+        {[10, 10, 10, 10, 10, 10].map((width, index) => (
+          <FlexItem key={index} m={1.5}>
+            <Card width={width} height={width} r={20} b={'solid 1px #ccc'} p={1.75}>
+              <Stub height={5} width={5} r={10} top={0.5} left={0.5}/>
+            </Card>
+          </FlexItem>
+        ))}
+      </Flex>
+    </Box>
+  ) : (
+    <Box overflow="hidden">
+      <Flex wrap="wrap" justify="space-between" m={-1.5}>
+        {children.map((item, i) => (
+          <FlexItem key={i} m={1.5}>
+            <FooterOutLink {...item}/>
+          </FlexItem>
+        ))}
+      </Flex>
+    </Box>
+    )
 )
