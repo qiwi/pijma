@@ -126,10 +126,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                       width={1}
                       px={6}
                       cursor="pointer"
-                      bg={country.selected ?
-                        '#E6E6E6' : country.focused ?
-                          '#F5F5F5' : '#FFF'
-                      }
+                      bg={country.selected ? '#E6E6E6' : country.focused ? '#F5F5F5' : '#FFF'}
                       onClick={country.onClick}
                       onMouseEnter={country.onMouseEnter}
                     >
