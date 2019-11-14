@@ -117,8 +117,8 @@ const banks = [
   },
 ];
 
-const container = React.useRef()
 const target = React.useRef()
+const container = React.useRef()
 
 const initialState = {
   suggest: '',
@@ -168,14 +168,14 @@ const equals = (a, b) => a.id === b.id;
 const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
 
 <Pos 
-  ref={target}
-  type="relative" 
+  ref={container}
+  type="relative"
   transform="scale(0.7)" 
   transformOrigin="left" 
   width={300}
 >
   <Header>
-    <Flex height={1} justify="space-between">
+    <Flex height={1} justify="space-between" ref={target}>
       <FlexItem ml={6}>
         <Flex height={1}>
           <FlexItem align="center" shrink={0} mr={11}>
@@ -205,7 +205,7 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
               error={state.error}
               equals={equals}
               target={target.current}
-              container={target.current}
+              container={container.current}
               onCancel={onCancel}
               onSubmit={onSubmit}
               onChange={onChange}

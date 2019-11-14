@@ -157,12 +157,12 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
   }
 
   private cancel: () => void = () => {
-    if (this.props.onCancel) {
-      this.props.onCancel()
-    }
     this.setState({
       show: false,
     })
+    if (this.props.onCancel) {
+      this.props.onCancel()
+    }
   }
 
   private get selected(): number | undefined {
