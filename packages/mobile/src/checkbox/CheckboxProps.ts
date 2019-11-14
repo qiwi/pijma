@@ -5,5 +5,6 @@ export default interface CheckboxProps {
   tabIndex?: number
   description?: string
   autoFocus?: boolean
+  stub?: boolean
   onChange: (value: boolean) => void
 }

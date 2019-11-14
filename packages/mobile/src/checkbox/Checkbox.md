@@ -20,6 +20,7 @@ initialState = {checked: true};
         disabled={true}
         label="Невыбранный заблокированный"
       />
+      <Checkbox stub/>
     </Spacer>
   </BlockContent>
 </Block>
