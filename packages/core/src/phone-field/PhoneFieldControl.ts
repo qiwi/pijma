@@ -45,7 +45,7 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
     this.props.countries.map((country => [country, createRef()])),
   )
 
-  private onCountryClick = (index: number) => (event: React.MouseEvent) => {
+  private onCountryClick: (index: number) => React.MouseEventHandler = (index) => (event) => {
     event.preventDefault()
     this.selectCountry(index)
   }
@@ -68,7 +68,7 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
     return findDOMNode(this.inputRef.current!) as HTMLInputElement
   }
 
-  private onFlagClick: React.MouseEventHandler = (event: React.MouseEvent) => {
+  private onFlagClick: React.MouseEventHandler = (event) => {
     event.preventDefault()
     this.inputField.focus()
     this.setState({
