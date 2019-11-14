@@ -68,6 +68,21 @@
 </Grid>
 ```
 
+#### Placeholder
+
+```jsx
+<Grid columns={2} layout={1}>
+  <LogoBlockLink
+    description="if you need description stub put any corrent content here"
+    stub
+  />
+  <LogoBlockLink
+    description="if you need description stub put any corrent content here"
+    stub
+  />
+</Grid>
+```
+
 ### Без описания
 
 ```jsx
@@ -129,6 +144,15 @@
       />
     ]}
   />
+</Grid>
+```
+
+#### Placeholder
+
+```jsx
+<Grid columns={2} layout={1}>
+  <LogoBlockLink stub/>
+  <LogoBlockLink stub/>
 </Grid>
 ```
 
@@ -194,6 +218,23 @@
 </Grid>
 ```
 
+#### Placeholder
+
+```jsx
+<Grid columns={1} layout={1}>
+  <LogoBlockLink
+    horizontal
+    description="if you need description stub put any corrent content here"
+    stub
+  />
+  <LogoBlockLink
+    horizontal
+    description="if you need description stub put any corrent content here"
+    stub
+  />
+</Grid>
+```
+
 ### Без описания
 
 ```jsx
@@ -247,5 +288,14 @@
       />
     ]}
   />
+</Grid>
+```
+
+#### Placeholder
+
+```jsx
+<Grid columns={1} layout={1}>
+  <LogoBlockLink horizontal stub/>
+  <LogoBlockLink horizontal stub/>
 </Grid>
 ```
