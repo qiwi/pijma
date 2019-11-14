@@ -50,14 +50,14 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
     this.selectCountry(index)
   }
 
-  private onCountryEnter = (country: PhoneFieldCountry) => (event: React.MouseEvent) => {
+  private onCountryEnter: (country: PhoneFieldCountry) => React.MouseEventHandler = (country) => (event) => {
     event.preventDefault()
     this.setState({
       focusedCountry: country,
     })
   }
 
-  private onCountryLeave = () => (event: React.MouseEvent) => {
+  private onCountryLeave: React.MouseEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       focusedCountry: null,
@@ -76,7 +76,7 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
     })
   }
 
-  private onFlagMouseDown: React.MouseEventHandler = (event: React.MouseEvent) => {
+  private onFlagMouseDown: React.MouseEventHandler = (event) => {
     event.preventDefault()
     this.inputField.focus()
   }
@@ -105,7 +105,7 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
     })
   }
 
-  private onChange: React.ChangeEventHandler<HTMLInputElement> = (event: React.ChangeEvent<HTMLInputElement>) => {
+  private onChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     event.preventDefault()
     const country = this.getCountryByPhone(event.currentTarget.value)
     if (this.props.onChange) {
@@ -119,7 +119,7 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
     })
   }
 
-  private onFocus: React.FocusEventHandler = (event: React.FocusEvent) => {
+  private onFocus: React.FocusEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       focused: true,
@@ -129,7 +129,7 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
     }
   }
 
-  private onBlur: React.FocusEventHandler = (event: React.FocusEvent) => {
+  private onBlur: React.FocusEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       focused: false,
@@ -144,11 +144,11 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
     }
   }
 
-  private clear(value: string): string {
+  private clear: (value: string) => string = (value) => {
     return value.replace(/\D/g, '')
   }
 
-  private getCountryByPhone(phoneNumber: string): PhoneFieldCountry | undefined {
+  private getCountryByPhone: (phoneNumber: string) => PhoneFieldCountry | undefined = (phoneNumber) => {
     const clearPhone = this.clear(phoneNumber)
     return this.props.countries
                .slice(0)
@@ -167,7 +167,7 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
         focused: country === this.state.focusedCountry,
         onClick: this.onCountryClick(index),
         onMouseEnter: this.onCountryEnter(country),
-        onMouseLeave: this.onCountryLeave(),
+        onMouseLeave: this.onCountryLeave,
       })),
       focused: this.state.focused,
       showCountries: this.state.showCountries,
