@@ -1,7 +1,7 @@
 import React, {FunctionComponent, ReactNode} from 'react'
 
 import {Typo, Pos, Flex, FlexItem, Box, Card} from '../primitive'
-import {Stub} from '@qiwi/pijma-core'
+import {Stub} from '../stub'
 
 export interface FieldProps {
   title?: ReactNode
