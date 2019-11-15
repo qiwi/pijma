@@ -4,11 +4,13 @@
 columns=[{
   title: 'Платеж',
   id: 'payment',
+  group: 1,
   cell: (data) => <span>{data[0]} <Typo color="#666" as="span">{data[1]}</Typo></span>
 }, {
   title: 'Сумма, ₽',
   id: 'money',
   align: 'right',
+  group: 1,
   weight: 500
 }, {
   title: 'Статус', 
@@ -20,11 +22,13 @@ columns=[{
 }, {
   title: 'Дата и время', 
   id: 'time',
+  group: 2,
   cell: (data) => <span><Typo weight="500" as="span">{data[0]}</Typo> <Typo color="#666" as="span">{data[1]}</Typo></span>
 }, {
   title: 'Номер', 
   id: 'number',
-  color: '#666'
+  group: 2,
+  state: 'minor'
 }];
 data=[];
 for(let i = 0; i <= 20; i++) {

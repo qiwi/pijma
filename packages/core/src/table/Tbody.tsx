@@ -22,7 +22,9 @@ const CellContentColor: {
 
 interface TbodyCell extends TheadTitleProps {
   cell: (column: ReactNode | ReactNode[]) => ReactNode
-  state?: (data: ReactNode | ReactNode[]) => CellContentColorProps['state']
+  state?:
+    | CellContentColorProps['state']
+    | ((data: ReactNode | ReactNode[]) => CellContentColorProps['state'])
 }
 
 interface TbodyOptions {
@@ -53,19 +55,27 @@ export const Tbody: FunctionComponent<TbodyProps> = ({
               : 300
             const colorState:
               | CellContentColorProps['state']
-              | undefined = column.state ? column.state(cell) : undefined
+              | undefined = column.state
+              ? typeof column.state === 'string'
+                ? column.state
+                : column.state(cell)
+              : undefined
             const color: TbodyCell['color'] = column.color
               ? column.color
               : colorState
               ? CellContentColor[colorState]
               : CellContentColor['main']
+            const isInGroup =
+              column.group && index && columns[index - 1].group
+                ? column.group === columns[index - 1].group
+                : false
 
             return (
               <Cell
                 key={`cell-${index}`}
                 pt={2}
                 pb={2}
-                pl={index ? (align === 'left' ? 8 : 5) : 0}
+                pl={index ? (isInGroup ? 5 : 8) : 0}
               >
                 <Typo
                   size={3.5}
