@@ -1,13 +1,14 @@
 import {SuggestControlProps, OverlayProps} from '@qiwi/pijma-core'
 
-import HeaderSuggestOptionModel from './HeaderSuggestOptionModel'
+import HeaderSuggestOptionModel from './TestHeaderSuggestOptionModel'
 
-export default interface HeaderSuggestProps<O extends HeaderSuggestOptionModel<V>, V> {
+export default interface TestHeaderSuggestProps<O extends HeaderSuggestOptionModel<V>, V> {
   value?: SuggestControlProps<O, V>['value']
   suggest: SuggestControlProps<O, V>['suggest']
   items: SuggestControlProps<O, V>['items']
-  target: OverlayProps['target']
-  container: OverlayProps['container']
+  target?: OverlayProps['target']
+  container?: OverlayProps['container']
+  show: boolean
   tabIndex?: number
   autoComplete?: boolean
   autoFocus?: boolean

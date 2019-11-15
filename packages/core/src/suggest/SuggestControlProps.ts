@@ -20,6 +20,7 @@ export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V
       suggest: string
     }
   }
+  show?: boolean
   equals: (a: V, b: V) => boolean
   onChange: (value: V) => void
   onRequest: (suggest: string) => void
@@ -33,6 +34,7 @@ export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V
     hovered: boolean
     selected: number | undefined
     show: boolean
+    showInput?: boolean
     inputRef: RefObject<HTMLInputElement>
     onFocus: React.FocusEventHandler
     onBlur: React.FocusEventHandler
@@ -40,6 +42,7 @@ export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V
     onSearchClick: React.MouseEventHandler
     onMouseEnter: React.MouseEventHandler
     onMouseLeave: React.MouseEventHandler
+    onClick: React.MouseEventHandler
     onKeyDown: React.KeyboardEventHandler
     onRequest: React.ChangeEventHandler
     onResultMouseDown: React.MouseEventHandler

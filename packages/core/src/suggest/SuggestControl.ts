@@ -7,19 +7,20 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
 
   public state: SuggestControlState = {
     show: false,
+    showInput: false,
     focused: false,
     hovered: false,
   }
 
   private inputRef: RefObject<HTMLInputElement> = createRef()
 
-  public componentDidUpdate(props: SuggestControlProps<SuggestOptionModel<V>, V>) {
-    if (props.items !== this.props.items) {
-      this.setState({
-        show: this.props.items.length > 0 || this.props.empty !== undefined,
-      })
-    }
-  }
+  // public componentDidUpdate(props: SuggestControlProps<SuggestOptionModel<V>, V>) {
+  //   if (props.items !== this.props.items) {
+  //     this.setState({
+  //       show: this.props.items.length > 0 || this.props.empty !== undefined,
+  //     })
+  //   }
+  // }
 
   private onRequest: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     event.preventDefault()
@@ -56,6 +57,13 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     if (this.props.onBlur) {
       this.props.onBlur()
     }
+  }
+
+  private onClick: React.MouseEventHandler = (event) => {
+    event.preventDefault()
+    this.setState({
+      show: true,
+    })
   }
 
   private onMouseEnter: React.MouseEventHandler = (event) => {
@@ -115,6 +123,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
   private change: (value: V) => void = (value) => {
     this.setState({
       show: false,
+      showInput: false,
     })
     this.props.onChange(value)
   }
@@ -125,6 +134,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     }
     this.setState({
       show: false,
+      showInput: false,
     })
   }
 
@@ -140,6 +150,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     }
     this.setState({
       show: false,
+      showInput: false,
     })
   }
 
@@ -157,6 +168,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     }
     this.setState({
       show: false,
+      showInput: false,
     })
   }
 
@@ -166,6 +178,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
       hovered: this.state.hovered,
       selected: this.selected,
       show: this.state.show,
+      showInput: this.state.showInput,
       inputRef: this.inputRef,
       onSelect: this.onSelect,
       onRequest: this.onRequest,
@@ -177,6 +190,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
       onMouseLeave: this.onMouseLeave,
       onKeyDown: this.onKeyDown,
       onHide: this.onHide,
+      onClick: this.onClick,
       onTotalClick: this.onTotalClick,
       onEmptyClick: this.onEmptyClick,
       onResultMouseDown: this.onResultMouseDown,

@@ -121,7 +121,14 @@ const initialState = {
   suggest: '',
   loading: false,
   error: false,
-  banks: [],
+  banks: [{
+              value: {
+                id: 14,
+              },
+              title: 'Русский Стандарт',
+              logo: require('./media/std.png'),
+              description: 'АО «Банк Русский Стандарт»',
+            },],
   timer: undefined,
   dialogText: undefined,
 };

@@ -36,9 +36,6 @@ export default class ModalSuggestControl<V> extends Component<ModalSuggestContro
     this.setState({
       show: true,
     })
-    if (this.props.onFocus) {
-      this.props.onFocus()
-    }
   }
 
   private onClick: React.MouseEventHandler = (event) => {
