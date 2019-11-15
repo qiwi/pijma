@@ -1,3 +1,17 @@
+# [@qiwi/pijma-desktop-v1.89.0](https://github.com/qiwi/pijma/compare/v1.88.0...v1.89.0) (2019-11-15)
+
+
+### Features
+
+* alert ([1a684e2](https://github.com/qiwi/pijma/commit/1a684e2))
+
+# [@qiwi/pijma-desktop-v1.88.0](https://github.com/qiwi/pijma/compare/v1.87.1...v1.88.0) (2019-11-13)
+
+
+### Features
+
+* rating ([db69ac6](https://github.com/qiwi/pijma/commit/db69ac6))
+
 # [@qiwi/pijma-desktop-v1.87.0](https://github.com/qiwi/pijma/compare/v1.86.0...v1.87.0) (2019-11-11)
 
 
