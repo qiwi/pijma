@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.90.0](https://github.com/qiwi/pijma/compare/v1.89.0...v1.90.0) (2019-11-15)
+
+
+### Features
+
+* stub link ([4e45439](https://github.com/qiwi/pijma/commit/4e45439))
+
 # [@qiwi/pijma-desktop-v1.89.0](https://github.com/qiwi/pijma/compare/v1.88.0...v1.89.0) (2019-11-15)
 
 
