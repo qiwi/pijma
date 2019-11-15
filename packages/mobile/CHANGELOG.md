@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.89.0](https://github.com/qiwi/pijma/compare/v1.88.0...v1.89.0) (2019-11-15)
+
+
+### Features
+
+* alert ([1a684e2](https://github.com/qiwi/pijma/commit/1a684e2))
+
 # [@qiwi/pijma-mobile-v1.88.0](https://github.com/qiwi/pijma/compare/v1.87.1...v1.88.0) (2019-11-13)
 
 
