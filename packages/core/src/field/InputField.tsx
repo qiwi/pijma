@@ -63,7 +63,6 @@ export const InputField: FunctionComponent<FieldProps> = ({title, active, padded
             size="s"
             bold={false}
             compact={true}
-            transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
             children={action}
           />
         </FlexItem>
