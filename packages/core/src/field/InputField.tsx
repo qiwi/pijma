@@ -35,12 +35,17 @@ export const InputField: FunctionComponent<FieldProps> = ({
       )}
       <Card bb="1px solid rgba(0, 0, 0, 0.2)" height={7}>
         <Flex align="center" justify="space-between" height={1}>
-          <FlexItem maxWidth={38} width={1}>
-            <Stub width={1} height={3} top={1} bottom={1}/>
+          <FlexItem
+            maxWidth={38}
+            width={1}
+            mt={1}
+            mb={1}
+          >
+            <Stub width={1} height={3}/>
           </FlexItem>
           {hint ? (
-            <FlexItem>
-              <Stub left={2} width={5} height={5} r={10}/>
+            <FlexItem ml={2}>
+              <Stub width={5} height={5} r={10}/>
             </FlexItem>
           ) : (
             null
@@ -50,7 +55,7 @@ export const InputField: FunctionComponent<FieldProps> = ({
       {help || error ? (
         <Stub width={15} height={2} top={2} bottom={1}/>
       ) : (
-        <Box height={5}/>
+        null
       )}
     </Box>
   ) : (
@@ -83,5 +88,5 @@ export const InputField: FunctionComponent<FieldProps> = ({
         )}
       </Flex>
     </Pos>
-    )
+  )
 )
