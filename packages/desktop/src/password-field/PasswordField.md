@@ -134,7 +134,7 @@
         title="if you need title stub put any corrent content here"
         error="if you need error stub put any corrent content here"
         hint="if you need hint stub put any corrent content here"
-        value=""
+        viewed={false}
       />
     </Box>
   </BlockContent>

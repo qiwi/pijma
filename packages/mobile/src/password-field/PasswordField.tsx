@@ -1,37 +1,20 @@
 import React, {FunctionComponent} from 'react'
 
-import {PasswordFieldControl, Box, InputField, BasicInput, Icon, Stub, Card, Flex, FlexItem} from '@qiwi/pijma-core'
+import {PasswordFieldControl, Box, InputField, BasicInput, Icon} from '@qiwi/pijma-core'
 
 import PasswordFieldProps from './PasswordFieldProps'
 
 const PasswordField: FunctionComponent<PasswordFieldProps> = (props) => (
   props.stub ? (
-    <Box>
-      {props.title ? (
-        <Stub width={15} height={2} top={1} bottom={1}/>
-      ) : (
-        <Box height={4}/>
-      )}
-      <Card bb="1px solid rgba(0, 0, 0, 0.2)" height={7}>
-        <Flex align="center" justify="space-between" height={1}>
-          <FlexItem>
-            <Stub width={38} height={3} top={1} bottom={1}/>
-          </FlexItem>
-          {props.hint || props.viewed ? (
-            <FlexItem>
-              <Stub width={5} height={5} r={10}/>
-            </FlexItem>
-          ) : (
-            null
-          )}
-        </Flex>
-      </Card>
-      {props.help || props.error ? (
-        <Stub width={15} height={2} top={2} bottom={1}/>
-      ) : (
-        <Box height={5}/>
-      )}
-    </Box>
+    <InputField
+      active={false}
+      input={false}
+      title={props.title}
+      hint={props.hint || props.viewed}
+      error={props.error}
+      help={props.help}
+      stub
+    />
   ) : (
     <PasswordFieldControl
       onChange={props.onChange}
