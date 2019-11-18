@@ -1,6 +1,6 @@
 import React, {FC, KeyboardEvent, ReactNode} from 'react'
 
-import {TextAreaFieldControl, InputField, BasicTextArea, Stub, Box, Card, Flex, FlexItem} from '@qiwi/pijma-core'
+import {TextAreaFieldControl, InputField, BasicTextArea} from '@qiwi/pijma-core'
 
 export interface TextAreaFieldProps {
   value: string
@@ -26,25 +26,14 @@ export interface TextAreaFieldProps {
 
 export const TextAreaField: FC<TextAreaFieldProps> = (props) => (
   props.stub ? (
-    <Box>
-      {props.title ? (
-        <Stub width={15} height={2} top={1} bottom={1}/>
-      ) : (
-        <Box height={4}/>
-      )}
-      <Card bb="1px solid rgba(0, 0, 0, 0.2)" height={7}>
-        <Flex align="center" justify="space-between" height={1}>
-          <FlexItem>
-            <Stub width={38} height={3} top={1} bottom={1}/>
-          </FlexItem>
-        </Flex>
-      </Card>
-      {props.help || props.error ? (
-        <Stub width={15} height={2} top={2} bottom={1}/>
-      ) : (
-        <Box height={5}/>
-      )}
-    </Box>
+    <InputField
+      active={false}
+      input={false}
+      title={props.title}
+      help={props.help}
+      error={props.error}
+      stub
+    />
   ) : (
     <TextAreaFieldControl
       onChange={props.onChange}
