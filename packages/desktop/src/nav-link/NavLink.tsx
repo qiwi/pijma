@@ -1,6 +1,5 @@
 import React, {FC} from 'react'
-import {LinkControl, Lnk, Typo, Box} from '@qiwi/pijma-core'
-import {Link} from '../link'
+import {LinkControl, Lnk, Typo, Stub} from '@qiwi/pijma-core'
 
 export interface NavLinkProps {
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
@@ -19,9 +18,12 @@ const TypoLink = Typo.withComponent(Lnk)
 
 export const NavLink: FC<NavLinkProps> = (props) => (
   props.stub ? (
-    <Box width={12}>
-      <Link size="s" stub/>
-    </Box>
+    <Stub
+      top={1.5}
+      bottom={1.5}
+      height={2}
+      width={1}
+    />
   ) : (
     <LinkControl
       onClick={props.onClick}

@@ -1,12 +1,12 @@
 ```jsx
 <Block>
   <BlockContent>
-    <Flex>
-      <FlexItem>
+    <Flex width={1}>
+      <FlexItem width={0.5}>
         <NavLink href="https://qiwi.com">Link</NavLink>  
       </FlexItem>
-      <FlexItem ml={2}>
-        <NavLink href stub/>  
+      <FlexItem width={0.5}>
+        <NavLink stub/>  
       </FlexItem>
     </Flex>
   </BlockContent>
