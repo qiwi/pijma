@@ -31,7 +31,7 @@
     "react-dom": "^16.8.6",
     "react-google-recaptcha": "^1.1.0",
     "react-intersection-observer": "^8.24.1",
-    "react-overlays": "^1.2.0",
+    "react-overlays": "^2.1.0",
     "react-text-mask": "^5.4.3",
     "react-transition-group": "^4.2.2",
     "react-waypoint": "^9.0.2",

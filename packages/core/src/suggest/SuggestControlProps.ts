@@ -34,7 +34,6 @@ export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V
     hovered: boolean
     selected: number | undefined
     show: boolean
-    showInput?: boolean
     inputRef: RefObject<HTMLInputElement>
     onFocus: React.FocusEventHandler
     onBlur: React.FocusEventHandler

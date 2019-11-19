@@ -57,6 +57,7 @@ export const HeaderSuggest = <V extends {}>({
     items={props.items}
     total={props.total}
     equals={equals}
+    show
     onRequest={props.onRequest}
     onChange={props.onChange}
     onBlur={props.onBlur}
@@ -70,138 +71,135 @@ export const HeaderSuggest = <V extends {}>({
         selected={renderProps.selected}
         onSelect={renderProps.onSelect}
         onKeyDown={renderProps.onKeyDown}
-        children={(menuRenderProps) => {
-          console.log(props.target, props.container)
-          return (
-            <React.Fragment>
-              <Box width={6} height={6} onClick={renderProps.onClick}>
-                <Icon name="search"/>
-              </Box>
-              <Overlay
-                target={props.target}
-                container={props.container}
-                show={renderProps.show}
-                rootClose={true}
-                transition={contentTransition}
-                onHide={renderProps.onHide}
-                children={() => (
-                  <Pos type="absolute" top={0} zIndex={10050} width={1}>
-                    <Card
-                      height={20}
-                      bg="#fff"
-                      bb={props.error ? 'solid 2px #d0021b' : 'none'}
-                      s="0 0 25px 0 rgba(0, 0, 0, 0.08)"
-                    >
-                      <Box width={295} mx="auto">
-                        <Flex
-                          align="center"
-                          width={295}
-                          mx="auto"
-                          height={20}
-                          py={4}
-                          px={6}
-                        >
-                          <FlexItem cursor="pointer" shrink={0} mr={4} onClick={renderProps.onHide}>
-                            <Icon name="arrow-left"/>
-                          </FlexItem>
-                          <FlexItem grow={1}>
-                            <Input
-                              ref={renderProps.inputRef}
-                              tabIndex={props.tabIndex}
-                              type="search"
-                              autoComplete={props.autoComplete ? 'on' : 'off'}
-                              value={props.suggest || ''}
-                              valueWeight={300}
-                              width={1}
-                              autoFocus
-                              valueSize={5}
-                              placeholder={placeholder}
-                              placeholderSize={5}
-                              placeholderWeight={300}
-                              onChange={renderProps.onRequest}
-                              onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onKeyDown}
-                              onFocus={renderProps.onFocus}
-                            />
-                          </FlexItem>
-                          <FlexItem shrink={0} ml={4} onClick={renderProps.onSearchClick}>
-                            {props.loading ? (
-                              <Spinner color="#ff8c00" width={6} height={6}/>
-                            ) : (
-                              <Box cursor="pointer" width={6} height={6}>
-                                <Icon name="search" color="#666"/>
-                              </Box>
-                            )}
-                          </FlexItem>
-                        </Flex>
-                      </Box>
-                    </Card>
-                    <Card
-                      ref={menuRenderProps.containerRef}
-                      overflow="auto"
-                      maxHeight={84}
-                      s="0 0 25px 0 rgba(0, 0, 0, 0.08)"
-                      bg="#fff"
-                    >
-                      <Box width={295} mx="auto">
-                        {props.loading ? (
-                          Array(4).fill(1).map((_item, key) => (
-                            <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
-                          ))
-                        ) : (
-                          <Spacer size="s">
-                            {menuRenderProps.items.length > 0 ? (
-                              <Fragment>
-                                {menuRenderProps.items.map((item, key) => (
-                                  <CardItem
-                                    key={key}
-                                    ref={item.ref}
-                                    cursor="pointer"
-                                    mt={key === 0 ? 4 : undefined}
-                                    round
-                                    text={props.items[key].title}
-                                    notes={props.items[key].description}
-                                    icon={<Image width={6} height={6} src={props.items[key].logo}/>}
-                                    hover={item.focused}
-                                    active={item.selected}
-                                    focus={item.selected}
-                                    onClick={item.onClick}
-                                    onMouseEnter={item.onMouseEnter}
-                                  />
-                                ))}
-                              </Fragment>
-                            ) : (
-                              null
-                            )}
-                            {props.total && props.items && props.items.length > 0 ? (
-                              <Box px={6} pb={4}>
-                                <Paragraph>
-                                  {props.total.text}
-                                  {props.total.link ? (
-                                    <Fragment>
-                                      {' '}
-                                      <Link
-                                        onClick={renderProps.onTotalClick}
-                                        children={props.total.link.text}
-                                      />
-                                    </Fragment>
-                                  ) : (
-                                    null
-                                  )}
-                                </Paragraph>
-                              </Box>
-                            ) : (
-                              null
-                            )}
-                          </Spacer>
-                        )}
-                      </Box>
-                    </Card>
-                  </Pos>
-                )}
-              />
-            </React.Fragment>
-          )
-        }}
+        children={(menuRenderProps) => (
+          <React.Fragment>
+            <Box width={6} height={6} onClick={renderProps.onClick}>
+              <Icon name="search"/>
+            </Box>
+            <Overlay
+              target={props.target}
+              container={props.container}
+              show={renderProps.show}
+              rootClose={true}
+              transition={contentTransition}
+              onHide={renderProps.onHide}
+              children={(overlayRenderProps) => (
+                <Pos type="absolute" top={0} zIndex={10050} width={1} ref={overlayRenderProps.props.ref}>
+                  <Card
+                    height={20}
+                    bg="#fff"
+                    bb={props.error ? 'solid 2px #d0021b' : 'none'}
+                    s="0 0 25px 0 rgba(0, 0, 0, 0.08)"
+                  >
+                    <Box width={295} mx="auto">
+                      <Flex
+                        align="center"
+                        width={295}
+                        mx="auto"
+                        height={20}
+                        py={4}
+                        px={6}
+                      >
+                        <FlexItem cursor="pointer" shrink={0} mr={4} onClick={renderProps.onHide}>
+                          <Icon name="arrow-left"/>
+                        </FlexItem>
+                        <FlexItem grow={1}>
+                          <Input
+                            ref={renderProps.inputRef}
+                            tabIndex={props.tabIndex}
+                            type="search"
+                            autoComplete={props.autoComplete ? 'on' : 'off'}
+                            value={props.suggest || ''}
+                            valueWeight={300}
+                            width={1}
+                            autoFocus
+                            valueSize={5}
+                            placeholder={placeholder}
+                            placeholderSize={5}
+                            placeholderWeight={300}
+                            onChange={renderProps.onRequest}
+                            onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onKeyDown}
+                            onFocus={renderProps.onFocus}
+                          />
+                        </FlexItem>
+                        <FlexItem shrink={0} ml={4} onClick={renderProps.onSearchClick}>
+                          {props.loading ? (
+                            <Spinner color="#ff8c00" width={6} height={6}/>
+                          ) : (
+                            <Box cursor="pointer" width={6} height={6}>
+                              <Icon name="search" color="#666"/>
+                            </Box>
+                          )}
+                        </FlexItem>
+                      </Flex>
+                    </Box>
+                  </Card>
+                  <Card
+                    ref={menuRenderProps.containerRef}
+                    overflow="auto"
+                    maxHeight={84}
+                    s="0 0 25px 0 rgba(0, 0, 0, 0.08)"
+                    bg="#fff"
+                  >
+                    <Box width={295} mx="auto">
+                      {props.loading ? (
+                        Array(4).fill(1).map((_item, key) => (
+                          <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
+                        ))
+                      ) : (
+                        <Spacer size="s">
+                          {menuRenderProps.items.length > 0 ? (
+                            <Fragment>
+                              {menuRenderProps.items.map((item, key) => (
+                                <CardItem
+                                  key={key}
+                                  ref={item.ref}
+                                  cursor="pointer"
+                                  mt={key === 0 ? 4 : undefined}
+                                  round
+                                  text={props.items[key].title}
+                                  notes={props.items[key].description}
+                                  icon={<Image width={6} height={6} src={props.items[key].logo}/>}
+                                  hover={item.focused}
+                                  active={item.selected}
+                                  focus={item.selected}
+                                  onClick={item.onClick}
+                                  onMouseEnter={item.onMouseEnter}
+                                />
+                              ))}
+                            </Fragment>
+                          ) : (
+                            null
+                          )}
+                          {props.total && props.items && props.items.length > 0 ? (
+                            <Box px={6} pb={4}>
+                              <Paragraph>
+                                {props.total.text}
+                                {props.total.link ? (
+                                  <Fragment>
+                                    {' '}
+                                    <Link
+                                      onClick={renderProps.onTotalClick}
+                                      children={props.total.link.text}
+                                    />
+                                  </Fragment>
+                                ) : (
+                                  null
+                                )}
+                              </Paragraph>
+                            </Box>
+                          ) : (
+                            null
+                          )}
+                        </Spacer>
+                      )}
+                    </Box>
+                  </Card>
+                </Pos>
+              )}
+            />
+          </React.Fragment>
+        )}
       />
     )}
   />

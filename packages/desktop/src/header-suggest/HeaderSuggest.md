@@ -1,4 +1,4 @@
-#### TestHeaderSuggest
+#### HeaderSuggest
 
 ```jsx
 const banks = [
@@ -117,15 +117,15 @@ const banks = [
   },
 ];
 
-const target = React.useRef()
-const container = React.useRef()
-
 const initialState = {
   suggest: '',
   loading: false,
   banks: [],
   timer: undefined,
 };
+
+const target = React.useRef()
+const container = React.useRef()
 
 const filterBanks = (title) => banks.filter(bank => {
   return title !== '' && bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1;
@@ -145,7 +145,6 @@ const getBanks = (suggest) => {
 const onRequest = (suggest) => {
   setState({suggest, error: suggest === ''});
   getBanks(suggest).then((banks) => setState({banks}));
-  console.log(suggest)
 };
 
 const onCancel = () => setState(initialState);
@@ -204,8 +203,8 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
               loading={state.loading}
               error={state.error}
               equals={equals}
-              target={target.current}
-              container={container.current}
+              target={() => target.current}
+              container={() => container.current}
               onCancel={onCancel}
               onSubmit={onSubmit}
               onChange={onChange}
