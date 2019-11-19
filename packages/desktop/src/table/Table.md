@@ -1,6 +1,7 @@
-Таблица
+Таблица - способ структурирования большого объёма данных для удобства просмотра и сравнения.
 
 ```jsx
+initialState = {activePage: 1};
 columns=[{
   title: 'Платеж',
   id: 'payment',
@@ -9,7 +10,6 @@ columns=[{
 }, {
   title: 'Сумма, ₽',
   id: 'money',
-  align: 'right',
   group: 1,
   weight: 500
 }, {
@@ -44,6 +44,44 @@ options={
 };
 
 <Table
+  header={
+    <Flex justify="flex-end">
+      Фильтр
+      <FlexItem width={6} height={6} ml={1} cursor="pointer" onClick={() => setState({filterIconActive: !state.filterIconActive})}>
+        <FilterIcon active={state.filterIconActive}/>
+      </FlexItem>
+    </Flex>
+  }
+  footer={
+    <Flex justify="center">
+      <Pagination
+        total={10}
+        active={state.activePage}
+        onChange={(activePage) => setState({activePage})}
+      />
+    </Flex>
+  }
   options={options}
+/>
+```
+
+#### Левый столбец всегда выравнивается по левому краю. Правый - по правому.
+
+```jsx
+columns=[{
+  title: 'Платеж',
+  id: 'payment'
+}, {
+  title: 'Сумма, ₽',
+  id: 'money',
+  weight: 500
+}];
+data=[['5580 75** **** 9807', '1 000 000, 00']];
+
+<Table
+  options={{
+    columns,
+    data
+  }}
 />
 ```

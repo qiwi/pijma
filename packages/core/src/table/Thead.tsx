@@ -18,7 +18,7 @@ export const Thead: FunctionComponent<TheadProps> = ({columns}) => (
   <thead>
     <Row>
       <Cell width={11} />
-      {columns.map(({title, align = 'left', group}, index: number) => {
+      {columns.map(({title, align, group}, index: number) => {
         const isInGroup =
           group && index && columns[index - 1].group
             ? group === columns[index - 1].group
@@ -35,7 +35,7 @@ export const Thead: FunctionComponent<TheadProps> = ({columns}) => (
               size={3.5}
               height={4}
               weight={300}
-              align={align}
+              align={align ? align : index === 1 ? 'right' : 'left'}
               color={'#666'}
             >
               {title}

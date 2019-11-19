@@ -49,6 +49,8 @@ export const Tbody: FunctionComponent<TbodyProps> = ({
             const column: TbodyCell = columns[index]
             const align: TbodyCell['align'] = column.align
               ? column.align
+              : index === 1
+              ? 'right'
               : 'left'
             const weight: TbodyCell['weight'] = column.weight
               ? column.weight
