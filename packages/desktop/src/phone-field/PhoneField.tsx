@@ -4,7 +4,6 @@ import {
   PhoneFieldControl,
   InputField,
   BasicInput,
-  Stub,
   Box,
   Pos,
   Card,
@@ -26,35 +25,15 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
   ...props
 }) => (
   props.stub ? (
-    <Box>
-      {props.title ? (
-        <Stub width={15} height={2} top={1} bottom={1}/>
-      ) : (
-        <Box height={4}/>
-      )}
-      <Card bb="1px solid rgba(0, 0, 0, 0.2)" height={7}>
-        <Flex align="center" justify="space-between" height={1}>
-          <FlexItem shrink={1} mr={3}>
-            <Stub width={6} height={4} top={1} bottom={1} r={0}/>
-          </FlexItem>
-          <FlexItem grow={1}>
-            <Stub width={38} height={3} top={1} bottom={1}/>
-          </FlexItem>
-          {props.hint ? (
-            <FlexItem>
-              <Stub width={5} height={5} r={10}/>
-            </FlexItem>
-          ) : (
-            null
-          )}
-        </Flex>
-      </Card>
-      {props.help ? (
-        <Stub width={15} height={2} top={2} bottom={1}/>
-      ) : (
-        <Box height={5}/>
-      )}
-    </Box>
+    <InputField
+      stub
+      title={props.title ? 'title' : undefined}
+      help={props.help ? 'help' : undefined}
+      hint={props.hint ? 'hint' : undefined}
+      icon="icon"
+      active
+      input=""
+    />
   ) : (
     <PhoneFieldControl
       value={props.value}

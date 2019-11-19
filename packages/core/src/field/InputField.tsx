@@ -25,6 +25,7 @@ export const InputField: FunctionComponent<FieldProps> = ({
   error,
   action,
   help,
+  icon,
   stub = false,
 }) => (
   stub ? (
@@ -36,6 +37,13 @@ export const InputField: FunctionComponent<FieldProps> = ({
       )}
       <Card bb="1px solid rgba(0, 0, 0, 0.2)" height={7}>
         <Flex align="center" justify="space-between" height={1}>
+          {icon ? (
+            <FlexItem shrink={1} mr={3}>
+              <Stub width={6} height={4} top={1} bottom={1} r={0}/>
+            </FlexItem>
+          ) : (
+            null
+          )}
           <FlexItem
             maxWidth={38}
             width={1}
@@ -70,6 +78,7 @@ export const InputField: FunctionComponent<FieldProps> = ({
         <Flex align="center">
           {input}
           <Pos type="absolute" zIndex={1} right={0} width={6} height={6} children={hint}/>
+          <Pos type="absolute" zIndex={1} left={0} width={6} height={6} children={icon}/>
         </Flex>
       </Pos>
       <Flex justify="flex-start" minHeight={4} mt={1}>
