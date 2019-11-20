@@ -77,28 +77,30 @@
   <BlockContent>
     <Grid columns={4} layout={[1]}>
       <LogoLink
-         href
-         title
-         icon
-         stub
+        href=""
+        title=""
+        icon=""
+        stub
       />
       <LogoLink
-         href
-         title
-         icon
-         stub
+        href=""
+        title=""
+        icon=""
+        stub
       />
       <LogoLink
-         href
-         title
-         icon
-         stub
+        href=""
+        title=""
+        icon=""
+        description="if you need description stub put any corrent content here"
+        stub
       />
       <LogoLink
-         href
-         title
-         icon
-         stub
+        href=""
+        title=""
+        icon=""
+        description="if you need description stub put any corrent content here"
+        stub
       />
     </Grid>
   </BlockContent>
@@ -192,33 +194,35 @@
 ```jsx
 <Block>
   <BlockContent>
-    <Grid columns={4} layout={[1]}>
+    <Grid columns={2} layout={[1]}>
       <LogoLink
         horizontal
-        href
-        title
-        icon
+        href=""
+        title=""
+        icon=""
         stub
       />
       <LogoLink
         horizontal
-        href
-        title
-        icon
+        href=""
+        title=""
+        icon=""
         stub
       />
       <LogoLink
         horizontal
-        href
-        title
-        icon
+        href=""
+        title=""
+        icon=""
+        description="if you need description stub put any corrent content here"
         stub
       />
       <LogoLink
         horizontal
-        href
-        title
-        icon
+        href=""
+        title=""
+        icon=""
+        description="if you need description stub put any corrent content here"
         stub
       />
     </Grid>

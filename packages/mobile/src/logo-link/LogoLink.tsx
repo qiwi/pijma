@@ -41,8 +41,27 @@ export const LogoLink: FC<LogoLinkProps> = ({
           >
             <Stub height={12} width={12} r={24}/>
           </FlexItem>
-          <FlexItem align="center" width={24}>
-            <Text display="block" size="m" stub/>
+          <FlexItem align="center" width={1}>
+            <Spacer size="xxs">
+              <Box maxWidth={38} width={1}>
+                <Text
+                  display="block"
+                  size="m"
+                  stub
+                />
+              </Box>
+              {description ? (
+                <Box maxWidth={18} width={1}>
+                  <Text
+                    display="block"
+                    size="s"
+                    stub
+                  />
+                </Box>
+              ) : (
+                null
+              )}
+            </Spacer>
           </FlexItem>
         </Flex>
       </Box>
@@ -51,9 +70,24 @@ export const LogoLink: FC<LogoLinkProps> = ({
         <Box width={16} height={16} mx="auto">
           <Stub height={16} width={16} r={32}/>
         </Box>
-        <Box width={24} mt={3} mx="auto">
-          <Text align="center" display="block" size="m" stub/>
+        <Box mt={3} mx="auto" maxWidth={38} width={1}>
+          <Text
+            display="block"
+            size="m"
+            stub
+          />
         </Box>
+        {description ? (
+          <Box mt={1} mx="auto" maxWidth={18} width={1}>
+            <Text
+              display="block"
+              size="s"
+              stub
+            />
+          </Box>
+        ) : (
+          null
+        )}
       </Box>
     )
   ) : (
