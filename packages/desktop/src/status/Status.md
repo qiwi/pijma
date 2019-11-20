@@ -150,3 +150,19 @@
   </BlockContent>
 </Block>
 ```
+
+## Placeholder
+
+```jsx
+<Block>
+  <BlockContent>
+    <Status
+      icon="if you need icon stub put any corrent content here"
+      title="if you need title stub put any corrent content here"
+      content="if you need content stub put any corrent content here"
+      actions="if you need action stub put any corrent content here"
+      stub
+    />
+  </BlockContent>
+</Block>
+```
