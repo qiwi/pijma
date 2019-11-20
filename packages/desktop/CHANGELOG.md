@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.92.0](https://github.com/qiwi/pijma/compare/v1.91.0...v1.92.0) (2019-11-20)
+
+
+### Features
+
+* stub nav-link ([673a7b8](https://github.com/qiwi/pijma/commit/673a7b8))
+
 # [@qiwi/pijma-desktop-v1.90.0](https://github.com/qiwi/pijma/compare/v1.89.0...v1.90.0) (2019-11-15)
 
 
