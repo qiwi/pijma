@@ -1,4 +1,5 @@
 import React, {FC} from 'react'
+
 import {LinkControl, Lnk, Typo, Stub} from '@qiwi/pijma-core'
 
 export interface NavLinkProps {
