@@ -126,6 +126,7 @@ const initialState = {
 
 const target = React.useRef()
 const container = React.useRef()
+const currentTarget = target.current
 
 const filterBanks = (title) => banks.filter(bank => {
   return title !== '' && bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1;
@@ -203,8 +204,8 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
               loading={state.loading}
               error={state.error}
               equals={equals}
-              target={() => target.current}
-              container={() => container.current}
+              target={target}
+              container={container}
               onCancel={onCancel}
               onSubmit={onSubmit}
               onChange={onChange}

@@ -1,8 +1,9 @@
-import {RefObject} from 'react'
+import React, {RefObject} from 'react'
 import RenderChild from '../RenderChild'
 import SuggestOptionModel from './SuggestOptionModel'
 
 export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V> {
+  modal?: boolean
   items: O[]
   value?: V
   suggest?: string
@@ -20,7 +21,6 @@ export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V
       suggest: string
     }
   }
-  show?: boolean
   equals: (a: V, b: V) => boolean
   onChange: (value: V) => void
   onRequest: (suggest: string) => void
@@ -37,17 +37,21 @@ export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V
     inputRef: RefObject<HTMLInputElement>
     onFocus: React.FocusEventHandler
     onBlur: React.FocusEventHandler
-    onSearchMouseDown: React.MouseEventHandler
+    onClick?: React.MouseEventHandler
+    onModalInputBlur?: React.FocusEventHandler
+    onSearchMouseDown?: React.MouseEventHandler
     onSearchClick: React.MouseEventHandler
+    onBack?: React.MouseEventHandler
     onMouseEnter: React.MouseEventHandler
     onMouseLeave: React.MouseEventHandler
-    onClick: React.MouseEventHandler
     onKeyDown: React.KeyboardEventHandler
     onRequest: React.ChangeEventHandler
-    onResultMouseDown: React.MouseEventHandler
+    onResultMouseDown?: React.MouseEventHandler
     onSelect: (index: number) => void
     onTotalClick: () => void
     onEmptyClick: () => void
     onHide: () => void
+    onShow?: () => void
+    onEscape?: () => void
   }>
 }

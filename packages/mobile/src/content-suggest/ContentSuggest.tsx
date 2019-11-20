@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 
 import {
-  ModalSuggestControl,
+  SuggestControl,
   Image,
   MenuControl,
   Icon,
@@ -27,7 +27,8 @@ export const ContentSuggest = <V extends {}>({
   equals = (a: V, b: V) => a === b,
   ...props
 }: ContentSuggestProps<ContentSuggestOptionModel<V>, V>) => (
-  <ModalSuggestControl<V>
+  <SuggestControl<V>
+    modal
     value={props.value}
     suggest={props.suggest}
     items={props.items}

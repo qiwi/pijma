@@ -33,7 +33,7 @@
     "markdown-to-jsx": "^6.10.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-overlays": "^2.1.0",
+    "react-overlays": "^1.2.0",
     "react-text-mask": "^5.4.3",
     "react-transition-group": "^4.2.2",
     "tslib": "^1.10.0"

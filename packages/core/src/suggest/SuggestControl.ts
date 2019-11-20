@@ -14,7 +14,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
   private inputRef: RefObject<HTMLInputElement> = createRef()
 
   public componentDidUpdate(props: SuggestControlProps<SuggestOptionModel<V>, V>) {
-    if (props.items !== this.props.items && !props.show) {
+    if (props.items !== this.props.items && !props.modal) {
       this.setState({
         show: this.props.items.length > 0 || this.props.empty !== undefined,
       })
@@ -39,22 +39,38 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
 
   private onFocus: React.FocusEventHandler = (event) => {
     event.preventDefault()
-    this.setState({
-      focused: true,
-    })
-    if (this.props.onFocus) {
-      this.props.onFocus()
+    if (this.props.modal) {
+      this.setState({
+        show: true,
+      })
+    }
+    else {
+      this.setState({
+        focused: true,
+      })
+      if (this.props.onFocus) {
+        this.props.onFocus()
+      }
     }
   }
 
   private onBlur: React.FocusEventHandler = (event) => {
     event.preventDefault()
-    this.hide()
-    this.setState({
-      focused: false,
-    })
+    if (!this.props.modal) {
+      this.hide()
+      this.setState({
+        focused: false,
+      })
+    }
     if (this.props.onBlur) {
       this.props.onBlur()
+    }
+  }
+
+  private onModalInputBlur: React.FocusEventHandler = (event) => {
+    event.preventDefault()
+    if (this.inputRef && this.inputRef.current) {
+      this.inputRef.current.focus({preventScroll: true})
     }
   }
 
@@ -83,7 +99,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     if (event.key === 'Enter') {
       this.submit()
     }
-    if (event.key === 'Escape') {
+    if (event.key === 'Escape' && !this.props.modal) {
       this.cancel()
     }
   }
@@ -113,6 +129,10 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
   private onSearchMouseDown: React.MouseEventHandler = (event) => {
     event.preventDefault()
     this.inputRef.current!.focus({preventScroll: true})
+  }
+
+  private onEscape: () => void = () => {
+    this.cancel()
   }
 
   private onHide: () => void = () => {
@@ -158,6 +178,24 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     return index !== -1 ? index : undefined
   }
 
+  private onBack: React.MouseEventHandler = (event) => {
+    event.preventDefault()
+    this.cancel()
+  }
+
+  private onShow: () => void = () => {
+    this.show()
+  }
+
+  private show: () => void = () => {
+    this.setState({
+      show: true,
+    })
+    if (this.props.suggest) {
+      this.request(this.props.suggest)
+    }
+  }
+
   private hide = () => {
     this.setState({
       show: false,
@@ -178,13 +216,17 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
       onRequest: this.onRequest,
       onFocus: this.onFocus,
       onBlur: this.onBlur,
+      onModalInputBlur: this.onModalInputBlur,
+      onClick: this.onClick,
       onSearchMouseDown: this.onSearchMouseDown,
       onSearchClick: this.onSearchClick,
       onMouseEnter: this.onMouseEnter,
       onMouseLeave: this.onMouseLeave,
       onKeyDown: this.onKeyDown,
+      onEscape: this.onEscape,
+      onShow: this.onShow,
+      onBack: this.onBack,
       onHide: this.onHide,
-      onClick: this.onClick,
       onTotalClick: this.onTotalClick,
       onEmptyClick: this.onEmptyClick,
       onResultMouseDown: this.onResultMouseDown,
