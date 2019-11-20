@@ -10,9 +10,6 @@
       },
     ]}
   />
-  <Breadcrumbs
-    children={[]}
-    stub
-  />
+  <Breadcrumbs stub/>
 </Spacer>
 ```
