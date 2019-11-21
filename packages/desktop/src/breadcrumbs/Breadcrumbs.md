@@ -10,5 +10,6 @@
       },
     ]}
   />
+  <Breadcrumbs stub/>
 </Spacer>
 ```
