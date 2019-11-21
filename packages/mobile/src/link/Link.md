@@ -3,17 +3,32 @@
 ```jsx
 <Block>
   <BlockContent>
-    <Flex align="baseline">
-      <FlexItem pr={4}>
-        <Link size="l" href="https://qiwi.com">Link L</Link>  
-      </FlexItem>
-      <FlexItem pr={4}>
-        <Link href="https://qiwi.com" target="_blank">Link M</Link>
-      </FlexItem>
-      <FlexItem pr={4}>
-        <Link size="s" href="https://qiwi.com" title="link s" onClick={() => alert('alert 2')}>Link S</Link>  
-      </FlexItem>
-    </Flex>
+    <Spacer size="m">
+      <Flex width={1}>
+        <FlexItem width={0.5}>
+          <Link size="l" href="https://qiwi.com">Link L</Link>  
+        </FlexItem>
+        <FlexItem width={0.5}>
+          <Link size="l" href stub/>
+        </FlexItem>
+      </Flex>
+      <Flex width={1}>
+        <FlexItem width={0.5}>
+          <Link href="https://qiwi.com" target="_blank">Link M</Link>
+        </FlexItem>
+        <FlexItem width={0.5}>
+          <Link size="m" href stub/>
+        </FlexItem>
+      </Flex>
+      <Flex width={1}>
+        <FlexItem width={0.5}>
+          <Link size="s" href="https://qiwi.com" title="link s" onClick={() => alert('alert 2')}>Link S</Link> 
+        </FlexItem>
+        <FlexItem width={0.5}>
+          <Link size="s" href stub/>
+        </FlexItem>
+      </Flex>
+    </Spacer>
   </BlockContent>
 </Block>
 ```
