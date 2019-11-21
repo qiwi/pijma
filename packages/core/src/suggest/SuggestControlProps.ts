@@ -3,7 +3,6 @@ import RenderChild from '../RenderChild'
 import SuggestOptionModel from './SuggestOptionModel'
 
 export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V> {
-  modal?: boolean
   items: O[]
   value?: V
   suggest?: string
@@ -34,8 +33,8 @@ export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V
     hovered: boolean
     selected: number | undefined
     show: boolean
+    result: boolean
     inputRef: RefObject<HTMLInputElement>
-    // onFocus: React.FocusEventHandler
     onShowFocus?: React.FocusEventHandler
     onInputFocus?: React.FocusEventHandler
     onInputBlur?: React.FocusEventHandler
@@ -46,7 +45,6 @@ export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V
     onBack?: React.MouseEventHandler
     onMouseInputEnter: React.MouseEventHandler
     onMouseInputLeave: React.MouseEventHandler
-    // onKeyDown: React.KeyboardEventHandler
     onModalItemKeyDown?: React.KeyboardEventHandler,
     onItemKeyDown?: React.KeyboardEventHandler,
     onRequest: React.ChangeEventHandler
@@ -55,7 +53,6 @@ export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V
     onTotalClick: () => void
     onEmptyClick: () => void
     onHide: () => void
-    // onShow?: () => void
     onEscapeInputModal?: () => void
   }>
 }

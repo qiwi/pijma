@@ -19,6 +19,7 @@ export default interface HeaderSuggestProps<O extends HeaderSuggestOptionModel<V
   error?: boolean
   loading?: boolean
   total?: SuggestControlProps<O, V>['total']
+  empty?: SuggestControlProps<O, V>['empty']
   onChange: SuggestControlProps<O, V>['onChange']
   onRequest: SuggestControlProps<O, V>['onRequest']
   onCancel?: SuggestControlProps<O, V>['onCancel']

@@ -28,7 +28,6 @@ export const ContentSuggest = <V extends {}>({
   ...props
 }: ContentSuggestProps<ContentSuggestOptionModel<V>, V>) => (
   <SuggestControl<V>
-    modal
     value={props.value}
     suggest={props.suggest}
     items={props.items}

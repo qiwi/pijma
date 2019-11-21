@@ -216,6 +216,19 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
                   suggest: state.suggest,
                 }
               }}
+              empty={state.error ? {
+                text: 'Ошибка,',
+                link: {
+                  text: 'попробуйте ещё раз',
+                  suggest: state.suggest,
+                }
+              } : {
+                text: 'Ничего не найдено, попробуйте',
+                link: {
+                  text: 'Сбербанк',
+                  suggest: 'Сбербанк',
+                }
+              }}
             />
           </FlexItem>
         </Flex>
