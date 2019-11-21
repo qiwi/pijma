@@ -153,9 +153,9 @@ const onChange = (value) => {
     value: value,
     suggest: title,
   });
-  //setState({
-  //  dialogText: `Выбрано: ${title}`,
-  //});
+  setState({
+    dialogText: `Выбрано: ${title}`,
+  });
 };
 
 const onSubmit = (suggest) => {
