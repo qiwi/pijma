@@ -9,7 +9,12 @@ initialState = {activePage: 1};
 ```
 
 ```jsx
-<Pagination shadowed stub/>
+<Pagination
+  total={10}
+  active={0}
+  shadowed
+  stub
+/>
 ```
 
 ```jsx
@@ -28,7 +33,11 @@ initialState = {activePage: 1};
 ```jsx
 <Block>
   <BlockContent>
-    <Pagination stub/>
+    <Pagination
+      total={10}
+      active={0}
+      stub
+    />
   </BlockContent>
 </Block>
 ```

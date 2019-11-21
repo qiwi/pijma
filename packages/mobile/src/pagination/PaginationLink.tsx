@@ -1,12 +1,13 @@
 import React, {FC} from 'react'
 
-import {LinkControl, Lnk, Card, Value, RenderChild, Flex} from '@qiwi/pijma-core'
+import {LinkControl, Lnk, Card, Value, RenderChild, Flex, Stub} from '@qiwi/pijma-core'
 
 export interface PaginationLinkProps {
   page: number
   disabled: boolean
   width?: Value
   href?: string
+  stub?: boolean
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
   children: RenderChild<{
     disabled: boolean
@@ -43,11 +44,19 @@ export const PaginationLink: FC<PaginationLinkProps> = props => (
           justify="center"
           width={1}
           height={1}
-          children={props.children({
-            disabled: props.disabled || false,
-            hover: renderProps.hover,
-            focus: renderProps.focus,
-          })}
+          children={props.stub ? (
+            <Stub
+              height={6}
+              width={6}
+              r={12}
+            />
+          ) : (
+            props.children({
+              disabled: props.disabled || false,
+              hover: renderProps.hover,
+              focus: renderProps.focus,
+            })
+          )}
         />
       </CardLink>
     )}
