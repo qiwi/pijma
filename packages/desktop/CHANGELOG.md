@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.93.0](https://github.com/qiwi/pijma/compare/v1.92.0...v1.93.0) (2019-11-21)
+
+
+### Features
+
+* stub breadcrumbs ([a12af85](https://github.com/qiwi/pijma/commit/a12af85))
+
 # [@qiwi/pijma-desktop-v1.92.0](https://github.com/qiwi/pijma/compare/v1.91.0...v1.92.0) (2019-11-20)
 
 
