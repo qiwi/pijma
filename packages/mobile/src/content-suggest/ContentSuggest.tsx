@@ -45,8 +45,8 @@ export const ContentSuggest = <V extends {}>({
       <Pos type="relative">
         <Box
           width={1}
-          onMouseEnter={renderProps.onMouseEnter}
-          onMouseLeave={renderProps.onMouseLeave}
+          onMouseEnter={renderProps.onMouseInputEnter}
+          onMouseLeave={renderProps.onMouseInputLeave}
         >
           <ContentInput
             value={props.suggest || ''}
@@ -61,17 +61,17 @@ export const ContentSuggest = <V extends {}>({
             focused={renderProps.focused}
             hovered={renderProps.hovered}
             onChange={renderProps.onRequest}
-            onFocus={renderProps.onFocus}
+            onFocus={renderProps.onShowFocus}
           />
-          <Pos type="absolute" right={4} top={3} onClick={renderProps.onShow}>
+          <Pos type="absolute" right={4} top={3} onClick={renderProps.onShowClick}>
             <Icon name="search" color="#666"/>
           </Pos>
         </Box>
         <MenuControl
           count={props.items.length}
           selected={renderProps.selected}
-          onSelect={renderProps.onSelect}
-          onKeyDown={renderProps.onKeyDown}
+          onSelect={renderProps.onItemSelect}
+          onKeyDown={renderProps.onModalItemKeyDown}
           children={(menuRenderProps) => (
             <InputModal
               value={props.suggest || ''}
@@ -84,12 +84,12 @@ export const ContentSuggest = <V extends {}>({
               contentRef={menuRenderProps.containerRef}
               error={props.error}
               onChange={renderProps.onRequest}
-              onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onKeyDown}
+              onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onModalItemKeyDown}
               onBlur={renderProps.onModalInputBlur}
               onSubmit={renderProps.onSearchClick}
-              onShow={renderProps.onShow}
+              onShow={renderProps.onShowClick}
               onHide={renderProps.onHide}
-              onEscape={renderProps.onEscape}
+              onEscape={renderProps.onEscapeInputModal}
               onBack={renderProps.onBack}
             >
               {props.loading ? (

@@ -37,31 +37,46 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     this.inputRef.current!.focus({preventScroll: true})
   }
 
-  private onFocus: React.FocusEventHandler = (event) => {
+  // private onFocus: React.FocusEventHandler = (event) => {
+  //   event.preventDefault()
+  //   if (this.props.modal) {
+  //     this.setState({
+  //       show: true,
+  //     })
+  //   }
+  //   else {
+  //     this.setState({
+  //       focused: true,
+  //     })
+  //     if (this.props.onFocus) {
+  //       this.props.onFocus()
+  //     }
+  //   }
+  // }
+
+  private onShowFocus: React.FocusEventHandler = (event) => {
     event.preventDefault()
-    if (this.props.modal) {
-      this.setState({
-        show: true,
-      })
-    }
-    else {
-      this.setState({
-        focused: true,
-      })
-      if (this.props.onFocus) {
-        this.props.onFocus()
-      }
+    this.setState({
+      show: true,
+    })
+  }
+
+  private onInputFocus: React.FocusEventHandler = (event) => {
+    event.preventDefault()
+    this.setState({
+      focused: true,
+    })
+    if (this.props.onFocus) {
+      this.props.onFocus()
     }
   }
 
-  private onBlur: React.FocusEventHandler = (event) => {
+  private onInputBlur: React.FocusEventHandler = (event) => {
     event.preventDefault()
-    if (!this.props.modal) {
-      this.hide()
-      this.setState({
-        focused: false,
-      })
-    }
+    this.hide()
+    this.setState({
+      focused: false,
+    })
     if (this.props.onBlur) {
       this.props.onBlur()
     }
@@ -72,39 +87,48 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     if (this.inputRef && this.inputRef.current) {
       this.inputRef.current.focus({preventScroll: true})
     }
+    if (this.props.onBlur) {
+      this.props.onBlur()
+    }
   }
 
-  private onClick: React.MouseEventHandler = (event) => {
-    event.preventDefault()
-    this.setState({
-      show: true,
-    })
-  }
+  // private onShowClick: React.MouseEventHandler = (event) => {
+  //   event.preventDefault()
+  //   this.setState({
+  //     show: true,
+  //   })
+  // }
 
-  private onMouseEnter: React.MouseEventHandler = (event) => {
+  private onMouseInputEnter: React.MouseEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       hovered: true,
     })
   }
 
-  private onMouseLeave: React.MouseEventHandler = (event) => {
+  private onMouseInputLeave: React.MouseEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       hovered: false,
     })
   }
 
-  private onKeyDown: React.KeyboardEventHandler = (event) => {
+  private onItemKeyDown: React.KeyboardEventHandler = (event) => {
     if (event.key === 'Enter') {
       this.submit()
     }
-    if (event.key === 'Escape' && !this.props.modal) {
+    if (event.key === 'Escape') {
       this.cancel()
     }
   }
 
-  private onResultMouseDown: React.MouseEventHandler = (event) => {
+  private onModalItemKeyDown: React.KeyboardEventHandler = (event) => {
+    if (event.key === 'Enter') {
+      this.submit()
+    }
+  }
+
+  private onResultItemsMouseDown: React.MouseEventHandler = (event) => {
     event.preventDefault()
     event.stopPropagation()
   }
@@ -131,7 +155,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     this.inputRef.current!.focus({preventScroll: true})
   }
 
-  private onEscape: () => void = () => {
+  private onEscapeInputModal: () => void = () => {
     this.cancel()
   }
 
@@ -183,7 +207,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     this.cancel()
   }
 
-  private onShow: () => void = () => {
+  private onShowClick: () => void = () => {
     this.show()
   }
 
@@ -212,24 +236,28 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
       selected: this.selected,
       show: this.state.show,
       inputRef: this.inputRef,
-      onSelect: this.onSelect,
+      onItemSelect: this.onSelect,
       onRequest: this.onRequest,
-      onFocus: this.onFocus,
-      onBlur: this.onBlur,
+      // onFocus: this.onFocus,
+      onShowFocus: this.onShowFocus,
+      onInputFocus: this.onInputFocus,
+      onInputBlur: this.onInputBlur,
       onModalInputBlur: this.onModalInputBlur,
-      onClick: this.onClick,
+      onShowClick: this.onShowClick,
       onSearchMouseDown: this.onSearchMouseDown,
       onSearchClick: this.onSearchClick,
-      onMouseEnter: this.onMouseEnter,
-      onMouseLeave: this.onMouseLeave,
-      onKeyDown: this.onKeyDown,
-      onEscape: this.onEscape,
-      onShow: this.onShow,
+      onMouseInputEnter: this.onMouseInputEnter,
+      onMouseInputLeave: this.onMouseInputLeave,
+      // onKeyDown: this.onKeyDown,
+      onItemKeyDown: this.onItemKeyDown,
+      onModalItemKeyDown: this.onModalItemKeyDown,
+      onEscapeInputModal: this.onEscapeInputModal,
+      // onShow: this.onShow,
       onBack: this.onBack,
       onHide: this.onHide,
       onTotalClick: this.onTotalClick,
       onEmptyClick: this.onEmptyClick,
-      onResultMouseDown: this.onResultMouseDown,
+      onResultItemsMouseDown: this.onResultItemsMouseDown,
     })
   }
 

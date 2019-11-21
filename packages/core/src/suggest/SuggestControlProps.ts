@@ -35,23 +35,27 @@ export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V
     selected: number | undefined
     show: boolean
     inputRef: RefObject<HTMLInputElement>
-    onFocus: React.FocusEventHandler
-    onBlur: React.FocusEventHandler
-    onClick?: React.MouseEventHandler
+    // onFocus: React.FocusEventHandler
+    onShowFocus?: React.FocusEventHandler
+    onInputFocus?: React.FocusEventHandler
+    onInputBlur?: React.FocusEventHandler
+    onShowClick?: React.MouseEventHandler
     onModalInputBlur?: React.FocusEventHandler
     onSearchMouseDown?: React.MouseEventHandler
     onSearchClick: React.MouseEventHandler
     onBack?: React.MouseEventHandler
-    onMouseEnter: React.MouseEventHandler
-    onMouseLeave: React.MouseEventHandler
-    onKeyDown: React.KeyboardEventHandler
+    onMouseInputEnter: React.MouseEventHandler
+    onMouseInputLeave: React.MouseEventHandler
+    // onKeyDown: React.KeyboardEventHandler
+    onModalItemKeyDown?: React.KeyboardEventHandler,
+    onItemKeyDown?: React.KeyboardEventHandler,
     onRequest: React.ChangeEventHandler
-    onResultMouseDown?: React.MouseEventHandler
-    onSelect: (index: number) => void
+    onResultItemsMouseDown?: React.MouseEventHandler
+    onItemSelect: (index: number) => void
     onTotalClick: () => void
     onEmptyClick: () => void
     onHide: () => void
-    onShow?: () => void
-    onEscape?: () => void
+    // onShow?: () => void
+    onEscapeInputModal?: () => void
   }>
 }

@@ -48,8 +48,8 @@ export const ContentSuggest = <V extends {}>({
       <MenuControl
         count={props.items.length}
         selected={renderProps.selected}
-        onSelect={renderProps.onSelect}
-        onKeyDown={renderProps.onKeyDown}
+        onSelect={renderProps.onItemSelect}
+        onKeyDown={renderProps.onItemKeyDown}
         children={(menuRenderProps) => (
           <CardPos
             type="relative"
@@ -61,8 +61,8 @@ export const ContentSuggest = <V extends {}>({
           >
             <Box
               width={1}
-              onMouseEnter={renderProps.onMouseEnter}
-              onMouseLeave={renderProps.onMouseLeave}
+              onMouseEnter={renderProps.onMouseInputEnter}
+              onMouseLeave={renderProps.onMouseInputLeave}
             >
               <ContentInput
                 value={props.suggest || ''}
