@@ -7,6 +7,7 @@ export default interface SwitchProps {
   stub?: boolean
   tabIndex?: number
   description?: ReactNode
+  icon?: ReactNode
   label: string
   onChange: (value: boolean) => void
 }

@@ -33,9 +33,18 @@ export const Switch: FunctionComponent<SwitchProps> = props => (
           r={10}
         />
       </FlexItem>
-      <FlexItem width={33} maxWidth={1}>
-        <Stub width={1} height={2} top={2} bottom={2}/>
+      <FlexItem width={1}>
+        <Box width={1} maxWidth={33}>
+          <Stub height={2} width={1} top={2} bottom={2}/>
+        </Box>
       </FlexItem>
+      {props.reverse && props.icon ? (
+        <FlexItem mr={3}>
+          <Stub width={6} height={6} r={12}/>
+        </FlexItem>
+      ) : (
+        null
+      )}
     </Flex>
   ) : (
     <SwitchControl
@@ -52,6 +61,7 @@ export const Switch: FunctionComponent<SwitchProps> = props => (
             <OptionFieldItem
               label={props.label}
               reverse={props.reverse}
+              iconReverse={props.icon}
               description={props.description}
               disabled={props.disabled}
               icon={(

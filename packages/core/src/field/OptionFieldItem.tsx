@@ -1,10 +1,12 @@
 import React, {ReactNode, MouseEventHandler} from 'react'
 
 import {Box, Pos, Typo, Flex} from '../primitive'
+import {Image} from '../image'
 
 export interface OptionFieldItemProps {
   disabled?: boolean
   reverse?: boolean
+  iconReverse?: ReactNode
   icon: ReactNode
   label: ReactNode
   description?: ReactNode
@@ -22,6 +24,7 @@ export const OptionFieldItem: React.FunctionComponent<OptionFieldItemProps> = ({
   onMouseEnter,
   onMouseLeave,
   reverse,
+  iconReverse,
 }) => (
   <Pos
     type="relative"
@@ -45,7 +48,7 @@ export const OptionFieldItem: React.FunctionComponent<OptionFieldItemProps> = ({
       >
         {icon}
       </Flex>
-      <Flex display="flex" direction="column">
+      <Flex display="flex" direction="column" width={1}>
         <Typo
           display="block"
           weight={300}
@@ -67,6 +70,26 @@ export const OptionFieldItem: React.FunctionComponent<OptionFieldItemProps> = ({
           </Box>
         ) : null}
       </Flex>
+      {reverse && iconReverse ? (
+        <Flex
+          display="flex"
+          mr={3}
+        >
+          <Box width={6}>
+            {typeof iconReverse === 'string' ? (
+              <Image
+                src={iconReverse}
+                width={6}
+                height={6}
+              />
+            ) : (
+              iconReverse
+            )}
+          </Box>
+        </Flex>
+      ) : (
+        null
+      )}
     </Flex>
   </Pos>
 )
