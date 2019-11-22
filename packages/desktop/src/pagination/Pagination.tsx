@@ -53,7 +53,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
         />
         <PaginationLink
           page={renderProps.prev}
-          disabled={stub ? true : renderProps.active === 1}
+          disabled={renderProps.active === 1}
           shadowed={shadowed}
           href={href ? href(renderProps.prev) : undefined}
           stub={stub}

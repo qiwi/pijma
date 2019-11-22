@@ -20,24 +20,24 @@ const CardLink = Card.withComponent(Lnk)
 
 export const PaginationLink: FC<PaginationLinkProps> = props => (
   <LinkControl
-    href={props.href}
-    onClick={props.onClick}
+    href={props.stub ? undefined : props.href}
+    onClick={props.stub ? undefined : props.onClick}
     children={renderProps => (
       <CardLink
         transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         height={12}
         width={props.width}
         display="inline-flex"
-        cursor={props.disabled ? 'default' : 'pointer'}
+        cursor={props.stub || props.disabled ? 'default' : 'pointer'}
         s="1px 0 0 #e6e6e6"
-        href={props.href}
-        onClick={renderProps.onClick}
-        onFocus={renderProps.onFocus}
-        onBlur={renderProps.onBlur}
-        onMouseEnter={renderProps.onMouseEnter}
-        onMouseLeave={renderProps.onMouseLeave}
-        onMouseUp={renderProps.onMouseUp}
-        onMouseDown={renderProps.onMouseDown}
+        href={props.stub ? undefined : props.href}
+        onClick={props.stub ? undefined : renderProps.onClick}
+        onFocus={props.stub ? undefined : renderProps.onFocus}
+        onBlur={props.stub ? undefined : renderProps.onBlur}
+        onMouseEnter={props.stub ? undefined : renderProps.onMouseEnter}
+        onMouseLeave={props.stub ? undefined : renderProps.onMouseLeave}
+        onMouseUp={props.stub ? undefined : renderProps.onMouseUp}
+        onMouseDown={props.stub ? undefined : renderProps.onMouseDown}
       >
         <Flex
           align="center"
