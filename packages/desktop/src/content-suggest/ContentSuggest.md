@@ -118,10 +118,8 @@ const banks = [
 ];
 
 const initialState = {
-  suggest: '',
   loading: false,
   error: false,
-  banks: [],
   timer: undefined,
   dialogText: undefined,
 };

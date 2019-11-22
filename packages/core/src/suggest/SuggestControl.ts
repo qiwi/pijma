@@ -76,14 +76,14 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     }
   }
 
-  private onMouseInputEnter: React.MouseEventHandler = (event) => {
+  private onInputMouseEnter: React.MouseEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       hovered: true,
     })
   }
 
-  private onMouseInputLeave: React.MouseEventHandler = (event) => {
+  private onInputMouseLeave: React.MouseEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       hovered: false,
@@ -203,6 +203,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
   private hide = () => {
     this.setState({
       show: false,
+      result: false,
     })
     if (this.props.onHide) {
       this.props.onHide()
@@ -226,8 +227,8 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
       onShowClick: this.onShowClick,
       onSearchMouseDown: this.onSearchMouseDown,
       onSearchClick: this.onSearchClick,
-      onMouseInputEnter: this.onMouseInputEnter,
-      onMouseInputLeave: this.onMouseInputLeave,
+      onInputMouseEnter: this.onInputMouseEnter,
+      onInputMouseLeave: this.onInputMouseLeave,
       onItemKeyDown: this.onItemKeyDown,
       onModalItemKeyDown: this.onModalItemKeyDown,
       onEscapeInputModal: this.onEscapeInputModal,

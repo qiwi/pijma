@@ -43,10 +43,10 @@ export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V
     onSearchMouseDown?: React.MouseEventHandler
     onSearchClick: React.MouseEventHandler
     onBack?: React.MouseEventHandler
-    onMouseInputEnter: React.MouseEventHandler
-    onMouseInputLeave: React.MouseEventHandler
-    onModalItemKeyDown?: React.KeyboardEventHandler,
+    onInputMouseEnter: React.MouseEventHandler
+    onInputMouseLeave: React.MouseEventHandler
     onItemKeyDown?: React.KeyboardEventHandler,
+    onModalItemKeyDown?: React.KeyboardEventHandler,
     onRequest: React.ChangeEventHandler
     onResultItemsMouseDown?: React.MouseEventHandler
     onItemSelect: (index: number) => void

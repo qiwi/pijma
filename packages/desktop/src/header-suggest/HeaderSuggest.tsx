@@ -69,7 +69,7 @@ export const HeaderSuggest = <V extends {}>({
         count={props.items ? props.items.length : 0}
         selected={renderProps.selected}
         onSelect={renderProps.onItemSelect}
-        onKeyDown={renderProps.onItemKeyDown}
+        onKeyDown={renderProps.onModalItemKeyDown}
         children={(menuRenderProps) => (
           <React.Fragment>
             <Box
@@ -122,7 +122,7 @@ export const HeaderSuggest = <V extends {}>({
                             placeholderWeight={300}
                             onChange={renderProps.onRequest}
                             onBlur={renderProps.onModalInputBlur}
-                            onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onItemKeyDown}
+                            onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onModalItemKeyDown}
                             onFocus={renderProps.onShowFocus}
                           />
                         </FlexItem>
@@ -171,7 +171,7 @@ export const HeaderSuggest = <V extends {}>({
                           ) : (
                             null
                           )}
-                          {props.total && props.items.length > 0 ? (
+                          {props.total && props.items && props.items.length > 0 ? (
                             <Box px={6} pb={4}>
                               <Paragraph>
                                 {props.total.text}
@@ -188,7 +188,7 @@ export const HeaderSuggest = <V extends {}>({
                                 )}
                               </Paragraph>
                             </Box>
-                          ) : props.empty && props.items.length === 0 && renderProps.result ? (
+                          ) : props.empty && props.items && props.items.length === 0 && renderProps.result ? (
                             <Box px={6} py={4}>
                               <Paragraph>
                                 {props.empty.text}

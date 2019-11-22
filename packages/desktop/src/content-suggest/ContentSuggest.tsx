@@ -46,7 +46,7 @@ export const ContentSuggest = <V extends {}>({
     onHide={props.onHide}
     children={(renderProps) => (
       <MenuControl
-        count={props.items.length}
+        count={props.items ? props.items.length : 0}
         selected={renderProps.selected}
         onSelect={renderProps.onItemSelect}
         onKeyDown={renderProps.onItemKeyDown}
@@ -61,8 +61,8 @@ export const ContentSuggest = <V extends {}>({
           >
             <Box
               width={1}
-              onMouseEnter={renderProps.onMouseInputEnter}
-              onMouseLeave={renderProps.onMouseInputLeave}
+              onMouseEnter={renderProps.onInputMouseEnter}
+              onMouseLeave={renderProps.onInputMouseLeave}
             >
               <ContentInput
                 value={props.suggest || ''}
@@ -150,7 +150,7 @@ export const ContentSuggest = <V extends {}>({
                       ) : (
                         null
                       )}
-                      {props.total && props.items.length > 0 ? (
+                      {props.total && props.items && props.items.length > 0 ? (
                         <Box px={4}>
                           <Paragraph>
                             {props.total.text}
@@ -167,7 +167,7 @@ export const ContentSuggest = <V extends {}>({
                             )}
                           </Paragraph>
                         </Box>
-                      ) : props.empty && props.items.length === 0 ? (
+                      ) : props.empty && props.items && props.items.length === 0 ? (
                         <Box px={4}>
                           <Paragraph>
                             {props.empty.text}
