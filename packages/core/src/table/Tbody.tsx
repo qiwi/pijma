@@ -20,32 +20,26 @@ const CellContentColor: {
   main: '#000',
 }
 
-interface TbodyCell extends TheadTitleProps {
-  cell: (column: ReactNode | ReactNode[]) => ReactNode
+export interface TbodyCell extends TheadTitleProps {
+  cell: (column: ReactNode) => ReactNode
   state?:
     | CellContentColorProps['state']
-    | ((data: ReactNode | ReactNode[]) => CellContentColorProps['state'])
-}
-
-interface TbodyOptions {
-  columns: TbodyCell[]
-  data: [][]
+    | ((data: ReactNode) => CellContentColorProps['state'])
 }
 
 export interface TbodyProps {
-  options: TbodyOptions
+  columns: TbodyCell[]
+  data: Array<ReactNode[]>
 }
 
-export const Tbody: FunctionComponent<TbodyProps> = ({
-  options: {data, columns},
-}) => (
+export const Tbody: FunctionComponent<TbodyProps> = ({data, columns}) => (
   <tbody>
     <Row height={2} />
-    {data.map((row: [], index) => {
+    {data.map((row: ReactNode[], index) => {
       return (
         <Row key={`body-${index}`} hover>
           <Cell width={11} />
-          {row.map((cell: ReactNode | ReactNode[], index) => {
+          {row.map((cell: ReactNode, index) => {
             const column: TbodyCell = columns[index]
             const align: TbodyCell['align'] = column.align
               ? column.align

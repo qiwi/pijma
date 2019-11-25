@@ -38,10 +38,6 @@ for(let i = 0; i <= 20; i++) {
     data.push([['+7 931 555-17-09', 'Васильев А. А.'], '1 000 000, 00', 'Отклонён сервисом', 'Никольская слобода', ['11.08.2019', '11:00'], 'QK3121b3a1583'])
   }
 }
-options={
-  columns,
-  data
-};
 
 <Table
   header={
@@ -61,7 +57,8 @@ options={
       />
     </Flex>
   }
-  options={options}
+  columns={columns}
+  data={data}
 />
 ```
 
@@ -79,9 +76,7 @@ columns=[{
 data=[['5580 75** **** 9807', '1 000 000, 00']];
 
 <Table
-  options={{
-    columns,
-    data
-  }}
+  columns={columns}
+  data={data}
 />
 ```
