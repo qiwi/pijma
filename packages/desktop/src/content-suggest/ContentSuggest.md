@@ -123,6 +123,7 @@ const initialState = {
   timer: undefined,
   dialogText: undefined,
   banks: [],
+  suggest: '',
 };
 
 const filterBanks = (title) => banks.filter(bank => {
