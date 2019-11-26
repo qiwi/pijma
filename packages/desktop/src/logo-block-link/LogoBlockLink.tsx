@@ -87,6 +87,8 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
                   display="flex"
                   height="100%"
                   bg="linear-gradient(to right, rgba(255, 255, 255, 0), #fff 48px)"
+                  rbr={10}
+                  rtr={10}
                 >
                   <Flex pl={12} align="center">
                     {actions.map((action, index) => (
@@ -148,7 +150,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
                 transition="opacity 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
                 type="absolute"
               >
-                <Card height="100%" bg="#fff">
+                <Card height="100%" bg="#fff" rbr={10} rbl={10}>
                   <Flex pt={description ? 2 : undefined} justify="center" align="center">
                     {actions.map((action, index) => (
                       <FlexItem
