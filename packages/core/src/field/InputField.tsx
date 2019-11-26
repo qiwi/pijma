@@ -70,7 +70,7 @@ export const InputField: FunctionComponent<FieldProps> = ({
   ) : (
     <Pos type="relative" width={1}>
       <Pos type="relative" height={4}>
-        <Pos type="absolute" top={active ? 0 : 4} left={0} maxWidth={1} transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)" pr={padded ? 7 : 0}>
+        <Pos type="absolute" top={active ? 0 : 4} left={!active && icon ? 7 : 0} maxWidth={1} transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)" pr={padded ? 7 : 0}>
           <Typo as="label" display="block" nowrap={true} weight={300} size={active ? 3.5 : 5} height={active ? 4 : 7} color="#666" transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)" children={title}/>
         </Pos>
       </Pos>
