@@ -143,9 +143,11 @@ export const HeaderSuggest = <V extends {}>({
                   >
                     <Box width={295} mx="auto">
                       {props.loading && renderProps.result ? (
-                        Array(4).fill(1).map((_item, key) => (
-                          <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
-                        ))
+                        <Box pt={4}>
+                          {Array(4).fill(1).map((_item, key) => (
+                            <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
+                          ))}
+                        </Box>
                       ) : (
                         <Spacer size="s">
                           {menuRenderProps.items.length > 0 ? (
