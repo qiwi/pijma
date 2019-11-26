@@ -1,3 +1,38 @@
+# [@qiwi/pijma-core-v1.91.0](https://github.com/qiwi/pijma/compare/v1.90.0...v1.91.0) (2019-11-18)
+
+
+### Features
+
+* **core:** stub input-field ([f7cf935](https://github.com/qiwi/pijma/commit/f7cf935))
+
+# [@qiwi/pijma-core-v1.89.0](https://github.com/qiwi/pijma/compare/v1.88.0...v1.89.0) (2019-11-15)
+
+
+### Features
+
+* alert ([1a684e2](https://github.com/qiwi/pijma/commit/1a684e2))
+
+# [@qiwi/pijma-core-v1.88.0](https://github.com/qiwi/pijma/compare/v1.87.1...v1.88.0) (2019-11-13)
+
+
+### Features
+
+* rating ([db69ac6](https://github.com/qiwi/pijma/commit/db69ac6))
+
+# [@qiwi/pijma-core-v1.87.1](https://github.com/qiwi/pijma/compare/v1.87.0...v1.87.1) (2019-11-11)
+
+
+### Bug Fixes
+
+* image 100% max width and height ([f68a1a9](https://github.com/qiwi/pijma/commit/f68a1a9))
+
+# [@qiwi/pijma-core-v1.86.0](https://github.com/qiwi/pijma/compare/v1.85.1...v1.86.0) (2019-11-11)
+
+
+### Features
+
+* content suggest ([d7780e2](https://github.com/qiwi/pijma/commit/d7780e2))
+
 # [@qiwi/pijma-core-v1.83.2](https://github.com/qiwi/pijma/compare/v1.83.1...v1.83.2) (2019-10-15)
 
 
