@@ -29,12 +29,12 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
   props.stub ? (
     <InputField
       stub
-      title={props.title ? 'title' : undefined}
-      help={props.help ? 'help' : undefined}
-      hint={props.hint ? 'hint' : undefined}
+      active={false}
+      input={false}
+      title={props.title}
+      help={props.help}
+      hint={props.hint}
       icon="icon"
-      active
-      input=""
     />
   ) : (
     <PhoneFieldControl
