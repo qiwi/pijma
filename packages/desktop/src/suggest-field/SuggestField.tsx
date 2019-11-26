@@ -55,7 +55,6 @@ export const SuggestField = <V extends {}>({
           >
             <Box
               width={1}
-              px={6}
               onMouseEnter={renderProps.onInputMouseEnter}
               onMouseLeave={renderProps.onInputMouseLeave}
             >
@@ -92,6 +91,7 @@ export const SuggestField = <V extends {}>({
                 maxHeight={98}
                 bg="#fff"
                 py={3}
+                mx={-6}
                 s="0 28px 52px 0 rgba(0, 0, 0, 0.16)"
                 r={10}
                 overflow="auto"
