@@ -159,7 +159,7 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
 
 <Block>
   <BlockContent>
-    <Box width={100}>
+    <Box>
       <SuggestField
         value={state.value}
         items={state.banks}
@@ -171,12 +171,6 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
         onCancel={onCancel}
         onChange={onChange}
         onRequest={onRequest}
-        total={{
-          link: {
-            text: 'Показать все',
-            suggest: state.suggest,
-          }
-        }}
         empty={state.error ? {
           text: 'Ошибка,',
           link: {

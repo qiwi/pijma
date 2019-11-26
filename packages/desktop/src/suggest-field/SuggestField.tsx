@@ -33,7 +33,6 @@ export const SuggestField = <V extends {}>({
     value={props.value}
     suggest={props.suggest}
     items={props.items}
-    total={props.total}
     empty={props.empty}
     equals={equals}
     onRequest={props.onRequest}
@@ -63,7 +62,7 @@ export const SuggestField = <V extends {}>({
               <BasicInput
                 ref={renderProps.inputRef}
                 padded
-                type="text"
+                type={props.typeInput}
                 value={props.suggest || ''}
                 tabIndex={props.tabIndex}
                 autoComplete={props.autoComplete}
@@ -100,7 +99,7 @@ export const SuggestField = <V extends {}>({
               >
                 {props.loading ? (
                   Array(4).fill(1).map((_item, key) => (
-                    <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
+                    <CardItem key={key} icon={true} stub smallStub text="stub" notes="stub"/>
                   ))
                 ) : (
                   <Spacer size="s">

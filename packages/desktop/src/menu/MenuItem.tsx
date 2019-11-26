@@ -14,6 +14,7 @@ export interface MenuItemProps {
   active?: boolean
   focus?: boolean
   stub?: boolean
+  smallStub?: boolean,
 }
 
 export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(({
@@ -26,6 +27,7 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(({
   hover = false,
   active = false,
   focus = false,
+  smallStub = false,
   ...props
 }, ref) => (
   <Section
@@ -53,7 +55,7 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(({
       <FlexItem align="center" grow={1}>
         <Flex justify="center" direction="column">
           {stub ? (
-            <Box width={80} maxWidth={1}>
+            <Box width={smallStub ? 50 : 80} maxWidth={1}>
               <Paragraph stub clamp={icon ? 1 : undefined}/>
             </Box>
           ) : (
@@ -61,7 +63,7 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(({
           )}
           {notes ? (
             stub ? (
-              <Box mt={1} width={100} maxWidth={1}>
+              <Box mt={1} width={smallStub ? 65 : 100} maxWidth={1}>
                 <Paragraph size="s" stub clamp={1}/>
               </Box>
             ) : (
