@@ -66,7 +66,7 @@ export const HeaderSuggest = <V extends {}>({
     onHide={props.onHide}
     children={(renderProps) => (
       <MenuControl
-        count={props.items ? props.items.length : 0}
+        count={props.items.length}
         selected={renderProps.selected}
         onSelect={renderProps.onItemSelect}
         onKeyDown={renderProps.onModalItemKeyDown}
@@ -171,7 +171,7 @@ export const HeaderSuggest = <V extends {}>({
                           ) : (
                             null
                           )}
-                          {props.total && props.items && props.items.length > 0 ? (
+                          {props.total && menuRenderProps.items.length > 0 ? (
                             <Box px={6} pb={4}>
                               <Paragraph>
                                 {props.total.text}
@@ -188,7 +188,7 @@ export const HeaderSuggest = <V extends {}>({
                                 )}
                               </Paragraph>
                             </Box>
-                          ) : props.empty && props.items && props.items.length === 0 && renderProps.result ? (
+                          ) : props.empty && menuRenderProps.items.length === 0 && renderProps.result ? (
                             <Box px={6} py={4}>
                               <Paragraph>
                                 {props.empty.text}

@@ -122,6 +122,7 @@ const initialState = {
   error: false,
   timer: undefined,
   dialogText: undefined,
+  banks: [],
 };
 
 const filterBanks = (title) => banks.filter(bank => {

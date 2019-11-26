@@ -122,6 +122,7 @@ const initialState = {
   loading: false,
   banks: [],
   timer: undefined,
+  error: false,
 };
 
 const target = React.useRef()
