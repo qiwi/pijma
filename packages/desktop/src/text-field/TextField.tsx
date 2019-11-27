@@ -52,7 +52,6 @@ const TextField: FunctionComponent<TextFieldProps> = (props) => (
         <InputField
           title={props.title}
           active={renderProps.focused || !!props.value || !!props.placeholder}
-          padded={!!props.hint}
           input={(
             <BasicInput
               type={props.type}

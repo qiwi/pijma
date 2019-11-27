@@ -23,7 +23,7 @@ const PosCard = Card.withComponent(Pos)
 
 export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
   tabIndex = 0,
-  defaultCode = 'ru',
+  code = 'ru',
   ...props
 }) => (
   props.stub ? (
@@ -52,7 +52,6 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
               <InputField
                 title={props.title}
                 active={renderProps.focused || !!props.value || !!props.placeholder}
-                padded={!!props.hint}
                 input={(
                   <BasicInput
                     ref={renderProps.inputRef}
@@ -84,7 +83,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                     my={1}
                     onClick={renderProps.onFlagClick}
                     onMouseDown={renderProps.onFlagMouseDown}
-                    children={(<Flag code={renderProps.code || defaultCode}/>)}
+                    children={(<Flag code={renderProps.code || code}/>)}
                   />
                 )}
                 error={props.error}
@@ -138,5 +137,5 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
 
 PhoneField.defaultProps = {
   tabIndex: 0,
-  defaultCode: 'ru',
+  code: 'ru',
 }

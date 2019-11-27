@@ -5,7 +5,7 @@ import {PhoneFieldCountry, FlagProps} from '@qiwi/pijma-core'
 export default interface PhoneFieldProps {
   value: string
   countries: PhoneFieldCountry[]
-  defaultCode?: FlagProps['code']
+  code?: FlagProps['code']
   tabIndex?: number
   name?: string
   title?: string
