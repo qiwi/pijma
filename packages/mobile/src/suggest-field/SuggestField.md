@@ -121,6 +121,7 @@ const initialState = {
   loading: false,
   error: false,
   timer: undefined,
+  banks: [],
 };
 
 const filterBanks = (title) => banks.filter(bank => {

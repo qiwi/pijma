@@ -10,6 +10,7 @@ import {
   Spacer,
   styled,
   BasicInput,
+  InputField,
 } from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
@@ -44,25 +45,36 @@ export const SuggestField = <V extends {}>({
           onMouseEnter={renderProps.onInputMouseEnter}
           onMouseLeave={renderProps.onInputMouseLeave}
         >
-          <BasicInput
-            ref={renderProps.inputRef}
-            padded
-            type={props.typeInput}
-            value={props.suggest || ''}
-            tabIndex={props.tabIndex}
-            autoComplete={props.autoComplete}
-            autoFocus={props.autoFocus}
-            placeholder={props.placeholder}
-            maxLength={props.maxLength}
-            error={!!props.error}
-            focused={renderProps.focused}
-            onChange={renderProps.onRequest}
-            onFocus={renderProps.onShowFocus}
-            onBlur={renderProps.onInputBlur}
+          <InputField
+            title={props.title}
+            active={renderProps.focused || !!props.suggest || !!props.placeholder}
+            padded={!!props.hint}
+            input={
+              <BasicInput
+                ref={renderProps.inputRef}
+                padded={!!props.hint}
+                type={props.type}
+                value={props.suggest || ''}
+                tabIndex={props.tabIndex}
+                autoComplete={props.autoComplete}
+                autoFocus={props.autoFocus}
+                placeholder={props.placeholder}
+                maxLength={props.maxLength}
+                error={!!props.error}
+                focused={renderProps.focused}
+                onChange={renderProps.onRequest}
+                onFocus={renderProps.onShowFocus}
+                onBlur={renderProps.onInputBlur}
+              />
+            }
+            hint={props.hint}
+            error={props.error}
+            help={props.help}
+            action={props.action}
           />
         </Box>
         <MenuControl
-          count={props.items ? props.items.length : 0}
+          count={props.items.length}
           selected={renderProps.selected}
           onSelect={renderProps.onItemSelect}
           onKeyDown={renderProps.onModalItemKeyDown}
@@ -76,7 +88,7 @@ export const SuggestField = <V extends {}>({
               show={renderProps.show}
               inputRef={renderProps.inputRef}
               contentRef={menuRenderProps.containerRef}
-              error={props.error}
+              error={!!props.error}
               onChange={renderProps.onRequest}
               onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onModalItemKeyDown}
               onBlur={renderProps.onModalInputBlur}
@@ -112,7 +124,7 @@ export const SuggestField = <V extends {}>({
                   ) : (
                     null
                   )}
-                  {props.empty && props.items && props.items.length === 0 ? (
+                  {props.empty && menuRenderProps.items.length === 0 ? (
                     <Box px={4}>
                       <Paragraph>
                         {props.empty.text}

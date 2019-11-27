@@ -119,8 +119,10 @@ const banks = [
 
 const initialState = {
   loading: false,
-  error: false,
+  validateError: false,
+  suggestError: false,
   timer: undefined,
+  banks: [],
 };
 
 const filterBanks = (title) => banks.filter(bank => {
@@ -139,8 +141,9 @@ const getBanks = (suggest) => {
 };
 
 const onRequest = (suggest) => {
-  setState({suggest, error: suggest === ''});
+  setState({suggest, suggestError: suggest === ''});
   getBanks(suggest).then((banks) => setState({banks}));
+  setState({validateError: state.banks.length === 0 ? 'Ничего не найдено' : undefined});
 };
 
 const onCancel = () => setState(initialState);
@@ -166,24 +169,19 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
         placeholder="Поле ввода"
         suggest={state.suggest}
         loading={state.loading}
-        error={state.error}
+        error={state.validateError}
         equals={equals}
         onCancel={onCancel}
         onChange={onChange}
         onRequest={onRequest}
-        empty={state.error ? {
+        empty={state.suggestError ? {
           text: 'Ошибка,',
           link: {
             text: 'попробуйте ещё раз',
             suggest: state.suggest,
           }
-        } : {
-          text: 'Ничего не найдено, попробуйте',
-          link: {
-            text: 'Сбербанк',
-            suggest: 'Сбербанк',
-          }
-        }}
+        } : undefined
+        }
       />
     </Box>
   </BlockContent>
