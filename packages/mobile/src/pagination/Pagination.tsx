@@ -11,6 +11,7 @@ export interface PaginationProps {
   count?: number
   shadowed?: boolean
   href?: (page: number) => string
+  stub?: boolean
   onChange?: (index: number) => void
 }
 
@@ -20,6 +21,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
   shadowed = false,
   active,
   href,
+  stub = false,
   onChange,
 }) => (
   <PaginationControl
@@ -41,6 +43,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           page={renderProps.prev}
           disabled={renderProps.active === 1}
           href={href ? href(renderProps.prev) : undefined}
+          stub={stub}
           onClick={renderProps.onPageClick(renderProps.prev, renderProps.active === 1)}
           children={({disabled}) => (
             <Icon name="angle-small-left" color={disabled ? '#ccc' : '#000'}/>
@@ -52,6 +55,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
             page={page}
             disabled={false}
             href={href ? href(page) : undefined}
+            stub={stub}
             onClick={renderProps.onPageClick(page, false)}
             children={() => (
               <Text
@@ -67,6 +71,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           page={renderProps.next}
           disabled={renderProps.active === renderProps.total}
           href={href ? href(renderProps.next) : undefined}
+          stub={stub}
           onClick={renderProps.onPageClick(renderProps.next, renderProps.active === renderProps.total)}
           children={({disabled}) => (
             <Icon name="angle-small-right" color={disabled ? '#ccc' : '#000'}/>
@@ -80,4 +85,5 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
 Pagination.defaultProps = {
   shadowed: false,
   count: 3,
+  stub: false,
 }
