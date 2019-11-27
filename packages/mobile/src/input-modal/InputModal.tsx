@@ -58,7 +58,7 @@ interface InputModalProps {
   onBlur?: FocusEventHandler
   onBack?: MouseEventHandler
   onSubmit?: MouseEventHandler
-  onShow?: () => void
+  onShow?: React.MouseEventHandler
   onHide?: () => void
   onEscape?: () => void
 }

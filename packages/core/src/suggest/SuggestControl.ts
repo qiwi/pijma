@@ -9,6 +9,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     show: false,
     focused: false,
     hovered: false,
+    result: false,
   }
 
   private inputRef: RefObject<HTMLInputElement> = createRef()
@@ -16,7 +17,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
   public componentDidUpdate(props: SuggestControlProps<SuggestOptionModel<V>, V>) {
     if (props.items !== this.props.items) {
       this.setState({
-        show: this.props.items.length > 0 || this.props.empty !== undefined,
+        result: this.props.items.length > 0 || this.props.empty !== undefined,
       })
     }
   }
@@ -37,7 +38,14 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     this.inputRef.current!.focus({preventScroll: true})
   }
 
-  private onFocus: React.FocusEventHandler = (event) => {
+  private onShowFocus: React.FocusEventHandler = (event) => {
+    event.preventDefault()
+    this.setState({
+      show: true,
+    })
+  }
+
+  private onInputFocus: React.FocusEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       focused: true,
@@ -47,7 +55,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     }
   }
 
-  private onBlur: React.FocusEventHandler = (event) => {
+  private onInputBlur: React.FocusEventHandler = (event) => {
     event.preventDefault()
     this.hide()
     this.setState({
@@ -58,21 +66,31 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     }
   }
 
-  private onMouseEnter: React.MouseEventHandler = (event) => {
+  private onModalInputBlur: React.FocusEventHandler = (event) => {
+    event.preventDefault()
+    if (this.inputRef && this.inputRef.current) {
+      this.inputRef.current.focus({preventScroll: true})
+    }
+    if (this.props.onBlur) {
+      this.props.onBlur()
+    }
+  }
+
+  private onInputMouseEnter: React.MouseEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       hovered: true,
     })
   }
 
-  private onMouseLeave: React.MouseEventHandler = (event) => {
+  private onInputMouseLeave: React.MouseEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       hovered: false,
     })
   }
 
-  private onKeyDown: React.KeyboardEventHandler = (event) => {
+  private onItemKeyDown: React.KeyboardEventHandler = (event) => {
     if (event.key === 'Enter') {
       this.submit()
     }
@@ -81,7 +99,13 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     }
   }
 
-  private onResultMouseDown: React.MouseEventHandler = (event) => {
+  private onModalItemKeyDown: React.KeyboardEventHandler = (event) => {
+    if (event.key === 'Enter') {
+      this.submit()
+    }
+  }
+
+  private onResultItemsMouseDown: React.MouseEventHandler = (event) => {
     event.preventDefault()
     event.stopPropagation()
   }
@@ -108,6 +132,10 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     this.inputRef.current!.focus({preventScroll: true})
   }
 
+  private onEscapeInputModal: () => void = () => {
+    this.cancel()
+  }
+
   private onHide: () => void = () => {
     this.hide()
   }
@@ -115,17 +143,19 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
   private change: (value: V) => void = (value) => {
     this.setState({
       show: false,
+      result: false,
     })
     this.props.onChange(value)
   }
 
   private submit: (value?: string) => void = (value) => {
+    this.setState({
+      show: false,
+      result: false,
+    })
     if (this.props.onSubmit) {
       this.props.onSubmit(value ? value : this.inputRef.current!.value)
     }
-    this.setState({
-      show: false,
-    })
   }
 
   private request: (value: string) => void = (value) => {
@@ -135,12 +165,13 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
   }
 
   private cancel: () => void = () => {
+    this.setState({
+      show: false,
+      result: false,
+    })
     if (this.props.onCancel) {
       this.props.onCancel()
     }
-    this.setState({
-      show: false,
-    })
   }
 
   private get selected(): number | undefined {
@@ -151,13 +182,32 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     return index !== -1 ? index : undefined
   }
 
+  private onBack: React.MouseEventHandler = (event) => {
+    event.preventDefault()
+    this.cancel()
+  }
+
+  private onShowClick: () => void = () => {
+    this.show()
+  }
+
+  private show: () => void = () => {
+    this.setState({
+      show: true,
+    })
+    if (this.props.suggest) {
+      this.request(this.props.suggest)
+    }
+  }
+
   private hide = () => {
+    this.setState({
+      show: false,
+      result: false,
+    })
     if (this.props.onHide) {
       this.props.onHide()
     }
-    this.setState({
-      show: false,
-    })
   }
 
   public render() {
@@ -166,20 +216,27 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
       hovered: this.state.hovered,
       selected: this.selected,
       show: this.state.show,
+      result: this.state.result,
       inputRef: this.inputRef,
-      onSelect: this.onSelect,
+      onItemSelect: this.onSelect,
       onRequest: this.onRequest,
-      onFocus: this.onFocus,
-      onBlur: this.onBlur,
+      onShowFocus: this.onShowFocus,
+      onInputFocus: this.onInputFocus,
+      onInputBlur: this.onInputBlur,
+      onModalInputBlur: this.onModalInputBlur,
+      onShowClick: this.onShowClick,
       onSearchMouseDown: this.onSearchMouseDown,
       onSearchClick: this.onSearchClick,
-      onMouseEnter: this.onMouseEnter,
-      onMouseLeave: this.onMouseLeave,
-      onKeyDown: this.onKeyDown,
+      onInputMouseEnter: this.onInputMouseEnter,
+      onInputMouseLeave: this.onInputMouseLeave,
+      onItemKeyDown: this.onItemKeyDown,
+      onModalItemKeyDown: this.onModalItemKeyDown,
+      onEscapeInputModal: this.onEscapeInputModal,
+      onBack: this.onBack,
       onHide: this.onHide,
       onTotalClick: this.onTotalClick,
       onEmptyClick: this.onEmptyClick,
-      onResultMouseDown: this.onResultMouseDown,
+      onResultItemsMouseDown: this.onResultItemsMouseDown,
     })
   }
 
