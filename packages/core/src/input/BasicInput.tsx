@@ -1,8 +1,8 @@
-import React, {forwardRef, ChangeEventHandler, FocusEventHandler, KeyboardEventHandler, RefObject} from 'react'
-
-import {MaskInput, Input} from '../primitive'
-import {isMaskDigital, Mask, Pipe} from '../mask'
+import React, {ChangeEventHandler, FocusEventHandler, KeyboardEventHandler, RefObject, forwardRef} from 'react'
 import MaskedInput from 'react-text-mask'
+
+import {MaskInput, Input, Value} from '../primitive'
+import {isMaskDigital, Mask, Pipe} from '../mask'
 
 export interface BasicInputProps {
   value: string
@@ -13,7 +13,8 @@ export interface BasicInputProps {
   autoFocus?: boolean
   placeholder?: string
   maxLength?: number
-  padded: boolean
+  pl?: Value
+  pr?: Value
   disabled?: boolean
   error: boolean
   focused: boolean
@@ -32,7 +33,8 @@ export const BasicInput = forwardRef<HTMLInputElement | MaskedInput, BasicInputP
     height: 7,
     m: 0,
     p: 0,
-    pr: props.padded ? 7 : undefined,
+    pr: props.pr,
+    pl: props.pl,
     r: 0,
     b: 'none',
     bb: props.disabled ? '1px dotted #999' : props.error ? '2px solid #d0021b' : props.focused ? '2px solid #ff8c00' : '1px solid rgba(0, 0, 0, 0.2)',
