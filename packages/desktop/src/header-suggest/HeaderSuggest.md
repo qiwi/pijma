@@ -1,4 +1,4 @@
-#### ContentSuggest
+#### HeaderSuggest
 
 ```jsx
 const banks = [
@@ -118,13 +118,16 @@ const banks = [
 ];
 
 const initialState = {
-  loading: false,
-  error: false,
-  timer: undefined,
-  dialogText: undefined,
-  banks: [],
   suggest: '',
+  loading: false,
+  banks: [],
+  timer: undefined,
+  error: false,
 };
+
+const target = React.useRef()
+const container = React.useRef()
+const currentTarget = target.current
 
 const filterBanks = (title) => banks.filter(bank => {
   return title !== '' && bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1;
@@ -154,71 +157,98 @@ const onChange = (value) => {
     value: value,
     suggest: title,
   });
-  setState({
-    dialogText: `Выбрано: ${title}`,
-  });
+  console.log('SELECT ITEM', value);
 };
 
 const onSubmit = (suggest) => {
-  setState({
-    dialogText: `Отправлено: ${suggest}`,
-  });
+  console.log('SUBMIT', suggest)
 };
-
-const hideDialog = () => setState({
-  dialogText: undefined,
-});
 
 const equals = (a, b) => a.id === b.id;
 
 const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
 
-<Block>
-  <BlockContent>
-    <Box width={128}>
-      <ContentSuggest
-        value={state.value}
-        items={state.banks}
-        suggest={state.suggest}
-        loading={state.loading}
-        error={state.error}
-        equals={equals}
-        onCancel={onCancel}
-        onSubmit={onSubmit}
-        onChange={onChange}
-        onRequest={onRequest}
-        total={{
-          link: {
-            text: 'Показать все',
-            suggest: state.suggest,
-          }
-        }}
-        empty={state.error ? {
-          text: 'Ошибка,',
-          link: {
-            text: 'попробуйте ещё раз',
-            suggest: state.suggest,
-          }
-        } : {
-          text: 'Ничего не найдено, попробуйте',
-          link: {
-            text: 'Сбербанк',
-            suggest: 'Сбербанк',
-          }
-        }}
-      />
-    </Box>
-    <SimpleModal
-      show={state.dialogText !== undefined}
-      onHide={hideDialog}
-      size="m"
-      closable
-      backdropClose
-    >
-      <Heading size="2">
-        {state.dialogText}
-      </Heading>
-    </SimpleModal>
-  </BlockContent>
-</Block>
+<Pos
+  ref={container}
+  type="relative"
+  transform="scale(0.7)" 
+  transformOrigin="left" 
+  width={300}
+>
+  <Header>
+    <Flex height={1} justify="space-between" ref={target}>
+      <FlexItem ml={6}>
+        <Flex height={1}>
+          <FlexItem align="center" shrink={0} mr={11}>
+            <Lnk href={window.location.href}>
+              <Box
+                as="img"
+                src="https://static.qiwi.com/img/qiwi_com/header/qiwi-wallet-logo.svg"
+                width={24}
+                height={12}
+              />
+            </Lnk>
+          </FlexItem>
+          <FlexItem shrink={0} mr={6}>
+            <HeaderMenu
+              children={[
+                {href: `${location.href}?menu=1`, title: 'Платежи', active: true},
+                {href: `${location.href}?menu=2`, title: 'Переводы'},
+              ]}
+            />
+          </FlexItem>
+          <FlexItem align="center" shrink={0} cursor="pointer">
+            <HeaderSuggest
+              value={state.value}
+              items={state.banks}
+              suggest={state.suggest}
+              loading={state.loading}
+              error={state.error}
+              equals={equals}
+              target={target}
+              container={container}
+              onCancel={onCancel}
+              onSubmit={onSubmit}
+              onChange={onChange}
+              onRequest={onRequest}
+              total={{
+                link: {
+                  text: 'Показать все',
+                  suggest: state.suggest,
+                }
+              }}
+              empty={state.error ? {
+                text: 'Ошибка,',
+                link: {
+                  text: 'попробуйте ещё раз',
+                  suggest: state.suggest,
+                }
+              } : {
+                text: 'Ничего не найдено, попробуйте',
+                link: {
+                  text: 'Сбербанк',
+                  suggest: 'Сбербанк',
+                }
+              }}
+            />
+          </FlexItem>
+        </Flex>
+      </FlexItem>
+      <FlexItem align="center" shrink={0} ml={11} mr={6}>
+        <Actions size="minor">
+          <Button
+            kind="simple"
+            size="minor"
+            text="Создать кошелек"
+          />
+          <Button
+            kind="brand"
+            size="minor"
+            text="Войти"
+          />
+        </Actions>
+      </FlexItem>
+    </Flex>
+  </Header>
+</Pos>
 ```

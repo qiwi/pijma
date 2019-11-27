@@ -38,6 +38,7 @@ export * from './alert'
 export * from './rating'
 export * from './content-suggest'
 export * from './progress-bar'
+export * from './header-suggest'
 export * from './alert'
 
 export {TextField as MaskTextField} from './text-field'
