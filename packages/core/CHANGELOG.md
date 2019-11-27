@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.95.0](https://github.com/qiwi/pijma/compare/v1.94.0...v1.95.0) (2019-11-27)
+
+
+### Features
+
+* phone-field ([d42068e](https://github.com/qiwi/pijma/commit/d42068e))
+
 # [@qiwi/pijma-core-v1.91.0](https://github.com/qiwi/pijma/compare/v1.90.0...v1.91.0) (2019-11-18)
 
 
