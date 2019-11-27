@@ -1,4 +1,4 @@
-import {RefObject} from 'react'
+import React, {RefObject} from 'react'
 import RenderChild from '../RenderChild'
 import SuggestOptionModel from './SuggestOptionModel'
 
@@ -33,19 +33,26 @@ export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V
     hovered: boolean
     selected: number | undefined
     show: boolean
+    result: boolean
     inputRef: RefObject<HTMLInputElement>
-    onFocus: React.FocusEventHandler
-    onBlur: React.FocusEventHandler
-    onSearchMouseDown: React.MouseEventHandler
+    onShowFocus?: React.FocusEventHandler
+    onInputFocus?: React.FocusEventHandler
+    onInputBlur?: React.FocusEventHandler
+    onShowClick?: React.MouseEventHandler
+    onModalInputBlur?: React.FocusEventHandler
+    onSearchMouseDown?: React.MouseEventHandler
     onSearchClick: React.MouseEventHandler
-    onMouseEnter: React.MouseEventHandler
-    onMouseLeave: React.MouseEventHandler
-    onKeyDown: React.KeyboardEventHandler
+    onBack?: React.MouseEventHandler
+    onInputMouseEnter: React.MouseEventHandler
+    onInputMouseLeave: React.MouseEventHandler
+    onItemKeyDown?: React.KeyboardEventHandler,
+    onModalItemKeyDown?: React.KeyboardEventHandler,
     onRequest: React.ChangeEventHandler
-    onResultMouseDown: React.MouseEventHandler
-    onSelect: (index: number) => void
+    onResultItemsMouseDown?: React.MouseEventHandler
+    onItemSelect: (index: number) => void
     onTotalClick: () => void
     onEmptyClick: () => void
     onHide: () => void
+    onEscapeInputModal?: () => void
   }>
 }
