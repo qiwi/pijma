@@ -1,3 +1,24 @@
+# [@qiwi/pijma-desktop-v1.94.0](https://github.com/qiwi/pijma/compare/v1.93.0...v1.94.0) (2019-11-27)
+
+
+### Features
+
+* stub pagination ([8166098](https://github.com/qiwi/pijma/commit/8166098))
+
+# [@qiwi/pijma-desktop-v1.93.0](https://github.com/qiwi/pijma/compare/v1.92.0...v1.93.0) (2019-11-21)
+
+
+### Features
+
+* stub breadcrumbs ([a12af85](https://github.com/qiwi/pijma/commit/a12af85))
+
+# [@qiwi/pijma-desktop-v1.92.0](https://github.com/qiwi/pijma/compare/v1.91.0...v1.92.0) (2019-11-20)
+
+
+### Features
+
+* stub nav-link ([673a7b8](https://github.com/qiwi/pijma/commit/673a7b8))
+
 # [@qiwi/pijma-desktop-v1.90.0](https://github.com/qiwi/pijma/compare/v1.89.0...v1.90.0) (2019-11-15)
 
 
