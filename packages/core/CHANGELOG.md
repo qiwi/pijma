@@ -1,3 +1,24 @@
+# [@qiwi/pijma-core-v1.95.0](https://github.com/qiwi/pijma/compare/v1.94.0...v1.95.0) (2019-11-27)
+
+
+### Features
+
+* phone-field ([d42068e](https://github.com/qiwi/pijma/commit/d42068e))
+
+# [@qiwi/pijma-core-v1.91.0](https://github.com/qiwi/pijma/compare/v1.90.0...v1.91.0) (2019-11-18)
+
+
+### Features
+
+* **core:** stub input-field ([f7cf935](https://github.com/qiwi/pijma/commit/f7cf935))
+
+# [@qiwi/pijma-core-v1.89.0](https://github.com/qiwi/pijma/compare/v1.88.0...v1.89.0) (2019-11-15)
+
+
+### Features
+
+* alert ([1a684e2](https://github.com/qiwi/pijma/commit/1a684e2))
+
 # [@qiwi/pijma-core-v1.88.0](https://github.com/qiwi/pijma/compare/v1.87.1...v1.88.0) (2019-11-13)
 
 
