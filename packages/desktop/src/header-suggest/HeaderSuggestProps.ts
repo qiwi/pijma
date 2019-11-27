@@ -1,11 +1,15 @@
+import React from 'react'
+
 import {SuggestControlProps} from '@qiwi/pijma-core'
 
-import ContentSuggestOptionModel from './ContentSuggestOptionModel'
+import HeaderSuggestOptionModel from './HeaderSuggestOptionModel'
 
-export default interface ContentSuggestProps<O extends ContentSuggestOptionModel<V>, V> {
+export default interface HeaderSuggestProps<O extends HeaderSuggestOptionModel<V>, V> {
   value?: SuggestControlProps<O, V>['value']
   suggest: SuggestControlProps<O, V>['suggest']
   items: SuggestControlProps<O, V>['items']
+  target: React.RefObject<any>
+  container: React.RefObject<any>
   tabIndex?: number
   autoComplete?: boolean
   autoFocus?: boolean
