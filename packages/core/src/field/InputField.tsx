@@ -45,12 +45,13 @@ export const InputField: FunctionComponent<FieldProps> = ({
             null
           )}
           <FlexItem
-            maxWidth={38}
             width={1}
             mt={1}
             mb={1}
           >
-            <Stub width={1} height={3}/>
+            <Box maxWidth={38}>
+              <Stub width={1} height={3}/>
+            </Box>
           </FlexItem>
           {hint ? (
             <FlexItem ml={2}>
