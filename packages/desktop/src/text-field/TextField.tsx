@@ -30,7 +30,6 @@ const TextField: FunctionComponent<TextFieldProps> = (props) => (
         <InputField
           title={props.title}
           active={renderProps.focused || !!props.value || !!props.placeholder}
-          padded={!!props.hint}
           input={(
             <BasicInput
               type={props.type}
@@ -40,7 +39,7 @@ const TextField: FunctionComponent<TextFieldProps> = (props) => (
               autoFocus={props.autoFocus}
               placeholder={props.placeholder}
               disabled={props.disabled}
-              padded={!!props.hint}
+              pr={props.hint ? 7 : undefined}
               error={!!props.error}
               focused={renderProps.focused}
               maxLength={props.maxLength}
