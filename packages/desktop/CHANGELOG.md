@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.96.0](https://github.com/qiwi/pijma/compare/v1.95.0...v1.96.0) (2019-11-27)
+
+
+### Features
+
+* header suggest ([e21e8d1](https://github.com/qiwi/pijma/commit/e21e8d1))
+
 # [@qiwi/pijma-desktop-v1.95.0](https://github.com/qiwi/pijma/compare/v1.94.0...v1.95.0) (2019-11-27)
 
 
