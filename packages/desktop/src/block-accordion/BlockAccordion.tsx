@@ -1,8 +1,8 @@
 import React, {FunctionComponent, ReactNode} from 'react'
 
-import {AccordionControl, Box, Card, Flex, FlexItem, Icon, Stub} from '@qiwi/pijma-core'
+import {AccordionControl, Box, Card, Flex, FlexItem, Icon} from '@qiwi/pijma-core'
 
-import {Paragraph} from '../typography'
+import {Paragraph, Text} from '../typography'
 
 export interface BlockAccordionProps<I> {
   items: I[]
@@ -29,7 +29,7 @@ const BlockAccordionIndent: {
 export const BlockAccordion: FunctionComponent<BlockAccordionProps<BlockAccordionItemModel>> = ({stub = false, items, indent = 'm', tabIndex = 0, opened, onChange}) => (
   stub ? (
     <Box py={3}>
-      {[33, 33, 33, 33, 33].map((width, index) => (
+      {Array(5).fill(33).map((width, index) => (
         <Card
           key={index}
           s={index > 0 ? '0 -1px 0 #e6e6e6' : undefined}
@@ -40,14 +40,14 @@ export const BlockAccordion: FunctionComponent<BlockAccordionProps<BlockAccordio
             align="center"
             px={BlockAccordionIndent[indent]}
           >
-            <Paragraph size="m">
-              <Stub
-                height={2}
-                width={opened.includes(index) ? 56 : width}
-                top={6}
-                bottom={6}
-              />
-            </Paragraph>
+            <Box
+              maxWidth={opened.includes(index) ? 56 : width}
+              width={1}
+              pt={4.5}
+              pb={opened.includes(index) ? 3 : 4.5}
+            >
+              <Text display="block" size="s" stub/>
+            </Box>
             <FlexItem
               shrink={0}
               width={6}
@@ -58,14 +58,13 @@ export const BlockAccordion: FunctionComponent<BlockAccordionProps<BlockAccordio
               <Icon name="angle-small-down"/>
             </FlexItem>
           </Flex>
-          <Box px={BlockAccordionIndent[indent]} display={opened.includes(index) ? 'block' : 'none'}>
-            <Paragraph size="m">
-              <Stub
-                height={2}
-                width={width}
-                bottom={6}
-              />
-            </Paragraph>
+          <Box
+            ml={BlockAccordionIndent[indent]}
+            pb={4.5}
+            width={width}
+            display={opened.includes(index) ? 'block' : 'none'}
+          >
+            <Text display="block" size="s" stub/>
           </Box>
         </Card>
       ))}
