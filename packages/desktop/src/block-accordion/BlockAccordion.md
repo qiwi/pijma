@@ -21,3 +21,14 @@ initialState = {opened: []};
   />
 </Block>
 ```
+
+```jsx
+initialState = {opened: [3]};
+<Block>
+  <BlockAccordion
+    opened={state.opened}
+    items={[]}
+    stub
+  />
+</Block>
+```
