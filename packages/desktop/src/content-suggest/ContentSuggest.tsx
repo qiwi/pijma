@@ -48,21 +48,21 @@ export const ContentSuggest = <V extends {}>({
       <MenuControl
         count={props.items.length}
         selected={renderProps.selected}
-        onSelect={renderProps.onSelect}
-        onKeyDown={renderProps.onKeyDown}
+        onSelect={renderProps.onItemSelect}
+        onKeyDown={renderProps.onItemKeyDown}
         children={(menuRenderProps) => (
           <CardPos
             type="relative"
             ref={dropDownContainerRef}
             width={1}
-            transition={`box-shadow ${renderProps.show ? 300 : 200}ms cubic-bezier(0.4, 0.0, 0.2, 1)`}
-            s={renderProps.focused && !renderProps.show ? '0 20px 64px 0 rgba(0, 0, 0, 0.16)' : 'none'}
+            transition={`box-shadow ${renderProps.result ? 300 : 200}ms cubic-bezier(0.4, 0.0, 0.2, 1)`}
+            s={renderProps.focused && !renderProps.result ? '0 20px 64px 0 rgba(0, 0, 0, 0.16)' : 'none'}
             r={10}
           >
             <Box
               width={1}
-              onMouseEnter={renderProps.onMouseEnter}
-              onMouseLeave={renderProps.onMouseLeave}
+              onMouseEnter={renderProps.onInputMouseEnter}
+              onMouseLeave={renderProps.onInputMouseLeave}
             >
               <ContentInput
                 value={props.suggest || ''}
@@ -75,12 +75,12 @@ export const ContentSuggest = <V extends {}>({
                 pr={14}
                 error={!!props.error}
                 focused={renderProps.focused}
-                norb={renderProps.show}
+                norb={renderProps.result}
                 hovered={renderProps.hovered}
                 onChange={renderProps.onRequest}
-                onFocus={renderProps.onFocus}
-                onBlur={renderProps.onBlur}
-                onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onKeyDown}
+                onFocus={renderProps.onInputFocus}
+                onBlur={renderProps.onInputBlur}
+                onKeyDown={renderProps.result ? menuRenderProps.onKeyDown : renderProps.onItemKeyDown}
               />
               <Pos
                 type="absolute"
@@ -94,7 +94,7 @@ export const ContentSuggest = <V extends {}>({
             </Box>
             <DropDown
               minWidth={1}
-              show={renderProps.show}
+              show={renderProps.result}
               rootClose={false}
               container={dropDownContainerRef.current}
               target={renderProps.inputRef.current!}
@@ -120,7 +120,7 @@ export const ContentSuggest = <V extends {}>({
                   ref={menuRenderProps.containerRef}
                   overflow="auto"
                   py={3}
-                  onMouseDown={renderProps.onResultMouseDown}
+                  onMouseDown={renderProps.onResultItemsMouseDown}
                 >
                   {props.loading ? (
                     Array(4).fill(1).map((_item, key) => (
@@ -150,7 +150,7 @@ export const ContentSuggest = <V extends {}>({
                       ) : (
                         null
                       )}
-                      {props.total && props.items.length > 0 ? (
+                      {props.total && menuRenderProps.items.length > 0 ? (
                         <Box px={4}>
                           <Paragraph>
                             {props.total.text}
@@ -167,7 +167,7 @@ export const ContentSuggest = <V extends {}>({
                             )}
                           </Paragraph>
                         </Box>
-                      ) : props.empty && props.items.length === 0 ? (
+                      ) : props.empty && menuRenderProps.items.length === 0 ? (
                         <Box px={4}>
                           <Paragraph>
                             {props.empty.text}
