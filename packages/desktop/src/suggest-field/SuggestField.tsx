@@ -72,11 +72,9 @@ export const SuggestField = <V extends {}>({
                 <InputField
                   title={props.title}
                   active={renderProps.focused || !!props.suggest || !!props.placeholder}
-                  padded={!!props.hint}
                   input={
                     <BasicInput
                       ref={renderProps.inputRef}
-                      padded={!!props.hint}
                       name={props.name}
                       disabled={props.disabled}
                       type={props.type}
@@ -84,7 +82,7 @@ export const SuggestField = <V extends {}>({
                       tabIndex={props.tabIndex}
                       autoComplete={props.autoComplete}
                       autoFocus={props.autoFocus}
-                      // pr={props.hint ? 7 : undefined}
+                      pr={props.hint ? 7 : undefined}
                       placeholder={props.placeholder}
                       maxLength={props.maxLength}
                       error={!!props.error}
@@ -108,7 +106,7 @@ export const SuggestField = <V extends {}>({
                 width={1}
                 offset={3}
                 show={renderProps.result}
-                rootClose={false}
+                rootClose={true}
                 onHide={renderProps.onHide}
               >
                 <CardPos
@@ -140,7 +138,7 @@ export const SuggestField = <V extends {}>({
                               cursor="pointer"
                               text={props.items[key].title}
                               notes={props.items[key].description}
-                              icon={<Image width={6} height={6} src={props.items[key].logo}/>}
+                              icon={props.items[key].logo ? <Image width={6} height={6} src={props.items[key].logo}/> : undefined}
                               hover={item.focused}
                               active={item.selected}
                               focus={item.selected}

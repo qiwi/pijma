@@ -27,131 +27,142 @@ export const SuggestField = <V extends {}>({
   equals = (a: V, b: V) => a === b,
   ...props
 }: SuggestFieldProps<SuggestFieldOptionModel<V>, V>) => (
-  <SuggestControl<V>
-    value={props.value}
-    suggest={props.suggest}
-    items={props.items}
-    empty={props.empty}
-    equals={equals}
-    onRequest={props.onRequest}
-    onChange={props.onChange}
-    onBlur={props.onBlur}
-    onFocus={props.onFocus}
-    onCancel={props.onCancel}
-    children={(renderProps) => (
-      <Pos type="relative">
-        <Box
-          width={1}
-          onMouseEnter={renderProps.onInputMouseEnter}
-          onMouseLeave={renderProps.onInputMouseLeave}
-        >
-          <InputField
-            title={props.title}
-            active={renderProps.focused || !!props.suggest || !!props.placeholder}
-            padded={!!props.hint}
-            input={
-              <BasicInput
-                ref={renderProps.inputRef}
-                padded={!!props.hint}
-                type={props.type}
+  props.stub ? (
+    <InputField
+      stub
+      input={false}
+      active={false}
+      title={props.title}
+      help={props.help}
+      hint={props.hint}
+    />
+  ) : (
+    <SuggestControl<V>
+      value={props.value}
+      suggest={props.suggest}
+      items={props.items}
+      empty={props.empty}
+      equals={equals}
+      onRequest={props.onRequest}
+      onChange={props.onChange}
+      onBlur={props.onBlur}
+      onFocus={props.onFocus}
+      onCancel={props.onCancel}
+      children={(renderProps) => (
+        <Pos type="relative">
+          <Box
+            width={1}
+            onMouseEnter={renderProps.onInputMouseEnter}
+            onMouseLeave={renderProps.onInputMouseLeave}
+          >
+            <InputField
+              title={props.title}
+              active={renderProps.focused || !!props.suggest || !!props.placeholder}
+              input={
+                <BasicInput
+                  ref={renderProps.inputRef}
+                  type={props.type}
+                  name={props.name}
+                  value={props.suggest || ''}
+                  tabIndex={props.tabIndex}
+                  pr={props.hint ? 7 : undefined}
+                  autoComplete={props.autoComplete}
+                  autoFocus={props.autoFocus}
+                  placeholder={props.placeholder}
+                  maxLength={props.maxLength}
+                  error={!!props.error}
+                  focused={renderProps.focused}
+                  onChange={renderProps.onRequest}
+                  onFocus={renderProps.onShowFocus}
+                  onBlur={renderProps.onInputBlur}
+                />
+              }
+              hint={props.hint}
+              error={props.error}
+              help={props.help}
+              action={props.action}
+            />
+          </Box>
+          <MenuControl
+            count={props.items.length}
+            selected={renderProps.selected}
+            onSelect={renderProps.onItemSelect}
+            onKeyDown={renderProps.onModalItemKeyDown}
+            children={(menuRenderProps) => (
+              <InputModal
                 value={props.suggest || ''}
                 tabIndex={props.tabIndex}
                 autoComplete={props.autoComplete}
-                autoFocus={props.autoFocus}
                 placeholder={props.placeholder}
                 maxLength={props.maxLength}
+                show={renderProps.show}
+                inputRef={renderProps.inputRef}
+                contentRef={menuRenderProps.containerRef}
                 error={!!props.error}
-                focused={renderProps.focused}
                 onChange={renderProps.onRequest}
-                onFocus={renderProps.onShowFocus}
-                onBlur={renderProps.onInputBlur}
-              />
-            }
-            hint={props.hint}
-            error={props.error}
-            help={props.help}
-            action={props.action}
+                onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onModalItemKeyDown}
+                onBlur={renderProps.onModalInputBlur}
+                onShow={renderProps.onShowClick}
+                onHide={renderProps.onHide}
+                onEscape={renderProps.onEscapeInputModal}
+                onBack={renderProps.onBack}
+              >
+                {props.loading ? (
+                  Array(4).fill(1).map((_item, key) => (
+                    <CardItem key={key} icon stub text="stub" notes="stub"/>
+                  ))
+                ) : (
+                  <Spacer size="s">
+                    {menuRenderProps.items.length > 0 ? (
+                      <Fragment>
+                        {menuRenderProps.items.map((item, key) => (
+                          <CardItem
+                            key={key}
+                            ref={item.ref}
+                            onClick={item.onClick}
+                            onMouseEnter={item.onMouseEnter}
+                            cursor="pointer"
+                            text={props.items[key].title}
+                            notes={props.items[key].description}
+                            icon={props.items[key].logo ? <Image width={6} height={6} src={props.items[key].logo}/> : undefined}
+                            hover={item.focused}
+                            active={item.selected}
+                            focus={item.selected}
+                          />
+                        ))}
+                      </Fragment>
+                    ) : (
+                      null
+                    )}
+                    {props.empty && menuRenderProps.items.length === 0 ? (
+                      <Box px={4}>
+                        <Paragraph>
+                          {props.empty.text}
+                          {props.empty.link ? (
+                            <Fragment>
+                              {' '}
+                              <Link
+                                onClick={renderProps.onEmptyClick}
+                                children={props.empty.link.text}
+                              />
+                            </Fragment>
+                          ) : (
+                            null
+                          )}
+                        </Paragraph>
+                      </Box>
+                    ) : (
+                      null
+                    )}
+                  </Spacer>
+                )}
+              </InputModal>
+            )}
           />
-        </Box>
-        <MenuControl
-          count={props.items.length}
-          selected={renderProps.selected}
-          onSelect={renderProps.onItemSelect}
-          onKeyDown={renderProps.onModalItemKeyDown}
-          children={(menuRenderProps) => (
-            <InputModal
-              value={props.suggest || ''}
-              tabIndex={props.tabIndex}
-              autoComplete={props.autoComplete}
-              placeholder={props.placeholder}
-              maxLength={props.maxLength}
-              show={renderProps.show}
-              inputRef={renderProps.inputRef}
-              contentRef={menuRenderProps.containerRef}
-              error={!!props.error}
-              onChange={renderProps.onRequest}
-              onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onModalItemKeyDown}
-              onBlur={renderProps.onModalInputBlur}
-              onShow={renderProps.onShowClick}
-              onHide={renderProps.onHide}
-              onEscape={renderProps.onEscapeInputModal}
-              onBack={renderProps.onBack}
-            >
-              {props.loading ? (
-                Array(4).fill(1).map((_item, key) => (
-                  <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
-                ))
-              ) : (
-                <Spacer size="s">
-                  {menuRenderProps.items.length > 0 ? (
-                    <Fragment>
-                      {menuRenderProps.items.map((item, key) => (
-                        <CardItem
-                          key={key}
-                          ref={item.ref}
-                          onClick={item.onClick}
-                          onMouseEnter={item.onMouseEnter}
-                          cursor="pointer"
-                          text={props.items[key].title}
-                          notes={props.items[key].description}
-                          icon={<Image width={6} height={6} src={props.items[key].logo}/>}
-                          hover={item.focused}
-                          active={item.selected}
-                          focus={item.selected}
-                        />
-                      ))}
-                    </Fragment>
-                  ) : (
-                    null
-                  )}
-                  {props.empty && menuRenderProps.items.length === 0 ? (
-                    <Box px={4}>
-                      <Paragraph>
-                        {props.empty.text}
-                        {props.empty.link ? (
-                          <Fragment>
-                            {' '}
-                            <Link
-                              onClick={renderProps.onEmptyClick}
-                              children={props.empty.link.text}
-                            />
-                          </Fragment>
-                        ) : (
-                          null
-                        )}
-                      </Paragraph>
-                    </Box>
-                  ) : (
-                    null
-                  )}
-                </Spacer>
-              )}
-            </InputModal>
-          )}
-        />
-      </Pos>
-    )}
-  />
+        </Pos>
+      )}
+    />
+  )
 )
 
 SuggestField.defaultProps = {

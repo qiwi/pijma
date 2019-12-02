@@ -164,7 +164,7 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
       <SuggestField
         value={state.value}
         items={state.banks}
-        placeholder="Поле ввода"
+        title="Поле ввода"
         suggest={state.suggest}
         loading={state.loading}
         error={state.error}

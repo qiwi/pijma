@@ -112,15 +112,14 @@ const banks = [
       id: 14,
     },
     title: 'Русский Стандарт',
-    logo: require('./media/std.png'),
     description: 'АО «Банк Русский Стандарт»',
   },
 ];
 
 const initialState = {
   loading: false,
-  validateError: false,
-  suggestError: false,
+  validateError: undefined,
+  suggestError: undefined,
   timer: undefined,
   banks: [],
 };
@@ -142,8 +141,8 @@ const getBanks = (suggest) => {
 
 const onRequest = (suggest) => {
   setState({suggest, suggestError: suggest === ''});
-  getBanks(suggest).then((banks) => setState({banks}));
-  setState({validateError: state.banks.length === 0 ? 'Ничего не найдено' : undefined});
+  getBanks(suggest)
+    .then((banks) => setState({banks, validateError: banks.length === 0 && suggest !== '' ? 'Ничего не найдено' : undefined}));
 };
 
 const onCancel = () => setState(initialState);
@@ -166,7 +165,7 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
       <SuggestField
         value={state.value}
         items={state.banks}
-        placeholder="Поле ввода"
+        title="Поле ввода"
         suggest={state.suggest}
         loading={state.loading}
         error={state.validateError}
