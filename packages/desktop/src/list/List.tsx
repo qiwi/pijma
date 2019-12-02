@@ -10,36 +10,40 @@ export interface ListProps {
   stub?: boolean
 }
 
-const ListType: {
-  [type in NonNullable<ListProps['type']>]: keyof JSX.IntrinsicElements
-} = {
+const ListType: Record<NonNullable<ListProps['type']>, keyof JSX.IntrinsicElements> = {
   step: 'ol',
   number: 'ol',
   bullet: 'ul',
 }
 
-const ListItemYMargin: { [type in NonNullable<ListProps['type']>]: number } = {
+const ListItemYMargin: Record<NonNullable<ListProps['type']>, number> = {
   step: 2,
   number: 0,
   bullet: 0,
 }
 
-const ItemIndent: { [type in NonNullable<ListProps['type']>]: number } = {
+const ItemIndent: Record<NonNullable<ListProps['type']>, number> = {
   step: 3,
   number: 4,
   bullet: 4,
 }
 
-const SpaceSize: { [size in NonNullable<ListProps['size']>]: number } = {
+const SpaceSize: Record<NonNullable<ListProps['size']>, number> = {
   s: 2,
   m: 3,
   l: 4,
 }
 
-const LetterSize: { [size in NonNullable<ListProps['size']>]: number } = {
+const LetterSize: Record<NonNullable<ListProps['size']>, number> = {
   s: 2,
   m: 2.5,
   l: 3,
+}
+
+const StubItemIndent: Record<NonNullable<ListProps['size']>, number> = {
+  s: 1.5,
+  m: 1.75,
+  l: 2.5,
 }
 
 export const List: FunctionComponent<ListProps> = ({stub = false, type, size = 'm', children}) => (
@@ -47,25 +51,33 @@ export const List: FunctionComponent<ListProps> = ({stub = false, type, size = '
     {(stub ? [0, 0] : (children)).map((item, index, array) => (
       <Flex key={index} as="li" mt={index > 0 ? ItemIndent[type] : 0}>
         {type === 'number' ? (
-          stub ? (
-            <FlexItem mr={SpaceSize[size]} align="center">
-              <Stub height={LetterSize[size]} width={LetterSize[size]} r={LetterSize[size] * 2}/>
-            </FlexItem>
-          ) : (
-            <FlexItem width={String(children.length).length * LetterSize[size] + SpaceSize[size]} shrink={0}>
+          <FlexItem width={String(children.length).length * LetterSize[size] + SpaceSize[size]} shrink={0}>
+            {stub ? (
+              <Stub
+                height={LetterSize[size]}
+                width={LetterSize[size]}
+                r={LetterSize[size] * 2}
+                top={StubItemIndent[size]}
+                bottom={StubItemIndent[size]}
+              />
+            ) : (
               <Text size={size} bold={false}>{index + 1}.</Text>
-            </FlexItem>
-          )
+            )}
+          </FlexItem>
         ) : type === 'bullet' ? (
-          stub ? (
-            <FlexItem width={5} shrink={0} align="center">
-              <Stub height={LetterSize[size]} width={LetterSize[size]} r={LetterSize[size] * 2}/>
-            </FlexItem>
-          ) : (
-            <FlexItem width={5} shrink={0}>
+          <FlexItem width={5} shrink={0}>
+            {stub ? (
+              <Stub
+                height={LetterSize[size]}
+                width={LetterSize[size]}
+                r={LetterSize[size] * 2}
+                top={StubItemIndent[size]}
+                bottom={StubItemIndent[size]}
+              />
+            ) : (
               <Text size={size} bold={false}>&#8226;</Text>
-            </FlexItem>
-          )
+            )}
+          </FlexItem>
         ) : type === 'step' ? (
           <Flex direction="column" height="auto" mr={5}>
             <FlexItem shrink={0}>
@@ -96,13 +108,15 @@ export const List: FunctionComponent<ListProps> = ({stub = false, type, size = '
         ) : (
           null
         )}
-        <Box my={ListItemYMargin[type]} width={1}>
+        <FlexItem my={ListItemYMargin[type]} width={1}>
           {stub ? (
-            (type === 'step' ? [0.8, 0.9, 0.7] : [33]).map((width, index) => (
-              <Box width={width} key={index}>
+            type === 'step' ? (
+              <Paragraph size={size} stub/>
+            ) : (
+              <Box width={1} maxWidth={33}>
                 <Text display="block" size={size} stub/>
               </Box>
-            ))
+            )
           ) : (
             typeof item === 'string' ? (
               <Paragraph size={size}>{item}</Paragraph>
@@ -110,7 +124,7 @@ export const List: FunctionComponent<ListProps> = ({stub = false, type, size = '
               item
             )
           )}
-        </Box>
+        </FlexItem>
       </Flex>
     ))}
   </Box>
