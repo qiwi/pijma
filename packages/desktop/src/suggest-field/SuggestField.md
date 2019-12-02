@@ -140,9 +140,15 @@ const getBanks = (suggest) => {
 };
 
 const onRequest = (suggest) => {
-  setState({suggest, suggestError: suggest === ''});
-  getBanks(suggest)
-    .then((banks) => setState({banks, validateError: banks.length === 0 && suggest !== '' ? 'Ничего не найдено' : undefined}));
+  console.log(state.validateError);
+  setState({suggest});
+  getBanks(suggest).then((banks) => {
+    setState({
+      banks, 
+      suggestError: banks.length === 0 && suggest !== '', 
+      validateError: suggest === '' ? 'Введите значение' : undefined
+    })
+  });
 };
 
 const onCancel = () => setState(initialState);
