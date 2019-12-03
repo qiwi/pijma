@@ -15,13 +15,15 @@ import CheckboxProps from './CheckboxProps'
 const Checkbox: FunctionComponent<CheckboxProps> = props => (
   props.stub ? (
     <Flex align="center">
-      <Stub
-        width={5}
-        height={5}
-        right={3}
-        left={0.5}
-      />
-      <Box width={33} maxWidth={1}>
+      <Box>
+        <Stub
+          width={5}
+          height={5}
+          right={3}
+          left={0.5}
+        />
+      </Box>
+      <Box width={1} maxWidth={33}>
         <Stub
           width={1}
           height={2}
