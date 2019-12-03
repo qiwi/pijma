@@ -140,7 +140,6 @@ const getBanks = (suggest) => {
 };
 
 const onRequest = (suggest) => {
-  console.log(state.validateError);
   setState({suggest});
   getBanks(suggest).then((banks) => {
     setState({
