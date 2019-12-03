@@ -113,21 +113,33 @@
 ```jsx
 <Grid columns={4} layout={1}>
   <LogoBlockLink
+    icon="required"
+    title="required"
+    href="required"
     description="if you need description stub put any corrent content here"
     stub
   />
   <LogoBlockLink
+    icon="required"
+    title="required"
+    href="required"
     description="if you need description stub put any corrent content here"
     stub
   />
   <LogoBlockLink
+    icon="required"
+    title="required"
+    href="required"
     description="if you need description stub put any corrent content here"
     stub
   />
   <LogoBlockLink
+    icon="required"
+    title="required"
+    href="required"
     description="if you need description stub put any corrent content here"
     stub
-  /> 
+  />
 </Grid>
 ```
 
@@ -230,11 +242,36 @@
 
 ```jsx
 <Grid columns={5} layout={1}>
-  <LogoBlockLink stub/>
-  <LogoBlockLink stub/>
-  <LogoBlockLink stub/>
-  <LogoBlockLink stub/>
-  <LogoBlockLink stub/>
+  <LogoBlockLink
+    icon="required"
+    title="required"
+    href="required"
+    stub
+  />
+  <LogoBlockLink
+    icon="required"
+    title="required"
+    href="required"
+    stub
+  />
+  <LogoBlockLink
+    icon="required"
+    title="required"
+    href="required"
+    stub
+  />
+  <LogoBlockLink
+    icon="required"
+    title="required"
+    href="required"
+    stub
+  />
+  <LogoBlockLink
+    icon="required"
+    title="required"
+    href="required"
+    stub
+  />
 </Grid>
 ```
 
@@ -338,16 +375,25 @@
 ```jsx
 <Grid columns={3} layout={1}>
   <LogoBlockLink
+    icon="required"
+    title="required"
+    href="required"
     horizontal
     description="if you need description stub put any corrent content here"
     stub
   />
   <LogoBlockLink
+    icon="required"
+    title="required"
+    href="required"
     horizontal
     description="if you need description stub put any corrent content here"
     stub
   />
   <LogoBlockLink
+    icon="required"
+    title="required"
+    href="required"
     horizontal
     description="if you need description stub put any corrent content here"
     stub
@@ -445,8 +491,26 @@
 
 ```jsx
 <Grid columns={3} layout={1}>
-  <LogoBlockLink horizontal stub/>
-  <LogoBlockLink horizontal stub/>
-  <LogoBlockLink horizontal stub/>
+  <LogoBlockLink
+    icon="required"
+    title="required"
+    href="required"
+    horizontal
+    stub
+  />
+  <LogoBlockLink
+    icon="required"
+    title="required"
+    href="required"
+    horizontal
+    stub
+  />
+  <LogoBlockLink
+    icon="required"
+    title="required"
+    href="required"
+    horizontal
+    stub
+  />
 </Grid>
 ```
