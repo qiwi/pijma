@@ -44,7 +44,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
                   />
                 </Box>
                 {description ? (
-                  <Box width={18}>
+                  <Box maxWidth={18} width={1}>
                     <Text
                       display="block"
                       size="s"
@@ -74,7 +74,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
             />
           </Box>
           {description ? (
-            <Box mt={1} mx="auto" width={18}>
+            <Box mt={1} mx="auto" maxWidth={18} width={1}>
               <Text
                 display="block"
                 size="s"
