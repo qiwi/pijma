@@ -27,7 +27,7 @@ export const Notice: FC<NoticeProps> = ({icon, title, children, stub = false}) =
           ) : (
             null
           )}
-          <Box width={33}>
+          <Box maxWidth={33} width={1}>
             <Text display="block" size="s" stub/>
           </Box>
         </Spacer>
