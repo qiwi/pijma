@@ -12,7 +12,7 @@ export interface GlossaryProps {
 export const Glossary: FC<GlossaryProps> = ({children, stub = false}) => (
   stub ? (
     <Box as="dl">
-      <Box as="dt" width={15}>
+      <Box as="dt" maxWidth={15} width={1}>
         <Text
           display="block"
           compact
@@ -20,7 +20,7 @@ export const Glossary: FC<GlossaryProps> = ({children, stub = false}) => (
           stub
         />
       </Box>
-      <Box mt={1} as="dd" width={38}>
+      <Box mt={1} as="dd" maxWidth={38} width={1}>
         <Text
           display="block"
           compact
