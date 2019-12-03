@@ -6,6 +6,9 @@ import {Pos, Box, QuestionIcon, Card, Spacer, HintControl, QuestionArrow} from '
 import {Heading, Text} from '../typography'
 
 export interface HintProps {
+  size: 'small' | 'strong'
+  show: boolean
+  content: ReactNode
   placement: 'auto-start'
     | 'auto'
     | 'auto-end'
@@ -21,11 +24,8 @@ export interface HintProps {
     | 'left-end'
     | 'left'
     | 'left-start'
-  size: 'small' | 'string'
-  width: number
-  title: ReactNode
-  content: ReactNode
-  show: boolean
+  width?: number
+  title?: ReactNode
   onClick: (show: boolean) => void
 }
 
@@ -51,22 +51,58 @@ const IndentItem: Record<NonNullable<HintProps['placement']>, string> = {
   'auto-start': '',
   'auto': '',
   'auto-end': '',
-  'top-start': '0 0 24px 0',
+  'top-start': '0 0 24px -48px',
   'top': '0 0 24px 0',
-  'top-end': '0 0 24px 0',
-  'right-start': '0 0 0 24px',
+  'top-end': '0 -48px 24px 0',
+  'right-start': '-48px 0 0 24px',
   'right': '0 0 0 24px',
-  'right-end': '0 0 0 24px',
-  'bottom-end': '24px 0 0 0',
+  'right-end': '0 0 -48px 24px',
+  'bottom-end': '24px -48px 0 0',
   'bottom': '24px 0 0 0',
-  'bottom-start': '24px 0 0 0',
-  'left-end': '0 24px 0 0',
+  'bottom-start': '24px 0 0 -48px',
+  'left-end': '0 24px -48px 0',
   'left': '0 24px 0 0',
-  'left-start': '0 24px 0 0',
+  'left-start': '-48px 24px 0 0',
+}
+
+const ArrowSizeWidth: Record<NonNullable<HintProps['placement']>, number> = {
+  'auto-start': 0,
+  'auto': 0,
+  'auto-end': 0,
+  'top-start': 11,
+  'top': 11,
+  'top-end': 11,
+  'right-start': 2.75,
+  'right': 2.75,
+  'right-end': 2.75,
+  'bottom-end': 11,
+  'bottom': 11,
+  'bottom-start': 11,
+  'left-end': 2.75,
+  'left': 2.75,
+  'left-start': 2.75,
+}
+
+const ArrowSizeHeight: Record<NonNullable<HintProps['placement']>, number> = {
+  'auto-start': 0,
+  'auto': 0,
+  'auto-end': 0,
+  'top-start': 11,
+  'top': 11,
+  'top-end': 11,
+  'right-start': 11,
+  'right': 11,
+  'right-end': 11,
+  'bottom-end': 2.75,
+  'bottom': 2.75,
+  'bottom-start': 2.75,
+  'left-end': 11,
+  'left': 11,
+  'left-start': 11,
 }
 
 export const Hint: FC<HintProps> = ({
-  placement = 'auto',
+  placement,
   size,
   width,
   title,
@@ -80,13 +116,13 @@ export const Hint: FC<HintProps> = ({
     children={(renderProps) => (
       <Manager>
         <Pos type="relative">
-          <Reference>
-            {({ref}) => (
-              <Box cursor="pointer" onClick={renderProps.onClick} ref={ref}>
+          <Reference
+            children={({ref}) => (
+              <Box cursor="pointer" onClick={renderProps.onClick} ref={ref} width={6} height={6}>
                 <QuestionIcon/>
               </Box>
             )}
-          </Reference>
+          />
           {show ? (
             <Popper
               placement={placement}
@@ -120,22 +156,21 @@ export const Hint: FC<HintProps> = ({
                     </Spacer>
                   </Card>
                   <Pos
-                    transform={TransformArrow[placement]}
                     type="absolute"
                     ref={arrowProps.ref}
                     style={arrowProps.style}
-                    width="1em"
-                    height="3em"
-                    top={placement === 'bottom' || placement === 'bottom-start' || placement === 'bottom-end' ? 0 : undefined}
-                    bottom={placement === 'top' || placement === 'top-start' || placement === 'top-end' ? 0 : undefined}
-                    left={placement === 'left' || placement === 'left-start' || placement === 'left-end' ? undefined : 0}
-                    right={placement === 'left' || placement === 'left-start' || placement === 'left-end' ? 0 : undefined}
-                    mt={placement === 'bottom' || placement === 'bottom-start' || placement === 'bottom-end' ? '-2.75em' : undefined}
-                    mb={placement === 'top' || placement === 'top-start' || placement === 'top-end' ? '-2.75em' : undefined}
-                    ml={placement === 'right' || placement === 'right-start' || placement === 'right-end' ? '-1.75em' : undefined}
-                    mr={placement === 'left' || placement === 'left-start' || placement === 'left-end' ? '-1.75em' : undefined}
+                    width={ArrowSizeWidth[placement]}
+                    height={ArrowSizeHeight[placement]}
+                    top={placement ? placement.includes('bottom') ? 0 : undefined : undefined}
+                    bottom={placement ? placement.includes('top') ? 0 : undefined : undefined}
+                    left={placement ? placement.includes('left') ? undefined : 0 : undefined}
+                    right={placement ? placement.includes('left') ? 0 : undefined : undefined}
+                    mt={placement ? placement.includes('bottom') ? -7 : undefined : undefined}
+                    mb={placement ? placement.includes('top') ? -7 : undefined : undefined}
+                    ml={placement ? placement.includes('right') ? -7 : undefined : undefined}
+                    mr={placement ? placement.includes('left') ? 1.25 : undefined : undefined}
                   >
-                    <QuestionArrow/>
+                    <QuestionArrow transform={TransformArrow[placement]}/>
                   </Pos>
                 </Pos>
               )}
