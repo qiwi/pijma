@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react'
 
-import {Flex, FlexItem, Stub} from '@qiwi/pijma-core'
+import {Box, Flex, FlexItem, Stub} from '@qiwi/pijma-core'
 
 import {Heading, Paragraph, Text} from '../typography'
 
@@ -24,84 +24,65 @@ export const Status: FC<StatusProps> = ({
 }) => (
   <Flex align="center" direction="column">
     {icon ? (
-      stub ? (
-        <FlexItem
-          height={16}
-          width={16}
-          mb={6}
-        >
+      <FlexItem
+        height={16}
+        width={16}
+        mb={6}
+      >
+        {stub ? (
           <Stub height={16} width={16} r={32}/>
-        </FlexItem>
-      ) : (
-        <FlexItem
-          height={16}
-          width={16}
-          mb={6}
-          children={icon}
-        />
-      )
+        ) : (
+          icon
+        )}
+      </FlexItem>
     ) : (
       null
     )}
     {title ? (
-      stub ? (
-        <FlexItem width={1} maxWidth={41}>
-          <Heading
-            align="center"
-            size="4"
-            stub
-          />
-        </FlexItem>
-      ) : (
+      <FlexItem width={1} maxWidth={stub ? 41 : 1}>
         <Heading
           align="center"
           size="4"
-          children={title}
+          stub={stub ? true : false}
+          children={stub ? null : title}
         />
-      )
+      </FlexItem>
     ) : (
       null
     )}
     {content ? (
-      stub ? (
-        <FlexItem maxWidth={25} width={1} mt={title ? 2 : 0}>
-          <Text
-            display="block"
-            align="center"
-            size="m"
-            stub
-          />
-        </FlexItem>
-      ) : (
-        <FlexItem width={1} mt={title ? 2 : 0}>
-          {typeof content === 'string' ? (
+      <FlexItem width={1} mt={title ? 2 : 0}>
+        {stub ? (
+          <Box maxWidth={25} width={1} m="auto">
+            <Text
+              display="block"
+              size="m"
+              stub
+            />
+          </Box>
+        ) : (
+          typeof content === 'string' ? (
             <Paragraph
               align="center"
               size="m"
               children={content}
             />
           ) : (
-            children
-          )}
-        </FlexItem>
-      )
+            content
+          )
+        )}
+      </FlexItem>
     ) : (
       null
     )}
     {actions ? (
-      stub ? (
-        <FlexItem
-          mt={content || title ? 4 : 0}
-        >
+      <FlexItem mt={content || title ? 4 : 0}>
+        {stub ? (
           <Button kind="simple" size="normal" stub type="button"/>
-        </FlexItem>
-      ) : (
-        <FlexItem
-          width={1}
-          mt={content || title ? 4 : 0}
-          children={actions}
-        />
-      )
+        ) : (
+          actions
+        )}
+      </FlexItem>
     ) : (
       null
     )}
