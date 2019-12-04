@@ -51,18 +51,36 @@ const IndentItem: Record<NonNullable<HintProps['placement']>, string> = {
   'auto-start': '',
   'auto': '',
   'auto-end': '',
-  'top-start': '0 0 24px -48px',
+  'top-start': '0 0 24px 0',
   'top': '0 0 24px 0',
-  'top-end': '0 -48px 24px 0',
-  'right-start': '-48px 0 0 24px',
+  'top-end': '0 0 24px 0',
+  'right-start': '0 0 0 24px',
   'right': '0 0 0 24px',
-  'right-end': '0 0 -48px 24px',
-  'bottom-end': '24px -48px 0 0',
+  'right-end': '0 0 0 24px',
+  'bottom-end': '24px 0 0 0',
   'bottom': '24px 0 0 0',
-  'bottom-start': '24px 0 0 -48px',
-  'left-end': '0 24px -48px 0',
+  'bottom-start': '24px 0 0 0',
+  'left-end': '0 24px 0 0',
   'left': '0 24px 0 0',
-  'left-start': '-48px 24px 0 0',
+  'left-start': '0 24px 0 0',
+}
+
+const IndentItemWithExtendedPlacement: Record<NonNullable<HintProps['placement']>, string> = {
+  'auto-start': '',
+  'auto': '',
+  'auto-end': '',
+  'top-start': '0 0 0 -48px',
+  'top': '0 0 0 0',
+  'top-end': '0 -48px 0 0',
+  'right-start': '-10px 0 0 0',
+  'right': '0 0 0 0',
+  'right-end': '0 0 -10px 0',
+  'bottom-end': '0 -48px 0 0',
+  'bottom': '0 0 0 0',
+  'bottom-start': '0 0 0 -48px',
+  'left-end': '0 0 -10px 0',
+  'left': '0 0 0 0',
+  'left-start': '-10px 0 0 0',
 }
 
 const ArrowSizeWidth: Record<NonNullable<HintProps['placement']>, number> = {
@@ -140,6 +158,7 @@ export const Hint: FC<HintProps> = ({
                     p={size === 'small' ? 4 : 8}
                     width={size === 'small' ? undefined : width}
                     css={size === 'small' ? {whiteSpace: 'nowrap'} : undefined}
+                    m={size === 'small' ? undefined : IndentItemWithExtendedPlacement[placement]}
                   >
                     <Spacer size="xs">
                       {title ? (
