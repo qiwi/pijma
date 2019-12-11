@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.96.1](https://github.com/qiwi/pijma/compare/v1.96.0...v1.96.1) (2019-12-11)
+
+
+### Bug Fixes
+
+* **mobile:** header menu scroll height ([4563567](https://github.com/qiwi/pijma/commit/4563567))
+
 # [@qiwi/pijma-mobile-v1.96.0](https://github.com/qiwi/pijma/compare/v1.95.0...v1.96.0) (2019-11-27)
 
 
