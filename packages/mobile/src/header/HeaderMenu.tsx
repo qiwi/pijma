@@ -117,7 +117,7 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({show, zIndex, header, from, onS
               children={header}
             />
           </FlexItem>
-          <FlexItem grow={1} height={1}>
+          <FlexItem grow={1} height={1} minHeight={0}>
             {renderProps.children}
           </FlexItem>
         </FlexCard>
