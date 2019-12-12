@@ -93,28 +93,9 @@ columns=[{
   group: 2,
   state: 'minor'
 }];
-data=[];
-for(let i = 0; i <= 20; i++) {
-  if(i % 2) {
-    data.push([['+7 926 898-98-09', 'Константинопольский К. К.'], '100 000, 00', 'Принято', 'Мещанский переулок', ['22.08.2019', '20:30'], 'AR4101b201209'])
-  } else {
-    data.push([['+7 931 555-17-09', 'Васильев А. А.'], '1 000 000, 00', 'Отклонён сервисом', 'Никольская слобода', ['11.08.2019', '11:00'], 'QK3121b3a1583'])
-  }
-}
+
 
 <Table
-  header={
-    <Flex justify="flex-end">
-      <FlexItem>
-          <Button
-            onClick={() => setState({data})}
-            kind="simple"
-            size="minor"
-            text="Загурзить данные"
-          />
-        </FlexItem>
-    </Flex>
-  }
   columns={columns}
   data={state.data}
 />

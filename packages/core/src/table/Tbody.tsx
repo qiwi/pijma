@@ -39,7 +39,7 @@ export const Tbody: FunctionComponent<TbodyProps> = ({data, columns, stub}) => (
     {data
       ? data.map((row: ReactNode[], index) => {
         return (
-          <Row key={`row-${index}`} hover>
+          <Row key={`row-${index}`} hover={!stub}>
             <Cell width={11} />
             {row.map((cell: ReactNode, index) => {
               const column: TbodyCell = columns[index]
