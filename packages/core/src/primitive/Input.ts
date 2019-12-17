@@ -41,6 +41,7 @@ export const Input = styled(Card.withComponent('input'), {
   textIndent: 0,
   letterSpacing: pxValue(props.valueSpacing),
   outline: 'none',
+  WebkitAppearance: 'none',
   MozAppearance: 'textfield',
   '&::placeholder': {
     fontSize: pxValue(props.placeholderSize, theme.scale),
