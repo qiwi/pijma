@@ -1,8 +1,10 @@
 import React, {FC, ReactNode} from 'react'
-
 import {Manager, Popper, Reference} from 'react-popper'
+import {Transition} from 'react-transition-group'
+import {TransitionStatus} from 'react-transition-group/Transition'
 
 import {Pos, Box, QuestionIcon, Card, Spacer, HintControl, QuestionArrow} from '@qiwi/pijma-core'
+
 import {Heading, Text} from '../typography'
 
 export interface HintProps {
@@ -119,6 +121,101 @@ const ArrowSizeHeight: Record<NonNullable<HintProps['placement']>, number> = {
   'left-start': 11,
 }
 
+const timeout = 150
+
+const defaultStyle = {
+  transition: `opacity ${timeout}ms ease-in-out, transform ${timeout}ms ease-in-out`,
+  opacity: 0,
+}
+
+const transitionStylesBottom = {
+  entering: {
+    opacity: 0,
+    transform: `translateY(${-12}px)`,
+  },
+  entered: {
+    opacity: 1,
+    transform: `translateY(${0}px)`,
+  },
+  exiting: {
+    opacity: 0,
+    transform: `translateY(${-12}px)`,
+  },
+  exited: {
+    opacity: 0,
+    transform: `translateY(${-12}px)`,
+  },
+  unmounted: {
+    opacity: 0,
+  },
+}
+
+const transitionStylesTop = {
+  entering: {
+    opacity: 0,
+    transform: `translateY(${12}px)`,
+  },
+  entered: {
+    opacity: 1,
+    transform: `translateY(${0}px)`,
+  },
+  exiting: {
+    opacity: 0,
+    transform: `translateY(${12}px)`,
+  },
+  exited: {
+    opacity: 0,
+    transform: `translateY(${12}px)`,
+  },
+  unmounted: {
+    opacity: 0,
+  },
+}
+
+const transitionStylesRight = {
+  entering: {
+    opacity: 0,
+    transform: `translateX(${-12}px)`,
+  },
+  entered: {
+    opacity: 1,
+    transform: `translateX(${0}px)`,
+  },
+  exiting: {
+    opacity: 0,
+    transform: `translateX(${-12}px)`,
+  },
+  exited: {
+    opacity: 0,
+    transform: `translateX(${-12}px)`,
+  },
+  unmounted: {
+    opacity: 0,
+  },
+}
+
+const transitionStylesLeft = {
+  entering: {
+    opacity: 0,
+    transform: `translateX(${12}px)`,
+  },
+  entered: {
+    opacity: 1,
+    transform: `translateX(${0}px)`,
+  },
+  exiting: {
+    opacity: 0,
+    transform: `translateX(${12}px)`,
+  },
+  exited: {
+    opacity: 0,
+    transform: `translateX(${12}px)`,
+  },
+  unmounted: {
+    opacity: 0,
+  },
+}
+
 export const Hint: FC<HintProps> = ({
   placement = 'auto',
   size,
@@ -141,62 +238,96 @@ export const Hint: FC<HintProps> = ({
               </Box>
             )}
           />
-          {show ? (
-            <Popper
-              placement={placement}
-              children={({ref, placement, style, arrowProps}) => (
-                <Pos
-                  ref={ref}
-                  style={style}
-                  m={IndentItem[placement]}
-                  zIndex={1}
-                >
-                  <Card
-                    bg="#fff"
-                    s="0 8px 16px 0 rgba(0, 0, 0, 0.12)"
-                    r={10}
-                    p={size === 'small' ? 4 : 8}
-                    width={size === 'small' ? undefined : width}
-                    css={size === 'small' ? {whiteSpace: 'nowrap'} : undefined}
-                    m={size === 'small' ? undefined : IndentItemWithExtendedPlacement[placement]}
-                  >
-                    <Spacer size="xs">
-                      {title ? (
-                        <Heading size="5" children={title}/>
-                      ) : (
-                        null
-                      )}
-                      <Text
-                        size={size === 'small' ? 'm' : 's'}
-                        display="block"
-                        bold={false}
-                        children={content}
-                      />
-                    </Spacer>
-                  </Card>
+          <Transition
+            timeout={timeout}
+            in={renderProps.show}
+            unmountOnExit
+          >
+            {(state: TransitionStatus) => (
+              <Popper
+                placement={placement}
+                modifiers={{
+                  computeStyle: {gpuAcceleration: false},
+                }}
+                children={({ref, placement, style: {position, top, left, willChange}, arrowProps}) => (
                   <Pos
-                    type="absolute"
-                    ref={arrowProps.ref}
-                    style={arrowProps.style}
-                    width={ArrowSizeWidth[placement]}
-                    height={ArrowSizeHeight[placement]}
-                    top={placement ? placement.includes('bottom') ? 0 : undefined : undefined}
-                    bottom={placement ? placement.includes('top') ? 0 : undefined : undefined}
-                    left={placement ? placement.includes('left') ? undefined : 0 : undefined}
-                    right={placement ? placement.includes('left') ? 0 : undefined : undefined}
-                    mt={placement ? placement.includes('bottom') ? -7 : undefined : undefined}
-                    mb={placement ? placement.includes('top') ? -7 : undefined : undefined}
-                    ml={placement ? placement.includes('right') ? -7 : undefined : undefined}
-                    mr={placement ? placement.includes('left') ? 1.25 : undefined : undefined}
+                    ref={ref}
+                    css={{
+                      ...defaultStyle,
+                      position,
+                      top,
+                      left,
+                      willChange,
+                    }}
+                    m={IndentItem[placement]}
+                    zIndex={1}
+                    style={placement ? (
+                      placement.includes('top') ? (
+                        {...transitionStylesTop[state]}
+                      ) : (
+                        placement.includes('bottom') ? (
+                          {...transitionStylesBottom[state]}
+                        ) : (
+                          placement.includes('left') ? (
+                            {...transitionStylesLeft[state]}
+                          ) : (
+                            placement.includes('right') ? (
+                              {...transitionStylesRight[state]}
+                            ) : (
+                              undefined
+                            )
+                          )
+                        )
+                      )
+                    ) : (
+                      undefined
+                    )}
                   >
-                    <QuestionArrow transform={TransformArrow[placement]}/>
+                    <Card
+                      bg="#fff"
+                      s="0 8px 16px 0 rgba(0, 0, 0, 0.12)"
+                      r={10}
+                      p={size === 'small' ? 4 : 8}
+                      width={size === 'small' ? undefined : width}
+                      css={size === 'small' ? {whiteSpace: 'nowrap'} : undefined}
+                      m={size === 'small' ? undefined : IndentItemWithExtendedPlacement[placement]}
+                    >
+                      <Spacer size="xs">
+                        {title ? (
+                          <Heading size="5" children={title}/>
+                        ) : (
+                          null
+                        )}
+                        <Text
+                          size={size === 'small' ? 'm' : 's'}
+                          display="block"
+                          bold={false}
+                          children={content}
+                        />
+                      </Spacer>
+                    </Card>
+                    <Pos
+                      type="absolute"
+                      ref={arrowProps.ref}
+                      style={arrowProps.style}
+                      width={ArrowSizeWidth[placement]}
+                      height={ArrowSizeHeight[placement]}
+                      top={placement ? placement.includes('bottom') ? 0 : undefined : undefined}
+                      bottom={placement ? placement.includes('top') ? 0 : undefined : undefined}
+                      left={placement ? placement.includes('left') ? undefined : 0 : undefined}
+                      right={placement ? placement.includes('left') ? 0 : undefined : undefined}
+                      mt={placement ? placement.includes('bottom') ? -7 : undefined : undefined}
+                      mb={placement ? placement.includes('top') ? -7 : undefined : undefined}
+                      ml={placement ? placement.includes('right') ? -7 : undefined : undefined}
+                      mr={placement ? placement.includes('left') ? 1.25 : undefined : undefined}
+                    >
+                      <QuestionArrow transform={TransformArrow[placement]}/>
+                    </Pos>
                   </Pos>
-                </Pos>
-              )}
-            />
-          ) : (
-            null
-          )}
+                )}
+              />
+            )}
+          </Transition>
         </Pos>
       </Manager>
     )}
