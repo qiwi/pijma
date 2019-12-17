@@ -56,7 +56,7 @@ export const ContentSuggest = <V extends {}>({
             ref={dropDownContainerRef}
             width={1}
             transition={`box-shadow ${renderProps.result ? 300 : 200}ms cubic-bezier(0.4, 0.0, 0.2, 1)`}
-            s={renderProps.focused && !renderProps.result ? '0 20px 64px 0 rgba(0, 0, 0, 0.16)' : 'none'}
+            s={renderProps.focused || renderProps.result ? '0 20px 64px 0 rgba(0, 0, 0, 0.16)' : 'none'}
             r={10}
           >
             <Box
@@ -101,13 +101,10 @@ export const ContentSuggest = <V extends {}>({
               onHide={renderProps.onHide}
             >
               <CardPos
-                type="relative"
                 height={1}
                 minWidth={1}
-                r="10px"
-                s="0 20px 64px 0 rgba(0, 0, 0, 0.16)"
-                pt={12}
-                top={-12}
+                r={10}
+                s="0 20px 20px 0 rgba(0, 0, 0, 0.16)"
               >
                 <CardPos
                   type="relative"
