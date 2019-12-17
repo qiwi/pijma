@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.96.2](https://github.com/qiwi/pijma/compare/v1.96.1...v1.96.2) (2019-12-17)
+
+
+### Bug Fixes
+
+* content suggest ([648a51d](https://github.com/qiwi/pijma/commit/648a51d))
+
 # [@qiwi/pijma-desktop-v1.96.0](https://github.com/qiwi/pijma/compare/v1.95.0...v1.96.0) (2019-11-27)
 
 
