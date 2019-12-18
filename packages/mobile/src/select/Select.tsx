@@ -3,7 +3,7 @@ import React, {FunctionComponent, ReactNode, Fragment} from 'react'
 import {MenuItem} from '../menu'
 import {DropUp} from '../drop-up'
 
-import {SelectInput, SelectControl, Box, Pos, Card, MenuControl, styled, InputField, Icon, Spacer, OptionModel} from '@qiwi/pijma-core'
+import {SelectInput, SelectControl, Pos, Card, MenuControl, styled, InputField, Icon, Spacer, OptionModel} from '@qiwi/pijma-core'
 
 const CardPos = Card.withComponent(Pos)
 const CardItem = styled(Card)().withComponent(MenuItem)
@@ -49,39 +49,35 @@ export const Select: FunctionComponent<SelectProps<SelectItemModel<any>, any>> =
             type="relative"
             width={1}
           >
-            <Box
-              width={1}
-            >
-              <Pos
-                type="absolute"
-                top={4}
-                right={0}
-                children={<Icon name="angle-down" color="#000"/>}
-                transform={`rotate(${renderProps.show ? 180 : 0}deg)`}
-                transition="transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1)"
-              />
-              <InputField
-                title={props.title}
-                active={renderProps.show || renderProps.select !== undefined}
-                error={props.error}
-                input={
-                  <SelectInput
-                    value={(renderProps.select !== undefined) && props.items[renderProps.select] ? props.items[renderProps.select].text : ''}
-                    focused={renderProps.focused}
-                    error={!!props.error}
-                    tabIndex={props.tabIndex}
-                    disabled={props.disabled}
-                    autoComplete={props.autoComplete}
-                    autoFocus={props.autoFocus}
-                    name={props.name}
-                    onFocus={renderProps.onFocus}
-                    onBlur={renderProps.onMobileBlur}
-                    onKeyDown={renderProps.onKeyDown}
-                    onClick={renderProps.onActive}
-                  />
-                }
-              />
-            </Box>
+            <Pos
+              type="absolute"
+              top={4}
+              right={0}
+              children={<Icon name="angle-down" color="#000"/>}
+              transform={`rotate(${renderProps.show ? 180 : 0}deg)`}
+              transition="transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1)"
+            />
+            <InputField
+              title={props.title}
+              active={renderProps.show || renderProps.select !== undefined}
+              error={props.error}
+              input={
+                <SelectInput
+                  value={(renderProps.select !== undefined) && props.items[renderProps.select] ? props.items[renderProps.select].text : ''}
+                  focused={renderProps.focused}
+                  error={!!props.error}
+                  tabIndex={props.tabIndex}
+                  disabled={props.disabled}
+                  autoComplete={props.autoComplete}
+                  autoFocus={props.autoFocus}
+                  name={props.name}
+                  onFocus={renderProps.onFocus}
+                  onBlur={renderProps.onMobileBlur}
+                  onKeyDown={renderProps.onKeyDown}
+                  onClick={renderProps.onActive}
+                />
+              }
+            />
             <DropUp
               title={props.title}
               show={renderProps.show}
@@ -91,16 +87,19 @@ export const Select: FunctionComponent<SelectProps<SelectItemModel<any>, any>> =
               <CardPos
                 height={1}
                 width={1}
-                ref={menuRenderProps.containerRef}
+                ref={renderProps.modalRef}
+                pt={-20}
               >
                 <CardPos
+                  type="relative"
                   s="0 20px 64px 0 rgba(0, 0, 0, 0.16)"
                   bg="#fff"
-                  overflow="auto"
-                  maxWidth={1}
+                  height={1}
                   pt={3}
                   pb={3}
-                  ref={renderProps.modalRef}
+                  ref={menuRenderProps.containerRef}
+                  overflow="auto"
+                  data-ref="ref"
                 >
                   <Spacer size="s">
                     <Fragment>
