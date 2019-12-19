@@ -38,8 +38,5 @@
         "yarn run guide_ci"
       ]
     }
-  },
-  "dependencies": {
-    "react-popper": "^1.3.6"
   }
 }
