@@ -15,11 +15,23 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
   private inputRef: RefObject<HTMLInputElement> = createRef()
 
   public componentDidUpdate(props: SuggestControlProps<SuggestOptionModel<V>, V>) {
-    if (props.items !== this.props.items) {
+    if (!this.equalArrays(this.props.items, props.items)) {
       this.setState({
         result: this.props.items.length > 0 || this.props.empty !== undefined,
       })
     }
+  }
+
+  private equalArrays: (items: SuggestControlProps<SuggestOptionModel<V>, V>['items'], prevItems: SuggestControlProps<SuggestOptionModel<V>, V>['items']) => boolean = (items, prevItems) => {
+    if (items.length !== prevItems.length) {
+      return false
+    }
+    for (let i = 0; i < items.length; i++) {
+      if (items[i] !== prevItems[i]) {
+        return false
+      }
+    }
+    return true
   }
 
   private onRequest: React.ChangeEventHandler<HTMLInputElement> = (event) => {
