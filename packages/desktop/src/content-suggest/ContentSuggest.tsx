@@ -30,7 +30,7 @@ export const ContentSuggest = <V extends {}>({
     equals = (a: V, b: V) => a === b,
     ...props
   }: ContentSuggestProps<ContentSuggestOptionsModel<V>, V>) => (
-  <SuggestControl<V>
+  <SuggestControl<V, ContentSuggestOptionsModel<V>>
     value={props.value}
     suggest={props.suggest}
     items={props.items}
@@ -46,7 +46,7 @@ export const ContentSuggest = <V extends {}>({
     onHide={props.onHide}
     children={(renderProps) => (
       <MenuControl
-        count={props.items.length}
+        count={renderProps.items.length}
         selected={renderProps.selected}
         onSelect={renderProps.onItemSelect}
         onKeyDown={renderProps.onItemKeyDown}
@@ -138,9 +138,9 @@ export const ContentSuggest = <V extends {}>({
                               onMouseDown={item.onMouseDown}
                               onMouseEnter={item.onMouseEnter}
                               cursor="pointer"
-                              text={props.items[key].title}
-                              notes={props.items[key].description}
-                              icon={<Image width={6} height={6} src={props.items[key].logo}/>}
+                              text={renderProps.items[key].title}
+                              notes={renderProps.items[key].description}
+                              icon={<Image width={6} height={6} src={renderProps.items[key].logo}/>}
                               hover={item.focused}
                               active={item.selected}
                               focus={item.selected}

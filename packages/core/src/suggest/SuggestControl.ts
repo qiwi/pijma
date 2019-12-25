@@ -3,7 +3,7 @@ import SuggestControlProps from './SuggestControlProps'
 import SuggestControlState from './SuggestControlState'
 import SuggestOptionModel from './SuggestOptionModel'
 
-export default class SuggestControl<V> extends Component<SuggestControlProps<SuggestOptionModel<V>, V>, SuggestControlState> {
+export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends Component<SuggestControlProps<O, V>, SuggestControlState> {
 
   public state: SuggestControlState = {
     show: false,
@@ -14,24 +14,37 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
 
   private inputRef: RefObject<HTMLInputElement> = createRef()
 
-  public componentDidUpdate(props: SuggestControlProps<SuggestOptionModel<V>, V>) {
-    if (!this.equalArrays(this.props.items, props.items)) {
+  public componentDidUpdate(props: SuggestControlProps<O, V>) {
+    if (!this.equalArrays(this.props.items, props.items) || this.props.items && props.items && this.props.items.length === 0 && props.items.length === 0 && this.props.items !== props.items) {
       this.setState({
-        result: this.props.items.length > 0 || this.props.empty !== undefined,
+        result: this.items.length > 0 || this.props.empty !== undefined,
       })
     }
   }
 
-  private equalArrays: (items: SuggestControlProps<SuggestOptionModel<V>, V>['items'], prevItems: SuggestControlProps<SuggestOptionModel<V>, V>['items']) => boolean = (items, prevItems) => {
-    if (items.length !== prevItems.length) {
+  private get items() {
+    return this.props.items === undefined ? [] : this.props.items
+  }
+
+  private equalArrays: (items: SuggestControlProps<O, V>['items'], prevItems: SuggestControlProps<O, V>['items']) => boolean = (items, prevItems) => {
+    if (items === undefined && prevItems !== undefined || items !== undefined && prevItems === undefined) {
       return false
     }
-    for (let i = 0; i < items.length; i++) {
-      if (items[i] !== prevItems[i]) {
+    if (items === undefined && prevItems === undefined) {
+      return true
+    }
+    if (items && prevItems) {
+      if (items.length !== prevItems.length) {
         return false
       }
+      if (items.length === 0 && prevItems.length === 0) {
+        return true
+      }
+      return items.some((item, key) => {
+        return this.props.equals(item.value, prevItems[key].value)
+      })
     }
-    return true
+    return false
   }
 
   private onRequest: React.ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -40,7 +53,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
   }
 
   private onSelect: (index: number) => void = (index: number) => {
-    const item = this.props.items[index]
+    const item = this.items[index]
     if (item.suggest) {
       this.request(item.suggest)
     }
@@ -161,10 +174,6 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
   }
 
   private submit: (value?: string) => void = (value) => {
-    this.setState({
-      show: false,
-      result: false,
-    })
     if (this.props.onSubmit) {
       this.props.onSubmit(value ? value : this.inputRef.current!.value)
     }
@@ -190,7 +199,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     if (!this.props.value) {
       return undefined
     }
-    const index = this.props.items.findIndex(item => this.props.equals(item.value, this.props.value!))
+    const index = this.items.findIndex(item => this.props.equals(item.value, this.props.value!))
     return index !== -1 ? index : undefined
   }
 
@@ -229,6 +238,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
       selected: this.selected,
       show: this.state.show,
       result: this.state.result,
+      items: this.items,
       inputRef: this.inputRef,
       onItemSelect: this.onSelect,
       onRequest: this.onRequest,

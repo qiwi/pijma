@@ -50,7 +50,7 @@ export const HeaderSuggest = <V extends {}>({
   placeholder = 'Текстовое поле',
   ...props
 }: HeaderSuggestProps<HeaderSuggestOptionModel<V>, V>) => (
-  <SuggestControl<V>
+  <SuggestControl<V, HeaderSuggestOptionModel<V>>
     value={props.value}
     suggest={props.suggest}
     items={props.items}
@@ -66,7 +66,7 @@ export const HeaderSuggest = <V extends {}>({
     onHide={props.onHide}
     children={(renderProps) => (
       <MenuControl
-        count={props.items.length}
+        count={renderProps.items.length}
         selected={renderProps.selected}
         onSelect={renderProps.onItemSelect}
         onKeyDown={renderProps.onModalItemKeyDown}
@@ -159,9 +159,9 @@ export const HeaderSuggest = <V extends {}>({
                                   cursor="pointer"
                                   mt={key === 0 ? 4 : undefined}
                                   round
-                                  text={props.items[key].title}
-                                  notes={props.items[key].description}
-                                  icon={<Image width={6} height={6} src={props.items[key].logo}/>}
+                                  text={renderProps.items[key].title}
+                                  notes={renderProps.items[key].description}
+                                  icon={<Image width={6} height={6} src={renderProps.items[key].logo}/>}
                                   hover={item.focused}
                                   active={item.selected}
                                   focus={item.selected}
