@@ -162,6 +162,12 @@ const onChange = (value) => {
 
 const onSubmit = (suggest) => {
   console.log('SUBMIT', suggest)
+  if (suggest.length < 1) {
+    setState({
+      error: true,
+    })
+  }
+  return suggest.length >= 1
 };
 
 const equals = (a, b) => a.id === b.id;

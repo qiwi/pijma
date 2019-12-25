@@ -175,7 +175,13 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
 
   private submit: (value?: string) => void = (value) => {
     if (this.props.onSubmit) {
-      this.props.onSubmit(value ? value : this.inputRef.current!.value)
+      const onsubmit = this.props.onSubmit(value ? value : this.inputRef.current!.value)
+      if (onsubmit) {
+        this.setState({
+          show: false,
+          result: false,
+        })
+      }
     }
   }
 

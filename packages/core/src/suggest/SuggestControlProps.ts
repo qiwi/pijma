@@ -27,7 +27,7 @@ export default interface SuggestControlProps<O extends SuggestOptionModel<V>, V>
   onFocus?: () => void
   onBlur?: () => void
   onHide?: () => void
-  onSubmit?: (value: string) => void
+  onSubmit?: (value: string) => boolean
   children: RenderChild<{
     focused: boolean
     hovered: boolean
