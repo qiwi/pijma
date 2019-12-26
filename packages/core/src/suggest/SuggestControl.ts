@@ -120,7 +120,9 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
       this.submit()
     }
     if (event.key === 'Escape') {
-      this.cancel()
+      this.setState({
+        result: false,
+      })
     }
   }
 
