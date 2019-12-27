@@ -23,8 +23,8 @@ import {MenuItem} from '../menu'
 import {Paragraph} from '../typography'
 import {Link} from '../link'
 
-import HeaderSuggestProps from './HeaderSuggestProps'
-import HeaderSuggestOptionModel from './HeaderSuggestOptionModel'
+import {HeaderSuggestProps} from './HeaderSuggestProps'
+import {HeaderSuggestOptionModel} from './HeaderSuggestOptionModel'
 
 const CardItem = styled(Card)().withComponent(MenuItem)
 
