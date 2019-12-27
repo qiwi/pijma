@@ -2,9 +2,9 @@ import React from 'react'
 
 import {SuggestControlProps} from '@qiwi/pijma-core'
 
-import HeaderSuggestOptionModel from './HeaderSuggestOptionModel'
+import {HeaderSuggestOptionModel} from './HeaderSuggestOptionModel'
 
-export default interface HeaderSuggestProps<O extends HeaderSuggestOptionModel<V>, V> {
+export interface HeaderSuggestProps<O extends HeaderSuggestOptionModel<V>, V> {
   value?: SuggestControlProps<O, V>['value']
   suggest: SuggestControlProps<O, V>['suggest']
   items?: SuggestControlProps<O, V>['items']
@@ -26,6 +26,5 @@ export default interface HeaderSuggestProps<O extends HeaderSuggestOptionModel<V
   onFocus?: SuggestControlProps<O, V>['onFocus']
   onBlur?: SuggestControlProps<O, V>['onBlur']
   onSubmit?: SuggestControlProps<O, V>['onSubmit']
-  onHide?: SuggestControlProps<O, V>['onHide']
   equals?: SuggestControlProps<O, V>['equals']
 }

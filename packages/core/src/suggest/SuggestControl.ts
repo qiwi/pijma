@@ -52,7 +52,7 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
 
   private onInputBlur: React.FocusEventHandler = (event) => {
     event.preventDefault()
-    this.hide()
+    this.cancel()
     this.setState({
       focused: false,
     })
@@ -131,10 +131,6 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
     this.cancel()
   }
 
-  private onHide: () => void = () => {
-    this.hide()
-  }
-
   private change: (value: V) => void = (value) => {
     this.setState({
       show: false,
@@ -143,13 +139,10 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
   }
 
   private submit: (value?: string) => void = (value) => {
-    if (this.props.onSubmit) {
-      const onsubmit = this.props.onSubmit(value ? value : this.inputRef.current!.value)
-      if (onsubmit) {
-        this.setState({
-          show: false,
-        })
-      }
+    if (this.props.onSubmit && this.props.onSubmit(value ? value : this.inputRef.current!.value)) {
+      this.setState({
+        show: false,
+      })
     }
   }
 
@@ -181,6 +174,10 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
     this.cancel()
   }
 
+  private onHide: () => void = () => {
+    this.cancel()
+  }
+
   private onShowClick: () => void = () => {
     this.show()
   }
@@ -191,15 +188,6 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
     })
     if (this.props.suggest) {
       this.request(this.props.suggest)
-    }
-  }
-
-  private hide = () => {
-    this.setState({
-      show: false,
-    })
-    if (this.props.onHide) {
-      this.props.onHide()
     }
   }
 

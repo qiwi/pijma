@@ -26,7 +26,6 @@ export default interface SuggestControlProps<O extends SuggestOptionModel<V>, V>
   onCancel?: () => void
   onFocus?: () => void
   onBlur?: () => void
-  onHide?: () => void
   onSubmit?: (value: string) => boolean
   children: RenderChild<{
     focused: boolean

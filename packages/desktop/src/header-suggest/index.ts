@@ -1,7 +1,3 @@
-import HeaderSuggestOptionModel from './HeaderSuggestOptionModel'
-
 export * from './HeaderSuggest'
-
-export {
-  HeaderSuggestOptionModel,
-}
+export * from './HeaderSuggestOptionModel'
+export * from './HeaderSuggestProps'

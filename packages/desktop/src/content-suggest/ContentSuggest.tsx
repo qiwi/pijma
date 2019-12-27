@@ -43,7 +43,6 @@ export const ContentSuggest = <V extends {}>({
     onFocus={props.onFocus}
     onSubmit={props.onSubmit}
     onCancel={props.onCancel}
-    onHide={props.onHide}
     children={(renderProps) => (
       <MenuControl
         count={renderProps.items.length}
@@ -56,7 +55,7 @@ export const ContentSuggest = <V extends {}>({
             ref={dropDownContainerRef}
             width={1}
             transition={`box-shadow ${renderProps.result ? 300 : 200}ms cubic-bezier(0.4, 0.0, 0.2, 1)`}
-            s={renderProps.focused || renderProps.result ? '0 20px 64 px 0 rgba(0, 0, 0, 0.16)' : 'none'}
+            s={renderProps.focused || renderProps.result ? '0 20px 64px 0 rgba(0, 0, 0, 0.16)' : 'none'}
             r={10}
           >
             <Box

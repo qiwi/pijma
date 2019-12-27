@@ -63,7 +63,6 @@ export const HeaderSuggest = <V extends {}>({
     onFocus={props.onFocus}
     onCancel={props.onCancel}
     onSubmit={props.onSubmit}
-    onHide={props.onHide}
     children={(renderProps) => (
       <MenuControl
         count={renderProps.items.length}
