@@ -120,7 +120,7 @@ const banks = [
 const initialState = {
   suggest: '',
   loading: false,
-  banks: [],
+  banks: undefined,
   timer: undefined,
   error: false,
 };

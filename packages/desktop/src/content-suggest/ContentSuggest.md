@@ -122,7 +122,7 @@ const initialState = {
   error: false,
   timer: undefined,
   dialogText: undefined,
-  banks: [],
+  banks: undefined,
   suggest: '',
 };
 

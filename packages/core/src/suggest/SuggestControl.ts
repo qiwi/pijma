@@ -9,42 +9,12 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
     show: false,
     focused: false,
     hovered: false,
-    result: false,
   }
 
   private inputRef: RefObject<HTMLInputElement> = createRef()
 
-  public componentDidUpdate(props: SuggestControlProps<O, V>) {
-    if (!this.equalArrays(this.props.items, props.items) || this.props.items && props.items && this.props.items.length === 0 && props.items.length === 0 && this.props.items !== props.items) {
-      this.setState({
-        result: this.items.length > 0 || this.props.empty !== undefined,
-      })
-    }
-  }
-
   private get items() {
     return this.props.items === undefined ? [] : this.props.items
-  }
-
-  private equalArrays: (items: SuggestControlProps<O, V>['items'], prevItems: SuggestControlProps<O, V>['items']) => boolean = (items, prevItems) => {
-    if (items === undefined && prevItems !== undefined || items !== undefined && prevItems === undefined) {
-      return false
-    }
-    if (items === undefined && prevItems === undefined) {
-      return true
-    }
-    if (items && prevItems) {
-      if (items.length !== prevItems.length) {
-        return false
-      }
-      if (items.length === 0 && prevItems.length === 0) {
-        return true
-      }
-      return items.some((item, key) => {
-        return this.props.equals(item.value, prevItems[key].value)
-      })
-    }
-    return false
   }
 
   private onRequest: React.ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -120,9 +90,7 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
       this.submit()
     }
     if (event.key === 'Escape') {
-      this.setState({
-        result: false,
-      })
+      this.cancel()
     }
   }
 
@@ -170,7 +138,6 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
   private change: (value: V) => void = (value) => {
     this.setState({
       show: false,
-      result: false,
     })
     this.props.onChange(value)
   }
@@ -181,7 +148,6 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
       if (onsubmit) {
         this.setState({
           show: false,
-          result: false,
         })
       }
     }
@@ -196,7 +162,6 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
   private cancel: () => void = () => {
     this.setState({
       show: false,
-      result: false,
     })
     if (this.props.onCancel) {
       this.props.onCancel()
@@ -232,7 +197,6 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
   private hide = () => {
     this.setState({
       show: false,
-      result: false,
     })
     if (this.props.onHide) {
       this.props.onHide()
@@ -245,7 +209,7 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
       hovered: this.state.hovered,
       selected: this.selected,
       show: this.state.show,
-      result: this.state.result,
+      result: this.props.items !== undefined && (this.props.items.length > 0 || (this.props.items.length === 0 && this.props.empty !== undefined)),
       items: this.items,
       inputRef: this.inputRef,
       onItemSelect: this.onSelect,
