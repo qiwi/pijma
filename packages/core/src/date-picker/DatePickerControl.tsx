@@ -1,8 +1,8 @@
-import React from 'react'
+import {Component, ChangeEventHandler, ChangeEvent, FocusEventHandler, FocusEvent, KeyboardEventHandler, KeyboardEvent} from 'react'
 import DatePickerControlProps from './DatePickerControlProps'
 import DatePickerControlState from './DatePickerControlState'
 
-export default class DatePickerControl extends React.Component<DatePickerControlProps, DatePickerControlState> {
+export default class DatePickerControl extends Component<DatePickerControlProps, DatePickerControlState> {
 
   public state: DatePickerControlState = {
     focused: false,
@@ -11,7 +11,7 @@ export default class DatePickerControl extends React.Component<DatePickerControl
   }
 
   public componentDidMount() {
-    // document.addEventListener('click', this.documentClick)
+    document.addEventListener('click', this.documentClick)
   }
 
   public componentWillUnmount() {
@@ -19,32 +19,31 @@ export default class DatePickerControl extends React.Component<DatePickerControl
   }
 
   private documentClick = () => {
-    if (!this.state.isCalendar) {
-      this.setVisibility(false)
-    }
-    this.setState({isCalendar: false})
-  }
-
-  private setVisibility = (val?: boolean) => {
-    const value = val || !this.state.isVisible
-
-    if (this.state.isVisible !== value) {
-      this.setState({isVisible: value})
-    }
+    this.setState(state => ({
+      isVisible: state.isCalendar,
+      isCalendar: false,
+    }))
   }
 
   private calendarClick = () => {
     this.setState({isCalendar: true})
   }
 
-  private onChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {
+  private toggleClick = () => {
+    this.setState({
+      isCalendar: true,
+      isVisible: true,
+    })
+  }
+
+  private onChange: ChangeEventHandler<HTMLInputElement> = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
     if (this.props.onChange) {
       this.props.onChange(e.currentTarget.value)
     }
   }
 
-  private onFocus: React.FocusEventHandler = (e: React.FocusEvent) => {
+  private onFocus: FocusEventHandler = (e: FocusEvent) => {
     this.setState({
       focused: true,
     })
@@ -52,9 +51,10 @@ export default class DatePickerControl extends React.Component<DatePickerControl
     if (this.props.onFocus) {
       this.props.onFocus()
     }
+    this.toggleClick()
   }
 
-  private onBlur: React.FocusEventHandler = (e: React.FocusEvent) => {
+  private onBlur: FocusEventHandler = (e: FocusEvent) => {
     this.setState({
       focused: false,
     })
@@ -64,15 +64,24 @@ export default class DatePickerControl extends React.Component<DatePickerControl
     }
   }
 
-  private onKeyDown: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
+  private onKeyDown: KeyboardEventHandler = (event: KeyboardEvent) => {
     if (this.props.onKeyDown && this.props.onKeyDown(event)) {
       event.preventDefault()
     }
   }
 
-  private onKeyUp: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
+  private onKeyUp: KeyboardEventHandler = (event: KeyboardEvent) => {
     if (this.props.onKeyUp && this.props.onKeyUp(event)) {
       event.preventDefault()
+    }
+  }
+
+  private onSelectDate = (date: Date) => {
+    this.setState({
+      isVisible: false,
+    })
+    if (this.props.onSelectDate) {
+      this.props.onSelectDate(date)
     }
   }
 
@@ -80,14 +89,15 @@ export default class DatePickerControl extends React.Component<DatePickerControl
     const {focused, isVisible} = this.state
 
     return this.props.children({
-      focused,
-      isVisible,
+      focused: focused || isVisible,
       calendarClick: this.calendarClick,
+      toggleClick: this.toggleClick,
       onChange: this.onChange,
       onFocus: this.onFocus,
       onBlur: this.onBlur,
       onKeyDown: this.onKeyDown,
       onKeyUp: this.onKeyUp,
+      onSelectDate: this.onSelectDate,
     })
   }
 

@@ -1,56 +1,17 @@
-import React from 'react'
+import {MouseEvent, Component} from 'react'
 import CalendarControlProps from './CalendarControlProps'
 import CalendarControlState from './CalendarControlState'
-import CalendarDate from './CalendarDate'
 
-const CURRENT_DATE = new Date().getDate()
-const CURRENT_MONTH = new Date().getMonth()
-const CURRENT_YEAR = new Date().getFullYear()
+export default class CalendarControl extends Component<CalendarControlProps, CalendarControlState> {
 
-const getDaysInMonth = (year: number, month: number) =>
-  new Date(year, month + 1, 0).getDate()
-
-const generateArrayOfDates = (from: number, to: number, hasActiveDate?: boolean, disabled?: boolean) => {
-  const dates = []
-  for (let i = from; i <= to; i++) {
-    dates.push({
-      active: hasActiveDate ? CURRENT_DATE === i : undefined,
-      value: i,
-      disabled,
-    })
-  }
-  return dates
-}
-
-const getDatesByMonthAndYear = (month: number, year: number) => {
-  const numberOfDays = getDaysInMonth(year, month) // количество дней в месяце
-
-  const dates = generateArrayOfDates(1, numberOfDays, (month === CURRENT_MONTH && year === CURRENT_YEAR)) // массив дней месяца
-
-  let prevMonthDates: CalendarDate[] = []
-  const firstDayInMonth = new Date(year, month, 1).getDay() // день недели первого дня месяца
-  if (firstDayInMonth !== 1) { // если первый день месяца не понедельник, то нужно получить недостоющие числа предыдущего месяца
-    const numberOfPrevMonthDates = firstDayInMonth === 0 ? 5 : firstDayInMonth - 2 // если вс то 6 дней
-    const prevMonthDateTo = getDaysInMonth(year, month - 1)
-    prevMonthDates = generateArrayOfDates(prevMonthDateTo - numberOfPrevMonthDates, prevMonthDateTo, false, true)
-  }
-
-  let nextMonthDates: CalendarDate[] = []
-  const lastDayInMonth = new Date(year, month, numberOfDays).getDay() // день недели последнего дня месяца
-  if (lastDayInMonth !== 0) {
-    nextMonthDates = generateArrayOfDates(1, 7 - lastDayInMonth, false, true)
-  }
-
-  return [...prevMonthDates, ...dates, ...nextMonthDates]
-}
-
-export default class CalendarControl extends React.Component<CalendarControlProps, CalendarControlState> {
-
-  public state: CalendarControlState = {
-    month: CURRENT_MONTH,
-    year: CURRENT_YEAR,
-    dates: getDatesByMonthAndYear(CURRENT_MONTH, CURRENT_YEAR),
-    showSelectMonth: false,
+  constructor(props: CalendarControlProps) {
+    super(props)
+    this.state = {
+      month: props.calendar.currentMonth,
+      year: props.calendar.currentYear,
+      dates: props.calendar.getDatesByMonthAndYear(props.calendar.currentMonth, props.calendar.currentYear),
+      showSelectMonth: false,
+    }
   }
 
   private toggleSelectMonth = () => {
@@ -65,7 +26,7 @@ export default class CalendarControl extends React.Component<CalendarControlProp
       return {
         month,
         year: selectedYear,
-        dates: getDatesByMonthAndYear(month, selectedYear),
+        dates: this.props.calendar.getDatesByMonthAndYear(month, selectedYear),
         showSelectMonth: false,
       }
     })
@@ -78,7 +39,7 @@ export default class CalendarControl extends React.Component<CalendarControlProp
       return {
         month,
         year,
-        dates: getDatesByMonthAndYear(month, year),
+        dates: this.props.calendar.getDatesByMonthAndYear(month, year),
       }
     })
   }
@@ -90,12 +51,13 @@ export default class CalendarControl extends React.Component<CalendarControlProp
       return {
         month,
         year,
-        dates: getDatesByMonthAndYear(month, year),
+        dates: this.props.calendar.getDatesByMonthAndYear(month, year),
       }
     })
   }
 
-  private onSelectDate = (day: number) => {
+  private onSelectDate = (event: MouseEvent, day: number) => {
+    event.stopPropagation()
     const {year, month} = this.state
     if (this.props.onSelectDate) {
       this.props.onSelectDate(new Date(year, month, day))

@@ -7,14 +7,16 @@ export default interface DatePickerControlProps {
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean
   onKeyUp?: (event: KeyboardEvent) => boolean
+  onSelectDate?: (date: Date) => void
   children: RenderChild<{
     focused: boolean
-    isVisible: boolean
     calendarClick: () => void
+    toggleClick: () => void
     onChange: ChangeEventHandler
     onFocus: FocusEventHandler
     onBlur: FocusEventHandler
     onKeyDown: KeyboardEventHandler
     onKeyUp: KeyboardEventHandler
+    onSelectDate: (date: Date) => void
   }>
 }
