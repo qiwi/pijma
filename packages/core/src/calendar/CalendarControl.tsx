@@ -56,7 +56,7 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
     })
   }
 
-  private onSelectDate = (event: MouseEvent, day: number) => {
+  public onSelectDate = (event: MouseEvent, day: number) => {
     event.stopPropagation()
     const {year, month} = this.state
     if (this.props.onSelectDate) {
