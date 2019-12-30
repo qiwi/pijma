@@ -1,4 +1,4 @@
-import {MouseEvent, Component} from 'react'
+import {SyntheticEvent, Component} from 'react'
 import CalendarControlProps from './CalendarControlProps'
 import CalendarControlState from './CalendarControlState'
 
@@ -56,7 +56,7 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
     })
   }
 
-  public onSelectDate = (event: MouseEvent, day: number) => {
+  private onSelectDate = (day: number) => (event: SyntheticEvent) => {
     event.stopPropagation()
     const {year, month} = this.state
     if (this.props.onSelectDate) {

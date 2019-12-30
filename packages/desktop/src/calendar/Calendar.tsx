@@ -83,7 +83,7 @@ export const Calendar: FC<CalendarProps> = props => {
                         align="center"
                         color={disabled ? '#666' : 'default'}
                         cursor={disabled ? 'default' : 'pointer'}
-                        onClick={e => renderProps.onSelectDate(e, value)}
+                        onClick={renderProps.onSelectDate(value)}
                         css={{'user-select': 'none'}}
                       >
                         {value}
