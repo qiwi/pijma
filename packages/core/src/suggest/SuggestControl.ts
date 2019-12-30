@@ -175,9 +175,7 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
   }
 
   private onHide: () => void = () => {
-    this.setState({
-      show: false,
-    })
+    this.cancel()
   }
 
   private onShowClick: () => void = () => {
