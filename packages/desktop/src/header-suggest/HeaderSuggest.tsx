@@ -102,7 +102,7 @@ export const HeaderSuggest = <V extends {}>({
                         py={4}
                         px={6}
                       >
-                        <FlexItem cursor="pointer" shrink={0} mr={4} onClick={renderProps.onHide}>
+                        <FlexItem cursor="pointer" shrink={0} mr={4} onClick={renderProps.onBack}>
                           <Icon name="arrow-left"/>
                         </FlexItem>
                         <FlexItem grow={1}>
@@ -219,7 +219,6 @@ export const HeaderSuggest = <V extends {}>({
           </React.Fragment>
         )}
       />
-    )
-    }
+    )}
   />
 )

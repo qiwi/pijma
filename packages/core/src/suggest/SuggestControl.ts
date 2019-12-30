@@ -37,6 +37,7 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
     event.preventDefault()
     this.setState({
       show: true,
+      focused: true,
     })
   }
 
@@ -174,7 +175,9 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
   }
 
   private onHide: () => void = () => {
-    this.cancel()
+    this.setState({
+      show: false,
+    })
   }
 
   private onShowClick: () => void = () => {
