@@ -197,7 +197,7 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
       hovered: this.state.hovered,
       selected: this.selected,
       show: this.state.show,
-      result: this.props.items !== undefined && (this.props.items.length > 0 || (this.props.items.length === 0 && this.props.empty !== undefined)),
+      result: this.props.items !== undefined && (this.props.items.length > 0 || this.props.empty !== undefined),
       items: this.items,
       inputRef: this.inputRef,
       onItemSelect: this.onSelect,
