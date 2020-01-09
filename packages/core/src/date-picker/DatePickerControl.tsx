@@ -98,6 +98,7 @@ export default class DatePickerControl extends Component<DatePickerControlProps,
       onKeyDown: this.onKeyDown,
       onKeyUp: this.onKeyUp,
       onSelectDate: this.onSelectDate,
+      documentClick: this.documentClick,
     })
   }
 

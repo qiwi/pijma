@@ -18,5 +18,6 @@ export default interface DatePickerControlProps {
     onKeyDown: KeyboardEventHandler
     onKeyUp: KeyboardEventHandler
     onSelectDate: (date: Date) => void
+    documentClick: () => void
   }>
 }
