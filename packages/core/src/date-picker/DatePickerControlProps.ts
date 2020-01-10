@@ -1,5 +1,5 @@
 import {KeyboardEvent, ChangeEventHandler, FocusEventHandler, KeyboardEventHandler} from 'react'
-import {Mask} from '@qiwi/pijma-core'
+import {Mask} from '../mask'
 import RenderChild from '../RenderChild'
 
 export default interface DatePickerControlProps {
