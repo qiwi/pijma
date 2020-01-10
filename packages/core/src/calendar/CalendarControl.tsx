@@ -33,27 +33,11 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
   }
 
   private toPrevMonth = () => {
-    this.setState(state => {
-      const month = state.month === 0 ? 11 : state.month - 1
-      const year = state.month === 0 ? state.year - 1 : state.year
-      return {
-        month,
-        year,
-        dates: this.props.calendar.getDatesByMonthAndYear(month, year),
-      }
-    })
+    this.setState(state => this.props.calendar.getPrevMonth(state.month, state.year))
   }
 
   private toNextMonth = () => {
-    this.setState(state => {
-      const month = state.month === 11 ? 0 : state.month + 1
-      const year = state.month === 11 ? state.year + 1 : state.year
-      return {
-        month,
-        year,
-        dates: this.props.calendar.getDatesByMonthAndYear(month, year),
-      }
-    })
+    this.setState(state => this.props.calendar.getNextMonth(state.month, state.year))
   }
 
   private onSelectDate = (day: number) => (event: SyntheticEvent) => {
