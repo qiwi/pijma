@@ -68,7 +68,17 @@ export const Calendar: FC<CalendarProps> = props => {
                   {renderProps.dates.map(({active, value, disabled}, key) => (
                     active ? (
                       <Pos key={key} type="absolute">
-                        <Card width={10} height={10} mt={-2} ml={-2} p={2} bg="#ff8c00" r={20}>
+                        <Card
+                          width={10}
+                          height={10}
+                          mt={-2}
+                          ml={-2}
+                          p={2}
+                          bg="#ff8c00"
+                          r={20}
+                          cursor="pointer"
+                          onClick={renderProps.onSelectDate(value)}
+                        >
                           <Typo size={4} weight={300} height={6} color="#fff" align="center" css={{'user-select': 'none'}}>
                             {value}
                           </Typo>

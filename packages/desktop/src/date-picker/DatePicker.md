@@ -3,9 +3,13 @@
   <BlockContent>
     <DatePicker
       title="Дата"
-      mask={[/[0-9]/, /\d/, '.', /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/]}
-      value={state.text}
-      onSelectDate={(date) => setState({text: `${date.getDate()}.${date.getMonth()}.${date.getFullYear()}`})}
+      format="dd.MM.yyyy"
+      value={state.date}
+      onChange={(date) => {
+        if (date.toString() !== 'Invalid Date') {
+          setState({date})
+        }
+      }}
     />
   </BlockContent>
 </Block>

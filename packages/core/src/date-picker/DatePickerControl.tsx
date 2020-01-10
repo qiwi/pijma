@@ -1,4 +1,5 @@
 import {Component, ChangeEventHandler, ChangeEvent, FocusEventHandler, FocusEvent, KeyboardEventHandler, KeyboardEvent} from 'react'
+import {format, parse} from 'date-fns'
 import DatePickerControlProps from './DatePickerControlProps'
 import DatePickerControlState from './DatePickerControlState'
 
@@ -39,7 +40,11 @@ export default class DatePickerControl extends Component<DatePickerControlProps,
   private onChange: ChangeEventHandler<HTMLInputElement> = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
     if (this.props.onChange) {
-      this.props.onChange(e.currentTarget.value)
+      const value = e.currentTarget.value
+      const date = value.length === this.props.format.length
+        ? parse(value, this.props.format, new Date())
+        : new Date('')
+      this.props.onChange(date)
     }
   }
 
@@ -80,8 +85,8 @@ export default class DatePickerControl extends Component<DatePickerControlProps,
     this.setState({
       isVisible: false,
     })
-    if (this.props.onSelectDate) {
-      this.props.onSelectDate(date)
+    if (this.props.onChange) {
+      this.props.onChange(date)
     }
   }
 
@@ -89,7 +94,9 @@ export default class DatePickerControl extends Component<DatePickerControlProps,
     const {focused, isVisible} = this.state
 
     return this.props.children({
+      value: this.props.value ? format(this.props.value, this.props.format) : '',
       focused: focused || isVisible,
+      mask: this.props.format.split('').map(sym => sym.match(/^[a-zA-Z]+$/) ? /\d/ : sym),
       calendarClick: this.calendarClick,
       toggleClick: this.toggleClick,
       onChange: this.onChange,
