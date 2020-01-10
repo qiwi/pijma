@@ -7,9 +7,8 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
   constructor(props: CalendarControlProps) {
     super(props)
     this.state = {
-      month: props.calendar.currentMonth,
-      year: props.calendar.currentYear,
-      dates: props.calendar.getDatesByMonthAndYear(props.calendar.currentMonth, props.calendar.currentYear),
+      date: new Date(),
+      dates: props.calendar.getDates(new Date()),
       showSelectMonth: false,
     }
   }
@@ -22,38 +21,50 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
 
   private selectMonth = (month: number, year?: number) => {
     this.setState(state => {
-      const selectedYear = year || state.year
+      const selectedYear = year || state.date.getFullYear()
+      const date = new Date(selectedYear, month, 1)
       return {
-        month,
-        year: selectedYear,
-        dates: this.props.calendar.getDatesByMonthAndYear(month, selectedYear),
+        date,
+        dates: this.props.calendar.getDates(date),
         showSelectMonth: false,
       }
     })
   }
 
   private toPrevMonth = () => {
-    this.setState(state => this.props.calendar.getPrevMonth(state.month, state.year))
+    this.setState(state => {
+      const prevMonthDate = this.props.calendar.getPrevMonth(state.date)
+      return {
+        date: prevMonthDate,
+        dates: this.props.calendar.getDates(prevMonthDate),
+      }
+    })
   }
 
   private toNextMonth = () => {
-    this.setState(state => this.props.calendar.getNextMonth(state.month, state.year))
+    this.setState(state => {
+      const nextMonthDate = this.props.calendar.getNextMonth(state.date)
+      return {
+        date: nextMonthDate,
+        dates: this.props.calendar.getDates(nextMonthDate),
+      }
+    })
   }
 
   private onSelectDate = (day: number) => (event: SyntheticEvent) => {
     event.stopPropagation()
-    const {year, month} = this.state
+    const {date} = this.state
     if (this.props.onSelectDate) {
-      this.props.onSelectDate(new Date(year, month, day))
+      this.props.onSelectDate(new Date(date.getFullYear(), date.getMonth(), day))
     }
   }
 
   public render() {
-    const {month, year, dates, showSelectMonth} = this.state
+    const {date, dates, showSelectMonth} = this.state
 
     return this.props.children({
-      month,
-      year,
+      month: date.getMonth(),
+      year: date.getFullYear(),
       dates,
       showSelectMonth,
       toggleSelectMonth: this.toggleSelectMonth,
