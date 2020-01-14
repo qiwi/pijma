@@ -45,12 +45,12 @@ const FooterOutLink: FC<FooterOutLinkProps> = (props) => (
         onMouseLeave={renderProps.onMouseLeave}
         onMouseUp={renderProps.onMouseUp}
         onMouseDown={renderProps.onMouseDown}
-        children={
+        children={(
           <Icon
             name={props.icon}
             color={renderProps.hover || renderProps.focus || renderProps.active ? '#666' : '#999'}
           />
-        }
+        )}
       />
     )}
   />

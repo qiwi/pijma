@@ -108,7 +108,7 @@ export const DatePicker: FC<DatePickerProps> = ({
             container={datePickerContainerRef.current}
             target={datePickerInputRef.current!}
             onHide={renderProps.closeCalendar}
-            // placement="bottom-start"
+            placement="bottom-start"
             children={(
               <Calendar
                 days={days}

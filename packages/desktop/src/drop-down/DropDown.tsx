@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Overlay, OverlayProps, SimpleTransition, SimpleTransitionProps, css, Pos, Value} from '@qiwi/pijma-core'
+import {Overlay, OverlayProps, SimpleTransition, SimpleTransitionProps, css, Pos, Value, Placements} from '@qiwi/pijma-core'
 
 export interface DropDownProps {
   show: boolean
@@ -11,6 +11,7 @@ export interface DropDownProps {
   rootClose?: boolean
   target: OverlayProps['target']
   container: OverlayProps['container']
+  placement?: Placements
   children: React.ReactElement
   onHide: () => void
 }
@@ -41,12 +42,14 @@ export const DropDown: FC<DropDownProps> = ({
   rootClose = true,
   target,
   container,
+  placement = 'bottom',
   onHide,
   children,
 }) => (
   <Overlay
     show={show}
-    placement="bottom"
+    // @ts-ignore
+    placement={placement}
     target={target}
     container={container}
     rootClose={rootClose}
