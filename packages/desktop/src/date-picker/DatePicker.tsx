@@ -1,7 +1,6 @@
-import React, {FC, ReactNode, KeyboardEvent, Fragment} from 'react'
-import {Manager, Popper, Reference} from 'react-popper'
-import {Box, Icon, InputField, BasicInput, DatePickerControl, Pipe} from '@qiwi/pijma-core'
-import {Calendar} from '../'
+import React, {FC, ReactNode, KeyboardEvent, useRef} from 'react'
+import {Box, Icon, InputField, BasicInput, DatePickerControl, Pipe, Pos} from '@qiwi/pijma-core'
+import {Calendar, DropDown} from '../'
 
 export interface DatePickerProps {
   value?: Date
@@ -52,89 +51,76 @@ export const DatePicker: FC<DatePickerProps> = ({
   months,
   firstDayIndex,
 }) => {
+  const datePickerContainerRef = useRef<HTMLDivElement>(null)
+  const datePickerInputRef = useRef<HTMLDivElement>(null)
+
   return (
-    <Manager>
-      <DatePickerControl
-        value={value}
-        format={format}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        onKeyDown={onKeyDown}
-        onKeyUp={onKeyUp}
-        onChange={onChange}
-        children={renderProps => (
-          <Fragment>
-            <Reference
-              children={({ref}) => (
-                <Box ref={ref}>
-                  <InputField
-                    title={title}
-                    active={renderProps.focused || !!value || !!placeholder}
-                    input={(
-                      <BasicInput
-                        type="text"
-                        value={renderProps.value}
-                        name={name}
-                        autoComplete={autoComplete}
-                        autoFocus={autoFocus}
-                        placeholder={placeholder}
-                        disabled={disabled}
-                        pr={7}
-                        error={!!error}
-                        focused={renderProps.focused}
-                        maxLength={maxLength}
-                        mask={renderProps.mask}
-                        pipe={pipe}
-                        onChange={renderProps.onChange}
-                        onFocus={renderProps.onFocus}
-                        onBlur={renderProps.onBlur}
-                        onKeyDown={renderProps.onKeyDown}
-                        onKeyUp={renderProps.onKeyUp}
-                      />
-                    )}
-                    hint={(
-                      <Box
-                        cursor="pointer"
-                        onClick={renderProps.toggleClick}
-                        children={<Icon name="calendar" />}
-                      />
-                    )}
-                    error={error}
-                    help={help}
-                    action={action}
-                  />
-                </Box>
+    <DatePickerControl
+      value={value}
+      format={format}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      onKeyDown={onKeyDown}
+      onKeyUp={onKeyUp}
+      onChange={onChange}
+      children={renderProps => (
+        <Pos type="relative" ref={datePickerContainerRef}>
+          <Box ref={datePickerInputRef} onClick={renderProps.openCalendar}>
+            <InputField
+              title={title}
+              active={renderProps.focused || !!value || !!placeholder}
+              input={(
+                <BasicInput
+                  type="text"
+                  value={renderProps.value}
+                  name={name}
+                  autoComplete={autoComplete}
+                  autoFocus={autoFocus}
+                  placeholder={placeholder}
+                  disabled={disabled}
+                  pr={7}
+                  error={!!error}
+                  focused={renderProps.focused}
+                  maxLength={maxLength}
+                  mask={renderProps.mask}
+                  pipe={pipe}
+                  onChange={renderProps.onChange}
+                  onFocus={renderProps.onFocus}
+                  onBlur={renderProps.onBlur}
+                  onKeyDown={renderProps.onKeyDown}
+                  onKeyUp={renderProps.onKeyUp}
+                />
               )}
+              hint={(
+                <Box
+                  cursor="pointer"
+                  children={<Icon name="calendar" />}
+                />
+              )}
+              error={error}
+              help={help}
+              action={action}
             />
-            {renderProps.focused ? (
-              <Popper
-                placement="bottom-start"
-                children={({ref, style}) => (
-                  <Box
-                    ref={ref}
-                    style={{
-                      ...style,
-                      zIndex: 999,
-                    }}
-                    width={82}
-                    onClick={renderProps.calendarClick}
-                  >
-                    <Calendar
-                      days={days}
-                      months={months}
-                      firstDayIndex={firstDayIndex}
-                      onSelectDate={renderProps.onSelectDate}
-                    />
-                  </Box>
-                )}
+          </Box>
+          <DropDown
+            width={82}
+            show={renderProps.focused}
+            container={datePickerContainerRef.current}
+            target={datePickerInputRef.current!}
+            onHide={renderProps.closeCalendar}
+            // placement="bottom-start"
+            children={(
+              <Calendar
+                days={days}
+                months={months}
+                firstDayIndex={firstDayIndex}
+                onSelectDate={renderProps.onSelectDate}
               />
-            ) : (
-              null
             )}
-          </Fragment>
-        )}
-      />
-    </Manager>
+          />
+        </Pos>
+      )}
+    />
   )
 }
 

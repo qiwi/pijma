@@ -7,33 +7,20 @@ export default class DatePickerControl extends Component<DatePickerControlProps,
 
   public state: DatePickerControlState = {
     focused: false,
-    isCalendar: false,
-    isVisible: false,
+    opened: false,
   }
 
-  public componentDidMount() {
-    document.addEventListener('click', this.documentClick)
+  private closeCalendar = () => {
+    if (!this.state.focused) {
+      this.setState({
+        opened: false,
+      })
+    }
   }
 
-  public componentWillUnmount() {
-    document.removeEventListener('click', this.documentClick)
-  }
-
-  private documentClick = () => {
-    this.setState(state => ({
-      isVisible: state.isCalendar,
-      isCalendar: false,
-    }))
-  }
-
-  private calendarClick = () => {
-    this.setState({isCalendar: true})
-  }
-
-  private toggleClick = () => {
+  private openCalendar = () => {
     this.setState({
-      isCalendar: true,
-      isVisible: true,
+      opened: true,
     })
   }
 
@@ -49,14 +36,13 @@ export default class DatePickerControl extends Component<DatePickerControlProps,
   }
 
   private onFocus: FocusEventHandler = (e: FocusEvent) => {
+    e.preventDefault()
     this.setState({
       focused: true,
     })
-    e.preventDefault()
     if (this.props.onFocus) {
       this.props.onFocus()
     }
-    this.toggleClick()
   }
 
   private onBlur: FocusEventHandler = (e: FocusEvent) => {
@@ -83,7 +69,7 @@ export default class DatePickerControl extends Component<DatePickerControlProps,
 
   private onSelectDate = (date: Date) => {
     this.setState({
-      isVisible: false,
+      opened: false,
     })
     if (this.props.onChange) {
       this.props.onChange(date)
@@ -91,20 +77,19 @@ export default class DatePickerControl extends Component<DatePickerControlProps,
   }
 
   public render() {
-    const {focused, isVisible} = this.state
-
+    const {focused, opened} = this.state
     return this.props.children({
       value: this.props.value ? format(this.props.value, this.props.format) : '',
-      focused: focused || isVisible,
+      focused: focused || opened,
       mask: this.props.format.split('').map(sym => sym.match(/^[a-zA-Z]+$/) ? /\d/ : sym),
-      calendarClick: this.calendarClick,
-      toggleClick: this.toggleClick,
       onChange: this.onChange,
       onFocus: this.onFocus,
       onBlur: this.onBlur,
       onKeyDown: this.onKeyDown,
       onKeyUp: this.onKeyUp,
       onSelectDate: this.onSelectDate,
+      closeCalendar: this.closeCalendar,
+      openCalendar: this.openCalendar,
     })
   }
 

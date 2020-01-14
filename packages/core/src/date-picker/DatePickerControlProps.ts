@@ -14,13 +14,13 @@ export default interface DatePickerControlProps {
     focused: boolean
     value: string
     mask: Mask
-    calendarClick: () => void
-    toggleClick: () => void
     onChange: ChangeEventHandler
     onFocus: FocusEventHandler
     onBlur: FocusEventHandler
     onKeyDown: KeyboardEventHandler
     onKeyUp: KeyboardEventHandler
     onSelectDate: (date: Date) => void
+    closeCalendar: () => void
+    openCalendar: () => void
   }>
 }
