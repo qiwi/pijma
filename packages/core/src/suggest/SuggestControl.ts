@@ -37,7 +37,6 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
     event.preventDefault()
     this.setState({
       show: true,
-      focused: true,
     })
   }
 
