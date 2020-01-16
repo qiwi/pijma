@@ -1,23 +1,26 @@
 import {KeyboardEvent, ChangeEventHandler, FocusEventHandler, KeyboardEventHandler} from 'react'
+import {Mask} from '../mask'
 import RenderChild from '../RenderChild'
 
 export default interface DatePickerControlProps {
-  onChange?: (value: string) => void
+  value?: Date
+  format: string
   onFocus?: () => void
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean
   onKeyUp?: (event: KeyboardEvent) => boolean
-  onSelectDate?: (date: Date) => void
+  onChange?: (date: Date) => void
   children: RenderChild<{
     focused: boolean
-    calendarClick: () => void
-    toggleClick: () => void
+    value: string
+    mask: Mask
     onChange: ChangeEventHandler
     onFocus: FocusEventHandler
     onBlur: FocusEventHandler
     onKeyDown: KeyboardEventHandler
     onKeyUp: KeyboardEventHandler
     onSelectDate: (date: Date) => void
-    documentClick: () => void
+    closeCalendar: () => void
+    openCalendar: () => void
   }>
 }

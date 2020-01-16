@@ -7,7 +7,9 @@ export interface CalendarConstructorProps {
   currentYear: number
   getDaysInMonth: (year: number, month: number) => number
   getDatesArray: (from: number, to: number, hasActiveDate?: boolean, disabled?: boolean) => CalendarDate[]
-  getDatesByMonthAndYear: (month: number, year: number) => CalendarDate[]
+  getDates: (date: Date) => CalendarDate[]
+  getPrevMonth: (date: Date) => Date
+  getNextMonth: (date: Date) => Date
 }
 
 export default class CalendarConstructor implements CalendarConstructorProps {
@@ -35,7 +37,9 @@ export default class CalendarConstructor implements CalendarConstructorProps {
     return dates
   }
 
-  public getDatesByMonthAndYear = (month: number, year: number) => {
+  public getDates = (date: Date) => {
+    const month = date.getMonth()
+    const year = date.getFullYear()
     const numberOfDays = this.getDaysInMonth(year, month)
     const dates = this.getDatesArray(1, numberOfDays, (month === this.currentMonth && year === this.currentYear))
 
@@ -54,6 +58,22 @@ export default class CalendarConstructor implements CalendarConstructorProps {
     }
 
     return [...prevMonthDates, ...dates, ...nextMonthDates]
+  }
+
+  public getPrevMonth = (date: Date) => {
+    const currentMonth = date.getMonth()
+    const currentYear = date.getFullYear()
+    const month = currentMonth === 0 ? 11 : currentMonth - 1
+    const year = currentMonth === 0 ? currentYear - 1 : currentYear
+    return new Date(year, month, 1)
+  }
+
+  public getNextMonth = (date: Date) => {
+    const currentMonth = date.getMonth()
+    const currentYear = date.getFullYear()
+    const month = currentMonth === 11 ? 0 : currentMonth + 1
+    const year = currentMonth === 11 ? currentYear + 1 : currentYear
+    return new Date(year, month, 1)
   }
 
 }

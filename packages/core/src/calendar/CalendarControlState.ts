@@ -1,8 +1,7 @@
 import CalendarDate from './CalendarDate'
 
 export default interface CalendarControlState {
-  month: number
-  year: number
+  date: Date
   dates: CalendarDate[]
   showSelectMonth: boolean
 }

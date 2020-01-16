@@ -69,6 +69,7 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
   }
 
   private onFlagClick: React.MouseEventHandler = (event) => {
+    console.log(3)
     event.preventDefault()
     this.inputField.focus()
     this.setState({
