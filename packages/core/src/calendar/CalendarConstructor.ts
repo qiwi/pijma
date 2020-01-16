@@ -3,10 +3,12 @@ import CalendarDate from './CalendarDate'
 
 export interface CalendarConstructorProps {
   firstDayIndex: number
+  activeDate?: Date
+  date: Date
   currentMonth: number
   currentYear: number
   getDaysInMonth: (year: number, month: number) => number
-  getDatesArray: (from: number, to: number, hasActiveDate?: boolean, disabled?: boolean) => CalendarDate[]
+  getDatesArray: (from: Date, to: Date, disabled?: boolean) => CalendarDate[]
   getDates: (date: Date) => CalendarDate[]
   getPrevMonth: (date: Date) => Date
   getNextMonth: (date: Date) => Date
@@ -14,23 +16,25 @@ export interface CalendarConstructorProps {
 
 export default class CalendarConstructor implements CalendarConstructorProps {
 
-  constructor(public firstDayIndex: number) {
+  constructor(public firstDayIndex: number, public activeDate?: Date) {
     this.firstDayIndex = firstDayIndex
+    this.activeDate = activeDate
   }
 
-  public currentMonth = new Date().getMonth()
-  public currentYear = new Date().getFullYear()
+  public date = this.activeDate || new Date()
+  public currentMonth = this.date.getMonth()
+  public currentYear = this.date.getFullYear()
   public lastDayIndex = this.firstDayIndex + 6 >= 7 ? this.firstDayIndex - 1 : this.firstDayIndex + 6
 
   public getDaysInMonth = (year: number, month: number) =>
     new Date(year, month + 1, 0).getDate()
 
-  public getDatesArray = (from: number, to: number, hasActiveDate?: boolean, disabled?: boolean) => {
+  public getDatesArray = (from: Date, to: Date, disabled?: boolean) => {
     const dates = []
-    for (let i = from; i <= to; i++) {
+    for (let d = from; d <= to; d.setDate(d.getDate() + 1)) {
+      const date = new Date(d)
       dates.push({
-        active: hasActiveDate ? new Date().getDate() === i : undefined,
-        value: i,
+        date,
         disabled,
       })
     }
@@ -41,20 +45,31 @@ export default class CalendarConstructor implements CalendarConstructorProps {
     const month = date.getMonth()
     const year = date.getFullYear()
     const numberOfDays = this.getDaysInMonth(year, month)
-    const dates = this.getDatesArray(1, numberOfDays, (month === this.currentMonth && year === this.currentYear))
+    const dates = this.getDatesArray(
+      new Date(year, month, 1),
+      new Date(year, month, this.getDaysInMonth(year, month)),
+    )
 
     let prevMonthDates: CalendarDate[] = []
     const firstDayInMonth = new Date(year, month, 1).getDay()
     if (firstDayInMonth !== this.firstDayIndex) {
       const prevDatesLength = (firstDayInMonth === 0 ? 7 : firstDayInMonth) - this.firstDayIndex - 1
       const prevMonthDateTo = this.getDaysInMonth(year, month - 1)
-      prevMonthDates = this.getDatesArray(prevMonthDateTo - prevDatesLength, prevMonthDateTo, false, true)
+      prevMonthDates = this.getDatesArray(
+        new Date(year, month - 1, prevMonthDateTo - prevDatesLength),
+        new Date(year, month - 1, prevMonthDateTo),
+        true,
+      )
     }
 
     let nextMonthDates: CalendarDate[] = []
     const lastDayInMonth = new Date(year, month, numberOfDays).getDay()
     if (lastDayInMonth !== this.lastDayIndex) {
-      nextMonthDates = this.getDatesArray(1, (this.firstDayIndex + 6) - lastDayInMonth, false, true)
+      nextMonthDates = this.getDatesArray(
+        new Date(year, month + 1, 1),
+        new Date(year, month + 1, (this.firstDayIndex + 6) - lastDayInMonth),
+        true,
+      )
     }
 
     return [...prevMonthDates, ...dates, ...nextMonthDates]

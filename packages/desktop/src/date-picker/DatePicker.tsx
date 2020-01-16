@@ -111,10 +111,11 @@ export const DatePicker: FC<DatePickerProps> = ({
             placement="bottom-start"
             children={(
               <Calendar
+                activeDate={value}
                 days={days}
                 months={months}
                 firstDayIndex={firstDayIndex}
-                onSelectDate={renderProps.onSelectDate}
+                saveDate={renderProps.saveDate}
               />
             )}
           />

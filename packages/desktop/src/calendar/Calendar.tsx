@@ -1,5 +1,5 @@
 import React, {FC} from 'react'
-import {Pos, Box, Card, Block, Grid, Flex, Icon, Typo, CalendarControl, CalendarConstructor} from '@qiwi/pijma-core'
+import {Pos, Box, Card, Block, Grid, Flex, Icon, Typo, CalendarControl, CalendarConstructor, CalendarControlChildrenProps} from '@qiwi/pijma-core'
 import {BlockContent, MenuLink} from '../'
 
 const defaultDays = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
@@ -7,20 +7,88 @@ const defaultMonths = ['Январь', 'Февраль', 'Март', 'Апрел
 const defaultFirstDayIndex = 1
 
 export interface CalendarProps {
+  activeDate?: Date
   days?: string[]
   months?: string[]
   firstDayIndex?: number
-  onSelectDate?: (date: Date) => void
+  saveDate?: (date: Date) => void
 }
 
 export const Calendar: FC<CalendarProps> = props => {
   const days = props.days || defaultDays
   const months = props.months || defaultMonths
   const firstDayIndex = props.firstDayIndex === undefined ? defaultFirstDayIndex : props.firstDayIndex
+
+  const getDateItems = (renderProps: CalendarControlChildrenProps) => {
+    return renderProps.dates.map(({date, disabled}, key) => {
+      switch (date.toDateString()) {
+        case renderProps.activeDate && renderProps.activeDate.toDateString():
+          return (
+            <Pos key={key} type="absolute">
+              <Card
+                width={10}
+                height={10}
+                mt={-2}
+                ml={-2}
+                p={2}
+                bg="#ff8c00"
+                r={20}
+                cursor="pointer"
+                onClick={renderProps.onDesktopSelectDate(date)}
+              >
+                <Typo size={4} weight={300} height={6} color="#fff" align="center" css={{'user-select': 'none'}}>
+                  {date.getDate()}
+                </Typo>
+              </Card>
+            </Pos>
+          )
+
+        case new Date().toDateString():
+          return (
+            <Pos key={key} type="absolute">
+              <Card
+                width={10}
+                height={10}
+                mt={-2}
+                ml={-2}
+                p={2}
+                bg="#f5f5f5"
+                r={20}
+                cursor="pointer"
+                onClick={renderProps.onDesktopSelectDate(date)}
+              >
+                <Typo size={4} weight={500} height={6} align="center" css={{'user-select': 'none'}}>
+                  {date.getDate()}
+                </Typo>
+              </Card>
+            </Pos>
+          )
+
+        default:
+          return (
+            <Typo
+              key={key}
+              size={4}
+              weight={300}
+              height={6}
+              align="center"
+              color={disabled ? '#666' : 'default'}
+              cursor={disabled ? 'default' : 'pointer'}
+              onClick={renderProps.onDesktopSelectDate(date)}
+              css={{'user-select': 'none'}}
+            >
+              {date.getDate()}
+            </Typo>
+          )
+      }
+    },
+    )
+  }
+
   return (
     <CalendarControl
-      calendar={new CalendarConstructor(firstDayIndex)}
-      onSelectDate={props.onSelectDate}
+      calendar={new CalendarConstructor(firstDayIndex, props.activeDate)}
+      saveDate={props.saveDate}
       children={renderProps => (
         <Card s="0 28px 52px 0 rgba(0, 0, 0, 0.16)" r={10}>
           <Block>
@@ -65,41 +133,7 @@ export const Calendar: FC<CalendarProps> = props => {
                       {day}
                     </Typo>
                   ))}
-                  {renderProps.dates.map(({active, value, disabled}, key) => (
-                    active ? (
-                      <Pos key={key} type="absolute">
-                        <Card
-                          width={10}
-                          height={10}
-                          mt={-2}
-                          ml={-2}
-                          p={2}
-                          bg="#ff8c00"
-                          r={20}
-                          cursor="pointer"
-                          onClick={renderProps.onSelectDate(value)}
-                        >
-                          <Typo size={4} weight={300} height={6} color="#fff" align="center" css={{'user-select': 'none'}}>
-                            {value}
-                          </Typo>
-                        </Card>
-                      </Pos>
-                    ) : (
-                      <Typo
-                        key={key}
-                        size={4}
-                        weight={300}
-                        height={6}
-                        align="center"
-                        color={disabled ? '#666' : 'default'}
-                        cursor={disabled ? 'default' : 'pointer'}
-                        onClick={renderProps.onSelectDate(value)}
-                        css={{'user-select': 'none'}}
-                      >
-                        {value}
-                      </Typo>
-                    )
-                  ))}
+                  {getDateItems(renderProps)}
                 </Grid>
               )}
             </BlockContent>

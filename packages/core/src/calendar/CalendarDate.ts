@@ -1,5 +1,4 @@
 export default interface CalendarDate {
-  active?: boolean
-  value: number
+  date: Date
   disabled?: boolean
 }

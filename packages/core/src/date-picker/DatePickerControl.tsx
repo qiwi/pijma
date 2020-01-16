@@ -67,7 +67,7 @@ export default class DatePickerControl extends Component<DatePickerControlProps,
     }
   }
 
-  private onSelectDate = (date: Date) => {
+  private saveDate = (date: Date) => {
     this.setState({
       opened: false,
     })
@@ -87,7 +87,7 @@ export default class DatePickerControl extends Component<DatePickerControlProps,
       onBlur: this.onBlur,
       onKeyDown: this.onKeyDown,
       onKeyUp: this.onKeyUp,
-      onSelectDate: this.onSelectDate,
+      saveDate: this.saveDate,
       closeCalendar: this.closeCalendar,
       openCalendar: this.openCalendar,
     })

@@ -7,8 +7,9 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
   constructor(props: CalendarControlProps) {
     super(props)
     this.state = {
-      date: new Date(),
-      dates: props.calendar.getDates(new Date()),
+      activeDate: props.calendar.activeDate,
+      date: props.calendar.activeDate || new Date(),
+      dates: props.calendar.getDates(props.calendar.activeDate || new Date()),
       showSelectMonth: false,
     }
   }
@@ -51,27 +52,42 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
     })
   }
 
-  private onSelectDate = (day: number) => (event: SyntheticEvent) => {
+  private onDesktopSelectDate = (date: Date) => (event: SyntheticEvent) => {
     event.stopPropagation()
-    const {date} = this.state
-    if (this.props.onSelectDate) {
-      this.props.onSelectDate(new Date(date.getFullYear(), date.getMonth(), day))
+    if (this.props.saveDate) {
+      this.props.saveDate(date)
+    }
+  }
+
+  private onMobileSelectDate = (activeDate: Date) => (event: SyntheticEvent) => {
+    event.stopPropagation()
+    this.setState({activeDate})
+  }
+
+  private onMobileSaveDate = () => {
+    if (this.props.saveDate && this.state.activeDate) {
+      this.props.saveDate(this.state.activeDate)
     }
   }
 
   public render() {
-    const {date, dates, showSelectMonth} = this.state
+    const {date, dates, showSelectMonth, activeDate} = this.state
 
     return this.props.children({
+      // TODO
       month: date.getMonth(),
       year: date.getFullYear(),
+      date,
       dates,
+      activeDate,
       showSelectMonth,
       toggleSelectMonth: this.toggleSelectMonth,
       selectMonth: this.selectMonth,
       toPrevMonth: this.toPrevMonth,
       toNextMonth: this.toNextMonth,
-      onSelectDate: this.onSelectDate,
+      onDesktopSelectDate: this.onDesktopSelectDate,
+      onMobileSelectDate: this.onMobileSelectDate,
+      onMobileSaveDate: this.onMobileSaveDate,
     })
   }
 

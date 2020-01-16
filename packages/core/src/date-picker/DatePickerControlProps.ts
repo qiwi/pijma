@@ -19,7 +19,7 @@ export default interface DatePickerControlProps {
     onBlur: FocusEventHandler
     onKeyDown: KeyboardEventHandler
     onKeyUp: KeyboardEventHandler
-    onSelectDate: (date: Date) => void
+    saveDate: (date: Date) => void
     closeCalendar: () => void
     openCalendar: () => void
   }>

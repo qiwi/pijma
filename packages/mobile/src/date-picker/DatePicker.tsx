@@ -1,9 +1,10 @@
-import React, {FC, ReactNode, KeyboardEvent, Fragment} from 'react'
-import {Box, Icon, InputField, BasicInput, DatePickerControl, Mask, Pipe} from '@qiwi/pijma-core'
-import {Calendar, SimpleModal} from '../'
+import React, {FC, ReactNode, KeyboardEvent, Fragment, FunctionComponent} from 'react'
+import {styled, Box, Icon, InputField, BasicInput, DatePickerControl, Pipe, Typo, Striper, Modal, ModalProps, SimpleTransitionProps, SimpleTransition, Pos, Card} from '@qiwi/pijma-core'
+import {css} from 'emotion'
+import {Calendar} from '../'
 
 export interface DatePickerProps {
-  value: string
+  value?: Date
   tabIndex?: number
   name?: string
   title?: string
@@ -15,79 +16,155 @@ export interface DatePickerProps {
   placeholder?: string
   disabled?: boolean
   maxLength?: number
-  mask?: Mask
+  format?: string
   pipe?: Pipe
   stub?: boolean
   days?: string[]
   months?: string[]
   firstDayIndex?: number
-  onChange?: (value: string) => void
+  onChange?: (date: Date) => void
   onFocus?: () => void
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean
   onKeyUp?: (event: KeyboardEvent) => boolean
-  onSelectDate?: (date: Date) => void
 }
 
-export const DatePicker: FC<DatePickerProps> = props => {
+const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+
+contentTransition.defaultProps = {
+  timeout: {
+    enter: 370,
+    exit: 250,
+  },
+  enterClassName: (timeout: number) => css({
+    opacity: 1,
+    transform: 'translate3d(0, 0, 0)',
+    transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
+  }),
+  exitClassName: (timeout: number) => css({
+    opacity: 0,
+    transform: 'translate3d(0, -100%, 0)',
+    transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
+  }),
+}
+
+const StyledModal = styled(Modal)<ModalProps>({
+  position: 'fixed',
+  zIndex: 9999,
+  top: 0,
+  bottom: 0,
+  left: 0,
+  right: 0,
+  height: '100%',
+  overflow: 'auto',
+})
+
+export const DatePicker: FC<DatePickerProps> = ({
+  value,
+  format = 'yyyy-MM-dd',
+  onFocus,
+  onBlur,
+  onKeyDown,
+  onKeyUp,
+  onChange,
+  title,
+  placeholder,
+  name,
+  autoComplete,
+  autoFocus,
+  disabled,
+  error,
+  maxLength,
+  pipe,
+  help,
+  action,
+  days,
+  months,
+  firstDayIndex,
+}) => {
   return (
     <DatePickerControl
-      onChange={props.onChange}
-      onFocus={props.onFocus}
-      onBlur={props.onBlur}
-      onKeyDown={props.onKeyDown}
-      onKeyUp={props.onKeyUp}
-      onSelectDate={props.onSelectDate}
+      value={value}
+      format={format}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      onKeyDown={onKeyDown}
+      onKeyUp={onKeyUp}
+      onChange={onChange}
       children={renderProps => (
         <Fragment>
-          <InputField
-            title={props.title}
-            active={renderProps.focused || !!props.value || !!props.placeholder}
-            input={(
-              <BasicInput
-                type="text"
-                value={props.value}
-                name={props.name}
-                autoComplete={props.autoComplete}
-                autoFocus={props.autoFocus}
-                placeholder={props.placeholder}
-                disabled={props.disabled}
-                pr={7}
-                error={!!props.error}
-                focused={renderProps.focused}
-                maxLength={props.maxLength}
-                mask={props.mask}
-                pipe={props.pipe}
-                onChange={renderProps.onChange}
-                onFocus={renderProps.onFocus}
-                onBlur={renderProps.onBlur}
-                onKeyDown={renderProps.onKeyDown}
-                onKeyUp={renderProps.onKeyUp}
-              />
-            )}
-            hint={(
-              <Box
-                cursor="pointer"
-                onClick={renderProps.toggleClick}
-                children={<Icon name="calendar" />}
-              />
-            )}
-            error={props.error}
-            help={props.help}
-            action={props.action}
-          />
-          <SimpleModal
+          <Box onClick={renderProps.openCalendar}>
+            <InputField
+              title={title}
+              active={renderProps.focused || !!value || !!placeholder}
+              input={(
+                <BasicInput
+                  type="text"
+                  value={renderProps.value}
+                  name={name}
+                  autoComplete={autoComplete}
+                  autoFocus={autoFocus}
+                  placeholder={placeholder}
+                  disabled={disabled}
+                  pr={7}
+                  error={!!error}
+                  focused={renderProps.focused}
+                  maxLength={maxLength}
+                  mask={renderProps.mask}
+                  pipe={pipe}
+                  onChange={renderProps.onChange}
+                  onFocus={renderProps.onFocus}
+                  onBlur={renderProps.onBlur}
+                  onKeyDown={renderProps.onKeyDown}
+                  onKeyUp={renderProps.onKeyUp}
+                />
+              )}
+              hint={(
+                <Box
+                  cursor="pointer"
+                  children={<Icon name="calendar" />}
+                />
+              )}
+              error={error}
+              help={help}
+              action={action}
+            />
+          </Box>
+          <StyledModal
             show={renderProps.focused}
-            closable
-            backdropClose
-            onHide={renderProps.documentClick}
+            onHide={renderProps.closeCalendar}
+            transition={contentTransition}
             children={(
-              <Calendar
-                days={props.days}
-                months={props.months}
-                firstDayIndex={props.firstDayIndex}
-                onSelectDate={renderProps.onSelectDate}
-              />
+              <Pos type="relative" width={1} height={1}>
+                <Card bg="#fff" width={1} height={1} overflow="auto">
+                  <Fragment>
+                    <Pos
+                      type="absolute"
+                      top={4}
+                      right={6}
+                      width={6}
+                      height={6}
+                      cursor="pointer"
+                      onClick={renderProps.closeCalendar}
+                      children={<Icon name="cross" color="#000"/>}
+                    />
+                    <Striper>
+                      <Box p="16px 48px 16px 24px">
+                        <Typo weight={500} size={5} height={7}>Выберите дату</Typo>
+                      </Box>
+                      <Fragment>
+                        <Calendar
+                          days={days}
+                          months={months}
+                          activeDate={value}
+                          firstDayIndex={firstDayIndex}
+                          saveDate={renderProps.saveDate}
+                        />
+                      </Fragment>
+                    </Striper>
+                  </Fragment>
+                </Card>
+              </Pos>
             )}
           />
         </Fragment>
