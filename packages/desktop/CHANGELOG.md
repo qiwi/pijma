@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.96.3](https://github.com/qiwi/pijma/compare/v1.96.2...v1.96.3) (2020-01-17)
+
+
+### Bug Fixes
+
+* add export checkbox ([cb898df](https://github.com/qiwi/pijma/commit/cb898df))
+
 # [@qiwi/pijma-desktop-v1.96.2](https://github.com/qiwi/pijma/compare/v1.96.1...v1.96.2) (2019-12-17)
 
 
