@@ -33,6 +33,7 @@ export const ContentSuggest = <V extends {}>({
     items={props.items}
     total={props.total}
     empty={props.empty}
+    loading={props.loading}
     equals={equals}
     onRequest={props.onRequest}
     onChange={props.onChange}
@@ -62,7 +63,7 @@ export const ContentSuggest = <V extends {}>({
             onChange={renderProps.onRequest}
             onFocus={renderProps.onShowFocus}
           />
-          <Pos type="absolute" right={4} top={3} onClick={renderProps.onShowClick}>
+          <Pos type="absolute" right={4} top={3} onClick={renderProps.onInputClick}>
             <Icon name="search" color="#666"/>
           </Pos>
         </Box>
@@ -86,7 +87,7 @@ export const ContentSuggest = <V extends {}>({
               onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onModalItemKeyDown}
               onBlur={renderProps.onModalInputBlur}
               onSubmit={renderProps.onSearchClick}
-              onShow={renderProps.onShowClick}
+              onShow={renderProps.onInputClick}
               onHide={renderProps.onHide}
               onEscape={renderProps.onEscapeInputModal}
               onBack={renderProps.onBack}

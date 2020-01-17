@@ -56,6 +56,7 @@ export const HeaderSuggest = <V extends {}>({
     items={props.items}
     total={props.total}
     empty={props.empty}
+    loading={props.loading}
     equals={equals}
     onRequest={props.onRequest}
     onChange={props.onChange}
@@ -141,7 +142,7 @@ export const HeaderSuggest = <V extends {}>({
                     bg="#fff"
                   >
                     <Box width={295} mx="auto">
-                      {props.loading && props.items !== undefined ? (
+                      {props.loading && renderProps.result ? (
                         <Box pt={4}>
                           {Array(4).fill(1).map((_item, key) => (
                             <CardItem key={key} icon={true} stub text="stub" notes="stub"/>

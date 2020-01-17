@@ -20,6 +20,7 @@ export default interface SuggestControlProps<O extends SuggestOptionModel<V>, V>
       suggest: string
     }
   }
+  loading: boolean | undefined
   equals: (a: V, b: V) => boolean
   onChange: (value: V) => void
   onRequest: (suggest: string) => void
@@ -39,6 +40,7 @@ export default interface SuggestControlProps<O extends SuggestOptionModel<V>, V>
     onInputFocus?: React.FocusEventHandler
     onInputBlur?: React.FocusEventHandler
     onShowClick?: React.MouseEventHandler
+    onInputClick?: React.MouseEventHandler
     onModalInputBlur?: React.FocusEventHandler
     onSearchMouseDown?: React.MouseEventHandler
     onSearchClick: React.MouseEventHandler

@@ -36,6 +36,7 @@ export const ContentSuggest = <V extends {}>({
     items={props.items}
     total={props.total}
     empty={props.empty}
+    loading={props.loading}
     equals={equals}
     onRequest={props.onRequest}
     onChange={props.onChange}
