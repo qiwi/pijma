@@ -11,34 +11,41 @@ export interface CalendarProps {
   days?: string[]
   months?: string[]
   firstDayIndex?: number
+  buttonText?: string
   saveDate?: (date: Date) => void
 }
 
-export const Calendar: FC<CalendarProps> = props => {
-  const days = props.days || defaultDays
-  const months = props.months || defaultMonths
-  const firstDayIndex = props.firstDayIndex === undefined ? defaultFirstDayIndex : props.firstDayIndex
+export const Calendar: FC<CalendarProps> = ({
+  days = defaultDays,
+  months = defaultMonths,
+  firstDayIndex,
+  activeDate,
+  buttonText = 'Выбрать',
+  saveDate,
+}) => {
+  const dayIndex = firstDayIndex === undefined ? defaultFirstDayIndex : firstDayIndex
 
   const getDateItems = (renderProps: CalendarControlChildrenProps) => {
     return renderProps.dates.map(({date, disabled}, key) => {
       switch (date.toDateString()) {
         case renderProps.activeDate && renderProps.activeDate.toDateString():
           return (
-            <Pos key={key} type="absolute">
-              <Card
-                width={10}
-                height={10}
-                mt={-2}
-                ml={-2}
-                p={2}
-                bg="#ff8c00"
-                r={20}
-                cursor="pointer"
-              >
-                <Typo size={4} weight={300} height={6} color="#fff" align="center" css={{'user-select': 'none'}}>
-                  {date.getDate()}
-                </Typo>
-              </Card>
+            <Pos key={key} type="relative">
+              <Pos type="absolute" left={0.5} transform="translate(-50%, 0)">
+                <Card
+                  width={10}
+                  height={10}
+                  mt={-2}
+                  p={2}
+                  bg="#ff8c00"
+                  r={20}
+                  cursor="pointer"
+                >
+                  <Typo size={4} weight={300} height={6} color="#fff" align="center" css={{'user-select': 'none'}}>
+                    {date.getDate()}
+                  </Typo>
+                </Card>
+              </Pos>
             </Pos>
           )
 
@@ -82,11 +89,11 @@ export const Calendar: FC<CalendarProps> = props => {
 
   return (
     <CalendarControl
-      calendar={new CalendarConstructor(firstDayIndex, props.activeDate)}
-      saveDate={props.saveDate}
+      calendar={new CalendarConstructor(dayIndex, activeDate)}
+      saveDate={saveDate}
       children={renderProps => (
         <Box p={6}>
-          <Flex justify="space-between" mb={4}>
+          <Flex justify="space-between" mb={6}>
             <Box
               cursor="pointer"
               onClick={renderProps.toPrevMonth}
@@ -94,7 +101,7 @@ export const Calendar: FC<CalendarProps> = props => {
             />
             <Box onClick={renderProps.toggleSelectMonth}>
               <Typo display="inline" weight={500} size={4.5} height={6} css={{'user-select': 'none'}}>
-                {months[renderProps.month]} {renderProps.year}
+                {months[renderProps.date.getMonth()]} {renderProps.date.getFullYear()}
               </Typo>
               <Box
                 display="inline"
@@ -114,7 +121,7 @@ export const Calendar: FC<CalendarProps> = props => {
                 <MenuLink
                   key={index}
                   title={month}
-                  active={index === renderProps.month}
+                  active={index === renderProps.date.getMonth()}
                   onClick={() => renderProps.selectMonth(index)}
                 />
               ))}
@@ -134,7 +141,7 @@ export const Calendar: FC<CalendarProps> = props => {
                   type="button"
                   kind="brand"
                   size="accent"
-                  text="Выбрать"
+                  text={buttonText}
                   onClick={renderProps.onMobileSaveDate}
                 />
               </Box>

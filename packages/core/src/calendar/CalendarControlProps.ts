@@ -4,8 +4,6 @@ import CalendarDate from './CalendarDate'
 import {CalendarConstructorProps} from './CalendarConstructor'
 
 export interface CalendarControlChildrenProps {
-  month: number
-  year: number
   date: Date
   dates: CalendarDate[]
   activeDate?: Date

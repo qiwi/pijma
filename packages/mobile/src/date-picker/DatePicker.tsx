@@ -22,6 +22,8 @@ export interface DatePickerProps {
   days?: string[]
   months?: string[]
   firstDayIndex?: number
+  buttonText?: string
+  titleText?: string
   onChange?: (date: Date) => void
   onFocus?: () => void
   onBlur?: () => void
@@ -81,6 +83,8 @@ export const DatePicker: FC<DatePickerProps> = ({
   days,
   months,
   firstDayIndex,
+  buttonText,
+  titleText = 'Выберите дату',
 }) => {
   return (
     <DatePickerControl
@@ -150,7 +154,7 @@ export const DatePicker: FC<DatePickerProps> = ({
                     />
                     <Striper>
                       <Box p="16px 48px 16px 24px">
-                        <Typo weight={500} size={5} height={7}>Выберите дату</Typo>
+                        <Typo weight={500} size={5} height={7}>{titleText}</Typo>
                       </Box>
                       <Fragment>
                         <Calendar
@@ -158,6 +162,7 @@ export const DatePicker: FC<DatePickerProps> = ({
                           months={months}
                           activeDate={value}
                           firstDayIndex={firstDayIndex}
+                          buttonText={buttonText}
                           saveDate={renderProps.saveDate}
                         />
                       </Fragment>

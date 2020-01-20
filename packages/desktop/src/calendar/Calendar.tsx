@@ -101,7 +101,7 @@ export const Calendar: FC<CalendarProps> = props => {
                 />
                 <Box onClick={renderProps.toggleSelectMonth}>
                   <Typo display="inline" weight={500} size={4.5} height={6} css={{'user-select': 'none'}}>
-                    {months[renderProps.month]} {renderProps.year}
+                    {months[renderProps.date.getMonth()]} {renderProps.date.getFullYear()}
                   </Typo>
                   <Box
                     display="inline"
@@ -121,7 +121,7 @@ export const Calendar: FC<CalendarProps> = props => {
                     <MenuLink
                       key={index}
                       title={month}
-                      active={index === renderProps.month}
+                      active={index === renderProps.date.getMonth()}
                       onClick={() => renderProps.selectMonth(index)}
                     />
                   ))}

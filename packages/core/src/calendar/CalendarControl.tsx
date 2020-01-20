@@ -74,9 +74,6 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
     const {date, dates, showSelectMonth, activeDate} = this.state
 
     return this.props.children({
-      // TODO
-      month: date.getMonth(),
-      year: date.getFullYear(),
       date,
       dates,
       activeDate,
