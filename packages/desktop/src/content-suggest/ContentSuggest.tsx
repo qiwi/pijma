@@ -27,16 +27,15 @@ const CardItem = styled(Card)().withComponent(MenuItem)
 const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
 
 export const ContentSuggest = <V extends {}>({
-    equals = (a: V, b: V) => a === b,
-    ...props
-  }: ContentSuggestProps<ContentSuggestOptionsModel<V>, V>) => (
+  equals = (a: V, b: V) => a === b,
+  ...props
+}: ContentSuggestProps<ContentSuggestOptionsModel<V>, V>) => (
   <SuggestControl<V, ContentSuggestOptionsModel<V>>
     value={props.value}
     suggest={props.suggest}
     items={props.items}
     total={props.total}
     empty={props.empty}
-    loading={props.loading}
     equals={equals}
     onRequest={props.onRequest}
     onChange={props.onChange}
@@ -46,7 +45,7 @@ export const ContentSuggest = <V extends {}>({
     onCancel={props.onCancel}
     children={(renderProps) => (
       <MenuControl
-        count={renderProps.items.length}
+        count={props.items ? props.items.length : 0}
         selected={renderProps.selected}
         onSelect={renderProps.onItemSelect}
         onKeyDown={renderProps.onItemKeyDown}
@@ -55,8 +54,8 @@ export const ContentSuggest = <V extends {}>({
             type="relative"
             ref={dropDownContainerRef}
             width={1}
-            transition={`box-shadow ${renderProps.result ? 300 : 200}ms cubic-bezier(0.4, 0.0, 0.2, 1)`}
-            s={renderProps.focused || renderProps.result ? '0 20px 64px 0 rgba(0, 0, 0, 0.16)' : 'none'}
+            transition={`box-shadow ${renderProps.focused ? 300 : 200}ms cubic-bezier(0.4, 0.0, 0.2, 1)`}
+            s={renderProps.focused ? '0 20px 64px 0 rgba(0, 0, 0, 0.16)' : 'none'}
             r={10}
           >
             <Box
@@ -75,12 +74,16 @@ export const ContentSuggest = <V extends {}>({
                 pr={14}
                 error={!!props.error}
                 focused={renderProps.focused}
-                norb={renderProps.result}
+                norb={props.items !== undefined && renderProps.focused && (props.items.length > 0 || props.empty !== undefined || props.loading)}
                 hovered={renderProps.hovered}
                 onChange={renderProps.onRequest}
                 onFocus={renderProps.onInputFocus}
                 onBlur={renderProps.onInputBlur}
-                onKeyDown={renderProps.result ? menuRenderProps.onKeyDown : renderProps.onItemKeyDown}
+                onKeyDown={props.items !== undefined && renderProps.focused && (props.items.length > 0 || props.empty !== undefined) ? (
+                  menuRenderProps.onKeyDown
+                ) : (
+                  renderProps.onItemKeyDown
+                )}
               />
               <Pos
                 type="absolute"
@@ -94,7 +97,7 @@ export const ContentSuggest = <V extends {}>({
             </Box>
             <DropDown
               minWidth={1}
-              show={renderProps.result}
+              show={props.items !== undefined && renderProps.focused && (props.items.length > 0 || props.empty !== undefined || props.loading === true)}
               rootClose={false}
               container={dropDownContainerRef.current}
               target={renderProps.inputRef.current!}
@@ -135,9 +138,9 @@ export const ContentSuggest = <V extends {}>({
                               onMouseDown={item.onMouseDown}
                               onMouseEnter={item.onMouseEnter}
                               cursor="pointer"
-                              text={renderProps.items[key].title}
-                              notes={renderProps.items[key].description}
-                              icon={<Image width={6} height={6} src={renderProps.items[key].logo}/>}
+                              text={props.items ? props.items[key].title : ''}
+                              notes={props.items ? props.items[key].description : undefined}
+                              icon={<Image width={6} height={6} src={props.items ? props.items[key].logo : ''}/>}
                               hover={item.focused}
                               active={item.selected}
                               focus={item.selected}

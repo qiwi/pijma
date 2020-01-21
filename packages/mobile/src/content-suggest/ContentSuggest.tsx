@@ -33,7 +33,6 @@ export const ContentSuggest = <V extends {}>({
     items={props.items}
     total={props.total}
     empty={props.empty}
-    loading={props.loading}
     equals={equals}
     onRequest={props.onRequest}
     onChange={props.onChange}
@@ -107,9 +106,9 @@ export const ContentSuggest = <V extends {}>({
                           onClick={item.onClick}
                           onMouseEnter={item.onMouseEnter}
                           cursor="pointer"
-                          text={renderProps.items[key].title}
-                          notes={renderProps.items[key].description}
-                          icon={<Image width={6} height={6} src={renderProps.items[key].logo}/>}
+                          text={props.items ? props.items[key].title : ''}
+                          notes={props.items ? props.items[key].description : undefined}
+                          icon={<Image width={6} height={6} src={props.items ? props.items[key].logo : ''}/>}
                           hover={item.focused}
                           active={item.selected}
                           focus={item.selected}

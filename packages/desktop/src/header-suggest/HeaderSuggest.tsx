@@ -56,7 +56,6 @@ export const HeaderSuggest = <V extends {}>({
     items={props.items}
     total={props.total}
     empty={props.empty}
-    loading={props.loading}
     equals={equals}
     onRequest={props.onRequest}
     onChange={props.onChange}
@@ -66,7 +65,7 @@ export const HeaderSuggest = <V extends {}>({
     onSubmit={props.onSubmit}
     children={(renderProps) => (
       <MenuControl
-        count={renderProps.items.length}
+        count={props.items ? props.items.length : 0}
         selected={renderProps.selected}
         onSelect={renderProps.onItemSelect}
         onKeyDown={renderProps.onModalItemKeyDown}
@@ -142,7 +141,7 @@ export const HeaderSuggest = <V extends {}>({
                     bg="#fff"
                   >
                     <Box width={295} mx="auto">
-                      {props.loading && renderProps.result ? (
+                      {props.loading && props.items !== undefined ? (
                         <Box pt={4}>
                           {Array(4).fill(1).map((_item, key) => (
                             <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
@@ -159,9 +158,9 @@ export const HeaderSuggest = <V extends {}>({
                                   cursor="pointer"
                                   mt={key === 0 ? 4 : undefined}
                                   round
-                                  text={renderProps.items[key].title}
-                                  notes={renderProps.items[key].description}
-                                  icon={<Image width={6} height={6} src={renderProps.items[key].logo}/>}
+                                  text={props.items ? props.items[key].title : ''}
+                                  notes={props.items ? props.items[key].description : undefined}
+                                  icon={<Image width={6} height={6} src={props.items ? props.items[key].logo : ''}/>}
                                   hover={item.focused}
                                   active={item.selected}
                                   focus={item.selected}
@@ -190,7 +189,7 @@ export const HeaderSuggest = <V extends {}>({
                                 )}
                               </Paragraph>
                             </Box>
-                          ) : props.empty && menuRenderProps.items.length === 0 && renderProps.result ? (
+                          ) : props.empty && menuRenderProps.items.length === 0 && props.items !== undefined ? (
                             <Box px={6} py={4}>
                               <Paragraph>
                                 {props.empty.text}
