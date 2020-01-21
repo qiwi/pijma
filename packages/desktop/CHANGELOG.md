@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.96.4](https://github.com/qiwi/pijma/compare/v1.96.3...v1.96.4) (2020-01-21)
+
+
+### Bug Fixes
+
+* **desktop:** logo-block-link ([cd283b9](https://github.com/qiwi/pijma/commit/cd283b9))
+
 # [@qiwi/pijma-desktop-v1.96.3](https://github.com/qiwi/pijma/compare/v1.96.2...v1.96.3) (2020-01-17)
 
 
