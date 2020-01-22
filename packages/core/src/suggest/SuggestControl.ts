@@ -1,4 +1,5 @@
 import {Component, RefObject, createRef} from 'react'
+
 import SuggestControlProps from './SuggestControlProps'
 import SuggestControlState from './SuggestControlState'
 import SuggestOptionModel from './SuggestOptionModel'
@@ -121,11 +122,6 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
     this.submit()
   }
 
-  private onSearchMouseDown: React.MouseEventHandler = (event) => {
-    event.preventDefault()
-    this.inputRef.current!.focus({preventScroll: true})
-  }
-
   private onEscapeInputModal: () => void = () => {
     this.cancel()
   }
@@ -139,8 +135,10 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
 
   private submit: (value?: string) => void = (value) => {
     if (this.props.onSubmit && this.props.onSubmit(value ? value : this.inputRef.current!.value)) {
+      this.inputRef.current!.blur()
       this.setState({
         show: false,
+        focused: false,
       })
     }
   }
@@ -212,7 +210,6 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
       onModalInputBlur: this.onModalInputBlur,
       onShowClick: this.onShowClick,
       onInputClick: this.onInputClick,
-      onSearchMouseDown: this.onSearchMouseDown,
       onSearchClick: this.onSearchClick,
       onInputMouseEnter: this.onInputMouseEnter,
       onInputMouseLeave: this.onInputMouseLeave,

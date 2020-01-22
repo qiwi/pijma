@@ -156,6 +156,7 @@ const onChange = (value) => {
   setState({
     value: value,
     suggest: title,
+    banks: undefined,
   });
   console.log('SELECT ITEM', value);
 };

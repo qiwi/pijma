@@ -39,7 +39,6 @@ export default interface SuggestControlProps<O extends SuggestOptionModel<V>, V>
     onShowClick?: React.MouseEventHandler
     onInputClick?: React.MouseEventHandler
     onModalInputBlur?: React.FocusEventHandler
-    onSearchMouseDown?: React.MouseEventHandler
     onSearchClick: React.MouseEventHandler
     onBack?: React.MouseEventHandler
     onInputMouseEnter: React.MouseEventHandler

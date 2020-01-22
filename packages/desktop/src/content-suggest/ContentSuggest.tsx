@@ -90,7 +90,6 @@ export const ContentSuggest = <V extends {}>({
                 cursor="pointer"
                 right={4}
                 top={3}
-                onMouseDown={renderProps.onSearchMouseDown}
                 onClick={renderProps.onSearchClick}
                 children={<Icon name="search" color="#666"/>}
               />

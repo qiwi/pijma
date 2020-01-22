@@ -153,6 +153,7 @@ const onChange = (value) => {
   setState({
     value: value,
     suggest: title,
+    banks: undefined,
   });
   setState({
     dialogText: `Выбрано: ${title}`,
