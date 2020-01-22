@@ -182,10 +182,6 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
     this.show()
   }
 
-  private onInputClick: () => void = () => {
-    this.show()
-  }
-
   private show: () => void = () => {
     this.setState({
       show: true,
@@ -209,7 +205,6 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
       onInputBlur: this.onInputBlur,
       onModalInputBlur: this.onModalInputBlur,
       onShowClick: this.onShowClick,
-      onInputClick: this.onInputClick,
       onSearchClick: this.onSearchClick,
       onInputMouseEnter: this.onInputMouseEnter,
       onInputMouseLeave: this.onInputMouseLeave,
