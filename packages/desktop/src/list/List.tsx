@@ -40,10 +40,28 @@ const LetterSize: Record<NonNullable<ListProps['size']>, number> = {
   l: 3,
 }
 
-const StubItemIndent: Record<NonNullable<ListProps['size']>, number> = {
+const StubNumberWidth: Record<NonNullable<ListProps['size']>, number> = {
+  s: 2,
+  m: 3,
+  l: 3,
+}
+
+const StubNumberHeight: Record<NonNullable<ListProps['size']>, number> = {
+  s: 2,
+  m: 3,
+  l: 3,
+}
+
+const StubNumberIndent: Record<NonNullable<ListProps['size']>, number> = {
   s: 1.5,
-  m: 1.75,
+  m: 1.5,
   l: 2.5,
+}
+
+const StubBulletIndent: Record<NonNullable<ListProps['size']>, number> = {
+  s: 1.5,
+  m: 2,
+  l: 3,
 }
 
 export const List: FunctionComponent<ListProps> = ({stub = false, type, size = 'm', children}) => (
@@ -53,13 +71,9 @@ export const List: FunctionComponent<ListProps> = ({stub = false, type, size = '
         {type === 'number' ? (
           <FlexItem width={String(children.length).length * LetterSize[size] + SpaceSize[size]} shrink={0}>
             {stub ? (
-              <Stub
-                height={LetterSize[size]}
-                width={LetterSize[size]}
-                r={LetterSize[size] * 2}
-                top={StubItemIndent[size]}
-                bottom={StubItemIndent[size]}
-              />
+              <Box width={StubNumberWidth[size]} height={StubNumberHeight[size]}>
+                <Stub height={1} width={1} top={StubNumberIndent[size]} bottom={StubNumberIndent[size]}/>
+              </Box>
             ) : (
               <Text size={size} bold={false}>{index + 1}.</Text>
             )}
@@ -67,13 +81,7 @@ export const List: FunctionComponent<ListProps> = ({stub = false, type, size = '
         ) : type === 'bullet' ? (
           <FlexItem width={5} shrink={0}>
             {stub ? (
-              <Stub
-                height={LetterSize[size]}
-                width={LetterSize[size]}
-                r={LetterSize[size] * 2}
-                top={StubItemIndent[size]}
-                bottom={StubItemIndent[size]}
-              />
+              <Stub height={2} width={2} top={StubBulletIndent[size]} bottom={StubNumberIndent[size]}/>
             ) : (
               <Text size={size} bold={false}>&#8226;</Text>
             )}
