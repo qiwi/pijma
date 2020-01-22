@@ -1,3 +1,31 @@
+# [@qiwi/pijma-mobile-v1.96.1](https://github.com/qiwi/pijma/compare/v1.96.0...v1.96.1) (2019-12-11)
+
+
+### Bug Fixes
+
+* **mobile:** header menu scroll height ([4563567](https://github.com/qiwi/pijma/commit/4563567))
+
+# [@qiwi/pijma-mobile-v1.96.0](https://github.com/qiwi/pijma/compare/v1.95.0...v1.96.0) (2019-11-27)
+
+
+### Features
+
+* header suggest ([e21e8d1](https://github.com/qiwi/pijma/commit/e21e8d1))
+
+# [@qiwi/pijma-mobile-v1.95.0](https://github.com/qiwi/pijma/compare/v1.94.0...v1.95.0) (2019-11-27)
+
+
+### Features
+
+* phone-field ([d42068e](https://github.com/qiwi/pijma/commit/d42068e))
+
+# [@qiwi/pijma-mobile-v1.94.0](https://github.com/qiwi/pijma/compare/v1.93.0...v1.94.0) (2019-11-27)
+
+
+### Features
+
+* stub pagination ([8166098](https://github.com/qiwi/pijma/commit/8166098))
+
 # [@qiwi/pijma-mobile-v1.93.0](https://github.com/qiwi/pijma/compare/v1.92.0...v1.93.0) (2019-11-21)
 
 

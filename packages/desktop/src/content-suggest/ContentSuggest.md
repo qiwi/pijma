@@ -118,12 +118,12 @@ const banks = [
 ];
 
 const initialState = {
-  suggest: '',
   loading: false,
   error: false,
-  banks: [],
   timer: undefined,
   dialogText: undefined,
+  banks: [],
+  suggest: '',
 };
 
 const filterBanks = (title) => banks.filter(bank => {
