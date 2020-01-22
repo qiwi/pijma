@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
-import {Pos, Box, Card, Block, Grid, Flex, Icon, Typo, CalendarControl, CalendarConstructor, CalendarControlChildrenProps} from '@qiwi/pijma-core'
-import {BlockContent, MenuLink} from '../'
+import {Box, Card, Block, Grid, Flex, Icon, Typo, CalendarControl, CalendarConstructor, CalendarControlChildrenProps} from '@qiwi/pijma-core'
+import {MenuLink} from '../'
 
 const defaultDays = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
 const defaultMonths = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
@@ -24,61 +24,56 @@ export const Calendar: FC<CalendarProps> = props => {
       switch (date.toDateString()) {
         case renderProps.activeDate && renderProps.activeDate.toDateString():
           return (
-            <Pos key={key} type="absolute">
-              <Card
-                width={10}
-                height={10}
-                mt={-2}
-                ml={-2}
-                p={2}
-                bg="#ff8c00"
-                r={20}
-                cursor="pointer"
-                onClick={renderProps.onDesktopSelectDate(date)}
-              >
-                <Typo size={4} weight={300} height={6} color="#fff" align="center" css={{'user-select': 'none'}}>
-                  {date.getDate()}
-                </Typo>
-              </Card>
-            </Pos>
+            <Card
+              key={key}
+              width={10}
+              height={10}
+              p={2}
+              bg="#ff8c00"
+              r={20}
+              cursor="pointer"
+              onClick={renderProps.onDesktopSelectDate(date)}
+            >
+              <Typo size={4} weight={300} height={6} color="#fff" align="center" css={{'user-select': 'none'}}>
+                {date.getDate()}
+              </Typo>
+            </Card>
           )
 
         case new Date().toDateString():
           return (
-            <Pos key={key} type="absolute">
-              <Card
-                width={10}
-                height={10}
-                mt={-2}
-                ml={-2}
-                p={2}
-                bg="#f5f5f5"
-                r={20}
-                cursor="pointer"
-                onClick={renderProps.onDesktopSelectDate(date)}
-              >
-                <Typo size={4} weight={500} height={6} align="center" css={{'user-select': 'none'}}>
-                  {date.getDate()}
-                </Typo>
-              </Card>
-            </Pos>
+            <Card
+              key={key}
+              width={10}
+              height={10}
+              p={2}
+              bg="#f5f5f5"
+              r={20}
+              cursor="pointer"
+              onClick={renderProps.onDesktopSelectDate(date)}
+            >
+              <Typo size={4} weight={500} height={6} align="center" css={{'user-select': 'none'}}>
+                {date.getDate()}
+              </Typo>
+            </Card>
           )
 
         default:
           return (
-            <Typo
-              key={key}
-              size={4}
-              weight={300}
-              height={6}
-              align="center"
-              color={disabled ? '#666' : 'default'}
-              cursor={disabled ? 'default' : 'pointer'}
-              onClick={renderProps.onDesktopSelectDate(date)}
-              css={{'user-select': 'none'}}
-            >
-              {date.getDate()}
-            </Typo>
+            <Box key={key} width={10} height={10} p={2}>
+              <Typo
+                size={4}
+                weight={300}
+                height={6}
+                align="center"
+                color={disabled ? '#666' : 'default'}
+                cursor={disabled ? 'default' : 'pointer'}
+                onClick={renderProps.onDesktopSelectDate(date)}
+                css={{'user-select': 'none'}}
+              >
+                {date.getDate()}
+              </Typo>
+            </Box>
           )
       }
     },
@@ -92,8 +87,8 @@ export const Calendar: FC<CalendarProps> = props => {
       children={renderProps => (
         <Card s="0 28px 52px 0 rgba(0, 0, 0, 0.16)" r={10}>
           <Block>
-            <BlockContent indent="s">
-              <Flex justify="space-between" mb={4}>
+            <Box pt={8} px={6} pb={6}>
+              <Flex justify="space-between" px={2} mb={2}>
                 <Box
                   cursor="pointer"
                   onClick={renderProps.toPrevMonth}
@@ -127,16 +122,18 @@ export const Calendar: FC<CalendarProps> = props => {
                   ))}
                 </Box>
               ) : (
-                <Grid columns={7} layout={1} gutter={16}>
+                <Grid columns={7} layout={1} gutter={0}>
                   {days.map(day => (
-                    <Typo key={day} size={3.5} weight={300} height={5} align="center" color="#666" css={{'user-select': 'none'}}>
-                      {day}
-                    </Typo>
+                    <Box key={day} width={10} height={10} p={2}>
+                      <Typo size={3.5} weight={300} height={5} align="center" color="#666" css={{'user-select': 'none'}}>
+                        {day}
+                      </Typo>
+                    </Box>
                   ))}
                   {getDateItems(renderProps)}
                 </Grid>
               )}
-            </BlockContent>
+            </Box>
           </Block>
         </Card>
       )}
