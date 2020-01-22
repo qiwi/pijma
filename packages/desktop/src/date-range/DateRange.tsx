@@ -1,9 +1,9 @@
 import React, {FC, ReactNode, KeyboardEvent, useRef} from 'react'
-import {Box, Icon, InputField, BasicInput, DatePickerControl, Pipe, Pos, Block, Card} from '@qiwi/pijma-core'
-import {Calendar, DropDown} from '../'
+import {Box, Icon, InputField, BasicInput, DateRangeControl, Pipe, Pos, Flex, Card, Block, DateRanges, DateRangeValueType} from '@qiwi/pijma-core'
+import {Calendar, DropDown, MenuLink} from '../'
 
-export interface DatePickerProps {
-  value?: Date
+export interface DateRangeProps {
+  value?: DateRangeValueType
   tabIndex?: number
   name?: string
   title?: string
@@ -21,14 +21,14 @@ export interface DatePickerProps {
   days?: string[]
   months?: string[]
   firstDayIndex?: number
-  onChange?: (date: Date) => void
+  onChange?: (date: DateRangeValueType) => void
   onFocus?: () => void
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean
   onKeyUp?: (event: KeyboardEvent) => boolean
 }
 
-export const DatePicker: FC<DatePickerProps> = ({
+export const DateRange: FC<DateRangeProps> = ({
   value,
   format = 'yyyy-MM-dd',
   onFocus,
@@ -53,9 +53,11 @@ export const DatePicker: FC<DatePickerProps> = ({
 }) => {
   const datePickerContainerRef = useRef<HTMLDivElement>(null)
   const datePickerInputRef = useRef<HTMLDivElement>(null)
+  type DateRangesKeys = keyof typeof DateRanges
+  const dateRanges = Object.keys(DateRanges) as DateRangesKeys[]
 
   return (
-    <DatePickerControl
+    <DateRangeControl
       value={value}
       format={format}
       onFocus={onFocus}
@@ -72,7 +74,7 @@ export const DatePicker: FC<DatePickerProps> = ({
               input={(
                 <BasicInput
                   type="text"
-                  value={renderProps.value}
+                  value={/*renderProps.value || */''}
                   name={name}
                   autoComplete={autoComplete}
                   autoFocus={autoFocus}
@@ -103,7 +105,6 @@ export const DatePicker: FC<DatePickerProps> = ({
             />
           </Box>
           <DropDown
-            width={82}
             show={renderProps.focused}
             container={datePickerContainerRef.current}
             target={datePickerInputRef.current!}
@@ -112,13 +113,36 @@ export const DatePicker: FC<DatePickerProps> = ({
             children={(
               <Card s="0 28px 52px 0 rgba(0, 0, 0, 0.16)" r={10}>
                 <Block>
-                  <Calendar
-                    activeDate={value}
-                    days={days}
-                    months={months}
-                    firstDayIndex={firstDayIndex}
-                    saveDate={renderProps.saveDate}
-                  />
+                  <Flex width={126} display="inline-flex">
+                    <Box minWidth={44} pt={3}>
+                      {dateRanges.map((key: DateRangesKeys) => {
+                        // type DateRangesKeys = keyof typeof DateRanges
+                        // const dateRange = key in DateRangesKeys ?
+                        return (
+                          <MenuLink
+                            key={key}
+                            title={DateRanges[key]}
+                            active={DateRanges[key] === renderProps.activeRange}
+                            onClick={renderProps.changeActiveRange(DateRanges[key])}
+                          />
+                        )
+                      })}
+                    </Box>
+                    {renderProps.activeRange === DateRanges.day || renderProps.activeRange === DateRanges.range
+                      ? (
+                        <Card s="rgb(230, 230, 230) -1px 0px 0px 0px}">
+                          <Calendar
+                            activeDate={new Date(2020, 0, 7)}
+                            activeDateTo={new Date(2020, 0, 11)}
+                            days={days}
+                            months={months}
+                            firstDayIndex={firstDayIndex}
+                            saveDate={renderProps.saveDate}
+                          />
+                        </Card>
+                      )
+                      : null}
+                  </Flex>
                 </Block>
               </Card>
             )}
@@ -129,6 +153,6 @@ export const DatePicker: FC<DatePickerProps> = ({
   )
 }
 
-DatePicker.defaultProps = {
+DateRange.defaultProps = {
   format: 'yyyy-MM-dd',
 }
