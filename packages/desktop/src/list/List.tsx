@@ -10,7 +10,7 @@ export interface ListProps {
   stub?: boolean
 }
 
-const ListType: Record<NonNullable<ListProps['type']>, keyof JSX.IntrinsicElements> = {
+const ListType: Record<NonNullable<ListProps['type']>, 'ol' | 'ul'> = {
   step: 'ol',
   number: 'ol',
   bullet: 'ul',
@@ -71,9 +71,12 @@ export const List: FunctionComponent<ListProps> = ({stub = false, type, size = '
         {type === 'number' ? (
           <FlexItem width={String(children.length).length * LetterSize[size] + SpaceSize[size]} shrink={0}>
             {stub ? (
-              <Box width={StubNumberWidth[size]} height={StubNumberHeight[size]}>
-                <Stub height={1} width={1} top={StubNumberIndent[size]} bottom={StubNumberIndent[size]}/>
-              </Box>
+              <Stub
+                height={StubNumberWidth[size]}
+                width={StubNumberHeight[size]}
+                top={StubNumberIndent[size]}
+                bottom={StubNumberIndent[size]}
+              />
             ) : (
               <Text size={size} bold={false}>{index + 1}.</Text>
             )}
@@ -81,7 +84,12 @@ export const List: FunctionComponent<ListProps> = ({stub = false, type, size = '
         ) : type === 'bullet' ? (
           <FlexItem width={5} shrink={0}>
             {stub ? (
-              <Stub height={2} width={2} top={StubBulletIndent[size]} bottom={StubNumberIndent[size]}/>
+              <Stub
+                height={2}
+                width={2}
+                top={StubBulletIndent[size]}
+                bottom={StubNumberIndent[size]}
+              />
             ) : (
               <Text size={size} bold={false}>&#8226;</Text>
             )}
