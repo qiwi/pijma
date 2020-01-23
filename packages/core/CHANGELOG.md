@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.98.0](https://github.com/qiwi/pijma/compare/v1.97.0...v1.98.0) (2020-01-23)
+
+
+### Features
+
+* suggest-control items undefined ([66ebdb2](https://github.com/qiwi/pijma/commit/66ebdb2))
+
 # [@qiwi/pijma-core-v1.96.2](https://github.com/qiwi/pijma/compare/v1.96.1...v1.96.2) (2019-12-17)
 
 
