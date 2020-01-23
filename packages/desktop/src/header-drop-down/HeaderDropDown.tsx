@@ -16,6 +16,7 @@ export interface HeaderDropDownProps {
   target: OverlayProps['target']
   container: OverlayProps['container']
   children: React.ReactElement
+  separated?: boolean
   onHide: () => void
 }
 
@@ -40,6 +41,7 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
   show,
   target,
   container,
+  separated,
   onHide,
   children,
 }) => (
@@ -75,6 +77,7 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
             width={1}
             pt={12}
             pb={12}
+            bt={separated ? 'solid 1px #e6e6e6' : undefined}
             s="0 0 16px 0 rgba(0, 0, 0, 0.12)"
           >
             {children}
