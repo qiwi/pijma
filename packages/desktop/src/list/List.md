@@ -22,6 +22,18 @@
 </Block>
 ```
 
+```jsx
+<Block>
+  <BlockContent>
+    <List
+      type="number"
+      children={[]}
+      stub
+    />
+  </BlockContent>
+</Block>
+```
+
 ## Маркированный
 
 ```jsx
@@ -35,6 +47,18 @@
 </Block>
 ```
 
+```jsx
+<Block>
+  <BlockContent>
+    <List
+      type="bullet"
+      children={[]}
+      stub
+    />
+  </BlockContent>
+</Block>
+```
+
 ## Степпер
 
 ```jsx
@@ -43,6 +67,19 @@
     <List
       type="step"
       children={['Элемент списка 1', 'Элемент списка 2', 'Элемент списка 3']}
+    />
+  </BlockContent>
+</Block>
+```
+
+
+```jsx
+<Block>
+  <BlockContent>
+    <List
+      type="step"
+      children={[]}
+      stub
     />
   </BlockContent>
 </Block>

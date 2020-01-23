@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.97.0](https://github.com/qiwi/pijma/compare/v1.96.4...v1.97.0) (2020-01-22)
+
+
+### Features
+
+* stub list ([7756060](https://github.com/qiwi/pijma/commit/7756060))
+
 # [@qiwi/pijma-desktop-v1.96.4](https://github.com/qiwi/pijma/compare/v1.96.3...v1.96.4) (2020-01-21)
 
 
