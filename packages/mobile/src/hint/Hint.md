@@ -14,7 +14,8 @@ initialState = {top: false, bottom: false, left: false, right: false};
           size="small"
           placement="top"
           content="Hint Text"
-          onClick={(top) => setState({top})}
+          onShow={(top) => setState({top: !state.top})}
+          onHide={(top) => setState({top: false})}
         />
       </FlexItem>
     </Flex>
@@ -30,7 +31,8 @@ initialState = {top: false, bottom: false, left: false, right: false};
           size="small"
           placement="right"
           content="Hint Text"
-          onClick={(right) => setState({right})}
+          onShow={(right) => setState({right: !state.right})}
+          onHide={(right) => setState({right: false})}
         />
       </FlexItem>
     </Flex>
@@ -46,7 +48,8 @@ initialState = {top: false, bottom: false, left: false, right: false};
           size="small"
           placement="bottom"
           content="Hint Text"
-          onClick={(bottom) => setState({bottom})}
+          onShow={(bottom) => setState({bottom: !state.bottom})}
+          onHide={(bottom) => setState({bottom: false})}
         />
       </FlexItem>
     </Flex>
@@ -62,7 +65,8 @@ initialState = {top: false, bottom: false, left: false, right: false};
           size="small"
           placement="left"
           content="Hint Text"
-          onClick={(left) => setState({left})}
+          onShow={(left) => setState({left: !state.left})}
+          onHide={(left) => setState({left: false})}
         />
       </FlexItem>
     </Flex>
@@ -101,7 +105,8 @@ initialState = {
           content="Text"
           title="Title"
           width={61}
-          onClick={(left) => setState({left})}
+          onShow={(left) => setState({left: !state.left})}
+          onHide={(left) => setState({left: false})}
         />
       </FlexItem>
       <FlexItem mt={6}>
@@ -115,7 +120,8 @@ initialState = {
           title="Title"
           content="Мы берем комиссию за определенный спопоб оплаты — этим мы покрываем раходы на оплату услуги и даем вам возможность платить любым удобным способом. Мы честно показываем, сколько вам придется доплатить при оплате определенным способом."
           width={61}
-          onClick={(left_start) => setState({left_start})}
+          onShow={(left_start) => setState({left_start: !state.left_start})}
+          onHide={(left_start) => setState({left_start: false})}
         />
       </FlexItem>
       <FlexItem mt={6}>
@@ -129,7 +135,8 @@ initialState = {
           title="Title"
           content="Мы берем комиссию за определенный спопоб оплаты — этим мы покрываем раходы на оплату услуги и даем вам возможность платить любым удобным способом. Мы честно показываем, сколько вам придется доплатить при оплате определенным способом."
           width={61}
-          onClick={(left_end) => setState({left_end})}
+          onShow={(left_end) => setState({left_end: !state.left_end})}
+          onHide={(left_end) => setState({left_end: false})}
         />
       </FlexItem>
     </Flex>
@@ -147,7 +154,8 @@ initialState = {
           content="Text"
           title="Title"
           width={61}
-          onClick={(bottom) => setState({bottom})}
+          onShow={(bottom) => setState({bottom: !state.bottom})}
+          onHide={(bottom) => setState({bottom: false})}
         />
       </FlexItem>
       <FlexItem mt={6}>
@@ -161,7 +169,8 @@ initialState = {
           title="Title"
           content="Мы берем комиссию за определенный спопоб оплаты — этим мы покрываем раходы на оплату услуги и даем вам возможность платить любым удобным способом. Мы честно показываем, сколько вам придется доплатить при оплате определенным способом."
           width={61}
-          onClick={(bottom_start) => setState({bottom_start})}
+          onShow={(bottom_start) => setState({bottom_start: !state.bottom_start})}
+          onHide={(bottom_start) => setState({bottom_start: false})}
         />
       </FlexItem>
       <FlexItem mt={6}>
@@ -175,7 +184,8 @@ initialState = {
           title="Title"
           content="Мы берем комиссию за определенный спопоб оплаты — этим мы покрываем раходы на оплату услуги и даем вам возможность платить любым удобным способом. Мы честно показываем, сколько вам придется доплатить при оплате определенным способом."
           width={61}
-          onClick={(bottom_end) => setState({bottom_end})}
+          onShow={(bottom_end) => setState({bottom_end: !state.bottom_end})}
+          onHide={(bottom_end) => setState({bottom_end: false})}
         />
       </FlexItem>
     </Flex>
@@ -193,7 +203,8 @@ initialState = {
           content="Text"
           title="Title"
           width={61}
-          onClick={(right) => setState({right})}
+          onShow={(right) => setState({right: !state.right})}
+          onHide={(right) => setState({right: false})}
         />
       </FlexItem>
       <FlexItem mt={6}>
@@ -208,7 +219,8 @@ initialState = {
           title="Title"
           content="Мы берем комиссию за определенный спопоб оплаты — этим мы покрываем раходы на оплату услуги и даем вам возможность платить любым удобным способом. Мы честно показываем, сколько вам придется доплатить при оплате определенным способом."
           width={61}
-          onClick={(right_start) => setState({right_start})}
+          onShow={(right_start) => setState({right_start: !state.right_start})}
+          onHide={(right_start) => setState({right_start: false})}
         />
       </FlexItem>
       <FlexItem mt={6}>
@@ -222,7 +234,8 @@ initialState = {
           title="Title"
           content="Мы берем комиссию за определенный спопоб оплаты — этим мы покрываем раходы на оплату услуги и даем вам возможность платить любым удобным способом. Мы честно показываем, сколько вам придется доплатить при оплате определенным способом."
           width={61}
-          onClick={(right_end) => setState({right_end})}
+          onShow={(right_end) => setState({right_end: !state.right_end})}
+          onHide={(right_end) => setState({right_end: false})}
         />
       </FlexItem>
     </Flex>
@@ -240,7 +253,8 @@ initialState = {
           content="Text"
           title="Title"
           width={61}
-          onClick={(top) => setState({top})}
+          onShow={(top) => setState({top: !state.top})}
+          onHide={(top) => setState({top: false})}
         />
       </FlexItem>
       <FlexItem mt={6}>
@@ -254,7 +268,8 @@ initialState = {
           title="Title"
           content="Мы берем комиссию за определенный спопоб оплаты — этим мы покрываем раходы на оплату услуги и даем вам возможность платить любым удобным способом. Мы честно показываем, сколько вам придется доплатить при оплате определенным способом."
           width={61}
-          onClick={(top_start) => setState({top_start})}
+          onShow={(top_start) => setState({top_start: !state.top_start})}
+          onHide={(top_start) => setState({top_start: false})}
         />
       </FlexItem>
       <FlexItem mt={6}>
@@ -268,7 +283,8 @@ initialState = {
           title="Title"
           content="Мы берем комиссию за определенный спопоб оплаты — этим мы покрываем раходы на оплату услуги и даем вам возможность платить любым удобным способом. Мы честно показываем, сколько вам придется доплатить при оплате определенным способом."
           width={61}
-          onClick={(top_end) => setState({top_end})}
+          onShow={(top_end) => setState({top_end: !state.top_end})}
+          onHide={(top_end) => setState({top_end: false})}
         />
       </FlexItem>
     </Flex>
