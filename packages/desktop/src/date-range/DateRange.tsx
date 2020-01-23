@@ -1,9 +1,10 @@
 import React, {FC, ReactNode, KeyboardEvent, useRef} from 'react'
-import {Box, Icon, InputField, BasicInput, DateRangeControl, Pipe, Pos, Flex, Card, Block, DateRanges, DateRangeValueType} from '@qiwi/pijma-core'
+import {Box, Icon, InputField, BasicInput, DateRangeControl, Pipe, Pos, Flex, Card, Block, DateRanges} from '@qiwi/pijma-core'
 import {Calendar, DropDown, MenuLink} from '../'
 
 export interface DateRangeProps {
-  value?: DateRangeValueType
+  value?: Date
+  valueTo?: Date
   tabIndex?: number
   name?: string
   title?: string
@@ -21,7 +22,7 @@ export interface DateRangeProps {
   days?: string[]
   months?: string[]
   firstDayIndex?: number
-  onChange?: (date: DateRangeValueType) => void
+  onChange?: (date: Date, dateTo?: Date) => void
   onFocus?: () => void
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean
@@ -30,6 +31,7 @@ export interface DateRangeProps {
 
 export const DateRange: FC<DateRangeProps> = ({
   value,
+  valueTo,
   format = 'yyyy-MM-dd',
   onFocus,
   onBlur,
@@ -132,11 +134,12 @@ export const DateRange: FC<DateRangeProps> = ({
                       ? (
                         <Card s="rgb(230, 230, 230) -1px 0px 0px 0px}">
                           <Calendar
-                            activeDate={new Date(2020, 0, 7)}
-                            activeDateTo={new Date(2020, 0, 11)}
+                            activeDate={value}
+                            activeDateTo={valueTo}
                             days={days}
                             months={months}
                             firstDayIndex={firstDayIndex}
+                            isRange
                             saveDate={renderProps.saveDate}
                           />
                         </Card>

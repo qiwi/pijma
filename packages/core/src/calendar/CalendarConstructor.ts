@@ -4,6 +4,7 @@ import CalendarDate from './CalendarDate'
 export interface CalendarConstructorProps {
   firstDayIndex: number
   activeDate?: Date
+  activeDateTo?: Date
   date: Date
   currentMonth: number
   currentYear: number
@@ -16,9 +17,10 @@ export interface CalendarConstructorProps {
 
 export default class CalendarConstructor implements CalendarConstructorProps {
 
-  constructor(public firstDayIndex: number, public activeDate?: Date) {
+  constructor(public firstDayIndex: number, public activeDate?: Date, public activeDateTo?: Date) {
     this.firstDayIndex = firstDayIndex
     this.activeDate = activeDate
+    this.activeDateTo = activeDateTo
   }
 
   public date = this.activeDate || new Date()

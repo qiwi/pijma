@@ -4,13 +4,13 @@ import RenderChild from '../RenderChild'
 import {DateRangeValueType, DateRanges} from './DateRangeControl'
 
 export default interface DateRangeControlProps {
-  value?: DateRangeValueType
+  value?: Date
   format: string
   onFocus?: () => void
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean
   onKeyUp?: (event: KeyboardEvent) => boolean
-  onChange?: (date: DateRangeValueType) => void
+  onChange?: (date: Date, dateTo?: Date) => void
   children: RenderChild<{
     focused: boolean
     value?: DateRangeValueType
@@ -21,7 +21,7 @@ export default interface DateRangeControlProps {
     onBlur: FocusEventHandler
     onKeyDown: KeyboardEventHandler
     onKeyUp: KeyboardEventHandler
-    saveDate: (date: DateRangeValueType) => void
+    saveDate: (date: Date, dateTo?: Date) => void
     closeCalendar: () => void
     openCalendar: () => void
     changeActiveRange: (activeRange: DateRanges) => () => void

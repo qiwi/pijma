@@ -7,6 +7,7 @@ export interface CalendarControlChildrenProps {
   date: Date
   dates: CalendarDate[]
   activeDate?: Date
+  activeDateTo?: Date
   showSelectMonth: boolean
   toggleSelectMonth: () => void
   selectMonth: (month: number, year?: number) => void
@@ -19,11 +20,12 @@ export interface CalendarControlChildrenProps {
 
 export default interface CalendarControlProps {
   calendar: CalendarConstructorProps
+  isRange?: boolean
   onChange?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean
   onKeyUp?: (event: KeyboardEvent) => boolean
-  saveDate?: (date: Date) => void
+  saveDate?: (date: Date, dateTo?: Date) => void
   children: RenderChild<CalendarControlChildrenProps>
 }

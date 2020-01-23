@@ -8,6 +8,7 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
     super(props)
     this.state = {
       activeDate: props.calendar.activeDate,
+      activeDateTo: props.calendar.activeDateTo,
       date: props.calendar.activeDate || new Date(),
       dates: props.calendar.getDates(props.calendar.activeDate || new Date()),
       showSelectMonth: false,
@@ -53,9 +54,33 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
   }
 
   private onDesktopSelectDate = (date: Date) => (event: SyntheticEvent) => {
+    const {isRange = false, saveDate} = this.props
+    const {activeDate, activeDateTo} = this.state
     event.stopPropagation()
-    if (this.props.saveDate) {
-      this.props.saveDate(date)
+    if (isRange) {
+      const newActiveDate = !activeDate || activeDateTo || date < activeDate
+
+      if (newActiveDate) {
+        this.setState({
+          activeDate: date,
+          activeDateTo: undefined,
+        })
+      }
+      else {
+        if (saveDate) {
+          saveDate(activeDate!, date)
+        }
+      }
+      // const newActiveDate = !state.activeDate || state.activeDateTo || date < state.activeDate
+      // return {
+      //   activeDate: newActiveDate ? date : state.activeDate,
+      //   activeDateTo: newActiveDate ? undefined : date,
+      // }
+    }
+    else {
+      if (saveDate) {
+        saveDate(date)
+      }
     }
   }
 
@@ -71,12 +96,13 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
   }
 
   public render() {
-    const {date, dates, showSelectMonth, activeDate} = this.state
+    const {date, dates, showSelectMonth, activeDate, activeDateTo} = this.state
 
     return this.props.children({
       date,
       dates,
       activeDate,
+      activeDateTo,
       showSelectMonth,
       toggleSelectMonth: this.toggleSelectMonth,
       selectMonth: this.selectMonth,

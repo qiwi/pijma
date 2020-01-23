@@ -43,6 +43,7 @@ export * from './alert'
 export * from './date-picker'
 export * from './calendar'
 export * from './date-range'
+export * from './checkbox'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'

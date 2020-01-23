@@ -1,5 +1,5 @@
 import React, {FC, Fragment} from 'react'
-import {Pos, Box, Card, Grid, Flex, Icon, Typo, CalendarControl, CalendarConstructor, CalendarControlChildrenProps} from '@qiwi/pijma-core'
+import {Box, Card, Grid, Flex, Icon, Typo, CalendarControl, CalendarConstructor, CalendarControlChildrenProps} from '@qiwi/pijma-core'
 import {MenuLink, Button} from '../'
 
 const defaultDays = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
@@ -30,57 +30,55 @@ export const Calendar: FC<CalendarProps> = ({
       switch (date.toDateString()) {
         case renderProps.activeDate && renderProps.activeDate.toDateString():
           return (
-            <Pos key={key} type="relative">
-              <Pos type="absolute" left={0.5} transform="translate(-50%, 0)">
-                <Card
-                  width={10}
-                  height={10}
-                  mt={-2}
-                  p={2}
-                  bg="#ff8c00"
-                  r={20}
-                  cursor="pointer"
-                >
-                  <Typo size={4} weight={300} height={6} color="#fff" align="center" css={{'user-select': 'none'}}>
-                    {date.getDate()}
-                  </Typo>
-                </Card>
-              </Pos>
-            </Pos>
+            <Card
+              key={key}
+              width={11}
+              height={11}
+              p={2.5}
+              bg="#ff8c00"
+              r={20}
+              cursor="pointer"
+            >
+              <Typo size={4} weight={300} height={6} color="#fff" align="center" css={{'user-select': 'none'}}>
+                {date.getDate()}
+              </Typo>
+            </Card>
           )
 
         case new Date().toDateString():
           return (
-            <Typo
-              key={key}
-              size={4}
-              weight={500}
-              height={6}
-              align="center"
-              color={disabled ? '#666' : 'default'}
-              cursor={disabled ? 'default' : 'pointer'}
-              onClick={renderProps.onMobileSelectDate(date)}
-              css={{'user-select': 'none'}}
-            >
-              {date.getDate()}
-            </Typo>
+            <Box key={key} width={11} height={11} p={2.5}>
+              <Typo
+                size={4}
+                weight={500}
+                height={6}
+                align="center"
+                color={disabled ? '#666' : 'default'}
+                cursor={disabled ? 'default' : 'pointer'}
+                onClick={renderProps.onMobileSelectDate(date)}
+                css={{'user-select': 'none'}}
+              >
+                {date.getDate()}
+              </Typo>
+            </Box>
           )
 
         default:
           return (
-            <Typo
-              key={key}
-              size={4}
-              weight={300}
-              height={6}
-              align="center"
-              color={disabled ? '#666' : 'default'}
-              cursor={disabled ? 'default' : 'pointer'}
-              onClick={renderProps.onMobileSelectDate(date)}
-              css={{'user-select': 'none'}}
-            >
-              {date.getDate()}
-            </Typo>
+            <Box key={key} width={11} height={11} p={2.5}>
+              <Typo
+                size={4}
+                weight={300}
+                height={6}
+                align="center"
+                color={disabled ? '#666' : 'default'}
+                cursor={disabled ? 'default' : 'pointer'}
+                onClick={renderProps.onMobileSelectDate(date)}
+                css={{'user-select': 'none'}}
+              >
+                {date.getDate()}
+              </Typo>
+            </Box>
           )
       }
     },
@@ -92,8 +90,8 @@ export const Calendar: FC<CalendarProps> = ({
       calendar={new CalendarConstructor(dayIndex, activeDate)}
       saveDate={saveDate}
       children={renderProps => (
-        <Box p={6}>
-          <Flex justify="space-between" mb={6}>
+        <Box pt={6} px={3.5} pb={3.5}>
+          <Flex justify="space-between" px={2.5} mb={3.5}>
             <Box
               cursor="pointer"
               onClick={renderProps.toPrevMonth}
@@ -128,11 +126,13 @@ export const Calendar: FC<CalendarProps> = ({
             </Box>
           ) : (
             <Fragment>
-              <Grid columns={7} layout={1} gutter={24}>
+              <Grid columns={7} layout={1} gutter={0}>
                 {days.map(day => (
-                  <Typo key={day} size={3.5} weight={300} height={5} align="center" color="#666" css={{'user-select': 'none'}}>
-                    {day}
-                  </Typo>
+                  <Box key={day} width={11} height={11} p={2.5}>
+                    <Typo size={3.5} weight={300} height={5} align="center" color="#666" css={{'user-select': 'none'}}>
+                      {day}
+                    </Typo>
+                  </Box>
                 ))}
                 {getDateItems(renderProps)}
               </Grid>

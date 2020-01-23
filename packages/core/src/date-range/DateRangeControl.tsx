@@ -1,5 +1,5 @@
 import {Component, ChangeEventHandler, ChangeEvent, FocusEventHandler, FocusEvent, KeyboardEventHandler, KeyboardEvent} from 'react'
-import {parse} from 'date-fns'
+import {format} from 'date-fns'
 import DateRangeControlProps from './DateRangeControlProps'
 import DateRangeControlState from './DateRangeControlState'
 
@@ -38,13 +38,13 @@ export default class DateRangeControl extends Component<DateRangeControlProps, D
 
   private onChange: ChangeEventHandler<HTMLInputElement> = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
-    if (this.props.onChange) {
-      const value = e.currentTarget.value
-      const date = value.length === this.props.format.length
-        ? parse(value, this.props.format, new Date())
-        : new Date('')
-      this.props.onChange(date)
-    }
+    // if (this.props.onChange) {
+    //   const value = e.currentTarget.value
+    //   const date = value.length === this.props.format.length
+    //     ? parse(value, this.props.format, new Date())
+    //     : new Date('')
+    //   // this.props.onChange(date) TODO
+    // }
   }
 
   private onFocus: FocusEventHandler = (e: FocusEvent) => {
@@ -79,12 +79,12 @@ export default class DateRangeControl extends Component<DateRangeControlProps, D
     }
   }
 
-  private saveDate = (date: DateRangeValueType) => {
+  private saveDate = (date: Date, dateTo?: Date) => {
     this.setState({
       opened: false,
     })
     if (this.props.onChange) {
-      this.props.onChange(date)
+      this.props.onChange(date, dateTo)
     }
   }
 
@@ -97,8 +97,8 @@ export default class DateRangeControl extends Component<DateRangeControlProps, D
   public render() {
     const {focused, opened, activeRange} = this.state
     return this.props.children({
-      value: this.props.value,
-      // value: this.props.value ? format(this.props.value, this.props.format) : '',
+      // value: this.props.value,
+      value: this.props.value ? format(this.props.value, this.props.format) : '',
       focused: focused || opened,
       mask: this.props.format.split('').map(sym => sym.match(/^[a-zA-Z]+$/) ? /\d/ : sym),
       activeRange,

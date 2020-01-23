@@ -5,9 +5,13 @@
       title="Дата"
       format="dd.MM.yyyy"
       value={state.date}
-      onChange={(date) => {
+      valueTo={state.dateTo}
+      onChange={(date, dateTo) => {
         if (date.toString() !== 'Invalid Date') {
-          setState({date})
+          setState({
+            date,
+            dateTo: dateTo.toString() !== 'Invalid Date' ? dateTo : undefined
+          })
         }
       }}
     />
