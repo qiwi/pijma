@@ -67,7 +67,7 @@ export const ContentSuggest = <V extends {}>({
           </Pos>
         </Box>
         <MenuControl
-          count={props.items ? props.items.length : 0}
+          count={renderProps.items.length}
           selected={renderProps.selected}
           onSelect={renderProps.onItemSelect}
           onKeyDown={renderProps.onModalItemKeyDown}
@@ -106,9 +106,9 @@ export const ContentSuggest = <V extends {}>({
                           onClick={item.onClick}
                           onMouseEnter={item.onMouseEnter}
                           cursor="pointer"
-                          text={props.items ? props.items[key].title : ''}
-                          notes={props.items ? props.items[key].description : undefined}
-                          icon={<Image width={6} height={6} src={props.items ? props.items[key].logo : ''}/>}
+                          text={renderProps.items[key].title}
+                          notes={renderProps.items[key].description}
+                          icon={<Image width={6} height={6} src={renderProps.items[key].logo}/>}
                           hover={item.focused}
                           active={item.selected}
                           focus={item.selected}

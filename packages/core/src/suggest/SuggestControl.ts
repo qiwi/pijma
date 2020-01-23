@@ -198,6 +198,7 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
       selected: this.selected,
       show: this.state.show,
       inputRef: this.inputRef,
+      items: this.items,
       onItemSelect: this.onSelect,
       onRequest: this.onRequest,
       onShowFocus: this.onShowFocus,

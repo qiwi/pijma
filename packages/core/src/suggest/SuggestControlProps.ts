@@ -33,6 +33,7 @@ export default interface SuggestControlProps<O extends SuggestOptionModel<V>, V>
     selected: number | undefined
     show: boolean
     inputRef: RefObject<HTMLInputElement>
+    items: O[]
     onShowFocus?: React.FocusEventHandler
     onInputFocus?: React.FocusEventHandler
     onInputBlur?: React.FocusEventHandler

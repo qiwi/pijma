@@ -65,7 +65,7 @@ export const HeaderSuggest = <V extends {}>({
     onSubmit={props.onSubmit}
     children={(renderProps) => (
       <MenuControl
-        count={props.items ? props.items.length : 0}
+        count={renderProps.items.length}
         selected={renderProps.selected}
         onSelect={renderProps.onItemSelect}
         onKeyDown={renderProps.onModalItemKeyDown}
@@ -158,9 +158,9 @@ export const HeaderSuggest = <V extends {}>({
                                   cursor="pointer"
                                   mt={key === 0 ? 4 : undefined}
                                   round
-                                  text={props.items ? props.items[key].title : ''}
-                                  notes={props.items ? props.items[key].description : undefined}
-                                  icon={<Image width={6} height={6} src={props.items ? props.items[key].logo : ''}/>}
+                                  text={renderProps.items[key].title}
+                                  notes={renderProps.items[key].description}
+                                  icon={<Image width={6} height={6} src={renderProps.items[key].logo}/>}
                                   hover={item.focused}
                                   active={item.selected}
                                   focus={item.selected}
