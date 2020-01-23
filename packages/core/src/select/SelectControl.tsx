@@ -13,6 +13,8 @@ export interface SelectControlProps<O extends OptionModel<V>, V> {
   onBlur?: () => void
   children: RenderChild<{
     modalRef: RefObject<HTMLDivElement>
+    targetRef: RefObject<HTMLDivElement>
+    containerRef: RefObject<HTMLDivElement>
     focused: boolean
     show: boolean
     select?: number
@@ -41,6 +43,10 @@ export class SelectControl<O extends OptionModel<V>, V> extends React.Component<
   }
 
   private modalRef: RefObject<HTMLDivElement> = createRef()
+
+  private targetRef: RefObject<HTMLDivElement> = createRef()
+
+  private containerRef: RefObject<HTMLDivElement> = createRef()
 
   public componentDidMount() {
     const index = this.props.items.findIndex(item => this.equals(this.props.value, item.value))
@@ -121,14 +127,9 @@ export class SelectControl<O extends OptionModel<V>, V> extends React.Component<
   }
 
   private onHide: () => void = () => {
-    this.hide()
-  }
-
-  private hide = () => {
     this.setState({
       show: false,
     })
-
     if (this.props.onHide) {
       this.props.onHide()
     }
@@ -137,6 +138,8 @@ export class SelectControl<O extends OptionModel<V>, V> extends React.Component<
   public render() {
     return this.props.children({
       modalRef: this.modalRef,
+      targetRef: this.targetRef,
+      containerRef: this.containerRef,
       focused: this.state.focus,
       show: this.state.show,
       select: this.state.select,
