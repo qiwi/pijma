@@ -122,7 +122,7 @@ const initialState = {
   error: false,
   timer: undefined,
   dialogText: undefined,
-  banks: [],
+  banks: undefined,
   suggest: '',
 };
 
@@ -153,6 +153,7 @@ const onChange = (value) => {
   setState({
     value: value,
     suggest: title,
+    banks: undefined,
   });
   setState({
     dialogText: `Выбрано: ${title}`,
@@ -160,9 +161,16 @@ const onChange = (value) => {
 };
 
 const onSubmit = (suggest) => {
-  setState({
-    dialogText: `Отправлено: ${suggest}`,
-  });
+  if (suggest.length < 1) {
+    setState({
+      error: true,
+    })
+  } else {
+    setState({
+      dialogText: `Отправлено: ${suggest}`,
+    });
+  }
+  return suggest.length >= 1
 };
 
 const hideDialog = () => setState({

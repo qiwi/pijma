@@ -27,7 +27,7 @@ export const ContentSuggest = <V extends {}>({
   equals = (a: V, b: V) => a === b,
   ...props
 }: ContentSuggestProps<ContentSuggestOptionModel<V>, V>) => (
-  <SuggestControl<V>
+  <SuggestControl<V, ContentSuggestOptionModel<V>>
     value={props.value}
     suggest={props.suggest}
     items={props.items}
@@ -57,7 +57,7 @@ export const ContentSuggest = <V extends {}>({
             placeholder={props.placeholder}
             maxLength={props.maxLength}
             pr={14}
-            focused={renderProps.focused}
+            focused={false}
             hovered={renderProps.hovered}
             onChange={renderProps.onRequest}
             onFocus={renderProps.onShowFocus}
@@ -67,7 +67,7 @@ export const ContentSuggest = <V extends {}>({
           </Pos>
         </Box>
         <MenuControl
-          count={props.items ? props.items.length : 0}
+          count={renderProps.items.length}
           selected={renderProps.selected}
           onSelect={renderProps.onItemSelect}
           onKeyDown={renderProps.onModalItemKeyDown}
@@ -106,9 +106,9 @@ export const ContentSuggest = <V extends {}>({
                           onClick={item.onClick}
                           onMouseEnter={item.onMouseEnter}
                           cursor="pointer"
-                          text={props.items[key].title}
-                          notes={props.items[key].description}
-                          icon={<Image width={6} height={6} src={props.items[key].logo}/>}
+                          text={renderProps.items[key].title}
+                          notes={renderProps.items[key].description}
+                          icon={<Image width={6} height={6} src={renderProps.items[key].logo}/>}
                           hover={item.focused}
                           active={item.selected}
                           focus={item.selected}
