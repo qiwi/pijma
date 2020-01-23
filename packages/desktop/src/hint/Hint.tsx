@@ -10,7 +10,8 @@ import {
   HintControl,
   Overlay,
   SimpleTransitionProps,
-  SimpleTransition, QuestionArrow,
+  SimpleTransition,
+  QuestionArrow,
 } from '@qiwi/pijma-core'
 
 import {Heading, Text} from '../typography'
