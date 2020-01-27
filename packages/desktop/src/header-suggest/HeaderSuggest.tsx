@@ -23,8 +23,8 @@ import {MenuItem} from '../menu'
 import {Paragraph} from '../typography'
 import {Link} from '../link'
 
-import HeaderSuggestProps from './HeaderSuggestProps'
-import HeaderSuggestOptionModel from './HeaderSuggestOptionModel'
+import {HeaderSuggestProps} from './HeaderSuggestProps'
+import {HeaderSuggestOptionModel} from './HeaderSuggestOptionModel'
 
 const CardItem = styled(Card)().withComponent(MenuItem)
 
@@ -50,7 +50,7 @@ export const HeaderSuggest = <V extends {}>({
   placeholder = 'Текстовое поле',
   ...props
 }: HeaderSuggestProps<HeaderSuggestOptionModel<V>, V>) => (
-  <SuggestControl<V>
+  <SuggestControl<V, HeaderSuggestOptionModel<V>>
     value={props.value}
     suggest={props.suggest}
     items={props.items}
@@ -63,10 +63,9 @@ export const HeaderSuggest = <V extends {}>({
     onFocus={props.onFocus}
     onCancel={props.onCancel}
     onSubmit={props.onSubmit}
-    onHide={props.onHide}
     children={(renderProps) => (
       <MenuControl
-        count={props.items.length}
+        count={renderProps.items.length}
         selected={renderProps.selected}
         onSelect={renderProps.onItemSelect}
         onKeyDown={renderProps.onModalItemKeyDown}
@@ -103,7 +102,7 @@ export const HeaderSuggest = <V extends {}>({
                         py={4}
                         px={6}
                       >
-                        <FlexItem cursor="pointer" shrink={0} mr={4} onClick={renderProps.onHide}>
+                        <FlexItem cursor="pointer" shrink={0} mr={4} onClick={renderProps.onBack}>
                           <Icon name="arrow-left"/>
                         </FlexItem>
                         <FlexItem grow={1}>
@@ -142,7 +141,7 @@ export const HeaderSuggest = <V extends {}>({
                     bg="#fff"
                   >
                     <Box width={295} mx="auto">
-                      {props.loading && renderProps.result ? (
+                      {props.loading && props.items !== undefined ? (
                         <Box pt={4}>
                           {Array(4).fill(1).map((_item, key) => (
                             <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
@@ -159,9 +158,9 @@ export const HeaderSuggest = <V extends {}>({
                                   cursor="pointer"
                                   mt={key === 0 ? 4 : undefined}
                                   round
-                                  text={props.items[key].title}
-                                  notes={props.items[key].description}
-                                  icon={<Image width={6} height={6} src={props.items[key].logo}/>}
+                                  text={renderProps.items[key].title}
+                                  notes={renderProps.items[key].description}
+                                  icon={<Image width={6} height={6} src={renderProps.items[key].logo}/>}
                                   hover={item.focused}
                                   active={item.selected}
                                   focus={item.selected}
@@ -190,7 +189,7 @@ export const HeaderSuggest = <V extends {}>({
                                 )}
                               </Paragraph>
                             </Box>
-                          ) : props.empty && menuRenderProps.items.length === 0 && renderProps.result ? (
+                          ) : props.empty && menuRenderProps.items.length === 0 && props.items !== undefined ? (
                             <Box px={6} py={4}>
                               <Paragraph>
                                 {props.empty.text}
@@ -220,7 +219,6 @@ export const HeaderSuggest = <V extends {}>({
           </React.Fragment>
         )}
       />
-    )
-    }
+    )}
   />
 )

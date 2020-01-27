@@ -1,3 +1,24 @@
+# [@qiwi/pijma-mobile-v1.98.0](https://github.com/qiwi/pijma/compare/v1.97.0...v1.98.0) (2020-01-23)
+
+
+### Features
+
+* suggest-control items undefined ([66ebdb2](https://github.com/qiwi/pijma/commit/66ebdb2))
+
+# [@qiwi/pijma-mobile-v1.97.0](https://github.com/qiwi/pijma/compare/v1.96.4...v1.97.0) (2020-01-22)
+
+
+### Features
+
+* stub list ([7756060](https://github.com/qiwi/pijma/commit/7756060))
+
+# [@qiwi/pijma-mobile-v1.96.1](https://github.com/qiwi/pijma/compare/v1.96.0...v1.96.1) (2019-12-11)
+
+
+### Bug Fixes
+
+* **mobile:** header menu scroll height ([4563567](https://github.com/qiwi/pijma/commit/4563567))
+
 # [@qiwi/pijma-mobile-v1.96.0](https://github.com/qiwi/pijma/compare/v1.95.0...v1.96.0) (2019-11-27)
 
 
