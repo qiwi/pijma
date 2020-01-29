@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.100.0](https://github.com/qiwi/pijma/compare/v1.99.0...v1.100.0) (2020-01-29)
+
+
+### Features
+
+* stub menu-item ([1fc97d2](https://github.com/qiwi/pijma/commit/1fc97d2))
+
 # [@qiwi/pijma-desktop-v1.99.0](https://github.com/qiwi/pijma/compare/v1.98.1...v1.99.0) (2020-01-29)
 
 
