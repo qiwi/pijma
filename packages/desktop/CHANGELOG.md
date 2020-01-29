@@ -1,3 +1,80 @@
+# [@qiwi/pijma-desktop-v1.99.0](https://github.com/qiwi/pijma/compare/v1.98.1...v1.99.0) (2020-01-29)
+
+
+### Features
+
+* stub logo-block-link ([c012a26](https://github.com/qiwi/pijma/commit/c012a26))
+
+# [@qiwi/pijma-desktop-v1.98.0](https://github.com/qiwi/pijma/compare/v1.97.0...v1.98.0) (2020-01-23)
+
+
+### Features
+
+* suggest-control items undefined ([66ebdb2](https://github.com/qiwi/pijma/commit/66ebdb2))
+
+# [@qiwi/pijma-desktop-v1.97.0](https://github.com/qiwi/pijma/compare/v1.96.4...v1.97.0) (2020-01-22)
+
+
+### Features
+
+* stub list ([7756060](https://github.com/qiwi/pijma/commit/7756060))
+
+# [@qiwi/pijma-desktop-v1.96.4](https://github.com/qiwi/pijma/compare/v1.96.3...v1.96.4) (2020-01-21)
+
+
+### Bug Fixes
+
+* **desktop:** logo-block-link ([cd283b9](https://github.com/qiwi/pijma/commit/cd283b9))
+
+# [@qiwi/pijma-desktop-v1.96.3](https://github.com/qiwi/pijma/compare/v1.96.2...v1.96.3) (2020-01-17)
+
+
+### Bug Fixes
+
+* add export checkbox ([cb898df](https://github.com/qiwi/pijma/commit/cb898df))
+
+# [@qiwi/pijma-desktop-v1.96.2](https://github.com/qiwi/pijma/compare/v1.96.1...v1.96.2) (2019-12-17)
+
+
+### Bug Fixes
+
+* content suggest ([648a51d](https://github.com/qiwi/pijma/commit/648a51d))
+
+# [@qiwi/pijma-desktop-v1.96.0](https://github.com/qiwi/pijma/compare/v1.95.0...v1.96.0) (2019-11-27)
+
+
+### Features
+
+* header suggest ([e21e8d1](https://github.com/qiwi/pijma/commit/e21e8d1))
+
+# [@qiwi/pijma-desktop-v1.95.0](https://github.com/qiwi/pijma/compare/v1.94.0...v1.95.0) (2019-11-27)
+
+
+### Features
+
+* phone-field ([d42068e](https://github.com/qiwi/pijma/commit/d42068e))
+
+# [@qiwi/pijma-desktop-v1.94.0](https://github.com/qiwi/pijma/compare/v1.93.0...v1.94.0) (2019-11-27)
+
+
+### Features
+
+* stub pagination ([8166098](https://github.com/qiwi/pijma/commit/8166098))
+
+# [@qiwi/pijma-desktop-v1.93.0](https://github.com/qiwi/pijma/compare/v1.92.0...v1.93.0) (2019-11-21)
+
+
+### Features
+
+* stub breadcrumbs ([a12af85](https://github.com/qiwi/pijma/commit/a12af85))
+
+# [@qiwi/pijma-desktop-v1.92.0](https://github.com/qiwi/pijma/compare/v1.91.0...v1.92.0) (2019-11-20)
+
+
+### Features
+
+* stub nav-link ([673a7b8](https://github.com/qiwi/pijma/commit/673a7b8))
+
 # [@qiwi/pijma-desktop-v1.90.0](https://github.com/qiwi/pijma/compare/v1.89.0...v1.90.0) (2019-11-15)
 
 

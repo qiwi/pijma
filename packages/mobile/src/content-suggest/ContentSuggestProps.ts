@@ -1,11 +1,11 @@
-import {ModalSuggestControlProps} from '@qiwi/pijma-core'
+import {SuggestControlProps} from '@qiwi/pijma-core'
 
 import ContentSuggestOptionModel from './ContentSuggestOptionModel'
 
 export default interface ContentSuggestProps<O extends ContentSuggestOptionModel<V>, V> {
-  value?: ModalSuggestControlProps<O, V>['value']
-  suggest: ModalSuggestControlProps<O, V>['suggest']
-  items: ModalSuggestControlProps<O, V>['items']
+  value?: SuggestControlProps<O, V>['value']
+  suggest: SuggestControlProps<O, V>['suggest']
+  items: SuggestControlProps<O, V>['items']
   tabIndex?: number
   autoComplete?: boolean
   autoFocus?: boolean
@@ -14,14 +14,13 @@ export default interface ContentSuggestProps<O extends ContentSuggestOptionModel
   stub?: boolean
   error?: boolean
   loading?: boolean
-  total?: ModalSuggestControlProps<O, V>['total']
-  empty?: ModalSuggestControlProps<O, V>['empty']
-  onChange: ModalSuggestControlProps<O, V>['onChange']
-  onRequest: ModalSuggestControlProps<O, V>['onRequest']
-  onCancel?: ModalSuggestControlProps<O, V>['onCancel']
-  onFocus?: ModalSuggestControlProps<O, V>['onFocus']
-  onBlur?: ModalSuggestControlProps<O, V>['onBlur']
-  onSubmit?: ModalSuggestControlProps<O, V>['onSubmit']
-  onHide?: ModalSuggestControlProps<O, V>['onHide']
-  equals?: ModalSuggestControlProps<O, V>['equals']
+  total?: SuggestControlProps<O, V>['total']
+  empty?: SuggestControlProps<O, V>['empty']
+  onChange: SuggestControlProps<O, V>['onChange']
+  onRequest: SuggestControlProps<O, V>['onRequest']
+  onCancel?: SuggestControlProps<O, V>['onCancel']
+  onFocus?: SuggestControlProps<O, V>['onFocus']
+  onBlur?: SuggestControlProps<O, V>['onBlur']
+  onSubmit?: SuggestControlProps<O, V>['onSubmit']
+  equals?: SuggestControlProps<O, V>['equals']
 }

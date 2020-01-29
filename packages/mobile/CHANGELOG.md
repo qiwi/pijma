@@ -1,3 +1,73 @@
+# [@qiwi/pijma-mobile-v1.99.0](https://github.com/qiwi/pijma/compare/v1.98.1...v1.99.0) (2020-01-29)
+
+
+### Features
+
+* stub logo-block-link ([c012a26](https://github.com/qiwi/pijma/commit/c012a26))
+
+# [@qiwi/pijma-mobile-v1.98.1](https://github.com/qiwi/pijma/compare/v1.98.0...v1.98.1) (2020-01-29)
+
+
+### Bug Fixes
+
+* export logo-block-link ([9a136b0](https://github.com/qiwi/pijma/commit/9a136b0))
+
+# [@qiwi/pijma-mobile-v1.98.0](https://github.com/qiwi/pijma/compare/v1.97.0...v1.98.0) (2020-01-23)
+
+
+### Features
+
+* suggest-control items undefined ([66ebdb2](https://github.com/qiwi/pijma/commit/66ebdb2))
+
+# [@qiwi/pijma-mobile-v1.97.0](https://github.com/qiwi/pijma/compare/v1.96.4...v1.97.0) (2020-01-22)
+
+
+### Features
+
+* stub list ([7756060](https://github.com/qiwi/pijma/commit/7756060))
+
+# [@qiwi/pijma-mobile-v1.96.1](https://github.com/qiwi/pijma/compare/v1.96.0...v1.96.1) (2019-12-11)
+
+
+### Bug Fixes
+
+* **mobile:** header menu scroll height ([4563567](https://github.com/qiwi/pijma/commit/4563567))
+
+# [@qiwi/pijma-mobile-v1.96.0](https://github.com/qiwi/pijma/compare/v1.95.0...v1.96.0) (2019-11-27)
+
+
+### Features
+
+* header suggest ([e21e8d1](https://github.com/qiwi/pijma/commit/e21e8d1))
+
+# [@qiwi/pijma-mobile-v1.95.0](https://github.com/qiwi/pijma/compare/v1.94.0...v1.95.0) (2019-11-27)
+
+
+### Features
+
+* phone-field ([d42068e](https://github.com/qiwi/pijma/commit/d42068e))
+
+# [@qiwi/pijma-mobile-v1.94.0](https://github.com/qiwi/pijma/compare/v1.93.0...v1.94.0) (2019-11-27)
+
+
+### Features
+
+* stub pagination ([8166098](https://github.com/qiwi/pijma/commit/8166098))
+
+# [@qiwi/pijma-mobile-v1.93.0](https://github.com/qiwi/pijma/compare/v1.92.0...v1.93.0) (2019-11-21)
+
+
+### Features
+
+* stub breadcrumbs ([a12af85](https://github.com/qiwi/pijma/commit/a12af85))
+
+# [@qiwi/pijma-mobile-v1.92.0](https://github.com/qiwi/pijma/compare/v1.91.0...v1.92.0) (2019-11-20)
+
+
+### Features
+
+* stub nav-link ([673a7b8](https://github.com/qiwi/pijma/commit/673a7b8))
+
 # [@qiwi/pijma-mobile-v1.90.0](https://github.com/qiwi/pijma/compare/v1.89.0...v1.90.0) (2019-11-15)
 
 
