@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.98.1](https://github.com/qiwi/pijma/compare/v1.98.0...v1.98.1) (2020-01-29)
+
+
+### Bug Fixes
+
+* export logo-block-link ([9a136b0](https://github.com/qiwi/pijma/commit/9a136b0))
+
 # [@qiwi/pijma-mobile-v1.98.0](https://github.com/qiwi/pijma/compare/v1.97.0...v1.98.0) (2020-01-23)
 
 
