@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.99.0](https://github.com/qiwi/pijma/compare/v1.98.1...v1.99.0) (2020-01-29)
+
+
+### Features
+
+* stub logo-block-link ([c012a26](https://github.com/qiwi/pijma/commit/c012a26))
+
 # [@qiwi/pijma-mobile-v1.98.1](https://github.com/qiwi/pijma/compare/v1.98.0...v1.98.1) (2020-01-29)
 
 
