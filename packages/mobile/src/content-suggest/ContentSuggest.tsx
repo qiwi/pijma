@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 
 import {
-  ModalSuggestControl,
+  SuggestControl,
   Image,
   MenuControl,
   Icon,
@@ -27,7 +27,7 @@ export const ContentSuggest = <V extends {}>({
   equals = (a: V, b: V) => a === b,
   ...props
 }: ContentSuggestProps<ContentSuggestOptionModel<V>, V>) => (
-  <ModalSuggestControl<V>
+  <SuggestControl<V, ContentSuggestOptionModel<V>>
     value={props.value}
     suggest={props.suggest}
     items={props.items}
@@ -44,8 +44,8 @@ export const ContentSuggest = <V extends {}>({
       <Pos type="relative">
         <Box
           width={1}
-          onMouseEnter={renderProps.onMouseEnter}
-          onMouseLeave={renderProps.onMouseLeave}
+          onMouseEnter={renderProps.onInputMouseEnter}
+          onMouseLeave={renderProps.onInputMouseLeave}
         >
           <ContentInput
             value={props.suggest || ''}
@@ -57,20 +57,20 @@ export const ContentSuggest = <V extends {}>({
             placeholder={props.placeholder}
             maxLength={props.maxLength}
             pr={14}
-            focused={renderProps.focused}
+            focused={false}
             hovered={renderProps.hovered}
             onChange={renderProps.onRequest}
-            onFocus={renderProps.onFocus}
+            onFocus={renderProps.onShowFocus}
           />
-          <Pos type="absolute" right={4} top={3} onClick={renderProps.onShow}>
+          <Pos type="absolute" right={4} top={3} onClick={renderProps.onShowClick}>
             <Icon name="search" color="#666"/>
           </Pos>
         </Box>
         <MenuControl
-          count={props.items.length}
+          count={renderProps.items.length}
           selected={renderProps.selected}
-          onSelect={renderProps.onSelect}
-          onKeyDown={renderProps.onKeyDown}
+          onSelect={renderProps.onItemSelect}
+          onKeyDown={renderProps.onModalItemKeyDown}
           children={(menuRenderProps) => (
             <InputModal
               value={props.suggest || ''}
@@ -83,12 +83,12 @@ export const ContentSuggest = <V extends {}>({
               contentRef={menuRenderProps.containerRef}
               error={props.error}
               onChange={renderProps.onRequest}
-              onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onKeyDown}
+              onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onModalItemKeyDown}
               onBlur={renderProps.onModalInputBlur}
               onSubmit={renderProps.onSearchClick}
-              onShow={renderProps.onShow}
+              onShow={renderProps.onShowClick}
               onHide={renderProps.onHide}
-              onEscape={renderProps.onEscape}
+              onEscape={renderProps.onEscapeInputModal}
               onBack={renderProps.onBack}
             >
               {props.loading ? (
@@ -106,9 +106,9 @@ export const ContentSuggest = <V extends {}>({
                           onClick={item.onClick}
                           onMouseEnter={item.onMouseEnter}
                           cursor="pointer"
-                          text={props.items[key].title}
-                          notes={props.items[key].description}
-                          icon={<Image width={6} height={6} src={props.items[key].logo}/>}
+                          text={renderProps.items[key].title}
+                          notes={renderProps.items[key].description}
+                          icon={<Image width={6} height={6} src={renderProps.items[key].logo}/>}
                           hover={item.focused}
                           active={item.selected}
                           focus={item.selected}
@@ -118,7 +118,7 @@ export const ContentSuggest = <V extends {}>({
                   ) : (
                     null
                   )}
-                  {props.total && props.items.length > 0 ? (
+                  {props.total && menuRenderProps.items.length > 0 ? (
                     <Box px={4}>
                       <Paragraph>
                         {props.total.text}
@@ -135,7 +135,7 @@ export const ContentSuggest = <V extends {}>({
                         )}
                       </Paragraph>
                     </Box>
-                  ) : props.empty && props.items.length === 0 ? (
+                  ) : props.empty && menuRenderProps.items.length === 0 ? (
                     <Box px={4}>
                       <Paragraph>
                         {props.empty.text}
