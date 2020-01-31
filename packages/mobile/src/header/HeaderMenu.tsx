@@ -11,14 +11,20 @@ import {
   Flex,
   FlexItem,
   Card,
+  Box,
   OffsetScrollControl,
 } from '@qiwi/pijma-core'
+
+import {MenuContainer} from '../menu'
+
+import {Text} from '../typography'
 
 interface HeaderMenuProps {
   show: boolean
   zIndex?: number
   header?: ReactNode
   from: 'top' | 'right' | 'bottom' | 'left'
+  stub?: boolean
   onShow?: () => void
   onHide?: () => void
 }
@@ -87,7 +93,7 @@ HeaderMenuModal.defaultProps = {
 
 const FlexCard = Flex.withComponent(Card)
 
-export const HeaderMenu: FC<HeaderMenuProps> = ({show, zIndex, header, from, onShow, onHide, children}) => (
+export const HeaderMenu: FC<HeaderMenuProps> = ({show, zIndex, header, from, stub, onShow, onHide, children}) => (
   <HeaderMenuModal
     autoFocus
     show={show}
@@ -118,7 +124,21 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({show, zIndex, header, from, onS
             />
           </FlexItem>
           <FlexItem grow={1} height={1} minHeight={0}>
-            {renderProps.children}
+            {stub ? (
+              <MenuContainer>
+                {[0.5, 0.6, 0.4].map((item, index) => (
+                  <Box key={index} width={item} px={6} py={3} height={14}>
+                    <Text
+                      size="l"
+                      display="block"
+                      stub
+                    />
+                  </Box>
+                ))}
+              </MenuContainer>
+            ) : (
+              renderProps.children
+            )}
           </FlexItem>
         </FlexCard>
       )}

@@ -1,7 +1,8 @@
 ```jsx
-initialState = {showMenu: false};
+initialState = {showMenu: false, showStubMenu: false};
 
 <React.Fragment>
+<Spacer size="l">
   <Button
     kind="simple"
     size="normal"
@@ -9,6 +10,14 @@ initialState = {showMenu: false};
     text="Показать меню"
     onClick={() => setState({showMenu: true})}
   />
+  <Button
+    kind="simple"
+    size="normal"
+    type="button"
+    text="Показать stub меню"
+    onClick={() => setState({showStubMenu: true})}
+  />
+</Spacer>
   <HeaderMenu
     show={state.showMenu}
     from="top"
@@ -16,23 +25,23 @@ initialState = {showMenu: false};
       <Striper>
         <MenuContainer>
           <MenuLink
-            text="Components"
+            title="Components"
             notes="List of pijma components"
             submenu
           />
           <MenuLink
-            text="link"
+            title="link"
             notes="with notes"
             href="https://qiwi.com"
           />
           <MenuLink
-            text="link"
+            title="link"
             href="https://qiwi.com"
           />
         </MenuContainer>
         <MenuContainer>
           <MenuLink
-            text="Закрыть меню"
+            title="Закрыть меню"
             href="https://qiwi.com"
             onClick={() => setState({showMenu: false})}
           />
@@ -40,5 +49,14 @@ initialState = {showMenu: false};
       </Striper>
     )}
   />
+  <HeaderMenu
+    stub
+    show={state.showStubMenu}
+    from="top"
+    children={undefined}
+  />
 </React.Fragment>
+
+
 ```
+
