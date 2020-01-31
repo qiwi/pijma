@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.101.1](https://github.com/qiwi/pijma/compare/v1.101.0...v1.101.1) (2020-01-31)
+
+
+### Bug Fixes
+
+* stub text-field ([caaddbb](https://github.com/qiwi/pijma/commit/caaddbb))
+
 # [@qiwi/pijma-desktop-v1.101.0](https://github.com/qiwi/pijma/compare/v1.100.0...v1.101.0) (2020-01-31)
 
 
