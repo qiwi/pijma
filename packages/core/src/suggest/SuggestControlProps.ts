@@ -2,8 +2,8 @@ import React, {RefObject} from 'react'
 import RenderChild from '../RenderChild'
 import SuggestOptionModel from './SuggestOptionModel'
 
-export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V> {
-  items: O[]
+export default interface SuggestControlProps<O extends SuggestOptionModel<V>, V> {
+  items?: O[]
   value?: V
   suggest?: string
   total?: {
@@ -26,21 +26,19 @@ export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V
   onCancel?: () => void
   onFocus?: () => void
   onBlur?: () => void
-  onHide?: () => void
-  onSubmit?: (value: string) => void
+  onSubmit?: (value: string) => boolean
   children: RenderChild<{
     focused: boolean
     hovered: boolean
     selected: number | undefined
     show: boolean
-    result: boolean
     inputRef: RefObject<HTMLInputElement>
+    items: O[]
     onShowFocus?: React.FocusEventHandler
     onInputFocus?: React.FocusEventHandler
     onInputBlur?: React.FocusEventHandler
     onShowClick?: React.MouseEventHandler
     onModalInputBlur?: React.FocusEventHandler
-    onSearchMouseDown?: React.MouseEventHandler
     onSearchClick: React.MouseEventHandler
     onBack?: React.MouseEventHandler
     onInputMouseEnter: React.MouseEventHandler

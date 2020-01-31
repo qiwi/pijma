@@ -120,7 +120,7 @@ const banks = [
 const initialState = {
   suggest: '',
   loading: false,
-  banks: [],
+  banks: undefined,
   timer: undefined,
   error: false,
 };
@@ -156,12 +156,19 @@ const onChange = (value) => {
   setState({
     value: value,
     suggest: title,
+    banks: undefined,
   });
   console.log('SELECT ITEM', value);
 };
 
 const onSubmit = (suggest) => {
   console.log('SUBMIT', suggest)
+  if (suggest.length < 1) {
+    setState({
+      error: true,
+    })
+  }
+  return suggest.length >= 1
 };
 
 const equals = (a, b) => a.id === b.id;

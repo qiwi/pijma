@@ -1,25 +1,21 @@
 import {Component, RefObject, createRef} from 'react'
+
 import SuggestControlProps from './SuggestControlProps'
 import SuggestControlState from './SuggestControlState'
 import SuggestOptionModel from './SuggestOptionModel'
 
-export default class SuggestControl<V> extends Component<SuggestControlProps<SuggestOptionModel<V>, V>, SuggestControlState> {
+export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends Component<SuggestControlProps<O, V>, SuggestControlState> {
 
   public state: SuggestControlState = {
     show: false,
     focused: false,
     hovered: false,
-    result: false,
   }
 
   private inputRef: RefObject<HTMLInputElement> = createRef()
 
-  public componentDidUpdate(props: SuggestControlProps<SuggestOptionModel<V>, V>) {
-    if (props.items !== this.props.items) {
-      this.setState({
-        result: this.props.items.length > 0 || this.props.empty !== undefined,
-      })
-    }
+  private get items() {
+    return this.props.items === undefined ? [] : this.props.items
   }
 
   private onRequest: React.ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -28,7 +24,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
   }
 
   private onSelect: (index: number) => void = (index: number) => {
-    const item = this.props.items[index]
+    const item = this.items[index]
     if (item.suggest) {
       this.request(item.suggest)
     }
@@ -57,7 +53,6 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
 
   private onInputBlur: React.FocusEventHandler = (event) => {
     event.preventDefault()
-    this.hide()
     this.setState({
       focused: false,
     })
@@ -127,34 +122,24 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     this.submit()
   }
 
-  private onSearchMouseDown: React.MouseEventHandler = (event) => {
-    event.preventDefault()
-    this.inputRef.current!.focus({preventScroll: true})
-  }
-
   private onEscapeInputModal: () => void = () => {
     this.cancel()
-  }
-
-  private onHide: () => void = () => {
-    this.hide()
   }
 
   private change: (value: V) => void = (value) => {
     this.setState({
       show: false,
-      result: false,
     })
     this.props.onChange(value)
   }
 
   private submit: (value?: string) => void = (value) => {
-    this.setState({
-      show: false,
-      result: false,
-    })
-    if (this.props.onSubmit) {
-      this.props.onSubmit(value ? value : this.inputRef.current!.value)
+    if (this.props.onSubmit && this.props.onSubmit(value ? value : this.inputRef.current!.value)) {
+      this.inputRef.current!.blur()
+      this.setState({
+        show: false,
+        focused: false,
+      })
     }
   }
 
@@ -167,7 +152,6 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
   private cancel: () => void = () => {
     this.setState({
       show: false,
-      result: false,
     })
     if (this.props.onCancel) {
       this.props.onCancel()
@@ -178,7 +162,7 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     if (!this.props.value) {
       return undefined
     }
-    const index = this.props.items.findIndex(item => this.props.equals(item.value, this.props.value!))
+    const index = this.items.findIndex(item => this.props.equals(item.value, this.props.value!))
     return index !== -1 ? index : undefined
   }
 
@@ -187,7 +171,14 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     this.cancel()
   }
 
+  private onHide: () => void = () => {
+    this.cancel()
+  }
+
   private onShowClick: () => void = () => {
+    this.setState({
+      focused: true,
+    })
     this.show()
   }
 
@@ -200,24 +191,14 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
     }
   }
 
-  private hide = () => {
-    this.setState({
-      show: false,
-      result: false,
-    })
-    if (this.props.onHide) {
-      this.props.onHide()
-    }
-  }
-
   public render() {
     return this.props.children({
       focused: this.state.focused,
       hovered: this.state.hovered,
       selected: this.selected,
       show: this.state.show,
-      result: this.state.result,
       inputRef: this.inputRef,
+      items: this.items,
       onItemSelect: this.onSelect,
       onRequest: this.onRequest,
       onShowFocus: this.onShowFocus,
@@ -225,7 +206,6 @@ export default class SuggestControl<V> extends Component<SuggestControlProps<Sug
       onInputBlur: this.onInputBlur,
       onModalInputBlur: this.onModalInputBlur,
       onShowClick: this.onShowClick,
-      onSearchMouseDown: this.onSearchMouseDown,
       onSearchClick: this.onSearchClick,
       onInputMouseEnter: this.onInputMouseEnter,
       onInputMouseLeave: this.onInputMouseLeave,
