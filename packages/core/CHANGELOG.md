@@ -1,3 +1,24 @@
+# [@qiwi/pijma-core-v1.98.0](https://github.com/qiwi/pijma/compare/v1.97.0...v1.98.0) (2020-01-23)
+
+
+### Features
+
+* suggest-control items undefined ([66ebdb2](https://github.com/qiwi/pijma/commit/66ebdb2))
+
+# [@qiwi/pijma-core-v1.96.2](https://github.com/qiwi/pijma/compare/v1.96.1...v1.96.2) (2019-12-17)
+
+
+### Bug Fixes
+
+* content suggest ([648a51d](https://github.com/qiwi/pijma/commit/648a51d))
+
+# [@qiwi/pijma-core-v1.96.0](https://github.com/qiwi/pijma/compare/v1.95.0...v1.96.0) (2019-11-27)
+
+
+### Features
+
+* header suggest ([e21e8d1](https://github.com/qiwi/pijma/commit/e21e8d1))
+
 # [@qiwi/pijma-core-v1.95.0](https://github.com/qiwi/pijma/compare/v1.94.0...v1.95.0) (2019-11-27)
 
 
