@@ -1,3 +1,17 @@
+# [@qiwi/pijma-mobile-v1.102.0](https://github.com/qiwi/pijma/compare/v1.101.1...v1.102.0) (2020-01-31)
+
+
+### Features
+
+* stub footer-nav ([e3eb002](https://github.com/qiwi/pijma/commit/e3eb002))
+
+# [@qiwi/pijma-mobile-v1.101.1](https://github.com/qiwi/pijma/compare/v1.101.0...v1.101.1) (2020-01-31)
+
+
+### Bug Fixes
+
+* stub text-field ([caaddbb](https://github.com/qiwi/pijma/commit/caaddbb))
+
 # [@qiwi/pijma-mobile-v1.100.0](https://github.com/qiwi/pijma/compare/v1.99.0...v1.100.0) (2020-01-29)
 
 
