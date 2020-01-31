@@ -41,6 +41,7 @@ export * from './progress-bar'
 export * from './header-suggest'
 export * from './alert'
 export * from './checkbox'
+export * from './suggest-field'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'
