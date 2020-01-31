@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.104.0](https://github.com/qiwi/pijma/compare/v1.103.0...v1.104.0) (2020-01-31)
+
+
+### Features
+
+* suggest-field ([945e2f9](https://github.com/qiwi/pijma/commit/945e2f9))
+
 # [@qiwi/pijma-desktop-v1.103.0](https://github.com/qiwi/pijma/compare/v1.102.0...v1.103.0) (2020-01-31)
 
 
