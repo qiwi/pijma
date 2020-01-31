@@ -121,7 +121,7 @@ const initialState = {
   validateError: undefined,
   suggestError: undefined,
   timer: undefined,
-  banks: [],
+  banks: undefined,
 };
 
 const filterBanks = (title) => banks.filter(bank => {
@@ -155,6 +155,7 @@ const onCancel = () => setState(initialState);
 const onChange = (value) => {
   const {title} = getBankByValue(value);
   setState({
+    banks: undefined,
     value: value,
     suggest: title,
   });

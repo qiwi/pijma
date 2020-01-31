@@ -28,6 +28,5 @@ export default interface SuggestFieldProps<O extends SuggestFieldOptionModel<V>,
   onCancel?: SuggestControlProps<O, V>['onCancel']
   onFocus?: SuggestControlProps<O, V>['onFocus']
   onBlur?: SuggestControlProps<O, V>['onBlur']
-  onHide?: SuggestControlProps<O, V>['onHide']
   equals?: SuggestControlProps<O, V>['equals']
 }

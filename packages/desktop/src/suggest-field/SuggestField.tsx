@@ -40,7 +40,7 @@ export const SuggestField = <V extends {}>({
       hint={props.hint}
     />
   ) : (
-    <SuggestControl<V>
+    <SuggestControl<V, SuggestFieldOptionsModel<V>>
       value={props.value}
       suggest={props.suggest}
       items={props.items}
@@ -51,10 +51,9 @@ export const SuggestField = <V extends {}>({
       onBlur={props.onBlur}
       onFocus={props.onFocus}
       onCancel={props.onCancel}
-      onHide={props.onHide}
       children={(renderProps) => (
         <MenuControl
-          count={props.items.length}
+          count={renderProps.items.length}
           selected={renderProps.selected}
           onSelect={renderProps.onItemSelect}
           onKeyDown={renderProps.onItemKeyDown}
@@ -62,7 +61,7 @@ export const SuggestField = <V extends {}>({
             <Pos
               type="relative"
               ref={dropDownContainerRef}
-              transition={`box-shadow ${renderProps.result ? 300 : 200}ms cubic-bezier(0.4, 0.0, 0.2, 1)`}
+              transition={`box-shadow ${renderProps.focused ? 300 : 200}ms cubic-bezier(0.4, 0.0, 0.2, 1)`}
             >
               <Box
                 width={1}
@@ -90,7 +89,11 @@ export const SuggestField = <V extends {}>({
                       onChange={renderProps.onRequest}
                       onFocus={renderProps.onInputFocus}
                       onBlur={renderProps.onInputBlur}
-                      onKeyDown={renderProps.result ? menuRenderProps.onKeyDown : renderProps.onItemKeyDown}
+                      onKeyDown={props.items !== undefined && renderProps.focused && (props.items.length > 0 || props.empty !== undefined) ? (
+                        menuRenderProps.onKeyDown
+                      ) : (
+                        renderProps.onItemKeyDown
+                      )}
                     />
                   }
                   hint={props.hint}
@@ -105,7 +108,7 @@ export const SuggestField = <V extends {}>({
                 minWidth={1}
                 width={1}
                 offset={3}
-                show={renderProps.result}
+                show={props.items !== undefined && renderProps.focused && (props.items.length > 0 || props.empty !== undefined || props.loading === true)}
                 rootClose={true}
                 onHide={renderProps.onHide}
               >
@@ -136,9 +139,9 @@ export const SuggestField = <V extends {}>({
                               onMouseDown={item.onMouseDown}
                               onMouseEnter={item.onMouseEnter}
                               cursor="pointer"
-                              text={props.items[key].title}
-                              notes={props.items[key].description}
-                              icon={props.items[key].logo ? <Image width={6} height={6} src={props.items[key].logo}/> : undefined}
+                              text={renderProps.items[key].title}
+                              notes={renderProps.items[key].description}
+                              icon={renderProps.items[key].logo ? <Image width={6} height={6} src={renderProps.items[key].logo}/> : undefined}
                               hover={item.focused}
                               active={item.selected}
                               focus={item.selected}

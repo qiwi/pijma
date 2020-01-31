@@ -37,7 +37,7 @@ export const SuggestField = <V extends {}>({
       hint={props.hint}
     />
   ) : (
-    <SuggestControl<V>
+    <SuggestControl<V, SuggestFieldOptionModel<V>>
       value={props.value}
       suggest={props.suggest}
       items={props.items}
@@ -84,7 +84,7 @@ export const SuggestField = <V extends {}>({
             />
           </Box>
           <MenuControl
-            count={props.items.length}
+            count={renderProps.items.length}
             selected={renderProps.selected}
             onSelect={renderProps.onItemSelect}
             onKeyDown={renderProps.onModalItemKeyDown}
@@ -122,9 +122,9 @@ export const SuggestField = <V extends {}>({
                             onClick={item.onClick}
                             onMouseEnter={item.onMouseEnter}
                             cursor="pointer"
-                            text={props.items[key].title}
-                            notes={props.items[key].description}
-                            icon={props.items[key].logo ? <Image width={6} height={6} src={props.items[key].logo}/> : undefined}
+                            text={renderProps.items[key].title}
+                            notes={renderProps.items[key].description}
+                            icon={renderProps.items[key].logo ? <Image width={6} height={6} src={renderProps.items[key].logo}/> : undefined}
                             hover={item.focused}
                             active={item.selected}
                             focus={item.selected}
