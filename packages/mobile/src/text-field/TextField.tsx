@@ -4,43 +4,21 @@ import {
   TextFieldControl,
   InputField,
   BasicInput,
-  Stub,
-  Box,
-  Card,
-  Flex,
-  FlexItem,
 } from '@qiwi/pijma-core'
 
 import TextFieldProps from './TextFieldProps'
 
 const TextField: FunctionComponent<TextFieldProps> = (props) => (
   props.stub ? (
-    <Box>
-      {props.title ? (
-        <Stub width={15} height={2} top={1} bottom={1}/>
-      ) : (
-        <Box height={4}/>
-      )}
-      <Card bb="1px solid rgba(0, 0, 0, 0.2)" height={7}>
-        <Flex align="center" justify="space-between" height={1}>
-          <FlexItem>
-            <Stub width={38} height={3} top={1} bottom={1}/>
-          </FlexItem>
-          {props.hint ? (
-            <FlexItem>
-              <Stub width={5} height={5} r={10}/>
-            </FlexItem>
-          ) : (
-            null
-          )}
-        </Flex>
-      </Card>
-      {props.help ? (
-        <Stub width={15} height={2} top={2} bottom={1}/>
-      ) : (
-        <Box height={5}/>
-      )}
-    </Box>
+    <InputField
+      active={false}
+      input={false}
+      title={props.title}
+      hint={props.hint}
+      help={props.help}
+      error={props.error}
+      stub
+    />
   ) : (
     <TextFieldControl
       onChange={props.onChange}
