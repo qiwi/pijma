@@ -82,7 +82,7 @@ const IconPath: { [name in PaymentSecurityIconProps['name']]: [string, string, s
 
 export const PaymentSecurityIcon: FC<PaymentSecurityIconProps> = ({gray, name, stub}) => (
   stub ? (
-    <Stub width={16} height={6}/>
+    <Stub width={1} height={1}/>
   ) : (
     <Svg width={1} height={1} viewBox="0 0 64 24" focusable="false">
       {IconPath[name].map((path, i) => (
