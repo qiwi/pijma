@@ -3,13 +3,19 @@ import RenderChild from '../RenderChild'
 import CalendarDate from './CalendarDate'
 import {CalendarConstructorProps} from './CalendarConstructor'
 
+export interface ScrollItem {
+  value: number
+  text: string
+}
+
 export interface CalendarControlChildrenProps {
   date: Date
   dates: CalendarDate[]
   activeDate?: Date
   showSelectMonth: boolean
+  years: ScrollItem[]
   toggleSelectMonth: () => void
-  selectMonth: (month: number, year?: number) => void
+  selectMonth: (values: number[]) => void
   toNextMonth: () => void
   toPrevMonth: () => void
   onDesktopSelectDate: (date: Date) => (event: SyntheticEvent) => void
@@ -19,6 +25,8 @@ export interface CalendarControlChildrenProps {
 
 export default interface CalendarControlProps {
   calendar: CalendarConstructorProps
+  minYear: number
+  maxYear: number
   onChange?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void

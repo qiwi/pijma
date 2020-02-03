@@ -1,5 +1,5 @@
 import {SyntheticEvent, Component} from 'react'
-import CalendarControlProps from './CalendarControlProps'
+import CalendarControlProps, {ScrollItem} from './CalendarControlProps'
 import CalendarControlState from './CalendarControlState'
 
 export default class CalendarControl extends Component<CalendarControlProps, CalendarControlState> {
@@ -11,6 +11,7 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
       date: props.calendar.activeDate || new Date(),
       dates: props.calendar.getDates(props.calendar.activeDate || new Date()),
       showSelectMonth: false,
+      years: this.getYearsArray(),
     }
   }
 
@@ -20,10 +21,9 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
     }))
   }
 
-  private selectMonth = (month: number, year?: number) => {
-    this.setState(state => {
-      const selectedYear = year || state.date.getFullYear()
-      const date = new Date(selectedYear, month, 1)
+  private selectMonth = ([month, year]: number[]) => {
+    this.setState(() => {
+      const date = new Date(year, month, 1)
       return {
         date,
         dates: this.props.calendar.getDates(date),
@@ -70,14 +70,27 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
     }
   }
 
+  private getYearsArray = () => {
+    const years: ScrollItem[] = []
+    for (let year = this.props.minYear; year <= this.props.maxYear; year++) {
+      years.push({
+        value: year,
+        text: year.toString(),
+      })
+    }
+
+    return years
+  }
+
   public render() {
-    const {date, dates, showSelectMonth, activeDate} = this.state
+    const {date, dates, showSelectMonth, activeDate, years} = this.state
 
     return this.props.children({
       date,
       dates,
       activeDate,
       showSelectMonth,
+      years,
       toggleSelectMonth: this.toggleSelectMonth,
       selectMonth: this.selectMonth,
       toPrevMonth: this.toPrevMonth,

@@ -1,6 +1,6 @@
 import React, {FC, Fragment} from 'react'
 import {Box, Card, Grid, Flex, Icon, Typo, CalendarControl, CalendarConstructor, CalendarControlChildrenProps} from '@qiwi/pijma-core'
-import {MenuLink, Button} from '../'
+import {Button, SelectScroll} from '../'
 
 const defaultDays = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
 const defaultMonths = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
@@ -12,6 +12,8 @@ export interface CalendarProps {
   months?: string[]
   firstDayIndex?: number
   buttonText?: string
+  minYear?: number
+  maxYear?: number
   saveDate?: (date: Date) => void
 }
 
@@ -21,10 +23,11 @@ export const Calendar: FC<CalendarProps> = ({
   firstDayIndex,
   activeDate,
   buttonText = 'Выбрать',
+  minYear = new Date().getFullYear() - 5,
+  maxYear = new Date().getFullYear() + 5,
   saveDate,
 }) => {
   const dayIndex = firstDayIndex === undefined ? defaultFirstDayIndex : firstDayIndex
-
   const getDateItems = (renderProps: CalendarControlChildrenProps) => {
     return renderProps.dates.map(({date, disabled}, key) => {
       switch (date.toDateString()) {
@@ -89,9 +92,11 @@ export const Calendar: FC<CalendarProps> = ({
     <CalendarControl
       calendar={new CalendarConstructor(dayIndex, activeDate)}
       saveDate={saveDate}
+      minYear={minYear}
+      maxYear={maxYear}
       children={renderProps => (
-        <Box pt={6} px={3.5} pb={3.5}>
-          <Flex justify="space-between" px={2.5} mb={3.5}>
+        <Fragment>
+          <Flex justify="space-between" mb={3.5} pt={6} px={6}>
             <Box
               cursor="pointer"
               onClick={renderProps.toPrevMonth}
@@ -114,18 +119,19 @@ export const Calendar: FC<CalendarProps> = ({
             />
           </Flex>
           {renderProps.showSelectMonth ? (
-            <Box maxHeight={91} overflow="auto">
-              {months.map((month, index) => (
-                <MenuLink
-                  key={index}
-                  title={month}
-                  active={index === renderProps.date.getMonth()}
-                  onClick={() => renderProps.selectMonth(index)}
-                />
-              ))}
-            </Box>
+            <SelectScroll
+              selected={[
+                renderProps.date.getMonth(),
+                renderProps.date.getFullYear(),
+              ]}
+              items={[
+                months.map((month, key) => ({value: key, text: month})),
+                renderProps.years,
+              ]}
+              onSelect={renderProps.selectMonth}
+            />
           ) : (
-            <Fragment>
+            <Box p={3.5}>
               <Grid columns={7} layout={1} gutter={0}>
                 {days.map(day => (
                   <Box key={day} width={11} height={11} p={2.5}>
@@ -136,7 +142,7 @@ export const Calendar: FC<CalendarProps> = ({
                 ))}
                 {getDateItems(renderProps)}
               </Grid>
-              <Box pt={6}>
+              <Box px={2.5} pb={2.5} pt={3.5}>
                 <Button
                   type="button"
                   kind="brand"
@@ -145,9 +151,9 @@ export const Calendar: FC<CalendarProps> = ({
                   onClick={renderProps.onMobileSaveDate}
                 />
               </Box>
-            </Fragment>
+            </Box>
           )}
-        </Box>
+        </Fragment>
       )}
     />
   )

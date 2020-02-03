@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 import {Box, Card, Block, Grid, Flex, Icon, Typo, CalendarControl, CalendarConstructor, CalendarControlChildrenProps} from '@qiwi/pijma-core'
-import {MenuLink} from '../'
+import {SelectScroll} from '../'
 
 const defaultDays = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
 const defaultMonths = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
@@ -11,13 +11,21 @@ export interface CalendarProps {
   days?: string[]
   months?: string[]
   firstDayIndex?: number
+  minYear?: number
+  maxYear?: number
   saveDate?: (date: Date) => void
 }
 
-export const Calendar: FC<CalendarProps> = props => {
-  const days = props.days || defaultDays
-  const months = props.months || defaultMonths
-  const firstDayIndex = props.firstDayIndex === undefined ? defaultFirstDayIndex : props.firstDayIndex
+export const Calendar: FC<CalendarProps> = ({
+  days = defaultDays,
+  months = defaultMonths,
+  firstDayIndex,
+  activeDate,
+  minYear = new Date().getFullYear() - 5,
+  maxYear = new Date().getFullYear() + 5,
+  saveDate,
+}) => {
+  const dayIndex = firstDayIndex === undefined ? defaultFirstDayIndex : firstDayIndex
 
   const getDateItems = (renderProps: CalendarControlChildrenProps) => {
     return renderProps.dates.map(({date, disabled}, key) => {
@@ -82,8 +90,10 @@ export const Calendar: FC<CalendarProps> = props => {
 
   return (
     <CalendarControl
-      calendar={new CalendarConstructor(firstDayIndex, props.activeDate)}
-      saveDate={props.saveDate}
+      calendar={new CalendarConstructor(dayIndex, activeDate)}
+      saveDate={saveDate}
+      minYear={minYear}
+      maxYear={maxYear}
       children={renderProps => (
         <Card s="0 28px 52px 0 rgba(0, 0, 0, 0.16)" r={10}>
           <Block>
@@ -111,16 +121,27 @@ export const Calendar: FC<CalendarProps> = props => {
                 />
               </Flex>
               {renderProps.showSelectMonth ? (
-                <Box maxHeight={91} overflow="auto">
-                  {months.map((month, index) => (
-                    <MenuLink
-                      key={index}
-                      title={month}
-                      active={index === renderProps.date.getMonth()}
-                      onClick={() => renderProps.selectMonth(index)}
-                    />
-                  ))}
-                </Box>
+                <SelectScroll
+                  selected={[
+                    renderProps.date.getMonth(),
+                    renderProps.date.getFullYear(),
+                  ]}
+                  items={[
+                    months.map((month, key) => ({value: key, text: month})),
+                    renderProps.years,
+                  ]}
+                  onSelect={renderProps.selectMonth}
+                />
+                // <Box maxHeight={91} overflow="auto">
+                //   {months.map((month, index) => (
+                //     <MenuLink
+                //       key={index}
+                //       title={month}
+                //       active={index === renderProps.date.getMonth()}
+                //       // onClick={() => renderProps.selectMonth(index)}
+                //     />
+                //   ))}
+                // </Box>
               ) : (
                 <Grid columns={7} layout={1} gutter={0}>
                   {days.map(day => (
