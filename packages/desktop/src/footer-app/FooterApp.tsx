@@ -19,7 +19,7 @@ interface FooterAppLinkProps {
 
 const FooterAppLink: FC<FooterAppLinkProps> = (props) => (
   props.stub ? (
-    <Stub width={1} height={1}/>
+    <Stub width={37} height={11}/>
   ) : (
     <LinkControl
       href={props.href}
@@ -60,13 +60,12 @@ export interface FooterAppProps {
 
 export const FooterApp: FC<FooterAppProps> = ({children, stub = false}) => (
   <Box overflow="hidden">
-    <Flex m={-2}>
+    <Flex justify="space-between" m={-2}>
       {(stub ? Array(2).fill(0) : children).map((item, i) => (
         <FlexItem
           key={i}
           shrink={1}
-          width={37}
-          height={11}
+          maxWidth={42}
           m={2}
           children={<FooterAppLink stub={stub} {...item}/>}
         />
