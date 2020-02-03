@@ -1,10 +1,12 @@
 import React, {FC} from 'react'
 
 import {Path, Svg} from '../primitive'
+import {Stub} from '../stub'
 
 export interface PaymentSecurityIconProps {
   name: 'mastercard-id-check' | 'visa-verified' | 'pci-dss' | 'mir-accept'
   gray?: boolean
+  stub?: boolean
 }
 
 const IconPath: { [name in PaymentSecurityIconProps['name']]: [string, string, string, 'evenodd' | 'inherit' | 'nonzero' | undefined][] } = {
@@ -78,10 +80,14 @@ const IconPath: { [name in PaymentSecurityIconProps['name']]: [string, string, s
   ],
 }
 
-export const PaymentSecurityIcon: FC<PaymentSecurityIconProps> = ({gray, name}) => (
-  <Svg width={1} height={1} viewBox="0 0 64 24" focusable="false">
-    {IconPath[name].map((path, i) => (
-      <Path key={i} fill={gray ? path[2] : path[0]} d={path[1]} fillRule={path[3]}/>
-    ))}
-  </Svg>
+export const PaymentSecurityIcon: FC<PaymentSecurityIconProps> = ({gray, name, stub}) => (
+  stub ? (
+    <Stub width={16} height={6}/>
+  ) : (
+    <Svg width={1} height={1} viewBox="0 0 64 24" focusable="false">
+      {IconPath[name].map((path, i) => (
+        <Path key={i} fill={gray ? path[2] : path[0]} d={path[1]} fillRule={path[3]}/>
+      ))}
+    </Svg>
+  )
 )
