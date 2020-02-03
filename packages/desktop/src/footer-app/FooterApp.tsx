@@ -49,14 +49,14 @@ const FooterAppLink: FC<FooterAppLinkProps> = (props) => (
 )
 
 export interface FooterAppProps {
-  children: FooterAppLinkProps[]
   stub?: boolean
+  children: FooterAppLinkProps[]
 }
 
-export const FooterApp: FC<FooterAppProps> = ({children, stub}) => (
+export const FooterApp: FC<FooterAppProps> = ({children, stub = false}) => (
   <Box overflow="hidden">
     <Flex justify="space-between" m={-2}>
-      {children.map((item, i) => (
+      {(stub ? Array(2).fill(0) : children).map((item, i) => (
         <FlexItem
           key={i}
           shrink={1}
