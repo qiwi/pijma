@@ -12,3 +12,16 @@
     },
   ]}/>
 ```
+
+```jsx
+  <FooterApp stub children={[
+    {
+      href: '', 
+      icon: '',
+    },
+    {
+      href: '',
+      icon: '',
+    },
+  ]}/>
+```
