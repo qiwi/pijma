@@ -56,29 +56,20 @@ export interface FooterAppProps {
 export const FooterApp: FC<FooterAppProps> = ({children, stub}) => (
   <Box overflow="hidden">
     <Flex justify="space-between" m={-2}>
-      {stub ? (
-        [0, 0].map((_item, i) => (
-          <FlexItem
-            key={i}
-            shrink={1}
-            maxWidth={42}
-            maxHeight={12.4}
-            m={2}
-            children={<Stub width={39} height={12}/>}
-          />
-        ))
-      ) : (
-        children.map((item, i) => (
-          <FlexItem
-            key={i}
-            shrink={1}
-            maxWidth={42}
-            maxHeight={12.4}
-            m={2}
-            children={<FooterAppLink {...item}/>}
-          />
-        ))
-      )}
+      {children.map((item, i) => (
+        <FlexItem
+          key={i}
+          shrink={1}
+          maxWidth={42}
+          maxHeight={12.4}
+          m={2}
+          children={stub ? (
+            <Stub width={39} height={12}/>
+          ) : (
+            <FooterAppLink {...item}/>
+          )}
+        />
+      ))}
     </Flex>
   </Box>
 )
