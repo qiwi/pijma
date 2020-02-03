@@ -9,7 +9,7 @@ export interface PaymentSecurityIconProps {
   stub?: boolean
 }
 
-const IconPath: { [name in PaymentSecurityIconProps['name']]: [string, string, string, 'evenodd' | 'inherit' | 'nonzero' | undefined][] } = {
+const IconPath: Record<NonNullable<PaymentSecurityIconProps['name']>, [string, string, string, 'evenodd' | 'inherit' | 'nonzero' | undefined][]> = {
   'mastercard-id-check': [
     [
       '#000',
