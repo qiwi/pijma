@@ -19,7 +19,7 @@ interface FooterAppLinkProps {
 
 const FooterAppLink: FC<FooterAppLinkProps> = (props) => (
   props.stub ? (
-    <Stub width={39} height={12}/>
+    <Stub width={1} height={1}/>
   ) : (
     <LinkControl
       href={props.href}
@@ -67,6 +67,8 @@ export const FooterApp: FC<FooterAppProps> = ({children, stub = false}) => (
           shrink={1}
           maxWidth={42}
           maxHeight={12.4}
+          minWidth={37}
+          minHeight={11}
           m={2}
           children={<FooterAppLink stub={stub} {...item}/>}
         />
