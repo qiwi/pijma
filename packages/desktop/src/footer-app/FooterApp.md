@@ -20,4 +20,3 @@
   <FooterApp stub children={[]}/>
 </Box>
 ```
-
