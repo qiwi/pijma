@@ -7,7 +7,7 @@ export interface RatingProps {
   disabled?: boolean
   count?: number
   stub?: boolean
-  onChange: (value: number) => void
+  onChange?: (value: number) => void
 }
 
 const RatingSize: Record<NonNullable<RatingProps['size']>, number> = {
@@ -29,11 +29,14 @@ export const Rating: FC<RatingProps> = ({
   onChange,
 }) => (
   stub ? (
-    <Flex>
+    <Flex
+      justify="space-between"
+      maxWidth={(count * RatingSize[size]) + ((count - 1) * RatingIndent[size])}
+      width={1}
+    >
       {Array(count).fill(1).map((_, index) => (
         <FlexItem
           key={index}
-          pl={index === 0 ? 0 : RatingIndent[size]}
         >
           <Stub
             height={RatingSize[size]}
@@ -50,12 +53,14 @@ export const Rating: FC<RatingProps> = ({
       disabled={disabled}
       onChange={onChange}
       children={renderProps => (
-        <Flex>
+        <Flex
+          justify="space-between"
+          maxWidth={(count * RatingSize[size]) + ((count - 1) * RatingIndent[size])}
+          width={1}
+        >
           {renderProps.items.map((item, index) => (
             <FlexItem
               key={index}
-              pl={index === 0 ? 0 : RatingIndent[size] / 2}
-              pr={index === count - 1 ? 0 : RatingIndent[size] / 2}
               onClick={item.onClick}
               onMouseMove={item.onMouseEnter}
               onMouseOut={item.onMouseLeave}
