@@ -1,5 +1,5 @@
 ```jsx
-initialState = {showMenu: false, showStubMenu: false};
+initialState = {showMenu: false};
 
 <React.Fragment>
 <Spacer size="l">
