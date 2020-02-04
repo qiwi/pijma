@@ -10,13 +10,6 @@ initialState = {showMenu: false, showStubMenu: false};
     text="Показать меню"
     onClick={() => setState({showMenu: true})}
   />
-  <Button
-    kind="simple"
-    size="normal"
-    type="button"
-    text="Показать stub меню"
-    onClick={() => setState({showStubMenu: true})}
-  />
 </Spacer>
   <HeaderMenu
     show={state.showMenu}
@@ -49,14 +42,6 @@ initialState = {showMenu: false, showStubMenu: false};
       </Striper>
     )}
   />
-  <HeaderMenu
-    stub
-    show={state.showStubMenu}
-    from="top"
-    children={undefined}
-  />
 </React.Fragment>
-
-
 ```
 

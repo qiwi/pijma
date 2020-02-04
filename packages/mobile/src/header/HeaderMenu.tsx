@@ -20,7 +20,7 @@ interface HeaderMenuProps {
   zIndex?: number
   header?: ReactNode
   from: 'top' | 'right' | 'bottom' | 'left'
-  stub?: ReactNode
+  stub?: boolean
   onShow?: () => void
   onHide?: () => void
 }
