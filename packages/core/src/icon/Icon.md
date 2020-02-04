@@ -137,10 +137,10 @@
 <Block>
   <BlockContent>
     <Flex>
-      <FlexItem width={36} height={11} mr={6}>
+      <FlexItem width={37} height={11} mr={6}>
         <MobileAppIcon name="google"/>
       </FlexItem>
-      <FlexItem width={36} height={11}>
+      <FlexItem width={37} height={11}>
         <MobileAppIcon name="apple"/>
       </FlexItem>
     </Flex>
