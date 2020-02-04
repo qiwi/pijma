@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.106.0](https://github.com/qiwi/pijma/compare/v1.105.0...v1.106.0) (2020-02-03)
+
+
+### Features
+
+* **core:** stub payment-security-icon ([6498687](https://github.com/qiwi/pijma/commit/6498687))
+
 # [@qiwi/pijma-core-v1.98.0](https://github.com/qiwi/pijma/compare/v1.97.0...v1.98.0) (2020-01-23)
 
 
