@@ -113,6 +113,20 @@
         <PaymentSecurityIcon name="mastercard-id-check" gray/>
       </FlexItem>
     </Flex>
+    <Flex mt={6}>
+      <FlexItem width={16} height={6} mr={2}>
+        <PaymentSecurityIcon name="pci-dss" stub/>
+      </FlexItem>
+      <FlexItem width={16} height={6} mr={2}>
+        <PaymentSecurityIcon name="mir-accept" stub/>
+      </FlexItem>
+      <FlexItem width={16} height={6} mr={2}>
+        <PaymentSecurityIcon name="visa-verified" stub/>
+      </FlexItem>
+      <FlexItem width={16} height={6}>
+        <PaymentSecurityIcon name="mastercard-id-check" stub/>
+      </FlexItem>
+    </Flex>
   </BlockContent>
 </Block>
 ```
