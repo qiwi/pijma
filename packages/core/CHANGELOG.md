@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.107.1](https://github.com/qiwi/pijma/compare/v1.107.0...v1.107.1) (2020-02-04)
+
+
+### Bug Fixes
+
+* rating ([b04a420](https://github.com/qiwi/pijma/commit/b04a420))
+
 # [@qiwi/pijma-core-v1.107.0](https://github.com/qiwi/pijma/compare/v1.106.0...v1.107.0) (2020-02-04)
 
 
