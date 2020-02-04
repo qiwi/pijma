@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.108.0](https://github.com/qiwi/pijma/compare/v1.107.1...v1.108.0) (2020-02-04)
+
+
+### Features
+
+* **mobile:** stub header menu ([efae3e1](https://github.com/qiwi/pijma/commit/efae3e1))
+
 # [@qiwi/pijma-mobile-v1.107.1](https://github.com/qiwi/pijma/compare/v1.107.0...v1.107.1) (2020-02-04)
 
 
