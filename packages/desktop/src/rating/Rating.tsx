@@ -7,7 +7,7 @@ export interface RatingProps {
   disabled?: boolean
   count?: number
   stub?: boolean
-  onChange: (value: number) => void
+  onChange?: (value: number) => void
 }
 
 const RatingSize: Record<NonNullable<RatingProps['size']>, number> = {

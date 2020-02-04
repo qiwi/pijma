@@ -35,6 +35,20 @@
     title="text"
     href="/"
   />
+  <MenuLink
+    stub
+    icon={<Icon name="qiwi"/>}
+    title="text"
+    href="#"
+  />
+  <MenuLink
+    stub
+    submenu
+    icon={<Icon name="qiwi"/>}
+    title="text"
+    notes="notes"
+    href="#"
+  />
 </Card>
 ```
 
@@ -75,6 +89,23 @@
     title="text"
     href="/"
   />
+  <MenuLink
+    stub
+    submenu
+    icon={<Icon name="qiwi"/>}
+    title="text"
+    href="#"
+    size="m"
+  />
+  <MenuLink
+    stub
+    submenu
+    icon={<Icon name="qiwi"/>}
+    title="text"
+    notes="notes"
+    href="#"
+    size="m"
+  />
 </Card>
 ```
 
@@ -114,6 +145,18 @@
     submenu
     title="text"
     href="/"
+  />
+  <MenuLink
+    stub
+    title="text"
+    href="#"
+  />
+  <MenuLink
+    stub
+    submenu
+    title="text"
+    notes="notes"
+    href="#"
   />
 </Card>
 ```

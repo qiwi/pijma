@@ -5,7 +5,7 @@ export interface RatingControlProps {
   value: number
   count: number
   disabled?: boolean
-  onChange: (value: number) => void
+  onChange?: (value: number) => void
   children: RenderChild<{
     items: Array<{
       active: boolean
@@ -28,7 +28,9 @@ export class RatingControl extends React.Component<RatingControlProps, RatingCon
 
   private onItemClick: (index: number) => React.MouseEventHandler = (index) => (event) => {
     event.preventDefault()
-    this.props.onChange(index + 1)
+    if (this.props.onChange) {
+      this.props.onChange(index + 1)
+    }
   }
 
   private onItemMouseLeave: React.MouseEventHandler = () => {

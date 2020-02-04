@@ -1,3 +1,38 @@
+# [@qiwi/pijma-desktop-v1.107.1](https://github.com/qiwi/pijma/compare/v1.107.0...v1.107.1) (2020-02-04)
+
+
+### Bug Fixes
+
+* rating ([b04a420](https://github.com/qiwi/pijma/commit/b04a420))
+
+# [@qiwi/pijma-desktop-v1.107.0](https://github.com/qiwi/pijma/compare/v1.106.0...v1.107.0) (2020-02-04)
+
+
+### Features
+
+* stub footer-app ([409e174](https://github.com/qiwi/pijma/commit/409e174))
+
+# [@qiwi/pijma-desktop-v1.105.0](https://github.com/qiwi/pijma/compare/v1.104.0...v1.105.0) (2020-02-03)
+
+
+### Features
+
+* stub menu-link ([2b41552](https://github.com/qiwi/pijma/commit/2b41552))
+
+# [@qiwi/pijma-desktop-v1.104.0](https://github.com/qiwi/pijma/compare/v1.103.0...v1.104.0) (2020-01-31)
+
+
+### Features
+
+* suggest-field ([945e2f9](https://github.com/qiwi/pijma/commit/945e2f9))
+
+# [@qiwi/pijma-desktop-v1.103.0](https://github.com/qiwi/pijma/compare/v1.102.0...v1.103.0) (2020-01-31)
+
+
+### Features
+
+* stub footer-out ([26b706a](https://github.com/qiwi/pijma/commit/26b706a))
+
 # [@qiwi/pijma-desktop-v1.102.0](https://github.com/qiwi/pijma/compare/v1.101.1...v1.102.0) (2020-01-31)
 
 
