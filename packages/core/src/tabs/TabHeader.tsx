@@ -3,6 +3,7 @@ import React, {FC} from 'react'
 import {Flex, FlexItem, Typo, Pos, Card} from '../primitive'
 import {Icon, IconProps} from '../icon'
 import {Stub} from '../stub'
+import {Breaker} from '../breaker'
 
 export interface TabProps {
   title: string
@@ -94,7 +95,7 @@ export const TabHeader: FC<TabProps> = ({
                 weight={500}
                 size={vertical ? 3.5 : 4}
                 height={6}
-                children={title}
+                children={<Breaker children={title}/>}
               />
             )}
           </FlexItem>
