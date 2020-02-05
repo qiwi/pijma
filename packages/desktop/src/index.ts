@@ -43,6 +43,7 @@ export * from './alert'
 export * from './checkbox'
 export * from './suggest-field'
 export * from './tabs'
+export * from './block-tabs'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'
