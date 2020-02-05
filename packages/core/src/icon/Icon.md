@@ -113,6 +113,20 @@
         <PaymentSecurityIcon name="mastercard-id-check" gray/>
       </FlexItem>
     </Flex>
+    <Flex mt={6}>
+      <FlexItem width={16} height={6} mr={2}>
+        <PaymentSecurityIcon name="pci-dss" stub/>
+      </FlexItem>
+      <FlexItem width={16} height={6} mr={2}>
+        <PaymentSecurityIcon name="mir-accept" stub/>
+      </FlexItem>
+      <FlexItem width={16} height={6} mr={2}>
+        <PaymentSecurityIcon name="visa-verified" stub/>
+      </FlexItem>
+      <FlexItem width={16} height={6}>
+        <PaymentSecurityIcon name="mastercard-id-check" stub/>
+      </FlexItem>
+    </Flex>
   </BlockContent>
 </Block>
 ```
@@ -123,10 +137,10 @@
 <Block>
   <BlockContent>
     <Flex>
-      <FlexItem width={36} height={11} mr={6}>
+      <FlexItem width={37} height={11} mr={6}>
         <MobileAppIcon name="google"/>
       </FlexItem>
-      <FlexItem width={36} height={11}>
+      <FlexItem width={37} height={11}>
         <MobileAppIcon name="apple"/>
       </FlexItem>
     </Flex>
