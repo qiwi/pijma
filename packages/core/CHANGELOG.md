@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.108.1](https://github.com/qiwi/pijma/compare/v1.108.0...v1.108.1) (2020-02-05)
+
+
+### Bug Fixes
+
+* **core:** image stub size ([9c9a648](https://github.com/qiwi/pijma/commit/9c9a648))
+
 # [@qiwi/pijma-core-v1.107.1](https://github.com/qiwi/pijma/compare/v1.107.0...v1.107.1) (2020-02-04)
 
 
