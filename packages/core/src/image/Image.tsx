@@ -62,7 +62,7 @@ export const Image: FC<ImageProps> = ({
                 ) : (
                   null
                 )}
-                <Box as="span" opacity={typeof stub === 'string' ? 1 : 0}>
+                <Box as="span" opacity={typeof stub === 'string' ? 1 : 0} width={width} height={height}>
                   <Img
                     width={width}
                     height={height}
