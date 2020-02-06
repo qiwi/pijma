@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.108.2](https://github.com/qiwi/pijma/compare/v1.108.1...v1.108.2) (2020-02-06)
+
+
+### Bug Fixes
+
+* add blur to image stub ([332ca27](https://github.com/qiwi/pijma/commit/332ca27))
+
 # [@qiwi/pijma-core-v1.108.1](https://github.com/qiwi/pijma/compare/v1.108.0...v1.108.1) (2020-02-05)
 
 
