@@ -1,4 +1,4 @@
-import CalendarControl from './CalendarControl'
+import CalendarControl, {defaultFirstDayIndex, defaultMonths} from './CalendarControl'
 import CalendarControlProps, {CalendarControlChildrenProps} from './CalendarControlProps'
 import CalendarDate from './CalendarDate'
 import CalendarConstructor from './CalendarConstructor'
@@ -9,4 +9,6 @@ export {
   CalendarControlChildrenProps,
   CalendarDate,
   CalendarConstructor,
+  defaultFirstDayIndex,
+  defaultMonths,
 }

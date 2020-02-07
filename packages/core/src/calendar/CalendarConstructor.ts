@@ -31,9 +31,12 @@ export default class CalendarConstructor implements CalendarConstructorProps {
   public getDaysInMonth = (year: number, month: number) =>
     new Date(year, month + 1, 0).getDate()
 
+  public getNextDay = (date: Date) =>
+    new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1)
+
   public getDatesArray = (from: Date, to: Date, disabled?: boolean) => {
     const dates = []
-    for (let d = from; d <= to; d.setDate(d.getDate() + 1)) {
+    for (let d = from; d <= to; d = this.getNextDay(d)) {
       const date = new Date(d)
       dates.push({
         date,

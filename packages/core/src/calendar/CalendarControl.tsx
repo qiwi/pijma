@@ -1,6 +1,12 @@
 import {SyntheticEvent, Component} from 'react'
-import CalendarControlProps from './CalendarControlProps'
+import CalendarControlProps, {ScrollItem} from './CalendarControlProps'
 import CalendarControlState from './CalendarControlState'
+
+export const defaultMonths = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
+export const defaultFirstDayIndex = 1
+const defaultDays = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
+const defaultMinYear = new Date().getFullYear() - 5
+const defaultMaxYear = new Date().getFullYear() + 5
 
 export default class CalendarControl extends Component<CalendarControlProps, CalendarControlState> {
 
@@ -12,6 +18,7 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
       date: props.calendar.activeDate || new Date(),
       dates: props.calendar.getDates(props.calendar.activeDate || new Date()),
       showSelectMonth: false,
+      years: this.getYearsArray(),
     }
   }
 
@@ -21,10 +28,9 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
     }))
   }
 
-  private selectMonth = (month: number, year?: number) => {
-    this.setState(state => {
-      const selectedYear = year || state.date.getFullYear()
-      const date = new Date(selectedYear, month, 1)
+  private selectMonth = ([month, year]: number[]) => {
+    this.setState(() => {
+      const date = new Date(year, month, 1)
       return {
         date,
         dates: this.props.calendar.getDates(date),
@@ -71,11 +77,6 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
           saveDate(activeDate!, date)
         }
       }
-      // const newActiveDate = !state.activeDate || state.activeDateTo || date < state.activeDate
-      // return {
-      //   activeDate: newActiveDate ? date : state.activeDate,
-      //   activeDateTo: newActiveDate ? undefined : date,
-      // }
     }
     else {
       if (saveDate) {
@@ -84,19 +85,70 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
     }
   }
 
-  private onMobileSelectDate = (activeDate: Date) => (event: SyntheticEvent) => {
+  private onMobileSelectDate = (date: Date) => (event: SyntheticEvent) => {
+    const {isRange = false} = this.props
+    const {activeDate, activeDateTo} = this.state
     event.stopPropagation()
-    this.setState({activeDate})
+    if (isRange) {
+      const newActiveDate = !activeDate || activeDateTo || date < activeDate
+
+      if (newActiveDate) {
+        this.setState({
+          activeDate: date,
+          activeDateTo: undefined,
+        })
+      }
+      else {
+        this.setState({
+          activeDate,
+          activeDateTo: date,
+        })
+      }
+    }
+    else {
+      this.setState({
+        activeDate: date,
+        activeDateTo: undefined,
+      })
+    }
   }
 
   private onMobileSaveDate = () => {
     if (this.props.saveDate && this.state.activeDate) {
-      this.props.saveDate(this.state.activeDate)
+      this.props.saveDate(this.state.activeDate, this.state.activeDateTo)
     }
   }
 
+  private getYearsArray = () => {
+    const {
+      minYear = defaultMinYear,
+      maxYear = defaultMaxYear,
+    } = this.props
+    const years: ScrollItem[] = []
+    for (let year = minYear; year <= maxYear; year++) {
+      years.push({
+        value: year,
+        text: year.toString(),
+      })
+    }
+
+    return years
+  }
+
+  private getActiveDatesArray = () => {
+    return (this.state.activeDate && this.state.activeDateTo)
+      ? this.props.calendar.getDatesArray(this.state.activeDate, this.state.activeDateTo)
+      : []
+  }
+
   public render() {
-    const {date, dates, showSelectMonth, activeDate, activeDateTo} = this.state
+    const {
+      days = defaultDays,
+      months = defaultMonths,
+      minYear = defaultMinYear,
+      maxYear = defaultMaxYear,
+    } = this.props
+    const {date, dates, showSelectMonth, activeDate, activeDateTo, years} = this.state
 
     return this.props.children({
       date,
@@ -104,6 +156,11 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
       activeDate,
       activeDateTo,
       showSelectMonth,
+      years,
+      days,
+      months,
+      minYear,
+      maxYear,
       toggleSelectMonth: this.toggleSelectMonth,
       selectMonth: this.selectMonth,
       toPrevMonth: this.toPrevMonth,
@@ -111,6 +168,7 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
       onDesktopSelectDate: this.onDesktopSelectDate,
       onMobileSelectDate: this.onMobileSelectDate,
       onMobileSaveDate: this.onMobileSaveDate,
+      activeDates: this.getActiveDatesArray(),
     })
   }
 

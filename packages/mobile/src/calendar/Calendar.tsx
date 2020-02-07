@@ -1,32 +1,75 @@
 import React, {FC, Fragment} from 'react'
-import {Box, Card, Grid, Flex, Icon, Typo, CalendarControl, CalendarConstructor, CalendarControlChildrenProps} from '@qiwi/pijma-core'
-import {MenuLink, Button} from '../'
-
-const defaultDays = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
-const defaultMonths = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
-const defaultFirstDayIndex = 1
+import {Box, Card, CardProps, Grid, Flex, Icon, Typo, CalendarControl, CalendarConstructor, CalendarControlChildrenProps, defaultFirstDayIndex} from '@qiwi/pijma-core'
+import {Button, SelectScroll} from '../'
 
 export interface CalendarProps {
   activeDate?: Date
+  activeDateTo?: Date
   days?: string[]
   months?: string[]
   firstDayIndex?: number
   buttonText?: string
+  isRange?: boolean
+  minYear?: number
+  maxYear?: number
   saveDate?: (date: Date) => void
 }
 
 export const Calendar: FC<CalendarProps> = ({
-  days = defaultDays,
-  months = defaultMonths,
-  firstDayIndex,
+  days,
+  months,
+  firstDayIndex = defaultFirstDayIndex,
   activeDate,
+  activeDateTo,
+  isRange = false,
   buttonText = 'Выбрать',
+  minYear,
+  maxYear,
   saveDate,
 }) => {
-  const dayIndex = firstDayIndex === undefined ? defaultFirstDayIndex : firstDayIndex
-
   const getDateItems = (renderProps: CalendarControlChildrenProps) => {
     return renderProps.dates.map(({date, disabled}, key) => {
+      const selectedDatesIndex = renderProps.activeDates
+        .findIndex(item => item.date.toDateString() === date.toDateString())
+      if (selectedDatesIndex !== -1 && isRange) {
+        const cardProps: CardProps = {}
+        let typoColor = '#fff'
+
+        switch (selectedDatesIndex) {
+          case 0:
+            cardProps.bg = '#ff8c00'
+            cardProps.rbl = 20
+            cardProps.rtl = 20
+            break
+
+          case renderProps.activeDates.length - 1:
+            cardProps.bg = '#ff8c00'
+            cardProps.rbr = 20
+            cardProps.rtr = 20
+            break
+
+          default:
+            cardProps.bg = 'rgba(255,140,0,0.2)'
+            typoColor = '#000'
+            break
+        }
+
+        return (
+          <Card
+            key={key}
+            width={1}
+            height={11}
+            p={2.5}
+            onClick={renderProps.onMobileSelectDate(date)}
+            {...cardProps}
+          >
+            <Typo size={4} weight={300} height={6} color={typoColor} align="center" css={{'user-select': 'none'}}>
+              {date.getDate()}
+            </Typo>
+          </Card>
+        )
+      }
+
       switch (date.toDateString()) {
         case renderProps.activeDate && renderProps.activeDate.toDateString():
           return (
@@ -87,11 +130,16 @@ export const Calendar: FC<CalendarProps> = ({
 
   return (
     <CalendarControl
-      calendar={new CalendarConstructor(dayIndex, activeDate)}
+      calendar={new CalendarConstructor(firstDayIndex, activeDate, activeDateTo)}
+      days={days}
+      months={months}
+      isRange={isRange}
+      minYear={minYear}
+      maxYear={maxYear}
       saveDate={saveDate}
       children={renderProps => (
-        <Box pt={6} px={3.5} pb={3.5}>
-          <Flex justify="space-between" px={2.5} mb={3.5}>
+        <Fragment>
+          <Flex justify="space-between" mb={3.5} pt={6} px={6}>
             <Box
               cursor="pointer"
               onClick={renderProps.toPrevMonth}
@@ -99,7 +147,7 @@ export const Calendar: FC<CalendarProps> = ({
             />
             <Box onClick={renderProps.toggleSelectMonth}>
               <Typo display="inline" weight={500} size={4.5} height={6} css={{'user-select': 'none'}}>
-                {months[renderProps.date.getMonth()]} {renderProps.date.getFullYear()}
+                {renderProps.months[renderProps.date.getMonth()]} {renderProps.date.getFullYear()}
               </Typo>
               <Box
                 display="inline"
@@ -114,20 +162,21 @@ export const Calendar: FC<CalendarProps> = ({
             />
           </Flex>
           {renderProps.showSelectMonth ? (
-            <Box maxHeight={91} overflow="auto">
-              {months.map((month, index) => (
-                <MenuLink
-                  key={index}
-                  title={month}
-                  active={index === renderProps.date.getMonth()}
-                  onClick={() => renderProps.selectMonth(index)}
-                />
-              ))}
-            </Box>
+            <SelectScroll
+              selected={[
+                renderProps.date.getMonth(),
+                renderProps.date.getFullYear(),
+              ]}
+              items={[
+                renderProps.months.map((month, key) => ({value: key, text: month})),
+                renderProps.years,
+              ]}
+              onSelect={renderProps.selectMonth}
+            />
           ) : (
-            <Fragment>
+            <Box p={3.5}>
               <Grid columns={7} layout={1} gutter={0}>
-                {days.map(day => (
+                {renderProps.days.map(day => (
                   <Box key={day} width={11} height={11} p={2.5}>
                     <Typo size={3.5} weight={300} height={5} align="center" color="#666" css={{'user-select': 'none'}}>
                       {day}
@@ -136,7 +185,7 @@ export const Calendar: FC<CalendarProps> = ({
                 ))}
                 {getDateItems(renderProps)}
               </Grid>
-              <Box pt={6}>
+              <Box px={2.5} pb={2.5} pt={3.5}>
                 <Button
                   type="button"
                   kind="brand"
@@ -145,9 +194,9 @@ export const Calendar: FC<CalendarProps> = ({
                   onClick={renderProps.onMobileSaveDate}
                 />
               </Box>
-            </Fragment>
+            </Box>
           )}
-        </Box>
+        </Fragment>
       )}
     />
   )

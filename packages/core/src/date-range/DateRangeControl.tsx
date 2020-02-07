@@ -1,5 +1,5 @@
 import {Component, ChangeEventHandler, ChangeEvent, FocusEventHandler, FocusEvent, KeyboardEventHandler, KeyboardEvent} from 'react'
-import {format} from 'date-fns'
+import {format, parse} from 'date-fns'
 import DateRangeControlProps from './DateRangeControlProps'
 import DateRangeControlState from './DateRangeControlState'
 
@@ -9,58 +9,87 @@ export enum DateRanges {
   all = 'Все время',
   range = 'Другой период',
 }
+export type DateRangesKeys = keyof typeof DateRanges
+export const dateRanges = Object.keys(DateRanges) as DateRangesKeys[]
 
-// export type DateRanges = 'day' | 'month' | 'all' | 'range'
+const getRangeFormat = (format: string) => `${format} - ${format}`
 
-export type DateRangeValueType = Date | [Date, Date] | number | string
+export interface DateRangeValue {
+  date?: Date
+  dateTo?: Date
+  all?: boolean
+  month?: number
+}
 
 export default class DateRangeControl extends Component<DateRangeControlProps, DateRangeControlState> {
 
-  public state: DateRangeControlState = {
-    focused: false,
-    opened: false,
-    activeRange: DateRanges.day,
+  constructor(props: DateRangeControlProps) {
+    super(props)
+    this.state = {
+      focused: false,
+      opened: false,
+    }
+  }
+
+  private getMaskByRange = (range?: DateRanges) => {
+    switch (range) {
+      case DateRanges.range:
+        return getRangeFormat(this.props.format).split('').map(sym => sym.match(/^[a-zA-Z]+$/) ? /\d/ : sym)
+
+      case DateRanges.all:
+      case DateRanges.month:
+        return false
+
+      case DateRanges.day:
+      default:
+        return this.props.format.split('').map(sym => sym.match(/^[a-zA-Z]+$/) ? /\d/ : sym)
+    }
   }
 
   private closeCalendar = () => {
     if (!this.state.focused) {
-      this.setState({
-        opened: false,
-      })
+      this.setState({opened: false})
     }
   }
 
   private openCalendar = () => {
-    this.setState({
-      opened: true,
-    })
+    this.setState({opened: true})
   }
 
   private onChange: ChangeEventHandler<HTMLInputElement> = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
-    // if (this.props.onChange) {
-    //   const value = e.currentTarget.value
-    //   const date = value.length === this.props.format.length
-    //     ? parse(value, this.props.format, new Date())
-    //     : new Date('')
-    //   // this.props.onChange(date) TODO
-    // }
+    if (this.props.onChange) {
+      const {format, onChange} = this.props
+      const currentDate = new Date()
+      const invalidDate = new Date('')
+      const value = e.currentTarget.value
+
+      if (this.state.activeRange === DateRanges.range) {
+        const isValidRange = value.length === getRangeFormat(format).length
+        const [date, dateTo] = value.split(' - ')
+        const valueFrom = isValidRange ? parse(date, format, currentDate) : invalidDate
+        const valueTo = isValidRange ? parse(dateTo, format, currentDate) : invalidDate
+        onChange(valueFrom, valueTo)
+      }
+      else {
+        const date = value.length === format.length
+          ? parse(value, format, currentDate)
+          : invalidDate
+        onChange(date)
+      }
+    }
   }
 
   private onFocus: FocusEventHandler = (e: FocusEvent) => {
     e.preventDefault()
-    this.setState({
-      focused: true,
-    })
+    this.setState({focused: true})
     if (this.props.onFocus) {
       this.props.onFocus()
     }
   }
 
   private onBlur: FocusEventHandler = (e: FocusEvent) => {
-    this.setState({
-      focused: false,
-    })
+    this.setState({focused: false})
     e.preventDefault()
     if (this.props.onBlur) {
       this.props.onBlur()
@@ -80,27 +109,67 @@ export default class DateRangeControl extends Component<DateRangeControlProps, D
   }
 
   private saveDate = (date: Date, dateTo?: Date) => {
-    this.setState({
-      opened: false,
-    })
+    this.setState({opened: false})
     if (this.props.onChange) {
-      this.props.onChange(date, dateTo)
+      this.props.onChange(date, this.props.isRange ? dateTo : undefined)
     }
   }
 
-  private changeActiveRange = (activeRange: DateRanges) => () => {
+  private selectMonth = ([month]: number[]) => {
+    this.setState({
+      opened: false,
+    }, () => {
+      if (this.props.onChange) {
+        this.props.onChange(month)
+      }
+    })
+  }
+
+  private changeActiveRange = (activeRange?: DateRanges) => () => {
+    if (activeRange === DateRanges.all && this.props.onChange) {
+      this.props.onChange('all')
+    }
     this.setState({
       activeRange,
+      opened: activeRange !== DateRanges.all,
     })
+  }
+
+  private getParamsByValue = (date?: Date | number | 'all', dateTo?: Date) => {
+    switch (typeof date) {
+      case 'number':
+        return {
+          range: DateRanges.month,
+          value: this.props.months[date],
+        }
+
+      case 'object':
+        return dateTo
+          ? {
+            range: DateRanges.range,
+            value: `${format(date, this.props.format)} - ${format(dateTo, this.props.format)}`,
+          }
+          : {
+            range: DateRanges.day,
+            value: format(date, this.props.format),
+          }
+
+      case 'string':
+      default:
+        return {
+          range: (date && date.length) ? DateRanges.all : DateRanges.day,
+          value: (date && date.length) ? 'Все время' : '',
+        }
+    }
   }
 
   public render() {
     const {focused, opened, activeRange} = this.state
+    const {value} = this.getParamsByValue(this.props.value, this.props.valueTo)
     return this.props.children({
-      // value: this.props.value,
-      value: this.props.value ? format(this.props.value, this.props.format) : '',
+      value,
       focused: focused || opened,
-      mask: this.props.format.split('').map(sym => sym.match(/^[a-zA-Z]+$/) ? /\d/ : sym),
+      mask: this.getMaskByRange(activeRange),
       activeRange,
       onChange: this.onChange,
       onFocus: this.onFocus,
@@ -111,6 +180,7 @@ export default class DateRangeControl extends Component<DateRangeControlProps, D
       closeCalendar: this.closeCalendar,
       openCalendar: this.openCalendar,
       changeActiveRange: this.changeActiveRange,
+      selectMonth: this.selectMonth,
     })
   }
 

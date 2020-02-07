@@ -1,21 +1,24 @@
 import {KeyboardEvent, ChangeEventHandler, FocusEventHandler, KeyboardEventHandler} from 'react'
 import {Mask} from '../mask'
 import RenderChild from '../RenderChild'
-import {DateRangeValueType, DateRanges} from './DateRangeControl'
+import {DateRanges} from './DateRangeControl'
 
 export default interface DateRangeControlProps {
-  value?: Date
+  value?: Date | number | 'all'
+  valueTo?: Date
   format: string
+  isRange?: boolean
+  months: string[]
   onFocus?: () => void
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean
   onKeyUp?: (event: KeyboardEvent) => boolean
-  onChange?: (date: Date, dateTo?: Date) => void
+  onChange?: (date: Date | number | 'all', dateTo?: Date) => void
   children: RenderChild<{
     focused: boolean
-    value?: DateRangeValueType
-    mask: Mask
-    activeRange: DateRanges
+    value: string
+    mask?: Mask
+    activeRange?: DateRanges
     onChange: ChangeEventHandler
     onFocus: FocusEventHandler
     onBlur: FocusEventHandler
@@ -24,6 +27,7 @@ export default interface DateRangeControlProps {
     saveDate: (date: Date, dateTo?: Date) => void
     closeCalendar: () => void
     openCalendar: () => void
-    changeActiveRange: (activeRange: DateRanges) => () => void
+    changeActiveRange: (activeRange?: DateRanges) => () => void
+    selectMonth: (valuest: number[]) => void
   }>
 }

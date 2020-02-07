@@ -1,9 +1,9 @@
 import React, {FC, ReactNode, KeyboardEvent, useRef} from 'react'
-import {Box, Icon, InputField, BasicInput, DateRangeControl, Pipe, Pos, Flex, Card, Block, DateRanges} from '@qiwi/pijma-core'
-import {Calendar, DropDown, MenuLink} from '../'
+import {Box, Icon, InputField, BasicInput, DateRangeControl, Pipe, Pos, Flex, Card, Block, DateRanges, defaultMonths, DateRangesKeys, dateRanges} from '@qiwi/pijma-core'
+import {Calendar, DropDown, MenuLink, SelectScroll} from '../'
 
 export interface DateRangeProps {
-  value?: Date
+  value?: Date | number | 'all'
   valueTo?: Date
   tabIndex?: number
   name?: string
@@ -22,7 +22,7 @@ export interface DateRangeProps {
   days?: string[]
   months?: string[]
   firstDayIndex?: number
-  onChange?: (date: Date, dateTo?: Date) => void
+  onChange?: (date: Date | number | 'all', dateTo?: Date) => void
   onFocus?: () => void
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean
@@ -50,18 +50,19 @@ export const DateRange: FC<DateRangeProps> = ({
   help,
   action,
   days,
-  months,
+  months = defaultMonths,
   firstDayIndex,
 }) => {
   const datePickerContainerRef = useRef<HTMLDivElement>(null)
   const datePickerInputRef = useRef<HTMLDivElement>(null)
-  type DateRangesKeys = keyof typeof DateRanges
-  const dateRanges = Object.keys(DateRanges) as DateRangesKeys[]
 
   return (
     <DateRangeControl
       value={value}
+      valueTo={valueTo}
       format={format}
+      isRange
+      months={months}
       onFocus={onFocus}
       onBlur={onBlur}
       onKeyDown={onKeyDown}
@@ -76,7 +77,7 @@ export const DateRange: FC<DateRangeProps> = ({
               input={(
                 <BasicInput
                   type="text"
-                  value={/*renderProps.value || */''}
+                  value={renderProps.value}
                   name={name}
                   autoComplete={autoComplete}
                   autoFocus={autoFocus}
@@ -115,11 +116,9 @@ export const DateRange: FC<DateRangeProps> = ({
             children={(
               <Card s="0 28px 52px 0 rgba(0, 0, 0, 0.16)" r={10}>
                 <Block>
-                  <Flex width={126} display="inline-flex">
+                  <Flex display="inline-flex">
                     <Box minWidth={44} pt={3}>
                       {dateRanges.map((key: DateRangesKeys) => {
-                        // type DateRangesKeys = keyof typeof DateRanges
-                        // const dateRange = key in DateRangesKeys ?
                         return (
                           <MenuLink
                             key={key}
@@ -132,15 +131,26 @@ export const DateRange: FC<DateRangeProps> = ({
                     </Box>
                     {renderProps.activeRange === DateRanges.day || renderProps.activeRange === DateRanges.range
                       ? (
-                        <Card s="rgb(230, 230, 230) -1px 0px 0px 0px}">
+                        <Card s="rgb(230, 230, 230) -1px 0px 0px 0px}" width={82}>
                           <Calendar
-                            activeDate={value}
+                            activeDate={typeof value === 'object' ? value : undefined}
                             activeDateTo={valueTo}
                             days={days}
                             months={months}
                             firstDayIndex={firstDayIndex}
-                            isRange
+                            isRange={renderProps.activeRange === DateRanges.range}
                             saveDate={renderProps.saveDate}
+                          />
+                        </Card>
+                      )
+                      : null}
+                    {renderProps.activeRange === DateRanges.month
+                      ? (
+                        <Card s="rgb(230, 230, 230) -1px 0px 0px 0px}">
+                          <SelectScroll
+                            selected={[typeof value === 'number' ? value : new Date().getMonth()]}
+                            items={[months.map((month, key) => ({value: key, text: month}))]}
+                            onSelect={renderProps.selectMonth}
                           />
                         </Card>
                       )

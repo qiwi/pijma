@@ -32,6 +32,7 @@ export * from './progress-bar'
 export * from './alert'
 export * from './calendar'
 export * from './date-picker'
+export * from './select-scroll'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'

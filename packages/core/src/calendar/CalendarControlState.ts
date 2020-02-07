@@ -1,4 +1,5 @@
 import CalendarDate from './CalendarDate'
+import {ScrollItem} from './CalendarControlProps'
 
 export default interface CalendarControlState {
   activeDate?: Date
@@ -6,4 +7,5 @@ export default interface CalendarControlState {
   date: Date
   dates: CalendarDate[]
   showSelectMonth: boolean
+  years: ScrollItem[]
 }
