@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react'
 
-import {TabsControl, TabHeader, Flex, FlexItem, Box, IconProps, Pos, Card} from '@qiwi/pijma-core'
+import {TabsControl, TabHeader, Flex, FlexItem, Box, IconProps, Pos, Card, TabBorder} from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
 
@@ -56,7 +56,7 @@ export const BlockTabs: FC<BlockTabsProps> = ({
             direction="row"
             overflow="auto"
             justify={centered ? 'space-between' : 'flex-start'}
-            css={{'&::-webkit-scrollbar': {display: 'none'}, scrollbarWidth: 'none', '-ms-overflow-style': 'none'}}
+            css={{'&::-webkit-scrollbar': {display: 'none'}, scrollbarWidth: 'none', '-ms-overflow-style': 'none', position: 'relative'}}
           >
             {[true, false, false].map((item, index) => (
               <TabHeader
@@ -69,10 +69,10 @@ export const BlockTabs: FC<BlockTabsProps> = ({
                 vertical={vertical}
                 select={item}
                 width={centered ? 1 : undefined}
-                borderRadius={hr}
                 stub
               />
             ))}
+            <TabBorder width={centered ? 'calc(33% - 20px)' : vertical ? 13 : 21} left={0} borderRadius={hr}/>
           </Flex>
           <FlexItem>
             {hr ? (
@@ -103,7 +103,7 @@ export const BlockTabs: FC<BlockTabsProps> = ({
                 direction="row"
                 overflow="auto"
                 justify={centered ? 'space-between' : 'flex-start'}
-                css={{'&::-webkit-scrollbar': {display: 'none'}, scrollbarWidth: 'none', '-ms-overflow-style': 'none'}}
+                css={{'&::-webkit-scrollbar': {display: 'none'}, scrollbarWidth: 'none', '-ms-overflow-style': 'none', position: 'relative'}}
               >
                 {renderProps.items.map((item, index) => (
                   <TabHeader
@@ -117,7 +117,7 @@ export const BlockTabs: FC<BlockTabsProps> = ({
                     select={item.select}
                     focus={item.focus}
                     width={centered ? 1 : undefined}
-                    borderRadius={hr}
+                    ref={item.ref}
                     onFocus={item.onFocus}
                     onBlur={item.onBlur}
                     onMouseEnter={item.onMouseEnter}
@@ -126,6 +126,7 @@ export const BlockTabs: FC<BlockTabsProps> = ({
                     onClick={item.onClick}
                   />
                 ))}
+                <TabBorder width={`${renderProps.borderWidth}px`} left={`${renderProps.borderOffSetLeft}px`} borderRadius={hr}/>
               </Flex>
               <FlexItem>
                 {hr ? (
@@ -138,10 +139,10 @@ export const BlockTabs: FC<BlockTabsProps> = ({
               </FlexItem>
               {items.map(({content}, index) => (
                 <FlexItem key={index}>
-                  <Box
-                    display={select === index ? 'block' : 'none'}
-                    children={content}
-                  />
+                    <Box
+                      display={select === index ? 'block' : 'none'}
+                      children={content}
+                    />
                 </FlexItem>
               ))}
             </Flex>

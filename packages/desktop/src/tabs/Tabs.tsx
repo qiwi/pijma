@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react'
 
-import {TabsControl, TabHeader, Flex, FlexItem, Box, IconProps} from '@qiwi/pijma-core'
+import {TabsControl, TabHeader, Flex, FlexItem, Box, IconProps, TabBorder} from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
 
@@ -34,7 +34,7 @@ export const Tabs: FC<TabsProps> = ({
           direction="row"
           overflow="auto"
           justify={centered ? 'space-between' : 'flex-start'}
-          css={{'&::-webkit-scrollbar': {display: 'none'}, scrollbarWidth: 'none', '-ms-overflow-style': 'none'}}
+          css={{'&::-webkit-scrollbar': {display: 'none'}, scrollbarWidth: 'none', '-ms-overflow-style': 'none', position: 'relative'}}
         >
           {[true, false, false].map((item, index) => (
             <TabHeader
@@ -50,6 +50,7 @@ export const Tabs: FC<TabsProps> = ({
               stub
             />
           ))}
+          <TabBorder width={centered ? 'calc(33% - 20px)' : vertical ? 13 : 21} left={0}/>
         </Flex>
         <FlexItem mt={4}>
             <Paragraph stub/>
@@ -66,7 +67,7 @@ export const Tabs: FC<TabsProps> = ({
               direction="row"
               overflow="auto"
               justify={centered ? 'space-between' : 'flex-start'}
-              css={{'&::-webkit-scrollbar': {display: 'none'}, scrollbarWidth: 'none', '-ms-overflow-style': 'none'}}
+              css={{'&::-webkit-scrollbar': {display: 'none'}, scrollbarWidth: 'none', '-ms-overflow-style': 'none', position: 'relative'}}
             >
               {renderProps.items.map((item, index) => (
                 <TabHeader
@@ -80,6 +81,7 @@ export const Tabs: FC<TabsProps> = ({
                   select={item.select}
                   focus={item.focus}
                   width={centered ? 1 : undefined}
+                  ref={item.ref}
                   onFocus={item.onFocus}
                   onBlur={item.onBlur}
                   onMouseEnter={item.onMouseEnter}
@@ -88,6 +90,7 @@ export const Tabs: FC<TabsProps> = ({
                   onClick={item.onClick}
                 />
               ))}
+              <TabBorder width={`${renderProps.borderWidth}px`} left={`${renderProps.borderOffSetLeft}px`}/>
             </Flex>
             {items.map(({content}, index) => (
               <FlexItem key={index}>
