@@ -1,5 +1,5 @@
 import React, {FC} from 'react'
-import {Card, Pos} from '@qiwi/pijma-core/primitive'
+import {Card, Pos} from '../primitive'
 
 export interface TabBorderProps {
   width: number | string
