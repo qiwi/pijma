@@ -12,3 +12,11 @@
 ```jsx
   <FooterOut children={[]} stub/>
 ```
+
+```jsx
+  <FooterOut stub children={[
+    {href: '//vk.com/qiwirussia', icon: 'vk'},
+    {href: '//ok.ru/qiwirussia', icon: 'ok'},
+    {href: '//youtube.com/user/QiwiRussia', icon: 'youtube'},
+  ]}/>
+```
