@@ -72,7 +72,7 @@ export interface FooterOutProps {
 export const FooterOut: FC<FooterOutProps> = ({children, stub = false}) => (
   <Box overflow="hidden">
     <Flex wrap="wrap" justify="space-between" m={-1.5}>
-      {(stub ? Array(6).fill({href: '', icon: 'qiwi'}) : children).map((item, i) => (
+      {(stub && children.length === 0 ? Array(6).fill({href: '', icon: 'qiwi'}) : children).map((item, i) => (
         <FlexItem key={i} m={1.5}>
           <FooterOutLink stub={stub} {...item}/>
         </FlexItem>
