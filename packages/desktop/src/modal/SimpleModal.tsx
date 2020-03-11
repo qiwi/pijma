@@ -91,7 +91,7 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = (props) => (
     transition={contentTransition}
     backdropTransition={backdropTransition}
     renderBackdrop={({onClick}) => (
-      <Pos type="fixed" zIndex={9999} top={0} right={0} bottom={0} left={0}>
+      <Pos type="fixed" zIndex="auto" top={0} right={0} bottom={0} left={0}>
         <Card bg="rgba(255, 255, 255, 0.96)" width={1} height={1} onClick={props.backdropClose ? onClick : undefined}/>
       </Pos>
     )}
