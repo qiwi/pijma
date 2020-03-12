@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.108.4](https://github.com/qiwi/pijma/compare/v1.108.3...v1.108.4) (2020-03-12)
+
+
+### Bug Fixes
+
+* **desktop:** z-index backdrop simple modal ([7069708](https://github.com/qiwi/pijma/commit/7069708))
+
 # [@qiwi/pijma-desktop-v1.108.3](https://github.com/qiwi/pijma/compare/v1.108.2...v1.108.3) (2020-03-12)
 
 
