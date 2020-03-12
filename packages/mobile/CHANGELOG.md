@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.108.3](https://github.com/qiwi/pijma/compare/v1.108.2...v1.108.3) (2020-03-12)
+
+
+### Bug Fixes
+
+* button blur ([cf1ef51](https://github.com/qiwi/pijma/commit/cf1ef51))
+
 # [@qiwi/pijma-mobile-v1.108.0](https://github.com/qiwi/pijma/compare/v1.107.1...v1.108.0) (2020-02-04)
 
 
