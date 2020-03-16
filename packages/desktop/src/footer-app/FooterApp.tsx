@@ -19,7 +19,7 @@ interface FooterAppLinkProps {
 
 const FooterAppLink: FC<FooterAppLinkProps> = (props) => (
   props.stub ? (
-    <Stub width={1} height={1}/>
+    <Stub width={1} height={1} r={8}/>
   ) : (
     <LinkControl
       href={props.href}
