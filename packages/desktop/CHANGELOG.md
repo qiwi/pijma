@@ -1,3 +1,24 @@
+# [@qiwi/pijma-desktop-v1.108.5](https://github.com/qiwi/pijma/compare/v1.108.4...v1.108.5) (2020-03-16)
+
+
+### Bug Fixes
+
+* stub footer-app ([30d68cf](https://github.com/qiwi/pijma/commit/30d68cf))
+
+# [@qiwi/pijma-desktop-v1.108.4](https://github.com/qiwi/pijma/compare/v1.108.3...v1.108.4) (2020-03-12)
+
+
+### Bug Fixes
+
+* **desktop:** z-index backdrop simple modal ([7069708](https://github.com/qiwi/pijma/commit/7069708))
+
+# [@qiwi/pijma-desktop-v1.108.3](https://github.com/qiwi/pijma/compare/v1.108.2...v1.108.3) (2020-03-12)
+
+
+### Bug Fixes
+
+* button blur ([cf1ef51](https://github.com/qiwi/pijma/commit/cf1ef51))
+
 # [@qiwi/pijma-desktop-v1.107.1](https://github.com/qiwi/pijma/compare/v1.107.0...v1.107.1) (2020-02-04)
 
 
