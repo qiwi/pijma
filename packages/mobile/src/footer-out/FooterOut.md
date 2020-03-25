@@ -12,3 +12,7 @@
 ```jsx
   <FooterOut children={[]} stub/>
 ```
+
+```jsx
+  <FooterOut stub={3} children={[]}/>
+```
