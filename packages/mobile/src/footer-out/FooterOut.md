@@ -14,9 +14,5 @@
 ```
 
 ```jsx
-  <FooterOut stub children={[
-    {href: '//vk.com/qiwirussia', icon: 'vk'},
-    {href: '//ok.ru/qiwirussia', icon: 'ok'},
-    {href: '//youtube.com/user/QiwiRussia', icon: 'youtube'},
-  ]}/>
+  <FooterOut stub={3} children={[]}/>
 ```
