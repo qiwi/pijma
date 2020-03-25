@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.108.6](https://github.com/qiwi/pijma/compare/v1.108.5...v1.108.6) (2020-03-25)
+
+
+### Bug Fixes
+
+* stub footer-out ([58e5ff8](https://github.com/qiwi/pijma/commit/58e5ff8))
+
 # [@qiwi/pijma-desktop-v1.108.5](https://github.com/qiwi/pijma/compare/v1.108.4...v1.108.5) (2020-03-16)
 
 
