@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.109.0](https://github.com/qiwi/pijma/compare/v1.108.6...v1.109.0) (2020-03-25)
+
+
+### Features
+
+* **core:** google icon ([934df19](https://github.com/qiwi/pijma/commit/934df19))
+
 # [@qiwi/pijma-core-v1.108.2](https://github.com/qiwi/pijma/compare/v1.108.1...v1.108.2) (2020-02-06)
 
 
