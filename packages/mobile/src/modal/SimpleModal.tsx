@@ -10,6 +10,7 @@ import {
   SimpleTransition,
   SimpleTransitionProps,
   Icon,
+  Box,
 } from '@qiwi/pijma-core'
 
 const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
@@ -53,6 +54,7 @@ interface SimpleModalProps {
   closable?: boolean
   escapeClose?: boolean
   backdropClose?: boolean
+  stub?: boolean
   onShow?: () => void
   onHide?: () => void
 }
@@ -69,19 +71,8 @@ const StyledModal = styled(Modal)<ModalProps>({
 })
 
 const SimpleModal: FunctionComponent<SimpleModalProps> = (props) => (
-  <StyledModal
-    show={props.show}
-    keyboard={props.escapeClose}
-    onShow={props.onShow}
-    onHide={props.onHide}
-    transition={contentTransition}
-    backdropTransition={backdropTransition}
-    renderBackdrop={({onClick}) => (
-      <Pos type="fixed" zIndex="auto" top={0} right={0} bottom={0} left={0}>
-        <Card bg="rgba(255, 255, 255, 0.96)" width={1} height={1} onClick={props.backdropClose ? onClick : undefined}/>
-      </Pos>
-    )}
-    children={(
+  props.stub ? (
+    <Box display="none">
       <Pos type="relative" width={1} height={1}>
         <Card bg="#fff" p={6} width={1} height={1} overflow="auto">
           <Fragment>
@@ -103,8 +94,45 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = (props) => (
           </Fragment>
         </Card>
       </Pos>
-    )}
-  />
+    </Box>
+  ) : (
+    <StyledModal
+      show={props.show}
+      keyboard={props.escapeClose}
+      onShow={props.onShow}
+      onHide={props.onHide}
+      transition={contentTransition}
+      backdropTransition={backdropTransition}
+      renderBackdrop={({onClick}) => (
+        <Pos type="fixed" zIndex="auto" top={0} right={0} bottom={0} left={0}>
+          <Card bg="rgba(255, 255, 255, 0.96)" width={1} height={1} onClick={props.backdropClose ? onClick : undefined}/>
+        </Pos>
+      )}
+      children={(
+        <Pos type="relative" width={1} height={1}>
+          <Card bg="#fff" p={6} width={1} height={1} overflow="auto">
+            <Fragment>
+              {props.closable && props.onHide ? (
+                <Pos
+                  type="absolute"
+                  top={6}
+                  right={6}
+                  width={6}
+                  height={6}
+                  cursor="pointer"
+                  onClick={() => props.onHide && props.onHide()}
+                  children={<Icon name="cross" color="#000"/>}
+                />
+              ) : (
+                null
+              )}
+              {props.children}
+            </Fragment>
+          </Card>
+        </Pos>
+      )}
+    />
+  )
 )
 
 export default SimpleModal
