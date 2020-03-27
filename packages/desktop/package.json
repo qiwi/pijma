@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-desktop",
-  "version": "1.108.5",
+  "version": "1.108.6",
   "main": "lib/es5/index.js",
   "types": "lib/es5/index.d.ts",
   "license": "MIT",
