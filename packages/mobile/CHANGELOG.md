@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.110.0](https://github.com/qiwi/pijma/compare/v1.109.0...v1.110.0) (2020-03-27)
+
+
+### Features
+
+* stub simple-modal ([ec8a981](https://github.com/qiwi/pijma/commit/ec8a981))
+
 # [@qiwi/pijma-mobile-v1.108.6](https://github.com/qiwi/pijma/compare/v1.108.5...v1.108.6) (2020-03-25)
 
 
