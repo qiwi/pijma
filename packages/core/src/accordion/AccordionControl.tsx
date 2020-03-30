@@ -26,7 +26,6 @@ const isOpened = (opened: AccordionOpenedItem[], path: number[]): boolean => {
 }
 
 const toggleOpened = (opened: AccordionOpenedItem[], path: number[]): AccordionOpenedItem[] => {
-  console.log('toggleOpened', opened, path)
   if (path.length === 0) return opened
   if (path.length === 1) {
     const index = path[0]
