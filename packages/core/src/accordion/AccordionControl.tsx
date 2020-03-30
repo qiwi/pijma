@@ -2,7 +2,7 @@ import React from 'react'
 import RenderChild from '../RenderChild'
 
 export interface AccordionOpenedNestedItem {
-  [key: number]: (number | AccordionOpenedNestedItem)[]
+  [key: number]: AccordionOpenedItem[]
 }
 export type AccordionOpenedItem = number | AccordionOpenedNestedItem
 const openedItemIsNestedItem = (openedItem: AccordionOpenedItem): openedItem is AccordionOpenedNestedItem =>
