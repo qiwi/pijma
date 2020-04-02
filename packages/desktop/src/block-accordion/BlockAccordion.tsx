@@ -1,15 +1,15 @@
 import React, {ReactNode, FunctionComponent} from 'react'
 
-import {AccordionControl, Box, Card, Flex, FlexItem, Icon, AccordionOpenedItem, AccordionChildItem, AccordionRenderChild} from '@qiwi/pijma-core'
+import {AccordionControl, Box, Card, Flex, FlexItem, Icon, AccordionChildItem, AccordionRenderChild} from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
 
 export interface BlockAccordionProps<I> {
   items: I[]
-  opened: AccordionOpenedItem[]
+  opened: string[]
   indent?: 's' | 'm' | 'l'
   tabIndex?: number
-  onChange: (opened: AccordionOpenedItem[]) => void
+  onChange: (opened: string[]) => void
 }
 
 export interface BlockAccordionItemModel {

@@ -1,43 +1,11 @@
 import React from 'react'
 import RenderChild from '../RenderChild'
 
-export interface AccordionOpenedNestedItem {
-  [key: number]: AccordionOpenedItem[]
-}
-export type AccordionOpenedItem = number | AccordionOpenedNestedItem
-const openedItemIsNestedItem = (openedItem: AccordionOpenedItem): openedItem is AccordionOpenedNestedItem =>
-  typeof openedItem === 'object'
-
 const startsWith = (path1: number[], path2: number[]) => {
   for (let index = 0; index < path2.length; index++) {
     if (path1[index] !== path2[index]) return false
   }
   return true
-}
-
-const isOpened = (opened: AccordionOpenedItem[], path: number[]): boolean => {
-  if (path.length === 0) return false
-  if (path.length === 1) return opened.includes(path[0])
-
-  const [rootIndex] = path
-  const nestedItem = opened.find(openedItemIsNestedItem)
-
-  return !!nestedItem && !!nestedItem[rootIndex] && isOpened(nestedItem[rootIndex], path.slice(1))
-}
-
-const toggleOpened = (opened: AccordionOpenedItem[], path: number[]): AccordionOpenedItem[] => {
-  if (path.length === 0) return opened
-  if (path.length === 1) {
-    const index = path[0]
-    return opened.includes(index)
-      ? opened.filter(i => i !== index)
-      : opened.concat(index)
-  }
-
-  const [rootIndex] = path
-  const nestedItem = opened.find(openedItemIsNestedItem) || {}
-
-  return [{...nestedItem, [rootIndex]: toggleOpened(nestedItem[rootIndex] || [], path.slice(1))}, ...opened.filter(x => !openedItemIsNestedItem(x))]
 }
 
 export type NestedItem<I> = I & {
@@ -60,8 +28,8 @@ export interface AccordionRenderChild<I> {
 }
 export interface AccordionControlProps<I> {
   items: NestedItem<I>[]
-  opened: AccordionOpenedItem[]
-  onChange: (opened: AccordionOpenedItem[]) => void
+  opened: string[]
+  onChange: (opened: string[]) => void
   children: RenderChild<AccordionRenderChild<I>>
 }
 
@@ -94,7 +62,12 @@ export class AccordionControl<I> extends React.Component<
 
   private onChange = (path: number[]) => {
     const {opened} = this.props
-    this.props.onChange(toggleOpened(opened, path))
+    const pathStr = path.join('.')
+    this.props.onChange(
+      opened.includes(pathStr)
+        ? opened.filter(x => x !== pathStr)
+        : opened.concat(pathStr),
+    )
   }
 
   private onItemClick = (path: number[]) => (
@@ -136,7 +109,7 @@ export class AccordionControl<I> extends React.Component<
       const currentPath = previousPath.concat(index)
       return ({
         ...item,
-        opened: isOpened(this.props.opened, currentPath),
+        opened: this.props.opened.includes(currentPath.join('.')),
         hovered: startsWith(this.state.hovered, currentPath),
         focused: startsWith(this.state.focused, currentPath),
         onClick: this.onItemClick(currentPath),
