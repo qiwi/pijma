@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.110.1](https://github.com/qiwi/pijma/compare/v1.110.0...v1.110.1) (2020-04-09)
+
+
+### Bug Fixes
+
+* add export for notice, checkbox ([#308](https://github.com/qiwi/pijma/issues/308)) ([2a85dbe](https://github.com/qiwi/pijma/commit/2a85dbe))
+
 # [@qiwi/pijma-mobile-v1.110.0](https://github.com/qiwi/pijma/compare/v1.109.0...v1.110.0) (2020-03-27)
 
 
