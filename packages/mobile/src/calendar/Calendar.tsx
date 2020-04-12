@@ -38,14 +38,14 @@ export const Calendar: FC<CalendarProps> = ({
         switch (selectedDatesIndex) {
           case 0:
             cardProps.bg = '#ff8c00'
-            cardProps.rbl = 20
-            cardProps.rtl = 20
+            cardProps.rbl = 22
+            cardProps.rtl = 22
             break
 
           case renderProps.activeDates.length - 1:
             cardProps.bg = '#ff8c00'
-            cardProps.rbr = 20
-            cardProps.rtr = 20
+            cardProps.rbr = 22
+            cardProps.rtr = 22
             break
 
           default:
@@ -79,7 +79,7 @@ export const Calendar: FC<CalendarProps> = ({
               height={11}
               p={2.5}
               bg="#ff8c00"
-              r={20}
+              r={22}
               cursor="pointer"
             >
               <Typo size={4} weight={300} height={6} color="#fff" align="center" css={{'user-select': 'none'}}>
