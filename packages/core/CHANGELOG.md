@@ -1,3 +1,52 @@
+# [@qiwi/pijma-core-v1.109.0](https://github.com/qiwi/pijma/compare/v1.108.6...v1.109.0) (2020-03-25)
+
+
+### Features
+
+* **core:** google icon ([934df19](https://github.com/qiwi/pijma/commit/934df19))
+
+# [@qiwi/pijma-core-v1.108.2](https://github.com/qiwi/pijma/compare/v1.108.1...v1.108.2) (2020-02-06)
+
+
+### Bug Fixes
+
+* add blur to image stub ([332ca27](https://github.com/qiwi/pijma/commit/332ca27))
+
+# [@qiwi/pijma-core-v1.108.1](https://github.com/qiwi/pijma/compare/v1.108.0...v1.108.1) (2020-02-05)
+
+
+### Bug Fixes
+
+* **core:** image stub size ([9c9a648](https://github.com/qiwi/pijma/commit/9c9a648))
+
+# [@qiwi/pijma-core-v1.107.1](https://github.com/qiwi/pijma/compare/v1.107.0...v1.107.1) (2020-02-04)
+
+
+### Bug Fixes
+
+* rating ([b04a420](https://github.com/qiwi/pijma/commit/b04a420))
+
+# [@qiwi/pijma-core-v1.107.0](https://github.com/qiwi/pijma/compare/v1.106.0...v1.107.0) (2020-02-04)
+
+
+### Features
+
+* stub footer-app ([409e174](https://github.com/qiwi/pijma/commit/409e174))
+
+# [@qiwi/pijma-core-v1.106.0](https://github.com/qiwi/pijma/compare/v1.105.0...v1.106.0) (2020-02-03)
+
+
+### Features
+
+* **core:** stub payment-security-icon ([6498687](https://github.com/qiwi/pijma/commit/6498687))
+
+# [@qiwi/pijma-core-v1.98.0](https://github.com/qiwi/pijma/compare/v1.97.0...v1.98.0) (2020-01-23)
+
+
+### Features
+
+* suggest-control items undefined ([66ebdb2](https://github.com/qiwi/pijma/commit/66ebdb2))
+
 # [@qiwi/pijma-core-v1.96.2](https://github.com/qiwi/pijma/compare/v1.96.1...v1.96.2) (2019-12-17)
 
 

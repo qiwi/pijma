@@ -8,3 +8,11 @@
     {href: '//instagram.com/qiwi_russia', target: '_blank', icon: 'instagram'},
   ]}/>
 ```
+
+```jsx
+  <FooterOut children={[]} stub/>
+```
+
+```jsx
+  <FooterOut stub={3} children={[]}/>
+```

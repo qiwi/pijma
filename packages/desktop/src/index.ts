@@ -46,6 +46,7 @@ export * from './date-range'
 export * from './checkbox'
 export * from './select-scroll'
 export * from './date-range'
+export * from './suggest-field'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'
