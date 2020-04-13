@@ -4,8 +4,8 @@ import RenderChild from '../RenderChild'
 import {DateRanges} from './DateRangeControl'
 
 export default interface DateRangeControlProps {
-  value?: Date | number | 'all'
-  valueTo?: Date
+  value?: Date | null
+  valueTo?: Date | null
   format: string
   isRange?: boolean
   months: string[]
@@ -13,7 +13,7 @@ export default interface DateRangeControlProps {
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean
   onKeyUp?: (event: KeyboardEvent) => boolean
-  onChange?: (date: Date | number | 'all', dateTo?: Date) => void
+  onChange?: (dateFrom: Date | null, dateTo: Date | null) => void
   children: RenderChild<{
     focused: boolean
     value: string
@@ -28,6 +28,5 @@ export default interface DateRangeControlProps {
     closeCalendar: () => void
     openCalendar: () => void
     changeActiveRange: (activeRange?: DateRanges) => () => void
-    selectMonth: (valuest: number[]) => void
   }>
 }

@@ -1,10 +1,10 @@
 import React, {FC, ReactNode, KeyboardEvent, useRef} from 'react'
 import {Box, Icon, InputField, BasicInput, DateRangeControl, Pipe, Pos, Flex, Card, Block, DateRanges, defaultMonths, DateRangesKeys, dateRanges} from '@qiwi/pijma-core'
-import {Calendar, DropDown, MenuLink, SelectScroll} from '../'
+import {Calendar, DropDown, MenuLink} from '../'
 
 export interface DateRangeProps {
-  value?: Date | number | 'all'
-  valueTo?: Date
+  value?: Date | null
+  valueTo?: Date | null
   tabIndex?: number
   name?: string
   title?: string
@@ -22,7 +22,7 @@ export interface DateRangeProps {
   days?: string[]
   months?: string[]
   firstDayIndex?: number
-  onChange?: (date: Date | number | 'all', dateTo?: Date) => void
+  onChange?: (dateFrom: Date | null, dateTo: Date | null) => void
   onFocus?: () => void
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean
@@ -73,7 +73,7 @@ export const DateRange: FC<DateRangeProps> = ({
           <Box ref={datePickerInputRef} onClick={renderProps.openCalendar}>
             <InputField
               title={title}
-              active={renderProps.focused || !!value || !!placeholder}
+              active={renderProps.focused || !!value || value === null || !!placeholder}
               input={(
                 <BasicInput
                   type="text"
@@ -129,28 +129,17 @@ export const DateRange: FC<DateRangeProps> = ({
                         )
                       })}
                     </Box>
-                    {renderProps.activeRange === DateRanges.day || renderProps.activeRange === DateRanges.range
+                    {renderProps.activeRange === DateRanges.range
                       ? (
                         <Card s="rgb(230, 230, 230) -1px 0px 0px 0px}" width={82}>
                           <Calendar
-                            activeDate={typeof value === 'object' ? value : undefined}
-                            activeDateTo={valueTo}
+                            activeDate={value || undefined}
+                            activeDateTo={valueTo || undefined}
                             days={days}
                             months={months}
                             firstDayIndex={firstDayIndex}
-                            isRange={renderProps.activeRange === DateRanges.range}
+                            isRange
                             saveDate={renderProps.saveDate}
-                          />
-                        </Card>
-                      )
-                      : null}
-                    {renderProps.activeRange === DateRanges.month
-                      ? (
-                        <Card s="rgb(230, 230, 230) -1px 0px 0px 0px}">
-                          <SelectScroll
-                            selected={[typeof value === 'number' ? value : new Date().getMonth()]}
-                            items={[months.map((month, key) => ({value: key, text: month}))]}
-                            onSelect={renderProps.selectMonth}
                           />
                         </Card>
                       )

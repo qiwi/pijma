@@ -1,11 +1,11 @@
 import React, {FC, ReactNode, KeyboardEvent, Fragment, FunctionComponent} from 'react'
 import {styled, Box, Icon, InputField, BasicInput, DateRangeControl, Pipe, Typo, Striper, Modal, ModalProps, SimpleTransitionProps, SimpleTransition, Pos, Card, DateRanges, defaultMonths, DateRangesKeys, dateRanges, Flex, FlexItem} from '@qiwi/pijma-core'
 import {css} from 'emotion'
-import {Calendar, SelectScroll, MenuLink} from '../'
+import {Calendar, MenuLink} from '../'
 
 export interface DateRangeProps {
-  value?: Date | number | 'all'
-  valueTo?: Date
+  value?: Date | null
+  valueTo?: Date | null
   tabIndex?: number
   name?: string
   title?: string
@@ -24,7 +24,7 @@ export interface DateRangeProps {
   months?: string[]
   firstDayIndex?: number
   buttonText?: string
-  onChange?: (date: Date | number | 'all', dateTo?: Date) => void
+  onChange?: (dateFrom: Date | null, dateTo: Date | null) => void
   onFocus?: () => void
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean
@@ -103,7 +103,7 @@ export const DateRange: FC<DateRangeProps> = ({
           <Box onClick={renderProps.openCalendar}>
             <InputField
               title={title}
-              active={renderProps.focused || !!value || !!placeholder}
+              active={renderProps.focused || !!value || value === null || !!placeholder}
               input={(
                 <BasicInput
                   type="text"
@@ -157,7 +157,7 @@ export const DateRange: FC<DateRangeProps> = ({
                     />
                     <Striper>
                       <Box p="16px 48px 16px 24px">
-                        {!renderProps.activeRange || renderProps.activeRange === DateRanges.all
+                        {!renderProps.activeRange || renderProps.activeRange !== DateRanges.range
                           ? <Typo weight={500} size={5} height={7}>Период</Typo>
                           : (
                             <Flex justify="space-between" onClick={renderProps.changeActiveRange()}>
@@ -169,7 +169,7 @@ export const DateRange: FC<DateRangeProps> = ({
                         }
                       </Box>
                       <Fragment>
-                        {!renderProps.activeRange || renderProps.activeRange === DateRanges.all ? (
+                        {!renderProps.activeRange || renderProps.activeRange !== DateRanges.range ? (
                           <Box minWidth={44} pt={3}>
                             {dateRanges.map((key: DateRangesKeys) => {
                               return (
@@ -177,36 +177,27 @@ export const DateRange: FC<DateRangeProps> = ({
                                   key={key}
                                   title={DateRanges[key]}
                                   active={DateRanges[key] === renderProps.activeRange}
-                                  submenu={DateRanges[key] !== DateRanges.all}
+                                  submenu={DateRanges[key] === DateRanges.range}
                                   onClick={renderProps.changeActiveRange(DateRanges[key])}
                                 />
                               )
                             })}
                           </Box>
                         ) : null}
-                        {renderProps.activeRange === DateRanges.day || renderProps.activeRange === DateRanges.range
+                        {renderProps.activeRange === DateRanges.range
                         ? (
                             <Calendar
-                              activeDate={typeof value === 'object' ? value : undefined}
-                              activeDateTo={valueTo}
+                              activeDate={value || undefined}
+                              activeDateTo={valueTo || undefined}
                               days={days}
                               months={months}
                               buttonText={buttonText}
                               firstDayIndex={firstDayIndex}
-                              isRange={renderProps.activeRange === DateRanges.range}
+                              isRange
                               saveDate={renderProps.saveDate}
                             />
                         )
                         : null}
-                        {renderProps.activeRange === DateRanges.month
-                          ? (
-                            <SelectScroll
-                              selected={[typeof value === 'number' ? value : new Date().getMonth()]}
-                              items={[months.map((month, key) => ({value: key, text: month}))]}
-                              onSelect={renderProps.selectMonth}
-                            />
-                          )
-                          : null}
                       </Fragment>
                     </Striper>
                   </Fragment>

@@ -1,5 +1,5 @@
 import {Component, ChangeEventHandler, ChangeEvent, FocusEventHandler, FocusEvent, KeyboardEventHandler, KeyboardEvent} from 'react'
-import {format, parse} from 'date-fns'
+import {format, parse, set, subDays} from 'date-fns'
 import DateRangeControlProps from './DateRangeControlProps'
 import DateRangeControlState from './DateRangeControlState'
 
@@ -34,10 +34,10 @@ export default class DateRangeControl extends Component<DateRangeControlProps, D
   private getMaskByRange = (range?: DateRanges) => {
     switch (range) {
       case DateRanges.range:
+      case DateRanges.month:
         return getRangeFormat(this.props.format).split('').map(sym => sym.match(/^[a-zA-Z]+$/) ? /\d/ : sym)
 
       case DateRanges.all:
-      case DateRanges.month:
         return false
 
       case DateRanges.day:
@@ -75,7 +75,7 @@ export default class DateRangeControl extends Component<DateRangeControlProps, D
         const date = value.length === format.length
           ? parse(value, format, currentDate)
           : invalidDate
-        onChange(date)
+        onChange(date, null)
       }
     }
   }
@@ -111,61 +111,58 @@ export default class DateRangeControl extends Component<DateRangeControlProps, D
   private saveDate = (date: Date, dateTo?: Date) => {
     this.setState({opened: false})
     if (this.props.onChange) {
-      this.props.onChange(date, this.props.isRange ? dateTo : undefined)
+      this.props.onChange(date, dateTo ? dateTo : null)
     }
   }
 
-  private selectMonth = ([month]: number[]) => {
-    this.setState({
-      opened: false,
-    }, () => {
-      if (this.props.onChange) {
-        this.props.onChange(month)
-      }
-    })
+  private getDateFrom = (activeRange?: DateRanges) => {
+    switch (activeRange) {
+      case DateRanges.day:
+        return set(new Date(), {hours: 0, minutes: 0, seconds: 0})
+
+      case DateRanges.month:
+        return set(subDays(new Date(), 30), {hours: 0, minutes: 0, seconds: 0})
+
+      case DateRanges.range:
+
+      case DateRanges.all:
+      default:
+        return null
+    }
+  }
+
+  private getDateTo = (activeRange?: DateRanges) => {
+    switch (activeRange) {
+      case DateRanges.day:
+      case DateRanges.month:
+        return set(new Date(), {hours: 23, minutes: 59, seconds: 59})
+
+      case DateRanges.range:
+
+      case DateRanges.all:
+      default:
+        return null
+    }
   }
 
   private changeActiveRange = (activeRange?: DateRanges) => () => {
-    if (activeRange === DateRanges.all && this.props.onChange) {
-      this.props.onChange('all')
+    if (activeRange !== DateRanges.range && this.props.onChange) {
+      this.props.onChange(this.getDateFrom(activeRange), this.getDateTo(activeRange))
     }
     this.setState({
       activeRange,
-      opened: activeRange !== DateRanges.all,
+      opened: !activeRange || activeRange === DateRanges.range,
     })
   }
 
-  private getParamsByValue = (date?: Date | number | 'all', dateTo?: Date) => {
-    switch (typeof date) {
-      case 'number':
-        return {
-          range: DateRanges.month,
-          value: this.props.months[date],
-        }
-
-      case 'object':
-        return dateTo
-          ? {
-            range: DateRanges.range,
-            value: `${format(date, this.props.format)} - ${format(dateTo, this.props.format)}`,
-          }
-          : {
-            range: DateRanges.day,
-            value: format(date, this.props.format),
-          }
-
-      case 'string':
-      default:
-        return {
-          range: (date && date.length) ? DateRanges.all : DateRanges.day,
-          value: (date && date.length) ? 'Все время' : '',
-        }
-    }
-  }
+  private getParamsByValue = (date?: Date | null, dateTo?: Date | null) =>
+    date && dateTo
+      ? `${format(date, this.props.format)} - ${format(dateTo, this.props.format)}`
+      : 'Все время'
 
   public render() {
     const {focused, opened, activeRange} = this.state
-    const {value} = this.getParamsByValue(this.props.value, this.props.valueTo)
+    const value = this.getParamsByValue(this.props.value, this.props.valueTo)
     return this.props.children({
       value,
       focused: focused || opened,
@@ -180,7 +177,6 @@ export default class DateRangeControl extends Component<DateRangeControlProps, D
       closeCalendar: this.closeCalendar,
       openCalendar: this.openCalendar,
       changeActiveRange: this.changeActiveRange,
-      selectMonth: this.selectMonth,
     })
   }
 
