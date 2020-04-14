@@ -21,7 +21,6 @@ export interface DateRangeProps {
   stub?: boolean
   days?: [string, string, string, string, string, string, string]
   months?: [string, string, string, string, string, string, string, string, string, string, string, string]
-  firstDayIndex?: number
   onChange?: (dateFrom: Date | null, dateTo: Date | null) => void
   onFocus?: () => void
   onBlur?: () => void
@@ -51,7 +50,6 @@ export const DateRange: FC<DateRangeProps> = ({
   action,
   days,
   months = defaultMonths,
-  firstDayIndex,
 }) => {
   const datePickerContainerRef = useRef<HTMLDivElement>(null)
   const datePickerInputRef = useRef<HTMLDivElement>(null)
@@ -137,7 +135,6 @@ export const DateRange: FC<DateRangeProps> = ({
                             dateTo={valueTo || undefined}
                             days={days}
                             months={months}
-                            firstDayIndex={firstDayIndex}
                             isRange
                             onChange={renderProps.saveDate}
                           />

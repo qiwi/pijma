@@ -22,7 +22,6 @@ export interface DateRangeProps {
   stub?: boolean
   days?: [string, string, string, string, string, string, string]
   months?: [string, string, string, string, string, string, string, string, string, string, string, string]
-  firstDayIndex?: number
   buttonText?: string
   onChange?: (dateFrom: Date | null, dateTo: Date | null) => void
   onFocus?: () => void
@@ -83,7 +82,6 @@ export const DateRange: FC<DateRangeProps> = ({
   action,
   days,
   months = defaultMonths,
-  firstDayIndex,
   buttonText,
 }) => {
   return (
@@ -192,7 +190,6 @@ export const DateRange: FC<DateRangeProps> = ({
                               days={days}
                               months={months}
                               buttonText={buttonText}
-                              firstDayIndex={firstDayIndex}
                               isRange
                               onChange={renderProps.saveDate}
                             />

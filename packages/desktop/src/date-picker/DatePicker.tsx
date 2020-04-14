@@ -20,7 +20,6 @@ export interface DatePickerProps {
   stub?: boolean
   days?: [string, string, string, string, string, string, string]
   months?: [string, string, string, string, string, string, string, string, string, string, string, string]
-  firstDayIndex?: number
   onChange?: (date: Date) => void
   onFocus?: () => void
   onBlur?: () => void
@@ -49,7 +48,6 @@ export const DatePicker: FC<DatePickerProps> = ({
   action,
   days,
   months,
-  firstDayIndex,
 }) => {
   const datePickerContainerRef = useRef<HTMLDivElement>(null)
   const datePickerInputRef = useRef<HTMLDivElement>(null)
@@ -116,7 +114,6 @@ export const DatePicker: FC<DatePickerProps> = ({
                     date={value}
                     days={days}
                     months={months}
-                    firstDayIndex={firstDayIndex}
                     onChange={renderProps.saveDate}
                   />
                 </Block>

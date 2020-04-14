@@ -1,5 +1,5 @@
 import React, {FC} from 'react'
-import {Box, Card, CardProps, Grid, Flex, Icon, Typo, CalendarControl, CalendarUtils, CalendarUtilsProps, CalendarControlChildrenProps, defaultFirstDayIndex} from '@qiwi/pijma-core'
+import {Box, Card, CardProps, Grid, Flex, Icon, Typo, CalendarControl, CalendarUtils, CalendarUtilsProps, CalendarControlChildrenProps} from '@qiwi/pijma-core'
 import {SelectScroll} from '../select-scroll'
 import {Button} from '../button'
 
@@ -8,7 +8,6 @@ export interface CalendarProps {
   dateTo?: Date
   days?: [string, string, string, string, string, string, string]
   months?: [string, string, string, string, string, string, string, string, string, string, string, string]
-  firstDayIndex?: number
   buttonText?: string
   isRange?: boolean
   minYear?: number
@@ -20,14 +19,13 @@ export interface CalendarProps {
 export const Calendar: FC<CalendarProps> = ({
   days,
   months,
-  firstDayIndex = defaultFirstDayIndex,
   date,
   dateTo,
   isRange = false,
   buttonText = 'Выбрать',
   minYear,
   maxYear,
-  calendar = new CalendarUtils(firstDayIndex, date, dateTo),
+  calendar = new CalendarUtils(date, dateTo),
   onChange,
 }) => {
   const getDateItems = (renderProps: CalendarControlChildrenProps) => {

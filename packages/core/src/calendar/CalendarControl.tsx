@@ -3,7 +3,6 @@ import CalendarControlProps, {ScrollItem} from './CalendarControlProps'
 import CalendarControlState from './CalendarControlState'
 
 export const defaultMonths: [string, string, string, string, string, string, string, string, string, string, string, string] = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
-export const defaultFirstDayIndex = 1
 const defaultDays: [string, string, string, string, string, string, string] = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
 const defaultMinYear = new Date().getFullYear() - 5
 const defaultMaxYear = new Date().getFullYear() + 5

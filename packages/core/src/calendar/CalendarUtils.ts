@@ -1,10 +1,14 @@
 
 import {CalendarDate} from './CalendarDate'
 
-export interface CalendarUtilsProps {
+interface DefaultParams {
   firstDayIndex: number
+}
+
+export interface CalendarUtilsProps {
   activeDate?: Date
   activeDateTo?: Date
+  defaultParams: DefaultParams
   date: Date
   currentMonth: number
   currentYear: number
@@ -17,16 +21,22 @@ export interface CalendarUtilsProps {
 
 export class CalendarUtils implements CalendarUtilsProps {
 
-  constructor(public firstDayIndex: number, public activeDate?: Date, public activeDateTo?: Date) {
-    this.firstDayIndex = firstDayIndex
+  constructor(
+    public activeDate?: Date,
+    public activeDateTo?: Date,
+    public defaultParams: DefaultParams = {
+      firstDayIndex: 1,
+    },
+  ) {
     this.activeDate = activeDate
     this.activeDateTo = activeDateTo
+    this.defaultParams = defaultParams
   }
 
   public date = this.activeDate || new Date()
   public currentMonth = this.date.getMonth()
   public currentYear = this.date.getFullYear()
-  public lastDayIndex = this.firstDayIndex + 6 >= 7 ? this.firstDayIndex - 1 : this.firstDayIndex + 6
+  public lastDayIndex = this.defaultParams.firstDayIndex + 6 >= 7 ? this.defaultParams.firstDayIndex - 1 : this.defaultParams.firstDayIndex + 6
 
   public getDaysInMonth = (year: number, month: number) =>
     new Date(year, month + 1, 0).getDate()
@@ -57,8 +67,8 @@ export class CalendarUtils implements CalendarUtilsProps {
 
     let prevMonthDates: CalendarDate[] = []
     const firstDayInMonth = new Date(year, month, 1).getDay()
-    if (firstDayInMonth !== this.firstDayIndex) {
-      const prevDatesLength = (firstDayInMonth === 0 ? 7 : firstDayInMonth) - this.firstDayIndex - 1
+    if (firstDayInMonth !== this.defaultParams.firstDayIndex) {
+      const prevDatesLength = (firstDayInMonth === 0 ? 7 : firstDayInMonth) - this.defaultParams.firstDayIndex - 1
       const prevMonthDateTo = this.getDaysInMonth(year, month - 1)
       prevMonthDates = this.getDatesArray(
         new Date(year, month - 1, prevMonthDateTo - prevDatesLength),
@@ -72,7 +82,7 @@ export class CalendarUtils implements CalendarUtilsProps {
     if (lastDayInMonth !== this.lastDayIndex) {
       nextMonthDates = this.getDatesArray(
         new Date(year, month + 1, 1),
-        new Date(year, month + 1, (this.firstDayIndex + 6) - lastDayInMonth),
+        new Date(year, month + 1, (this.defaultParams.firstDayIndex + 6) - lastDayInMonth),
         true,
       )
     }

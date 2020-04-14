@@ -21,7 +21,6 @@ export interface DatePickerProps {
   stub?: boolean
   days?: [string, string, string, string, string, string, string]
   months?: [string, string, string, string, string, string, string, string, string, string, string, string]
-  firstDayIndex?: number
   buttonText?: string
   titleText?: string
   onChange?: (date: Date) => void
@@ -82,7 +81,6 @@ export const DatePicker: FC<DatePickerProps> = ({
   action,
   days,
   months,
-  firstDayIndex,
   buttonText,
   titleText = 'Выберите дату',
 }) => {
@@ -161,7 +159,6 @@ export const DatePicker: FC<DatePickerProps> = ({
                           days={days}
                           months={months}
                           date={value}
-                          firstDayIndex={firstDayIndex}
                           buttonText={buttonText}
                           onChange={renderProps.saveDate}
                         />
