@@ -6,8 +6,6 @@ export interface CalendarProps {
   date?: Date
   dateTo?: Date
   isRange?: boolean
-  minYear?: number
-  maxYear?: number
   calendar?: CalendarUtilsProps
   onChange?: (date: Date) => void
 }
@@ -16,8 +14,6 @@ export const Calendar: FC<CalendarProps> = ({
   date,
   dateTo,
   isRange = false,
-  minYear,
-  maxYear,
   calendar = new CalendarUtils(date, dateTo),
   onChange,
 }) => {
@@ -127,8 +123,6 @@ export const Calendar: FC<CalendarProps> = ({
     <CalendarControl
       calendar={calendar}
       isRange={isRange}
-      minYear={minYear}
-      maxYear={maxYear}
       onChange={onChange}
       children={renderProps => (
         <Box pt={8} px={6} pb={6} css={{'user-select': 'none'}}>

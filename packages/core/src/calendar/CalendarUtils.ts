@@ -5,6 +5,8 @@ interface DefaultParams {
   firstDayIndex: number
   days: [string, string, string, string, string, string, string]
   months: [string, string, string, string, string, string, string, string, string, string, string, string]
+  minYear: number
+  maxYear: number
 }
 
 export interface CalendarUtilsProps {
@@ -30,6 +32,8 @@ export class CalendarUtils implements CalendarUtilsProps {
       firstDayIndex: 1,
       days: ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
       months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+      minYear: new Date().getFullYear() - 5,
+      maxYear: new Date().getFullYear() + 5,
     },
   ) {
     this.activeDate = activeDate

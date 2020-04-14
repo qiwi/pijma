@@ -32,8 +32,6 @@ export interface CalendarControlChildrenProps {
 export default interface CalendarControlProps {
   calendar: CalendarUtilsProps
   isRange?: boolean
-  minYear?: number
-  maxYear?: number
   onFocus?: () => void
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean

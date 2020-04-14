@@ -2,9 +2,6 @@ import {SyntheticEvent, Component} from 'react'
 import CalendarControlProps, {ScrollItem} from './CalendarControlProps'
 import CalendarControlState from './CalendarControlState'
 
-const defaultMinYear = new Date().getFullYear() - 5
-const defaultMaxYear = new Date().getFullYear() + 5
-
 export default class CalendarControl extends Component<CalendarControlProps, CalendarControlState> {
 
   constructor(props: CalendarControlProps) {
@@ -117,12 +114,9 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
   }
 
   private getYearsArray = () => {
-    const {
-      minYear = defaultMinYear,
-      maxYear = defaultMaxYear,
-    } = this.props
+    const {calendar} = this.props
     const years: ScrollItem[] = []
-    for (let year = minYear; year <= maxYear; year++) {
+    for (let year = calendar.defaultParams.minYear; year <= calendar.defaultParams.maxYear; year++) {
       years.push({
         value: year,
         text: year.toString(),
@@ -139,11 +133,7 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
   }
 
   public render() {
-    const {
-      calendar,
-      minYear = defaultMinYear,
-      maxYear = defaultMaxYear,
-    } = this.props
+    const {calendar} = this.props
     const {date, dates, showSelectMonth, activeDate, activeDateTo, years} = this.state
 
     return this.props.children({
@@ -155,8 +145,8 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
       years,
       days: calendar.defaultParams.days,
       months: calendar.defaultParams.months,
-      minYear,
-      maxYear,
+      minYear: calendar.defaultParams.minYear,
+      maxYear: calendar.defaultParams.maxYear,
       toggleSelectMonth: this.toggleSelectMonth,
       selectMonth: this.selectMonth,
       toPrevMonth: this.toPrevMonth,
