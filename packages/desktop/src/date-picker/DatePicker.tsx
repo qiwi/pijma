@@ -18,7 +18,6 @@ export interface DatePickerProps {
   format?: string
   pipe?: Pipe
   stub?: boolean
-  months?: [string, string, string, string, string, string, string, string, string, string, string, string]
   calendar?: CalendarUtilsProps
   onChange?: (date: Date) => void
   onFocus?: () => void
@@ -46,7 +45,6 @@ export const DatePicker: FC<DatePickerProps> = ({
   pipe,
   help,
   action,
-  months,
   calendar,
 }) => {
   const datePickerContainerRef = useRef<HTMLDivElement>(null)
@@ -113,7 +111,6 @@ export const DatePicker: FC<DatePickerProps> = ({
                   <Calendar
                     calendar={calendar}
                     date={value}
-                    months={months}
                     onChange={renderProps.saveDate}
                   />
                 </Block>

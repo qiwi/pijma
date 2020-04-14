@@ -6,7 +6,6 @@ import {Button} from '../button'
 export interface CalendarProps {
   date?: Date
   dateTo?: Date
-  months?: [string, string, string, string, string, string, string, string, string, string, string, string]
   buttonText?: string
   isRange?: boolean
   minYear?: number
@@ -16,7 +15,6 @@ export interface CalendarProps {
 }
 
 export const Calendar: FC<CalendarProps> = ({
-  months,
   date,
   dateTo,
   isRange = false,
@@ -128,7 +126,6 @@ export const Calendar: FC<CalendarProps> = ({
   return (
     <CalendarControl
       calendar={calendar}
-      months={months}
       isRange={isRange}
       minYear={minYear}
       maxYear={maxYear}

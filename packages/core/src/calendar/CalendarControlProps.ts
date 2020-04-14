@@ -31,7 +31,6 @@ export interface CalendarControlChildrenProps {
 
 export default interface CalendarControlProps {
   calendar: CalendarUtilsProps
-  months?: [string, string, string, string, string, string, string, string, string, string, string, string]
   isRange?: boolean
   minYear?: number
   maxYear?: number

@@ -1,5 +1,5 @@
 import React, {FC, ReactNode, KeyboardEvent, useRef} from 'react'
-import {Box, Icon, InputField, BasicInput, DateRangeControl, Pipe, Pos, Flex, Card, Block, DateRanges, defaultMonths, DateRangesKeys, dateRanges, CalendarUtilsProps} from '@qiwi/pijma-core'
+import {Box, Icon, InputField, BasicInput, DateRangeControl, Pipe, Pos, Flex, Card, Block, DateRanges, DateRangesKeys, dateRanges, CalendarUtilsProps} from '@qiwi/pijma-core'
 import {Calendar, DropDown, MenuLink} from '../'
 
 export interface DateRangeProps {
@@ -19,7 +19,6 @@ export interface DateRangeProps {
   format?: string
   pipe?: Pipe
   stub?: boolean
-  months?: [string, string, string, string, string, string, string, string, string, string, string, string]
   calendar?: CalendarUtilsProps
   onChange?: (dateFrom: Date | null, dateTo: Date | null) => void
   onFocus?: () => void
@@ -48,7 +47,6 @@ export const DateRange: FC<DateRangeProps> = ({
   pipe,
   help,
   action,
-  months = defaultMonths,
   calendar,
 }) => {
   const datePickerContainerRef = useRef<HTMLDivElement>(null)
@@ -60,7 +58,6 @@ export const DateRange: FC<DateRangeProps> = ({
       valueTo={valueTo}
       format={format}
       isRange
-      months={months}
       onFocus={onFocus}
       onBlur={onBlur}
       onKeyDown={onKeyDown}
@@ -134,7 +131,6 @@ export const DateRange: FC<DateRangeProps> = ({
                             calendar={calendar}
                             date={value || undefined}
                             dateTo={valueTo || undefined}
-                            months={months}
                             isRange
                             onChange={renderProps.saveDate}
                           />

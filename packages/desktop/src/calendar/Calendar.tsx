@@ -5,7 +5,6 @@ import {SelectScroll} from '../select-scroll'
 export interface CalendarProps {
   date?: Date
   dateTo?: Date
-  months?: [string, string, string, string, string, string, string, string, string, string, string, string]
   isRange?: boolean
   minYear?: number
   maxYear?: number
@@ -14,7 +13,6 @@ export interface CalendarProps {
 }
 
 export const Calendar: FC<CalendarProps> = ({
-  months,
   date,
   dateTo,
   isRange = false,
@@ -128,7 +126,6 @@ export const Calendar: FC<CalendarProps> = ({
   return (
     <CalendarControl
       calendar={calendar}
-      months={months}
       isRange={isRange}
       minYear={minYear}
       maxYear={maxYear}

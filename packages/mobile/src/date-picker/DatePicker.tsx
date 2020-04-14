@@ -19,7 +19,6 @@ export interface DatePickerProps {
   format?: string
   pipe?: Pipe
   stub?: boolean
-  months?: [string, string, string, string, string, string, string, string, string, string, string, string]
   calendar?: CalendarUtilsProps
   buttonText?: string
   titleText?: string
@@ -79,7 +78,6 @@ export const DatePicker: FC<DatePickerProps> = ({
   pipe,
   help,
   action,
-  months,
   calendar,
   buttonText,
   titleText = 'Выберите дату',
@@ -157,7 +155,6 @@ export const DatePicker: FC<DatePickerProps> = ({
                       <Fragment>
                         <Calendar
                           calendar={calendar}
-                          months={months}
                           date={value}
                           buttonText={buttonText}
                           onChange={renderProps.saveDate}

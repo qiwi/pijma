@@ -2,7 +2,6 @@ import {SyntheticEvent, Component} from 'react'
 import CalendarControlProps, {ScrollItem} from './CalendarControlProps'
 import CalendarControlState from './CalendarControlState'
 
-export const defaultMonths: [string, string, string, string, string, string, string, string, string, string, string, string] = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
 const defaultMinYear = new Date().getFullYear() - 5
 const defaultMaxYear = new Date().getFullYear() + 5
 
@@ -142,7 +141,6 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
   public render() {
     const {
       calendar,
-      months = defaultMonths,
       minYear = defaultMinYear,
       maxYear = defaultMaxYear,
     } = this.props
@@ -156,7 +154,7 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
       showSelectMonth,
       years,
       days: calendar.defaultParams.days,
-      months,
+      months: calendar.defaultParams.months,
       minYear,
       maxYear,
       toggleSelectMonth: this.toggleSelectMonth,

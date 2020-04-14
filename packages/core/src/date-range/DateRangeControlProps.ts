@@ -8,7 +8,6 @@ export default interface DateRangeControlProps {
   valueTo?: Date | null
   format: string
   isRange?: boolean
-  months: string[]
   onFocus?: () => void
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean
