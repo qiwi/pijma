@@ -133,8 +133,8 @@ export const DateRange: FC<DateRangeProps> = ({
                       ? (
                         <Card s="rgb(230, 230, 230) -1px 0px 0px 0px}" width={82}>
                           <Calendar
-                            activeDate={value || undefined}
-                            activeDateTo={valueTo || undefined}
+                            date={value || undefined}
+                            dateTo={valueTo || undefined}
                             days={days}
                             months={months}
                             firstDayIndex={firstDayIndex}

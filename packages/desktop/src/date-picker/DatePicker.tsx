@@ -113,7 +113,7 @@ export const DatePicker: FC<DatePickerProps> = ({
               <Card s="0 28px 52px 0 rgba(0, 0, 0, 0.16)" r={10}>
                 <Block>
                   <Calendar
-                    activeDate={value}
+                    date={value}
                     days={days}
                     months={months}
                     firstDayIndex={firstDayIndex}

@@ -3,8 +3,8 @@ import {Box, Card, CardProps, Grid, Flex, Icon, Typo, CalendarControl, CalendarU
 import {SelectScroll} from '../select-scroll'
 
 export interface CalendarProps {
-  activeDate?: Date
-  activeDateTo?: Date
+  date?: Date
+  dateTo?: Date
   days?: [string, string, string, string, string, string, string]
   months?: [string, string, string, string, string, string, string, string, string, string, string, string]
   firstDayIndex?: number
@@ -19,12 +19,12 @@ export const Calendar: FC<CalendarProps> = ({
   days,
   months,
   firstDayIndex = defaultFirstDayIndex,
-  activeDate,
-  activeDateTo,
+  date,
+  dateTo,
   isRange = false,
   minYear,
   maxYear,
-  calendar = new CalendarUtils(firstDayIndex, activeDate, activeDateTo),
+  calendar = new CalendarUtils(firstDayIndex, date, dateTo),
   saveDate,
 }) => {
   const getDateItems = (renderProps: CalendarControlChildrenProps) => {

@@ -4,8 +4,8 @@ import {SelectScroll} from '../select-scroll'
 import {Button} from '../button'
 
 export interface CalendarProps {
-  activeDate?: Date
-  activeDateTo?: Date
+  date?: Date
+  dateTo?: Date
   days?: [string, string, string, string, string, string, string]
   months?: [string, string, string, string, string, string, string, string, string, string, string, string]
   firstDayIndex?: number
@@ -21,13 +21,13 @@ export const Calendar: FC<CalendarProps> = ({
   days,
   months,
   firstDayIndex = defaultFirstDayIndex,
-  activeDate,
-  activeDateTo,
+  date,
+  dateTo,
   isRange = false,
   buttonText = 'Выбрать',
   minYear,
   maxYear,
-  calendar = new CalendarUtils(firstDayIndex, activeDate, activeDateTo),
+  calendar = new CalendarUtils(firstDayIndex, date, dateTo),
   saveDate,
 }) => {
   const getDateItems = (renderProps: CalendarControlChildrenProps) => {

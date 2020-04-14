@@ -187,8 +187,8 @@ export const DateRange: FC<DateRangeProps> = ({
                         {renderProps.activeRange === DateRanges.range
                         ? (
                             <Calendar
-                              activeDate={value || undefined}
-                              activeDateTo={valueTo || undefined}
+                              date={value || undefined}
+                              dateTo={valueTo || undefined}
                               days={days}
                               months={months}
                               buttonText={buttonText}

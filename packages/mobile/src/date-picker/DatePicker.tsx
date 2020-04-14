@@ -160,7 +160,7 @@ export const DatePicker: FC<DatePickerProps> = ({
                         <Calendar
                           days={days}
                           months={months}
-                          activeDate={value}
+                          date={value}
                           firstDayIndex={firstDayIndex}
                           buttonText={buttonText}
                           saveDate={renderProps.saveDate}
