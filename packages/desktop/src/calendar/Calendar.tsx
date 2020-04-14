@@ -1,6 +1,7 @@
 import React, {FC} from 'react'
-import {Box, Card, CardProps, Grid, Flex, Icon, Typo, CalendarControl, CalendarUtils, CalendarUtilsProps, CalendarControlChildrenProps} from '@qiwi/pijma-core'
+import {Box, Card, CardProps, Grid, Flex, Icon, CalendarControl, CalendarUtils, CalendarUtilsProps, CalendarControlChildrenProps} from '@qiwi/pijma-core'
 import {SelectScroll} from '../select-scroll'
+import {Text} from '../typography'
 
 export interface CalendarProps {
   date?: Date
@@ -23,7 +24,7 @@ export const Calendar: FC<CalendarProps> = ({
         .findIndex(item => item.date.toDateString() === date.toDateString())
       if (selectedDatesIndex !== -1) {
         const cardProps: CardProps = {}
-        let typoColor = '#fff'
+        let textColor: 'default' | 'inverse' = 'inverse'
 
         switch (selectedDatesIndex) {
           case 0:
@@ -40,7 +41,7 @@ export const Calendar: FC<CalendarProps> = ({
 
           default:
             cardProps.bg = 'rgba(255,140,0,0.2)'
-            typoColor = '#000'
+            textColor = 'default'
             break
         }
 
@@ -54,9 +55,9 @@ export const Calendar: FC<CalendarProps> = ({
             onClick={renderProps.onDesktopSelectDate(date)}
             {...cardProps}
           >
-            <Typo size={4} weight={300} height={6} color={typoColor} align="center">
+            <Text size="m" color={textColor} display="block" align="center" bold={false}>
               {date.getDate()}
-            </Typo>
+            </Text>
           </Card>
         )
       }
@@ -74,9 +75,9 @@ export const Calendar: FC<CalendarProps> = ({
               cursor="pointer"
               onClick={renderProps.onDesktopSelectDate(date)}
             >
-              <Typo size={4} weight={300} height={6} color="#fff" align="center">
+              <Text size="m" color="inverse" display="block" align="center" bold={false}>
                 {date.getDate()}
-              </Typo>
+              </Text>
             </Card>
           )
 
@@ -92,26 +93,25 @@ export const Calendar: FC<CalendarProps> = ({
               cursor="pointer"
               onClick={renderProps.onDesktopSelectDate(date)}
             >
-              <Typo size={4} weight={500} height={6} align="center">
+              <Text size="m" display="block" align="center" bold>
                 {date.getDate()}
-              </Typo>
+              </Text>
             </Card>
           )
 
         default:
           return (
-            <Box key={key} width={10} height={10} p={2}>
-              <Typo
-                size={4}
-                weight={300}
-                height={6}
-                align="center"
-                color={disabled ? '#666' : 'default'}
-                cursor={disabled ? 'default' : 'pointer'}
-                onClick={renderProps.onDesktopSelectDate(date)}
-              >
+            <Box
+              key={key}
+              width={10}
+              height={10}
+              p={2}
+              cursor={disabled ? 'default' : 'pointer'}
+              onClick={renderProps.onDesktopSelectDate(date)}
+            >
+              <Text size="m" color={disabled ? 'support' : 'default'} display="block" align="center" bold={false}>
                 {date.getDate()}
-              </Typo>
+              </Text>
             </Box>
           )
       }
@@ -133,9 +133,9 @@ export const Calendar: FC<CalendarProps> = ({
               children={<Icon name="angle-left" />}
             />
             <Box onClick={renderProps.toggleSelectMonth}>
-              <Typo display="inline" weight={500} size={4.5} height={6}>
+              <Text size="m" display="inline" bold>
                 {renderProps.months[renderProps.date.getMonth()]} {renderProps.date.getFullYear()}
-              </Typo>
+              </Text>
               <Box
                 display="inline"
                 cursor="pointer"
@@ -164,9 +164,9 @@ export const Calendar: FC<CalendarProps> = ({
             <Grid columns={7} layout={1} gutter={0}>
               {renderProps.days.map(day => (
                 <Box key={day} width={10} height={10} p={2}>
-                  <Typo size={3.5} weight={300} height={5} align="center" color="#666">
+                  <Text size="s" color="support" display="block" align="center" bold={false}>
                     {day}
-                  </Typo>
+                  </Text>
                 </Box>
               ))}
               {getDateItems(renderProps)}
