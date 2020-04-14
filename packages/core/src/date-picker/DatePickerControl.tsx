@@ -1,5 +1,4 @@
 import {Component, ChangeEventHandler, ChangeEvent, FocusEventHandler, FocusEvent, KeyboardEventHandler, KeyboardEvent} from 'react'
-import {format, parse} from 'date-fns'
 import DatePickerControlProps from './DatePickerControlProps'
 import DatePickerControlState from './DatePickerControlState'
 
@@ -26,12 +25,13 @@ export default class DatePickerControl extends Component<DatePickerControlProps,
 
   private onChange: ChangeEventHandler<HTMLInputElement> = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
-    if (this.props.onChange) {
+    const {format, onChange, calendar: {defaultParams: {parse}}} = this.props
+    if (onChange) {
       const value = e.currentTarget.value
-      const date = value.length === this.props.format.length
-        ? parse(value, this.props.format, new Date())
+      const date = value.length === format.length
+        ? parse(value, format, new Date())
         : new Date('')
-      this.props.onChange(date)
+      onChange(date)
     }
   }
 
@@ -77,11 +77,12 @@ export default class DatePickerControl extends Component<DatePickerControlProps,
   }
 
   public render() {
+    const {value, format, children, calendar: {defaultParams}} = this.props
     const {focused, opened} = this.state
-    return this.props.children({
-      value: this.props.value ? format(this.props.value, this.props.format) : '',
+    return children({
+      value: value ? defaultParams.format(value, format) : '',
       focused: focused || opened,
-      mask: this.props.format.split('').map(sym => sym.match(/^[a-zA-Z]+$/) ? /\d/ : sym),
+      mask: format.split('').map(sym => sym.match(/^[a-zA-Z]+$/) ? /\d/ : sym),
       onChange: this.onChange,
       onFocus: this.onFocus,
       onBlur: this.onBlur,

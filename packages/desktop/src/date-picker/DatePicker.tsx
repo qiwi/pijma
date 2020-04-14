@@ -1,5 +1,5 @@
 import React, {FC, ReactNode, KeyboardEvent, useRef} from 'react'
-import {Box, Icon, InputField, BasicInput, DatePickerControl, Pipe, Pos, Block, Card, CalendarUtilsProps} from '@qiwi/pijma-core'
+import {Box, Icon, InputField, BasicInput, DatePickerControl, Pipe, Pos, Block, Card, CalendarUtils, CalendarUtilsProps} from '@qiwi/pijma-core'
 import {Calendar, DropDown} from '../'
 
 export interface DatePickerProps {
@@ -45,13 +45,14 @@ export const DatePicker: FC<DatePickerProps> = ({
   pipe,
   help,
   action,
-  calendar,
+  calendar = new CalendarUtils(value),
 }) => {
   const datePickerContainerRef = useRef<HTMLDivElement>(null)
   const datePickerInputRef = useRef<HTMLDivElement>(null)
 
   return (
     <DatePickerControl
+      calendar={calendar}
       value={value}
       format={format}
       onFocus={onFocus}

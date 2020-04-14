@@ -1,5 +1,4 @@
 import {Component, ChangeEventHandler, ChangeEvent, FocusEventHandler, FocusEvent, KeyboardEventHandler, KeyboardEvent} from 'react'
-import {format, parse, set, subDays} from 'date-fns'
 import DateRangeControlProps from './DateRangeControlProps'
 import DateRangeControlState from './DateRangeControlState'
 
@@ -58,8 +57,8 @@ export default class DateRangeControl extends Component<DateRangeControlProps, D
 
   private onChange: ChangeEventHandler<HTMLInputElement> = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
-    if (this.props.onChange) {
-      const {format, onChange} = this.props
+    const {format, onChange, calendar: {defaultParams: {parse}}} = this.props
+    if (onChange) {
       const currentDate = new Date()
       const invalidDate = new Date('')
       const value = e.currentTarget.value
@@ -116,6 +115,7 @@ export default class DateRangeControl extends Component<DateRangeControlProps, D
   }
 
   private getDateFrom = (activeRange?: DateRanges) => {
+    const {calendar: {defaultParams: {set, subDays}}} = this.props
     switch (activeRange) {
       case DateRanges.day:
         return set(new Date(), {hours: 0, minutes: 0, seconds: 0})
@@ -132,6 +132,7 @@ export default class DateRangeControl extends Component<DateRangeControlProps, D
   }
 
   private getDateTo = (activeRange?: DateRanges) => {
+    const {calendar: {defaultParams: {set}}} = this.props
     switch (activeRange) {
       case DateRanges.day:
       case DateRanges.month:
@@ -155,10 +156,12 @@ export default class DateRangeControl extends Component<DateRangeControlProps, D
     })
   }
 
-  private getParamsByValue = (date?: Date | null, dateTo?: Date | null) =>
-    date && dateTo
+  private getParamsByValue = (date?: Date | null, dateTo?: Date | null) => {
+    const {calendar: {defaultParams: {format}}} = this.props
+    return date && dateTo
       ? `${format(date, this.props.format)} - ${format(dateTo, this.props.format)}`
       : 'Все время'
+  }
 
   public render() {
     const {focused, opened, activeRange} = this.state

@@ -1,5 +1,5 @@
 import React, {FC, ReactNode, KeyboardEvent, useRef} from 'react'
-import {Box, Icon, InputField, BasicInput, DateRangeControl, Pipe, Pos, Flex, Card, Block, DateRanges, DateRangesKeys, dateRanges, CalendarUtilsProps} from '@qiwi/pijma-core'
+import {Box, Icon, InputField, BasicInput, DateRangeControl, Pipe, Pos, Flex, Card, Block, DateRanges, DateRangesKeys, dateRanges, CalendarUtils, CalendarUtilsProps} from '@qiwi/pijma-core'
 import {Calendar, DropDown, MenuLink} from '../'
 
 export interface DateRangeProps {
@@ -47,7 +47,7 @@ export const DateRange: FC<DateRangeProps> = ({
   pipe,
   help,
   action,
-  calendar,
+  calendar = new CalendarUtils(value ? value : undefined, valueTo ? valueTo : undefined),
 }) => {
   const datePickerContainerRef = useRef<HTMLDivElement>(null)
   const datePickerInputRef = useRef<HTMLDivElement>(null)
@@ -58,6 +58,7 @@ export const DateRange: FC<DateRangeProps> = ({
       valueTo={valueTo}
       format={format}
       isRange
+      calendar={calendar}
       onFocus={onFocus}
       onBlur={onBlur}
       onKeyDown={onKeyDown}

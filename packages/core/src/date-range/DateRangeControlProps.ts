@@ -2,12 +2,14 @@ import {KeyboardEvent, ChangeEventHandler, FocusEventHandler, KeyboardEventHandl
 import {Mask} from '../mask'
 import RenderChild from '../RenderChild'
 import {DateRanges} from './DateRangeControl'
+import {CalendarUtilsProps} from '../calendar'
 
 export default interface DateRangeControlProps {
   value?: Date | null
   valueTo?: Date | null
   format: string
   isRange?: boolean
+  calendar: CalendarUtilsProps
   onFocus?: () => void
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean

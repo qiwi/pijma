@@ -1,4 +1,5 @@
 
+import {format, parse, set, subDays} from 'date-fns'
 import {CalendarDate} from './CalendarDate'
 
 interface DefaultParams {
@@ -7,6 +8,42 @@ interface DefaultParams {
   months: [string, string, string, string, string, string, string, string, string, string, string, string]
   minYear: number
   maxYear: number
+  format: (
+    date: Date | number,
+    format: string,
+    options?: {
+      locale?: Locale
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6
+      firstWeekContainsDate?: number
+      useAdditionalWeekYearTokens?: boolean
+      useAdditionalDayOfYearTokens?: boolean
+    },
+  ) => string
+  parse: (
+    dateString: string,
+    formatString: string,
+    backupDate: Date | number,
+    options?: {
+      locale?: Locale
+      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6
+      firstWeekContainsDate?: 1 | 2 | 3 | 4 | 5 | 6 | 7
+      useAdditionalWeekYearTokens?: boolean
+      useAdditionalDayOfYearTokens?: boolean
+    },
+  ) => Date
+  set: (
+    date: Date | number,
+    values: {
+      year?: number
+      month?: number
+      date?: number
+      hours?: number
+      minutes?: number
+      seconds?: number
+      milliseconds?: number
+    },
+  ) => Date
+  subDays: (date: Date | number, amount: number) => Date
 }
 
 export interface CalendarUtilsProps {
@@ -34,6 +71,10 @@ export class CalendarUtils implements CalendarUtilsProps {
       months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
       minYear: new Date().getFullYear() - 5,
       maxYear: new Date().getFullYear() + 5,
+      format,
+      parse,
+      set,
+      subDays,
     },
   ) {
     this.activeDate = activeDate
