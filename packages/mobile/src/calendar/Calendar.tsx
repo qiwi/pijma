@@ -1,4 +1,4 @@
-import React, {FC, Fragment} from 'react'
+import React, {FC} from 'react'
 import {Box, Card, CardProps, Grid, Flex, Icon, Typo, CalendarControl, CalendarUtils, CalendarUtilsProps, CalendarControlChildrenProps, defaultFirstDayIndex} from '@qiwi/pijma-core'
 import {SelectScroll} from '../select-scroll'
 import {Button} from '../button'
@@ -66,7 +66,7 @@ export const Calendar: FC<CalendarProps> = ({
             onClick={renderProps.onMobileSelectDate(date)}
             {...cardProps}
           >
-            <Typo size={4} weight={300} height={6} color={typoColor} align="center" css={{'user-select': 'none'}}>
+            <Typo size={4} weight={300} height={6} color={typoColor} align="center">
               {date.getDate()}
             </Typo>
           </Card>
@@ -85,7 +85,7 @@ export const Calendar: FC<CalendarProps> = ({
               r={22}
               cursor="pointer"
             >
-              <Typo size={4} weight={300} height={6} color="#fff" align="center" css={{'user-select': 'none'}}>
+              <Typo size={4} weight={300} height={6} color="#fff" align="center">
                 {date.getDate()}
               </Typo>
             </Card>
@@ -102,7 +102,6 @@ export const Calendar: FC<CalendarProps> = ({
                 color={disabled ? '#666' : 'default'}
                 cursor={disabled ? 'default' : 'pointer'}
                 onClick={renderProps.onMobileSelectDate(date)}
-                css={{'user-select': 'none'}}
               >
                 {date.getDate()}
               </Typo>
@@ -120,7 +119,6 @@ export const Calendar: FC<CalendarProps> = ({
                 color={disabled ? '#666' : 'default'}
                 cursor={disabled ? 'default' : 'pointer'}
                 onClick={renderProps.onMobileSelectDate(date)}
-                css={{'user-select': 'none'}}
               >
                 {date.getDate()}
               </Typo>
@@ -141,7 +139,7 @@ export const Calendar: FC<CalendarProps> = ({
       maxYear={maxYear}
       onChange={onChange}
       children={renderProps => (
-        <Fragment>
+        <Box css={{'user-select': 'none'}}>
           <Flex justify="space-between" mb={3.5} pt={6} px={6}>
             <Box
               cursor="pointer"
@@ -149,7 +147,7 @@ export const Calendar: FC<CalendarProps> = ({
               children={<Icon name="angle-left" />}
             />
             <Box onClick={renderProps.toggleSelectMonth}>
-              <Typo display="inline" weight={500} size={4.5} height={6} css={{'user-select': 'none'}}>
+              <Typo display="inline" weight={500} size={4.5} height={6}>
                 {renderProps.months[renderProps.date.getMonth()]} {renderProps.date.getFullYear()}
               </Typo>
               <Box
@@ -181,7 +179,7 @@ export const Calendar: FC<CalendarProps> = ({
               <Grid columns={7} layout={1} gutter={0}>
                 {renderProps.days.map(day => (
                   <Box key={day} width={11} height={11} p={2.5}>
-                    <Typo size={3.5} weight={300} height={5} align="center" color="#666" css={{'user-select': 'none'}}>
+                    <Typo size={3.5} weight={300} height={5} align="center" color="#666">
                       {day}
                     </Typo>
                   </Box>
@@ -199,7 +197,7 @@ export const Calendar: FC<CalendarProps> = ({
               </Box>
             </Box>
           )}
-        </Fragment>
+        </Box>
       )}
     />
   )

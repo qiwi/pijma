@@ -64,7 +64,7 @@ export const Calendar: FC<CalendarProps> = ({
             onClick={renderProps.onDesktopSelectDate(date)}
             {...cardProps}
           >
-            <Typo size={4} weight={300} height={6} color={typoColor} align="center" css={{'user-select': 'none'}}>
+            <Typo size={4} weight={300} height={6} color={typoColor} align="center">
               {date.getDate()}
             </Typo>
           </Card>
@@ -84,7 +84,7 @@ export const Calendar: FC<CalendarProps> = ({
               cursor="pointer"
               onClick={renderProps.onDesktopSelectDate(date)}
             >
-              <Typo size={4} weight={300} height={6} color="#fff" align="center" css={{'user-select': 'none'}}>
+              <Typo size={4} weight={300} height={6} color="#fff" align="center">
                 {date.getDate()}
               </Typo>
             </Card>
@@ -102,7 +102,7 @@ export const Calendar: FC<CalendarProps> = ({
               cursor="pointer"
               onClick={renderProps.onDesktopSelectDate(date)}
             >
-              <Typo size={4} weight={500} height={6} align="center" css={{'user-select': 'none'}}>
+              <Typo size={4} weight={500} height={6} align="center">
                 {date.getDate()}
               </Typo>
             </Card>
@@ -119,7 +119,6 @@ export const Calendar: FC<CalendarProps> = ({
                 color={disabled ? '#666' : 'default'}
                 cursor={disabled ? 'default' : 'pointer'}
                 onClick={renderProps.onDesktopSelectDate(date)}
-                css={{'user-select': 'none'}}
               >
                 {date.getDate()}
               </Typo>
@@ -140,7 +139,7 @@ export const Calendar: FC<CalendarProps> = ({
       maxYear={maxYear}
       onChange={onChange}
       children={renderProps => (
-        <Box pt={8} px={6} pb={6}>
+        <Box pt={8} px={6} pb={6} css={{'user-select': 'none'}}>
           <Flex justify="space-between" px={2} mb={2}>
             <Box
               cursor="pointer"
@@ -148,7 +147,7 @@ export const Calendar: FC<CalendarProps> = ({
               children={<Icon name="angle-left" />}
             />
             <Box onClick={renderProps.toggleSelectMonth}>
-              <Typo display="inline" weight={500} size={4.5} height={6} css={{'user-select': 'none'}}>
+              <Typo display="inline" weight={500} size={4.5} height={6}>
                 {renderProps.months[renderProps.date.getMonth()]} {renderProps.date.getFullYear()}
               </Typo>
               <Box
@@ -179,7 +178,7 @@ export const Calendar: FC<CalendarProps> = ({
             <Grid columns={7} layout={1} gutter={0}>
               {renderProps.days.map(day => (
                 <Box key={day} width={10} height={10} p={2}>
-                  <Typo size={3.5} weight={300} height={5} align="center" color="#666" css={{'user-select': 'none'}}>
+                  <Typo size={3.5} weight={300} height={5} align="center" color="#666">
                     {day}
                   </Typo>
                 </Box>
