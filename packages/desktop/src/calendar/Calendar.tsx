@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 import {Box, Card, CardProps, Grid, Flex, Icon, Typo, CalendarControl, CalendarUtils, CalendarControlChildrenProps, defaultFirstDayIndex} from '@qiwi/pijma-core'
-import {SelectScroll} from '../'
+import {SelectScroll} from '../select-scroll'
 
 export interface CalendarProps {
   activeDate?: Date
