@@ -3,6 +3,7 @@ import {CalendarDate} from './CalendarDate'
 
 interface DefaultParams {
   firstDayIndex: number
+  days: [string, string, string, string, string, string, string]
 }
 
 export interface CalendarUtilsProps {
@@ -26,6 +27,7 @@ export class CalendarUtils implements CalendarUtilsProps {
     public activeDateTo?: Date,
     public defaultParams: DefaultParams = {
       firstDayIndex: 1,
+      days: ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
     },
   ) {
     this.activeDate = activeDate

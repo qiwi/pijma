@@ -1,5 +1,5 @@
 import React, {FC, ReactNode, KeyboardEvent, useRef} from 'react'
-import {Box, Icon, InputField, BasicInput, DatePickerControl, Pipe, Pos, Block, Card} from '@qiwi/pijma-core'
+import {Box, Icon, InputField, BasicInput, DatePickerControl, Pipe, Pos, Block, Card, CalendarUtilsProps} from '@qiwi/pijma-core'
 import {Calendar, DropDown} from '../'
 
 export interface DatePickerProps {
@@ -18,8 +18,8 @@ export interface DatePickerProps {
   format?: string
   pipe?: Pipe
   stub?: boolean
-  days?: [string, string, string, string, string, string, string]
   months?: [string, string, string, string, string, string, string, string, string, string, string, string]
+  calendar?: CalendarUtilsProps
   onChange?: (date: Date) => void
   onFocus?: () => void
   onBlur?: () => void
@@ -46,8 +46,8 @@ export const DatePicker: FC<DatePickerProps> = ({
   pipe,
   help,
   action,
-  days,
   months,
+  calendar,
 }) => {
   const datePickerContainerRef = useRef<HTMLDivElement>(null)
   const datePickerInputRef = useRef<HTMLDivElement>(null)
@@ -111,8 +111,8 @@ export const DatePicker: FC<DatePickerProps> = ({
               <Card s="0 28px 52px 0 rgba(0, 0, 0, 0.16)" r={10}>
                 <Block>
                   <Calendar
+                    calendar={calendar}
                     date={value}
-                    days={days}
                     months={months}
                     onChange={renderProps.saveDate}
                   />

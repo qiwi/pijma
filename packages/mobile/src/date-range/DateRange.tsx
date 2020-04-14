@@ -1,5 +1,5 @@
 import React, {FC, ReactNode, KeyboardEvent, Fragment, FunctionComponent} from 'react'
-import {styled, Box, Icon, InputField, BasicInput, DateRangeControl, Pipe, Typo, Striper, Modal, ModalProps, SimpleTransitionProps, SimpleTransition, Pos, Card, DateRanges, defaultMonths, DateRangesKeys, dateRanges, Flex, FlexItem} from '@qiwi/pijma-core'
+import {styled, Box, Icon, InputField, BasicInput, DateRangeControl, Pipe, Typo, Striper, Modal, ModalProps, SimpleTransitionProps, SimpleTransition, Pos, Card, DateRanges, defaultMonths, DateRangesKeys, dateRanges, Flex, FlexItem, CalendarUtilsProps} from '@qiwi/pijma-core'
 import {css} from 'emotion'
 import {Calendar, MenuLink} from '../'
 
@@ -20,9 +20,9 @@ export interface DateRangeProps {
   format?: string
   pipe?: Pipe
   stub?: boolean
-  days?: [string, string, string, string, string, string, string]
   months?: [string, string, string, string, string, string, string, string, string, string, string, string]
   buttonText?: string
+  calendar?: CalendarUtilsProps
   onChange?: (dateFrom: Date | null, dateTo: Date | null) => void
   onFocus?: () => void
   onBlur?: () => void
@@ -80,9 +80,9 @@ export const DateRange: FC<DateRangeProps> = ({
   pipe,
   help,
   action,
-  days,
   months = defaultMonths,
   buttonText,
+  calendar,
 }) => {
   return (
     <DateRangeControl
@@ -185,9 +185,9 @@ export const DateRange: FC<DateRangeProps> = ({
                         {renderProps.activeRange === DateRanges.range
                         ? (
                             <Calendar
+                              calendar={calendar}
                               date={value || undefined}
                               dateTo={valueTo || undefined}
-                              days={days}
                               months={months}
                               buttonText={buttonText}
                               isRange
