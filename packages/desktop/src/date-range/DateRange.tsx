@@ -19,8 +19,8 @@ export interface DateRangeProps {
   format?: string
   pipe?: Pipe
   stub?: boolean
-  days?: string[]
-  months?: string[]
+  days?: [string, string, string, string, string, string, string]
+  months?: [string, string, string, string, string, string, string, string, string, string, string, string]
   firstDayIndex?: number
   onChange?: (dateFrom: Date | null, dateTo: Date | null) => void
   onFocus?: () => void

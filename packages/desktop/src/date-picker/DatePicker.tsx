@@ -18,8 +18,8 @@ export interface DatePickerProps {
   format?: string
   pipe?: Pipe
   stub?: boolean
-  days?: string[]
-  months?: string[]
+  days?: [string, string, string, string, string, string, string]
+  months?: [string, string, string, string, string, string, string, string, string, string, string, string]
   firstDayIndex?: number
   onChange?: (date: Date) => void
   onFocus?: () => void

@@ -15,8 +15,8 @@ export interface CalendarControlChildrenProps {
   activeDateTo?: Date
   showSelectMonth: boolean
   years: ScrollItem[]
-  days: string[]
-  months: string[]
+  days: [string, string, string, string, string, string, string]
+  months: [string, string, string, string, string, string, string, string, string, string, string, string]
   minYear: number
   maxYear: number
   toggleSelectMonth: () => void
@@ -31,8 +31,8 @@ export interface CalendarControlChildrenProps {
 
 export default interface CalendarControlProps {
   calendar: CalendarUtilsProps
-  days?: string[]
-  months?: string[]
+  days?: [string, string, string, string, string, string, string]
+  months?: [string, string, string, string, string, string, string, string, string, string, string, string]
   isRange?: boolean
   minYear?: number
   maxYear?: number

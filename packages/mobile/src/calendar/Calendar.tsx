@@ -6,8 +6,8 @@ import {Button} from '../button'
 export interface CalendarProps {
   activeDate?: Date
   activeDateTo?: Date
-  days?: string[]
-  months?: string[]
+  days?: [string, string, string, string, string, string, string]
+  months?: [string, string, string, string, string, string, string, string, string, string, string, string]
   firstDayIndex?: number
   buttonText?: string
   isRange?: boolean
