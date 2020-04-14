@@ -5,5 +5,3 @@
 /packages/*/node_modules
 /packages/*/lib
 .DS_Store
-/yarn-error.log
-/packages/*/yarn-error.log

@@ -1,7 +1,7 @@
 
-import CalendarDate from './CalendarDate'
+import {CalendarDate} from './CalendarDate'
 
-export interface CalendarConstructorProps {
+export interface CalendarUtilsProps {
   firstDayIndex: number
   activeDate?: Date
   activeDateTo?: Date
@@ -15,7 +15,7 @@ export interface CalendarConstructorProps {
   getNextMonth: (date: Date) => Date
 }
 
-export default class CalendarConstructor implements CalendarConstructorProps {
+export class CalendarUtils implements CalendarUtilsProps {
 
   constructor(public firstDayIndex: number, public activeDate?: Date, public activeDateTo?: Date) {
     this.firstDayIndex = firstDayIndex

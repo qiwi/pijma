@@ -1,5 +1,5 @@
 import React, {FC, Fragment} from 'react'
-import {Box, Card, CardProps, Grid, Flex, Icon, Typo, CalendarControl, CalendarConstructor, CalendarControlChildrenProps, defaultFirstDayIndex} from '@qiwi/pijma-core'
+import {Box, Card, CardProps, Grid, Flex, Icon, Typo, CalendarControl, CalendarUtils, CalendarControlChildrenProps, defaultFirstDayIndex} from '@qiwi/pijma-core'
 import {Button, SelectScroll} from '../'
 
 export interface CalendarProps {
@@ -130,7 +130,7 @@ export const Calendar: FC<CalendarProps> = ({
 
   return (
     <CalendarControl
-      calendar={new CalendarConstructor(firstDayIndex, activeDate, activeDateTo)}
+      calendar={new CalendarUtils(firstDayIndex, activeDate, activeDateTo)}
       days={days}
       months={months}
       isRange={isRange}

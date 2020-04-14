@@ -1,4 +1,4 @@
-export default interface CalendarDate {
+export interface CalendarDate {
   date: Date
   disabled?: boolean
 }

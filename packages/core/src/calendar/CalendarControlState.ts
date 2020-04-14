@@ -1,4 +1,4 @@
-import CalendarDate from './CalendarDate'
+import {CalendarDate} from './CalendarDate'
 import {ScrollItem} from './CalendarControlProps'
 
 export default interface CalendarControlState {
