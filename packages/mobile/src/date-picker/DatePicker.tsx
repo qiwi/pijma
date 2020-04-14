@@ -163,7 +163,7 @@ export const DatePicker: FC<DatePickerProps> = ({
                           date={value}
                           firstDayIndex={firstDayIndex}
                           buttonText={buttonText}
-                          saveDate={renderProps.saveDate}
+                          onChange={renderProps.saveDate}
                         />
                       </Fragment>
                     </Striper>

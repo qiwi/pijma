@@ -139,7 +139,7 @@ export const DateRange: FC<DateRangeProps> = ({
                             months={months}
                             firstDayIndex={firstDayIndex}
                             isRange
-                            saveDate={renderProps.saveDate}
+                            onChange={renderProps.saveDate}
                           />
                         </Card>
                       )

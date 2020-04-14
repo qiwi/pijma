@@ -194,7 +194,7 @@ export const DateRange: FC<DateRangeProps> = ({
                               buttonText={buttonText}
                               firstDayIndex={firstDayIndex}
                               isRange
-                              saveDate={renderProps.saveDate}
+                              onChange={renderProps.saveDate}
                             />
                         )
                         : null}

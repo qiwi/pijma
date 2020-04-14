@@ -117,7 +117,7 @@ export const DatePicker: FC<DatePickerProps> = ({
                     days={days}
                     months={months}
                     firstDayIndex={firstDayIndex}
-                    saveDate={renderProps.saveDate}
+                    onChange={renderProps.saveDate}
                   />
                 </Block>
               </Card>

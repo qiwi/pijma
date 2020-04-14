@@ -60,7 +60,7 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
   }
 
   private onDesktopSelectDate = (date: Date) => (event: SyntheticEvent) => {
-    const {isRange = false, saveDate} = this.props
+    const {isRange = false, onChange} = this.props
     const {activeDate, activeDateTo} = this.state
     event.stopPropagation()
     if (isRange) {
@@ -73,14 +73,14 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
         })
       }
       else {
-        if (saveDate) {
-          saveDate(activeDate!, date)
+        if (onChange) {
+          onChange(activeDate!, date)
         }
       }
     }
     else {
-      if (saveDate) {
-        saveDate(date)
+      if (onChange) {
+        onChange(date)
       }
     }
   }
@@ -114,8 +114,8 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
   }
 
   private onMobileSaveDate = () => {
-    if (this.props.saveDate && this.state.activeDate) {
-      this.props.saveDate(this.state.activeDate, this.state.activeDateTo)
+    if (this.props.onChange && this.state.activeDate) {
+      this.props.onChange(this.state.activeDate, this.state.activeDateTo)
     }
   }
 

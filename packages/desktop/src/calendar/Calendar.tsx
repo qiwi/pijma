@@ -12,7 +12,7 @@ export interface CalendarProps {
   minYear?: number
   maxYear?: number
   calendar?: CalendarUtilsProps
-  saveDate?: (date: Date) => void
+  onChange?: (date: Date) => void
 }
 
 export const Calendar: FC<CalendarProps> = ({
@@ -25,7 +25,7 @@ export const Calendar: FC<CalendarProps> = ({
   minYear,
   maxYear,
   calendar = new CalendarUtils(firstDayIndex, date, dateTo),
-  saveDate,
+  onChange,
 }) => {
   const getDateItems = (renderProps: CalendarControlChildrenProps) => {
     return renderProps.dates.map(({date, disabled}, key) => {
@@ -138,7 +138,7 @@ export const Calendar: FC<CalendarProps> = ({
       isRange={isRange}
       minYear={minYear}
       maxYear={maxYear}
-      saveDate={saveDate}
+      onChange={onChange}
       children={renderProps => (
         <Box pt={8} px={6} pb={6}>
           <Flex justify="space-between" px={2} mb={2}>
