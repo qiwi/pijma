@@ -17,6 +17,8 @@ export interface DateRangeProps {
   disabled?: boolean
   maxLength?: number
   format?: string
+  minDate?: Date
+  maxDate?: Date
   pipe?: Pipe
   stub?: boolean
   utils: CalendarUtils
@@ -31,6 +33,8 @@ export const DateRange: FC<DateRangeProps> = ({
   value,
   valueTo,
   format = 'yyyy-MM-dd',
+  minDate,
+  maxDate,
   onFocus,
   onBlur,
   onKeyDown,
@@ -133,6 +137,8 @@ export const DateRange: FC<DateRangeProps> = ({
                             date={value || undefined}
                             dateTo={valueTo || undefined}
                             isRange
+                            minDate={minDate}
+                            maxDate={maxDate}
                             onChange={renderProps.saveDate}
                           />
                         </Card>

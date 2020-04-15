@@ -4,11 +4,9 @@ import {CalendarUtils, ParseValues, CalendarDate} from './CalendarUtils'
 
 export class DateFnsCalendarUtils implements CalendarUtils {
 
-  public firstDayIndex = 1
-  public days: [string, string, string, string, string, string, string] = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
-  public months: [string, string, string, string, string, string, string, string, string, string, string, string] = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
-  public minYear = new Date().getFullYear() - 5
-  public maxYear = new Date().getFullYear() + 5
+  readonly firstDayIndex = 1
+  readonly days: [string, string, string, string, string, string, string] = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
+  readonly months: [string, string, string, string, string, string, string, string, string, string, string, string] = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
   public format = (date: Date | number, formatString: string) => format(date, formatString)
   public parse = (dateString: string, formatString: string, backupDate: Date | number) => parse(dateString, formatString, backupDate)
   public set = (date: Date | number, values: ParseValues) => set(date, values)

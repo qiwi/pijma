@@ -16,8 +16,6 @@ export interface CalendarControlChildrenProps {
   years: ScrollItem[]
   days: [string, string, string, string, string, string, string]
   months: [string, string, string, string, string, string, string, string, string, string, string, string]
-  minYear: number
-  maxYear: number
   toggleSelectMonth: () => void
   selectMonth: (values: number[]) => void
   toNextMonth: () => void
@@ -33,6 +31,8 @@ export default interface CalendarControlProps {
   date?: Date
   dateTo?: Date
   isRange?: boolean
+  minDate: Date
+  maxDate: Date
   onFocus?: () => void
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean

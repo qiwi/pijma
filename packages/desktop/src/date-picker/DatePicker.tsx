@@ -16,6 +16,8 @@ export interface DatePickerProps {
   disabled?: boolean
   maxLength?: number
   format?: string
+  minDate?: Date
+  maxDate?: Date
   pipe?: Pipe
   stub?: boolean
   utils: CalendarUtils
@@ -29,6 +31,8 @@ export interface DatePickerProps {
 export const DatePicker: FC<DatePickerProps> = ({
   value,
   format = 'yyyy-MM-dd',
+  minDate,
+  maxDate,
   onFocus,
   onBlur,
   onKeyDown,
@@ -112,6 +116,8 @@ export const DatePicker: FC<DatePickerProps> = ({
                   <Calendar
                     utils={utils}
                     date={value}
+                    minDate={minDate}
+                    maxDate={maxDate}
                     onChange={renderProps.saveDate}
                   />
                 </Block>

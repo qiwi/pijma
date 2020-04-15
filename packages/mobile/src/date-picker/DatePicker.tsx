@@ -17,6 +17,8 @@ export interface DatePickerProps {
   disabled?: boolean
   maxLength?: number
   format?: string
+  minDate?: Date
+  maxDate?: Date
   pipe?: Pipe
   stub?: boolean
   utils: CalendarUtils
@@ -62,6 +64,8 @@ const StyledModal = styled(Modal)<ModalProps>({
 export const DatePicker: FC<DatePickerProps> = ({
   value,
   format = 'yyyy-MM-dd',
+  minDate,
+  maxDate,
   onFocus,
   onBlur,
   onKeyDown,
@@ -158,6 +162,8 @@ export const DatePicker: FC<DatePickerProps> = ({
                           utils={utils}
                           date={value}
                           buttonText={buttonText}
+                          minDate={minDate}
+                          maxDate={maxDate}
                           onChange={renderProps.saveDate}
                         />
                       </Fragment>

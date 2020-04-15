@@ -114,9 +114,11 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
   }
 
   private getYearsArray = () => {
-    const {utils} = this.props
+    const {minDate, maxDate} = this.props
+    const minYear = minDate.getFullYear()
+    const maxYear = maxDate.getFullYear()
     const years: ScrollItem[] = []
-    for (let year = utils.minYear; year <= utils.maxYear; year++) {
+    for (let year = minYear; year <= maxYear; year++) {
       years.push({
         value: year,
         text: year.toString(),
@@ -145,8 +147,6 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
       years,
       days: utils.days,
       months: utils.months,
-      minYear: utils.minYear,
-      maxYear: utils.maxYear,
       toggleSelectMonth: this.toggleSelectMonth,
       selectMonth: this.selectMonth,
       toPrevMonth: this.toPrevMonth,

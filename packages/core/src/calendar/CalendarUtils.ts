@@ -12,13 +12,10 @@ export interface ParseValues {
   seconds?: number
   milliseconds?: number
 }
-
 export interface CalendarUtils {
-  firstDayIndex: number
-  days: [string, string, string, string, string, string, string]
-  months: [string, string, string, string, string, string, string, string, string, string, string, string]
-  minYear: number
-  maxYear: number
+  readonly firstDayIndex: number
+  readonly days: [string, string, string, string, string, string, string]
+  readonly months: [string, string, string, string, string, string, string, string, string, string, string, string]
   format: (date: Date | number, formatString: string) => string
   parse: (dateString: string, formatString: string, backupDate: Date | number) => Date
   set: (date: Date | number, values: ParseValues) => Date

@@ -10,6 +10,8 @@ export interface CalendarProps {
   buttonText?: string
   isRange?: boolean
   utils: CalendarUtils
+  minDate?: Date
+  maxDate?: Date
   onChange?: (date: Date) => void
 }
 
@@ -19,6 +21,8 @@ export const Calendar: FC<CalendarProps> = ({
   isRange = false,
   buttonText = 'Выбрать',
   utils,
+  minDate = new Date('1900-01-01'),
+  maxDate = new Date('2100-01-01'),
   onChange,
 }) => {
   const getDateItems = (renderProps: CalendarControlChildrenProps) => {
@@ -124,6 +128,8 @@ export const Calendar: FC<CalendarProps> = ({
       date={date}
       dateTo={dateTo}
       isRange={isRange}
+      minDate={minDate}
+      maxDate={maxDate}
       onChange={onChange}
       children={renderProps => (
         <Box css={{'user-select': 'none'}}>
