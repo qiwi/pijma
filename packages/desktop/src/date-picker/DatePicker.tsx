@@ -45,7 +45,7 @@ export const DatePicker: FC<DatePickerProps> = ({
   pipe,
   help,
   action,
-  calendar = new CalendarUtils(value),
+  calendar = new CalendarUtils(),
 }) => {
   const datePickerContainerRef = useRef<HTMLDivElement>(null)
   const datePickerInputRef = useRef<HTMLDivElement>(null)

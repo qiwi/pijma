@@ -31,6 +31,8 @@ export interface CalendarControlChildrenProps {
 
 export default interface CalendarControlProps {
   calendar: CalendarUtilsProps
+  date?: Date
+  dateTo?: Date
   isRange?: boolean
   onFocus?: () => void
   onBlur?: () => void

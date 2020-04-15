@@ -25,11 +25,11 @@ export default class DatePickerControl extends Component<DatePickerControlProps,
 
   private onChange: ChangeEventHandler<HTMLInputElement> = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
-    const {format, onChange, calendar: {defaultParams: {parse}}} = this.props
+    const {format, onChange, calendar} = this.props
     if (onChange) {
       const value = e.currentTarget.value
       const date = value.length === format.length
-        ? parse(value, format, new Date())
+        ? calendar.parse(value, format, new Date())
         : new Date('')
       onChange(date)
     }
@@ -77,10 +77,10 @@ export default class DatePickerControl extends Component<DatePickerControlProps,
   }
 
   public render() {
-    const {value, format, children, calendar: {defaultParams}} = this.props
+    const {value, format, children, calendar} = this.props
     const {focused, opened} = this.state
     return children({
-      value: value ? defaultParams.format(value, format) : '',
+      value: value ? calendar.format(value, format) : '',
       focused: focused || opened,
       mask: format.split('').map(sym => sym.match(/^[a-zA-Z]+$/) ? /\d/ : sym),
       onChange: this.onChange,

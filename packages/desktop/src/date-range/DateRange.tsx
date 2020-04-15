@@ -47,7 +47,7 @@ export const DateRange: FC<DateRangeProps> = ({
   pipe,
   help,
   action,
-  calendar = new CalendarUtils(value ? value : undefined, valueTo ? valueTo : undefined),
+  calendar = new CalendarUtils(),
 }) => {
   const datePickerContainerRef = useRef<HTMLDivElement>(null)
   const datePickerInputRef = useRef<HTMLDivElement>(null)

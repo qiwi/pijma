@@ -57,7 +57,7 @@ export default class DateRangeControl extends Component<DateRangeControlProps, D
 
   private onChange: ChangeEventHandler<HTMLInputElement> = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
-    const {format, onChange, calendar: {defaultParams: {parse}}} = this.props
+    const {format, onChange, calendar} = this.props
     if (onChange) {
       const currentDate = new Date()
       const invalidDate = new Date('')
@@ -66,13 +66,13 @@ export default class DateRangeControl extends Component<DateRangeControlProps, D
       if (this.state.activeRange === DateRanges.range) {
         const isValidRange = value.length === getRangeFormat(format).length
         const [date, dateTo] = value.split(' - ')
-        const valueFrom = isValidRange ? parse(date, format, currentDate) : invalidDate
-        const valueTo = isValidRange ? parse(dateTo, format, currentDate) : invalidDate
+        const valueFrom = isValidRange ? calendar.parse(date, format, currentDate) : invalidDate
+        const valueTo = isValidRange ? calendar.parse(dateTo, format, currentDate) : invalidDate
         onChange(valueFrom, valueTo)
       }
       else {
         const date = value.length === format.length
-          ? parse(value, format, currentDate)
+          ? calendar.parse(value, format, currentDate)
           : invalidDate
         onChange(date, null)
       }
@@ -115,13 +115,13 @@ export default class DateRangeControl extends Component<DateRangeControlProps, D
   }
 
   private getDateFrom = (activeRange?: DateRanges) => {
-    const {calendar: {defaultParams: {set, subDays}}} = this.props
+    const {calendar} = this.props
     switch (activeRange) {
       case DateRanges.day:
-        return set(new Date(), {hours: 0, minutes: 0, seconds: 0})
+        return calendar.set(new Date(), {hours: 0, minutes: 0, seconds: 0})
 
       case DateRanges.month:
-        return set(subDays(new Date(), 30), {hours: 0, minutes: 0, seconds: 0})
+        return calendar.set(calendar.subDays(new Date(), 30), {hours: 0, minutes: 0, seconds: 0})
 
       case DateRanges.range:
 
@@ -132,11 +132,10 @@ export default class DateRangeControl extends Component<DateRangeControlProps, D
   }
 
   private getDateTo = (activeRange?: DateRanges) => {
-    const {calendar: {defaultParams: {set}}} = this.props
     switch (activeRange) {
       case DateRanges.day:
       case DateRanges.month:
-        return set(new Date(), {hours: 23, minutes: 59, seconds: 59})
+        return this.props.calendar.set(new Date(), {hours: 23, minutes: 59, seconds: 59})
 
       case DateRanges.range:
 
@@ -157,9 +156,9 @@ export default class DateRangeControl extends Component<DateRangeControlProps, D
   }
 
   private getParamsByValue = (date?: Date | null, dateTo?: Date | null) => {
-    const {calendar: {defaultParams: {format}}} = this.props
+    const {calendar, format} = this.props
     return date && dateTo
-      ? `${format(date, this.props.format)} - ${format(dateTo, this.props.format)}`
+      ? `${calendar.format(date, format)} - ${calendar.format(dateTo, format)}`
       : 'Все время'
   }
 

@@ -2,57 +2,26 @@
 import {format, parse, set, subDays} from 'date-fns'
 import {CalendarDate} from './CalendarDate'
 
-interface DefaultParams {
+interface ParseValues {
+  year?: number
+  month?: number
+  date?: number
+  hours?: number
+  minutes?: number
+  seconds?: number
+  milliseconds?: number
+}
+
+export interface CalendarUtilsProps {
   firstDayIndex: number
   days: [string, string, string, string, string, string, string]
   months: [string, string, string, string, string, string, string, string, string, string, string, string]
   minYear: number
   maxYear: number
-  format: (
-    date: Date | number,
-    format: string,
-    options?: {
-      locale?: Locale
-      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6
-      firstWeekContainsDate?: number
-      useAdditionalWeekYearTokens?: boolean
-      useAdditionalDayOfYearTokens?: boolean
-    },
-  ) => string
-  parse: (
-    dateString: string,
-    formatString: string,
-    backupDate: Date | number,
-    options?: {
-      locale?: Locale
-      weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6
-      firstWeekContainsDate?: 1 | 2 | 3 | 4 | 5 | 6 | 7
-      useAdditionalWeekYearTokens?: boolean
-      useAdditionalDayOfYearTokens?: boolean
-    },
-  ) => Date
-  set: (
-    date: Date | number,
-    values: {
-      year?: number
-      month?: number
-      date?: number
-      hours?: number
-      minutes?: number
-      seconds?: number
-      milliseconds?: number
-    },
-  ) => Date
+  format: (date: Date | number, formatString: string) => string
+  parse: (dateString: string, formatString: string, backupDate: Date | number) => Date
+  set: (date: Date | number, values: ParseValues) => Date
   subDays: (date: Date | number, amount: number) => Date
-}
-
-export interface CalendarUtilsProps {
-  activeDate?: Date
-  activeDateTo?: Date
-  defaultParams: DefaultParams
-  date: Date
-  currentMonth: number
-  currentYear: number
   getDaysInMonth: (year: number, month: number) => number
   getDatesArray: (from: Date, to: Date, disabled?: boolean) => CalendarDate[]
   getDates: (date: Date) => CalendarDate[]
@@ -62,30 +31,17 @@ export interface CalendarUtilsProps {
 
 export class CalendarUtils implements CalendarUtilsProps {
 
-  constructor(
-    public activeDate?: Date,
-    public activeDateTo?: Date,
-    public defaultParams: DefaultParams = {
-      firstDayIndex: 1,
-      days: ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
-      months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-      minYear: new Date().getFullYear() - 5,
-      maxYear: new Date().getFullYear() + 5,
-      format,
-      parse,
-      set,
-      subDays,
-    },
-  ) {
-    this.activeDate = activeDate
-    this.activeDateTo = activeDateTo
-    this.defaultParams = defaultParams
-  }
+  public firstDayIndex = 1
+  public days: [string, string, string, string, string, string, string] = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
+  public months: [string, string, string, string, string, string, string, string, string, string, string, string] = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
+  public minYear = new Date().getFullYear() - 5
+  public maxYear = new Date().getFullYear() + 5
+  public format = (date: Date | number, formatString: string) => format(date, formatString)
+  public parse = (dateString: string, formatString: string, backupDate: Date | number) => parse(dateString, formatString, backupDate)
+  public set = (date: Date | number, values: ParseValues) => set(date, values)
+  public subDays = (date: Date | number, amount: number) => subDays(date, amount)
 
-  public date = this.activeDate || new Date()
-  public currentMonth = this.date.getMonth()
-  public currentYear = this.date.getFullYear()
-  public lastDayIndex = this.defaultParams.firstDayIndex + 6 >= 7 ? this.defaultParams.firstDayIndex - 1 : this.defaultParams.firstDayIndex + 6
+  public lastDayIndex = this.firstDayIndex + 6 >= 7 ? this.firstDayIndex - 1 : this.firstDayIndex + 6
 
   public getDaysInMonth = (year: number, month: number) =>
     new Date(year, month + 1, 0).getDate()
@@ -116,8 +72,8 @@ export class CalendarUtils implements CalendarUtilsProps {
 
     let prevMonthDates: CalendarDate[] = []
     const firstDayInMonth = new Date(year, month, 1).getDay()
-    if (firstDayInMonth !== this.defaultParams.firstDayIndex) {
-      const prevDatesLength = (firstDayInMonth === 0 ? 7 : firstDayInMonth) - this.defaultParams.firstDayIndex - 1
+    if (firstDayInMonth !== this.firstDayIndex) {
+      const prevDatesLength = (firstDayInMonth === 0 ? 7 : firstDayInMonth) - this.firstDayIndex - 1
       const prevMonthDateTo = this.getDaysInMonth(year, month - 1)
       prevMonthDates = this.getDatesArray(
         new Date(year, month - 1, prevMonthDateTo - prevDatesLength),
@@ -131,7 +87,7 @@ export class CalendarUtils implements CalendarUtilsProps {
     if (lastDayInMonth !== this.lastDayIndex) {
       nextMonthDates = this.getDatesArray(
         new Date(year, month + 1, 1),
-        new Date(year, month + 1, (this.defaultParams.firstDayIndex + 6) - lastDayInMonth),
+        new Date(year, month + 1, (this.firstDayIndex + 6) - lastDayInMonth),
         true,
       )
     }

@@ -7,10 +7,10 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
   constructor(props: CalendarControlProps) {
     super(props)
     this.state = {
-      activeDate: props.calendar.activeDate,
-      activeDateTo: props.calendar.activeDateTo,
-      date: props.calendar.activeDate || new Date(),
-      dates: props.calendar.getDates(props.calendar.activeDate || new Date()),
+      activeDate: props.date,
+      activeDateTo: props.dateTo,
+      date: props.date || new Date(),
+      dates: props.calendar.getDates(props.date || new Date()),
       showSelectMonth: false,
       years: this.getYearsArray(),
     }
@@ -116,7 +116,7 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
   private getYearsArray = () => {
     const {calendar} = this.props
     const years: ScrollItem[] = []
-    for (let year = calendar.defaultParams.minYear; year <= calendar.defaultParams.maxYear; year++) {
+    for (let year = calendar.minYear; year <= calendar.maxYear; year++) {
       years.push({
         value: year,
         text: year.toString(),
@@ -143,10 +143,10 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
       activeDateTo,
       showSelectMonth,
       years,
-      days: calendar.defaultParams.days,
-      months: calendar.defaultParams.months,
-      minYear: calendar.defaultParams.minYear,
-      maxYear: calendar.defaultParams.maxYear,
+      days: calendar.days,
+      months: calendar.months,
+      minYear: calendar.minYear,
+      maxYear: calendar.maxYear,
       toggleSelectMonth: this.toggleSelectMonth,
       selectMonth: this.selectMonth,
       toPrevMonth: this.toPrevMonth,

@@ -80,7 +80,7 @@ export const DateRange: FC<DateRangeProps> = ({
   help,
   action,
   buttonText,
-  calendar = new CalendarUtils(value ? value : undefined, valueTo ? valueTo : undefined),
+  calendar = new CalendarUtils(),
 }) => {
   return (
     <DateRangeControl

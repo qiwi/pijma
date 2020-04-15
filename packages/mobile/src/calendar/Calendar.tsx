@@ -18,7 +18,7 @@ export const Calendar: FC<CalendarProps> = ({
   dateTo,
   isRange = false,
   buttonText = 'Выбрать',
-  calendar = new CalendarUtils(date, dateTo),
+  calendar = new CalendarUtils(),
   onChange,
 }) => {
   const getDateItems = (renderProps: CalendarControlChildrenProps) => {
@@ -121,6 +121,8 @@ export const Calendar: FC<CalendarProps> = ({
   return (
     <CalendarControl
       calendar={calendar}
+      date={date}
+      dateTo={dateTo}
       isRange={isRange}
       onChange={onChange}
       children={renderProps => (

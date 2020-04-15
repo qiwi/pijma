@@ -78,7 +78,7 @@ export const DatePicker: FC<DatePickerProps> = ({
   pipe,
   help,
   action,
-  calendar = new CalendarUtils(value),
+  calendar = new CalendarUtils(),
   buttonText,
   titleText = 'Выберите дату',
 }) => {
