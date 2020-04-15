@@ -1,7 +1,6 @@
 import {KeyboardEvent, SyntheticEvent} from 'react'
 import RenderChild from '../RenderChild'
-import {CalendarDate} from './CalendarDate'
-import {CalendarUtilsProps} from './CalendarUtils'
+import {CalendarUtils, CalendarDate} from './CalendarUtils'
 
 export interface ScrollItem {
   value: number
@@ -30,7 +29,7 @@ export interface CalendarControlChildrenProps {
 }
 
 export default interface CalendarControlProps {
-  calendar: CalendarUtilsProps
+  utils: CalendarUtils
   date?: Date
   dateTo?: Date
   isRange?: boolean

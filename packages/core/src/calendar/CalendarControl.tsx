@@ -10,7 +10,7 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
       activeDate: props.date,
       activeDateTo: props.dateTo,
       date: props.date || new Date(),
-      dates: props.calendar.getDates(props.date || new Date()),
+      dates: props.utils.getDates(props.date || new Date()),
       showSelectMonth: false,
       years: this.getYearsArray(),
     }
@@ -27,7 +27,7 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
       const date = new Date(year, month, 1)
       return {
         date,
-        dates: this.props.calendar.getDates(date),
+        dates: this.props.utils.getDates(date),
         showSelectMonth: false,
       }
     })
@@ -35,20 +35,20 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
 
   private toPrevMonth = () => {
     this.setState(state => {
-      const prevMonthDate = this.props.calendar.getPrevMonth(state.date)
+      const prevMonthDate = this.props.utils.getPrevMonth(state.date)
       return {
         date: prevMonthDate,
-        dates: this.props.calendar.getDates(prevMonthDate),
+        dates: this.props.utils.getDates(prevMonthDate),
       }
     })
   }
 
   private toNextMonth = () => {
     this.setState(state => {
-      const nextMonthDate = this.props.calendar.getNextMonth(state.date)
+      const nextMonthDate = this.props.utils.getNextMonth(state.date)
       return {
         date: nextMonthDate,
-        dates: this.props.calendar.getDates(nextMonthDate),
+        dates: this.props.utils.getDates(nextMonthDate),
       }
     })
   }
@@ -114,9 +114,9 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
   }
 
   private getYearsArray = () => {
-    const {calendar} = this.props
+    const {utils} = this.props
     const years: ScrollItem[] = []
-    for (let year = calendar.minYear; year <= calendar.maxYear; year++) {
+    for (let year = utils.minYear; year <= utils.maxYear; year++) {
       years.push({
         value: year,
         text: year.toString(),
@@ -128,12 +128,12 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
 
   private getActiveDatesArray = () => {
     return (this.state.activeDate && this.state.activeDateTo)
-      ? this.props.calendar.getDatesArray(this.state.activeDate, this.state.activeDateTo)
+      ? this.props.utils.getDatesArray(this.state.activeDate, this.state.activeDateTo)
       : []
   }
 
   public render() {
-    const {calendar} = this.props
+    const {utils} = this.props
     const {date, dates, showSelectMonth, activeDate, activeDateTo, years} = this.state
 
     return this.props.children({
@@ -143,10 +143,10 @@ export default class CalendarControl extends Component<CalendarControlProps, Cal
       activeDateTo,
       showSelectMonth,
       years,
-      days: calendar.days,
-      months: calendar.months,
-      minYear: calendar.minYear,
-      maxYear: calendar.maxYear,
+      days: utils.days,
+      months: utils.months,
+      minYear: utils.minYear,
+      maxYear: utils.maxYear,
       toggleSelectMonth: this.toggleSelectMonth,
       selectMonth: this.selectMonth,
       toPrevMonth: this.toPrevMonth,

@@ -1,13 +1,14 @@
 import CalendarControl from './CalendarControl'
 import CalendarControlProps, {CalendarControlChildrenProps} from './CalendarControlProps'
-import {CalendarDate} from './CalendarDate'
-import {CalendarUtils, CalendarUtilsProps} from './CalendarUtils'
+import {CalendarUtils, ParseValues, CalendarDate} from './CalendarUtils'
+import {DateFnsCalendarUtils} from './DateFnsCalendarUtils'
 
 export {
   CalendarControl,
   CalendarControlProps,
   CalendarControlChildrenProps,
-  CalendarDate,
   CalendarUtils,
-  CalendarUtilsProps,
+  ParseValues,
+  CalendarDate,
+  DateFnsCalendarUtils,
 }

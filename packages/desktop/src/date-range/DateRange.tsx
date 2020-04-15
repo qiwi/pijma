@@ -1,5 +1,5 @@
 import React, {FC, ReactNode, KeyboardEvent, useRef} from 'react'
-import {Box, Icon, InputField, BasicInput, DateRangeControl, Pipe, Pos, Flex, Card, Block, DateRanges, DateRangesKeys, dateRanges, CalendarUtils, CalendarUtilsProps} from '@qiwi/pijma-core'
+import {Box, Icon, InputField, BasicInput, DateRangeControl, Pipe, Pos, Flex, Card, Block, DateRanges, DateRangesKeys, dateRanges, CalendarUtils} from '@qiwi/pijma-core'
 import {Calendar, DropDown, MenuLink} from '../'
 
 export interface DateRangeProps {
@@ -19,7 +19,7 @@ export interface DateRangeProps {
   format?: string
   pipe?: Pipe
   stub?: boolean
-  calendar?: CalendarUtilsProps
+  utils: CalendarUtils
   onChange?: (dateFrom: Date | null, dateTo: Date | null) => void
   onFocus?: () => void
   onBlur?: () => void
@@ -47,7 +47,7 @@ export const DateRange: FC<DateRangeProps> = ({
   pipe,
   help,
   action,
-  calendar = new CalendarUtils(),
+  utils,
 }) => {
   const datePickerContainerRef = useRef<HTMLDivElement>(null)
   const datePickerInputRef = useRef<HTMLDivElement>(null)
@@ -58,7 +58,7 @@ export const DateRange: FC<DateRangeProps> = ({
       valueTo={valueTo}
       format={format}
       isRange
-      calendar={calendar}
+      utils={utils}
       onFocus={onFocus}
       onBlur={onBlur}
       onKeyDown={onKeyDown}
@@ -129,7 +129,7 @@ export const DateRange: FC<DateRangeProps> = ({
                       ? (
                         <Card s="rgb(230, 230, 230) -1px 0px 0px 0px}" width={82}>
                           <Calendar
-                            calendar={calendar}
+                            utils={utils}
                             date={value || undefined}
                             dateTo={valueTo || undefined}
                             isRange

@@ -1,5 +1,5 @@
 import React, {FC, ReactNode, KeyboardEvent, Fragment, FunctionComponent} from 'react'
-import {styled, Box, Icon, InputField, BasicInput, DatePickerControl, Pipe, Typo, Striper, Modal, ModalProps, SimpleTransitionProps, SimpleTransition, Pos, Card, CalendarUtils, CalendarUtilsProps} from '@qiwi/pijma-core'
+import {styled, Box, Icon, InputField, BasicInput, DatePickerControl, Pipe, Typo, Striper, Modal, ModalProps, SimpleTransitionProps, SimpleTransition, Pos, Card, CalendarUtils} from '@qiwi/pijma-core'
 import {css} from 'emotion'
 import {Calendar} from '../'
 
@@ -19,7 +19,7 @@ export interface DatePickerProps {
   format?: string
   pipe?: Pipe
   stub?: boolean
-  calendar?: CalendarUtilsProps
+  utils: CalendarUtils
   buttonText?: string
   titleText?: string
   onChange?: (date: Date) => void
@@ -78,7 +78,7 @@ export const DatePicker: FC<DatePickerProps> = ({
   pipe,
   help,
   action,
-  calendar = new CalendarUtils(),
+  utils,
   buttonText,
   titleText = 'Выберите дату',
 }) => {
@@ -86,7 +86,7 @@ export const DatePicker: FC<DatePickerProps> = ({
     <DatePickerControl
       value={value}
       format={format}
-      calendar={calendar}
+      utils={utils}
       onFocus={onFocus}
       onBlur={onBlur}
       onKeyDown={onKeyDown}
@@ -155,7 +155,7 @@ export const DatePicker: FC<DatePickerProps> = ({
                       </Box>
                       <Fragment>
                         <Calendar
-                          calendar={calendar}
+                          utils={utils}
                           date={value}
                           buttonText={buttonText}
                           onChange={renderProps.saveDate}

@@ -6,6 +6,7 @@
       format="dd.MM.yyyy"
       value={state.date}
       valueTo={state.dateTo}
+      utils={new DateFnsCalendarUtils()}
       onChange={(date, dateTo) => {
         if (date === null || date.toString() !== 'Invalid Date') {
           setState({

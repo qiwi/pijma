@@ -1,12 +1,12 @@
 import {KeyboardEvent, ChangeEventHandler, FocusEventHandler, KeyboardEventHandler} from 'react'
-import {CalendarUtilsProps} from '../calendar'
+import {CalendarUtils} from '../calendar'
 import {Mask} from '../mask'
 import RenderChild from '../RenderChild'
 
 export default interface DatePickerControlProps {
   value?: Date
   format: string
-  calendar: CalendarUtilsProps
+  utils: CalendarUtils
   onFocus?: () => void
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean
