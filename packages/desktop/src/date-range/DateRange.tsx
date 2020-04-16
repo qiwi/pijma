@@ -29,12 +29,14 @@ export interface DateRangeProps {
   onKeyUp?: (event: KeyboardEvent) => boolean
 }
 
+const date = new Date()
+
 export const DateRange: FC<DateRangeProps> = ({
   value,
   valueTo,
   format = 'yyyy-MM-dd',
-  minDate = new Date(new Date().getFullYear() - 10, new Date().getMonth(), new Date().getDate()),
-  maxDate = new Date(new Date().getFullYear() + 10, new Date().getMonth(), new Date().getDate()),
+  minDate = new Date(date.getFullYear() - 10, date.getMonth(), date.getDate()),
+  maxDate = new Date(date.getFullYear() + 10, date.getMonth(), date.getDate()),
   onFocus,
   onBlur,
   onKeyDown,
