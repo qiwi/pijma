@@ -198,17 +198,15 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
                             justify="center"
                             width={1}
                             height={1}
-                          >
-                            {props.loading ? (
+                            children={(
                               <Spinner
+                                spin={props.loading}
                                 width={iconSize[props.size]}
                                 height={iconSize[props.size]}
                                 color={props.disabled ? '#666' : textColor[props.kind]}
                               />
-                            ) : (
-                              null
                             )}
-                          </Flex>
+                          />
                         )}
                       />
                       {props.icon ? (

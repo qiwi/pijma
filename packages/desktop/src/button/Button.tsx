@@ -210,17 +210,15 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
                             justify="center"
                             width={1}
                             height={1}
-                          >
-                            {props.loading ? (
+                            children={(
                               <Spinner
+                                spin={props.loading}
                                 width={6}
                                 height={6}
                                 color={props.disabled ? '#666' : textColor[props.kind]}
                               />
-                            ) : (
-                              null
                             )}
-                          </Flex>
+                          />
                         )}
                       />
                       {props.icon ? (
