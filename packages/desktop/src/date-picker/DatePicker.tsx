@@ -31,8 +31,8 @@ export interface DatePickerProps {
 export const DatePicker: FC<DatePickerProps> = ({
   value,
   format = 'yyyy-MM-dd',
-  minDate,
-  maxDate,
+  minDate = new Date(new Date().getFullYear() - 10, new Date().getMonth(), new Date().getDate()),
+  maxDate = new Date(new Date().getFullYear() + 10, new Date().getMonth(), new Date().getDate()),
   onFocus,
   onBlur,
   onKeyDown,

@@ -8,8 +8,8 @@ export interface CalendarProps {
   dateTo?: Date
   isRange?: boolean
   utils: CalendarUtils
-  minDate?: Date
-  maxDate?: Date
+  minDate: Date
+  maxDate: Date
   onChange?: (date: Date) => void
 }
 
@@ -18,8 +18,8 @@ export const Calendar: FC<CalendarProps> = ({
   dateTo,
   isRange = false,
   utils,
-  minDate = new Date('1900-01-01'),
-  maxDate = new Date('2100-01-01'),
+  minDate,
+  maxDate,
   onChange,
 }) => {
   const getDateItems = (renderProps: CalendarControlChildrenProps) => {
