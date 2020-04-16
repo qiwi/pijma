@@ -196,30 +196,34 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
                   transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
                   children={(
                     <Fragment>
-                      <Pos
-                        type="absolute"
-                        top={0}
-                        right={0}
-                        bottom={0}
-                        left={0}
-                        opacity={props.loading ? (renderProps.hover || renderProps.active || renderProps.focus ? 0.9 : 1) : 0}
-                        transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-                        children={(
-                          <Flex
-                            align="center"
-                            justify="center"
-                            width={1}
-                            height={1}
-                            children={(
-                              <Spinner
-                                width={6}
-                                height={6}
-                                color={props.disabled ? '#666' : textColor[props.kind]}
-                              />
-                            )}
-                          />
-                        )}
-                      />
+                      {props.loading ? (
+                        <Pos
+                          type="absolute"
+                          top={0}
+                          right={0}
+                          bottom={0}
+                          left={0}
+                          opacity={renderProps.hover || renderProps.active || renderProps.focus ? 0.9 : 1}
+                          transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+                          children={(
+                            <Flex
+                              align="center"
+                              justify="center"
+                              width={1}
+                              height={1}
+                              children={(
+                                <Spinner
+                                  width={6}
+                                  height={6}
+                                  color={props.disabled ? '#666' : textColor[props.kind]}
+                                />
+                              )}
+                            />
+                          )}
+                        />
+                      ) : (
+                        null
+                      )}
                       {props.icon ? (
                         <FlexItem
                           shrink={0}
