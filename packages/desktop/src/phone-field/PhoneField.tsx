@@ -18,6 +18,7 @@ import {DropDown} from '../drop-down'
 import PhoneFieldProps from './PhoneFieldProps'
 
 const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
+const dropDownTargetRef: RefObject<HTMLDivElement> = createRef()
 
 export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
   tabIndex = 0,
@@ -76,6 +77,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                 hint={props.hint}
                 icon={(
                   <Box
+                    ref={dropDownTargetRef}
                     cursor="pointer"
                     width={6}
                     height={4}
@@ -92,9 +94,10 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
               <DropDown
                 offset={4}
                 container={dropDownContainerRef.current}
-                target={renderProps.inputRef.current!}
+                target={dropDownTargetRef.current!}
                 show={renderProps.showCountries}
                 onHide={renderProps.onCountriesHide}
+                placement="bottom-start"
               >
                 <Card
                   ref={menuRenderProps.containerRef}
