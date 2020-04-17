@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.111.0](https://github.com/qiwi/pijma/compare/v1.110.1...v1.111.0) (2020-04-17)
+
+
+### Features
+
+* button spinner paused ([#310](https://github.com/qiwi/pijma/issues/310)) ([ad674f9](https://github.com/qiwi/pijma/commit/ad674f9))
+
 # [@qiwi/pijma-desktop-v1.110.0](https://github.com/qiwi/pijma/compare/v1.109.0...v1.110.0) (2020-03-27)
 
 
