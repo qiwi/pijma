@@ -212,6 +212,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
                             height={1}
                             children={(
                               <Spinner
+                                paused={!props.loading}
                                 width={6}
                                 height={6}
                                 color={props.disabled ? '#666' : textColor[props.kind]}
