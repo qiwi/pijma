@@ -165,6 +165,11 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
       onBlur={props.onBlur}
       children={(renderProps) => (
         <Btn
+          data-pijma-button={JSON.stringify({
+            kind: props.kind,
+            size: props.size,
+            text: props.text,
+          })}
           disabled={props.disabled}
           type={props.type}
           width={!props.icon || props.text ? 1 : buttonSize[props.size]}
