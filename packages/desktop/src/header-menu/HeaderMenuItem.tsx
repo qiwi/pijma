@@ -31,6 +31,9 @@ export const HeaderMenuItem = forwardRef<HTMLAnchorElement, HeaderMenuItemProps>
     onBlur={props.onBlur}
     children={renderProps => (
       <PosLink
+        data-pijma-header-menu-item={JSON.stringify({
+          title: props.title,
+        })}
         as={props.href ? 'a' : 'div'}
         ref={ref}
         height={1}
