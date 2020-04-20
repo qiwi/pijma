@@ -79,6 +79,10 @@ export const Link: FC<LinkProps> = (props) => (
       rel={props.rel}
       children={(renderProps) => (
         <TypoLink
+          data-pijma-link={JSON.stringify({
+            title: props.title,
+            size: props.size,
+          })}
           tabIndex={props.tabIndex}
           href={props.href}
           onClick={renderProps.onClick}
