@@ -11,7 +11,8 @@
     "lint": "tslint -p tsconfig.build.json src/**/*.ts{,x}",
     "lint:fix": "tslint -p tsconfig.build.json --fix src/**/*.ts{,x}",
     "guide": "gh-pages -d styleguide/lib -e desktop -m \"update desktop style guide v$npm_package_version\"",
-    "guide_ci": "gh-pages -d styleguide/lib -e desktop -m \"update desktop style guide v$npm_package_version\" -r \"https://$GH_TOKEN@github.com/qiwi/pijma.git\""
+    "guide_ci": "gh-pages -d styleguide/lib -e desktop -m \"update desktop style guide v$npm_package_version\" -r \"https://$GH_TOKEN@github.com/qiwi/pijma.git\"",
+    "test": "jest"
   },
   "files": [
     "README.md",
@@ -22,6 +23,9 @@
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
     "@qiwi/pijma-core": "^1.x.x",
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^25.2.1",
     "@types/markdown-to-jsx": "^6.9.0",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
@@ -30,12 +34,17 @@
     "@types/react-transition-group": "^4.2.2",
     "emotion": "^10.0.14",
     "emotion-theming": "^10.0.14",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
+    "jest": "^25.4.0",
     "markdown-to-jsx": "^6.10.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-overlays": "^1.2.0",
     "react-text-mask": "^5.4.3",
     "react-transition-group": "^4.2.2",
+    "ts-jest": "^25.4.0",
     "tslib": "^1.10.0"
   },
   "devDependencies": {
