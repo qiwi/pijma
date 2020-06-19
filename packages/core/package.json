@@ -7,6 +7,7 @@
   "scripts": {
     "clean": "rm -rf lib",
     "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && cp -r src/fonts lib/es5/fonts",
+    "prebuild": "rimraf buildcache",
     "lint": "tslint -p tsconfig.build.json src/**/*.ts{,x}",
     "lint:fix": "tslint -p tsconfig.build.json --fix src/**/*.ts{,x}",
     "test": "jest"

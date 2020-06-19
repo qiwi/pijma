@@ -3,7 +3,9 @@
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "lib/es5",
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "incremental": true,
+    "tsBuildInfoFile": "./buildcache/.tsbuildinfo"
   },
   "include": [
     "src/**/*"
