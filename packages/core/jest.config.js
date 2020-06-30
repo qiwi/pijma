@@ -19,6 +19,7 @@ module.exports = {
   collectCoverageFrom: [
     '**/core/src/*/*.ts{,x}',
   ],
+  coverageDirectory: '<rootDir>/coverage/core',
   coveragePathIgnorePatterns: ['node_modules', 'index.ts'],
   snapshotSerializers: ['enzyme-to-json/serializer'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
