@@ -16,6 +16,10 @@ module.exports = {
   transformIgnorePatterns: ['/node_modules/(?!@qiwi).+ \\ .js $'],
   testMatch: ['**/desktop/**/test/**/*.+(ts|tsx)'],
   collectCoverage: true,
+  collectCoverageFrom: [
+    '**/desktop/src/*/*.ts{,x}',
+  ],
+  coveragePathIgnorePatterns: ['node_modules', 'index.ts'],
   snapshotSerializers: ['enzyme-to-json/serializer'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleNameMapper: {
