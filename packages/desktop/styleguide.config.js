@@ -54,6 +54,7 @@ module.exports = {
   ],
   ignore: [
     '**/*/index.{js,jsx,ts,tsx}',
+    '**/test/**',
   ],
   skipComponentsWithoutExample: true,
   getComponentPathLine(file) {

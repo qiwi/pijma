@@ -1,20 +1,22 @@
 {
   "name": "@qiwi/pijma-core",
   "version": "1.111.0",
+  "license": "MIT",
   "main": "lib/es5/index.js",
   "types": "lib/es5/index.d.ts",
-  "license": "MIT",
-  "scripts": {
-    "clean": "rm -rf lib",
-    "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && cp -r src/fonts lib/es5/fonts",
-    "lint": "tslint -p tsconfig.build.json src/**/*.ts{,x}",
-    "lint:fix": "tslint -p tsconfig.build.json --fix src/**/*.ts{,x}"
-  },
   "files": [
     "README.md",
     "CHANGELOG.md",
     "lib"
   ],
+  "scripts": {
+    "prebuild": "rimraf buildcache",
+    "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && cp -r src/fonts lib/es5/fonts",
+    "clean": "rm -rf lib",
+    "lint": "tslint -p tsconfig.build.json src/**/*.ts{,x}",
+    "lint:fix": "tslint -p tsconfig.build.json --fix src/**/*.ts{,x}",
+    "test": "jest"
+  },
   "dependencies": {
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
@@ -38,7 +40,14 @@
     "tslib": "^1.10.0"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.10.5",
+    "@types/jest": "^25.2.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
     "husky": "3.0.3",
+    "jest": "^25.4.0",
+    "ts-jest": "^25.4.0",
     "tslint": "5.18.0",
     "tslint-config-qiwi": "1.1.1",
     "typescript": "3.5.3"

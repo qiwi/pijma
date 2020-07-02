@@ -1,23 +1,25 @@
 {
   "name": "@qiwi/pijma-mobile",
   "version": "1.111.0",
+  "license": "MIT",
   "main": "lib/es5/index.js",
   "types": "lib/es5/index.d.ts",
-  "license": "MIT",
-  "scripts": {
-    "clean": "rm -rf lib styleguide/lib",
-    "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && styleguidist build",
-    "watch": "styleguidist server",
-    "lint": "tslint -p tsconfig.build.json src/**/*.ts{,x}",
-    "lint:fix": "tslint -p tsconfig.build.json --fix src/**/*.ts{,x}",
-    "guide": "gh-pages -d styleguide/lib -e mobile -m \"update mobile style guide v$npm_package_version\"",
-    "guide_ci": "gh-pages -d styleguide/lib -e mobile -m \"update mobile style guide v$npm_package_version\" -r \"https://$GH_TOKEN@github.com/qiwi/pijma.git\""
-  },
   "files": [
     "README.md",
     "CHANGELOG.md",
     "lib"
   ],
+  "scripts": {
+    "prebuild": "rimraf buildcache",
+    "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && styleguidist build",
+    "clean": "rm -rf lib styleguide/lib",
+    "guide": "gh-pages -d styleguide/lib -e mobile -m \"update mobile style guide v$npm_package_version\"",
+    "guide_ci": "gh-pages -d styleguide/lib -e mobile -m \"update mobile style guide v$npm_package_version\" -r \"https://$GH_TOKEN@github.com/qiwi/pijma.git\"",
+    "lint": "tslint -p tsconfig.build.json src/**/*.ts{,x}",
+    "lint:fix": "tslint -p tsconfig.build.json --fix src/**/*.ts{,x}",
+    "test": "jest",
+    "watch": "styleguidist server"
+  },
   "dependencies": {
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
@@ -39,12 +41,19 @@
     "tslib": "^1.10.0"
   },
   "devDependencies": {
+    "@types/enzyme": "^3.10.5",
+    "@types/jest": "^25.2.1",
     "@types/webpack-env": "1.14.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
     "file-loader": "4.2.0",
     "gh-pages": "2.1.1",
     "husky": "3.0.3",
+    "jest": "^25.4.0",
     "react-docgen-typescript": "1.12.5",
     "react-styleguidist": "9.1.14",
+    "ts-jest": "^25.4.0",
     "ts-loader": "6.0.4",
     "tslint": "5.18.0",
     "tslint-config-qiwi": "1.1.1",
