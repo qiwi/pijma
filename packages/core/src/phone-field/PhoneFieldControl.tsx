@@ -1,4 +1,4 @@
-import {Component, RefObject, createRef} from 'react'
+import React, {Component, RefObject, createRef} from 'react'
 import MaskedInput from 'react-text-mask'
 import {findDOMNode} from 'react-dom'
 
@@ -7,8 +7,9 @@ import PhoneFieldControlState from './PhoneFieldControlState'
 
 import PhoneFieldCountry from './PhoneFieldCountry'
 import {createPhoneMask} from '../mask'
+import {FormContext, IFormContext} from '../FormContext'
 
-export default class PhoneFieldControl extends Component<PhoneFieldControlProps, PhoneFieldControlState> {
+class PhoneFieldControl extends Component<PhoneFieldControlProps & {context?: IFormContext}, PhoneFieldControlState> {
 
   public componentDidUpdate(props: PhoneFieldControlProps, state: PhoneFieldControlState) {
     if (
@@ -112,12 +113,14 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
       this.props.onChange(
         event.currentTarget.value,
         country ? country.code : undefined,
-        event,
       )
     }
     this.setState({
       selectedCountry: country ? country : null,
     })
+    if (this.props.context) {
+      this.props.context.onChange(event)
+    }
   }
 
   private onFocus: React.FocusEventHandler = (event) => {
@@ -141,7 +144,10 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
       })
     }
     if (this.props.onBlur) {
-      this.props.onBlur(event)
+      this.props.onBlur()
+    }
+    if (this.props.context) {
+      this.props.context.onBlur(event)
     }
   }
 
@@ -187,3 +193,9 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
   }
 
 }
+
+export default (props: PhoneFieldControlProps & {context?: IFormContext}) => (
+  <FormContext.Consumer>
+    {(context) => <PhoneFieldControl {...props} context={context}/>}
+  </FormContext.Consumer>
+)

@@ -1,21 +1,27 @@
 import React, {FC, ReactFragment} from 'react'
+
 import {FormControl} from './FormControl'
+import {FormContext} from '../FormContext'
 
 export interface FormProps {
-  errors: Record<string, string>
-  onChange: () => Record<string, string>
+  errors: Record<string, React.ReactNode>
+  validate: () => Record<string, React.ReactNode>
   onSubmit: () => void
   children: (renderProps: any) => ReactFragment
 }
 
 export const Form: FC<FormProps> = (props) => (
   <FormControl
-    onChange={props.onChange}
+    validate={props.validate}
     onSubmit={props.onSubmit}
     children={renderProps => (
-      <form onSubmit={props.onSubmit} css={{height: '100%'}}>
-        {props.children(renderProps)}
-      </form>
+      <FormContext.Provider
+        value={{onChange: renderProps.onChangeItem, onBlur: renderProps.onBlurItem}}
+      >
+        <form onSubmit={props.onSubmit} css={{height: '100%'}}>
+          {props.children(renderProps)}
+        </form>
+      </FormContext.Provider>
     )}
   />
 )

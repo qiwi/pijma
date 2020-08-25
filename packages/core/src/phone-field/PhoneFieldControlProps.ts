@@ -11,9 +11,9 @@ export default interface PhoneFieldControlProps {
   countries: PhoneFieldCountry[]
   value?: string
   hideOnBlur?: boolean
-  onChange?: (phone: string, code: FlagProps['code'] | undefined, event?: React.ChangeEvent) => void
+  onChange?: (phone: string, code: FlagProps['code'] | undefined) => void
   onFocus?: () => void
-  onBlur?: (event?: React.FocusEvent) => void
+  onBlur?: () => void
   children: RenderChild<{
     value: string
     code: FlagProps['code'] | undefined

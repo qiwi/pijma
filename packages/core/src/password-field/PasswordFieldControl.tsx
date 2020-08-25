@@ -2,8 +2,9 @@ import React from 'react'
 
 import PasswordFieldControlProps from './PasswordFieldControlProps'
 import PasswordFieldControlState from './PasswordFieldControlState'
+import {FormContext, IFormContext} from '../FormContext'
 
-export default class PasswordFieldControl extends React.Component<PasswordFieldControlProps, PasswordFieldControlState> {
+class PasswordFieldControl extends React.Component<PasswordFieldControlProps & {context?: IFormContext}, PasswordFieldControlState> {
 
   public state: PasswordFieldControlState = {
     focused: false,
@@ -13,7 +14,10 @@ export default class PasswordFieldControl extends React.Component<PasswordFieldC
   private onChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
     if (this.props.onChange) {
-      this.props.onChange(e.currentTarget.value, e)
+      this.props.onChange(e.currentTarget.value)
+    }
+    if (this.props.context) {
+      this.props.context.onChange(e)
     }
   }
 
@@ -33,7 +37,10 @@ export default class PasswordFieldControl extends React.Component<PasswordFieldC
     })
     e.preventDefault()
     if (this.props.onBlur) {
-      this.props.onBlur(e)
+      this.props.onBlur()
+    }
+    if (this.props.context) {
+      this.props.context.onBlur(e)
     }
   }
 
@@ -74,3 +81,9 @@ export default class PasswordFieldControl extends React.Component<PasswordFieldC
   }
 
 }
+
+export default (props: PasswordFieldControlProps & {context?: IFormContext}) => (
+  <FormContext.Consumer>
+    {(context) => <PasswordFieldControl {...props} context={context}/>}
+  </FormContext.Consumer>
+)

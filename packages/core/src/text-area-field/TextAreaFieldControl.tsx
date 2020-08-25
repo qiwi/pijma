@@ -2,8 +2,9 @@ import React from 'react'
 
 import TextAreaFieldControlProps from './TextAreaFieldControlProps'
 import TextAreaFieldControlState from './TextAreaFieldControlState'
+import {FormContext, IFormContext} from '../FormContext'
 
-export default class TextAreaFieldControl extends React.Component<TextAreaFieldControlProps, TextAreaFieldControlState> {
+class TextAreaFieldControl extends React.Component<TextAreaFieldControlProps & {context?: IFormContext}, TextAreaFieldControlState> {
 
   public state = {
     focused: false,
@@ -48,7 +49,10 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
   private onChange: React.ChangeEventHandler<HTMLTextAreaElement> = (event) => {
     event.preventDefault()
     if (this.props.onChange) {
-      this.props.onChange(event.currentTarget.value, event)
+      this.props.onChange(event.currentTarget.value)
+    }
+    if (this.props.context) {
+      this.props.context.onChange(event)
     }
   }
 
@@ -68,7 +72,10 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
     })
     event.preventDefault()
     if (this.props.onBlur) {
-      this.props.onBlur(event)
+      this.props.onBlur()
+    }
+    if (this.props.context) {
+      this.props.context.onBlur(event)
     }
   }
 
@@ -99,3 +106,9 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
   }
 
 }
+
+export default (props: TextAreaFieldControlProps & {context?: IFormContext}) => (
+  <FormContext.Consumer>
+    {(context) => <TextAreaFieldControl {...props} context={context}/>}
+  </FormContext.Consumer>
+)

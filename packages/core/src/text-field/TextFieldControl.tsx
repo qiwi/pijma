@@ -2,16 +2,21 @@ import React from 'react'
 
 import TextFieldControlProps from './TextFieldControlProps'
 import TextFieldControlState from './TextFieldControlState'
+import {FormContext, IFormContext} from '../FormContext'
 
-export default class TextFieldControl extends React.Component<TextFieldControlProps, TextFieldControlState> {
+class TextFieldControl extends React.Component<TextFieldControlProps & {context?: IFormContext}, TextFieldControlState> {
 
   public state: TextFieldControlState = {
     focused: false,
   }
+
   private onChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
     if (this.props.onChange) {
-      this.props.onChange(e.currentTarget.value, e)
+      this.props.onChange(e.currentTarget.value)
+    }
+    if (this.props.context) {
+      this.props.context.onChange(e)
     }
   }
 
@@ -31,7 +36,10 @@ export default class TextFieldControl extends React.Component<TextFieldControlPr
     })
     e.preventDefault()
     if (this.props.onBlur) {
-      this.props.onBlur(e)
+      this.props.onBlur()
+    }
+    if (this.props.context) {
+      this.props.context.onBlur(e)
     }
   }
 
@@ -59,3 +67,9 @@ export default class TextFieldControl extends React.Component<TextFieldControlPr
   }
 
 }
+
+export default (props: TextFieldControlProps & {context?: IFormContext}) => (
+  <FormContext.Consumer>
+    {(context) => <TextFieldControl {...props} context={context}/>}
+  </FormContext.Consumer>
+)

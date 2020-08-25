@@ -3,7 +3,7 @@
   <BlockContent>
     <Box width={64}>
       <Form
-        onChange={() => ({username: "Username validation Error"})}>
+        validate={() => ({username: "Username validation Error"})}>
         {(renderProps) => (
           <Spacer size="xs">
             <TextField
@@ -12,7 +12,6 @@
               name="username"
               value={state.username}
               error={renderProps.errors.username}
-              onBlur={renderProps.onBlur}
               onChange={username => setState({username})}
             />
             <PasswordField
@@ -20,7 +19,6 @@
               title="Пароль"
               value={state.password}
               error={renderProps.errors.password}
-              onBlur={renderProps.onBlur}
               onChange={password => setState({password})}
             />
             <Button

@@ -3,16 +3,17 @@ import React from 'react'
 import RenderChild from '../RenderChild'
 
 export interface FormControlProps {
-  onChange: () => Record<string, string>
+  validate: () => Record<string, React.ReactNode>
   onSubmit: () => void
   children: RenderChild<{
-    errors: Record<string, string>
-    onBlur: (event: React.FocusEvent) => void
+    errors: Record<string, React.ReactNode>
+    onBlurItem: (event: React.FocusEvent) => void
+    onChangeItem: (event: React.ChangeEvent) => void
   }>
 }
 
 export interface FormControlState {
-  validatedFields: Record<string, string>
+  validatedFields: Record<string, React.ReactNode>
 }
 
 export class FormControl extends React.Component<FormControlProps> {
@@ -21,8 +22,8 @@ export class FormControl extends React.Component<FormControlProps> {
     validatedFields: {},
   }
 
-  private onBlur: React.FocusEventHandler = (e: React.FocusEvent) => {
-    const errors = this.props.onChange()
+  private onBlurItem: React.FocusEventHandler = (e: React.FocusEvent) => {
+    const errors = this.props.validate()
     const targetName = e.target.getAttribute('name')
     if (targetName && errors[targetName]) {
       this.setState((prevState: FormControlState) => ({
@@ -34,10 +35,22 @@ export class FormControl extends React.Component<FormControlProps> {
     }
   }
 
+  private onChangeItem: React.ChangeEventHandler = (e: React.ChangeEvent) => {
+    const targetName = e.target.getAttribute('name')
+    if (targetName && this.state.validatedFields[targetName]) {
+      const validatedFields = {...this.state.validatedFields}
+      delete validatedFields[targetName]
+      this.setState({
+        validatedFields,
+      })
+    }
+  }
+
   public render() {
     return this.props.children({
       errors: this.state.validatedFields,
-      onBlur: this.onBlur,
+      onBlurItem: this.onBlurItem,
+      onChangeItem: this.onChangeItem,
     })
   }
 

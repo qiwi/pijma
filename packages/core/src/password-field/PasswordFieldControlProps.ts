@@ -3,9 +3,9 @@ import React from 'react'
 import RenderChild from '../RenderChild'
 
 export default interface PasswordFieldControlProps {
-  onChange?: (value: string, event?: React.ChangeEvent) => void
+  onChange?: (value: string) => void
   onFocus?: () => void
-  onBlur?: (event?: React.FocusEvent) => void
+  onBlur?: () => void
   onKeyDown?: (event: React.KeyboardEvent) => boolean
   onKeyUp?: (event: React.KeyboardEvent) => boolean
   onToggle?: (hidden: boolean) => void
