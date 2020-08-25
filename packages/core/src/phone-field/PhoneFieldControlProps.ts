@@ -11,22 +11,20 @@ export default interface PhoneFieldControlProps {
   countries: PhoneFieldCountry[]
   value?: string
   hideOnBlur?: boolean
-  onChange?: (phone: string, code: FlagProps['code'] | undefined) => void
+  onChange?: (phone: string, code: FlagProps['code'] | undefined, event?: React.ChangeEvent) => void
   onFocus?: () => void
-  onBlur?: () => void
+  onBlur?: (event?: React.FocusEvent) => void
   children: RenderChild<{
     value: string
     code: FlagProps['code'] | undefined
-    countries: Array<
-      PhoneFieldCountry & {
-        ref: RefObject<HTMLDivElement>
-        selected: boolean
-        focused: boolean
-        onClick: React.MouseEventHandler
-        onMouseEnter: React.MouseEventHandler
-        onMouseLeave: React.MouseEventHandler
-      }
-    >
+    countries: Array<PhoneFieldCountry & {
+      ref: RefObject<HTMLDivElement>
+      selected: boolean
+      focused: boolean
+      onClick: React.MouseEventHandler
+      onMouseEnter: React.MouseEventHandler
+      onMouseLeave: React.MouseEventHandler
+    }>
     focused: boolean
     showCountries: boolean
     containerRef: RefObject<HTMLDivElement>

@@ -48,7 +48,7 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
   private onChange: React.ChangeEventHandler<HTMLTextAreaElement> = (event) => {
     event.preventDefault()
     if (this.props.onChange) {
-      this.props.onChange(event.currentTarget.value)
+      this.props.onChange(event.currentTarget.value, event)
     }
   }
 
@@ -68,7 +68,7 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
     })
     event.preventDefault()
     if (this.props.onBlur) {
-      this.props.onBlur()
+      this.props.onBlur(event)
     }
   }
 

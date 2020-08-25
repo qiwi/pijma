@@ -112,6 +112,7 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
       this.props.onChange(
         event.currentTarget.value,
         country ? country.code : undefined,
+        event,
       )
     }
     this.setState({
@@ -140,7 +141,7 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
       })
     }
     if (this.props.onBlur) {
-      this.props.onBlur()
+      this.props.onBlur(event)
     }
   }
 

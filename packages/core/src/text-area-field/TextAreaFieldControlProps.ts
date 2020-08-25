@@ -4,9 +4,9 @@ import RenderChild from '../RenderChild'
 
 export default interface TextAreaFieldControlProps {
   value: string
-  onChange?: (value: string) => void
+  onChange?: (value: string, event?: React.ChangeEvent) => void
   onFocus?: () => void
-  onBlur?: () => void
+  onBlur?: (event?: React.FocusEvent) => void
   onKeyDown?: (event: React.KeyboardEvent) => boolean
   onKeyUp?: (event: React.KeyboardEvent) => boolean
   children: RenderChild<{

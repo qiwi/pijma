@@ -11,7 +11,7 @@ export default class TextFieldControl extends React.Component<TextFieldControlPr
   private onChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
     if (this.props.onChange) {
-      this.props.onChange(e.currentTarget.value)
+      this.props.onChange(e.currentTarget.value, e)
     }
   }
 
@@ -31,7 +31,7 @@ export default class TextFieldControl extends React.Component<TextFieldControlPr
     })
     e.preventDefault()
     if (this.props.onBlur) {
-      this.props.onBlur()
+      this.props.onBlur(e)
     }
   }
 
