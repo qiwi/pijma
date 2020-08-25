@@ -18,7 +18,7 @@ export const Form: FC<FormProps> = (props) => (
       <FormContext.Provider
         value={{onChange: renderProps.onChangeItem, onBlur: renderProps.onBlurItem}}
       >
-        <form onSubmit={props.onSubmit} css={{height: '100%'}}>
+        <form onSubmit={props.onSubmit} style={{height: '100%'}}>
           {props.children(renderProps)}
         </form>
       </FormContext.Provider>
