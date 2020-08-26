@@ -4,7 +4,7 @@ import {FormControl} from './FormControl'
 import {FormContext} from '../FormContext'
 
 export interface FormProps {
-  errors: Record<string, React.ReactNode>
+  errors?: Record<string, React.ReactNode>
   validate: () => Record<string, React.ReactNode>
   onSubmit: () => void
   children: (renderProps: any) => ReactFragment
