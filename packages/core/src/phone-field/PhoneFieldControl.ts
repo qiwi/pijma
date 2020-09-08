@@ -10,6 +10,15 @@ import {createPhoneMask} from '../mask'
 
 export default class PhoneFieldControl extends Component<PhoneFieldControlProps, PhoneFieldControlState> {
 
+  public componentDidMount() {
+    if (this.props.value) {
+      const country = this.getCountryByPhone(this.props.value)
+      this.setState({
+        selectedCountry: country ? country : null,
+      })
+    }
+  }
+
   public componentDidUpdate(props: PhoneFieldControlProps, state: PhoneFieldControlState) {
     if (
       state.selectedCountry === null || (
