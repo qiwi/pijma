@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.111.1](https://github.com/qiwi/pijma/compare/v1.111.0...v1.111.1) (2020-09-08)
+
+
+### Bug Fixes
+
+* initial country code ([#319](https://github.com/qiwi/pijma/issues/319)) ([35f6187](https://github.com/qiwi/pijma/commit/35f6187))
+
 # [@qiwi/pijma-core-v1.111.0](https://github.com/qiwi/pijma/compare/v1.110.1...v1.111.0) (2020-04-17)
 
 
