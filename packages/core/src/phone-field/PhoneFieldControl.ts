@@ -20,19 +20,15 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
   }
 
   public componentDidUpdate(props: PhoneFieldControlProps, state: PhoneFieldControlState) {
-    if (state.selectedCountry === null && this.state.selectedCountry) {
-      this.inputField.setSelectionRange(
-        this.state.selectedCountry.mask.length - 1,
-        this.state.selectedCountry.mask.length - 1,
+    if (
+      state.selectedCountry === null || (
+        state.selectedCountry &&
+        this.state.selectedCountry &&
+        state.selectedCountry.mask !== this.state.selectedCountry.mask &&
+        this.props.value
       )
-    }
-    else if (
-      state.selectedCountry &&
-      this.state.selectedCountry &&
-      state.selectedCountry.mask !== this.state.selectedCountry.mask &&
-      this.props.value
     ) {
-      this.inputField.setSelectionRange(this.props.value.length, this.props.value.length)
+      this.inputField.setSelectionRange(100, 100)
     }
     if (this.props.countries !== props.countries) {
       this.optionsRefs = new Map(
