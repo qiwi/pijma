@@ -15,7 +15,7 @@ import {
 
 import {Paragraph} from '../typography'
 import {DropUp} from '../drop-up'
-import PhoneFieldProps from './PhoneFieldProps'
+import {PhoneFieldProps} from './PhoneFieldProps'
 
 const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
 

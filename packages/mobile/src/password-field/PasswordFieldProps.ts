@@ -1,7 +1,7 @@
 import {ReactNode, KeyboardEvent} from 'react'
 import {Mask, Pipe} from '@qiwi/pijma-core'
 
-export default interface PasswordFieldProps {
+export interface PasswordFieldProps {
   value: string
   tabIndex?: number
   name?: string
