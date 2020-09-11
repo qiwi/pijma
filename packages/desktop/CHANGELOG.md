@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.111.3](https://github.com/qiwi/pijma/compare/v1.111.2...v1.111.3) (2020-09-11)
+
+
+### Bug Fixes
+
+* export field-props ([#329](https://github.com/qiwi/pijma/issues/329)) ([89d7cdf](https://github.com/qiwi/pijma/commit/89d7cdf))
+
 # [@qiwi/pijma-desktop-v1.111.0](https://github.com/qiwi/pijma/compare/v1.110.1...v1.111.0) (2020-04-17)
 
 
