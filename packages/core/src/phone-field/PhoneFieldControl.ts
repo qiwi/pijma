@@ -28,7 +28,11 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
         this.props.value
       )
     ) {
-      this.inputField.setSelectionRange(100, 100)
+      const length = Math.max(
+        (this.props.value || '').length,
+        (this.state.selectedCountry ? this.state.selectedCountry.mask : '').length,
+      )
+      this.inputField.setSelectionRange(length, length)
     }
     if (this.props.countries !== props.countries) {
       this.optionsRefs = new Map(
