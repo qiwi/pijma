@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.111.2](https://github.com/qiwi/pijma/compare/v1.111.1...v1.111.2) (2020-09-11)
+
+
+### Bug Fixes
+
+* phone-field focus ([#327](https://github.com/qiwi/pijma/issues/327)) ([887fe37](https://github.com/qiwi/pijma/commit/887fe37))
+
 # [@qiwi/pijma-core-v1.111.1](https://github.com/qiwi/pijma/compare/v1.111.0...v1.111.1) (2020-09-08)
 
 
