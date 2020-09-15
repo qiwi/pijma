@@ -1,9 +1,15 @@
 import React, {FC} from 'react'
 
 import {FormControl} from './FormControl'
-import {FrmProps, Frm} from '../primitive'
+import {Frm, Value} from '../primitive'
 
-export interface FormProps extends FrmProps {
+export interface FormProps {
+  width?: Value
+  minWidth?: Value
+  maxWidth?: Value
+  height?: Value
+  minHeight?: Value
+  maxHeight?: Value
   onSubmit?: () => void
 }
 
