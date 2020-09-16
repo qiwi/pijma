@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.112.0](https://github.com/qiwi/pijma/compare/v1.111.3...v1.112.0) (2020-09-16)
+
+
+### Features
+
+* add form ([#330](https://github.com/qiwi/pijma/issues/330)) ([ce29870](https://github.com/qiwi/pijma/commit/ce29870))
+
 # [@qiwi/pijma-core-v1.111.2](https://github.com/qiwi/pijma/compare/v1.111.1...v1.111.2) (2020-09-11)
 
 
