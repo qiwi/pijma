@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.112.1](https://github.com/qiwi/pijma/compare/v1.112.0...v1.112.1) (2020-09-23)
+
+
+### Bug Fixes
+
+* **core:** export image props ([#331](https://github.com/qiwi/pijma/issues/331)) ([8841cae](https://github.com/qiwi/pijma/commit/8841cae))
+
 # [@qiwi/pijma-core-v1.112.0](https://github.com/qiwi/pijma/compare/v1.111.3...v1.112.0) (2020-09-16)
 
 
