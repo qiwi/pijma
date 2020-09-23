@@ -4,7 +4,7 @@ import {InView} from '../InView'
 import {Stub} from '../stub'
 import {ImageControl} from './ImageControl'
 
-interface ImageProps {
+export interface ImageProps {
   width: Value
   height: Value
   src: string
