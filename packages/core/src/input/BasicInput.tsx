@@ -7,7 +7,7 @@ import {isMaskDigital, Mask, Pipe} from '../mask'
 export interface BasicInputProps {
   value: string
   tabIndex?: number
-  type?: 'text' | 'password' | 'tel' | 'number' | 'search' | 'email' | 'url'
+  type?: 'text' | 'password' | 'tel' | 'number' | 'search' | 'email' | 'url' | 'hidden'
   name?: string
   autoComplete?: boolean
   autoFocus?: boolean
