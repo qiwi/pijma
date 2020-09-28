@@ -5,7 +5,7 @@ import {Mask, Pipe} from '@qiwi/pijma-core'
 export interface TextFieldProps {
   value: string
   tabIndex?: number
-  type?: 'text' | 'password' | 'tel' | 'number' | 'search' | 'email' | 'url'
+  type?: 'text' | 'password' | 'tel' | 'number' | 'search' | 'email' | 'url' | 'hidden'
   name?: string
   title?: string
   error?: ReactNode
