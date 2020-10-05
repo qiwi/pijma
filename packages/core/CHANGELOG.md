@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.113.0](https://github.com/qiwi/pijma/compare/v1.112.1...v1.113.0) (2020-10-05)
+
+
+### Features
+
+* **core:** add apple pay security badge ([#333](https://github.com/qiwi/pijma/issues/333)) ([4ad6db1](https://github.com/qiwi/pijma/commit/4ad6db1))
+
 # [@qiwi/pijma-core-v1.112.1](https://github.com/qiwi/pijma/compare/v1.112.0...v1.112.1) (2020-09-23)
 
 
