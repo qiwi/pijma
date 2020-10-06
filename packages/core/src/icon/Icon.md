@@ -86,53 +86,70 @@
 <Block>
   <BlockContent>
     <Flex>
-      <FlexItem width={16} height={6} mr={2}>
+      <FlexItem width={20} height={6} mr={2}>
+        <Text size="s" children="pci-dss"/>
+      </FlexItem>
+      <FlexItem width={20} height={6} mr={2}>
+        <Text size="s" children="mir-accept"/>
+      </FlexItem>
+      <FlexItem width={20} height={6} mr={2}>
+        <Text size="s" children="visa-verified"/>
+      </FlexItem>
+      <FlexItem width={20} height={6} mr={2}>
+        <Text size="s" children="mastercard-id-check"/>
+      </FlexItem>
+      <FlexItem width={20} height={6}>
+        <Text size="s" children="apple-pay"/>
+      </FlexItem>
+    </Flex>
+    <Flex mt={6}>
+      <FlexItem width={20} height={6} mr={2}>
         <PaymentSecurityIcon name="pci-dss"/>
       </FlexItem>
-      <FlexItem width={16} height={6} mr={2}>
+      <FlexItem width={20} height={6} mr={2}>
         <PaymentSecurityIcon name="mir-accept"/>
       </FlexItem>
-      <FlexItem width={16} height={6} mr={2}>
+      <FlexItem width={20} height={6} mr={2}>
         <PaymentSecurityIcon name="visa-verified"/>
       </FlexItem>
-      <FlexItem width={16} height={6} mr={2}>
+      <FlexItem width={20} height={6} mr={2}>
         <PaymentSecurityIcon name="mastercard-id-check"/>
       </FlexItem>
-      <FlexItem width={16} height={6}>
+      <FlexItem width={20} height={6}>
         <PaymentSecurityIcon name="apple-pay"/>
       </FlexItem>
     </Flex>
     <Flex mt={6}>
-      <FlexItem width={16} height={6} mr={2}>
+      <FlexItem width={20} height={6} mr={2}>
         <PaymentSecurityIcon name="pci-dss" gray/>
       </FlexItem>
-      <FlexItem width={16} height={6} mr={2}>
+      <FlexItem width={20} height={6} mr={2}>
         <PaymentSecurityIcon name="mir-accept" gray/>
       </FlexItem>
-      <FlexItem width={16} height={6} mr={2}>
+      <FlexItem width={20} height={6} mr={2}>
         <PaymentSecurityIcon name="visa-verified" gray/>
       </FlexItem>
-      <FlexItem width={16} height={6} mr={2}>
+      <FlexItem width={20} height={6} mr={2}>
         <PaymentSecurityIcon name="mastercard-id-check" gray/>
       </FlexItem>
-      <FlexItem width={16} height={6}>
+      <FlexItem width={20} height={6}>
         <PaymentSecurityIcon name="apple-pay" gray/>
       </FlexItem>
     </Flex>
     <Flex mt={6}>
-      <FlexItem width={16} height={6} mr={2}>
+      <FlexItem width={20} height={6} mr={2}>
         <PaymentSecurityIcon name="pci-dss" stub/>
       </FlexItem>
-      <FlexItem width={16} height={6} mr={2}>
+      <FlexItem width={20} height={6} mr={2}>
         <PaymentSecurityIcon name="mir-accept" stub/>
       </FlexItem>
-      <FlexItem width={16} height={6} mr={2}>
+      <FlexItem width={20} height={6} mr={2}>
         <PaymentSecurityIcon name="visa-verified" stub/>
       </FlexItem>
-      <FlexItem width={16} height={6} mr={2}>
+      <FlexItem width={20} height={6} mr={2}>
         <PaymentSecurityIcon name="mastercard-id-check" stub/>
       </FlexItem>
-      <FlexItem width={16} height={6}>
+      <FlexItem width={20} height={6}>
         <PaymentSecurityIcon name="apple-pay" stub/>
       </FlexItem>
     </Flex>
@@ -145,6 +162,14 @@
 ```jsx
 <Block>
   <BlockContent>
+    <Flex>
+      <FlexItem width={37} height={11} mr={6}>
+        <Text children="google"/>
+      </FlexItem>
+      <FlexItem width={37} height={11}>
+        <Text children="apple"/>
+      </FlexItem>
+    </Flex>
     <Flex>
       <FlexItem width={37} height={11} mr={6}>
         <MobileAppIcon name="google"/>
