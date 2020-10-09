@@ -1,39 +1,22 @@
 ```jsx
-<Box width={78}>
-  <Spacer>
-    <FooterApp children={[
-      {
-        href: '//s.qiwi.com/2m3_GW1_z3V', 
-        target: '_blank', 
-        icon: <MobileAppIcon name="google"/>,
-      },
-      {
-        href: '//bnc.lt/x0Ih/pNHp68DJ9s', 
-        target: '_blank', 
-        icon: <MobileAppIcon name="apple"/>,
-      },
-    ]}/>
-    <FooterApp stub children={[]}/>
-  </Spacer>
-</Box>
-```
-
-```jsx
-<Box width={88}>
-  <Spacer>
-    <FooterApp children={[
-      {
-        href: '//s.qiwi.com/2m3_GW1_z3V', 
-        target: '_blank', 
-        icon: <MobileAppIcon name="google"/>,
-      },
-      {
-        href: '//bnc.lt/x0Ih/pNHp68DJ9s', 
-        target: '_blank', 
-        icon: <MobileAppIcon name="apple"/>,
-      },
-    ]}/>
-    <FooterApp stub children={[]}/>
-  </Spacer>
-</Box>
+<Spacer>
+  <FooterApp children={[
+    {
+      href: '//s.qiwi.com/2m3_GW1_z3V', 
+      target: '_blank', 
+      icon: <MobileAppIcon name="google"/>,
+    },
+    {
+      href: '//bnc.lt/x0Ih/pNHp68DJ9s', 
+      target: '_blank', 
+      icon: <MobileAppIcon name="apple"/>,
+    },
+    {
+      href: 'https://appgallery.huawei.com/#/app/C101130485', 
+      target: '_blank', 
+      icon: <MobileAppIcon name="huawei"/>,
+    },
+  ]}/>
+  <FooterApp stub children={[]}/>
+</Spacer>
 ```
