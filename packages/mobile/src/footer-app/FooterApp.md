@@ -12,7 +12,7 @@
       icon: <MobileAppIcon name="apple"/>,
     },
     {
-      href: 'https://appgallery.huawei.com/#/app/C101130485', 
+      href: '//appgallery.huawei.com/#/app/C101130485', 
       target: '_blank', 
       icon: <MobileAppIcon name="huawei"/>,
     },
