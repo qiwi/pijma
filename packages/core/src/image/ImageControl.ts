@@ -8,7 +8,6 @@ export interface ImageControlProps {
   src: string
   srcSet?: string
   stub?: string | ReactNode
-  viewedDelay?: number
   onLoad?: () => void
   children: RenderChild<{
     src: string | undefined
@@ -26,49 +25,25 @@ export interface ImageControlState {
 
 export class ImageControl extends Component<ImageControlProps, ImageControlState> {
 
-  public static defaultProps = {
-    viewedDelay: 1000,
-  }
-
   public state: ImageControlState = {
     viewed: false,
     loaded: false,
   }
 
-  private viewedTimer: number | undefined
-
-  public componentWillUnmount: () => void = () => {
-    clearTimeout(this.viewedTimer)
-  }
-
   private onChange: (inView: boolean) => void = (inView) => {
-    clearTimeout(this.viewedTimer)
     if (!inView) {
       return
     }
-    if (this.isCached) {
+    const image = document.createElement('img')
+    image.src = this.props.src
+    if (this.props.srcSet) {
+      image.srcset = this.props.srcSet
+    }
+    image.onload = () => {
       this.setState({
         viewed: true,
       })
-      return
     }
-    this.viewedTimer = setTimeout(() => {
-      this.setState({
-        viewed: true,
-      })
-    }, this.props.viewedDelay)
-  }
-
-  private onLoad: () => void = () => {
-    if (!this.state.viewed) {
-      return
-    }
-    if (this.props.onLoad) {
-      this.props.onLoad()
-    }
-    this.setState({
-      loaded: true,
-    })
   }
 
   private get src(): string | undefined {
@@ -89,15 +64,16 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
     return this.props.srcSet
   }
 
-  private get isCached(): boolean {
-    try {
-      const image = document.createElement('img')
-      image.src = this.props.src
-      return image.complete || image.width > 0
+  private onLoad: () => void = () => {
+    if (!this.state.viewed) {
+      return
     }
-    catch (e) {
-      return false
+    if (this.props.onLoad) {
+      this.props.onLoad()
     }
+    this.setState({
+      loaded: true,
+    })
   }
 
   public render() {
