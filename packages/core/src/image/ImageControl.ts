@@ -61,7 +61,6 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
         return
       }
       this.viewedTimer = setTimeout(() => {
-        console.log('timer')
         this.setState({
           viewed: true,
         })
