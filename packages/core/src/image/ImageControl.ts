@@ -1,4 +1,5 @@
 import {Component, ReactNode} from 'react'
+
 import {Value} from '../primitive'
 import RenderChild from '../RenderChild'
 
@@ -6,7 +7,7 @@ export interface ImageControlProps {
   width: Value
   height: Value
   src: string
-  viewDelay: number
+  viewDelay?: number
   srcSet?: string
   stub?: string | ReactNode
   viewedDelay?: number
@@ -23,6 +24,7 @@ export interface ImageControlProps {
 export interface ImageControlState {
   viewed: boolean
   loaded: boolean
+  cached: boolean | undefined
 }
 
 export class ImageControl extends Component<ImageControlProps, ImageControlState> {
@@ -34,38 +36,51 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
   public state: ImageControlState = {
     viewed: false,
     loaded: false,
+    cached: undefined,
   }
 
   public componentWillUnmount: () => void = () => {
     clearTimeout(this.viewedTimer)
+    clearTimeout(this.cachedTimer)
   }
 
   private viewedTimer: number | undefined
+  private cachedTimer: number | undefined
 
   private onChange: (inView: boolean) => void = (inView) => {
+    clearTimeout(this.viewedTimer)
     if (!inView) {
       return
     }
-    const image = document.createElement('img')
-    image.src = this.props.src
-    if (this.props.srcSet) {
-      image.srcset = this.props.srcSet
-    }
-    const startLoad = Date.now()
-    image.onload = () => {
-      const stopLoad = Date.now()
-      if (stopLoad - startLoad < this.props.viewDelay) {
-        this.setState({
-          viewed: true,
-        })
-        return
+    if (this.state.cached === undefined) {
+      const image = document.createElement('img')
+      image.src = this.props.src
+      if (this.props.srcSet) {
+        image.srcset = this.props.srcSet
       }
-      this.viewedTimer = setTimeout(() => {
-        this.setState({
-          viewed: true,
-        })
-      }, this.props.viewedDelay)
+      this.cachedTimer = setTimeout(() => {
+        const complete = image.complete
+        image.src = ''
+        image.srcset = ''
+        if (complete) {
+          this.setState({
+            cached: true,
+            viewed: true,
+          })
+        }
+        else {
+          this.setState({
+            cached: false,
+          })
+        }
+      }, this.props.viewDelay)
+      return
     }
+    this.viewedTimer = setTimeout(() => {
+      this.setState({
+        viewed: true,
+      })
+    }, this.props.viewedDelay)
   }
 
   private get src(): string | undefined {
