@@ -6,8 +6,10 @@ export interface ImageControlProps {
   width: Value
   height: Value
   src: string
+  viewDelay: number
   srcSet?: string
   stub?: string | ReactNode
+  viewedDelay?: number
   onLoad?: () => void
   children: RenderChild<{
     src: string | undefined
@@ -25,10 +27,20 @@ export interface ImageControlState {
 
 export class ImageControl extends Component<ImageControlProps, ImageControlState> {
 
+  public static defaultProps = {
+    viewedDelay: 1000,
+  }
+
   public state: ImageControlState = {
     viewed: false,
     loaded: false,
   }
+
+  public componentWillUnmount: () => void = () => {
+    clearTimeout(this.viewedTimer)
+  }
+
+  private viewedTimer: number | undefined
 
   private onChange: (inView: boolean) => void = (inView) => {
     if (!inView) {
@@ -39,10 +51,21 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
     if (this.props.srcSet) {
       image.srcset = this.props.srcSet
     }
+    const startLoad = Date.now()
     image.onload = () => {
-      this.setState({
-        viewed: true,
-      })
+      const stopLoad = Date.now()
+      if (stopLoad - startLoad < this.props.viewDelay) {
+        this.setState({
+          viewed: true,
+        })
+        return
+      }
+      this.viewedTimer = setTimeout(() => {
+        console.log('timer')
+        this.setState({
+          viewed: true,
+        })
+      }, this.props.viewedDelay)
     }
   }
 
