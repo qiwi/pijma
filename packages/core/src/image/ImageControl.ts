@@ -10,7 +10,6 @@ export interface ImageControlProps {
   srcSet?: string
   stub?: string | ReactNode
   cachedDelay?: number
-  frameInterval?: number
   viewedDelay?: number
   onLoad?: () => void
   children: RenderChild<{
@@ -31,7 +30,6 @@ export interface ImageControlState {
 export class ImageControl extends Component<ImageControlProps, ImageControlState> {
 
   public static defaultProps = {
-    frameInterval: 5,
     cachedDelay: 50,
     viewedDelay: 1000,
   }
@@ -45,14 +43,11 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
   public componentWillUnmount: () => void = () => {
     clearTimeout(this.viewedTimer)
     clearTimeout(this.cachedTimer)
-    clearInterval(this.cachedInterval)
   }
 
   private viewedTimer: number | undefined
 
   private cachedTimer: number | undefined
-
-  private cachedInterval: number | undefined
 
   private image: HTMLImageElement | undefined
 
@@ -68,25 +63,21 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
     if (this.state.cached === undefined) {
       this.image = document.createElement('img')
       this.image.src = this.props.src
-      if (this.props.srcSet) {
-        this.image.srcset = this.props.srcSet
-      }
-      this.cachedInterval = setInterval(() => {
-        if (this.image && this.image.complete) {
-          this.setState({
-            cached: true,
-            viewed: true,
-          })
-          clearInterval(this.cachedInterval)
-          clearTimeout(this.cachedTimer)
-        }
-      }, this.props.frameInterval)
-      this.cachedTimer = setTimeout(() => {
+      this.image.srcset = this.props.srcSet ? this.props.srcSet : ''
+      this.image.onload = () => {
         this.setState({
-          cached: false,
+          cached: true,
+          viewed: true,
         })
-        this.onView()
-        clearInterval(this.cachedInterval)
+      }
+      this.cachedTimer = setTimeout(() => {
+        if (!this.state.cached && this.image) {
+          this.image.onload = null
+          this.setState({
+            cached: false,
+          })
+          this.onView()
+        }
       }, this.props.cachedDelay)
       return
     }
@@ -103,6 +94,9 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
 
   private get src(): string | undefined {
     const {stub, src} = this.props
+    if (this.state.cached === undefined) {
+      return undefined
+    }
     if (this.state.viewed) {
       return src
     }
@@ -113,7 +107,7 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
   }
 
   private get srcSet(): string | undefined {
-    if (!this.state.viewed) {
+    if (!this.state.viewed || this.state.cached === undefined) {
       return undefined
     }
     return this.props.srcSet
