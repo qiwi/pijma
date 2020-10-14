@@ -7,9 +7,10 @@ export interface ImageControlProps {
   width: Value
   height: Value
   src: string
-  viewDelay?: number
   srcSet?: string
   stub?: string | ReactNode
+  cachedDelay?: number
+  frameInterval?: number
   viewedDelay?: number
   onLoad?: () => void
   children: RenderChild<{
@@ -30,6 +31,8 @@ export interface ImageControlState {
 export class ImageControl extends Component<ImageControlProps, ImageControlState> {
 
   public static defaultProps = {
+    frameInterval: 5,
+    cachedDelay: 50,
     viewedDelay: 1000,
   }
 
@@ -41,41 +44,56 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
 
   public componentWillUnmount: () => void = () => {
     clearTimeout(this.viewedTimer)
-    clearTimeout(this.cachedTimer)
+    clearTimeout(this.cachedInterval)
+    clearInterval(this.cachedInterval)
   }
 
   private viewedTimer: number | undefined
+
   private cachedTimer: number | undefined
+
+  private cachedInterval: number | undefined
+
+  private image: HTMLImageElement | undefined
 
   private onChange: (inView: boolean) => void = (inView) => {
     clearTimeout(this.viewedTimer)
     if (!inView) {
+      if (this.image) {
+        this.image.src = ''
+        this.image.srcset = ''
+      }
       return
     }
     if (this.state.cached === undefined) {
-      const image = document.createElement('img')
-      image.src = this.props.src
+      this.image = document.createElement('img')
+      this.image.src = this.props.src
       if (this.props.srcSet) {
-        image.srcset = this.props.srcSet
+        this.image.srcset = this.props.srcSet
       }
-      this.cachedTimer = setTimeout(() => {
-        const complete = image.complete
-        image.src = ''
-        image.srcset = ''
-        if (complete) {
+      this.cachedInterval = setInterval(() => {
+        if (this.image && this.image.complete) {
           this.setState({
             cached: true,
             viewed: true,
           })
+          clearInterval(this.cachedInterval)
+          clearTimeout(this.cachedTimer)
         }
-        else {
-          this.setState({
-            cached: false,
-          })
-        }
-      }, this.props.viewDelay)
+      }, this.props.frameInterval)
+      this.cachedTimer = setTimeout(() => {
+        this.setState({
+          cached: false,
+        })
+        this.onView()
+        clearInterval(this.cachedInterval)
+      }, this.props.cachedDelay)
       return
     }
+    this.onView()
+  }
+
+  private onView: () => void = () => {
     this.viewedTimer = setTimeout(() => {
       this.setState({
         viewed: true,

@@ -9,7 +9,9 @@ export interface ImageProps {
   width: Value
   height: Value
   src: string
-  viewDelay?: number
+  frameInterval?: number
+  cachedDelay?: number
+  viewedDelay?: number
   srcSet?: string
   sizes?: string
   alt?: string
@@ -25,7 +27,9 @@ export const Image: FC<ImageProps> = ({
   sizes,
   alt,
   stub = true,
-  viewDelay = 100,
+  frameInterval = 10,
+  cachedDelay = 50,
+  viewedDelay = 1000,
   onLoad,
 }) => (
   stub ? (
@@ -35,7 +39,9 @@ export const Image: FC<ImageProps> = ({
       src={src}
       srcSet={srcSet}
       stub={stub}
-      viewDelay={viewDelay}
+      frameInterval={frameInterval}
+      cachedDelay={cachedDelay}
+      viewedDelay={viewedDelay}
       onLoad={onLoad}
       children={(renderProps) => (
         renderProps.loaded ? (
