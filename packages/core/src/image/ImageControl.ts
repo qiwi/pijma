@@ -44,7 +44,7 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
 
   public componentWillUnmount: () => void = () => {
     clearTimeout(this.viewedTimer)
-    clearTimeout(this.cachedInterval)
+    clearTimeout(this.cachedTimer)
     clearInterval(this.cachedInterval)
   }
 
