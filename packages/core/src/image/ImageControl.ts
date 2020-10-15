@@ -63,7 +63,9 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
     if (this.state.cached === undefined) {
       this.image = document.createElement('img')
       this.image.src = this.props.src
-      this.image.srcset = this.props.srcSet ? this.props.srcSet : ''
+      if (this.props.srcSet) {
+        this.image.srcset = this.props.srcSet
+      }
       this.image.onload = () => {
         this.setState({
           cached: true,
@@ -91,6 +93,17 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
       })
     }, this.props.viewedDelay)
   }
+  private onLoad: () => void = () => {
+    if (!this.state.viewed) {
+      return
+    }
+    if (this.props.onLoad) {
+      this.props.onLoad()
+    }
+    this.setState({
+      loaded: true,
+    })
+  }
 
   private get src(): string | undefined {
     const {stub, src} = this.props
@@ -111,18 +124,6 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
       return undefined
     }
     return this.props.srcSet
-  }
-
-  private onLoad: () => void = () => {
-    if (!this.state.viewed) {
-      return
-    }
-    if (this.props.onLoad) {
-      this.props.onLoad()
-    }
-    this.setState({
-      loaded: true,
-    })
   }
 
   public render() {
