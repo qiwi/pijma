@@ -21,11 +21,16 @@ export interface ImageControlProps {
   }>
 }
 
+enum Step {
+  NONE,
+  CHECK_CACHE,
+  NO_CACHE,
+  LOAD,
+  DONE,
+}
+
 export interface ImageControlState {
-  view: boolean
-  load: boolean
-  done: boolean
-  cache: boolean | undefined
+  step: Step
 }
 
 export class ImageControl extends Component<ImageControlProps, ImageControlState> {
@@ -36,10 +41,7 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
   }
 
   public state: ImageControlState = {
-    view: false,
-    load: false,
-    done: false,
-    cache: undefined,
+    step: Step.NONE,
   }
 
   public componentWillUnmount: () => void = () => {
@@ -52,25 +54,22 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
   private cachedTimer: number | undefined
 
   private onChange: (inView: boolean) => void = (inView) => {
-    this.setState({
-      view: inView,
-    })
     clearTimeout(this.viewedTimer)
     if (!inView) {
       return
     }
-    if (this.state.cache === undefined) {
+    if (this.state.step === Step.NONE) {
       this.setState({
-        cache: true,
+        step: Step.CHECK_CACHE,
       })
       const image = document.createElement('img')
       image.src = this.props.src
       image.srcset = this.props.srcSet || ''
       image.onload = () => {
         clearTimeout(this.viewedTimer)
+        clearTimeout(this.cachedTimer)
         this.setState({
-          load: true,
-          cache: false,
+          step: Step.LOAD,
         })
       }
       this.cachedTimer = setTimeout(() => {
@@ -78,35 +77,35 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
         image.src = ''
         image.srcset = ''
         this.setState({
-          cache: false,
+          step: Step.NO_CACHE,
         })
       }, this.props.cachedDelay)
     }
     this.viewedTimer = setTimeout(() => {
       this.setState({
-        load: true,
+        step: Step.LOAD,
       })
     }, this.props.viewedDelay)
   }
 
   private onLoad: () => void = () => {
-    if (!this.state.load) {
+    if (this.state.step !== Step.LOAD) {
       return
     }
     if (this.props.onLoad) {
       this.props.onLoad()
     }
     this.setState({
-      done: true,
+      step: Step.DONE,
     })
   }
 
   private get src(): string | undefined {
     const {stub, src} = this.props
-    if (this.state.load) {
+    if (this.state.step === Step.LOAD || this.state.step === Step.DONE) {
       return src
     }
-    if (this.state.cache || !this.state.view) {
+    if (this.state.step === Step.NONE || this.state.step === Step.CHECK_CACHE) {
       return undefined
     }
     if (typeof stub === 'string') {
@@ -116,7 +115,7 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
   }
 
   private get srcSet(): string | undefined {
-    if (this.state.load) {
+    if (this.state.step === Step.LOAD || this.state.step === Step.DONE) {
       return this.props.srcSet
     }
     return undefined
@@ -126,7 +125,7 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
     return this.props.children({
       src: this.src,
       srcSet: this.srcSet,
-      loaded: this.state.done,
+      loaded: this.state.step === Step.DONE,
       onChange: this.onChange,
       onLoad: this.onLoad,
     })
