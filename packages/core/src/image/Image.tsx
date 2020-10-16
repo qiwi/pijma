@@ -1,4 +1,5 @@
 import React, {FC, ReactNode, Children, isValidElement} from 'react'
+
 import {Img, Box, Pos, Value} from '../primitive'
 import {InView} from '../InView'
 import {Stub} from '../stub'
@@ -8,6 +9,8 @@ export interface ImageProps {
   width: Value
   height: Value
   src: string
+  cachedDelay?: number
+  viewedDelay?: number
   srcSet?: string
   sizes?: string
   alt?: string
@@ -23,6 +26,8 @@ export const Image: FC<ImageProps> = ({
   sizes,
   alt,
   stub = true,
+  cachedDelay = 50,
+  viewedDelay = 1000,
   onLoad,
 }) => (
   stub ? (
@@ -32,6 +37,8 @@ export const Image: FC<ImageProps> = ({
       src={src}
       srcSet={srcSet}
       stub={stub}
+      cachedDelay={cachedDelay}
+      viewedDelay={viewedDelay}
       onLoad={onLoad}
       children={(renderProps) => (
         renderProps.loaded ? (
