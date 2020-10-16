@@ -169,6 +169,9 @@
       <FlexItem width={37} height={11}>
         <Text children="apple"/>
       </FlexItem>
+      <FlexItem width={37} height={11}>
+        <Text children="huawei"/>
+      </FlexItem>
     </Flex>
     <Flex>
       <FlexItem width={37} height={11} mr={6}>
@@ -176,6 +179,9 @@
       </FlexItem>
       <FlexItem width={37} height={11}>
         <MobileAppIcon name="apple"/>
+      </FlexItem>
+      <FlexItem width={37} height={11}>
+        <MobileAppIcon name="huawei"/>
       </FlexItem>
     </Flex>
   </BlockContent>
