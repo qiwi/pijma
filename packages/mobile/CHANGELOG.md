@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.114.0](https://github.com/qiwi/pijma/compare/v1.113.1...v1.114.0) (2020-10-16)
+
+
+### Features
+
+* new mobile app icons ([#337](https://github.com/qiwi/pijma/issues/337)) ([48ced61](https://github.com/qiwi/pijma/commit/48ced61))
+
 # [@qiwi/pijma-mobile-v1.111.3](https://github.com/qiwi/pijma/compare/v1.111.2...v1.111.3) (2020-09-11)
 
 

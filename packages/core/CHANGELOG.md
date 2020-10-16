@@ -1,3 +1,17 @@
+# [@qiwi/pijma-core-v1.114.0](https://github.com/qiwi/pijma/compare/v1.113.1...v1.114.0) (2020-10-16)
+
+
+### Features
+
+* new mobile app icons ([#337](https://github.com/qiwi/pijma/issues/337)) ([48ced61](https://github.com/qiwi/pijma/commit/48ced61))
+
+# [@qiwi/pijma-core-v1.113.1](https://github.com/qiwi/pijma/compare/v1.113.0...v1.113.1) (2020-10-16)
+
+
+### Bug Fixes
+
+* **core:** load cashed image ([#336](https://github.com/qiwi/pijma/issues/336)) ([8012035](https://github.com/qiwi/pijma/commit/8012035))
+
 # [@qiwi/pijma-core-v1.113.0](https://github.com/qiwi/pijma/compare/v1.112.1...v1.113.0) (2020-10-05)
 
 

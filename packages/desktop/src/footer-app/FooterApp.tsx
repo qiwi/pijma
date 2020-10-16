@@ -1,6 +1,6 @@
 import React, {FC, ReactElement} from 'react'
 
-import {Box, Lnk, LinkControl, Flex, FlexItem, Stub} from '@qiwi/pijma-core'
+import {Box, Lnk, LinkControl, Stub, FlexItem, Flex} from '@qiwi/pijma-core'
 
 const BoxLink = Box.withComponent(Lnk)
 
@@ -59,21 +59,15 @@ export interface FooterAppProps {
 }
 
 export const FooterApp: FC<FooterAppProps> = ({children, stub = false}) => (
-  <Box overflow="hidden">
-    <Flex justify="space-between" m={-2}>
-      {(stub ? Array(2).fill(0) : children).map((item, i) => (
-        <FlexItem
-          key={i}
-          shrink={1}
-          grow={1}
-          minWidth={37}
-          minHeight={11}
-          maxWidth={42}
-          maxHeight={13}
-          m={2}
-          children={<FooterAppLink stub={stub} {...item}/>}
-        />
-      ))}
-    </Flex>
-  </Box>
+  <Flex>
+    {(stub ? Array(3).fill(0) : children).map((item, i) => (
+      <FlexItem
+        key={i}
+        width={32}
+        height={10}
+        ml={i > 0 ? 4 : 0}
+        children={<FooterAppLink stub={stub} {...item}/>}
+      />
+    ))}
+  </Flex>
 )
