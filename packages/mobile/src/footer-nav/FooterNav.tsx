@@ -28,3 +28,5 @@ export const FooterNav: FC<FooterNavProps> = ({children = [], stub = false}) => 
     </Flex>
   </Box>
 )
+
+FooterNav.displayName = 'FooterNav'

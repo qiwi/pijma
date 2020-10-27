@@ -119,3 +119,5 @@ Paragraph.defaultProps = {
   compact: false,
   color: 'default',
 }
+
+Paragraph.displayName = 'Paragraph'

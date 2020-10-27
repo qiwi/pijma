@@ -99,3 +99,5 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(({
     </Flex>
   </Section>
 ))
+
+MenuItem.displayName = 'MenuItem'

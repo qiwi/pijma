@@ -48,3 +48,5 @@ Grid.defaultProps = {
   gutter: 20,
   columns: 12,
 }
+
+Grid.displayName = 'Grid'

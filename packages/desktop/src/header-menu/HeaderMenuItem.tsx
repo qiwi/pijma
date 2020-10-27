@@ -74,3 +74,5 @@ export const HeaderMenuItem = forwardRef<HTMLAnchorElement, HeaderMenuItemProps>
 HeaderMenuItem.defaultProps = {
   active: false,
 }
+
+HeaderMenuItem.displayName = 'HeaderMenuItem'

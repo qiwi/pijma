@@ -56,3 +56,5 @@ export const TextArea = styled(Card.withComponent('textarea'), {
     letterSpacing: pxValue(props.placeholderSpacing),
   },
 }))
+
+TextArea.displayName = 'TextArea'

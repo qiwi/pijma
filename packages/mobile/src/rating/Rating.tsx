@@ -86,3 +86,5 @@ Rating.defaultProps = {
   count: 5,
   stub: false,
 }
+
+Rating.displayName = 'Rating'

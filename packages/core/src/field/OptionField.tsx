@@ -46,3 +46,5 @@ export const OptionField: React.FunctionComponent<OptionFieldProps> = (props) =>
     </Spacer>
   </Box>
 )
+
+OptionField.displayName = 'OptionField'

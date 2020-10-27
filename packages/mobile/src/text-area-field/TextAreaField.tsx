@@ -67,3 +67,5 @@ export const TextAreaField: FC<TextAreaFieldProps> = (props) => (
 TextAreaField.defaultProps = {
   tabIndex: 0,
 }
+
+TextAreaField.displayName = 'TextAreaField'

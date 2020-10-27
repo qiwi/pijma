@@ -72,3 +72,5 @@ export const DropDown: FC<DropDownProps> = ({
 DropDown.defaultProps = {
   rootClose: true,
 }
+
+DropDown.displayName = 'DropDown'

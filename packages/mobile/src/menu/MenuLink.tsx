@@ -72,3 +72,5 @@ export const MenuLink: FC<MenuLinkProps> = (props) => (
     />
   )
 )
+
+MenuLink.displayName = 'MenuLink'

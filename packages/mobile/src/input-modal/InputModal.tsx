@@ -144,4 +144,6 @@ const InputModal: FunctionComponent<InputModalProps> = (props) => (
   />
 )
 
+InputModal.displayName = 'InputModal'
+
 export default InputModal

@@ -26,3 +26,5 @@ export const QuestionIcon: FC<QuestionIconProps> = ({
 QuestionIcon.defaultProps = {
   size: 6,
 }
+
+QuestionIcon.displayName = 'QuestionIcon'

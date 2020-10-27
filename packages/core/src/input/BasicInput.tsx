@@ -84,4 +84,6 @@ BasicInput.defaultProps = {
   tabIndex: 0,
 }
 
+BasicInput.displayName = 'BasicInput'
+
 export default BasicInput

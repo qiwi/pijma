@@ -257,3 +257,5 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
     />
   )
 )
+
+Button.displayName = 'Button'

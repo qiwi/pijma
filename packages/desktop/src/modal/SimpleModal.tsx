@@ -129,4 +129,6 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = (props) => (
   )
 )
 
+SimpleModal.displayName = 'SimpleModal'
+
 export default SimpleModal

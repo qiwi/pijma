@@ -72,3 +72,5 @@ export const FileLink: FC<FileLinkProps> = (props) => (
     )}
   />
 )
+
+FileLink.displayName = 'FileLink'

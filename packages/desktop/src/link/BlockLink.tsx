@@ -59,3 +59,5 @@ export const BlockLink: FC<BlockLinkProps> = (props) => (
     )}
   />
 )
+
+BlockLink.displayName = 'BlockLink'

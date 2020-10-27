@@ -96,3 +96,5 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
     )}
   />
 )
+
+HeaderDropDown.displayName = 'HeaderDropDown'

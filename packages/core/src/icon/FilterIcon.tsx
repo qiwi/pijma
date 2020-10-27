@@ -36,3 +36,5 @@ FilterIcon.defaultProps = {
   color: '#000',
   active: false,
 }
+
+FilterIcon.displayName = 'FilterIcon'

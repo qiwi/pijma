@@ -211,3 +211,5 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
     </BlockLink>
   )
 )
+
+LogoBlockLink.displayName = 'LogoBlockLink'

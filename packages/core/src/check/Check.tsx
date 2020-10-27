@@ -36,3 +36,5 @@ export const Check: FunctionComponent<CheckProps> = (props) => (
     />
   </Svg>
 )
+
+Check.displayName = 'Check'

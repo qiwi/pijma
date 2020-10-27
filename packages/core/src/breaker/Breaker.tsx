@@ -17,3 +17,5 @@ export const Breaker: FC = ({children}) => (
     )}
   </Fragment>
 )
+
+Breaker.displayName = 'Breaker'

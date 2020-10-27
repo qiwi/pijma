@@ -40,3 +40,5 @@ export const Notice: FC<NoticeProps> = ({icon, title, children}) => (
     )}
   </Flex>
 )
+
+Notice.displayName = 'Notice'

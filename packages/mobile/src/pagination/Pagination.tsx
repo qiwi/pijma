@@ -87,3 +87,5 @@ Pagination.defaultProps = {
   count: 3,
   stub: false,
 }
+
+Pagination.displayName = 'Pagination'

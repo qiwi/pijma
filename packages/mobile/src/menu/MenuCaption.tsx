@@ -14,3 +14,5 @@ export const MenuCaption: FC<MenuCaptionProps> = ({text}) => (
     </Caption>
   </Box>
 )
+
+MenuCaption.displayName = 'MenuCaption'

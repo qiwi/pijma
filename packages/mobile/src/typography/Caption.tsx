@@ -50,3 +50,5 @@ export const Caption: FunctionComponent<CaptionProps> = ({color = 'support', ali
 Caption.defaultProps = {
   color: 'support',
 }
+
+Caption.displayName = 'Caption'

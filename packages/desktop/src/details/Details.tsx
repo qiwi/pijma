@@ -94,3 +94,5 @@ export const Details: FC<DetailsProps> = ({children, dots, titleWidth, contentWi
     ))}
   </Box>
 )
+
+Details.displayName = 'Details'

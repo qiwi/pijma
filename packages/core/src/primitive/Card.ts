@@ -82,3 +82,5 @@ export const Card = styled(Box, {
     },
   } : {}),
 }))
+
+Card.displayName = 'Card'

@@ -40,3 +40,5 @@ export const Glossary: FC<GlossaryProps> = ({children}) => (
     ))}
   </Box>
 )
+
+Glossary.displayName = 'Glossary'

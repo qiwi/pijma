@@ -37,3 +37,5 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
   )
 
 )
+
+Breadcrumbs.displayName = 'Breadcrumbs'

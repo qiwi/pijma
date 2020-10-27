@@ -71,3 +71,5 @@ export const FooterApp: FC<FooterAppProps> = ({children, stub = false}) => (
     ))}
   </Flex>
 )
+
+FooterApp.displayName = 'FooterApp'

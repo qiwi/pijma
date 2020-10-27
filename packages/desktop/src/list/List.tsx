@@ -145,3 +145,5 @@ export const List: FunctionComponent<ListProps> = ({stub = false, type, size = '
     ))}
   </Box>
 )
+
+List.displayName = 'List'

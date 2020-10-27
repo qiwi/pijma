@@ -107,3 +107,5 @@ export const InputField: FunctionComponent<FieldProps> = ({
     </Pos>
   )
 )
+
+InputField.displayName = 'InputField'

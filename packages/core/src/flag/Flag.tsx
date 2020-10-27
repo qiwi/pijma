@@ -146,3 +146,5 @@ Flag.defaultProps = {
   width: 6,
   height: 4,
 }
+
+Flag.displayName = 'Flag'

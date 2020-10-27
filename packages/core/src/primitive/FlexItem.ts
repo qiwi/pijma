@@ -22,3 +22,5 @@ export const FlexItem = styled(Box, {
   alignSelf: align,
   justifySelf: justify,
 }))
+
+FlexItem.displayName = 'FlexItem'

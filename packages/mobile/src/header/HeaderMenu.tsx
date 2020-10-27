@@ -152,3 +152,5 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({show, zIndex, header, from, stu
     </HeaderMenuModal>
   )
 )
+
+HeaderMenu.displayName = 'HeaderMenu'

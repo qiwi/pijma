@@ -119,4 +119,6 @@ SwitchField.defaultProps = {
   tabIndex: 0,
 }
 
+SwitchField.displayName = 'SwitchField'
+
 export default SwitchField

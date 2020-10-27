@@ -70,3 +70,5 @@ PasswordField.defaultProps = {
   tabIndex: 0,
   viewed: true,
 }
+
+PasswordField.displayName = 'PasswordField'

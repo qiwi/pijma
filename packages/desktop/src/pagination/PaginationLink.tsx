@@ -74,3 +74,5 @@ PaginationLink.defaultProps = {
   width: 12,
   shadowed: false,
 }
+
+PaginationLink.displayName = 'PaginationLink'

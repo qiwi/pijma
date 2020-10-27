@@ -123,3 +123,5 @@ export const Text: FunctionComponent<TextProps> = ({
   )
 
 )
+
+Text.displayName = 'Text'

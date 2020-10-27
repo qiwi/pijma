@@ -154,3 +154,5 @@ export const DropUp: FunctionComponent<DropUpProps> = (props) => (
     }
   />
 )
+
+DropUp.displayName = 'DropUp'

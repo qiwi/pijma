@@ -32,3 +32,5 @@ export const SimpleField: FC<SimpleFieldProps> = ({input, error, action, help}) 
     </Flex>
   </Pos>
 )
+
+SimpleField.displayName = 'SimpleField'

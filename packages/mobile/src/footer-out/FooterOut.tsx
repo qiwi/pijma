@@ -79,3 +79,5 @@ export const FooterOut: FC<FooterOutProps> = ({children, stub = false}) => (
     </Flex>
   </Box>
 )
+
+FooterOut.displayName = 'FooterOut'

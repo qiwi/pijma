@@ -49,4 +49,6 @@ Checkbox.defaultProps = {
   tabIndex: 0,
 }
 
+Checkbox.displayName = 'Checkbox'
+
 export default Checkbox

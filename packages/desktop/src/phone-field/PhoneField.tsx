@@ -149,3 +149,5 @@ PhoneField.defaultProps = {
   tabIndex: 0,
   code: 'ru',
 }
+
+PhoneField.displayName = 'PhoneField'

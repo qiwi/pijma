@@ -51,3 +51,5 @@ export const Oops: FC<ErrorPageProps> = ({logo, error, title, content, footer}) 
     </Flex>
   </Card>
 )
+
+Oops.displayName = 'Oops'

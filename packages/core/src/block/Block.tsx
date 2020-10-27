@@ -35,3 +35,5 @@ Block.defaultProps = {
   accent: false,
   bg: '#fff',
 }
+
+Block.displayName = 'Block'

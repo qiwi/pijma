@@ -116,3 +116,5 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizonta
     )}
   </SectionLink>
 )
+
+LogoLink.displayName = 'LogoLink'

@@ -6,3 +6,5 @@ export const MenuContainer: FC = ({children}) => (
     {children}
   </Box>
 )
+
+MenuContainer.displayName = 'MenuContainer'

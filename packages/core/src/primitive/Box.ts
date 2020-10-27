@@ -80,3 +80,5 @@ export const Box = styled('div', {
 Box.defaultProps = {
   display: 'block',
 }
+
+Box.displayName = 'Box'

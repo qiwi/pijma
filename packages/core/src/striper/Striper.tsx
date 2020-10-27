@@ -19,3 +19,5 @@ export const Striper: FC = ({children}) => {
     </Fragment>
   )
 }
+
+Striper.displayName = 'Striper'

@@ -94,3 +94,5 @@ BlockAccordion.defaultProps = {
   indent: 'm',
   tabIndex: 0,
 }
+
+BlockAccordion.displayName = 'BlockAccordion'

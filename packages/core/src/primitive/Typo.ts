@@ -46,3 +46,5 @@ export const Typo = styled('div', {
   WebkitLineClamp: props.clamp !== undefined && props.height !== undefined && props.display === 'block' ? props.clamp : undefined,
   WebkitBoxOrient: props.clamp !== undefined && props.height !== undefined && props.display === 'block' ? 'vertical' : undefined,
 }), (props) => props.css)
+
+Typo.displayName = 'Typo'

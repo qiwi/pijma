@@ -80,3 +80,5 @@ export const BlockAccordion: FunctionComponent<BlockAccordionProps<BlockAccordio
 BlockAccordion.defaultProps = {
   tabIndex: 0,
 }
+
+BlockAccordion.displayName = 'BlockAccordion'

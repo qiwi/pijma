@@ -215,3 +215,5 @@ Icon.defaultProps = {
   size: 6,
   color: '#000',
 }
+
+Icon.displayName = 'Icon'

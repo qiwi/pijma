@@ -38,3 +38,5 @@ export const Spacer: FunctionComponent<SpacerProps> = ({size = 'm', children}) =
 Spacer.defaultProps = {
   size: 'm',
 }
+
+Spacer.displayName = 'Spacer'

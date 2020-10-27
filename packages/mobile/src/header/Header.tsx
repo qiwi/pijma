@@ -33,3 +33,5 @@ export const Header: FC<HeaderProps> = ({zIndex = 10002, active, children}) => (
     </Pos>
   </Pos>
 )
+
+Header.displayName = 'Header'

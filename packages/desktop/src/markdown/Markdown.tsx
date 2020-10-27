@@ -161,3 +161,5 @@ export const Markdown: FC<MarkdownProps> = ({size = 'm', children}) => (
     }}
   />
 )
+
+Markdown.displayName = 'Markdown'

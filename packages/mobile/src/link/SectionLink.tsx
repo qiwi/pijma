@@ -61,3 +61,5 @@ export const SectionLink: FC<SectionLinkProps> = (props) => (
     )}
   />
 )
+
+SectionLink.displayName = 'SectionLink'

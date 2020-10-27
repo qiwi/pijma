@@ -65,3 +65,5 @@ export const TextField: FunctionComponent<TextFieldProps> = (props) => (
 TextField.defaultProps = {
   tabIndex: 0,
 }
+
+TextField.displayName = 'TextField'

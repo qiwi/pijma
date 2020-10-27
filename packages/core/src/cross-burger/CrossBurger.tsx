@@ -42,3 +42,5 @@ CrossBurger.defaultProps = {
   color: '#000',
   active: false,
 }
+
+CrossBurger.displayName = 'CrossBurger'

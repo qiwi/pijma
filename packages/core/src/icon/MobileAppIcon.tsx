@@ -38,3 +38,5 @@ export const MobileAppIcon: FC<MobileAppIconProps> = ({name}) => (
     {appIcon[name]}
   </Svg>
 )
+
+MobileAppIcon.displayName = 'MobileAppIcon'

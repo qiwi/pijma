@@ -73,3 +73,5 @@ export const Stub: FC<StubProps> = (props) => (
 Stub.defaultProps = {
   r: 4,
 }
+
+Stub.displayName = 'Stub'

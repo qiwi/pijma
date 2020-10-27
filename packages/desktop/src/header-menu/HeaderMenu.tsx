@@ -28,3 +28,5 @@ export const HeaderMenu: FC<HeaderMenuProps> = (props) => (
     )}
   </Flex>
 )
+
+HeaderMenu.displayName = 'HeaderMenu'

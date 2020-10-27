@@ -28,3 +28,5 @@ export const Actions: FunctionComponent<ActionsProps> = (props) => {
     />
   )
 }
+
+Actions.displayName = 'Actions'

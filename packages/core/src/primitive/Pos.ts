@@ -24,3 +24,5 @@ export const Pos = styled(Box, {
   bottom: cssValue(props.bottom, theme.scale),
   left: cssValue(props.left, theme.scale),
 }))
+
+Pos.displayName = 'Pos'

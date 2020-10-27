@@ -129,3 +129,5 @@ export const PaymentSecurityIcon: FC<PaymentSecurityIconProps> = ({gray, name, s
     </Svg>
   )
 )
+
+PaymentSecurityIcon.displayName = 'PaymentSecurityIcon'

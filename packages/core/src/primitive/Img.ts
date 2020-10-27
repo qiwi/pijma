@@ -32,3 +32,5 @@ export const Img = styled('img', {
   minHeight: cssValue(props.minHeight, theme.scale),
   maxHeight: cssValue(props.maxHeight, theme.scale),
 }), (props) => props.css)
+
+Img.displayName = 'Img'

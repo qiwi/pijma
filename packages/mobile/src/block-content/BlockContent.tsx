@@ -21,3 +21,5 @@ export const BlockContent: FC<BlockContentProps> = ({indent = 'm', children}) =>
 BlockContent.defaultProps = {
   indent: 'm',
 }
+
+BlockContent.displayName = 'BlockContent'

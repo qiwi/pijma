@@ -28,3 +28,5 @@ export const ProgressBar: FC<ProgressBarProps> = ({
   )
 
 )
+
+ProgressBar.displayName = 'ProgressBar'
