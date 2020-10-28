@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf lib styleguide/lib",
-    "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && styleguidist build",
+    "build": "mkdir -p lib/es5 && ttsc -p tsconfig.build.json && styleguidist build",
     "watch": "styleguidist server",
     "lint": "tslint -p tsconfig.build.json src/**/*.ts{,x}",
     "lint:fix": "tslint -p tsconfig.build.json --fix src/**/*.ts{,x}",
@@ -46,9 +46,12 @@
     "react-docgen-typescript": "1.12.5",
     "react-styleguidist": "9.1.14",
     "ts-loader": "6.0.4",
+    "ts-node": "9.0.0",
+    "ts-react-display-name": "1.2.0",
     "tslint": "5.18.0",
     "tslint-config-qiwi": "1.1.1",
     "tslint-loader": "3.5.4",
+    "ttypescript": "1.5.12",
     "typescript": "3.5.3",
     "webpack": "4.39.2"
   }
