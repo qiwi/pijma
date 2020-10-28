@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf lib",
-    "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && cp -r src/fonts lib/es5/fonts",
+    "build": "mkdir -p lib/es5 && ttsc -p tsconfig.build.json && cp -r src/fonts lib/es5/fonts",
     "lint": "tslint -p tsconfig.build.json src/**/*.ts{,x}",
     "lint:fix": "tslint -p tsconfig.build.json --fix src/**/*.ts{,x}"
   },
@@ -35,12 +35,15 @@
     "react-text-mask": "^5.4.3",
     "react-transition-group": "^4.2.2",
     "react-waypoint": "^9.0.2",
+    "ts-node": "^9.0.0",
     "tslib": "^1.10.0"
   },
   "devDependencies": {
     "husky": "3.0.3",
+    "ts-react-display-name": "^1.2.0",
     "tslint": "5.18.0",
     "tslint-config-qiwi": "1.1.1",
+    "ttypescript": "^1.5.12",
     "typescript": "3.5.3"
   }
 }
