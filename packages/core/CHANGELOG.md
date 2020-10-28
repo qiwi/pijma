@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.114.1](https://github.com/qiwi/pijma/compare/v1.114.0...v1.114.1) (2020-10-28)
+
+
+### Performance Improvements
+
+* compile es5, auto display name ([#342](https://github.com/qiwi/pijma/issues/342)) ([dae09a2](https://github.com/qiwi/pijma/commit/dae09a2))
+
 # [@qiwi/pijma-core-v1.114.0](https://github.com/qiwi/pijma/compare/v1.113.1...v1.114.0) (2020-10-16)
 
 
