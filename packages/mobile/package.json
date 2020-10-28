@@ -47,11 +47,11 @@
     "react-docgen-typescript": "1.12.5",
     "react-styleguidist": "9.1.14",
     "ts-loader": "6.0.4",
-    "ts-react-display-name": "^1.2.0",
+    "ts-react-display-name": "1.2.0",
     "tslint": "5.18.0",
     "tslint-config-qiwi": "1.1.1",
     "tslint-loader": "3.5.4",
-    "ttypescript": "^1.5.12",
+    "ttypescript": "1.5.12",
     "typescript": "3.5.3",
     "webpack": "4.39.2"
   }
