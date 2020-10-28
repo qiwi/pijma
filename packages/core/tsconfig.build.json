@@ -5,7 +5,9 @@
     "outDir": "lib/es5",
     "baseUrl": "src",
     "plugins": [
-      {"transform":  "../../AutoDisplayName.ts"}
+      {
+        "transform": "../../AutoDisplayName.ts"
+      }
     ]
   },
   "include": [
