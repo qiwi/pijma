@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.114.2](https://github.com/qiwi/pijma/compare/v1.114.1...v1.114.2) (2020-10-29)
+
+
+### Bug Fixes
+
+* **desktop:** header-suggest display name ([#343](https://github.com/qiwi/pijma/issues/343)) ([726ed25](https://github.com/qiwi/pijma/commit/726ed25))
+
 # [@qiwi/pijma-desktop-v1.114.1](https://github.com/qiwi/pijma/compare/v1.114.0...v1.114.1) (2020-10-28)
 
 
