@@ -162,7 +162,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
           bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? buttonHoverBackground[props.kind] : buttonBackground[props.kind]}
           b={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? buttonHoverBorder[props.kind] : buttonBorder[props.kind]}
           r={buttonRadius[props.size]}
-          transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+          transition="box-shadow 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
           onClick={renderProps.onClick}
           onFocus={renderProps.onFocus}
           onBlur={renderProps.onBlur}
@@ -181,7 +181,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
                   width={1}
                   height={1}
                   px={props.icon && !props.text ? 0 : contextPaddingX[props.size]}
-                  transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+                  transition="opacity 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
                   children={(
                     <Fragment>
                       <Pos
@@ -191,7 +191,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
                         bottom={0}
                         left={0}
                         opacity={props.loading ? (renderProps.hover || renderProps.active || renderProps.focus ? 0.9 : 1) : 0}
-                        transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+                        transition="opacity 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
                         children={(
                           <Flex
                             align="center"
@@ -216,7 +216,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
                           mr={props.text ? iconMargin[props.size] : 0}
                           width={iconSize[props.size]}
                           height={iconSize[props.size]}
-                          transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+                          transition="opacity 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
                           children={React.cloneElement(props.icon, {
                             color: props.disabled ? '#666' : props.kind === 'brand' ? '#fff' : '#000',
                             size: 1,
@@ -229,7 +229,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
                         <FlexItem
                           opacity={props.loading ? 0 : renderProps.hover || renderProps.active || renderProps.focus ? 0.9 : 1}
                           overflow="hidden"
-                          transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+                          transition="opacity 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
                           children={(
                             <Typo
                               nowrap={true}
@@ -238,7 +238,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
                               color={props.disabled ? '#666' : textColor[props.kind]}
                               size={textSize[props.size]}
                               height={textSize[props.size]}
-                              transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+                              transition="opacity 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
                               children={props.text}
                             />
                           )}
