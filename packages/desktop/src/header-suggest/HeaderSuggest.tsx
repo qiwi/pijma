@@ -222,3 +222,5 @@ export const HeaderSuggest = <V extends {}>({
     )}
   />
 )
+
+HeaderSuggest.displayName = 'HeaderSuggest'
