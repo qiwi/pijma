@@ -100,6 +100,7 @@ export const DropUp: FunctionComponent<DropUpProps> = (props) => (
   props.stub ? (
     <Box display="none">
       {props.children}
+      {props.footer}
     </Box>
   ) : (
     // @ts-ignore
