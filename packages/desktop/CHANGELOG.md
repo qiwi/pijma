@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.115.0](https://github.com/qiwi/pijma/compare/v1.114.2...v1.115.0) (2020-11-09)
+
+
+### Features
+
+* **desktop:** drop-down stub ([#346](https://github.com/qiwi/pijma/issues/346)) ([a414ee8](https://github.com/qiwi/pijma/commit/a414ee8))
+
 # [@qiwi/pijma-desktop-v1.114.2](https://github.com/qiwi/pijma/compare/v1.114.1...v1.114.2) (2020-10-29)
 
 
