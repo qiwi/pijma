@@ -49,7 +49,7 @@ export const DropDown: FC<DropDownProps> = ({
   minWidth,
   maxWidth,
   rootClose = true,
-  stub,
+  stub = false,
   target,
   container,
   onHide,
@@ -88,4 +88,5 @@ export const DropDown: FC<DropDownProps> = ({
 
 DropDown.defaultProps = {
   rootClose: true,
+  stub: false,
 }
