@@ -23,7 +23,7 @@ export const FeedIcon: FC<FeedIconProps> = ({
         cx="21"
         cy="3"
         r="3"
-        fill="#D0021B"
+        fill="#ed4848"
       />
     ) : (
       null
