@@ -85,23 +85,6 @@
 ```jsx
 <Block>
   <BlockContent>
-    <Flex>
-      <FlexItem width={20} height={6} mr={2}>
-        <Text size="s" children="pci-dss"/>
-      </FlexItem>
-      <FlexItem width={20} height={6} mr={2}>
-        <Text size="s" children="mir-accept"/>
-      </FlexItem>
-      <FlexItem width={20} height={6} mr={2}>
-        <Text size="s" children="visa-verified"/>
-      </FlexItem>
-      <FlexItem width={20} height={6} mr={2}>
-        <Text size="s" children="mastercard-id-check"/>
-      </FlexItem>
-      <FlexItem width={20} height={6}>
-        <Text size="s" children="apple-pay"/>
-      </FlexItem>
-    </Flex>
     <Flex mt={6}>
       <FlexItem width={20} height={6} mr={2}>
         <PaymentSecurityIcon name="pci-dss"/>
@@ -162,17 +145,6 @@
 ```jsx
 <Block>
   <BlockContent>
-    <Flex>
-      <FlexItem width={37} height={11} mr={6}>
-        <Text children="google"/>
-      </FlexItem>
-      <FlexItem width={37} height={11}>
-        <Text children="apple"/>
-      </FlexItem>
-      <FlexItem width={37} height={11}>
-        <Text children="huawei"/>
-      </FlexItem>
-    </Flex>
     <Flex>
       <FlexItem width={37} height={11} mr={6}>
         <MobileAppIcon name="google"/>
