@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.117.0](https://github.com/qiwi/pijma/compare/v1.116.0...v1.117.0) (2020-11-18)
+
+
+### Features
+
+* menu-item attention ([#348](https://github.com/qiwi/pijma/issues/348)) ([30d0738](https://github.com/qiwi/pijma/commit/30d0738))
+
 # [@qiwi/pijma-mobile-v1.114.1](https://github.com/qiwi/pijma/compare/v1.114.0...v1.114.1) (2020-10-28)
 
 
