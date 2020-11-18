@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.116.0](https://github.com/qiwi/pijma/compare/v1.115.1...v1.116.0) (2020-11-18)
+
+
+### Features
+
+* **core:** bell and feed icon ([#347](https://github.com/qiwi/pijma/issues/347)) ([0302ff9](https://github.com/qiwi/pijma/commit/0302ff9))
+
 # [@qiwi/pijma-core-v1.114.1](https://github.com/qiwi/pijma/compare/v1.114.0...v1.114.1) (2020-10-28)
 
 
