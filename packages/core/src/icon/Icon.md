@@ -41,8 +41,11 @@
       <FlexItem width={6} height={6} mr={6} cursor="pointer" onClick={() => setState({filterIconActive: !state.filterIconActive})}>
         <FilterIcon active={state.filterIconActive}/>
       </FlexItem>
-      <FlexItem width={6} height={6} cursor="pointer" onClick={() => setState({crossBurgerActive: !state.crossBurgerActive})}>
+      <FlexItem width={6} height={6} mr={6} cursor="pointer" onClick={() => setState({crossBurgerActive: !state.crossBurgerActive})}>
         <CrossBurger active={state.crossBurgerActive}/>
+      </FlexItem>
+      <FlexItem width={6} height={6} cursor="pointer" onClick={() => setState({feedIconActive: !state.feedIconActive})}>
+        <FeedIcon active={state.feedIconActive}/>
       </FlexItem>
     </Flex>
   </BlockContent>
