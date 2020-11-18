@@ -16,7 +16,7 @@ export interface MenuLinkProps {
   download?: LinkControlProps['download']
   rel?: LinkControlProps['rel']
   size?: 's' | 'm'
-  notice?: boolean
+  attention?: boolean
   stub?: boolean
   onClick?: LinkControlProps['onClick']
   onFocus?: LinkControlProps['onFocus']
@@ -61,7 +61,7 @@ export const MenuLink: FC<MenuLinkProps> = (props) => (
           download={props.href ? props.download : undefined}
           rel={props.href ? props.rel : undefined}
           size={props.size}
-          notice={props.notice}
+          attention={props.attention}
           onClick={renderProps.onClick}
           onFocus={renderProps.onFocus}
           onBlur={renderProps.onBlur}

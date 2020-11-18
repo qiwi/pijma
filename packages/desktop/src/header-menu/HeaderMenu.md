@@ -3,7 +3,7 @@
   <HeaderMenu
     children={[
       {href: `${location.href}?menu=1`, title: 'Платежи', active: true},
-      {href: `${location.href}?menu=2`, title: 'Переводы', notice: true},
+      {href: `${location.href}?menu=2`, title: 'Переводы', attention: true},
       {title: 'Пополнение кошелька', onClick: () => alert('Пополение')},
     ]}
   />

@@ -12,7 +12,7 @@ export interface HeaderMenuItemProps {
   rel?: LinkControlProps['rel']
   title?: string
   active?: boolean
-  notice?: boolean
+  attention?: boolean
   ref?: Ref<HTMLAnchorElement>
   onClick?: LinkControlProps['onClick']
   onFocus?: LinkControlProps['onFocus']
@@ -60,7 +60,7 @@ export const HeaderMenuItem = forwardRef<HTMLAnchorElement, HeaderMenuItemProps>
             decoration="none"
           >
             {props.title}
-            {props.notice ? (
+            {props.attention ? (
               <Typo
                 as="span"
                 css={{marginLeft: '2px'}}

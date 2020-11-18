@@ -23,7 +23,7 @@ export interface MenuItemProps {
   active?: boolean
   focus?: boolean
   size?: 's' | 'm'
-  notice?: boolean
+  attention?: boolean
   stub?: boolean
 }
 
@@ -42,7 +42,7 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(({
   active = false,
   focus = false,
   size = 's',
-  notice = false,
+  attention = false,
   stub = false,
   ...props
 }, ref) => (
@@ -85,7 +85,7 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(({
           ) : (
             <Paragraph clamp={icon && !notes ? 2 : undefined} bold>
               {text}
-              {notice ? (
+              {attention ? (
                 <Typo
                   as="span"
                   css={{marginLeft: '2px'}}

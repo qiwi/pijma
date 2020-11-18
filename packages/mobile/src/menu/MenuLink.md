@@ -166,18 +166,18 @@
   <MenuLink
     title="text"
     href="/"
-    notice
+    attention
   />
   <MenuLink
     title="long text long text long text long text long"
     href="/"
-    notice
+    attention
   />
   <MenuLink
     title="long text long text long text long text long text long text long text"
     notes="long notes long notes long notes long notes long notes long notes"
     href="/"
-    notice
+    attention
   />
 </Card>
 ```

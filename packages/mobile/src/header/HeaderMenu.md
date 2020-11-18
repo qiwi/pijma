@@ -30,7 +30,7 @@ initialState = {showMenu: false};
           <MenuLink
             title="link"
             href="https://qiwi.com"
-            notice
+            attention
           />
         </MenuContainer>
         <MenuContainer>
