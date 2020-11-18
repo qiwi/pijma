@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.115.1](https://github.com/qiwi/pijma/compare/v1.115.0...v1.115.1) (2020-11-18)
+
+
+### Bug Fixes
+
+* **desktop:** less space between header menu items ([#349](https://github.com/qiwi/pijma/issues/349)) ([e75d041](https://github.com/qiwi/pijma/commit/e75d041))
+
 # [@qiwi/pijma-desktop-v1.115.0](https://github.com/qiwi/pijma/compare/v1.114.2...v1.115.0) (2020-11-09)
 
 
