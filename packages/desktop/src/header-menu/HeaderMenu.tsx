@@ -13,13 +13,13 @@ export const HeaderMenu: FC<HeaderMenuProps> = (props) => (
   <Flex height={1} width={1} justify="flex-start">
     {props.stub ? (
       (typeof props.stub === 'boolean' ? [32, 44, 26] : props.stub).map((width, index) => (
-        <FlexItem key={index} ml={index > 0 ? 5 : 0} width={width} align="center">
+        <FlexItem key={index} ml={index > 0 ? 6 : 0} width={width} align="center">
           <Link size="m" stub/>
         </FlexItem>
       ))
     ) : (
       props.children.map((item, i) => (
-        <FlexItem key={i} ml={i > 0 ? 5 : 0}>
+        <FlexItem key={i} ml={i > 0 ? 6 : 0}>
           <HeaderMenuItem
             {...item}
           />
