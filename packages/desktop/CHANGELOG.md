@@ -1,3 +1,31 @@
+# [@qiwi/pijma-desktop-v1.115.1](https://github.com/qiwi/pijma/compare/v1.115.0...v1.115.1) (2020-11-18)
+
+
+### Bug Fixes
+
+* **desktop:** less space between header menu items ([#349](https://github.com/qiwi/pijma/issues/349)) ([e75d041](https://github.com/qiwi/pijma/commit/e75d041))
+
+# [@qiwi/pijma-desktop-v1.115.0](https://github.com/qiwi/pijma/compare/v1.114.2...v1.115.0) (2020-11-09)
+
+
+### Features
+
+* **desktop:** drop-down stub ([#346](https://github.com/qiwi/pijma/issues/346)) ([a414ee8](https://github.com/qiwi/pijma/commit/a414ee8))
+
+# [@qiwi/pijma-desktop-v1.114.2](https://github.com/qiwi/pijma/compare/v1.114.1...v1.114.2) (2020-10-29)
+
+
+### Bug Fixes
+
+* **desktop:** header-suggest display name ([#343](https://github.com/qiwi/pijma/issues/343)) ([726ed25](https://github.com/qiwi/pijma/commit/726ed25))
+
+# [@qiwi/pijma-desktop-v1.114.1](https://github.com/qiwi/pijma/compare/v1.114.0...v1.114.1) (2020-10-28)
+
+
+### Performance Improvements
+
+* compile es5, auto display name ([#342](https://github.com/qiwi/pijma/issues/342)) ([dae09a2](https://github.com/qiwi/pijma/commit/dae09a2))
+
 # [@qiwi/pijma-desktop-v1.114.0](https://github.com/qiwi/pijma/compare/v1.113.1...v1.114.0) (2020-10-16)
 
 

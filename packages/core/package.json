@@ -1,12 +1,12 @@
 {
   "name": "@qiwi/pijma-core",
-  "version": "1.114.0",
+  "version": "1.114.1",
   "main": "lib/es5/index.js",
   "types": "lib/es5/index.d.ts",
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf lib",
-    "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && cp -r src/fonts lib/es5/fonts",
+    "build": "mkdir -p lib/es5 && ttsc -p tsconfig.build.json && cp -r src/fonts lib/es5/fonts",
     "lint": "tslint -p tsconfig.build.json src/**/*.ts{,x}",
     "lint:fix": "tslint -p tsconfig.build.json --fix src/**/*.ts{,x}"
   },
@@ -39,8 +39,11 @@
   },
   "devDependencies": {
     "husky": "3.0.3",
+    "ts-node": "9.0.0",
+    "ts-react-display-name": "1.2.0",
     "tslint": "5.18.0",
     "tslint-config-qiwi": "1.1.1",
+    "ttypescript": "1.5.12",
     "typescript": "3.5.3"
   }
 }

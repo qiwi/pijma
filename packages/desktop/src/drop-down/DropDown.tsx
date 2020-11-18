@@ -1,6 +1,15 @@
 import React, {FC} from 'react'
 
-import {Overlay, OverlayProps, SimpleTransition, SimpleTransitionProps, css, Pos, Value} from '@qiwi/pijma-core'
+import {
+  Overlay,
+  OverlayProps,
+  SimpleTransition,
+  SimpleTransitionProps,
+  css,
+  Pos,
+  Value,
+  Box,
+} from '@qiwi/pijma-core'
 
 export interface DropDownProps {
   show: boolean
@@ -9,6 +18,7 @@ export interface DropDownProps {
   minWidth?: Value
   maxWidth?: Value
   rootClose?: boolean
+  stub?: boolean
   target: OverlayProps['target']
   container: OverlayProps['container']
   children: React.ReactElement
@@ -39,36 +49,44 @@ export const DropDown: FC<DropDownProps> = ({
   minWidth,
   maxWidth,
   rootClose = true,
+  stub = false,
   target,
   container,
   onHide,
   children,
 }) => (
-  <Overlay
-    show={show}
-    placement="bottom"
-    target={target}
-    container={container}
-    rootClose={rootClose}
-    onHide={onHide}
-    transition={transition}
-    children={(renderProps) => (
-      <Pos
-        type="absolute"
-        width={width}
-        minWidth={minWidth}
-        maxWidth={maxWidth}
-        zIndex={999}
-        ref={renderProps.props.ref}
-        mt={offset}
-        css={renderProps.props.style}
-      >
-        {children}
-      </Pos>
-    )}
-  />
+  stub ? (
+    <Box display="none">
+      {children}
+    </Box>
+  ) : (
+    <Overlay
+      show={show}
+      placement="bottom"
+      target={target}
+      container={container}
+      rootClose={rootClose}
+      onHide={onHide}
+      transition={transition}
+      children={(renderProps) => (
+        <Pos
+          type="absolute"
+          width={width}
+          minWidth={minWidth}
+          maxWidth={maxWidth}
+          zIndex={999}
+          ref={renderProps.props.ref}
+          mt={offset}
+          css={renderProps.props.style}
+        >
+          {children}
+        </Pos>
+      )}
+    />
+  )
 )
 
 DropDown.defaultProps = {
   rootClose: true,
+  stub: false,
 }

@@ -3,7 +3,12 @@
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "lib/es5",
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "plugins": [
+      {
+        "transform": "../../ts-react-display-name.ts"
+      }
+    ]
   },
   "include": [
     "src/**/*"
