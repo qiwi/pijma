@@ -1,5 +1,16 @@
 import React, {forwardRef, ReactNode} from 'react'
-import {Flex, FlexItem, Icon, Box, Section, Stub, Image} from '@qiwi/pijma-core'
+
+import {
+  Flex,
+  FlexItem,
+  Icon,
+  Box,
+  Section,
+  Stub,
+  Image,
+  Typo,
+} from '@qiwi/pijma-core'
+
 import {Paragraph, Text} from '../typography'
 
 export interface MenuItemProps {
@@ -12,6 +23,7 @@ export interface MenuItemProps {
   active?: boolean
   focus?: boolean
   size?: 's' | 'm'
+  notice?: boolean
   stub?: boolean
 }
 
@@ -30,6 +42,7 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(({
   active = false,
   focus = false,
   size = 's',
+  notice = false,
   stub = false,
   ...props
 }, ref) => (
@@ -70,7 +83,22 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(({
               <Text display="block" size="m" stub/>
             </Box>
           ) : (
-            <Paragraph clamp={icon && !notes ? 2 : undefined} bold>{text}</Paragraph>
+            <Paragraph clamp={icon && !notes ? 2 : undefined} bold>
+              {text}
+              {notice ? (
+                <Typo
+                  as="span"
+                  css={{marginLeft: '2px'}}
+                  size={4}
+                  color="#ed4848"
+                  height={2}
+                >
+                  &bull;
+                </Typo>
+              ) : (
+                null
+              )}
+            </Paragraph>
           )}
           {notes ? (
             stub ? (
@@ -90,9 +118,9 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(({
         </Flex>
       </FlexItem>
       {submenu ? (
-          <FlexItem align="center" shrink={0} width={6} height={6} ml={3}>
-            <Icon name="angle-right"/>
-          </FlexItem>
+        <FlexItem align="center" shrink={0} width={6} height={6} ml={3}>
+          <Icon name="angle-right"/>
+        </FlexItem>
       ) : (
         null
       )}

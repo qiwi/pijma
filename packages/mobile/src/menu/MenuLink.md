@@ -160,3 +160,24 @@
   />
 </Card>
 ```
+
+```jsx
+<Card bg="#fff" py={4}>
+  <MenuLink
+    title="text"
+    href="/"
+    notice
+  />
+  <MenuLink
+    title="long text long text long text long text long"
+    href="/"
+    notice
+  />
+  <MenuLink
+    title="long text long text long text long text long text long text long text"
+    notes="long notes long notes long notes long notes long notes long notes"
+    href="/"
+    notice
+  />
+</Card>
+```
