@@ -155,6 +155,9 @@
       <FlexItem width={37} height={11}>
         <MobileAppIcon name="apple"/>
       </FlexItem>
+      <FlexItem width={37} height={11}>
+        <MobileAppIcon name="huawei"/>
+      </FlexItem>
     </Flex>
   </BlockContent>
 </Block>
