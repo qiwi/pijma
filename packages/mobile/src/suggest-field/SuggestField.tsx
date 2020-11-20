@@ -48,6 +48,7 @@ export const SuggestField = <V extends {}>({
       onBlur={props.onBlur}
       onFocus={props.onFocus}
       onCancel={props.onCancel}
+      onSubmit={props.onSubmit}
       children={(renderProps) => (
         <Pos type="relative">
           <Box
@@ -106,6 +107,7 @@ export const SuggestField = <V extends {}>({
                 onHide={renderProps.onHide}
                 onEscape={renderProps.onEscapeInputModal}
                 onBack={renderProps.onBack}
+                onSubmit={props.onSubmit ? renderProps.onSearchClick : undefined}
               >
                 {props.loading ? (
                   Array(4).fill(1).map((_item, key) => (
@@ -134,7 +136,24 @@ export const SuggestField = <V extends {}>({
                     ) : (
                       null
                     )}
-                    {props.empty && menuRenderProps.items.length === 0 ? (
+                    {props.total && menuRenderProps.items.length > 0 ? (
+                      <Box px={6}>
+                        <Paragraph>
+                          {props.total.text}
+                          {props.total.link ? (
+                            <Fragment>
+                              {' '}
+                              <Link
+                                onClick={renderProps.onTotalClick}
+                                children={props.total.link.text}
+                              />
+                            </Fragment>
+                          ) : (
+                            null
+                          )}
+                        </Paragraph>
+                      </Box>
+                    ) : props.empty && menuRenderProps.items.length === 0 && props.items !== undefined ? (
                       <Box px={4}>
                         <Paragraph>
                           {props.empty.text}

@@ -15,6 +15,7 @@ export default interface SuggestFieldProps<O extends SuggestFieldOptionModel<V>,
   stub?: boolean
   error?: ReactNode
   loading?: boolean
+  total?: SuggestControlProps<O, V>['total']
   name?: string
   type?: 'text' | 'password' | 'tel' | 'number' | 'search' | 'email' | 'url'
   title?: string
@@ -28,5 +29,6 @@ export default interface SuggestFieldProps<O extends SuggestFieldOptionModel<V>,
   onCancel?: SuggestControlProps<O, V>['onCancel']
   onFocus?: SuggestControlProps<O, V>['onFocus']
   onBlur?: SuggestControlProps<O, V>['onBlur']
+  onSubmit?: SuggestControlProps<O, V>['onSubmit']
   equals?: SuggestControlProps<O, V>['equals']
 }
