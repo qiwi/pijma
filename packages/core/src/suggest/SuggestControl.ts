@@ -152,6 +152,7 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
   private cancel: () => void = () => {
     this.setState({
       show: false,
+      focused: false,
     })
     if (this.props.onCancel) {
       this.props.onCancel()
