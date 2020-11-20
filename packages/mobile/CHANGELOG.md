@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.117.1](https://github.com/qiwi/pijma/compare/v1.117.0...v1.117.1) (2020-11-20)
+
+
+### Bug Fixes
+
+* suggest-field total and submit ([#351](https://github.com/qiwi/pijma/issues/351)) ([cbbb02e](https://github.com/qiwi/pijma/commit/cbbb02e))
+
 # [@qiwi/pijma-mobile-v1.117.0](https://github.com/qiwi/pijma/compare/v1.116.0...v1.117.0) (2020-11-18)
 
 
