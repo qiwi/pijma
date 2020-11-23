@@ -3,7 +3,6 @@ import {ReactElement, ReactNode} from 'react'
 import {SuggestControlProps} from '@qiwi/pijma-core'
 
 import SuggestFieldOptionModel from './SuggestFieldOptionModel'
-import {MarkdownProps} from '../markdown'
 
 export default interface SuggestFieldProps<O extends SuggestFieldOptionModel<V>, V> {
   value?: SuggestControlProps<O, V>['value']
@@ -26,7 +25,6 @@ export default interface SuggestFieldProps<O extends SuggestFieldOptionModel<V>,
   hint?: ReactNode
   action?: ReactNode
   empty?: SuggestControlProps<O, V>['empty'] | ReactElement | string
-  size?: MarkdownProps['size']
   onChange: SuggestControlProps<O, V>['onChange']
   onRequest: SuggestControlProps<O, V>['onRequest']
   onCancel?: SuggestControlProps<O, V>['onCancel']

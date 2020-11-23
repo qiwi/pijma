@@ -42,8 +42,8 @@ export const SuggestField = <V extends {}>({
       value={props.value}
       suggest={props.suggest}
       items={props.items}
-      total={!React.isValidElement(props.total) && typeof props.total !== 'string' ? props.total : undefined}
-      empty={!React.isValidElement(props.empty) && typeof props.empty !== 'string' ? props.empty : undefined}
+      total={React.isValidElement(props.total) || typeof props.total === 'string' ? undefined : props.total}
+      empty={React.isValidElement(props.empty) || typeof props.empty === 'string' ? undefined : props.empty}
       equals={equals}
       onRequest={props.onRequest}
       onChange={props.onChange}
@@ -144,7 +144,7 @@ export const SuggestField = <V extends {}>({
                           props.total
                         ) : (
                           typeof props.total === 'string' ? (
-                            <Markdown size={props.size} children={props.total}/>
+                            <Markdown children={props.total}/>
                           ) : (
                             <Paragraph>
                               {props.total.text}
@@ -169,7 +169,7 @@ export const SuggestField = <V extends {}>({
                           props.empty
                         ) : (
                           typeof props.empty === 'string' ? (
-                            <Markdown size={props.size} children={props.empty}/>
+                            <Markdown children={props.empty}/>
                           ) : (
                             <Paragraph>
                               {props.empty.text}
