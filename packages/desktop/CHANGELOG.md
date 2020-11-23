@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.118.0](https://github.com/qiwi/pijma/compare/v1.117.1...v1.118.0) (2020-11-23)
+
+
+### Features
+
+* suggest custom empty and total message ([#352](https://github.com/qiwi/pijma/issues/352)) ([312ed87](https://github.com/qiwi/pijma/commit/312ed87))
+
 # [@qiwi/pijma-desktop-v1.117.0](https://github.com/qiwi/pijma/compare/v1.116.0...v1.117.0) (2020-11-18)
 
 
