@@ -17,6 +17,7 @@ import {Paragraph} from '../typography'
 import {Link} from '../link'
 import {MenuItem} from '../menu'
 import {InputModal} from '../input-modal'
+import {Markdown} from '../markdown'
 
 import SuggestFieldProps from './SuggestFieldProps'
 import SuggestFieldOptionModel from './SuggestFieldOptionModel'
@@ -41,8 +42,8 @@ export const SuggestField = <V extends {}>({
       value={props.value}
       suggest={props.suggest}
       items={props.items}
-      total={!React.isValidElement(props.total) ? props.total : undefined}
-      empty={!React.isValidElement(props.empty) ? props.empty : undefined}
+      total={!React.isValidElement(props.total) && typeof props.total !== 'string' ? props.total : undefined}
+      empty={!React.isValidElement(props.empty) && typeof props.empty !== 'string' ? props.empty : undefined}
       equals={equals}
       onRequest={props.onRequest}
       onChange={props.onChange}
@@ -142,20 +143,24 @@ export const SuggestField = <V extends {}>({
                         {React.isValidElement(props.total) ? (
                           props.total
                         ) : (
-                          <Paragraph>
-                            {props.total.text}
-                            {props.total.link ? (
-                              <Fragment>
-                                {' '}
-                                <Link
-                                  onClick={renderProps.onTotalClick}
-                                  children={props.total.link.text}
-                                />
-                              </Fragment>
-                            ) : (
-                              null
-                            )}
-                          </Paragraph>
+                          typeof props.total === 'string' ? (
+                            <Markdown size={props.size} children={props.total}/>
+                          ) : (
+                            <Paragraph>
+                              {props.total.text}
+                              {props.total.link ? (
+                                <Fragment>
+                                  {' '}
+                                  <Link
+                                    onClick={renderProps.onTotalClick}
+                                    children={props.total.link.text}
+                                  />
+                                </Fragment>
+                              ) : (
+                                null
+                              )}
+                            </Paragraph>
+                          )
                         )}
                       </Box>
                     ) : props.empty && menuRenderProps.items.length === 0 && props.items !== undefined ? (
@@ -163,20 +168,24 @@ export const SuggestField = <V extends {}>({
                         {React.isValidElement(props.empty) ? (
                           props.empty
                         ) : (
-                          <Paragraph>
-                            {props.empty.text}
-                            {props.empty.link ? (
-                              <Fragment>
-                                {' '}
-                                <Link
-                                  onClick={renderProps.onEmptyClick}
-                                  children={props.empty.link.text}
-                                />
-                              </Fragment>
-                            ) : (
-                              null
-                            )}
-                          </Paragraph>
+                          typeof props.empty === 'string' ? (
+                            <Markdown size={props.size} children={props.empty}/>
+                          ) : (
+                            <Paragraph>
+                              {props.empty.text}
+                              {props.empty.link ? (
+                                <Fragment>
+                                  {' '}
+                                  <Link
+                                    onClick={renderProps.onEmptyClick}
+                                    children={props.empty.link.text}
+                                  />
+                                </Fragment>
+                              ) : (
+                                null
+                              )}
+                            </Paragraph>
+                          )
                         )}
                       </Box>
                     ) : (

@@ -3,6 +3,7 @@ import React, {ReactElement} from 'react'
 import {SuggestControlProps} from '@qiwi/pijma-core'
 
 import {HeaderSuggestOptionModel} from './HeaderSuggestOptionModel'
+import {MarkdownProps} from '../markdown'
 
 export interface HeaderSuggestProps<O extends HeaderSuggestOptionModel<V>, V> {
   value?: SuggestControlProps<O, V>['value']
@@ -18,8 +19,9 @@ export interface HeaderSuggestProps<O extends HeaderSuggestOptionModel<V>, V> {
   stub?: boolean
   error?: boolean
   loading?: boolean
-  total?: SuggestControlProps<O, V>['total'] | ReactElement
-  empty?: SuggestControlProps<O, V>['empty'] | ReactElement
+  total?: SuggestControlProps<O, V>['total'] | ReactElement | string
+  empty?: SuggestControlProps<O, V>['empty'] | ReactElement | string
+  size?: MarkdownProps['size']
   onChange: SuggestControlProps<O, V>['onChange']
   onRequest: SuggestControlProps<O, V>['onRequest']
   onCancel?: SuggestControlProps<O, V>['onCancel']
