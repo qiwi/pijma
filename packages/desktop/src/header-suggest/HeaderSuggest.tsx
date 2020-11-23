@@ -54,8 +54,8 @@ export const HeaderSuggest = <V extends {}>({
     value={props.value}
     suggest={props.suggest}
     items={props.items}
-    total={props.total}
-    empty={props.empty}
+    total={!React.isValidElement(props.total) ? props.total : undefined}
+    empty={!React.isValidElement(props.empty) ? props.empty : undefined}
     equals={equals}
     onRequest={props.onRequest}
     onChange={props.onChange}
@@ -174,37 +174,45 @@ export const HeaderSuggest = <V extends {}>({
                           )}
                           {props.total && menuRenderProps.items.length > 0 ? (
                             <Box px={6} pb={4}>
-                              <Paragraph>
-                                {props.total.text}
-                                {props.total.link ? (
-                                  <Fragment>
-                                    {' '}
-                                    <Link
-                                      onClick={renderProps.onTotalClick}
-                                      children={props.total.link.text}
-                                    />
-                                  </Fragment>
-                                ) : (
-                                  null
-                                )}
-                              </Paragraph>
+                              {React.isValidElement(props.total) ? (
+                                props.total
+                              ) : (
+                                <Paragraph>
+                                  {props.total.text}
+                                  {props.total.link ? (
+                                    <Fragment>
+                                      {' '}
+                                      <Link
+                                        onClick={renderProps.onTotalClick}
+                                        children={props.total.link.text}
+                                      />
+                                    </Fragment>
+                                  ) : (
+                                    null
+                                  )}
+                                </Paragraph>
+                              )}
                             </Box>
                           ) : props.empty && menuRenderProps.items.length === 0 && props.items !== undefined ? (
                             <Box px={6} py={4}>
-                              <Paragraph>
-                                {props.empty.text}
-                                {props.empty.link ? (
-                                  <Fragment>
-                                    {' '}
-                                    <Link
-                                      onClick={renderProps.onEmptyClick}
-                                      children={props.empty.link.text}
-                                    />
-                                  </Fragment>
-                                ) : (
-                                  null
-                                )}
-                              </Paragraph>
+                              {React.isValidElement(props.empty) ? (
+                                props.empty
+                              ) : (
+                                <Paragraph>
+                                  {props.empty.text}
+                                  {props.empty.link ? (
+                                    <Fragment>
+                                      {' '}
+                                      <Link
+                                        onClick={renderProps.onEmptyClick}
+                                        children={props.empty.link.text}
+                                      />
+                                    </Fragment>
+                                  ) : (
+                                    null
+                                  )}
+                                </Paragraph>
+                              )}
                             </Box>
                           ) : (
                             null
