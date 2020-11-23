@@ -17,6 +17,7 @@ import {Paragraph} from '../typography'
 import {Link} from '../link'
 import {MenuItem} from '../menu'
 import {InputModal} from '../input-modal'
+import {Markdown} from '../markdown'
 
 import SuggestFieldProps from './SuggestFieldProps'
 import SuggestFieldOptionModel from './SuggestFieldOptionModel'
@@ -41,7 +42,8 @@ export const SuggestField = <V extends {}>({
       value={props.value}
       suggest={props.suggest}
       items={props.items}
-      empty={props.empty}
+      total={React.isValidElement(props.total) || typeof props.total === 'string' ? undefined : props.total}
+      empty={React.isValidElement(props.empty) || typeof props.empty === 'string' ? undefined : props.empty}
       equals={equals}
       onRequest={props.onRequest}
       onChange={props.onChange}
@@ -138,37 +140,53 @@ export const SuggestField = <V extends {}>({
                     )}
                     {props.total && menuRenderProps.items.length > 0 ? (
                       <Box px={6}>
-                        <Paragraph>
-                          {props.total.text}
-                          {props.total.link ? (
-                            <Fragment>
-                              {' '}
-                              <Link
-                                onClick={renderProps.onTotalClick}
-                                children={props.total.link.text}
-                              />
-                            </Fragment>
+                        {React.isValidElement(props.total) ? (
+                          props.total
+                        ) : (
+                          typeof props.total === 'string' ? (
+                            <Markdown children={props.total}/>
                           ) : (
-                            null
-                          )}
-                        </Paragraph>
+                            <Paragraph>
+                              {props.total.text}
+                              {props.total.link ? (
+                                <Fragment>
+                                  {' '}
+                                  <Link
+                                    onClick={renderProps.onTotalClick}
+                                    children={props.total.link.text}
+                                  />
+                                </Fragment>
+                              ) : (
+                                null
+                              )}
+                            </Paragraph>
+                          )
+                        )}
                       </Box>
                     ) : props.empty && menuRenderProps.items.length === 0 && props.items !== undefined ? (
-                      <Box px={4}>
-                        <Paragraph>
-                          {props.empty.text}
-                          {props.empty.link ? (
-                            <Fragment>
-                              {' '}
-                              <Link
-                                onClick={renderProps.onEmptyClick}
-                                children={props.empty.link.text}
-                              />
-                            </Fragment>
+                      <Box px={6}>
+                        {React.isValidElement(props.empty) ? (
+                          props.empty
+                        ) : (
+                          typeof props.empty === 'string' ? (
+                            <Markdown children={props.empty}/>
                           ) : (
-                            null
-                          )}
-                        </Paragraph>
+                            <Paragraph>
+                              {props.empty.text}
+                              {props.empty.link ? (
+                                <Fragment>
+                                  {' '}
+                                  <Link
+                                    onClick={renderProps.onEmptyClick}
+                                    children={props.empty.link.text}
+                                  />
+                                </Fragment>
+                              ) : (
+                                null
+                              )}
+                            </Paragraph>
+                          )
+                        )}
                       </Box>
                     ) : (
                       null

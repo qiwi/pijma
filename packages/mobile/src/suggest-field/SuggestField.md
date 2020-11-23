@@ -1,6 +1,6 @@
-#### SuggestField
-
 ```jsx
+const types = ['object', 'markdown', 'react'];
+let type = types[Math.floor(Math.random() * 3)];
 const banks = [
   {
     value: {
@@ -140,6 +140,7 @@ const getBanks = (suggest) => {
 };
 
 const onRequest = (suggest) => {
+  type = types[Math.floor(Math.random() * 3)];
   setState({suggest, error: suggest === ''});
   getBanks(suggest).then((banks) => setState({banks}));
 };
@@ -173,19 +174,46 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
         onCancel={onCancel}
         onChange={onChange}
         onRequest={onRequest}
-        empty={state.error ? {
-          text: 'Ошибка,',
-          link: {
-            text: 'попробуйте ещё раз',
-            suggest: state.suggest,
+        total={type === 'object' ? (
+          {
+            link: {
+              text: 'Показать все',
+              suggest: state.suggest,
+            }
           }
-        } : {
-          text: 'Ничего не найдено, попробуйте',
-          link: {
-            text: 'Сбербанк',
-            suggest: 'Сбербанк',
+        ) : type === 'markdown' ? (
+          "[Показать все](#)"
+        ) : (
+          <Link href="#" children="Показать все"/>
+        )} 
+        empty={type === 'object' ? (
+          {
+            text: 'Ничего не найдено, попробуйте',
+            link: {
+              text: 'Сбербанк',
+              suggest: 'Сбербанк',
+            }
           }
-        }}
+        ) : type === 'markdown' ? (
+          "Ничего не нашлось"
+        ) : (
+          <React.Fragment>
+            <Box mb={4}>
+              <Heading size="4">
+                Ничего не нашлось
+              </Heading>
+            </Box>
+            <List
+              type="bullet"
+              children={[
+                <Paragraph>Если у вас есть квитанция с реквизитами, <Link href="#">оплатите по ним.</Link></Paragraph>,
+                <Paragraph><Link href="#">Напишите нам</Link>. Если услуги нет в кошельке, мы постараемся ее добавить.</Paragraph>,
+                <Paragraph>Уточните у поставщика услуги, можно ли ее оплачивать через QIWI.</Paragraph>,
+                <Paragraph>Провайдер был, а теперь его нет? Возможно, у него изменилось название или мы перестали с ним сотрудничать.<br/>Перейдите на сайт провайдера и оплатите услугу с помощью <Link href="#">виртуальной или пластиковой карты QIWI</Link>,<br/>баланс карт равен балансу кошелька.</Paragraph>,
+              ]}
+            />
+          </React.Fragment>
+        )}
       />
     </Box>
   </BlockContent>
