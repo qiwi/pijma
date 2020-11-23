@@ -1,5 +1,6 @@
 ```jsx
-const type = ['object', 'markdown', 'reactElement'][Math.floor(Math.random() * 3)]
+const types = ['object', 'markdown', 'react'];
+let type = types[Math.floor(Math.random() * 3)];
 const banks = [
   {
     value: {
@@ -139,6 +140,7 @@ const getBanks = (suggest) => {
 };
 
 const onRequest = (suggest) => {
+  type = types[Math.floor(Math.random() * 3)];
   setState({suggest, error: suggest === ''});
   getBanks(suggest).then((banks) => setState({banks}));
 };
