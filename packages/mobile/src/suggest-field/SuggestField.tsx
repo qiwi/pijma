@@ -163,7 +163,7 @@ export const SuggestField = <V extends {}>({
                           )
                         )}
                       </Box>
-                    ) : props.empty && menuRenderProps.items.length === 0 && props.items !== undefined ? (
+                    ) : props.empty && menuRenderProps.items.length === 0 ? (
                       <Box px={6}>
                         {React.isValidElement(props.empty) ? (
                           props.empty
