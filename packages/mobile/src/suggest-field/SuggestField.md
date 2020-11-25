@@ -165,7 +165,7 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
     <Box>
       <SuggestField
         value={state.value}
-        items={state.banks}
+        items={state.banks || []}
         title="Поле ввода"
         suggest={state.suggest}
         loading={state.loading}
@@ -186,7 +186,7 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
         ) : (
           <Link href="#" children="Показать все"/>
         )} 
-        empty={type === 'object' ? (
+        empty={state.banks !== undefined ? (type === 'object' ? (
           {
             text: 'Ничего не найдено, попробуйте',
             link: {
@@ -213,6 +213,8 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
               ]}
             />
           </React.Fragment>
+        )) : (
+          undefined
         )}
       />
     </Box>

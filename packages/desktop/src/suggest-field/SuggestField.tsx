@@ -53,7 +53,7 @@ export const SuggestField = <V extends {}>({
       onCancel={props.onCancel}
       children={(renderProps) => (
         <MenuControl
-          count={renderProps.items.length}
+          count={props.items.length}
           selected={renderProps.selected}
           onSelect={renderProps.onItemSelect}
           onKeyDown={renderProps.onItemKeyDown}
@@ -89,7 +89,7 @@ export const SuggestField = <V extends {}>({
                       onChange={renderProps.onRequest}
                       onFocus={renderProps.onInputFocus}
                       onBlur={renderProps.onInputBlur}
-                      onKeyDown={props.items !== undefined && renderProps.focused && (props.items.length > 0 || props.empty !== undefined) ? (
+                      onKeyDown={renderProps.focused && (props.items.length > 0 || props.empty !== undefined) ? (
                         menuRenderProps.onKeyDown
                       ) : (
                         renderProps.onItemKeyDown
@@ -108,7 +108,7 @@ export const SuggestField = <V extends {}>({
                 minWidth={1}
                 width={1}
                 offset={3}
-                show={props.items !== undefined && renderProps.focused && (props.items.length > 0 || props.empty !== undefined || props.loading === true)}
+                show={renderProps.focused && (props.items.length > 0 || props.empty !== undefined || props.loading === true)}
                 rootClose={true}
                 onHide={renderProps.onHide}
               >
@@ -139,9 +139,9 @@ export const SuggestField = <V extends {}>({
                               onMouseDown={item.onMouseDown}
                               onMouseEnter={item.onMouseEnter}
                               cursor="pointer"
-                              text={renderProps.items[key].title}
-                              notes={renderProps.items[key].description}
-                              icon={renderProps.items[key].logo ? <Image width={6} height={6} src={renderProps.items[key].logo}/> : undefined}
+                              text={props.items[key].title}
+                              notes={props.items[key].description}
+                              icon={props.items[key].logo ? <Image width={6} height={6} src={props.items[key].logo}/> : undefined}
                               hover={item.focused}
                               active={item.selected}
                               focus={item.selected}

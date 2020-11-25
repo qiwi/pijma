@@ -3,7 +3,7 @@ import RenderChild from '../RenderChild'
 import SuggestOptionModel from './SuggestOptionModel'
 
 export default interface SuggestControlProps<O extends SuggestOptionModel<V>, V> {
-  items?: O[]
+  items: O[]
   value?: V
   suggest?: string
   total?: {
@@ -33,7 +33,6 @@ export default interface SuggestControlProps<O extends SuggestOptionModel<V>, V>
     selected: number | undefined
     show: boolean
     inputRef: RefObject<HTMLInputElement>
-    items: O[]
     onShowFocus?: React.FocusEventHandler
     onInputFocus?: React.FocusEventHandler
     onInputBlur?: React.FocusEventHandler

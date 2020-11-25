@@ -208,9 +208,9 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
           <FlexItem align="center" shrink={0} cursor="pointer">
             <HeaderSuggest
               value={state.value}
-              items={state.banks}
+              items={state.banks || []}
               suggest={state.suggest}
-              loading={state.loading}
+              loading={state.loading && state.banks !== undefined}
               error={state.error}
               equals={equals}
               target={target}
@@ -231,7 +231,7 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
               ) : (
                 <Link href="#" children="Показать все"/>
               )} 
-              empty={type === 'object' ? (
+              empty={state.banks !== undefined ? (type === 'object' ? (
                 {
                   text: 'Ничего не найдено, попробуйте',
                   link: {
@@ -258,6 +258,8 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
                     ]}
                   />
                 </React.Fragment>
+              )) : (
+                undefined
               )}
             />
           </FlexItem>

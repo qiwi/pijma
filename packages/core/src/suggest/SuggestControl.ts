@@ -14,17 +14,13 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
 
   private inputRef: RefObject<HTMLInputElement> = createRef()
 
-  private get items() {
-    return this.props.items === undefined ? [] : this.props.items
-  }
-
   private onRequest: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     event.preventDefault()
     this.request(event.currentTarget.value)
   }
 
   private onSelect: (index: number) => void = (index: number) => {
-    const item = this.items[index]
+    const item = this.props.items[index]
     if (item.suggest) {
       this.request(item.suggest)
     }
@@ -163,7 +159,7 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
     if (!this.props.value) {
       return undefined
     }
-    const index = this.items.findIndex(item => this.props.equals(item.value, this.props.value!))
+    const index = this.props.items.findIndex(item => this.props.equals(item.value, this.props.value!))
     return index !== -1 ? index : undefined
   }
 
@@ -199,7 +195,6 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
       selected: this.selected,
       show: this.state.show,
       inputRef: this.inputRef,
-      items: this.items,
       onItemSelect: this.onSelect,
       onRequest: this.onRequest,
       onShowFocus: this.onShowFocus,

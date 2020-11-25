@@ -45,7 +45,7 @@ export const ContentSuggest = <V extends {}>({
     onCancel={props.onCancel}
     children={(renderProps) => (
       <MenuControl
-        count={renderProps.items.length}
+        count={props.items.length}
         selected={renderProps.selected}
         onSelect={renderProps.onItemSelect}
         onKeyDown={renderProps.onItemKeyDown}
@@ -74,12 +74,12 @@ export const ContentSuggest = <V extends {}>({
                 pr={14}
                 error={!!props.error}
                 focused={renderProps.focused}
-                norb={props.items !== undefined && renderProps.focused && (props.items.length > 0 || props.empty !== undefined || props.loading)}
+                norb={renderProps.focused && (props.items.length > 0 || props.empty !== undefined || props.loading)}
                 hovered={renderProps.hovered}
                 onChange={renderProps.onRequest}
                 onFocus={renderProps.onInputFocus}
                 onBlur={renderProps.onInputBlur}
-                onKeyDown={props.items !== undefined && renderProps.focused && (props.items.length > 0 || props.empty !== undefined) ? (
+                onKeyDown={renderProps.focused && (props.items.length > 0 || props.empty !== undefined) ? (
                   menuRenderProps.onKeyDown
                 ) : (
                   renderProps.onItemKeyDown
@@ -96,7 +96,7 @@ export const ContentSuggest = <V extends {}>({
             </Box>
             <DropDown
               minWidth={1}
-              show={props.items !== undefined && renderProps.focused && (props.items.length > 0 || props.empty !== undefined || props.loading === true)}
+              show={renderProps.focused && (props.items.length > 0 || props.empty !== undefined || props.loading === true)}
               rootClose={false}
               container={dropDownContainerRef.current}
               target={renderProps.inputRef.current!}
@@ -137,9 +137,9 @@ export const ContentSuggest = <V extends {}>({
                               onMouseDown={item.onMouseDown}
                               onMouseEnter={item.onMouseEnter}
                               cursor="pointer"
-                              text={renderProps.items[key].title}
-                              notes={renderProps.items[key].description}
-                              icon={<Image width={6} height={6} src={renderProps.items[key].logo}/>}
+                              text={props.items[key].title}
+                              notes={props.items[key].description}
+                              icon={<Image width={6} height={6} src={props.items[key].logo}/>}
                               hover={item.focused}
                               active={item.selected}
                               focus={item.selected}

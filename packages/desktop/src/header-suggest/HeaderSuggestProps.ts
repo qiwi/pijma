@@ -7,7 +7,7 @@ import {HeaderSuggestOptionModel} from './HeaderSuggestOptionModel'
 export interface HeaderSuggestProps<O extends HeaderSuggestOptionModel<V>, V> {
   value?: SuggestControlProps<O, V>['value']
   suggest: SuggestControlProps<O, V>['suggest']
-  items?: SuggestControlProps<O, V>['items']
+  items: SuggestControlProps<O, V>['items']
   target: React.RefObject<any>
   container: React.RefObject<any>
   tabIndex?: number

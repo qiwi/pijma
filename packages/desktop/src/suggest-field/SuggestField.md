@@ -170,10 +170,10 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
     <Box width={70}>
       <SuggestField
         value={state.value}
-        items={state.banks}
+        items={state.banks || []}
         title="Поле ввода"
         suggest={state.suggest}
-        loading={state.loading}
+        loading={state.loading && state.banks !== undefined}
         error={state.validateError}
         equals={equals}
         onCancel={onCancel}
