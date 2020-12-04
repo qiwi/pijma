@@ -2,7 +2,7 @@ import React, {FC, ReactElement} from 'react'
 import {Card} from '@qiwi/pijma-core'
 
 export interface AnnotationProps {
-  children: ReactElement | string
+  children: ReactElement
 }
 
 export const Annotation: FC<AnnotationProps> = ({children}) => (
