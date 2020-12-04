@@ -1,8 +1,8 @@
-import React, {FC, ReactElement} from 'react'
+import React, {FC, ReactNode} from 'react'
 import {Card} from '@qiwi/pijma-core'
 
 export interface AnnotationProps {
-  children: ReactElement
+  children: ReactNode
 }
 
 export const Annotation: FC<AnnotationProps> = ({children}) => (
