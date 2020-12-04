@@ -75,7 +75,10 @@ export const HeaderSuggest = <V extends {}>({
             <Box
               width={6}
               height={6}
-              onClick={renderProps.onShowClick}
+              onClick={(event) => {
+                event.stopPropagation()
+                renderProps.onShowClick && renderProps.onShowClick(event)
+              }}
             >
               <Icon name="search"/>
             </Box>
