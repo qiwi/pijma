@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.119.1](https://github.com/qiwi/pijma/compare/v1.119.0...v1.119.1) (2020-12-08)
+
+
+### Bug Fixes
+
+* **core:** suggest on show click ([#357](https://github.com/qiwi/pijma/issues/357)) ([fd51f38](https://github.com/qiwi/pijma/commit/fd51f38))
+
 # [@qiwi/pijma-core-v1.117.1](https://github.com/qiwi/pijma/compare/v1.117.0...v1.117.1) (2020-11-20)
 
 
