@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.119.0](https://github.com/qiwi/pijma/compare/v1.118.0...v1.119.0) (2020-12-04)
+
+
+### Features
+
+* **desktop:** annotation ([#354](https://github.com/qiwi/pijma/issues/354)) ([0a5b37c](https://github.com/qiwi/pijma/commit/0a5b37c))
+
 # [@qiwi/pijma-desktop-v1.118.0](https://github.com/qiwi/pijma/compare/v1.117.1...v1.118.0) (2020-11-23)
 
 
