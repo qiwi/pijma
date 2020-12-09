@@ -71,7 +71,7 @@ export const SuggestField = <V extends {}>({
                 <InputField
                   title={props.title}
                   active={renderProps.focused || !!props.suggest || !!props.placeholder}
-                  input={
+                  input={(
                     <BasicInput
                       ref={renderProps.inputRef}
                       name={props.name}
@@ -95,7 +95,7 @@ export const SuggestField = <V extends {}>({
                         renderProps.onItemKeyDown
                       )}
                     />
-                  }
+                  )}
                   hint={props.hint}
                   error={props.error}
                   help={props.help}
