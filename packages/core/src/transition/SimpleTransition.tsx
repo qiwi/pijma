@@ -15,8 +15,8 @@ const statusClassName = (status: string, props: SimpleTransitionProps): string |
     exitedClassName,
     exitClassName,
   } = props
-  const enter = typeof timeout === 'number' ? timeout : timeout.enter || 0
-  const exit = typeof timeout === 'number' ? timeout : timeout.exit || 0
+  const enter = typeof timeout === 'number' ? timeout : timeout && timeout.enter || 0
+  const exit = typeof timeout === 'number' ? timeout : timeout && timeout.exit || 0
   switch (status) {
     case ENTERING:
       return enteringClassName ? enteringClassName(enter) : enterClassName ? enterClassName(enter) : undefined
