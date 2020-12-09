@@ -110,7 +110,7 @@ export const DropUp: FunctionComponent<DropUpProps> = (props) => (
     )}
     transition={props.horizontal ? contentTransitionHorizontal : contentTransitionVertical}
     backdropTransition={backdropTransition}
-    children={
+    children={(
       <FlexPosCard
         display="flex"
         direction="column"
@@ -151,6 +151,6 @@ export const DropUp: FunctionComponent<DropUpProps> = (props) => (
           null
         )}
       </FlexPosCard>
-    }
+    )}
   />
 )
