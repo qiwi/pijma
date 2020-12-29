@@ -1,11 +1,15 @@
 import React, {FC} from 'react'
-import {Flex, FlexItem, Icon, Card, AlertControl, IconProps} from '@qiwi/pijma-core'
+import {Flex, FlexItem, Icon, Card, AlertControl, IconProps, Value, Box} from '@qiwi/pijma-core'
 import {Paragraph, ParagraphProps} from '../typography'
+import {Button} from '../button'
 
 export interface AlertProps {
   text: string
   type: 'success' | 'warning' | 'failure' | 'general'
+  width?: Value
+  actionText?: string
   onHide?: () => void
+  onClick?: () => void
 }
 
 const AlertBackgroundColor: Record<NonNullable<AlertProps['type']>, string> = {
@@ -36,38 +40,45 @@ const AlertIconColor: Record<NonNullable<AlertProps['type']>, string> = {
   general: '#666',
 }
 
-export const Alert: FC<AlertProps> = ({type = 'general', text, onHide}) => (
+export const Alert: FC<AlertProps> = ({type = 'general', text, width = 295, actionText, onHide, onClick}) => (
   <AlertControl
     onHide={onHide}
     children={renderProps => (
       <Card bg={AlertBackgroundColor[type]}>
         <Flex
+          maxWidth={width}
           minHeight={16}
+          mx="auto"
+          my={0}
+          py={2}
+          px={12}
           align="center"
-          justify="flex-start"
-          pt={2}
-          pb={2}
         >
-          <FlexItem
-            ml={12}
-            mr={4}
-          >
+          <FlexItem>
             <Icon
               size={6}
               name={AlertIconName[type]}
               color={AlertIconColor[type]}
             />
           </FlexItem>
-          <FlexItem mr={onHide ? 4 : 12} overflow="hidden">
-            <Paragraph
-              color={AlertColorText[type]}
-              children={text}
-            />
+          <FlexItem overflow="hidden" mx={4}>
+            <Flex direction="row" align="center">
+              <Paragraph
+                color={AlertColorText[type]}
+                children={text}
+              />
+              {actionText ? (
+                <Box ml={2}>
+                  <Button kind="simple" size="minor" type="submit" text={actionText} onClick={onClick}/>
+                </Box>
+              ) : (
+                null
+              )}
+            </Flex>
           </FlexItem>
           {onHide ? (
             <FlexItem
               ml="auto"
-              mr={12}
               cursor="pointer"
               opacity={renderProps.hover ? 0.7 : 1}
               transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
@@ -93,4 +104,5 @@ export const Alert: FC<AlertProps> = ({type = 'general', text, onHide}) => (
 
 Alert.defaultProps = {
   type: 'general',
+  width: 295,
 }

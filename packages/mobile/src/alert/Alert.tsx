@@ -1,11 +1,14 @@
 import React, {FC} from 'react'
 import {Flex, FlexItem, Icon, Card, AlertControl, IconProps} from '@qiwi/pijma-core'
 import {Paragraph, ParagraphProps} from '../typography'
+import {Button} from '../button'
 
 export interface AlertProps {
   text: string
   type: 'success' | 'warning' | 'failure' | 'general'
+  actionText?: string
   onHide?: () => void
+  onClick?: () => void
 }
 
 const AlertBackgroundColor: Record<NonNullable<AlertProps['type']>, string> = {
@@ -36,7 +39,7 @@ const AlertIconColor: Record<NonNullable<AlertProps['type']>, string> = {
   general: '#666',
 }
 
-export const Alert: FC<AlertProps> = ({type = 'general', text, onHide}) => (
+export const Alert: FC<AlertProps> = ({type = 'general', text, actionText, onHide, onClick}) => (
   <AlertControl
     onHide={onHide}
     children={renderProps => (
@@ -63,6 +66,11 @@ export const Alert: FC<AlertProps> = ({type = 'general', text, onHide}) => (
               color={AlertColorText[type]}
               children={text}
             />
+            {actionText ? (
+              <Button kind="simple" size="minor" type="submit" text={actionText} onClick={onClick}/>
+            ) : (
+              null
+            )}
           </FlexItem>
           {onHide ? (
             <FlexItem
