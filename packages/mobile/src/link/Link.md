@@ -37,9 +37,9 @@
 <Block bg="#2D3540">
   <BlockContent>
     <Flex justify="space-around" align="center" width={1}> 
-      <Link inverse size="l" bold href="https://qiwi.com" title="inverse link l" onClick={() => alert('alert 2')}>Inverse link L</Link>
-      <Link inverse size="m" bold href="https://qiwi.com" title="inverse link m" onClick={() => alert('alert 2')}>Inverse link M</Link>
-      <Link inverse size="s" bold href="https://qiwi.com" title="inverse link s" onClick={() => alert('alert 2')}>Inverse link S</Link>
+      <Link inverse size="l" bold href="https://qiwi.com" title="inverse link l" onClick={() => alert('alert 2')}>Inverse L</Link>
+      <Link inverse size="m" bold href="https://qiwi.com" title="inverse link m" onClick={() => alert('alert 2')}>Inverse M</Link>
+      <Link inverse size="s" bold href="https://qiwi.com" title="inverse link s" onClick={() => alert('alert 2')}>Inverse S</Link>
     </Flex>
   </BlockContent>
 </Block>
