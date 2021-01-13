@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.120.0](https://github.com/qiwi/pijma/compare/v1.119.2...v1.120.0) (2021-01-13)
+
+
+### Features
+
+* inverse link ([#363](https://github.com/qiwi/pijma/issues/363)) ([19e966d](https://github.com/qiwi/pijma/commit/19e966d))
+
 # [@qiwi/pijma-desktop-v1.119.2](https://github.com/qiwi/pijma/compare/v1.119.1...v1.119.2) (2021-01-13)
 
 
