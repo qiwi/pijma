@@ -70,7 +70,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                     onChange={renderProps.onChange}
                     onFocus={renderProps.onFocus}
                     onBlur={renderProps.onBlur}
-                    onKeyDown={menuRenderProps.onKeyDown}
+                    onKeyDown={renderProps.showCountries ? menuRenderProps.onKeyDown : undefined}
                   />
                 )}
                 hint={props.hint}
