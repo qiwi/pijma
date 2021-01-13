@@ -106,7 +106,3 @@ export const Link: FC<LinkProps> = (props) => (
     />
   )
 )
-
-Link.defaultProps = {
-  inverse: false,
-}
