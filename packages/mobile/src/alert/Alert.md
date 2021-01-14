@@ -42,7 +42,7 @@ initialState = {success: true, warning: true, failure: true, general: true, warn
         <Alert
           type="warning"
           text="Ограничения в вашем кошельке."
-          actionText="Ввести данные"
+          action="Ввести данные"
           onHide={(warningButton) => setState({warningButton})}
           onClick={() => alert('Спасибо')}
         />

@@ -9,7 +9,7 @@ export interface AlertProps {
   text: string
   type: 'success' | 'warning' | 'failure' | 'general'
   width?: Value
-  actionText?: string
+  action?: string
   onHide?: () => void
   onClick?: () => void
 }
@@ -49,7 +49,14 @@ const AlertIconColor: Record<NonNullable<AlertProps['type']>, string> = {
   general: '#666',
 }
 
-export const Alert: FC<AlertProps> = ({type = 'general', text, width = 295, actionText, onHide, onClick}) => (
+export const Alert: FC<AlertProps> = ({
+  type = 'general',
+  text,
+  width = 295,
+  action,
+  onHide,
+  onClick,
+}) => (
   <AlertControl
     onHide={onHide}
     children={renderProps => (
@@ -74,8 +81,8 @@ export const Alert: FC<AlertProps> = ({type = 'general', text, width = 295, acti
               color={AlertColorText[type]}
               children={text}
             />
-            {actionText ? (
-              <Link inverse={AlertColorActionText[type]} bold onClick={onClick} children={actionText}/>
+            {action ? (
+              <Link inverse={AlertColorActionText[type]} onClick={onClick} children={action}/>
             ) : (
               null
             )}
