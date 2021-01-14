@@ -62,13 +62,12 @@ export const Alert: FC<AlertProps> = ({
         <Flex
           minHeight={14}
           justify="flex-start"
-          p={4.5}
+          p={4}
         >
           <FlexItem
             mr={3}
           >
             <Icon
-              size={6}
               name={AlertIconName[type]}
               color={AlertIconColor[type]}
             />
@@ -79,7 +78,14 @@ export const Alert: FC<AlertProps> = ({
               children={text}
             />
             {action ? (
-              <Link inverse={AlertColorActionText[type]} onClick={onClick} children={action}/>
+              <Paragraph>
+                <Link
+                  bold
+                  inverse={AlertColorActionText[type]}
+                  onClick={onClick}
+                  children={action}
+                />
+              </Paragraph>
             ) : (
               null
             )}

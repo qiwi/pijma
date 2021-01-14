@@ -71,7 +71,6 @@ export const Alert: FC<AlertProps> = ({
         >
           <FlexItem>
             <Icon
-              size={6}
               name={AlertIconName[type]}
               color={AlertIconColor[type]}
             />
@@ -82,7 +81,14 @@ export const Alert: FC<AlertProps> = ({
               children={text}
             />
             {action ? (
-              <Link inverse={AlertColorActionText[type]} onClick={onClick} children={action}/>
+              <Paragraph>
+                <Link
+                  bold
+                  inverse={AlertColorActionText[type]}
+                  onClick={onClick}
+                  children={action}
+                />
+              </Paragraph>
             ) : (
               null
             )}
