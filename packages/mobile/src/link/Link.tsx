@@ -16,6 +16,7 @@ export interface LinkProps {
   size?: 's' | 'm' | 'l'
   bold?: boolean
   stub?: boolean
+  inverse?: boolean
 }
 
 const LinkSize: { [size in NonNullable<LinkProps['size']>]: number } = {
@@ -88,7 +89,7 @@ export const Link: FC<LinkProps> = (props) => (
           onMouseLeave={renderProps.onMouseLeave}
           onMouseUp={renderProps.onMouseUp}
           onMouseDown={renderProps.onMouseDown}
-          color={renderProps.hover || renderProps.focus ? '#FF8C00' : '#0055BB'}
+          color={renderProps.hover || renderProps.focus ? props.inverse ? '#CCC' : '#FF8C00' : props.inverse ? '#FFF' : '#0055BB'}
           transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
           cursor="pointer"
           decoration="none"

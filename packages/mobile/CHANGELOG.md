@@ -1,3 +1,17 @@
+# [@qiwi/pijma-mobile-v1.120.0](https://github.com/qiwi/pijma/compare/v1.119.2...v1.120.0) (2021-01-13)
+
+
+### Features
+
+* inverse link ([#363](https://github.com/qiwi/pijma/issues/363)) ([19e966d](https://github.com/qiwi/pijma/commit/19e966d))
+
+# [@qiwi/pijma-mobile-v1.119.2](https://github.com/qiwi/pijma/compare/v1.119.1...v1.119.2) (2021-01-13)
+
+
+### Bug Fixes
+
+* phone-field keydown ([#361](https://github.com/qiwi/pijma/issues/361)) ([7386aef](https://github.com/qiwi/pijma/commit/7386aef))
+
 # [@qiwi/pijma-mobile-v1.118.0](https://github.com/qiwi/pijma/compare/v1.117.1...v1.118.0) (2020-11-23)
 
 
