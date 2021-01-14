@@ -98,7 +98,6 @@ export const Alert: FC<AlertProps> = ({
               onMouseOut={renderProps.onMouseLeave}
             >
               <Icon
-                size={6}
                 name="cross-small"
                 color={AlertIconColor[type]}
               />
