@@ -1,7 +1,9 @@
 import React, {FC} from 'react'
+
 import {Flex, FlexItem, Icon, Card, AlertControl, IconProps} from '@qiwi/pijma-core'
+
 import {Paragraph, ParagraphProps} from '../typography'
-import {Button} from '../button'
+import {LinkProps, Link} from '../link'
 
 export interface AlertProps {
   text: string
@@ -25,6 +27,13 @@ const AlertColorText: Record<NonNullable<AlertProps['type']>, ParagraphProps['co
   general: 'default',
 }
 
+const AlertColorActionText: Record<NonNullable<AlertProps['type']>, LinkProps['inverse']> = {
+  success: true,
+  warning: true,
+  failure: true,
+  general: false,
+}
+
 const AlertIconName: Record<NonNullable<AlertProps['type']>, IconProps['name']> = {
   success: 'success',
   warning: 'warning',
@@ -46,13 +55,10 @@ export const Alert: FC<AlertProps> = ({type = 'general', text, actionText, onHid
       <Card bg={AlertBackgroundColor[type]}>
         <Flex
           minHeight={14}
-          align="center"
           justify="flex-start"
-          pt={2}
-          pb={2}
+          p={4.5}
         >
           <FlexItem
-            ml={4}
             mr={3}
           >
             <Icon
@@ -61,13 +67,13 @@ export const Alert: FC<AlertProps> = ({type = 'general', text, actionText, onHid
               color={AlertIconColor[type]}
             />
           </FlexItem>
-          <FlexItem mr={onHide ? 3 : 4} overflow="hidden">
+          <FlexItem mr={onHide ? 4 : 0} overflow="hidden">
             <Paragraph
               color={AlertColorText[type]}
               children={text}
             />
             {actionText ? (
-              <Button kind="simple" size="minor" type="submit" text={actionText} onClick={onClick}/>
+              <Link inverse={AlertColorActionText[type]} bold onClick={onClick} children={actionText}/>
             ) : (
               null
             )}
@@ -75,7 +81,6 @@ export const Alert: FC<AlertProps> = ({type = 'general', text, actionText, onHid
           {onHide ? (
             <FlexItem
               ml="auto"
-              mr={4}
               cursor="pointer"
               opacity={renderProps.hover ? 0.7 : 1}
               transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
@@ -84,7 +89,7 @@ export const Alert: FC<AlertProps> = ({type = 'general', text, actionText, onHid
               onMouseOut={renderProps.onMouseLeave}
             >
               <Icon
-                size={6}
+                size={5}
                 name="cross"
                 color={AlertIconColor[type]}
               />

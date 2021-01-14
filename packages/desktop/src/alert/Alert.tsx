@@ -1,5 +1,7 @@
 import React, {FC} from 'react'
+
 import {Flex, FlexItem, Icon, Card, AlertControl, IconProps, Value} from '@qiwi/pijma-core'
+
 import {Paragraph, ParagraphProps} from '../typography'
 import {Link, LinkProps} from '../link'
 
