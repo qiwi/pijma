@@ -1,5 +1,5 @@
 ```jsx
-initialState = {success: true, warning: true, failure: true, general: true};
+initialState = {success: true, warning: true, failure: true, general: true, warningButton: true};
 <Block>
   <BlockContent>
     <Spacer>
@@ -34,6 +34,17 @@ initialState = {success: true, warning: true, failure: true, general: true};
           type="general" 
           text="Sed lobortis tincidunt felis a congue."
           onHide={(general) => setState({general})}
+        />
+      ) : (
+        null
+      )}
+      {state.warningButton ? (
+        <Alert
+          type="warning"
+          text="Ограничения в вашем кошельке."
+          action="Ввести данные"
+          onHide={(warningButton) => setState({warningButton})}
+          onClick={() => alert('Спасибо')}
         />
       ) : (
         null

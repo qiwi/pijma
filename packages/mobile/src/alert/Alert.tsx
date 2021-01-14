@@ -1,11 +1,16 @@
 import React, {FC} from 'react'
+
 import {Flex, FlexItem, Icon, Card, AlertControl, IconProps} from '@qiwi/pijma-core'
+
 import {Paragraph, ParagraphProps} from '../typography'
+import {LinkProps, Link} from '../link'
 
 export interface AlertProps {
   text: string
   type: 'success' | 'warning' | 'failure' | 'general'
+  action?: string
   onHide?: () => void
+  onClick?: () => void
 }
 
 const AlertBackgroundColor: Record<NonNullable<AlertProps['type']>, string> = {
@@ -22,6 +27,13 @@ const AlertColorText: Record<NonNullable<AlertProps['type']>, ParagraphProps['co
   general: 'default',
 }
 
+const AlertColorActionText: Record<NonNullable<AlertProps['type']>, LinkProps['inverse']> = {
+  success: true,
+  warning: true,
+  failure: true,
+  general: false,
+}
+
 const AlertIconName: Record<NonNullable<AlertProps['type']>, IconProps['name']> = {
   success: 'success',
   warning: 'warning',
@@ -36,38 +48,51 @@ const AlertIconColor: Record<NonNullable<AlertProps['type']>, string> = {
   general: '#666',
 }
 
-export const Alert: FC<AlertProps> = ({type = 'general', text, onHide}) => (
+export const Alert: FC<AlertProps> = ({
+  type = 'general',
+  text,
+  action,
+  onHide,
+  onClick,
+}) => (
   <AlertControl
     onHide={onHide}
     children={renderProps => (
       <Card bg={AlertBackgroundColor[type]}>
         <Flex
           minHeight={14}
-          align="center"
           justify="flex-start"
-          pt={2}
-          pb={2}
+          p={4}
         >
           <FlexItem
-            ml={4}
             mr={3}
           >
             <Icon
-              size={6}
               name={AlertIconName[type]}
               color={AlertIconColor[type]}
             />
           </FlexItem>
-          <FlexItem mr={onHide ? 3 : 4} overflow="hidden">
+          <FlexItem mr={onHide ? 4 : 0} overflow="hidden">
             <Paragraph
               color={AlertColorText[type]}
               children={text}
             />
+            {action ? (
+              <Paragraph>
+                <Link
+                  bold
+                  inverse={AlertColorActionText[type]}
+                  onClick={onClick}
+                  children={action}
+                />
+              </Paragraph>
+            ) : (
+              null
+            )}
           </FlexItem>
           {onHide ? (
             <FlexItem
               ml="auto"
-              mr={4}
               cursor="pointer"
               opacity={renderProps.hover ? 0.7 : 1}
               transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
@@ -76,8 +101,7 @@ export const Alert: FC<AlertProps> = ({type = 'general', text, onHide}) => (
               onMouseOut={renderProps.onMouseLeave}
             >
               <Icon
-                size={6}
-                name="cross"
+                name="cross-small"
                 color={AlertIconColor[type]}
               />
             </FlexItem>
