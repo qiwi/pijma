@@ -1,3 +1,10 @@
+# [@qiwi/pijma-mobile-v1.121.0](https://github.com/qiwi/pijma/compare/v1.120.0...v1.121.0) (2021-01-14)
+
+
+### Features
+
+* alert action ([#362](https://github.com/qiwi/pijma/issues/362)) ([8769d88](https://github.com/qiwi/pijma/commit/8769d88))
+
 # [@qiwi/pijma-mobile-v1.120.0](https://github.com/qiwi/pijma/compare/v1.119.2...v1.120.0) (2021-01-13)
 
 
