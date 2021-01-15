@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Flex, FlexItem, Icon, Card, AlertControl, IconProps} from '@qiwi/pijma-core'
+import {Flex, FlexItem, Icon, Card, AlertControl, IconProps, Box} from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
 import {Link} from '../link'
@@ -56,13 +56,15 @@ export const Alert: FC<AlertProps> = ({
               children={text}
             />
             {action ? (
-              <Paragraph>
-                <Link
-                  bold
-                  onClick={onClick}
-                  children={action}
-                />
-              </Paragraph>
+              <Box mt={1}>
+                <Paragraph>
+                  <Link
+                    bold
+                    onClick={onClick}
+                    children={action}
+                  />
+                </Paragraph>
+              </Box>
             ) : (
               null
             )}
