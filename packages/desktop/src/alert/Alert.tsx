@@ -2,8 +2,8 @@ import React, {FC} from 'react'
 
 import {Flex, FlexItem, Icon, Card, AlertControl, IconProps, Value, Box} from '@qiwi/pijma-core'
 
-import {Paragraph, ParagraphProps} from '../typography'
-import {Link, LinkProps} from '../link'
+import {Paragraph} from '../typography'
+import {Link} from '../link'
 
 export interface AlertProps {
   text: string
@@ -14,25 +14,11 @@ export interface AlertProps {
   onClick?: () => void
 }
 
-const AlertBackgroundColor: Record<NonNullable<AlertProps['type']>, string> = {
+const AlertIconColor: Record<NonNullable<AlertProps['type']>, string> = {
   success: '#4bbd5c',
   warning: '#ff8c00',
   failure: '#d0021b',
-  general: '#f5f5f5',
-}
-
-const AlertColorText: Record<NonNullable<AlertProps['type']>, ParagraphProps['color']> = {
-  success: 'inverse',
-  warning: 'inverse',
-  failure: 'inverse',
-  general: 'default',
-}
-
-const AlertColorActionText: Record<NonNullable<AlertProps['type']>, LinkProps['inverse']> = {
-  success: true,
-  warning: true,
-  failure: true,
-  general: false,
+  general: '#666666',
 }
 
 const AlertIconName: Record<NonNullable<AlertProps['type']>, IconProps['name']> = {
@@ -40,13 +26,6 @@ const AlertIconName: Record<NonNullable<AlertProps['type']>, IconProps['name']> 
   warning: 'warning',
   failure: 'attention',
   general: 'info',
-}
-
-const AlertIconColor: Record<NonNullable<AlertProps['type']>, string> = {
-  success: '#ffffff',
-  warning: '#ffffff',
-  failure: '#ffffff',
-  general: '#666',
 }
 
 export const Alert: FC<AlertProps> = ({
@@ -60,7 +39,7 @@ export const Alert: FC<AlertProps> = ({
   <AlertControl
     onHide={onHide}
     children={renderProps => (
-      <Card bg={AlertBackgroundColor[type]}>
+      <Card bg="#F5F5F5" s="inset 0 -1px 0 0 #e6e6e6">
         <Flex
           maxWidth={width}
           minHeight={16}
@@ -76,7 +55,6 @@ export const Alert: FC<AlertProps> = ({
           </FlexItem>
           <FlexItem overflow="hidden" mx={4}>
             <Paragraph
-              color={AlertColorText[type]}
               children={text}
             />
             {action ? (
@@ -84,7 +62,6 @@ export const Alert: FC<AlertProps> = ({
                 <Paragraph>
                   <Link
                     bold
-                    inverse={AlertColorActionText[type]}
                     onClick={onClick}
                     children={action}
                   />
@@ -106,7 +83,7 @@ export const Alert: FC<AlertProps> = ({
             >
               <Icon
                 name="cross-small"
-                color={AlertIconColor[type]}
+                color="#666666"
               />
             </FlexItem>
           ) : (
