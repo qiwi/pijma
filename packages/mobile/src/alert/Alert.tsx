@@ -37,7 +37,7 @@ export const Alert: FC<AlertProps> = ({
   <AlertControl
     onHide={onHide}
     children={renderProps => (
-      <Card bg="#F5F5F5" s="inset 0 -1px 0 0 #e6e6e6">
+      <Card s="inset 0 -1px 0 0 #e6e6e6">
         <Flex
           minHeight={14}
           justify="flex-start"

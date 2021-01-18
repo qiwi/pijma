@@ -1,6 +1,6 @@
 ```jsx
 initialState = {success: true, warning: true, failure: true, general: true, warningButton: true};
-<Block>
+<Card bg="#fff">
   {state.success ? (
     <Alert
       width={154}
@@ -52,5 +52,5 @@ initialState = {success: true, warning: true, failure: true, general: true, warn
   ) : (
     null
   )}
-</Block>
+</Card>
 ```
