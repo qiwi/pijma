@@ -26,7 +26,7 @@ export const Glossary: FC<GlossaryProps> = ({children, stub}) => stub ? (
           />
         </Box>
         <Box mt={1} as="dd" maxWidth={32}>
-          {([] as GlossaryText[]).concat(item.content).map((_content, j) => (
+          {(Array.isArray(item.content) ? item.content : [item.content]).map((_content, j) => (
             <Box key={`${i}.${j}`} mt={j === 0 ? undefined : 2}>
               <Text
                 stub
@@ -59,7 +59,7 @@ export const Glossary: FC<GlossaryProps> = ({children, stub}) => stub ? (
           />
         </Box>
         <Box mt={1} as="dd">
-          {([] as GlossaryText[]).concat(item.content).map((content, j) => (
+          {(Array.isArray(item.content) ? item.content : [item.content]).map((content, j) => (
             <Box key={`${i}.${j}`} mt={j === 0 ? undefined : 2}>
               <Text
                 bold={false}
