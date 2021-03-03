@@ -16,7 +16,7 @@ export const Glossary: FC<GlossaryProps> = ({children, stub}) => stub ? (
         key={i}
         mt={i === 0 ? undefined : 5}
       >
-        <Box as="dt" maxWidth={22}>
+        <Box as="dt" maxWidth={0.7}>
           <Text
             stub
             display="block"
@@ -25,7 +25,7 @@ export const Glossary: FC<GlossaryProps> = ({children, stub}) => stub ? (
             size="s"
           />
         </Box>
-        <Box as="dd" mt={1} maxWidth={32}>
+        <Box as="dd" mt={1}>
           <Spacer size="xs">
             {(Array.isArray(item.content) ? item.content : [item.content]).map((_content, j) => (
               <Text
