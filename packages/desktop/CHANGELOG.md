@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.123.0](https://github.com/qiwi/pijma/compare/v1.122.0...v1.123.0) (2021-03-03)
+
+
+### Features
+
+* glossary stub ([#366](https://github.com/qiwi/pijma/issues/366)) ([8967ae8](https://github.com/qiwi/pijma/commit/8967ae8))
+
 # [@qiwi/pijma-desktop-v1.122.0](https://github.com/qiwi/pijma/compare/v1.121.0...v1.122.0) (2021-01-18)
 
 
