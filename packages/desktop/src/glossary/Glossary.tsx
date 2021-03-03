@@ -16,7 +16,7 @@ export const Glossary: FC<GlossaryProps> = ({children, stub}) => stub ? (
         key={i}
         mt={i === 0 ? undefined : 5}
       >
-        <Box as="dt" maxWidth={0.7}>
+        <Box as="dt" mr={16} minWidth={0.5}>
           <Text
             stub
             display="block"
