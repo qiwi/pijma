@@ -1,5 +1,5 @@
 import React, {FC, ReactElement} from 'react'
-import {Box} from '@qiwi/pijma-core'
+import {Box, Spacer} from '@qiwi/pijma-core'
 import {Text} from '../typography'
 
 type GlossaryText = ReactElement | string
@@ -26,17 +26,18 @@ export const Glossary: FC<GlossaryProps> = ({children, stub}) => stub ? (
           />
         </Box>
         <Box as="dd" mt={1} maxWidth={32}>
-          {(Array.isArray(item.content) ? item.content : [item.content]).map((_content, j) => (
-            <Box key={`${i}.${j}`} mt={j === 0 ? undefined : 2}>
+          <Spacer size="xs">
+            {(Array.isArray(item.content) ? item.content : [item.content]).map((_content, j) => (
               <Text
+                key={`${i}.${j}`}
                 stub
                 bold={false}
                 display="block"
                 compact
                 size="m"
               />
-            </Box>
-          ))}
+            ))}
+          </Spacer>
         </Box>
       </Box>
     ))}
@@ -59,17 +60,18 @@ export const Glossary: FC<GlossaryProps> = ({children, stub}) => stub ? (
           />
         </Box>
         <Box mt={1} as="dd">
-          {(Array.isArray(item.content) ? item.content : [item.content]).map((content, j) => (
-            <Box key={`${i}.${j}`} mt={j === 0 ? undefined : 2}>
+          <Spacer size="xs">
+            {(Array.isArray(item.content) ? item.content : [item.content]).map((content, j) => (
               <Text
+                key={`${i}.${j}`}
                 display="block"
                 bold={false}
                 compact
                 size="m"
                 children={content}
               />
-            </Box>
-          ))}
+            ))}
+          </Spacer>
         </Box>
       </Box>
     ))}
