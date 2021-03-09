@@ -1,3 +1,10 @@
+# [@qiwi/pijma-core-v1.124.0](https://github.com/qiwi/pijma/compare/v1.123.0...v1.124.0) (2021-03-09)
+
+
+### Features
+
+* auto display name ([#368](https://github.com/qiwi/pijma/issues/368)) ([41beeea](https://github.com/qiwi/pijma/commit/41beeea))
+
 # [@qiwi/pijma-core-v1.119.1](https://github.com/qiwi/pijma/compare/v1.119.0...v1.119.1) (2020-12-08)
 
 
