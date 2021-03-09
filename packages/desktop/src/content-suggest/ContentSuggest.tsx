@@ -21,7 +21,7 @@ import {MenuItem} from '../menu'
 import ContentSuggestProps from './ContentSuggestProps'
 import ContentSuggestOptionsModel from './ContentSuggestOptionModel'
 
-const CardPos = Card.withComponent(Pos)
+const CardPos = styled(Card)().withComponent(Pos)
 const CardItem = styled(Card)().withComponent(MenuItem)
 
 const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
@@ -201,3 +201,5 @@ export const ContentSuggest = <V extends {}>({
 ContentSuggest.defaultProps = {
   equals: (a: any, b: any) => a === b,
 }
+
+ContentSuggest.displayName = 'ContentSuggest'

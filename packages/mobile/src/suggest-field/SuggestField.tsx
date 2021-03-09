@@ -205,3 +205,5 @@ export const SuggestField = <V extends {}>({
 SuggestField.defaultProps = {
   equals: (a: any, b: any) => a === b,
 }
+
+SuggestField.displayName = 'SuggestField'

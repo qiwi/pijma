@@ -87,7 +87,7 @@ HeaderMenuModal.defaultProps = {
   zIndex: 9999,
 }
 
-const FlexCard = Flex.withComponent(Card)
+const FlexCard = styled(Flex)().withComponent(Card)
 
 export const HeaderMenu: FC<HeaderMenuProps> = ({show, zIndex, header, from, stub, onShow, onHide, children}) => (
   stub ? (

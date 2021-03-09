@@ -1,8 +1,8 @@
 import React, {FC} from 'react'
 
-import {Lnk, Card, Icon, IconProps, LinkControl, Flex, FlexItem, Box, Stub} from '@qiwi/pijma-core'
+import {styled, Lnk, Card, Icon, IconProps, LinkControl, Flex, FlexItem, Box, Stub} from '@qiwi/pijma-core'
 
-const CardLink = Card.withComponent(Lnk)
+const CardLink = styled(Card)().withComponent(Lnk)
 
 interface FooterOutLinkProps {
   href: string
