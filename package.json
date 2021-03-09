@@ -10,7 +10,8 @@
     "lint": "lerna run --no-bail --parallel lint",
     "lint:fix": "lerna run --no-bail --parallel lint:fix",
     "guide": "lerna run --concurrency=1 guide",
-    "guide_ci": "lerna run --concurrency=1 guide_ci"
+    "guide_ci": "lerna run --concurrency=1 guide_ci",
+    "postinstall": "patch-package"
   },
   "husky": {
     "hooks": {
@@ -26,6 +27,7 @@
     "@semantic-release/npm": "5.1.13",
     "@semantic-release/release-notes-generator": "7.3.0",
     "lerna": "3.16.4",
+    "patch-package": "6.4.6",
     "semantic-release": "15.13.21",
     "semantic-release-monorepo": "6.1.1",
     "semantic-release-monorepo-hooks": "2.9.5",

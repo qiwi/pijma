@@ -74,7 +74,7 @@ const StyledModal = styled(Modal)<ModalProps>({
   overflow: 'auto',
 })
 
-const BoxPos = Box.withComponent(Pos)
+const BoxPos = styled(Box)().withComponent(Pos)
 const PosFlexCard = styled(Card.withComponent(Pos))().withComponent(Flex)
 
 const InputModal: FunctionComponent<InputModalProps> = (props) => (

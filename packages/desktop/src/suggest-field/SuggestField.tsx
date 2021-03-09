@@ -21,7 +21,7 @@ import {MenuItem} from '../menu'
 import SuggestFieldProps from './SuggestFieldProps'
 import SuggestFieldOptionsModel from './SuggestFieldOptionModel'
 
-const CardPos = Card.withComponent(Pos)
+const CardPos = styled(Card)().withComponent(Pos)
 const CardItem = styled(Card)().withComponent(MenuItem)
 
 const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
@@ -186,3 +186,5 @@ export const SuggestField = <V extends {}>({
 SuggestField.defaultProps = {
   equals: (a: any, b: any) => a === b,
 }
+
+SuggestField.displayName = 'SuggestField'

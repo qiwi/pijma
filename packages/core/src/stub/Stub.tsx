@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {keyframes} from '../styled'
+import styled, {keyframes} from '../styled'
 import {Card, Box, Pos, Value} from '../primitive'
 
 const stubKeyframes = keyframes({
@@ -23,7 +23,7 @@ export interface StubProps {
   r?: Value
 }
 
-const CardPos = Card.withComponent(Pos)
+const CardPos = styled(Card)().withComponent(Pos)
 
 export const Stub: FC<StubProps> = (props) => (
   <Box
