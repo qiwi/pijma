@@ -1,3 +1,10 @@
+# [@qiwi/pijma-desktop-v1.124.1](https://github.com/qiwi/pijma/compare/v1.124.0...v1.124.1) (2021-03-10)
+
+
+### Performance Improvements
+
+* upgrade react-styleguidist to 10.6.2 ([#371](https://github.com/qiwi/pijma/issues/371)) ([34711d3](https://github.com/qiwi/pijma/commit/34711d3))
+
 # [@qiwi/pijma-desktop-v1.124.0](https://github.com/qiwi/pijma/compare/v1.123.0...v1.124.0) (2021-03-09)
 
 
