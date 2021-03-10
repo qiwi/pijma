@@ -28,7 +28,7 @@
     "@semantic-release/release-notes-generator": "7.3.0",
     "lerna": "3.16.4",
     "patch-package": "6.4.6",
-    "semantic-release": "15.13.21",
+    "semantic-release": "17.2.3",
     "semantic-release-monorepo": "6.1.1",
     "semantic-release-monorepo-hooks": "2.9.5",
     "semantic-release-plugin-decorators": "2.0.0"
