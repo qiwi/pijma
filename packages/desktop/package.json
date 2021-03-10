@@ -4,6 +4,9 @@
   "main": "lib/es5/index.js",
   "types": "lib/es5/index.d.ts",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "clean": "rm -rf lib styleguide/lib",
     "build": "mkdir -p lib/es5 && ttsc -p tsconfig.build.json && styleguidist build",
@@ -54,5 +57,13 @@
     "ttypescript": "1.5.12",
     "typescript": "3.5.3",
     "webpack": "4.39.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiwi/pijma.git"
+  },
+  "bugs": {
+    "url": "https://github.com/qiwi/pijma/issues"
+  },
+  "homepage": "https://github.com/qiwi/pijma/#readme"
 }
