@@ -44,7 +44,7 @@
     "gh-pages": "2.1.1",
     "husky": "3.0.3",
     "react-docgen-typescript": "1.12.5",
-    "react-styleguidist": "9.1.14",
+    "react-styleguidist": "10.6.2",
     "ts-loader": "6.0.4",
     "ts-node": "9.0.0",
     "ts-react-display-name": "1.2.0",
