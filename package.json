@@ -1,4 +1,5 @@
 {
+  "name": "pijma",
   "private": true,
   "workspaces": [
     "packages/*"
@@ -26,5 +27,13 @@
     "lerna": "4.0.0",
     "patch-package": "6.4.6"
   },
-  "name": "pijma"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiwi/pijma.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qiwi/pijma/issues"
+  },
+  "homepage": "https://github.com/qiwi/pijma/#readme"
 }
