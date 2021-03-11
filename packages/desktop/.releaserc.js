@@ -6,7 +6,7 @@ module.exports = {
       {
         publish: {
           action: 'push',
-          branch: 'docs',
+          branch: 'gh-pages',
           from: './styleguide/lib',
           to: './desktop',
           message: 'update pijma-desktop docs'
