@@ -6,6 +6,11 @@ cache: yarn
 os: linux
 dist: focal
 
+branches:
+  except:
+    - docs
+    - gh-pages
+
 jobs:
   fast_finish: true
   include:
