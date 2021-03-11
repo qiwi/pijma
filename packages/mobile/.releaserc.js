@@ -6,7 +6,7 @@ module.exports = {
       {
         publish: {
           action: 'push',
-          branch: 'docs',
+          branch: 'gh-pages',
           from: './styleguide/lib',
           to: './mobile',
           message: 'update pijma-mobile docs',
