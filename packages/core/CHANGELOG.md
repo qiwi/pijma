@@ -1,3 +1,17 @@
+## @qiwi/pijma-core [1.124.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.124.1...@qiwi/pijma-core@1.124.2) (2021-03-11)
+
+
+### Performance Improvements
+
+* migrate to @qiwi/semrel-toolkit ([#377](https://github.com/qiwi/pijma/issues/377)) ([87dc7f5](https://github.com/qiwi/pijma/commit/87dc7f5449893e20968dd9f54d338dc24235de33))
+
+# [@qiwi/pijma-core-v1.124.0](https://github.com/qiwi/pijma/compare/v1.123.0...v1.124.0) (2021-03-09)
+
+
+### Features
+
+* auto display name ([#368](https://github.com/qiwi/pijma/issues/368)) ([41beeea](https://github.com/qiwi/pijma/commit/41beeea))
+
 # [@qiwi/pijma-core-v1.119.1](https://github.com/qiwi/pijma/compare/v1.119.0...v1.119.1) (2020-12-08)
 
 

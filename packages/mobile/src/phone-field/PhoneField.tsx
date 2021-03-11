@@ -1,16 +1,17 @@
 import React, {createRef, FunctionComponent, RefObject} from 'react'
 
 import {
+  styled,
   PhoneFieldControl,
-  InputField,
+  MenuControl,
   BasicInput,
   Box,
   Pos,
   Card,
   Flex,
   FlexItem,
+  InputField,
   Flag,
-  MenuControl,
 } from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
@@ -19,7 +20,7 @@ import {PhoneFieldProps} from './PhoneFieldProps'
 
 const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
 
-const PosCard = Card.withComponent(Pos)
+const PosCard = styled(Card)().withComponent(Pos)
 
 export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
   tabIndex = 0,

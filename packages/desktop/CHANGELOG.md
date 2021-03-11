@@ -1,3 +1,24 @@
+## [1.124.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.124.1...@qiwi/pijma-desktop@1.124.2) (2021-03-11)
+
+
+### Performance Improvements
+
+* migrate to @qiwi/semrel-toolkit ([#377](https://github.com/qiwi/pijma/issues/377)) ([87dc7f5](https://github.com/qiwi/pijma/commit/87dc7f5449893e20968dd9f54d338dc24235de33))
+
+# [@qiwi/pijma-desktop-v1.124.1](https://github.com/qiwi/pijma/compare/v1.124.0...v1.124.1) (2021-03-10)
+
+
+### Performance Improvements
+
+* upgrade react-styleguidist to 10.6.2 ([#371](https://github.com/qiwi/pijma/issues/371)) ([34711d3](https://github.com/qiwi/pijma/commit/34711d3))
+
+# [@qiwi/pijma-desktop-v1.124.0](https://github.com/qiwi/pijma/compare/v1.123.0...v1.124.0) (2021-03-09)
+
+
+### Features
+
+* auto display name ([#368](https://github.com/qiwi/pijma/issues/368)) ([41beeea](https://github.com/qiwi/pijma/commit/41beeea))
+
 # [@qiwi/pijma-desktop-v1.123.0](https://github.com/qiwi/pijma/compare/v1.122.0...v1.123.0) (2021-03-03)
 
 
