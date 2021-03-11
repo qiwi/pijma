@@ -9,6 +9,7 @@ module.exports = {
           branch: 'docs',
           from: './styleguide/lib',
           to: './mobile',
+          message: 'update pijma-mobile docs',
         }
       }
     ],

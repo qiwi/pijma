@@ -9,6 +9,7 @@ module.exports = {
           branch: 'docs',
           from: './styleguide/lib',
           to: './desktop',
+          message: 'update pijma-desktop docs'
         }
       }
     ],
