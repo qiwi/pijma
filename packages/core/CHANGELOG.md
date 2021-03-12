@@ -1,3 +1,10 @@
+# @qiwi/pijma-core [1.125.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.124.2...@qiwi/pijma-core@1.125.0) (2021-03-12)
+
+
+### Features
+
+* up react-styleguidist ([#381](https://github.com/qiwi/pijma/issues/381)) ([8652107](https://github.com/qiwi/pijma/commit/8652107c9061dc8c91d24da0513f7946505ae0f5))
+
 ## @qiwi/pijma-core [1.124.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.124.1...@qiwi/pijma-core@1.124.2) (2021-03-11)
 
 

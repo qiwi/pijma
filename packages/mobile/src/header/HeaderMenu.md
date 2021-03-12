@@ -1,5 +1,5 @@
 ```jsx
-initialState = {showMenu: false};
+const [showMenu, setShowMenu] = React.useState(false);
 
 <React.Fragment>
 <Spacer size="l">
@@ -8,11 +8,11 @@ initialState = {showMenu: false};
     size="normal"
     type="button"
     text="Показать меню"
-    onClick={() => setState({showMenu: true})}
+    onClick={() => setShowMenu(true)}
   />
 </Spacer>
   <HeaderMenu
-    show={state.showMenu}
+    show={showMenu}
     from="top"
     children={(
       <Striper>
@@ -37,7 +37,7 @@ initialState = {showMenu: false};
           <MenuLink
             title="Закрыть меню"
             href="https://qiwi.com"
-            onClick={() => setState({showMenu: false})}
+            onClick={() => setShowMenu(false)}
           />
         </MenuContainer>
       </Striper>

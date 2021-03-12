@@ -3,7 +3,7 @@
 Размещайте в одном списке не более 7 радиокнопок. Для остальных случаев применяйте выпадающие списки.
 
 ```jsx
-initialState = {value: 'selected'};
+const [value, setValue] = React.useState('selected');
 <Block>
   <BlockContent>
     <RadioField
@@ -26,15 +26,15 @@ initialState = {value: 'selected'};
         value: 'disabled',
         disabled: true,
       }]}
-      value={state.value}
-      onChange={(value) => setState({value})}
+      value={value}
+      onChange={(value) => setValue(value)}
     />
   </BlockContent>
 </Block>
 ```
 
 ```jsx
-initialState = {value: 'selected'};
+const [value, setValue] = React.useState('selected');
 <Block>
   <BlockContent>
     <RadioField
@@ -61,8 +61,8 @@ initialState = {value: 'selected'};
         value: 'disabled',
         disabled: true,
       }]}
-      value={state.value}
-      onChange={(value) => setState({value})}
+      value={value}
+      onChange={(value) => setValue(value)}
     />
   </BlockContent>
 </Block>

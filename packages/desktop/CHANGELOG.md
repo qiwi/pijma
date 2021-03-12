@@ -1,3 +1,17 @@
+# [1.126.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.125.0...@qiwi/pijma-desktop@1.126.0) (2021-03-12)
+
+
+### Features
+
+* up react-styleguidist ([#381](https://github.com/qiwi/pijma/issues/381)) ([8652107](https://github.com/qiwi/pijma/commit/8652107c9061dc8c91d24da0513f7946505ae0f5))
+
+# [1.125.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.124.2...@qiwi/pijma-desktop@1.125.0) (2021-03-12)
+
+
+### Features
+
+* radio-field stub customization ([#379](https://github.com/qiwi/pijma/issues/379)) ([7d5457d](https://github.com/qiwi/pijma/commit/7d5457da27da706c6e43281083ffa8aee12bf720))
+
 ## [1.124.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.124.1...@qiwi/pijma-desktop@1.124.2) (2021-03-11)
 
 

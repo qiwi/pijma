@@ -1,6 +1,8 @@
 ### Стандартное поле ввода пароля
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -8,8 +10,8 @@
         name="password"
         title="Пароль"
         viewed={false}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -19,6 +21,8 @@
 #### С кнопкой показать пароль
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -26,8 +30,8 @@
         name="password"
         title="Пароль"
         viewed
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -37,6 +41,8 @@
 #### Поле ввода с кнопкой
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -45,8 +51,8 @@
         title="Пароль"
         viewed
         action={<a href="#/Fields/TextField">Сылка-кнопка</a>}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -56,6 +62,8 @@
 #### Ошибка
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -64,8 +72,8 @@
         title="Пароль"
         error="Подсказка"
         viewed
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -91,6 +99,8 @@
 #### Поле с хинтом
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -99,8 +109,8 @@
         title="Пароль"
         viewed={false}
         hint={<QuestionIcon />}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -110,6 +120,8 @@
 #### Поле ввода с ограниченным количеством символов
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -117,8 +129,8 @@
         name="password"
         title="Пароль"
         maxLength={3}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>

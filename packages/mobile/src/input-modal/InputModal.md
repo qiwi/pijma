@@ -3,6 +3,8 @@
 В окнах применяются [Brand Button](#/Компоненты/Button) и [Simple Button](#/Компоненты/Button) в размере Normal.
 
 ```jsx
+const [show, setShow] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Actions size="normal">
@@ -11,17 +13,17 @@
         size="normal"
         type="button"
         text="Показать окно"
-        onClick={() => setState({show: true})}
+        onClick={() => setShow(true)}
       />
     </Actions>
     <InputModal
-      show={state.show}
+      show={show}
       closable
       backdropClose
       submitIcon="search"
-      onBack={() => setState({show: false})}
-      onSubmit={() => setState({show: false})}
-      onHide={() => setState({show: false})}
+      onBack={() => setShow(false)}
+      onSubmit={() => setShow(false)}
+      onHide={() => setShow(false)}
       children={
         <Spacer size="xl">
           <Actions size="normal">
@@ -30,14 +32,14 @@
               size="normal"
               type="button"
               text="Удалить"
-              onClick={() => setState({show: false})}
+              onClick={() => setShow(false)}
             />
             <Button
               kind="simple"
               size="normal"
               type="button"
               text="Отменить"
-              onClick={() => setState({show: false})}
+              onClick={() => setShow(false)}
             />
           </Actions>
         </Spacer>
