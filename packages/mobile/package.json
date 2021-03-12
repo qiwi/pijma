@@ -1,9 +1,12 @@
 {
   "name": "@qiwi/pijma-mobile",
-  "version": "1.122.0",
+  "version": "1.124.2",
   "main": "lib/es5/index.js",
   "types": "lib/es5/index.d.ts",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "clean": "rm -rf lib styleguide/lib",
     "build": "mkdir -p lib/es5 && ttsc -p tsconfig.build.json && styleguidist build",
@@ -21,7 +24,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
-    "@qiwi/pijma-core": "^1.x.x",
+    "@qiwi/pijma-core": "1.124.2",
     "@types/markdown-to-jsx": "^6.9.0",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
@@ -44,7 +47,7 @@
     "gh-pages": "2.1.1",
     "husky": "3.0.3",
     "react-docgen-typescript": "1.12.5",
-    "react-styleguidist": "9.1.14",
+    "react-styleguidist": "10.6.2",
     "ts-loader": "6.0.4",
     "ts-node": "9.0.0",
     "ts-react-display-name": "1.2.0",
@@ -54,5 +57,13 @@
     "ttypescript": "1.5.12",
     "typescript": "3.5.3",
     "webpack": "4.39.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiwi/pijma.git"
+  },
+  "bugs": {
+    "url": "https://github.com/qiwi/pijma/issues"
+  },
+  "homepage": "https://github.com/qiwi/pijma/#readme"
 }

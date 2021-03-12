@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {Card, LinkControl, LinkControlProps, Lnk, Image, styled, Box} from '@qiwi/pijma-core'
+import {styled, Card, LinkControl, LinkControlProps, Lnk, Image, Box} from '@qiwi/pijma-core'
 
 import {Text} from '../typography'
 
@@ -19,7 +19,7 @@ export interface HeaderBankCardLinkProps {
   onBlur?: LinkControlProps['onBlur']
 }
 
-const BoxLnk = styled(Box.withComponent(Lnk))()
+const BoxLnk = styled(Box)().withComponent(Lnk)
 
 export const HeaderBankCardLink: FC<HeaderBankCardLinkProps> = (props) => (
   <LinkControl

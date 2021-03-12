@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {RenderChild, LinkControl, LinkControlProps, Card, Lnk, Block, styled} from '@qiwi/pijma-core'
+import {styled, RenderChild, LinkControl, LinkControlProps, Card, Lnk, Block} from '@qiwi/pijma-core'
 
 export interface BlockLinkProps {
   tabIndex?: number
