@@ -141,7 +141,8 @@ const getBanks = (suggest) => {
 };
 
 const onRequest = (suggest) => {
-  { setSuggest(suggest); setError(suggest === '') };
+  setSuggest(suggest);
+  setError(suggest === '');
   getBanks(suggest).then((banks) => setBanks(banks));
 };
 
@@ -170,7 +171,7 @@ const onSubmit = (suggest) => {
   return suggest.length >= 1
 };
 
-const hideDialog = () => setDialogText(undefined,);
+const hideDialog = () => setDialogText(undefined);
 
 const equals = (a, b) => a.id === b.id;
 

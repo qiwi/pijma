@@ -129,7 +129,6 @@ const filterBanks = (title) => banksList.filter(bank => {
 });
 
 const getBanks = (suggest) => {
-  console.log('getBanks')
   setLoading(true);
   clearTimeout(timer);
   return new Promise((resolve, reject) => {

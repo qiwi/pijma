@@ -137,7 +137,7 @@ const getBanks = (suggest) => {
   clearTimeout(timer);
   return new Promise((resolve, reject) => {
     setTimer(setTimeout(() => {
-      setLoading(true);
+      setLoading(false);
       resolve(filterBanks(suggest));
     }, 1000));
   });
@@ -145,7 +145,8 @@ const getBanks = (suggest) => {
 
 const onRequest = (suggest) => {
   type = types[Math.floor(Math.random() * 3)];
-  { setSuggest(suggest); setError(suggest === '') };
+  setSuggest(suggest);
+  setError(suggest === '');
   getBanks(suggest).then((banks) => setBanks(banks));
 };
 
@@ -167,7 +168,7 @@ const onChange = (value) => {
 const onSubmit = (suggest) => {
   console.log('SUBMIT', suggest)
   if (suggest.length < 1) {
-    setError(true,)
+    setError(true)
   }
   return suggest.length >= 1
 };
