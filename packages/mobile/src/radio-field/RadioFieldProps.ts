@@ -8,7 +8,7 @@ export default interface RadioFieldProps<O extends OptionModel<V>, V> {
   help?: ReactNode
   tabIndex?: number
   autoFocus?: boolean
-  stub?: boolean
+  stub?: number | boolean
   options: O[]
   value: V
   equals?: (a: V, b: V) => boolean
