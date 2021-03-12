@@ -1,13 +1,15 @@
 ## Стандартное многострочное текстовое поле
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
       <TextAreaField
         title="Поле ввода"
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -16,7 +18,7 @@
 ## Поле с настраиваемым количеством строк
 
 ```jsx
-initialState = {text: 'Многострочный текст превышающий начальное количество строк'};
+const [text, setText] = React.useState('Многострочный текст превышающий начальное количество строк');
 
 <Block>
   <BlockContent>
@@ -25,8 +27,8 @@ initialState = {text: 'Многострочный текст превышающ�
         title="Поле ввода"
         minRows={2}
         maxRows={4}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -36,6 +38,8 @@ initialState = {text: 'Многострочный текст превышающ�
 ## Поле с плейсхолдером
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -44,8 +48,8 @@ initialState = {text: 'Многострочный текст превышающ�
         placeholder="Только многострочный текст"
         minRows={2}
         maxRows={4}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -55,14 +59,16 @@ initialState = {text: 'Многострочный текст превышающ�
 #### Поле с подсказкой
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
       <TextAreaField
         title="Поле ввода"
         help="Подсказка"
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -72,14 +78,16 @@ initialState = {text: 'Многострочный текст превышающ�
 #### Поле ввода с кнопкой
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
       <TextAreaField
         title="Поле ввода"
         action={<a href="#/Fields/TextAreaField">Сылка-кнопка</a>}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -89,14 +97,16 @@ initialState = {text: 'Многострочный текст превышающ�
 #### Ошибка
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
       <TextAreaField
         title="Поле ввода"
         error="Подсказка"
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -106,6 +116,8 @@ initialState = {text: 'Многострочный текст превышающ�
 #### Выключенное поле
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -122,6 +134,8 @@ initialState = {text: 'Многострочный текст превышающ�
 #### Поле ввода с ограниченным количеством символов и количеством полей
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -129,8 +143,8 @@ initialState = {text: 'Многострочный текст превышающ�
         title="Поле ввода"
         maxLength={60}
         maxRows={3}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>

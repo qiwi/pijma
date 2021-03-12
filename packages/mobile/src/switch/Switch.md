@@ -3,13 +3,13 @@
 #### Состояния переключателя
 
 ```jsx
-initialState = {checked: true};
+const [checked, setChecked] = React.useState(true);
 <Block>
   <BlockContent>
     <Spacer>
       <Switch
-        onChange={checked => setState({checked})}
-        checked={state.checked}
+        onChange={checked => setChecked(checked)}
+        checked={checked}
         label="Выбранный переключатель"
       />
       <Switch
@@ -35,14 +35,14 @@ initialState = {checked: true};
 #### Инвертированный переключатель
 
 ```jsx
-initialState = {checked: false};
+const [checked, setChecked] = React.useState(false);;
 <Block>
   <BlockContent>
     <Spacer>
       <Switch
-        onChange={checked => setState({checked})}
+        onChange={checked => setChecked(checked)}
         reverse={true}
-        checked={state.checked}
+        checked={checked}
         label="Выбранный переключатель"
       />
       <Switch

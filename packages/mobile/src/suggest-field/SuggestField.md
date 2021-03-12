@@ -1,7 +1,7 @@
 ```jsx
 const types = ['object', 'markdown', 'react'];
 let type = types[Math.floor(Math.random() * 3)];
-const banks = [
+const bankList = [
   {
     value: {
       id: 1,
@@ -117,59 +117,58 @@ const banks = [
   },
 ];
 
-const initialState = {
-  loading: false,
-  error: false,
-  timer: undefined,
-  banks: undefined,
-};
+const [loading, setLoading] = React.useState(false);
+const [error, setError] = React.useState(false);
+const [timer, setTimer] = React.useState(undefined);
+const [banks, setBanks] = React.useState(undefined);
+const [value, setValue] = React.useState(undefined);
+const [suggest, setSuggest] = React.useState(undefined);
 
-const filterBanks = (title) => banks.filter(bank => {
+const filterBanks = (title) => bankList.filter(bank => {
   return title !== '' && bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1;
 });
 
 const getBanks = (suggest) => {
-  setState({loading: true});
-  clearTimeout(state.timer);
+  setLoading(true);
+  clearTimeout(timer);
   return new Promise((resolve, reject) => {
-    setState({timer: setTimeout(() => {
-      setState({loading: false});
+    setTimer(setTimeout(() => {
+      setLoading(false);
       resolve(filterBanks(suggest));
-    }, 1000)});
+    }, 1000));
   });
 };
 
 const onRequest = (suggest) => {
   type = types[Math.floor(Math.random() * 3)];
-  setState({suggest, error: suggest === ''});
-  getBanks(suggest).then((banks) => setState({banks}));
+  setSuggest(suggest);
+  setError(suggest === '');
+  getBanks(suggest).then((banks) => setBanks(banks));
 };
 
 const onCancel = () => setState(initialState);
 
 const onChange = (value) => {
   const {title} = getBankByValue(value);
-  setState({
-    banks: undefined,
-    value: value,
-    suggest: title,
-  });
+  setBanks(undefined);
+  setValue(value);
+  setSuggest(title);
 };
 
 const equals = (a, b) => a.id === b.id;
 
-const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
+const getBankByValue = (value) => bankList.find(bank => equals(bank.value, value));
 
 <Block>
   <BlockContent>
     <Box>
       <SuggestField
-        value={state.value}
-        items={state.banks}
+        value={value}
+        items={banks}
         title="Поле ввода"
-        suggest={state.suggest}
-        loading={state.loading}
-        error={state.error}
+        suggest={suggest}
+        loading={loading}
+        error={error}
         equals={equals}
         onCancel={onCancel}
         onChange={onChange}
@@ -178,14 +177,14 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
           {
             link: {
               text: 'Показать все',
-              suggest: state.suggest,
+              suggest: suggest,
             }
           }
         ) : type === 'markdown' ? (
           "[Показать все](#)"
         ) : (
           <Link href="#" children="Показать все"/>
-        )} 
+        )}
         empty={type === 'object' ? (
           {
             text: 'Ничего не найдено, попробуйте',
