@@ -1,3 +1,10 @@
+## @qiwi/pijma-mobile [1.126.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.126.0...@qiwi/pijma-mobile@1.126.1) (2021-03-12)
+
+
+### Bug Fixes
+
+* **package:** fix vulnerabilities ([#383](https://github.com/qiwi/pijma/issues/383)) ([3cba676](https://github.com/qiwi/pijma/commit/3cba676f0dfbc0e8a55b0ab4195d9f00c1deac18))
+
 # [1.126.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.125.0...@qiwi/pijma-mobile@1.126.0) (2021-03-12)
 
 
