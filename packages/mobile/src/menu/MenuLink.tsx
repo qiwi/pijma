@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react'
 
-import {LinkControl, LinkControlProps, Lnk, styled} from '@qiwi/pijma-core'
+import {styled, LinkControl, LinkControlProps, Lnk} from '@qiwi/pijma-core'
 
 import {MenuItem} from '../menu'
 
@@ -16,6 +16,7 @@ export interface MenuLinkProps {
   download?: LinkControlProps['download']
   rel?: LinkControlProps['rel']
   size?: 's' | 'm'
+  attention?: boolean
   stub?: boolean
   onClick?: LinkControlProps['onClick']
   onFocus?: LinkControlProps['onFocus']
@@ -60,6 +61,7 @@ export const MenuLink: FC<MenuLinkProps> = (props) => (
           download={props.href ? props.download : undefined}
           rel={props.href ? props.rel : undefined}
           size={props.size}
+          attention={props.attention}
           onClick={renderProps.onClick}
           onFocus={renderProps.onFocus}
           onBlur={renderProps.onBlur}

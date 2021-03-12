@@ -1,7 +1,7 @@
-#### HeaderSuggest
-
 ```jsx
-const banks = [
+const types = ['object', 'markdown', 'react'];
+let type = types[Math.floor(Math.random() * 3)];
+const bankList = [
   {
     value: {
       id: 1,
@@ -117,69 +117,71 @@ const banks = [
   },
 ];
 
-const initialState = {
-  suggest: '',
-  loading: false,
-  banks: undefined,
-  timer: undefined,
-  error: false,
-};
+const [suggest, setSuggest] = React.useState('');
+const [loading, setLoading] = React.useState(false);
+const [banks, setBanks] = React.useState(undefined);
+const [timer, setTimer] = React.useState(undefined);
+const [error, setError] = React.useState(false);
+const [value, setValue] = React.useState(undefined);
 
 const target = React.useRef()
 const container = React.useRef()
 const currentTarget = target.current
 
-const filterBanks = (title) => banks.filter(bank => {
+const filterBanks = (title) => bankList.filter(bank => {
   return title !== '' && bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1;
 });
 
 const getBanks = (suggest) => {
-  setState({loading: true});
-  clearTimeout(state.timer);
+  setLoading(true);
+  clearTimeout(timer);
   return new Promise((resolve, reject) => {
-    setState({timer: setTimeout(() => {
-      setState({loading: false});
+    setTimer(setTimeout(() => {
+      setLoading(false);
       resolve(filterBanks(suggest));
-    }, 1000)});
+    }, 1000));
   });
 };
 
 const onRequest = (suggest) => {
-  setState({suggest, error: suggest === ''});
-  getBanks(suggest).then((banks) => setState({banks}));
+  type = types[Math.floor(Math.random() * 3)];
+  setSuggest(suggest);
+  setError(suggest === '');
+  getBanks(suggest).then((banks) => setBanks(banks));
 };
 
-const onCancel = () => setState(initialState);
+const onCancel = () => {
+  setSuggest('');
+  setLoading(false);
+  setBanks(undefined);
+  setTimer(undefined);
+  setError(false);
+};
 
 const onChange = (value) => {
   const {title} = getBankByValue(value);
-  setState({
-    value: value,
-    suggest: title,
-    banks: undefined,
-  });
+  setValue(value,
+    suggest);
   console.log('SELECT ITEM', value);
 };
 
 const onSubmit = (suggest) => {
   console.log('SUBMIT', suggest)
   if (suggest.length < 1) {
-    setState({
-      error: true,
-    })
+    setError(true)
   }
   return suggest.length >= 1
 };
 
 const equals = (a, b) => a.id === b.id;
 
-const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
+const getBankByValue = (value) => bankList.find(bank => equals(bank.value, value));
 
 <Pos
   ref={container}
   type="relative"
-  transform="scale(0.7)" 
-  transformOrigin="left" 
+  transform="scale(0.7)"
+  transformOrigin="left"
   width={300}
 >
   <Header>
@@ -206,11 +208,11 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
           </FlexItem>
           <FlexItem align="center" shrink={0} cursor="pointer">
             <HeaderSuggest
-              value={state.value}
-              items={state.banks}
-              suggest={state.suggest}
-              loading={state.loading}
-              error={state.error}
+              value={value}
+              items={bankList}
+              suggest={suggest}
+              loading={loading}
+              error={error}
               equals={equals}
               target={target}
               container={container}
@@ -218,25 +220,46 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
               onSubmit={onSubmit}
               onChange={onChange}
               onRequest={onRequest}
-              total={{
-                link: {
-                  text: 'Показать все',
-                  suggest: state.suggest,
+              total={type === 'object' ? (
+                {
+                  link: {
+                    text: 'Показать все',
+                    suggest: suggest,
+                  }
                 }
-              }}
-              empty={state.error ? {
-                text: 'Ошибка,',
-                link: {
-                  text: 'попробуйте ещё раз',
-                  suggest: state.suggest,
+              ) : type === 'markdown' ? (
+                "[Показать все](#)"
+              ) : (
+                <Link href="#" children="Показать все"/>
+              )}
+              empty={type === 'object' ? (
+                {
+                  text: 'Ничего не найдено, попробуйте',
+                  link: {
+                    text: 'Сбербанк',
+                    suggest: 'Сбербанк',
+                  }
                 }
-              } : {
-                text: 'Ничего не найдено, попробуйте',
-                link: {
-                  text: 'Сбербанк',
-                  suggest: 'Сбербанк',
-                }
-              }}
+              ) : type === 'markdown' ? (
+                "Ничего не нашлось"
+              ) : (
+                <React.Fragment>
+                  <Box mb={4}>
+                    <Heading size="4">
+                      Ничего не нашлось
+                    </Heading>
+                  </Box>
+                  <List
+                    type="bullet"
+                    children={[
+                      <Paragraph>Если у вас есть квитанция с реквизитами, <Link href="#">оплатите по ним.</Link></Paragraph>,
+                      <Paragraph><Link href="#">Напишите нам</Link>. Если услуги нет в кошельке, мы постараемся ее добавить.</Paragraph>,
+                      <Paragraph>Уточните у поставщика услуги, можно ли ее оплачивать через QIWI.</Paragraph>,
+                      <Paragraph>Провайдер был, а теперь его нет? Возможно, у него изменилось название или мы перестали с ним сотрудничать.<br/>Перейдите на сайт провайдера и оплатите услугу с помощью <Link href="#">виртуальной или пластиковой карты QIWI</Link>,<br/>баланс карт равен балансу кошелька.</Paragraph>,
+                    ]}
+                  />
+                </React.Fragment>
+              )}
             />
           </FlexItem>
         </Flex>

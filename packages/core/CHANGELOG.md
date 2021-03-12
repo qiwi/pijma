@@ -1,3 +1,101 @@
+# @qiwi/pijma-core [1.125.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.124.2...@qiwi/pijma-core@1.125.0) (2021-03-12)
+
+
+### Features
+
+* up react-styleguidist ([#381](https://github.com/qiwi/pijma/issues/381)) ([8652107](https://github.com/qiwi/pijma/commit/8652107c9061dc8c91d24da0513f7946505ae0f5))
+
+## @qiwi/pijma-core [1.124.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.124.1...@qiwi/pijma-core@1.124.2) (2021-03-11)
+
+
+### Performance Improvements
+
+* migrate to @qiwi/semrel-toolkit ([#377](https://github.com/qiwi/pijma/issues/377)) ([87dc7f5](https://github.com/qiwi/pijma/commit/87dc7f5449893e20968dd9f54d338dc24235de33))
+
+# [@qiwi/pijma-core-v1.124.0](https://github.com/qiwi/pijma/compare/v1.123.0...v1.124.0) (2021-03-09)
+
+
+### Features
+
+* auto display name ([#368](https://github.com/qiwi/pijma/issues/368)) ([41beeea](https://github.com/qiwi/pijma/commit/41beeea))
+
+# [@qiwi/pijma-core-v1.119.1](https://github.com/qiwi/pijma/compare/v1.119.0...v1.119.1) (2020-12-08)
+
+
+### Bug Fixes
+
+* **core:** suggest on show click ([#357](https://github.com/qiwi/pijma/issues/357)) ([fd51f38](https://github.com/qiwi/pijma/commit/fd51f38))
+
+# [@qiwi/pijma-core-v1.117.1](https://github.com/qiwi/pijma/compare/v1.117.0...v1.117.1) (2020-11-20)
+
+
+### Bug Fixes
+
+* suggest-field total and submit ([#351](https://github.com/qiwi/pijma/issues/351)) ([cbbb02e](https://github.com/qiwi/pijma/commit/cbbb02e))
+
+# [@qiwi/pijma-core-v1.116.0](https://github.com/qiwi/pijma/compare/v1.115.1...v1.116.0) (2020-11-18)
+
+
+### Features
+
+* **core:** bell and feed icon ([#347](https://github.com/qiwi/pijma/issues/347)) ([0302ff9](https://github.com/qiwi/pijma/commit/0302ff9))
+
+# [@qiwi/pijma-core-v1.114.1](https://github.com/qiwi/pijma/compare/v1.114.0...v1.114.1) (2020-10-28)
+
+
+### Performance Improvements
+
+* compile es5, auto display name ([#342](https://github.com/qiwi/pijma/issues/342)) ([dae09a2](https://github.com/qiwi/pijma/commit/dae09a2))
+
+# [@qiwi/pijma-core-v1.114.0](https://github.com/qiwi/pijma/compare/v1.113.1...v1.114.0) (2020-10-16)
+
+
+### Features
+
+* new mobile app icons ([#337](https://github.com/qiwi/pijma/issues/337)) ([48ced61](https://github.com/qiwi/pijma/commit/48ced61))
+
+# [@qiwi/pijma-core-v1.113.1](https://github.com/qiwi/pijma/compare/v1.113.0...v1.113.1) (2020-10-16)
+
+
+### Bug Fixes
+
+* **core:** load cashed image ([#336](https://github.com/qiwi/pijma/issues/336)) ([8012035](https://github.com/qiwi/pijma/commit/8012035))
+
+# [@qiwi/pijma-core-v1.113.0](https://github.com/qiwi/pijma/compare/v1.112.1...v1.113.0) (2020-10-05)
+
+
+### Features
+
+* **core:** add apple pay security badge ([#333](https://github.com/qiwi/pijma/issues/333)) ([4ad6db1](https://github.com/qiwi/pijma/commit/4ad6db1))
+
+# [@qiwi/pijma-core-v1.112.1](https://github.com/qiwi/pijma/compare/v1.112.0...v1.112.1) (2020-09-23)
+
+
+### Bug Fixes
+
+* **core:** export image props ([#331](https://github.com/qiwi/pijma/issues/331)) ([8841cae](https://github.com/qiwi/pijma/commit/8841cae))
+
+# [@qiwi/pijma-core-v1.112.0](https://github.com/qiwi/pijma/compare/v1.111.3...v1.112.0) (2020-09-16)
+
+
+### Features
+
+* add form ([#330](https://github.com/qiwi/pijma/issues/330)) ([ce29870](https://github.com/qiwi/pijma/commit/ce29870))
+
+# [@qiwi/pijma-core-v1.111.2](https://github.com/qiwi/pijma/compare/v1.111.1...v1.111.2) (2020-09-11)
+
+
+### Bug Fixes
+
+* phone-field focus ([#327](https://github.com/qiwi/pijma/issues/327)) ([887fe37](https://github.com/qiwi/pijma/commit/887fe37))
+
+# [@qiwi/pijma-core-v1.111.1](https://github.com/qiwi/pijma/compare/v1.111.0...v1.111.1) (2020-09-08)
+
+
+### Bug Fixes
+
+* initial country code ([#319](https://github.com/qiwi/pijma/issues/319)) ([35f6187](https://github.com/qiwi/pijma/commit/35f6187))
+
 # [@qiwi/pijma-core-v1.111.0](https://github.com/qiwi/pijma/compare/v1.110.1...v1.111.0) (2020-04-17)
 
 

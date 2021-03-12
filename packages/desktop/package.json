@@ -1,12 +1,15 @@
 {
   "name": "@qiwi/pijma-desktop",
-  "version": "1.111.0",
+  "version": "1.126.0",
   "main": "lib/es5/index.js",
   "types": "lib/es5/index.d.ts",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "clean": "rm -rf lib styleguide/lib",
-    "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && styleguidist build",
+    "build": "mkdir -p lib/es5 && ttsc -p tsconfig.build.json && styleguidist build",
     "watch": "styleguidist server",
     "lint": "tslint -p tsconfig.build.json src/**/*.ts{,x}",
     "lint:fix": "tslint -p tsconfig.build.json --fix src/**/*.ts{,x}",
@@ -21,7 +24,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
-    "@qiwi/pijma-core": "^1.x.x",
+    "@qiwi/pijma-core": "1.125.0",
     "@types/markdown-to-jsx": "^6.9.0",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
@@ -44,12 +47,23 @@
     "gh-pages": "2.1.1",
     "husky": "3.0.3",
     "react-docgen-typescript": "1.12.5",
-    "react-styleguidist": "9.1.14",
+    "react-styleguidist": "11.1.5",
     "ts-loader": "6.0.4",
+    "ts-node": "9.0.0",
+    "ts-react-display-name": "1.2.0",
     "tslint": "5.18.0",
     "tslint-config-qiwi": "1.1.1",
     "tslint-loader": "3.5.4",
+    "ttypescript": "1.5.12",
     "typescript": "3.5.3",
     "webpack": "4.39.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiwi/pijma.git"
+  },
+  "bugs": {
+    "url": "https://github.com/qiwi/pijma/issues"
+  },
+  "homepage": "https://github.com/qiwi/pijma/#readme"
 }

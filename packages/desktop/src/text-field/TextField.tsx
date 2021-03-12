@@ -6,9 +6,9 @@ import {
   BasicInput,
 } from '@qiwi/pijma-core'
 
-import TextFieldProps from './TextFieldProps'
+import {TextFieldProps} from './TextFieldProps'
 
-const TextField: FunctionComponent<TextFieldProps> = (props) => (
+export const TextField: FunctionComponent<TextFieldProps> = (props) => (
   props.stub ? (
     <InputField
       active={false}
@@ -65,5 +65,3 @@ const TextField: FunctionComponent<TextFieldProps> = (props) => (
 TextField.defaultProps = {
   tabIndex: 0,
 }
-
-export default TextField

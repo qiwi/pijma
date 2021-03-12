@@ -17,6 +17,7 @@ import {Paragraph} from '../typography'
 import {Link} from '../link'
 import {MenuItem} from '../menu'
 import {InputModal} from '../input-modal'
+import {Markdown} from '../markdown'
 
 import SuggestFieldProps from './SuggestFieldProps'
 import SuggestFieldOptionModel from './SuggestFieldOptionModel'
@@ -41,13 +42,15 @@ export const SuggestField = <V extends {}>({
       value={props.value}
       suggest={props.suggest}
       items={props.items}
-      empty={props.empty}
+      total={React.isValidElement(props.total) || typeof props.total === 'string' ? undefined : props.total}
+      empty={React.isValidElement(props.empty) || typeof props.empty === 'string' ? undefined : props.empty}
       equals={equals}
       onRequest={props.onRequest}
       onChange={props.onChange}
       onBlur={props.onBlur}
       onFocus={props.onFocus}
       onCancel={props.onCancel}
+      onSubmit={props.onSubmit}
       children={(renderProps) => (
         <Pos type="relative">
           <Box
@@ -58,7 +61,7 @@ export const SuggestField = <V extends {}>({
             <InputField
               title={props.title}
               active={renderProps.focused || !!props.suggest || !!props.placeholder}
-              input={
+              input={(
                 <BasicInput
                   ref={renderProps.inputRef}
                   type={props.type}
@@ -76,7 +79,7 @@ export const SuggestField = <V extends {}>({
                   onFocus={renderProps.onShowFocus}
                   onBlur={renderProps.onInputBlur}
                 />
-              }
+              )}
               hint={props.hint}
               error={props.error}
               help={props.help}
@@ -106,6 +109,7 @@ export const SuggestField = <V extends {}>({
                 onHide={renderProps.onHide}
                 onEscape={renderProps.onEscapeInputModal}
                 onBack={renderProps.onBack}
+                onSubmit={props.onSubmit ? renderProps.onSearchClick : undefined}
               >
                 {props.loading ? (
                   Array(4).fill(1).map((_item, key) => (
@@ -134,22 +138,55 @@ export const SuggestField = <V extends {}>({
                     ) : (
                       null
                     )}
-                    {props.empty && menuRenderProps.items.length === 0 ? (
-                      <Box px={4}>
-                        <Paragraph>
-                          {props.empty.text}
-                          {props.empty.link ? (
-                            <Fragment>
-                              {' '}
-                              <Link
-                                onClick={renderProps.onEmptyClick}
-                                children={props.empty.link.text}
-                              />
-                            </Fragment>
+                    {props.total && menuRenderProps.items.length > 0 ? (
+                      <Box px={6}>
+                        {React.isValidElement(props.total) ? (
+                          props.total
+                        ) : (
+                          typeof props.total === 'string' ? (
+                            <Markdown children={props.total}/>
                           ) : (
-                            null
-                          )}
-                        </Paragraph>
+                            <Paragraph>
+                              {props.total.text}
+                              {props.total.link ? (
+                                <Fragment>
+                                  {' '}
+                                  <Link
+                                    onClick={renderProps.onTotalClick}
+                                    children={props.total.link.text}
+                                  />
+                                </Fragment>
+                              ) : (
+                                null
+                              )}
+                            </Paragraph>
+                          )
+                        )}
+                      </Box>
+                    ) : props.empty && menuRenderProps.items.length === 0 && props.items !== undefined ? (
+                      <Box px={6}>
+                        {React.isValidElement(props.empty) ? (
+                          props.empty
+                        ) : (
+                          typeof props.empty === 'string' ? (
+                            <Markdown children={props.empty}/>
+                          ) : (
+                            <Paragraph>
+                              {props.empty.text}
+                              {props.empty.link ? (
+                                <Fragment>
+                                  {' '}
+                                  <Link
+                                    onClick={renderProps.onEmptyClick}
+                                    children={props.empty.link.text}
+                                  />
+                                </Fragment>
+                              ) : (
+                                null
+                              )}
+                            </Paragraph>
+                          )
+                        )}
                       </Box>
                     ) : (
                       null
@@ -168,3 +205,5 @@ export const SuggestField = <V extends {}>({
 SuggestField.defaultProps = {
   equals: (a: any, b: any) => a === b,
 }
+
+SuggestField.displayName = 'SuggestField'

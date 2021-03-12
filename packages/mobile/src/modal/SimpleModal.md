@@ -3,6 +3,7 @@
 В окнах применяются [Brand Button](#/Компоненты/Button) и [Simple Button](#/Компоненты/Button) в размере Normal.
 
 ```jsx
+const [deleteModal, setDeleteModal] = React.useState(undefined);
 <Block>
   <BlockContent>
     <Actions size="normal">
@@ -11,15 +12,15 @@
         size="normal"
         type="button"
         text="Показать окно"
-        onClick={() => setState({delete: true})}
+        onClick={() => setDeleteModal(true)}
       />
     </Actions>
     <SimpleModal
-      show={state.delete}
+      show={deleteModal}
       size="m"
       closable
       backdropClose
-      onHide={() => setState({delete: false})}
+      onHide={() => setDeleteModal(false)}
       children={
         <Spacer size="xl">
           <Heading size="2">Удалить из избранного?</Heading>
@@ -29,14 +30,14 @@
               size="normal"
               type="button"
               text="Удалить"
-              onClick={() => setState({delete: false})}
+              onClick={() => setDeleteModal(false)}
             />
             <Button
               kind="simple"
               size="normal"
               type="button"
               text="Отменить"
-              onClick={() => setState({delete: false})}
+              onClick={() => setDeleteModal(false)}
             />
           </Actions>
         </Spacer>
@@ -51,6 +52,8 @@
 #### Заголовок, описание и кнопки
 
 ```jsx
+const [notification, setNotification] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Actions size="normal">
@@ -59,15 +62,15 @@
         size="normal"
         type="button"
         text="Открыть"
-        onClick={() => setState({notification: true})}
+        onClick={() => setNotification(true)}
       />
     </Actions>
     <SimpleModal
-      show={state.notification}
+      show={notification}
       size="m"
       closable
       backdropClose
-      onHide={() => setState({notification: false})}
+      onHide={() => setNotification(false)}
       children={
         <Spacer size="l">
           <Spacer size="m">
@@ -80,14 +83,14 @@
               size="normal"
               type="button"
               text="Отключить уведомления"
-              onClick={() => setState({notification: false})}
+              onClick={() => setNotification(false)}
             />
             <Button
               kind="simple"
               size="normal"
               type="button"
               text="Не отключать"
-              onClick={() => setState({notification: false})}
+              onClick={() => setNotification(false)}
             />
           </Actions>
         </Spacer>
@@ -100,6 +103,9 @@
 #### Заголовок, инпут и кнопка
 
 ```jsx
+const [email, setEmail] = React.useState(undefined);
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Actions size="normal">
@@ -108,15 +114,15 @@
         size="normal"
         type="button"
         text="Открыть"
-        onClick={() => setState({email: true})}
+        onClick={() => setEmail(true)}
       />
     </Actions>
     <SimpleModal
-      show={state.email}
+      show={email}
       size="m"
       closable
       backdropClose
-      onHide={() => setState({email: false})}
+      onHide={() => setEmail(false)}
       children={
         <Spacer size="l">
           <Spacer size="l">
@@ -124,8 +130,8 @@
               <TextField
                 title="Адрес электронной почты"
                 type="text"
-                value={state.text}
-                onChange={text => setState({text})}
+                value={text}
+                onChange={text => setText(text)}
               />
           </Spacer>
           <Actions size="normal">
@@ -134,7 +140,7 @@
               size="normal"
               type="button"
               text="Отправить"
-              onClick={() => setState({email: false})}
+              onClick={() => setEmail(false)}
             />
           </Actions>
         </Spacer>
@@ -147,7 +153,10 @@
 #### Заголовок, инпут, кнопка и чекбоксы.
 
 ```jsx
-initialState = {values: ['selected']};
+const [values, setValues] = React.useState(['selected']);
+const [snapping, setSnapping] = React.useState(undefined);
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Actions size="normal">
@@ -156,15 +165,15 @@ initialState = {values: ['selected']};
         size="normal"
         type="button"
         text="Открыть"
-        onClick={() => setState({snapping: true})}
+        onClick={() => setSnapping(true)}
       />
     </Actions>
     <SimpleModal
-      show={state.snapping}
+      show={snapping}
       size="m"
       closable
       backdropClose
-      onHide={() => setState({snapping: false})}
+      onHide={() => setSnapping(false)}
       children={
         <Spacer size="l">
           <Spacer size="l">
@@ -172,8 +181,8 @@ initialState = {values: ['selected']};
               <TextField
                 title="Адрес электронной почты"
                 type="text"
-                value={state.text}
-                onChange={text => setState({text})}
+                value={text}
+                onChange={text => setText(text)}
               />
           </Spacer>
           <Actions size="normal">
@@ -182,7 +191,7 @@ initialState = {values: ['selected']};
               size="normal"
               type="button"
               text="Привязать почту"
-              onClick={() => setState({snapping: false})}
+              onClick={() => setSnapping(false)}
             />
           </Actions>
          <CheckboxField
@@ -195,8 +204,8 @@ initialState = {values: ['selected']};
               value: 'normal',
               disabled: false,
             }]}
-            values={state.values}
-            onChange={(values) => setState({values})}
+            values={values}
+            onChange={(values) => setValues(values)}
           />
         </Spacer>
       }
