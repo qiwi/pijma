@@ -27,7 +27,7 @@ const RadioField: FunctionComponent<
         bottom={4}
       />
       <Spacer size="s">
-        {[33, 38, 30].map((width: number, id: number) => (
+        {(Array.isArray(props.stub) ? props.stub : [33, 38, 30]).map((width: number, id: number) => (
           <Flex key={id} align="center">
             <Stub
               width={5}
