@@ -3,6 +3,8 @@
 Футер чаще всего будет использоваться как контейнер для кнопок.
 
 ```jsx
+const [show, setShow] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Actions>
@@ -11,12 +13,12 @@
         size="normal"
         type="button"
         text="Показать"
-        onClick={() => setState({show: !state.show})}
+        onClick={() => setShow(!show)}
       />
     </Actions>
     <DropUp
-      show={state.show}
-      onHide={() => setState({show: false})}
+      show={show}
+      onHide={() => setShow(false)}
       title="Заголовок"
       children={(
         <Flex height={14} align="center" px={0} onClick={() => null}>
@@ -32,7 +34,7 @@
             size="normal"
             type="button"
             text="Закрыть"
-            onClick={() => setState({show: !state.show})}
+            onClick={() => setShow(!show)}
           />
         </Actions>
       )}
@@ -43,6 +45,8 @@
 
 Пример компонента с большим содержимым.
 ```jsx
+const [show, setShow] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Actions>
@@ -51,12 +55,12 @@
         size="normal"
         type="button"
         text="Показать"
-        onClick={() => setState({show: !state.show})}
+        onClick={() => setShow(!show)}
       />
     </Actions>
     <DropUp
-      show={state.show}
-      onHide={() => setState({show: false})}
+      show={show}
+      onHide={() => setShow(false)}
       title="Заголовок"
       children={(
         <React.Fragment>
@@ -134,7 +138,7 @@
             size="normal"
             type="button"
             text="Закрыть"
-            onClick={() => setState({show: !state.show})}
+            onClick={() => setShow(!show)}
           />
         </Actions>
       )}
@@ -149,6 +153,9 @@
 Компонент может иметь второй уровень, в этом случае рядом с заголовком появляется кнопка «Назад», для перехода на уровень выше. Количество уровней не ограничено.
 
 ```jsx
+const [show, setShow] = React.useState(undefined);
+const [showHorizontal, setShowHorizontal] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Actions>
@@ -157,12 +164,12 @@
         size="normal"
         type="button"
         text="Показать"
-        onClick={() => setState({show: !state.show})}
+        onClick={() => setShow(!show)}
       />
     </Actions>
     <DropUp
-      show={state.show}
-      onHide={() => setState({show: false})}
+      show={show}
+      onHide={() => setShow(false)}
       title="Заголовок"
       children={(
         <Flex height={14} align="center" px={0} onClick={() => null}>
@@ -178,22 +185,22 @@
             size="normal"
             type="button"
             text="Показать второй уровень"
-            onClick={() => setState({showHorizontal: !state.showHorizontal, show: !state.show})}
+            onClick={() => { setShowHorizontal(!showHorizontal); setShow(!show) }}
           />
           <Button
             kind="simple"
             size="normal"
             type="button"
             text="Закрыть"
-            onClick={() => setState({show: !state.show})}
+            onClick={() => setShow(!show)}
           />
         </Actions>
       }
     />
     <DropUp
-      show={state.showHorizontal}
-      onHide={() => setState({showHorizontal: false})}
-      onBack={() => setState({showHorizontal: false, show: true})}
+      show={showHorizontal}
+      onHide={() => setShowHorizontal(false)}
+      onBack={() => { setShowHorizontal(false); setShow(true) }}
       horizontal
       title="Заголовок"
       children={(
@@ -210,7 +217,7 @@
             size="normal"
             type="button"
             text="Закрыть"
-            onClick={() => setState({showHorizontal: !state.showHorizontal})}
+            onClick={() => setShowHorizontal(!showHorizontal)}
           />
         </Actions>
       }
