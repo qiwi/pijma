@@ -1,9 +1,9 @@
 ```jsx
-initialState = {opened: []};
+const [opened, setOpened] = React.useState([]);
 <Block>
   <BlockAccordion
-    opened={state.opened}
-    onChange={(opened) => setState({opened})}
+    opened={opened}
+    onChange={(opened) => setOpened(opened)}
     items={[
       {
         title: 'Заголовок 1',

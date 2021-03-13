@@ -38,14 +38,14 @@
       <FlexItem width={6} height={6} mr={6} cursor="pointer">
         <QuestionIcon/>
       </FlexItem>
-      <FlexItem width={6} height={6} mr={6} cursor="pointer" onClick={() => setState({filterIconActive: !state.filterIconActive})}>
-        <FilterIcon active={state.filterIconActive}/>
+      <FlexItem width={6} height={6} mr={6} cursor="pointer" onClick={() => setFilterIconActive(!filterIconActive)}>
+        <FilterIcon active={filterIconActive}/>
       </FlexItem>
-      <FlexItem width={6} height={6} mr={6} cursor="pointer" onClick={() => setState({crossBurgerActive: !state.crossBurgerActive})}>
-        <CrossBurger active={state.crossBurgerActive}/>
+      <FlexItem width={6} height={6} mr={6} cursor="pointer" onClick={() => setCrossBurgerActive(!crossBurgerActive)}>
+        <CrossBurger active={crossBurgerActive}/>
       </FlexItem>
-      <FlexItem width={6} height={6} cursor="pointer" onClick={() => setState({feedIconActive: !state.feedIconActive})}>
-        <FeedIcon active={state.feedIconActive}/>
+      <FlexItem width={6} height={6} cursor="pointer" onClick={() => setFeedIconActive(!feedIconActive)}>
+        <FeedIcon active={feedIconActive}/>
       </FlexItem>
     </Flex>
   </BlockContent>

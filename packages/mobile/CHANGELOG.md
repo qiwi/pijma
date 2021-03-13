@@ -1,3 +1,31 @@
+## @qiwi/pijma-mobile [1.126.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.126.0...@qiwi/pijma-mobile@1.126.1) (2021-03-12)
+
+
+### Bug Fixes
+
+* **package:** fix vulnerabilities ([#383](https://github.com/qiwi/pijma/issues/383)) ([3cba676](https://github.com/qiwi/pijma/commit/3cba676f0dfbc0e8a55b0ab4195d9f00c1deac18))
+
+# [1.126.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.125.0...@qiwi/pijma-mobile@1.126.0) (2021-03-12)
+
+
+### Features
+
+* up react-styleguidist ([#381](https://github.com/qiwi/pijma/issues/381)) ([8652107](https://github.com/qiwi/pijma/commit/8652107c9061dc8c91d24da0513f7946505ae0f5))
+
+# @qiwi/pijma-mobile [1.125.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.124.2...@qiwi/pijma-mobile@1.125.0) (2021-03-12)
+
+
+### Features
+
+* radio-field stub customization ([#379](https://github.com/qiwi/pijma/issues/379)) ([7d5457d](https://github.com/qiwi/pijma/commit/7d5457da27da706c6e43281083ffa8aee12bf720))
+
+## [1.124.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.124.1...@qiwi/pijma-mobile@1.124.2) (2021-03-11)
+
+
+### Performance Improvements
+
+* migrate to @qiwi/semrel-toolkit ([#377](https://github.com/qiwi/pijma/issues/377)) ([87dc7f5](https://github.com/qiwi/pijma/commit/87dc7f5449893e20968dd9f54d338dc24235de33))
+
 # [@qiwi/pijma-mobile-v1.124.1](https://github.com/qiwi/pijma/compare/v1.124.0...v1.124.1) (2021-03-10)
 
 

@@ -2,13 +2,13 @@
 
 #### Состояния чекбоксов
 ```jsx
-initialState = {checked: true};
+const [checked, setChecked] = React.useState(true);
 <Block>
   <BlockContent>
     <Spacer>
       <Checkbox
-        onChange={checked => setState({checked})}
-        checked={state.checked}
+        onChange={checked => setChecked(checked)}
+        checked={checked}
         label="Выбранный чекбокс"
       />
       <Checkbox

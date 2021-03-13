@@ -25,8 +25,8 @@
       <TextField
         title="Поле ввода"
         type="text"
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -61,8 +61,8 @@
         title="Поле ввода"
         help="Подсказка"
         type="text"
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -79,8 +79,8 @@
         title="Поиск"
         type="text"
         action={<a href="#/Fields/TextField">Сылка-кнопка</a>}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -97,8 +97,8 @@
         title="Поле ввода"
         error="Подсказка"
         type="text"
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -131,8 +131,8 @@
         title="Поле ввода"
         type="text"
         hint={<QuestionIcon />}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -142,7 +142,7 @@
 #### Номер телефона
 
 ```jsx
-initialState = {text: '+7'};
+const [text, setText] = React.useState('+7');
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -150,8 +150,8 @@ initialState = {text: '+7'};
         title="Номер телефона"
         type="tel"
         mask={['+', /7/, '(', /\d/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -173,8 +173,8 @@ initialState = {text: '+7'};
           requireDecimal: true,
           integerLimit: 20
         })}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -191,8 +191,8 @@ initialState = {text: '+7'};
         title="Имя на карте"
         type="tel"
         mask={createFilterMask(/[a-zA-Z\s-]/)}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -209,8 +209,8 @@ initialState = {text: '+7'};
         title="CVV"
         type="password"
         mask={[/\d/, /\d/, /\d/]}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -227,8 +227,8 @@ initialState = {text: '+7'};
         title="Поле ввода"
         type="text"
         maxLength={3}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -244,26 +244,26 @@ initialState = {text: '+7'};
       <TextField
         placeholder="Цифровое поле"
         type="tel"
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
       <TextField
         title="Поисковое поле"
         type="search"
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
       <TextField
         title="Поле под email"
         type="email"
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
       <TextField
         title="Поле url адреса "
         type="url"
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>

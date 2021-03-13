@@ -6,9 +6,10 @@ module.exports = {
       {
         publish: {
           action: 'push',
-          branch: 'docs',
+          branch: 'gh-pages',
           from: './styleguide/lib',
           to: './desktop',
+          message: 'update pijma-desktop docs'
         }
       }
     ],
@@ -23,6 +24,11 @@ module.exports = {
         failComment: false
       }
     ],
-    '@semantic-release/git'
+    [
+      '@semantic-release/git',
+      {
+        message: 'chore(release): ${nextRelease.gitTag} [skip ci]\\n\\n${nextRelease.notes}'
+      }
+    ]
   ]
 }
