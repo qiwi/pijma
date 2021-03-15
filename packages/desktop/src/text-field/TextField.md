@@ -19,6 +19,8 @@
 #### Обычное поле
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -54,6 +56,8 @@
 #### Поле с подсказкой
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -72,6 +76,8 @@
 #### Поле ввода с кнопкой
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -90,6 +96,8 @@
 #### Ошибка
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -124,6 +132,8 @@
 #### Поле с хинтом
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -143,6 +153,7 @@
 
 ```jsx
 const [text, setText] = React.useState('+7');
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -161,6 +172,8 @@ const [text, setText] = React.useState('+7');
 #### Поле ввода ссумы
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -184,6 +197,8 @@ const [text, setText] = React.useState('+7');
 #### Поле ввода латинских символов
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -202,6 +217,8 @@ const [text, setText] = React.useState('+7');
 #### Скрыть вводимые символы
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -220,6 +237,8 @@ const [text, setText] = React.useState('+7');
 #### Поле ввода с ограниченным количеством символов
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -238,32 +257,37 @@ const [text, setText] = React.useState('+7');
 ## Типы полей для мобильной клавиатуры
 
 ```jsx
+const [text1, setText1] = React.useState(undefined);
+const [text2, setText2] = React.useState(undefined);
+const [text3, setText3] = React.useState(undefined);
+const [text4, setText4] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
       <TextField
         placeholder="Цифровое поле"
         type="tel"
-        value={text}
-        onChange={text => setText(text)}
+        value={text1}
+        onChange={text => setText1(text)}
       />
       <TextField
         title="Поисковое поле"
         type="search"
-        value={text}
-        onChange={text => setText(text)}
+        value={text2}
+        onChange={text => setText2(text)}
       />
       <TextField
         title="Поле под email"
         type="email"
-        value={text}
-        onChange={text => setText(text)}
+        value={text3}
+        onChange={text => setText3(text)}
       />
       <TextField
         title="Поле url адреса "
         type="url"
-        value={text}
-        onChange={text => setText(text)}
+        value={text4}
+        onChange={text => setText4(text)}
       />
     </Box>
   </BlockContent>
