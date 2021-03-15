@@ -2,9 +2,9 @@ import React, {FunctionComponent} from 'react'
 
 import {PasswordFieldControl, Box, InputField, BasicInput, Icon} from '@qiwi/pijma-core'
 
-import PasswordFieldProps from './PasswordFieldProps'
+import {PasswordFieldProps} from './PasswordFieldProps'
 
-const PasswordField: FunctionComponent<PasswordFieldProps> = (props) => (
+export const PasswordField: FunctionComponent<PasswordFieldProps> = (props) => (
   <PasswordFieldControl
     onChange={props.onChange}
     onFocus={props.onFocus}
@@ -16,7 +16,6 @@ const PasswordField: FunctionComponent<PasswordFieldProps> = (props) => (
       <InputField
         title={props.title}
         active={renderProps.focused || !!props.value || !!props.placeholder}
-        padded={!!props.hint || !!props.viewed}
         input={(
           <BasicInput
             type={props.viewed && !renderProps.hidden ? 'text' : 'password'}
@@ -26,7 +25,7 @@ const PasswordField: FunctionComponent<PasswordFieldProps> = (props) => (
             autoFocus={props.autoFocus}
             placeholder={props.placeholder}
             disabled={props.disabled}
-            padded={!!props.hint}
+            pr={props.hint || props.viewed ? 7 : undefined}
             error={!!props.error}
             focused={renderProps.focused}
             maxLength={props.maxLength}
@@ -71,5 +70,3 @@ PasswordField.defaultProps = {
   tabIndex: 0,
   viewed: true,
 }
-
-export default PasswordField

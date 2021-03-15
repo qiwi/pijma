@@ -1,18 +1,18 @@
 import React, {FC} from 'react'
 
-import {LinkControl, RenderChild, Lnk, Card} from '@qiwi/pijma-core'
+import {styled, RenderChild, LinkControl, LinkControlProps, Card, Lnk, Block} from '@qiwi/pijma-core'
 
 export interface BlockLinkProps {
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
-  onFocus?: () => void
-  onBlur?: () => void
   tabIndex?: number
-  href?: string
-  target?: string
-  download?: string | boolean
-  rel?: string
-  title?: string
   accent?: boolean
+  href: LinkControlProps['href']
+  target?: LinkControlProps['target']
+  download?: LinkControlProps['download']
+  rel?: LinkControlProps['rel']
+  title?: string
+  onClick?: LinkControlProps['onClick']
+  onFocus?: LinkControlProps['onFocus']
+  onBlur?: LinkControlProps['onBlur']
   children: RenderChild<{
     active: boolean
     focus: boolean
@@ -20,7 +20,7 @@ export interface BlockLinkProps {
   }>
 }
 
-const CardLink = Card.withComponent(Lnk)
+const BlockLnk = styled(Card.withComponent(Lnk))().withComponent(Block)
 
 export const BlockLink: FC<BlockLinkProps> = (props) => (
   <LinkControl
@@ -32,17 +32,15 @@ export const BlockLink: FC<BlockLinkProps> = (props) => (
     download={props.download}
     rel={props.rel}
     children={(renderProps) => (
-      <CardLink
-        display="block"
-        overflow="hidden"
-        bg="#fff"
-        cursor="pointer"
-        r={10}
-        s={renderProps.hover || renderProps.focus || renderProps.active ? '0 10px 24px 0 rgba(0,0,0,0.08)' : '0 1px 2px 0 rgba(0,0,0,0.12)'}
-        transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-        transform={renderProps.hover && props.accent ? 'translateY(-4px)' : undefined}
+      <BlockLnk
+        as="a"
+        accent={props.accent}
+        hover={renderProps.hover}
+        focus={renderProps.focus}
+        active={renderProps.active}
         tabIndex={props.tabIndex}
         href={props.href}
+        title={props.title}
         onClick={renderProps.onClick}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}

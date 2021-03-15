@@ -1,5 +1,2 @@
-import PasswordField from './PasswordField'
-
-export {
-  PasswordField,
-}
+export * from './PasswordField'
+export * from './PasswordFieldProps'

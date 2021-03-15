@@ -29,7 +29,7 @@ export const InputNonProps = [
   'placeholderSize', 'placeholderWeight', 'placeholderColor', 'placeholderTransform', 'placeholderSpacing',
 ].concat(CardNonProps)
 
-export const Input = styled(Card.withComponent('input'), {
+export const Input = styled(Card, {
   shouldForwardProp: (prop) => !InputNonProps.includes(prop),
 })<InputProps>(({theme, ...props}) => ({
   fontFamily: theme.font.family,
@@ -41,6 +41,7 @@ export const Input = styled(Card.withComponent('input'), {
   textIndent: 0,
   letterSpacing: pxValue(props.valueSpacing),
   outline: 'none',
+  WebkitAppearance: 'none',
   MozAppearance: 'textfield',
   '&::placeholder': {
     fontSize: pxValue(props.placeholderSize, theme.scale),
@@ -65,4 +66,4 @@ export const Input = styled(Card.withComponent('input'), {
   },
   '&::-webkit-outer-spin-button': appearanceNone,
   '&::-webkit-inner-spin-button': appearanceNone,
-}))
+})).withComponent('input')

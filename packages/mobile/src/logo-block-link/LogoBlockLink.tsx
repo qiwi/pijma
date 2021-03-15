@@ -1,7 +1,7 @@
 import React, {FC, ReactElement, ReactNode} from 'react'
-import {Box, Flex, FlexItem, Spacer} from '@qiwi/pijma-core'
+import {Box, Flex, FlexItem, Spacer, Image, LinkControlProps, Block, Stub} from '@qiwi/pijma-core'
 import {BlockLink} from '../link'
-import {Paragraph} from '../typography'
+import {Paragraph, Text} from '../typography'
 
 export interface LogoBlockLinkProps {
   icon: ReactNode
@@ -9,33 +9,21 @@ export interface LogoBlockLinkProps {
   description?: string
   actions?: ReactElement[]
   tabIndex?: number
-  href?: string
-  target?: string
-  download?: string | boolean
-  rel?: string
+  href: LinkControlProps['href']
+  target?: LinkControlProps['target']
+  download?: LinkControlProps['download']
+  rel?: LinkControlProps['rel']
   horizontal?: boolean
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
-  onFocus?: () => void
-  onBlur?: () => void
+  stub?: boolean
+  onClick?: LinkControlProps['onClick']
+  onFocus?: LinkControlProps['onFocus']
+  onBlur?: LinkControlProps['onBlur']
 }
 
-const Img = Box.withComponent('img')
-
 export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description, actions, ...props}) => (
-  <BlockLink
-    title={title}
-    accent
-    tabIndex={props.tabIndex}
-    href={props.href}
-    target={props.target}
-    download={props.download}
-    rel={props.rel}
-    onClick={props.onClick}
-    onFocus={props.onFocus}
-    onBlur={props.onBlur}
-  >
-    {() => (
-      props.horizontal ? (
+  props.stub ? (
+    <Block>
+      {props.horizontal ? (
         <Box p={4}>
           <Flex align="baseline">
             <FlexItem
@@ -44,51 +32,30 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
               width={12}
               height={12}
             >
-              {typeof icon === 'string' ? (
-                <Img
-                  src={icon}
-                  alt={title}
-                  maxWidth={12}
-                  maxHeight={12}
-                />
-              ) : (
-                icon
-              )}
+              <Stub height={12} width={12} r={24}/>
             </FlexItem>
-            <FlexItem align="center">
+            <FlexItem align="center" width={1}>
               <Spacer size="xxs">
-                <Paragraph
-                  clamp={description ? 1 : 2}
-                  color="default"
-                  size="m"
-                  bold
-                  children={title}
-                />
-                {description ? (
-                  <Paragraph
-                    clamp={1}
-                    color="support"
-                    size="s"
-                    children={description}
+                <Box maxWidth={38} width={1} pr={4.5}>
+                  <Text
+                    display="block"
+                    size="m"
+                    stub
                   />
+                </Box>
+                {description ? (
+                  <Box maxWidth={18} width={1}>
+                    <Text
+                      display="block"
+                      size="s"
+                      stub
+                    />
+                  </Box>
                 ) : (
                   null
                 )}
               </Spacer>
             </FlexItem>
-            {actions ? (
-              actions.map((action, index) => (
-                <FlexItem
-                  pl={index === 0 ? 2 : undefined}
-                  align="center"
-                  ml={index !== 0 ? 3 : 'auto'}
-                  key={index}
-                  children={action}
-                />
-              ))
-            ) : (
-              null
-            )}
           </Flex>
         </Box>
       ) : (
@@ -97,50 +64,150 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
           height={actions ? (description ? 56 : 50) : (description ? 43 : 42)}
         >
           <Box width={14} height={14} mt={2} mx="auto">
-            {typeof icon === 'string' ? (
-              <Img src={icon} alt={title} maxWidth={14} maxHeight={14}/>
-            ) : (
-              icon
-            )}
+            <Stub height={14} width={14} r={28}/>
           </Box>
-          <Box mt={3} mx="auto">
-            <Paragraph
-              clamp={description ? 2 : 3}
-              color="default"
+          <Box mt={3} mx="auto" maxWidth={38} width={1} pl={4.5} pr={4.5}>
+            <Text
+              display="block"
               size="s"
-              bold
-              align="center"
-              children={title}
+              stub
             />
           </Box>
           {description ? (
-            <Box mt={1} mx="auto">
-              <Paragraph
-                clamp={1}
-                color="support"
+            <Box mt={1} mx="auto" maxWidth={18} width={1}>
+              <Text
+                display="block"
                 size="s"
-                align="center"
-                children={description}
+                stub
               />
             </Box>
           ) : (
             null
           )}
-          {actions ? (
-            <Flex mt={3} mx="auto" align="baseline" justify="center">
-              {actions.map((action, index) => (
-                <FlexItem
-                  ml={index !== 0 ? 3 : undefined}
-                  key={index}
-                  children={action}
-                />
-              ))}
-            </Flex>
-          ) : (
-            null
-          )}
         </Box>
-      )
-    )}
-  </BlockLink>
+      )}
+    </Block>
+  ) : (
+    <BlockLink
+      title={title}
+      accent
+      tabIndex={props.tabIndex}
+      href={props.href}
+      target={props.target}
+      download={props.download}
+      rel={props.rel}
+      onClick={props.onClick}
+      onFocus={props.onFocus}
+      onBlur={props.onBlur}
+    >
+      {() => (
+        props.horizontal ? (
+          <Box p={4}>
+            <Flex align="baseline">
+              <FlexItem
+                shrink={0}
+                mr={4}
+                width={12}
+                height={12}
+              >
+                {typeof icon === 'string' ? (
+                  <Image
+                    src={icon}
+                    alt={title}
+                    width={12}
+                    height={12}
+                  />
+                ) : (
+                  icon
+                )}
+              </FlexItem>
+              <FlexItem align="center">
+                <Spacer size="xxs">
+                  <Paragraph
+                    clamp={description ? 1 : 2}
+                    color="default"
+                    size="m"
+                    bold
+                    children={title}
+                  />
+                  {description ? (
+                    <Paragraph
+                      clamp={1}
+                      color="support"
+                      size="s"
+                      children={description}
+                    />
+                  ) : (
+                    null
+                  )}
+                </Spacer>
+              </FlexItem>
+              {actions ? (
+                actions.map((action, index) => (
+                  <FlexItem
+                    pl={index === 0 ? 2 : undefined}
+                    align="center"
+                    ml={index !== 0 ? 3 : 'auto'}
+                    key={index}
+                    children={action}
+                  />
+                ))
+              ) : (
+                null
+              )}
+            </Flex>
+          </Box>
+        ) : (
+          <Box
+            p={4}
+            height={actions ? (description ? 56 : 50) : (description ? 43 : 42)}
+          >
+            <Box width={14} height={14} mt={2} mx="auto">
+              {typeof icon === 'string' ? (
+                <Image src={icon} alt={title} width={14} height={14}/>
+              ) : (
+                icon
+              )}
+            </Box>
+            <Box mt={3} mx="auto">
+              <Paragraph
+                clamp={description ? 2 : 3}
+                color="default"
+                size="s"
+                bold
+                align="center"
+                children={title}
+              />
+            </Box>
+            {description ? (
+              <Box mt={1} mx="auto">
+                <Paragraph
+                  clamp={1}
+                  color="support"
+                  size="s"
+                  align="center"
+                  children={description}
+                />
+              </Box>
+            ) : (
+              null
+            )}
+            {actions ? (
+              <Flex mt={3} mx="auto" align="baseline" justify="center">
+                {actions.map((action, index) => (
+                  <FlexItem
+                    ml={index !== 0 ? 3 : undefined}
+                    key={index}
+                    children={action}
+                  />
+                ))}
+              </Flex>
+            ) : (
+              null
+            )}
+          </Box>
+        )
+      )}
+    </BlockLink>
+  )
 )

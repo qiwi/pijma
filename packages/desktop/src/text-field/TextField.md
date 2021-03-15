@@ -19,14 +19,16 @@
 #### Обычное поле
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
       <TextField
         title="Поле ввода"
         type="text"
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -54,6 +56,8 @@
 #### Поле с подсказкой
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -61,8 +65,8 @@
         title="Поле ввода"
         help="Подсказка"
         type="text"
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -72,6 +76,8 @@
 #### Поле ввода с кнопкой
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -79,8 +85,8 @@
         title="Поиск"
         type="text"
         action={<a href="#/Fields/TextField">Сылка-кнопка</a>}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -90,6 +96,8 @@
 #### Ошибка
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -97,8 +105,8 @@
         title="Поле ввода"
         error="Подсказка"
         type="text"
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -124,6 +132,8 @@
 #### Поле с хинтом
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -131,8 +141,8 @@
         title="Поле ввода"
         type="text"
         hint={<QuestionIcon />}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -142,7 +152,8 @@
 #### Номер телефона
 
 ```jsx
-initialState = {text: '+7'};
+const [text, setText] = React.useState('+7');
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -150,8 +161,8 @@ initialState = {text: '+7'};
         title="Номер телефона"
         type="tel"
         mask={['+', /7/, '(', /\d/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -161,6 +172,8 @@ initialState = {text: '+7'};
 #### Поле ввода ссумы
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -173,8 +186,8 @@ initialState = {text: '+7'};
           requireDecimal: true,
           integerLimit: 20
         })}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -184,6 +197,8 @@ initialState = {text: '+7'};
 #### Поле ввода латинских символов
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -191,8 +206,8 @@ initialState = {text: '+7'};
         title="Имя на карте"
         type="tel"
         mask={createFilterMask(/[a-zA-Z\s-]/)}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -202,6 +217,8 @@ initialState = {text: '+7'};
 #### Скрыть вводимые символы
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -209,8 +226,8 @@ initialState = {text: '+7'};
         title="CVV"
         type="password"
         mask={[/\d/, /\d/, /\d/]}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -220,6 +237,8 @@ initialState = {text: '+7'};
 #### Поле ввода с ограниченным количеством символов
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
@@ -227,8 +246,8 @@ initialState = {text: '+7'};
         title="Поле ввода"
         type="text"
         maxLength={3}
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text}
+        onChange={text => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -238,32 +257,37 @@ initialState = {text: '+7'};
 ## Типы полей для мобильной клавиатуры
 
 ```jsx
+const [text1, setText1] = React.useState(undefined);
+const [text2, setText2] = React.useState(undefined);
+const [text3, setText3] = React.useState(undefined);
+const [text4, setText4] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
       <TextField
         placeholder="Цифровое поле"
         type="tel"
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text1}
+        onChange={text => setText1(text)}
       />
       <TextField
         title="Поисковое поле"
         type="search"
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text2}
+        onChange={text => setText2(text)}
       />
       <TextField
         title="Поле под email"
         type="email"
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text3}
+        onChange={text => setText3(text)}
       />
       <TextField
         title="Поле url адреса "
         type="url"
-        value={state.text}
-        onChange={text => setState({text})}
+        value={text4}
+        onChange={text => setText4(text)}
       />
     </Box>
   </BlockContent>
@@ -273,3 +297,7 @@ initialState = {text: '+7'};
 ## Поле ввода пароля
 
 Для ввода пароля используется отдельный компонент [PasswordField](#/Компоненты/PasswordField)
+
+## Многострочное текстовое поле
+
+Для ввода нескольких строк текста используется отдельный компонент [TextAreaField](#/Компоненты/TextAreaField)
