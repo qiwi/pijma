@@ -1,10 +1,14 @@
 
-<p align="center">
+<p>
   <a href="https://qiwi.github.io/pijma/desktop">
     <img alt="QIWI Pijma" src="https://github.com/qiwi/pijma/blob/docs/img/pijma.png?raw=true" width="450">
   </a>
 </p>
 
+[![Build Status](https://travis-ci.com/qiwi/pijma.svg?branch=master)](https://travis-ci.com/qiwi/pijma)
+![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/qiwi/pijma)
+[![npm (scoped)](https://img.shields.io/npm/v/@qiwi/pijma-desktop?label=%40qiwi%2Fpijma-desktop&color=39f)](https://www.npmjs.com/package/@qiwi/pijma-desktop)
+[![npm (scoped)](https://img.shields.io/npm/v/@qiwi/pijma-mobile?label=%40qiwi%2Fpijma-mobile&color=39f)](https://www.npmjs.com/package/@qiwi/pijma-mobile)  
 Yet another user interface components library. Weird. Slow. Our own.
 
 ## Demo
