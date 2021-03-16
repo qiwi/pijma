@@ -34,6 +34,8 @@ export * from './alert'
 export * from './logo-block-link'
 export * from './suggest-field'
 export * from './notice'
+export * from './switch'
+export * from './switch-field'
 
 export {TextField as MaskTextField} from './text-field'
 export {PasswordField as MaskPasswordField} from './password-field'
