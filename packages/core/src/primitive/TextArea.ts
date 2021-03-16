@@ -33,7 +33,7 @@ export const TextAreaNonProps = [
   'placeholderSpacing',
 ].concat(CardNonProps)
 
-export const TextArea = styled(Card.withComponent('textarea'), {
+export const TextArea = styled(Card, {
   shouldForwardProp: (prop) => !TextAreaNonProps.includes(prop),
 })<TextAreaProps>(({theme, ...props}) => ({
   fontFamily: theme.font.family,
@@ -55,4 +55,4 @@ export const TextArea = styled(Card.withComponent('textarea'), {
     textTransform: props.placeholderTransform,
     letterSpacing: pxValue(props.placeholderSpacing),
   },
-}))
+})).withComponent('textarea')

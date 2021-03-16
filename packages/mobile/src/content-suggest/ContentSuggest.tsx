@@ -168,3 +168,5 @@ export const ContentSuggest = <V extends {}>({
 ContentSuggest.defaultProps = {
   equals: (a: any, b: any) => a === b,
 }
+
+ContentSuggest.displayName = 'ContentSuggest'

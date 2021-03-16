@@ -1,8 +1,8 @@
 import React, {FC} from 'react'
 
-import {Lnk, Card, Icon, IconProps, LinkControl, Flex, FlexItem, Box, Stub} from '@qiwi/pijma-core'
+import {styled, Lnk, Card, Icon, IconProps, LinkControl, Flex, FlexItem, Box, Stub} from '@qiwi/pijma-core'
 
-const CardLink = Card.withComponent(Lnk)
+const CardLink = styled(Card)().withComponent(Lnk)
 
 interface FooterOutLinkProps {
   href: string
@@ -51,12 +51,12 @@ const FooterOutLink: FC<FooterOutLinkProps> = (props) => (
           onMouseLeave={renderProps.onMouseLeave}
           onMouseUp={renderProps.onMouseUp}
           onMouseDown={renderProps.onMouseDown}
-          children={
+          children={(
             <Icon
               name={props.icon}
               color={renderProps.hover || renderProps.focus || renderProps.active ? '#666' : '#999'}
             />
-          }
+          )}
         />
       )}
     />

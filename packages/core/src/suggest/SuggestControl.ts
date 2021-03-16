@@ -176,7 +176,9 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
     this.cancel()
   }
 
-  private onShowClick: () => void = () => {
+  private onShowClick: React.MouseEventHandler = (event) => {
+    event.preventDefault()
+    event.stopPropagation()
     this.setState({
       focused: true,
     })

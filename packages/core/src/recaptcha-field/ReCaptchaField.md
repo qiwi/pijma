@@ -1,14 +1,17 @@
 #### Ширина контейнера больше ширины рекапчи
 
 ```jsx
+const [value1, setValue1] = React.useState(undefined);
+const [value2, setValue2] = React.useState(undefined);
+
 <Grid columns={2} layout={1}>
   <Block>
     <BlockContent>
       <ReCaptchaField
         siteKey="6Le0iiETAAAAAPNu6albLuW5O2Zz7FO8N95lisA1"
-        value={state.value1}
-        action={state.value1 ? <a href="javascript:void(0)" onClick={() => setState({value1: undefined})}>Сбросить</a> : null}
-        onChange={(value1) => setState({value1})}
+        value={value1}
+        action={value1 ? <a href="javascript:void(0)" onClick={() => setValue1(undefined)}>Сбросить</a> : null}
+        onChange={(value1) => setValue1(value1)}
       />
     </BlockContent>
   </Block>
@@ -16,10 +19,10 @@
     <BlockContent>
       <ReCaptchaField
         siteKey="6Le0iiETAAAAAPNu6albLuW5O2Zz7FO8N95lisA1"
-        value={state.value2}
+        value={value2}
         error="Кажется, вы робот"
-        action={state.value2 ? <a href="javascript:void(0)" onClick={() => setState({value2: undefined})}>Сбросить</a> : null}
-        onChange={(value2) => setState({value2})}
+        action={value2 ? <a href="javascript:void(0)" onClick={() => setValue2(undefined)}>Сбросить</a> : null}
+        onChange={(value2) => setValue2(value2)}
       />
     </BlockContent>
   </Block>
@@ -29,14 +32,17 @@
 #### Ширина контейнера меньше ширины рекапчи
 
 ```jsx
+const [value3, setValue3] = React.useState(undefined);
+const [value4, setValue4] = React.useState(undefined);
+
 <Grid columns={7} layout={[3,1,3]}>
   <Block>
     <BlockContent>
       <ReCaptchaField
         siteKey="6Le0iiETAAAAAPNu6albLuW5O2Zz7FO8N95lisA1"
-        value={state.value3}
-        action={state.value3 ? <a href="javascript:void(0)" onClick={() => setState({value3: undefined})}>Сбросить</a> : null}
-        onChange={(value3) => setState({value3})}
+        value={value3}
+        action={value3 ? <a href="javascript:void(0)" onClick={() => setValue3(undefined)}>Сбросить</a> : null}
+        onChange={(value3) => setValue3(value3)}
       />
     </BlockContent>
   </Block>
@@ -45,10 +51,10 @@
     <BlockContent>
       <ReCaptchaField
         siteKey="6Le0iiETAAAAAPNu6albLuW5O2Zz7FO8N95lisA1"
-        value={state.value4}
+        value={value4}
         error="Кажется, вы робот"
-        action={state.value4 ? <a href="javascript:void(0)" onClick={() => setState({value4: undefined})}>Сбросить</a> : null}
-        onChange={(value4) => setState({value4})}
+        action={value4 ? <a href="javascript:void(0)" onClick={() => setValue4(undefined)}>Сбросить</a> : null}
+        onChange={(value4) => setValue4(value4)}
       />
     </BlockContent>
   </Block>

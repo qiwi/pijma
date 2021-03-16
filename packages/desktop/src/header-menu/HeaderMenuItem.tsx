@@ -1,6 +1,6 @@
 import React, {forwardRef, Ref} from 'react'
 
-import {LinkControl, Lnk, Flex, Pos, Card, LinkControlProps, Typo} from '@qiwi/pijma-core'
+import {styled, LinkControl, Lnk, Flex, Pos, Card, LinkControlProps, Typo} from '@qiwi/pijma-core'
 
 import {Text} from '../typography'
 
@@ -19,7 +19,7 @@ export interface HeaderMenuItemProps {
   onBlur?: LinkControlProps['onBlur']
 }
 
-const PosLink = Pos.withComponent(Lnk)
+const PosLink = styled(Pos)().withComponent(Lnk)
 
 export const HeaderMenuItem = forwardRef<HTMLAnchorElement, HeaderMenuItemProps>((props, ref) => (
   <LinkControl

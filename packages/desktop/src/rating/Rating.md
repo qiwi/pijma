@@ -1,12 +1,12 @@
 ```jsx
-initialState = {value: 0};
+const [value, setValue] = React.useState(0);
 <Block>
   <BlockContent>
     <Spacer size="l">
       <Paragraph align="center" size="l" bold>Оцените работу нашего сайта</Paragraph>
       <Paragraph align="center" size="m">Мы хотим стать лучше для вас</Paragraph>
       <Flex justify="center">
-        <Rating value={state.value} size="m" onChange={(value) => setState({value})}/>
+        <Rating value={value} size="m" onChange={(value) => setValue(value)}/>
       </Flex>
       <Paragraph align="center" size="m">Удовлетворительно</Paragraph>
     </Spacer>

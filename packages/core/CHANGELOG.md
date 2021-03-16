@@ -1,3 +1,31 @@
+# @qiwi/pijma-core [1.125.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.124.2...@qiwi/pijma-core@1.125.0) (2021-03-12)
+
+
+### Features
+
+* up react-styleguidist ([#381](https://github.com/qiwi/pijma/issues/381)) ([8652107](https://github.com/qiwi/pijma/commit/8652107c9061dc8c91d24da0513f7946505ae0f5))
+
+## @qiwi/pijma-core [1.124.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.124.1...@qiwi/pijma-core@1.124.2) (2021-03-11)
+
+
+### Performance Improvements
+
+* migrate to @qiwi/semrel-toolkit ([#377](https://github.com/qiwi/pijma/issues/377)) ([87dc7f5](https://github.com/qiwi/pijma/commit/87dc7f5449893e20968dd9f54d338dc24235de33))
+
+# [@qiwi/pijma-core-v1.124.0](https://github.com/qiwi/pijma/compare/v1.123.0...v1.124.0) (2021-03-09)
+
+
+### Features
+
+* auto display name ([#368](https://github.com/qiwi/pijma/issues/368)) ([41beeea](https://github.com/qiwi/pijma/commit/41beeea))
+
+# [@qiwi/pijma-core-v1.119.1](https://github.com/qiwi/pijma/compare/v1.119.0...v1.119.1) (2020-12-08)
+
+
+### Bug Fixes
+
+* **core:** suggest on show click ([#357](https://github.com/qiwi/pijma/issues/357)) ([fd51f38](https://github.com/qiwi/pijma/commit/fd51f38))
+
 # [@qiwi/pijma-core-v1.117.1](https://github.com/qiwi/pijma/compare/v1.117.0...v1.117.1) (2020-11-20)
 
 
