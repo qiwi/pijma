@@ -15,17 +15,15 @@
     "lint:fix": "lerna run --no-bail --parallel lint:fix",
     "guide": "lerna run --concurrency=1 guide",
     "guide_ci": "lerna run --concurrency=1 guide_ci",
-    "postinstall": "patch-package"
+    "upgrade": "npx npm-upgrade-monorepo"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint",
       "pre-push": "yarn lint"
     }
   },
   "devDependencies": {
-    "lerna": "4.0.0",
-    "patch-package": "6.4.6"
+    "lerna": "4.0.0"
   },
   "repository": {
     "type": "git",
