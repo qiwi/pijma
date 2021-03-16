@@ -6,7 +6,7 @@
     "baseUrl": "src",
     "plugins": [
       {
-        "transform": "../../ts-react-display-name.ts"
+        "transform": "../infra/ts-react-display-name.ts"
       }
     ]
   },
