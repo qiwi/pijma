@@ -1,3 +1,10 @@
+## [1.126.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.126.1...@qiwi/pijma-mobile@1.126.2) (2021-03-16)
+
+
+### Bug Fixes
+
+* switch export ([#391](https://github.com/qiwi/pijma/issues/391)) ([6986600](https://github.com/qiwi/pijma/commit/6986600c7da7abae768eae3333ca6057e8c9c0c0))
+
 ## @qiwi/pijma-mobile [1.126.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.126.0...@qiwi/pijma-mobile@1.126.1) (2021-03-12)
 
 
