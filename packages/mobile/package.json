@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-mobile",
-  "version": "1.126.3",
+  "version": "1.126.4",
   "main": "lib/es5/index.js",
   "types": "lib/es5/index.d.ts",
   "license": "MIT",
@@ -24,7 +24,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
-    "@qiwi/pijma-core": "1.125.1",
+    "@qiwi/pijma-core": "1.125.2",
     "@types/markdown-to-jsx": "^6.9.0",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
