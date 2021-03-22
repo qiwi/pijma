@@ -1,3 +1,18 @@
+## @qiwi/pijma-core [1.125.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.125.0...@qiwi/pijma-core@1.125.1) (2021-03-22)
+
+
+### Bug Fixes
+
+* should forward prop ([#393](https://github.com/qiwi/pijma/issues/393)) ([59cef3d](https://github.com/qiwi/pijma/commit/59cef3d6932a05ee860887bf26346d26677c2d51))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-infra:** upgraded to 1.0.0
+
 # @qiwi/pijma-core [1.125.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.124.2...@qiwi/pijma-core@1.125.0) (2021-03-12)
 
 

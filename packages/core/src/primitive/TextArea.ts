@@ -1,4 +1,4 @@
-import styled from '../styled'
+import styled, {StyledOptions} from '../styled'
 
 import {Card, CardProps, CardNonProps} from './Card'
 import {pxValue} from './Value'
@@ -33,9 +33,11 @@ export const TextAreaNonProps = [
   'placeholderSpacing',
 ].concat(CardNonProps)
 
-export const TextArea = styled(Card, {
+const TextAreaOptions: StyledOptions = {
   shouldForwardProp: (prop) => !TextAreaNonProps.includes(prop),
-})<TextAreaProps>(({theme, ...props}) => ({
+}
+
+export const TextArea = styled(Card, TextAreaOptions)<TextAreaProps>(({theme, ...props}) => ({
   fontFamily: theme.font.family,
   fontSize: pxValue(props.valueSize, theme.scale),
   fontWeight: props.valueWeight,
