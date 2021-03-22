@@ -56,7 +56,6 @@ export const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>((props
     <Input
       {...common}
       ref={ref as RefObject<HTMLInputElement>}
-      // css={{zIndex: 2}}
     />
   )
 })
