@@ -63,7 +63,7 @@ export const InputField: FunctionComponent<FieldProps> = ({
       {help || error ? (
         <Stub width={15} height={2} top={2} bottom={1}/>
       ) : (
-        null
+        <Box height={5}/>
       )}
     </Box>
   ) : (
