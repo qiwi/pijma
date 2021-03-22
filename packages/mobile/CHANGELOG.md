@@ -1,3 +1,10 @@
+## [1.126.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.126.2...@qiwi/pijma-mobile@1.126.3) (2021-03-22)
+
+
+### Bug Fixes
+
+* should forward prop ([#393](https://github.com/qiwi/pijma/issues/393)) ([59cef3d](https://github.com/qiwi/pijma/commit/59cef3d6932a05ee860887bf26346d26677c2d51))
+
 ## [1.126.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.126.1...@qiwi/pijma-mobile@1.126.2) (2021-03-16)
 
 
