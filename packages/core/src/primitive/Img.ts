@@ -1,4 +1,4 @@
-import styled, {CSSObject} from '../styled'
+import styled, {CSSObject, StyledOptions} from '../styled'
 import {Value, cssValue} from '../primitive/Value'
 
 export interface ImgProps {
@@ -21,9 +21,11 @@ export const ImgNonProps = [
   'height', 'minHeight', 'maxHeight',
 ]
 
-export const Img = styled('img', {
+export const ImgOptions: StyledOptions = {
   shouldForwardProp: (prop) => !ImgNonProps.includes(prop),
-})<ImgProps>(({theme, ...props}) => ({
+}
+
+export const Img = styled('img', ImgOptions)<ImgProps>(({theme, ...props}) => ({
   display: 'block',
   width: cssValue(props.width, theme.scale),
   minWidth: cssValue(props.minWidth, theme.scale),

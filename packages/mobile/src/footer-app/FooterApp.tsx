@@ -1,8 +1,8 @@
 import React, {FC, ReactElement} from 'react'
 
-import {styled, Box, Lnk, LinkControl, Stub, Flex, FlexItem} from '@qiwi/pijma-core'
+import {styled, Box, Lnk, LinkControl, Stub, Flex, FlexItem, BoxOptions} from '@qiwi/pijma-core'
 
-const BoxLink = styled(Box)().withComponent(Lnk)
+const BoxLink = styled(Box, BoxOptions)().withComponent(Lnk)
 
 interface FooterAppLinkProps {
   href: string

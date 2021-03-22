@@ -8,6 +8,7 @@ import {
   Box,
   Pos,
   Card,
+  CardOptions,
   Flex,
   FlexItem,
   InputField,
@@ -20,7 +21,7 @@ import {PhoneFieldProps} from './PhoneFieldProps'
 
 const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
 
-const PosCard = styled(Card)().withComponent(Pos)
+const PosCard = styled(Card, CardOptions)().withComponent(Pos)
 
 export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
   tabIndex = 0,

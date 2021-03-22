@@ -13,6 +13,7 @@ import {
   Card,
   Box,
   OffsetScrollControl,
+  FlexOptions,
 } from '@qiwi/pijma-core'
 
 interface HeaderMenuProps {
@@ -87,7 +88,7 @@ HeaderMenuModal.defaultProps = {
   zIndex: 9999,
 }
 
-const FlexCard = styled(Flex)().withComponent(Card)
+const FlexCard = styled(Flex, FlexOptions)().withComponent(Card)
 
 export const HeaderMenu: FC<HeaderMenuProps> = ({show, zIndex, header, from, stub, onShow, onHide, children}) => (
   stub ? (
