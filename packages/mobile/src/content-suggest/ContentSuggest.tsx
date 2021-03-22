@@ -9,6 +9,7 @@ import {
   Pos,
   Box,
   Card,
+  CardOptions,
   Spacer,
   styled,
 } from '@qiwi/pijma-core'
@@ -21,7 +22,7 @@ import {InputModal} from '../input-modal'
 import ContentSuggestProps from './ContentSuggestProps'
 import ContentSuggestOptionModel from './ContentSuggestOptionModel'
 
-const CardItem = styled(Card)().withComponent(MenuItem)
+const CardItem = styled(Card, CardOptions)().withComponent(MenuItem)
 
 export const ContentSuggest = <V extends {}>({
   equals = (a: V, b: V) => a === b,

@@ -11,6 +11,7 @@ import {
   Spacer,
   BasicInput,
   InputField,
+  CardOptions,
 } from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
@@ -21,8 +22,8 @@ import {MenuItem} from '../menu'
 import SuggestFieldProps from './SuggestFieldProps'
 import SuggestFieldOptionsModel from './SuggestFieldOptionModel'
 
-const CardPos = styled(Card)().withComponent(Pos)
-const CardItem = styled(Card)().withComponent(MenuItem)
+const CardPos = styled(Card, CardOptions)().withComponent(Pos)
+const CardItem = styled(Card, CardOptions)().withComponent(MenuItem)
 
 const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
 

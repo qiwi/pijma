@@ -1,4 +1,4 @@
-import styled, {CSSObject} from '../styled'
+import styled, {CSSObject, StyledOptions} from '../styled'
 
 import {pxValue} from './Value'
 
@@ -22,9 +22,11 @@ export interface TypoProps {
 
 export const TypoNonProps = ['as', 'css', 'innerRef', 'ref', 'display', 'size', 'height', 'weight', 'color', 'transform', 'nowrap', 'spacing', 'transition', 'decoration', 'cursor', 'align', 'clamp']
 
-export const Typo = styled('div', {
+export const TypoOptions: StyledOptions = {
   shouldForwardProp: (prop) => !TypoNonProps.includes(prop),
-})<TypoProps>(({theme, ...props}) => ({
+}
+
+export const Typo = styled('div', TypoOptions)<TypoProps>(({theme, ...props}) => ({
   display: ([] as string[]).concat(props.display || [], props.clamp !== undefined && props.display === 'block' && props.height !== undefined ? '-webkit-box' : []),
   fontFamily: theme.font.family,
   fontSize: pxValue(props.size, theme.scale),
