@@ -1,3 +1,18 @@
+# @qiwi/pijma-mobile [1.127.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.126.5...@qiwi/pijma-mobile@1.127.0) (2021-03-23)
+
+
+### Features
+
+* select-field ([#395](https://github.com/qiwi/pijma/issues/395)) ([b37cde9](https://github.com/qiwi/pijma/commit/b37cde9c55a03f24ef7ad39c4340d26fd80759ab))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.127.0
+
 ## [1.126.5](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.126.4...@qiwi/pijma-mobile@1.126.5) (2021-03-23)
 
 ## [1.126.4](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.126.3...@qiwi/pijma-mobile@1.126.4) (2021-03-22)
