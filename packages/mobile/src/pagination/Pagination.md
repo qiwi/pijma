@@ -1,21 +1,42 @@
 ```jsx
-initialState = {activePage: 1};
+const [activePage, setActivePage] = React.useState(1);
 <Pagination
   total={10}
-  active={state.activePage}
+  active={activePage}
   shadowed
-  onChange={(activePage) => setState({activePage})}
+  onChange={(activePage) => setActivePage(activePage)}
 />
 ```
 
 ```jsx
-initialState = {activePage: 1};
+<Pagination
+  total={10}
+  active={0}
+  shadowed
+  stub
+/>
+```
+
+```jsx
+const [activePage, setActivePage] = React.useState(1);
 <Block>
   <BlockContent>
     <Pagination
       total={10}
-      active={state.activePage}
-      onChange={(activePage) => setState({activePage})}
+      active={activePage}
+      onChange={(activePage) => setActivePage(activePage)}
+    />
+  </BlockContent>
+</Block>
+```
+
+```jsx
+<Block>
+  <BlockContent>
+    <Pagination
+      total={10}
+      active={0}
+      stub
     />
   </BlockContent>
 </Block>

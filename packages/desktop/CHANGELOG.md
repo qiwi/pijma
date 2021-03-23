@@ -1,3 +1,351 @@
+## @qiwi/pijma-desktop [1.126.5](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.126.4...@qiwi/pijma-desktop@1.126.5) (2021-03-22)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.125.2
+
+## [1.126.4](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.126.3...@qiwi/pijma-desktop@1.126.4) (2021-03-22)
+
+
+### Bug Fixes
+
+* should forward prop ([#393](https://github.com/qiwi/pijma/issues/393)) ([59cef3d](https://github.com/qiwi/pijma/commit/59cef3d6932a05ee860887bf26346d26677c2d51))
+
+## @qiwi/pijma-desktop [1.126.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.126.2...@qiwi/pijma-desktop@1.126.3) (2021-03-16)
+
+
+### Bug Fixes
+
+* switch export ([#391](https://github.com/qiwi/pijma/issues/391)) ([6986600](https://github.com/qiwi/pijma/commit/6986600c7da7abae768eae3333ca6057e8c9c0c0))
+
+## @qiwi/pijma-desktop [1.126.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.126.1...@qiwi/pijma-desktop@1.126.2) (2021-03-15)
+
+## [1.126.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.126.0...@qiwi/pijma-desktop@1.126.1) (2021-03-12)
+
+
+### Bug Fixes
+
+* **package:** fix vulnerabilities ([#383](https://github.com/qiwi/pijma/issues/383)) ([3cba676](https://github.com/qiwi/pijma/commit/3cba676f0dfbc0e8a55b0ab4195d9f00c1deac18))
+
+# [1.126.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.125.0...@qiwi/pijma-desktop@1.126.0) (2021-03-12)
+
+
+### Features
+
+* up react-styleguidist ([#381](https://github.com/qiwi/pijma/issues/381)) ([8652107](https://github.com/qiwi/pijma/commit/8652107c9061dc8c91d24da0513f7946505ae0f5))
+
+# [1.125.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.124.2...@qiwi/pijma-desktop@1.125.0) (2021-03-12)
+
+
+### Features
+
+* radio-field stub customization ([#379](https://github.com/qiwi/pijma/issues/379)) ([7d5457d](https://github.com/qiwi/pijma/commit/7d5457da27da706c6e43281083ffa8aee12bf720))
+
+## [1.124.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.124.1...@qiwi/pijma-desktop@1.124.2) (2021-03-11)
+
+
+### Performance Improvements
+
+* migrate to @qiwi/semrel-toolkit ([#377](https://github.com/qiwi/pijma/issues/377)) ([87dc7f5](https://github.com/qiwi/pijma/commit/87dc7f5449893e20968dd9f54d338dc24235de33))
+
+# [@qiwi/pijma-desktop-v1.124.1](https://github.com/qiwi/pijma/compare/v1.124.0...v1.124.1) (2021-03-10)
+
+
+### Performance Improvements
+
+* upgrade react-styleguidist to 10.6.2 ([#371](https://github.com/qiwi/pijma/issues/371)) ([34711d3](https://github.com/qiwi/pijma/commit/34711d3))
+
+# [@qiwi/pijma-desktop-v1.124.0](https://github.com/qiwi/pijma/compare/v1.123.0...v1.124.0) (2021-03-09)
+
+
+### Features
+
+* auto display name ([#368](https://github.com/qiwi/pijma/issues/368)) ([41beeea](https://github.com/qiwi/pijma/commit/41beeea))
+
+# [@qiwi/pijma-desktop-v1.123.0](https://github.com/qiwi/pijma/compare/v1.122.0...v1.123.0) (2021-03-03)
+
+
+### Features
+
+* glossary stub ([#366](https://github.com/qiwi/pijma/issues/366)) ([8967ae8](https://github.com/qiwi/pijma/commit/8967ae8))
+
+# [@qiwi/pijma-desktop-v1.122.0](https://github.com/qiwi/pijma/compare/v1.121.0...v1.122.0) (2021-01-18)
+
+
+### Features
+
+* alert simplify ([#364](https://github.com/qiwi/pijma/issues/364)) ([398129a](https://github.com/qiwi/pijma/commit/398129a))
+
+# [@qiwi/pijma-desktop-v1.121.0](https://github.com/qiwi/pijma/compare/v1.120.0...v1.121.0) (2021-01-14)
+
+
+### Features
+
+* alert action ([#362](https://github.com/qiwi/pijma/issues/362)) ([8769d88](https://github.com/qiwi/pijma/commit/8769d88))
+
+# [@qiwi/pijma-desktop-v1.120.0](https://github.com/qiwi/pijma/compare/v1.119.2...v1.120.0) (2021-01-13)
+
+
+### Features
+
+* inverse link ([#363](https://github.com/qiwi/pijma/issues/363)) ([19e966d](https://github.com/qiwi/pijma/commit/19e966d))
+
+# [@qiwi/pijma-desktop-v1.119.2](https://github.com/qiwi/pijma/compare/v1.119.1...v1.119.2) (2021-01-13)
+
+
+### Bug Fixes
+
+* phone-field keydown ([#361](https://github.com/qiwi/pijma/issues/361)) ([7386aef](https://github.com/qiwi/pijma/commit/7386aef))
+
+# [@qiwi/pijma-desktop-v1.119.0](https://github.com/qiwi/pijma/compare/v1.118.0...v1.119.0) (2020-12-04)
+
+
+### Features
+
+* **desktop:** annotation ([#354](https://github.com/qiwi/pijma/issues/354)) ([0a5b37c](https://github.com/qiwi/pijma/commit/0a5b37c))
+
+# [@qiwi/pijma-desktop-v1.118.0](https://github.com/qiwi/pijma/compare/v1.117.1...v1.118.0) (2020-11-23)
+
+
+### Features
+
+* suggest custom empty and total message ([#352](https://github.com/qiwi/pijma/issues/352)) ([312ed87](https://github.com/qiwi/pijma/commit/312ed87))
+
+# [@qiwi/pijma-desktop-v1.117.0](https://github.com/qiwi/pijma/compare/v1.116.0...v1.117.0) (2020-11-18)
+
+
+### Features
+
+* menu-item attention ([#348](https://github.com/qiwi/pijma/issues/348)) ([30d0738](https://github.com/qiwi/pijma/commit/30d0738))
+
+# [@qiwi/pijma-desktop-v1.115.1](https://github.com/qiwi/pijma/compare/v1.115.0...v1.115.1) (2020-11-18)
+
+
+### Bug Fixes
+
+* **desktop:** less space between header menu items ([#349](https://github.com/qiwi/pijma/issues/349)) ([e75d041](https://github.com/qiwi/pijma/commit/e75d041))
+
+# [@qiwi/pijma-desktop-v1.115.0](https://github.com/qiwi/pijma/compare/v1.114.2...v1.115.0) (2020-11-09)
+
+
+### Features
+
+* **desktop:** drop-down stub ([#346](https://github.com/qiwi/pijma/issues/346)) ([a414ee8](https://github.com/qiwi/pijma/commit/a414ee8))
+
+# [@qiwi/pijma-desktop-v1.114.2](https://github.com/qiwi/pijma/compare/v1.114.1...v1.114.2) (2020-10-29)
+
+
+### Bug Fixes
+
+* **desktop:** header-suggest display name ([#343](https://github.com/qiwi/pijma/issues/343)) ([726ed25](https://github.com/qiwi/pijma/commit/726ed25))
+
+# [@qiwi/pijma-desktop-v1.114.1](https://github.com/qiwi/pijma/compare/v1.114.0...v1.114.1) (2020-10-28)
+
+
+### Performance Improvements
+
+* compile es5, auto display name ([#342](https://github.com/qiwi/pijma/issues/342)) ([dae09a2](https://github.com/qiwi/pijma/commit/dae09a2))
+
+# [@qiwi/pijma-desktop-v1.114.0](https://github.com/qiwi/pijma/compare/v1.113.1...v1.114.0) (2020-10-16)
+
+
+### Features
+
+* new mobile app icons ([#337](https://github.com/qiwi/pijma/issues/337)) ([48ced61](https://github.com/qiwi/pijma/commit/48ced61))
+
+# [@qiwi/pijma-desktop-v1.111.3](https://github.com/qiwi/pijma/compare/v1.111.2...v1.111.3) (2020-09-11)
+
+
+### Bug Fixes
+
+* export field-props ([#329](https://github.com/qiwi/pijma/issues/329)) ([89d7cdf](https://github.com/qiwi/pijma/commit/89d7cdf))
+
+# [@qiwi/pijma-desktop-v1.111.0](https://github.com/qiwi/pijma/compare/v1.110.1...v1.111.0) (2020-04-17)
+
+
+### Features
+
+* button spinner paused ([#310](https://github.com/qiwi/pijma/issues/310)) ([ad674f9](https://github.com/qiwi/pijma/commit/ad674f9))
+
+# [@qiwi/pijma-desktop-v1.110.0](https://github.com/qiwi/pijma/compare/v1.109.0...v1.110.0) (2020-03-27)
+
+
+### Features
+
+* stub simple-modal ([ec8a981](https://github.com/qiwi/pijma/commit/ec8a981))
+
+# [@qiwi/pijma-desktop-v1.108.6](https://github.com/qiwi/pijma/compare/v1.108.5...v1.108.6) (2020-03-25)
+
+
+### Bug Fixes
+
+* stub footer-out ([58e5ff8](https://github.com/qiwi/pijma/commit/58e5ff8))
+
+# [@qiwi/pijma-desktop-v1.108.5](https://github.com/qiwi/pijma/compare/v1.108.4...v1.108.5) (2020-03-16)
+
+
+### Bug Fixes
+
+* stub footer-app ([30d68cf](https://github.com/qiwi/pijma/commit/30d68cf))
+
+# [@qiwi/pijma-desktop-v1.108.4](https://github.com/qiwi/pijma/compare/v1.108.3...v1.108.4) (2020-03-12)
+
+
+### Bug Fixes
+
+* **desktop:** z-index backdrop simple modal ([7069708](https://github.com/qiwi/pijma/commit/7069708))
+
+# [@qiwi/pijma-desktop-v1.108.3](https://github.com/qiwi/pijma/compare/v1.108.2...v1.108.3) (2020-03-12)
+
+
+### Bug Fixes
+
+* button blur ([cf1ef51](https://github.com/qiwi/pijma/commit/cf1ef51))
+
+# [@qiwi/pijma-desktop-v1.107.1](https://github.com/qiwi/pijma/compare/v1.107.0...v1.107.1) (2020-02-04)
+
+
+### Bug Fixes
+
+* rating ([b04a420](https://github.com/qiwi/pijma/commit/b04a420))
+
+# [@qiwi/pijma-desktop-v1.107.0](https://github.com/qiwi/pijma/compare/v1.106.0...v1.107.0) (2020-02-04)
+
+
+### Features
+
+* stub footer-app ([409e174](https://github.com/qiwi/pijma/commit/409e174))
+
+# [@qiwi/pijma-desktop-v1.105.0](https://github.com/qiwi/pijma/compare/v1.104.0...v1.105.0) (2020-02-03)
+
+
+### Features
+
+* stub menu-link ([2b41552](https://github.com/qiwi/pijma/commit/2b41552))
+
+# [@qiwi/pijma-desktop-v1.104.0](https://github.com/qiwi/pijma/compare/v1.103.0...v1.104.0) (2020-01-31)
+
+
+### Features
+
+* suggest-field ([945e2f9](https://github.com/qiwi/pijma/commit/945e2f9))
+
+# [@qiwi/pijma-desktop-v1.103.0](https://github.com/qiwi/pijma/compare/v1.102.0...v1.103.0) (2020-01-31)
+
+
+### Features
+
+* stub footer-out ([26b706a](https://github.com/qiwi/pijma/commit/26b706a))
+
+# [@qiwi/pijma-desktop-v1.102.0](https://github.com/qiwi/pijma/compare/v1.101.1...v1.102.0) (2020-01-31)
+
+
+### Features
+
+* stub footer-nav ([e3eb002](https://github.com/qiwi/pijma/commit/e3eb002))
+
+# [@qiwi/pijma-desktop-v1.101.1](https://github.com/qiwi/pijma/compare/v1.101.0...v1.101.1) (2020-01-31)
+
+
+### Bug Fixes
+
+* stub text-field ([caaddbb](https://github.com/qiwi/pijma/commit/caaddbb))
+
+# [@qiwi/pijma-desktop-v1.101.0](https://github.com/qiwi/pijma/compare/v1.100.0...v1.101.0) (2020-01-31)
+
+
+### Features
+
+* **desktop:** stub header-menu ([aa7fb6d](https://github.com/qiwi/pijma/commit/aa7fb6d))
+
+# [@qiwi/pijma-desktop-v1.100.0](https://github.com/qiwi/pijma/compare/v1.99.0...v1.100.0) (2020-01-29)
+
+
+### Features
+
+* stub menu-item ([1fc97d2](https://github.com/qiwi/pijma/commit/1fc97d2))
+
+# [@qiwi/pijma-desktop-v1.99.0](https://github.com/qiwi/pijma/compare/v1.98.1...v1.99.0) (2020-01-29)
+
+
+### Features
+
+* stub logo-block-link ([c012a26](https://github.com/qiwi/pijma/commit/c012a26))
+
+# [@qiwi/pijma-desktop-v1.98.0](https://github.com/qiwi/pijma/compare/v1.97.0...v1.98.0) (2020-01-23)
+
+
+### Features
+
+* suggest-control items undefined ([66ebdb2](https://github.com/qiwi/pijma/commit/66ebdb2))
+
+# [@qiwi/pijma-desktop-v1.97.0](https://github.com/qiwi/pijma/compare/v1.96.4...v1.97.0) (2020-01-22)
+
+
+### Features
+
+* stub list ([7756060](https://github.com/qiwi/pijma/commit/7756060))
+
+# [@qiwi/pijma-desktop-v1.96.4](https://github.com/qiwi/pijma/compare/v1.96.3...v1.96.4) (2020-01-21)
+
+
+### Bug Fixes
+
+* **desktop:** logo-block-link ([cd283b9](https://github.com/qiwi/pijma/commit/cd283b9))
+
+# [@qiwi/pijma-desktop-v1.96.3](https://github.com/qiwi/pijma/compare/v1.96.2...v1.96.3) (2020-01-17)
+
+
+### Bug Fixes
+
+* add export checkbox ([cb898df](https://github.com/qiwi/pijma/commit/cb898df))
+
+# [@qiwi/pijma-desktop-v1.96.2](https://github.com/qiwi/pijma/compare/v1.96.1...v1.96.2) (2019-12-17)
+
+
+### Bug Fixes
+
+* content suggest ([648a51d](https://github.com/qiwi/pijma/commit/648a51d))
+
+# [@qiwi/pijma-desktop-v1.96.0](https://github.com/qiwi/pijma/compare/v1.95.0...v1.96.0) (2019-11-27)
+
+
+### Features
+
+* header suggest ([e21e8d1](https://github.com/qiwi/pijma/commit/e21e8d1))
+
+# [@qiwi/pijma-desktop-v1.95.0](https://github.com/qiwi/pijma/compare/v1.94.0...v1.95.0) (2019-11-27)
+
+
+### Features
+
+* phone-field ([d42068e](https://github.com/qiwi/pijma/commit/d42068e))
+
+# [@qiwi/pijma-desktop-v1.94.0](https://github.com/qiwi/pijma/compare/v1.93.0...v1.94.0) (2019-11-27)
+
+
+### Features
+
+* stub pagination ([8166098](https://github.com/qiwi/pijma/commit/8166098))
+
+# [@qiwi/pijma-desktop-v1.93.0](https://github.com/qiwi/pijma/compare/v1.92.0...v1.93.0) (2019-11-21)
+
+
+### Features
+
+* stub breadcrumbs ([a12af85](https://github.com/qiwi/pijma/commit/a12af85))
+
+# [@qiwi/pijma-desktop-v1.92.0](https://github.com/qiwi/pijma/compare/v1.91.0...v1.92.0) (2019-11-20)
+
+
+### Features
+
+* stub nav-link ([673a7b8](https://github.com/qiwi/pijma/commit/673a7b8))
+
 # [@qiwi/pijma-desktop-v1.90.0](https://github.com/qiwi/pijma/compare/v1.89.0...v1.90.0) (2019-11-15)
 
 

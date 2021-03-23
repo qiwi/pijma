@@ -1,13 +1,16 @@
 import React, {FC, ReactNode, Children, isValidElement} from 'react'
+
 import {Img, Box, Pos, Value} from '../primitive'
 import {InView} from '../InView'
 import {Stub} from '../stub'
 import {ImageControl} from './ImageControl'
 
-interface ImageProps {
+export interface ImageProps {
   width: Value
   height: Value
   src: string
+  cachedDelay?: number
+  viewedDelay?: number
   srcSet?: string
   sizes?: string
   alt?: string
@@ -23,6 +26,8 @@ export const Image: FC<ImageProps> = ({
   sizes,
   alt,
   stub = true,
+  cachedDelay = 50,
+  viewedDelay = 1000,
   onLoad,
 }) => (
   stub ? (
@@ -32,6 +37,8 @@ export const Image: FC<ImageProps> = ({
       src={src}
       srcSet={srcSet}
       stub={stub}
+      cachedDelay={cachedDelay}
+      viewedDelay={viewedDelay}
       onLoad={onLoad}
       children={(renderProps) => (
         renderProps.loaded ? (
@@ -62,7 +69,7 @@ export const Image: FC<ImageProps> = ({
                 ) : (
                   null
                 )}
-                <Box as="span" opacity={typeof stub === 'string' ? 1 : 0}>
+                <Box as="span" opacity={typeof stub === 'string' ? 1 : 0} width={width} height={height}>
                   <Img
                     width={width}
                     height={height}
@@ -70,6 +77,7 @@ export const Image: FC<ImageProps> = ({
                     srcSet={renderProps.srcSet}
                     sizes={sizes}
                     alt={alt}
+                    css={typeof stub === 'string' ? {filter: 'blur(10px)'} : undefined}
                     onLoad={renderProps.onLoad}
                   />
                 </Box>

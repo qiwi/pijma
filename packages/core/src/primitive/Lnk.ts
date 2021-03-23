@@ -1,4 +1,4 @@
-import styled, {CSSObject} from '../styled'
+import styled, {CSSObject, StyledOptions} from '../styled'
 
 export interface LnkProps {
   as?: keyof JSX.IntrinsicElements
@@ -8,9 +8,11 @@ export interface LnkProps {
 
 export const LnkNonProps = ['as', 'css', 'cursor']
 
-export const Lnk = styled('a', {
+export const LnkOptions: StyledOptions = {
   shouldForwardProp: (prop) => !LnkNonProps.includes(prop),
-})<LnkProps>(({
+}
+
+export const Lnk = styled('a', LnkOptions)<LnkProps>(({
   cursor = 'pointer',
 }) => ({
   cursor,

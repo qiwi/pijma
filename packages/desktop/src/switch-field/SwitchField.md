@@ -1,7 +1,7 @@
 Переключатели — это элементы управления, которые позволяют выбрать несколько вариантов из списка. Используйте в одном списке не более 7 переключателей. Для остальных случаев применяйте выпадающие списки.
 
 ```jsx
-initialState = {values: ['selected']};
+const [values, setValues] = React.useState(['selected']);
 <Block>
   <BlockContent>
     <SwitchField
@@ -24,8 +24,8 @@ initialState = {values: ['selected']};
         value: 'disabled',
         disabled: true,
       }]}
-      values={state.values}
-      onChange={(values) => setState({values})}
+      values={values}
+      onChange={(values) => setValues(values)}
     />
   </BlockContent>
 </Block>
@@ -45,7 +45,7 @@ initialState = {values: ['selected']};
 ```
 
 ```jsx
-initialState = {values: ['selected']};
+const [values, setValues] = React.useState(['selected']);
 <Block>
   <BlockContent>
     <SwitchField
@@ -69,8 +69,8 @@ initialState = {values: ['selected']};
         value: 'disabled',
         disabled: true,
       }]}
-      values={state.values}
-      onChange={(values) => setState({values})}
+      values={values}
+      onChange={(values) => setValues(values)}
     />
   </BlockContent>
 </Block>
@@ -91,7 +91,7 @@ initialState = {values: ['selected']};
 ```
 
 ```jsx
-initialState = {values: ['selected']};
+const [values, setValues] = React.useState(['selected']);
 <Block>
   <BlockContent>
     <SwitchField
@@ -118,8 +118,8 @@ initialState = {values: ['selected']};
         value: 'disabled',
         disabled: true,
       }]}
-      values={state.values}
-      onChange={(values) => setState({values})}
+      values={values}
+      onChange={(values) => setValues(values)}
     />
   </BlockContent>
 </Block>

@@ -1,5 +1,2 @@
-import TextField from './TextField'
-
-export {
-  TextField,
-}
+export * from './TextField'
+export * from './TextFieldProps'

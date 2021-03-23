@@ -1,5 +1,5 @@
 import {Global, CacheProvider, jsx} from '@emotion/core'
-import styled, {CreateStyled, CSSObject} from '@emotion/styled'
+import styled, {CreateStyled, CSSObject, StyledOptions} from '@emotion/styled'
 import {injectGlobal, keyframes, cache, css, cx, flush} from 'emotion'
 import {ThemeProvider} from 'emotion-theming'
 
@@ -17,6 +17,7 @@ export {
   keyframes,
   ThemeProvider,
   CSSObject,
+  StyledOptions,
 }
 
 export default styled as CreateStyled<Theme>

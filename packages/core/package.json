@@ -1,12 +1,15 @@
 {
   "name": "@qiwi/pijma-core",
-  "version": "1.91.0",
+  "version": "1.125.2",
   "main": "lib/es5/index.js",
   "types": "lib/es5/index.d.ts",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "clean": "rm -rf lib",
-    "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && cp -r src/fonts lib/es5/fonts",
+    "build": "mkdir -p lib/es5 && ttsc -p tsconfig.build.json && cp -r src/fonts lib/es5/fonts",
     "lint": "tslint -p tsconfig.build.json src/**/*.ts{,x}",
     "lint:fix": "tslint -p tsconfig.build.json --fix src/**/*.ts{,x}"
   },
@@ -38,9 +41,14 @@
     "tslib": "^1.10.0"
   },
   "devDependencies": {
-    "husky": "3.0.3",
-    "tslint": "5.18.0",
-    "tslint-config-qiwi": "1.1.1",
-    "typescript": "3.5.3"
-  }
+    "@qiwi/pijma-infra": "1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiwi/pijma.git"
+  },
+  "bugs": {
+    "url": "https://github.com/qiwi/pijma/issues"
+  },
+  "homepage": "https://github.com/qiwi/pijma/#readme"
 }
