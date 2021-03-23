@@ -1,3 +1,5 @@
+## [1.126.5](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.126.4...@qiwi/pijma-mobile@1.126.5) (2021-03-23)
+
 ## [1.126.4](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.126.3...@qiwi/pijma-mobile@1.126.4) (2021-03-22)
 
 ## [1.126.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.126.2...@qiwi/pijma-mobile@1.126.3) (2021-03-22)
