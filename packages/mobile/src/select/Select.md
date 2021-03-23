@@ -158,5 +158,14 @@ const items = [
       onChange={(value) => setValue(value)}
     />
   </Box>
+  <Box>
+    <Caption>STUB</Caption>
+    <Select
+      stub
+      title="Select"
+      items={[]}
+      onChange={() => null}
+    />
+  </Box>
 </Grid>
  ```
