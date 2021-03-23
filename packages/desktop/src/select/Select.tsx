@@ -20,7 +20,7 @@ import {
   SimpleTransition,
 } from '@qiwi/pijma-core'
 
-const CardPos = Card.withComponent(Pos)
+const CardPos = styled(Card)().withComponent(Pos)
 const CardItem = styled(Card)().withComponent(MenuItem)
 
 export interface SelectProps<I extends OptionModel<V>, V> {
@@ -36,15 +36,16 @@ export interface SelectProps<I extends OptionModel<V>, V> {
   equals?: (a: V, b: V) => boolean
   onFocus?: () => void
   onBlur?: () => void
+  onHide?: () => void
 }
 
 export interface SelectItemModel<V> extends OptionModel<V> {
   text: string
 }
 
-const transition: FC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const Transition: FC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
 
-transition.defaultProps = {
+Transition.defaultProps = {
   timeout: {
     enter: 150,
     exit: 150,
@@ -80,6 +81,7 @@ export const Select: FunctionComponent<SelectProps<SelectItemModel<any>, any>> =
     onChange={props.onChange}
     onFocus={props.onFocus}
     onBlur={props.onBlur}
+    onHide={props.onHide}
     children={(renderProps) => (
       <MenuControl
         count={props.items.length}
@@ -104,7 +106,7 @@ export const Select: FunctionComponent<SelectProps<SelectItemModel<any>, any>> =
               />
               <InputField
                 title={props.title}
-                active={renderProps.show || renderProps.select !== undefined}
+                active={renderProps.select !== undefined}
                 error={props.error}
                 input={
                   <SelectInput
@@ -130,7 +132,8 @@ export const Select: FunctionComponent<SelectProps<SelectItemModel<any>, any>> =
               target={renderProps.targetRef.current!}
               container={renderProps.containerRef.current}
               popperConfig={{modifiers: {computeStyle: {gpuAcceleration: false}}}}
-              transition={transition}
+              transition={Transition}
+              onHide={renderProps.onHide}
               children={(overlayRenderProps) => (
                 <CardPos
                   ref={overlayRenderProps.props.ref}

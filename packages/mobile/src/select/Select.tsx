@@ -5,7 +5,7 @@ import {DropUp} from '../drop-up'
 
 import {SelectInput, SelectControl, Pos, Card, MenuControl, styled, InputField, Icon, Spacer, OptionModel} from '@qiwi/pijma-core'
 
-const CardPos = Card.withComponent(Pos)
+const CardPos = styled(Card)().withComponent(Pos)
 const CardItem = styled(Card)().withComponent(MenuItem)
 
 export interface SelectProps<I extends OptionModel<V>, V> {
@@ -22,6 +22,7 @@ export interface SelectProps<I extends OptionModel<V>, V> {
   autoComplete?: boolean
   onFocus?: () => void
   onBlur?: () => void
+  onHide?: () => void
 }
 
 export interface SelectItemModel<V> extends OptionModel<V> {
@@ -36,6 +37,7 @@ export const Select: FunctionComponent<SelectProps<SelectItemModel<any>, any>> =
     onChange={props.onChange}
     onFocus={props.onFocus}
     onBlur={props.onBlur}
+    onHide={props.onHide}
     equals={props.equals}
     children={(renderProps) => (
       <MenuControl
@@ -45,7 +47,6 @@ export const Select: FunctionComponent<SelectProps<SelectItemModel<any>, any>> =
         onSelect={renderProps.onItemSelect}
         children={(menuRenderProps) => (
           <CardPos
-            data-value={props.value.valueOf()}
             type="relative"
             width={1}
           >
@@ -99,7 +100,6 @@ export const Select: FunctionComponent<SelectProps<SelectItemModel<any>, any>> =
                   pb={3}
                   ref={menuRenderProps.containerRef}
                   overflow="auto"
-                  data-ref="ref"
                 >
                   <Spacer size="s">
                     <Fragment>
