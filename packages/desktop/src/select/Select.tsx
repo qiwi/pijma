@@ -1,8 +1,6 @@
 import React, {FunctionComponent, ReactNode, Fragment, FC} from 'react'
 import {css} from 'emotion'
 
-import {MenuItem} from '../menu'
-
 import {
   SelectInput,
   SelectControl,
@@ -17,11 +15,13 @@ import {
   OptionModel,
   Overlay,
   SimpleTransitionProps,
-  SimpleTransition,
+  SimpleTransition, CardOptions,
 } from '@qiwi/pijma-core'
 
-const CardPos = styled(Card)().withComponent(Pos)
-const CardItem = styled(Card)().withComponent(MenuItem)
+import {MenuItem} from '../menu'
+
+const CardPos = styled(Card, CardOptions)().withComponent(Pos)
+const CardItem = styled(Card, CardOptions)().withComponent(MenuItem)
 
 export interface SelectProps<I extends OptionModel<V>, V> {
   items: I[]

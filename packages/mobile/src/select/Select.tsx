@@ -1,12 +1,24 @@
 import React, {FunctionComponent, ReactNode, Fragment} from 'react'
 
+import {
+  SelectInput,
+  SelectControl,
+  Pos,
+  Card,
+  MenuControl,
+  styled,
+  InputField,
+  Icon,
+  Spacer,
+  OptionModel,
+  CardOptions,
+} from '@qiwi/pijma-core'
+
 import {MenuItem} from '../menu'
 import {DropUp} from '../drop-up'
 
-import {SelectInput, SelectControl, Pos, Card, MenuControl, styled, InputField, Icon, Spacer, OptionModel} from '@qiwi/pijma-core'
-
-const CardPos = styled(Card)().withComponent(Pos)
-const CardItem = styled(Card)().withComponent(MenuItem)
+const CardPos = styled(Card, CardOptions)().withComponent(Pos)
+const CardItem = styled(Card, CardOptions)().withComponent(MenuItem)
 
 export interface SelectProps<I extends OptionModel<V>, V> {
   items: I[]
