@@ -11,6 +11,7 @@ import {
   styled,
   BasicInput,
   InputField,
+  CardOptions,
 } from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
@@ -22,7 +23,7 @@ import {Markdown} from '../markdown'
 import SuggestFieldProps from './SuggestFieldProps'
 import SuggestFieldOptionModel from './SuggestFieldOptionModel'
 
-const CardItem = styled(Card)().withComponent(MenuItem)
+const CardItem = styled(Card, CardOptions)().withComponent(MenuItem)
 
 export const SuggestField = <V extends {}>({
   equals = (a: V, b: V) => a === b,

@@ -9,6 +9,7 @@ import {
   Pos,
   Box,
   Card,
+  CardOptions,
   styled,
   Spacer,
 } from '@qiwi/pijma-core'
@@ -21,8 +22,8 @@ import {MenuItem} from '../menu'
 import ContentSuggestProps from './ContentSuggestProps'
 import ContentSuggestOptionsModel from './ContentSuggestOptionModel'
 
-const CardPos = styled(Card)().withComponent(Pos)
-const CardItem = styled(Card)().withComponent(MenuItem)
+const CardPos = styled(Card, CardOptions)().withComponent(Pos)
+const CardItem = styled(Card, CardOptions)().withComponent(MenuItem)
 
 const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
 

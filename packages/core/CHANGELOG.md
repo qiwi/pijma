@@ -1,3 +1,25 @@
+## @qiwi/pijma-core [1.125.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.125.1...@qiwi/pijma-core@1.125.2) (2021-03-22)
+
+
+### Bug Fixes
+
+* **core:** input-field stub ([#394](https://github.com/qiwi/pijma/issues/394)) ([a619b87](https://github.com/qiwi/pijma/commit/a619b87020130d4f9df41ba8d3e5972f6d299b85))
+
+## @qiwi/pijma-core [1.125.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.125.0...@qiwi/pijma-core@1.125.1) (2021-03-22)
+
+
+### Bug Fixes
+
+* should forward prop ([#393](https://github.com/qiwi/pijma/issues/393)) ([59cef3d](https://github.com/qiwi/pijma/commit/59cef3d6932a05ee860887bf26346d26677c2d51))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-infra:** upgraded to 1.0.0
+
 # @qiwi/pijma-core [1.125.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.124.2...@qiwi/pijma-core@1.125.0) (2021-03-12)
 
 

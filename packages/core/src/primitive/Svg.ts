@@ -1,4 +1,4 @@
-import styled from '../styled'
+import styled, {StyledOptions} from '../styled'
 
 import {cssValue, Value} from './Value'
 
@@ -13,9 +13,11 @@ interface SvgProps {
 
 export const SvgNonProps = ['width', 'height', 'animation', 'transition', 'transform', 'transformOrigin']
 
-export const Svg = styled('svg', {
+export const SvgOptions: StyledOptions = {
   shouldForwardProp: (prop) => !SvgNonProps.includes(prop),
-})<SvgProps>(({theme, ...props}) => ({
+}
+
+export const Svg = styled('svg', SvgOptions)<SvgProps>(({theme, ...props}) => ({
   width: cssValue(props.width, theme.scale),
   height: cssValue(props.height, theme.scale),
   animation: props.animation,
@@ -37,10 +39,12 @@ interface SvgItemProps {
 
 export const SvgItemNonProps = ['animation', 'transition', 'transform', 'transformOrigin']
 
+export const SvgItemOptions: StyledOptions = {
+  shouldForwardProp: (prop) => !SvgItemNonProps.includes(prop),
+}
+
 const SvgItem = (tag: keyof JSX.IntrinsicElements) => (
-  styled(tag, {
-    shouldForwardProp: (prop) => !SvgItemNonProps.includes(prop),
-  })<SvgItemProps>(({theme, ...props}) => ({
+  styled(tag, SvgItemOptions)<SvgItemProps>(({theme, ...props}) => ({
     animation: props.animation,
     transition: props.transition,
     transform: props.transform,

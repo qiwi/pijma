@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react'
 
-import {styled, LinkControl, LinkControlProps, Lnk} from '@qiwi/pijma-core'
+import {styled, LinkControl, LinkControlProps, Lnk, LnkOptions} from '@qiwi/pijma-core'
 
 import {MenuItem} from '../menu'
 
@@ -23,7 +23,7 @@ export interface MenuLinkProps {
   onBlur?: LinkControlProps['onBlur']
 }
 
-const MenuItemLnk = styled(Lnk)().withComponent(MenuItem)
+const MenuItemLnk = styled(Lnk, LnkOptions)().withComponent(MenuItem)
 
 export const MenuLink: FC<MenuLinkProps> = (props) => (
   props.stub ? (

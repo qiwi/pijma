@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {styled, RenderChild, LinkControl, LinkControlProps, Card, Lnk, Block} from '@qiwi/pijma-core'
+import {styled, RenderChild, LinkControl, LinkControlProps, Card, Lnk, Block, CardOptions} from '@qiwi/pijma-core'
 
 export interface BlockLinkProps {
   tabIndex?: number
@@ -20,7 +20,8 @@ export interface BlockLinkProps {
   }>
 }
 
-const BlockLnk = styled(Card.withComponent(Lnk))().withComponent(Block)
+const CardLink = styled(Card, CardOptions)().withComponent(Lnk)
+const BlockLnk = styled(CardLink)().withComponent(Block)
 
 export const BlockLink: FC<BlockLinkProps> = (props) => (
   <LinkControl

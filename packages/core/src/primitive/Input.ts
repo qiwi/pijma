@@ -1,4 +1,4 @@
-import styled, {CSSObject} from '../styled'
+import styled, {CSSObject, StyledOptions} from '../styled'
 
 import {Card, CardProps, CardNonProps} from './Card'
 import {pxValue} from './Value'
@@ -29,9 +29,11 @@ export const InputNonProps = [
   'placeholderSize', 'placeholderWeight', 'placeholderColor', 'placeholderTransform', 'placeholderSpacing',
 ].concat(CardNonProps)
 
-export const Input = styled(Card, {
+export const InputOptions: StyledOptions = {
   shouldForwardProp: (prop) => !InputNonProps.includes(prop),
-})<InputProps>(({theme, ...props}) => ({
+}
+
+export const Input = styled(Card, InputOptions)<InputProps>(({theme, ...props}) => ({
   fontFamily: theme.font.family,
   fontSize: pxValue(props.valueSize, theme.scale),
   fontWeight: props.valueWeight,
