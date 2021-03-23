@@ -15,7 +15,8 @@ import {
   OptionModel,
   Overlay,
   SimpleTransitionProps,
-  SimpleTransition, CardOptions,
+  SimpleTransition,
+  CardOptions,
 } from '@qiwi/pijma-core'
 
 import {MenuItem} from '../menu'
