@@ -60,7 +60,7 @@ export const Select: FunctionComponent<SelectProps<SelectItemModel<any>, any>> =
             />
             <InputField
               title={props.title}
-              active={renderProps.show || renderProps.select !== undefined}
+              active={renderProps.select !== undefined}
               error={props.error}
               input={
                 <SelectInput
