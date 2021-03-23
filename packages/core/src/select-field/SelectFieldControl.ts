@@ -3,7 +3,7 @@ import React, {createRef, RefObject} from 'react'
 import RenderChild from '../RenderChild'
 import {OptionModel} from '../option'
 
-export interface SelectControlProps<O extends OptionModel<V>, V> {
+export interface SelectFieldControlProps<O extends OptionModel<V>, V> {
   items: O[]
   value: V
   disabled?: boolean
@@ -29,13 +29,13 @@ export interface SelectControlProps<O extends OptionModel<V>, V> {
   }>
 }
 
-export interface SelectControlState {
+export interface SelectFieldControlState {
   focus: boolean
   show: boolean
   select?: number
 }
 
-export class SelectControl<O extends OptionModel<V>, V> extends React.Component<SelectControlProps<O, V>, SelectControlState> {
+export class SelectFieldControl<O extends OptionModel<V>, V> extends React.Component<SelectFieldControlProps<O, V>, SelectFieldControlState> {
 
   private modalRef: RefObject<HTMLDivElement> = createRef()
 
@@ -43,7 +43,7 @@ export class SelectControl<O extends OptionModel<V>, V> extends React.Component<
 
   private containerRef: RefObject<HTMLDivElement> = createRef()
 
-  public state: SelectControlState = {
+  public state: SelectFieldControlState = {
     focus: false,
     show: false,
     select: undefined,

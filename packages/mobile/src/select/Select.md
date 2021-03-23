@@ -127,7 +127,7 @@ const items = [
 <Grid columns={1} layout={[1]}>
   <Box>
     <Caption>AUTOFOCUS</Caption>
-    <Select
+    <SelectField
       title="Select"
       value={value}
       items={items}
@@ -138,7 +138,7 @@ const items = [
   </Box>
   <Box>
     <Caption>ERROR</Caption>
-    <Select
+    <SelectField
       title="Select"
       value={value}
       equals={equals}
@@ -149,7 +149,7 @@ const items = [
   </Box>
   <Box>
     <Caption>DISABLED</Caption>
-    <Select
+    <SelectField
       title="Select"
       value={value}
       equals={equals}
@@ -160,7 +160,7 @@ const items = [
   </Box>
   <Box>
     <Caption>STUB</Caption>
-    <Select
+    <SelectField
       stub
       title="Select"
       items={[]}

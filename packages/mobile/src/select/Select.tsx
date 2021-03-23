@@ -1,15 +1,14 @@
-import React, {FunctionComponent, ReactNode, Fragment} from 'react'
+import React, {FunctionComponent, ReactNode} from 'react'
 
 import {
   SelectInput,
-  SelectControl,
+  SelectFieldControl,
   Pos,
   Card,
   MenuControl,
   styled,
   InputField,
   Icon,
-  Spacer,
   OptionModel,
   CardOptions,
 } from '@qiwi/pijma-core'
@@ -20,7 +19,7 @@ import {DropUp} from '../drop-up'
 const CardPos = styled(Card, CardOptions)().withComponent(Pos)
 const CardItem = styled(Card, CardOptions)().withComponent(MenuItem)
 
-export interface SelectProps<I extends OptionModel<V>, V> {
+export interface SelectFieldProps<I extends OptionModel<V>, V> {
   items: I[]
   title: string
   value: V
@@ -38,11 +37,11 @@ export interface SelectProps<I extends OptionModel<V>, V> {
   onHide?: () => void
 }
 
-export interface SelectItemModel<V> extends OptionModel<V> {
+export interface SelectFieldItemModel<V> extends OptionModel<V> {
   text: string
 }
 
-export const Select: FunctionComponent<SelectProps<SelectItemModel<any>, any>> = (props) => (
+export const SelectField: FunctionComponent<SelectFieldProps<SelectFieldItemModel<any>, any>> = (props) => (
   props.stub ? (
     <InputField
       active={false}
@@ -52,7 +51,7 @@ export const Select: FunctionComponent<SelectProps<SelectItemModel<any>, any>> =
       stub
     />
   ) : (
-    <SelectControl
+    <SelectFieldControl
       value={props.value}
       items={props.items}
       disabled={props.disabled}
@@ -123,23 +122,19 @@ export const Select: FunctionComponent<SelectProps<SelectItemModel<any>, any>> =
                     ref={menuRenderProps.containerRef}
                     overflow="auto"
                   >
-                    <Spacer size="s">
-                      <Fragment>
-                        {menuRenderProps.items.map((item, key) => (
-                          <CardItem
-                            key={key}
-                            ref={item.ref}
-                            cursor="pointer"
-                            text={props.items[key].text}
-                            hover={item.focused}
-                            active={item.selected}
-                            focus={item.selected}
-                            onClick={item.onClick}
-                            onMouseEnter={item.onMouseEnter}
-                          />
-                        ))}
-                      </Fragment>
-                    </Spacer>
+                    {menuRenderProps.items.map((item, key) => (
+                      <CardItem
+                        key={key}
+                        ref={item.ref}
+                        cursor="pointer"
+                        text={props.items[key].text}
+                        hover={item.focused}
+                        active={item.selected}
+                        focus={item.selected}
+                        onClick={item.onClick}
+                        onMouseEnter={item.onMouseEnter}
+                      />
+                    ))}
                   </CardPos>
                 </CardPos>
               </DropUp>
