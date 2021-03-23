@@ -1,3 +1,10 @@
+# @qiwi/pijma-core [1.126.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.125.2...@qiwi/pijma-core@1.126.0) (2021-03-23)
+
+
+### Features
+
+* **core:** add sbp icon ([#396](https://github.com/qiwi/pijma/issues/396)) ([f814228](https://github.com/qiwi/pijma/commit/f8142280ee188e79f7ceba2ac4078e3670011062))
+
 ## @qiwi/pijma-core [1.125.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.125.1...@qiwi/pijma-core@1.125.2) (2021-03-22)
 
 
