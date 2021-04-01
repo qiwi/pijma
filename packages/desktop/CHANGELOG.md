@@ -1,3 +1,24 @@
+## @qiwi/pijma-desktop [1.127.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.127.2...@qiwi/pijma-desktop@1.127.3) (2021-04-01)
+
+
+### Bug Fixes
+
+* button text height ([#399](https://github.com/qiwi/pijma/issues/399)) ([50fb4df](https://github.com/qiwi/pijma/commit/50fb4dfbf777609413537354a1540605e302a74a))
+
+## [1.127.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.127.1...@qiwi/pijma-desktop@1.127.2) (2021-04-01)
+
+
+### Bug Fixes
+
+* lnk options ([#398](https://github.com/qiwi/pijma/issues/398)) ([8cc08b7](https://github.com/qiwi/pijma/commit/8cc08b797b9ccb6e56e2cc09c415c2809ede9788))
+
+## [1.127.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.127.0...@qiwi/pijma-desktop@1.127.1) (2021-04-01)
+
+
+### Bug Fixes
+
+* suggests ([#397](https://github.com/qiwi/pijma/issues/397)) ([9c39e3e](https://github.com/qiwi/pijma/commit/9c39e3e650f34f9c4107a00a3721d98e76ae2d7c))
+
 # [1.127.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.126.6...@qiwi/pijma-desktop@1.127.0) (2021-03-23)
 
 

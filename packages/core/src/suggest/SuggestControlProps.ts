@@ -50,6 +50,7 @@ export default interface SuggestControlProps<O extends SuggestOptionModel<V>, V>
     onItemSelect: (index: number) => void
     onTotalClick: () => void
     onEmptyClick: () => void
+    onShow: () => void
     onHide: () => void
     onEscapeInputModal?: () => void
   }>

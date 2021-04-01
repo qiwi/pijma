@@ -146,7 +146,15 @@ const onRequest = (suggest) => {
   getBanks(suggest).then((banks) => setBanks(banks));
 };
 
-const onCancel = () => setState(initialState);
+const onCancel = () => {
+  setSuggest('');
+  setLoading(false);
+  setBanks(undefined);
+  setTimer(undefined);
+  setDialogText(undefined);
+  setValue(undefined);
+  setError(undefined);
+};
 
 const onChange = (value) => {
   const {title} = getBankByValue(value);
@@ -169,7 +177,7 @@ const hideDialog = () => setDialogText(undefined);
 
 const equals = (a, b) => a.id === b.id;
 
-const getBankByValue = (value) => banksList.find(bank => equals(bank.value, value));
+const getBankByValue = (value) => bankList.find(bank => equals(bank.value, value));
 
 <Block>
   <BlockContent>

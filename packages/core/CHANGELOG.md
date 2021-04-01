@@ -1,3 +1,10 @@
+## @qiwi/pijma-core [1.127.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.127.0...@qiwi/pijma-core@1.127.1) (2021-04-01)
+
+
+### Bug Fixes
+
+* suggests ([#397](https://github.com/qiwi/pijma/issues/397)) ([9c39e3e](https://github.com/qiwi/pijma/commit/9c39e3e650f34f9c4107a00a3721d98e76ae2d7c))
+
 # @qiwi/pijma-core [1.127.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.126.0...@qiwi/pijma-core@1.127.0) (2021-03-23)
 
 
