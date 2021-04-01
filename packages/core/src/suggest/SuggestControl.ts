@@ -14,6 +14,8 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
 
   private inputRef: RefObject<HTMLInputElement> = createRef()
 
+  private containerRef: RefObject<HTMLDivElement> = createRef()
+
   private get items() {
     return this.props.items === undefined ? [] : this.props.items
   }
@@ -208,6 +210,7 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
       selected: this.selected,
       show: this.state.show,
       inputRef: this.inputRef,
+      containerRef: this.containerRef,
       items: this.items,
       onItemSelect: this.onSelect,
       onRequest: this.onRequest,

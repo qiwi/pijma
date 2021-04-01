@@ -131,6 +131,10 @@ const countries = [
     mask: '+996dddddddddddd',
   },
 ];
+
+const [phone, setPhone] = React.useState(undefined);
+const [code, setCode] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
