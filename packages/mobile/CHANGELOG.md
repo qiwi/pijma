@@ -1,3 +1,10 @@
+## @qiwi/pijma-mobile [1.127.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.127.1...@qiwi/pijma-mobile@1.127.2) (2021-04-01)
+
+
+### Bug Fixes
+
+* lnk options ([#398](https://github.com/qiwi/pijma/issues/398)) ([8cc08b7](https://github.com/qiwi/pijma/commit/8cc08b797b9ccb6e56e2cc09c415c2809ede9788))
+
 ## [1.127.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.127.0...@qiwi/pijma-mobile@1.127.1) (2021-04-01)
 
 
