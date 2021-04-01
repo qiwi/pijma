@@ -83,6 +83,12 @@ const textSize: { [size in ButtonProps['size']]: number } = {
   minor: 3.5,
 }
 
+const textHeight: { [size in ButtonProps['size']]: number } = {
+  accent: 5,
+  normal: 4,
+  minor: 4,
+}
+
 const textColor: { [kind in ButtonProps['kind']]: string } = {
   brand: '#fff',
   simple: '#000',
@@ -237,7 +243,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
                               weight={500}
                               color={props.disabled ? '#666' : textColor[props.kind]}
                               size={textSize[props.size]}
-                              height={textSize[props.size]}
+                              height={textHeight[props.size]}
                               transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
                               children={props.text}
                             />
