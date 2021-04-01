@@ -146,7 +146,14 @@ const onRequest = (suggest) => {
   getBanks(suggest).then((banks) => setBanks(banks));
 };
 
-const onCancel = () => setState(initialState);
+const onCancel = () => {
+  setLoading(false);
+  setError(false);
+  setTimer(undefined);
+  setBanks(undefined);
+  setValue(undefined);
+  setSuggest(undefined);
+};
 
 const onChange = (value) => {
   const {title} = getBankByValue(value);
