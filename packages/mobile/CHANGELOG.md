@@ -1,3 +1,10 @@
+## [1.127.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.127.2...@qiwi/pijma-mobile@1.127.3) (2021-04-01)
+
+
+### Bug Fixes
+
+* button text height ([#399](https://github.com/qiwi/pijma/issues/399)) ([50fb4df](https://github.com/qiwi/pijma/commit/50fb4dfbf777609413537354a1540605e302a74a))
+
 ## @qiwi/pijma-mobile [1.127.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.127.1...@qiwi/pijma-mobile@1.127.2) (2021-04-01)
 
 
