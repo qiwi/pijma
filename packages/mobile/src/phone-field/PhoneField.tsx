@@ -1,4 +1,4 @@
-import React, {createRef, FunctionComponent, RefObject} from 'react'
+import React, {FunctionComponent} from 'react'
 
 import {
   styled,
@@ -18,8 +18,6 @@ import {
 import {Paragraph} from '../typography'
 import {DropUp} from '../drop-up'
 import {PhoneFieldProps} from './PhoneFieldProps'
-
-const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
 
 const PosCard = styled(Card, CardOptions)().withComponent(Pos)
 
@@ -50,7 +48,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
           count={props.countries.length}
           onSelect={renderProps.onSelectCountry}
           children={(menuRenderProps) => (
-            <Pos type="relative" ref={dropDownContainerRef}>
+            <Pos type="relative" ref={renderProps.containerRef}>
               <InputField
                 title={props.title}
                 active={renderProps.focused || !!props.value || !!props.placeholder}
