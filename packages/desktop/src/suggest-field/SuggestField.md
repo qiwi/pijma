@@ -1,7 +1,7 @@
 #### SuggestField
 
 ```jsx
-const banksList = [
+const bankList = [
   {
     value: {
       id: 1,
@@ -124,7 +124,7 @@ const [timer, setTimer] = React.useState(undefined);
 const [banks, setBanks] = React.useState(undefined);
 const [value, setValue] = React.useState(undefined);
 
-const filterBanks = (title) => banksList.filter(bank => {
+const filterBanks = (title) => bankList.filter(bank => {
   return title !== '' && bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1;
 });
 
@@ -165,7 +165,7 @@ const onChange = (value) => {
 
 const equals = (a, b) => a.id === b.id;
 
-const getBankByValue = (value) => banksList.find(bank => equals(bank.value, value));
+const getBankByValue = (value) => bankList.find(bank => equals(bank.value, value));
 
 <Block>
   <BlockContent>
