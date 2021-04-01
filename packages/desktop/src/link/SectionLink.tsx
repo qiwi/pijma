@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {styled, Lnk, LinkControl, LinkControlProps, Section, RenderChild, LnkOptions} from '@qiwi/pijma-core'
+import {styled, Lnk, LinkControl, LinkControlProps, Section, RenderChild} from '@qiwi/pijma-core'
 
 export interface SectionLinkProps {
   tabIndex?: number
@@ -21,7 +21,7 @@ export interface SectionLinkProps {
   }>
 }
 
-const SectionLnk = styled(Lnk, LnkOptions)().withComponent(Section)
+const SectionLnk = styled(Lnk)().withComponent(Section)
 
 export const SectionLink: FC<SectionLinkProps> = (props) => (
   <LinkControl
