@@ -2,6 +2,7 @@
 # If the tests pass and this is a push to the master branch it also runs Semantic Release.
 name: CI
 on: [push, pull_request]
+
 jobs:
   init:
     name: init
@@ -133,12 +134,11 @@ jobs:
 
       - name: Multi-semantic-release
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_USER: 'qiwibot'
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GIT_AUTHOR_EMAIL: 'opensource@qiwi.com'
           GIT_COMMITTER_EMAIL: 'opensource@qiwi.com'
           GIT_AUTHOR_NAME: '@qiwibot'
           GIT_COMMITTER_NAME: '@qiwibot'
-        run: GH_TOKEN="$GH_TOKEN" GH_USER="$GH_USER" NPM_TOKEN="$NPM_TOKEN" GIT_AUTHOR_EMAIL="$GIT_AUTHOR_EMAIL" GIT_COMMITTER_EMAIL="$GIT_COMMITTER_EMAIL" GIT_AUTHOR_NAME="$GIT_AUTHOR_NAME" GIT_COMMITTER_NAME="$GIT_COMMITTER_NAME" npx -p @qiwi/semrel-toolkit multi-semrel
+        run: npx -p @qiwi/semrel-toolkit multi-semrel
