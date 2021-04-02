@@ -1,3 +1,10 @@
+## [1.127.4](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.127.3...@qiwi/pijma-mobile@1.127.4) (2021-04-02)
+
+
+### Bug Fixes
+
+* dropdown refs ([#401](https://github.com/qiwi/pijma/issues/401)) ([8a5ab9d](https://github.com/qiwi/pijma/commit/8a5ab9df17c53e677c440e957610ebad085bf49d))
+
 ## [1.127.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.127.2...@qiwi/pijma-mobile@1.127.3) (2021-04-01)
 
 
