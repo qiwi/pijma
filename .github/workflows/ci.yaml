@@ -42,8 +42,10 @@ jobs:
           name: target
           retention-days: 1
           path: |
-            packages/**/lib
-            packages/**/styleguide
+            !packages/*/node_modules
+            !packages/*/src
+            packages
+            lerna.json
 
   test_push:
     needs: build
@@ -67,6 +69,7 @@ jobs:
           yarn bootstrap
       - name: Unit test only
         run: yarn test:unit
+
 #      - name: Push coverage
 #        if: github.ref == 'refs/heads/master'
 #        uses: actions/upload-artifact@v2
@@ -116,6 +119,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
       - name: Restore target
         uses: actions/download-artifact@v2
         with:
@@ -134,7 +140,7 @@ jobs:
 
       - name: Multi-semantic-release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_USER: 'qiwibot'
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GIT_AUTHOR_EMAIL: 'opensource@qiwi.com'
