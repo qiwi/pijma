@@ -1,8 +1,8 @@
 import React, {FC} from 'react'
 
-import {Lnk, Card, Icon, IconProps, LinkControl, Flex, FlexItem, Box, Stub} from '@qiwi/pijma-core'
+import {styled, Lnk, Card, Icon, IconProps, LinkControl, Flex, FlexItem, Box, Stub, CardOptions} from '@qiwi/pijma-core'
 
-const CardLink = Card.withComponent(Lnk)
+const CardLink = styled(Card, CardOptions)().withComponent(Lnk)
 
 interface FooterOutLinkProps {
   href: string
@@ -51,12 +51,12 @@ const FooterOutLink: FC<FooterOutLinkProps> = (props) => (
           onMouseLeave={renderProps.onMouseLeave}
           onMouseUp={renderProps.onMouseUp}
           onMouseDown={renderProps.onMouseDown}
-          children={
+          children={(
             <Icon
               name={props.icon}
               color={renderProps.hover || renderProps.focus || renderProps.active ? '#666' : '#999'}
             />
-          }
+          )}
         />
       )}
     />
@@ -65,13 +65,13 @@ const FooterOutLink: FC<FooterOutLinkProps> = (props) => (
 
 export interface FooterOutProps {
   children: FooterOutLinkProps[]
-  stub?: boolean
+  stub?: number | boolean
 }
 
 export const FooterOut: FC<FooterOutProps> = ({children, stub = false}) => (
   <Box overflow="hidden">
     <Flex wrap="wrap" justify="space-between" m={-1.5}>
-      {(stub ? Array(6).fill({href: '', icon: 'qiwi'}) : children).map((item, i) => (
+      {(stub ? Array(typeof stub === 'number' ? stub : 6).fill({href: '', icon: 'qiwi'}) : children).map((item, i) => (
         <FlexItem key={i} m={1.5}>
           <FooterOutLink stub={stub} {...item}/>
         </FlexItem>

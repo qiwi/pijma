@@ -15,7 +15,7 @@ import {
 
 import {Paragraph} from '../typography'
 import {DropDown} from '../drop-down'
-import PhoneFieldProps from './PhoneFieldProps'
+import {PhoneFieldProps} from './PhoneFieldProps'
 
 const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
 
@@ -70,7 +70,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                     onChange={renderProps.onChange}
                     onFocus={renderProps.onFocus}
                     onBlur={renderProps.onBlur}
-                    onKeyDown={menuRenderProps.onKeyDown}
+                    onKeyDown={renderProps.showCountries ? menuRenderProps.onKeyDown : undefined}
                   />
                 )}
                 hint={props.hint}

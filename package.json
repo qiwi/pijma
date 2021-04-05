@@ -1,42 +1,37 @@
 {
+  "name": "pijma",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
+    "bootstrap": "lerna bootstrap",
     "clean": "lerna clean --yes && lerna run clean",
-    "build": "yarn clean && yarn lint && lerna run --stream build",
+    "build": "lerna run build",
     "watch": "lerna run --parallel watch",
+    "test": "yarn lint",
+    "test:report": "yarn test",
     "lint": "lerna run --no-bail --parallel lint",
     "lint:fix": "lerna run --no-bail --parallel lint:fix",
     "guide": "lerna run --concurrency=1 guide",
-    "guide_ci": "lerna run --concurrency=1 guide_ci"
+    "guide_ci": "lerna run --concurrency=1 guide_ci",
+    "upgrade": "npx npm-upgrade-monorepo"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint",
       "pre-push": "yarn lint"
     }
   },
   "devDependencies": {
-    "@semantic-release/changelog": "3.0.4",
-    "@semantic-release/commit-analyzer": "6.3.0",
-    "@semantic-release/git": "7.0.16",
-    "@semantic-release/github": "5.4.2",
-    "@semantic-release/npm": "5.1.13",
-    "@semantic-release/release-notes-generator": "7.3.0",
-    "lerna": "3.16.4",
-    "semantic-release": "15.13.21",
-    "semantic-release-monorepo": "6.1.1",
-    "semantic-release-monorepo-hooks": "2.9.5",
-    "semantic-release-plugin-decorators": "2.0.0"
+    "lerna": "4.0.0"
   },
-  "name": "pijma",
-  "monorepoHooks": {
-    "afterAll": {
-      "cmd": [
-        "yarn run guide_ci"
-      ]
-    }
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiwi/pijma.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qiwi/pijma/issues"
+  },
+  "homepage": "https://github.com/qiwi/pijma/#readme"
 }

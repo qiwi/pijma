@@ -165,7 +165,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
           transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
           onClick={renderProps.onClick}
           onFocus={renderProps.onFocus}
-          onBlur={renderProps.onFocus}
+          onBlur={renderProps.onBlur}
           onMouseEnter={renderProps.onMouseEnter}
           onMouseLeave={renderProps.onMouseLeave}
           children={(
@@ -200,6 +200,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
                             height={1}
                             children={(
                               <Spinner
+                                paused={!props.loading}
                                 width={iconSize[props.size]}
                                 height={iconSize[props.size]}
                                 color={props.disabled ? '#666' : textColor[props.kind]}

@@ -1,7 +1,7 @@
 #### SuggestField
 
 ```jsx
-const banks = [
+const banksList = [
   {
     value: {
       id: 1,
@@ -116,74 +116,76 @@ const banks = [
   },
 ];
 
-const initialState = {
-  loading: false,
-  validateError: undefined,
-  suggestError: undefined,
-  timer: undefined,
-  banks: undefined,
-};
+const [loading, setLoading] = React.useState(false);
+const [validateError, setValidateError] = React.useState(undefined);
+const [suggestError, setSuggestError] = React.useState(undefined);
+const [suggest, setSuggest] = React.useState(undefined);
+const [timer, setTimer] = React.useState(undefined);
+const [banks, setBanks] = React.useState(undefined);
+const [value, setValue] = React.useState(undefined);
 
-const filterBanks = (title) => banks.filter(bank => {
+const filterBanks = (title) => banksList.filter(bank => {
   return title !== '' && bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1;
 });
 
 const getBanks = (suggest) => {
-  setState({loading: true});
-  clearTimeout(state.timer);
+  setLoading(true);
+  clearTimeout(timer);
   return new Promise((resolve, reject) => {
-    setState({timer: setTimeout(() => {
-      setState({loading: false});
+    setTimer(setTimeout(() => {
+      setLoading(false);
       resolve(filterBanks(suggest));
-    }, 1000)});
+    }, 1000));
   });
 };
 
 const onRequest = (suggest) => {
-  setState({suggest});
+  setSuggest(suggest);
   getBanks(suggest).then((banks) => {
-    setState({
-      banks, 
-      suggestError: banks.length === 0 && suggest !== '', 
-      validateError: suggest === '' ? 'Введите значение' : undefined
-    })
+    setBanks(banks);
+    setSuggestError(banks.length === 0 && suggest !== '');
+    setValidateError(suggest === '' ? 'Введите значение' : undefined)
   });
 };
 
-const onCancel = () => setState(initialState);
+const onCancel = () => {
+  setLoading(false);
+  setValidateError(undefined);
+  setSuggestError(undefined);
+  setTimer(undefined);
+  setBanks(undefined);
+};
 
 const onChange = (value) => {
   const {title} = getBankByValue(value);
-  setState({
-    banks: undefined,
-    value: value,
-    suggest: title,
-  });
+  setBanks(undefined);
+  setValue(value);
+  setSuggest(title);
 };
 
 const equals = (a, b) => a.id === b.id;
 
-const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
+const getBankByValue = (value) => banksList.find(bank => equals(bank.value, value));
 
 <Block>
   <BlockContent>
     <Box width={70}>
       <SuggestField
-        value={state.value}
-        items={state.banks}
+        value={value}
+        items={banks}
         title="Поле ввода"
-        suggest={state.suggest}
-        loading={state.loading}
-        error={state.validateError}
+        suggest={suggest}
+        loading={loading}
+        error={validateError}
         equals={equals}
         onCancel={onCancel}
         onChange={onChange}
         onRequest={onRequest}
-        empty={state.suggestError ? {
+        empty={suggestError ? {
           text: 'Ошибка,',
           link: {
             text: 'попробуйте ещё раз',
-            suggest: state.suggest,
+            suggest: suggest,
           }
         } : undefined
         }

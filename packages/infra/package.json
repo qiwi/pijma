@@ -1,0 +1,37 @@
+{
+  "name": "@qiwi/pijma-infra",
+  "description": "QIWI Pijma infra assets: common configs, dev deps, etc",
+  "version": "1.0.0",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {},
+  "files": [],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/webpack-env": "1.14.0",
+    "file-loader": "4.2.0",
+    "gh-pages": "2.1.1",
+    "husky": "3.0.3",
+    "react-docgen-typescript": "1.12.5",
+    "react-styleguidist": "11.1.5",
+    "ts-loader": "6.0.4",
+    "ts-node": "9.0.0",
+    "ts-react-display-name": "1.2.1",
+    "tslint": "5.18.0",
+    "tslint-config-qiwi": "1.1.1",
+    "tslint-loader": "3.5.4",
+    "ttypescript": "1.5.12",
+    "typescript": "3.5.3",
+    "webpack": "4.39.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiwi/pijma.git"
+  },
+  "bugs": {
+    "url": "https://github.com/qiwi/pijma/issues"
+  },
+  "homepage": "https://github.com/qiwi/pijma/#readme"
+}

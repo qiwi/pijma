@@ -1,7 +1,8 @@
+import {ReactElement, ReactNode} from 'react'
+
 import {SuggestControlProps} from '@qiwi/pijma-core'
 
 import SuggestFieldOptionModel from './SuggestFieldOptionModel'
-import {ReactNode} from 'react'
 
 export default interface SuggestFieldProps<O extends SuggestFieldOptionModel<V>, V> {
   value?: SuggestControlProps<O, V>['value']
@@ -15,6 +16,7 @@ export default interface SuggestFieldProps<O extends SuggestFieldOptionModel<V>,
   stub?: boolean
   error?: ReactNode
   loading?: boolean
+  total?: SuggestControlProps<O, V>['total'] | ReactElement | string
   name?: string
   type?: 'text' | 'password' | 'tel' | 'number' | 'search' | 'email' | 'url'
   title?: string
@@ -22,11 +24,12 @@ export default interface SuggestFieldProps<O extends SuggestFieldOptionModel<V>,
   help?: ReactNode
   hint?: ReactNode
   action?: ReactNode
-  empty?: SuggestControlProps<O, V>['empty']
+  empty?: SuggestControlProps<O, V>['empty'] | ReactElement | string
   onChange: SuggestControlProps<O, V>['onChange']
   onRequest: SuggestControlProps<O, V>['onRequest']
   onCancel?: SuggestControlProps<O, V>['onCancel']
   onFocus?: SuggestControlProps<O, V>['onFocus']
   onBlur?: SuggestControlProps<O, V>['onBlur']
+  onSubmit?: SuggestControlProps<O, V>['onSubmit']
   equals?: SuggestControlProps<O, V>['equals']
 }
