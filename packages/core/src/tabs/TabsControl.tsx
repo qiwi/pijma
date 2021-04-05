@@ -1,7 +1,7 @@
 import React, {createRef, RefObject} from 'react'
+import {findDOMNode} from 'react-dom'
 
 import RenderChild from '../RenderChild'
-import {findDOMNode} from 'react-dom'
 
 export interface TabsControlProps {
   select: number
