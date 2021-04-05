@@ -14,6 +14,8 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
 
   private inputRef: RefObject<HTMLInputElement> = createRef()
 
+  private containerRef: RefObject<HTMLDivElement> = createRef()
+
   private get items() {
     return this.props.items === undefined ? [] : this.props.items
   }
@@ -176,6 +178,13 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
     this.cancel()
   }
 
+  private onShow: () => void = () => {
+    this.setState({
+      focused: true,
+    })
+    this.show()
+  }
+
   private onShowClick: React.MouseEventHandler = (event) => {
     event.preventDefault()
     event.stopPropagation()
@@ -201,6 +210,7 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
       selected: this.selected,
       show: this.state.show,
       inputRef: this.inputRef,
+      containerRef: this.containerRef,
       items: this.items,
       onItemSelect: this.onSelect,
       onRequest: this.onRequest,
@@ -216,6 +226,7 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
       onModalItemKeyDown: this.onModalItemKeyDown,
       onEscapeInputModal: this.onEscapeInputModal,
       onBack: this.onBack,
+      onShow: this.onShow,
       onHide: this.onHide,
       onTotalClick: this.onTotalClick,
       onEmptyClick: this.onEmptyClick,

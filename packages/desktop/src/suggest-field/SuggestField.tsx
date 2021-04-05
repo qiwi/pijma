@@ -1,4 +1,4 @@
-import React, {RefObject, createRef, Fragment} from 'react'
+import React, {Fragment} from 'react'
 
 import {
   SuggestControl,
@@ -24,8 +24,6 @@ import SuggestFieldOptionsModel from './SuggestFieldOptionModel'
 
 const CardPos = styled(Card, CardOptions)().withComponent(Pos)
 const CardItem = styled(Card, CardOptions)().withComponent(MenuItem)
-
-const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
 
 export const SuggestField = <V extends {}>({
   equals = (a: V, b: V) => a === b,
@@ -61,7 +59,7 @@ export const SuggestField = <V extends {}>({
           children={(menuRenderProps) => (
             <Pos
               type="relative"
-              ref={dropDownContainerRef}
+              ref={renderProps.containerRef}
               transition={`box-shadow ${renderProps.focused ? 300 : 200}ms cubic-bezier(0.4, 0.0, 0.2, 1)`}
             >
               <Box
@@ -105,7 +103,7 @@ export const SuggestField = <V extends {}>({
               </Box>
               <DropDown
                 target={renderProps.inputRef.current!}
-                container={dropDownContainerRef.current}
+                container={renderProps.containerRef.current}
                 minWidth={1}
                 width={1}
                 offset={3}

@@ -11,6 +11,7 @@
     "watch": "lerna run --parallel watch",
     "test": "yarn lint",
     "test:report": "yarn test",
+    "test:unit": "yarn test",
     "lint": "lerna run --no-bail --parallel lint",
     "lint:fix": "lerna run --no-bail --parallel lint:fix",
     "guide": "lerna run --concurrency=1 guide",

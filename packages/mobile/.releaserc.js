@@ -9,7 +9,7 @@ module.exports = {
           branch: 'gh-pages',
           from: './styleguide/lib',
           to: './mobile',
-          message: 'update pijma-mobile docs',
+          message: 'update docs ${nextRelease.gitTag}',
         }
       }
     ],
