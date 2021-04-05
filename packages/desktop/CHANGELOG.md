@@ -1,3 +1,10 @@
+# [1.128.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.127.4...@qiwi/pijma-desktop@1.128.0) (2021-04-05)
+
+
+### Features
+
+* tabs ([#294](https://github.com/qiwi/pijma/issues/294)) ([c8d2f82](https://github.com/qiwi/pijma/commit/c8d2f827f895c5a6865966cc66383319f2a5dfbe))
+
 ## [1.127.4](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.127.3...@qiwi/pijma-desktop@1.127.4) (2021-04-02)
 
 
