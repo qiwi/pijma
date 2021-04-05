@@ -9,7 +9,7 @@ module.exports = {
           branch: 'gh-pages',
           from: './styleguide/lib',
           to: './desktop',
-          message: 'update pijma-desktop docs'
+          message: 'update docs ${nextRelease.gitTag}',
         }
       }
     ],
