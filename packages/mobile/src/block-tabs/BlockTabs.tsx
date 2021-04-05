@@ -1,6 +1,18 @@
 import React, {FC, ReactNode} from 'react'
 
-import {TabsControl, TabHeader, Flex, FlexItem, Box, IconProps, Pos, Card, TabBorder} from '@qiwi/pijma-core'
+import {
+  TabsControl,
+  TabHeader,
+  Flex,
+  FlexItem,
+  IconProps,
+  Pos,
+  Card,
+  TabBorder,
+  styled,
+  FlexOptions,
+  Value,
+} from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
 
@@ -16,20 +28,25 @@ export interface BlockTabsProps {
   centered?: boolean
   hr?: boolean
   indent?: 'm' | 'l'
-  indentTop?: boolean
+  pt?: Value
+  pb?: Value
   stub?: boolean
   onChange?: () => void
 }
 
-const BlockTabsIndent: Record<NonNullable<BlockTabsProps['indent']>, number> = {
-  m: 4,
-  l: 6,
+const BlockTabsIndent: Record<NonNullable<BlockTabsProps['indent']>, [Value, Value, Value, Value]> = {
+  m: [4, 4, 4, 4],
+  l: [6, 6, 6, 6],
 }
 
-const BlockTabsIndentWithoutTop: Record<NonNullable<BlockTabsProps['indent']>, string> = {
-  m: '0 16px 16px 16px',
-  l: '0 24px 24px 24px',
-}
+const FlexOverflow = styled(Flex, FlexOptions)({
+  '&::-webkit-scrollbar': {
+    display: 'none',
+  },
+  scrollbarWidth: 'none',
+  msOverflowStyle: 'none',
+  position: 'relative',
+})
 
 export const BlockTabs: FC<BlockTabsProps> = ({
   items,
@@ -40,7 +57,8 @@ export const BlockTabs: FC<BlockTabsProps> = ({
   stub = false,
   hr = true,
   indent = 'm',
-  indentTop = true,
+  pt,
+  pb,
   onChange,
 }) => {
   return (
@@ -48,19 +66,21 @@ export const BlockTabs: FC<BlockTabsProps> = ({
       <Pos type="relative">
         <Flex
           direction="column"
-          p={indentTop ? BlockTabsIndent[indent] : BlockTabsIndentWithoutTop[indent]}
+          pt={pt !== undefined ? pt : BlockTabsIndent[indent][0]}
+          pr={BlockTabsIndent[indent][1]}
+          pb={pb !== undefined ? pb : BlockTabsIndent[indent][2]}
+          pl={BlockTabsIndent[indent][3]}
         >
-          <Flex
+          <FlexOverflow
             direction="row"
             overflow="auto"
             justify={centered ? 'space-between' : 'flex-start'}
-            css={{'&::-webkit-scrollbar': {display: 'none'}, scrollbarWidth: 'none', '-ms-overflow-style': 'none', position: 'relative'}}
           >
             {[true, false, false].map((item, index) => (
               <TabHeader
                 key={index}
                 title="stub"
-                indent={index === (items.length - 1) ? 0 : 5}
+                indent={index === items.length - 1 ? 0 : 5}
                 wrap={!centered}
                 tabIndex={-1}
                 icon="qiwi"
@@ -70,8 +90,13 @@ export const BlockTabs: FC<BlockTabsProps> = ({
                 stub
               />
             ))}
-            <TabBorder width={centered ? 'calc(33% - 20px)' : vertical ? 13 : 21} left={0} borderRadius={hr}/>
-          </Flex>
+            <TabBorder
+              width={centered ? 'calc(33% - 20px)' : vertical ? 13 : 21}
+              left={0}
+              radius={hr}
+              stub
+            />
+          </FlexOverflow>
           <FlexItem>
             {hr ? (
               <Pos type="absolute" width={1} left={0} zIndex={0}>
@@ -95,19 +120,21 @@ export const BlockTabs: FC<BlockTabsProps> = ({
           <Pos type="relative">
             <Flex
               direction="column"
-              p={indentTop ? BlockTabsIndent[indent] : BlockTabsIndentWithoutTop[indent]}
+              pt={pt !== undefined ? pt : BlockTabsIndent[indent][0]}
+              pr={BlockTabsIndent[indent][1]}
+              pb={pb !== undefined ? pb : BlockTabsIndent[indent][2]}
+              pl={BlockTabsIndent[indent][3]}
             >
-              <Flex
+              <FlexOverflow
                 direction="row"
                 overflow="auto"
                 justify={centered ? 'space-between' : 'flex-start'}
-                css={{'&::-webkit-scrollbar': {display: 'none'}, scrollbarWidth: 'none', '-ms-overflow-style': 'none', position: 'relative'}}
               >
                 {renderProps.items.map((item, index) => (
                   <TabHeader
                     key={index}
                     title={items[index].title}
-                    indent={index === (items.length - 1) ? 0 : 5}
+                    indent={index === items.length - 1 ? 0 : 5}
                     wrap={!centered}
                     tabIndex={tabIndex}
                     icon={items[index].icon}
@@ -124,24 +151,28 @@ export const BlockTabs: FC<BlockTabsProps> = ({
                     onClick={item.onClick}
                   />
                 ))}
-                <TabBorder width={`${renderProps.borderWidth}px`} left={`${renderProps.borderOffSetLeft}px`} borderRadius={hr}/>
-              </Flex>
-              <FlexItem>
-                {hr ? (
+                <TabBorder
+                  width={`${renderProps.borderWidth}px`}
+                  left={`${renderProps.borderOffSetLeft}px`}
+                  radius={hr}
+                />
+              </FlexOverflow>
+              {hr ? (
+                <FlexItem>
                   <Pos type="absolute" width={1} left={0} zIndex={0}>
                     <Card mt="-1px" bg="#e6e6e6" width={1} height="1px"/>
                   </Pos>
-                ) : (
-                  null
-                )}
-              </FlexItem>
-              {items.map(({content}, index) => (
-                <FlexItem key={index}>
-                  <Box
-                    display={select === index ? 'block' : 'none'}
-                    children={content}
-                  />
                 </FlexItem>
+              ) : (
+                null
+              )}
+              {items.map(({content}, index) => (
+                <FlexItem
+                  key={index}
+                  display={select === index ? 'block' : 'none'}
+                  pt={4}
+                  children={content}
+                />
               ))}
             </Flex>
           </Pos>
@@ -159,5 +190,4 @@ BlockTabs.defaultProps = {
   stub: false,
   hr: true,
   indent: 'm',
-  indentTop: true,
 }

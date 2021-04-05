@@ -1,6 +1,15 @@
 import React, {FC, ReactNode} from 'react'
 
-import {TabsControl, TabHeader, Flex, FlexItem, Box, IconProps, TabBorder} from '@qiwi/pijma-core'
+import {
+  TabsControl,
+  TabHeader,
+  Flex,
+  FlexItem,
+  IconProps,
+  TabBorder,
+  styled,
+  FlexOptions
+} from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
 
@@ -18,6 +27,15 @@ export interface TabsProps {
   onChange?: () => void
 }
 
+const FlexOverflow = styled(Flex, FlexOptions)({
+  '&::-webkit-scrollbar': {
+    display: 'none',
+  },
+  scrollbarWidth: 'none',
+  msOverflowStyle: 'none',
+  position: 'relative',
+})
+
 export const Tabs: FC<TabsProps> = ({
   items,
   select = 0,
@@ -30,17 +48,16 @@ export const Tabs: FC<TabsProps> = ({
   return (
     stub ? (
       <Flex direction="column">
-        <Flex
+        <FlexOverflow
           direction="row"
           overflow="auto"
           justify={centered ? 'space-between' : 'flex-start'}
-          css={{'&::-webkit-scrollbar': {display: 'none'}, scrollbarWidth: 'none', '-ms-overflow-style': 'none', position: 'relative'}}
         >
           {[true, false, false].map((item, index) => (
             <TabHeader
               key={index}
               title="stub"
-              indent={index === (items.length - 1) ? 0 : 5}
+              indent={index === items.length - 1 ? 0 : 5}
               wrap={!centered}
               tabIndex={-1}
               icon="qiwi"
@@ -50,8 +67,12 @@ export const Tabs: FC<TabsProps> = ({
               stub
             />
           ))}
-          <TabBorder width={centered ? 'calc(33% - 20px)' : vertical ? 13 : 21} left={0}/>
-        </Flex>
+          <TabBorder
+            width={centered ? 'calc(33% - 20px)' : vertical ? 13 : 21}
+            left={0}
+            stub
+          />
+        </FlexOverflow>
         <FlexItem mt={4}>
             <Paragraph stub/>
         </FlexItem>
@@ -61,19 +82,18 @@ export const Tabs: FC<TabsProps> = ({
         select={select}
         length={items.length}
         onChange={onChange}
-        children={renderProps => (
+        children={(renderProps) => (
           <Flex direction="column">
-            <Flex
+            <FlexOverflow
               direction="row"
               overflow="auto"
               justify={centered ? 'space-between' : 'flex-start'}
-              css={{'&::-webkit-scrollbar': {display: 'none'}, scrollbarWidth: 'none', '-ms-overflow-style': 'none', position: 'relative'}}
             >
               {renderProps.items.map((item, index) => (
                 <TabHeader
                   key={index}
                   title={items[index].title}
-                  indent={index === (items.length - 1) ? 0 : 5}
+                  indent={index === items.length - 1 ? 0 : 5}
                   wrap={!centered}
                   tabIndex={tabIndex}
                   icon={items[index].icon}
@@ -90,15 +110,18 @@ export const Tabs: FC<TabsProps> = ({
                   onClick={item.onClick}
                 />
               ))}
-              <TabBorder width={`${renderProps.borderWidth}px`} left={`${renderProps.borderOffSetLeft}px`}/>
-            </Flex>
+              <TabBorder
+                width={`${renderProps.borderWidth}px`}
+                left={`${renderProps.borderOffSetLeft}px`}
+              />
+            </FlexOverflow>
             {items.map(({content}, index) => (
-              <FlexItem key={index}>
-                <Box
-                  display={select === index ? 'block' : 'none'}
-                  children={content}
-                />
-              </FlexItem>
+              <FlexItem
+                key={index}
+                display={select === index ? 'block' : 'none'}
+                pt={4}
+                children={content}
+              />
             ))}
           </Flex>
         )}
