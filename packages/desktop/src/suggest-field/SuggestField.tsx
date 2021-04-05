@@ -1,4 +1,4 @@
-import React, {RefObject, createRef, Fragment} from 'react'
+import React, {Fragment} from 'react'
 
 import {
   SuggestControl,
@@ -11,6 +11,7 @@ import {
   Spacer,
   BasicInput,
   InputField,
+  CardOptions,
 } from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
@@ -21,10 +22,8 @@ import {MenuItem} from '../menu'
 import SuggestFieldProps from './SuggestFieldProps'
 import SuggestFieldOptionsModel from './SuggestFieldOptionModel'
 
-const CardPos = Card.withComponent(Pos)
-const CardItem = styled(Card)().withComponent(MenuItem)
-
-const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
+const CardPos = styled(Card, CardOptions)().withComponent(Pos)
+const CardItem = styled(Card, CardOptions)().withComponent(MenuItem)
 
 export const SuggestField = <V extends {}>({
   equals = (a: V, b: V) => a === b,
@@ -60,7 +59,7 @@ export const SuggestField = <V extends {}>({
           children={(menuRenderProps) => (
             <Pos
               type="relative"
-              ref={dropDownContainerRef}
+              ref={renderProps.containerRef}
               transition={`box-shadow ${renderProps.focused ? 300 : 200}ms cubic-bezier(0.4, 0.0, 0.2, 1)`}
             >
               <Box
@@ -71,7 +70,7 @@ export const SuggestField = <V extends {}>({
                 <InputField
                   title={props.title}
                   active={renderProps.focused || !!props.suggest || !!props.placeholder}
-                  input={
+                  input={(
                     <BasicInput
                       ref={renderProps.inputRef}
                       name={props.name}
@@ -95,7 +94,7 @@ export const SuggestField = <V extends {}>({
                         renderProps.onItemKeyDown
                       )}
                     />
-                  }
+                  )}
                   hint={props.hint}
                   error={props.error}
                   help={props.help}
@@ -104,7 +103,7 @@ export const SuggestField = <V extends {}>({
               </Box>
               <DropDown
                 target={renderProps.inputRef.current!}
-                container={dropDownContainerRef.current}
+                container={renderProps.containerRef.current}
                 minWidth={1}
                 width={1}
                 offset={3}
@@ -186,3 +185,5 @@ export const SuggestField = <V extends {}>({
 SuggestField.defaultProps = {
   equals: (a: any, b: any) => a === b,
 }
+
+SuggestField.displayName = 'SuggestField'

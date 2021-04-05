@@ -21,6 +21,8 @@ import {
   Flex,
   FlexItem,
   Input,
+  BoxOptions,
+  CardOptions,
 } from '@qiwi/pijma-core'
 
 const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
@@ -74,8 +76,9 @@ const StyledModal = styled(Modal)<ModalProps>({
   overflow: 'auto',
 })
 
-const BoxPos = Box.withComponent(Pos)
-const PosFlexCard = styled(Card.withComponent(Pos))().withComponent(Flex)
+const BoxPos = styled(Box, BoxOptions)().withComponent(Pos)
+const CardPos = styled(Card, CardOptions)().withComponent(Pos)
+const PosFlexCard = styled(CardPos)().withComponent(Flex)
 
 const InputModal: FunctionComponent<InputModalProps> = (props) => (
   <StyledModal

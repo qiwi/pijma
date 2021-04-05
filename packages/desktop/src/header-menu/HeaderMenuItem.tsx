@@ -1,6 +1,6 @@
 import React, {forwardRef, Ref} from 'react'
 
-import {LinkControl, Lnk, Flex, Pos, Card, LinkControlProps} from '@qiwi/pijma-core'
+import {styled, LinkControl, Lnk, Flex, Pos, Card, LinkControlProps, Typo, PosOptions} from '@qiwi/pijma-core'
 
 import {Text} from '../typography'
 
@@ -12,13 +12,14 @@ export interface HeaderMenuItemProps {
   rel?: LinkControlProps['rel']
   title?: string
   active?: boolean
+  attention?: boolean
   ref?: Ref<HTMLAnchorElement>
   onClick?: LinkControlProps['onClick']
   onFocus?: LinkControlProps['onFocus']
   onBlur?: LinkControlProps['onBlur']
 }
 
-const PosLink = Pos.withComponent(Lnk)
+const PosLink = styled(Pos, PosOptions)().withComponent(Lnk)
 
 export const HeaderMenuItem = forwardRef<HTMLAnchorElement, HeaderMenuItemProps>((props, ref) => (
   <LinkControl
@@ -59,6 +60,19 @@ export const HeaderMenuItem = forwardRef<HTMLAnchorElement, HeaderMenuItemProps>
             decoration="none"
           >
             {props.title}
+            {props.attention ? (
+              <Typo
+                as="span"
+                css={{marginLeft: '2px'}}
+                size={4}
+                color="#ed4848"
+                height={2}
+              >
+                &bull;
+              </Typo>
+            ) : (
+              null
+            )}
           </Text>
         </Flex>
         {props.active ? (

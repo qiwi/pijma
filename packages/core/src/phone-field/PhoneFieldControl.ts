@@ -10,6 +10,15 @@ import {createPhoneMask} from '../mask'
 
 export default class PhoneFieldControl extends Component<PhoneFieldControlProps, PhoneFieldControlState> {
 
+  public componentDidMount() {
+    if (this.props.value) {
+      const country = this.getCountryByPhone(this.props.value)
+      this.setState({
+        selectedCountry: country ? country : null,
+      })
+    }
+  }
+
   public componentDidUpdate(props: PhoneFieldControlProps, state: PhoneFieldControlState) {
     if (
       state.selectedCountry === null || (
@@ -19,7 +28,11 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
         this.props.value
       )
     ) {
-      this.inputField.setSelectionRange(-1, -1)
+      const length = Math.max(
+        (this.props.value || '').length,
+        (this.state.selectedCountry ? this.state.selectedCountry.mask : '').length,
+      )
+      this.inputField.setSelectionRange(length, length)
     }
     if (this.props.countries !== props.countries) {
       this.optionsRefs = new Map(

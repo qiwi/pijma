@@ -38,11 +38,14 @@
       <FlexItem width={6} height={6} mr={6} cursor="pointer">
         <QuestionIcon/>
       </FlexItem>
-      <FlexItem width={6} height={6} mr={6} cursor="pointer" onClick={() => setState({filterIconActive: !state.filterIconActive})}>
-        <FilterIcon active={state.filterIconActive}/>
+      <FlexItem width={6} height={6} mr={6} cursor="pointer" onClick={() => setFilterIconActive(!filterIconActive)}>
+        <FilterIcon active={filterIconActive}/>
       </FlexItem>
-      <FlexItem width={6} height={6} cursor="pointer" onClick={() => setState({crossBurgerActive: !state.crossBurgerActive})}>
-        <CrossBurger active={state.crossBurgerActive}/>
+      <FlexItem width={6} height={6} mr={6} cursor="pointer" onClick={() => setCrossBurgerActive(!crossBurgerActive)}>
+        <CrossBurger active={crossBurgerActive}/>
+      </FlexItem>
+      <FlexItem width={6} height={6} cursor="pointer" onClick={() => setFeedIconActive(!feedIconActive)}>
+        <FeedIcon active={feedIconActive}/>
       </FlexItem>
     </Flex>
   </BlockContent>
@@ -95,8 +98,11 @@
       <FlexItem width={16} height={6} mr={2}>
         <PaymentSecurityIcon name="visa-verified"/>
       </FlexItem>
-      <FlexItem width={16} height={6}>
+      <FlexItem width={16} height={6} mr={2}>
         <PaymentSecurityIcon name="mastercard-id-check"/>
+      </FlexItem>
+      <FlexItem width={16} height={6}>
+        <PaymentSecurityIcon name="apple-pay"/>
       </FlexItem>
     </Flex>
     <Flex mt={6}>
@@ -109,8 +115,28 @@
       <FlexItem width={16} height={6} mr={2}>
         <PaymentSecurityIcon name="visa-verified" gray/>
       </FlexItem>
-      <FlexItem width={16} height={6}>
+      <FlexItem width={16} height={6} mr={2}>
         <PaymentSecurityIcon name="mastercard-id-check" gray/>
+      </FlexItem>
+      <FlexItem width={16} height={6}>
+        <PaymentSecurityIcon name="apple-pay" gray/>
+      </FlexItem>
+    </Flex>
+    <Flex mt={6}>
+      <FlexItem width={16} height={6} mr={2}>
+        <PaymentSecurityIcon name="pci-dss" stub/>
+      </FlexItem>
+      <FlexItem width={16} height={6} mr={2}>
+        <PaymentSecurityIcon name="mir-accept" stub/>
+      </FlexItem>
+      <FlexItem width={16} height={6} mr={2}>
+        <PaymentSecurityIcon name="visa-verified" stub/>
+      </FlexItem>
+      <FlexItem width={16} height={6} mr={2}>
+        <PaymentSecurityIcon name="mastercard-id-check" stub/>
+      </FlexItem>
+      <FlexItem width={16} height={6}>
+        <PaymentSecurityIcon name="apple-pay" stub/>
       </FlexItem>
     </Flex>
   </BlockContent>
@@ -123,11 +149,14 @@
 <Block>
   <BlockContent>
     <Flex>
-      <FlexItem width={36} height={11} mr={6}>
+      <FlexItem width={37} height={11} mr={6}>
         <MobileAppIcon name="google"/>
       </FlexItem>
-      <FlexItem width={36} height={11}>
+      <FlexItem width={37} height={11}>
         <MobileAppIcon name="apple"/>
+      </FlexItem>
+      <FlexItem width={37} height={11}>
+        <MobileAppIcon name="huawei"/>
       </FlexItem>
     </Flex>
   </BlockContent>

@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {LinkControl, Lnk, Typo, Stub} from '@qiwi/pijma-core'
+import {styled, LinkControl, Lnk, Typo, Stub, TypoOptions} from '@qiwi/pijma-core'
 
 export interface LinkProps {
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
@@ -16,6 +16,7 @@ export interface LinkProps {
   size?: 's' | 'm' | 'l'
   bold?: boolean
   stub?: boolean
+  inverse?: boolean
 }
 
 const LinkSize: { [size in NonNullable<LinkProps['size']>]: number } = {
@@ -54,7 +55,7 @@ const LinkHeightCompact: { [size in NonNullable<LinkProps['size']>]: number } = 
   l: 7,
 }
 
-const TypoLink = Typo.withComponent(Lnk)
+const TypoLink = styled(Typo, TypoOptions)().withComponent(Lnk)
 
 export const Link: FC<LinkProps> = (props) => (
   props.stub ? (
@@ -88,7 +89,7 @@ export const Link: FC<LinkProps> = (props) => (
           onMouseLeave={renderProps.onMouseLeave}
           onMouseUp={renderProps.onMouseUp}
           onMouseDown={renderProps.onMouseDown}
-          color={renderProps.hover || renderProps.focus ? '#FF8C00' : '#0055BB'}
+          color={renderProps.hover || renderProps.focus ? props.inverse ? '#CCC' : '#FF8C00' : props.inverse ? '#FFF' : '#0055BB'}
           transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
           cursor="pointer"
           decoration="none"

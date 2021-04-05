@@ -1,4 +1,4 @@
-import styled from '../styled'
+import styled, {StyledOptions} from '../styled'
 
 import {Box, BoxNonProps, BoxProps} from './Box'
 
@@ -12,9 +12,11 @@ export interface FlexProps extends BoxProps {
 
 export const FlexNonProps = BoxNonProps.concat(['wrap', 'direction', 'align', 'justify'])
 
-export const Flex = styled(Box, {
+export const FlexOptions: StyledOptions = {
   shouldForwardProp: (prop) => !FlexNonProps.includes(prop),
-})<FlexProps>(({wrap, direction, align, justify}) => ({
+}
+
+export const Flex = styled(Box, FlexOptions)<FlexProps>(({wrap, direction, align, justify}) => ({
   flexWrap: wrap,
   flexDirection: direction,
   alignItems: align,

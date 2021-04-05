@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {LinkControl, Lnk, FlexItem, Flex, Icon} from '@qiwi/pijma-core'
+import {styled, LinkControl, Lnk, FlexItem, Flex, Icon, FlexOptions} from '@qiwi/pijma-core'
 
 import {Text} from '../typography'
 
@@ -21,7 +21,7 @@ export interface FileLinkProps {
   title?: string
 }
 
-const FlexLink = Flex.withComponent(Lnk)
+const FlexLink = styled(Flex, FlexOptions)().withComponent(Lnk)
 
 export const FileLink: FC<FileLinkProps> = (props) => (
   <LinkControl

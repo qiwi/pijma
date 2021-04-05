@@ -9,6 +9,7 @@ import {
   Pos,
   Box,
   Card,
+  CardOptions,
   Spacer,
   styled,
 } from '@qiwi/pijma-core'
@@ -21,7 +22,7 @@ import {InputModal} from '../input-modal'
 import ContentSuggestProps from './ContentSuggestProps'
 import ContentSuggestOptionModel from './ContentSuggestOptionModel'
 
-const CardItem = styled(Card)().withComponent(MenuItem)
+const CardItem = styled(Card, CardOptions)().withComponent(MenuItem)
 
 export const ContentSuggest = <V extends {}>({
   equals = (a: V, b: V) => a === b,
@@ -86,7 +87,7 @@ export const ContentSuggest = <V extends {}>({
               onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onModalItemKeyDown}
               onBlur={renderProps.onModalInputBlur}
               onSubmit={renderProps.onSearchClick}
-              onShow={renderProps.onShowClick}
+              onShow={renderProps.onShow}
               onHide={renderProps.onHide}
               onEscape={renderProps.onEscapeInputModal}
               onBack={renderProps.onBack}
@@ -168,3 +169,5 @@ export const ContentSuggest = <V extends {}>({
 ContentSuggest.defaultProps = {
   equals: (a: any, b: any) => a === b,
 }
+
+ContentSuggest.displayName = 'ContentSuggest'

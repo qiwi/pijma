@@ -131,14 +131,18 @@ const countries = [
     mask: '+996dddddddddddd',
   },
 ];
+
+const [phone, setPhone] = React.useState(undefined);
+const [code, setCode] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <Box width={64}>
       <PhoneField
         countries={countries}
-        value={state.phone}
-        action={state.code ? `Код страны: ${state.code}` : undefined}
-        onChange={(phone, code) => setState({phone, code})}
+        value={phone}
+        action={code ? `Код страны: ${code}` : undefined}
+        onChange={(phone, code) => { setPhone(phone); setCode(code) }}
       />
     </Box>
   </BlockContent>
@@ -156,7 +160,7 @@ const countries = [
         title="if you need title stub put any corrent content here"
         help="if you need help stub put any corrent content here"
         hint="if you need hint stub put any corrent content here"
-        onChange={(phone, code) => setState({phone, code})}
+        onChange={(phone, code) => { setPhone(phone); setCode(code) }}
         value=""
       />
     </Box>

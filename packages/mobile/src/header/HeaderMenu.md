@@ -1,40 +1,43 @@
 ```jsx
-initialState = {showMenu: false};
+const [showMenu, setShowMenu] = React.useState(false);
 
 <React.Fragment>
+<Spacer size="l">
   <Button
     kind="simple"
     size="normal"
     type="button"
     text="Показать меню"
-    onClick={() => setState({showMenu: true})}
+    onClick={() => setShowMenu(true)}
   />
+</Spacer>
   <HeaderMenu
-    show={state.showMenu}
+    show={showMenu}
     from="top"
     children={(
       <Striper>
         <MenuContainer>
           <MenuLink
-            text="Components"
+            title="Components"
             notes="List of pijma components"
             submenu
           />
           <MenuLink
-            text="link"
+            title="link"
             notes="with notes"
             href="https://qiwi.com"
           />
           <MenuLink
-            text="link"
+            title="link"
             href="https://qiwi.com"
+            attention
           />
         </MenuContainer>
         <MenuContainer>
           <MenuLink
-            text="Закрыть меню"
+            title="Закрыть меню"
             href="https://qiwi.com"
-            onClick={() => setState({showMenu: false})}
+            onClick={() => setShowMenu(false)}
           />
         </MenuContainer>
       </Striper>
@@ -42,3 +45,4 @@ initialState = {showMenu: false};
   />
 </React.Fragment>
 ```
+

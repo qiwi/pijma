@@ -1,4 +1,4 @@
-import React, {createRef, FunctionComponent, RefObject} from 'react'
+import React, {FunctionComponent} from 'react'
 
 import {
   PhoneFieldControl,
@@ -15,9 +15,7 @@ import {
 
 import {Paragraph} from '../typography'
 import {DropDown} from '../drop-down'
-import PhoneFieldProps from './PhoneFieldProps'
-
-const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
+import {PhoneFieldProps} from './PhoneFieldProps'
 
 export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
   tabIndex = 0,
@@ -47,7 +45,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
           count={props.countries.length}
           onSelect={renderProps.onSelectCountry}
           children={(menuRenderProps) => (
-            <Pos type="relative" ref={dropDownContainerRef}>
+            <Pos type="relative" ref={renderProps.containerRef}>
               <InputField
                 title={props.title}
                 active={renderProps.focused || !!props.value || !!props.placeholder}
@@ -70,7 +68,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                     onChange={renderProps.onChange}
                     onFocus={renderProps.onFocus}
                     onBlur={renderProps.onBlur}
-                    onKeyDown={menuRenderProps.onKeyDown}
+                    onKeyDown={renderProps.showCountries ? menuRenderProps.onKeyDown : undefined}
                   />
                 )}
                 hint={props.hint}
@@ -91,7 +89,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
               />
               <DropDown
                 offset={4}
-                container={dropDownContainerRef.current}
+                container={renderProps.containerRef.current}
                 target={renderProps.inputRef.current!}
                 show={renderProps.showCountries}
                 onHide={renderProps.onCountriesHide}

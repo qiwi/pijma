@@ -1,25 +1,25 @@
-import React, {createRef, FunctionComponent, RefObject} from 'react'
+import React, {FunctionComponent} from 'react'
 
 import {
+  styled,
   PhoneFieldControl,
-  InputField,
+  MenuControl,
   BasicInput,
   Box,
   Pos,
   Card,
+  CardOptions,
   Flex,
   FlexItem,
+  InputField,
   Flag,
-  MenuControl,
 } from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
 import {DropUp} from '../drop-up'
-import PhoneFieldProps from './PhoneFieldProps'
+import {PhoneFieldProps} from './PhoneFieldProps'
 
-const dropDownContainerRef: RefObject<HTMLDivElement> = createRef()
-
-const PosCard = Card.withComponent(Pos)
+const PosCard = styled(Card, CardOptions)().withComponent(Pos)
 
 export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
   tabIndex = 0,
@@ -48,7 +48,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
           count={props.countries.length}
           onSelect={renderProps.onSelectCountry}
           children={(menuRenderProps) => (
-            <Pos type="relative" ref={dropDownContainerRef}>
+            <Pos type="relative" ref={renderProps.containerRef}>
               <InputField
                 title={props.title}
                 active={renderProps.focused || !!props.value || !!props.placeholder}
@@ -71,7 +71,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                     onChange={renderProps.onChange}
                     onFocus={renderProps.onFocus}
                     onBlur={renderProps.onBlur}
-                    onKeyDown={menuRenderProps.onKeyDown}
+                    onKeyDown={renderProps.showCountries ? menuRenderProps.onKeyDown : undefined}
                   />
                 )}
                 hint={props.hint}

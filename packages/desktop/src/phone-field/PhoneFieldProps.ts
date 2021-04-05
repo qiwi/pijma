@@ -2,7 +2,7 @@ import {ReactNode} from 'react'
 
 import {PhoneFieldCountry, FlagProps} from '@qiwi/pijma-core'
 
-export default interface PhoneFieldProps {
+export interface PhoneFieldProps {
   value: string
   countries: PhoneFieldCountry[]
   code?: FlagProps['code']

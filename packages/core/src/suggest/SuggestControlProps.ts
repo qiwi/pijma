@@ -33,6 +33,7 @@ export default interface SuggestControlProps<O extends SuggestOptionModel<V>, V>
     selected: number | undefined
     show: boolean
     inputRef: RefObject<HTMLInputElement>
+    containerRef: RefObject<HTMLDivElement>
     items: O[]
     onShowFocus?: React.FocusEventHandler
     onInputFocus?: React.FocusEventHandler
@@ -50,6 +51,7 @@ export default interface SuggestControlProps<O extends SuggestOptionModel<V>, V>
     onItemSelect: (index: number) => void
     onTotalClick: () => void
     onEmptyClick: () => void
+    onShow: () => void
     onHide: () => void
     onEscapeInputModal?: () => void
   }>
