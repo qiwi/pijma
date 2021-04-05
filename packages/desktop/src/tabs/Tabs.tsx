@@ -8,7 +8,7 @@ import {
   IconProps,
   TabBorder,
   styled,
-  FlexOptions
+  FlexOptions,
 } from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
@@ -74,7 +74,7 @@ export const Tabs: FC<TabsProps> = ({
           />
         </FlexOverflow>
         <FlexItem mt={4}>
-            <Paragraph stub/>
+          <Paragraph stub/>
         </FlexItem>
       </Flex>
     ) : (
