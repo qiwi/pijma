@@ -1,4 +1,4 @@
-import React, {forwardRef, Ref} from 'react'
+import React, {forwardRef, Ref, RefObject} from 'react'
 
 import {styled, LinkControl, Lnk, Flex, Pos, Card, LinkControlProps, Typo, PosOptions} from '@qiwi/pijma-core'
 
@@ -33,7 +33,7 @@ export const HeaderMenuItem = forwardRef<HTMLAnchorElement, HeaderMenuItemProps>
     children={renderProps => (
       <PosLink
         as={props.href ? 'a' : 'div'}
-        ref={ref as any}
+        ref={ref as string & RefObject<HTMLAnchorElement>}
         height={1}
         type="relative"
         display="block"

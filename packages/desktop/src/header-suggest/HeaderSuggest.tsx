@@ -1,4 +1,4 @@
-import React, {Fragment, FunctionComponent} from 'react'
+import React, {Fragment, FunctionComponent, ChangeEventHandler} from 'react'
 
 import {
   Image,
@@ -121,7 +121,7 @@ export const HeaderSuggest = <V extends {}>({
                             placeholder={placeholder}
                             placeholderSize={5}
                             placeholderWeight={300}
-                            onChange={renderProps.onRequest as any}
+                            onChange={renderProps.onRequest as ChangeEventHandler<EventTarget>}
                             onBlur={renderProps.onModalInputBlur}
                             onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onModalItemKeyDown}
                             onFocus={renderProps.onShowFocus}
