@@ -14,7 +14,7 @@ export interface PosProps extends BoxProps {
 
 export const PosNonProps = BoxNonProps.concat(['type', 'zIndex', 'top', 'right', 'bottom', 'left'])
 
-export const PosOptions: StyledOptions<Record<string, any>> = {
+export const PosOptions: StyledOptions = {
   shouldForwardProp: (prop) => !PosNonProps.includes(prop as string),
 }
 

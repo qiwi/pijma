@@ -33,7 +33,7 @@ export const TextAreaNonProps = [
   'placeholderSpacing',
 ].concat(CardNonProps)
 
-const TextAreaOptions: StyledOptions<Record<string, any>> = {
+const TextAreaOptions: StyledOptions = {
   shouldForwardProp: (prop) => !TextAreaNonProps.includes(prop as string),
 }
 

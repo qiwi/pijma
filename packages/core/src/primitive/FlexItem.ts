@@ -13,7 +13,7 @@ export interface FlexItemProps extends BoxProps {
 
 export const FlexItemNonProps = BoxNonProps.concat(['basis', 'grow', 'shrink', 'align', 'justify'])
 
-export const FlexItemOptions: StyledOptions<Record<string, any>> = {
+export const FlexItemOptions: StyledOptions = {
   shouldForwardProp: (prop) => !FlexItemNonProps.includes(prop as string),
 }
 

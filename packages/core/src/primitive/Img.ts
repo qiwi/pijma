@@ -21,7 +21,7 @@ export const ImgNonProps = [
   'height', 'minHeight', 'maxHeight',
 ]
 
-export const ImgOptions: StyledOptions<Record<string, any>> = {
+export const ImgOptions: StyledOptions = {
   shouldForwardProp: (prop) => !ImgNonProps.includes(prop as string),
 }
 

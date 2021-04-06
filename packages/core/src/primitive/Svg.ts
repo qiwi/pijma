@@ -13,7 +13,7 @@ interface SvgProps {
 
 export const SvgNonProps = ['width', 'height', 'animation', 'transition', 'transform', 'transformOrigin']
 
-export const SvgOptions: StyledOptions<Record<string, any>> = {
+export const SvgOptions: StyledOptions = {
   shouldForwardProp: (prop) => !SvgNonProps.includes(prop as string),
 }
 
@@ -39,7 +39,7 @@ interface SvgItemProps {
 
 export const SvgItemNonProps = ['animation', 'transition', 'transform', 'transformOrigin']
 
-export const SvgItemOptions: StyledOptions<Record<string, any>> = {
+export const SvgItemOptions: StyledOptions = {
   shouldForwardProp: (prop) => !SvgItemNonProps.includes(prop as string),
 }
 
