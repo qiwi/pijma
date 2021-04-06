@@ -31,7 +31,7 @@ export interface BlockTabsProps {
   pt?: Value
   pb?: Value
   stub?: boolean
-  onChange?: () => void
+  onChange?: (selected: number) => void
 }
 
 const BlockTabsIndent: Record<NonNullable<BlockTabsProps['indent']>, [Value, Value, Value, Value]> = {
