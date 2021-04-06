@@ -1,5 +1,5 @@
 import React, {Children, FC} from 'react'
-import MarkdownComponent from 'markdown-to-jsx'
+import MarkdownComponent, {MarkdownOptions} from 'markdown-to-jsx'
 import {Paragraph, Heading, Text} from '../typography'
 import {Link} from '../link'
 import {List} from '../list'
@@ -8,6 +8,7 @@ import {styled, Box, Image} from '@qiwi/pijma-core'
 export interface MarkdownProps {
   size?: 's' | 'm' | 'l'
   children: string
+  overrides?: Record<string, FC<any>>
 }
 
 const MarkdownBox = styled(Box)({
@@ -127,7 +128,7 @@ const ol: FC<NumericListProps> = ({size, start, children}) => (
   </MarkdownBox>
 )
 
-const overrides: {[tag: string]: FC<any>} = {
+const defaultOverrides: MarkdownProps['overrides'] = {
   p,
   h1,
   h2,
@@ -143,21 +144,24 @@ const overrides: {[tag: string]: FC<any>} = {
   img,
 }
 
-export const Markdown: FC<MarkdownProps> = ({size = 'm', children}) => (
-  <MarkdownComponent
-    children={children}
-    options={{
-      overrides: Object.keys(overrides).reduce((prev, tag) => ({
-        ...prev,
-        ...{
-          [tag]: {
-            component: overrides[tag],
-            props: {
-              size,
+export const Markdown: FC<MarkdownProps> = ({size = 'm', children, overrides = {}}) => {
+  const allOverrides = {...defaultOverrides, ...overrides}
+  return (
+    <MarkdownComponent
+      children={children}
+      options={{
+        overrides: Object.keys(allOverrides).reduce<MarkdownOptions['overrides']>((prev, tag) => ({
+          ...prev,
+          ...{
+            [tag]: {
+              component: allOverrides[tag],
+              props: {
+                size,
+              },
             },
           },
-        },
-      }), {}),
-    }}
-  />
-)
+        }), {}),
+      }}
+    />
+  )
+}
