@@ -15,7 +15,7 @@ export interface TextAreaProps extends CardProps {
   placeholderWeight?: number
   placeholderColor?: string
   placeholderTransform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
-  placeholderSpacing?: number
+  placeholderSpacing?: number,
 }
 
 export const TextAreaNonProps = [
@@ -33,8 +33,8 @@ export const TextAreaNonProps = [
   'placeholderSpacing',
 ].concat(CardNonProps)
 
-const TextAreaOptions: StyledOptions = {
-  shouldForwardProp: (prop) => !TextAreaNonProps.includes(prop),
+const TextAreaOptions: StyledOptions<any> = {
+  shouldForwardProp: (prop) => !TextAreaNonProps.includes(prop as string),
 }
 
 export const TextArea = styled(Card, TextAreaOptions)<TextAreaProps>(({theme, ...props}) => ({

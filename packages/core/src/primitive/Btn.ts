@@ -7,8 +7,8 @@ export interface BtnProps extends CardProps {
 
 export const BtnNonProps = CardNonProps
 
-export const BtnOptions: StyledOptions = {
-  shouldForwardProp: (prop) => !BtnNonProps.includes(prop),
+export const BtnOptions: StyledOptions<any> = {
+  shouldForwardProp: (prop: any) => !BtnNonProps.includes(prop as string),
 }
 
 export const Btn = styled(Card, BtnOptions)<BtnProps>().withComponent('button')

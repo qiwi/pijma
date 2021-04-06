@@ -20,8 +20,8 @@ export interface CardProps extends BoxProps {
 
 export const CardNonProps = ['bg', 'b', 'bt', 'br', 'bb', 'bl', 'r', 'rtr', 'rtl', 'btr', 'btl', 's'].concat(BoxNonProps)
 
-export const CardOptions: StyledOptions = {
-  shouldForwardProp: (prop) => !CardNonProps.includes(prop),
+export const CardOptions: StyledOptions<any> = {
+  shouldForwardProp: (prop) => !CardNonProps.includes(prop as string),
 }
 
 const customScroll = (() => {

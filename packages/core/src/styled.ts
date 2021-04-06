@@ -1,9 +1,15 @@
-import {Global, CacheProvider, jsx} from '@emotion/core'
-import styled, {CreateStyled, CSSObject, StyledOptions} from '@emotion/styled'
-import {injectGlobal, keyframes, cache, css, cx, flush} from 'emotion'
-import {ThemeProvider} from 'emotion-theming'
+import styled, {CSSObject, StyledOptions} from '@emotion/styled'
+import {injectGlobal, keyframes, cache, css, cx, flush} from '@emotion/css'
+import {ThemeProvider, jsx, CacheProvider, Global} from '@emotion/react'
+import {Theme as T} from './Theme'
 
-import Theme from './Theme'
+// https://deploy-preview-1600--emotion.netlify.app/docs/typescript#define-a-theme
+// https://github.com/emotion-js/emotion/issues/1757#issuecomment-617281471
+declare module '@emotion/react' {
+  export interface Theme extends T {}
+}
+
+export * from './Theme'
 
 export {
   cache,
@@ -20,4 +26,4 @@ export {
   StyledOptions,
 }
 
-export default styled as CreateStyled<Theme>
+export default styled

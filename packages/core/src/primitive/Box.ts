@@ -48,8 +48,12 @@ export const BoxNonProps = [
   'transform', 'transformOrigin',
 ]
 
-export const BoxOptions: StyledOptions = {
-  shouldForwardProp: (prop) => !BoxNonProps.includes(prop),
+export interface BoxOptions {
+  shouldForwardProp: (prop: string) => boolean
+}
+
+export const BoxOptions: StyledOptions<BoxOptions> = {
+  shouldForwardProp: (prop) => !BoxNonProps.includes(prop as string),
 }
 
 export const Box = styled('div', BoxOptions)<BoxProps>(({theme, ...props}) => ({

@@ -33,7 +33,7 @@ export const HeaderMenuItem = forwardRef<HTMLAnchorElement, HeaderMenuItemProps>
     children={renderProps => (
       <PosLink
         as={props.href ? 'a' : 'div'}
-        ref={ref}
+        ref={ref as any}
         height={1}
         type="relative"
         display="block"

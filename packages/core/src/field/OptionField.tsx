@@ -16,7 +16,7 @@ export interface OptionFieldProps {
 }
 
 const Input = styled(Box, {
-  shouldForwardProp: (prop) => !['autoFocus'].includes(prop),
+  shouldForwardProp: (prop) => !['autoFocus'].includes(prop as string),
 })<BoxProps & Pick<OptionFieldProps, 'autoFocus'>>()
 
 export const OptionField: React.FunctionComponent<OptionFieldProps> = (props) => (

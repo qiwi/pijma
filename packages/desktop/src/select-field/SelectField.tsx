@@ -1,5 +1,5 @@
 import React, {FunctionComponent, ReactNode, FC} from 'react'
-import {css} from 'emotion'
+import {css} from '@emotion/css'
 
 import {
   SelectInput,

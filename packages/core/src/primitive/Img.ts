@@ -21,8 +21,8 @@ export const ImgNonProps = [
   'height', 'minHeight', 'maxHeight',
 ]
 
-export const ImgOptions: StyledOptions = {
-  shouldForwardProp: (prop) => !ImgNonProps.includes(prop),
+export const ImgOptions: StyledOptions<any> = {
+  shouldForwardProp: (prop) => !ImgNonProps.includes(prop as string),
 }
 
 export const Img = styled('img', ImgOptions)<ImgProps>(({theme, ...props}) => ({
