@@ -102,7 +102,8 @@ export interface IconProps {
     'withdraw' |
     'youtube'
   size?: Value
-  color?: string
+  color?: string,
+  css?: Record<string, any>
 }
 
 export const IconPaths: { [name in IconProps['name']]: string } = {

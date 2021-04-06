@@ -7,7 +7,7 @@ export interface FrmProps extends BoxProps {
 
 export const FrmNonProps = BoxNonProps
 
-export const FrmOptions: StyledOptions<any> = {
+export const FrmOptions: StyledOptions<Record<string, any>> = {
   shouldForwardProp: (prop) => !FrmNonProps.includes(prop as string),
 }
 

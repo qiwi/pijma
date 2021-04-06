@@ -29,7 +29,7 @@ export const InputNonProps = [
   'placeholderSize', 'placeholderWeight', 'placeholderColor', 'placeholderTransform', 'placeholderSpacing',
 ].concat(CardNonProps)
 
-export const InputOptions: StyledOptions<any> = {
+export const InputOptions: StyledOptions<Record<string, any>> = {
   shouldForwardProp: (prop) => !InputNonProps.includes(prop as string),
 }
 

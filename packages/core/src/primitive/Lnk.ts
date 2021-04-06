@@ -8,7 +8,7 @@ export interface LnkProps {
 
 export const LnkNonProps = ['as', 'css', 'cursor']
 
-export const LnkOptions: StyledOptions<any> = {
+export const LnkOptions: StyledOptions<Record<string, any>> = {
   shouldForwardProp: (prop) => !LnkNonProps.includes(prop as string),
 }
 
