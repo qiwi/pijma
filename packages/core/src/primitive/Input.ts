@@ -30,7 +30,7 @@ export const InputNonProps = [
 ].concat(CardNonProps)
 
 export const InputOptions: StyledOptions = {
-  shouldForwardProp: (prop) => !InputNonProps.includes(prop as string),
+  shouldForwardProp: (prop) => !InputNonProps.includes(prop),
 }
 
 export const Input = styled(Card, InputOptions)<InputProps>(({theme, ...props}) => ({

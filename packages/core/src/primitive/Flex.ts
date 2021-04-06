@@ -13,7 +13,7 @@ export interface FlexProps extends BoxProps {
 export const FlexNonProps = BoxNonProps.concat(['wrap', 'direction', 'align', 'justify'])
 
 export const FlexOptions: StyledOptions = {
-  shouldForwardProp: (prop) => !FlexNonProps.includes(prop as string),
+  shouldForwardProp: (prop) => !FlexNonProps.includes(prop),
 }
 
 export const Flex = styled(Box, FlexOptions)<FlexProps>(({wrap, direction, align, justify}) => ({

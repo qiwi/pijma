@@ -23,7 +23,7 @@ export interface TypoProps {
 export const TypoNonProps = ['as', 'css', 'innerRef', 'ref', 'display', 'size', 'height', 'weight', 'color', 'transform', 'nowrap', 'spacing', 'transition', 'decoration', 'cursor', 'align', 'clamp']
 
 export const TypoOptions: StyledOptions = {
-  shouldForwardProp: (prop) => !TypoNonProps.includes(prop as string),
+  shouldForwardProp: (prop) => !TypoNonProps.includes(prop),
 }
 
 export const Typo = styled('div', TypoOptions)<TypoProps>(({theme, ...props}) => ({

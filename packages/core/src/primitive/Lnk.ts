@@ -9,7 +9,7 @@ export interface LnkProps {
 export const LnkNonProps = ['as', 'css', 'cursor']
 
 export const LnkOptions: StyledOptions = {
-  shouldForwardProp: (prop) => !LnkNonProps.includes(prop as string),
+  shouldForwardProp: (prop) => !LnkNonProps.includes(prop),
 }
 
 export const Lnk = styled('a', LnkOptions)<LnkProps>(({

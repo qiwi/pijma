@@ -8,7 +8,7 @@ export interface FrmProps extends BoxProps {
 export const FrmNonProps = BoxNonProps
 
 export const FrmOptions: StyledOptions = {
-  shouldForwardProp: (prop) => !FrmNonProps.includes(prop as string),
+  shouldForwardProp: (prop) => !FrmNonProps.includes(prop),
 }
 
 export const Frm = styled(Box, FrmOptions)<FrmProps>().withComponent('form')

@@ -12,7 +12,9 @@ declare module '@emotion/react' {
 export * from './Theme'
 
 // https://github.com/emotion-js/emotion/pull/2333/
-export interface StyledOptions extends _StyledOptions<Record<PropertyKey, any>> {}
+export interface StyledOptions extends _StyledOptions<Record<PropertyKey, any>> {
+  shouldForwardProp: (prop: string) => boolean
+}
 
 export {
   cache,

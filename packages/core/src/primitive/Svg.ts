@@ -14,7 +14,7 @@ interface SvgProps {
 export const SvgNonProps = ['width', 'height', 'animation', 'transition', 'transform', 'transformOrigin']
 
 export const SvgOptions: StyledOptions = {
-  shouldForwardProp: (prop) => !SvgNonProps.includes(prop as string),
+  shouldForwardProp: (prop) => !SvgNonProps.includes(prop),
 }
 
 export const Svg = styled('svg', SvgOptions)<SvgProps>(({theme, ...props}) => ({
@@ -40,7 +40,7 @@ interface SvgItemProps {
 export const SvgItemNonProps = ['animation', 'transition', 'transform', 'transformOrigin']
 
 export const SvgItemOptions: StyledOptions = {
-  shouldForwardProp: (prop) => !SvgItemNonProps.includes(prop as string),
+  shouldForwardProp: (prop) => !SvgItemNonProps.includes(prop),
 }
 
 const SvgItem = (tag: keyof JSX.IntrinsicElements) => (

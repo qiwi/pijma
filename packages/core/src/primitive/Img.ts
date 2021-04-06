@@ -22,7 +22,7 @@ export const ImgNonProps = [
 ]
 
 export const ImgOptions: StyledOptions = {
-  shouldForwardProp: (prop) => !ImgNonProps.includes(prop as string),
+  shouldForwardProp: (prop) => !ImgNonProps.includes(prop),
 }
 
 export const Img = styled('img', ImgOptions)<ImgProps>(({theme, ...props}) => ({

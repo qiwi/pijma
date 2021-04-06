@@ -74,7 +74,7 @@ const contentTransition: { [direction in HeaderMenuProps['from']]: FC<SimpleTran
 }
 
 const HeaderMenuModal = styled(Modal, {
-  shouldForwardProp: (prop) => !['zIndex'].includes(prop as string),
+  shouldForwardProp: (prop) => !['zIndex'].includes(prop),
 })<HeaderMenuModalProps>(({theme, ...props}) => ({
   position: 'fixed',
   zIndex: props.zIndex,

@@ -34,7 +34,7 @@ export const TextAreaNonProps = [
 ].concat(CardNonProps)
 
 const TextAreaOptions: StyledOptions = {
-  shouldForwardProp: (prop) => !TextAreaNonProps.includes(prop as string),
+  shouldForwardProp: (prop) => !TextAreaNonProps.includes(prop),
 }
 
 export const TextArea = styled(Card, TextAreaOptions)<TextAreaProps>(({theme, ...props}) => ({
