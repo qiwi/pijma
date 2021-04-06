@@ -24,7 +24,7 @@ export interface TabsProps {
   vertical?: boolean
   centered?: boolean
   stub?: boolean
-  onChange?: () => void
+  onChange?: (selected: number) => void
 }
 
 const FlexOverflow = styled(Flex, FlexOptions)({
