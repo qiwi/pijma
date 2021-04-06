@@ -1,3 +1,10 @@
+# @qiwi/pijma-core [1.129.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.128.0...@qiwi/pijma-core@1.129.0) (2021-04-06)
+
+
+### Features
+
+* **core:** update museo ([#407](https://github.com/qiwi/pijma/issues/407)) ([9e90367](https://github.com/qiwi/pijma/commit/9e90367dfffa8f4a22f95d4cd811830918c375ed))
+
 # @qiwi/pijma-core [1.128.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.127.2...@qiwi/pijma-core@1.128.0) (2021-04-05)
 
 
