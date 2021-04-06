@@ -20,7 +20,7 @@ export interface BasicInputProps {
   focused: boolean
   mask?: Mask
   pipe?: Pipe
-  onChange?: ChangeEventHandler
+  onChange?: ChangeEventHandler<EventTarget>
   onFocus?: FocusEventHandler
   onBlur?: FocusEventHandler
   onKeyDown?: KeyboardEventHandler
@@ -62,7 +62,7 @@ export const BasicInput = forwardRef<HTMLInputElement | MaskedInput, BasicInputP
     props.mask ? (
       <MaskInput
         {...common}
-        ref={ref as RefObject<MaskedInput>}
+        ref={ref as string & RefObject<MaskedInput>}
         type={props.type === undefined ? (isMaskDigital(props.mask) ? 'tel' : 'text') : (['text', 'password', 'tel'].includes(props.type) ? props.type : 'text')}
         mask={props.mask}
         pipe={props.pipe}

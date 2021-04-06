@@ -6,7 +6,7 @@ import React, {
   RefObject,
   FocusEventHandler,
 } from 'react'
-import {css} from 'emotion'
+import {css} from '@emotion/css'
 
 import {
   styled,
@@ -54,7 +54,7 @@ interface InputModalProps {
   inputRef?: RefObject<HTMLInputElement>
   contentRef?: RefObject<HTMLDivElement>
   error?: boolean
-  onChange?: ChangeEventHandler
+  onChange?: ChangeEventHandler<EventTarget>
   onKeyDown?: KeyboardEventHandler
   onFocus?: FocusEventHandler
   onBlur?: FocusEventHandler

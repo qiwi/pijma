@@ -92,7 +92,7 @@ export interface DropUpProps {
 const FlexPosCardNonProps = FlexNonProps.concat(PosNonProps).concat(CardNonProps)
 
 const FlexPosCard = styled(Flex.withComponent(Pos).withComponent(Card), {
-  shouldForwardProp: (prop) => !FlexPosCardNonProps.includes(prop),
+  shouldForwardProp: (prop) => !FlexPosCardNonProps.includes(prop as string),
 })<PosProps & CardProps & FlexProps>()
 
 export const DropUp: FunctionComponent<DropUpProps> = (props) => (

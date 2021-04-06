@@ -20,7 +20,7 @@ export interface SelectInputProps {
   disabled?: boolean
   error: boolean
   focused: boolean
-  onChange?: ChangeEventHandler
+  onChange?: ChangeEventHandler<EventTarget>
   onFocus?: FocusEventHandler
   onBlur?: FocusEventHandler
   onKeyDown?: KeyboardEventHandler

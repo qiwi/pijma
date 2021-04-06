@@ -1,4 +1,4 @@
-export default interface Theme {
+export interface Theme {
   scale: number,
   font: {
     family: string
@@ -24,3 +24,5 @@ export default interface Theme {
     success: string
   }
 }
+
+export default Theme

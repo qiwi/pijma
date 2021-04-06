@@ -15,7 +15,7 @@ export interface TextAreaProps extends CardProps {
   placeholderWeight?: number
   placeholderColor?: string
   placeholderTransform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
-  placeholderSpacing?: number
+  placeholderSpacing?: number,
 }
 
 export const TextAreaNonProps = [

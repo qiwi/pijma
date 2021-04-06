@@ -1,5 +1,5 @@
 import React, {FunctionComponent, Fragment} from 'react'
-import {css} from 'emotion'
+import {css} from '@emotion/css'
 
 import {
   styled,
