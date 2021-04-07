@@ -1,7 +1,7 @@
 Чекбоксы — это элементы управления, которые позволяют выбрать несколько вариантов из списка. Используйте в одном списке не более 7 чекбоксов. Для остальных случаев применяйте выпадающие списки.
 
 ```jsx
-initialState = {values: ['selected']};
+const [values, setValues] = React.useState(['selected']);
 <Block>
   <BlockContent>
     <CheckboxField
@@ -24,15 +24,15 @@ initialState = {values: ['selected']};
         value: 'disabled',
         disabled: true,
       }]}
-      values={state.values}
-      onChange={(values) => setState({values})}
+      values={values}
+      onChange={(values) => setValues(values)}
     />
   </BlockContent>
 </Block>
 ```
 
 ```jsx
-initialState = {values: ['selected']};
+const [values, setValues] = React.useState(['selected']);
 <Block>
   <BlockContent>
     <CheckboxField
@@ -59,8 +59,8 @@ initialState = {values: ['selected']};
         value: 'disabled',
         disabled: true,
       }]}
-      values={state.values}
-      onChange={(values) => setState({values})}
+      values={values}
+      onChange={(values) => setValues(values)}
     />
   </BlockContent>
 </Block>

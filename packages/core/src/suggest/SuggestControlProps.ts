@@ -1,9 +1,9 @@
-import {RefObject} from 'react'
+import React, {RefObject} from 'react'
 import RenderChild from '../RenderChild'
 import SuggestOptionModel from './SuggestOptionModel'
 
-export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V> {
-  items: O[]
+export default interface SuggestControlProps<O extends SuggestOptionModel<V>, V> {
+  items?: O[]
   value?: V
   suggest?: string
   total?: {
@@ -26,26 +26,33 @@ export default interface SuggestControlProps <O extends SuggestOptionModel<V>, V
   onCancel?: () => void
   onFocus?: () => void
   onBlur?: () => void
-  onHide?: () => void
-  onSubmit?: (value: string) => void
+  onSubmit?: (value: string) => boolean
   children: RenderChild<{
     focused: boolean
     hovered: boolean
     selected: number | undefined
     show: boolean
     inputRef: RefObject<HTMLInputElement>
-    onFocus: React.FocusEventHandler
-    onBlur: React.FocusEventHandler
-    onSearchMouseDown: React.MouseEventHandler
+    containerRef: RefObject<HTMLDivElement>
+    items: O[]
+    onShowFocus?: React.FocusEventHandler
+    onInputFocus?: React.FocusEventHandler
+    onInputBlur?: React.FocusEventHandler
+    onShowClick?: React.MouseEventHandler
+    onModalInputBlur?: React.FocusEventHandler
     onSearchClick: React.MouseEventHandler
-    onMouseEnter: React.MouseEventHandler
-    onMouseLeave: React.MouseEventHandler
-    onKeyDown: React.KeyboardEventHandler
+    onBack?: React.MouseEventHandler
+    onInputMouseEnter: React.MouseEventHandler
+    onInputMouseLeave: React.MouseEventHandler
+    onItemKeyDown?: React.KeyboardEventHandler,
+    onModalItemKeyDown?: React.KeyboardEventHandler,
     onRequest: React.ChangeEventHandler
-    onResultMouseDown: React.MouseEventHandler
-    onSelect: (index: number) => void
+    onResultItemsMouseDown?: React.MouseEventHandler
+    onItemSelect: (index: number) => void
     onTotalClick: () => void
     onEmptyClick: () => void
+    onShow: () => void
     onHide: () => void
+    onEscapeInputModal?: () => void
   }>
 }

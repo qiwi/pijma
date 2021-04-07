@@ -22,6 +22,5 @@ export default interface ContentSuggestProps<O extends ContentSuggestOptionModel
   onFocus?: SuggestControlProps<O, V>['onFocus']
   onBlur?: SuggestControlProps<O, V>['onBlur']
   onSubmit?: SuggestControlProps<O, V>['onSubmit']
-  onHide?: SuggestControlProps<O, V>['onHide']
   equals?: SuggestControlProps<O, V>['equals']
 }

@@ -11,7 +11,9 @@ import {
   Flex,
   FlexItem,
   Card,
+  Box,
   OffsetScrollControl,
+  FlexOptions,
 } from '@qiwi/pijma-core'
 
 interface HeaderMenuProps {
@@ -19,6 +21,7 @@ interface HeaderMenuProps {
   zIndex?: number
   header?: ReactNode
   from: 'top' | 'right' | 'bottom' | 'left'
+  stub?: boolean
   onShow?: () => void
   onHide?: () => void
 }
@@ -85,43 +88,68 @@ HeaderMenuModal.defaultProps = {
   zIndex: 9999,
 }
 
-const FlexCard = Flex.withComponent(Card)
+const FlexCard = styled(Flex, FlexOptions)().withComponent(Card)
 
-export const HeaderMenu: FC<HeaderMenuProps> = ({show, zIndex, header, from, onShow, onHide, children}) => (
-  <HeaderMenuModal
-    autoFocus
-    show={show}
-    zIndex={zIndex}
-    onShow={onShow}
-    onHide={onHide}
-    transition={contentTransition[from]}
-    containerClassName={containerClassName}
-  >
-    <OffsetScrollControl
-      content={children}
-      top="8px"
-      children={(renderProps) => (
-        <FlexCard
-          display="flex"
-          direction="column"
-          bg="#fff"
-          width={1}
-          height={1}
-          s="0 8px 16px 0 rgba(0, 0, 0, 0.12)"
-        >
-          <FlexItem height={15} shrink={1}>
-            <Card
-              height={1}
-              s={renderProps.top ? '0 1px 2px 0 rgba(0, 0, 0, 0.12)' : undefined}
-              transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-              children={header}
-            />
-          </FlexItem>
-          <FlexItem grow={1} height={1}>
-            {renderProps.children}
-          </FlexItem>
-        </FlexCard>
-      )}
-    />
-  </HeaderMenuModal>
+export const HeaderMenu: FC<HeaderMenuProps> = ({show, zIndex, header, from, stub, onShow, onHide, children}) => (
+  stub ? (
+    <Box display="none">
+      <FlexCard
+        display="flex"
+        direction="column"
+        bg="#fff"
+        width={1}
+        height={1}
+        s="0 8px 16px 0 rgba(0, 0, 0, 0.12)"
+      >
+        <FlexItem height={15} shrink={1}>
+          <Card
+            height={1}
+            s="0 1px 2px 0 rgba(0, 0, 0, 0.12)"
+            transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+            children={header}
+          />
+        </FlexItem>
+        <FlexItem grow={1} height={1} minHeight={0}>
+          {children}
+        </FlexItem>
+      </FlexCard>
+    </Box>
+  ) : (
+    <HeaderMenuModal
+      autoFocus
+      show={show}
+      zIndex={zIndex}
+      onShow={onShow}
+      onHide={onHide}
+      transition={contentTransition[from]}
+      containerClassName={containerClassName}
+    >
+      <OffsetScrollControl
+        content={children}
+        top="8px"
+        children={(renderProps) => (
+          <FlexCard
+            display="flex"
+            direction="column"
+            bg="#fff"
+            width={1}
+            height={1}
+            s="0 8px 16px 0 rgba(0, 0, 0, 0.12)"
+          >
+            <FlexItem height={15} shrink={1}>
+              <Card
+                height={1}
+                s={renderProps.top ? '0 1px 2px 0 rgba(0, 0, 0, 0.12)' : undefined}
+                transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+                children={header}
+              />
+            </FlexItem>
+            <FlexItem grow={1} height={1} minHeight={0}>
+              {renderProps.children}
+            </FlexItem>
+          </FlexCard>
+        )}
+      />
+    </HeaderMenuModal>
+  )
 )

@@ -1,4 +1,4 @@
-import styled, {CSSObject} from '../styled'
+import styled, {CSSObject, StyledOptions} from '../styled'
 
 import {Card, CardProps, CardNonProps} from './Card'
 import {pxValue} from './Value'
@@ -29,9 +29,11 @@ export const InputNonProps = [
   'placeholderSize', 'placeholderWeight', 'placeholderColor', 'placeholderTransform', 'placeholderSpacing',
 ].concat(CardNonProps)
 
-export const Input = styled(Card.withComponent('input'), {
+export const InputOptions: StyledOptions = {
   shouldForwardProp: (prop) => !InputNonProps.includes(prop),
-})<InputProps>(({theme, ...props}) => ({
+}
+
+export const Input = styled(Card, InputOptions)<InputProps>(({theme, ...props}) => ({
   fontFamily: theme.font.family,
   fontSize: pxValue(props.valueSize, theme.scale),
   fontWeight: props.valueWeight,
@@ -41,6 +43,7 @@ export const Input = styled(Card.withComponent('input'), {
   textIndent: 0,
   letterSpacing: pxValue(props.valueSpacing),
   outline: 'none',
+  WebkitAppearance: 'none',
   MozAppearance: 'textfield',
   '&::placeholder': {
     fontSize: pxValue(props.placeholderSize, theme.scale),
@@ -65,4 +68,4 @@ export const Input = styled(Card.withComponent('input'), {
   },
   '&::-webkit-outer-spin-button': appearanceNone,
   '&::-webkit-inner-spin-button': appearanceNone,
-}))
+})).withComponent('input')

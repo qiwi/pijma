@@ -1,7 +1,7 @@
 #### ContentSuggest
 
 ```jsx
-const banks = [
+const bankList = [
   {
     value: {
       id: 1,
@@ -117,70 +117,77 @@ const banks = [
   },
 ];
 
-const initialState = {
-  suggest: '',
-  loading: false,
-  banks: [],
-  timer: undefined,
-  dialogText: undefined,
-};
+const [suggest, setSuggest] = React.useState('');
+const [loading, setLoading] = React.useState(false);
+const [banks, setBanks] = React.useState(undefined);
+const [timer, setTimer] = React.useState(undefined);
+const [dialogText, setDialogText] = React.useState(undefined);
+const [value, setValue] = React.useState(undefined);
+const [error, setError] = React.useState(undefined);
 
-const filterBanks = (title) => banks.filter(bank => {
+const filterBanks = (title) => bankList.filter(bank => {
   return title !== '' && bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1;
 });
 
 const getBanks = (suggest) => {
-  setState({loading: true});
-  clearTimeout(state.timer);
+  setLoading(true);
+  clearTimeout(timer);
   return new Promise((resolve, reject) => {
-    setState({timer: setTimeout(() => {
-      setState({loading: false});
+    setTimer(setTimeout(() => {
+      setLoading(false);
       resolve(filterBanks(suggest));
-    }, 1000)});
+    }, 1000));
   });
 };
 
 const onRequest = (suggest) => {
-  setState({suggest, error: suggest === ''});
-  getBanks(suggest).then((banks) => setState({banks}));
+  setSuggest(suggest);
+  setError(suggest === '');
+  getBanks(suggest).then((banks) => setBanks(banks));
 };
 
-const onCancel = () => setState(initialState);
+const onCancel = () => {
+  setSuggest('');
+  setLoading(false);
+  setBanks(undefined);
+  setTimer(undefined);
+  setDialogText(undefined);
+  setValue(undefined);
+  setError(undefined);
+};
 
 const onChange = (value) => {
   const {title} = getBankByValue(value);
-  setState({
-    value: value,
-    suggest: title,
-  });
-  setState({
-    dialogText: `Выбрано: ${title}`,
-  });
+  setValue(value);
+  setSuggest(title);
+  setBanks(undefined);
+  setDialogText(`Выбрано: ${title}`);
 };
 
 const onSubmit = (suggest) => {
-  setState({
-    dialogText: `Отправлено: ${suggest}`,
-  });
+  if (suggest.length < 1) {
+    setError(true)
+  } else {
+    setDialogText(`Отправлено: ${suggest}`);
+  }
+  return suggest.length >= 1
 };
 
-const hideDialog = () => setState({
-  dialogText: undefined,
-});
+const hideDialog = () => setDialogText(undefined);
 
 const equals = (a, b) => a.id === b.id;
 
-const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
+const getBankByValue = (value) => bankList.find(bank => equals(bank.value, value));
 
 <Block>
   <BlockContent>
     <Box width={64}>
       <ContentSuggest
-        value={state.value}
-        items={state.banks}
-        suggest={state.suggest}
-        loading={state.loading}
-        error={state.error}
+        value={value}
+        items={banks}
+        suggest={suggest}
+        loading={loading}
+        error={error}
         equals={equals}
         onCancel={onCancel}
         onSubmit={onSubmit}
@@ -189,14 +196,14 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
         total={{
           link: {
             text: 'Показать все',
-            suggest: state.suggest,
+            suggest: suggest,
           }
         }}
-        empty={state.error ? {
+        empty={error ? {
           text: 'Ошибка,',
           link: {
             text: 'попробуйте ещё раз',
-            suggest: state.suggest,
+            suggest: suggest,
           }
         } : {
           text: 'Ничего не найдено, попробуйте',
@@ -208,14 +215,14 @@ const getBankByValue = (value) => banks.find(bank => equals(bank.value, value));
       />
     </Box>
     <SimpleModal
-      show={state.dialogText !== undefined}
+      show={dialogText !== undefined}
       onHide={hideDialog}
       size="m"
       closable
       backdropClose
     >
       <Heading size="2">
-        {state.dialogText}
+        {dialogText}
       </Heading>
     </SimpleModal>
   </BlockContent>
