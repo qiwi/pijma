@@ -122,3 +122,16 @@
   </BlockContent>
 </Block>
 ```
+
+```jsx
+<Block>
+  <BlockContent>
+    <Details
+      size="s"
+      dots
+      children={[]}
+      stub
+    />
+  </BlockContent>
+</Block>
+```
