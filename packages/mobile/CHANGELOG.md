@@ -1,3 +1,10 @@
+## [1.128.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.2...@qiwi/pijma-mobile@1.128.3) (2021-04-07)
+
+
+### Bug Fixes
+
+* tabs stub ([#408](https://github.com/qiwi/pijma/issues/408)) ([637cfe7](https://github.com/qiwi/pijma/commit/637cfe76d4f1508c2b3bde90f0496c3441f14506))
+
 ## [1.128.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.1...@qiwi/pijma-mobile@1.128.2) (2021-04-06)
 
 ## @qiwi/pijma-mobile [1.128.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.0...@qiwi/pijma-mobile@1.128.1) (2021-04-06)
