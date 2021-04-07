@@ -30,7 +30,7 @@ export interface BlockTabsProps {
   indent?: 'm' | 'l'
   pt?: Value
   pb?: Value
-  stub?: boolean
+  stub?: boolean | boolean[]
   onChange?: (selected: number) => void
 }
 
@@ -76,16 +76,16 @@ export const BlockTabs: FC<BlockTabsProps> = ({
             overflow="auto"
             justify={centered ? 'space-between' : 'flex-start'}
           >
-            {[true, false, false].map((item, index) => (
+            {(Array.isArray(stub) ? stub : [true, true, true]).map((icon, index, arr) => (
               <TabHeader
                 key={index}
                 title="stub"
-                indent={index === items.length - 1 ? 0 : 5}
+                indent={index === arr.length - 1 ? 0 : 5}
                 wrap={!centered}
                 tabIndex={-1}
-                icon="qiwi"
+                icon={icon ? 'qiwi' : undefined}
                 vertical={vertical}
-                select={item}
+                select={false}
                 width={centered ? 1 : undefined}
                 stub
               />
