@@ -5,12 +5,15 @@ import {Text} from '../typography'
 type DetailsText = ReactElement | string
 
 export interface DetailsProps {
-  children: {title: DetailsText, content: DetailsText | DetailsText[]}[]
+  children: {
+    title: DetailsText,
+    content: DetailsText | DetailsText[]
+  }[]
   dots?: boolean
   titleWidth?: Value
   contentWidth?: Value
   size?: 's' | 'm' | 'l'
-  stub?: boolean
+  stub?: boolean | number[]
 }
 
 const indentDots: { [size in NonNullable<DetailsProps['size']>]: string } = {
@@ -35,7 +38,7 @@ export const Details: FC<DetailsProps> = ({
 }) => (
   stub ? (
     <Box as="dl" width="100%" display="table">
-      {[{'title': 0.4, 'content': 0.45}, {'title': 0.45, 'content': 0.35}, {'title': 0.35, 'content': 0.4}].map((item, i) => (
+      {(Array.isArray(stub) ? stub : [0.4, 0.5, 0.3]).map((width, i) => (
         <Box css={{display: 'table-row'}} key={`${i}`}>
           <Box
             as="dt"
@@ -57,11 +60,11 @@ export const Details: FC<DetailsProps> = ({
                     bottom: bottomDots[size],
                     borderBottom: 'dashed 1px #e6e6e6',
                     width: '100%',
-                    marginLeft: item.title * 100 + '%',
+                    marginLeft: width * 100 + '%',
                   },
                 }}
               >
-                <Box width={item.title} pr={indentDots[size]}>
+                <Box width={width} pr={indentDots[size]}>
                   <Text
                     display="block"
                     size={size}
@@ -70,7 +73,7 @@ export const Details: FC<DetailsProps> = ({
                 </Box>
               </Pos>
             ) : (
-              <Box width={item.title}>
+              <Box width={width}>
                 <Text
                   display="block"
                   size={size}
@@ -89,7 +92,7 @@ export const Details: FC<DetailsProps> = ({
             }}
             pl={indentDots[size]}
           >
-            <Box width={item.content}>
+            <Box width={1 - width}>
               <Text
                 display="block"
                 size={size}
