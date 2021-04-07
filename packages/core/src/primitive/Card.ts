@@ -1,4 +1,4 @@
-import styled from '../styled'
+import styled, {StyledOptions} from '../styled'
 
 import {Value, cssValue} from './Value'
 import {Box, BoxNonProps, BoxProps} from './Box'
@@ -20,6 +20,10 @@ export interface CardProps extends BoxProps {
 
 export const CardNonProps = ['bg', 'b', 'bt', 'br', 'bb', 'bl', 'r', 'rtr', 'rtl', 'btr', 'btl', 's'].concat(BoxNonProps)
 
+export const CardOptions: StyledOptions = {
+  shouldForwardProp: (prop) => !CardNonProps.includes(prop),
+}
+
 const customScroll = (() => {
   try {
     const element = document.createElement('div')
@@ -34,9 +38,7 @@ const customScroll = (() => {
   }
 })()
 
-export const Card = styled(Box, {
-  shouldForwardProp: (prop) => !CardNonProps.includes(prop),
-})<CardProps>(({theme, ...props}) => ({
+export const Card = styled(Box, CardOptions)<CardProps>(({theme, ...props}) => ({
   background: props.bg,
   border: props.b,
   borderTop: props.bt,

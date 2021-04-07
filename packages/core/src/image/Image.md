@@ -117,55 +117,55 @@ dataImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAAAAAA7VNdtA
     <Card width={1} overflow="auto">
       <Pos type="relative">
         <Flex>
-          <Box mr={5}>
+          <FlexItem shrink={0} mr={5}>
             <Image
               src={require('./media/cat_41.gif')}
               width={75}
               height={75}
             />
-          </Box>
-          <Box ml={5} mr={5}>
+          </FlexItem>
+          <FlexItem shrink={0} ml={5} mr={5}>
             <Image
               src={require('./media/cat_42.gif')}
               width={75}
               height={75}
             />
-          </Box>
-          <Box ml={5} mr={5}>
+          </FlexItem>
+          <FlexItem shrink={0} ml={5} mr={5}>
             <Image
               src={require('./media/cat_43.gif')}
               width={75}
               height={75}
             />
-          </Box>
-          <Box ml={5} mr={5}>
+          </FlexItem>
+          <FlexItem shrink={0} ml={5} mr={5}>
             <Image
               src={require('./media/cat_44.gif')}
               width={75}
               height={75}
             />
-          </Box>
-          <Box ml={5} mr={5}>
+          </FlexItem>
+          <FlexItem shrink={0} ml={5} mr={5}>
             <Image
               src={require('./media/cat_45.gif')}
               width={75}
               height={75}
             />
-          </Box>
-          <Box ml={5} mr={5}>
+          </FlexItem>
+          <FlexItem shrink={0} ml={5} mr={5}>
             <Image
               src={require('./media/cat_46.gif')}
               width={75}
               height={75}
             />
-          </Box>
-          <Box ml={5}>
+          </FlexItem>
+          <FlexItem shrink={0} ml={5}>
             <Image
               src={require('./media/cat_47.gif')}
               width={75}
               height={75}
             />
-          </Box>
+          </FlexItem>
         </Flex>
       </Pos>
     </Card>

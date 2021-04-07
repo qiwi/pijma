@@ -65,12 +65,14 @@ QIWI Guide — это развивающийся набор рекомендац
 #### Обычное поле
 
 ```jsx
+const [text, setText] = React.useState();
+
 <Box width={64}>
   <TextField
     title="Поле ввода"
     type="text"
-    value={state.text}
-    onChange={text => setState({text})}
+    value={text}
+    onChange={text => setText(text)}
   />
 </Box>
 ```
@@ -78,13 +80,15 @@ QIWI Guide — это развивающийся набор рекомендац
 #### Поле с подсказкой
 
 ```jsx
+const [text, setText] = React.useState();
+
 <Box width={64}>
   <TextField
     title="Поле ввода"
     help="Подсказка"
     type="text"
-    value={state.text}
-    onChange={text => setState({text})}
+    value={text}
+    onChange={text => setText(text)}
   />
 </Box>
 ```
@@ -96,6 +100,7 @@ QIWI Guide — это развивающийся набор рекомендац
 В окнах применяются [Brand Button](#/Компоненты/Button) и [Simple Button](#/Компоненты/Button) в размере Normal.
 
 ```jsx
+
 <Box>
   <Actions size="normal">
     <Button
@@ -126,6 +131,8 @@ QIWI Guide — это развивающийся набор рекомендац
 ```
 
 ```jsx static
+const [_, setDelete] = React.useState();
+
 <Box>
   <Actions size="normal">
     <Button
@@ -133,7 +140,7 @@ QIWI Guide — это развивающийся набор рекомендац
       size="normal"
       type="button"
       text="Показать окно"
-      onClick={() => setState({delete: true})}
+      onClick={() => setDelete(true)}
     />
   </Actions>
 </Box>

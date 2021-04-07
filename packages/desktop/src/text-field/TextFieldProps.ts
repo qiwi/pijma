@@ -2,7 +2,7 @@ import {ReactNode, KeyboardEvent} from 'react'
 
 import {Mask, Pipe} from '@qiwi/pijma-core'
 
-export default interface TextFieldProps {
+export interface TextFieldProps {
   value: string
   tabIndex?: number
   type?: 'text' | 'password' | 'tel' | 'number' | 'search' | 'email' | 'url'

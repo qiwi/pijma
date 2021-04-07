@@ -1,4 +1,4 @@
-import styled, {CSSObject} from '../styled'
+import styled, {CSSObject, StyledOptions} from '../styled'
 
 import {Value, cssValue} from './Value'
 
@@ -48,9 +48,11 @@ export const BoxNonProps = [
   'transform', 'transformOrigin',
 ]
 
-export const Box = styled('div', {
+export const BoxOptions: StyledOptions = {
   shouldForwardProp: (prop) => !BoxNonProps.includes(prop),
-})<BoxProps>(({theme, ...props}) => ({
+}
+
+export const Box = styled('div', BoxOptions)<BoxProps>(({theme, ...props}) => ({
   display: props.display,
   margin: cssValue(props.m, theme.scale, false),
   marginTop: cssValue(props.mt || props.my, theme.scale, false),

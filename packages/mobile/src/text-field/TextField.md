@@ -19,13 +19,15 @@
 #### Обычное поле
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <TextField
       title="Поле ввода"
       type="text"
-      value={state.text}
-      onChange={text => setState({text})}
+      value={text}
+      onChange={text => setText(text)}
     />
   </BlockContent>
 </Block>
@@ -50,14 +52,16 @@
 #### Поле с подсказкой
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <TextField
       title="Поле ввода"
       help="Подсказка"
       type="text"
-      value={state.text}
-      onChange={text => setState({text})}
+      value={text}
+      onChange={text => setText(text)}
     />
   </BlockContent>
 </Block>
@@ -66,14 +70,16 @@
 #### Поле ввода с кнопкой
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <TextField
       title="Поиск"
       type="text"
       action={<a href="#/Fields/TextField">Сылка-кнопка</a>}
-      value={state.text}
-      onChange={text => setState({text})}
+      value={text}
+      onChange={text => setText(text)}
     />
   </BlockContent>
 </Block>
@@ -82,14 +88,16 @@
 #### Ошибка
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <TextField
       title="Поле ввода"
       error="Подсказка"
       type="text"
-      value={state.text}
-      onChange={text => setState({text})}
+      value={text}
+      onChange={text => setText(text)}
     />
   </BlockContent>
 </Block>
@@ -112,14 +120,16 @@
 #### Поле с хинтом
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <TextField
       title="Поле ввода"
       type="text"
       hint={<QuestionIcon />}
-      value={state.text}
-      onChange={text => setState({text})}
+      value={text}
+      onChange={text => setText(text)}
     />
   </BlockContent>
 </Block>
@@ -128,15 +138,15 @@
 #### Номер телефона
 
 ```jsx
-initialState = {text: '+7'};
+const [text, setText] = React.useState('+7');
 <Block>
   <BlockContent>
     <TextField
       title="Номер телефона"
       type="tel"
       mask={['+', /7/, '(', /\d/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]}
-      value={state.text}
-      onChange={text => setState({text})}
+      value={text}
+      onChange={text => setText(text)}
     />
   </BlockContent>
 </Block>
@@ -145,6 +155,8 @@ initialState = {text: '+7'};
 #### Поле ввода ссумы
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <TextField
@@ -156,8 +168,8 @@ initialState = {text: '+7'};
         requireDecimal: true,
         integerLimit: 20
       })}
-      value={state.text}
-      onChange={text => setState({text})}
+      value={text}
+      onChange={text => setText(text)}
     />
   </BlockContent>
 </Block>
@@ -166,14 +178,16 @@ initialState = {text: '+7'};
 #### Поле ввода латинских символов
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
 <BlockContent>
     <TextField
       title="Имя на карте"
       type="tel"
       mask={createFilterMask(/[a-zA-Z\s-]/)}
-      value={state.text}
-      onChange={text => setState({text})}
+      value={text}
+      onChange={text => setText(text)}
     />
   </BlockContent>
 </Block>
@@ -182,14 +196,16 @@ initialState = {text: '+7'};
 #### Скрыть вводимые символы
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <TextField
       title="CVV"
       type="password"
       mask={[/\d/, /\d/, /\d/]}
-      value={state.text}
-      onChange={text => setState({text})}
+      value={text}
+      onChange={text => setText(text)}
     />
   </BlockContent>
 </Block>
@@ -198,14 +214,16 @@ initialState = {text: '+7'};
 #### Поле ввода с ограниченным количеством символов
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <TextField
       title="Поле ввода"
       type="text"
       maxLength={3}
-      value={state.text}
-      onChange={text => setState({text})}
+      value={text}
+      onChange={text => setText(text)}
     />
   </BlockContent>
 </Block>
@@ -214,31 +232,33 @@ initialState = {text: '+7'};
 ## Типы полей для мобильной клавиатуры
 
 ```jsx
+const [text, setText] = React.useState(undefined);
+
 <Block>
   <BlockContent>
     <TextField
       placeholder="Цифровое поле"
       type="tel"
-      value={state.text}
-      onChange={text => setState({text})}
+      value={text}
+      onChange={text => setText(text)}
     />
     <TextField
       title="Поисковое поле"
       type="search"
-      value={state.text}
-      onChange={text => setState({text})}
+      value={text}
+      onChange={text => setText(text)}
     />
     <TextField
       title="Поле под email"
       type="email"
-      value={state.text}
-      onChange={text => setState({text})}
+      value={text}
+      onChange={text => setText(text)}
     />
     <TextField
       title="Поле url адреса "
       type="url"
-      value={state.text}
-      onChange={text => setState({text})}
+      value={text}
+      onChange={text => setText(text)}
     />
   </BlockContent>
 </Block>
