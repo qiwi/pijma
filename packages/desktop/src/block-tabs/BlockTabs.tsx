@@ -30,7 +30,7 @@ export interface BlockTabsProps {
   indent?: 's' | 'm' | 'l'
   pt?: Value
   pb?: Value
-  stub?: boolean
+  stub?: boolean | boolean[]
   onChange?: (selected: number) => void
 }
 
@@ -67,127 +67,125 @@ export const BlockTabs: FC<BlockTabsProps> = ({
   pt,
   pb,
   onChange,
-}) => {
-  return (
-    stub ? (
-      <Pos type="relative">
-        <Flex
-          direction="column"
-          pt={pt !== undefined ? pt : BlockTabsIndent[indent][0]}
-          pr={BlockTabsIndent[indent][1]}
-          pb={pb !== undefined ? pb : BlockTabsIndent[indent][2]}
-          pl={BlockTabsIndent[indent][3]}
+}) => (
+  stub ? (
+    <Pos type="relative">
+      <Flex
+        direction="column"
+        pt={pt !== undefined ? pt : BlockTabsIndent[indent][0]}
+        pr={BlockTabsIndent[indent][1]}
+        pb={pb !== undefined ? pb : BlockTabsIndent[indent][2]}
+        pl={BlockTabsIndent[indent][3]}
+      >
+        <FlexOverflow
+          direction="row"
+          overflow="auto"
+          justify={centered ? 'space-between' : 'flex-start'}
         >
-          <FlexOverflow
-            direction="row"
-            overflow="auto"
-            justify={centered ? 'space-between' : 'flex-start'}
-          >
-            {[true, false, false].map((item, index) => (
-              <TabHeader
-                key={index}
-                title="stub"
-                indent={index === items.length - 1 ? 0 : 5}
-                wrap={!centered}
-                tabIndex={-1}
-                icon="qiwi"
-                vertical={vertical}
-                select={item}
-                width={centered ? 1 : undefined}
-                stub
-              />
-            ))}
-            <TabBorder
-              width={centered ? 'calc(33% - 20px)' : vertical ? 13 : 21}
-              left={0}
-              radius={hr}
+          {(Array.isArray(stub) ? stub : [true, true, true]).map((icon, index, arr) => (
+            <TabHeader
+              key={index}
+              title="stub"
+              indent={index === arr.length - 1 ? 0 : 5}
+              wrap={!centered}
+              tabIndex={-1}
+              icon={icon ? 'qiwi' : undefined}
+              vertical={vertical}
+              select={false}
+              width={centered ? 1 : undefined}
               stub
             />
-          </FlexOverflow>
-          <FlexItem>
+          ))}
+          <TabBorder
+            width={centered ? 'calc(33% - 20px)' : vertical ? 13 : 21}
+            left={0}
+            radius={hr}
+            stub
+          />
+        </FlexOverflow>
+        <FlexItem>
+          {hr ? (
+            <Pos type="absolute" width={1} left={0} zIndex={0}>
+              <Card mt="-1px" bg="#e6e6e6" width={1} height="1px"/>
+            </Pos>
+          ) : (
+            null
+          )}
+        </FlexItem>
+        <FlexItem mt={4}>
+          <Paragraph stub/>
+        </FlexItem>
+      </Flex>
+    </Pos>
+  ) : (
+    <TabsControl
+      select={select}
+      length={items.length}
+      onChange={onChange}
+      children={renderProps => (
+        <Pos type="relative">
+          <Flex
+            direction="column"
+            pt={pt !== undefined ? pt : BlockTabsIndent[indent][0]}
+            pr={BlockTabsIndent[indent][1]}
+            pb={pb !== undefined ? pb : BlockTabsIndent[indent][2]}
+            pl={BlockTabsIndent[indent][3]}
+          >
+            <FlexOverflow
+              direction="row"
+              overflow="auto"
+              justify={centered ? 'space-between' : 'flex-start'}
+            >
+              {renderProps.items.map((item, index) => (
+                <TabHeader
+                  key={index}
+                  title={items[index].title}
+                  indent={index === items.length - 1 ? 0 : 5}
+                  wrap={!centered}
+                  tabIndex={tabIndex}
+                  icon={items[index].icon}
+                  vertical={vertical}
+                  select={item.select}
+                  focus={item.focus}
+                  width={centered ? 1 : undefined}
+                  ref={item.ref}
+                  onFocus={item.onFocus}
+                  onBlur={item.onBlur}
+                  onMouseEnter={item.onMouseEnter}
+                  onMouseLeave={item.onMouseLeave}
+                  onKeyDown={renderProps.onKeyDown}
+                  onClick={item.onClick}
+                />
+              ))}
+              <TabBorder
+                width={`${renderProps.borderWidth}px`}
+                left={`${renderProps.borderOffSetLeft}px`}
+                radius={hr}
+              />
+            </FlexOverflow>
             {hr ? (
-              <Pos type="absolute" width={1} left={0} zIndex={0}>
-                <Card mt="-1px" bg="#e6e6e6" width={1} height="1px"/>
-              </Pos>
+              <FlexItem>
+                <Pos type="absolute" width={1} left={0} zIndex={0}>
+                  <Card mt="-1px" bg="#e6e6e6" width={1} height="1px"/>
+                </Pos>
+              </FlexItem>
             ) : (
               null
             )}
-          </FlexItem>
-          <FlexItem mt={4}>
-            <Paragraph stub/>
-          </FlexItem>
-        </Flex>
-      </Pos>
-    ) : (
-      <TabsControl
-        select={select}
-        length={items.length}
-        onChange={onChange}
-        children={renderProps => (
-          <Pos type="relative">
-            <Flex
-              direction="column"
-              pt={pt !== undefined ? pt : BlockTabsIndent[indent][0]}
-              pr={BlockTabsIndent[indent][1]}
-              pb={pb !== undefined ? pb : BlockTabsIndent[indent][2]}
-              pl={BlockTabsIndent[indent][3]}
-            >
-              <FlexOverflow
-                direction="row"
-                overflow="auto"
-                justify={centered ? 'space-between' : 'flex-start'}
-              >
-                {renderProps.items.map((item, index) => (
-                  <TabHeader
-                    key={index}
-                    title={items[index].title}
-                    indent={index === items.length - 1 ? 0 : 5}
-                    wrap={!centered}
-                    tabIndex={tabIndex}
-                    icon={items[index].icon}
-                    vertical={vertical}
-                    select={item.select}
-                    focus={item.focus}
-                    width={centered ? 1 : undefined}
-                    ref={item.ref}
-                    onFocus={item.onFocus}
-                    onBlur={item.onBlur}
-                    onMouseEnter={item.onMouseEnter}
-                    onMouseLeave={item.onMouseLeave}
-                    onKeyDown={renderProps.onKeyDown}
-                    onClick={item.onClick}
-                  />
-                ))}
-                <TabBorder
-                  width={`${renderProps.borderWidth}px`}
-                  left={`${renderProps.borderOffSetLeft}px`}
-                  radius={hr}
-                />
-              </FlexOverflow>
-              {hr ? (
-                <FlexItem>
-                  <Pos type="absolute" width={1} left={0} zIndex={0}>
-                    <Card mt="-1px" bg="#e6e6e6" width={1} height="1px"/>
-                  </Pos>
-                </FlexItem>
-              ) : (
-                null
-              )}
-              {items.map(({content}, index) => (
-                <FlexItem
-                  key={index}
-                  display={select === index ? 'block' : 'none'}
-                  pt={ContentIndent[indent]}
-                  children={content}
-                />
-              ))}
-            </Flex>
-          </Pos>
-        )}
-      />
-    )
+            {items.map(({content}, index) => (
+              <FlexItem
+                key={index}
+                display={select === index ? 'block' : 'none'}
+                pt={ContentIndent[indent]}
+                children={content}
+              />
+            ))}
+          </Flex>
+        </Pos>
+      )}
+    />
   )
-}
+)
 
 BlockTabs.defaultProps = {
   select: 0,

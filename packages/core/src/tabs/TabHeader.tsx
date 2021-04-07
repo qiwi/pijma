@@ -84,7 +84,12 @@ export const TabHeader = forwardRef<HTMLDivElement, TabProps>(({
         )}
         <FlexItem>
           {stub ? (
-            <Stub height={2} width={13}/>
+            <Stub
+              top={2}
+              bottom={2}
+              height={2}
+              width={13}
+            />
           ) : (
             <Typo
               nowrap={wrap}
