@@ -1,3 +1,10 @@
+## [1.128.5](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.128.4...@qiwi/pijma-desktop@1.128.5) (2021-04-12)
+
+
+### Bug Fixes
+
+* tabs sub components ([#409](https://github.com/qiwi/pijma/issues/409)) ([162eb64](https://github.com/qiwi/pijma/commit/162eb64534647ab9377380144b3b4fdf02c285a5))
+
 ## @qiwi/pijma-desktop [1.128.4](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.128.3...@qiwi/pijma-desktop@1.128.4) (2021-04-07)
 
 
