@@ -9,7 +9,7 @@ export interface TabsControlProps {
   onChange?: (selected: number) => void
   children: RenderChild<{
     onKeyDown: React.KeyboardEventHandler
-    borderOffSetLeft: number
+    borderLeft: number
     borderWidth: number
     items: Array<{
       select: boolean
@@ -26,37 +26,43 @@ export interface TabsControlProps {
 
 export interface TabsControlState {
   focused: number
-  borderOffSetLeft: number
+  borderLeft: number
   borderWidth: number
   refs: RefObject<HTMLDivElement>[]
 }
 
 export class TabsControl extends React.Component<TabsControlProps> {
 
-  public static getDerivedStateFromProps(nextProps: TabsControlProps): Partial<TabsControlState> {
-    const {length} = nextProps
-    return {
-      refs: Array(length).fill(1).map(() => createRef()),
-    }
-  }
-
   public state: TabsControlState = {
     focused: -1,
-    borderOffSetLeft: 0,
+    borderLeft: 0,
     borderWidth: 0,
     refs: Array(this.props.length).fill(1).map(() => createRef()),
   }
 
-  public componentDidMount(): void {
-    this.settingBorder(this.props.select)
+  private calculateBorder() {
+    const element = findDOMNode(this.state.refs[this.props.select].current) as HTMLDivElement
+    this.setState({
+      borderLeft: element.offsetLeft,
+      borderWidth: element.offsetWidth,
+    })
   }
 
-  private settingBorder(index: number) {
-    const refItem = findDOMNode(this.state.refs[index].current) as HTMLDivElement
-    this.setState({
-      borderOffSetLeft: refItem.offsetLeft,
-      borderWidth: refItem.offsetWidth,
-    })
+  public static getDerivedStateFromProps(nextProps: TabsControlProps): Partial<TabsControlState> {
+    const {length} = nextProps
+    return {
+      refs: Array(length).fill(1).map(() => createRef<HTMLDivElement>()),
+    }
+  }
+
+  public componentDidMount() {
+    this.calculateBorder()
+  }
+
+  public componentDidUpdate(props: TabsControlProps) {
+    if (props.select !== this.props.select) {
+      this.calculateBorder()
+    }
   }
 
   private onItemFocus: (index: number) => React.FocusEventHandler = (index) => (event) => {
@@ -91,7 +97,6 @@ export class TabsControl extends React.Component<TabsControlProps> {
 
   private onItemClick: (select: number) => React.MouseEventHandler = (select) => (event) => {
     event.preventDefault()
-    this.settingBorder(select)
     if (this.props.onChange) {
       this.props.onChange(select)
     }
@@ -106,7 +111,6 @@ export class TabsControl extends React.Component<TabsControlProps> {
         event.preventDefault()
         event.stopPropagation()
         if (this.state.focused !== -1 && this.props.onChange) {
-          this.settingBorder(this.state.focused)
           this.props.onChange(this.state.focused)
         }
         break
@@ -116,7 +120,7 @@ export class TabsControl extends React.Component<TabsControlProps> {
   public render() {
     return this.props.children({
       onKeyDown: this.onKeyDown,
-      borderOffSetLeft: this.state.borderOffSetLeft,
+      borderLeft: this.state.borderLeft,
       borderWidth: this.state.borderWidth,
       items: Array(this.props.length).fill(0).map((_item, index) => ({
         select: index === this.props.select,

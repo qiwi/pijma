@@ -8,6 +8,7 @@ import {
   IconProps,
   TabBorder,
   FlexOptions,
+  FlexItemOptions,
   styled,
 } from '@qiwi/pijma-core'
 
@@ -35,6 +36,8 @@ const FlexOverflow = styled(Flex, FlexOptions)({
   msOverflowStyle: 'none',
   position: 'relative',
 })
+
+const TabContent = styled(FlexItem, FlexItemOptions)()
 
 export const Tabs: FC<TabsProps> = ({
   items,
@@ -106,11 +109,11 @@ export const Tabs: FC<TabsProps> = ({
             ))}
             <TabBorder
               width={`${renderProps.borderWidth}px`}
-              left={`${renderProps.borderOffSetLeft}px`}
+              left={`${renderProps.borderLeft}px`}
             />
           </FlexOverflow>
           {items.map(({content}, index) => (
-            <FlexItem
+            <TabContent
               key={index}
               display={select === index ? 'block' : 'none'}
               pt={4}

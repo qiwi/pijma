@@ -11,6 +11,7 @@ import {
   TabBorder,
   styled,
   FlexOptions,
+  FlexItemOptions,
   Value,
 } from '@qiwi/pijma-core'
 
@@ -54,6 +55,8 @@ const FlexOverflow = styled(Flex, FlexOptions)({
   msOverflowStyle: 'none',
   position: 'relative',
 })
+
+const TabContent = styled(FlexItem, FlexItemOptions)()
 
 export const BlockTabs: FC<BlockTabsProps> = ({
   items,
@@ -159,7 +162,7 @@ export const BlockTabs: FC<BlockTabsProps> = ({
               ))}
               <TabBorder
                 width={`${renderProps.borderWidth}px`}
-                left={`${renderProps.borderOffSetLeft}px`}
+                left={`${renderProps.borderLeft}px`}
                 radius={hr}
               />
             </FlexOverflow>
@@ -173,7 +176,7 @@ export const BlockTabs: FC<BlockTabsProps> = ({
               null
             )}
             {items.map(({content}, index) => (
-              <FlexItem
+              <TabContent
                 key={index}
                 display={select === index ? 'block' : 'none'}
                 pt={ContentIndent[indent]}
