@@ -1,3 +1,10 @@
+## @qiwi/pijma-core [1.129.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.129.1...@qiwi/pijma-core@1.129.2) (2021-04-12)
+
+
+### Bug Fixes
+
+* tabs sub components ([#409](https://github.com/qiwi/pijma/issues/409)) ([162eb64](https://github.com/qiwi/pijma/commit/162eb64534647ab9377380144b3b4fdf02c285a5))
+
 ## @qiwi/pijma-core [1.129.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.129.0...@qiwi/pijma-core@1.129.1) (2021-04-07)
 
 
