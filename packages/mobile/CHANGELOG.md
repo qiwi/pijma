@@ -1,3 +1,10 @@
+## @qiwi/pijma-mobile [1.128.6](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.5...@qiwi/pijma-mobile@1.128.6) (2021-04-22)
+
+
+### Bug Fixes
+
+* heading stub clamp ([#411](https://github.com/qiwi/pijma/issues/411)) ([c956512](https://github.com/qiwi/pijma/commit/c956512d14e05df2c8b493d3e9a19a5f45a2940f))
+
 ## [1.128.5](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.4...@qiwi/pijma-mobile@1.128.5) (2021-04-20)
 
 ## [1.128.4](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.3...@qiwi/pijma-mobile@1.128.4) (2021-04-12)
