@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from 'react'
+import React, {Fragment, FunctionComponent} from 'react'
 
 import {Breaker, Box, Stub, Typo, TypoProps} from '@qiwi/pijma-core'
 
@@ -67,20 +67,25 @@ const HeadingColor: { [color in NonNullable<HeadingProps['color']>]: string } = 
 
 export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'default', align, stub, clamp, children}) => (
   stub ? (
-    <Box
-      ml={align === 'center' || align === 'right' ? 'auto' : 'none'}
-      mr={align === 'center' ? 'auto' : 'none'}
-      width={50}
-      maxWidth={1}
-    >
-      <Stub
-        top={StubOffsetTop[size]}
-        bottom={StubOffsetBottom[size]}
-        width={1}
-        height={StubHeight[size]}
-        inverse={color === 'inverse'}
-      />
-    </Box>
+    <Fragment>
+      {Array(clamp === undefined ? 1 : clamp).fill(0).map((_, i) => i % 3 === 0 ? 0.5 : i % 3 === 1 ? 0.6 : 0.4).map((width, id) => (
+        <Box
+          key={id}
+          ml={align === 'center' || align === 'right' ? 'auto' : 'none'}
+          mr={align === 'center' ? 'auto' : 'none'}
+          width={width}
+          maxWidth={1}
+        >
+          <Stub
+            top={StubOffsetTop[size]}
+            bottom={StubOffsetBottom[size]}
+            width={1}
+            height={StubHeight[size]}
+            inverse={color === 'inverse'}
+          />
+        </Box>
+      ))}
+    </Fragment>
   ) : (
     <Typo
       as={tag ? tag : HeadingTag[size]}
