@@ -1,3 +1,10 @@
+# @qiwi/pijma-core [1.130.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.129.3...@qiwi/pijma-core@1.130.0) (2021-06-01)
+
+
+### Features
+
+* **core:** clock ([#413](https://github.com/qiwi/pijma/issues/413)) ([13d5360](https://github.com/qiwi/pijma/commit/13d53600e88c831d8666d7345e2edeccef387ae1))
+
 ## @qiwi/pijma-core [1.129.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.129.2...@qiwi/pijma-core@1.129.3) (2021-04-20)
 
 
