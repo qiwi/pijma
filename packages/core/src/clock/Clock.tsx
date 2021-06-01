@@ -11,8 +11,20 @@ const rotate = keyframes({
 
 const CardPos = styled(Card, CardOptions)().withComponent(Pos)
 
-const Clock: FunctionComponent = () => (
-  <CardPos type="relative" width={10} height={10} r={20} bg="#FFB800">
+interface ClockProps {
+  width?: number
+  height?: number
+  color?: string
+  r?: number
+}
+
+const Clock: FunctionComponent<ClockProps> = ({
+    width = 10,
+    height = 10,
+    color = '#FFB800',
+    r = 20,
+  }) => (
+  <CardPos type="relative" width={width} height={height} r={r} bg={color}>
     <CardPos
       type="absolute"
       left="50%"
@@ -26,7 +38,7 @@ const Clock: FunctionComponent = () => (
     <CardPos
       type="absolute"
       top="20%"
-      left="18px"
+      left={(width - 1) / 2}
       width="4px"
       height="30%"
       bg="#fff"
@@ -37,7 +49,7 @@ const Clock: FunctionComponent = () => (
     <CardPos
       type="absolute"
       top="20%"
-      left="18px"
+      left={(width - 1) / 2}
       width="4px"
       height="30%"
       bg="#fff"
