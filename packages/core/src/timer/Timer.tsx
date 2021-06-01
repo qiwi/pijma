@@ -25,10 +25,10 @@ const Timer: FunctionComponent = () => (
     />
     <CardPos
       type="absolute"
-      top="25%"
+      top="20%"
       left="18px"
       width="4px"
-      height="25%"
+      height="30%"
       bg="#fff"
       r={2}
       transformOrigin="50% 100%"
@@ -37,11 +37,11 @@ const Timer: FunctionComponent = () => (
     <CardPos
       type="absolute"
       top="20%"
-      left="19px"
-      width="2px"
+      left="18px"
+      width="4px"
       height="30%"
       bg="#fff"
-      r={1}
+      r={2}
       transformOrigin="50% 100%"
       animation={`${rotate} 2000ms linear infinite`}
     />
