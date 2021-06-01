@@ -11,7 +11,7 @@ const rotate = keyframes({
 
 const CardPos = styled(Card, CardOptions)().withComponent(Pos)
 
-const ClockIcon: FunctionComponent = () => (
+const Clock: FunctionComponent = () => (
   <CardPos type="relative" width={10} height={10} r={20} bg="#FFB800">
     <CardPos
       type="absolute"
@@ -48,4 +48,4 @@ const ClockIcon: FunctionComponent = () => (
   </CardPos>
 )
 
-export default ClockIcon
+export default Clock
