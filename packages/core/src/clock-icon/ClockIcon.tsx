@@ -11,7 +11,7 @@ const rotate = keyframes({
 
 const CardPos = styled(Card, CardOptions)().withComponent(Pos)
 
-const Timer: FunctionComponent = () => (
+const ClockIcon: FunctionComponent = () => (
   <CardPos type="relative" width={10} height={10} r={20} bg="#FFB800">
     <CardPos
       type="absolute"
@@ -48,4 +48,4 @@ const Timer: FunctionComponent = () => (
   </CardPos>
 )
 
-export default Timer
+export default ClockIcon

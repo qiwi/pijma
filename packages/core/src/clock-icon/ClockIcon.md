@@ -1,7 +1,7 @@
 ```jsx
 <Block>
   <BlockContent>
-    <Timer/>
+    <ClockIcon/>
   </BlockContent>
 </Block>
 ```
