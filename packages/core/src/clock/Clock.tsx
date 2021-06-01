@@ -12,48 +12,43 @@ const rotate = keyframes({
 const CardPos = styled(Card, CardOptions)().withComponent(Pos)
 
 interface ClockProps {
-  width?: number
-  height?: number
+  size?: number
   color?: string
-  r?: number
 }
 
-const Clock: FunctionComponent<ClockProps> = ({
-    width = 10,
-    height = 10,
-    color = '#FFB800',
-    r = 20,
-  }) => (
-  <CardPos type="relative" width={width} height={height} r={r} bg={color}>
+const Clock: FunctionComponent<ClockProps> = ({size= 10, color = '#FFB800'}) => (
+  <CardPos type="relative" width={size} height={size} r={size * 2} bg={color}>
     <CardPos
       type="absolute"
       left="50%"
       top="50%"
       transform="translate(-50%, -50%)"
-      width="4px"
-      height="4px"
+      width={`${size / 10 * 4}px`}
+      height={`${size / 10 * 4}px`}
       r="50%"
       bg="#fff"
     />
     <CardPos
       type="absolute"
       top="20%"
-      left={(width - 1) / 2}
-      width="4px"
+      left={(size - size / 10) / 2}
+      width={`${size / 10 * 4}px`}
       height="30%"
       bg="#fff"
-      r={2}
+      rtr={`${size / 20 * 4}px`}
+      rtl={`${size / 20 * 4}px`}
       transformOrigin="50% 100%"
       animation={`${rotate} 24000ms linear infinite`}
     />
     <CardPos
       type="absolute"
       top="20%"
-      left={(width - 1) / 2}
-      width="4px"
+      left={(size - size / 10) / 2}
+      width={`${size / 10 * 4}px`}
       height="30%"
       bg="#fff"
-      r={2}
+      rtr={`${size / 20 * 4}px`}
+      rtl={`${size / 20 * 4}px`}
       transformOrigin="50% 100%"
       animation={`${rotate} 2000ms linear infinite`}
     />
