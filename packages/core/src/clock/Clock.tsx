@@ -13,11 +13,11 @@ const CardPos = styled(Card, CardOptions)().withComponent(Pos)
 
 interface ClockProps {
   size?: number
-  color?: string
+  bg?: string
 }
 
-const Clock: FunctionComponent<ClockProps> = ({size= 10, color = '#FFB800'}) => (
-  <CardPos type="relative" width={size} height={size} r={size * 2} bg={color}>
+const Clock: FunctionComponent<ClockProps> = ({size= 10, bg = '#FFB800'}) => (
+  <CardPos type="relative" width={size} height={size} r={size * 2} bg={bg}>
     <CardPos
       type="absolute"
       left="50%"
