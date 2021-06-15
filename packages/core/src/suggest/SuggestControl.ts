@@ -28,7 +28,7 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
   private onSelect: (index: number) => void = (index: number) => {
     const item = this.items[index]
     if (item.suggest) {
-      this.request(item.suggest + ' ')
+      this.request(`${item.suggest} `)
     }
     else {
       this.change(item.value)
