@@ -1,3 +1,10 @@
+# @qiwi/pijma-core [1.131.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.130.0...@qiwi/pijma-core@1.131.0) (2021-06-24)
+
+
+### Features
+
+* clock-solid ([#419](https://github.com/qiwi/pijma/issues/419)) ([aa8ce80](https://github.com/qiwi/pijma/commit/aa8ce809f051cfc1f788e7300979dc6a42182abd))
+
 # @qiwi/pijma-core [1.130.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.129.3...@qiwi/pijma-core@1.130.0) (2021-06-01)
 
 
