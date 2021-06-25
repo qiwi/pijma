@@ -35,6 +35,7 @@ export interface BoxProps {
   cursor?: string
   opacity?: number
   overflow?: string
+  visibility?: 'visible' | 'hidden' | 'collapse' | 'inherit'
 }
 
 export const BoxNonProps = [
@@ -77,6 +78,7 @@ export const Box = styled('div', BoxOptions)<BoxProps>(({theme, ...props}) => ({
   transition: props.transition,
   transform: props.transform,
   transformOrigin: props.transformOrigin,
+  visibility: props.visibility,
 }), (props) => props.css)
 
 Box.defaultProps = {
