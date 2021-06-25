@@ -1,3 +1,10 @@
+## @qiwi/pijma-core [1.131.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.131.1...@qiwi/pijma-core@1.131.2) (2021-06-25)
+
+
+### Bug Fixes
+
+* switch controled checked ([#424](https://github.com/qiwi/pijma/issues/424)) ([0344983](https://github.com/qiwi/pijma/commit/0344983146a333cbdc841f6f1534ebab6e000b9b))
+
 ## @qiwi/pijma-core [1.131.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.131.0...@qiwi/pijma-core@1.131.1) (2021-06-24)
 
 
