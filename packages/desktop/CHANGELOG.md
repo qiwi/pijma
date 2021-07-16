@@ -1,3 +1,20 @@
+## [1.128.11](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.128.10...@qiwi/pijma-desktop@1.128.11) (2021-06-25)
+
+
+### Bug Fixes
+
+* switch controled checked ([#424](https://github.com/qiwi/pijma/issues/424)) ([0344983](https://github.com/qiwi/pijma/commit/0344983146a333cbdc841f6f1534ebab6e000b9b))
+
+## @qiwi/pijma-desktop [1.128.10](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.128.9...@qiwi/pijma-desktop@1.128.10) (2021-06-24)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.131.1
+
 ## @qiwi/pijma-desktop [1.128.9](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.128.8...@qiwi/pijma-desktop@1.128.9) (2021-06-24)
 
 

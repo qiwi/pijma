@@ -30,7 +30,7 @@ const Checkbox: FunctionComponent<CheckboxProps> = props => (
               <Box width={6}>
                 <Check
                   disabled={props.disabled}
-                  checked={renderProps.checked}
+                  checked={props.checked}
                   focused={renderProps.focused}
                 />
               </Box>
