@@ -32,6 +32,18 @@
     icon={<Icon name="qiwi"/>}
     text="text"
   />
+  <MenuItem
+    icon={<Icon name="qiwi"/>}
+    text="text"
+    submenu
+    stub
+  />
+  <MenuItem
+    icon="if you need icon stub put any corrent content here"
+    text="text"
+    notes="if you need notes stub put any corrent content here"
+    stub
+  />
 </Card>
 ```
 
@@ -66,6 +78,19 @@
     icon={<Icon size={12} name="qiwi"/>}
     text="text"
   />
+  <MenuItem
+    icon="if you need icon stub put any corrent content here"
+    size="m"
+    text="text"
+    notes="if you need notes stub put any corrent content here"
+    stub
+  />
+  <MenuItem
+    icon="if you need icon stub put any corrent content here"
+    size="m"
+    submenu
+    stub
+  />
 </Card>
 ```
 
@@ -98,6 +123,14 @@
   <MenuItem
     submenu
     text="text"
+  />
+  <MenuItem
+    submenu
+    notes="if you need notes stub put any corrent content here"
+    stub
+  />
+  <MenuItem
+    stub
   />
 </Card>
 ```

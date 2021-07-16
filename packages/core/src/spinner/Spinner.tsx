@@ -28,6 +28,7 @@ export interface SpinnerProps {
   width?: Value
   height?: Value
   color?: string
+  paused?: boolean
 }
 
 const Spinner: FunctionComponent<SpinnerProps> = (props) => (
@@ -36,7 +37,7 @@ const Spinner: FunctionComponent<SpinnerProps> = (props) => (
     width={props.width}
     height={props.height}
     transformOrigin="center center"
-    animation={`${rotate} 2000ms linear infinite`}
+    animation={props.paused ? undefined : `${rotate} 2000ms linear infinite`}
     children={(
       <Circle
         cx="48"
@@ -49,7 +50,7 @@ const Spinner: FunctionComponent<SpinnerProps> = (props) => (
         strokeLinecap="round"
         strokeWidth="4"
         transition="stroke 333ms ease-in-out"
-        animation={`${progress} 1500ms ease-in-out infinite`}
+        animation={props.paused ? undefined : `${progress} 1500ms ease-in-out infinite`}
       />
     )}
   />

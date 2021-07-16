@@ -1,10 +1,10 @@
 ```jsx
-initialState = {menuCollapsed: true};
+const [menuCollapsed, setMenuCollapsed] = React.useState(true);
 <Header zIndex={0}>
   <Flex height={1} px={4} align="center" justify="space-between">
      <FlexItem width={0.25} shrink={0}>
-       <Box width={6} height={6} onClick={() => setState({menuCollapsed: !state.menuCollapsed, showMenu: state.menuCollapsed})}>
-         <CrossBurger active={!state.menuCollapsed}/>
+       <Box width={6} height={6} onClick={() => { setMenuCollapsed(!menuCollapsed); setShowMenu(menuCollapsed) }}>
+         <CrossBurger active={!menuCollapsed}/>
        </Box>
      </FlexItem>
      <FlexItem width={37} height={7} shrink={0} align="center">
@@ -13,8 +13,8 @@ initialState = {menuCollapsed: true};
      <FlexItem
        width={0.25}
        shrink={1}
-       opacity={state.menuCollapsed? 1 : 0}
-       transition={state.menuCollapsed? 'all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)' : 'all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)'}
+       opacity={menuCollapsed? 1 : 0}
+       transition={menuCollapsed? 'all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)' : 'all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)'}
      >
        <Flex justify="flex-end">
          <Box display="inline-block">

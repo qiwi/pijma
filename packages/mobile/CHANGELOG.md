@@ -1,3 +1,466 @@
+## [1.128.10](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.9...@qiwi/pijma-mobile@1.128.10) (2021-06-25)
+
+
+### Bug Fixes
+
+* switch controled checked ([#424](https://github.com/qiwi/pijma/issues/424)) ([0344983](https://github.com/qiwi/pijma/commit/0344983146a333cbdc841f6f1534ebab6e000b9b))
+
+## [1.128.9](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.8...@qiwi/pijma-mobile@1.128.9) (2021-06-24)
+
+## [1.128.8](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.7...@qiwi/pijma-mobile@1.128.8) (2021-06-24)
+
+## [1.128.7](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.6...@qiwi/pijma-mobile@1.128.7) (2021-06-01)
+
+## @qiwi/pijma-mobile [1.128.6](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.5...@qiwi/pijma-mobile@1.128.6) (2021-04-22)
+
+
+### Bug Fixes
+
+* heading stub clamp ([#411](https://github.com/qiwi/pijma/issues/411)) ([c956512](https://github.com/qiwi/pijma/commit/c956512d14e05df2c8b493d3e9a19a5f45a2940f))
+
+## [1.128.5](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.4...@qiwi/pijma-mobile@1.128.5) (2021-04-20)
+
+## [1.128.4](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.3...@qiwi/pijma-mobile@1.128.4) (2021-04-12)
+
+
+### Bug Fixes
+
+* tabs sub components ([#409](https://github.com/qiwi/pijma/issues/409)) ([162eb64](https://github.com/qiwi/pijma/commit/162eb64534647ab9377380144b3b4fdf02c285a5))
+
+## [1.128.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.2...@qiwi/pijma-mobile@1.128.3) (2021-04-07)
+
+
+### Bug Fixes
+
+* tabs stub ([#408](https://github.com/qiwi/pijma/issues/408)) ([637cfe7](https://github.com/qiwi/pijma/commit/637cfe76d4f1508c2b3bde90f0496c3441f14506))
+
+## [1.128.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.1...@qiwi/pijma-mobile@1.128.2) (2021-04-06)
+
+## @qiwi/pijma-mobile [1.128.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.0...@qiwi/pijma-mobile@1.128.1) (2021-04-06)
+
+
+### Bug Fixes
+
+* tabs change selected ([#406](https://github.com/qiwi/pijma/issues/406)) ([4c5d01b](https://github.com/qiwi/pijma/commit/4c5d01b34ae36f3f7303e5028ed87ac3f84186bb))
+
+# [1.128.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.127.4...@qiwi/pijma-mobile@1.128.0) (2021-04-05)
+
+
+### Features
+
+* tabs ([#294](https://github.com/qiwi/pijma/issues/294)) ([c8d2f82](https://github.com/qiwi/pijma/commit/c8d2f827f895c5a6865966cc66383319f2a5dfbe))
+
+## [1.127.4](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.127.3...@qiwi/pijma-mobile@1.127.4) (2021-04-02)
+
+
+### Bug Fixes
+
+* dropdown refs ([#401](https://github.com/qiwi/pijma/issues/401)) ([8a5ab9d](https://github.com/qiwi/pijma/commit/8a5ab9df17c53e677c440e957610ebad085bf49d))
+
+## [1.127.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.127.2...@qiwi/pijma-mobile@1.127.3) (2021-04-01)
+
+
+### Bug Fixes
+
+* button text height ([#399](https://github.com/qiwi/pijma/issues/399)) ([50fb4df](https://github.com/qiwi/pijma/commit/50fb4dfbf777609413537354a1540605e302a74a))
+
+## @qiwi/pijma-mobile [1.127.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.127.1...@qiwi/pijma-mobile@1.127.2) (2021-04-01)
+
+
+### Bug Fixes
+
+* lnk options ([#398](https://github.com/qiwi/pijma/issues/398)) ([8cc08b7](https://github.com/qiwi/pijma/commit/8cc08b797b9ccb6e56e2cc09c415c2809ede9788))
+
+## [1.127.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.127.0...@qiwi/pijma-mobile@1.127.1) (2021-04-01)
+
+
+### Bug Fixes
+
+* suggests ([#397](https://github.com/qiwi/pijma/issues/397)) ([9c39e3e](https://github.com/qiwi/pijma/commit/9c39e3e650f34f9c4107a00a3721d98e76ae2d7c))
+
+# @qiwi/pijma-mobile [1.127.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.126.5...@qiwi/pijma-mobile@1.127.0) (2021-03-23)
+
+
+### Features
+
+* select-field ([#395](https://github.com/qiwi/pijma/issues/395)) ([b37cde9](https://github.com/qiwi/pijma/commit/b37cde9c55a03f24ef7ad39c4340d26fd80759ab))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.127.0
+
+## [1.126.5](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.126.4...@qiwi/pijma-mobile@1.126.5) (2021-03-23)
+
+## [1.126.4](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.126.3...@qiwi/pijma-mobile@1.126.4) (2021-03-22)
+
+## [1.126.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.126.2...@qiwi/pijma-mobile@1.126.3) (2021-03-22)
+
+
+### Bug Fixes
+
+* should forward prop ([#393](https://github.com/qiwi/pijma/issues/393)) ([59cef3d](https://github.com/qiwi/pijma/commit/59cef3d6932a05ee860887bf26346d26677c2d51))
+
+## [1.126.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.126.1...@qiwi/pijma-mobile@1.126.2) (2021-03-16)
+
+
+### Bug Fixes
+
+* switch export ([#391](https://github.com/qiwi/pijma/issues/391)) ([6986600](https://github.com/qiwi/pijma/commit/6986600c7da7abae768eae3333ca6057e8c9c0c0))
+
+## @qiwi/pijma-mobile [1.126.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.126.0...@qiwi/pijma-mobile@1.126.1) (2021-03-12)
+
+
+### Bug Fixes
+
+* **package:** fix vulnerabilities ([#383](https://github.com/qiwi/pijma/issues/383)) ([3cba676](https://github.com/qiwi/pijma/commit/3cba676f0dfbc0e8a55b0ab4195d9f00c1deac18))
+
+# [1.126.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.125.0...@qiwi/pijma-mobile@1.126.0) (2021-03-12)
+
+
+### Features
+
+* up react-styleguidist ([#381](https://github.com/qiwi/pijma/issues/381)) ([8652107](https://github.com/qiwi/pijma/commit/8652107c9061dc8c91d24da0513f7946505ae0f5))
+
+# @qiwi/pijma-mobile [1.125.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.124.2...@qiwi/pijma-mobile@1.125.0) (2021-03-12)
+
+
+### Features
+
+* radio-field stub customization ([#379](https://github.com/qiwi/pijma/issues/379)) ([7d5457d](https://github.com/qiwi/pijma/commit/7d5457da27da706c6e43281083ffa8aee12bf720))
+
+## [1.124.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.124.1...@qiwi/pijma-mobile@1.124.2) (2021-03-11)
+
+
+### Performance Improvements
+
+* migrate to @qiwi/semrel-toolkit ([#377](https://github.com/qiwi/pijma/issues/377)) ([87dc7f5](https://github.com/qiwi/pijma/commit/87dc7f5449893e20968dd9f54d338dc24235de33))
+
+# [@qiwi/pijma-mobile-v1.124.1](https://github.com/qiwi/pijma/compare/v1.124.0...v1.124.1) (2021-03-10)
+
+
+### Performance Improvements
+
+* upgrade react-styleguidist to 10.6.2 ([#371](https://github.com/qiwi/pijma/issues/371)) ([34711d3](https://github.com/qiwi/pijma/commit/34711d3))
+
+# [@qiwi/pijma-mobile-v1.124.0](https://github.com/qiwi/pijma/compare/v1.123.0...v1.124.0) (2021-03-09)
+
+
+### Features
+
+* auto display name ([#368](https://github.com/qiwi/pijma/issues/368)) ([41beeea](https://github.com/qiwi/pijma/commit/41beeea))
+
+# [@qiwi/pijma-mobile-v1.123.0](https://github.com/qiwi/pijma/compare/v1.122.0...v1.123.0) (2021-03-03)
+
+
+### Features
+
+* glossary stub ([#366](https://github.com/qiwi/pijma/issues/366)) ([8967ae8](https://github.com/qiwi/pijma/commit/8967ae8))
+
+# [@qiwi/pijma-mobile-v1.122.0](https://github.com/qiwi/pijma/compare/v1.121.0...v1.122.0) (2021-01-18)
+
+
+### Features
+
+* alert simplify ([#364](https://github.com/qiwi/pijma/issues/364)) ([398129a](https://github.com/qiwi/pijma/commit/398129a))
+
+# [@qiwi/pijma-mobile-v1.121.0](https://github.com/qiwi/pijma/compare/v1.120.0...v1.121.0) (2021-01-14)
+
+
+### Features
+
+* alert action ([#362](https://github.com/qiwi/pijma/issues/362)) ([8769d88](https://github.com/qiwi/pijma/commit/8769d88))
+
+# [@qiwi/pijma-mobile-v1.120.0](https://github.com/qiwi/pijma/compare/v1.119.2...v1.120.0) (2021-01-13)
+
+
+### Features
+
+* inverse link ([#363](https://github.com/qiwi/pijma/issues/363)) ([19e966d](https://github.com/qiwi/pijma/commit/19e966d))
+
+# [@qiwi/pijma-mobile-v1.119.2](https://github.com/qiwi/pijma/compare/v1.119.1...v1.119.2) (2021-01-13)
+
+
+### Bug Fixes
+
+* phone-field keydown ([#361](https://github.com/qiwi/pijma/issues/361)) ([7386aef](https://github.com/qiwi/pijma/commit/7386aef))
+
+# [@qiwi/pijma-mobile-v1.118.0](https://github.com/qiwi/pijma/compare/v1.117.1...v1.118.0) (2020-11-23)
+
+
+### Features
+
+* suggest custom empty and total message ([#352](https://github.com/qiwi/pijma/issues/352)) ([312ed87](https://github.com/qiwi/pijma/commit/312ed87))
+
+# [@qiwi/pijma-mobile-v1.117.1](https://github.com/qiwi/pijma/compare/v1.117.0...v1.117.1) (2020-11-20)
+
+
+### Bug Fixes
+
+* suggest-field total and submit ([#351](https://github.com/qiwi/pijma/issues/351)) ([cbbb02e](https://github.com/qiwi/pijma/commit/cbbb02e))
+
+# [@qiwi/pijma-mobile-v1.117.0](https://github.com/qiwi/pijma/compare/v1.116.0...v1.117.0) (2020-11-18)
+
+
+### Features
+
+* menu-item attention ([#348](https://github.com/qiwi/pijma/issues/348)) ([30d0738](https://github.com/qiwi/pijma/commit/30d0738))
+
+# [@qiwi/pijma-mobile-v1.114.1](https://github.com/qiwi/pijma/compare/v1.114.0...v1.114.1) (2020-10-28)
+
+
+### Performance Improvements
+
+* compile es5, auto display name ([#342](https://github.com/qiwi/pijma/issues/342)) ([dae09a2](https://github.com/qiwi/pijma/commit/dae09a2))
+
+# [@qiwi/pijma-mobile-v1.114.0](https://github.com/qiwi/pijma/compare/v1.113.1...v1.114.0) (2020-10-16)
+
+
+### Features
+
+* new mobile app icons ([#337](https://github.com/qiwi/pijma/issues/337)) ([48ced61](https://github.com/qiwi/pijma/commit/48ced61))
+
+# [@qiwi/pijma-mobile-v1.111.3](https://github.com/qiwi/pijma/compare/v1.111.2...v1.111.3) (2020-09-11)
+
+
+### Bug Fixes
+
+* export field-props ([#329](https://github.com/qiwi/pijma/issues/329)) ([89d7cdf](https://github.com/qiwi/pijma/commit/89d7cdf))
+
+# [@qiwi/pijma-mobile-v1.111.0](https://github.com/qiwi/pijma/compare/v1.110.1...v1.111.0) (2020-04-17)
+
+
+### Features
+
+* button spinner paused ([#310](https://github.com/qiwi/pijma/issues/310)) ([ad674f9](https://github.com/qiwi/pijma/commit/ad674f9))
+
+# [@qiwi/pijma-mobile-v1.110.1](https://github.com/qiwi/pijma/compare/v1.110.0...v1.110.1) (2020-04-09)
+
+
+### Bug Fixes
+
+* add export for notice, checkbox ([#308](https://github.com/qiwi/pijma/issues/308)) ([2a85dbe](https://github.com/qiwi/pijma/commit/2a85dbe))
+
+# [@qiwi/pijma-mobile-v1.110.0](https://github.com/qiwi/pijma/compare/v1.109.0...v1.110.0) (2020-03-27)
+
+
+### Features
+
+* stub simple-modal ([ec8a981](https://github.com/qiwi/pijma/commit/ec8a981))
+
+# [@qiwi/pijma-mobile-v1.108.6](https://github.com/qiwi/pijma/compare/v1.108.5...v1.108.6) (2020-03-25)
+
+
+### Bug Fixes
+
+* stub footer-out ([58e5ff8](https://github.com/qiwi/pijma/commit/58e5ff8))
+
+# [@qiwi/pijma-mobile-v1.108.5](https://github.com/qiwi/pijma/compare/v1.108.4...v1.108.5) (2020-03-16)
+
+
+### Bug Fixes
+
+* stub footer-app ([30d68cf](https://github.com/qiwi/pijma/commit/30d68cf))
+
+# [@qiwi/pijma-mobile-v1.108.3](https://github.com/qiwi/pijma/compare/v1.108.2...v1.108.3) (2020-03-12)
+
+
+### Bug Fixes
+
+* button blur ([cf1ef51](https://github.com/qiwi/pijma/commit/cf1ef51))
+
+# [@qiwi/pijma-mobile-v1.108.0](https://github.com/qiwi/pijma/compare/v1.107.1...v1.108.0) (2020-02-04)
+
+
+### Features
+
+* **mobile:** stub header menu ([efae3e1](https://github.com/qiwi/pijma/commit/efae3e1))
+
+# [@qiwi/pijma-mobile-v1.107.1](https://github.com/qiwi/pijma/compare/v1.107.0...v1.107.1) (2020-02-04)
+
+
+### Bug Fixes
+
+* rating ([b04a420](https://github.com/qiwi/pijma/commit/b04a420))
+
+# [@qiwi/pijma-mobile-v1.107.0](https://github.com/qiwi/pijma/compare/v1.106.0...v1.107.0) (2020-02-04)
+
+
+### Features
+
+* stub footer-app ([409e174](https://github.com/qiwi/pijma/commit/409e174))
+
+# [@qiwi/pijma-mobile-v1.105.0](https://github.com/qiwi/pijma/compare/v1.104.0...v1.105.0) (2020-02-03)
+
+
+### Features
+
+* stub menu-link ([2b41552](https://github.com/qiwi/pijma/commit/2b41552))
+
+# [@qiwi/pijma-mobile-v1.104.0](https://github.com/qiwi/pijma/compare/v1.103.0...v1.104.0) (2020-01-31)
+
+
+### Features
+
+* suggest-field ([945e2f9](https://github.com/qiwi/pijma/commit/945e2f9))
+
+# [@qiwi/pijma-mobile-v1.103.0](https://github.com/qiwi/pijma/compare/v1.102.0...v1.103.0) (2020-01-31)
+
+
+### Features
+
+* stub footer-out ([26b706a](https://github.com/qiwi/pijma/commit/26b706a))
+
+# [@qiwi/pijma-mobile-v1.102.0](https://github.com/qiwi/pijma/compare/v1.101.1...v1.102.0) (2020-01-31)
+
+
+### Features
+
+* stub footer-nav ([e3eb002](https://github.com/qiwi/pijma/commit/e3eb002))
+
+# [@qiwi/pijma-mobile-v1.101.1](https://github.com/qiwi/pijma/compare/v1.101.0...v1.101.1) (2020-01-31)
+
+
+### Bug Fixes
+
+* stub text-field ([caaddbb](https://github.com/qiwi/pijma/commit/caaddbb))
+
+# [@qiwi/pijma-mobile-v1.100.0](https://github.com/qiwi/pijma/compare/v1.99.0...v1.100.0) (2020-01-29)
+
+
+### Features
+
+* stub menu-item ([1fc97d2](https://github.com/qiwi/pijma/commit/1fc97d2))
+
+# [@qiwi/pijma-mobile-v1.99.0](https://github.com/qiwi/pijma/compare/v1.98.1...v1.99.0) (2020-01-29)
+
+
+### Features
+
+* stub logo-block-link ([c012a26](https://github.com/qiwi/pijma/commit/c012a26))
+
+# [@qiwi/pijma-mobile-v1.98.1](https://github.com/qiwi/pijma/compare/v1.98.0...v1.98.1) (2020-01-29)
+
+
+### Bug Fixes
+
+* export logo-block-link ([9a136b0](https://github.com/qiwi/pijma/commit/9a136b0))
+
+# [@qiwi/pijma-mobile-v1.98.0](https://github.com/qiwi/pijma/compare/v1.97.0...v1.98.0) (2020-01-23)
+
+
+### Features
+
+* suggest-control items undefined ([66ebdb2](https://github.com/qiwi/pijma/commit/66ebdb2))
+
+# [@qiwi/pijma-mobile-v1.97.0](https://github.com/qiwi/pijma/compare/v1.96.4...v1.97.0) (2020-01-22)
+
+
+### Features
+
+* stub list ([7756060](https://github.com/qiwi/pijma/commit/7756060))
+
+# [@qiwi/pijma-mobile-v1.96.1](https://github.com/qiwi/pijma/compare/v1.96.0...v1.96.1) (2019-12-11)
+
+
+### Bug Fixes
+
+* **mobile:** header menu scroll height ([4563567](https://github.com/qiwi/pijma/commit/4563567))
+
+# [@qiwi/pijma-mobile-v1.96.0](https://github.com/qiwi/pijma/compare/v1.95.0...v1.96.0) (2019-11-27)
+
+
+### Features
+
+* header suggest ([e21e8d1](https://github.com/qiwi/pijma/commit/e21e8d1))
+
+# [@qiwi/pijma-mobile-v1.95.0](https://github.com/qiwi/pijma/compare/v1.94.0...v1.95.0) (2019-11-27)
+
+
+### Features
+
+* phone-field ([d42068e](https://github.com/qiwi/pijma/commit/d42068e))
+
+# [@qiwi/pijma-mobile-v1.94.0](https://github.com/qiwi/pijma/compare/v1.93.0...v1.94.0) (2019-11-27)
+
+
+### Features
+
+* stub pagination ([8166098](https://github.com/qiwi/pijma/commit/8166098))
+
+# [@qiwi/pijma-mobile-v1.93.0](https://github.com/qiwi/pijma/compare/v1.92.0...v1.93.0) (2019-11-21)
+
+
+### Features
+
+* stub breadcrumbs ([a12af85](https://github.com/qiwi/pijma/commit/a12af85))
+
+# [@qiwi/pijma-mobile-v1.92.0](https://github.com/qiwi/pijma/compare/v1.91.0...v1.92.0) (2019-11-20)
+
+
+### Features
+
+* stub nav-link ([673a7b8](https://github.com/qiwi/pijma/commit/673a7b8))
+
+# [@qiwi/pijma-mobile-v1.90.0](https://github.com/qiwi/pijma/compare/v1.89.0...v1.90.0) (2019-11-15)
+
+
+### Features
+
+* stub link ([4e45439](https://github.com/qiwi/pijma/commit/4e45439))
+
+# [@qiwi/pijma-mobile-v1.89.0](https://github.com/qiwi/pijma/compare/v1.88.0...v1.89.0) (2019-11-15)
+
+
+### Features
+
+* alert ([1a684e2](https://github.com/qiwi/pijma/commit/1a684e2))
+
+# [@qiwi/pijma-mobile-v1.88.0](https://github.com/qiwi/pijma/compare/v1.87.1...v1.88.0) (2019-11-13)
+
+
+### Features
+
+* rating ([db69ac6](https://github.com/qiwi/pijma/commit/db69ac6))
+
+# [@qiwi/pijma-mobile-v1.87.0](https://github.com/qiwi/pijma/compare/v1.86.0...v1.87.0) (2019-11-11)
+
+
+### Features
+
+* stub text ([7f1fb93](https://github.com/qiwi/pijma/commit/7f1fb93))
+
+# [@qiwi/pijma-mobile-v1.86.0](https://github.com/qiwi/pijma/compare/v1.85.1...v1.86.0) (2019-11-11)
+
+
+### Features
+
+* content suggest ([d7780e2](https://github.com/qiwi/pijma/commit/d7780e2))
+
+# [@qiwi/pijma-mobile-v1.85.1](https://github.com/qiwi/pijma/compare/v1.85.0...v1.85.1) (2019-11-08)
+
+
+### Bug Fixes
+
+* progress-bar stub ([8bafcdd](https://github.com/qiwi/pijma/commit/8bafcdd))
+
+# [@qiwi/pijma-mobile-v1.85.0](https://github.com/qiwi/pijma/compare/v1.84.1...v1.85.0) (2019-11-08)
+
+
+### Features
+
+* progress-bar ([564c1d2](https://github.com/qiwi/pijma/commit/564c1d2))
+
+# [@qiwi/pijma-mobile-v1.84.1](https://github.com/qiwi/pijma/compare/v1.84.0...v1.84.1) (2019-10-29)
+
+
+### Bug Fixes
+
+* paragraph clamp and align stub ([08078dc](https://github.com/qiwi/pijma/commit/08078dc))
+
 # [@qiwi/pijma-mobile-v1.83.0](https://github.com/qiwi/pijma/compare/v1.82.4...v1.83.0) (2019-10-09)
 
 

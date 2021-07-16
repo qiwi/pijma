@@ -19,3 +19,11 @@
   </BlockContent>
 </Block>
 ```
+
+```jsx
+<Block>
+  <BlockContent>
+    <FooterNav stub={[32, 40, 26]}/>
+  </BlockContent>
+</Block>
+```

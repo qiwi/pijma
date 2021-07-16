@@ -1,5 +1,7 @@
 import ReactTextMask from 'react-text-mask'
 
-import {Input} from './Input'
+import styled from '../styled'
 
-export const MaskInput = Input.withComponent(ReactTextMask)
+import {Input, InputOptions} from './Input'
+
+export const MaskInput = styled(Input, InputOptions)().withComponent(ReactTextMask)
