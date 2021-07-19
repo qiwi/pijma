@@ -1,3 +1,10 @@
+## @qiwi/pijma-desktop [1.128.12](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.128.11...@qiwi/pijma-desktop@1.128.12) (2021-07-16)
+
+
+### Bug Fixes
+
+* status content ([#426](https://github.com/qiwi/pijma/issues/426)) ([41c7ccd](https://github.com/qiwi/pijma/commit/41c7ccde9a831e639ba2a02aa6e817895b78f454))
+
 ## [1.128.11](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.128.10...@qiwi/pijma-desktop@1.128.11) (2021-06-25)
 
 

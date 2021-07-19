@@ -41,7 +41,7 @@ export const Status: FC<StatusProps> = ({icon, title, actions, content, children
             children={content}
           />
         ) : (
-          children
+          content
         )}
       </FlexItem>
     ) : (
