@@ -11,7 +11,6 @@ export interface SwitchControlProps {
   children: RenderChild<{
     focused: boolean
     tabIndex?: number
-    checked: boolean
     onFocus: React.FocusEventHandler
     onBlur: React.FocusEventHandler
     onClick: React.MouseEventHandler
@@ -23,7 +22,6 @@ export interface SwitchControlProps {
 
 export interface SwitchControlState {
   focused: boolean
-  checked: boolean
 }
 
 export class SwitchControl extends React.Component<
@@ -33,7 +31,6 @@ export class SwitchControl extends React.Component<
 
   public state: SwitchControlState = {
     focused: false,
-    checked: this.props.checked,
   }
 
   private onFocus: React.FocusEventHandler<HTMLElement> = (
@@ -78,12 +75,8 @@ export class SwitchControl extends React.Component<
     if (this.props.disabled) {
       return
     }
-    const checked = !this.state.checked
-    this.setState({
-      checked,
-    })
     if (this.props.onChange) {
-      this.props.onChange(checked)
+      this.props.onChange(!this.props.checked)
     }
   }
 
@@ -106,7 +99,6 @@ export class SwitchControl extends React.Component<
     return this.props.children({
       tabIndex: this.props.tabIndex,
       focused: this.state.focused,
-      checked: this.state.checked,
       onFocus: this.onFocus,
       onBlur: this.onBlur,
       onClick: this.onClick,

@@ -58,7 +58,7 @@ export const Switch: FunctionComponent<SwitchProps> = props => (
                 <Box width={10}>
                   <Tumbler
                     disabled={props.disabled}
-                    checked={renderProps.checked}
+                    checked={props.checked}
                     focused={renderProps.focused}
                   />
                 </Box>

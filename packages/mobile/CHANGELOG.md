@@ -1,3 +1,19 @@
+## [1.128.11](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.10...@qiwi/pijma-mobile@1.128.11) (2021-07-16)
+
+
+### Bug Fixes
+
+* status content ([#426](https://github.com/qiwi/pijma/issues/426)) ([41c7ccd](https://github.com/qiwi/pijma/commit/41c7ccde9a831e639ba2a02aa6e817895b78f454))
+
+## [1.128.10](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.9...@qiwi/pijma-mobile@1.128.10) (2021-06-25)
+
+
+### Bug Fixes
+
+* switch controled checked ([#424](https://github.com/qiwi/pijma/issues/424)) ([0344983](https://github.com/qiwi/pijma/commit/0344983146a333cbdc841f6f1534ebab6e000b9b))
+
+## [1.128.9](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.8...@qiwi/pijma-mobile@1.128.9) (2021-06-24)
+
 ## [1.128.8](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.7...@qiwi/pijma-mobile@1.128.8) (2021-06-24)
 
 ## [1.128.7](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.6...@qiwi/pijma-mobile@1.128.7) (2021-06-01)
