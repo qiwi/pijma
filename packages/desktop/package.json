@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-desktop",
-  "version": "1.128.7",
+  "version": "1.128.12",
   "main": "lib/es5/index.js",
   "types": "lib/es5/index.d.ts",
   "license": "MIT",
@@ -24,7 +24,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
-    "@qiwi/pijma-core": "1.129.3",
+    "@qiwi/pijma-core": "1.131.2",
     "@types/markdown-to-jsx": "^6.9.0",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",

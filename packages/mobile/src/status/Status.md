@@ -25,6 +25,43 @@
   </BlockContent>
 </Block>
 ```
+
+```jsx
+<Block>
+  <BlockContent indent="m">
+    <Status
+      icon={(
+        <Icon
+          name="attention"
+          color="#ff0000"
+          size={1}
+        />
+      )}
+      title="Не удалось найти информацию о никнейме"
+      content={(
+        <Spacer size="xxs">
+          <Paragraph align="center" color="support">
+            Наташа, проснись!
+          </Paragraph>
+          <Paragraph size="l" align="center" bold>
+            Мы всё уронили!!!
+          </Paragraph>
+        </Spacer>
+      )}
+      actions={(
+        <Actions size="normal">
+          <Button 
+            text="Обновить страницу" 
+            type="submit" 
+            kind="simple" 
+            size="normal"
+          />
+        </Actions>
+      )}
+    />
+  </BlockContent>
+</Block>
+```
   
 ```jsx
 <Block>
