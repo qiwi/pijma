@@ -65,6 +65,7 @@ export const SuggestField = <V extends {}>({
               input={(
                 <BasicInput
                   ref={renderProps.inputRef}
+                  disabled={props.disabled}
                   type={props.type}
                   name={props.name}
                   value={props.suggest || ''}
