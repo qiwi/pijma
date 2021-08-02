@@ -1,3 +1,10 @@
+## @qiwi/pijma-mobile [1.128.13](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.12...@qiwi/pijma-mobile@1.128.13) (2021-08-02)
+
+
+### Bug Fixes
+
+* **mobile:** suggest field prevent focus ([#429](https://github.com/qiwi/pijma/issues/429)) ([64f2d1b](https://github.com/qiwi/pijma/commit/64f2d1b399853c5afbba1e862da5a977455f660b))
+
 ## @qiwi/pijma-mobile [1.128.12](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.11...@qiwi/pijma-mobile@1.128.12) (2021-08-02)
 
 
