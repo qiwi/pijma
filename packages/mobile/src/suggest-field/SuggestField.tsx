@@ -61,7 +61,7 @@ export const SuggestField = <V extends {}>({
           >
             <InputField
               title={props.title}
-              active={renderProps.focused || !!props.suggest || !!props.placeholder}
+              active={!!props.suggest || !!props.placeholder}
               input={(
                 <BasicInput
                   ref={renderProps.inputRef}
@@ -76,7 +76,7 @@ export const SuggestField = <V extends {}>({
                   placeholder={props.placeholder}
                   maxLength={props.maxLength}
                   error={!!props.error}
-                  focused={renderProps.focused}
+                  focused={false}
                   onChange={renderProps.onRequest}
                   onFocus={renderProps.onShowFocus}
                   onBlur={renderProps.onInputBlur}
