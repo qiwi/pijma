@@ -1,3 +1,10 @@
+## @qiwi/pijma-mobile [1.128.12](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.11...@qiwi/pijma-mobile@1.128.12) (2021-08-02)
+
+
+### Bug Fixes
+
+* **mobile:** add disabled prop to suggest field ([#428](https://github.com/qiwi/pijma/issues/428)) ([87883dc](https://github.com/qiwi/pijma/commit/87883dc4e6670d4b987175e8d009074e83dbd4fb))
+
 ## [1.128.11](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.10...@qiwi/pijma-mobile@1.128.11) (2021-07-16)
 
 
