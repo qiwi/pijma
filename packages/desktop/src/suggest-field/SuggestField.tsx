@@ -140,7 +140,27 @@ export const SuggestField = <V extends {}>({
                               cursor="pointer"
                               text={renderProps.items[key].title}
                               notes={renderProps.items[key].description}
-                              icon={renderProps.items[key].logo ? <Image width={6} height={6} src={renderProps.items[key].logo}/> : undefined}
+                              icon={
+                                renderProps.items[key].logo ? (
+                                  <Image
+                                    stub={
+                                      renderProps.items[key].stub ? (
+                                        <Image
+                                          width={6}
+                                          src={renderProps.items[key].stub!}
+                                          height={6}
+                                        />
+                                      ) : (
+                                        true
+                                      )
+                                    }
+                                    width={6}
+                                    height={6}
+                                    src={renderProps.items[key].logo}
+                                  />
+                                ) : (
+                                  undefined
+                                )}
                               hover={item.focused}
                               active={item.selected}
                               focus={item.selected}

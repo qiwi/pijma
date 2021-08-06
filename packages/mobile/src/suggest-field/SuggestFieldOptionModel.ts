@@ -4,4 +4,5 @@ export default interface SuggestFieldOptionsModel<V> extends SuggestOptionModel<
   title: string
   logo: string
   description: string
+  stub?: string
 }
