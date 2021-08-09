@@ -143,17 +143,7 @@ export const SuggestField = <V extends {}>({
                               icon={
                                 renderProps.items[key].logo ? (
                                   <Image
-                                    stub={
-                                      renderProps.items[key].stub ? (
-                                        <Image
-                                          width={6}
-                                          src={renderProps.items[key].stub!}
-                                          height={6}
-                                        />
-                                      ) : (
-                                        true
-                                      )
-                                    }
+                                    stub={renderProps.items[key].stub}
                                     width={6}
                                     height={6}
                                     src={renderProps.items[key].logo}
