@@ -1,3 +1,10 @@
+# @qiwi/pijma-mobile [1.129.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.13...@qiwi/pijma-mobile@1.129.0) (2021-08-10)
+
+
+### Features
+
+* suggest-field menu-item stub ([#431](https://github.com/qiwi/pijma/issues/431)) ([c508053](https://github.com/qiwi/pijma/commit/c5080530c71ec5ce2c104cca0fbcbfd711492c59))
+
 ## @qiwi/pijma-mobile [1.128.13](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.12...@qiwi/pijma-mobile@1.128.13) (2021-08-02)
 
 
