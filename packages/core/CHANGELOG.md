@@ -1,3 +1,10 @@
+## @qiwi/pijma-core [1.131.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.131.2...@qiwi/pijma-core@1.131.3) (2021-08-10)
+
+
+### Bug Fixes
+
+* **core:** suggest-control input-ref ([#432](https://github.com/qiwi/pijma/issues/432)) ([d5d9b6d](https://github.com/qiwi/pijma/commit/d5d9b6d5641adf8491c2d91b2e84ad4c807db1dd))
+
 ## @qiwi/pijma-core [1.131.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.131.1...@qiwi/pijma-core@1.131.2) (2021-06-25)
 
 
