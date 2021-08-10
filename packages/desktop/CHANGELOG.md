@@ -1,3 +1,10 @@
+# [1.129.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.128.12...@qiwi/pijma-desktop@1.129.0) (2021-08-10)
+
+
+### Features
+
+* suggest-field menu-item stub ([#431](https://github.com/qiwi/pijma/issues/431)) ([c508053](https://github.com/qiwi/pijma/commit/c5080530c71ec5ce2c104cca0fbcbfd711492c59))
+
 ## @qiwi/pijma-desktop [1.128.12](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.128.11...@qiwi/pijma-desktop@1.128.12) (2021-07-16)
 
 
