@@ -39,7 +39,7 @@
     "react-overlays": "^1.2.0",
     "react-text-mask": "^5.4.3",
     "react-transition-group": "^4.2.2",
-    "tslib": "^1.10.0"
+    "tslib": "^1.14.1"
   },
   "devDependencies": {
     "@qiwi/pijma-infra": "1.0.0"
