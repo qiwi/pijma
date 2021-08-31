@@ -32,7 +32,6 @@ export interface SelectFieldControlProps<O extends OptionModel<V>, V> {
 export interface SelectFieldControlState {
   focus: boolean
   show: boolean
-  select?: number
 }
 
 export class SelectFieldControl<O extends OptionModel<V>, V> extends React.Component<SelectFieldControlProps<O, V>, SelectFieldControlState> {
@@ -46,14 +45,6 @@ export class SelectFieldControl<O extends OptionModel<V>, V> extends React.Compo
   public state: SelectFieldControlState = {
     focus: false,
     show: false,
-    select: undefined,
-  }
-
-  public componentDidMount() {
-    const index = this.props.items.findIndex(item => this.equals(this.props.value, item.value))
-    this.setState({
-      select: index === -1 ? undefined : index,
-    })
   }
 
   private onFocus: React.FocusEventHandler = (event) => {
@@ -119,12 +110,16 @@ export class SelectFieldControl<O extends OptionModel<V>, V> extends React.Compo
     this.props.onChange(item.value)
     this.setState({
       show: false,
-      select: index,
     })
   }
 
   private equals(a: V, b: V): boolean {
     return this.props.equals ? this.props.equals(a, b) : a === b
+  }
+
+  private findItemIndex(): number | undefined {
+    const index = this.props.items.findIndex(item => this.equals(this.props.value, item.value))
+    return index === -1 ? undefined : index
   }
 
   private onHide: () => void = () => {
@@ -143,7 +138,7 @@ export class SelectFieldControl<O extends OptionModel<V>, V> extends React.Compo
       containerRef: this.containerRef,
       focused: this.state.focus,
       show: this.state.show,
-      select: this.state.select,
+      select: this.findItemIndex(),
       onItemSelect: this.onSelect,
       onHide: this.onHide,
       onFocus: this.props.disabled ? undefined : this.onFocus,
