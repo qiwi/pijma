@@ -32,6 +32,7 @@ export interface SelectFieldControlProps<O extends OptionModel<V>, V> {
 export interface SelectFieldControlState {
   focus: boolean
   show: boolean
+  select?: number
 }
 
 export class SelectFieldControl<O extends OptionModel<V>, V> extends React.Component<SelectFieldControlProps<O, V>, SelectFieldControlState> {
@@ -45,6 +46,21 @@ export class SelectFieldControl<O extends OptionModel<V>, V> extends React.Compo
   public state: SelectFieldControlState = {
     focus: false,
     show: false,
+    select: undefined,
+  }
+
+  public componentDidMount() {
+    this.setState({
+      select: this.findItemIndex(),
+    })
+  }
+
+  public componentDidUpdate(prevProps: Readonly<SelectFieldControlProps<O, V>>) {
+    if (prevProps.value !== this.props.value) {
+      this.setState({
+        select: this.findItemIndex(),
+      })
+    }
   }
 
   private onFocus: React.FocusEventHandler = (event) => {
@@ -138,7 +154,7 @@ export class SelectFieldControl<O extends OptionModel<V>, V> extends React.Compo
       containerRef: this.containerRef,
       focused: this.state.focus,
       show: this.state.show,
-      select: this.findItemIndex(),
+      select: this.state.select,
       onItemSelect: this.onSelect,
       onHide: this.onHide,
       onFocus: this.props.disabled ? undefined : this.onFocus,
