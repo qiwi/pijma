@@ -1,3 +1,10 @@
+## @qiwi/pijma-core [1.131.4](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.131.3...@qiwi/pijma-core@1.131.4) (2021-09-01)
+
+
+### Bug Fixes
+
+* **core:** select-field-control ([#435](https://github.com/qiwi/pijma/issues/435)) ([796a93b](https://github.com/qiwi/pijma/commit/796a93b14e353ad740e4f60e1a387422e97ec23f))
+
 ## @qiwi/pijma-core [1.131.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.131.2...@qiwi/pijma-core@1.131.3) (2021-08-10)
 
 
