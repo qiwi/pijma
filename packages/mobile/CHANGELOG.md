@@ -1,3 +1,13 @@
+## @qiwi/pijma-mobile [1.129.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.129.1...@qiwi/pijma-mobile@1.129.2) (2021-09-01)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.131.4
+
 ## [1.129.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.129.0...@qiwi/pijma-mobile@1.129.1) (2021-08-10)
 
 # @qiwi/pijma-mobile [1.129.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.128.13...@qiwi/pijma-mobile@1.129.0) (2021-08-10)
