@@ -11,7 +11,6 @@ export interface CodeFieldControlProps {
   onBlur?: () => void
   onReady?: (value?: string) => void
   children: RenderChild<{
-    value: string[]
     onKeyDown: (e: React.KeyboardEvent, index: number) => void
     values: Array<{
       focused: boolean
@@ -19,6 +18,7 @@ export interface CodeFieldControlProps {
       onChange: (e: React.ChangeEvent, index: number) => React.ChangeEventHandler
       onClick: (e: React.MouseEvent<HTMLInputElement, MouseEvent>, index: number) => React.MouseEventHandler
       onFocus: (e: React.FocusEvent, index: number) => React.FocusEventHandler
+      onBlur: (e: React.FocusEvent, index: number) => React.FocusEventHandler
     }>
   }>
 }
@@ -118,10 +118,10 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
   }
 
   private onFieldBlur: React.FocusEventHandler = (e: React.FocusEvent) => {
+    e.preventDefault()
     this.setState({
       focus: -1,
     })
-    e.preventDefault()
     if (this.props.onBlur) {
       this.props.onBlur()
     }
@@ -129,7 +129,6 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
 
   public render() {
     return this.props.children({
-      value: this.props.value,
       onKeyDown: this.onKeyDown,
       values: Array(this.props.value.length).fill(0).map((item, index) => ({
         ...item,

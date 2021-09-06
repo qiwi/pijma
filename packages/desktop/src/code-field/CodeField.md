@@ -73,7 +73,7 @@ const simulateQuery = (value) => {
       setError('Неверный код, попробуйте ещё раз')
       setStub(false)
     }
-  }, 1600)
+  }, 2000)
 }
 <Card width={96} align="center">
   <Block>

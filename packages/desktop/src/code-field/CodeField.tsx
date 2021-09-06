@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react'
 
-import {Input, CodeFieldControl, Stub, Typo, Box, Pos, keyframes, Flex, FlexItem} from '@qiwi/pijma-core'
+import {Input, CodeFieldControl, Stub, Typo, Box, keyframes, Flex, FlexItem} from '@qiwi/pijma-core'
 
 import {CodeFieldProps} from './CodeFieldProps'
 
@@ -35,12 +35,13 @@ export const CodeField: React.FC<CodeFieldProps> = ({length = 4, autoFocus = fal
       onBlur={props.onBlur}
       onReady={props.onReady}
       children={(renderProps) => (
-        <Pos type="relative" width={1} minHeight={12}>
+        <Box width={1} minHeight={12}>
           <Flex>
             {renderProps.values.map((item, index) => (
               <FlexItem ml={index === 0 ? 0 : 3} align="top" key={index}>
                 <Input
-                  animation={loading ? `${animation(props.value.length)} ${400 * props.value.length}ms ease-in-out ${400 * index}ms infinite` : undefined}
+                  cursor={props.disabled ? 'not-allowed' : undefined}
+                  animation={loading ? `${animation(props.value.length)} ${500 * props.value.length}ms ease-in-out ${500 * index}ms infinite` : undefined}
                   autoFocus={autoFocus && index === 0}
                   css={{textAlign: 'center'}}
                   bg="#F2F2F2"
@@ -59,6 +60,7 @@ export const CodeField: React.FC<CodeFieldProps> = ({length = 4, autoFocus = fal
                   onChange={e => item.onChange(e, index)}
                   onClick={e => item.onClick(e, index)}
                   onFocus={e => item.onFocus(e, index)}
+                  onBlur={e => item.onBlur(e, index)}
                   onKeyDown={e => renderProps.onKeyDown(e, index)}
                 />
               </FlexItem>
@@ -71,14 +73,14 @@ export const CodeField: React.FC<CodeFieldProps> = ({length = 4, autoFocus = fal
                 color="#d0021b"
                 weight={300}
                 size={3.5}
-                height={4}
+                height={5}
                 children={props.error}
               />
             </Box>
           ) : (
             null
           )}
-        </Pos>
+        </Box>
       )}
     />
   )
