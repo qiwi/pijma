@@ -5,7 +5,7 @@ import RenderChild from '../RenderChild'
 export interface CodeFieldControlProps {
   autoFocus: boolean
   value: string[]
-  length: number
+  loading: boolean
   onChange?: (value: string[]) => void
   onFocus?: () => void
   onBlur?: () => void
@@ -32,13 +32,21 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
 
   public state: CodeFieldControlState = {
     focus: this.props.autoFocus ? 0 : -1,
-    refs: Array(this.props.length).fill(1).map(() => createRef()),
+    refs: Array(this.props.value.length).fill(1).map(() => createRef()),
+  }
+
+  public componentDidUpdate(props: CodeFieldControlProps, state: CodeFieldControlState) {
+    if (props.loading && state.focus !== -1) {
+      this.setState({
+        focus: -1,
+      })
+    }
   }
 
   private onFieldChange: (e: React.ChangeEvent<HTMLInputElement>, index: number) => void = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     e.preventDefault()
     const value = e.target.value
-    if ((this.props.length - 1) === index) {
+    if ((this.props.value.length - 1) === index) {
       const current = this.state.refs[index]
       if (current && current.current) {
         current.current.select()
@@ -48,17 +56,11 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
     if (value !== '' && next && next.current) {
       next.current.focus()
     }
-    else if (value === '') {
-      const prev = this.state.refs[index - 1]
-      if (prev && prev.current) {
-        prev.current.focus()
-      }
-    }
     const newValue = this.props.value.map((item, i) => index === i ? value : item)
     if (this.props.onChange) {
       this.props.onChange(newValue)
     }
-    if (this.props.onReady && newValue.find(item => item === '') === undefined) {
+    if (this.props.onReady && !newValue.includes('')) {
       this.props.onReady(newValue.join(''))
     }
   }
@@ -68,31 +70,37 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
   }
 
   private onKeyDown: (e: React.KeyboardEvent, index: number) => void = (e: React.KeyboardEvent, index: number) => {
-    if (e.key === 'ArrowLeft') {
-      e.preventDefault()
-      const newIndex = index - 1
-      const prev = this.state.refs[newIndex]
-      if (prev && prev.current) {
-        prev.current.focus()
-      }
-    }
-    if (e.key === 'ArrowRight') {
-      e.preventDefault()
-      const newIndex = index + 1
-      const next = this.state.refs[newIndex]
-      if (next && next.current) {
-        next.current.focus()
-      }
-    }
-    if (e.key === 'Backspace') {
-      if (this.props.value[index] === '') {
+    switch (e.key) {
+      case 'ArrowLeft':
         e.preventDefault()
-        const newIndex = index - 1
-        const prev = this.state.refs[newIndex]
+        const prev = this.state.refs[index - 1]
         if (prev && prev.current) {
           prev.current.focus()
         }
-      }
+        break
+      case 'ArrowRight':
+        e.preventDefault()
+        const next = this.state.refs[index + 1]
+        if (next && next.current) {
+          next.current.focus()
+        }
+        break
+      case 'Backspace':
+        if (this.props.value[index] === '') {
+          const prev = this.state.refs[index - 1]
+          if (prev && prev.current) {
+            prev.current.focus()
+          }
+        }
+        break
+      default:
+        if (this.props.value[index] === e.key) {
+          e.preventDefault()
+          const next = this.state.refs[index + 1]
+          if (next && next.current) {
+            next.current.focus()
+          }
+        }
     }
   }
   private onFieldFocus: (e: React.ChangeEvent<HTMLInputElement>, index: number) => void = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
@@ -123,7 +131,7 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
     return this.props.children({
       value: this.props.value,
       onKeyDown: this.onKeyDown,
-      values: Array(this.props.length).fill(0).map((item, index) => ({
+      values: Array(this.props.value.length).fill(0).map((item, index) => ({
         ...item,
         focused: this.state.focus === index,
         ref: this.state.refs[index],

@@ -75,10 +75,10 @@ const simulateQuery = (value) => {
     }
   }, 1600)
 }
-<Card width={96} align="center">
+<Card width={80} align="center">
   <Block>
     <BlockContent>
-      <Flex minHeight={133} justify="space-between" direction="column">
+      <Flex minHeight={142} justify="space-between" direction="column">
         <FlexItem>
           <Spacer size="l">
             <Heading size="2">
