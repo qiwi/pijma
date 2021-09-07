@@ -61,6 +61,14 @@ const [code, setCode] = React.useState(['', '', '', '', '']);
 const [code, setCode] = React.useState(['', '', '', '']);
 const [stub, setStub] = React.useState(false)
 const [error, setError] = React.useState(undefined)
+const animation = keyframes({
+  '0%': {
+    opacity: '0',
+  },
+  '100%': {
+    opacity: '100%',
+  },
+})
 const simulateQuery = (value) => {
   setStub(true)
   setError(undefined)
@@ -70,10 +78,12 @@ const simulateQuery = (value) => {
       setStub(false)
     } else {
       setCode(['', '', '', ''])
-      setError('Неверный код, попробуйте ещё раз')
+      setError(<Box css={{
+        animation: `${animation} 200ms ease-in-out`
+      }}>Неверный код, попробуйте ещё раз</Box>)
       setStub(false)
     }
-  }, 2000)
+  }, 1800)
 }
 <Card width={96} align="center">
   <Block>

@@ -46,23 +46,27 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
   private onFieldChange: (e: React.ChangeEvent<HTMLInputElement>, index: number) => void = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     e.preventDefault()
     const value = e.target.value
-    if ((this.props.value.length - 1) === index) {
-      const current = this.state.refs[index]
-      if (current && current.current) {
-        current.current.select()
+    const newValue = this.props.value.map((item, i) => index === i ? value : item)
+    if (newValue.includes('')) {
+      if ((this.props.value.length - 1) === index) {
+        const current = this.state.refs[index]
+        if (current && current.current) {
+          current.current.select()
+        }
+      }
+      const next = this.state.refs[index + 1]
+      if (value !== '' && next && next.current) {
+        next.current.focus()
       }
     }
-    const next = this.state.refs[index + 1]
-    if (value !== '' && next && next.current) {
-      next.current.focus()
-    }
-    const newValue = this.props.value.map((item, i) => index === i ? value : item)
     if (this.props.onChange) {
       this.props.onChange(newValue)
     }
-    if (this.props.onReady && !newValue.includes('')) {
-      this.props.onReady(newValue.join(''))
-    }
+    setTimeout(() => {
+      if (this.props.onReady && !newValue.includes('')) {
+        this.props.onReady(newValue.join(''))
+      }
+    }, 300)
   }
 
   private onFieldClick: (e: React.ChangeEvent<HTMLInputElement>, index: number) => void = (e: React.ChangeEvent<HTMLInputElement>, _index: number) => {

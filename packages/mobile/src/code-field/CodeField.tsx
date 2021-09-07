@@ -41,7 +41,7 @@ export const CodeField: React.FC<CodeFieldProps> = ({length = 4, autoFocus = fal
               <FlexItem ml={index === 0 ? 0 : 3} align="top" key={index}>
                 <Input
                   cursor={props.disabled ? 'not-allowed' : undefined}
-                  animation={loading ? `${animation(props.value.length)} ${500 * props.value.length}ms ease-in-out ${500 * index}ms infinite` : undefined}
+                  animation={loading ? `${animation(props.value.length)} ${450 * props.value.length}ms ease-in-out ${450 * index}ms infinite` : undefined}
                   autoFocus={autoFocus && index === 0}
                   css={{textAlign: 'center'}}
                   bg="#F2F2F2"
