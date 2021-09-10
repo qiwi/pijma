@@ -99,7 +99,7 @@ const simulateQuery = (value) => {
             </Paragraph>
             <Box width={41}>
               <CodeField
-                type="number"
+                type="tel"
                 length={4}
                 loading={stub}
                 error={error}

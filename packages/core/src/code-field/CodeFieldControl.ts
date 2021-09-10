@@ -6,6 +6,7 @@ export interface CodeFieldControlProps {
   autoFocus: boolean
   value: string[]
   loading: boolean
+  type?: 'text' | 'tel'
   onChange?: (value: string[]) => void
   onFocus?: () => void
   onBlur?: () => void
@@ -48,6 +49,7 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
 
   public componentWillUnmount() {
     document.removeEventListener('mousedown', this.onMouseDown)
+    clearTimeout(this.onReadyTimeout)
   }
 
   public componentDidUpdate(props: CodeFieldControlProps, state: CodeFieldControlState) {
@@ -62,7 +64,7 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
   private onFieldChange: (e: React.ChangeEvent<HTMLInputElement>, index: number) => void = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     e.preventDefault()
     const value = e.target.value
-    if (value.length > 1) {
+    if (value.length > 1 || (this.props.type === 'tel' && !/^\d?$/.test(value))) {
       return
     }
     clearTimeout(this.onReadyTimeout)
@@ -83,11 +85,13 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
     if (this.props.onChange) {
       this.props.onChange(newValue)
     }
-    this.onReadyTimeout = setTimeout(() => {
-      if (this.props.onReady && !newValue.includes('')) {
-        this.props.onReady(newValue.join(''))
-      }
-    }, 200)
+    if (this.props.onReady && !newValue.includes('')) {
+      this.onReadyTimeout = setTimeout(() => {
+        if (this.props.onReady && !newValue.includes('')) {
+          this.props.onReady(newValue.join(''))
+        }
+      }, 200)
+    }
   }
 
   private onFieldClick: (e: React.ChangeEvent<HTMLInputElement>, index: number) => void = (e: React.ChangeEvent<HTMLInputElement>, _index: number) => {

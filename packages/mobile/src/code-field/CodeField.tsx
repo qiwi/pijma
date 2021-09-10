@@ -28,6 +28,7 @@ export const CodeField: React.FC<CodeFieldProps> = ({length = 4, autoFocus = fal
   ) : (
     <CodeFieldControl
       value={props.value}
+      type={props.type}
       autoFocus={autoFocus}
       loading={loading}
       onChange={props.onChange}
