@@ -30,9 +30,9 @@ export interface CodeFieldControlState {
 
 export class CodeFieldControl extends React.Component<CodeFieldControlProps, CodeFieldControlState> {
 
-  private preventBlur = false
+  private preventBlur = true
 
-  private focused = false
+  private preventFocus = true
 
   private onReadyTimeout: any
 
@@ -41,21 +41,21 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
     refs: Array(this.props.value.length).fill(1).map(() => createRef()),
   }
 
-  public componentDidMount () {
-    this.focused = this.props.autoFocus
+  public componentDidMount() {
+    this.preventFocus = !this.props.autoFocus
     document.addEventListener('mousedown', this.onMouseDown)
   }
 
-  public componentWillUnmount () {
+  public componentWillUnmount() {
     document.removeEventListener('mousedown', this.onMouseDown)
   }
 
-  public componentDidUpdate (props: CodeFieldControlProps, state: CodeFieldControlState) {
+  public componentDidUpdate(props: CodeFieldControlProps, state: CodeFieldControlState) {
     if (props.loading && state.focus !== -1) {
       this.setState({
         focus: -1,
       })
-      this.focused = false
+      this.preventFocus = true
     }
   }
 
@@ -76,7 +76,7 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
       }
       const next = this.state.refs[index + 1]
       if (value !== '' && next && next.current) {
-        this.preventBlur = false
+        this.preventBlur = true
         next.current.focus()
       }
     }
@@ -100,7 +100,7 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
         e.preventDefault()
         const prev = this.state.refs[index - 1]
         if (prev && prev.current) {
-          this.preventBlur = false
+          this.preventBlur = true
           prev.current.focus()
         }
         break
@@ -108,7 +108,7 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
         e.preventDefault()
         const next = this.state.refs[index + 1]
         if (next && next.current) {
-          this.preventBlur = false
+          this.preventBlur = true
           next.current.focus()
         }
         break
@@ -116,7 +116,7 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
         if (this.props.value[index] === '') {
           const prev = this.state.refs[index - 1]
           if (prev && prev.current) {
-            this.preventBlur = false
+            this.preventBlur = true
             prev.current.focus()
           }
         }
@@ -126,7 +126,7 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
           e.preventDefault()
           const next = this.state.refs[index + 1]
           if (next && next.current) {
-            this.preventBlur = false
+            this.preventBlur = true
             next.current.focus()
           }
         }
@@ -141,11 +141,11 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
     if (field && field.current && field.current.value) {
       field.current.select()
     }
-    if (this.props.onFocus && !this.focused) {
+    if (this.props.onFocus && this.preventFocus) {
       this.props.onFocus()
     }
-    this.focused = true
-    this.preventBlur = true
+    this.preventFocus = false
+    this.preventBlur = false
   }
 
   private onFieldBlur: React.FocusEventHandler = (e: React.FocusEvent) => {
@@ -153,19 +153,19 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
     this.setState({
       focus: -1,
     })
-    if (this.props.onBlur && this.preventBlur) {
+    if (this.props.onBlur && !this.preventBlur) {
       this.props.onBlur()
     }
-    if (this.preventBlur) {
-      this.focused = false
+    if (!this.preventBlur) {
+      this.preventFocus = true
     }
   }
 
   private onMouseDown: EventListenerOrEventListenerObject = (e: any) => {
-    this.preventBlur = !this.state.refs.map(item => item.current).includes(e.target)
+    this.preventBlur = this.state.refs.map(item => item.current).includes(e.target)
   }
 
-  public render () {
+  public render() {
     return this.props.children({
       onKeyDown: this.onKeyDown,
       values: Array(this.props.value.length).fill(0).map((item, index) => ({
