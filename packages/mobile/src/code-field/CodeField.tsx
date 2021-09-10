@@ -40,6 +40,7 @@ export const CodeField: React.FC<CodeFieldProps> = ({length = 4, autoFocus = fal
             {renderProps.values.map((item, index) => (
               <FlexItem ml={index === 0 ? 0 : 3} align="top" key={index}>
                 <Input
+                  tabIndex={index === 0 ? 0 : -1}
                   cursor={props.disabled ? 'not-allowed' : undefined}
                   animation={loading ? `${animation(props.value.length)} ${450 * props.value.length}ms ease-in-out ${450 * index}ms infinite` : undefined}
                   autoFocus={autoFocus && index === 0}
@@ -47,7 +48,6 @@ export const CodeField: React.FC<CodeFieldProps> = ({length = 4, autoFocus = fal
                   bg="#F2F2F2"
                   b={item.focused && !loading ? '1px solid #CCCCCC' : undefined}
                   autoComplete="off"
-                  maxLength={1}
                   valueSize={5}
                   valueWeight={400}
                   width={8}
