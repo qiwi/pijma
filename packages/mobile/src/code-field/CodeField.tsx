@@ -16,7 +16,7 @@ const animation = (count: number) => keyframes({
   },
 })
 
-export const CodeField: React.FC<CodeFieldProps> = ({length = 4, autoFocus = false, loading = false, ...props}) => (
+export const CodeField: React.FC<CodeFieldProps> = ({length = 4, autoFocus = false, loading = false, type = 'tel', ...props}) => (
   props.stub ? (
     <Fragment>
       {Array(length).fill('').map((_, index) => (
@@ -28,7 +28,7 @@ export const CodeField: React.FC<CodeFieldProps> = ({length = 4, autoFocus = fal
   ) : (
     <CodeFieldControl
       value={props.value}
-      type={props.type}
+      type={type}
       autoFocus={autoFocus}
       loading={loading}
       onChange={props.onChange}
@@ -41,6 +41,7 @@ export const CodeField: React.FC<CodeFieldProps> = ({length = 4, autoFocus = fal
             {renderProps.values.map((item, index) => (
               <FlexItem ml={index === 0 ? 0 : 3} align="top" key={index}>
                 <Input
+                  name={props.name}
                   tabIndex={index === 0 ? 0 : -1}
                   cursor={props.disabled ? 'not-allowed' : undefined}
                   animation={loading ? `${animation(props.value.length)} ${450 * props.value.length}ms ease-in-out ${450 * index}ms infinite` : undefined}
@@ -54,7 +55,7 @@ export const CodeField: React.FC<CodeFieldProps> = ({length = 4, autoFocus = fal
                   width={8}
                   height={12}
                   r={8}
-                  type={props.type}
+                  type={type}
                   disabled={props.disabled || loading}
                   ref={item.ref}
                   value={loading ? '' : props.value[index]}

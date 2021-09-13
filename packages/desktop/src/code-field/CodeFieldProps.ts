@@ -3,6 +3,7 @@ import {ReactNode} from 'react'
 export interface CodeFieldProps {
   value: string[]
   type?: 'tel' | 'text'
+  name?: string
   error?: ReactNode
   disabled?: boolean
   autoFocus?: boolean
