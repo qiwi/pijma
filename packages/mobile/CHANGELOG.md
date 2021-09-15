@@ -1,3 +1,10 @@
+# [1.130.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.129.2...@qiwi/pijma-mobile@1.130.0) (2021-09-15)
+
+
+### Features
+
+* code-field ([#436](https://github.com/qiwi/pijma/issues/436)) ([ee17d41](https://github.com/qiwi/pijma/commit/ee17d410a8b27e420c6a877e1e059a5cf2962bc3))
+
 ## @qiwi/pijma-mobile [1.129.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.129.1...@qiwi/pijma-mobile@1.129.2) (2021-09-01)
 
 
