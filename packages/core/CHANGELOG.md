@@ -1,3 +1,10 @@
+# @qiwi/pijma-core [1.132.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.131.4...@qiwi/pijma-core@1.132.0) (2021-09-15)
+
+
+### Features
+
+* code-field ([#436](https://github.com/qiwi/pijma/issues/436)) ([ee17d41](https://github.com/qiwi/pijma/commit/ee17d410a8b27e420c6a877e1e059a5cf2962bc3))
+
 ## @qiwi/pijma-core [1.131.4](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.131.3...@qiwi/pijma-core@1.131.4) (2021-09-01)
 
 
