@@ -12,8 +12,8 @@ fontWeights.forEach(fontWeight => {
         font-weight: ${fontWeight};
         font-display: swap;
         src: local('${fontFamily}'),
-             url(${require(`./fonts/MuseoSans_${fontWeight}_${fontStyle}.woff2`)}) format('woff2'),
-             url(${require(`./fonts/MuseoSans_${fontWeight}_${fontStyle}.woff`)}) format('woff');
+             url(https://static.qiwi.com/fonts/museo-sans/v2/${fontWeight}_${fontStyle}.woff2) format('woff2'),
+             url(https://static.qiwi.com/fonts/museo-sans/v2/${fontWeight}_${fontStyle}.woff) format('woff');
       }
     `)
   })
