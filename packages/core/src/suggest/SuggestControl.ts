@@ -33,7 +33,9 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
     else {
       this.change(item.value)
     }
-    this.inputRef.current!.focus({preventScroll: true})
+    if (this.inputRef.current) {
+      this.inputRef.current.focus({preventScroll: true})
+    }
   }
 
   private onShowFocus: React.FocusEventHandler = (event) => {

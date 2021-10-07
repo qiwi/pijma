@@ -61,10 +61,11 @@ export const SuggestField = <V extends {}>({
           >
             <InputField
               title={props.title}
-              active={renderProps.focused || !!props.suggest || !!props.placeholder}
+              active={!!props.suggest || !!props.placeholder}
               input={(
                 <BasicInput
                   ref={renderProps.inputRef}
+                  disabled={props.disabled}
                   type={props.type}
                   name={props.name}
                   value={props.suggest || ''}
@@ -75,7 +76,7 @@ export const SuggestField = <V extends {}>({
                   placeholder={props.placeholder}
                   maxLength={props.maxLength}
                   error={!!props.error}
-                  focused={renderProps.focused}
+                  focused={false}
                   onChange={renderProps.onRequest}
                   onFocus={renderProps.onShowFocus}
                   onBlur={renderProps.onInputBlur}
@@ -129,7 +130,17 @@ export const SuggestField = <V extends {}>({
                             cursor="pointer"
                             text={renderProps.items[key].title}
                             notes={renderProps.items[key].description}
-                            icon={renderProps.items[key].logo ? <Image width={6} height={6} src={renderProps.items[key].logo}/> : undefined}
+                            icon={
+                              renderProps.items[key].logo ? (
+                                <Image
+                                  stub={renderProps.items[key].stub}
+                                  width={6}
+                                  height={6}
+                                  src={renderProps.items[key].logo}
+                                />
+                              ) : (
+                                undefined
+                              )}
                             hover={item.focused}
                             active={item.selected}
                             focus={item.selected}

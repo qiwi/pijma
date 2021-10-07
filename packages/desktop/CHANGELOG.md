@@ -1,3 +1,53 @@
+# [1.130.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.129.2...@qiwi/pijma-desktop@1.130.0) (2021-09-15)
+
+
+### Features
+
+* code-field ([#436](https://github.com/qiwi/pijma/issues/436)) ([ee17d41](https://github.com/qiwi/pijma/commit/ee17d410a8b27e420c6a877e1e059a5cf2962bc3))
+
+## [1.129.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.129.1...@qiwi/pijma-desktop@1.129.2) (2021-09-01)
+
+## @qiwi/pijma-desktop [1.129.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.129.0...@qiwi/pijma-desktop@1.129.1) (2021-08-10)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.131.3
+
+# [1.129.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.128.12...@qiwi/pijma-desktop@1.129.0) (2021-08-10)
+
+
+### Features
+
+* suggest-field menu-item stub ([#431](https://github.com/qiwi/pijma/issues/431)) ([c508053](https://github.com/qiwi/pijma/commit/c5080530c71ec5ce2c104cca0fbcbfd711492c59))
+
+## @qiwi/pijma-desktop [1.128.12](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.128.11...@qiwi/pijma-desktop@1.128.12) (2021-07-16)
+
+
+### Bug Fixes
+
+* status content ([#426](https://github.com/qiwi/pijma/issues/426)) ([41c7ccd](https://github.com/qiwi/pijma/commit/41c7ccde9a831e639ba2a02aa6e817895b78f454))
+
+## [1.128.11](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.128.10...@qiwi/pijma-desktop@1.128.11) (2021-06-25)
+
+
+### Bug Fixes
+
+* switch controled checked ([#424](https://github.com/qiwi/pijma/issues/424)) ([0344983](https://github.com/qiwi/pijma/commit/0344983146a333cbdc841f6f1534ebab6e000b9b))
+
+## @qiwi/pijma-desktop [1.128.10](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.128.9...@qiwi/pijma-desktop@1.128.10) (2021-06-24)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.131.1
+
 ## @qiwi/pijma-desktop [1.128.9](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.128.8...@qiwi/pijma-desktop@1.128.9) (2021-06-24)
 
 

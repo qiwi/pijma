@@ -1,3 +1,38 @@
+# @qiwi/pijma-core [1.132.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.131.4...@qiwi/pijma-core@1.132.0) (2021-09-15)
+
+
+### Features
+
+* code-field ([#436](https://github.com/qiwi/pijma/issues/436)) ([ee17d41](https://github.com/qiwi/pijma/commit/ee17d410a8b27e420c6a877e1e059a5cf2962bc3))
+
+## @qiwi/pijma-core [1.131.4](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.131.3...@qiwi/pijma-core@1.131.4) (2021-09-01)
+
+
+### Bug Fixes
+
+* **core:** select-field-control ([#435](https://github.com/qiwi/pijma/issues/435)) ([796a93b](https://github.com/qiwi/pijma/commit/796a93b14e353ad740e4f60e1a387422e97ec23f))
+
+## @qiwi/pijma-core [1.131.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.131.2...@qiwi/pijma-core@1.131.3) (2021-08-10)
+
+
+### Bug Fixes
+
+* **core:** suggest-control input-ref ([#432](https://github.com/qiwi/pijma/issues/432)) ([d5d9b6d](https://github.com/qiwi/pijma/commit/d5d9b6d5641adf8491c2d91b2e84ad4c807db1dd))
+
+## @qiwi/pijma-core [1.131.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.131.1...@qiwi/pijma-core@1.131.2) (2021-06-25)
+
+
+### Bug Fixes
+
+* switch controled checked ([#424](https://github.com/qiwi/pijma/issues/424)) ([0344983](https://github.com/qiwi/pijma/commit/0344983146a333cbdc841f6f1534ebab6e000b9b))
+
+## @qiwi/pijma-core [1.131.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.131.0...@qiwi/pijma-core@1.131.1) (2021-06-24)
+
+
+### Bug Fixes
+
+* **core:** option-field-item description breaker ([#417](https://github.com/qiwi/pijma/issues/417)) ([8e94aea](https://github.com/qiwi/pijma/commit/8e94aea40bedeec033df4f9cd4f6a17fea63f5c6))
+
 # @qiwi/pijma-core [1.131.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.130.0...@qiwi/pijma-core@1.131.0) (2021-06-24)
 
 
