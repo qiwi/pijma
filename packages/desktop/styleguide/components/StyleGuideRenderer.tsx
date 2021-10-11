@@ -19,20 +19,7 @@ injectGlobal(fonts, reset, {
   },
 })
 
-applyDefaultClickHandler((href, target, download) => {
-  if (download && href) {
-    const a = document.createElement('a')
-    a.download = typeof download === 'string' ? download : ''
-    a.href = href
-    a.target = target || '_blank'
-    document.body.appendChild(a)
-    a.click()
-    a.remove()
-  }
-  else {
-    window.open(href, target || '_self')
-  }
-})
+applyDefaultClickHandler()
 
 interface StyleGuideRendererProps {
   title: ReactNode
