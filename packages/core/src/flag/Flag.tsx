@@ -2,20 +2,20 @@ import React, {FC} from 'react'
 
 import {Svg, Path, Value} from '../primitive'
 
-export const FlagCode =
+export const FlagCodes =
   ['am', 'az', 'by', 'ee', 'gb', 'ge', 'il', 'in',
     'jp', 'kg', 'kr', 'kz', 'lt', 'lv', 'md', 'pa',
     'ru', 'th', 'tj', 'tr', 'ua', 'us', 'uz', 'vn'] as const
 
-export type FlagCodeType = typeof FlagCode
+export type FlagCode = typeof FlagCodes
 
 export interface FlagProps {
-  code: FlagCodeType[number]
+  code: FlagCode[number]
   width?: Value
   height?: Value
 }
 
-export const FlagFillPaths: {[code in FlagCodeType[number]]: [string, string][]} = {
+export const FlagFillPaths: {[code in FlagCode[number]]: [string, string][]} = {
   'am': [
     ['#F2B54A', 'M0 10H21V15H0z'],
     ['#1E4AA6', 'M0 5H21V10H0z'],
