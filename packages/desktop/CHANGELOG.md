@@ -1,3 +1,10 @@
+## [1.130.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.130.0...@qiwi/pijma-desktop@1.130.1) (2021-10-18)
+
+
+### Bug Fixes
+
+* click stop propagation ([#442](https://github.com/qiwi/pijma/issues/442)) ([3276fe2](https://github.com/qiwi/pijma/commit/3276fe26232707e347a9e576f231833f55cd97e0))
+
 # [1.130.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.129.2...@qiwi/pijma-desktop@1.130.0) (2021-09-15)
 
 
