@@ -1,3 +1,10 @@
+## @qiwi/pijma-core [1.132.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.132.0...@qiwi/pijma-core@1.132.1) (2021-10-18)
+
+
+### Bug Fixes
+
+* click stop propagation ([#442](https://github.com/qiwi/pijma/issues/442)) ([3276fe2](https://github.com/qiwi/pijma/commit/3276fe26232707e347a9e576f231833f55cd97e0))
+
 # @qiwi/pijma-core [1.132.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.131.4...@qiwi/pijma-core@1.132.0) (2021-09-15)
 
 
