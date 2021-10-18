@@ -3,7 +3,7 @@ import React from 'react'
 import RenderChild from '../RenderChild'
 
 export interface LinkControlProps {
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
+  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => boolean | void
   onFocus?: () => void
   onBlur?: () => void
   href?: string
@@ -67,7 +67,13 @@ export class LinkControl extends React.Component<LinkControlProps, LinkControlSt
   private onClick: React.MouseEventHandler = (e: React.MouseEvent) => {
     e.preventDefault()
     if (this.props.onClick) {
-      this.props.onClick(this.props.href, this.props.target, this.props.download, this.props.rel)
+      const res = this.props.onClick(this.props.href, this.props.target, this.props.download, this.props.rel)
+      if (res !== true) {
+        e.stopPropagation()
+      }
+    }
+    else {
+      e.stopPropagation()
     }
   }
 

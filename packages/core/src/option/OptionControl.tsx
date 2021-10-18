@@ -11,6 +11,7 @@ export default class OptionControl<V> extends React.Component<
     event: React.MouseEvent<HTMLElement>,
   ) => {
     event.preventDefault()
+    event.stopPropagation()
     if (this.props.disabled) {
       return
     }
