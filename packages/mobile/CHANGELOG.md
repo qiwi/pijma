@@ -1,3 +1,10 @@
+# [1.131.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.130.1...@qiwi/pijma-mobile@1.131.0) (2021-10-19)
+
+
+### Features
+
+* up react 17 ([#443](https://github.com/qiwi/pijma/issues/443)) ([cec2b1a](https://github.com/qiwi/pijma/commit/cec2b1aedde4b174532b12e738f7c94beba64d15))
+
 ## [1.130.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.130.0...@qiwi/pijma-mobile@1.130.1) (2021-10-18)
 
 
