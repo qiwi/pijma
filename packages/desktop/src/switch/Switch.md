@@ -22,6 +22,11 @@ const [checked, setChecked] = React.useState(true);
         label="Невыбранный заблокированный"
       />
       <Switch
+        loading
+        checked={checked}
+        label="Выполнение запроса"
+      />
+      <Switch
         stub
         checked={true}
         label=""
@@ -55,6 +60,12 @@ const [checked, setChecked] = React.useState(false);
         reverse={true}
         disabled={true}
         label="Невыбранный заблокированный"
+      />
+      <Switch
+        loading
+        reverse
+        checked={checked}
+        label="Выполнение запроса"
       />
       <Switch
         stub
