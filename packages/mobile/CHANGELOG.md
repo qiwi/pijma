@@ -1,3 +1,10 @@
+# [1.132.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.131.0...@qiwi/pijma-mobile@1.132.0) (2021-10-25)
+
+
+### Features
+
+* switch loading ([#444](https://github.com/qiwi/pijma/issues/444)) ([01d1a82](https://github.com/qiwi/pijma/commit/01d1a823536b1766330c674152dec01261a88e59))
+
 # [1.131.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.130.1...@qiwi/pijma-mobile@1.131.0) (2021-10-19)
 
 
