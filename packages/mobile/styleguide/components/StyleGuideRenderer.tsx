@@ -1,8 +1,10 @@
 import React, {FC, ReactNode} from 'react'
 
-import {themes, ThemeProvider, Card, fonts, reset, injectGlobal, applyDefaultClickHandler} from '@qiwi/pijma-core'
+import {themes, ThemeProvider, Card, reset, injectGlobal, applyDefaultClickHandler} from '@qiwi/pijma-core'
 
-injectGlobal(fonts, reset, {
+import '@qiwi/pijma-fonts'
+
+injectGlobal(reset, {
   '#rsg-root': {
     width: '100%',
     height: '100%',

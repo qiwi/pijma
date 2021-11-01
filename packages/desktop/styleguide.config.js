@@ -47,7 +47,7 @@ module.exports = {
     },
     color: {
       codeBackground: '#fff',
-    }
+    },
   },
   require: [
     path.resolve(styleguide, 'require.js'),
@@ -119,6 +119,17 @@ module.exports = {
               options: {
                 name: '[name].[hash].[ext]',
               },
+            },
+          ],
+        },
+        {
+          test: /\.(?:css)?$/,
+          use: [
+            {
+              loader: 'style-loader',
+            },
+            {
+              loader: 'css-loader',
             },
           ],
         },
