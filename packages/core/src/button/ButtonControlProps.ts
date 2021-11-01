@@ -1,10 +1,10 @@
-import RenderChild from '../RenderChild'
+import {FC} from 'react'
 
 export default interface ButtonControlProps {
   onClick?: () => void
   onFocus?: () => void
   onBlur?: () => void
-  children: RenderChild<{
+  children: FC<{
     active: boolean
     focus: boolean
     hover: boolean

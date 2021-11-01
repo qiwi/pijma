@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {styled, LinkControl, Lnk, Card, Value, RenderChild, Flex, Stub, CardOptions} from '@qiwi/pijma-core'
+import {styled, LinkControl, Lnk, Card, Value, Flex, Stub, CardOptions} from '@qiwi/pijma-core'
 
 export interface PaginationLinkProps {
   page: number
@@ -10,7 +10,7 @@ export interface PaginationLinkProps {
   shadowed?: boolean
   stub?: boolean
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
-  children: RenderChild<{
+  children: FC<{
     disabled: boolean
     hover: boolean
     focus: boolean

@@ -1,7 +1,6 @@
-import {Component, ReactNode} from 'react'
+import {Component, ReactNode, FC} from 'react'
 
 import {Value} from '../primitive'
-import RenderChild from '../RenderChild'
 
 export interface ImageControlProps {
   width: Value
@@ -12,7 +11,7 @@ export interface ImageControlProps {
   cachedDelay?: number
   viewedDelay?: number
   onLoad?: () => void
-  children: RenderChild<{
+  children: FC<{
     src: string | undefined
     srcSet: string | undefined
     loaded: boolean

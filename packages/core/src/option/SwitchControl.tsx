@@ -1,5 +1,4 @@
-import React from 'react'
-import RenderChild from '../RenderChild'
+import React, {FC} from 'react'
 
 export interface SwitchControlProps {
   disabled?: boolean
@@ -8,7 +7,7 @@ export interface SwitchControlProps {
   onFocus?: React.FocusEventHandler
   onBlur?: React.FocusEventHandler
   onChange: (value: boolean) => void
-  children: RenderChild<{
+  children: FC<{
     focused: boolean
     tabIndex?: number
     onFocus: React.FocusEventHandler
@@ -24,10 +23,8 @@ export interface SwitchControlState {
   focused: boolean
 }
 
-export class SwitchControl extends React.Component<
-  SwitchControlProps,
-  SwitchControlState
-> {
+export class SwitchControl extends React.Component<SwitchControlProps,
+  SwitchControlState> {
 
   public state: SwitchControlState = {
     focused: false,

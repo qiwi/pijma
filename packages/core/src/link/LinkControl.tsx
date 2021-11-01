@@ -1,16 +1,14 @@
-import React from 'react'
-
-import RenderChild from '../RenderChild'
+import React, {FC} from 'react'
 
 export interface LinkControlProps {
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
+  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => boolean | void
   onFocus?: () => void
   onBlur?: () => void
   href?: string
   target?: string
   download?: string | boolean
   rel?: string
-  children: RenderChild<{
+  children: FC<{
     active: boolean
     focus: boolean
     hover: boolean
@@ -67,7 +65,13 @@ export class LinkControl extends React.Component<LinkControlProps, LinkControlSt
   private onClick: React.MouseEventHandler = (e: React.MouseEvent) => {
     e.preventDefault()
     if (this.props.onClick) {
-      this.props.onClick(this.props.href, this.props.target, this.props.download, this.props.rel)
+      const res = this.props.onClick(this.props.href, this.props.target, this.props.download, this.props.rel)
+      if (res !== true) {
+        e.stopPropagation()
+      }
+    }
+    else {
+      e.stopPropagation()
     }
   }
 

@@ -1,7 +1,5 @@
-import React, {RefObject} from 'react'
+import React, {RefObject, FC} from 'react'
 import MaskedInput from 'react-text-mask'
-
-import RenderChild from '../RenderChild'
 
 import PhoneFieldCountry from './PhoneFieldCountry'
 import {FlagProps} from '../flag'
@@ -14,7 +12,7 @@ export default interface PhoneFieldControlProps {
   onChange?: (phone: string, code: FlagProps['code'] | undefined) => void
   onFocus?: () => void
   onBlur?: () => void
-  children: RenderChild<{
+  children: FC<{
     value: string
     code: FlagProps['code'] | undefined
     countries: Array<

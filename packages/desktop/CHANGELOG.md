@@ -1,3 +1,38 @@
+# [1.134.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.133.0...@qiwi/pijma-desktop@1.134.0) (2021-11-01)
+
+
+### Features
+
+* use ts-patch ([#446](https://github.com/qiwi/pijma/issues/446)) ([c2bdf49](https://github.com/qiwi/pijma/commit/c2bdf4960c2ab9a48ee9bca563fde145bb9bf9d0))
+
+# [1.133.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.132.0...@qiwi/pijma-desktop@1.133.0) (2021-11-01)
+
+
+### Features
+
+* no render props ([#445](https://github.com/qiwi/pijma/issues/445)) ([5da89bd](https://github.com/qiwi/pijma/commit/5da89bd1154a6eeaef78d728e40b1ce2162b2f6a))
+
+# @qiwi/pijma-desktop [1.132.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.131.0...@qiwi/pijma-desktop@1.132.0) (2021-10-25)
+
+
+### Features
+
+* switch loading ([#444](https://github.com/qiwi/pijma/issues/444)) ([01d1a82](https://github.com/qiwi/pijma/commit/01d1a823536b1766330c674152dec01261a88e59))
+
+# [1.131.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.130.1...@qiwi/pijma-desktop@1.131.0) (2021-10-19)
+
+
+### Features
+
+* up react 17 ([#443](https://github.com/qiwi/pijma/issues/443)) ([cec2b1a](https://github.com/qiwi/pijma/commit/cec2b1aedde4b174532b12e738f7c94beba64d15))
+
+## [1.130.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.130.0...@qiwi/pijma-desktop@1.130.1) (2021-10-18)
+
+
+### Bug Fixes
+
+* click stop propagation ([#442](https://github.com/qiwi/pijma/issues/442)) ([3276fe2](https://github.com/qiwi/pijma/commit/3276fe26232707e347a9e576f231833f55cd97e0))
+
 # [1.130.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.129.2...@qiwi/pijma-desktop@1.130.0) (2021-09-15)
 
 

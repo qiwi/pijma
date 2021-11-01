@@ -1,12 +1,11 @@
-import React from 'react'
-import RenderChild from '../RenderChild'
+import React, {FC} from 'react'
 
 export interface RatingControlProps {
   value: number
   count: number
   disabled?: boolean
   onChange?: (value: number) => void
-  children: RenderChild<{
+  children: FC<{
     items: Array<{
       active: boolean
       onClick?: React.MouseEventHandler

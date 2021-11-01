@@ -1,6 +1,5 @@
-import React, {createRef, RefObject} from 'react'
+import React, {createRef, RefObject, FC} from 'react'
 
-import RenderChild from '../RenderChild'
 import {OptionModel} from '../option'
 
 export interface SelectFieldControlProps<O extends OptionModel<V>, V> {
@@ -12,7 +11,7 @@ export interface SelectFieldControlProps<O extends OptionModel<V>, V> {
   equals?: (a: V, b: V) => boolean
   onFocus?: () => void
   onBlur?: () => void
-  children: RenderChild<{
+  children: FC<{
     modalRef: RefObject<HTMLDivElement>
     targetRef: RefObject<HTMLDivElement>
     containerRef: RefObject<HTMLDivElement>
