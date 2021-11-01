@@ -1,12 +1,11 @@
-import {RefObject, KeyboardEventHandler, MouseEventHandler} from 'react'
-import RenderChild from '../RenderChild'
+import {RefObject, KeyboardEventHandler, MouseEventHandler, FC} from 'react'
 
 export default interface MenuControlProps {
   count: number
   selected?: number | undefined
   onKeyDown?: KeyboardEventHandler
   onSelect?: (index: number) => void
-  children: RenderChild<{
+  children: FC<{
     items: Array<{
       ref: RefObject<HTMLDivElement>
       selected: boolean

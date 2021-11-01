@@ -1,5 +1,4 @@
-import React from 'react'
-import RenderChild from '../RenderChild'
+import React, {FC} from 'react'
 
 export interface PaginationControlProps {
   total: number
@@ -7,7 +6,7 @@ export interface PaginationControlProps {
   count: number
   href?: (page: number) => string
   onChange?: (index: number) => void
-  children: RenderChild<{
+  children: FC<{
     prev: number
     next: number
     pages: number[]

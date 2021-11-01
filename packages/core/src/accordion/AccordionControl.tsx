@@ -1,11 +1,10 @@
-import React from 'react'
-import RenderChild from '../RenderChild'
+import React, {FC} from 'react'
 
 export interface AccordionControlProps<I> {
   items: I[]
   opened: number[]
   onChange: (opened: number[]) => void
-  children: RenderChild<{
+  children: FC<{
     onKeyDown: React.KeyboardEventHandler
     items: Array<
       I & {

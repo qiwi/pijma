@@ -1,5 +1,4 @@
 import Theme from './Theme'
-import RenderChild from './RenderChild'
 
 import styled from './styled'
 
@@ -12,7 +11,7 @@ export * from './styled'
 export * from './InView'
 export * from './waypoint'
 
-export {styled, Theme, RenderChild, themes, reset, fonts}
+export {styled, Theme, themes, reset, fonts}
 
 export * from './primitive'
 export * from './spacer'

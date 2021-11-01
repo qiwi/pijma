@@ -1,6 +1,4 @@
-import React from 'react'
-
-import RenderChild from '../RenderChild'
+import React, {FC} from 'react'
 
 export default interface PasswordFieldControlProps {
   onChange?: (value: string) => void
@@ -9,7 +7,7 @@ export default interface PasswordFieldControlProps {
   onKeyDown?: (event: React.KeyboardEvent) => boolean
   onKeyUp?: (event: React.KeyboardEvent) => boolean
   onToggle?: (hidden: boolean) => void
-  children: RenderChild<{
+  children: FC<{
     focused: boolean
     hidden: boolean
     onChange: React.ChangeEventHandler

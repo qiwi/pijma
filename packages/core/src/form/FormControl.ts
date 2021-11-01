@@ -1,9 +1,8 @@
-import React from 'react'
-import RenderChild from '../RenderChild'
+import React, {FC} from 'react'
 
 export interface FormControlProps {
   onSubmit?: () => void
-  children: RenderChild<{
+  children: FC<{
     onSubmit: React.FormEventHandler
   }>
 }

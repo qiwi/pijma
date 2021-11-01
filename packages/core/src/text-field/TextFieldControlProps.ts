@@ -1,6 +1,4 @@
-import React from 'react'
-
-import RenderChild from '../RenderChild'
+import React, {FC} from 'react'
 
 export default interface TextFieldControlProps {
   onChange?: (value: string) => void
@@ -8,7 +6,7 @@ export default interface TextFieldControlProps {
   onBlur?: () => void
   onKeyDown?: (event: React.KeyboardEvent) => boolean
   onKeyUp?: (event: React.KeyboardEvent) => boolean
-  children: RenderChild<{
+  children: FC<{
     focused: boolean
     onChange: React.ChangeEventHandler
     onFocus: React.FocusEventHandler

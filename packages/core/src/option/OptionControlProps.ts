@@ -1,6 +1,4 @@
-import React from 'react'
-
-import RenderChild from '../RenderChild'
+import React, {FC} from 'react'
 
 export default interface OptionControlProps<V> {
   value: V
@@ -8,7 +6,7 @@ export default interface OptionControlProps<V> {
   onClick: (value: V) => void
   onMouseEnter: (value: V) => void
   onMouseLeave: React.MouseEventHandler
-  children: RenderChild<{
+  children: FC<{
     onClick: React.MouseEventHandler
     onMouseEnter: React.MouseEventHandler
     onMouseLeave: React.MouseEventHandler

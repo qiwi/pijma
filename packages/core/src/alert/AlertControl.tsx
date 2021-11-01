@@ -1,9 +1,8 @@
-import React from 'react'
-import RenderChild from '../RenderChild'
+import React, {FC} from 'react'
 
 export interface AlertControlProps {
   onHide?: () => void
-  children: RenderChild<{
+  children: FC<{
     hover: boolean
     onClick: React.MouseEventHandler
     onMouseEnter: React.MouseEventHandler
