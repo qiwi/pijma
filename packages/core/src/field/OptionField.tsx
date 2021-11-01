@@ -1,7 +1,7 @@
 import React, {ReactNode, FocusEventHandler, KeyboardEventHandler} from 'react'
 
-import styled from '../styled'
-import {Typo, Box, Flex, FlexItem, BoxProps} from '../primitive'
+import {styled} from '../styled'
+import {Typo, Box, Flex, FlexItem, BoxProps, BoxNonProps} from '../primitive'
 import {Spacer} from '../spacer'
 
 export interface OptionFieldProps {
@@ -15,8 +15,10 @@ export interface OptionFieldProps {
   onKeyDown: KeyboardEventHandler
 }
 
+const InputProps = BoxNonProps.concat(['autoFocus'])
+
 const Input = styled(Box, {
-  shouldForwardProp: (prop) => !['autoFocus'].includes(prop),
+  shouldForwardProp: (prop) => !InputProps.includes(prop),
 })<BoxProps & Pick<OptionFieldProps, 'autoFocus'>>()
 
 export const OptionField: React.FunctionComponent<OptionFieldProps> = (props) => (

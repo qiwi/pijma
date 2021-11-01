@@ -1,4 +1,9 @@
-import React, {ChangeEventHandler, FocusEventHandler, KeyboardEventHandler, Ref, forwardRef} from 'react'
+import React, {
+  ChangeEventHandler,
+  FocusEventHandler,
+  KeyboardEventHandler,
+  forwardRef,
+} from 'react'
 
 import {TextArea} from '../primitive'
 
@@ -24,8 +29,9 @@ export interface BasicTextAreaProps {
   onKeyUp?: KeyboardEventHandler
 }
 
-export const BasicTextArea = forwardRef((props: BasicTextAreaProps, ref: Ref<HTMLTextAreaElement>) => (
+export const BasicTextArea = forwardRef<HTMLTextAreaElement, BasicTextAreaProps>((props, ref) => (
   <TextArea
+    ref={ref}
     rows={props.rows}
     width={1}
     height={props.rows * 7}
@@ -47,7 +53,6 @@ export const BasicTextArea = forwardRef((props: BasicTextAreaProps, ref: Ref<HTM
     transition={props.transition}
     value={props.value}
     name={props.name}
-    ref={ref}
     autoComplete={props.autoComplete ? 'on' : 'off'}
     autoFocus={props.autoFocus}
     placeholder={props.placeholder}

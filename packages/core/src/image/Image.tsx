@@ -1,7 +1,7 @@
 import React, {FC, ReactNode, Children, isValidElement} from 'react'
 
 import {Img, Box, Pos, Value} from '../primitive'
-import {InView} from '../InView'
+import {InView} from '../inview'
 import {Stub} from '../stub'
 import {ImageControl} from './ImageControl'
 

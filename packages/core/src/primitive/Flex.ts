@@ -1,8 +1,8 @@
-import styled, {StyledOptions} from '../styled'
+import {styled, StyledOptions} from '../styled'
 
-import {Box, BoxNonProps, BoxProps} from './Box'
+import {Box} from './Box'
 
-export interface FlexProps extends BoxProps {
+export interface FlexProps {
   display?: 'flex' | 'inline-flex'
   wrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
   direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse'
@@ -10,9 +10,9 @@ export interface FlexProps extends BoxProps {
   justify?: string
 }
 
-export const FlexNonProps = BoxNonProps.concat(['wrap', 'direction', 'align', 'justify'])
+export const FlexNonProps: PropertyKey[] = ['wrap', 'direction', 'align', 'justify']
 
-export const FlexOptions: StyledOptions = {
+export const FlexOptions: StyledOptions<FlexProps> = {
   shouldForwardProp: (prop) => !FlexNonProps.includes(prop),
 }
 

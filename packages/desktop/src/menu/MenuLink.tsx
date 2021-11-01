@@ -45,7 +45,7 @@ export const MenuLink: FC<MenuLinkProps> = (props) => (
       onBlur={props.onBlur}
       children={(renderProps) => (
         <MenuItemLnk
-          as={props.href ? 'a' : undefined}
+          tag={props.href ? 'a' : undefined}
           notes={props.notes}
           text={props.title}
           icon={props.icon}

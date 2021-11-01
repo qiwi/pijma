@@ -1,9 +1,9 @@
-import styled, {StyledOptions} from '../styled'
+import {styled, StyledOptions, Theme, Interpolation} from '../styled'
 
-import {Value, cssValue} from './Value'
-import {Box, BoxNonProps, BoxProps} from './Box'
+import {Value, cssValue, customScroll} from './Value'
+import {Box, BoxProps} from './Box'
 
-export interface CardProps extends BoxProps {
+export interface CardProps {
   bg?: string
   s?: string
   b?: string
@@ -18,27 +18,13 @@ export interface CardProps extends BoxProps {
   rbl?: Value
 }
 
-export const CardNonProps = ['bg', 'b', 'bt', 'br', 'bb', 'bl', 'r', 'rtr', 'rtl', 'btr', 'btl', 's'].concat(BoxNonProps)
+export const CardNonProps: PropertyKey[] = ['bg', 'b', 'bt', 'br', 'bb', 'bl', 'r', 'rtr', 'rtl', 'btr', 'btl', 's']
 
-export const CardOptions: StyledOptions = {
+export const CardOptions: StyledOptions<CardProps> = {
   shouldForwardProp: (prop) => !CardNonProps.includes(prop),
 }
 
-const customScroll = (() => {
-  try {
-    const element = document.createElement('div')
-    document.body.appendChild(element)
-    element.style.overflow = 'scroll'
-    const result = element.offsetWidth !== element.clientWidth
-    document.body.removeChild(element)
-    return result
-  }
-  catch (e) {
-    return undefined
-  }
-})()
-
-export const Card = styled(Box, CardOptions)<CardProps>(({theme, ...props}) => ({
+export const CardStyles: Interpolation<BoxProps & CardProps & {theme: Theme}> = ({theme, ...props}) => ({
   background: props.bg,
   border: props.b,
   borderTop: props.bt,
@@ -83,4 +69,6 @@ export const Card = styled(Box, CardOptions)<CardProps>(({theme, ...props}) => (
       height: 0,
     },
   } : {}),
-}))
+})
+
+export const Card = styled(Box, CardOptions)<CardProps>(CardStyles)

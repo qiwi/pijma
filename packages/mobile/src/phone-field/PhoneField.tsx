@@ -1,25 +1,22 @@
 import React, {FunctionComponent} from 'react'
 
 import {
-  styled,
   PhoneFieldControl,
   MenuControl,
   BasicInput,
   Box,
   Pos,
   Card,
-  CardOptions,
   Flex,
   FlexItem,
   InputField,
   Flag,
+  CardPos,
 } from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
 import {DropUp} from '../drop-up'
 import {PhoneFieldProps} from './PhoneFieldProps'
-
-const PosCard = styled(Card, CardOptions)().withComponent(Pos)
 
 export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
   tabIndex = 0,
@@ -97,7 +94,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                 onKeyDown={menuRenderProps.onKeyDown}
                 onHide={renderProps.onCountriesHide}
               >
-                <PosCard ref={menuRenderProps.containerRef} type="relative" height={1} overflow="auto">
+                <CardPos ref={menuRenderProps.containerRef} type="relative" height={1} overflow="auto">
                   {menuRenderProps.items.map((country, index) => (
                     <Card
                       key={index}
@@ -126,7 +123,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                       </Flex>
                     </Card>
                   ))}
-                </PosCard>
+                </CardPos>
               </DropUp>
             </Pos>
           )}

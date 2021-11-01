@@ -3,7 +3,7 @@ const [menuCollapsed, setMenuCollapsed] = React.useState(true);
 <Header zIndex={0}>
   <Flex height={1} px={4} align="center" justify="space-between">
      <FlexItem width={0.25} shrink={0}>
-       <Box width={6} height={6} onClick={() => { setMenuCollapsed(!menuCollapsed); setShowMenu(menuCollapsed) }}>
+       <Box width={6} height={6} onClick={() => setMenuCollapsed(!menuCollapsed)}>
          <CrossBurger active={!menuCollapsed}/>
        </Box>
      </FlexItem>

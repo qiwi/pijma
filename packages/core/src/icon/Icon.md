@@ -32,6 +32,9 @@
 ### Special
 
 ```jsx
+const [filterIconActive, setFilterIconActive] = React.useState(false);
+const [crossBurgerActive, setCrossBurgerActive] = React.useState(false);
+const [feedIconActive, setFeedIconActive] = React.useState(false);
 <Block>
   <BlockContent>
     <Flex>

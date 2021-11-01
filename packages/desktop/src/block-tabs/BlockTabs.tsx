@@ -10,8 +10,6 @@ import {
   Card,
   TabBorder,
   styled,
-  FlexOptions,
-  FlexItemOptions,
   Value,
 } from '@qiwi/pijma-core'
 
@@ -47,7 +45,7 @@ const ContentIndent: Record<NonNullable<BlockTabsProps['indent']>, Value> = {
   l: 6,
 }
 
-const FlexOverflow = styled(Flex, FlexOptions)({
+const FlexOverflow = styled(Flex)({
   '&::-webkit-scrollbar': {
     display: 'none',
   },
@@ -56,7 +54,7 @@ const FlexOverflow = styled(Flex, FlexOptions)({
   position: 'relative',
 })
 
-const TabContent = styled(FlexItem, FlexItemOptions)()
+const TabContent = styled(FlexItem)()
 
 export const BlockTabs: FC<BlockTabsProps> = ({
   items,

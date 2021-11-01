@@ -1,9 +1,9 @@
-import styled, {StyledOptions} from '../styled'
+import {styled, StyledOptions} from '../styled'
 
 import {Value, cssValue} from './Value'
-import {Box, BoxNonProps, BoxProps} from './Box'
+import {Box} from './Box'
 
-export interface FlexItemProps extends BoxProps {
+export interface FlexItemProps {
   basis?: Value
   grow?: number
   shrink?: number
@@ -11,9 +11,9 @@ export interface FlexItemProps extends BoxProps {
   justify?: string
 }
 
-export const FlexItemNonProps = BoxNonProps.concat(['basis', 'grow', 'shrink', 'align', 'justify'])
+export const FlexItemNonProps: PropertyKey[] = ['basis', 'grow', 'shrink', 'align', 'justify']
 
-export const FlexItemOptions: StyledOptions = {
+export const FlexItemOptions: StyledOptions<FlexItemProps> = {
   shouldForwardProp: (prop) => !FlexItemNonProps.includes(prop),
 }
 

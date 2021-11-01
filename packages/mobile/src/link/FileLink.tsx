@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {styled, LinkControl, Lnk, FlexItem, Flex, Icon, FlexOptions} from '@qiwi/pijma-core'
+import {LinkControl, FlexItem, Icon, FlexLnk} from '@qiwi/pijma-core'
 
 import {Text} from '../typography'
 
@@ -21,8 +21,6 @@ export interface FileLinkProps {
   title?: string
 }
 
-const FlexLink = styled(Flex, FlexOptions)().withComponent(Lnk)
-
 export const FileLink: FC<FileLinkProps> = (props) => (
   <LinkControl
     onClick={props.onClick}
@@ -33,7 +31,7 @@ export const FileLink: FC<FileLinkProps> = (props) => (
     download={props.download}
     rel={props.rel}
     children={(renderProps) => (
-      <FlexLink
+      <FlexLnk
         tabIndex={props.tabIndex}
         href={props.href}
         target={props.target}
@@ -68,7 +66,7 @@ export const FileLink: FC<FileLinkProps> = (props) => (
             children={props.children}
           />
         </FlexItem>
-      </FlexLink>
+      </FlexLnk>
     )}
   />
 )

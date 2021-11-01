@@ -1,8 +1,6 @@
 import React, {FC} from 'react'
 
-import {styled, Lnk, Card, Icon, IconProps, LinkControl, Flex, FlexItem, Box, Stub, CardOptions} from '@qiwi/pijma-core'
-
-const CardLink = styled(Card, CardOptions)().withComponent(Lnk)
+import {Card, Icon, IconProps, LinkControl, Flex, FlexItem, Box, Stub, CardLnk} from '@qiwi/pijma-core'
 
 interface FooterOutLinkProps {
   href: string
@@ -32,7 +30,7 @@ const FooterOutLink: FC<FooterOutLinkProps> = (props) => (
       onFocus={props.onFocus}
       onBlur={props.onBlur}
       children={(renderProps) => (
-        <CardLink
+        <CardLnk
           display="block"
           width={10}
           height={10}

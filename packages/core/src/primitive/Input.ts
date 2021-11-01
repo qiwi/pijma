@@ -1,7 +1,8 @@
-import styled, {CSSObject, StyledOptions} from '../styled'
+import {styled, CSSObject, StyledOptions} from '../styled'
 
-import {Card, CardProps, CardNonProps} from './Card'
 import {pxValue} from './Value'
+import {BoxNonProps, BoxProps, BoxStyles} from './Box'
+import {CardNonProps, CardProps, CardStyles} from './Card'
 
 const displayNone: CSSObject = {
   display: 'none',
@@ -11,7 +12,7 @@ const appearanceNone: CSSObject = {
   appearance: 'none',
 }
 
-export interface InputProps extends CardProps {
+export interface InputProps extends BoxProps, CardProps {
   valueSize?: number
   valueWeight?: number
   valueColor?: string
@@ -24,16 +25,18 @@ export interface InputProps extends CardProps {
   placeholderSpacing?: number
 }
 
-export const InputNonProps = [
+export const InputNonProps: PropertyKey[] = [
   'valueSize', 'valueWeight', 'valueColor', 'valueTransform', 'valueSpacing',
   'placeholderSize', 'placeholderWeight', 'placeholderColor', 'placeholderTransform', 'placeholderSpacing',
-].concat(CardNonProps)
+  ...BoxNonProps,
+  ...CardNonProps,
+]
 
-export const InputOptions: StyledOptions = {
+export const InputOptions: StyledOptions<InputProps> = {
   shouldForwardProp: (prop) => !InputNonProps.includes(prop),
 }
 
-export const Input = styled(Card, InputOptions)<InputProps>(({theme, ...props}) => ({
+export const Input = styled('input', InputOptions)<InputProps>(BoxStyles, CardStyles, ({theme, ...props}) => ({
   fontFamily: theme.font.family,
   fontSize: pxValue(props.valueSize, theme.scale),
   fontWeight: props.valueWeight,
@@ -68,4 +71,4 @@ export const Input = styled(Card, InputOptions)<InputProps>(({theme, ...props}) 
   },
   '&::-webkit-outer-spin-button': appearanceNone,
   '&::-webkit-inner-spin-button': appearanceNone,
-})).withComponent('input')
+}))

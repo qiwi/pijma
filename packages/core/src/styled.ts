@@ -1,23 +1,22 @@
-import {Global, CacheProvider, jsx} from '@emotion/core'
-import styled, {CreateStyled, CSSObject, StyledOptions} from '@emotion/styled'
-import {injectGlobal, keyframes, cache, css, cx, flush} from 'emotion'
-import {ThemeProvider} from 'emotion-theming'
-
-import Theme from './Theme'
+import styled from '@emotion/styled'
+import createCache from '@emotion/cache'
+import createEmotionServer from '@emotion/server/create-instance'
 
 export {
-  cache,
-  CacheProvider,
-  injectGlobal,
-  Global,
-  jsx,
-  css,
-  cx,
-  flush,
-  keyframes,
-  ThemeProvider,
-  CSSObject,
-  StyledOptions,
+  styled,
+  createCache,
+  createEmotionServer,
 }
 
-export default styled as CreateStyled<Theme>
+export * from '@emotion/styled'
+export * from '@emotion/react'
+
+export {
+  flush,
+  hydrate,
+  cx,
+  css,
+  injectGlobal,
+  keyframes,
+  cache,
+} from '@emotion/css'

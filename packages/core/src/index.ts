@@ -1,17 +1,15 @@
-import Theme from './Theme'
-
-import styled from './styled'
-
-import reset from './reset'
-import fonts from './fonts'
-
-import * as themes from './themes'
-
 export * from './styled'
-export * from './InView'
-export * from './waypoint'
 
-export {styled, Theme, themes, reset, fonts}
+export * from './Theme'
+
+export * from './reset'
+export * from './fonts'
+
+export * from './themes'
+
+export * from './waypoint'
+export * from './inview'
+export * from './markdown'
 
 export * from './primitive'
 export * from './spacer'

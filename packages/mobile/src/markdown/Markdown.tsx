@@ -1,9 +1,8 @@
 import React, {Children, FC} from 'react'
-import MarkdownComponent from 'markdown-to-jsx'
 import {Paragraph, Heading, Text} from '../typography'
 import {Link} from '../link'
 import {List} from '../list'
-import {styled, Box, Image} from '@qiwi/pijma-core'
+import {styled, Box, Image, MarkdownToJSX} from '@qiwi/pijma-core'
 
 export interface MarkdownProps {
   size?: 's' | 'm' | 'l'
@@ -137,7 +136,7 @@ const overrides: {[tag: string]: FC<any>} = {
 }
 
 export const Markdown: FC<MarkdownProps> = ({size = 'm', children}) => (
-  <MarkdownComponent
+  <MarkdownToJSX
     children={children}
     options={{
       overrides: Object.keys(overrides).reduce((prev, tag) => ({

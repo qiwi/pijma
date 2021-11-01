@@ -19,6 +19,4 @@ fontWeights.forEach(fontWeight => {
   })
 })
 
-const fonts = fontFaces.join('\n')
-
-export default fonts
+export const fonts = fontFaces.join('\n')

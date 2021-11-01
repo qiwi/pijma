@@ -1,10 +1,9 @@
 import React, {
   ChangeEventHandler,
   FocusEventHandler,
-  KeyboardEventHandler,
-  RefObject,
-  forwardRef,
   MouseEventHandler,
+  KeyboardEventHandler,
+  forwardRef,
 } from 'react'
 
 import {Input, Value} from '../primitive'
@@ -30,6 +29,7 @@ export interface SelectInputProps {
 
 export const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>((props, ref) => {
   const common = {
+    ref,
     width: 1,
     height: 7,
     m: 0,
@@ -62,7 +62,6 @@ export const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>((props
   return (
     <Input
       {...common}
-      ref={ref as RefObject<HTMLInputElement>}
     />
   )
 })

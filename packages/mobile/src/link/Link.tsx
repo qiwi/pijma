@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {styled, LinkControl, Lnk, Stub, Typo, TypoOptions} from '@qiwi/pijma-core'
+import {LinkControl, Stub, TypoLnk} from '@qiwi/pijma-core'
 
 export interface LinkProps {
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
@@ -55,8 +55,6 @@ const LinkHeightCompact: { [size in NonNullable<LinkProps['size']>]: number } = 
   l: 7,
 }
 
-const TypoLink = styled(Typo, TypoOptions)().withComponent(Lnk)
-
 export const Link: FC<LinkProps> = (props) => (
   props.stub ? (
     props.size === undefined ? (
@@ -79,7 +77,7 @@ export const Link: FC<LinkProps> = (props) => (
       download={props.download}
       rel={props.rel}
       children={(renderProps) => (
-        <TypoLink
+        <TypoLnk
           tabIndex={props.tabIndex}
           href={props.href}
           onClick={renderProps.onClick}

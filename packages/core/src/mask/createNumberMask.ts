@@ -12,15 +12,15 @@ const decimalRegExp = /[\.,]/
 const caretTrap = '[]'
 
 export interface NumberMaskOpts {
-  prefix?: string,
-  suffix?: string,
-  includeThousandsSeparator?: boolean,
-  thousandsSeparatorSymbol?: string,
-  allowDecimal?: boolean,
-  decimalLimit?: number,
-  requireDecimal?: boolean,
-  allowNegative?: boolean,
-  allowLeadingZeroes?: boolean,
+  prefix?: string
+  suffix?: string
+  includeThousandsSeparator?: boolean
+  thousandsSeparatorSymbol?: string
+  allowDecimal?: boolean
+  decimalLimit?: number
+  requireDecimal?: boolean
+  allowNegative?: boolean
+  allowLeadingZeroes?: boolean
   integerLimit?: number
 }
 

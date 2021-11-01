@@ -3,6 +3,7 @@ import {Flex, FlexItem, Icon, Box, Section, Stub, Image} from '@qiwi/pijma-core'
 import {Paragraph, Text} from '../typography'
 
 export interface MenuItemProps {
+  tag?: keyof JSX.IntrinsicElements
   text: string
   notes?: string
   icon?: ReactNode
@@ -21,6 +22,7 @@ const IconSize: Record<NonNullable<MenuItemProps['size']>, number> = {
 }
 
 export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(({
+  tag = 'div',
   text,
   notes,
   icon,
@@ -34,6 +36,7 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(({
   ...props
 }, ref) => (
   <Section
+    tag={tag}
     ref={ref}
     active={active}
     focus={focus}

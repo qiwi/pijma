@@ -1,9 +1,10 @@
-import styled, {StyledOptions} from '../styled'
+import {styled, StyledOptions} from '../styled'
 
-import {Card, CardProps, CardNonProps} from './Card'
 import {pxValue} from './Value'
+import {CardNonProps, CardProps, CardStyles} from './Card'
+import {BoxNonProps, BoxProps, BoxStyles} from './Box'
 
-export interface TextAreaProps extends CardProps {
+export interface TextAreaProps extends BoxProps, CardProps {
   valueSize?: number
   valueHeight?: number
   valueWeight?: number
@@ -18,7 +19,9 @@ export interface TextAreaProps extends CardProps {
   placeholderSpacing?: number
 }
 
-export const TextAreaNonProps = [
+export const TextAreaNonProps: PropertyKey[] = [
+  ...BoxNonProps,
+  ...CardNonProps,
   'valueSize',
   'valueWeight',
   'valueColor',
@@ -31,13 +34,13 @@ export const TextAreaNonProps = [
   'placeholderColor',
   'placeholderTransform',
   'placeholderSpacing',
-].concat(CardNonProps)
+]
 
-const TextAreaOptions: StyledOptions = {
+const TextAreaOptions: StyledOptions<TextAreaProps> = {
   shouldForwardProp: (prop) => !TextAreaNonProps.includes(prop),
 }
 
-export const TextArea = styled(Card, TextAreaOptions)<TextAreaProps>(({theme, ...props}) => ({
+export const TextArea = styled('textarea', TextAreaOptions)<TextAreaProps>(BoxStyles, CardStyles, ({theme, ...props}) => ({
   fontFamily: theme.font.family,
   fontSize: pxValue(props.valueSize, theme.scale),
   fontWeight: props.valueWeight,
@@ -57,4 +60,4 @@ export const TextArea = styled(Card, TextAreaOptions)<TextAreaProps>(({theme, ..
     textTransform: props.placeholderTransform,
     letterSpacing: pxValue(props.placeholderSpacing),
   },
-})).withComponent('textarea')
+}))

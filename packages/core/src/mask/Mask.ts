@@ -1,3 +1,9 @@
-import {MaskedInputProps} from 'react-text-mask'
+import MaskedInput, {MaskedInputProps} from 'react-text-mask'
 
-export type Mask = MaskedInputProps['mask']
+type Mask = MaskedInputProps['mask']
+
+export {
+  Mask,
+  MaskedInput,
+  MaskedInputProps,
+}

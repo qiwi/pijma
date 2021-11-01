@@ -1,14 +1,16 @@
-import styled, {StyledOptions} from '../styled'
+import {styled, StyledOptions} from '../styled'
 
-import {Box, BoxProps, BoxNonProps} from './Box'
+import {BoxStyles, BoxNonProps, BoxProps} from './Box'
 
 export interface FrmProps extends BoxProps {
 }
 
-export const FrmNonProps = BoxNonProps
+export const FrmNonProps: PropertyKey[] = [
+  ...BoxNonProps,
+]
 
-export const FrmOptions: StyledOptions = {
+export const FrmOptions: StyledOptions<FrmProps> = {
   shouldForwardProp: (prop) => !FrmNonProps.includes(prop),
 }
 
-export const Frm = styled(Box, FrmOptions)<FrmProps>().withComponent('form')
+export const Frm = styled('form', FrmOptions)<FrmProps>(BoxStyles)

@@ -10,14 +10,13 @@ import {
   InputField,
   Icon,
   OptionModel,
-  CardOptions,
+  CardPos,
 } from '@qiwi/pijma-core'
 
 import {MenuItem} from '../menu'
 import {DropUp} from '../drop-up'
 
-const CardPos = styled(Card, CardOptions)().withComponent(Pos)
-const CardItem = styled(Card, CardOptions)().withComponent(MenuItem)
+const CardItem = styled(Card)().withComponent(MenuItem)
 
 export interface SelectFieldProps<I extends OptionModel<V>, V> {
   items: I[]

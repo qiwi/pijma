@@ -1,5 +1,5 @@
 import React, {RefObject, Component, createRef, ReactNode, FC} from 'react'
-import {InView} from '../InView'
+import {InView} from '../inview'
 import {Box} from '../primitive'
 
 export interface OffsetScrollControlProps {

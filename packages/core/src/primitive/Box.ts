@@ -1,11 +1,10 @@
-import styled, {CSSObject, StyledOptions} from '../styled'
+import {styled, CSSObject, StyledOptions, Interpolation, Theme} from '../styled'
 
 import {Value, cssValue} from './Value'
 
 export type BoxDisplay = 'none' | 'inline' | 'block' | 'contents' | 'flex' | 'grid' | 'inline-block' | 'inline-flex' | 'table'
 
 export interface BoxProps {
-  as?: keyof JSX.IntrinsicElements
   css?: CSSObject
   display?: BoxDisplay
   m?: Value
@@ -37,8 +36,8 @@ export interface BoxProps {
   overflow?: string
 }
 
-export const BoxNonProps = [
-  'as', 'css', 'innerRef', 'ref',
+export const BoxNonProps: PropertyKey[] = [
+  'as', 'css',
   'display', 'transition', 'animation',
   'm', 'mt', 'mr', 'mb', 'ml', 'mx', 'my',
   'p', 'pt', 'pr', 'pb', 'pl', 'px', 'py',
@@ -48,11 +47,11 @@ export const BoxNonProps = [
   'transform', 'transformOrigin',
 ]
 
-export const BoxOptions: StyledOptions = {
+export const BoxOptions: StyledOptions<BoxProps> = {
   shouldForwardProp: (prop) => !BoxNonProps.includes(prop),
 }
 
-export const Box = styled('div', BoxOptions)<BoxProps>(({theme, ...props}) => ({
+export const BoxStyles: Interpolation<BoxProps & {theme: Theme}> = ({theme, ...props}) => ({
   display: props.display,
   margin: cssValue(props.m, theme.scale, false),
   marginTop: cssValue(props.mt || props.my, theme.scale, false),
@@ -77,7 +76,10 @@ export const Box = styled('div', BoxOptions)<BoxProps>(({theme, ...props}) => ({
   transition: props.transition,
   transform: props.transform,
   transformOrigin: props.transformOrigin,
-}), (props) => props.css)
+  ...props.css,
+})
+
+export const Box = styled('div', BoxOptions)<BoxProps>(BoxStyles)
 
 Box.defaultProps = {
   display: 'block',

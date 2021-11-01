@@ -1,8 +1,13 @@
-import React, {ChangeEventHandler, FocusEventHandler, KeyboardEventHandler, RefObject, forwardRef} from 'react'
-import MaskedInput from 'react-text-mask'
+import React, {
+  ChangeEventHandler,
+  FocusEventHandler,
+  KeyboardEventHandler,
+  forwardRef,
+  RefObject,
+} from 'react'
 
 import {MaskInput, Input, Value} from '../primitive'
-import {isMaskDigital, Mask, Pipe} from '../mask'
+import {MaskedInput, isMaskDigital, Mask, Pipe} from '../mask'
 
 export interface BasicInputProps {
   value: string
@@ -27,7 +32,7 @@ export interface BasicInputProps {
   onKeyUp?: KeyboardEventHandler
 }
 
-export const BasicInput = forwardRef<HTMLInputElement | MaskedInput, BasicInputProps>((props, ref) => {
+export const BasicInput = forwardRef<HTMLInputElement, BasicInputProps>((props, ref) => {
   const common = {
     width: 1,
     height: 7,
@@ -57,12 +62,12 @@ export const BasicInput = forwardRef<HTMLInputElement | MaskedInput, BasicInputP
     onBlur: props.onBlur,
     onKeyDown: props.onKeyDown,
     onKeyUp: props.onKeyUp,
+    ref: ref as RefObject<HTMLInputElement & MaskedInput>,
   }
   return (
     props.mask ? (
       <MaskInput
         {...common}
-        ref={ref as RefObject<MaskedInput>}
         type={props.type === undefined ? (isMaskDigital(props.mask) ? 'tel' : 'text') : (['text', 'password', 'tel'].includes(props.type) ? props.type : 'text')}
         mask={props.mask}
         pipe={props.pipe}
@@ -73,7 +78,6 @@ export const BasicInput = forwardRef<HTMLInputElement | MaskedInput, BasicInputP
     ) : (
       <Input
         {...common}
-        ref={ref as RefObject<HTMLInputElement>}
         type={props.type === undefined ? 'text' : props.type}
       />
     )
