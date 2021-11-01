@@ -18,11 +18,11 @@
     "react-styleguidist": "11.1.5",
     "ts-loader": "6.0.4",
     "ts-node": "9.0.0",
-    "ts-react-display-name": "1.2.1",
+    "ts-patch": "1.4.5",
+    "ts-react-display-name": "1.2.2",
     "tslint": "5.18.0",
     "tslint-config-qiwi": "1.1.1",
     "tslint-loader": "3.5.4",
-    "ttypescript": "1.5.12",
     "typescript": "3.5.3",
     "webpack": "4.39.2"
   },

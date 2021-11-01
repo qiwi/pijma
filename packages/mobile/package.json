@@ -8,8 +8,10 @@
     "access": "public"
   },
   "scripts": {
+    "prebuild": "yarn clean",
+    "postinstallx": "ts-patch install -s",
     "clean": "rm -rf lib styleguide/lib",
-    "build": "mkdir -p lib/es5 && ttsc -p tsconfig.build.json && styleguidist build",
+    "build": "mkdir -p lib/es5 && tsc -p tsconfig.build.json && styleguidist build",
     "watch": "styleguidist server",
     "lint": "tslint -p tsconfig.build.json src/**/*.ts{,x}",
     "lint:fix": "tslint -p tsconfig.build.json --fix src/**/*.ts{,x}",
