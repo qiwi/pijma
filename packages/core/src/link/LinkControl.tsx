@@ -1,6 +1,4 @@
-import React from 'react'
-
-import RenderChild from '../RenderChild'
+import React, {FC} from 'react'
 
 export interface LinkControlProps {
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => boolean | void
@@ -10,7 +8,7 @@ export interface LinkControlProps {
   target?: string
   download?: string | boolean
   rel?: string
-  children: RenderChild<{
+  children: FC<{
     active: boolean
     focus: boolean
     hover: boolean

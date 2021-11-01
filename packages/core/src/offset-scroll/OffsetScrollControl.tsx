@@ -1,13 +1,12 @@
-import React, {RefObject, Component, createRef, ReactNode} from 'react'
+import React, {RefObject, Component, createRef, ReactNode, FC} from 'react'
 import {InView} from '../InView'
 import {Box} from '../primitive'
-import RenderChild from '../RenderChild'
 
 export interface OffsetScrollControlProps {
   content: ReactNode
   top?: string
   bottom?: string
-  children: RenderChild<{
+  children: FC<{
     top: boolean
     bottom: boolean
     children: ReactNode

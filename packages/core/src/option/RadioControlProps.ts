@@ -1,6 +1,4 @@
-import React from 'react'
-
-import RenderChild from '../RenderChild'
+import React, {FC} from 'react'
 
 import OptionModel from './OptionModel'
 
@@ -12,7 +10,7 @@ export default interface RadioControlProps<O extends OptionModel<V>, V> {
   onChange?: (value: V) => void
   onFocus?: () => void
   onBlur?: () => void
-  children: RenderChild<{
+  children: FC<{
     tabIndex?: number
     onFocus: React.FocusEventHandler
     onBlur: React.FocusEventHandler

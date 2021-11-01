@@ -1,6 +1,4 @@
-import React from 'react'
-
-import RenderChild from '../RenderChild'
+import React, {FC} from 'react'
 
 export default interface TextAreaFieldControlProps {
   value: string
@@ -9,7 +7,7 @@ export default interface TextAreaFieldControlProps {
   onBlur?: () => void
   onKeyDown?: (event: React.KeyboardEvent) => boolean
   onKeyUp?: (event: React.KeyboardEvent) => boolean
-  children: RenderChild<{
+  children: FC<{
     rows: number
     focused: boolean
     animate: boolean

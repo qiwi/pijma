@@ -1,6 +1,4 @@
-import React, {createRef, RefObject} from 'react'
-
-import RenderChild from '../RenderChild'
+import React, {createRef, RefObject, FC} from 'react'
 
 export interface CodeFieldControlProps {
   autoFocus: boolean
@@ -11,7 +9,7 @@ export interface CodeFieldControlProps {
   onFocus?: () => void
   onBlur?: () => void
   onReady?: (value?: string) => void
-  children: RenderChild<{
+  children: FC<{
     onKeyDown: (e: React.KeyboardEvent, index: number) => void
     values: Array<{
       focused: boolean

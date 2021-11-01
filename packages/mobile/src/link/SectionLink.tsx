@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {styled, Lnk, LinkControl, LinkControlProps, Section, RenderChild} from '@qiwi/pijma-core'
+import {styled, Lnk, LinkControl, LinkControlProps, Section} from '@qiwi/pijma-core'
 
 export interface SectionLinkProps {
   tabIndex?: number
@@ -14,7 +14,7 @@ export interface SectionLinkProps {
   onBlur?: LinkControlProps['onBlur']
   active?: boolean
   flat?: boolean
-  children: RenderChild<{
+  children: FC<{
     active: boolean
     focus: boolean
     hover: boolean

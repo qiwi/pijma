@@ -1,5 +1,4 @@
-import React, {RefObject} from 'react'
-import RenderChild from '../RenderChild'
+import React, {RefObject, FC} from 'react'
 import SuggestOptionModel from './SuggestOptionModel'
 
 export default interface SuggestControlProps<O extends SuggestOptionModel<V>, V> {
@@ -27,7 +26,7 @@ export default interface SuggestControlProps<O extends SuggestOptionModel<V>, V>
   onFocus?: () => void
   onBlur?: () => void
   onSubmit?: (value: string) => boolean
-  children: RenderChild<{
+  children: FC<{
     focused: boolean
     hovered: boolean
     selected: number | undefined
