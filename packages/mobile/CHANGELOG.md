@@ -1,3 +1,10 @@
+# [1.133.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.132.0...@qiwi/pijma-mobile@1.133.0) (2021-11-01)
+
+
+### Features
+
+* no render props ([#445](https://github.com/qiwi/pijma/issues/445)) ([5da89bd](https://github.com/qiwi/pijma/commit/5da89bd1154a6eeaef78d728e40b1ce2162b2f6a))
+
 # [1.132.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.131.0...@qiwi/pijma-mobile@1.132.0) (2021-10-25)
 
 
