@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {styled, RenderChild, LinkControl, LinkControlProps, Card, Lnk, Block, CardOptions} from '@qiwi/pijma-core'
+import {styled, LinkControl, LinkControlProps, Card, Lnk, Block, CardOptions} from '@qiwi/pijma-core'
 
 export interface BlockLinkProps {
   tabIndex?: number
@@ -13,7 +13,7 @@ export interface BlockLinkProps {
   onClick?: LinkControlProps['onClick']
   onFocus?: LinkControlProps['onFocus']
   onBlur?: LinkControlProps['onBlur']
-  children: RenderChild<{
+  children: FC<{
     active: boolean
     focus: boolean
     hover: boolean

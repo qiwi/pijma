@@ -1,13 +1,11 @@
-import React, {createRef, RefObject} from 'react'
+import React, {createRef, RefObject, FC} from 'react'
 import {findDOMNode} from 'react-dom'
-
-import RenderChild from '../RenderChild'
 
 export interface TabsControlProps {
   select: number
   length: number
   onChange?: (selected: number) => void
-  children: RenderChild<{
+  children: FC<{
     onKeyDown: React.KeyboardEventHandler
     borderLeft: number
     borderWidth: number
