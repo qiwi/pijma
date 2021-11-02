@@ -1,8 +1,10 @@
 import React, {FC, ReactNode} from 'react'
 
-import {themes, ThemeProvider, Flex, FlexItem, Card, Box, Icon, injectGlobal, fonts, reset, applyDefaultClickHandler} from '@qiwi/pijma-core'
+import {themes, ThemeProvider, Flex, FlexItem, Card, Box, Icon, injectGlobal, reset, applyDefaultClickHandler} from '@qiwi/pijma-core'
 
-injectGlobal(fonts, reset, {
+import '@qiwi/pijma-fonts'
+
+injectGlobal(reset, {
   '#rsg-root': {
     height: '100%',
     minHeight: '100%',
