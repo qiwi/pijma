@@ -1,3 +1,10 @@
+# @qiwi/pijma-infra [1.2.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.1.0...@qiwi/pijma-infra@1.2.0) (2021-11-02)
+
+
+### Features
+
+* move fonts to static and package ([#441](https://github.com/qiwi/pijma/issues/441)) ([f630479](https://github.com/qiwi/pijma/commit/f6304790827f1b2379622b4bcf9aacb430376661))
+
 # @qiwi/pijma-infra [1.1.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.0.0...@qiwi/pijma-infra@1.1.0) (2021-11-01)
 
 

@@ -1,7 +1,7 @@
 {
   "name": "@qiwi/pijma-infra",
   "description": "QIWI Pijma infra assets: common configs, dev deps, etc",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
