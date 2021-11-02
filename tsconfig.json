@@ -20,6 +20,9 @@
       ],
       "@qiwi/pijma-mobile/*": [
         "./mobile/src/*"
+      ],
+      "@qiwi/pijma-fonts": [
+        "./fonts"
       ]
     }
   }
