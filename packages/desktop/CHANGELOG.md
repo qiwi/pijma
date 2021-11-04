@@ -1,3 +1,10 @@
+# [1.136.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.135.0...@qiwi/pijma-desktop@1.136.0) (2021-11-04)
+
+
+### Features
+
+* up emotion 11 ([#447](https://github.com/qiwi/pijma/issues/447)) ([f654807](https://github.com/qiwi/pijma/commit/f6548077d5f419e706fe6662fe715e366c349847))
+
 # [1.135.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.134.0...@qiwi/pijma-desktop@1.135.0) (2021-11-02)
 
 
