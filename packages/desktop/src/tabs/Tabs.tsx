@@ -8,8 +8,6 @@ import {
   IconProps,
   TabBorder,
   styled,
-  FlexOptions,
-  FlexItemOptions,
 } from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
@@ -28,7 +26,7 @@ export interface TabsProps {
   onChange?: (selected: number) => void
 }
 
-const FlexOverflow = styled(Flex, FlexOptions)({
+const FlexOverflow = styled(Flex)({
   '&::-webkit-scrollbar': {
     display: 'none',
   },
@@ -37,7 +35,7 @@ const FlexOverflow = styled(Flex, FlexOptions)({
   position: 'relative',
 })
 
-const TabContent = styled(FlexItem, FlexItemOptions)()
+const TabContent = styled(FlexItem)()
 
 export const Tabs: FC<TabsProps> = ({
   items,

@@ -1,9 +1,8 @@
-import styled, {CSSObject, StyledOptions} from '../styled'
+import {styled, CSSObject, StyledOptions} from '../styled'
 
 import {pxValue} from './Value'
 
 export interface TypoProps {
-  as?: keyof JSX.IntrinsicElements
   css?: CSSObject
   display?: 'block' | 'inline' | 'inline-block'
   size?: number
@@ -20,9 +19,9 @@ export interface TypoProps {
   clamp?: number
 }
 
-export const TypoNonProps = ['as', 'css', 'innerRef', 'ref', 'display', 'size', 'height', 'weight', 'color', 'transform', 'nowrap', 'spacing', 'transition', 'decoration', 'cursor', 'align', 'clamp']
+export const TypoNonProps: PropertyKey[] = ['as', 'css', 'display', 'size', 'height', 'weight', 'color', 'transform', 'nowrap', 'spacing', 'transition', 'decoration', 'cursor', 'align', 'clamp']
 
-export const TypoOptions: StyledOptions = {
+export const TypoOptions: StyledOptions<TypoProps> = {
   shouldForwardProp: (prop) => !TypoNonProps.includes(prop),
 }
 
@@ -47,4 +46,5 @@ export const Typo = styled('div', TypoOptions)<TypoProps>(({theme, ...props}) =>
   maxHeight: props.clamp !== undefined && props.height !== undefined && props.display === 'block' ? pxValue(props.height * props.clamp, theme.scale) : undefined,
   WebkitLineClamp: props.clamp !== undefined && props.height !== undefined && props.display === 'block' ? props.clamp : undefined,
   WebkitBoxOrient: props.clamp !== undefined && props.height !== undefined && props.display === 'block' ? 'vertical' : undefined,
-}), (props) => props.css)
+  ...props.css,
+}))

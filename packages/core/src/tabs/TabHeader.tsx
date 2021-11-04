@@ -72,7 +72,7 @@ export const TabHeader = forwardRef<HTMLDivElement, TabProps>(({
               />
             ) : (
               <Icon
-                css={{transition: 'svg 100ms cubic-bezier(0.4, 0.0, 0.2, 1)'}}
+                // css={{transition: 'svg 100ms cubic-bezier(0.4, 0.0, 0.2, 1)'}}
                 size={vertical ? 8 : 6}
                 color={select || focus ? '#ff8c00' : '#666'}
                 name={icon}

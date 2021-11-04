@@ -1,4 +1,4 @@
-import styled, {StyledOptions} from '../styled'
+import {styled, StyledOptions} from '../styled'
 
 import {cssValue, Value} from './Value'
 
@@ -11,9 +11,9 @@ interface SvgProps {
   transformOrigin?: string
 }
 
-export const SvgNonProps = ['width', 'height', 'animation', 'transition', 'transform', 'transformOrigin']
+export const SvgNonProps: PropertyKey[] = ['as', 'width', 'height', 'animation', 'transition', 'transform', 'transformOrigin']
 
-export const SvgOptions: StyledOptions = {
+export const SvgOptions: StyledOptions<SvgProps> = {
   shouldForwardProp: (prop) => !SvgNonProps.includes(prop),
 }
 
@@ -37,9 +37,9 @@ interface SvgItemProps {
   transformOrigin?: string
 }
 
-export const SvgItemNonProps = ['animation', 'transition', 'transform', 'transformOrigin']
+export const SvgItemNonProps: PropertyKey[] = ['as', 'animation', 'transition', 'transform', 'transformOrigin']
 
-export const SvgItemOptions: StyledOptions = {
+export const SvgItemOptions: StyledOptions<SvgItemProps> = {
   shouldForwardProp: (prop) => !SvgItemNonProps.includes(prop),
 }
 

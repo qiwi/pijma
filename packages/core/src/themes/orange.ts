@@ -1,4 +1,4 @@
-import Theme from '../Theme'
+import {Theme} from '../styled'
 
 export const orange: Theme = {
   scale: 4,

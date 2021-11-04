@@ -9,7 +9,7 @@ import {
   Pos,
   Box,
   Card,
-  CardOptions,
+  CardPos,
   styled,
   Spacer,
 } from '@qiwi/pijma-core'
@@ -22,8 +22,7 @@ import {MenuItem} from '../menu'
 import ContentSuggestProps from './ContentSuggestProps'
 import ContentSuggestOptionsModel from './ContentSuggestOptionModel'
 
-const CardPos = styled(Card, CardOptions)().withComponent(Pos)
-const CardItem = styled(Card, CardOptions)().withComponent(MenuItem)
+const CardMenuItem = styled(Card)().withComponent(MenuItem)
 
 export const ContentSuggest = <V extends {}>({
   equals = (a: V, b: V) => a === b,
@@ -122,14 +121,14 @@ export const ContentSuggest = <V extends {}>({
                 >
                   {props.loading ? (
                     Array(4).fill(1).map((_item, key) => (
-                      <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
+                      <CardMenuItem key={key} icon={true} stub text="stub" notes="stub"/>
                     ))
                   ) : (
                     <Spacer size="s">
                       {menuRenderProps.items.length > 0 ? (
                         <Fragment>
                           {menuRenderProps.items.map((item, key) => (
-                            <CardItem
+                            <CardMenuItem
                               key={key}
                               ref={item.ref}
                               onClick={item.onClick}

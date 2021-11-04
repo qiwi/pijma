@@ -1,6 +1,6 @@
-import React, {forwardRef, Ref} from 'react'
+import React, {forwardRef} from 'react'
 
-import {styled, LinkControl, Lnk, Flex, Pos, Card, LinkControlProps, Typo, PosOptions} from '@qiwi/pijma-core'
+import {LinkControl, LinkControlProps, Flex, Pos, Card, Typo, PosLnk} from '@qiwi/pijma-core'
 
 import {Text} from '../typography'
 
@@ -13,15 +13,12 @@ export interface HeaderMenuItemProps {
   title?: string
   active?: boolean
   attention?: boolean
-  ref?: Ref<HTMLAnchorElement>
   onClick?: LinkControlProps['onClick']
   onFocus?: LinkControlProps['onFocus']
   onBlur?: LinkControlProps['onBlur']
 }
 
-const PosLink = styled(Pos, PosOptions)().withComponent(Lnk)
-
-export const HeaderMenuItem = forwardRef<HTMLAnchorElement, HeaderMenuItemProps>((props, ref) => (
+export const HeaderMenuItem = forwardRef<HTMLDivElement & HTMLAnchorElement, HeaderMenuItemProps>((props, ref) => (
   <LinkControl
     href={props.href}
     target={props.target}
@@ -31,7 +28,7 @@ export const HeaderMenuItem = forwardRef<HTMLAnchorElement, HeaderMenuItemProps>
     onFocus={props.onFocus}
     onBlur={props.onBlur}
     children={renderProps => (
-      <PosLink
+      <PosLnk
         as={props.href ? 'a' : 'div'}
         ref={ref}
         height={1}
@@ -80,7 +77,7 @@ export const HeaderMenuItem = forwardRef<HTMLAnchorElement, HeaderMenuItemProps>
             <Card bg="#ff8c00" height={1} width={1} rtr={4} rtl={4}/>
           </Pos>
         ) : null}
-      </PosLink>
+      </PosLnk>
     )}
   />
 ))

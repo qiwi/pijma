@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {styled, LinkControl, Lnk, Typo, Stub, TypoOptions} from '@qiwi/pijma-core'
+import {LinkControl, Stub, TypoLnk} from '@qiwi/pijma-core'
 
 export interface NavLinkProps {
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
@@ -14,8 +14,6 @@ export interface NavLinkProps {
   title?: string
   stub?: boolean
 }
-
-const TypoLink = styled(Typo, TypoOptions)().withComponent(Lnk)
 
 export const NavLink: FC<NavLinkProps> = (props) => (
   props.stub ? (
@@ -35,7 +33,7 @@ export const NavLink: FC<NavLinkProps> = (props) => (
       download={props.download}
       rel={props.rel}
       children={(renderProps) => (
-        <TypoLink
+        <TypoLnk
           tabIndex={props.tabIndex}
           href={props.href}
           onClick={renderProps.onClick}

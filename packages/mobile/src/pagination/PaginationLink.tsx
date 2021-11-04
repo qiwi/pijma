@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {styled, LinkControl, Lnk, Card, Value, Flex, Stub, CardOptions} from '@qiwi/pijma-core'
+import {LinkControl, Value, Flex, Stub, CardLnk} from '@qiwi/pijma-core'
 
 export interface PaginationLinkProps {
   page: number
@@ -16,14 +16,12 @@ export interface PaginationLinkProps {
   }>
 }
 
-const CardLink = styled(Card, CardOptions)().withComponent(Lnk)
-
 export const PaginationLink: FC<PaginationLinkProps> = props => (
   <LinkControl
     href={props.stub ? undefined : props.href}
     onClick={props.stub ? undefined : props.onClick}
     children={renderProps => (
-      <CardLink
+      <CardLnk
         as={props.stub ? 'div' : 'a'}
         transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         height={12}
@@ -59,7 +57,7 @@ export const PaginationLink: FC<PaginationLinkProps> = props => (
             })
           )}
         />
-      </CardLink>
+      </CardLnk>
     )}
   />
 )

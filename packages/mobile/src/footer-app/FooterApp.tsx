@@ -1,8 +1,6 @@
 import React, {FC, ReactElement} from 'react'
 
-import {styled, Box, Lnk, LinkControl, Stub, Flex, FlexItem, BoxOptions} from '@qiwi/pijma-core'
-
-const BoxLink = styled(Box, BoxOptions)().withComponent(Lnk)
+import {LinkControl, Stub, Flex, FlexItem, BoxLnk} from '@qiwi/pijma-core'
 
 interface FooterAppLinkProps {
   href: string
@@ -30,7 +28,7 @@ const FooterAppLink: FC<FooterAppLinkProps> = (props) => (
       onFocus={props.onFocus}
       onBlur={props.onBlur}
       children={(renderProps) => (
-        <BoxLink
+        <BoxLnk
           display="block"
           href={props.href}
           rel={props.rel}

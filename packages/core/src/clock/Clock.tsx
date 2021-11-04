@@ -1,15 +1,13 @@
 import React, {FunctionComponent} from 'react'
 
-import {Card, CardOptions, Pos} from '../primitive'
-import styled, {keyframes} from '../styled'
+import {CardPos} from '../primitive'
+import {keyframes} from '../styled'
 
 const rotate = keyframes({
   '100%': {
     transform: 'rotateZ(360deg)',
   },
 })
-
-const CardPos = styled(Card, CardOptions)().withComponent(Pos)
 
 interface ClockProps {
   size?: number

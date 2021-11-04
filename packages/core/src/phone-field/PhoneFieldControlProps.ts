@@ -1,5 +1,4 @@
 import React, {RefObject, FC} from 'react'
-import MaskedInput from 'react-text-mask'
 
 import PhoneFieldCountry from './PhoneFieldCountry'
 import {FlagProps} from '../flag'
@@ -28,7 +27,7 @@ export default interface PhoneFieldControlProps {
     focused: boolean
     showCountries: boolean
     containerRef: RefObject<HTMLDivElement>
-    inputRef: RefObject<MaskedInput>
+    inputRef: RefObject<HTMLInputElement>
     dropdownRef: RefObject<HTMLDivElement>
     onChange: React.ChangeEventHandler
     onFocus: React.FocusEventHandler

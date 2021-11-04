@@ -1,6 +1,6 @@
 import {CSSObject} from './styled'
 
-const reset: CSSObject = {
+export const reset: CSSObject = {
   '*': {
     boxSizing: 'border-box',
     outline: 0,
@@ -32,5 +32,3 @@ const reset: CSSObject = {
     verticalAlign: 'top',
   },
 }
-
-export default reset

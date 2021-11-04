@@ -11,7 +11,7 @@ import {
   Spacer,
   BasicInput,
   InputField,
-  CardOptions,
+  CardPos,
 } from '@qiwi/pijma-core'
 
 import {Paragraph} from '../typography'
@@ -22,8 +22,7 @@ import {MenuItem} from '../menu'
 import SuggestFieldProps from './SuggestFieldProps'
 import SuggestFieldOptionsModel from './SuggestFieldOptionModel'
 
-const CardPos = styled(Card, CardOptions)().withComponent(Pos)
-const CardItem = styled(Card, CardOptions)().withComponent(MenuItem)
+const CardMenuItem = styled(Card)().withComponent(MenuItem)
 
 export const SuggestField = <V extends {}>({
   equals = (a: V, b: V) => a === b,
@@ -124,14 +123,14 @@ export const SuggestField = <V extends {}>({
                 >
                   {props.loading ? (
                     Array(4).fill(1).map((_item, key) => (
-                      <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
+                      <CardMenuItem key={key} icon={true} stub text="stub" notes="stub"/>
                     ))
                   ) : (
                     <Spacer size="s">
                       {menuRenderProps.items.length > 0 ? (
                         <Fragment>
                           {menuRenderProps.items.map((item, key) => (
-                            <CardItem
+                            <CardMenuItem
                               key={key}
                               ref={item.ref}
                               onClick={item.onClick}

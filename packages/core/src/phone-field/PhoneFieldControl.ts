@@ -1,5 +1,4 @@
 import {Component, RefObject, createRef} from 'react'
-import MaskedInput from 'react-text-mask'
 import {findDOMNode} from 'react-dom'
 
 import PhoneFieldControlProps from './PhoneFieldControlProps'
@@ -50,7 +49,7 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
 
   private containerRef: RefObject<HTMLDivElement> = createRef()
 
-  private inputRef: RefObject<MaskedInput> = createRef()
+  private inputRef: RefObject<HTMLInputElement> = createRef()
 
   private dropdownRef: RefObject<HTMLDivElement> = createRef()
 

@@ -5,7 +5,6 @@ import {
   MenuControl,
   Box,
   Card,
-  CardOptions,
   styled,
   Spacer,
   Icon,
@@ -28,7 +27,7 @@ import {Markdown} from '../markdown'
 import {HeaderSuggestProps} from './HeaderSuggestProps'
 import {HeaderSuggestOptionModel} from './HeaderSuggestOptionModel'
 
-const CardItem = styled(Card, CardOptions)().withComponent(MenuItem)
+const CardItem = styled(Card)().withComponent(MenuItem)
 
 const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
 

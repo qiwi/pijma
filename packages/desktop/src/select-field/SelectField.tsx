@@ -1,7 +1,7 @@
 import React, {FunctionComponent, ReactNode, FC} from 'react'
-import {css} from 'emotion'
 
 import {
+  css,
   SelectInput,
   SelectFieldControl,
   Box,
@@ -15,13 +15,12 @@ import {
   Overlay,
   SimpleTransitionProps,
   SimpleTransition,
-  CardOptions,
+  CardPos,
 } from '@qiwi/pijma-core'
 
 import {MenuItem} from '../menu'
 
-const CardPos = styled(Card, CardOptions)().withComponent(Pos)
-const CardItem = styled(Card, CardOptions)().withComponent(MenuItem)
+const CardMenuItem = styled(Card)().withComponent(MenuItem)
 
 export interface SelectFieldProps<I extends OptionModel<V>, V> {
   items: I[]
@@ -165,7 +164,7 @@ export const SelectField: FunctionComponent<SelectFieldProps<SelectFieldItemMode
                       pb={3}
                     >
                       {menuRenderProps.items.map((item, key) => (
-                        <CardItem
+                        <CardMenuItem
                           key={key}
                           ref={item.ref}
                           cursor="pointer"
