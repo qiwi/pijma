@@ -6,7 +6,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "ts-patch install -s"
+  },
   "files": [],
   "dependencies": {},
   "devDependencies": {
