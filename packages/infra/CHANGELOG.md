@@ -1,3 +1,10 @@
+# @qiwi/pijma-infra [1.3.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.2.0...@qiwi/pijma-infra@1.3.0) (2021-11-12)
+
+
+### Features
+
+* up ts ([#450](https://github.com/qiwi/pijma/issues/450)) ([09b439c](https://github.com/qiwi/pijma/commit/09b439cc9bc98aeb58ba892d84e9ceee4984c02c))
+
 # @qiwi/pijma-infra [1.2.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.1.0...@qiwi/pijma-infra@1.2.0) (2021-11-02)
 
 
