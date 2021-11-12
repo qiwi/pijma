@@ -1,3 +1,18 @@
+# @qiwi/pijma-core [1.138.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.137.0...@qiwi/pijma-core@1.138.0) (2021-11-12)
+
+
+### Features
+
+* up ts ([#450](https://github.com/qiwi/pijma/issues/450)) ([09b439c](https://github.com/qiwi/pijma/commit/09b439cc9bc98aeb58ba892d84e9ceee4984c02c))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-infra:** upgraded to 1.3.0
+
 # @qiwi/pijma-core [1.137.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.136.0...@qiwi/pijma-core@1.137.0) (2021-11-04)
 
 
