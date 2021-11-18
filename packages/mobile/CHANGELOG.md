@@ -1,3 +1,10 @@
+# [1.137.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.136.1...@qiwi/pijma-mobile@1.137.0) (2021-11-18)
+
+
+### Features
+
+* export all from core ([#451](https://github.com/qiwi/pijma/issues/451)) ([0f51166](https://github.com/qiwi/pijma/commit/0f5116662727405bd15397a94ae434558883cefb))
+
 ## [1.136.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.136.0...@qiwi/pijma-mobile@1.136.1) (2021-11-12)
 
 # [1.136.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.135.0...@qiwi/pijma-mobile@1.136.0) (2021-11-04)
