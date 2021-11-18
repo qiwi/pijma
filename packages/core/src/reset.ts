@@ -14,6 +14,14 @@ export const reset: CSSObject = {
     font: 'inherit',
     verticalAlign: 'baseline',
   },
+  'html, body, #root': {
+    height: '100%',
+    minHeight: '100%',
+    position: 'relative',
+  },
+  body: {
+    overflowY: 'scroll',
+  },
   'article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section': {
     display: 'block',
   },

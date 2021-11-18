@@ -65,6 +65,7 @@ module.exports = {
   getExampleFilename(componentPath) {
     return path.resolve(path.dirname(componentPath), `${path.basename(componentPath, path.extname(componentPath))}.md`)
   },
+  mountPointId: 'root',
   pagePerSection: true,
   sections: [
     {
