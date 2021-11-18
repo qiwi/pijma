@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-desktop",
-  "version": "1.136.1",
+  "version": "1.137.0",
   "main": "lib/es5/index.js",
   "types": "lib/es5/index.d.ts",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "lib"
   ],
   "dependencies": {
-    "@qiwi/pijma-core": "1.138.0",
+    "@qiwi/pijma-core": "1.139.0",
     "@qiwi/pijma-fonts": "1.0.0"
   },
   "devDependencies": {

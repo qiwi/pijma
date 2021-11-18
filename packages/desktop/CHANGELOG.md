@@ -1,3 +1,10 @@
+# [1.137.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.136.1...@qiwi/pijma-desktop@1.137.0) (2021-11-18)
+
+
+### Features
+
+* export all from core ([#451](https://github.com/qiwi/pijma/issues/451)) ([0f51166](https://github.com/qiwi/pijma/commit/0f5116662727405bd15397a94ae434558883cefb))
+
 ## @qiwi/pijma-desktop [1.136.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.136.0...@qiwi/pijma-desktop@1.136.1) (2021-11-12)
 
 
