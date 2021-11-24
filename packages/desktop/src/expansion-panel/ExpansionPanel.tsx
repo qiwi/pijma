@@ -40,7 +40,7 @@ export const ExpansionPanel: FC<ExpansionPanelProps> = (
         p={6}
         cursor="pointer"
         opacity={faded ? 0.3 : 1}
-        css={{'&:hover': {opacity: 1, transition: 'opacity .3s' }}}
+        css={{'&:hover': {opacity: 1, transition: 'opacity .3s'}}}
         onClick={handleClick}
       >
         <Flex justify="space-between">
