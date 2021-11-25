@@ -39,7 +39,7 @@ export const ExpansionPanel: FC<ExpansionPanelProps> = (
       <Box
         p={6}
         cursor="pointer"
-        opacity={faded ? 0.3 : 1}
+        opacity={!expanded && faded ? 0.3 : 1}
         css={{'&:active': {opacity: 1, transition: 'opacity .3s'}}}
         onClick={handleClick}
       >
