@@ -1,5 +1,5 @@
 import {ReactNode, KeyboardEvent} from 'react'
-import {Mask, Pipe} from '@qiwi/pijma-core'
+import {BasicInputProps, Mask, Pipe} from '@qiwi/pijma-core'
 
 export interface PasswordFieldProps {
   value: string
@@ -11,7 +11,7 @@ export interface PasswordFieldProps {
   help?: ReactNode
   hint?: ReactNode
   viewed?: boolean
-  autoComplete?: boolean
+  autoComplete?: BasicInputProps['autoComplete']
   autoFocus?: boolean
   placeholder?: string
   disabled?: boolean

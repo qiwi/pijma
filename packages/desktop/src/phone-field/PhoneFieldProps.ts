@@ -1,6 +1,6 @@
 import {ReactNode} from 'react'
 
-import {PhoneFieldCountry, FlagProps} from '@qiwi/pijma-core'
+import {PhoneFieldCountry, FlagProps, BasicInputProps} from '@qiwi/pijma-core'
 
 export interface PhoneFieldProps {
   value: string
@@ -13,7 +13,7 @@ export interface PhoneFieldProps {
   action?: ReactNode
   help?: ReactNode
   hint?: ReactNode
-  autoComplete?: boolean
+  autoComplete?: BasicInputProps['autoComplete']
   autoFocus?: boolean
   placeholder?: string
   disabled?: boolean

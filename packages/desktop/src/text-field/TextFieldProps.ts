@@ -1,6 +1,6 @@
 import {ReactNode, KeyboardEvent} from 'react'
 
-import {Mask, Pipe} from '@qiwi/pijma-core'
+import {Mask, Pipe, BasicInputProps} from '@qiwi/pijma-core'
 
 export interface TextFieldProps {
   value: string
@@ -12,7 +12,7 @@ export interface TextFieldProps {
   action?: ReactNode
   help?: ReactNode
   hint?: ReactNode
-  autoComplete?: boolean
+  autoComplete?: BasicInputProps['autoComplete']
   autoFocus?: boolean
   placeholder?: string
   disabled?: boolean
