@@ -1,7 +1,6 @@
 import React, {FC, ReactNode} from 'react'
-import {Block, Box, Flex, FlexItem, Icon, Spacer, Stub} from '@qiwi/pijma-core'
-import {Paragraph} from '@qiwi/pijma-mobile'
-import {CollapseControl} from '@qiwi/pijma-core/collapse'
+import {CollapseControl, Block, Box, Flex, FlexItem, Icon, Spacer, Stub} from '@qiwi/pijma-core'
+import {Paragraph} from '../typography'
 
 export interface ExpansionPanelProps {
   title: string
