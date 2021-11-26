@@ -17,6 +17,7 @@ export interface BasicInputProps {
   autoComplete?: boolean | string
   autoFocus?: boolean
   placeholder?: string
+  inputMode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'
   maxLength?: number
   pl?: Value
   pr?: Value
@@ -30,7 +31,6 @@ export interface BasicInputProps {
   onBlur?: FocusEventHandler
   onKeyDown?: KeyboardEventHandler
   onKeyUp?: KeyboardEventHandler
-  inputMode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'
 }
 
 export const BasicInput = forwardRef<HTMLInputElement, BasicInputProps>((props, ref) => {
@@ -60,6 +60,7 @@ export const BasicInput = forwardRef<HTMLInputElement, BasicInputProps>((props, 
         : 'off',
     autoFocus: props.autoFocus,
     placeholder: props.placeholder,
+    inputMode: props.inputMode,
     disabled: !!props.disabled,
     maxLength: props.maxLength,
     onChange: props.onChange,
@@ -68,7 +69,6 @@ export const BasicInput = forwardRef<HTMLInputElement, BasicInputProps>((props, 
     onKeyDown: props.onKeyDown,
     onKeyUp: props.onKeyUp,
     ref: ref as RefObject<HTMLInputElement & MaskedInput>,
-    inputMode: props.inputMode,
   }
   return (
     props.mask ? (
