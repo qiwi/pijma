@@ -15,6 +15,7 @@ export interface TextFieldProps {
   autoComplete?: BasicInputProps['autoComplete']
   autoFocus?: boolean
   placeholder?: string
+  inputMode?: BasicInputProps['inputMode']
   disabled?: boolean
   maxLength?: number
   mask?: Mask
@@ -25,5 +26,4 @@ export interface TextFieldProps {
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean
   onKeyUp?: (event: KeyboardEvent) => boolean
-  inputMode?: BasicInputProps['inputMode']
 }

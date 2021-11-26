@@ -16,11 +16,11 @@ export interface PhoneFieldProps {
   autoComplete?: BasicInputProps['autoComplete']
   autoFocus?: boolean
   placeholder?: string
+  inputMode?: BasicInputProps['inputMode']
   disabled?: boolean
   maxLength?: number
   stub?: boolean
   onChange: (phone: string, code: FlagProps['code'] | undefined) => void
   onFocus?: () => void
   onBlur?: () => void
-  inputMode?: BasicInputProps['inputMode']
 }
