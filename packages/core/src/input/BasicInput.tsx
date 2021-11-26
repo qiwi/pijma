@@ -14,7 +14,7 @@ export interface BasicInputProps {
   tabIndex?: number
   type?: 'text' | 'password' | 'tel' | 'number' | 'search' | 'email' | 'url'
   name?: string
-  autoComplete?: boolean
+  autoComplete?: boolean | string
   autoFocus?: boolean
   placeholder?: string
   maxLength?: number
@@ -52,7 +52,11 @@ export const BasicInput = forwardRef<HTMLInputElement, BasicInputProps>((props, 
     transition: 'all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)',
     value: props.value,
     name: props.name,
-    autoComplete: props.autoComplete ? 'on' : 'off',
+    autoComplete: typeof props.autoComplete === 'string'
+      ? props.autoComplete
+      : props.autoComplete
+        ? 'on'
+        : 'off',
     autoFocus: props.autoFocus,
     placeholder: props.placeholder,
     disabled: !!props.disabled,
