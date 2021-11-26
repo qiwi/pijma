@@ -54,7 +54,7 @@ export const BasicInput = forwardRef<HTMLInputElement, BasicInputProps>((props, 
     name: props.name,
     autoComplete: typeof props.autoComplete === 'string'
       ? props.autoComplete
-      : props.autoComplete === true
+      : props.autoComplete
         ? 'on'
         : 'off',
     autoFocus: props.autoFocus,
