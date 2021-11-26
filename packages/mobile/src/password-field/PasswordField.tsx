@@ -36,6 +36,7 @@ export const PasswordField: FunctionComponent<PasswordFieldProps> = (props) => (
             onBlur={renderProps.onBlur}
             onKeyDown={renderProps.onKeyDown}
             onKeyUp={renderProps.onKeyUp}
+            inputMode={props.inputMode}
           />
         )}
         hint={(

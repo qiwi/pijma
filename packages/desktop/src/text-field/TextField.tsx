@@ -50,6 +50,7 @@ export const TextField: FunctionComponent<TextFieldProps> = (props) => (
               onBlur={renderProps.onBlur}
               onKeyDown={renderProps.onKeyDown}
               onKeyUp={renderProps.onKeyUp}
+              inputMode={props.inputMode}
             />
           )}
           hint={props.hint}

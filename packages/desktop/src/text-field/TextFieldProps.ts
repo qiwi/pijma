@@ -25,4 +25,5 @@ export interface TextFieldProps {
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean
   onKeyUp?: (event: KeyboardEvent) => boolean
+  inputMode?: BasicInputProps['inputMode']
 }

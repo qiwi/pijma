@@ -24,4 +24,5 @@ export interface PasswordFieldProps {
   onKeyDown?: (event: KeyboardEvent) => boolean
   onKeyUp?: (event: KeyboardEvent) => boolean
   onToggle?: (hidden: boolean) => void
+  inputMode?: BasicInputProps['inputMode']
 }

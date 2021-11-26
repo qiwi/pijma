@@ -22,4 +22,5 @@ export interface PhoneFieldProps {
   onChange: (phone: string, code: FlagProps['code'] | undefined) => void
   onFocus?: () => void
   onBlur?: () => void
+  inputMode?: BasicInputProps['inputMode']
 }
