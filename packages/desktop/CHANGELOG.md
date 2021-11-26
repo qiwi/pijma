@@ -1,3 +1,10 @@
+# [1.138.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.137.0...@qiwi/pijma-desktop@1.138.0) (2021-11-26)
+
+
+### Features
+
+* make auto-complete boolean or string in inputs ([#453](https://github.com/qiwi/pijma/issues/453)) ([9d706f3](https://github.com/qiwi/pijma/commit/9d706f32b98065fd65d33446651322a348803b3c))
+
 # [1.137.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.136.1...@qiwi/pijma-desktop@1.137.0) (2021-11-18)
 
 
