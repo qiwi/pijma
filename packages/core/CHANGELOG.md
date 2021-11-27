@@ -1,3 +1,10 @@
+# @qiwi/pijma-core [1.141.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.140.0...@qiwi/pijma-core@1.141.0) (2021-11-27)
+
+
+### Features
+
+* add inputMode prop to inputs ([#454](https://github.com/qiwi/pijma/issues/454)) ([41b9b31](https://github.com/qiwi/pijma/commit/41b9b31663982ab215764fdcb29b54f09ec23915))
+
 # @qiwi/pijma-core [1.140.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.139.0...@qiwi/pijma-core@1.140.0) (2021-11-26)
 
 
