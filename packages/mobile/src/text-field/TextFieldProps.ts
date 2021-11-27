@@ -15,6 +15,7 @@ export interface TextFieldProps {
   autoComplete?: BasicInputProps['autoComplete']
   autoFocus?: boolean
   placeholder?: string
+  inputMode?: BasicInputProps['inputMode']
   disabled?: boolean
   maxLength?: number
   mask?: Mask

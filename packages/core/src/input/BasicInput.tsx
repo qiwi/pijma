@@ -17,6 +17,7 @@ export interface BasicInputProps {
   autoComplete?: boolean | string
   autoFocus?: boolean
   placeholder?: string
+  inputMode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'
   maxLength?: number
   pl?: Value
   pr?: Value
@@ -59,6 +60,7 @@ export const BasicInput = forwardRef<HTMLInputElement, BasicInputProps>((props, 
         : 'off',
     autoFocus: props.autoFocus,
     placeholder: props.placeholder,
+    inputMode: props.inputMode,
     disabled: !!props.disabled,
     maxLength: props.maxLength,
     onChange: props.onChange,

@@ -59,6 +59,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                     autoComplete={props.autoComplete}
                     autoFocus={props.autoFocus}
                     placeholder={props.placeholder}
+                    inputMode={props.inputMode}
                     disabled={props.disabled}
                     pr={props.hint ? 7 : undefined}
                     pl={9}
