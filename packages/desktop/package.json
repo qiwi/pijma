@@ -11,7 +11,7 @@
     "prebuild": "yarn clean",
     "clean": "rm -rf lib styleguide/lib",
     "build": "tsc -p tsconfig.build.json && styleguidist build",
-    "watch": "styleguidist server",
+    "watch": "NODE_ENV=production styleguidist server",
     "lint": "tslint -p tsconfig.build.json src/**/*.ts{,x}",
     "lint:fix": "tslint -p tsconfig.build.json --fix src/**/*.ts{,x}",
     "guide": "gh-pages -d styleguide/lib -e desktop -m \"update desktop style guide v$npm_package_version\"",

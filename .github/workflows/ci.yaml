@@ -31,9 +31,7 @@ jobs:
         with:
           node-version: 14
       - name: Install deps
-        run: |
-          yarn
-          yarn bootstrap
+        run: yarn
       - run: yarn build
 
       - name: Save target (artifact)
@@ -64,9 +62,7 @@ jobs:
         with:
           node-version: 14
       - name: Install deps
-        run: |
-          yarn
-          yarn bootstrap
+        run: yarn
       - name: Unit test only
         run: yarn test:unit
 
@@ -100,9 +96,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install deps
-        run: |
-          yarn
-          yarn bootstrap
+        run: yarn
       - name: Unit test only
         if: matrix.node-version != '14' || matrix.os != 'ubuntu-20.04'
         run: yarn test:unit
