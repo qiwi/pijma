@@ -11,8 +11,8 @@
     "prebuild": "yarn clean",
     "clean": "rm -rf lib",
     "build": "tsc -p tsconfig.build.json",
-    "lint": "tslint -p tsconfig.build.json src/**/*.ts{,x}",
-    "lint:fix": "tslint -p tsconfig.build.json --fix src/**/*.ts{,x}"
+    "lint": "../../node_modules/.bin/tslint -p tsconfig.build.json src/**/*.ts{,x}",
+    "lint:fix": "../../node_modules/.bin/tslint -p tsconfig.build.json --fix src/**/*.ts{,x}"
   },
   "files": [
     "README.md",
