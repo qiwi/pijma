@@ -43,7 +43,6 @@ jobs:
             !packages/*/node_modules
             !packages/*/src
             packages
-            lerna.json
 
   test_push:
     needs: build

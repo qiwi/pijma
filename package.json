@@ -10,10 +10,10 @@
     "test": "yarn lint",
     "test:report": "yarn test",
     "test:unit": "yarn test",
-    "lint": "lerna run --no-bail --parallel lint",
-    "lint:fix": "lerna run --no-bail --parallel lint:fix",
+    "lint": "yarn workspaces foreach run lint",
+    "lint:fix": "yarn workspaces foreach run lint:fix",
     "guide": "yarn workspaces foreach run guide",
-    "guide_ci": "lerna run --concurrency=1 guide_ci",
+    "guide_ci": "yarn workspaces foreach run guide_ci",
     "upgrade": "npx npm-upgrade-monorepo",
     "audit:fix": "npm_config_yes=true npx yarn-audit-fix@9"
   },
