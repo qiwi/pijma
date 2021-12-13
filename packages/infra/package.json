@@ -11,7 +11,12 @@
   },
   "files": [],
   "devDependencies": {
+    "concurrently": "6.4.0",
     "css-loader": "4.3.0",
+    "esbuild": "0.14.3",
+    "esbuild-loader": "2.17.0",
+    "esbuild-node-externals": "^1.4.1",
+    "fast-glob": "3.2.7",
     "file-loader": "4.2.0",
     "gh-pages": "2.1.1",
     "husky": "3.0.3",

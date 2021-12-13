@@ -10,7 +10,10 @@
   "scripts": {
     "prebuild": "yarn clean",
     "clean": "rm -rf lib styleguide/lib",
-    "build": "tsc -p tsconfig.build.json && ../../node_modules/.bin/styleguidist build",
+    "build": "../../node_modules/.bin/concurrently 'npm:build:*'",
+    "build:guide": "NODE_ENV=production styleguidist build",
+    "build:es5": "node ../infra/esbuild.js",
+    "build:libdef": "tsc -p tsconfig.build.json --emitDeclarationOnly",
     "watch": "../../node_modules/.bin/styleguidist server",
     "lint": "../../node_modules/.bin/tslint -p tsconfig.build.json src/**/*.ts{,x}",
     "lint:fix": "../../node_modules/.bin/tslint -p tsconfig.build.json --fix src/**/*.ts{,x}",
