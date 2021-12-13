@@ -2,9 +2,6 @@
   "name": "pijma",
   "version": "1.0.1",
   "license": "MIT",
-  "scripts": {},
-  "dependencies": {},
-  "devDependencies": {},
   "files": [
     "README.md",
     "CHANGELOG.md",
