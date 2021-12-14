@@ -10,10 +10,10 @@
   "scripts": {
     "prebuild": "yarn clean",
     "clean": "rm -rf lib",
-    "build": "../../node_modules/.bin/concurrently 'npm:build:*'",
+    "build": "concurrently 'npm:build:*'",
     "build:es5": "node ../infra/esbuild.js",
     "build:libdef": "tsc -p tsconfig.build.json --emitDeclarationOnly",
-    "lint": "../../node_modules/.bin/eslint -c ../infra/.eslintrc.js 'src/**/*.ts{,x}'",
+    "lint": "eslint -c ../infra/.eslintrc.js 'src/**/*.ts{,x}'",
     "lint:fix": "yarn lint --fix"
   },
   "files": [

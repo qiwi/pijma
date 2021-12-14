@@ -10,15 +10,15 @@
   "scripts": {
     "prebuild": "yarn clean",
     "clean": "rm -rf lib styleguide/lib",
-    "build": "../../node_modules/.bin/concurrently 'npm:build:*'",
-    "build:guide": "NODE_ENV=production ../../node_modules/.bin/styleguidist build",
+    "build": "concurrently 'npm:build:*'",
+    "build:guide": "NODE_ENV=production styleguidist build",
     "build:es5": "node ../infra/esbuild.js",
     "build:libdef": "tsc -p tsconfig.build.json --emitDeclarationOnly",
-    "watch": "NODE_ENV=production ../../node_modules/.bin/styleguidist server",
-    "lint": "../../node_modules/.bin/eslint -c ../infra/.eslintrc.js 'src/**/*.ts{,x}'",
+    "watch": "NODE_ENV=production styleguidist server",
+    "lint": "eslint -c ../infra/.eslintrc.js 'src/**/*.ts{,x}'",
     "lint:fix": "yarn lint --fix",
-    "guide": "../../node_modules/.bin/gh-pages -d styleguide/lib -e desktop -m \"update desktop style guide v$npm_package_version\"",
-    "guide_ci": "../../node_modules/.bin/gh-pages -d styleguide/lib -e desktop -m \"update desktop style guide v$npm_package_version\" -r \"https://$GH_TOKEN@github.com/qiwi/pijma.git\""
+    "guide": "gh-pages -d styleguide/lib -e desktop -m \"update desktop style guide v$npm_package_version\"",
+    "guide_ci": "gh-pages -d styleguide/lib -e desktop -m \"update desktop style guide v$npm_package_version\" -r \"https://$GH_TOKEN@github.com/qiwi/pijma.git\""
   },
   "files": [
     "README.md",

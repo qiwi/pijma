@@ -927,6 +927,11 @@ __metadata:
     ts-react-display-name: 1.2.2
     typescript: 4.4.4
     webpack: 4.39.2
+  bin:
+    concurrently: ../../node_modules/.bin/concurrently
+    eslint: ../../node_modules/.bin/eslint
+    gh-pages: ../../node_modules/.bin/gh-pages
+    styleguidist: ../../node_modules/.bin/styleguidist
   languageName: unknown
   linkType: soft
 
