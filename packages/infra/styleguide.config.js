@@ -1,6 +1,7 @@
 const path = require('path')
 const docgen = require('react-docgen-typescript')
 const glob = require('fast-glob')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 module.exports = ({cwd, extra = {}, components = []}) => {
   const styleguideRoot = path.resolve(cwd, 'styleguide')
@@ -87,18 +88,15 @@ module.exports = ({cwd, extra = {}, components = []}) => {
         removeEmptyChunks: false,
         usedExports: false,
       },
+      plugins: [
+        new ESLintPlugin({
+          overrideConfigFile: path.resolve(__dirname, '.eslintrc.js'),
+          extensions: ['ts', `tsx`],
+          exclude: ['/node_modules/'],
+        })
+      ],
       module: {
         rules: [
-          {
-            test: /\.tsx?$/,
-            enforce: 'pre',
-            loader: 'tslint-loader',
-            options: {
-              configFile: path.resolve(cwd, 'tslint.json'),
-              tsConfigFile: path.resolve(cwd, 'tsconfig.json'),
-            },
-            exclude: /node_modules/,
-          },
           {
             test: /\.tsx?$/,
             use: [

@@ -15,8 +15,8 @@
     "build:es5": "node ../infra/esbuild.js",
     "build:libdef": "tsc -p tsconfig.build.json --emitDeclarationOnly",
     "watch": "../../node_modules/.bin/styleguidist server",
-    "lint": "../../node_modules/.bin/tslint -p tsconfig.build.json src/**/*.ts{,x}",
-    "lint:fix": "../../node_modules/.bin/tslint -p tsconfig.build.json --fix src/**/*.ts{,x}",
+    "lint": "../../node_modules/.bin/eslint -c ../infra/.eslintrc.js 'src/**/*.ts{,x}'",
+    "lint:fix": "yarn lint --fix",
     "guide": "../../node_modules/.bin/gh-pages -d styleguide/lib -e mobile -m \"update mobile style guide v$npm_package_version\"",
     "guide_ci": "../../node_modules/.bin/gh-pages -d styleguide/lib -e mobile -m \"update mobile style guide v$npm_package_version\" -r \"https://$GH_TOKEN@github.com/qiwi/pijma.git\""
   },
