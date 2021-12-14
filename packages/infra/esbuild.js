@@ -6,7 +6,7 @@ const entryPoints = glob.sync('./src/**/*.ts(x)?')
 
 esbuild.build({
   entryPoints,
-  outdir: './lib/es5/',
+  outdir: './lib/es6/',
   bundle: false,
   minify: false,
   platform: 'node',

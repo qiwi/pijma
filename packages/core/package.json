@@ -1,8 +1,8 @@
 {
   "name": "@qiwi/pijma-core",
   "version": "1.141.0",
-  "main": "lib/es5/index.js",
-  "types": "lib/es5/index.d.ts",
+  "main": "lib/es6/index.js",
+  "types": "lib/es6/index.d.ts",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -10,7 +10,9 @@
   "scripts": {
     "prebuild": "yarn clean",
     "clean": "rm -rf lib",
-    "build": "tsc -p tsconfig.build.json",
+    "build": "../../node_modules/.bin/concurrently 'npm:build:*'",
+    "build:es5": "node ../infra/esbuild.js",
+    "build:libdef": "tsc -p tsconfig.build.json --emitDeclarationOnly",
     "lint": "../../node_modules/.bin/tslint -p tsconfig.build.json src/**/*.ts{,x}",
     "lint:fix": "../../node_modules/.bin/tslint -p tsconfig.build.json --fix src/**/*.ts{,x}"
   },

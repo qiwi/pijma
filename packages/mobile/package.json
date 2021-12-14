@@ -1,8 +1,8 @@
 {
   "name": "@qiwi/pijma-mobile",
   "version": "1.139.0",
-  "main": "lib/es5/index.js",
-  "types": "lib/es5/index.d.ts",
+  "main": "lib/es6/index.js",
+  "types": "lib/es6/index.d.ts",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
