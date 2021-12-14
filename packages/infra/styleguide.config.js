@@ -39,19 +39,7 @@ module.exports = ({cwd, extra = {}, components = []}) => {
         },
       },
     },
-    theme: {
-      borderRadius: '10px',
-      fontFamily: {
-        base: '\'Museo Sans\', \'Helvetica Neue\', \'Helvetica\', \'Arial\', sans-serif',
-        monospace: 'monospace',
-      },
-      mq: {
-        small: '@media (min-width: 0px)',
-      },
-      color: {
-        codeBackground: '#fff',
-      },
-    },
+    theme: {},
     require: [
       path.resolve(styleguideRoot, 'require.js'),
     ],
