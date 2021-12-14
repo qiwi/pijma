@@ -10578,8 +10578,8 @@ __metadata:
   linkType: hard
 
 "tar@npm:^6.0.2":
-  version: 6.1.0
-  resolution: "tar@npm:6.1.0"
+  version: 6.1.2
+  resolution: "tar@npm:6.1.2"
   dependencies:
     chownr: ^2.0.0
     fs-minipass: ^2.0.0
@@ -10587,7 +10587,7 @@ __metadata:
     minizlib: ^2.1.1
     mkdirp: ^1.0.3
     yallist: ^4.0.0
-  checksum: 0638a405b625263e0c47e97f0ea5e871b1a549da4593e31bf1792bcc83d97c28065ed172669f186744526637ea627a424d519ddd99f3fd52b17ac75f58f43519
+  checksum: 13c9b26b22b26b321e842f024fd56831e26fd455cceface3827f2034d1027ad1e9c59b75a98e30a19171b1b5047526d517ec6bf38d2d7bb6bb8d496d7ff239af
   languageName: node
   linkType: hard
 
