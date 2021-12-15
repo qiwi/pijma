@@ -33,7 +33,7 @@ jobs:
           cache: 'yarn'
 
       - name: Install deps
-        run: yarn --immutable
+        run: yarn
 
       - name: Build
         run: yarn build
@@ -67,7 +67,7 @@ jobs:
         with:
           node-version: 14
       - name: Install deps
-        run: yarn --immutable
+        run: yarn
       - name: Unit test only
         run: yarn test:unit
 
@@ -104,7 +104,7 @@ jobs:
           cache: 'yarn'
 
       - name: Install deps
-        run: yarn --immutable
+        run: yarn
       - name: Unit test only
         if: matrix.node-version != '14' || matrix.os != 'ubuntu-20.04'
         run: yarn test:unit
