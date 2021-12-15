@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-core",
-  "version": "1.141.1",
+  "version": "1.141.2",
   "main": "lib/es6/index.js",
   "types": "lib/es6/index.d.ts",
   "license": "MIT",
@@ -48,7 +48,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@qiwi/pijma-infra": "1.3.0"
+    "@qiwi/pijma-infra": "1.3.1"
   },
   "repository": {
     "type": "git",
