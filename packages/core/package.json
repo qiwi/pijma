@@ -9,7 +9,7 @@
   },
   "scripts": {
     "prebuild": "yarn clean",
-    "clean": "rm -rf lib",
+    "clean": "rimraf lib",
     "build": "concurrently 'npm:build:*'",
     "build:es5": "node ../infra/esbuild.js",
     "build:libdef": "tsc -p tsconfig.build.json --emitDeclarationOnly",

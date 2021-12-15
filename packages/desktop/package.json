@@ -9,7 +9,7 @@
   },
   "scripts": {
     "prebuild": "yarn clean",
-    "clean": "rm -rf lib styleguide/lib",
+    "clean": "rimraf lib styleguide/lib",
     "build": "concurrently 'npm:build:*'",
     "build:guide": "NODE_ENV=production styleguidist build",
     "build:es5": "node ../infra/esbuild.js",

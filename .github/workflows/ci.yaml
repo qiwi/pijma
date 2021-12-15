@@ -47,6 +47,7 @@ jobs:
             !packages/*/node_modules
             !packages/*/src
             packages
+            package.json
 
   test_push:
     needs: build
