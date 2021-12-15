@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - id: ci-skip-step
         uses: mstachniuk/ci-skip@v1
 
@@ -26,13 +26,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - uses: actions/setup-node@v2
         with:
           node-version: 14
+          cache: 'yarn'
+
       - name: Install deps
-        run: yarn
-      - run: yarn build
+        run: yarn --immutable
+
+      - name: Build
+        run: yarn build
 
       - name: Save target (artifact)
         uses: actions/upload-artifact@v2
@@ -52,7 +56,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          fetch-depth: 1
+
       - name: Restore target
         uses: actions/download-artifact@v2
         with:
@@ -61,7 +66,7 @@ jobs:
         with:
           node-version: 14
       - name: Install deps
-        run: yarn
+        run: yarn --immutable
       - name: Unit test only
         run: yarn test:unit
 
@@ -86,7 +91,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0
+          fetch-depth: 1
+
       - name: Restore target
         uses: actions/download-artifact@v2
         with:
@@ -94,8 +100,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+
       - name: Install deps
-        run: yarn
+        run: yarn --immutable
       - name: Unit test only
         if: matrix.node-version != '14' || matrix.os != 'ubuntu-20.04'
         run: yarn test:unit
@@ -122,6 +130,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14
+          cache: 'yarn'
 
 #      - name: Codeclimate
 #        uses: paambaati/codeclimate-action@v2.7.5
