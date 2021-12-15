@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "lib/es5",
+    "outDir": "lib/es6",
     "baseUrl": "src"
   },
   "include": [
