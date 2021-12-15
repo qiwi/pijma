@@ -15,11 +15,13 @@ export const reset: CSSObject = {
     verticalAlign: 'baseline',
   },
   'html, body, #root': {
+    width: '100%',
     height: '100%',
     minHeight: '100%',
     position: 'relative',
   },
   body: {
+    background: '#f5f5f5',
     overflowY: 'scroll',
   },
   'article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section': {
