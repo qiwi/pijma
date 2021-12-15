@@ -1,3 +1,10 @@
+## [1.139.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.139.1...@qiwi/pijma-desktop@1.139.2) (2021-12-15)
+
+
+### Bug Fixes
+
+* fix build artifact prefix ([7ef78a5](https://github.com/qiwi/pijma/commit/7ef78a592e15069bbf86211d99e1bfa723cb2573))
+
 ## @qiwi/pijma-desktop [1.139.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.139.0...@qiwi/pijma-desktop@1.139.1) (2021-12-15)
 
 
