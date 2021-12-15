@@ -1,3 +1,10 @@
+## @qiwi/pijma-core [1.141.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.141.0...@qiwi/pijma-core@1.141.1) (2021-12-15)
+
+
+### Bug Fixes
+
+* **crore:** reset ([#457](https://github.com/qiwi/pijma/issues/457)) ([fb8a8b2](https://github.com/qiwi/pijma/commit/fb8a8b25d219cb6b61107225c1185b561de9f250))
+
 # @qiwi/pijma-core [1.141.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.140.0...@qiwi/pijma-core@1.141.0) (2021-11-27)
 
 
