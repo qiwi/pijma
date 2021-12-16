@@ -1,8 +1,8 @@
 {
   "name": "@qiwi/pijma-desktop",
   "version": "1.139.2",
-  "main": "lib/es6/index.js",
-  "types": "lib/es6/index.d.ts",
+  "main": "./lib/es6/index.js",
+  "types": "./lib/es6/index.d.ts",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -11,9 +11,9 @@
     "prebuild": "yarn clean",
     "clean": "rimraf lib styleguide/lib",
     "build": "concurrently 'npm:build:*'",
-    "build:guide": "NODE_ENV=production styleguidist build",
-    "build:es5": "node ../infra/esbuild.js",
     "build:libdef": "tsc -p tsconfig.build.json --emitDeclarationOnly",
+    "build:es6": "node ../infra/esbuild.js && tsc-esm-fix --target=lib/es6",
+    "build:guide": "NODE_ENV=production styleguidist build",
     "watch": "NODE_ENV=production styleguidist server",
     "lint": "eslint -c ../infra/.eslintrc.js 'src/**/*.ts{,x}'",
     "lint:fix": "yarn lint --fix",

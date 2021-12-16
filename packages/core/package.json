@@ -1,8 +1,8 @@
 {
   "name": "@qiwi/pijma-core",
   "version": "1.141.2",
-  "main": "lib/es6/index.js",
-  "types": "lib/es6/index.d.ts",
+  "main": "./lib/es6/index.js",
+  "types": "./lib/es6/index.d.ts",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -11,7 +11,7 @@
     "prebuild": "yarn clean",
     "clean": "rimraf lib",
     "build": "concurrently 'npm:build:*'",
-    "build:es5": "node ../infra/esbuild.js",
+    "build:es6": "node ../infra/esbuild.js && tsc-esm-fix --target=lib/es6",
     "build:libdef": "tsc -p tsconfig.build.json --emitDeclarationOnly",
     "lint": "eslint -c ../infra/.eslintrc.js 'src/**/*.ts{,x}'",
     "lint:fix": "yarn lint --fix"
