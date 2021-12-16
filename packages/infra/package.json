@@ -11,13 +11,15 @@
     "eslint": "../../node_modules/.bin/eslint",
     "gh-pages": "../../node_modules/.bin/gh-pages",
     "rimraf": "../../node_modules/.bin/rimraf",
-    "styleguidist": "../../node_modules/.bin/styleguidist"
+    "styleguidist": "../../node_modules/.bin/styleguidist",
+    "tsc-esm-fix": "../../node_modules/.bin/tsc-esm-fix"
   },
   "scripts": {
     "build": "ts-patch install -s"
   },
   "files": [],
   "devDependencies": {
+    "@types/node": "17.0.0",
     "@typescript-eslint/eslint-plugin": "5.7.0",
     "concurrently": "6.4.0",
     "css-loader": "4.3.0",
@@ -38,6 +40,7 @@
     "ts-node": "9.0.0",
     "ts-patch": "2.0.1",
     "ts-react-display-name": "1.2.2",
+    "tsc-esm-fix": "2.7.5",
     "typescript": "4.4.4",
     "webpack": "4.39.2"
   },
