@@ -1,3 +1,5 @@
+## [1.139.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.139.2...@qiwi/pijma-desktop@1.139.3) (2021-12-21)
+
 ## [1.139.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.139.1...@qiwi/pijma-desktop@1.139.2) (2021-12-15)
 
 
