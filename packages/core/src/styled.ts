@@ -1,12 +1,7 @@
 import styled from '@emotion/styled'
 import createCache from '@emotion/cache'
-import createEmotionServer from '@emotion/server/create-instance'
 
-export {
-  styled,
-  createCache,
-  createEmotionServer,
-}
+export {styled, createCache}
 
 export * from '@emotion/styled'
 export * from '@emotion/react'
