@@ -1,3 +1,10 @@
+# @qiwi/pijma-core [1.142.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.141.2...@qiwi/pijma-core@1.142.0) (2021-12-21)
+
+
+### Features
+
+* **ssr:** introduce @qiwi/pijma-ssr package ([#463](https://github.com/qiwi/pijma/issues/463)) ([829abb7](https://github.com/qiwi/pijma/commit/829abb7f755c1085ca3f664d385fbfe3bcbd5e00))
+
 ## @qiwi/pijma-core [1.141.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.141.1...@qiwi/pijma-core@1.141.2) (2021-12-15)
 
 
