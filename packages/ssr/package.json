@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-ssr",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "./lib/es6/index.js",
   "types": "./lib/es6/index.d.ts",
   "license": "MIT",
