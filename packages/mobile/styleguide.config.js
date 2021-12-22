@@ -2,7 +2,7 @@ module.exports = require('../infra/styleguide.config')({
   components: ['@qiwi/pijma-core', '@qiwi/pijma-mobile'],
   cwd: __dirname,
   extra: {
-    serverPort: 6060,
+    serverPort: 7070,
     theme: {
       borderRadius: '10px',
       fontFamily: {
