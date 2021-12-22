@@ -853,7 +853,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/pijma-core@1.141.2, @qiwi/pijma-core@workspace:packages/core":
+"@qiwi/pijma-core@1.142.0, @qiwi/pijma-core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-core@workspace:packages/core"
   dependencies:
@@ -888,7 +888,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-desktop@workspace:packages/desktop"
   dependencies:
-    "@qiwi/pijma-core": 1.141.2
+    "@qiwi/pijma-core": 1.142.0
     "@qiwi/pijma-fonts": 1.0.0
     "@qiwi/pijma-infra": 1.3.1
   languageName: unknown
@@ -948,7 +948,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-mobile@workspace:packages/mobile"
   dependencies:
-    "@qiwi/pijma-core": 1.141.2
+    "@qiwi/pijma-core": 1.142.0
     "@qiwi/pijma-fonts": 1.0.0
     "@qiwi/pijma-infra": 1.3.1
   languageName: unknown
