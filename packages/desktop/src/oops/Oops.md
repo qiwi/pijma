@@ -2,38 +2,38 @@
 <Block>
   <BlockContent>
     <Flex justify="center" transform="scale(0.6)">
-    <Oops
-      logo={
-        <Image
-          width={25}
-          height={10}
-          src={require('./media/logo.svg')}
-        />
-      }
-      title="Ошибочка вышла"
-      error={
-        <Image
-          width={100}
-          height={65}
-          src={require('./media/error.svg')}
-        />
-      }
-      content={
-        <Spacer>
-          <Paragraph>
-            При попытке открыть страницу что-то пошло не так.
+      <Oops
+        logo={
+          <Image
+            width={25}
+            height={10}
+            src={require('./media/logo.svg')}
+          />
+        }
+        title="Ошибочка вышла"
+        error={
+          <Image
+            width={100}
+            height={65}
+            src={require('./media/error.svg')}
+          />
+        }
+        content={
+          <Spacer>
+            <Paragraph>
+              При попытке открыть страницу что-то пошло не так.
+            </Paragraph>
+            <Paragraph>
+              <Link href="/" children="Перейти на главную"/>
+            </Paragraph>
+          </Spacer>
+        }
+        footer={
+          <Paragraph align="center" color="support">
+            Уверены, что страница должна быть в&nbsp;строю? Наша техподдержка у&nbsp;аппарата, звоните: 8&nbsp;800&nbsp;707&#8209;77&#8209;59
           </Paragraph>
-          <Paragraph>
-            <Link href="/" children="Перейти на главную"/>
-          </Paragraph>
-        </Spacer>
-      }
-      footer={
-        <Paragraph align="center" color="support">
-          Уверены, что страница должна быть в&nbsp;строю? Наша техподдержка у&nbsp;аппарата, звоните: 8&nbsp;800&nbsp;707&#8209;77&#8209;59
-        </Paragraph>
-      }
-    />
+        }
+      />
     </Flex>
   </BlockContent>
 </Block>
@@ -43,38 +43,38 @@
 <Block>
   <BlockContent>
     <Flex justify="center" transform="scale(0.6)">
-    <Oops
-      logo={
-        <Image
-          width={25}
-          height={10}
-          src={require('./media/logo.svg')}
-        />
-      }
-      title="Пропала из вида!"
-      error={
-        <Image
-          width={100}
-          height={65}
-          src={require('./media/404.svg')}
-        />
-      }
-      content={
-        <Spacer>
-          <Paragraph>
-            Такой страницы на данный момент не существует
+      <Oops
+        logo={
+          <Image
+            width={25}
+            height={10}
+            src={require('./media/logo.svg')}
+          />
+        }
+        title="Пропала из вида!"
+        error={
+          <Image
+            width={100}
+            height={65}
+            src={require('./media/404.svg')}
+          />
+        }
+        content={
+          <Spacer>
+            <Paragraph>
+              Такой страницы на данный момент не существует
+            </Paragraph>
+            <Paragraph>
+              <Link href="/" children="Перейти на главную"/>
+            </Paragraph>
+          </Spacer>
+        }
+        footer={
+          <Paragraph align="center" color="support">
+            Уверены, что страница должна быть в&nbsp;строю? Наша техподдержка у&nbsp;аппарата, звоните: 8&nbsp;800&nbsp;707&#8209;77&#8209;59
           </Paragraph>
-          <Paragraph>
-            <Link href="/" children="Перейти на главную"/>
-          </Paragraph>
-        </Spacer>
-      }
-      footer={
-        <Paragraph align="center" color="support">
-          Уверены, что страница должна быть в&nbsp;строю? Наша техподдержка у&nbsp;аппарата, звоните: 8&nbsp;800&nbsp;707&#8209;77&#8209;59
-        </Paragraph>
-      }
-    />
+        }
+      />
     </Flex>
   </BlockContent>
 </Block>
@@ -111,24 +111,24 @@
 <Block>
   <BlockContent>
     <Flex justify="center" transform="scale(0.6)">
-    <Oops
-      logo={
-        <Image
-          width={25}
-          height={10}
-          src={require('./media/logo.svg')}
-        />
-      }
-      title="Браузер устарел"
-      error={
-        <Image
-          width={100}
-          height={65}
-          src={require('./media/jackass.svg')}
-        />
-      }
-      content={`Мы простились со старым Бро.\nОбновите браузер, чтобы попасть на сайт`}
-    />
+      <Oops
+        logo={
+          <Image
+            width={25}
+            height={10}
+            src={require('./media/logo.svg')}
+          />
+        }
+        title="Браузер устарел"
+        error={
+          <Image
+            width={100}
+            height={65}
+            src={require('./media/jackass.svg')}
+          />
+        }
+        content={`Мы простились со старым Бро.\nОбновите браузер, чтобы попасть на сайт`}
+      />
     </Flex>
   </BlockContent>
 </Block>
@@ -162,24 +162,24 @@
 <Block>
   <BlockContent>
     <Flex justify="center" transform="scale(0.6)">
-    <Oops
-      logo={
-        <Box width={60} height={10}>
-          <WalletLogo/>
-        </Box>
-      }
-      title="Мы не нашли страницу, которую вы ищете"
-      error="404"
-      content={
-        <Paragraph>
-          Если вы уверены, что тут что-то должно быть, позвоните нам по телефону 8&nbsp;800&nbsp;707&#8209;77&#8209;59,
-          <Link href="/" children="перейти на главную"/>
-        </Paragraph>
-      }
-      footer={(
-        <iframe src="https://qiwi.com/qcms/wallet/games/default/" width="100%" height="200"></iframe>
-      )}
-    />
+      <Oops
+        logo={
+          <Box width={60} height={10}>
+            <WalletLogo/>
+          </Box>
+        }
+        title="Мы не нашли страницу, которую вы ищете"
+        error="404"
+        content={
+          <Paragraph>
+            Если вы уверены, что тут что-то должно быть, позвоните нам по телефону 8&nbsp;800&nbsp;707&#8209;77&#8209;59,
+            <Link href="/" children="перейти на главную"/>
+          </Paragraph>
+        }
+        footer={(
+          <iframe src="https://qiwi.com/qcms/wallet/games/default/" width="100%" height="200"></iframe>
+        )}
+      />
     </Flex>
   </BlockContent>
 </Block>
