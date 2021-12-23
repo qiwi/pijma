@@ -1,3 +1,10 @@
+# @qiwi/pijma-desktop [1.140.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.139.3...@qiwi/pijma-desktop@1.140.0) (2021-12-23)
+
+
+### Features
+
+* oops improvements ([#465](https://github.com/qiwi/pijma/issues/465)) ([fa0bd17](https://github.com/qiwi/pijma/commit/fa0bd17ab124d90ae31a2a1812465bde98188a7c))
+
 ## [1.139.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.139.2...@qiwi/pijma-desktop@1.139.3) (2021-12-21)
 
 ## [1.139.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.139.1...@qiwi/pijma-desktop@1.139.2) (2021-12-15)
