@@ -1,3 +1,10 @@
+## @qiwi/pijma-core [1.142.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.142.0...@qiwi/pijma-core@1.142.1) (2022-01-19)
+
+
+### Bug Fixes
+
+* **core:** kebab-case webkit-tap-highlight-color ([#467](https://github.com/qiwi/pijma/issues/467)) ([8f0293c](https://github.com/qiwi/pijma/commit/8f0293c2a75e5f47e06ec525f6287d6b0a98daa9))
+
 # @qiwi/pijma-core [1.142.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.141.2...@qiwi/pijma-core@1.142.0) (2021-12-21)
 
 
