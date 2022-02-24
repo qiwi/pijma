@@ -1,3 +1,53 @@
+## @qiwi/pijma-core [1.142.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.142.0...@qiwi/pijma-core@1.142.1) (2022-01-19)
+
+
+### Bug Fixes
+
+* **core:** kebab-case webkit-tap-highlight-color ([#467](https://github.com/qiwi/pijma/issues/467)) ([8f0293c](https://github.com/qiwi/pijma/commit/8f0293c2a75e5f47e06ec525f6287d6b0a98daa9))
+
+# @qiwi/pijma-core [1.142.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.141.2...@qiwi/pijma-core@1.142.0) (2021-12-21)
+
+
+### Features
+
+* **ssr:** introduce @qiwi/pijma-ssr package ([#463](https://github.com/qiwi/pijma/issues/463)) ([829abb7](https://github.com/qiwi/pijma/commit/829abb7f755c1085ca3f664d385fbfe3bcbd5e00))
+
+## @qiwi/pijma-core [1.141.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.141.1...@qiwi/pijma-core@1.141.2) (2021-12-15)
+
+
+### Bug Fixes
+
+* fix build artifact prefix ([7ef78a5](https://github.com/qiwi/pijma/commit/7ef78a592e15069bbf86211d99e1bfa723cb2573))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-infra:** upgraded to 1.3.1
+
+## @qiwi/pijma-core [1.141.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.141.0...@qiwi/pijma-core@1.141.1) (2021-12-15)
+
+
+### Bug Fixes
+
+* **crore:** reset ([#457](https://github.com/qiwi/pijma/issues/457)) ([fb8a8b2](https://github.com/qiwi/pijma/commit/fb8a8b25d219cb6b61107225c1185b561de9f250))
+
+# @qiwi/pijma-core [1.141.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.140.0...@qiwi/pijma-core@1.141.0) (2021-11-27)
+
+
+### Features
+
+* add inputMode prop to inputs ([#454](https://github.com/qiwi/pijma/issues/454)) ([41b9b31](https://github.com/qiwi/pijma/commit/41b9b31663982ab215764fdcb29b54f09ec23915))
+
+# @qiwi/pijma-core [1.140.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.139.0...@qiwi/pijma-core@1.140.0) (2021-11-26)
+
+
+### Features
+
+* make auto-complete boolean or string in inputs ([#453](https://github.com/qiwi/pijma/issues/453)) ([9d706f3](https://github.com/qiwi/pijma/commit/9d706f32b98065fd65d33446651322a348803b3c))
+
 # @qiwi/pijma-core [1.139.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.138.0...@qiwi/pijma-core@1.139.0) (2021-11-18)
 
 

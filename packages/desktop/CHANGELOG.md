@@ -1,3 +1,53 @@
+## @qiwi/pijma-desktop [1.140.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.140.0...@qiwi/pijma-desktop@1.140.1) (2022-01-19)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.142.1
+
+# @qiwi/pijma-desktop [1.140.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.139.3...@qiwi/pijma-desktop@1.140.0) (2021-12-23)
+
+
+### Features
+
+* oops improvements ([#465](https://github.com/qiwi/pijma/issues/465)) ([fa0bd17](https://github.com/qiwi/pijma/commit/fa0bd17ab124d90ae31a2a1812465bde98188a7c))
+
+## [1.139.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.139.2...@qiwi/pijma-desktop@1.139.3) (2021-12-21)
+
+## [1.139.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.139.1...@qiwi/pijma-desktop@1.139.2) (2021-12-15)
+
+
+### Bug Fixes
+
+* fix build artifact prefix ([7ef78a5](https://github.com/qiwi/pijma/commit/7ef78a592e15069bbf86211d99e1bfa723cb2573))
+
+## @qiwi/pijma-desktop [1.139.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.139.0...@qiwi/pijma-desktop@1.139.1) (2021-12-15)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.141.1
+
+# [1.139.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.138.0...@qiwi/pijma-desktop@1.139.0) (2021-11-27)
+
+
+### Features
+
+* add inputMode prop to inputs ([#454](https://github.com/qiwi/pijma/issues/454)) ([41b9b31](https://github.com/qiwi/pijma/commit/41b9b31663982ab215764fdcb29b54f09ec23915))
+
+# [1.138.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.137.0...@qiwi/pijma-desktop@1.138.0) (2021-11-26)
+
+
+### Features
+
+* make auto-complete boolean or string in inputs ([#453](https://github.com/qiwi/pijma/issues/453)) ([9d706f3](https://github.com/qiwi/pijma/commit/9d706f32b98065fd65d33446651322a348803b3c))
+
 # [1.137.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.136.1...@qiwi/pijma-desktop@1.137.0) (2021-11-18)
 
 

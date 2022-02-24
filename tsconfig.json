@@ -23,6 +23,12 @@
       ],
       "@qiwi/pijma-fonts": [
         "./fonts"
+      ],
+      "@qiwi/pijma-ssr": [
+        "./ssr/src"
+      ],
+      "@qiwi/pijma-ssr/": [
+        "./ssr/src/*"
       ]
     }
   }

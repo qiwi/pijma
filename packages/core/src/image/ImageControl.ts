@@ -78,13 +78,13 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
         this.setState({
           step: Step.NO_CACHE,
         })
-      }, this.props.cachedDelay)
+      }, this.props.cachedDelay) as unknown as number
     }
     this.viewedTimer = setTimeout(() => {
       this.setState({
         step: Step.LOAD,
       })
-    }, this.props.viewedDelay)
+    }, this.props.viewedDelay) as unknown as number
   }
 
   private onLoad: () => void = () => {

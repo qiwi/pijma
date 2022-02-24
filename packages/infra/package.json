@@ -1,18 +1,35 @@
 {
   "name": "@qiwi/pijma-infra",
   "description": "QIWI Pijma infra assets: common configs, dev deps, etc",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
+  },
+  "bin": {
+    "concurrently": "../../node_modules/.bin/concurrently",
+    "eslint": "../../node_modules/.bin/eslint",
+    "gh-pages": "../../node_modules/.bin/gh-pages",
+    "rimraf": "../../node_modules/.bin/rimraf",
+    "styleguidist": "../../node_modules/.bin/styleguidist",
+    "tsc-esm-fix": "../../node_modules/.bin/tsc-esm-fix"
   },
   "scripts": {
     "build": "ts-patch install -s"
   },
   "files": [],
-  "dependencies": {},
   "devDependencies": {
+    "@types/node": "17.0.0",
+    "@typescript-eslint/eslint-plugin": "5.7.0",
+    "concurrently": "6.4.0",
     "css-loader": "4.3.0",
+    "esbuild": "0.14.3",
+    "esbuild-loader": "2.17.0",
+    "esbuild-node-externals": "^1.4.1",
+    "eslint": "8.4.1",
+    "eslint-config-qiwi": "1.15.2",
+    "eslint-webpack-plugin": "2.6.0",
+    "fast-glob": "3.2.7",
     "file-loader": "4.2.0",
     "gh-pages": "2.1.1",
     "husky": "3.0.3",
@@ -23,9 +40,7 @@
     "ts-node": "9.0.0",
     "ts-patch": "2.0.1",
     "ts-react-display-name": "1.2.2",
-    "tslint": "5.18.0",
-    "tslint-config-qiwi": "1.1.1",
-    "tslint-loader": "3.5.4",
+    "tsc-esm-fix": "2.7.5",
     "typescript": "4.4.4",
     "webpack": "4.39.2"
   },
