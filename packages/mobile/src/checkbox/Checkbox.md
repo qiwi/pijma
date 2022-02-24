@@ -20,6 +20,11 @@ const [checked, setChecked] = React.useState(true);
         disabled={true}
         label="Невыбранный заблокированный"
       />
+      <Checkbox
+        onChange={checked => setChecked(checked)}
+        checked={checked}
+        label={<Paragraph>Ознакомлен с <Link ref="#" children="офертой"/></Paragraph>}
+      />
     </Spacer>
   </BlockContent>
 </Block>
