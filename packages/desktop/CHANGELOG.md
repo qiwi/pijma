@@ -1,3 +1,10 @@
+# [1.141.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.140.1...@qiwi/pijma-desktop@1.141.0) (2022-02-25)
+
+
+### Features
+
+* checkbox label as reactnode ([#469](https://github.com/qiwi/pijma/issues/469)) ([923e9fb](https://github.com/qiwi/pijma/commit/923e9fb6bebc41aa61d439be45068d0ceb000848))
+
 ## @qiwi/pijma-desktop [1.140.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.140.0...@qiwi/pijma-desktop@1.140.1) (2022-01-19)
 
 
