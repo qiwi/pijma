@@ -47,14 +47,18 @@ export const OptionFieldItem: React.FunctionComponent<OptionFieldItemProps> = ({
         {icon}
       </Flex>
       <Flex display="flex" direction="column">
-        <Typo
-          display="block"
-          weight={300}
-          size={4}
-          height={6}
-          color={disabled ? '#666' : '#000'}
-          children={label}
-        />
+        {typeof label === 'string' ? (
+          <Typo
+            display="block"
+            weight={300}
+            size={4}
+            height={6}
+            color={disabled ? '#666' : '#000'}
+            children={label}
+          />
+        ) : (
+          label
+        )}
         {description ? (
           <Box mt={1}>
             <Typo
