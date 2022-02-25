@@ -23,7 +23,7 @@ const [checked, setChecked] = React.useState(true);
       <Checkbox
         onChange={checked => setChecked(checked)}
         checked={checked}
-        label={<Paragraph>Ознакомлен с <Link ref="#" children="офертой"/></Paragraph>}
+        label={<Paragraph>Ознакомлен с <Link href="#" children="офертой"/></Paragraph>}
       />
     </Spacer>
   </BlockContent>
