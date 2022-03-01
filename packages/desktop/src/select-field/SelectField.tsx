@@ -136,13 +136,11 @@ export const SelectField: FunctionComponent<SelectFieldProps<SelectFieldItemMode
               </Box>
               <Overlay
                 show={renderProps.show}
-                rootClose={true}
                 placement="bottom"
                 target={renderProps.targetRef.current!}
                 container={renderProps.containerRef.current}
                 popperConfig={{modifiers: {computeStyle: {gpuAcceleration: false}}}}
                 transition={Transition}
-                onHide={renderProps.onHide}
                 children={(overlayRenderProps) => (
                   <CardPos
                     ref={overlayRenderProps.props.ref}
