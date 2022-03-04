@@ -17,7 +17,13 @@ module.exports = {
     ],
     '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
-    '@semantic-release/npm',
+    '@semrel-extra/npm',
+    [
+      '@semantic-release/exec',
+      {
+        prepareCmd: 'YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install && git add ../../yarn.lock'
+      }
+    ],
     [
       '@semantic-release/github',
       {
