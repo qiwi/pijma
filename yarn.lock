@@ -853,7 +853,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/pijma-core@1.142.1, @qiwi/pijma-core@workspace:packages/core":
+"@qiwi/pijma-core@1.143.0, @qiwi/pijma-core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-core@workspace:packages/core"
   dependencies:
@@ -888,7 +888,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-desktop@workspace:packages/desktop"
   dependencies:
-    "@qiwi/pijma-core": 1.142.1
+    "@qiwi/pijma-core": 1.143.0
     "@qiwi/pijma-fonts": 1.0.0
     "@qiwi/pijma-infra": 1.3.1
   languageName: unknown
@@ -918,7 +918,7 @@ __metadata:
     file-loader: 4.2.0
     gh-pages: 2.1.1
     husky: 3.0.3
-    react-docgen-typescript: 1.12.5
+    react-docgen-typescript: 2.2.2
     react-styleguidist: 11.1.5
     style-loader: 2.0.0
     ts-loader: 6.0.4
@@ -948,7 +948,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-mobile@workspace:packages/mobile"
   dependencies:
-    "@qiwi/pijma-core": 1.142.1
+    "@qiwi/pijma-core": 1.143.0
     "@qiwi/pijma-fonts": 1.0.0
     "@qiwi/pijma-infra": 1.3.1
   languageName: unknown
@@ -5075,12 +5075,12 @@ __metadata:
   linkType: hard
 
 "follow-redirects@npm:^1.0.0":
-  version: 1.13.3
-  resolution: "follow-redirects@npm:1.13.3"
+  version: 1.14.7
+  resolution: "follow-redirects@npm:1.14.7"
   peerDependenciesMeta:
     debug:
       optional: true
-  checksum: 4b5aaa91a0f938547a083d001a572da4d6b7586b699f330da8794ae2cf8b0d8628bcde794f9b205fbe6c6dcab30272454e723aed8f5540bf47a41fa8c7e36441
+  checksum: f6d03e5e30877431065bca0d1b2e3db93949eb799d368a5c07ea8a4b71205f0349a3f8f0191bf13a07c93885522834dca1dc8e527dc99a772c6911fba24edc5f
   languageName: node
   linkType: hard
 
@@ -8766,9 +8766,9 @@ __metadata:
   linkType: hard
 
 "prismjs@npm:^1.17.1":
-  version: 1.25.0
-  resolution: "prismjs@npm:1.25.0"
-  checksum: 04d8eae9d1b26b76c350bc65621584c8f8cab80ace7da3953f8aef2f9a8dd4b4f71c1d15bc5c67f126ddc90cd5af613919dc1340589a6c57355bed86fa3ac010
+  version: 1.27.0
+  resolution: "prismjs@npm:1.27.0"
+  checksum: 85c7f4a3e999073502cc9e1882af01e3709706369ec254b60bff1149eda701f40d02512acab956012dc7e61cfd61743a3a34c1bd0737e8dbacd79141e5698bbc
   languageName: node
   linkType: hard
 
@@ -9105,10 +9105,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-docgen-typescript@npm:1.12.5":
-  version: 1.12.5
-  resolution: "react-docgen-typescript@npm:1.12.5"
-  checksum: 9625ff85eca497299b9efdcd9e3b01b311d348d49518938170e3bff849f7149c19404a95915e564c19966f48bac2cdf3a849c90fa8e13dfe17af9277bf89997e
+"react-docgen-typescript@npm:2.2.2":
+  version: 2.2.2
+  resolution: "react-docgen-typescript@npm:2.2.2"
+  peerDependencies:
+    typescript: ">= 4.3.x"
+  checksum: a9826459ea44e818f21402728dd47f5cae60bd936574cefd4f90ad101ff3eebacd67b6e017b793309734ce62c037aa3072dbc855d2b0e29bad1a38cbf5bac115
   languageName: node
   linkType: hard
 
@@ -10195,15 +10197,15 @@ __metadata:
   linkType: hard
 
 "shelljs@npm:^0.8.4":
-  version: 0.8.4
-  resolution: "shelljs@npm:0.8.4"
+  version: 0.8.5
+  resolution: "shelljs@npm:0.8.5"
   dependencies:
     glob: ^7.0.0
     interpret: ^1.0.0
     rechoir: ^0.6.2
   bin:
     shjs: bin/shjs
-  checksum: 27f83206ef6a4f5b74a493726c3e6b4c3e07a9c2aac94c5e692d800a61353c18a8234967bd8523b1346abe718beb563843687fb57f466529ba06db3cae6f0bb3
+  checksum: 7babc46f732a98f4c054ec1f048b55b9149b98aa2da32f6cf9844c434b43c6251efebd6eec120937bd0999e13811ebd45efe17410edb3ca938f82f9381302748
   languageName: node
   linkType: hard
 
@@ -10861,8 +10863,8 @@ __metadata:
   linkType: hard
 
 "tar@npm:^6.0.2":
-  version: 6.1.2
-  resolution: "tar@npm:6.1.2"
+  version: 6.1.7
+  resolution: "tar@npm:6.1.7"
   dependencies:
     chownr: ^2.0.0
     fs-minipass: ^2.0.0
@@ -10870,7 +10872,7 @@ __metadata:
     minizlib: ^2.1.1
     mkdirp: ^1.0.3
     yallist: ^4.0.0
-  checksum: 13c9b26b22b26b321e842f024fd56831e26fd455cceface3827f2034d1027ad1e9c59b75a98e30a19171b1b5047526d517ec6bf38d2d7bb6bb8d496d7ff239af
+  checksum: c54c069341140ffed769be0517b6152799b109c6bed448573294169154be328c5e4982fcd1dea54ed429dcee8450e4fd301514318078c5e5515c0ddf811e8bdf
   languageName: node
   linkType: hard
 
@@ -11557,12 +11559,12 @@ __metadata:
   linkType: hard
 
 "url-parse@npm:^1.4.3, url-parse@npm:^1.4.7":
-  version: 1.5.3
-  resolution: "url-parse@npm:1.5.3"
+  version: 1.5.6
+  resolution: "url-parse@npm:1.5.6"
   dependencies:
     querystringify: ^2.1.1
     requires-port: ^1.0.0
-  checksum: c6b32fff835e43f3b1b4150239f459744f0ab1a908841dbfecbfc79bf67f4d6c8d9af1841d0c6d814d45bfa08525cc29312a0bef31db7aa894306b3db07e4ee0
+  checksum: f2176a2035b5f14ba3ebeb94b6f7e112d1f1e60ce95dd23214ac3b5b293899f7cbc8d1a43df4e3c9755bc07151e974b745898353549277da4b854a308d19e143
   languageName: node
   linkType: hard
 
