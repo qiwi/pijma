@@ -1,3 +1,10 @@
+## @qiwi/pijma-desktop [1.141.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.141.0...@qiwi/pijma-desktop@1.141.1) (2022-03-04)
+
+
+### Bug Fixes
+
+* **desktop:** select field cannot be opened by mouse click ([#470](https://github.com/qiwi/pijma/issues/470)) ([fb6618b](https://github.com/qiwi/pijma/commit/fb6618b7ea3ad942f459b87a1b46a21f54f8ac3c))
+
 # [1.141.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.140.1...@qiwi/pijma-desktop@1.141.0) (2022-02-25)
 
 

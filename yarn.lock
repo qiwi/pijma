@@ -918,7 +918,7 @@ __metadata:
     file-loader: 4.2.0
     gh-pages: 2.1.1
     husky: 3.0.3
-    react-docgen-typescript: 1.12.5
+    react-docgen-typescript: 2.2.2
     react-styleguidist: 11.1.5
     style-loader: 2.0.0
     ts-loader: 6.0.4
@@ -9105,10 +9105,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-docgen-typescript@npm:1.12.5":
-  version: 1.12.5
-  resolution: "react-docgen-typescript@npm:1.12.5"
-  checksum: 9625ff85eca497299b9efdcd9e3b01b311d348d49518938170e3bff849f7149c19404a95915e564c19966f48bac2cdf3a849c90fa8e13dfe17af9277bf89997e
+"react-docgen-typescript@npm:2.2.2":
+  version: 2.2.2
+  resolution: "react-docgen-typescript@npm:2.2.2"
+  peerDependencies:
+    typescript: ">= 4.3.x"
+  checksum: a9826459ea44e818f21402728dd47f5cae60bd936574cefd4f90ad101ff3eebacd67b6e017b793309734ce62c037aa3072dbc855d2b0e29bad1a38cbf5bac115
   languageName: node
   linkType: hard
 
