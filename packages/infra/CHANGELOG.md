@@ -1,3 +1,10 @@
+# @qiwi/pijma-infra [1.4.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.3.1...@qiwi/pijma-infra@1.4.0) (2022-03-22)
+
+
+### Features
+
+* esbuild react display name ([#474](https://github.com/qiwi/pijma/issues/474)) ([55ef45f](https://github.com/qiwi/pijma/commit/55ef45fd56cbabbe85bc7c1c910b6ac8f8cee906))
+
 ## @qiwi/pijma-infra [1.3.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.3.0...@qiwi/pijma-infra@1.3.1) (2021-12-15)
 
 
