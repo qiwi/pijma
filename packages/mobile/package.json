@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-mobile",
-  "version": "1.141.0",
+  "version": "1.141.1",
   "main": "./lib/es6/index.js",
   "types": "./lib/es6/index.d.ts",
   "license": "MIT",
@@ -26,11 +26,11 @@
     "lib"
   ],
   "dependencies": {
-    "@qiwi/pijma-core": "1.143.0",
+    "@qiwi/pijma-core": "1.143.1",
     "@qiwi/pijma-fonts": "1.0.0"
   },
   "devDependencies": {
-    "@qiwi/pijma-infra": "1.3.1"
+    "@qiwi/pijma-infra": "1.4.0"
   },
   "repository": {
     "type": "git",
