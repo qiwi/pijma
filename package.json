@@ -5,6 +5,7 @@
     "packages/*"
   ],
   "scripts": {
+    "clean": "yarn workspaces foreach -tp run clean",
     "build": "yarn workspaces foreach -tp run build",
     "watch": "yarn workspaces foreach -tp run watch",
     "test": "yarn lint",
