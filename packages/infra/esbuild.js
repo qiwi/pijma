@@ -5,31 +5,30 @@ const fs = require('fs');
 
 const entryPoints = glob.sync('./src/**/*.ts(x)?')
 
-const reactDisplayNamePlugin = (options) => {
-  const displayName = (content, regexp, filter) => {
-    return Array
-      .from(content.matchAll(regexp))
-      .filter((match) => filter.includes(match[2]))
-      .map((match) => `${match[1]}.displayName = '${match[1]}'`)
+const displayName = (content, regexp, filter) => (
+  Array
+    .from(content.matchAll(regexp))
+    .filter((match) => filter.includes(match[2]))
+    .map((match) => `${match[1]}.displayName = '${match[1]}'`)
+)
+
+const reactDisplayNamePlugin = (options) => ({
+  name: 'react-display-name',
+  setup: (build) => {
+    build.onLoad({filter: /\.tsx?$/}, async (args) => {
+      const contents = (await fs.promises.readFile(args.path)).toString()
+      return {
+        contents: [
+          contents,
+          displayName(contents, /const\s+(\w+)\s*=\s*([\.\w]+)/g, options.factoryFuncs),
+          displayName(contents, /const\s+(\w+)\s*:\s*([\.\w]+)/g, options.funcTypes),
+          displayName(contents, /class\s+(\w+)\s+extends\s+([\.\w]+)/g, options.classTypes),
+        ].join('\n'),
+        loader: 'tsx',
+      }
+    })
   }
-  return {
-    name: 'react-display-name',
-    setup: (build) => {
-      build.onLoad({filter: /\.tsx?$/}, async (args) => {
-        let contents = (await fs.promises.readFile(args.path)).toString()
-        return {
-          contents: [
-            contents,
-            displayName(contents, /const\s+(\w+)\s*=\s*([\.\w]+)/g, options.factoryFuncs),
-            displayName(contents, /const\s+(\w+)\s*:\s*([\.\w]+)/g, options.funcTypes),
-            displayName(contents, /class\s+(\w+)\s+extends\s+([\.\w]+)/g, options.classTypes),
-          ].join('\n'),
-          loader: 'tsx',
-        }
-      })
-    }
-  }
-}
+})
 
 esbuild.build({
   entryPoints,
