@@ -40,15 +40,11 @@ export class ReCaptcha extends PureComponent<ReCaptchaProps> {
   }
 
   private onErrored = () => {
-    if (this.props.onErrored) {
-      this.props.onErrored()
-    }
+    this.props.onErrored?.()
   }
 
   private asyncScriptOnLoad = () => {
-    if (this.props.asyncScriptOnLoad) {
-      this.props.asyncScriptOnLoad()
-    }
+    this.props.asyncScriptOnLoad?.()
   }
 
   private resize = () => {
