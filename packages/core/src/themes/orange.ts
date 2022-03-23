@@ -60,9 +60,11 @@ export const orange: Theme = {
         simple: '0 25px 50px -10px rgba(0, 0, 0, 0.15)',
       },
     },
-    textColor: {
-      brand: '#fff',
-      simple: '#000',
+    text: {
+      color: {
+        brand: '#fff',
+        simple: '#000',
+      },
     },
   },
   link: {

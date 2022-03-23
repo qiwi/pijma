@@ -184,7 +184,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
                                   paused={!props.loading}
                                   width={6}
                                   height={6}
-                                  color={props.disabled ? '#666' : theme.button.textColor[props.kind]}
+                                  color={props.disabled ? '#666' : theme.button.text.color[props.kind]}
                                 />
                               )}
                             />
@@ -216,7 +216,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
                                 nowrap={true}
                                 display="block"
                                 weight={500}
-                                color={props.disabled ? '#666' : theme.button.textColor[props.kind]}
+                                color={props.disabled ? '#666' : theme.button.text.color[props.kind]}
                                 size={textSize[props.size]}
                                 height={textHeight[props.size]}
                                 transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"

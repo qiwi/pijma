@@ -1,5 +1,5 @@
 import {orange} from './orange'
-import {Theme} from '@emotion/react'
+import {Theme} from '../styled'
 
 export const themes: Record<string, Theme> = {
   orange,

@@ -8,7 +8,7 @@ import React, {
 
 import {MaskInput, Input, Value} from '../primitive'
 import {MaskedInput, isMaskDigital, Mask, Pipe} from '../mask'
-import {useTheme} from '@emotion/react'
+import {useTheme} from '../styled'
 
 export interface BasicInputProps {
   value: string

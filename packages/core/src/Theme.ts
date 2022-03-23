@@ -62,9 +62,11 @@ declare module '@emotion/react' {
           simple: string
         }
       }
-      textColor: {
-        brand: string
-        simple: string
+      text: {
+        color: {
+          brand: string
+          simple: string
+        }
       }
     },
     link: {
