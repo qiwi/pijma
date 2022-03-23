@@ -1,3 +1,10 @@
+# @qiwi/pijma-core [1.144.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.143.1...@qiwi/pijma-core@1.144.0) (2022-03-23)
+
+
+### Features
+
+* **core:** recaptcha asyncScriptOnLoad & onErrored props added ([#475](https://github.com/qiwi/pijma/issues/475)) ([59c0b12](https://github.com/qiwi/pijma/commit/59c0b124b6d8e77aea4583e69faf4af0a57b598f))
+
 ## @qiwi/pijma-core [1.143.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.143.0...@qiwi/pijma-core@1.143.1) (2022-03-22)
 
 

@@ -17,6 +17,8 @@ export const ReCaptchaField: FC<ReCaptchaFieldProps> = (props) => (
         tabIndex={props.tabIndex}
         value={props.value}
         onChange={props.onChange}
+        onErrored={props.onErrored}
+        asyncScriptOnLoad={props.asyncScriptOnLoad}
       />
     )}
     error={props.error}
