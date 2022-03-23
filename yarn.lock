@@ -884,37 +884,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/pijma-core@npm:1.143.1":
-  version: 1.143.1
-  resolution: "@qiwi/pijma-core@npm:1.143.1"
-  dependencies:
-    "@emotion/core": ^11.0.0
-    "@emotion/css": ^11.5.0
-    "@emotion/react": ^11.5.0
-    "@emotion/styled": ^11.3.0
-    "@types/dom-helpers": ^3.4.1
-    "@types/markdown-to-jsx": ^6.9.0
-    "@types/react": ">=16.8.23 <17.1.0"
-    "@types/react-dom": ">=16.8.4 <17.1.0"
-    "@types/react-google-recaptcha": ^1.0.0
-    "@types/react-overlays": ^1.1.3
-    "@types/react-text-mask": ^5.4.6
-    "@types/react-transition-group": ^4.2.2
-    dom-helpers: ^3.4.0
-    markdown-to-jsx: ^6.10.3
-    react: ">=16.8.6 <17.1.0"
-    react-dom: ">=16.8.6 <17.1.0"
-    react-google-recaptcha: ^1.1.0
-    react-intersection-observer: ^8.24.1
-    react-overlays: ^1.2.0
-    react-text-mask: ^5.4.3
-    react-transition-group: ^4.2.2
-    react-waypoint: ^9.0.2
-    tslib: ^2.3.1
-  checksum: 38d66ece7c53f187cda61e1ffdf1209ac07a821dec3db96eeeaec40b89eb123ff18010487c1f565cd2c03a6cc21927f67668fe3d0b5ed0ce4bfaa751d8f16fdc
-  languageName: node
-  linkType: hard
-
 "@qiwi/pijma-desktop@workspace:packages/desktop":
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-desktop@workspace:packages/desktop"
@@ -979,7 +948,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-mobile@workspace:packages/mobile"
   dependencies:
-    "@qiwi/pijma-core": 1.143.1
+    "@qiwi/pijma-core": 1.144.0
     "@qiwi/pijma-fonts": 1.0.0
     "@qiwi/pijma-infra": 1.4.0
   languageName: unknown
@@ -1180,15 +1149,6 @@ __metadata:
   dependencies:
     "@types/react": "*"
   checksum: 8d0fa9e2ad8b3f135c423a196f7007650dc06bceeab3edf73176699189527f1befeefcf9c4289d9e3f1feb427d0034ca218331afa7e874d9e92ff81105a0a4ca
-  languageName: node
-  linkType: hard
-
-"@types/react-google-recaptcha@npm:^1.0.0":
-  version: 1.1.2
-  resolution: "@types/react-google-recaptcha@npm:1.1.2"
-  dependencies:
-    "@types/react": "*"
-  checksum: 2a4a0697a19e18a90c5b45d946f1b7bcfccc8e96f5f33dcf64e3605a94940e731d480a01c53ceb18503fa950ddaa55d6b8bff5c38528765f20bbcb3a9bf1544e
   languageName: node
   linkType: hard
 
@@ -9074,7 +9034,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-async-script@npm:^1.0.0, react-async-script@npm:^1.1.1":
+"react-async-script@npm:^1.1.1":
   version: 1.2.0
   resolution: "react-async-script@npm:1.2.0"
   dependencies:
@@ -9189,18 +9149,6 @@ __metadata:
   version: 6.0.9
   resolution: "react-error-overlay@npm:6.0.9"
   checksum: 695853bc885e798008a00c10d8d94e5ac91626e8130802fea37345f9c037f41b80104345db2ee87f225feb4a4ef71b0df572b17c378a6d397b6815f6d4a84293
-  languageName: node
-  linkType: hard
-
-"react-google-recaptcha@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "react-google-recaptcha@npm:1.1.0"
-  dependencies:
-    prop-types: ^15.5.0
-    react-async-script: ^1.0.0
-  peerDependencies:
-    react: ">=16.4.1"
-  checksum: 65846f015d92b7ae38d62224636501ccd46aabdd2c5e49cae824c44a7b795ec2afffb69708810a6dbf66af05703efe8e28e5ccc961373447413e5e52c6613521
   languageName: node
   linkType: hard
 
