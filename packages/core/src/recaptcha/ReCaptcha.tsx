@@ -9,6 +9,8 @@ export interface ReCaptchaProps {
   tabIndex?: number
   value?: string
   onChange: (token: string | undefined) => void
+  onErrored?: () => void
+  asyncScriptOnLoad?: () => void
 }
 
 const width = 304
@@ -35,6 +37,18 @@ export class ReCaptcha extends PureComponent<ReCaptchaProps> {
 
   private onChange = (token: string | null) => {
     this.props.onChange(token === null ? undefined : token)
+  }
+
+  private onErrored = () => {
+    if (this.props.onErrored) {
+      this.props.onErrored()
+    }
+  }
+
+  private asyncScriptOnLoad = () => {
+    if (this.props.asyncScriptOnLoad) {
+      this.props.asyncScriptOnLoad()
+    }
   }
 
   private resize = () => {
@@ -92,10 +106,11 @@ export class ReCaptcha extends PureComponent<ReCaptchaProps> {
             size="normal"
             type="image"
             onChange={this.onChange}
+            onErrored={this.onErrored}
+            asyncScriptOnLoad={this.asyncScriptOnLoad}
           />
         </Pos>
       </Pos>
     )
   }
-
 }
