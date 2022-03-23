@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 import {Card, Pos} from '../primitive'
-import {useTheme} from "@emotion/react";
+import {useTheme} from '@emotion/react'
 
 export interface TabBorderProps {
   width: number | string

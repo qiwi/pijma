@@ -38,7 +38,7 @@ export const orange: Theme = {
       accent: {
         brand: 'linear-gradient(to bottom, #ff9810, #ff8300)',
         simple: '#fff padding-box',
-      }
+      },
     },
     border: {
       kind: {
@@ -48,7 +48,7 @@ export const orange: Theme = {
       hover: {
         brand: 'none',
         simple: '1px solid rgba(0, 0, 0, 0.28)',
-      }
+      },
     },
     shadow: {
       kind: {
@@ -58,24 +58,24 @@ export const orange: Theme = {
       hover: {
         brand: '0 25px 50px -10px rgb(255, 206, 135)',
         simple: '0 25px 50px -10px rgba(0, 0, 0, 0.15)',
-      }
+      },
     },
     textColor: {
       brand: '#fff',
       simple: '#000',
-    }
+    },
   },
   link: {
     color: {
       brand: {
         default: '#0055BB',
-        hover: '#FF8C00'
+        hover: '#FF8C00',
       },
       inverse: {
         default: '#FFF',
-        hover: '#CCC'
-      }
-    }
+        hover: '#CCC',
+      },
+    },
   },
   tabs: {
     icon: {
@@ -83,18 +83,18 @@ export const orange: Theme = {
         default: '#666',
         select: '#ff8c00',
         hover: '#ff8c00',
-      }
+      },
     },
     text: {
       color: {
         default: '#666',
         select: '#000',
         hover: '#ff8c00',
-      }
+      },
     },
     border: {
-      color: '#ff8c00'
-    }
+      color: '#ff8c00',
+    },
   },
   input: {
     border: {
@@ -102,6 +102,6 @@ export const orange: Theme = {
       default: '1px solid rgba(0, 0, 0, 0.2)',
       focused: '2px solid #ff8c00',
       error: '2px solid #d0021b',
-    }
-  }
+    },
+  },
 }

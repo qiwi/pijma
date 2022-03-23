@@ -4,7 +4,7 @@ import {Flex, FlexItem, Typo, Pos} from '../primitive'
 import {Icon, IconProps} from '../icon'
 import {Stub} from '../stub'
 import {Breaker} from '../breaker'
-import {useTheme} from "@emotion/react";
+import {useTheme} from '@emotion/react'
 
 export interface TabProps {
   title: string
