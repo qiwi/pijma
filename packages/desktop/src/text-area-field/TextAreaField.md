@@ -141,3 +141,20 @@ const [text, setText] = React.useState(undefined);
   </BlockContent>
 </Block>
 ```
+
+
+#### Плейсхолдер
+
+```jsx
+<Block>
+  <BlockContent>
+    <Box width={64}>
+      <TextAreaField
+        stub
+        title="if you need title stub put any corrent content here"
+        error="if you need error stub put any corrent content here"
+      />
+    </Box>
+  </BlockContent>
+</Block>
+```
