@@ -1,5 +1,6 @@
 import React, {FC} from 'react'
 import {Card, Pos} from '../primitive'
+import {useTheme} from "@emotion/react";
 
 export interface TabBorderProps {
   width: number | string
@@ -13,8 +14,10 @@ export const TabBorder: FC<TabBorderProps> = ({
   left,
   radius,
   stub = false,
-}) => (
-  stub ? (
+}) => {
+  const theme = useTheme()
+
+  return stub ? (
     null
   ) : (
     <Pos
@@ -27,7 +30,7 @@ export const TabBorder: FC<TabBorderProps> = ({
       zIndex={1}
     >
       <Card
-        bg="#ff8c00"
+        bg={theme.tabs.border.color}
         r={radius ? 0 : 4}
         rtl={radius ? 2 : 4}
         rtr={radius ? 2 : 4}
@@ -36,4 +39,4 @@ export const TabBorder: FC<TabBorderProps> = ({
       />
     </Pos>
   )
-)
+}

@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-import {LinkControl, Stub, TypoLnk} from '@qiwi/pijma-core'
+import {LinkControl, Stub, TypoLnk, useTheme} from '@qiwi/pijma-core'
 
 export interface LinkProps {
   onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
@@ -55,8 +55,10 @@ const LinkHeightCompact: { [size in NonNullable<LinkProps['size']>]: number } = 
   l: 7,
 }
 
-export const Link: FC<LinkProps> = (props) => (
-  props.stub ? (
+export const Link: FC<LinkProps> = (props) => {
+  const theme = useTheme()
+
+  return props.stub ? (
     props.size === undefined ? (
       null
     ) : (
@@ -87,7 +89,7 @@ export const Link: FC<LinkProps> = (props) => (
           onMouseLeave={renderProps.onMouseLeave}
           onMouseUp={renderProps.onMouseUp}
           onMouseDown={renderProps.onMouseDown}
-          color={renderProps.hover || renderProps.focus ? props.inverse ? '#CCC' : '#FF8C00' : props.inverse ? '#FFF' : '#0055BB'}
+          color={renderProps.hover || renderProps.focus ? props.inverse ? theme.link.color.inverse.hover : theme.link.color.brand.hover : props.inverse ? theme.link.color.inverse.default : theme.link.color.brand.default}
           transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
           cursor="pointer"
           decoration="none"
@@ -103,4 +105,4 @@ export const Link: FC<LinkProps> = (props) => (
       )}
     />
   )
-)
+}

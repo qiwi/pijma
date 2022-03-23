@@ -8,6 +8,7 @@ import React, {
 
 import {MaskInput, Input, Value} from '../primitive'
 import {MaskedInput, isMaskDigital, Mask, Pipe} from '../mask'
+import {useTheme} from "@emotion/react";
 
 export interface BasicInputProps {
   value: string
@@ -34,6 +35,8 @@ export interface BasicInputProps {
 }
 
 export const BasicInput = forwardRef<HTMLInputElement, BasicInputProps>((props, ref) => {
+  const theme = useTheme()
+
   const common = {
     width: 1,
     height: 7,
@@ -43,7 +46,7 @@ export const BasicInput = forwardRef<HTMLInputElement, BasicInputProps>((props, 
     pl: props.pl,
     r: 0,
     b: 'none',
-    bb: props.disabled ? '1px dotted #999' : props.error ? '2px solid #d0021b' : props.focused ? '2px solid #ff8c00' : '1px solid rgba(0, 0, 0, 0.2)',
+    bb: props.disabled ? theme.input.border.disabled : props.error ? theme.input.border.error : props.focused ? theme.input.border.focused : theme.input.border.default,
     valueSize: 5,
     valueWeight: 300,
     valueColor: props.disabled ? '#666' : '#000',

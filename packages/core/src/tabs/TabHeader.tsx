@@ -4,6 +4,7 @@ import {Flex, FlexItem, Typo, Pos} from '../primitive'
 import {Icon, IconProps} from '../icon'
 import {Stub} from '../stub'
 import {Breaker} from '../breaker'
+import {useTheme} from "@emotion/react";
 
 export interface TabProps {
   title: string
@@ -41,8 +42,10 @@ export const TabHeader = forwardRef<HTMLDivElement, TabProps>(({
   onMouseLeave,
   onKeyDown,
   onClick,
-}, ref) => (
-  <FlexItem
+}, ref) => {
+  const theme = useTheme()
+
+  return <FlexItem
     mr={indent}
     width={width}
     ref={ref}
@@ -74,7 +77,7 @@ export const TabHeader = forwardRef<HTMLDivElement, TabProps>(({
               <Icon
                 // css={{transition: 'svg 100ms cubic-bezier(0.4, 0.0, 0.2, 1)'}}
                 size={vertical ? 8 : 6}
-                color={select || focus ? '#ff8c00' : '#666'}
+                color={select ? theme.tabs.icon.color.select : focus ? theme.tabs.icon.color.hover : theme.tabs.icon.color.default}
                 name={icon}
               />
             )}
@@ -93,7 +96,7 @@ export const TabHeader = forwardRef<HTMLDivElement, TabProps>(({
           ) : (
             <Typo
               nowrap={wrap}
-              color={select ? '#000' : focus ? '#ff8c00' : '#666'}
+              color={select ? theme.tabs.text.color.select : focus ? theme.tabs.text.color.hover : theme.tabs.text.color.default}
               display="block"
               align={vertical || !wrap ? 'center' : 'left'}
               weight={500}
@@ -107,4 +110,4 @@ export const TabHeader = forwardRef<HTMLDivElement, TabProps>(({
       </Flex>
     </Pos>
   </FlexItem>
-))
+})
