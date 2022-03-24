@@ -10,6 +10,7 @@ import {
   Typo,
   Btn,
   Stub,
+  useTheme,
 } from '@qiwi/pijma-core'
 
 export interface ButtonProps {
@@ -31,26 +32,6 @@ const buttonSize: { [size in ButtonProps['size']]: number } = {
   accent: 12,
   normal: 10,
   minor: 8,
-}
-
-const buttonBackground: { [kind in ButtonProps['kind']]: string } = {
-  brand: '#ff8c00',
-  simple: '#fff padding-box',
-}
-
-const buttonHoverBackground: { [kind in ButtonProps['kind']]: string } = {
-  brand: '#ff8200',
-  simple: '#fff padding-box',
-}
-
-const buttonBorder: { [kind in ButtonProps['kind']]: string } = {
-  brand: 'none',
-  simple: '1px solid rgba(0, 0, 0, 0.14)',
-}
-
-const buttonHoverBorder: { [kind in ButtonProps['kind']]: string } = {
-  brand: 'none',
-  simple: '1px solid rgba(0, 0, 0, 0.28)',
 }
 
 const buttonRadius: { [size in ButtonProps['size']]: number } = {
@@ -89,11 +70,6 @@ const textHeight: { [size in ButtonProps['size']]: number } = {
   minor: 4,
 }
 
-const textColor: { [kind in ButtonProps['kind']]: string } = {
-  brand: '#fff',
-  simple: '#000',
-}
-
 const stubHeight: { [size in ButtonProps['size']]: number } = {
   accent: 3,
   normal: 2,
@@ -106,13 +82,15 @@ const stubWidth: { [size in ButtonProps['size']]: number } = {
   minor: 19,
 }
 
-export const Button: FunctionComponent<ButtonProps> = (props) => (
-  props.stub ? (
+export const Button: FunctionComponent<ButtonProps> = (props) => {
+  const theme = useTheme()
+
+  return props.stub ? (
     <Card
       width={!props.icon || props.text ? 1 : buttonSize[props.size]}
       height={buttonSize[props.size]}
-      bg={buttonBackground.simple}
-      b={buttonBorder.simple}
+      bg={theme.button.bg.kind.simple}
+      b={theme.button.border.kind.simple}
       r={buttonRadius[props.size]}
     >
       <Flex
@@ -165,8 +143,8 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
           type={props.type}
           width={!props.icon || props.text ? 1 : buttonSize[props.size]}
           height={buttonSize[props.size]}
-          bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? buttonHoverBackground[props.kind] : buttonBackground[props.kind]}
-          b={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? buttonHoverBorder[props.kind] : buttonBorder[props.kind]}
+          bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? theme.button.bg.hover[props.kind] : theme.button.bg.kind[props.kind]}
+          b={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? theme.button.border.hover[props.kind] : theme.button.border.kind[props.kind]}
           r={buttonRadius[props.size]}
           transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
           onClick={renderProps.onClick}
@@ -209,7 +187,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
                                 paused={!props.loading}
                                 width={iconSize[props.size]}
                                 height={iconSize[props.size]}
-                                color={props.disabled ? '#666' : textColor[props.kind]}
+                                color={props.disabled ? '#666' : theme.button.text.color[props.kind]}
                               />
                             )}
                           />
@@ -241,7 +219,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
                               nowrap={true}
                               display="block"
                               weight={500}
-                              color={props.disabled ? '#666' : textColor[props.kind]}
+                              color={props.disabled ? '#666' : theme.button.text.color[props.kind]}
                               size={textSize[props.size]}
                               height={textHeight[props.size]}
                               transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
@@ -262,4 +240,4 @@ export const Button: FunctionComponent<ButtonProps> = (props) => (
       )}
     />
   )
-)
+}
