@@ -1,3 +1,18 @@
+# @qiwi/pijma-mobile [1.142.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.141.2...@qiwi/pijma-mobile@1.142.0) (2022-03-24)
+
+
+### Features
+
+* theme link, button, input, tabs ([#476](https://github.com/qiwi/pijma/issues/476)) ([dc20f15](https://github.com/qiwi/pijma/commit/dc20f156a976b1355044b8b7508b4f62ceb9875f))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.145.0
+
 ## @qiwi/pijma-mobile [1.141.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.141.1...@qiwi/pijma-mobile@1.141.2) (2022-03-23)
 
 
