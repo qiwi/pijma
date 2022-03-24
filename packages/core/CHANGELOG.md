@@ -1,3 +1,10 @@
+# @qiwi/pijma-core [1.145.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.144.0...@qiwi/pijma-core@1.145.0) (2022-03-24)
+
+
+### Features
+
+* theme link, button, input, tabs ([#476](https://github.com/qiwi/pijma/issues/476)) ([dc20f15](https://github.com/qiwi/pijma/commit/dc20f156a976b1355044b8b7508b4f62ceb9875f))
+
 # @qiwi/pijma-core [1.144.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.143.1...@qiwi/pijma-core@1.144.0) (2022-03-23)
 
 
