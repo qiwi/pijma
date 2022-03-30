@@ -1,3 +1,10 @@
+# @qiwi/pijma-ssr [1.1.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-ssr@1.0.1...@qiwi/pijma-ssr@1.1.0) (2022-03-30)
+
+
+### Features
+
+* pkg entry points ([#478](https://github.com/qiwi/pijma/issues/478)) ([eb24222](https://github.com/qiwi/pijma/commit/eb24222fc1421560abcc8736dd0c0127b56d8e0e))
+
 ## @qiwi/pijma-ssr [1.0.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-ssr@1.0.0...@qiwi/pijma-ssr@1.0.1) (2022-03-22)
 
 
