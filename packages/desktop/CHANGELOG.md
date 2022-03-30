@@ -1,3 +1,18 @@
+# @qiwi/pijma-desktop [1.143.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.142.0...@qiwi/pijma-desktop@1.143.0) (2022-03-30)
+
+
+### Features
+
+* pkg entry points ([#478](https://github.com/qiwi/pijma/issues/478)) ([eb24222](https://github.com/qiwi/pijma/commit/eb24222fc1421560abcc8736dd0c0127b56d8e0e))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.146.0
+
 # @qiwi/pijma-desktop [1.142.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.141.3...@qiwi/pijma-desktop@1.142.0) (2022-03-24)
 
 
