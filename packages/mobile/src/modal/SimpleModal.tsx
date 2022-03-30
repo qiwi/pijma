@@ -66,7 +66,7 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = ({
   onShow,
   onHide,
   backdropClose,
-  zIndex = 9999,
+  zIndex = 10050,
   closable,
 }) => (
   stub ? (
