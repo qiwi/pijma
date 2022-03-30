@@ -110,7 +110,7 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = ({
                     width={6}
                     height={6}
                     cursor="pointer"
-                    onClick={() => onHide && onHide()}
+                    onClick={onHide}
                     children={<Icon name="cross" color="#000"/>}
                   />
                 ) : (
