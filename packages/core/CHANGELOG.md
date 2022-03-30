@@ -1,3 +1,10 @@
+# @qiwi/pijma-core [1.146.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.145.0...@qiwi/pijma-core@1.146.0) (2022-03-30)
+
+
+### Features
+
+* pkg entry points ([#478](https://github.com/qiwi/pijma/issues/478)) ([eb24222](https://github.com/qiwi/pijma/commit/eb24222fc1421560abcc8736dd0c0127b56d8e0e))
+
 # @qiwi/pijma-core [1.145.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.144.0...@qiwi/pijma-core@1.145.0) (2022-03-24)
 
 
