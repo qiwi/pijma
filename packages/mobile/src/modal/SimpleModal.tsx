@@ -53,22 +53,33 @@ interface SimpleModalProps {
   escapeClose?: boolean
   backdropClose?: boolean
   stub?: boolean
+  zIndex?: number
   onShow?: () => void
   onHide?: () => void
 }
 
-const SimpleModal: FunctionComponent<SimpleModalProps> = (props) => (
-  props.stub ? (
+const SimpleModal: FunctionComponent<SimpleModalProps> = ({
+  stub,
+  children,
+  show,
+  escapeClose,
+  onShow,
+  onHide,
+  backdropClose,
+  zIndex = 10050,
+  closable,
+}) => (
+  stub ? (
     <Box display="none">
-      {props.children}
+      {children}
     </Box>
   ) : (
     <Modal
-      show={props.show}
-      keyboard={props.escapeClose}
-      onShow={props.onShow}
-      onHide={props.onHide}
-      onBackdropClick={props.backdropClose ? props.onHide : undefined}
+      show={show}
+      keyboard={escapeClose}
+      onShow={onShow}
+      onHide={onHide}
+      onBackdropClick={backdropClose ? onHide : undefined}
       transition={contentTransition}
       backdropTransition={backdropTransition}
       renderBackdrop={(backdropProps) => (
@@ -79,19 +90,19 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = (props) => (
       renderDialog={(dialogProps) => (
         <Pos
           type="fixed"
-          // zIndex={10050}
           top={0}
           bottom={0}
           left={0}
           right={0}
           height="100%"
           overflow="auto"
+          zIndex={zIndex}
           {...dialogProps}
         >
           <Pos type="relative" width={1} height={1}>
             <Card bg="#fff" p={6} width={1} height={1} overflow="auto">
               <Fragment>
-                {props.closable && props.onHide ? (
+                {closable && onHide ? (
                   <Pos
                     type="absolute"
                     top={6}
@@ -99,13 +110,13 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = (props) => (
                     width={6}
                     height={6}
                     cursor="pointer"
-                    onClick={() => props.onHide && props.onHide()}
+                    onClick={onHide}
                     children={<Icon name="cross" color="#000"/>}
                   />
                 ) : (
                   null
                 )}
-                {props.children}
+                {children}
               </Fragment>
             </Card>
           </Pos>

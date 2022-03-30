@@ -20,6 +20,7 @@ const [deleteModal, setDeleteModal] = React.useState(undefined);
       size="m"
       closable
       backdropClose
+      zIndex={10000}
       onHide={() => setDeleteModal(false)}
       children={
         <Spacer size="xl">
