@@ -1,3 +1,10 @@
+## @qiwi/pijma-mobile [1.142.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.142.0...@qiwi/pijma-mobile@1.142.1) (2022-03-30)
+
+
+### Bug Fixes
+
+* **mobile:** simple-modal z-index ([#477](https://github.com/qiwi/pijma/issues/477)) ([8725125](https://github.com/qiwi/pijma/commit/8725125e188910f999200f6edc097e8d772f9c1f))
+
 # @qiwi/pijma-mobile [1.142.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.141.2...@qiwi/pijma-mobile@1.142.0) (2022-03-24)
 
 
