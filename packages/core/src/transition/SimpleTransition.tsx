@@ -1,5 +1,5 @@
 import React from 'react'
-import Transition, {ENTERED, ENTERING, EXITED, EXITING} from 'react-transition-group/Transition'
+import {Transition} from 'react-transition-group'
 
 import {cx} from '../styled'
 
@@ -18,13 +18,13 @@ const statusClassName = (status: string, props: SimpleTransitionProps): string |
   const enter = typeof timeout === 'number' ? timeout : timeout.enter || 0
   const exit = typeof timeout === 'number' ? timeout : timeout.exit || 0
   switch (status) {
-    case ENTERING:
+    case 'entering':
       return enteringClassName ? enteringClassName(enter) : enterClassName ? enterClassName(enter) : undefined
-    case ENTERED:
+    case 'entered':
       return enteredClassName ? enteredClassName(enter) : enterClassName ? enterClassName(enter) : undefined
-    case EXITING:
+    case 'exiting':
       return exitingClassName ? exitingClassName(exit) : exitClassName ? exitClassName(enter) : undefined
-    case EXITED:
+    case 'exited':
       return exitedClassName ? exitedClassName(exit) : exitClassName ? exitClassName(enter) : undefined
   }
   return undefined
