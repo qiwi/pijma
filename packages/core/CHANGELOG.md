@@ -1,3 +1,10 @@
+## @qiwi/pijma-core [1.146.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.146.0...@qiwi/pijma-core@1.146.1) (2022-03-31)
+
+
+### Bug Fixes
+
+* **core:** react-transition-group import ([#480](https://github.com/qiwi/pijma/issues/480)) ([b1b1df1](https://github.com/qiwi/pijma/commit/b1b1df15564ee78c60c33291cd8a8da15968b775))
+
 # @qiwi/pijma-core [1.146.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.145.0...@qiwi/pijma-core@1.146.0) (2022-03-30)
 
 

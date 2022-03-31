@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-core",
-  "version": "1.146.0",
+  "version": "1.146.1",
   "exports": "./lib/es6/index.js",
   "type": "module",
   "types": "./lib/es6/index.d.ts",
