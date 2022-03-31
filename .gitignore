@@ -14,3 +14,7 @@
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+/packages/*/styleguide/build
+/packages/*/styleguide/lib
+/packages/*/styleguide/index.html
