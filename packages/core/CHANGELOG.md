@@ -1,3 +1,18 @@
+## @qiwi/pijma-core [1.146.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.146.1...@qiwi/pijma-core@1.146.2) (2022-04-01)
+
+
+### Bug Fixes
+
+* fill blank js files after esbuild ([#481](https://github.com/qiwi/pijma/issues/481)) ([27ed64a](https://github.com/qiwi/pijma/commit/27ed64ae458c9991d466dc9a479231d65ccb4d60))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-infra:** upgraded to 1.4.1
+
 ## @qiwi/pijma-core [1.146.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.146.0...@qiwi/pijma-core@1.146.1) (2022-03-31)
 
 
