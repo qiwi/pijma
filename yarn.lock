@@ -925,7 +925,7 @@ __metadata:
     ts-node: 9.0.0
     ts-patch: 2.0.1
     ts-react-display-name: 1.2.2
-    tsc-esm-fix: 2.8.0
+    tsc-esm-fix: 2.9.0
     typescript: 4.4.4
     webpack: 4.39.2
   bin:
@@ -937,20 +937,6 @@ __metadata:
     tsc-esm-fix: ../../node_modules/.bin/tsc-esm-fix
   languageName: unknown
   linkType: soft
-
-"@qiwi/pijma-infra@npm:1.4.0":
-  version: 1.4.0
-  resolution: "@qiwi/pijma-infra@npm:1.4.0"
-  bin:
-    concurrently: node_modules/.bin/concurrently
-    eslint: node_modules/.bin/eslint
-    gh-pages: node_modules/.bin/gh-pages
-    rimraf: node_modules/.bin/rimraf
-    styleguidist: node_modules/.bin/styleguidist
-    tsc-esm-fix: node_modules/.bin/tsc-esm-fix
-  checksum: 1bc1230b8f54e274a7d86e385c5be6a6ae0ab52159d0da64845142a085b2f8596c3a40027c7680399c85696b3c4b2d9c7ab38a813edd1abd577d6fe4235175b5
-  languageName: node
-  linkType: hard
 
 "@qiwi/pijma-media@workspace:packages/media":
   version: 0.0.0-use.local
@@ -973,7 +959,7 @@ __metadata:
   resolution: "@qiwi/pijma-ssr@workspace:packages/ssr"
   dependencies:
     "@emotion/server": ^11.4.0
-    "@qiwi/pijma-infra": 1.4.0
+    "@qiwi/pijma-infra": 1.4.1
   languageName: unknown
   linkType: soft
 
@@ -11219,9 +11205,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsc-esm-fix@npm:2.8.0":
-  version: 2.8.0
-  resolution: "tsc-esm-fix@npm:2.8.0"
+"tsc-esm-fix@npm:2.9.0":
+  version: 2.9.0
+  resolution: "tsc-esm-fix@npm:2.9.0"
   dependencies:
     "@types/fs-extra": ^9.0.13
     fs-extra: ^10.0.1
@@ -11231,7 +11217,7 @@ __metadata:
     tslib: ^2.3.1
   bin:
     tsc-esm-fix: target/es6/cli.mjs
-  checksum: b9a4dc2197221fca46f315ee56c316042c72e313153c6caadeab9fe34a27fad192df5c5e86627af4cc721d1474f43de6914a7c1add9876a5c0ff63970d580c8c
+  checksum: b3a714bff25ef358c454fb87c162d548382f1d5fc413381bb93281fa559463573f36995bb09810f15199252de8dab31714794895362ab8b1c8df7b761d8a2d62
   languageName: node
   linkType: hard
 
