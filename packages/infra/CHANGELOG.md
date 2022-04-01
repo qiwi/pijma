@@ -1,3 +1,10 @@
+## @qiwi/pijma-infra [1.4.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.4.1...@qiwi/pijma-infra@1.4.2) (2022-04-01)
+
+
+### Bug Fixes
+
+* add default export for empty bundles ([cf10711](https://github.com/qiwi/pijma/commit/cf1071175f724cc60c358ce7695bcbdbc12a3316))
+
 ## @qiwi/pijma-infra [1.4.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.4.0...@qiwi/pijma-infra@1.4.1) (2022-04-01)
 
 
