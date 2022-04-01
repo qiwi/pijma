@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-ssr",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "exports": "./lib/es6/index.js",
   "type": "module",
   "types": "./lib/es6/index.d.ts",
@@ -26,7 +26,7 @@
     "@emotion/server": "^11.4.0"
   },
   "devDependencies": {
-    "@qiwi/pijma-infra": "1.4.1"
+    "@qiwi/pijma-infra": "1.4.2"
   },
   "repository": {
     "type": "git",
