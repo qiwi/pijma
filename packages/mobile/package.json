@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-mobile",
-  "version": "1.143.1",
+  "version": "1.143.2",
   "exports": "./lib/es6/index.js",
   "type": "module",
   "types": "./lib/es6/index.d.ts",
@@ -27,11 +27,11 @@
     "lib"
   ],
   "dependencies": {
-    "@qiwi/pijma-core": "1.146.1",
+    "@qiwi/pijma-core": "1.146.2",
     "@qiwi/pijma-fonts": "1.0.0"
   },
   "devDependencies": {
-    "@qiwi/pijma-infra": "1.4.0"
+    "@qiwi/pijma-infra": "1.4.1"
   },
   "repository": {
     "type": "git",
