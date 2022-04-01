@@ -1,3 +1,18 @@
+## @qiwi/pijma-ssr [1.1.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-ssr@1.1.0...@qiwi/pijma-ssr@1.1.1) (2022-04-01)
+
+
+### Bug Fixes
+
+* fill blank js files after esbuild ([#481](https://github.com/qiwi/pijma/issues/481)) ([27ed64a](https://github.com/qiwi/pijma/commit/27ed64ae458c9991d466dc9a479231d65ccb4d60))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-infra:** upgraded to 1.4.1
+
 # @qiwi/pijma-ssr [1.1.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-ssr@1.0.1...@qiwi/pijma-ssr@1.1.0) (2022-03-30)
 
 
