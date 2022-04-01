@@ -14,7 +14,7 @@
     "build": "concurrently 'npm:build:*'",
     "build:libdef": "tsc -p tsconfig.build.json --emitDeclarationOnly",
     "build:es6": "node ../infra/esbuild.js && tsc-esm-fix --target=lib/es6 --fillBlank",
-    "build:guide": "NODE_ENV=production styleguidist build",
+    "build:guide": "NODE_ENV=production styleguidist --config styleguide.config.cjs build",
     "watch": "NODE_ENV=production styleguidist server",
     "lint": "eslint -c ../infra/.eslintrc.js 'src/**/*.ts{,x}'",
     "lint:fix": "yarn lint --fix",
