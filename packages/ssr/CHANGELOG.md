@@ -1,3 +1,13 @@
+## @qiwi/pijma-ssr [1.1.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-ssr@1.1.2...@qiwi/pijma-ssr@1.1.3) (2022-04-04)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-infra:** upgraded to 1.5.0
+
 ## @qiwi/pijma-ssr [1.1.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-ssr@1.1.1...@qiwi/pijma-ssr@1.1.2) (2022-04-01)
 
 
