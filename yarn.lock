@@ -853,7 +853,38 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/pijma-core@1.146.3, @qiwi/pijma-core@workspace:packages/core":
+"@qiwi/pijma-core@npm:1.146.3":
+  version: 1.146.3
+  resolution: "@qiwi/pijma-core@npm:1.146.3"
+  dependencies:
+    "@emotion/core": ^11.0.0
+    "@emotion/css": ^11.5.0
+    "@emotion/react": ^11.5.0
+    "@emotion/styled": ^11.3.0
+    "@types/dom-helpers": ^3.4.1
+    "@types/markdown-to-jsx": ^6.9.0
+    "@types/react": ">=16.8.23 <17.1.0"
+    "@types/react-dom": ">=16.8.4 <17.1.0"
+    "@types/react-google-recaptcha": " ^2.1.5"
+    "@types/react-overlays": ^1.1.3
+    "@types/react-text-mask": ^5.4.6
+    "@types/react-transition-group": ^4.2.2
+    dom-helpers: ^3.4.0
+    markdown-to-jsx: ^6.10.3
+    react: ">=16.8.6 <17.1.0"
+    react-dom: ">=16.8.6 <17.1.0"
+    react-google-recaptcha: ^2.1.0
+    react-intersection-observer: ^8.24.1
+    react-overlays: ^1.2.0
+    react-text-mask: ^5.4.3
+    react-transition-group: ^4.2.2
+    react-waypoint: ^9.0.2
+    tslib: ^2.3.1
+  checksum: b4fa85991aa7202cbfdfb641b5e5454a193d1de9c36286711cf99623793dd72b148d7d2de1c6af79af1ed9c665d66ee2b216162ead6e5b48eb3b6e7f248e4602
+  languageName: node
+  linkType: hard
+
+"@qiwi/pijma-core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-core@workspace:packages/core"
   dependencies:
@@ -861,7 +892,7 @@ __metadata:
     "@emotion/css": ^11.5.0
     "@emotion/react": ^11.5.0
     "@emotion/styled": ^11.3.0
-    "@qiwi/pijma-infra": 1.4.2
+    "@qiwi/pijma-infra": 1.5.0
     "@types/dom-helpers": ^3.4.1
     "@types/markdown-to-jsx": ^6.9.0
     "@types/react": ">=16.8.23 <17.1.0"
@@ -900,7 +931,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/pijma-infra@1.4.2, @qiwi/pijma-infra@workspace:packages/infra":
+"@qiwi/pijma-infra@1.5.0, @qiwi/pijma-infra@workspace:packages/infra":
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-infra@workspace:packages/infra"
   dependencies:
@@ -938,6 +969,20 @@ __metadata:
     tsc-esm-fix: ../../node_modules/.bin/tsc-esm-fix
   languageName: unknown
   linkType: soft
+
+"@qiwi/pijma-infra@npm:1.4.2":
+  version: 1.4.2
+  resolution: "@qiwi/pijma-infra@npm:1.4.2"
+  bin:
+    concurrently: node_modules/.bin/concurrently
+    eslint: node_modules/.bin/eslint
+    gh-pages: node_modules/.bin/gh-pages
+    rimraf: node_modules/.bin/rimraf
+    styleguidist: node_modules/.bin/styleguidist
+    tsc-esm-fix: node_modules/.bin/tsc-esm-fix
+  checksum: d116bbfeb1f8d2b2df2da3ec3947a4aabe535befbf5614b444e64d910c034baaa6da32eb83c38e7c408a92efc17695510d46d8a8729c661856b0e0fce1bde67a
+  languageName: node
+  linkType: hard
 
 "@qiwi/pijma-media@workspace:packages/media":
   version: 0.0.0-use.local
