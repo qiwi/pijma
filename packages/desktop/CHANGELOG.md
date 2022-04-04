@@ -1,3 +1,19 @@
+# @qiwi/pijma-desktop [1.144.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.143.3...@qiwi/pijma-desktop@1.144.0) (2022-04-04)
+
+
+### Features
+
+* add cjs bundles ([#482](https://github.com/qiwi/pijma/issues/482)) ([494439c](https://github.com/qiwi/pijma/commit/494439c09968c27dc4916f30a6762d41d6fc4ed5))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.147.0
+* **@qiwi/pijma-infra:** upgraded to 1.5.0
+
 ## @qiwi/pijma-desktop [1.143.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.143.2...@qiwi/pijma-desktop@1.143.3) (2022-04-01)
 
 
