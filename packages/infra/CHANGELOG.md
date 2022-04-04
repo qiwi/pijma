@@ -1,3 +1,10 @@
+# @qiwi/pijma-infra [1.5.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.4.2...@qiwi/pijma-infra@1.5.0) (2022-04-04)
+
+
+### Features
+
+* add cjs bundles ([#482](https://github.com/qiwi/pijma/issues/482)) ([494439c](https://github.com/qiwi/pijma/commit/494439c09968c27dc4916f30a6762d41d6fc4ed5))
+
 ## @qiwi/pijma-infra [1.4.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.4.1...@qiwi/pijma-infra@1.4.2) (2022-04-01)
 
 
