@@ -1,9 +1,13 @@
 const esbuild = require('esbuild')
 const {nodeExternalsPlugin} = require('esbuild-node-externals')
 const glob = require('fast-glob')
-const fs = require('fs');
+const fs = require('fs')
+const argv = require('minimist')(process.argv.slice(2))
 
-const entryPoints = glob.sync('./src/**/*.ts(x)?')
+const _entries = argv.entryPoints || './src/**/*.ts(x)?'
+const entryPoints = glob.sync(_entries)
+const target = argv.target || 'es6'
+const outdir = argv.outdir || './lib/es6/'
 
 const displayName = (content, regexp, filter) => (
   Array
@@ -32,12 +36,12 @@ const reactDisplayNamePlugin = (options) => ({
 
 esbuild.build({
   entryPoints,
-  outdir: './lib/es6/',
+  outdir,
   bundle: false,
   minify: false,
   platform: 'node',
   sourcemap: false,
-  target: 'es6',
+  target,
   plugins: [
     nodeExternalsPlugin(),
     reactDisplayNamePlugin({

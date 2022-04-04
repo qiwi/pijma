@@ -918,6 +918,7 @@ __metadata:
     file-loader: 4.2.0
     gh-pages: 2.1.1
     husky: 3.0.3
+    minimist: 1.2.6
     react-docgen-typescript: 2.2.2
     react-styleguidist: 11.1.5
     style-loader: 2.0.0
@@ -937,20 +938,6 @@ __metadata:
     tsc-esm-fix: ../../node_modules/.bin/tsc-esm-fix
   languageName: unknown
   linkType: soft
-
-"@qiwi/pijma-infra@npm:1.4.1":
-  version: 1.4.1
-  resolution: "@qiwi/pijma-infra@npm:1.4.1"
-  bin:
-    concurrently: node_modules/.bin/concurrently
-    eslint: node_modules/.bin/eslint
-    gh-pages: node_modules/.bin/gh-pages
-    rimraf: node_modules/.bin/rimraf
-    styleguidist: node_modules/.bin/styleguidist
-    tsc-esm-fix: node_modules/.bin/tsc-esm-fix
-  checksum: 353e267b587c2cb562264694e4832977d123a6c475724fa81b1b11f62dafc57b96c2b5cd4f6f07ab1ed4231aea77529caf1971f2f47a21c6135f3344d715bede
-  languageName: node
-  linkType: hard
 
 "@qiwi/pijma-media@workspace:packages/media":
   version: 0.0.0-use.local
@@ -973,7 +960,7 @@ __metadata:
   resolution: "@qiwi/pijma-ssr@workspace:packages/ssr"
   dependencies:
     "@emotion/server": ^11.4.0
-    "@qiwi/pijma-infra": 1.4.1
+    "@qiwi/pijma-infra": 1.4.2
   languageName: unknown
   linkType: soft
 
@@ -7582,7 +7569,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimist@npm:^1.2.0, minimist@npm:^1.2.5, minimist@npm:~1.2.5":
+"minimist@npm:1.2.6, minimist@npm:^1.2.0, minimist@npm:^1.2.5, minimist@npm:~1.2.5":
   version: 1.2.6
   resolution: "minimist@npm:1.2.6"
   checksum: d15428cd1e11eb14e1233bcfb88ae07ed7a147de251441d61158619dfb32c4d7e9061d09cab4825fdee18ecd6fce323228c8c47b5ba7cd20af378ca4048fb3fb
