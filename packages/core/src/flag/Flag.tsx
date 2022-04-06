@@ -2,18 +2,20 @@ import React, {FC} from 'react'
 
 import {Svg, Path, Value} from '../primitive'
 
-type FlagCode =
-  'am' | 'az' | 'by' | 'ee' | 'gb' | 'ge' | 'il' | 'in' |
-  'jp' | 'kg' | 'kr' | 'kz' | 'lt' | 'lv' | 'md' | 'pa' |
-  'ru' | 'th' | 'tj' | 'tr' | 'ua' | 'us' | 'uz' | 'vn'
+export const FlagCodes =
+  ['am', 'az', 'by', 'ee', 'gb', 'ge', 'il', 'in',
+    'jp', 'kg', 'kr', 'kz', 'lt', 'lv', 'md', 'pa',
+    'ru', 'th', 'tj', 'tr', 'ua', 'us', 'uz', 'vn'] as const
+
+export type FlagCode = typeof FlagCodes
 
 export interface FlagProps {
-  code: FlagCode
+  code: FlagCode[number]
   width?: Value
   height?: Value
 }
 
-export const FlagFillPaths: {[code in FlagCode]: [string, string][]} = {
+export const FlagFillPaths: {[code in FlagCode[number]]: [string, string][]} = {
   'am': [
     ['#F2B54A', 'M0 10H21V15H0z'],
     ['#1E4AA6', 'M0 5H21V10H0z'],
@@ -138,7 +140,7 @@ export const Flag: FC<FlagProps> = ({code, width = 6, height = 4}) => (
     {FlagFillPaths[code].map((flag, i) => (
       <Path key={i} fill={flag[0]} d={flag[1]}/>
     ))}
-    <Path fill="none" stroke="#000000" strokeOpacity="0.1" d="m0.5 0.5v14h20v-14h-20z" />
+    <Path fill="none" stroke="#000000" strokeOpacity="0.1" d="m0.5 0.5v14h20v-14h-20z"/>
   </Svg>
 )
 
