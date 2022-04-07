@@ -1,3 +1,18 @@
+# @qiwi/pijma-mobile [1.145.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.144.0...@qiwi/pijma-mobile@1.145.0) (2022-04-07)
+
+
+### Features
+
+* react-text-mask fork ([#483](https://github.com/qiwi/pijma/issues/483)) ([d6d5d3d](https://github.com/qiwi/pijma/commit/d6d5d3d430988349bbb6a3d4635bc399a1236071))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.148.0
+
 # @qiwi/pijma-mobile [1.144.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.143.3...@qiwi/pijma-mobile@1.144.0) (2022-04-04)
 
 
