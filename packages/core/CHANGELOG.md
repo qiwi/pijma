@@ -1,3 +1,10 @@
+# @qiwi/pijma-core [1.148.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.147.0...@qiwi/pijma-core@1.148.0) (2022-04-07)
+
+
+### Features
+
+* react-text-mask fork ([#483](https://github.com/qiwi/pijma/issues/483)) ([d6d5d3d](https://github.com/qiwi/pijma/commit/d6d5d3d430988349bbb6a3d4635bc399a1236071))
+
 # @qiwi/pijma-core [1.147.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.146.3...@qiwi/pijma-core@1.147.0) (2022-04-04)
 
 
