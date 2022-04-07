@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-desktop",
-  "version": "1.144.0",
+  "version": "1.145.0",
   "main": "./lib/es5/index.js",
   "exports": {
     ".": {
@@ -34,7 +34,7 @@
     "lib"
   ],
   "dependencies": {
-    "@qiwi/pijma-core": "1.147.0",
+    "@qiwi/pijma-core": "1.148.0",
     "@qiwi/pijma-fonts": "1.0.0"
   },
   "devDependencies": {
