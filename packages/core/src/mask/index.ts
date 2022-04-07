@@ -9,5 +9,4 @@ export {
 }
 
 export * from './isMaskDigital'
-export * from './Mask'
-export * from './Pipe'
+export * from './MaskedInput'

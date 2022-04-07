@@ -22,7 +22,7 @@
     "build:es5": "tsc -p tsconfig.build.json --target es5 --outDir lib/es5 && tsc-esm-fix --target=lib/es5 --fillBlank",
     "build:es6": "node ../infra/esbuild.js && tsc-esm-fix --target=lib/es6 --fillBlank",
     "build:libdef": "tsc -p tsconfig.build.json --emitDeclarationOnly",
-    "watch": "styleguidist server",
+    "watch": "styleguidist --config styleguide.config.cjs server",
     "lint": "eslint -c ../infra/.eslintrc.js 'src/**/*.ts{,x}'",
     "lint:fix": "yarn lint --fix",
     "guide": "gh-pages -d styleguide/lib -e mobile -m \"update mobile style guide v$npm_package_version\"",
