@@ -1,4 +1,4 @@
-import {Mask} from './Mask'
+import {Mask} from './MaskedInput'
 
 const createFilterMask = (pattern: RegExp): Mask => {
   return (value: string) => {

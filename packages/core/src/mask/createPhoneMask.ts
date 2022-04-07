@@ -1,4 +1,4 @@
-import {Mask} from './Mask'
+import {Mask} from './MaskedInput'
 
 export default function createPhoneMask(masks: string[]): Mask {
 
