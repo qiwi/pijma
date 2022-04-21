@@ -32,5 +32,5 @@
     "url": "https://github.com/qiwi/pijma/issues"
   },
   "homepage": "https://github.com/qiwi/pijma/#readme",
-  "packageManager": "yarn@3.1.1"
+  "packageManager": "yarn@3.2.0"
 }
