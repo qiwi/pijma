@@ -9,7 +9,7 @@
       "dom"
     ],
     "strict": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "declaration": true,
     "jsx": "react",
     "noEmitHelpers": true,
