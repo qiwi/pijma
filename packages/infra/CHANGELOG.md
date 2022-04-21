@@ -1,3 +1,10 @@
+## @qiwi/pijma-infra [1.5.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.5.0...@qiwi/pijma-infra@1.5.1) (2022-04-21)
+
+
+### Bug Fixes
+
+* rm broken and useless sourcemaps ([#484](https://github.com/qiwi/pijma/issues/484)) ([f075e7d](https://github.com/qiwi/pijma/commit/f075e7d9d7e4dc21310000a8e38dbac927c60fd6))
+
 # @qiwi/pijma-infra [1.5.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.4.2...@qiwi/pijma-infra@1.5.0) (2022-04-04)
 
 
