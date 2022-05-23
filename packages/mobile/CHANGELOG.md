@@ -1,3 +1,10 @@
+## @qiwi/pijma-mobile [1.145.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.145.1...@qiwi/pijma-mobile@1.145.2) (2022-05-23)
+
+
+### Bug Fixes
+
+* **mobile:** FileLink ([#485](https://github.com/qiwi/pijma/issues/485)) ([1e2249d](https://github.com/qiwi/pijma/commit/1e2249dfabb6e0eca0a4a48516e158065c8578ce))
+
 ## @qiwi/pijma-mobile [1.145.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.145.0...@qiwi/pijma-mobile@1.145.1) (2022-04-21)
 
 

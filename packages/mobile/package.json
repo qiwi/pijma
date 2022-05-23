@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-mobile",
-  "version": "1.145.1",
+  "version": "1.145.2",
   "main": "./lib/es5/index.js",
   "exports": {
     ".": {
