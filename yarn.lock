@@ -939,20 +939,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/pijma-infra@npm:1.5.0":
-  version: 1.5.0
-  resolution: "@qiwi/pijma-infra@npm:1.5.0"
-  bin:
-    concurrently: node_modules/.bin/concurrently
-    eslint: node_modules/.bin/eslint
-    gh-pages: node_modules/.bin/gh-pages
-    rimraf: node_modules/.bin/rimraf
-    styleguidist: node_modules/.bin/styleguidist
-    tsc-esm-fix: node_modules/.bin/tsc-esm-fix
-  checksum: eefa789eafc2bc321dd9ad6016bbbf21768d6b461fc77c9a8b0bb0f295460336242f846e5461956c95643bfc914fff57b2a7698c58d1d55744f558eb82bd7d42
-  languageName: node
-  linkType: hard
-
 "@qiwi/pijma-media@workspace:packages/media":
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-media@workspace:packages/media"
@@ -974,7 +960,7 @@ __metadata:
   resolution: "@qiwi/pijma-ssr@workspace:packages/ssr"
   dependencies:
     "@emotion/server": ^11.4.0
-    "@qiwi/pijma-infra": 1.5.0
+    "@qiwi/pijma-infra": 1.5.1
   languageName: unknown
   linkType: soft
 

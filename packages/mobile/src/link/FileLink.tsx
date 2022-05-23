@@ -40,7 +40,6 @@ export const FileLink: FC<FileLinkProps> = (props) => (
         title={props.title}
         display="inline-flex"
         cursor="pointer"
-        align="center"
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
         onClick={renderProps.onClick}
@@ -58,7 +57,7 @@ export const FileLink: FC<FileLinkProps> = (props) => (
         >
           <Icon name="file" color={renderProps.hover || renderProps.focus || renderProps.active ? '#FF8C00' : '#000'}/>
         </FlexItem>
-        <FlexItem>
+        <FlexItem align="center">
           <Text
             color={renderProps.hover || renderProps.focus || renderProps.active ? 'warning' : 'default'}
             size="s"
