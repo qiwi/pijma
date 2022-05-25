@@ -1,3 +1,10 @@
+## @qiwi/pijma-infra [1.5.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.5.1...@qiwi/pijma-infra@1.5.2) (2022-05-25)
+
+
+### Bug Fixes
+
+* react display name ([#486](https://github.com/qiwi/pijma/issues/486)) ([e31c9cb](https://github.com/qiwi/pijma/commit/e31c9cb17c5c9028f27d622cb5c16b534ff8e9ef))
+
 ## @qiwi/pijma-infra [1.5.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.5.0...@qiwi/pijma-infra@1.5.1) (2022-04-21)
 
 
