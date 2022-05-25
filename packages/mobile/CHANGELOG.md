@@ -1,3 +1,19 @@
+## @qiwi/pijma-mobile [1.145.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.145.2...@qiwi/pijma-mobile@1.145.3) (2022-05-25)
+
+
+### Bug Fixes
+
+* react display name ([#486](https://github.com/qiwi/pijma/issues/486)) ([e31c9cb](https://github.com/qiwi/pijma/commit/e31c9cb17c5c9028f27d622cb5c16b534ff8e9ef))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.148.2
+* **@qiwi/pijma-infra:** upgraded to 1.5.2
+
 ## @qiwi/pijma-mobile [1.145.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.145.1...@qiwi/pijma-mobile@1.145.2) (2022-05-23)
 
 
