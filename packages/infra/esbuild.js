@@ -12,7 +12,7 @@ const outdir = argv.outdir || './lib/es6/'
 const displayName = (content, regexp, filter) => (
   Array
     .from(content.matchAll(regexp))
-    .filter((match) => filter.includes(match[2]))
+    .filter((match) => filter.includes(match[match.length - 1]))
     .map((match) => `${match[1]}.displayName = '${match[1]}'`)
 )
 
@@ -26,12 +26,12 @@ const reactDisplayNamePlugin = (options) => ({
           contents,
           displayName(contents, /const\s+(\w+)\s*=\s*([\.\w]+)/g, options.factoryFuncs),
           displayName(contents, /const\s+(\w+)\s*:\s*([\.\w]+)/g, options.funcTypes),
-          displayName(contents, /class\s+(\w+)\s+extends\s+([\.\w]+)/g, options.classTypes),
+          displayName(contents, /class\s+(\w+)(<\w>)?\s+extends\s+([\.\w]+)/g, options.classTypes),
         ].join('\n'),
         loader: 'tsx',
       }
     })
-  }
+  },
 })
 
 esbuild.build({
@@ -49,23 +49,23 @@ esbuild.build({
         'React.Component',
         'React.PureComponent',
         'Component',
-        'PureComponent'
+        'PureComponent',
       ],
       funcTypes: [
         'React.FunctionComponent',
         'React.FC',
         'FC',
-        'FunctionComponent'
+        'FunctionComponent',
       ],
       factoryFuncs: [
         'React.forwardRef',
         'React.memo',
         'forwardRef',
         'memo',
-        'styled'
+        'styled',
       ],
-    })
+    }),
   ],
-  tsconfig: './tsconfig.build.json'
+  tsconfig: './tsconfig.build.json',
 })
   .catch(() => process.exit(1))
