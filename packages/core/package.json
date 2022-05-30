@@ -15,7 +15,6 @@
     "access": "public"
   },
   "scripts": {
-    "prepare": "ts-patch install -s",
     "prebuild": "yarn clean",
     "clean": "rimraf lib",
     "build": "concurrently 'npm:build:*'",
