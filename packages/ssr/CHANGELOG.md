@@ -1,3 +1,10 @@
+## @qiwi/pijma-ssr [1.1.6](https://github.com/qiwi/pijma/compare/@qiwi/pijma-ssr@1.1.5...@qiwi/pijma-ssr@1.1.6) (2022-05-30)
+
+
+### Bug Fixes
+
+* ssr releaser ([#488](https://github.com/qiwi/pijma/issues/488)) ([0d09d75](https://github.com/qiwi/pijma/commit/0d09d758808f35a1382f20118a50f4fb7db978e4))
+
 ## @qiwi/pijma-ssr [1.1.5](https://github.com/qiwi/pijma/compare/@qiwi/pijma-ssr@1.1.4...@qiwi/pijma-ssr@1.1.5) (2022-05-25)
 
 
