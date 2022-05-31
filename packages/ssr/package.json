@@ -9,7 +9,7 @@
     "access": "public"
   },
   "scripts": {
-    "prebuild": "yarn clean",
+    "prebuild": "yarn clean && ts-patch install -s",
     "clean": "rimraf lib",
     "build": "concurrently 'npm:build:*'",
     "build:es6": "node ../infra/esbuild.js && tsc-esm-fix --target=lib/es6 --fillBlank",

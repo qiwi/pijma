@@ -15,7 +15,7 @@
     "access": "public"
   },
   "scripts": {
-    "prebuild": "yarn clean",
+    "prebuild": "yarn clean && ts-patch install -s",
     "clean": "rimraf lib styleguide/lib",
     "build": "concurrently 'npm:build:*'",
     "build:libdef": "tsc -p tsconfig.build.json --emitDeclarationOnly",
