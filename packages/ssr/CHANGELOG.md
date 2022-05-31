@@ -1,3 +1,10 @@
+## @qiwi/pijma-ssr [1.1.8](https://github.com/qiwi/pijma/compare/@qiwi/pijma-ssr@1.1.7...@qiwi/pijma-ssr@1.1.8) (2022-05-31)
+
+
+### Bug Fixes
+
+* temporary prebuild ts-patch ([#490](https://github.com/qiwi/pijma/issues/490)) ([7fdc5a6](https://github.com/qiwi/pijma/commit/7fdc5a6a60620dd5f67ec0d10f51103f1a57489c))
+
 ## @qiwi/pijma-ssr [1.1.7](https://github.com/qiwi/pijma/compare/@qiwi/pijma-ssr@1.1.6...@qiwi/pijma-ssr@1.1.7) (2022-05-31)
 
 
