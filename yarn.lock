@@ -883,36 +883,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/pijma-core@npm:1.148.3":
-  version: 1.148.3
-  resolution: "@qiwi/pijma-core@npm:1.148.3"
-  dependencies:
-    "@emotion/core": ^11.0.0
-    "@emotion/css": ^11.5.0
-    "@emotion/react": ^11.5.0
-    "@emotion/styled": ^11.3.0
-    "@types/dom-helpers": ^3.4.1
-    "@types/markdown-to-jsx": ^6.9.0
-    "@types/react": ">=16.8.23 <17.1.0"
-    "@types/react-dom": ">=16.8.4 <17.1.0"
-    "@types/react-google-recaptcha": " ^2.1.5"
-    "@types/react-overlays": ^1.1.3
-    "@types/react-transition-group": ^4.2.2
-    dom-helpers: ^3.4.0
-    markdown-to-jsx: ^6.10.3
-    react: ">=16.8.6 <17.1.0"
-    react-dom: ">=16.8.6 <17.1.0"
-    react-google-recaptcha: ^2.1.0
-    react-intersection-observer: ^8.24.1
-    react-overlays: ^1.2.0
-    react-transition-group: ^4.2.2
-    react-waypoint: ^9.0.2
-    text-mask-core: ^5.1.2
-    tslib: ^2.3.1
-  checksum: e1b253bcbe01ed18fa431a9868eeaeb2e9e8f6fff475ce41af741599648ab62e57a5bf1efe83e5a255979237e505da222e16b205682754f1e4ff57f42f106458
-  languageName: node
-  linkType: hard
-
 "@qiwi/pijma-desktop@workspace:packages/desktop":
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-desktop@workspace:packages/desktop"
@@ -979,7 +949,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-mobile@workspace:packages/mobile"
   dependencies:
-    "@qiwi/pijma-core": 1.148.3
+    "@qiwi/pijma-core": 1.148.4
     "@qiwi/pijma-fonts": 1.0.0
     "@qiwi/pijma-infra": 1.5.3
   languageName: unknown
