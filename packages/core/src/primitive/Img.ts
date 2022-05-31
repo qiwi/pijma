@@ -13,12 +13,14 @@ export interface ImgProps {
   srcSet?: string
   sizes?: string
   alt?: string
+  objectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down'
 }
 
 export const ImgNonProps: PropertyKey[] = [
   'as', 'css', 'display',
   'width', 'minWidth', 'maxWidth',
   'height', 'minHeight', 'maxHeight',
+  'objectFit',
 ]
 
 export const ImgOptions: StyledOptions<ImgProps> = {
@@ -26,6 +28,7 @@ export const ImgOptions: StyledOptions<ImgProps> = {
 }
 
 export const Img = styled('img', ImgOptions)<ImgProps>(({theme, ...props}) => ({
+  objectFit: props.objectFit,
   display: 'block',
   width: cssValue(props.width, theme.scale),
   minWidth: cssValue(props.minWidth, theme.scale),

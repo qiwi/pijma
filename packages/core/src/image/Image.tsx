@@ -15,6 +15,7 @@ export interface ImageProps {
   sizes?: string
   alt?: string
   stub?: string | boolean | ReactNode
+  objectFit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down'
   onLoad?: () => void
 }
 
@@ -28,6 +29,7 @@ export const Image: FC<ImageProps> = ({
   stub = true,
   cachedDelay = 50,
   viewedDelay = 1000,
+  objectFit,
   onLoad,
 }) => (
   stub ? (
@@ -52,6 +54,7 @@ export const Image: FC<ImageProps> = ({
             srcSet={renderProps.srcSet}
             sizes={sizes}
             alt={alt}
+            objectFit={objectFit}
           />
         ) : (
           <InView
@@ -77,6 +80,7 @@ export const Image: FC<ImageProps> = ({
                     srcSet={renderProps.srcSet}
                     sizes={sizes}
                     alt={alt}
+                    objectFit={objectFit}
                     css={typeof stub === 'string' ? {filter: 'blur(10px)'} : undefined}
                     onLoad={renderProps.onLoad}
                   />
@@ -95,6 +99,7 @@ export const Image: FC<ImageProps> = ({
       srcSet={srcSet}
       sizes={sizes}
       alt={alt}
+      objectFit={objectFit}
       onLoad={onLoad}
     />
   )
