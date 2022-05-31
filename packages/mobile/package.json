@@ -15,9 +15,8 @@
     "access": "public"
   },
   "scripts": {
-    "prebuild": "yarn clean && ts-patch install -s",
     "clean": "rimraf lib styleguide/lib",
-    "build": "concurrently 'npm:build:*'",
+    "build": "ts-patch install -s && concurrently 'npm:build:*'",
     "build:guide": "NODE_ENV=production styleguidist --config styleguide.config.cjs build",
     "build:es5": "tsc -p tsconfig.build.json --target es5 --outDir lib/es5 && tsc-esm-fix --target=lib/es5 --fillBlank",
     "build:es6": "node ../infra/esbuild.js && tsc-esm-fix --target=lib/es6 --fillBlank",
