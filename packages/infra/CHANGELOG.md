@@ -1,3 +1,10 @@
+## @qiwi/pijma-infra [1.5.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.5.2...@qiwi/pijma-infra@1.5.3) (2022-05-31)
+
+
+### Bug Fixes
+
+* ts-patch in infra only ([#489](https://github.com/qiwi/pijma/issues/489)) ([90b7004](https://github.com/qiwi/pijma/commit/90b70042b1fda37bb0e9f11746781b33cbe32985))
+
 ## @qiwi/pijma-infra [1.5.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.5.1...@qiwi/pijma-infra@1.5.2) (2022-05-25)
 
 
