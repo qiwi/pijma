@@ -1,3 +1,18 @@
+## @qiwi/pijma-desktop [1.145.4](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.145.3...@qiwi/pijma-desktop@1.145.4) (2022-05-31)
+
+
+### Bug Fixes
+
+* temporary prebuild ts-patch ([#490](https://github.com/qiwi/pijma/issues/490)) ([7fdc5a6](https://github.com/qiwi/pijma/commit/7fdc5a6a60620dd5f67ec0d10f51103f1a57489c))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.148.4
+
 ## @qiwi/pijma-desktop [1.145.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.145.2...@qiwi/pijma-desktop@1.145.3) (2022-05-31)
 
 

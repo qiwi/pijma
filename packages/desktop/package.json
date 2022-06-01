@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-desktop",
-  "version": "1.145.3",
+  "version": "1.145.4",
   "main": "./lib/es5/index.js",
   "exports": {
     ".": {
@@ -15,7 +15,7 @@
     "access": "public"
   },
   "scripts": {
-    "prebuild": "yarn clean",
+    "prebuild": "yarn clean && ts-patch install -s",
     "clean": "rimraf lib styleguide/lib",
     "build": "concurrently 'npm:build:*'",
     "build:libdef": "tsc -p tsconfig.build.json --emitDeclarationOnly",
@@ -34,7 +34,7 @@
     "lib"
   ],
   "dependencies": {
-    "@qiwi/pijma-core": "1.148.3",
+    "@qiwi/pijma-core": "1.148.4",
     "@qiwi/pijma-fonts": "1.0.0"
   },
   "devDependencies": {

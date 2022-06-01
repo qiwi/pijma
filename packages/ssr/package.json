@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-ssr",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "exports": "./lib/es6/index.js",
   "type": "module",
   "types": "./lib/es6/index.d.ts",
@@ -9,7 +9,7 @@
     "access": "public"
   },
   "scripts": {
-    "prebuild": "yarn clean",
+    "prebuild": "yarn clean && ts-patch install -s",
     "clean": "rimraf lib",
     "build": "concurrently 'npm:build:*'",
     "build:es6": "node ../infra/esbuild.js && tsc-esm-fix --target=lib/es6 --fillBlank",

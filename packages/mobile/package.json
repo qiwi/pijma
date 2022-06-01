@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-mobile",
-  "version": "1.145.4",
+  "version": "1.145.5",
   "main": "./lib/es5/index.js",
   "exports": {
     ".": {
@@ -15,7 +15,7 @@
     "access": "public"
   },
   "scripts": {
-    "prebuild": "yarn clean",
+    "prebuild": "yarn clean && ts-patch install -s",
     "clean": "rimraf lib styleguide/lib",
     "build": "concurrently 'npm:build:*'",
     "build:guide": "NODE_ENV=production styleguidist --config styleguide.config.cjs build",
@@ -34,7 +34,7 @@
     "lib"
   ],
   "dependencies": {
-    "@qiwi/pijma-core": "1.148.3",
+    "@qiwi/pijma-core": "1.148.4",
     "@qiwi/pijma-fonts": "1.0.0"
   },
   "devDependencies": {

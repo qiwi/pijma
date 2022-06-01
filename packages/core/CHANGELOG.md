@@ -1,3 +1,10 @@
+## @qiwi/pijma-core [1.148.4](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.148.3...@qiwi/pijma-core@1.148.4) (2022-05-31)
+
+
+### Bug Fixes
+
+* temporary prebuild ts-patch ([#490](https://github.com/qiwi/pijma/issues/490)) ([7fdc5a6](https://github.com/qiwi/pijma/commit/7fdc5a6a60620dd5f67ec0d10f51103f1a57489c))
+
 ## @qiwi/pijma-core [1.148.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.148.2...@qiwi/pijma-core@1.148.3) (2022-05-31)
 
 
