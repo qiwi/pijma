@@ -1,3 +1,10 @@
+# @qiwi/pijma-core [1.149.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.148.5...@qiwi/pijma-core@1.149.0) (2022-06-01)
+
+
+### Features
+
+* **image:** object-fit ([#491](https://github.com/qiwi/pijma/issues/491)) ([cec12c5](https://github.com/qiwi/pijma/commit/cec12c50977ee1eb19bf601c43db3adb3031f6d1))
+
 ## @qiwi/pijma-core [1.148.5](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.148.4...@qiwi/pijma-core@1.148.5) (2022-06-01)
 
 

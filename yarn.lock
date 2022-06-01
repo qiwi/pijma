@@ -853,7 +853,37 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/pijma-core@1.148.5, @qiwi/pijma-core@workspace:packages/core":
+"@qiwi/pijma-core@npm:1.148.5":
+  version: 1.148.5
+  resolution: "@qiwi/pijma-core@npm:1.148.5"
+  dependencies:
+    "@emotion/core": ^11.0.0
+    "@emotion/css": ^11.5.0
+    "@emotion/react": ^11.5.0
+    "@emotion/styled": ^11.3.0
+    "@types/dom-helpers": ^3.4.1
+    "@types/markdown-to-jsx": ^6.9.0
+    "@types/react": ">=16.8.23 <17.1.0"
+    "@types/react-dom": ">=16.8.4 <17.1.0"
+    "@types/react-google-recaptcha": " ^2.1.5"
+    "@types/react-overlays": ^1.1.3
+    "@types/react-transition-group": ^4.2.2
+    dom-helpers: ^3.4.0
+    markdown-to-jsx: ^6.10.3
+    react: ">=16.8.6 <17.1.0"
+    react-dom: ">=16.8.6 <17.1.0"
+    react-google-recaptcha: ^2.1.0
+    react-intersection-observer: ^8.24.1
+    react-overlays: ^1.2.0
+    react-transition-group: ^4.2.2
+    react-waypoint: ^9.0.2
+    text-mask-core: ^5.1.2
+    tslib: ^2.3.1
+  checksum: 028d5837f1b7872219189a1364895ab8e6c67c9ed32b3741a3b85d2500c789d7bbe03c2875293f14e57279498bca4c23d8dd801699e8c59af479584d48aa5b83
+  languageName: node
+  linkType: hard
+
+"@qiwi/pijma-core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-core@workspace:packages/core"
   dependencies:
