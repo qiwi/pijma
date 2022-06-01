@@ -19,7 +19,7 @@
     "build": "concurrently 'npm:build:*'",
     "build:libdef": "tsc -p tsconfig.build.json --emitDeclarationOnly",
     "build:es6": "node ../infra/esbuild.js && tsc-esm-fix --target=lib/es6 --fillBlank",
-    "build:es5": "ts-patch install -s && tsc -p tsconfig.build.json --target es5 --outDir lib/es5 && tsc-esm-fix --target=lib/es5 --fillBlank && cat lib/es5/typography/Text.js",
+    "build:es5": "tsc -p tsconfig.build.json --target es5 --outDir lib/es5 && tsc-esm-fix --target=lib/es5 --fillBlank",
     "build:guide": "NODE_ENV=production styleguidist --config styleguide.config.cjs build",
     "watch": "NODE_ENV=production styleguidist --config styleguide.config.cjs server",
     "lint": "eslint -c ../infra/.eslintrc.js 'src/**/*.ts{,x}'",

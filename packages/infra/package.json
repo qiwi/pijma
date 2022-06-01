@@ -16,7 +16,7 @@
     "tsc-esm-fix": "../../node_modules/.bin/tsc-esm-fix"
   },
   "scripts": {
-    "build": "echo 'TS-PATCH START...' && ts-patch install -s && echo 'TS-PATCH DONE...'"
+    "build": "echo 'TS-PATCH START...' && ts-patch install && echo 'TS-PATCH DONE...'"
   },
   "files": [],
   "devDependencies": {
