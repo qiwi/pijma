@@ -1,3 +1,18 @@
+## @qiwi/pijma-ssr [1.1.9](https://github.com/qiwi/pijma/compare/@qiwi/pijma-ssr@1.1.8...@qiwi/pijma-ssr@1.1.9) (2022-06-01)
+
+
+### Bug Fixes
+
+* temporary build ts-patch ([#492](https://github.com/qiwi/pijma/issues/492)) ([f0bfe42](https://github.com/qiwi/pijma/commit/f0bfe42c8239d93fae59c23928d26f2d12140c98))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-infra:** upgraded to 1.5.4
+
 ## @qiwi/pijma-ssr [1.1.8](https://github.com/qiwi/pijma/compare/@qiwi/pijma-ssr@1.1.7...@qiwi/pijma-ssr@1.1.8) (2022-05-31)
 
 

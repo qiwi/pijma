@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-core",
-  "version": "1.148.4",
+  "version": "1.148.5",
   "main": "./lib/es5/index.js",
   "exports": {
     ".": {
@@ -15,9 +15,8 @@
     "access": "public"
   },
   "scripts": {
-    "prebuild": "yarn clean && ts-patch install -s",
     "clean": "rimraf lib",
-    "build": "concurrently 'npm:build:*'",
+    "build": "ts-patch install -s && concurrently 'npm:build:*'",
     "build:es6": "node ../infra/esbuild.js && tsc-esm-fix --target=lib/es6 --fillBlank",
     "build:es5": "tsc -p tsconfig.build.json --target es5 --outDir lib/es5 && tsc-esm-fix --target=lib/es5 --fillBlank",
     "build:libdef": "tsc -p tsconfig.build.json --emitDeclarationOnly",
@@ -54,7 +53,7 @@
     "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@qiwi/pijma-infra": "1.5.3"
+    "@qiwi/pijma-infra": "1.5.4"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-ssr",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "exports": "./lib/es6/index.js",
   "type": "module",
   "types": "./lib/es6/index.d.ts",
@@ -9,9 +9,8 @@
     "access": "public"
   },
   "scripts": {
-    "prebuild": "yarn clean && ts-patch install -s",
     "clean": "rimraf lib",
-    "build": "concurrently 'npm:build:*'",
+    "build": "ts-patch install -s && concurrently 'npm:build:*'",
     "build:es6": "node ../infra/esbuild.js && tsc-esm-fix --target=lib/es6 --fillBlank",
     "build:libdef": "tsc -p tsconfig.build.json --emitDeclarationOnly",
     "lint": "eslint -c ../infra/.eslintrc.js 'src/**/*.ts{,x}'",
@@ -26,7 +25,7 @@
     "@emotion/server": "^11.4.0"
   },
   "devDependencies": {
-    "@qiwi/pijma-infra": "1.5.3"
+    "@qiwi/pijma-infra": "1.5.4"
   },
   "repository": {
     "type": "git",
