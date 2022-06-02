@@ -18,7 +18,7 @@
     "clean": "rimraf lib",
     "build": "ts-patch install -s && concurrently 'npm:build:*'",
     "build:es6": "node ../infra/esbuild.js && tsc-esm-fix --target=lib/es6 --fillBlank",
-    "build:es5": "tsc -p tsconfig.build.json --target es5 --outDir lib/es5 && tsc-esm-fix --target=lib/es5 --fillBlank && cat lib/es5/primitive/Box.js",
+    "build:es5": "tsc -p tsconfig.build.json --target es5 --outDir lib/es5 && tsc-esm-fix --target=lib/es5 --fillBlank",
     "build:libdef": "tsc -p tsconfig.build.json --emitDeclarationOnly",
     "lint": "eslint -c ../infra/.eslintrc.js 'src/**/*.ts{,x}'",
     "lint:fix": "yarn lint --fix"
