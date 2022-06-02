@@ -1,7 +1,7 @@
-import styled from '@emotion/styled'
+import styled, {CreateStyled, CreateStyledComponent, StyledComponent, StyledOptions, StyledTags} from '@emotion/styled'
 import createCache from '@emotion/cache'
 
-export {styled, createCache}
+export {styled, createCache, CreateStyled, CreateStyledComponent, StyledComponent, StyledOptions, StyledTags}
 
 export * from '@emotion/react'
 
