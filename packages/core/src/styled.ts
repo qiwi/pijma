@@ -3,6 +3,7 @@ import createCache from '@emotion/cache'
 
 export {styled, createCache}
 
+export * from '@emotion/styled'
 export * from '@emotion/react'
 
 export {
