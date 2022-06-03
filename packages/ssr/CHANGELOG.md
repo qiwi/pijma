@@ -1,3 +1,10 @@
+## @qiwi/pijma-ssr [1.1.10](https://github.com/qiwi/pijma/compare/@qiwi/pijma-ssr@1.1.9...@qiwi/pijma-ssr@1.1.10) (2022-06-03)
+
+
+### Bug Fixes
+
+* ts-patch works with node 16 ([#493](https://github.com/qiwi/pijma/issues/493)) ([fed7671](https://github.com/qiwi/pijma/commit/fed76714e3828dae193a832e9085abdc5bb16443))
+
 ## @qiwi/pijma-ssr [1.1.9](https://github.com/qiwi/pijma/compare/@qiwi/pijma-ssr@1.1.8...@qiwi/pijma-ssr@1.1.9) (2022-06-01)
 
 
