@@ -1,3 +1,10 @@
+# @qiwi/pijma-desktop [1.146.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.145.6...@qiwi/pijma-desktop@1.146.0) (2022-06-06)
+
+
+### Features
+
+* add radius prop to button ([#487](https://github.com/qiwi/pijma/issues/487)) ([c2575db](https://github.com/qiwi/pijma/commit/c2575dbe391904f8c5e18799a240873bd9d617c7))
+
 ## @qiwi/pijma-desktop [1.145.6](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.145.5...@qiwi/pijma-desktop@1.145.6) (2022-06-01)
 
 
