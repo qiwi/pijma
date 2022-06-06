@@ -1,3 +1,47 @@
+# @qiwi/pijma-core [1.149.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.148.5...@qiwi/pijma-core@1.149.0) (2022-06-01)
+
+
+### Features
+
+* **image:** object-fit ([#491](https://github.com/qiwi/pijma/issues/491)) ([cec12c5](https://github.com/qiwi/pijma/commit/cec12c50977ee1eb19bf601c43db3adb3031f6d1))
+
+## @qiwi/pijma-core [1.148.5](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.148.4...@qiwi/pijma-core@1.148.5) (2022-06-01)
+
+
+### Bug Fixes
+
+* temporary build ts-patch ([#492](https://github.com/qiwi/pijma/issues/492)) ([f0bfe42](https://github.com/qiwi/pijma/commit/f0bfe42c8239d93fae59c23928d26f2d12140c98))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-infra:** upgraded to 1.5.4
+
+## @qiwi/pijma-core [1.148.4](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.148.3...@qiwi/pijma-core@1.148.4) (2022-05-31)
+
+
+### Bug Fixes
+
+* temporary prebuild ts-patch ([#490](https://github.com/qiwi/pijma/issues/490)) ([7fdc5a6](https://github.com/qiwi/pijma/commit/7fdc5a6a60620dd5f67ec0d10f51103f1a57489c))
+
+## @qiwi/pijma-core [1.148.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.148.2...@qiwi/pijma-core@1.148.3) (2022-05-31)
+
+
+### Bug Fixes
+
+* ts-patch in infra only ([#489](https://github.com/qiwi/pijma/issues/489)) ([90b7004](https://github.com/qiwi/pijma/commit/90b70042b1fda37bb0e9f11746781b33cbe32985))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-infra:** upgraded to 1.5.3
+
 ## @qiwi/pijma-core [1.148.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.148.1...@qiwi/pijma-core@1.148.2) (2022-05-25)
 
 

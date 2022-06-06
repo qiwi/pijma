@@ -1,3 +1,60 @@
+## @qiwi/pijma-mobile [1.145.7](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.145.6...@qiwi/pijma-mobile@1.145.7) (2022-06-01)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.149.0
+
+## @qiwi/pijma-mobile [1.145.6](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.145.5...@qiwi/pijma-mobile@1.145.6) (2022-06-01)
+
+
+### Bug Fixes
+
+* temporary build ts-patch ([#492](https://github.com/qiwi/pijma/issues/492)) ([f0bfe42](https://github.com/qiwi/pijma/commit/f0bfe42c8239d93fae59c23928d26f2d12140c98))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.148.5
+* **@qiwi/pijma-infra:** upgraded to 1.5.4
+
+## @qiwi/pijma-mobile [1.145.5](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.145.4...@qiwi/pijma-mobile@1.145.5) (2022-05-31)
+
+
+### Bug Fixes
+
+* temporary prebuild ts-patch ([#490](https://github.com/qiwi/pijma/issues/490)) ([7fdc5a6](https://github.com/qiwi/pijma/commit/7fdc5a6a60620dd5f67ec0d10f51103f1a57489c))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.148.4
+
+## @qiwi/pijma-mobile [1.145.4](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.145.3...@qiwi/pijma-mobile@1.145.4) (2022-05-31)
+
+
+### Bug Fixes
+
+* ts-patch in infra only ([#489](https://github.com/qiwi/pijma/issues/489)) ([90b7004](https://github.com/qiwi/pijma/commit/90b70042b1fda37bb0e9f11746781b33cbe32985))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.148.3
+* **@qiwi/pijma-infra:** upgraded to 1.5.3
+
 ## @qiwi/pijma-mobile [1.145.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.145.2...@qiwi/pijma-mobile@1.145.3) (2022-05-25)
 
 
