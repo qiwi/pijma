@@ -1,3 +1,10 @@
+## @qiwi/pijma-infra [1.5.5](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.5.4...@qiwi/pijma-infra@1.5.5) (2022-06-06)
+
+
+### Bug Fixes
+
+* up vulnerable deps ([#494](https://github.com/qiwi/pijma/issues/494)) ([f828f91](https://github.com/qiwi/pijma/commit/f828f9101e0d09b7fc30d43ca6f2f201e5f04e6a))
+
 ## @qiwi/pijma-infra [1.5.4](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.5.3...@qiwi/pijma-infra@1.5.4) (2022-06-01)
 
 
