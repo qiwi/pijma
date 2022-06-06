@@ -1,3 +1,13 @@
+## @qiwi/pijma-core [1.149.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.149.0...@qiwi/pijma-core@1.149.1) (2022-06-06)
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-infra:** upgraded to 1.5.5
+
 # @qiwi/pijma-core [1.149.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.148.5...@qiwi/pijma-core@1.149.0) (2022-06-01)
 
 
