@@ -26,6 +26,7 @@ export interface ButtonProps {
   icon?: ReactElement
   loading?: boolean
   stub?: boolean
+  radius?: number
 }
 
 const buttonSize: { [size in ButtonProps['size']]: number } = {
@@ -91,7 +92,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
       height={buttonSize[props.size]}
       bg={theme.button.bg.kind.simple}
       b={theme.button.border.kind.simple}
-      r={buttonRadius[props.size]}
+      r={props.radius ?? buttonRadius[props.size]}
     >
       <Flex
         align="center"
@@ -145,7 +146,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
           height={buttonSize[props.size]}
           bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? theme.button.bg.hover[props.kind] : theme.button.bg.kind[props.kind]}
           b={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? theme.button.border.hover[props.kind] : theme.button.border.kind[props.kind]}
-          r={buttonRadius[props.size]}
+          r={props.radius ?? buttonRadius[props.size]}
           transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
           onClick={renderProps.onClick}
           onFocus={renderProps.onFocus}

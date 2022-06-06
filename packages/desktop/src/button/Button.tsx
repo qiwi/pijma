@@ -26,6 +26,7 @@ export interface ButtonProps {
   icon?: ReactElement
   loading?: boolean
   stub?: boolean
+  radius?: number
 }
 
 const buttonRadius: { [size in ButtonProps['size']]: number } = {
@@ -86,7 +87,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
         minWidth={props.text ? buttonMinWith[props.size] : undefined}
         bg={theme.button.bg.kind.simple}
         b={theme.button.border.kind.simple}
-        r={buttonRadius[props.size]}
+        r={props.radius ?? buttonRadius[props.size]}
       >
         <Flex
           align="center"
@@ -141,7 +142,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
             minWidth={props.text ? buttonMinWith[props.size] : undefined}
             bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? theme.button.bg.hover[props.kind] : props.size === 'accent' ? theme.button.bg.accent[props.kind] : theme.button.bg.kind[props.kind]}
             b={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? theme.button.border.hover[props.kind] : theme.button.border.kind[props.kind]}
-            r={buttonRadius[props.size]}
+            r={props.radius ?? buttonRadius[props.size]}
             s={props.disabled ? 'none' : (renderProps.hover || renderProps.focus) && props.size === 'accent' ? theme.button.shadow.hover[props.kind] : props.size === 'accent' ? theme.button.shadow.kind[props.kind] : 'none'}
             transition="box-shadow 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
             onClick={renderProps.onClick}
