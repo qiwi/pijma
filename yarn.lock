@@ -733,13 +733,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/pijma-infra@npm:1.5.6":
-  version: 1.5.6
-  resolution: "@qiwi/pijma-infra@npm:1.5.6"
-  checksum: ce00129439165d93ac044804a16bd1eed79ce0f1e38c1a26464f98b3995388700e89c5a43dfda2008b8a0e319d81e0b7df6bb3eb034d2ecc11fff632e4da86d0
-  languageName: node
-  linkType: hard
-
 "@qiwi/pijma-infra@npm:1.5.7, @qiwi/pijma-infra@workspace:packages/infra":
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-infra@workspace:packages/infra"
@@ -803,7 +796,7 @@ __metadata:
   resolution: "@qiwi/pijma-ssr@workspace:packages/ssr"
   dependencies:
     "@emotion/server": "npm:^11.4.0"
-    "@qiwi/pijma-infra": "npm:1.5.6"
+    "@qiwi/pijma-infra": "npm:1.5.7"
     concurrently: "npm:6.4.0"
     eslint: "npm:8.4.1"
     eslint-config-qiwi: "npm:1.15.2"
