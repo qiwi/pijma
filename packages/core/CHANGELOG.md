@@ -1,3 +1,25 @@
+## @qiwi/pijma-core [1.149.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.149.1...@qiwi/pijma-core@1.149.2) (2022-06-20)
+
+
+### Bug Fixes
+
+* deps ([70878fc](https://github.com/qiwi/pijma/commit/70878fcb24f68af613d67b4c765d816fe68c083d))
+* deps ([3a728c3](https://github.com/qiwi/pijma/commit/3a728c3247cb3220ca35bc9c3eea36e53447b5b0))
+* deps ([04bfd19](https://github.com/qiwi/pijma/commit/04bfd19bb42501e09c30335b0c7f4b00f2d11728))
+* deps ([2e4bf8a](https://github.com/qiwi/pijma/commit/2e4bf8a306b4303b3ef3f38d79ded7a6b3bf21d4))
+* deps ([5da2c8e](https://github.com/qiwi/pijma/commit/5da2c8e00d34351f6eb9656cc5c28b028b289e6c))
+* deps ([749eada](https://github.com/qiwi/pijma/commit/749eada767e8c0dc83754e0bcf481c2058800f75))
+* react deps ([eaac606](https://github.com/qiwi/pijma/commit/eaac6069c89680ba123b3793314ff98c4b1866e0))
+* react deps ([#498](https://github.com/qiwi/pijma/issues/498)) ([88e8265](https://github.com/qiwi/pijma/commit/88e82658b8f381bf842523423a9ca11f9da2360a))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-infra:** upgraded to 1.5.6
+
 ## @qiwi/pijma-core [1.149.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.149.0...@qiwi/pijma-core@1.149.1) (2022-06-06)
 
 
