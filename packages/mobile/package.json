@@ -35,8 +35,7 @@
     "@qiwi/pijma-fonts": "1.0.0"
   },
   "devDependencies": {
-    "@qiwi/pijma-infra": "1.5.5",
-    "concurrently": "6.4.0"
+    "@qiwi/pijma-infra": "1.5.5"
   },
   "repository": {
     "type": "git",
