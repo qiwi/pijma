@@ -35,7 +35,11 @@
     "@qiwi/pijma-fonts": "1.0.0"
   },
   "devDependencies": {
-    "@qiwi/pijma-infra": "1.5.5"
+    "@qiwi/pijma-infra": "1.5.5",
+    "@types/react": "17.0.30",
+    "@types/react-dom": "17.0.9",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "repository": {
     "type": "git",
