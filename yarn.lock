@@ -700,7 +700,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qiwi/pijma-core@workspace:packages/core":
+"@qiwi/pijma-core@npm:1.149.3, @qiwi/pijma-core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-core@workspace:packages/core"
   dependencies:
@@ -742,9 +742,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-desktop@workspace:packages/desktop"
   dependencies:
-    "@qiwi/pijma-core": "npm:1.149.2"
+    "@qiwi/pijma-core": "npm:1.149.3"
     "@qiwi/pijma-fonts": "npm:1.0.0"
-    "@qiwi/pijma-infra": "npm:1.5.6"
+    "@qiwi/pijma-infra": "npm:1.5.7"
     concurrently: "npm:6.4.0"
     eslint: "npm:8.4.1"
     eslint-config-qiwi: "npm:1.15.2"
