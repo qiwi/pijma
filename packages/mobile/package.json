@@ -23,9 +23,7 @@
     "build:libdef": "tsc -p tsconfig.build.json --emitDeclarationOnly",
     "watch": "styleguidist --config styleguide.config.cjs server",
     "lint": "eslint -c ../infra/.eslintrc.js 'src/**/*.ts{,x}'",
-    "lint:fix": "yarn lint --fix",
-    "guide": "gh-pages -d styleguide/lib -e mobile -m \"update mobile style guide v$npm_package_version\"",
-    "guide_ci": "gh-pages -d styleguide/lib -e mobile -m \"update mobile style guide v$npm_package_version\" -r \"https://$GH_TOKEN@github.com/qiwi/pijma.git\""
+    "lint:fix": "yarn lint --fix"
   },
   "files": [
     "README.md",

@@ -5,18 +5,14 @@
     "packages/*"
   ],
   "scripts": {
-    "clean": "yarn workspaces foreach -tp run clean",
-    "build": "yarn workspaces foreach -tp run build",
-    "watch": "yarn workspaces foreach -tp run watch",
+    "clean": "yarn workspaces foreach --parallel --topological-dev --no-private run clean",
+    "build": "yarn workspaces foreach --parallel --topological-dev --no-private run build",
+    "watch": "yarn workspaces foreach --parallel --topological-dev --no-private run watch",
     "test": "yarn lint",
     "test:report": "yarn test",
     "test:unit": "yarn test",
     "lint": "yarn workspaces foreach -p run lint",
-    "lint:fix": "yarn workspaces foreach -p run lint:fix",
-    "guide": "yarn workspaces foreach run guide",
-    "guide_ci": "yarn workspaces foreach run guide_ci",
-    "upgrade": "npx npm-upgrade-monorepo",
-    "audit:fix": "npm_config_yes=true npx yarn-audit-fix@9"
+    "lint:fix": "yarn workspaces foreach -p run lint:fix"
   },
   "resolutions": {
     "glob-parent": "^5.1.2",
@@ -36,5 +32,5 @@
     "url": "https://github.com/qiwi/pijma/issues"
   },
   "homepage": "https://github.com/qiwi/pijma/#readme",
-  "packageManager": "yarn@3.2.0"
+  "packageManager": "yarn@4.0.0-rc.9"
 }
