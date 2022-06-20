@@ -4,11 +4,10 @@ import React, {
   MouseEventHandler,
   KeyboardEventHandler,
   forwardRef,
-  RefObject,
 } from 'react'
 
 import {MaskInput, Input, Value} from '../primitive'
-import {isMaskDigital, Mask, MaskedInput, Pipe} from '../mask'
+import {isMaskDigital, Mask, Pipe} from '../mask'
 
 export interface ContentInputProps {
   value: string
@@ -70,7 +69,7 @@ export const ContentInput = forwardRef<HTMLInputElement, ContentInputProps>((pro
     onKeyUp: props.onKeyUp,
     onMouseEnter: props.onMouseEnter,
     onMouseLeave: props.onMouseLeave,
-    ref: ref as RefObject<HTMLInputElement & MaskedInput>,
+    ref,
   }
   return (
     props.mask ? (

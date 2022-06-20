@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FocusEvent, InputHTMLAttributes, PureComponent} from 'react'
+import React, {ChangeEvent, FocusEvent, ForwardedRef, InputHTMLAttributes, PureComponent} from 'react'
 import {
   createTextMaskInputElement as tmcCreateTextMaskInputElement,
   conformToMask as tmcConformToMask,
@@ -75,9 +75,10 @@ export interface MaskedInputProps extends InputHTMLAttributes<HTMLInputElement> 
   placeholderChar?: string
   keepCharPositions?: boolean
   showMask?: boolean
+  inputRef?: ForwardedRef<HTMLInputElement>
 }
 
-export class MaskedInput extends PureComponent<MaskedInputProps, {}> {
+class MaskedInputComponent extends PureComponent<MaskedInputProps, {}> {
 
   private inputElement!: HTMLInputElement
 
@@ -92,6 +93,16 @@ export class MaskedInput extends PureComponent<MaskedInputProps, {}> {
 
   setRef(inputElement: HTMLInputElement) {
     this.inputElement = inputElement
+
+    const {inputRef} = this.props
+    if (!inputRef) {
+      return
+    } else if (typeof inputRef === 'function') {
+      inputRef(inputElement)
+    } else {
+      inputRef.current = inputElement
+    }
+
   }
 
   initTextMask() {
@@ -151,3 +162,14 @@ export class MaskedInput extends PureComponent<MaskedInputProps, {}> {
   }
 
 }
+
+export const MaskedInput = React.forwardRef<HTMLInputElement, MaskedInputProps>((props, ref) => {
+    const inputProps = {
+      ...props,
+      inputRef: ref,
+    }
+
+    return <MaskedInputComponent {...inputProps} />
+  },
+)
+

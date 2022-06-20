@@ -1,4 +1,4 @@
-import {ReactNode, KeyboardEvent} from 'react'
+import {ReactNode, KeyboardEvent, Ref} from 'react'
 
 import {Mask, Pipe, BasicInputProps} from '@qiwi/pijma-core'
 
@@ -26,4 +26,5 @@ export interface TextFieldProps {
   onBlur?: () => void
   onKeyDown?: (event: KeyboardEvent) => boolean
   onKeyUp?: (event: KeyboardEvent) => boolean
+  inputRef?: Ref<HTMLInputElement>
 }

@@ -3,11 +3,10 @@ import React, {
   FocusEventHandler,
   KeyboardEventHandler,
   forwardRef,
-  RefObject,
 } from 'react'
 
 import {MaskInput, Input, Value} from '../primitive'
-import {MaskedInput, isMaskDigital, Mask, Pipe} from '../mask'
+import {isMaskDigital, Mask, Pipe} from '../mask'
 import {useTheme} from '../styled'
 
 export interface BasicInputProps {
@@ -71,7 +70,7 @@ export const BasicInput = forwardRef<HTMLInputElement, BasicInputProps>((props, 
     onBlur: props.onBlur,
     onKeyDown: props.onKeyDown,
     onKeyUp: props.onKeyUp,
-    ref: ref as RefObject<HTMLInputElement & MaskedInput>,
+    ref,
   }
   return (
     props.mask ? (
