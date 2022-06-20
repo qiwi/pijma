@@ -1,3 +1,31 @@
+# @qiwi/pijma-mobile [1.147.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.146.1...@qiwi/pijma-mobile@1.147.0) (2022-06-20)
+
+
+### Bug Fixes
+
+* deps ([a2b4853](https://github.com/qiwi/pijma/commit/a2b48534c7ae9266420ffc255c65174e8ee32a67))
+* deps ([70878fc](https://github.com/qiwi/pijma/commit/70878fcb24f68af613d67b4c765d816fe68c083d))
+* deps ([3a728c3](https://github.com/qiwi/pijma/commit/3a728c3247cb3220ca35bc9c3eea36e53447b5b0))
+* deps ([04bfd19](https://github.com/qiwi/pijma/commit/04bfd19bb42501e09c30335b0c7f4b00f2d11728))
+* deps ([2e4bf8a](https://github.com/qiwi/pijma/commit/2e4bf8a306b4303b3ef3f38d79ded7a6b3bf21d4))
+* deps ([749eada](https://github.com/qiwi/pijma/commit/749eada767e8c0dc83754e0bcf481c2058800f75))
+* react deps ([eaac606](https://github.com/qiwi/pijma/commit/eaac6069c89680ba123b3793314ff98c4b1866e0))
+* react deps ([#498](https://github.com/qiwi/pijma/issues/498)) ([88e8265](https://github.com/qiwi/pijma/commit/88e82658b8f381bf842523423a9ca11f9da2360a))
+
+
+### Features
+
+* forward ref in TextField ([#495](https://github.com/qiwi/pijma/issues/495)) ([4a51cc0](https://github.com/qiwi/pijma/commit/4a51cc06be71ecb6ef9937f2f696869ca825fa3b))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-core:** upgraded to 1.149.3
+* **@qiwi/pijma-infra:** upgraded to 1.5.7
+
 ## @qiwi/pijma-mobile [1.146.1](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.146.0...@qiwi/pijma-mobile@1.146.1) (2022-06-06)
 
 

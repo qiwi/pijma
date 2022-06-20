@@ -670,7 +670,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/pijma-core@npm:1.149.2, @qiwi/pijma-core@workspace:packages/core":
+"@qiwi/pijma-core@npm:1.149.3, @qiwi/pijma-core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-core@workspace:packages/core"
   dependencies:
@@ -678,7 +678,7 @@ __metadata:
     "@emotion/css": "npm:^11.5.0"
     "@emotion/react": "npm:^11.5.0"
     "@emotion/styled": "npm:^11.3.0"
-    "@qiwi/pijma-infra": "npm:1.5.6"
+    "@qiwi/pijma-infra": "npm:1.5.7"
     "@types/dom-helpers": "npm:^3.4.1"
     "@types/markdown-to-jsx": "npm:^6.9.0"
     "@types/react": "npm:>=16.8.23 <17.1.0"
@@ -712,9 +712,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-desktop@workspace:packages/desktop"
   dependencies:
-    "@qiwi/pijma-core": "npm:1.149.2"
+    "@qiwi/pijma-core": "npm:1.149.3"
     "@qiwi/pijma-fonts": "npm:1.0.0"
-    "@qiwi/pijma-infra": "npm:1.5.6"
+    "@qiwi/pijma-infra": "npm:1.5.7"
     concurrently: "npm:6.4.0"
     eslint: "npm:8.4.1"
     eslint-config-qiwi: "npm:1.15.2"
@@ -733,7 +733,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/pijma-infra@npm:1.5.6, @qiwi/pijma-infra@workspace:packages/infra":
+"@qiwi/pijma-infra@npm:1.5.7, @qiwi/pijma-infra@workspace:packages/infra":
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-infra@workspace:packages/infra"
   dependencies:
@@ -776,9 +776,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-mobile@workspace:packages/mobile"
   dependencies:
-    "@qiwi/pijma-core": "npm:1.149.2"
+    "@qiwi/pijma-core": "npm:1.149.3"
     "@qiwi/pijma-fonts": "npm:1.0.0"
-    "@qiwi/pijma-infra": "npm:1.5.6"
+    "@qiwi/pijma-infra": "npm:1.5.7"
     concurrently: "npm:6.4.0"
     eslint: "npm:8.4.1"
     eslint-config-qiwi: "npm:1.15.2"
@@ -796,7 +796,7 @@ __metadata:
   resolution: "@qiwi/pijma-ssr@workspace:packages/ssr"
   dependencies:
     "@emotion/server": "npm:^11.4.0"
-    "@qiwi/pijma-infra": "npm:1.5.6"
+    "@qiwi/pijma-infra": "npm:1.5.7"
     concurrently: "npm:6.4.0"
     eslint: "npm:8.4.1"
     eslint-config-qiwi: "npm:1.15.2"
@@ -6983,8 +6983,8 @@ __metadata:
   linkType: hard
 
 "make-fetch-happen@npm:^10.0.3":
-  version: 10.1.7
-  resolution: "make-fetch-happen@npm:10.1.7"
+  version: 10.1.8
+  resolution: "make-fetch-happen@npm:10.1.8"
   dependencies:
     agentkeepalive: "npm:^4.2.1"
     cacache: "npm:^16.1.0"
@@ -7002,7 +7002,7 @@ __metadata:
     promise-retry: "npm:^2.0.1"
     socks-proxy-agent: "npm:^7.0.0"
     ssri: "npm:^9.0.0"
-  checksum: 4d99b9060d7082a39c5e5c65ecd19d3e1b5e5bcbaecc3e2cc8b4bebac3eb69ac826e88768574b495d78843490e0a505ba8683720e0e511d9426c4bb08dad15e9
+  checksum: 273acfa88639a705992f3e0f75fb201214010f79e78d02cb13585d466e18f6c0ac383abd285b8619a6637da6c83da75c2a2a36ad3a27cdd781d66beba4ef7097
   languageName: node
   linkType: hard
 

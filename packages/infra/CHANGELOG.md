@@ -1,3 +1,10 @@
+## @qiwi/pijma-infra [1.5.7](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.5.6...@qiwi/pijma-infra@1.5.7) (2022-06-20)
+
+
+### Bug Fixes
+
+* deps ([a2b4853](https://github.com/qiwi/pijma/commit/a2b48534c7ae9266420ffc255c65174e8ee32a67))
+
 ## @qiwi/pijma-infra [1.5.6](https://github.com/qiwi/pijma/compare/@qiwi/pijma-infra@1.5.5...@qiwi/pijma-infra@1.5.6) (2022-06-20)
 
 

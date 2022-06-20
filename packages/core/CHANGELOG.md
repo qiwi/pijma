@@ -1,3 +1,19 @@
+## @qiwi/pijma-core [1.149.3](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.149.2...@qiwi/pijma-core@1.149.3) (2022-06-20)
+
+
+### Bug Fixes
+
+* deps ([a2b4853](https://github.com/qiwi/pijma/commit/a2b48534c7ae9266420ffc255c65174e8ee32a67))
+* simple transition ([0b4fff7](https://github.com/qiwi/pijma/commit/0b4fff705291f273372223d18a9e43df38dbfaca))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-infra:** upgraded to 1.5.7
+
 ## @qiwi/pijma-core [1.149.2](https://github.com/qiwi/pijma/compare/@qiwi/pijma-core@1.149.1...@qiwi/pijma-core@1.149.2) (2022-06-20)
 
 

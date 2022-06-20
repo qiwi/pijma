@@ -1,3 +1,23 @@
+## @qiwi/pijma-ssr [1.1.12](https://github.com/qiwi/pijma/compare/@qiwi/pijma-ssr@1.1.11...@qiwi/pijma-ssr@1.1.12) (2022-06-20)
+
+
+### Bug Fixes
+
+* deps ([a2b4853](https://github.com/qiwi/pijma/commit/a2b48534c7ae9266420ffc255c65174e8ee32a67))
+* deps ([70878fc](https://github.com/qiwi/pijma/commit/70878fcb24f68af613d67b4c765d816fe68c083d))
+* deps ([3a728c3](https://github.com/qiwi/pijma/commit/3a728c3247cb3220ca35bc9c3eea36e53447b5b0))
+* deps ([04bfd19](https://github.com/qiwi/pijma/commit/04bfd19bb42501e09c30335b0c7f4b00f2d11728))
+* deps ([2e4bf8a](https://github.com/qiwi/pijma/commit/2e4bf8a306b4303b3ef3f38d79ded7a6b3bf21d4))
+* deps ([749eada](https://github.com/qiwi/pijma/commit/749eada767e8c0dc83754e0bcf481c2058800f75))
+
+
+
+
+
+### Dependencies
+
+* **@qiwi/pijma-infra:** upgraded to 1.5.7
+
 ## @qiwi/pijma-ssr [1.1.11](https://github.com/qiwi/pijma/compare/@qiwi/pijma-ssr@1.1.10...@qiwi/pijma-ssr@1.1.11) (2022-06-06)
 
 
