@@ -56,6 +56,7 @@ interface SimpleModalProps {
   zIndex?: number
   onShow?: () => void
   onHide?: () => void
+  displayContent?: 'none' | 'inline' | 'block' | 'contents' | 'flex' | 'grid' | 'inline-block' | 'inline-flex' | 'table'
 }
 
 const SimpleModal: FunctionComponent<SimpleModalProps> = ({
@@ -68,6 +69,7 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = ({
   backdropClose,
   zIndex = 10050,
   closable,
+  displayContent,
 }) => (
   stub ? (
     <Box display="none">
@@ -100,7 +102,7 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = ({
           {...dialogProps}
         >
           <Pos type="relative" width={1} height={1}>
-            <Card bg="#fff" p={6} width={1} height={1} overflow="auto">
+            <Card bg="#fff" p={6} width={1} height={1} overflow="auto" display={displayContent}>
               <Fragment>
                 {closable && onHide ? (
                   <Pos
