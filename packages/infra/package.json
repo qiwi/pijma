@@ -7,7 +7,6 @@
     "access": "public"
   },
   "bin": {
-    "concurrently": "../../node_modules/.bin/concurrently",
     "eslint": "../../node_modules/.bin/eslint",
     "gh-pages": "../../node_modules/.bin/gh-pages",
     "rimraf": "../../node_modules/.bin/rimraf",
