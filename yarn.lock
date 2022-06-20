@@ -889,6 +889,7 @@ __metadata:
     "@types/react-transition-group": "npm:^4.2.2"
     concurrently: "npm:6.4.0"
     dom-helpers: "npm:^3.4.0"
+    eslint: "npm:8.4.1"
     markdown-to-jsx: "npm:^6.10.3"
     react: "npm:>=16.8.6 <17.1.0"
     react-dom: "npm:>=16.8.6 <17.1.0"
@@ -911,7 +912,9 @@ __metadata:
     "@qiwi/pijma-fonts": "npm:1.0.0"
     "@qiwi/pijma-infra": "npm:1.5.5"
     concurrently: "npm:6.4.0"
+    eslint: "npm:8.4.1"
     react-styleguidist: "npm:11.2.0"
+    typescript: "npm:4.4.4"
   languageName: unknown
   linkType: soft
 
@@ -968,6 +971,7 @@ __metadata:
     "@qiwi/pijma-fonts": "npm:1.0.0"
     "@qiwi/pijma-infra": "npm:1.5.5"
     concurrently: "npm:6.4.0"
+    eslint: "npm:8.4.1"
     react-styleguidist: "npm:11.2.0"
     typescript: "npm:4.4.4"
   languageName: unknown
@@ -980,6 +984,7 @@ __metadata:
     "@emotion/server": "npm:^11.4.0"
     "@qiwi/pijma-infra": "npm:1.5.5"
     concurrently: "npm:6.4.0"
+    eslint: "npm:8.4.1"
     typescript: "npm:4.4.4"
   languageName: unknown
   linkType: soft

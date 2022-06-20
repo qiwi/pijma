@@ -37,6 +37,7 @@
   "devDependencies": {
     "@qiwi/pijma-infra": "1.5.5",
     "concurrently": "6.4.0",
+    "eslint": "8.4.1",
     "react-styleguidist": "11.2.0",
     "typescript": "4.4.4"
   },
