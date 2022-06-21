@@ -141,7 +141,7 @@ jobs:
 #          coverageLocations: |
 #            ${{github.workspace}}/coverage/*.lcov:lcov
 
-      - name: Multi-semantic-release
+      - name: Release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_USER: 'qiwibot'
@@ -150,4 +150,4 @@ jobs:
           GIT_COMMITTER_EMAIL: 'opensource@qiwi.com'
           GIT_AUTHOR_NAME: '@qiwibot'
           GIT_COMMITTER_NAME: '@qiwibot'
-        run: npx -p @qiwi/semrel-toolkit multi-semrel
+        run: npm_config_yes=true npx zx-bulk-release
