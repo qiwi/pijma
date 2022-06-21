@@ -1,8 +1,7 @@
-import React, {FC} from 'react'
+import { FlexItem, FlexLnk, Icon, LinkControl } from '@qiwi/pijma-core'
+import React, { FC } from 'react'
 
-import {LinkControl, FlexItem, Icon, FlexLnk} from '@qiwi/pijma-core'
-
-import {Text} from '../typography'
+import { Text } from '../typography'
 
 export interface FileLinkProps {
   onClick?: (
@@ -48,18 +47,23 @@ export const FileLink: FC<FileLinkProps> = (props) => (
         onMouseUp={renderProps.onMouseUp}
         onMouseDown={renderProps.onMouseDown}
       >
-        <FlexItem
-          display="inline-block"
-          width={6}
-          height={6}
-          mr={2}
-          shrink={0}
-        >
-          <Icon name="file" color={renderProps.hover || renderProps.focus || renderProps.active ? '#FF8C00' : '#000'}/>
+        <FlexItem display="inline-block" width={6} height={6} mr={2} shrink={0}>
+          <Icon
+            name="file"
+            color={
+              renderProps.hover || renderProps.focus || renderProps.active
+                ? '#FF8C00'
+                : '#000'
+            }
+          />
         </FlexItem>
         <FlexItem>
           <Text
-            color={renderProps.hover || renderProps.focus || renderProps.active ? 'warning' : 'default'}
+            color={
+              renderProps.hover || renderProps.focus || renderProps.active
+                ? 'warning'
+                : 'default'
+            }
             decoration="none"
             size="m"
             bold={false}

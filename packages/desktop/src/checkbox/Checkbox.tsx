@@ -1,16 +1,15 @@
-import React, {FunctionComponent} from 'react'
-
 import {
+  Box,
   Check,
+  OptionField,
   OptionFieldItem,
   SwitchControl,
-  OptionField,
-  Box,
 } from '@qiwi/pijma-core'
+import React, { FunctionComponent } from 'react'
 
 import CheckboxProps from './CheckboxProps'
 
-const Checkbox: FunctionComponent<CheckboxProps> = props => (
+const Checkbox: FunctionComponent<CheckboxProps> = (props) => (
   <SwitchControl
     disabled={props.disabled}
     checked={props.checked}
@@ -21,12 +20,12 @@ const Checkbox: FunctionComponent<CheckboxProps> = props => (
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
         onKeyDown={renderProps.onKeyDown}
-        children={(
+        children={
           <OptionFieldItem
             disabled={props.disabled}
             label={props.label}
             description={props.description}
-            icon={(
+            icon={
               <Box width={6}>
                 <Check
                   disabled={props.disabled}
@@ -34,12 +33,12 @@ const Checkbox: FunctionComponent<CheckboxProps> = props => (
                   focused={renderProps.focused}
                 />
               </Box>
-            )}
+            }
             onClick={renderProps.onClick}
             onMouseEnter={renderProps.onMouseEnter}
             onMouseLeave={renderProps.onMouseLeave}
           />
-        )}
+        }
       />
     )}
   />

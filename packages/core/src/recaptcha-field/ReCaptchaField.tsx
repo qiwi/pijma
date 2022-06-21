@@ -1,7 +1,7 @@
-import React, {FC, ReactNode} from 'react'
+import React, { FC, ReactNode } from 'react'
 
-import {ReCaptcha, ReCaptchaProps} from '../recaptcha'
-import {SimpleField} from '../field'
+import { SimpleField } from '../field'
+import { ReCaptcha, ReCaptchaProps } from '../recaptcha'
 
 export interface ReCaptchaFieldProps extends ReCaptchaProps {
   error?: ReactNode
@@ -11,7 +11,7 @@ export interface ReCaptchaFieldProps extends ReCaptchaProps {
 
 export const ReCaptchaField: FC<ReCaptchaFieldProps> = (props) => (
   <SimpleField
-    input={(
+    input={
       <ReCaptcha
         siteKey={props.siteKey}
         tabIndex={props.tabIndex}
@@ -20,7 +20,7 @@ export const ReCaptchaField: FC<ReCaptchaFieldProps> = (props) => (
         onErrored={props.onErrored}
         asyncScriptOnLoad={props.asyncScriptOnLoad}
       />
-    )}
+    }
     error={props.error}
     action={props.action}
     help={props.help}

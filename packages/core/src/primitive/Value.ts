@@ -1,6 +1,9 @@
 export type Value = number | string | undefined
 
-export const pxValue = (value: number | undefined, scale: number = 1): string | undefined => {
+export const pxValue = (
+  value: number | undefined,
+  scale = 1,
+): string | undefined => {
   if (value === undefined) {
     return undefined
   }
@@ -14,7 +17,11 @@ export const pcValue = (value: number | undefined): string | undefined => {
   return `${value}%`
 }
 
-export const cssValue = (value: Value | undefined, scale: number = 1, relative: boolean = true): string | undefined => {
+export const cssValue = (
+  value: Value | undefined,
+  scale = 1,
+  relative = true,
+): string | undefined => {
   if (value === undefined) {
     return undefined
   }
@@ -38,8 +45,5 @@ export const customScroll = (() => {
     const result = element.offsetWidth !== element.clientWidth
     document.body.removeChild(element)
     return result
-  }
-  catch (e) {
-    return undefined
-  }
+  } catch (e) {}
 })()

@@ -1,6 +1,7 @@
-import React, {FC, ReactNode} from 'react'
-import {Flex, FlexItem, Typo, Card} from '@qiwi/pijma-core'
-import {Paragraph, Heading} from '../typography'
+import { Card, Flex, FlexItem, Typo } from '@qiwi/pijma-core'
+import React, { FC, ReactNode } from 'react'
+
+import { Heading, Paragraph } from '../typography'
 
 export interface OopsProps {
   logo?: ReactNode
@@ -10,14 +11,16 @@ export interface OopsProps {
   footer?: ReactNode
 }
 
-export const Oops: FC<OopsProps> = ({logo, error, title, content, footer}) => (
+export const Oops: FC<OopsProps> = ({
+  logo,
+  error,
+  title,
+  content,
+  footer,
+}) => (
   <Card px={6} minHeight="100%" bg="#fff">
     <Flex align="center" direction="column">
-      {logo ? (
-        <FlexItem my={6} shrink={0} children={logo}/>
-      ) : (
-        null
-      )}
+      {logo ? <FlexItem my={6} shrink={0} children={logo} /> : null}
       <FlexItem my={6}>
         {typeof error === 'string' ? (
           <Typo
@@ -37,26 +40,27 @@ export const Oops: FC<OopsProps> = ({logo, error, title, content, footer}) => (
         )}
       </FlexItem>
       <FlexItem my={2}>
-        <Heading align="center" size="1" children={title}/>
+        <Heading align="center" size="1" children={title} />
       </FlexItem>
       <FlexItem my={4}>
         {typeof content === 'string' ? (
-          <Paragraph align="center" children={content}/>
+          <Paragraph align="center" children={content} />
         ) : (
           content
         )}
       </FlexItem>
       {footer ? (
-        <FlexItem my={6} children={
-          typeof footer === 'string' ? (
-            <Paragraph align="center" color="support" children={footer}/>
-          ) : (
-            footer
-          )}
+        <FlexItem
+          my={6}
+          children={
+            typeof footer === 'string' ? (
+              <Paragraph align="center" color="support" children={footer} />
+            ) : (
+              footer
+            )
+          }
         />
-      ) : (
-        null
-      )}
+      ) : null}
     </Flex>
   </Card>
 )

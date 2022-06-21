@@ -7,28 +7,28 @@
     target="_blank"
     title="Перейти на главную"
     description="Примечание"
-    icon={<Icon name="passport" size={1}/>}
+    icon={<Icon name="passport" size={1} />}
   />
   <LogoBlockLink
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
     description="Примечание"
-    icon={<Icon name="passport" size={1}/>}
+    icon={<Icon name="passport" size={1} />}
   />
   <LogoBlockLink
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
     description="Примечание"
-    icon={<Icon name="passport" size={1}/>}
+    icon={<Icon name="passport" size={1} />}
   />
   <LogoBlockLink
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
     description="Примечание"
-    icon={<Icon name="passport" size={1}/>}
+    icon={<Icon name="passport" size={1} />}
   />
 </Grid>
 ```
@@ -42,29 +42,21 @@
     target="_blank"
     title="Перейти на главную"
     description="Примечание"
-    icon={<Icon name="passport" size={1}/>}
+    icon={<Icon name="passport" size={1} />}
     actions={[
-      <Button
-        kind="simple"
-        size="minor"
-        icon={<Icon name="dots-h"/>}
-      />
+      <Button kind="simple" size="minor" icon={<Icon name="dots-h" />} />,
     ]}
   />
   <LogoBlockLink
-      href="//qiwi.com"
-      target="_blank"
-      title="Перейти на главную"
-      description="Примечание"
-      icon={<Icon name="passport" size={1}/>}
-      actions={[
-        <Button
-          kind="simple"
-          size="minor"
-          icon={<Icon name="dots-h"/>}
-        />
-      ]}
-    />
+    href="//qiwi.com"
+    target="_blank"
+    title="Перейти на главную"
+    description="Примечание"
+    icon={<Icon name="passport" size={1} />}
+    actions={[
+      <Button kind="simple" size="minor" icon={<Icon name="dots-h" />} />,
+    ]}
+  />
 </Grid>
 ```
 
@@ -97,25 +89,25 @@
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
-    icon={<Icon name="passport" size={1}/>}
+    icon={<Icon name="passport" size={1} />}
   />
   <LogoBlockLink
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
-    icon={<Icon name="passport" size={1}/>}
+    icon={<Icon name="passport" size={1} />}
   />
   <LogoBlockLink
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
-    icon={<Icon name="passport" size={1}/>}
+    icon={<Icon name="passport" size={1} />}
   />
   <LogoBlockLink
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
-    icon={<Icon name="passport" size={1}/>}
+    icon={<Icon name="passport" size={1} />}
   />
 </Grid>
 ```
@@ -128,26 +120,18 @@
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
-    icon={<Icon name="passport" size={1}/>}
+    icon={<Icon name="passport" size={1} />}
     actions={[
-      <Button
-        kind="simple"
-        size="minor"
-        icon={<Icon name="dots-h"/>}
-      />
+      <Button kind="simple" size="minor" icon={<Icon name="dots-h" />} />,
     ]}
   />
   <LogoBlockLink
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
-    icon={<Icon name="passport" size={1}/>}
+    icon={<Icon name="passport" size={1} />}
     actions={[
-      <Button
-        kind="simple"
-        size="minor"
-        icon={<Icon name="dots-h"/>}
-      />
+      <Button kind="simple" size="minor" icon={<Icon name="dots-h" />} />,
     ]}
   />
 </Grid>
@@ -157,18 +141,8 @@
 
 ```jsx
 <Grid columns={2} layout={1}>
-  <LogoBlockLink
-    icon="required"
-    title="required"
-    href="required"
-    stub
-  />
-  <LogoBlockLink
-    icon="required"
-    title="required"
-    href="required"
-    stub
-  />
+  <LogoBlockLink icon="required" title="required" href="required" stub />
+  <LogoBlockLink icon="required" title="required" href="required" stub />
 </Grid>
 ```
 
@@ -184,7 +158,7 @@
     target="_blank"
     title="Перейти на главную"
     description="Примечание"
-    icon={<Icon name="passport" size={1}/>}
+    icon={<Icon name="passport" size={1} />}
   />
   <LogoBlockLink
     horizontal
@@ -192,7 +166,7 @@
     target="_blank"
     title="Перейти на главную"
     description="Примечание"
-    icon={<Icon name="passport" size={1}/>}
+    icon={<Icon name="passport" size={1} />}
   />
 </Grid>
 ```
@@ -207,29 +181,21 @@
     target="_blank"
     title="Перейти на главную"
     description="Примечание"
-    icon={<Icon name="passport" size={1}/>}
+    icon={<Icon name="passport" size={1} />}
     actions={[
-      <Button
-        kind="simple"
-        size="minor"
-        icon={<Icon name="dots-h"/>}
-      />
+      <Button kind="simple" size="minor" icon={<Icon name="dots-h" />} />,
     ]}
   />
   <LogoBlockLink
-      horizontal
-      href="//qiwi.com"
-      target="_blank"
-      title="Перейти на главную"
-      description="Примечание"
-      icon={<Icon name="passport" size={1}/>}
-      actions={[
-        <Button
-          kind="simple"
-          size="minor"
-          icon={<Icon name="dots-h"/>}
-        />
-      ]}
+    horizontal
+    href="//qiwi.com"
+    target="_blank"
+    title="Перейти на главную"
+    description="Примечание"
+    icon={<Icon name="passport" size={1} />}
+    actions={[
+      <Button kind="simple" size="minor" icon={<Icon name="dots-h" />} />,
+    ]}
   />
 </Grid>
 ```
@@ -266,14 +232,14 @@
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
-    icon={<Icon name="passport" size={1}/>}
+    icon={<Icon name="passport" size={1} />}
   />
   <LogoBlockLink
     horizontal
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
-    icon={<Icon name="passport" size={1}/>}
+    icon={<Icon name="passport" size={1} />}
   />
 </Grid>
 ```
@@ -287,13 +253,9 @@
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
-    icon={<Icon name="passport" size={1}/>}
+    icon={<Icon name="passport" size={1} />}
     actions={[
-      <Button
-        kind="simple"
-        size="minor"
-        icon={<Icon name="dots-h"/>}
-      />
+      <Button kind="simple" size="minor" icon={<Icon name="dots-h" />} />,
     ]}
   />
   <LogoBlockLink
@@ -301,13 +263,9 @@
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
-    icon={<Icon name="passport" size={1}/>}
+    icon={<Icon name="passport" size={1} />}
     actions={[
-      <Button
-        kind="simple"
-        size="minor"
-        icon={<Icon name="dots-h"/>}
-      />
+      <Button kind="simple" size="minor" icon={<Icon name="dots-h" />} />,
     ]}
   />
 </Grid>

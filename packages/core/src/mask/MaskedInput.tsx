@@ -1,7 +1,12 @@
-import React, {ChangeEvent, FocusEvent, InputHTMLAttributes, PureComponent} from 'react'
+import React, {
+  ChangeEvent,
+  FocusEvent,
+  InputHTMLAttributes,
+  PureComponent,
+} from 'react'
 import {
-  createTextMaskInputElement as tmcCreateTextMaskInputElement,
   conformToMask as tmcConformToMask,
+  createTextMaskInputElement as tmcCreateTextMaskInputElement,
 } from 'text-mask-core'
 
 export interface TextMaskInputElement {
@@ -18,7 +23,9 @@ export interface CreateTextMaskConfig {
   showMask?: boolean
 }
 
-export function createTextMaskInputElement(config: CreateTextMaskConfig): TextMaskInputElement {
+export function createTextMaskInputElement(
+  config: CreateTextMaskConfig,
+): TextMaskInputElement {
   return tmcCreateTextMaskInputElement(config)
 }
 
@@ -38,7 +45,11 @@ export interface ConformToMaskConfig {
   previousConformedValue?: string
 }
 
-export function conformToMask(text: string, mask: Mask, config?: ConformToMaskConfig): ConformToMaskResult {
+export function conformToMask(
+  text: string,
+  mask: Mask,
+  config?: ConformToMaskConfig,
+): ConformToMaskResult {
   return tmcConformToMask(text, mask, config)
 }
 
@@ -60,14 +71,18 @@ export interface PipeConfig {
   previousConformedValue: string
 }
 
-export type PipeResult = false | string | {
-  value: string
-  indexesOfPipedChars: number[]
-}
+export type PipeResult =
+  | false
+  | string
+  | {
+      value: string
+      indexesOfPipedChars: number[]
+    }
 
 export type Pipe = (conformedValue: string, config: PipeConfig) => PipeResult
 
-export interface MaskedInputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface MaskedInputProps
+  extends InputHTMLAttributes<HTMLInputElement> {
   mask: Mask
   value?: string
   pipe?: Pipe
@@ -78,7 +93,6 @@ export interface MaskedInputProps extends InputHTMLAttributes<HTMLInputElement> 
 }
 
 export class MaskedInput extends PureComponent<MaskedInputProps, {}> {
-
   private inputElement!: HTMLInputElement
 
   private textMaskInputElement!: TextMaskInputElement
@@ -95,7 +109,15 @@ export class MaskedInput extends PureComponent<MaskedInputProps, {}> {
   }
 
   initTextMask() {
-    const {mask, guide, value, pipe, placeholderChar, keepCharPositions, showMask} = this.props
+    const {
+      mask,
+      guide,
+      value,
+      pipe,
+      placeholderChar,
+      keepCharPositions,
+      showMask,
+    } = this.props
     this.textMaskInputElement = createTextMaskInputElement({
       inputElement: this.inputElement,
       mask,
@@ -113,10 +135,21 @@ export class MaskedInput extends PureComponent<MaskedInputProps, {}> {
   }
 
   componentDidUpdate(prevProps: MaskedInputProps) {
-    const {value, pipe, mask, guide, placeholderChar, showMask} = this.props
-    const isPipeChanged = typeof pipe === 'function' && typeof prevProps.pipe === 'function' ? pipe.toString() !== prevProps.pipe.toString() : isNil(pipe) && !isNil(prevProps.pipe) || !isNil(pipe) && isNil(prevProps.pipe)
-    const isMaskChanged = typeof mask === 'function' && typeof prevProps.mask === 'function' ? mask.toString() !== prevProps.mask.toString() : isNil(mask) && !isNil(prevProps.mask) || !isNil(mask) && isNil(prevProps.mask)
-    const isSettingChanged = guide !== prevProps.guide || placeholderChar !== prevProps.placeholderChar || showMask !== prevProps.showMask
+    const { value, pipe, mask, guide, placeholderChar, showMask } = this.props
+    const isPipeChanged =
+      typeof pipe === 'function' && typeof prevProps.pipe === 'function'
+        ? pipe.toString() !== prevProps.pipe.toString()
+        : (isNil(pipe) && !isNil(prevProps.pipe)) ||
+          (!isNil(pipe) && isNil(prevProps.pipe))
+    const isMaskChanged =
+      typeof mask === 'function' && typeof prevProps.mask === 'function'
+        ? mask.toString() !== prevProps.mask.toString()
+        : (isNil(mask) && !isNil(prevProps.mask)) ||
+          (!isNil(mask) && isNil(prevProps.mask))
+    const isSettingChanged =
+      guide !== prevProps.guide ||
+      placeholderChar !== prevProps.placeholderChar ||
+      showMask !== prevProps.showMask
     const isValueChanged = value !== this.inputElement.value
     if (isValueChanged || isSettingChanged || isPipeChanged || isMaskChanged) {
       this.initTextMask()
@@ -124,8 +157,20 @@ export class MaskedInput extends PureComponent<MaskedInputProps, {}> {
   }
 
   render() {
-    const exclude = ['mask', 'guide', 'pipe', 'placeholderChar', 'keepCharPositions', 'showMask', 'value', 'onBlur', 'onChange']
-    const props = Object.fromEntries(Object.entries(this.props).filter(([key]) => !exclude.includes(key)))
+    const exclude = [
+      'mask',
+      'guide',
+      'pipe',
+      'placeholderChar',
+      'keepCharPositions',
+      'showMask',
+      'value',
+      'onBlur',
+      'onChange',
+    ]
+    const props = Object.fromEntries(
+      Object.entries(this.props).filter(([key]) => !exclude.includes(key)),
+    )
     return (
       <input
         ref={this.setRef}
@@ -149,5 +194,4 @@ export class MaskedInput extends PureComponent<MaskedInputProps, {}> {
       this.props.onBlur(event)
     }
   }
-
 }

@@ -1,11 +1,13 @@
 import React from 'react'
 
-import OptionModel from './OptionModel'
 import CheckboxControlProps from './CheckboxControlProps'
 import CheckboxControlState from './CheckboxControlState'
+import OptionModel from './OptionModel'
 
-export default class CheckboxControl<O extends OptionModel<V>, V> extends React.Component<CheckboxControlProps<O, V>, CheckboxControlState> {
-
+export default class CheckboxControl<
+  O extends OptionModel<V>,
+  V,
+> extends React.Component<CheckboxControlProps<O, V>, CheckboxControlState> {
   public state: CheckboxControlState = {
     focused: -1,
   }
@@ -18,7 +20,7 @@ export default class CheckboxControl<O extends OptionModel<V>, V> extends React.
     if (this.props.onChange) {
       this.props.onChange(
         this.props.values.includes(value)
-          ? this.props.values.filter(v => !this.equals(v, value))
+          ? this.props.values.filter((v) => !this.equals(v, value))
           : this.props.values.concat(value),
       )
     }
@@ -27,7 +29,7 @@ export default class CheckboxControl<O extends OptionModel<V>, V> extends React.
   private onFocus: React.FocusEventHandler<HTMLElement> = () => {
     if (this.state.focused === -1) {
       this.setState({
-        focused: this.props.options.findIndex(option => !option.disabled),
+        focused: this.props.options.findIndex((option) => !option.disabled),
       })
     }
     if (this.props.onFocus) {
@@ -44,7 +46,9 @@ export default class CheckboxControl<O extends OptionModel<V>, V> extends React.
     }
   }
 
-  private onKeyDown: React.KeyboardEventHandler<HTMLElement> = (event: React.KeyboardEvent<HTMLElement>) => {
+  private onKeyDown: React.KeyboardEventHandler<HTMLElement> = (
+    event: React.KeyboardEvent<HTMLElement>,
+  ) => {
     switch (event.key) {
       case 'ArrowDown':
         event.preventDefault()
@@ -64,9 +68,13 @@ export default class CheckboxControl<O extends OptionModel<V>, V> extends React.
       case 'ArrowUp':
         event.preventDefault()
         event.stopPropagation()
-        let prev = this.state.focused === -1 ? this.props.options.length - 1 : this.state.focused
+        let prev =
+          this.state.focused === -1
+            ? this.props.options.length - 1
+            : this.state.focused
         while (true) {
-          prev = (prev + this.props.options.length - 1) % this.props.options.length
+          prev =
+            (prev + this.props.options.length - 1) % this.props.options.length
           if (this.props.options[prev].disabled) {
             continue
           }
@@ -95,32 +103,42 @@ export default class CheckboxControl<O extends OptionModel<V>, V> extends React.
 
   private onOptionClick = (value: V) => {
     this.setState({
-      focused: this.props.options.findIndex(option => this.equals(option.value, value)),
+      focused: this.props.options.findIndex((option) =>
+        this.equals(option.value, value),
+      ),
     })
     this.onChange(value)
   }
 
   private onOptionMouseEnter = (value: V) => {
     this.setState({
-      focused: this.props.options.findIndex(option => this.equals(option.value, value)),
+      focused: this.props.options.findIndex((option) =>
+        this.equals(option.value, value),
+      ),
     })
   }
 
   public render() {
     return this.props.children({
-      tabIndex: this.props.options.filter(option => option.disabled).length === this.props.options.length ? undefined : this.props.tabIndex || 0,
+      tabIndex:
+        this.props.options.filter((option) => option.disabled).length ===
+        this.props.options.length
+          ? undefined
+          : this.props.tabIndex || 0,
       onFocus: this.onFocus,
       onBlur: this.onBlur,
       onKeyDown: this.onKeyDown,
       onMouseLeave: this.onMouseLeave,
       options: this.props.options.map((option, index) => ({
         ...option,
-        checked: this.props.values.findIndex(value => this.equals(value, option.value)) !== -1,
+        checked:
+          this.props.values.findIndex((value) =>
+            this.equals(value, option.value),
+          ) !== -1,
         focused: index === this.state.focused,
         onClick: this.onOptionClick,
         onMouseEnter: this.onOptionMouseEnter,
       })),
     })
   }
-
 }

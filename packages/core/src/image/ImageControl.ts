@@ -1,6 +1,6 @@
-import {Component, ReactNode, FC} from 'react'
+import { Component, FC, ReactNode } from 'react'
 
-import {Value} from '../primitive'
+import { Value } from '../primitive'
 
 export interface ImageControlProps {
   width: Value
@@ -32,8 +32,10 @@ export interface ImageControlState {
   step: Step
 }
 
-export class ImageControl extends Component<ImageControlProps, ImageControlState> {
-
+export class ImageControl extends Component<
+  ImageControlProps,
+  ImageControlState
+> {
   public static defaultProps = {
     cachedDelay: 50,
     viewedDelay: 1000,
@@ -100,7 +102,7 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
   }
 
   private get src(): string | undefined {
-    const {stub, src} = this.props
+    const { stub, src } = this.props
     if (this.state.step === Step.LOAD || this.state.step === Step.DONE) {
       return src
     }
@@ -129,5 +131,4 @@ export class ImageControl extends Component<ImageControlProps, ImageControlState
       onLoad: this.onLoad,
     })
   }
-
 }

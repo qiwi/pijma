@@ -14,7 +14,7 @@ const DropDownExample = () => {
             text="Показать дропдаун"
             onClick={() => setShow(!show)}
           />
-        </Box> 
+        </Box>
       </Actions>
       <DropDown
         show={show}

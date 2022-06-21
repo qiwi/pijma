@@ -1,7 +1,7 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 
-import {keyframes} from '../styled'
-import {Box, Value, CardPos} from '../primitive'
+import { Box, CardPos, Value } from '../primitive'
+import { keyframes } from '../styled'
 
 const stubKeyframes = keyframes({
   '0%': {
@@ -55,7 +55,9 @@ export const Stub: FC<StubProps> = (props) => (
           linear-gradient(
             to right,
             transparent 0,
-            ${props.inverse ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.03)'} 80px,
+            ${
+              props.inverse ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.03)'
+            } 80px,
             transparent 160px,
             transparent 560px
           )

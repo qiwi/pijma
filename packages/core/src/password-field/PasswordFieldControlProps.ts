@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 
 export default interface PasswordFieldControlProps {
   onChange?: (value: string) => void

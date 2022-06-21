@@ -3,14 +3,18 @@ import React from 'react'
 import PasswordFieldControlProps from './PasswordFieldControlProps'
 import PasswordFieldControlState from './PasswordFieldControlState'
 
-export default class PasswordFieldControl extends React.Component<PasswordFieldControlProps, PasswordFieldControlState> {
-
+export default class PasswordFieldControl extends React.Component<
+  PasswordFieldControlProps,
+  PasswordFieldControlState
+> {
   public state: PasswordFieldControlState = {
     focused: false,
     hidden: true,
   }
 
-  private onChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {
+  private onChange: React.ChangeEventHandler<HTMLInputElement> = (
+    e: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     e.preventDefault()
     if (this.props.onChange) {
       this.props.onChange(e.currentTarget.value)
@@ -37,19 +41,25 @@ export default class PasswordFieldControl extends React.Component<PasswordFieldC
     }
   }
 
-  private onKeyDown: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
+  private onKeyDown: React.KeyboardEventHandler = (
+    event: React.KeyboardEvent,
+  ) => {
     if (this.props.onKeyDown && this.props.onKeyDown(event)) {
       event.preventDefault()
     }
   }
 
-  private onKeyUp: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
+  private onKeyUp: React.KeyboardEventHandler = (
+    event: React.KeyboardEvent,
+  ) => {
     if (this.props.onKeyUp && this.props.onKeyUp(event)) {
       event.preventDefault()
     }
   }
 
-  private onToggle: React.MouseEventHandler<HTMLElement> = (event: React.MouseEvent<HTMLElement>) => {
+  private onToggle: React.MouseEventHandler<HTMLElement> = (
+    event: React.MouseEvent<HTMLElement>,
+  ) => {
     event.preventDefault()
     event.stopPropagation()
     this.setState({
@@ -72,5 +82,4 @@ export default class PasswordFieldControl extends React.Component<PasswordFieldC
       onToggle: this.onToggle,
     })
   }
-
 }

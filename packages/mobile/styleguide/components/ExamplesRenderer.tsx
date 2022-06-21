@@ -1,7 +1,5 @@
-import React, {FC, Fragment} from 'react'
+import React, { FC, Fragment } from 'react'
 
-const ExamplesRenderer: FC = (props) => (
-  <Fragment>{props.children}</Fragment>
-)
+const ExamplesRenderer: FC = (props) => <Fragment>{props.children}</Fragment>
 
 export default ExamplesRenderer

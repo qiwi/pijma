@@ -1,5 +1,5 @@
-import {orange} from './orange'
-import {Theme} from '../styled'
+import { Theme } from '../styled'
+import { orange } from './orange'
 
 export const themes: Record<string, Theme> = {
   orange,

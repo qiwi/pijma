@@ -1,10 +1,12 @@
 ```jsx
 <Block>
   <BlockContent>
-    <Notice 
-      icon={<Icon name="attention" color="#ff0000"/>}
+    <Notice
+      icon={<Icon name="attention" color="#ff0000" />}
       title="Заголовок какого-нибудь алерта"
-      children={"Заголовок какого-нибудь алерта \n Заголовок какого-нибудь алерта"}
+      children={
+        'Заголовок какого-нибудь алерта \n Заголовок какого-нибудь алерта'
+      }
     />
   </BlockContent>
 </Block>
@@ -13,9 +15,11 @@
 ```jsx
 <Block>
   <BlockContent>
-    <Notice 
-      icon={<Icon name="attention"/>}
-      children={"Заголовок какого-нибудь алерта \n Заголовок какого-нибудь алерта"}
+    <Notice
+      icon={<Icon name="attention" />}
+      children={
+        'Заголовок какого-нибудь алерта \n Заголовок какого-нибудь алерта'
+      }
     />
   </BlockContent>
 </Block>

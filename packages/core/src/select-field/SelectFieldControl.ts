@@ -1,6 +1,6 @@
-import React, {createRef, RefObject, FC} from 'react'
+import React, { createRef, FC, RefObject } from 'react'
 
-import {OptionModel} from '../option'
+import { OptionModel } from '../option'
 
 export interface SelectFieldControlProps<O extends OptionModel<V>, V> {
   items: O[]
@@ -34,8 +34,13 @@ export interface SelectFieldControlState {
   select?: number
 }
 
-export class SelectFieldControl<O extends OptionModel<V>, V> extends React.Component<SelectFieldControlProps<O, V>, SelectFieldControlState> {
-
+export class SelectFieldControl<
+  O extends OptionModel<V>,
+  V,
+> extends React.Component<
+  SelectFieldControlProps<O, V>,
+  SelectFieldControlState
+> {
   private modalRef: RefObject<HTMLDivElement> = createRef()
 
   private targetRef: RefObject<HTMLDivElement> = createRef()
@@ -54,7 +59,9 @@ export class SelectFieldControl<O extends OptionModel<V>, V> extends React.Compo
     })
   }
 
-  public componentDidUpdate(prevProps: Readonly<SelectFieldControlProps<O, V>>) {
+  public componentDidUpdate(
+    prevProps: Readonly<SelectFieldControlProps<O, V>>,
+  ) {
     if (prevProps.value !== this.props.value) {
       this.setState({
         select: this.findItemIndex(),
@@ -98,13 +105,16 @@ export class SelectFieldControl<O extends OptionModel<V>, V> extends React.Compo
 
   private onActive: React.MouseEventHandler = (event) => {
     event.preventDefault()
-    this.setState({
-      show: !this.state.show,
-    }, () => {
-      if (this.modalRef.current) {
-        this.modalRef.current!.focus({preventScroll: true})
-      }
-    })
+    this.setState(
+      {
+        show: !this.state.show,
+      },
+      () => {
+        if (this.modalRef.current) {
+          this.modalRef.current!.focus({ preventScroll: true })
+        }
+      },
+    )
   }
 
   private onKeyDown: React.KeyboardEventHandler = (event) => {
@@ -133,7 +143,9 @@ export class SelectFieldControl<O extends OptionModel<V>, V> extends React.Compo
   }
 
   private findItemIndex(): number | undefined {
-    const index = this.props.items.findIndex(item => this.equals(this.props.value, item.value))
+    const index = this.props.items.findIndex((item) =>
+      this.equals(this.props.value, item.value),
+    )
     return index === -1 ? undefined : index
   }
 
@@ -163,5 +175,4 @@ export class SelectFieldControl<O extends OptionModel<V>, V> extends React.Compo
       onActive: this.props.disabled ? undefined : this.onActive,
     })
   }
-
 }

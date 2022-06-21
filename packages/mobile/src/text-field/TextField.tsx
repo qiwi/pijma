@@ -1,14 +1,10 @@
-import React, {forwardRef} from 'react'
+import { BasicInput, InputField, TextFieldControl } from '@qiwi/pijma-core'
+import React, { forwardRef } from 'react'
 
-import {
-  TextFieldControl,
-  InputField,
-  BasicInput,
-} from '@qiwi/pijma-core'
+import { TextFieldProps } from './TextFieldProps'
 
-import {TextFieldProps} from './TextFieldProps'
-
-export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => (
+export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
+  (props, ref) =>
     props.stub ? (
       <InputField
         active={false}
@@ -30,7 +26,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, re
           <InputField
             title={props.title}
             active={renderProps.focused || !!props.value || !!props.placeholder}
-            input={(
+            input={
               <BasicInput
                 type={props.type}
                 value={props.value}
@@ -53,7 +49,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, re
                 onKeyUp={renderProps.onKeyUp}
                 ref={ref}
               />
-            )}
+            }
             hint={props.hint}
             error={props.error}
             help={props.help}
@@ -61,8 +57,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, re
           />
         )}
       />
-    )
-  ),
+    ),
 )
 
 TextField.defaultProps = {

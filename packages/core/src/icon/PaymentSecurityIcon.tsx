@@ -1,15 +1,23 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 
-import {Path, Svg} from '../primitive'
-import {Stub} from '../stub'
+import { Path, Svg } from '../primitive'
+import { Stub } from '../stub'
 
 export interface PaymentSecurityIconProps {
-  name: 'mastercard-id-check' | 'visa-verified' | 'pci-dss' | 'mir-accept' | 'apple-pay'
+  name:
+    | 'mastercard-id-check'
+    | 'visa-verified'
+    | 'pci-dss'
+    | 'mir-accept'
+    | 'apple-pay'
   gray?: boolean
   stub?: boolean
 }
 
-const IconPath: Record<PaymentSecurityIconProps['name'], [string, string, string, 'evenodd' | 'inherit' | 'nonzero' | undefined][]> = {
+const IconPath: Record<
+  PaymentSecurityIconProps['name'],
+  [string, string, string, 'evenodd' | 'inherit' | 'nonzero' | undefined][]
+> = {
   'mastercard-id-check': [
     [
       '#000',
@@ -17,12 +25,7 @@ const IconPath: Record<PaymentSecurityIconProps['name'], [string, string, string
       '#999',
       'nonzero',
     ],
-    [
-      '#F46B3E',
-      'M6.61 6.22h4.9v8.82h-4.9z',
-      '#999',
-      'evenodd',
-    ],
+    ['#F46B3E', 'M6.61 6.22h4.9v8.82h-4.9z', '#999', 'evenodd'],
     [
       '#F14840',
       'M6.93 10.63a5.6 5.6 0 0 1 2.14-4.4 5.6 5.6 0 1 0 0 8.81 5.6 5.6 0 0 1-2.14-4.4z',
@@ -118,14 +121,22 @@ const IconPath: Record<PaymentSecurityIconProps['name'], [string, string, string
   ],
 }
 
-export const PaymentSecurityIcon: FC<PaymentSecurityIconProps> = ({gray, name, stub}) => (
+export const PaymentSecurityIcon: FC<PaymentSecurityIconProps> = ({
+  gray,
+  name,
+  stub,
+}) =>
   stub ? (
-    <Stub width={1} height={1}/>
+    <Stub width={1} height={1} />
   ) : (
     <Svg width={1} height={1} viewBox="0 0 64 24" focusable="false">
       {IconPath[name].map((path, i) => (
-        <Path key={i} fill={gray ? path[2] : path[0]} d={path[1]} fillRule={path[3]}/>
+        <Path
+          key={i}
+          fill={gray ? path[2] : path[0]}
+          d={path[1]}
+          fillRule={path[3]}
+        />
       ))}
     </Svg>
   )
-)

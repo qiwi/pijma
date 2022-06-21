@@ -3,8 +3,10 @@ import React from 'react'
 import ButtonControlProps from './ButtonControlProps'
 import ButtonControlState from './ButtonControlState'
 
-export default class ButtonControl extends React.Component<ButtonControlProps, ButtonControlState> {
-
+export default class ButtonControl extends React.Component<
+  ButtonControlProps,
+  ButtonControlState
+> {
   public state: ButtonControlState = {
     active: false,
     focus: false,
@@ -68,5 +70,4 @@ export default class ButtonControl extends React.Component<ButtonControlProps, B
       onMouseLeave: this.onMouseLeave,
     })
   }
-
 }

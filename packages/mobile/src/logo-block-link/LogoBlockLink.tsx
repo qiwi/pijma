@@ -1,7 +1,17 @@
-import React, {FC, ReactElement, ReactNode} from 'react'
-import {Box, Flex, FlexItem, Spacer, Image, LinkControlProps, Block, Stub} from '@qiwi/pijma-core'
-import {BlockLink} from '../link'
-import {Paragraph, Text} from '../typography'
+import {
+  Block,
+  Box,
+  Flex,
+  FlexItem,
+  Image,
+  LinkControlProps,
+  Spacer,
+  Stub,
+} from '@qiwi/pijma-core'
+import React, { FC, ReactElement, ReactNode } from 'react'
+
+import { BlockLink } from '../link'
+import { Paragraph, Text } from '../typography'
 
 export interface LogoBlockLinkProps {
   icon: ReactNode
@@ -20,40 +30,31 @@ export interface LogoBlockLinkProps {
   onBlur?: LinkControlProps['onBlur']
 }
 
-export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description, actions, ...props}) => (
+export const LogoBlockLink: FC<LogoBlockLinkProps> = ({
+  title,
+  icon,
+  description,
+  actions,
+  ...props
+}) =>
   props.stub ? (
     <Block>
       {props.horizontal ? (
         <Box p={4}>
           <Flex align="baseline">
-            <FlexItem
-              shrink={0}
-              mr={4}
-              width={12}
-              height={12}
-            >
-              <Stub height={12} width={12} r={24}/>
+            <FlexItem shrink={0} mr={4} width={12} height={12}>
+              <Stub height={12} width={12} r={24} />
             </FlexItem>
             <FlexItem align="center" width={1}>
               <Spacer size="xxs">
                 <Box maxWidth={38} width={1} pr={4.5}>
-                  <Text
-                    display="block"
-                    size="m"
-                    stub
-                  />
+                  <Text display="block" size="m" stub />
                 </Box>
                 {description ? (
                   <Box maxWidth={18} width={1}>
-                    <Text
-                      display="block"
-                      size="s"
-                      stub
-                    />
+                    <Text display="block" size="s" stub />
                   </Box>
-                ) : (
-                  null
-                )}
+                ) : null}
               </Spacer>
             </FlexItem>
           </Flex>
@@ -61,29 +62,19 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
       ) : (
         <Box
           p={4}
-          height={actions ? (description ? 56 : 50) : (description ? 43 : 42)}
+          height={actions ? (description ? 56 : 50) : description ? 43 : 42}
         >
           <Box width={14} height={14} mt={2} mx="auto">
-            <Stub height={14} width={14} r={28}/>
+            <Stub height={14} width={14} r={28} />
           </Box>
           <Box mt={3} mx="auto" maxWidth={38} width={1} pl={4.5} pr={4.5}>
-            <Text
-              display="block"
-              size="s"
-              stub
-            />
+            <Text display="block" size="s" stub />
           </Box>
           {description ? (
             <Box mt={1} mx="auto" maxWidth={18} width={1}>
-              <Text
-                display="block"
-                size="s"
-                stub
-              />
+              <Text display="block" size="s" stub />
             </Box>
-          ) : (
-            null
-          )}
+          ) : null}
         </Box>
       )}
     </Block>
@@ -100,23 +91,13 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
       onFocus={props.onFocus}
       onBlur={props.onBlur}
     >
-      {() => (
+      {() =>
         props.horizontal ? (
           <Box p={4}>
             <Flex align="baseline">
-              <FlexItem
-                shrink={0}
-                mr={4}
-                width={12}
-                height={12}
-              >
+              <FlexItem shrink={0} mr={4} width={12} height={12}>
                 {typeof icon === 'string' ? (
-                  <Image
-                    src={icon}
-                    alt={title}
-                    width={12}
-                    height={12}
-                  />
+                  <Image src={icon} alt={title} width={12} height={12} />
                 ) : (
                   icon
                 )}
@@ -137,34 +118,30 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
                       size="s"
                       children={description}
                     />
-                  ) : (
-                    null
-                  )}
+                  ) : null}
                 </Spacer>
               </FlexItem>
-              {actions ? (
-                actions.map((action, index) => (
-                  <FlexItem
-                    pl={index === 0 ? 2 : undefined}
-                    align="center"
-                    ml={index !== 0 ? 3 : 'auto'}
-                    key={index}
-                    children={action}
-                  />
-                ))
-              ) : (
-                null
-              )}
+              {actions
+                ? actions.map((action, index) => (
+                    <FlexItem
+                      pl={index === 0 ? 2 : undefined}
+                      align="center"
+                      ml={index !== 0 ? 3 : 'auto'}
+                      key={index}
+                      children={action}
+                    />
+                  ))
+                : null}
             </Flex>
           </Box>
         ) : (
           <Box
             p={4}
-            height={actions ? (description ? 56 : 50) : (description ? 43 : 42)}
+            height={actions ? (description ? 56 : 50) : description ? 43 : 42}
           >
             <Box width={14} height={14} mt={2} mx="auto">
               {typeof icon === 'string' ? (
-                <Image src={icon} alt={title} width={14} height={14}/>
+                <Image src={icon} alt={title} width={14} height={14} />
               ) : (
                 icon
               )}
@@ -189,9 +166,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
                   children={description}
                 />
               </Box>
-            ) : (
-              null
-            )}
+            ) : null}
             {actions ? (
               <Flex mt={3} mx="auto" align="baseline" justify="center">
                 {actions.map((action, index) => (
@@ -202,12 +177,9 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({title, icon, description,
                   />
                 ))}
               </Flex>
-            ) : (
-              null
-            )}
+            ) : null}
           </Box>
         )
-      )}
+      }
     </BlockLink>
   )
-)

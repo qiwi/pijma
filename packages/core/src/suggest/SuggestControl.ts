@@ -1,11 +1,13 @@
-import {Component, RefObject, createRef} from 'react'
+import { Component, createRef, RefObject } from 'react'
 
 import SuggestControlProps from './SuggestControlProps'
 import SuggestControlState from './SuggestControlState'
 import SuggestOptionModel from './SuggestOptionModel'
 
-export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends Component<SuggestControlProps<O, V>, SuggestControlState> {
-
+export default class SuggestControl<
+  V,
+  O extends SuggestOptionModel<V>,
+> extends Component<SuggestControlProps<O, V>, SuggestControlState> {
   public state: SuggestControlState = {
     show: false,
     focused: false,
@@ -29,12 +31,11 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
     const item = this.items[index]
     if (item.suggest) {
       this.request(item.suggest)
-    }
-    else {
+    } else {
       this.change(item.value)
     }
     if (this.inputRef.current) {
-      this.inputRef.current.focus({preventScroll: true})
+      this.inputRef.current.focus({ preventScroll: true })
     }
   }
 
@@ -68,7 +69,7 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
   private onModalInputBlur: React.FocusEventHandler = (event) => {
     event.preventDefault()
     if (this.inputRef && this.inputRef.current) {
-      this.inputRef.current.focus({preventScroll: true})
+      this.inputRef.current.focus({ preventScroll: true })
     }
     if (this.props.onBlur) {
       this.props.onBlur()
@@ -138,7 +139,10 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
   }
 
   private submit: (value?: string) => void = (value) => {
-    if (this.props.onSubmit && this.props.onSubmit(value ? value : this.inputRef.current!.value)) {
+    if (
+      this.props.onSubmit &&
+      this.props.onSubmit(value || this.inputRef.current!.value)
+    ) {
       this.inputRef.current!.blur()
       this.setState({
         show: false,
@@ -167,7 +171,9 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
     if (!this.props.value) {
       return undefined
     }
-    const index = this.items.findIndex(item => this.props.equals(item.value, this.props.value!))
+    const index = this.items.findIndex((item) =>
+      this.props.equals(item.value, this.props.value!),
+    )
     return index !== -1 ? index : undefined
   }
 
@@ -235,5 +241,4 @@ export default class SuggestControl<V, O extends SuggestOptionModel<V>> extends 
       onResultItemsMouseDown: this.onResultItemsMouseDown,
     })
   }
-
 }

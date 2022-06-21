@@ -1,8 +1,7 @@
-import {styled, StyledOptions} from '../styled'
-
-import {pxValue} from './Value'
-import {CardNonProps, CardProps, CardStyles} from './Card'
-import {BoxNonProps, BoxProps, BoxStyles} from './Box'
+import { styled, StyledOptions } from '../styled'
+import { BoxNonProps, BoxProps, BoxStyles } from './Box'
+import { CardNonProps, CardProps, CardStyles } from './Card'
+import { pxValue } from './Value'
 
 export interface TextAreaProps extends BoxProps, CardProps {
   valueSize?: number
@@ -40,24 +39,28 @@ const TextAreaOptions: StyledOptions<TextAreaProps> = {
   shouldForwardProp: (prop) => !TextAreaNonProps.includes(prop),
 }
 
-export const TextArea = styled('textarea', TextAreaOptions)<TextAreaProps>(BoxStyles, CardStyles, ({theme, ...props}) => ({
-  fontFamily: theme.font.family,
-  fontSize: pxValue(props.valueSize, theme.scale),
-  fontWeight: props.valueWeight,
-  lineHeight: pxValue(props.valueHeight, theme.scale),
-  color: props.valueColor,
-  textTransform: props.valueTransform,
-  textIndent: 0,
-  letterSpacing: pxValue(props.valueSpacing),
-  outline: 'none',
-  resize: 'none',
-  MozAppearance: 'textfield',
-  '&::placeholder': {
-    fontSize: pxValue(props.placeholderSize, theme.scale),
-    fontWeight: props.placeholderWeight,
-    lineHeight: pxValue(props.placeholderHeight, theme.scale),
-    color: props.placeholderColor,
-    textTransform: props.placeholderTransform,
-    letterSpacing: pxValue(props.placeholderSpacing),
-  },
-}))
+export const TextArea = styled('textarea', TextAreaOptions)<TextAreaProps>(
+  BoxStyles,
+  CardStyles,
+  ({ theme, ...props }) => ({
+    fontFamily: theme.font.family,
+    fontSize: pxValue(props.valueSize, theme.scale),
+    fontWeight: props.valueWeight,
+    lineHeight: pxValue(props.valueHeight, theme.scale),
+    color: props.valueColor,
+    textTransform: props.valueTransform,
+    textIndent: 0,
+    letterSpacing: pxValue(props.valueSpacing),
+    outline: 'none',
+    resize: 'none',
+    MozAppearance: 'textfield',
+    '&::placeholder': {
+      fontSize: pxValue(props.placeholderSize, theme.scale),
+      fontWeight: props.placeholderWeight,
+      lineHeight: pxValue(props.placeholderHeight, theme.scale),
+      color: props.placeholderColor,
+      textTransform: props.placeholderTransform,
+      letterSpacing: pxValue(props.placeholderSpacing),
+    },
+  }),
+)

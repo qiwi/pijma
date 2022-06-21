@@ -3,8 +3,8 @@
 В окнах применяются [Brand Button](#/Компоненты/Button) и [Simple Button](#/Компоненты/Button) в размере Normal.
 
 ```jsx
-const [deleteModal, setDeleteModal] = React.useState(undefined);
-<Block>
+const [deleteModal, setDeleteModal] = React.useState(undefined)
+;<Block>
   <BlockContent>
     <Actions size="normal">
       <Button
@@ -50,10 +50,10 @@ const [deleteModal, setDeleteModal] = React.useState(undefined);
 #### Размеры окон
 
 ```jsx
-const [s, setS] = React.useState(undefined);
-const [m, setM] = React.useState(undefined);
-const [l, setL] = React.useState(undefined);
-<Block>
+const [s, setS] = React.useState(undefined)
+const [m, setM] = React.useState(undefined)
+const [l, setL] = React.useState(undefined)
+;<Block>
   <BlockContent>
     <Actions size="normal">
       <Button
@@ -123,9 +123,9 @@ const [l, setL] = React.useState(undefined);
 #### Заголовок, описание и кнопки
 
 ```jsx
-const [notification, setNotification] = React.useState(undefined);
+const [notification, setNotification] = React.useState(undefined)
 
-<Block>
+;<Block>
   <BlockContent>
     <Actions size="normal">
       <Button
@@ -146,7 +146,9 @@ const [notification, setNotification] = React.useState(undefined);
         <Spacer size="l">
           <Spacer size="m">
             <Heading size="2">Отключить уведомления?</Heading>
-            <Paragraph size="m">Вам перестанут приходить сообщения о пополнении и списании</Paragraph>
+            <Paragraph size="m">
+              Вам перестанут приходить сообщения о пополнении и списании
+            </Paragraph>
           </Spacer>
           <Actions size="normal">
             <Button
@@ -174,10 +176,10 @@ const [notification, setNotification] = React.useState(undefined);
 #### Заголовок, инпут и кнопка
 
 ```jsx
-const [email, setEmail] = React.useState(undefined);
-const [text, setText] = React.useState(undefined);
+const [email, setEmail] = React.useState(undefined)
+const [text, setText] = React.useState(undefined)
 
-<Block>
+;<Block>
   <BlockContent>
     <Actions size="normal">
       <Button
@@ -198,12 +200,12 @@ const [text, setText] = React.useState(undefined);
         <Spacer size="l">
           <Spacer size="l">
             <Heading size="2">Куда отправить квитанцию?</Heading>
-              <TextField
-                title="Адрес электронной почты"
-                type="text"
-                value={text}
-                onChange={text => setText(text)}
-              />
+            <TextField
+              title="Адрес электронной почты"
+              type="text"
+              value={text}
+              onChange={(text) => setText(text)}
+            />
           </Spacer>
           <Actions size="normal">
             <Button
@@ -224,10 +226,10 @@ const [text, setText] = React.useState(undefined);
 #### Заголовок, инпут, кнопка и чекбоксы.
 
 ```jsx
-const [values, setValues] = React.useState(['selected']);
-const [snapping, setSnapping] = React.useState(undefined);
-const [text, setText] = React.useState(undefined);
-<Block>
+const [values, setValues] = React.useState(['selected'])
+const [snapping, setSnapping] = React.useState(undefined)
+const [text, setText] = React.useState(undefined)
+;<Block>
   <BlockContent>
     <Actions size="normal">
       <Button
@@ -248,12 +250,12 @@ const [text, setText] = React.useState(undefined);
         <Spacer size="l">
           <Spacer size="l">
             <Heading size="2">Привязка почты к QIWI Кошельку</Heading>
-              <TextField
-                title="Адрес электронной почты"
-                type="text"
-                value={text}
-                onChange={text => setText(text)}
-              />
+            <TextField
+              title="Адрес электронной почты"
+              type="text"
+              value={text}
+              onChange={(text) => setText(text)}
+            />
           </Spacer>
           <Actions size="normal">
             <Button
@@ -264,16 +266,19 @@ const [text, setText] = React.useState(undefined);
               onClick={() => setSnapping(false)}
             />
           </Actions>
-         <CheckboxField
-            options={[{
-              label: 'Использовать почту для изменения пароля',
-              value: 'selected',
-              disabled: false,
-            }, {
-              label: 'Получать письма о полезных функциях и акциях от QIWI',
-              value: 'normal',
-              disabled: false,
-            }]}
+          <CheckboxField
+            options={[
+              {
+                label: 'Использовать почту для изменения пароля',
+                value: 'selected',
+                disabled: false,
+              },
+              {
+                label: 'Получать письма о полезных функциях и акциях от QIWI',
+                value: 'normal',
+                disabled: false,
+              },
+            ]}
             values={values}
             onChange={(values) => setValues(values)}
           />

@@ -1,5 +1,3 @@
 import SimpleModal from './SimpleModal'
 
-export {
-  SimpleModal,
-}
+export { SimpleModal }

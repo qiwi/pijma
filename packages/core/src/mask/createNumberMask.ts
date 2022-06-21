@@ -1,4 +1,4 @@
-import {Mask} from './MaskedInput'
+import { Mask } from './MaskedInput'
 
 const emptyString = ''
 const space = ' '
@@ -8,7 +8,7 @@ const minus = '-'
 const minusRegExp = /-/
 const nonDigitsRegExp = /\D+/g
 const digitRegExp = /\d/
-const decimalRegExp = /[\.,]/
+const decimalRegExp = /[,.]/
 const caretTrap = '[]'
 
 export interface NumberMaskOpts {
@@ -24,38 +24,48 @@ export interface NumberMaskOpts {
   integerLimit?: number
 }
 
-export default function createNumberMask(
-  {
-    prefix = '',
-    suffix = emptyString,
-    includeThousandsSeparator = true,
-    thousandsSeparatorSymbol = space,
-    allowDecimal = true,
-    decimalLimit = 2,
-    requireDecimal = false,
-    allowNegative = false,
-    allowLeadingZeroes = false,
-    integerLimit = 6,
-  }: NumberMaskOpts = {},
-): Mask {
-
-  const prefixLength = prefix && prefix.length || 0
-  const suffixLength = suffix && suffix.length || 0
-  const thousandsSeparatorSymbolLength = thousandsSeparatorSymbol && thousandsSeparatorSymbol.length || 0
+export default function createNumberMask({
+  prefix = '',
+  suffix = emptyString,
+  includeThousandsSeparator = true,
+  thousandsSeparatorSymbol = space,
+  allowDecimal = true,
+  decimalLimit = 2,
+  requireDecimal = false,
+  allowNegative = false,
+  allowLeadingZeroes = false,
+  integerLimit = 6,
+}: NumberMaskOpts = {}): Mask {
+  const prefixLength = (prefix && prefix.length) || 0
+  const suffixLength = (suffix && suffix.length) || 0
+  const thousandsSeparatorSymbolLength =
+    (thousandsSeparatorSymbol && thousandsSeparatorSymbol.length) || 0
 
   function numberMask(rawValue = emptyString) {
-
     const rawValueLength = rawValue.length
 
-    if (rawValue === emptyString || (rawValue[0] === prefix[0] && rawValueLength === 1)) {
-      return [...prefix.split(emptyString), digitRegExp, ...suffix.split(emptyString)]
+    if (
+      rawValue === emptyString ||
+      (rawValue[0] === prefix[0] && rawValueLength === 1)
+    ) {
+      return [
+        ...prefix.split(emptyString),
+        digitRegExp,
+        ...suffix.split(emptyString),
+      ]
     }
 
     if ((rawValue === period || rawValue === comma) && allowDecimal) {
-      return [...prefix.split(emptyString), '0', decimalRegExp, digitRegExp, ...suffix.split(emptyString)]
+      return [
+        ...prefix.split(emptyString),
+        '0',
+        decimalRegExp,
+        digitRegExp,
+        ...suffix.split(emptyString),
+      ]
     }
 
-    const isNegative = (rawValue[0] === minus) && allowNegative
+    const isNegative = rawValue[0] === minus && allowNegative
 
     if (isNegative) {
       rawValue = rawValue.toString().substr(1)
@@ -63,7 +73,8 @@ export default function createNumberMask(
 
     const indexOfLastDecimal1 = rawValue.lastIndexOf(period)
     const indexOfLastDecimal2 = rawValue.lastIndexOf(comma)
-    const indexOfLastDecimal = indexOfLastDecimal1 === -1 ? indexOfLastDecimal2 : indexOfLastDecimal1
+    const indexOfLastDecimal =
+      indexOfLastDecimal1 === -1 ? indexOfLastDecimal2 : indexOfLastDecimal1
     const hasDecimal = indexOfLastDecimal !== -1
     const decimalSymbol = hasDecimal ? rawValue[indexOfLastDecimal] : null
 
@@ -76,23 +87,31 @@ export default function createNumberMask(
     }
 
     if (hasDecimal && (allowDecimal || requireDecimal)) {
-      integer = rawValue.slice(rawValue.slice(0, prefixLength) === prefix ? prefixLength : 0, indexOfLastDecimal)
+      integer = rawValue.slice(
+        rawValue.slice(0, prefixLength) === prefix ? prefixLength : 0,
+        indexOfLastDecimal,
+      )
       fraction = rawValue.slice(indexOfLastDecimal + 1, rawValueLength)
       fraction = convertToMask(fraction.replace(nonDigitsRegExp, emptyString))
-    }
-    else {
+    } else {
       if (rawValue.slice(0, prefixLength) === prefix) {
         integer = rawValue.slice(prefixLength)
-      }
-      else {
+      } else {
         integer = rawValue
       }
     }
 
     if (integerLimit) {
-      const thousandsSeparatorRegex = thousandsSeparatorSymbol === '.' ? '[.]' : `${thousandsSeparatorSymbol}`
-      const numberOfThousandSeparators = (integer.match(new RegExp(thousandsSeparatorRegex, 'g')) || []).length
-      integer = integer.slice(0, integerLimit + (numberOfThousandSeparators * thousandsSeparatorSymbolLength))
+      const thousandsSeparatorRegex =
+        thousandsSeparatorSymbol === '.' ? '[.]' : `${thousandsSeparatorSymbol}`
+      const numberOfThousandSeparators = (
+        integer.match(new RegExp(thousandsSeparatorRegex, 'g')) || []
+      ).length
+      integer = integer.slice(
+        0,
+        integerLimit +
+          numberOfThousandSeparators * thousandsSeparatorSymbolLength,
+      )
     }
 
     integer = integer.replace(nonDigitsRegExp, emptyString)
@@ -101,7 +120,9 @@ export default function createNumberMask(
       integer = integer.replace(/^0+(0$|[^0])/, '$1')
     }
 
-    integer = (includeThousandsSeparator) ? addThousandsSeparator(integer, thousandsSeparatorSymbol) : integer
+    integer = includeThousandsSeparator
+      ? addThousandsSeparator(integer, thousandsSeparatorSymbol)
+      : integer
 
     mask = convertToMask(integer)
 
@@ -118,7 +139,10 @@ export default function createNumberMask(
         }
         mask = mask.concat(fraction)
       }
-      if (requireDecimal === true && rawValue[indexOfLastDecimal - 1] === decimalSymbol) {
+      if (
+        requireDecimal === true &&
+        rawValue[indexOfLastDecimal - 1] === decimalSymbol
+      ) {
         mask.push(digitRegExp)
       }
     }
@@ -142,13 +166,12 @@ export default function createNumberMask(
   }
 
   return numberMask
-
 }
 
 function convertToMask(strNumber: string): Array<string | RegExp> {
   return strNumber
     .split(emptyString)
-    .map((char) => digitRegExp.test(char) ? digitRegExp : char)
+    .map((char) => (digitRegExp.test(char) ? digitRegExp : char))
 }
 
 function addThousandsSeparator(n: string, thousandsSeparatorSymbol: string) {

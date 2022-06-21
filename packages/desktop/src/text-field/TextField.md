@@ -3,6 +3,7 @@
 Максимальная ширина поля ввода — 528px.
 
 Ширину поля можно сократить:
+
 - Когда известно точное количество символов, которые нужно ввести.
 - Когда мы знаем ширину содержимого выпадающего списка.
 
@@ -19,16 +20,16 @@
 #### Обычное поле
 
 ```jsx
-const [text, setText] = React.useState(undefined);
+const [text, setText] = React.useState(undefined)
 
-<Block>
+;<Block>
   <BlockContent>
     <Box width={64}>
       <TextField
         title="Поле ввода"
         type="text"
         value={text}
-        onChange={text => setText(text)}
+        onChange={(text) => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -56,9 +57,9 @@ const [text, setText] = React.useState(undefined);
 #### Поле с подсказкой
 
 ```jsx
-const [text, setText] = React.useState(undefined);
+const [text, setText] = React.useState(undefined)
 
-<Block>
+;<Block>
   <BlockContent>
     <Box width={64}>
       <TextField
@@ -66,7 +67,7 @@ const [text, setText] = React.useState(undefined);
         help="Подсказка"
         type="text"
         value={text}
-        onChange={text => setText(text)}
+        onChange={(text) => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -76,9 +77,9 @@ const [text, setText] = React.useState(undefined);
 #### Поле ввода с кнопкой
 
 ```jsx
-const [text, setText] = React.useState(undefined);
+const [text, setText] = React.useState(undefined)
 
-<Block>
+;<Block>
   <BlockContent>
     <Box width={64}>
       <TextField
@@ -86,7 +87,7 @@ const [text, setText] = React.useState(undefined);
         type="text"
         action={<a href="#/Fields/TextField">Сылка-кнопка</a>}
         value={text}
-        onChange={text => setText(text)}
+        onChange={(text) => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -96,9 +97,9 @@ const [text, setText] = React.useState(undefined);
 #### Ошибка
 
 ```jsx
-const [text, setText] = React.useState(undefined);
+const [text, setText] = React.useState(undefined)
 
-<Block>
+;<Block>
   <BlockContent>
     <Box width={64}>
       <TextField
@@ -106,7 +107,7 @@ const [text, setText] = React.useState(undefined);
         error="Подсказка"
         type="text"
         value={text}
-        onChange={text => setText(text)}
+        onChange={(text) => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -119,11 +120,7 @@ const [text, setText] = React.useState(undefined);
 <Block>
   <BlockContent>
     <Box width={64}>
-      <TextField
-        title="Поле ввода"
-        type="text"
-        disabled={true}
-      />
+      <TextField title="Поле ввода" type="text" disabled={true} />
     </Box>
   </BlockContent>
 </Block>
@@ -132,9 +129,9 @@ const [text, setText] = React.useState(undefined);
 #### Поле с хинтом
 
 ```jsx
-const [text, setText] = React.useState(undefined);
+const [text, setText] = React.useState(undefined)
 
-<Block>
+;<Block>
   <BlockContent>
     <Box width={64}>
       <TextField
@@ -142,7 +139,7 @@ const [text, setText] = React.useState(undefined);
         type="text"
         hint={<QuestionIcon />}
         value={text}
-        onChange={text => setText(text)}
+        onChange={(text) => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -152,17 +149,34 @@ const [text, setText] = React.useState(undefined);
 #### Номер телефона
 
 ```jsx
-const [text, setText] = React.useState('+7');
+const [text, setText] = React.useState('+7')
 
-<Block>
+;<Block>
   <BlockContent>
     <Box width={64}>
       <TextField
         title="Номер телефона"
         type="tel"
-        mask={['+', /7/, '(', /\d/, /\d/, /\d/, ')', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]}
+        mask={[
+          '+',
+          /7/,
+          '(',
+          /\d/,
+          /\d/,
+          /\d/,
+          ')',
+          /\d/,
+          /\d/,
+          /\d/,
+          '-',
+          /\d/,
+          /\d/,
+          '-',
+          /\d/,
+          /\d/,
+        ]}
         value={text}
-        onChange={text => setText(text)}
+        onChange={(text) => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -172,22 +186,22 @@ const [text, setText] = React.useState('+7');
 #### Поле ввода ссумы
 
 ```jsx
-const [text, setText] = React.useState(undefined);
+const [text, setText] = React.useState(undefined)
 
-<Block>
+;<Block>
   <BlockContent>
     <Box width={64}>
       <TextField
         title="Сумма"
         type="tel"
         mask={createNumberMask({
-          suffix: " ₽",
+          suffix: ' ₽',
           decimalLimit: 2,
           requireDecimal: true,
-          integerLimit: 20
+          integerLimit: 20,
         })}
         value={text}
-        onChange={text => setText(text)}
+        onChange={(text) => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -197,9 +211,9 @@ const [text, setText] = React.useState(undefined);
 #### Поле ввода латинских символов
 
 ```jsx
-const [text, setText] = React.useState(undefined);
+const [text, setText] = React.useState(undefined)
 
-<Block>
+;<Block>
   <BlockContent>
     <Box width={64}>
       <TextField
@@ -207,7 +221,7 @@ const [text, setText] = React.useState(undefined);
         type="tel"
         mask={createFilterMask(/[a-zA-Z\s-]/)}
         value={text}
-        onChange={text => setText(text)}
+        onChange={(text) => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -217,9 +231,9 @@ const [text, setText] = React.useState(undefined);
 #### Скрыть вводимые символы
 
 ```jsx
-const [text, setText] = React.useState(undefined);
+const [text, setText] = React.useState(undefined)
 
-<Block>
+;<Block>
   <BlockContent>
     <Box width={64}>
       <TextField
@@ -227,7 +241,7 @@ const [text, setText] = React.useState(undefined);
         type="password"
         mask={[/\d/, /\d/, /\d/]}
         value={text}
-        onChange={text => setText(text)}
+        onChange={(text) => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -237,9 +251,9 @@ const [text, setText] = React.useState(undefined);
 #### Поле ввода с ограниченным количеством символов
 
 ```jsx
-const [text, setText] = React.useState(undefined);
+const [text, setText] = React.useState(undefined)
 
-<Block>
+;<Block>
   <BlockContent>
     <Box width={64}>
       <TextField
@@ -247,7 +261,7 @@ const [text, setText] = React.useState(undefined);
         type="text"
         maxLength={3}
         value={text}
-        onChange={text => setText(text)}
+        onChange={(text) => setText(text)}
       />
     </Box>
   </BlockContent>
@@ -257,37 +271,37 @@ const [text, setText] = React.useState(undefined);
 ## Типы полей для мобильной клавиатуры
 
 ```jsx
-const [text1, setText1] = React.useState(undefined);
-const [text2, setText2] = React.useState(undefined);
-const [text3, setText3] = React.useState(undefined);
-const [text4, setText4] = React.useState(undefined);
+const [text1, setText1] = React.useState(undefined)
+const [text2, setText2] = React.useState(undefined)
+const [text3, setText3] = React.useState(undefined)
+const [text4, setText4] = React.useState(undefined)
 
-<Block>
+;<Block>
   <BlockContent>
     <Box width={64}>
       <TextField
         placeholder="Цифровое поле"
         type="tel"
         value={text1}
-        onChange={text => setText1(text)}
+        onChange={(text) => setText1(text)}
       />
       <TextField
         title="Поисковое поле"
         type="search"
         value={text2}
-        onChange={text => setText2(text)}
+        onChange={(text) => setText2(text)}
       />
       <TextField
         title="Поле под email"
         type="email"
         value={text3}
-        onChange={text => setText3(text)}
+        onChange={(text) => setText3(text)}
       />
       <TextField
         title="Поле url адреса "
         type="url"
         value={text4}
-        onChange={text => setText4(text)}
+        onChange={(text) => setText4(text)}
       />
     </Box>
   </BlockContent>

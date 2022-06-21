@@ -1,5 +1,3 @@
-import {InView} from 'react-intersection-observer'
+import { InView } from 'react-intersection-observer'
 
-export {
-  InView,
-}
+export { InView }

@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 
 export interface SwitchControlProps {
   disabled?: boolean
@@ -23,8 +23,10 @@ export interface SwitchControlState {
   focused: boolean
 }
 
-export class SwitchControl extends React.Component<SwitchControlProps, SwitchControlState> {
-
+export class SwitchControl extends React.Component<
+  SwitchControlProps,
+  SwitchControlState
+> {
   public state: SwitchControlState = {
     focused: false,
   }
@@ -103,5 +105,4 @@ export class SwitchControl extends React.Component<SwitchControlProps, SwitchCon
       onKeyDown: this.onKeyDown,
     })
   }
-
 }

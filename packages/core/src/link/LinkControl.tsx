@@ -1,7 +1,12 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 
 export interface LinkControlProps {
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => boolean | void
+  onClick?: (
+    href?: string,
+    target?: string,
+    download?: string | boolean,
+    rel?: string,
+  ) => boolean | void
   onFocus?: () => void
   onBlur?: () => void
   href?: string
@@ -28,8 +33,10 @@ export interface LinkControlState {
   hover: boolean
 }
 
-export class LinkControl extends React.Component<LinkControlProps, LinkControlState> {
-
+export class LinkControl extends React.Component<
+  LinkControlProps,
+  LinkControlState
+> {
   public static defaultProps: Partial<LinkControlProps> = {}
 
   public state: LinkControlState = {
@@ -65,12 +72,16 @@ export class LinkControl extends React.Component<LinkControlProps, LinkControlSt
   private onClick: React.MouseEventHandler = (e: React.MouseEvent) => {
     e.preventDefault()
     if (this.props.onClick) {
-      const res = this.props.onClick(this.props.href, this.props.target, this.props.download, this.props.rel)
+      const res = this.props.onClick(
+        this.props.href,
+        this.props.target,
+        this.props.download,
+        this.props.rel,
+      )
       if (res !== true) {
         e.stopPropagation()
       }
-    }
-    else {
+    } else {
       e.stopPropagation()
     }
   }
@@ -109,5 +120,4 @@ export class LinkControl extends React.Component<LinkControlProps, LinkControlSt
       onMouseDown: this.onMouseDown,
     })
   }
-
 }

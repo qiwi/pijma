@@ -1,6 +1,5 @@
-import {ReactNode} from 'react'
-
-import {OptionModel} from '@qiwi/pijma-core'
+import { OptionModel } from '@qiwi/pijma-core'
+import { ReactNode } from 'react'
 
 export default interface SwitchFieldOptionModel<V> extends OptionModel<V> {
   label: ReactNode

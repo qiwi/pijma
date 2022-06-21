@@ -1,6 +1,5 @@
-import {ReactNode, KeyboardEvent} from 'react'
-
-import {BasicInputProps, Mask, Pipe} from '@qiwi/pijma-core'
+import { BasicInputProps, Mask, Pipe } from '@qiwi/pijma-core'
+import { KeyboardEvent, ReactNode } from 'react'
 
 export interface TextFieldProps {
   value: string

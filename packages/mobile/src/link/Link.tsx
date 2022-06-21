@@ -1,9 +1,13 @@
-import React, {FC} from 'react'
-
-import {LinkControl, Stub, TypoLnk, useTheme} from '@qiwi/pijma-core'
+import { LinkControl, Stub, TypoLnk, useTheme } from '@qiwi/pijma-core'
+import React, { FC } from 'react'
 
 export interface LinkProps {
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
+  onClick?: (
+    href?: string,
+    target?: string,
+    download?: string | boolean,
+    rel?: string,
+  ) => void
   onFocus?: () => void
   onBlur?: () => void
   tabIndex?: number
@@ -49,22 +53,25 @@ const LinkHeight: { [size in NonNullable<LinkProps['size']>]: number } = {
   l: 8,
 }
 
-const LinkHeightCompact: { [size in NonNullable<LinkProps['size']>]: number } = {
-  s: 4,
-  m: 5,
-  l: 7,
-}
+const LinkHeightCompact: { [size in NonNullable<LinkProps['size']>]: number } =
+  {
+    s: 4,
+    m: 5,
+    l: 7,
+  }
 
 export const Link: FC<LinkProps> = (props) => {
   const theme = useTheme()
 
   return props.stub ? (
-    props.size === undefined ? (
-      null
-    ) : (
+    props.size === undefined ? null : (
       <Stub
-        top={props.compact ? StubOffSetCompact[props.size] : StubOffSet[props.size]}
-        bottom={props.compact ? StubOffSetCompact[props.size] : StubOffSet[props.size]}
+        top={
+          props.compact ? StubOffSetCompact[props.size] : StubOffSet[props.size]
+        }
+        bottom={
+          props.compact ? StubOffSetCompact[props.size] : StubOffSet[props.size]
+        }
         height={StubLinkSize[props.size]}
         width={1}
       />
@@ -89,7 +96,15 @@ export const Link: FC<LinkProps> = (props) => {
           onMouseLeave={renderProps.onMouseLeave}
           onMouseUp={renderProps.onMouseUp}
           onMouseDown={renderProps.onMouseDown}
-          color={renderProps.hover || renderProps.focus ? props.inverse ? theme.link.color.inverse.hover : theme.link.color.brand.hover : props.inverse ? theme.link.color.inverse.default : theme.link.color.brand.default}
+          color={
+            renderProps.hover || renderProps.focus
+              ? props.inverse
+                ? theme.link.color.inverse.hover
+                : theme.link.color.brand.hover
+              : props.inverse
+              ? theme.link.color.inverse.default
+              : theme.link.color.brand.default
+          }
           transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
           cursor="pointer"
           decoration="none"
@@ -97,7 +112,13 @@ export const Link: FC<LinkProps> = (props) => {
           download={props.download}
           rel={props.rel}
           title={props.title}
-          size={props.size === undefined ? undefined : props.compact ? LinkHeightCompact[props.size] : LinkSize[props.size]}
+          size={
+            props.size === undefined
+              ? undefined
+              : props.compact
+              ? LinkHeightCompact[props.size]
+              : LinkSize[props.size]
+          }
           height={props.size === undefined ? undefined : LinkHeight[props.size]}
           weight={props.bold === undefined ? undefined : props.bold ? 500 : 300}
           children={props.children}

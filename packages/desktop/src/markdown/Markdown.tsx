@@ -1,8 +1,9 @@
-import React, {Children, FC} from 'react'
-import {Paragraph, Heading, Text} from '../typography'
-import {Link} from '../link'
-import {List} from '../list'
-import {styled, Box, Image, MarkdownToJSX} from '@qiwi/pijma-core'
+import { Box, Image, MarkdownToJSX, styled } from '@qiwi/pijma-core'
+import React, { Children, FC } from 'react'
+
+import { Link } from '../link'
+import { List } from '../list'
+import { Heading, Paragraph, Text } from '../typography'
 
 export interface MarkdownProps {
   size?: 's' | 'm' | 'l'
@@ -25,9 +26,9 @@ interface SizeProps {
   size: 's' | 'm' | 'l'
 }
 
-const p: FC<SizeProps> = ({children, size}) => (
+const p: FC<SizeProps> = ({ children, size }) => (
   <MarkdownBox mt={SizeMargin[size]}>
-    <Paragraph size={size} children={children}/>
+    <Paragraph size={size} children={children} />
   </MarkdownBox>
 )
 
@@ -36,8 +37,8 @@ interface ImageProps extends SizeProps {
   src: string
 }
 
-const img: FC<ImageProps> = ({src, alt}) => (
-  <Image src={src} alt={alt} width="auto" height="auto"/>
+const img: FC<ImageProps> = ({ src, alt }) => (
+  <Image src={src} alt={alt} width="auto" height="auto" />
 )
 
 interface LinkProps extends SizeProps {
@@ -45,59 +46,54 @@ interface LinkProps extends SizeProps {
   href?: string
 }
 
-const a: FC<LinkProps> = ({title, href, size, children}) => (
-  <Link
-    title={title}
-    href={href}
-    size={size}
-    children={children}
-  />
+const a: FC<LinkProps> = ({ title, href, size, children }) => (
+  <Link title={title} href={href} size={size} children={children} />
 )
 
-const h1: FC<SizeProps> = ({children}) => (
+const h1: FC<SizeProps> = ({ children }) => (
   <MarkdownBox mt={11}>
-    <Heading size="1" children={children}/>
+    <Heading size="1" children={children} />
   </MarkdownBox>
 )
 
-const h2: FC<SizeProps> = ({children}) => (
+const h2: FC<SizeProps> = ({ children }) => (
   <MarkdownBox mt={11}>
-    <Heading size="2" children={children}/>
+    <Heading size="2" children={children} />
   </MarkdownBox>
 )
 
-const h3: FC<SizeProps> = ({children}) => (
+const h3: FC<SizeProps> = ({ children }) => (
   <MarkdownBox mt={8}>
-    <Heading size="3" children={children}/>
+    <Heading size="3" children={children} />
   </MarkdownBox>
 )
 
-const h4: FC<SizeProps> = ({children}) => (
+const h4: FC<SizeProps> = ({ children }) => (
   <MarkdownBox mt={7}>
-    <Heading size="4" children={children}/>
+    <Heading size="4" children={children} />
   </MarkdownBox>
 )
 
-const h5: FC<SizeProps> = ({children}) => (
+const h5: FC<SizeProps> = ({ children }) => (
   <MarkdownBox mt={6}>
-    <Heading size="5" children={children}/>
+    <Heading size="5" children={children} />
   </MarkdownBox>
 )
 
-const strong: FC<SizeProps> = ({children}) => (
-  <Text bold children={children}/>
+const strong: FC<SizeProps> = ({ children }) => (
+  <Text bold children={children} />
 )
 
-const del: FC<SizeProps> = ({children}) => (
-  <Text decoration="line-through" children={children}/>
+const del: FC<SizeProps> = ({ children }) => (
+  <Text decoration="line-through" children={children} />
 )
 
-const li: FC<SizeProps> = ({size, children}) => (
+const li: FC<SizeProps> = ({ size, children }) => (
   <React.Fragment>
     {React.Children.map(children, (child, i) => (
       <MarkdownBox key={i} mt={SizeMargin[size]}>
         {typeof child === 'string' ? (
-          <Paragraph key={i} size={size} children={child}/>
+          <Paragraph key={i} size={size} children={child} />
         ) : (
           child
         )}
@@ -106,9 +102,9 @@ const li: FC<SizeProps> = ({size, children}) => (
   </React.Fragment>
 )
 
-const ul: FC<SizeProps> = ({size, children}) => (
+const ul: FC<SizeProps> = ({ size, children }) => (
   <MarkdownBox mt={SizeMargin[size]}>
-    <List size={size} type="bullet" children={Children.toArray(children)}/>
+    <List size={size} type="bullet" children={Children.toArray(children)} />
   </MarkdownBox>
 )
 
@@ -116,7 +112,7 @@ interface NumericListProps extends SizeProps {
   start: number
 }
 
-const ol: FC<NumericListProps> = ({size, start, children}) => (
+const ol: FC<NumericListProps> = ({ size, start, children }) => (
   <MarkdownBox mt={SizeMargin[size]}>
     <List
       size={size}
@@ -126,7 +122,7 @@ const ol: FC<NumericListProps> = ({size, start, children}) => (
   </MarkdownBox>
 )
 
-const overrides: {[tag: string]: FC<any>} = {
+const overrides: { [tag: string]: FC<any> } = {
   p,
   h1,
   h2,
@@ -142,21 +138,24 @@ const overrides: {[tag: string]: FC<any>} = {
   img,
 }
 
-export const Markdown: FC<MarkdownProps> = ({size = 'm', children}) => (
+export const Markdown: FC<MarkdownProps> = ({ size = 'm', children }) => (
   <MarkdownToJSX
     children={children}
     options={{
-      overrides: Object.keys(overrides).reduce((prev, tag) => ({
-        ...prev,
-        ...{
-          [tag]: {
-            component: overrides[tag],
-            props: {
-              size,
+      overrides: Object.keys(overrides).reduce(
+        (prev, tag) => ({
+          ...prev,
+          ...{
+            [tag]: {
+              component: overrides[tag],
+              props: {
+                size,
+              },
             },
           },
-        },
-      }), {}),
+        }),
+        {},
+      ),
     }}
   />
 )

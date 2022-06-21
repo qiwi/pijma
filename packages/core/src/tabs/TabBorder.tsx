@@ -1,6 +1,7 @@
-import React, {FC} from 'react'
-import {Card, Pos} from '../primitive'
-import {useTheme} from '../styled'
+import React, { FC } from 'react'
+
+import { Card, Pos } from '../primitive'
+import { useTheme } from '../styled'
 
 export interface TabBorderProps {
   width: number | string
@@ -17,9 +18,7 @@ export const TabBorder: FC<TabBorderProps> = ({
 }) => {
   const theme = useTheme()
 
-  return stub ? (
-    null
-  ) : (
+  return stub ? null : (
     <Pos
       transition="left 300ms cubic-bezier(0.4, 0.0, 0.2, 1), width 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
       type="absolute"

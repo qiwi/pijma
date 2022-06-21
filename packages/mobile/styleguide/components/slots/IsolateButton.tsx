@@ -1,13 +1,10 @@
-import React, {FC} from 'react'
-
+import React, { FC } from 'react'
 // @ts-ignore
-import {MdFullscreen, MdFullscreenExit} from 'react-icons/md'
-
-// @ts-ignore
-import ToolbarButton from 'rsg-components/ToolbarButton'
-
+import { MdFullscreen, MdFullscreenExit } from 'react-icons/md'
 // @ts-ignore
 import getUrl from 'react-styleguidist/lib/client/utils/getUrl'
+// @ts-ignore
+import ToolbarButton from 'rsg-components/ToolbarButton'
 
 interface IsolateButtonProps {
   name: string
@@ -15,7 +12,7 @@ interface IsolateButtonProps {
   isolated: boolean
 }
 
-const IsolateButton: FC<IsolateButtonProps> = ({name, example, isolated}) => (
+const IsolateButton: FC<IsolateButtonProps> = ({ name, example, isolated }) =>
   isolated ? (
     <ToolbarButton
       href={getUrl({
@@ -24,7 +21,7 @@ const IsolateButton: FC<IsolateButtonProps> = ({name, example, isolated}) => (
       })}
       title="Show all components"
     >
-      <MdFullscreenExit/>
+      <MdFullscreenExit />
     </ToolbarButton>
   ) : (
     <ToolbarButton
@@ -35,9 +32,8 @@ const IsolateButton: FC<IsolateButtonProps> = ({name, example, isolated}) => (
       })}
       title="Open isolated"
     >
-      <MdFullscreen/>
+      <MdFullscreen />
     </ToolbarButton>
   )
-)
 
 export default IsolateButton

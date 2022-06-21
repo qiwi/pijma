@@ -43,5 +43,5 @@ export * from './switch-field'
 export * from './select-field'
 export * from './code-field'
 
-export {TextField as MaskTextField} from './text-field'
-export {PasswordField as MaskPasswordField} from './password-field'
+export { TextField as MaskTextField } from './text-field'
+export { PasswordField as MaskPasswordField } from './password-field'

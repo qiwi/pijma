@@ -1,9 +1,15 @@
-import React, {FC, ReactNode} from 'react'
+import {
+  Box,
+  Flex,
+  FlexItem,
+  Image,
+  LinkControlProps,
+  Spacer,
+} from '@qiwi/pijma-core'
+import React, { FC, ReactNode } from 'react'
 
-import {Box, Flex, FlexItem, Spacer, Image, LinkControlProps} from '@qiwi/pijma-core'
-
-import {Paragraph} from '../typography'
-import {SectionLink} from '../link'
+import { SectionLink } from '../link'
+import { Paragraph } from '../typography'
 
 export interface LogoLinkProps {
   icon: ReactNode
@@ -20,7 +26,13 @@ export interface LogoLinkProps {
   onBlur?: LinkControlProps['onBlur']
 }
 
-export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizontal, ...props}) => (
+export const LogoLink: FC<LogoLinkProps> = ({
+  title,
+  icon,
+  description,
+  horizontal,
+  ...props
+}) => (
   <SectionLink
     href={props.href}
     target={props.target}
@@ -30,23 +42,13 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizonta
     onFocus={props.onFocus}
     onBlur={props.onBlur}
   >
-    {() => (
+    {() =>
       horizontal ? (
         <Box p={4}>
           <Flex align="baseline">
-            <FlexItem
-              shrink={0}
-              mr={4}
-              width={12}
-              height={12}
-            >
+            <FlexItem shrink={0} mr={4} width={12} height={12}>
               {typeof icon === 'string' ? (
-                <Image
-                  src={icon}
-                  alt={title}
-                  width={12}
-                  height={12}
-                />
+                <Image src={icon} alt={title} width={12} height={12} />
               ) : (
                 icon
               )}
@@ -67,9 +69,7 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizonta
                     size="s"
                     children={description}
                   />
-                ) : (
-                  null
-                )}
+                ) : null}
               </Spacer>
             </FlexItem>
           </Flex>
@@ -78,12 +78,7 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizonta
         <Box p={4} height={description ? 53 : 48}>
           <Box width={16} height={16} mx="auto">
             {typeof icon === 'string' ? (
-              <Image
-                src={icon}
-                alt={title}
-                width={16}
-                height={16}
-              />
+              <Image src={icon} alt={title} width={16} height={16} />
             ) : (
               icon
             )}
@@ -108,11 +103,9 @@ export const LogoLink: FC<LogoLinkProps> = ({title, icon, description, horizonta
                 children={description}
               />
             </Box>
-          ) : (
-            null
-          )}
+          ) : null}
         </Box>
       )
-    )}
+    }
   </SectionLink>
 )

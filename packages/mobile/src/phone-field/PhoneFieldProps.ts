@@ -1,6 +1,5 @@
-import {ReactNode} from 'react'
-
-import {PhoneFieldCountry, FlagProps, BasicInputProps} from '@qiwi/pijma-core'
+import { BasicInputProps, FlagProps, PhoneFieldCountry } from '@qiwi/pijma-core'
+import { ReactNode } from 'react'
 
 export interface PhoneFieldProps {
   value: string

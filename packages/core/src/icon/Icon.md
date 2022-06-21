@@ -3,9 +3,16 @@
   <BlockContent>
     <Flex wrap="wrap">
       {Object.keys(IconPaths).map((name, i) => (
-        <Flex width={25} key={i} direction="column" align="center" my={3} mx={5}>
+        <Flex
+          width={25}
+          key={i}
+          direction="column"
+          align="center"
+          my={3}
+          mx={5}
+        >
           <FlexItem mb={4} shrink={0}>
-            <Icon name={name}/>
+            <Icon name={name} />
           </FlexItem>
           <FlexItem>
             <Paragraph size="s" align="center">
@@ -24,7 +31,7 @@
 ```jsx
 <Block>
   <BlockContent>
-    <Icon name="qiwi"/>
+    <Icon name="qiwi" />
   </BlockContent>
 </Block>
 ```
@@ -32,23 +39,40 @@
 ### Special
 
 ```jsx
-const [filterIconActive, setFilterIconActive] = React.useState(false);
-const [crossBurgerActive, setCrossBurgerActive] = React.useState(false);
-const [feedIconActive, setFeedIconActive] = React.useState(false);
-<Block>
+const [filterIconActive, setFilterIconActive] = React.useState(false)
+const [crossBurgerActive, setCrossBurgerActive] = React.useState(false)
+const [feedIconActive, setFeedIconActive] = React.useState(false)
+;<Block>
   <BlockContent>
     <Flex>
       <FlexItem width={6} height={6} mr={6} cursor="pointer">
-        <QuestionIcon/>
+        <QuestionIcon />
       </FlexItem>
-      <FlexItem width={6} height={6} mr={6} cursor="pointer" onClick={() => setFilterIconActive(!filterIconActive)}>
-        <FilterIcon active={filterIconActive}/>
+      <FlexItem
+        width={6}
+        height={6}
+        mr={6}
+        cursor="pointer"
+        onClick={() => setFilterIconActive(!filterIconActive)}
+      >
+        <FilterIcon active={filterIconActive} />
       </FlexItem>
-      <FlexItem width={6} height={6} mr={6} cursor="pointer" onClick={() => setCrossBurgerActive(!crossBurgerActive)}>
-        <CrossBurger active={crossBurgerActive}/>
+      <FlexItem
+        width={6}
+        height={6}
+        mr={6}
+        cursor="pointer"
+        onClick={() => setCrossBurgerActive(!crossBurgerActive)}
+      >
+        <CrossBurger active={crossBurgerActive} />
       </FlexItem>
-      <FlexItem width={6} height={6} cursor="pointer" onClick={() => setFeedIconActive(!feedIconActive)}>
-        <FeedIcon active={feedIconActive}/>
+      <FlexItem
+        width={6}
+        height={6}
+        cursor="pointer"
+        onClick={() => setFeedIconActive(!feedIconActive)}
+      >
+        <FeedIcon active={feedIconActive} />
       </FlexItem>
     </Flex>
   </BlockContent>
@@ -62,24 +86,24 @@ const [feedIconActive, setFeedIconActive] = React.useState(false);
   <BlockContent>
     <Flex>
       <FlexItem width={12} height={6} mr={6}>
-        <PaymentSystemIcon name="mastercard"/>
+        <PaymentSystemIcon name="mastercard" />
       </FlexItem>
       <FlexItem width={12} height={6} mr={6}>
-        <PaymentSystemIcon name="mir"/>
+        <PaymentSystemIcon name="mir" />
       </FlexItem>
       <FlexItem width={12} height={6}>
-        <PaymentSystemIcon name="visa"/>
+        <PaymentSystemIcon name="visa" />
       </FlexItem>
     </Flex>
     <Flex mt={6}>
       <FlexItem width={12} height={6} mr={6}>
-        <PaymentSystemIcon name="mastercard" gray/>
+        <PaymentSystemIcon name="mastercard" gray />
       </FlexItem>
       <FlexItem width={12} height={6} mr={6}>
-        <PaymentSystemIcon name="mir" gray/>
+        <PaymentSystemIcon name="mir" gray />
       </FlexItem>
       <FlexItem width={12} height={6}>
-        <PaymentSystemIcon name="visa" gray/>
+        <PaymentSystemIcon name="visa" gray />
       </FlexItem>
     </Flex>
   </BlockContent>
@@ -93,53 +117,53 @@ const [feedIconActive, setFeedIconActive] = React.useState(false);
   <BlockContent>
     <Flex>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="pci-dss"/>
+        <PaymentSecurityIcon name="pci-dss" />
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="mir-accept"/>
+        <PaymentSecurityIcon name="mir-accept" />
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="visa-verified"/>
+        <PaymentSecurityIcon name="visa-verified" />
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="mastercard-id-check"/>
+        <PaymentSecurityIcon name="mastercard-id-check" />
       </FlexItem>
       <FlexItem width={16} height={6}>
-        <PaymentSecurityIcon name="apple-pay"/>
+        <PaymentSecurityIcon name="apple-pay" />
       </FlexItem>
     </Flex>
     <Flex mt={6}>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="pci-dss" gray/>
+        <PaymentSecurityIcon name="pci-dss" gray />
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="mir-accept" gray/>
+        <PaymentSecurityIcon name="mir-accept" gray />
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="visa-verified" gray/>
+        <PaymentSecurityIcon name="visa-verified" gray />
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="mastercard-id-check" gray/>
+        <PaymentSecurityIcon name="mastercard-id-check" gray />
       </FlexItem>
       <FlexItem width={16} height={6}>
-        <PaymentSecurityIcon name="apple-pay" gray/>
+        <PaymentSecurityIcon name="apple-pay" gray />
       </FlexItem>
     </Flex>
     <Flex mt={6}>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="pci-dss" stub/>
+        <PaymentSecurityIcon name="pci-dss" stub />
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="mir-accept" stub/>
+        <PaymentSecurityIcon name="mir-accept" stub />
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="visa-verified" stub/>
+        <PaymentSecurityIcon name="visa-verified" stub />
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="mastercard-id-check" stub/>
+        <PaymentSecurityIcon name="mastercard-id-check" stub />
       </FlexItem>
       <FlexItem width={16} height={6}>
-        <PaymentSecurityIcon name="apple-pay" stub/>
+        <PaymentSecurityIcon name="apple-pay" stub />
       </FlexItem>
     </Flex>
   </BlockContent>
@@ -153,13 +177,13 @@ const [feedIconActive, setFeedIconActive] = React.useState(false);
   <BlockContent>
     <Flex>
       <FlexItem width={37} height={11} mr={6}>
-        <MobileAppIcon name="google"/>
+        <MobileAppIcon name="google" />
       </FlexItem>
       <FlexItem width={37} height={11}>
-        <MobileAppIcon name="apple"/>
+        <MobileAppIcon name="apple" />
       </FlexItem>
       <FlexItem width={37} height={11}>
-        <MobileAppIcon name="huawei"/>
+        <MobileAppIcon name="huawei" />
       </FlexItem>
     </Flex>
   </BlockContent>

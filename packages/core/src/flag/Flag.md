@@ -3,9 +3,16 @@
   <BlockContent>
     <Flex wrap="wrap">
       {Object.keys(FlagFillPaths).map((code, i) => (
-        <Flex width={25} key={i} direction="column" align="center" my={3} mx={2}>
+        <Flex
+          width={25}
+          key={i}
+          direction="column"
+          align="center"
+          my={3}
+          mx={2}
+        >
           <FlexItem mb={4} shrink={0}>
-            <Flag code={code} height={11} width={16}/>
+            <Flag code={code} height={11} width={16} />
           </FlexItem>
           <FlexItem>
             <Paragraph size="s">

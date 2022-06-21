@@ -1,50 +1,57 @@
-import React, {FunctionComponent, Fragment} from 'react'
-
 import {
-  css,
   Box,
   Card,
-  Pos,
-  Modal,
+  css,
   Icon,
+  Modal,
+  Pos,
   SimpleTransition,
   SimpleTransitionProps,
 } from '@qiwi/pijma-core'
+import React, { Fragment, FunctionComponent } from 'react'
 
-const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => (
+  <SimpleTransition {...props} />
+)
 
 contentTransition.defaultProps = {
   timeout: {
     enter: 370,
     exit: 250,
   },
-  enterClassName: (timeout: number) => css({
-    opacity: 1,
-    transform: 'translate3d(0, 0, 0)',
-    transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
-  }),
-  exitClassName: (timeout: number) => css({
-    opacity: 0,
-    transform: 'translate3d(0, 35px, 0)',
-    transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
-  }),
+  enterClassName: (timeout: number) =>
+    css({
+      opacity: 1,
+      transform: 'translate3d(0, 0, 0)',
+      transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
+    }),
+  exitClassName: (timeout: number) =>
+    css({
+      opacity: 0,
+      transform: 'translate3d(0, 35px, 0)',
+      transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
+    }),
 }
 
-const backdropTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const backdropTransition: FunctionComponent<SimpleTransitionProps> = (
+  props,
+) => <SimpleTransition {...props} />
 
 backdropTransition.defaultProps = {
   timeout: {
     enter: 370,
     exit: 250,
   },
-  enterClassName: (timeout: number) => css({
-    opacity: 1,
-    transition: `opacity ${timeout}ms ease`,
-  }),
-  exitClassName: (timeout: number) => css({
-    opacity: 0,
-    transition: `opacity ${timeout}ms ease`,
-  }),
+  enterClassName: (timeout: number) =>
+    css({
+      opacity: 1,
+      transition: `opacity ${timeout}ms ease`,
+    }),
+  exitClassName: (timeout: number) =>
+    css({
+      opacity: 0,
+      transition: `opacity ${timeout}ms ease`,
+    }),
 }
 
 interface SimpleModalProps {
@@ -58,17 +65,16 @@ interface SimpleModalProps {
   onHide?: () => void
 }
 
-const ModalWidth: { [size in NonNullable<SimpleModalProps['size']>]: number } = {
-  s: 95,
-  m: 145,
-  l: 170,
-}
+const ModalWidth: { [size in NonNullable<SimpleModalProps['size']>]: number } =
+  {
+    s: 95,
+    m: 145,
+    l: 170,
+  }
 
-const SimpleModal: FunctionComponent<SimpleModalProps> = (props) => (
+const SimpleModal: FunctionComponent<SimpleModalProps> = (props) =>
   props.stub ? (
-    <Box display="none">
-      {props.children}
-    </Box>
+    <Box display="none">{props.children}</Box>
   ) : (
     <Modal
       show={props.show}
@@ -78,8 +84,16 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = (props) => (
       transition={contentTransition}
       backdropTransition={backdropTransition}
       renderBackdrop={(backdropProps) => (
-        <Pos type="fixed" zIndex={9999} top={0} right={0} bottom={0} left={0} {...backdropProps}>
-          <Card bg="rgba(255, 255, 255, 0.96)" width={1} height={1}/>
+        <Pos
+          type="fixed"
+          zIndex={9999}
+          top={0}
+          right={0}
+          bottom={0}
+          left={0}
+          {...backdropProps}
+        >
+          <Card bg="rgba(255, 255, 255, 0.96)" width={1} height={1} />
         </Pos>
       )}
       renderDialog={(dialogProps) => (
@@ -103,8 +117,21 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = (props) => (
           }}
           {...dialogProps}
         >
-          <Pos type="relative" display="inline-block" p={12} css={{verticalAlign: 'middle', textAlign: 'left'}}>
-            <Card s="0 20px 64px 8px rgba(0, 0, 0, 0.16)" r={10} bg="#fff" pt={11} pb={12} px={11} width={ModalWidth[props.size]}>
+          <Pos
+            type="relative"
+            display="inline-block"
+            p={12}
+            css={{ verticalAlign: 'middle', textAlign: 'left' }}
+          >
+            <Card
+              s="0 20px 64px 8px rgba(0, 0, 0, 0.16)"
+              r={10}
+              bg="#fff"
+              pt={11}
+              pb={12}
+              px={11}
+              width={ModalWidth[props.size]}
+            >
               <Fragment>
                 {props.closable && props.onHide ? (
                   <Pos
@@ -115,11 +142,9 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = (props) => (
                     height={6}
                     cursor="pointer"
                     onClick={props.onHide}
-                    children={<Icon name="cross" color="#000"/>}
+                    children={<Icon name="cross" color="#000" />}
                   />
-                ) : (
-                  null
-                )}
+                ) : null}
                 {props.children}
               </Fragment>
             </Card>
@@ -128,6 +153,5 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = (props) => (
       )}
     />
   )
-)
 
 export default SimpleModal

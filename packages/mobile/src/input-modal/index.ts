@@ -1,5 +1,3 @@
 import InputModal from './InputModal'
 
-export {
-  InputModal,
-}
+export { InputModal }

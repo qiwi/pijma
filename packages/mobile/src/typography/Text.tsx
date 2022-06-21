@@ -1,6 +1,5 @@
-import React, {FunctionComponent} from 'react'
-
-import {Box, Breaker, Stub, Typo, TypoProps} from '@qiwi/pijma-core'
+import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
+import React, { FunctionComponent } from 'react'
 
 export interface TextProps {
   display?: 'block' | 'inline' | 'inline-block'
@@ -28,11 +27,12 @@ const TextHeight: { [size in NonNullable<TextProps['size']>]: number } = {
   l: 8,
 }
 
-const TextHeightCompact: { [size in NonNullable<TextProps['size']>]: number } = {
-  s: 4,
-  m: 5,
-  l: 7,
-}
+const TextHeightCompact: { [size in NonNullable<TextProps['size']>]: number } =
+  {
+    s: 4,
+    m: 5,
+    l: 7,
+  }
 
 const StubHeight: Record<NonNullable<TextProps['size']>, number> = {
   s: 2,
@@ -57,7 +57,10 @@ const StubOffsetCompactTop: Record<NonNullable<TextProps['size']>, number> = {
   l: 2,
 }
 
-const StubOffsetCompactBottom: Record<NonNullable<TextProps['size']>, number> = {
+const StubOffsetCompactBottom: Record<
+  NonNullable<TextProps['size']>,
+  number
+> = {
   s: 1,
   m: 1,
   l: 2,
@@ -85,24 +88,23 @@ export const Text: FunctionComponent<TextProps> = ({
   clamp,
   children,
   stub = false,
-}) => (
+}) =>
   stub ? (
-    size === undefined || display === undefined ? (
-      null
-    ) : (
-      <Box
-        as="span"
-        display={display}
-      >
-        {Array(clamp === undefined ? 1 : clamp).fill(1).map((width: number, index: number) => (
-          <Stub
-            key={index}
-            height={StubHeight[size]}
-            width={width}
-            top={compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}
-            bottom={compact ? StubOffsetCompactBottom[size] : StubOffsetBottom[size]}
-          />
-        ))}
+    size === undefined || display === undefined ? null : (
+      <Box as="span" display={display}>
+        {new Array(clamp === undefined ? 1 : clamp)
+          .fill(1)
+          .map((width: number, index: number) => (
+            <Stub
+              key={index}
+              height={StubHeight[size]}
+              width={width}
+              top={compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}
+              bottom={
+                compact ? StubOffsetCompactBottom[size] : StubOffsetBottom[size]
+              }
+            />
+          ))}
       </Box>
     )
   ) : (
@@ -110,7 +112,13 @@ export const Text: FunctionComponent<TextProps> = ({
       as="span"
       display={display}
       size={size === undefined ? undefined : TextSize[size]}
-      height={size === undefined ? undefined : compact ? TextHeightCompact[size] : TextHeight[size]}
+      height={
+        size === undefined
+          ? undefined
+          : compact
+          ? TextHeightCompact[size]
+          : TextHeight[size]
+      }
       weight={bold === undefined ? undefined : bold ? 500 : 300}
       color={color === undefined ? undefined : TextColor[color]}
       decoration={decoration}
@@ -118,8 +126,6 @@ export const Text: FunctionComponent<TextProps> = ({
       transition={transition}
       align={align}
       clamp={clamp}
-      children={<Breaker children={children}/>}
+      children={<Breaker children={children} />}
     />
   )
-
-)

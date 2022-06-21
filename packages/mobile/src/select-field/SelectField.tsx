@@ -1,20 +1,19 @@
-import React, {FunctionComponent, ReactNode} from 'react'
-
 import {
-  SelectInput,
-  SelectFieldControl,
-  Pos,
   Card,
-  MenuControl,
-  styled,
-  InputField,
-  Icon,
-  OptionModel,
   CardPos,
+  Icon,
+  InputField,
+  MenuControl,
+  OptionModel,
+  Pos,
+  SelectFieldControl,
+  SelectInput,
+  styled,
 } from '@qiwi/pijma-core'
+import React, { FunctionComponent, ReactNode } from 'react'
 
-import {MenuItem} from '../menu'
-import {DropUp} from '../drop-up'
+import { DropUp } from '../drop-up'
+import { MenuItem } from '../menu'
 
 const CardItem = styled(Card)().withComponent(MenuItem)
 
@@ -40,7 +39,9 @@ export interface SelectFieldItemModel<V> extends OptionModel<V> {
   text: string
 }
 
-export const SelectField: FunctionComponent<SelectFieldProps<SelectFieldItemModel<any>, any>> = (props) => (
+export const SelectField: FunctionComponent<
+  SelectFieldProps<SelectFieldItemModel<any>, any>
+> = (props) =>
   props.stub ? (
     <InputField
       active={false}
@@ -66,15 +67,12 @@ export const SelectField: FunctionComponent<SelectFieldProps<SelectFieldItemMode
           onKeyDown={renderProps.onKeyDown}
           onSelect={renderProps.onItemSelect}
           children={(menuRenderProps) => (
-            <CardPos
-              type="relative"
-              width={1}
-            >
+            <CardPos type="relative" width={1}>
               <Pos
                 type="absolute"
                 top={4}
                 right={0}
-                children={<Icon name="angle-down" color="#000"/>}
+                children={<Icon name="angle-down" color="#000" />}
                 transform={`rotate(${renderProps.show ? 180 : 0}deg)`}
                 transition="transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1)"
               />
@@ -84,7 +82,12 @@ export const SelectField: FunctionComponent<SelectFieldProps<SelectFieldItemMode
                 error={props.error}
                 input={
                   <SelectInput
-                    value={(renderProps.select !== undefined) && props.items[renderProps.select] ? props.items[renderProps.select].text : ''}
+                    value={
+                      renderProps.select !== undefined &&
+                      props.items[renderProps.select]
+                        ? props.items[renderProps.select].text
+                        : ''
+                    }
                     focused={renderProps.focused}
                     error={!!props.error}
                     tabIndex={props.tabIndex}
@@ -143,4 +146,3 @@ export const SelectField: FunctionComponent<SelectFieldProps<SelectFieldItemMode
       )}
     />
   )
-)

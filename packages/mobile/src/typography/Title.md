@@ -14,7 +14,7 @@ font-weight: 900
   <BlockContent>
     <Spacer size="m">
       <Title size="1">Title H1</Title>
-      <Title size="1" stub/>
+      <Title size="1" stub />
     </Spacer>
   </BlockContent>
 </Block>
@@ -34,7 +34,7 @@ font-weight: 900
   <BlockContent>
     <Spacer size="m">
       <Title size="2">Title H2</Title>
-      <Title size="2" stub/>
+      <Title size="2" stub />
     </Spacer>
   </BlockContent>
 </Block>
@@ -46,7 +46,9 @@ font-weight: 900
 <Block>
   <BlockContent>
     <Title size="2" clamp={4}>
-      В типографических элементах есть возможность задавать максимальное количество видимых строк через свойство clamp. Если текст выходит за заданные рамки, в конце текста будет добавлено многоточие
+      В типографических элементах есть возможность задавать максимальное
+      количество видимых строк через свойство clamp. Если текст выходит за
+      заданные рамки, в конце текста будет добавлено многоточие
     </Title>
   </BlockContent>
 </Block>

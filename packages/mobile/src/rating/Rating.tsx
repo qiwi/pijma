@@ -1,5 +1,5 @@
-import React, {FC} from 'react'
-import {Flex, FlexItem, Icon, RatingControl, Stub} from '@qiwi/pijma-core'
+import { Flex, FlexItem, Icon, RatingControl, Stub } from '@qiwi/pijma-core'
+import React, { FC } from 'react'
 
 export interface RatingProps {
   value?: number
@@ -27,22 +27,16 @@ export const Rating: FC<RatingProps> = ({
   count = 5,
   stub = false,
   onChange,
-}) => (
+}) =>
   stub ? (
     <Flex
       justify="space-between"
-      maxWidth={(count * RatingSize[size]) + ((count - 1) * RatingIndent[size])}
+      maxWidth={count * RatingSize[size] + (count - 1) * RatingIndent[size]}
       width={1}
     >
-      {Array(count).fill(1).map((_, index) => (
-        <FlexItem
-          key={index}
-        >
-          <Stub
-            height={RatingSize[size]}
-            width={RatingSize[size]}
-            r="50%"
-          />
+      {new Array(count).fill(1).map((_, index) => (
+        <FlexItem key={index}>
+          <Stub height={RatingSize[size]} width={RatingSize[size]} r="50%" />
         </FlexItem>
       ))}
     </Flex>
@@ -52,10 +46,10 @@ export const Rating: FC<RatingProps> = ({
       count={count}
       disabled={disabled}
       onChange={onChange}
-      children={renderProps => (
+      children={(renderProps) => (
         <Flex
           justify="space-between"
-          maxWidth={(count * RatingSize[size]) + ((count - 1) * RatingIndent[size])}
+          maxWidth={count * RatingSize[size] + (count - 1) * RatingIndent[size]}
           width={1}
         >
           {renderProps.items.map((item, index) => (
@@ -76,8 +70,6 @@ export const Rating: FC<RatingProps> = ({
       )}
     />
   )
-
-)
 
 Rating.defaultProps = {
   value: 0,

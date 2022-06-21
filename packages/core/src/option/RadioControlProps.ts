@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 
 import OptionModel from './OptionModel'
 
@@ -16,11 +16,13 @@ export default interface RadioControlProps<O extends OptionModel<V>, V> {
     onBlur: React.FocusEventHandler
     onKeyDown: React.KeyboardEventHandler
     onMouseLeave: React.MouseEventHandler
-    options: Array<O & {
-      checked: boolean
-      focused: boolean
-      onClick: (value: V) => void
-      onMouseEnter: (value: V) => void
-    }>
+    options: Array<
+      O & {
+        checked: boolean
+        focused: boolean
+        onClick: (value: V) => void
+        onMouseEnter: (value: V) => void
+      }
+    >
   }>
 }

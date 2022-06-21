@@ -1,8 +1,11 @@
-import {SuggestControlProps} from '@qiwi/pijma-core'
+import { SuggestControlProps } from '@qiwi/pijma-core'
 
 import ContentSuggestOptionModel from './ContentSuggestOptionModel'
 
-export default interface ContentSuggestProps<O extends ContentSuggestOptionModel<V>, V> {
+export default interface ContentSuggestProps<
+  O extends ContentSuggestOptionModel<V>,
+  V,
+> {
   value?: SuggestControlProps<O, V>['value']
   suggest: SuggestControlProps<O, V>['suggest']
   items: SuggestControlProps<O, V>['items']

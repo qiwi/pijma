@@ -1,35 +1,40 @@
-import {Component, RefObject, createRef} from 'react'
-import {findDOMNode} from 'react-dom'
+import { Component, createRef, RefObject } from 'react'
+import { findDOMNode } from 'react-dom'
+
 import MenuControlProps from './MenuControlProps'
 import MenuControlState from './MenuControlState'
 
-export default class MenuControl extends Component<MenuControlProps, MenuControlState> {
-
-  public static getDerivedStateFromProps(nextProps: MenuControlProps, prevState: MenuControlState): Partial<MenuControlState> {
-    const {focused} = prevState
-    const {count} = nextProps
+export default class MenuControl extends Component<
+  MenuControlProps,
+  MenuControlState
+> {
+  public static getDerivedStateFromProps(
+    nextProps: MenuControlProps,
+    prevState: MenuControlState,
+  ): Partial<MenuControlState> {
+    const { focused } = prevState
+    const { count } = nextProps
     return {
-      focused: count === 0 ? (
-        undefined
-      ) : focused !== undefined && count <= focused ? (
-        count - 1
-      ) : (
-        focused
-      ),
-      refs: Array(count).fill(1).map(() => createRef()),
+      focused:
+        count === 0
+          ? undefined
+          : focused !== undefined && count <= focused
+          ? count - 1
+          : focused,
+      refs: new Array(count).fill(1).map(() => createRef()),
     }
   }
 
   public componentDidUpdate() {
-    const {selected} = this.props
-    const {focused, refs} = this.state
+    const { selected } = this.props
+    const { focused, refs } = this.state
     if (selected !== undefined && focused === undefined) {
       this.scrollToItem(refs[selected])
     }
   }
 
   public state: MenuControlState = {
-    refs: Array(this.props.count).fill(1).map(() => createRef()),
+    refs: new Array(this.props.count).fill(1).map(() => createRef()),
     focused: undefined,
   }
 
@@ -62,7 +67,9 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
   }
 
   private scrollToItem: (item: RefObject<HTMLDivElement>) => void = (item) => {
-    const containerElement = findDOMNode(this.containerRef.current) as HTMLDivElement
+    const containerElement = findDOMNode(
+      this.containerRef.current,
+    ) as HTMLDivElement
     const itemElement = findDOMNode(item.current) as HTMLDivElement
     if (!containerElement || !itemElement) {
       return
@@ -72,17 +79,24 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
     const itemOffset = itemElement.offsetTop
     const scrollOffset = containerElement.scrollTop
     const itemHeigher = itemOffset < scrollOffset
-    const itemLower = itemOffset + itemBoundingRect.height > scrollOffset + containerBoundingRect.height
+    const itemLower =
+      itemOffset + itemBoundingRect.height >
+      scrollOffset + containerBoundingRect.height
     if (itemHeigher) {
-      containerElement.scrollTo({top: itemOffset})
+      containerElement.scrollTo({ top: itemOffset })
     }
     if (itemLower) {
-      containerElement.scrollTo({top: itemOffset + itemBoundingRect.height - containerBoundingRect.height})
+      containerElement.scrollTo({
+        top:
+          itemOffset + itemBoundingRect.height - containerBoundingRect.height,
+      })
     }
   }
 
-  private onKeyDown: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
-    const {focused} = this.state
+  private onKeyDown: React.KeyboardEventHandler = (
+    event: React.KeyboardEvent,
+  ) => {
+    const { focused } = this.state
     if (event.key === 'ArrowDown') {
       event.preventDefault()
       const next = this.next
@@ -126,8 +140,8 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
   }
 
   private get next(): number | undefined {
-    const {count, selected} = this.props
-    const {focused} = this.state
+    const { count, selected } = this.props
+    const { focused } = this.state
     if (focused === undefined && selected === undefined) {
       return 0
     }
@@ -136,8 +150,8 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
   }
 
   private get prev(): number | undefined {
-    const {count, selected} = this.props
-    const {focused} = this.state
+    const { count, selected } = this.props
+    const { focused } = this.state
     if (focused === undefined && selected === undefined) {
       return count - 1
     }
@@ -146,10 +160,10 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
   }
 
   public render() {
-    const {focused} = this.state
-    const {selected, count} = this.props
+    const { focused } = this.state
+    const { selected, count } = this.props
     return this.props.children({
-      items: Array(count).fill(1).map((_item, index) => ({
+      items: new Array(count).fill(1).map((_item, index) => ({
         ref: this.state.refs[index],
         focused: focused !== undefined ? focused === index : false,
         selected: selected !== undefined ? selected === index : false,
@@ -163,5 +177,4 @@ export default class MenuControl extends Component<MenuControlProps, MenuControl
       onKeyDown: this.onKeyDown,
     })
   }
-
 }

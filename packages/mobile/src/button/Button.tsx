@@ -1,17 +1,16 @@
-import React, {FunctionComponent, ReactElement, Fragment} from 'react'
-
 import {
+  Btn,
   ButtonControl,
-  Spinner,
   Card,
-  Pos,
   Flex,
   FlexItem,
-  Typo,
-  Btn,
+  Pos,
+  Spinner,
   Stub,
+  Typo,
   useTheme,
 } from '@qiwi/pijma-core'
+import React, { Fragment, FunctionComponent, ReactElement } from 'react'
 
 export interface ButtonProps {
   onClick?: () => void
@@ -119,17 +118,13 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
                 r={(iconSize[props.size] - 1) * 2}
               />
             </FlexItem>
-          ) : (
-            null
-          )}
+          ) : null}
           {props.text || !props.icon ? (
             <Stub
               width={stubWidth[props.size] - (props.icon ? 9 : 0)}
               height={stubHeight[props.size]}
             />
-          ) : (
-            null
-          )}
+          ) : null}
         </Fragment>
       </Flex>
     </Card>
@@ -144,8 +139,20 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
           type={props.type}
           width={!props.icon || props.text ? 1 : buttonSize[props.size]}
           height={buttonSize[props.size]}
-          bg={props.disabled ? '#e6e6e6' : renderProps.hover || renderProps.focus ? theme.button.bg.hover[props.kind] : theme.button.bg.kind[props.kind]}
-          b={props.disabled ? 'none' : renderProps.hover || renderProps.focus ? theme.button.border.hover[props.kind] : theme.button.border.kind[props.kind]}
+          bg={
+            props.disabled
+              ? '#e6e6e6'
+              : renderProps.hover || renderProps.focus
+              ? theme.button.bg.hover[props.kind]
+              : theme.button.bg.kind[props.kind]
+          }
+          b={
+            props.disabled
+              ? 'none'
+              : renderProps.hover || renderProps.focus
+              ? theme.button.border.hover[props.kind]
+              : theme.button.border.kind[props.kind]
+          }
           r={props.radius ?? buttonRadius[props.size]}
           transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
           onClick={renderProps.onClick}
@@ -153,21 +160,23 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
           onBlur={renderProps.onBlur}
           onMouseEnter={renderProps.onMouseEnter}
           onMouseLeave={renderProps.onMouseLeave}
-          children={(
+          children={
             <Pos
               type="relative"
               width={1}
               height={1}
               cursor={props.disabled ? 'not-allowed' : 'pointer'}
-              children={(
+              children={
                 <Flex
                   align="center"
                   justify="center"
                   width={1}
                   height={1}
-                  px={props.icon && !props.text ? 0 : contextPaddingX[props.size]}
+                  px={
+                    props.icon && !props.text ? 0 : contextPaddingX[props.size]
+                  }
                   transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-                  children={(
+                  children={
                     <Fragment>
                       <Pos
                         type="absolute"
@@ -175,68 +184,100 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
                         right={0}
                         bottom={0}
                         left={0}
-                        opacity={props.loading ? (renderProps.hover || renderProps.active || renderProps.focus ? 0.9 : 1) : 0}
+                        opacity={
+                          props.loading
+                            ? renderProps.hover ||
+                              renderProps.active ||
+                              renderProps.focus
+                              ? 0.9
+                              : 1
+                            : 0
+                        }
                         transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-                        children={(
+                        children={
                           <Flex
                             align="center"
                             justify="center"
                             width={1}
                             height={1}
-                            children={(
+                            children={
                               <Spinner
                                 paused={!props.loading}
                                 width={iconSize[props.size]}
                                 height={iconSize[props.size]}
-                                color={props.disabled ? '#666' : theme.button.text.color[props.kind]}
+                                color={
+                                  props.disabled
+                                    ? '#666'
+                                    : theme.button.text.color[props.kind]
+                                }
                               />
-                            )}
+                            }
                           />
-                        )}
+                        }
                       />
                       {props.icon ? (
                         <FlexItem
                           shrink={0}
-                          opacity={props.loading ? 0 : renderProps.hover || renderProps.active || renderProps.focus ? 0.9 : 1}
+                          opacity={
+                            props.loading
+                              ? 0
+                              : renderProps.hover ||
+                                renderProps.active ||
+                                renderProps.focus
+                              ? 0.9
+                              : 1
+                          }
                           mr={props.text ? iconMargin[props.size] : 0}
                           width={iconSize[props.size]}
                           height={iconSize[props.size]}
                           transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
                           children={React.cloneElement(props.icon, {
-                            color: props.disabled ? '#666' : props.kind === 'brand' ? '#fff' : '#000',
+                            color: props.disabled
+                              ? '#666'
+                              : props.kind === 'brand'
+                              ? '#fff'
+                              : '#000',
                             size: 1,
                           })}
                         />
-                      ) : (
-                        null
-                      )}
+                      ) : null}
                       {props.text || !props.icon ? (
                         <FlexItem
-                          opacity={props.loading ? 0 : renderProps.hover || renderProps.active || renderProps.focus ? 0.9 : 1}
+                          opacity={
+                            props.loading
+                              ? 0
+                              : renderProps.hover ||
+                                renderProps.active ||
+                                renderProps.focus
+                              ? 0.9
+                              : 1
+                          }
                           overflow="hidden"
                           transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-                          children={(
+                          children={
                             <Typo
                               nowrap={true}
                               display="block"
                               weight={500}
-                              color={props.disabled ? '#666' : theme.button.text.color[props.kind]}
+                              color={
+                                props.disabled
+                                  ? '#666'
+                                  : theme.button.text.color[props.kind]
+                              }
                               size={textSize[props.size]}
                               height={textHeight[props.size]}
                               transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
                               children={props.text}
                             />
-                          )}
+                          }
                         />
-                      ) : (
-                        null
-                      )}
+                      ) : null}
                     </Fragment>
-                  )}
+                  }
                 />
-              )}
+              }
             />
-          )}
+          }
         />
       )}
     />

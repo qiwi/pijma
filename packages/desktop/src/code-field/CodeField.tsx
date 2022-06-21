@@ -1,27 +1,42 @@
-import React, {Fragment} from 'react'
+import {
+  Box,
+  CodeFieldControl,
+  Flex,
+  FlexItem,
+  Input,
+  keyframes,
+  Stub,
+  Typo,
+} from '@qiwi/pijma-core'
+import React, { Fragment } from 'react'
 
-import {Input, CodeFieldControl, Stub, Typo, Box, keyframes, Flex, FlexItem} from '@qiwi/pijma-core'
+import { CodeFieldProps } from './CodeFieldProps'
 
-import {CodeFieldProps} from './CodeFieldProps'
+const animation = (count: number) =>
+  keyframes({
+    '0%': {
+      height: '48px',
+    },
+    [`${(1 / count) * 50}%`]: {
+      height: '40px',
+    },
+    [`${(1 / count) * 100}%`]: {
+      height: '48px',
+    },
+  })
 
-const animation = (count: number) => keyframes({
-  '0%': {
-    height: '48px',
-  },
-  [`${1 / count * 50}%`]: {
-    height: '40px',
-  },
-  [`${1 / count * 100}%`]: {
-    height: '48px',
-  },
-})
-
-export const CodeField: React.FC<CodeFieldProps> = ({length = 4, autoFocus = false, loading = false, type = 'tel', ...props}) => (
+export const CodeField: React.FC<CodeFieldProps> = ({
+  length = 4,
+  autoFocus = false,
+  loading = false,
+  type = 'tel',
+  ...props
+}) =>
   props.stub ? (
     <Fragment>
-      {Array(length).fill('').map((_, index) => (
+      {new Array(length).fill('').map((_, index) => (
         <Box ml={index === 0 ? 0 : 3} display="inline-block" key={index}>
-          <Stub width={8} height={12} r={8}/>
+          <Stub width={8} height={12} r={8} />
         </Box>
       ))}
     </Fragment>
@@ -44,9 +59,15 @@ export const CodeField: React.FC<CodeFieldProps> = ({length = 4, autoFocus = fal
                   name={props.name}
                   tabIndex={index === 0 ? 0 : -1}
                   cursor={props.disabled ? 'not-allowed' : undefined}
-                  animation={loading ? `${animation(props.value.length)} ${450 * props.value.length}ms ease-in-out ${450 * index}ms infinite` : undefined}
+                  animation={
+                    loading
+                      ? `${animation(props.value.length)} ${
+                          450 * props.value.length
+                        }ms ease-in-out ${450 * index}ms infinite`
+                      : undefined
+                  }
                   autoFocus={autoFocus && index === 0}
-                  css={{textAlign: 'center'}}
+                  css={{ textAlign: 'center' }}
                   bg="#F2F2F2"
                   b={item.focused && !loading ? '1px solid #CCCCCC' : undefined}
                   autoComplete="off"
@@ -59,11 +80,11 @@ export const CodeField: React.FC<CodeFieldProps> = ({length = 4, autoFocus = fal
                   disabled={props.disabled || loading}
                   ref={item.ref}
                   value={loading ? '' : props.value[index]}
-                  onChange={e => item.onChange(e, index)}
-                  onClick={e => item.onClick(e, index)}
-                  onFocus={e => item.onFocus(e, index)}
-                  onBlur={e => item.onBlur(e, index)}
-                  onKeyDown={e => renderProps.onKeyDown(e, index)}
+                  onChange={(e) => item.onChange(e, index)}
+                  onClick={(e) => item.onClick(e, index)}
+                  onFocus={(e) => item.onFocus(e, index)}
+                  onBlur={(e) => item.onBlur(e, index)}
+                  onKeyDown={(e) => renderProps.onKeyDown(e, index)}
                 />
               </FlexItem>
             ))}
@@ -79,11 +100,8 @@ export const CodeField: React.FC<CodeFieldProps> = ({length = 4, autoFocus = fal
                 children={props.error}
               />
             </Box>
-          ) : (
-            null
-          )}
+          ) : null}
         </Box>
       )}
     />
   )
-)

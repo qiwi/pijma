@@ -1,33 +1,31 @@
-import React, {Fragment} from 'react'
-
 import {
-  SuggestControl,
-  Image,
-  MenuControl,
-  Pos,
+  BasicInput,
   Box,
   Card,
-  styled,
-  Spacer,
-  BasicInput,
-  InputField,
   CardPos,
+  Image,
+  InputField,
+  MenuControl,
+  Pos,
+  Spacer,
+  styled,
+  SuggestControl,
 } from '@qiwi/pijma-core'
+import React, { Fragment } from 'react'
 
-import {Paragraph} from '../typography'
-import {Link} from '../link'
-import {DropDown} from '../drop-down'
-import {MenuItem} from '../menu'
-
-import SuggestFieldProps from './SuggestFieldProps'
+import { DropDown } from '../drop-down'
+import { Link } from '../link'
+import { MenuItem } from '../menu'
+import { Paragraph } from '../typography'
 import SuggestFieldOptionsModel from './SuggestFieldOptionModel'
+import SuggestFieldProps from './SuggestFieldProps'
 
 const CardMenuItem = styled(Card)().withComponent(MenuItem)
 
 export const SuggestField = <V extends {}>({
   equals = (a: V, b: V) => a === b,
   ...props
-}: SuggestFieldProps<SuggestFieldOptionsModel<V>, V>) => (
+}: SuggestFieldProps<SuggestFieldOptionsModel<V>, V>) =>
   props.stub ? (
     <InputField
       stub
@@ -59,7 +57,9 @@ export const SuggestField = <V extends {}>({
             <Pos
               type="relative"
               ref={renderProps.containerRef}
-              transition={`box-shadow ${renderProps.focused ? 300 : 200}ms cubic-bezier(0.4, 0.0, 0.2, 1)`}
+              transition={`box-shadow ${
+                renderProps.focused ? 300 : 200
+              }ms cubic-bezier(0.4, 0.0, 0.2, 1)`}
             >
               <Box
                 width={1}
@@ -68,8 +68,12 @@ export const SuggestField = <V extends {}>({
               >
                 <InputField
                   title={props.title}
-                  active={renderProps.focused || !!props.suggest || !!props.placeholder}
-                  input={(
+                  active={
+                    renderProps.focused ||
+                    !!props.suggest ||
+                    !!props.placeholder
+                  }
+                  input={
                     <BasicInput
                       ref={renderProps.inputRef}
                       name={props.name}
@@ -87,13 +91,15 @@ export const SuggestField = <V extends {}>({
                       onChange={renderProps.onRequest}
                       onFocus={renderProps.onInputFocus}
                       onBlur={renderProps.onInputBlur}
-                      onKeyDown={props.items !== undefined && renderProps.focused && (props.items.length > 0 || props.empty !== undefined) ? (
-                        menuRenderProps.onKeyDown
-                      ) : (
-                        renderProps.onItemKeyDown
-                      )}
+                      onKeyDown={
+                        props.items !== undefined &&
+                        renderProps.focused &&
+                        (props.items.length > 0 || props.empty !== undefined)
+                          ? menuRenderProps.onKeyDown
+                          : renderProps.onItemKeyDown
+                      }
                     />
-                  )}
+                  }
                   hint={props.hint}
                   error={props.error}
                   help={props.help}
@@ -106,7 +112,13 @@ export const SuggestField = <V extends {}>({
                 minWidth={1}
                 width={1}
                 offset={3}
-                show={props.items !== undefined && renderProps.focused && (props.items.length > 0 || props.empty !== undefined || props.loading === true)}
+                show={
+                  props.items !== undefined &&
+                  renderProps.focused &&
+                  (props.items.length > 0 ||
+                    props.empty !== undefined ||
+                    props.loading === true)
+                }
                 rootClose={true}
                 onHide={renderProps.onHide}
               >
@@ -122,9 +134,17 @@ export const SuggestField = <V extends {}>({
                   onMouseDown={renderProps.onResultItemsMouseDown}
                 >
                   {props.loading ? (
-                    Array(4).fill(1).map((_item, key) => (
-                      <CardMenuItem key={key} icon={true} stub text="stub" notes="stub"/>
-                    ))
+                    new Array(4)
+                      .fill(1)
+                      .map((_item, key) => (
+                        <CardMenuItem
+                          key={key}
+                          icon={true}
+                          stub
+                          text="stub"
+                          notes="stub"
+                        />
+                      ))
                   ) : (
                     <Spacer size="s">
                       {menuRenderProps.items.length > 0 ? (
@@ -147,18 +167,15 @@ export const SuggestField = <V extends {}>({
                                     height={6}
                                     src={renderProps.items[key].logo}
                                   />
-                                ) : (
-                                  undefined
-                                )}
+                                ) : undefined
+                              }
                               hover={item.focused}
                               active={item.selected}
                               focus={item.selected}
                             />
                           ))}
                         </Fragment>
-                      ) : (
-                        null
-                      )}
+                      ) : null}
                       {props.empty && menuRenderProps.items.length === 0 ? (
                         <Box px={4}>
                           <Paragraph>
@@ -171,14 +188,10 @@ export const SuggestField = <V extends {}>({
                                   children={props.empty.link.text}
                                 />
                               </Fragment>
-                            ) : (
-                              null
-                            )}
+                            ) : null}
                           </Paragraph>
                         </Box>
-                      ) : (
-                        null
-                      )}
+                      ) : null}
                     </Spacer>
                   )}
                 </CardPos>
@@ -189,7 +202,6 @@ export const SuggestField = <V extends {}>({
       )}
     />
   )
-)
 
 SuggestField.defaultProps = {
   equals: (a: any, b: any) => a === b,

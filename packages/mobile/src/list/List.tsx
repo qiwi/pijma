@@ -1,7 +1,7 @@
-import React, {FunctionComponent, ReactNode} from 'react'
+import { Box, Card, Flex, FlexItem, Stub } from '@qiwi/pijma-core'
+import React, { FunctionComponent, ReactNode } from 'react'
 
-import {Box, Card, Flex, FlexItem, Stub} from '@qiwi/pijma-core'
-import {Paragraph, Text} from '../typography'
+import { Paragraph, Text } from '../typography'
 
 export interface ListProps {
   children: ReactNode[]
@@ -64,12 +64,23 @@ const StubBulletIndent: Record<NonNullable<ListProps['size']>, number> = {
   l: 3,
 }
 
-export const List: FunctionComponent<ListProps> = ({stub = false, type, size = 'm', children}) => (
+export const List: FunctionComponent<ListProps> = ({
+  stub = false,
+  type,
+  size = 'm',
+  children,
+}) => (
   <Box as={ListType[type]}>
-    {(stub ? [0, 0] : (children)).map((item, index, array) => (
+    {(stub ? [0, 0] : children).map((item, index, array) => (
       <Flex key={index} as="li" mt={index > 0 ? ItemIndent[type] : 0}>
         {type === 'number' ? (
-          <FlexItem width={String(children.length).length * LetterSize[size] + SpaceSize[size]} shrink={0}>
+          <FlexItem
+            width={
+              String(children.length).length * LetterSize[size] +
+              SpaceSize[size]
+            }
+            shrink={0}
+          >
             {stub ? (
               <Stub
                 height={StubNumberWidth[size]}
@@ -78,7 +89,9 @@ export const List: FunctionComponent<ListProps> = ({stub = false, type, size = '
                 bottom={StubNumberIndent[size]}
               />
             ) : (
-              <Text size={size} bold={false}>{index + 1}.</Text>
+              <Text size={size} bold={false}>
+                {index + 1}.
+              </Text>
             )}
           </FlexItem>
         ) : type === 'bullet' ? (
@@ -91,14 +104,16 @@ export const List: FunctionComponent<ListProps> = ({stub = false, type, size = '
                 bottom={StubNumberIndent[size]}
               />
             ) : (
-              <Text size={size} bold={false}>&#8226;</Text>
+              <Text size={size} bold={false}>
+                &#8226;
+              </Text>
             )}
           </FlexItem>
         ) : type === 'step' ? (
           <Flex direction="column" height="auto" mr={4}>
             <FlexItem shrink={0}>
               {stub ? (
-                <Stub height={10} width={10} r={20}/>
+                <Stub height={10} width={10} r={20} />
               ) : (
                 <Card bg="#F5F5F5" r="50%" height={10} width={10}>
                   <Flex align="center" justify="center" height={1} width={1}>
@@ -109,36 +124,36 @@ export const List: FunctionComponent<ListProps> = ({stub = false, type, size = '
                 </Card>
               )}
             </FlexItem>
-            {index + 1 === array.length ? (
-              null
-            ) : (
-              <FlexItem height={1} minHeight={2} align="center" justify="center" mt={2}>
+            {index + 1 === array.length ? null : (
+              <FlexItem
+                height={1}
+                minHeight={2}
+                align="center"
+                justify="center"
+                mt={2}
+              >
                 {stub ? (
-                  <Stub height={1} width="4px"/>
+                  <Stub height={1} width="4px" />
                 ) : (
-                  <Card bg="#F5F5F5" height={1} width="4px"/>
+                  <Card bg="#F5F5F5" height={1} width="4px" />
                 )}
               </FlexItem>
             )}
           </Flex>
-        ) : (
-          null
-        )}
+        ) : null}
         <FlexItem mt={ListItemYMargin[type]} width={1}>
           {stub ? (
             type === 'step' ? (
-              <Paragraph size={size} stub/>
+              <Paragraph size={size} stub />
             ) : (
               <Box width={1} maxWidth={33}>
-                <Text display="block" size={size} stub/>
+                <Text display="block" size={size} stub />
               </Box>
             )
+          ) : typeof item === 'string' ? (
+            <Paragraph size={size}>{item}</Paragraph>
           ) : (
-            typeof item === 'string' ? (
-              <Paragraph size={size}>{item}</Paragraph>
-            ) : (
-              item
-            )
+            item
           )}
         </FlexItem>
       </Flex>

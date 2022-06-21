@@ -26,7 +26,9 @@
 <Block>
   <BlockContent>
     <Typo as="p" display="block" size="4" height="6" weight="300" color="#000">
-      <Breaker>{'Еще можно использовать \\r \r или \\r\\n \r\n например'}</Breaker>
+      <Breaker>
+        {'Еще можно использовать \\r \r или \\r\\n \r\n например'}
+      </Breaker>
     </Typo>
   </BlockContent>
 </Block>

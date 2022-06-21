@@ -115,36 +115,42 @@ const bankList = [
     logo: require('./media/std.png'),
     description: 'АО «Банк Русский Стандарт»',
   },
-];
+]
 
-const [loading, setLoading] = React.useState(false);
-const [error, setError] = React.useState(false);
-const [timer, setTimer] = React.useState(undefined);
-const [dialogText, setDialogText] = React.useState(undefined);
-const [banks, setBanks] = React.useState(undefined);
-const [suggest, setSuggest] = React.useState('');
-const [value, setValue] = React.useState(undefined);
+const [loading, setLoading] = React.useState(false)
+const [error, setError] = React.useState(false)
+const [timer, setTimer] = React.useState(undefined)
+const [dialogText, setDialogText] = React.useState(undefined)
+const [banks, setBanks] = React.useState(undefined)
+const [suggest, setSuggest] = React.useState('')
+const [value, setValue] = React.useState(undefined)
 
-const filterBanks = (title) => bankList.filter(bank => {
-  return title !== '' && bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1;
-});
+const filterBanks = (title) =>
+  bankList.filter((bank) => {
+    return (
+      title !== '' &&
+      bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1
+    )
+  })
 
 const getBanks = (suggest) => {
-  setLoading(true);
-  clearTimeout(timer);
+  setLoading(true)
+  clearTimeout(timer)
   return new Promise((resolve, reject) => {
-    setTimer(setTimeout(() => {
-      setLoading(false);
-      resolve(filterBanks(suggest));
-    }, 1000));
-  });
-};
+    setTimer(
+      setTimeout(() => {
+        setLoading(false)
+        resolve(filterBanks(suggest))
+      }, 1000),
+    )
+  })
+}
 
 const onRequest = (suggest) => {
-  setSuggest(suggest);
-  setError(suggest === '');
-  getBanks(suggest).then((banks) => setBanks(banks));
-};
+  setSuggest(suggest)
+  setError(suggest === '')
+  getBanks(suggest).then((banks) => setBanks(banks))
+}
 
 const onCancel = () => {
   setSuggest('')
@@ -152,32 +158,33 @@ const onCancel = () => {
   setBanks(undefined)
   setTimer(undefined)
   setError(false)
-};
+}
 
 const onChange = (value) => {
-  const {title} = getBankByValue(value);
-  setValue(value);
-  setSuggest(title);
-  setBanks(undefined);
-  setDialogText(`Выбрано`);
-};
+  const { title } = getBankByValue(value)
+  setValue(value)
+  setSuggest(title)
+  setBanks(undefined)
+  setDialogText(`Выбрано`)
+}
 
 const onSubmit = (suggest) => {
   if (suggest.length < 1) {
     setError(true)
   } else {
-    setDialogText(`Отправлено: ${suggest}`);
+    setDialogText(`Отправлено: ${suggest}`)
   }
   return suggest.length >= 1
-};
+}
 
-const hideDialog = () => setDialogText(undefined);
+const hideDialog = () => setDialogText(undefined)
 
-const equals = (a, b) => a.id === b.id;
+const equals = (a, b) => a.id === b.id
 
-const getBankByValue = (value) => bankList.find(bank => equals(bank.value, value));
+const getBankByValue = (value) =>
+  bankList.find((bank) => equals(bank.value, value))
 
-<Block>
+;<Block>
   <BlockContent>
     <Box width={128}>
       <ContentSuggest
@@ -195,21 +202,25 @@ const getBankByValue = (value) => bankList.find(bank => equals(bank.value, value
           link: {
             text: 'Показать все',
             suggest: suggest,
-          }
+          },
         }}
-        empty={error ? {
-          text: 'Ошибка,',
-          link: {
-            text: 'попробуйте ещё раз',
-            suggest: suggest,
-          }
-        } : {
-          text: 'Ничего не найдено, попробуйте',
-          link: {
-            text: 'Сбербанк',
-            suggest: 'Сбербанк',
-          }
-        }}
+        empty={
+          error
+            ? {
+                text: 'Ошибка,',
+                link: {
+                  text: 'попробуйте ещё раз',
+                  suggest: suggest,
+                },
+              }
+            : {
+                text: 'Ничего не найдено, попробуйте',
+                link: {
+                  text: 'Сбербанк',
+                  suggest: 'Сбербанк',
+                },
+              }
+        }
       />
     </Box>
     <SimpleModal
@@ -219,9 +230,7 @@ const getBankByValue = (value) => bankList.find(bank => equals(bank.value, value
       closable
       backdropClose
     >
-      <Heading size="2">
-        {dialogText}
-      </Heading>
+      <Heading size="2">{dialogText}</Heading>
     </SimpleModal>
   </BlockContent>
 </Block>

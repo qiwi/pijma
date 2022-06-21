@@ -5,41 +5,14 @@
 ```jsx
 <Spacer size="xl">
   <Spacer>
-    <Button
-      kind="brand"
-      size="accent"
-      text="Нажать"
-    />
-    <Button
-      kind="brand"
-      size="normal"
-      text="Нажать"
-    />
-    <Button
-      kind="brand"
-      size="minor"
-      text="Нажать"
-    />
+    <Button kind="brand" size="accent" text="Нажать" />
+    <Button kind="brand" size="normal" text="Нажать" />
+    <Button kind="brand" size="minor" text="Нажать" />
   </Spacer>
   <Spacer>
-    <Button
-      disabled
-      kind="brand"
-      size="accent"
-      text="Нажать"
-    />
-    <Button
-      disabled
-      kind="brand"
-      size="normal"
-      text="Нажать"
-    />
-    <Button
-      disabled
-      kind="brand"
-      size="minor"
-      text="Нажать"
-    />
+    <Button disabled kind="brand" size="accent" text="Нажать" />
+    <Button disabled kind="brand" size="normal" text="Нажать" />
+    <Button disabled kind="brand" size="minor" text="Нажать" />
   </Spacer>
   <Spacer>
     <Button
@@ -74,41 +47,14 @@
 ```jsx
 <Spacer size="xl">
   <Spacer>
-    <Button
-      kind="simple"
-      size="accent"
-      text="Нажать"
-    />
-    <Button
-      kind="simple"
-      size="normal"
-      text="Нажать"
-    />
-    <Button
-      kind="simple"
-      size="minor"
-      text="Нажать"
-    />
+    <Button kind="simple" size="accent" text="Нажать" />
+    <Button kind="simple" size="normal" text="Нажать" />
+    <Button kind="simple" size="minor" text="Нажать" />
   </Spacer>
   <Spacer>
-    <Button
-      disabled
-      kind="simple"
-      size="accent"
-      text="Нажать"
-    />
-    <Button
-      disabled
-      kind="simple"
-      size="normal"
-      text="Нажать"
-    />
-    <Button
-      disabled
-      kind="simple"
-      size="minor"
-      text="Нажать"
-    />
+    <Button disabled kind="simple" size="accent" text="Нажать" />
+    <Button disabled kind="simple" size="normal" text="Нажать" />
+    <Button disabled kind="simple" size="minor" text="Нажать" />
   </Spacer>
   <Spacer>
     <Button
@@ -143,44 +89,14 @@
 ```jsx
 <Spacer size="xl">
   <Spacer>
-    <Button
-      loading
-      kind="brand"
-      size="accent"
-      text="Нажать"
-    />
-    <Button
-      loading
-      kind="brand"
-      size="normal"
-      text="Нажать"
-    />
-    <Button
-      loading
-      kind="brand"
-      size="minor"
-      text="Нажать"
-    />
+    <Button loading kind="brand" size="accent" text="Нажать" />
+    <Button loading kind="brand" size="normal" text="Нажать" />
+    <Button loading kind="brand" size="minor" text="Нажать" />
   </Spacer>
   <Spacer>
-    <Button
-      loading
-      kind="simple"
-      size="accent"
-      text="Нажать"
-    />
-    <Button
-      loading
-      kind="simple"
-      size="normal"
-      text="Нажать"
-    />
-    <Button
-      loading
-      kind="simple"
-      size="minor"
-      text="Нажать"
-    />
+    <Button loading kind="simple" size="accent" text="Нажать" />
+    <Button loading kind="simple" size="normal" text="Нажать" />
+    <Button loading kind="simple" size="minor" text="Нажать" />
   </Spacer>
 </Spacer>
 ```
@@ -195,19 +111,19 @@
     <Button
       kind="brand"
       size="accent"
-      icon={<Icon name="star"/>}
+      icon={<Icon name="star" />}
       text="Нажать"
     />
     <Button
       kind="brand"
       size="normal"
-      icon={<Icon name="star"/>}
+      icon={<Icon name="star" />}
       text="Нажать"
     />
     <Button
       kind="brand"
       size="minor"
-      icon={<Icon name="star"/>}
+      icon={<Icon name="star" />}
       text="Нажать"
     />
   </Spacer>
@@ -215,19 +131,19 @@
     <Button
       kind="simple"
       size="accent"
-      icon={<Icon name="star"/>}
+      icon={<Icon name="star" />}
       text="Нажать"
     />
     <Button
       kind="simple"
       size="normal"
-      icon={<Icon name="star"/>}
+      icon={<Icon name="star" />}
       text="Нажать"
     />
     <Button
       kind="simple"
       size="minor"
-      icon={<Icon name="star"/>}
+      icon={<Icon name="star" />}
       text="Нажать"
     />
   </Spacer>
@@ -266,77 +182,35 @@
 <Spacer size="xl">
   <Flex align="flex-start">
     <FlexItem pr={4}>
-      <Button
-        kind="brand"
-        size="accent"
-        icon={<Icon name="star"/>}
-      />
+      <Button kind="brand" size="accent" icon={<Icon name="star" />} />
     </FlexItem>
     <FlexItem pr={4}>
-      <Button
-        kind="brand"
-        size="normal"
-        icon={<Icon name="star"/>}
-      />
+      <Button kind="brand" size="normal" icon={<Icon name="star" />} />
     </FlexItem>
     <FlexItem>
-      <Button
-        kind="brand"
-        size="minor"
-        icon={<Icon name="star"/>}
-      />
+      <Button kind="brand" size="minor" icon={<Icon name="star" />} />
     </FlexItem>
   </Flex>
   <Flex align="flex-start">
     <FlexItem pr={4}>
-      <Button
-        kind="simple"
-        size="accent"
-        icon={<Icon name="star"/>}
-      />
+      <Button kind="simple" size="accent" icon={<Icon name="star" />} />
     </FlexItem>
     <FlexItem pr={4}>
-      <Button
-        kind="simple"
-        size="normal"
-        icon={<Icon name="star"/>}
-      />
+      <Button kind="simple" size="normal" icon={<Icon name="star" />} />
     </FlexItem>
     <FlexItem pr={4}>
-      <Button
-        kind="simple"
-        size="minor"
-        icon={<Icon name="star"/>}
-      />
+      <Button kind="simple" size="minor" icon={<Icon name="star" />} />
     </FlexItem>
   </Flex>
   <Flex align="flex-start">
     <FlexItem pr={4}>
-      <Button
-        size="accent"
-        kind="brand"
-        type="button"
-        icon
-        stub
-      />
+      <Button size="accent" kind="brand" type="button" icon stub />
     </FlexItem>
     <FlexItem pr={4}>
-      <Button
-        size="normal"
-        kind="brand"
-        type="button"
-        icon
-        stub
-      />
+      <Button size="normal" kind="brand" type="button" icon stub />
     </FlexItem>
     <FlexItem pr={4}>
-      <Button
-        size="minor"
-        kind="brand"
-        type="button"
-        icon
-        stub
-      />
+      <Button size="minor" kind="brand" type="button" icon stub />
     </FlexItem>
   </Flex>
 </Spacer>

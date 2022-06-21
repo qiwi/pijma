@@ -1,5 +1,3 @@
 import CheckboxField from './CheckboxField'
 
-export {
-  CheckboxField,
-}
+export { CheckboxField }

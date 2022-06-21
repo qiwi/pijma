@@ -1,4 +1,4 @@
-import {FlagProps} from '../flag'
+import { FlagProps } from '../flag'
 
 interface PhoneFieldCountry {
   name: string

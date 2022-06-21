@@ -1,6 +1,7 @@
-import React, {RefObject, Component, createRef, ReactNode, FC} from 'react'
-import {InView} from '../inview'
-import {Box} from '../primitive'
+import React, { Component, createRef, FC, ReactNode, RefObject } from 'react'
+
+import { InView } from '../inview'
+import { Box } from '../primitive'
 
 export interface OffsetScrollControlProps {
   content: ReactNode
@@ -18,8 +19,10 @@ export interface OffsetScrollControlState {
   bottom: boolean
 }
 
-export class OffsetScrollControl extends Component<OffsetScrollControlProps, OffsetScrollControlState> {
-
+export class OffsetScrollControl extends Component<
+  OffsetScrollControlProps,
+  OffsetScrollControlState
+> {
   public state: OffsetScrollControlState = {
     top: false,
     bottom: false,
@@ -60,19 +63,22 @@ export class OffsetScrollControl extends Component<OffsetScrollControlProps, Off
           <InView
             root={this.ref.current}
             rootMargin={`${this.props.top || '0px'} 0px 0px 0px`}
-            onChange={(inView) => inView ? this.onTopEnter() : this.onTopLeave()}
-            children={({ref}) => (<div ref={ref}/>)}
+            onChange={(inView) =>
+              inView ? this.onTopEnter() : this.onTopLeave()
+            }
+            children={({ ref }) => <div ref={ref} />}
           />
           {this.props.content}
           <InView
             root={this.ref.current}
             rootMargin={`0px 0px ${this.props.bottom || '0px'} 0px`}
-            onChange={(inView) => inView ? this.onBottomEnter() : this.onBottomLeave()}
-            children={({ref}) => (<div ref={ref}/>)}
+            onChange={(inView) =>
+              inView ? this.onBottomEnter() : this.onBottomLeave()
+            }
+            children={({ ref }) => <div ref={ref} />}
           />
         </Box>
       ),
     })
   }
-
 }

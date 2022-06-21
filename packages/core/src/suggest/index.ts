@@ -1,6 +1,6 @@
 import SuggestControl from './SuggestControl'
-import SuggestControlState from './SuggestControlState'
 import SuggestControlProps from './SuggestControlProps'
+import SuggestControlState from './SuggestControlState'
 import SuggestOptionModel from './SuggestOptionModel'
 
 export {

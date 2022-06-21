@@ -1,8 +1,8 @@
-import React, {PureComponent, RefObject} from 'react'
+import React, { PureComponent, RefObject } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 
-import {keyframes} from '../styled'
-import {Pos, Card} from '../primitive'
+import { Card, Pos } from '../primitive'
+import { keyframes } from '../styled'
 
 export interface ReCaptchaProps {
   siteKey: string
@@ -22,7 +22,7 @@ const placeholder = keyframes({
     opacity: 0.04,
   },
   '50%': {
-    opacity: 0.10,
+    opacity: 0.1,
   },
   '100%': {
     opacity: 0.04,
@@ -30,7 +30,6 @@ const placeholder = keyframes({
 })
 
 export class ReCaptcha extends PureComponent<ReCaptchaProps> {
-
   private element: RefObject<ReCAPTCHA> = React.createRef()
 
   private wrapper: RefObject<HTMLDivElement> = React.createRef()
@@ -84,13 +83,38 @@ export class ReCaptcha extends PureComponent<ReCaptchaProps> {
   public render() {
     return (
       <Pos type="relative" ref={this.wrapper}>
-        <Pos type="absolute" top={0} left={0} width={`${width}px`} height={`${height}px`} overflow="hidden">
-          <Card width="302px" height="76px" bg="#f9f9f9" b="1px solid #d3d3d3" r="3px"/>
+        <Pos
+          type="absolute"
+          top={0}
+          left={0}
+          width={`${width}px`}
+          height={`${height}px`}
+          overflow="hidden"
+        >
+          <Card
+            width="302px"
+            height="76px"
+            bg="#f9f9f9"
+            b="1px solid #d3d3d3"
+            r="3px"
+          />
           <Pos type="absolute" top="22px" left="13px">
-            <Card width="28px" height="28px" bg="#fff" b="2px solid #c1c1c1" r="2px"/>
+            <Card
+              width="28px"
+              height="28px"
+              bg="#fff"
+              b="2px solid #c1c1c1"
+              r="2px"
+            />
           </Pos>
           <Pos type="absolute" top="26px" left="52px">
-            <Card width="128px" height="20px" bg="#000" r="4px" animation={`${placeholder} 1800ms ease-in-out infinite`}/>
+            <Card
+              width="128px"
+              height="20px"
+              bg="#000"
+              r="4px"
+              animation={`${placeholder} 1800ms ease-in-out infinite`}
+            />
           </Pos>
         </Pos>
         <Pos type="relative" width={`${width}px`} height={`${height}px`}>

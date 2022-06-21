@@ -1,5 +1,5 @@
-import {styled, CSSObject, StyledOptions} from '../styled'
-import {Value, cssValue} from '../primitive/Value'
+import { cssValue, Value } from '../primitive/Value'
+import { CSSObject, styled, StyledOptions } from '../styled'
 
 export interface ImgProps {
   css?: CSSObject
@@ -17,9 +17,15 @@ export interface ImgProps {
 }
 
 export const ImgNonProps: PropertyKey[] = [
-  'as', 'css', 'display',
-  'width', 'minWidth', 'maxWidth',
-  'height', 'minHeight', 'maxHeight',
+  'as',
+  'css',
+  'display',
+  'width',
+  'minWidth',
+  'maxWidth',
+  'height',
+  'minHeight',
+  'maxHeight',
   'objectFit',
 ]
 
@@ -27,7 +33,10 @@ export const ImgOptions: StyledOptions<ImgProps> = {
   shouldForwardProp: (prop) => !ImgNonProps.includes(prop),
 }
 
-export const Img = styled('img', ImgOptions)<ImgProps>(({theme, ...props}) => ({
+export const Img = styled(
+  'img',
+  ImgOptions,
+)<ImgProps>(({ theme, ...props }) => ({
   objectFit: props.objectFit,
   display: 'block',
   width: cssValue(props.width, theme.scale),

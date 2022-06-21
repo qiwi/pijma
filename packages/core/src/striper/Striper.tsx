@@ -1,9 +1,9 @@
-import React, {ReactNode, FC, Children, Fragment} from 'react'
+import React, { Children, FC, Fragment, ReactNode } from 'react'
 
-import {Card} from '../primitive'
+import { Card } from '../primitive'
 
-export const Striper: FC = ({children}) => {
-  const elements = Children.toArray(children).filter(child => !!child)
+export const Striper: FC = ({ children }) => {
+  const elements = Children.toArray(children).filter((child) => !!child)
   if (elements.length === 0) {
     return null
   }

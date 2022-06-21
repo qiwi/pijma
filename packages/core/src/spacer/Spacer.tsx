@@ -1,6 +1,6 @@
-import React, {ReactNode, FunctionComponent, Children, Fragment} from 'react'
+import React, { Children, Fragment, FunctionComponent, ReactNode } from 'react'
 
-import {Box} from '../primitive'
+import { Box } from '../primitive'
 
 export interface SpacerProps {
   size?: 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl'
@@ -16,8 +16,11 @@ const SpacerSize: { [size in NonNullable<SpacerProps['size']>]: number } = {
   xxl: 12,
 }
 
-export const Spacer: FunctionComponent<SpacerProps> = ({size = 'm', children}) => {
-  const elements = Children.toArray(children).filter(child => !!child)
+export const Spacer: FunctionComponent<SpacerProps> = ({
+  size = 'm',
+  children,
+}) => {
+  const elements = Children.toArray(children).filter((child) => !!child)
   if (elements.length === 0) {
     return null
   }

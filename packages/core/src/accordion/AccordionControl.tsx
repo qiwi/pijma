@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 
 export interface AccordionControlProps<I> {
   items: I[]
@@ -30,7 +30,6 @@ export class AccordionControl<I> extends React.Component<
   AccordionControlProps<I>,
   AccordionControlState
 > {
-
   public state: AccordionControlState = {
     hovered: -1,
     focused: -1,
@@ -49,18 +48,19 @@ export class AccordionControl<I> extends React.Component<
   }
 
   private onChange = (index: number) => {
-    const {opened} = this.props
-    this.props.onChange(opened.includes(index)
-    ? opened.filter(i => i !== index)
-    : opened.concat(index))
+    const { opened } = this.props
+    this.props.onChange(
+      opened.includes(index)
+        ? opened.filter((i) => i !== index)
+        : opened.concat(index),
+    )
   }
 
-  private onItemClick = (index: number) => (
-    event: React.MouseEvent<HTMLElement>,
-  ) => {
-    event.preventDefault()
-    this.onChange(index)
-  }
+  private onItemClick =
+    (index: number) => (event: React.MouseEvent<HTMLElement>) => {
+      event.preventDefault()
+      this.onChange(index)
+    }
 
   private onItemMouseEnter = (index: number) => () => {
     this.setState({
@@ -105,5 +105,4 @@ export class AccordionControl<I> extends React.Component<
       })),
     })
   }
-
 }

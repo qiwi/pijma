@@ -1,6 +1,6 @@
-import React, {FunctionComponent} from 'react'
+import React, { FunctionComponent } from 'react'
 
-import {Svg, Path, Rect} from '../primitive'
+import { Path, Rect, Svg } from '../primitive'
 
 export interface RadioProps {
   disabled?: boolean
@@ -9,11 +9,7 @@ export interface RadioProps {
 }
 
 export const Radio: FunctionComponent<RadioProps> = (props) => (
-  <Svg
-    viewBox="0 0 24 24"
-    width="24"
-    height="24"
-  >
+  <Svg viewBox="0 0 24 24" width="24" height="24">
     <Rect
       width="18"
       height="18"

@@ -1,9 +1,9 @@
-import React, {FC, ReactNode, Children, isValidElement} from 'react'
+import React, { Children, FC, isValidElement, ReactNode } from 'react'
 
-import {Img, Box, Pos, Value} from '../primitive'
-import {InView} from '../inview'
-import {Stub} from '../stub'
-import {ImageControl} from './ImageControl'
+import { InView } from '../inview'
+import { Box, Img, Pos, Value } from '../primitive'
+import { Stub } from '../stub'
+import { ImageControl } from './ImageControl'
 
 export interface ImageProps {
   width: Value
@@ -31,7 +31,7 @@ export const Image: FC<ImageProps> = ({
   viewedDelay = 1000,
   objectFit,
   onLoad,
-}) => (
+}) =>
   stub ? (
     <ImageControl
       width={width}
@@ -42,7 +42,7 @@ export const Image: FC<ImageProps> = ({
       cachedDelay={cachedDelay}
       viewedDelay={viewedDelay}
       onLoad={onLoad}
-      children={(renderProps) => (
+      children={(renderProps) =>
         renderProps.loaded ? (
           <Img
             key={src}
@@ -59,20 +59,33 @@ export const Image: FC<ImageProps> = ({
         ) : (
           <InView
             onChange={renderProps.onChange}
-            children={({ref}) => (
-              <Pos as="span" ref={ref} type="relative" width={width} height={height}>
+            children={({ ref }) => (
+              <Pos
+                as="span"
+                ref={ref}
+                type="relative"
+                width={width}
+                height={height}
+              >
                 {typeof stub === 'boolean' && stub ? (
                   <Pos as="span" type="absolute" width={width} height={height}>
-                    <Stub width={width} height={height} r={width === height ? '100%' : undefined}/>
+                    <Stub
+                      width={width}
+                      height={height}
+                      r={width === height ? '100%' : undefined}
+                    />
                   </Pos>
                 ) : isValidElement(stub) && Children.only(stub) ? (
                   <Pos as="span" type="absolute" width={width} height={height}>
                     {stub}
                   </Pos>
-                ) : (
-                  null
-                )}
-                <Box as="span" opacity={typeof stub === 'string' ? 1 : 0} width={width} height={height}>
+                ) : null}
+                <Box
+                  as="span"
+                  opacity={typeof stub === 'string' ? 1 : 0}
+                  width={width}
+                  height={height}
+                >
                   <Img
                     width={width}
                     height={height}
@@ -81,7 +94,11 @@ export const Image: FC<ImageProps> = ({
                     sizes={sizes}
                     alt={alt}
                     objectFit={objectFit}
-                    css={typeof stub === 'string' ? {filter: 'blur(10px)'} : undefined}
+                    css={
+                      typeof stub === 'string'
+                        ? { filter: 'blur(10px)' }
+                        : undefined
+                    }
                     onLoad={renderProps.onLoad}
                   />
                 </Box>
@@ -89,7 +106,7 @@ export const Image: FC<ImageProps> = ({
             )}
           />
         )
-      )}
+      }
     />
   ) : (
     <Img
@@ -103,7 +120,6 @@ export const Image: FC<ImageProps> = ({
       onLoad={onLoad}
     />
   )
-)
 
 Image.defaultProps = {
   stub: true,

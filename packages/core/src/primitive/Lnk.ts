@@ -1,4 +1,4 @@
-import {styled, CSSObject, StyledOptions} from '../styled'
+import { CSSObject, styled, StyledOptions } from '../styled'
 
 export interface LnkProps {
   css?: CSSObject
@@ -11,9 +11,10 @@ export const LnkOptions: StyledOptions<LnkProps> = {
   shouldForwardProp: (prop) => !LnkNonProps.includes(prop),
 }
 
-export const Lnk = styled('a', LnkOptions)<LnkProps>(({
-  cursor = 'pointer',
-}) => ({
+export const Lnk = styled(
+  'a',
+  LnkOptions,
+)<LnkProps>(({ cursor = 'pointer' }) => ({
   cursor,
   textDecoration: 'none',
 }))

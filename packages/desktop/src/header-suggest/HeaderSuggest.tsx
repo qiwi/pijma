@@ -1,49 +1,51 @@
-import React, {Fragment, FunctionComponent} from 'react'
-
 import {
-  Image,
-  MenuControl,
   Box,
   Card,
-  styled,
-  Spacer,
-  Icon,
-  Pos,
-  FlexItem,
-  Input,
-  SimpleTransitionProps,
-  SimpleTransition,
-  Flex,
-  Overlay,
   css,
+  Flex,
+  FlexItem,
+  Icon,
+  Image,
+  Input,
+  MenuControl,
+  Overlay,
+  Pos,
+  SimpleTransition,
+  SimpleTransitionProps,
+  Spacer,
+  styled,
   SuggestControl,
 } from '@qiwi/pijma-core'
+import React, { Fragment, FunctionComponent } from 'react'
 
-import {MenuItem} from '../menu'
-import {Paragraph} from '../typography'
-import {Link} from '../link'
-import {Markdown} from '../markdown'
-
-import {HeaderSuggestProps} from './HeaderSuggestProps'
-import {HeaderSuggestOptionModel} from './HeaderSuggestOptionModel'
+import { Link } from '../link'
+import { Markdown } from '../markdown'
+import { MenuItem } from '../menu'
+import { Paragraph } from '../typography'
+import { HeaderSuggestOptionModel } from './HeaderSuggestOptionModel'
+import { HeaderSuggestProps } from './HeaderSuggestProps'
 
 const CardItem = styled(Card)().withComponent(MenuItem)
 
-const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => (
+  <SimpleTransition {...props} />
+)
 
 contentTransition.defaultProps = {
   timeout: {
     enter: 150,
     exit: 150,
   },
-  enterClassName: (timeout: number) => css({
-    opacity: 1,
-    transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-  }),
-  exitClassName: (timeout: number) => css({
-    opacity: 0,
-    transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-  }),
+  enterClassName: (timeout: number) =>
+    css({
+      opacity: 1,
+      transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+    }),
+  exitClassName: (timeout: number) =>
+    css({
+      opacity: 0,
+      transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+    }),
 }
 
 export const HeaderSuggest = <V extends {}>({
@@ -55,8 +57,16 @@ export const HeaderSuggest = <V extends {}>({
     value={props.value}
     suggest={props.suggest}
     items={props.items}
-    total={React.isValidElement(props.total) || typeof props.total === 'string' ? undefined : props.total}
-    empty={React.isValidElement(props.empty) || typeof props.empty === 'string' ? undefined : props.empty}
+    total={
+      React.isValidElement(props.total) || typeof props.total === 'string'
+        ? undefined
+        : props.total
+    }
+    empty={
+      React.isValidElement(props.empty) || typeof props.empty === 'string'
+        ? undefined
+        : props.empty
+    }
     equals={equals}
     onRequest={props.onRequest}
     onChange={props.onChange}
@@ -72,12 +82,8 @@ export const HeaderSuggest = <V extends {}>({
         onKeyDown={renderProps.onModalItemKeyDown}
         children={(menuRenderProps) => (
           <React.Fragment>
-            <Box
-              width={6}
-              height={6}
-              onClick={renderProps.onShowClick}
-            >
-              <Icon name="search"/>
+            <Box width={6} height={6} onClick={renderProps.onShowClick}>
+              <Icon name="search" />
             </Box>
             <Overlay
               target={props.target.current}
@@ -87,7 +93,13 @@ export const HeaderSuggest = <V extends {}>({
               transition={contentTransition}
               onHide={renderProps.onHide}
               children={(overlayRenderProps) => (
-                <Pos type="absolute" top={0} zIndex={10050} width={1} ref={overlayRenderProps.props.ref}>
+                <Pos
+                  type="absolute"
+                  top={0}
+                  zIndex={10050}
+                  width={1}
+                  ref={overlayRenderProps.props.ref}
+                >
                   <Card
                     height={20}
                     bg="#fff"
@@ -103,8 +115,13 @@ export const HeaderSuggest = <V extends {}>({
                         py={4}
                         px={6}
                       >
-                        <FlexItem cursor="pointer" shrink={0} mr={4} onClick={renderProps.onBack}>
-                          <Icon name="arrow-left"/>
+                        <FlexItem
+                          cursor="pointer"
+                          shrink={0}
+                          mr={4}
+                          onClick={renderProps.onBack}
+                        >
+                          <Icon name="arrow-left" />
                         </FlexItem>
                         <FlexItem grow={1}>
                           <Input
@@ -122,13 +139,21 @@ export const HeaderSuggest = <V extends {}>({
                             placeholderWeight={300}
                             onChange={renderProps.onRequest}
                             onBlur={renderProps.onModalInputBlur}
-                            onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onModalItemKeyDown}
+                            onKeyDown={
+                              renderProps.show
+                                ? menuRenderProps.onKeyDown
+                                : renderProps.onModalItemKeyDown
+                            }
                             onFocus={renderProps.onShowFocus}
                           />
                         </FlexItem>
-                        <FlexItem shrink={0} ml={4} onClick={renderProps.onSearchClick}>
+                        <FlexItem
+                          shrink={0}
+                          ml={4}
+                          onClick={renderProps.onSearchClick}
+                        >
                           <Box cursor="pointer" width={6} height={6}>
-                            <Icon name="search" color="#666"/>
+                            <Icon name="search" color="#666" />
                           </Box>
                         </FlexItem>
                       </Flex>
@@ -144,8 +169,14 @@ export const HeaderSuggest = <V extends {}>({
                     <Box width={295} mx="auto">
                       {props.loading && props.items !== undefined ? (
                         <Box pt={4}>
-                          {Array(4).fill(1).map((_item, key) => (
-                            <CardItem key={key} icon={true} stub text="stub" notes="stub"/>
+                          {new Array(4).fill(1).map((_item, key) => (
+                            <CardItem
+                              key={key}
+                              icon={true}
+                              stub
+                              text="stub"
+                              notes="stub"
+                            />
                           ))}
                         </Box>
                       ) : (
@@ -161,7 +192,13 @@ export const HeaderSuggest = <V extends {}>({
                                   round
                                   text={renderProps.items[key].title}
                                   notes={renderProps.items[key].description}
-                                  icon={<Image width={6} height={6} src={renderProps.items[key].logo}/>}
+                                  icon={
+                                    <Image
+                                      width={6}
+                                      height={6}
+                                      src={renderProps.items[key].logo}
+                                    />
+                                  }
                                   hover={item.focused}
                                   active={item.selected}
                                   focus={item.selected}
@@ -170,62 +207,52 @@ export const HeaderSuggest = <V extends {}>({
                                 />
                               ))}
                             </Fragment>
-                          ) : (
-                            null
-                          )}
+                          ) : null}
                           {props.total && menuRenderProps.items.length > 0 ? (
                             <Box px={6} pb={4}>
                               {React.isValidElement(props.total) ? (
                                 props.total
+                              ) : typeof props.total === 'string' ? (
+                                <Markdown children={props.total} />
                               ) : (
-                                typeof props.total === 'string' ? (
-                                  <Markdown children={props.total}/>
-                                ) : (
-                                  <Paragraph>
-                                    {props.total.text}
-                                    {props.total.link ? (
-                                      <Fragment>
-                                        {' '}
-                                        <Link
-                                          onClick={renderProps.onTotalClick}
-                                          children={props.total.link.text}
-                                        />
-                                      </Fragment>
-                                    ) : (
-                                      null
-                                    )}
-                                  </Paragraph>
-                                )
+                                <Paragraph>
+                                  {props.total.text}
+                                  {props.total.link ? (
+                                    <Fragment>
+                                      {' '}
+                                      <Link
+                                        onClick={renderProps.onTotalClick}
+                                        children={props.total.link.text}
+                                      />
+                                    </Fragment>
+                                  ) : null}
+                                </Paragraph>
                               )}
                             </Box>
-                          ) : props.empty && menuRenderProps.items.length === 0 && props.items !== undefined ? (
+                          ) : props.empty &&
+                            menuRenderProps.items.length === 0 &&
+                            props.items !== undefined ? (
                             <Box px={6} py={4}>
                               {React.isValidElement(props.empty) ? (
                                 props.empty
+                              ) : typeof props.empty === 'string' ? (
+                                <Markdown children={props.empty} />
                               ) : (
-                                typeof props.empty === 'string' ? (
-                                  <Markdown children={props.empty}/>
-                                ) : (
-                                  <Paragraph>
-                                    {props.empty.text}
-                                    {props.empty.link ? (
-                                      <Fragment>
-                                        {' '}
-                                        <Link
-                                          onClick={renderProps.onEmptyClick}
-                                          children={props.empty.link.text}
-                                        />
-                                      </Fragment>
-                                    ) : (
-                                      null
-                                    )}
-                                  </Paragraph>
-                                )
+                                <Paragraph>
+                                  {props.empty.text}
+                                  {props.empty.link ? (
+                                    <Fragment>
+                                      {' '}
+                                      <Link
+                                        onClick={renderProps.onEmptyClick}
+                                        children={props.empty.link.text}
+                                      />
+                                    </Fragment>
+                                  ) : null}
+                                </Paragraph>
                               )}
                             </Box>
-                          ) : (
-                            null
-                          )}
+                          ) : null}
                         </Spacer>
                       )}
                     </Box>

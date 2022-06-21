@@ -1,6 +1,6 @@
 ```jsx
-const types = ['object', 'markdown', 'react'];
-let type = types[Math.floor(Math.random() * 3)];
+const types = ['object', 'markdown', 'react']
+let type = types[Math.floor(Math.random() * 3)]
 const bankList = [
   {
     value: {
@@ -115,55 +115,60 @@ const bankList = [
     logo: require('./media/std.png'),
     description: 'АО «Банк Русский Стандарт»',
   },
-];
+]
 
-const [suggest, setSuggest] = React.useState('');
-const [loading, setLoading] = React.useState(false);
-const [banks, setBanks] = React.useState(undefined);
-const [timer, setTimer] = React.useState(undefined);
-const [error, setError] = React.useState(false);
-const [value, setValue] = React.useState(undefined);
+const [suggest, setSuggest] = React.useState('')
+const [loading, setLoading] = React.useState(false)
+const [banks, setBanks] = React.useState(undefined)
+const [timer, setTimer] = React.useState(undefined)
+const [error, setError] = React.useState(false)
+const [value, setValue] = React.useState(undefined)
 
 const target = React.useRef()
 const container = React.useRef()
 const currentTarget = target.current
 
-const filterBanks = (title) => bankList.filter(bank => {
-  return title !== '' && bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1;
-});
+const filterBanks = (title) =>
+  bankList.filter((bank) => {
+    return (
+      title !== '' &&
+      bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1
+    )
+  })
 
 const getBanks = (suggest) => {
-  setLoading(true);
-  clearTimeout(timer);
+  setLoading(true)
+  clearTimeout(timer)
   return new Promise((resolve, reject) => {
-    setTimer(setTimeout(() => {
-      setLoading(false);
-      resolve(filterBanks(suggest));
-    }, 1000));
-  });
-};
+    setTimer(
+      setTimeout(() => {
+        setLoading(false)
+        resolve(filterBanks(suggest))
+      }, 1000),
+    )
+  })
+}
 
 const onRequest = (suggest) => {
-  type = types[Math.floor(Math.random() * 3)];
-  setSuggest(suggest);
-  setError(suggest === '');
-  getBanks(suggest).then((banks) => setBanks(banks));
-};
+  type = types[Math.floor(Math.random() * 3)]
+  setSuggest(suggest)
+  setError(suggest === '')
+  getBanks(suggest).then((banks) => setBanks(banks))
+}
 
 const onCancel = () => {
-  setSuggest('');
-  setLoading(false);
-  setBanks(undefined);
-  setTimer(undefined);
-  setError(false);
-};
+  setSuggest('')
+  setLoading(false)
+  setBanks(undefined)
+  setTimer(undefined)
+  setError(false)
+}
 
 const onChange = (value) => {
-  const {title} = getBankByValue(value);
-  setValue(value,
-    suggest);
-  console.log('SELECT ITEM', value);
-};
+  const { title } = getBankByValue(value)
+  setValue(value, suggest)
+  console.log('SELECT ITEM', value)
+}
 
 const onSubmit = (suggest) => {
   console.log('SUBMIT', suggest)
@@ -171,13 +176,14 @@ const onSubmit = (suggest) => {
     setError(true)
   }
   return suggest.length >= 1
-};
+}
 
-const equals = (a, b) => a.id === b.id;
+const equals = (a, b) => a.id === b.id
 
-const getBankByValue = (value) => bankList.find(bank => equals(bank.value, value));
+const getBankByValue = (value) =>
+  bankList.find((bank) => equals(bank.value, value))
 
-<Pos
+;<Pos
   ref={container}
   type="relative"
   transform="scale(0.7)"
@@ -201,8 +207,12 @@ const getBankByValue = (value) => bankList.find(bank => equals(bank.value, value
           <FlexItem shrink={0} mr={6}>
             <HeaderMenu
               children={[
-                {href: `${location.href}?menu=1`, title: 'Платежи', active: true},
-                {href: `${location.href}?menu=2`, title: 'Переводы'},
+                {
+                  href: `${location.href}?menu=1`,
+                  title: 'Платежи',
+                  active: true,
+                },
+                { href: `${location.href}?menu=2`, title: 'Переводы' },
               ]}
             />
           </FlexItem>
@@ -220,62 +230,77 @@ const getBankByValue = (value) => bankList.find(bank => equals(bank.value, value
               onSubmit={onSubmit}
               onChange={onChange}
               onRequest={onRequest}
-              total={type === 'object' ? (
-                {
-                  link: {
-                    text: 'Показать все',
-                    suggest: suggest,
+              total={
+                type === 'object' ? (
+                  {
+                    link: {
+                      text: 'Показать все',
+                      suggest: suggest,
+                    },
                   }
-                }
-              ) : type === 'markdown' ? (
-                "[Показать все](#)"
-              ) : (
-                <Link href="#" children="Показать все"/>
-              )}
-              empty={type === 'object' ? (
-                {
-                  text: 'Ничего не найдено, попробуйте',
-                  link: {
-                    text: 'Сбербанк',
-                    suggest: 'Сбербанк',
+                ) : type === 'markdown' ? (
+                  '[Показать все](#)'
+                ) : (
+                  <Link href="#" children="Показать все" />
+                )
+              }
+              empty={
+                type === 'object' ? (
+                  {
+                    text: 'Ничего не найдено, попробуйте',
+                    link: {
+                      text: 'Сбербанк',
+                      suggest: 'Сбербанк',
+                    },
                   }
-                }
-              ) : type === 'markdown' ? (
-                "Ничего не нашлось"
-              ) : (
-                <React.Fragment>
-                  <Box mb={4}>
-                    <Heading size="4">
-                      Ничего не нашлось
-                    </Heading>
-                  </Box>
-                  <List
-                    type="bullet"
-                    children={[
-                      <Paragraph>Если у вас есть квитанция с реквизитами, <Link href="#">оплатите по ним.</Link></Paragraph>,
-                      <Paragraph><Link href="#">Напишите нам</Link>. Если услуги нет в кошельке, мы постараемся ее добавить.</Paragraph>,
-                      <Paragraph>Уточните у поставщика услуги, можно ли ее оплачивать через QIWI.</Paragraph>,
-                      <Paragraph>Провайдер был, а теперь его нет? Возможно, у него изменилось название или мы перестали с ним сотрудничать.<br/>Перейдите на сайт провайдера и оплатите услугу с помощью <Link href="#">виртуальной или пластиковой карты QIWI</Link>,<br/>баланс карт равен балансу кошелька.</Paragraph>,
-                    ]}
-                  />
-                </React.Fragment>
-              )}
+                ) : type === 'markdown' ? (
+                  'Ничего не нашлось'
+                ) : (
+                  <React.Fragment>
+                    <Box mb={4}>
+                      <Heading size="4">Ничего не нашлось</Heading>
+                    </Box>
+                    <List
+                      type="bullet"
+                      children={[
+                        <Paragraph>
+                          Если у вас есть квитанция с реквизитами,{' '}
+                          <Link href="#">оплатите по ним.</Link>
+                        </Paragraph>,
+                        <Paragraph>
+                          <Link href="#">Напишите нам</Link>. Если услуги нет в
+                          кошельке, мы постараемся ее добавить.
+                        </Paragraph>,
+                        <Paragraph>
+                          Уточните у поставщика услуги, можно ли ее оплачивать
+                          через QIWI.
+                        </Paragraph>,
+                        <Paragraph>
+                          Провайдер был, а теперь его нет? Возможно, у него
+                          изменилось название или мы перестали с ним
+                          сотрудничать.
+                          <br />
+                          Перейдите на сайт провайдера и оплатите услугу с
+                          помощью{' '}
+                          <Link href="#">
+                            виртуальной или пластиковой карты QIWI
+                          </Link>
+                          ,<br />
+                          баланс карт равен балансу кошелька.
+                        </Paragraph>,
+                      ]}
+                    />
+                  </React.Fragment>
+                )
+              }
             />
           </FlexItem>
         </Flex>
       </FlexItem>
       <FlexItem align="center" shrink={0} ml={11} mr={6}>
         <Actions size="minor">
-          <Button
-            kind="simple"
-            size="minor"
-            text="Создать кошелек"
-          />
-          <Button
-            kind="brand"
-            size="minor"
-            text="Войти"
-          />
+          <Button kind="simple" size="minor" text="Создать кошелек" />
+          <Button kind="brand" size="minor" text="Войти" />
         </Actions>
       </FlexItem>
     </Flex>

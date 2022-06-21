@@ -1,7 +1,7 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 
-import {FormControl} from './FormControl'
-import {Frm, Value} from '../primitive'
+import { Frm, Value } from '../primitive'
+import { FormControl } from './FormControl'
 
 export interface FormProps {
   width?: Value
@@ -13,11 +13,11 @@ export interface FormProps {
   onSubmit?: () => void
 }
 
-export const Form: FC<FormProps> = ({onSubmit, ...props}) => (
+export const Form: FC<FormProps> = ({ onSubmit, ...props }) => (
   <FormControl
     onSubmit={onSubmit}
     children={(renderProps) => (
-      <Frm onSubmit={renderProps.onSubmit} {...props}/>
+      <Frm onSubmit={renderProps.onSubmit} {...props} />
     )}
   />
 )

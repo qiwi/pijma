@@ -1,6 +1,5 @@
-import React, {FunctionComponent} from 'react'
-
-import {Card} from '@qiwi/pijma-core'
+import { Card } from '@qiwi/pijma-core'
+import React, { FunctionComponent } from 'react'
 
 export interface HeaderProps {
   underline?: boolean

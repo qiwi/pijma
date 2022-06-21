@@ -1,7 +1,11 @@
-import React, {FC, useState} from 'react'
-
-import {Box, Flex, FlexItem, CrossBurger, Icon} from '@qiwi/pijma-core'
-import {Header, HeaderMenu, MenuContainer, TextField} from '@qiwi/pijma-mobile'
+import { Box, CrossBurger, Flex, FlexItem, Icon } from '@qiwi/pijma-core'
+import {
+  Header,
+  HeaderMenu,
+  MenuContainer,
+  TextField,
+} from '@qiwi/pijma-mobile'
+import React, { FC, useState } from 'react'
 
 interface TableOfContentsRendererProps {
   searchTerm: string
@@ -18,35 +22,30 @@ const TableOfContentsRenderer: FC<TableOfContentsRendererProps> = (props) => {
             width={6}
             height={6}
             onClick={() => setMenuShow(!menuShow)}
-            children={<CrossBurger active={menuShow}/>}
+            children={<CrossBurger active={menuShow} />}
           />
         </FlexItem>
         <FlexItem width={8} height={8} shrink={0} align="center">
-          <Icon name="qiwi" color="#ff8c00" size={1}/>
+          <Icon name="qiwi" color="#ff8c00" size={1} />
         </FlexItem>
-        <FlexItem
-          width={0.25}
-          shrink={1}
-        />
+        <FlexItem width={0.25} shrink={1} />
       </Flex>
       <HeaderMenu
         show={menuShow}
         from="top"
-        children={(
+        children={
           <MenuContainer>
             <Box px={4}>
               <TextField
                 value={props.searchTerm}
                 placeholder="Поиск"
-                hint={<Icon name="search" color="#666"/>}
+                hint={<Icon name="search" color="#666" />}
                 onChange={props.onSearchTermChange}
               />
             </Box>
-            <Box onClick={() => setMenuShow(false)}>
-              {props.children}
-            </Box>
+            <Box onClick={() => setMenuShow(false)}>{props.children}</Box>
           </MenuContainer>
-        )}
+        }
       />
     </Header>
   )

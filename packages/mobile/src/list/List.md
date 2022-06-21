@@ -15,7 +15,7 @@
         'Элемент списка 7',
         'Элемент списка 8',
         'Элемент списка 9',
-        'Элемент списка 10'
+        'Элемент списка 10',
       ]}
     />
   </BlockContent>
@@ -25,11 +25,7 @@
 ```jsx
 <Block>
   <BlockContent>
-    <List
-      type="number"
-      children={[]}
-      stub
-    />
+    <List type="number" children={[]} stub />
   </BlockContent>
 </Block>
 ```
@@ -50,11 +46,7 @@
 ```jsx
 <Block>
   <BlockContent>
-    <List
-      type="bullet"
-      children={[]}
-      stub
-    />
+    <List type="bullet" children={[]} stub />
   </BlockContent>
 </Block>
 ```
@@ -75,11 +67,7 @@
 ```jsx
 <Block>
   <BlockContent>
-    <List
-      type="step"
-      children={[]}
-      stub
-    />
+    <List type="step" children={[]} stub />
   </BlockContent>
 </Block>
 ```

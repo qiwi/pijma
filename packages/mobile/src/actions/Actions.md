@@ -6,19 +6,11 @@
 <Block>
   <BlockContent>
     <Actions size="accent">
-      <Button
-        kind="brand"
-        size="accent"
-        text="Кнопка"
-      />
-      <Button
-        kind="simple"
-        size="accent"
-        text="Кнопка"
-      />
+      <Button kind="brand" size="accent" text="Кнопка" />
+      <Button kind="simple" size="accent" text="Кнопка" />
     </Actions>
   </BlockContent>
-</Block>    
+</Block>
 ```
 
 ## Размеры
@@ -31,19 +23,11 @@
 <Block>
   <BlockContent>
     <Actions size="accent">
-      <Button
-        kind="brand"
-        size="accent"
-        text="Кнопка"
-      />
-      <Button
-        kind="simple"
-        size="accent"
-        text="Кнопка"
-      />
+      <Button kind="brand" size="accent" text="Кнопка" />
+      <Button kind="simple" size="accent" text="Кнопка" />
     </Actions>
   </BlockContent>
-</Block>    
+</Block>
 ```
 
 #### Normal
@@ -52,19 +36,11 @@
 <Block>
   <BlockContent>
     <Actions size="normal">
-      <Button
-        kind="brand"
-        size="normal"
-        text="Кнопка"
-      />
-      <Button
-        kind="simple"
-        size="normal"
-        text="Кнопка"
-      />
+      <Button kind="brand" size="normal" text="Кнопка" />
+      <Button kind="simple" size="normal" text="Кнопка" />
     </Actions>
   </BlockContent>
-</Block>    
+</Block>
 ```
 
 #### Minor
@@ -73,17 +49,9 @@
 <Block>
   <BlockContent>
     <Actions size="minor">
-      <Button
-        kind="brand"
-        size="minor"
-        text="Кнопка"
-      />
-      <Button
-        kind="simple"
-        size="minor"
-        text="Кнопка"
-      />
+      <Button kind="brand" size="minor" text="Кнопка" />
+      <Button kind="simple" size="minor" text="Кнопка" />
     </Actions>
   </BlockContent>
-</Block>    
+</Block>
 ```

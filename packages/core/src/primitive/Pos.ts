@@ -1,7 +1,6 @@
-import {styled, StyledOptions} from '../styled'
-
-import {Value, cssValue} from './Value'
-import {Box} from './Box'
+import { styled, StyledOptions } from '../styled'
+import { Box } from './Box'
+import { cssValue, Value } from './Value'
 
 export interface PosProps {
   type?: 'static' | 'relative' | 'absolute' | 'sticky' | 'fixed'
@@ -12,13 +11,23 @@ export interface PosProps {
   left?: Value
 }
 
-export const PosNonProps: PropertyKey[] = ['type', 'zIndex', 'top', 'right', 'bottom', 'left']
+export const PosNonProps: PropertyKey[] = [
+  'type',
+  'zIndex',
+  'top',
+  'right',
+  'bottom',
+  'left',
+]
 
 export const PosOptions: StyledOptions<PosProps> = {
   shouldForwardProp: (prop) => !PosNonProps.includes(prop),
 }
 
-export const Pos = styled(Box, PosOptions)<PosProps>(({theme, ...props}) => ({
+export const Pos = styled(
+  Box,
+  PosOptions,
+)<PosProps>(({ theme, ...props }) => ({
   position: props.type,
   zIndex: props.zIndex,
   top: cssValue(props.top, theme.scale),

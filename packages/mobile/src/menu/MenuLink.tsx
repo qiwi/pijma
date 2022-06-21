@@ -1,8 +1,7 @@
-import React, {FC, ReactNode} from 'react'
+import { LinkControl, LinkControlProps, Lnk, styled } from '@qiwi/pijma-core'
+import React, { FC, ReactNode } from 'react'
 
-import {styled, LinkControl, LinkControlProps, Lnk} from '@qiwi/pijma-core'
-
-import {MenuItem} from '../menu'
+import { MenuItem } from '../menu'
 
 export interface MenuLinkProps {
   title: string
@@ -25,7 +24,7 @@ export interface MenuLinkProps {
 
 const MenuItemLnk = styled(Lnk)().withComponent(MenuItem)
 
-export const MenuLink: FC<MenuLinkProps> = (props) => (
+export const MenuLink: FC<MenuLinkProps> = (props) =>
   props.stub ? (
     <MenuItem
       stub
@@ -72,4 +71,3 @@ export const MenuLink: FC<MenuLinkProps> = (props) => (
       )}
     />
   )
-)

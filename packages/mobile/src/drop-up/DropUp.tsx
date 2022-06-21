@@ -1,24 +1,27 @@
-import React, {FunctionComponent, ReactNode} from 'react'
-
 import {
-  css,
-  Modal,
-  SimpleTransition,
-  SimpleTransitionProps,
   Box,
-  Pos,
   Card,
+  css,
   Flex,
   FlexItem,
   FlexPos,
-  styled,
   Icon,
+  Modal,
+  Pos,
+  SimpleTransition,
+  SimpleTransitionProps,
+  styled,
 } from '@qiwi/pijma-core'
+import React, { FunctionComponent, ReactNode } from 'react'
 
-import {Paragraph} from '../typography'
+import { Paragraph } from '../typography'
 
-const contentTransitionVertical: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
-const contentTransitionHorizontal: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const contentTransitionVertical: FunctionComponent<SimpleTransitionProps> = (
+  props,
+) => <SimpleTransition {...props} />
+const contentTransitionHorizontal: FunctionComponent<SimpleTransitionProps> = (
+  props,
+) => <SimpleTransition {...props} />
 
 const translate3d = {
   vertical: '0, 100%, 0',
@@ -30,36 +33,42 @@ const defaultProps = (direction: 'vertical' | 'horizontal') => ({
     enter: 370,
     exit: 250,
   },
-  enterClassName: (timeout: number) => css({
-    opacity: 1,
-    transform: 'translate3d(0, 0, 0)',
-    transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
-  }),
-  exitClassName: (timeout: number) => css({
-    opacity: 0,
-    transform: `translate3d(${translate3d[direction]})`,
-    transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
-  }),
+  enterClassName: (timeout: number) =>
+    css({
+      opacity: 1,
+      transform: 'translate3d(0, 0, 0)',
+      transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
+    }),
+  exitClassName: (timeout: number) =>
+    css({
+      opacity: 0,
+      transform: `translate3d(${translate3d[direction]})`,
+      transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
+    }),
 })
 
 contentTransitionVertical.defaultProps = defaultProps('vertical')
 contentTransitionHorizontal.defaultProps = defaultProps('horizontal')
 
-const backdropTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const backdropTransition: FunctionComponent<SimpleTransitionProps> = (
+  props,
+) => <SimpleTransition {...props} />
 
 backdropTransition.defaultProps = {
   timeout: {
     enter: 370,
     exit: 250,
   },
-  enterClassName: (timeout: number) => css({
-    opacity: 1,
-    transition: `opacity ${timeout}ms ease`,
-  }),
-  exitClassName: (timeout: number) => css({
-    opacity: 0,
-    transition: `opacity ${timeout}ms ease`,
-  }),
+  enterClassName: (timeout: number) =>
+    css({
+      opacity: 1,
+      transition: `opacity ${timeout}ms ease`,
+    }),
+  exitClassName: (timeout: number) =>
+    css({
+      opacity: 0,
+      transition: `opacity ${timeout}ms ease`,
+    }),
 }
 
 export interface DropUpProps {
@@ -82,11 +91,21 @@ export const DropUp: FunctionComponent<DropUpProps> = (props) => (
     autoFocus={props.autoFocus}
     onShow={props.onShow}
     onHide={props.onHide}
-    transition={props.horizontal ? contentTransitionHorizontal : contentTransitionVertical}
+    transition={
+      props.horizontal ? contentTransitionHorizontal : contentTransitionVertical
+    }
     backdropTransition={backdropTransition}
     renderBackdrop={(backdropProps) => (
-      <Pos type="fixed" zIndex="auto" top={0} right={0} bottom={0} left={0} {...backdropProps}>
-        <Card bg="rgba(245, 245, 245, 0.8)" width={1} height={1}/>
+      <Pos
+        type="fixed"
+        zIndex="auto"
+        top={0}
+        right={0}
+        bottom={0}
+        left={0}
+        {...backdropProps}
+      >
+        <Card bg="rgba(245, 245, 245, 0.8)" width={1} height={1} />
       </Pos>
     )}
     renderDialog={(dialogProps) => (
@@ -115,14 +134,14 @@ export const DropUp: FunctionComponent<DropUpProps> = (props) => (
               <Flex width={1} align="center">
                 {props.onBack ? (
                   <Box width={6} height={6} mr={3} onClick={props.onBack}>
-                    <Icon name="arrow-left"/>
+                    <Icon name="arrow-left" />
                   </Box>
-                ) : (
-                  null
-                )}
-                <Paragraph size="m" bold>{props.title}</Paragraph>
+                ) : null}
+                <Paragraph size="m" bold>
+                  {props.title}
+                </Paragraph>
                 <Box width={6} height={6} ml="auto" onClick={props.onHide}>
-                  <Icon name="cross"/>
+                  <Icon name="cross" />
                 </Box>
               </Flex>
             </Card>
@@ -136,9 +155,7 @@ export const DropUp: FunctionComponent<DropUpProps> = (props) => (
             <Box p={4} width={1}>
               {props.footer}
             </Box>
-          ) : (
-            null
-          )}
+          ) : null}
         </FlexPosCard>
       </Pos>
     )}

@@ -1,19 +1,18 @@
-import React, {FC, ReactNode} from 'react'
-
 import {
-  TabsControl,
-  TabHeader,
+  Card,
   Flex,
   FlexItem,
   IconProps,
   Pos,
-  Card,
-  TabBorder,
   styled,
+  TabBorder,
+  TabHeader,
+  TabsControl,
   Value,
 } from '@qiwi/pijma-core'
+import React, { FC, ReactNode } from 'react'
 
-import {Paragraph} from '../typography'
+import { Paragraph } from '../typography'
 
 export interface BlockTabsProps {
   items: {
@@ -33,7 +32,10 @@ export interface BlockTabsProps {
   onChange?: (selected: number) => void
 }
 
-const BlockTabsIndent: Record<NonNullable<BlockTabsProps['indent']>, [Value, Value, Value, Value]> = {
+const BlockTabsIndent: Record<
+  NonNullable<BlockTabsProps['indent']>,
+  [Value, Value, Value, Value]
+> = {
   s: [8, 8, 8, 8],
   m: [11, 11, 12, 11],
   l: [11, 17, 12, 17],
@@ -68,7 +70,7 @@ export const BlockTabs: FC<BlockTabsProps> = ({
   pt,
   pb,
   onChange,
-}) => (
+}) =>
   stub ? (
     <Pos type="relative">
       <Flex
@@ -83,20 +85,22 @@ export const BlockTabs: FC<BlockTabsProps> = ({
           overflow="auto"
           justify={centered ? 'space-between' : 'flex-start'}
         >
-          {(Array.isArray(stub) ? stub : [true, true, true]).map((icon, index, arr) => (
-            <TabHeader
-              key={index}
-              title="stub"
-              indent={index === arr.length - 1 ? 0 : 5}
-              wrap={!centered}
-              tabIndex={-1}
-              icon={icon ? 'qiwi' : undefined}
-              vertical={vertical}
-              select={false}
-              width={centered ? 1 : undefined}
-              stub
-            />
-          ))}
+          {(Array.isArray(stub) ? stub : [true, true, true]).map(
+            (icon, index, arr) => (
+              <TabHeader
+                key={index}
+                title="stub"
+                indent={index === arr.length - 1 ? 0 : 5}
+                wrap={!centered}
+                tabIndex={-1}
+                icon={icon ? 'qiwi' : undefined}
+                vertical={vertical}
+                select={false}
+                width={centered ? 1 : undefined}
+                stub
+              />
+            ),
+          )}
           <TabBorder
             width={centered ? 'calc(33% - 20px)' : vertical ? 13 : 21}
             left={0}
@@ -107,14 +111,12 @@ export const BlockTabs: FC<BlockTabsProps> = ({
         <FlexItem>
           {hr ? (
             <Pos type="absolute" width={1} left={0} zIndex={0}>
-              <Card mt="-1px" bg="#e6e6e6" width={1} height="1px"/>
+              <Card mt="-1px" bg="#e6e6e6" width={1} height="1px" />
             </Pos>
-          ) : (
-            null
-          )}
+          ) : null}
         </FlexItem>
         <FlexItem mt={4}>
-          <Paragraph stub/>
+          <Paragraph stub />
         </FlexItem>
       </Flex>
     </Pos>
@@ -123,7 +125,7 @@ export const BlockTabs: FC<BlockTabsProps> = ({
       select={select}
       length={items.length}
       onChange={onChange}
-      children={renderProps => (
+      children={(renderProps) => (
         <Pos type="relative">
           <Flex
             direction="column"
@@ -167,13 +169,11 @@ export const BlockTabs: FC<BlockTabsProps> = ({
             {hr ? (
               <FlexItem>
                 <Pos type="absolute" width={1} left={0} zIndex={0}>
-                  <Card mt="-1px" bg="#e6e6e6" width={1} height="1px"/>
+                  <Card mt="-1px" bg="#e6e6e6" width={1} height="1px" />
                 </Pos>
               </FlexItem>
-            ) : (
-              null
-            )}
-            {items.map(({content}, index) => (
+            ) : null}
+            {items.map(({ content }, index) => (
               <TabContent
                 key={index}
                 display={select === index ? 'block' : 'none'}
@@ -186,7 +186,6 @@ export const BlockTabs: FC<BlockTabsProps> = ({
       )}
     />
   )
-)
 
 BlockTabs.defaultProps = {
   select: 0,

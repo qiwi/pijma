@@ -1,15 +1,14 @@
-import React, {FC} from 'react'
-
 import {
+  Box,
+  css,
   Overlay,
   OverlayProps,
+  Pos,
   SimpleTransition,
   SimpleTransitionProps,
-  css,
-  Pos,
   Value,
-  Box,
 } from '@qiwi/pijma-core'
+import React, { FC } from 'react'
 
 export interface DropDownProps {
   show: boolean
@@ -25,21 +24,25 @@ export interface DropDownProps {
   onHide: () => void
 }
 
-const transition: FC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const transition: FC<SimpleTransitionProps> = (props) => (
+  <SimpleTransition {...props} />
+)
 
 transition.defaultProps = {
   timeout: {
     enter: 300,
     exit: 200,
   },
-  enterClassName: (timeout: number) => css({
-    opacity: 1,
-    transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-  }),
-  exitClassName: (timeout: number) => css({
-    opacity: 0,
-    transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-  }),
+  enterClassName: (timeout: number) =>
+    css({
+      opacity: 1,
+      transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+    }),
+  exitClassName: (timeout: number) =>
+    css({
+      opacity: 0,
+      transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+    }),
 }
 
 export const DropDown: FC<DropDownProps> = ({
@@ -54,11 +57,9 @@ export const DropDown: FC<DropDownProps> = ({
   container,
   onHide,
   children,
-}) => (
+}) =>
   stub ? (
-    <Box display="none">
-      {children}
-    </Box>
+    <Box display="none">{children}</Box>
   ) : (
     <Overlay
       show={show}
@@ -84,7 +85,6 @@ export const DropDown: FC<DropDownProps> = ({
       )}
     />
   )
-)
 
 DropDown.defaultProps = {
   rootClose: true,

@@ -1,6 +1,5 @@
-import React, {FunctionComponent} from 'react'
-
-import {Breaker, Box, Stub, Typo, TypoProps} from '@qiwi/pijma-core'
+import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
+import React, { FunctionComponent } from 'react'
 
 export interface TitleProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -21,7 +20,9 @@ const TitleHeight: { [size in TitleProps['size']]: number } = {
   2: 12,
 }
 
-const TitleTag: { [size in TitleProps['size']]: NonNullable<TitleProps['tag']> } = {
+const TitleTag: {
+  [size in TitleProps['size']]: NonNullable<TitleProps['tag']>
+} = {
   1: 'h1',
   2: 'h2',
 }
@@ -51,7 +52,15 @@ const TitleColor: { [color in NonNullable<TitleProps['color']>]: string } = {
   inverse: '#fff',
 }
 
-export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'default', align, stub, clamp, children}) => (
+export const Title: FunctionComponent<TitleProps> = ({
+  tag,
+  size,
+  color = 'default',
+  align,
+  stub,
+  clamp,
+  children,
+}) =>
   stub ? (
     <Box
       ml={align === 'center' || align === 'right' ? 'auto' : 'none'}
@@ -68,7 +77,7 @@ export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'defaul
     </Box>
   ) : (
     <Typo
-      as={tag ? tag : TitleTag[size]}
+      as={tag || TitleTag[size]}
       display="block"
       size={TitleSize[size]}
       height={TitleHeight[size]}
@@ -76,10 +85,9 @@ export const Title: FunctionComponent<TitleProps> = ({tag, size, color = 'defaul
       color={TitleColor[color]}
       align={align}
       clamp={clamp}
-      children={<Breaker children={children}/>}
+      children={<Breaker children={children} />}
     />
   )
-)
 
 Title.defaultProps = {
   color: 'default',

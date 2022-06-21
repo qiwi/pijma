@@ -1,4 +1,4 @@
-import {RefObject, KeyboardEventHandler, MouseEventHandler, FC} from 'react'
+import { FC, KeyboardEventHandler, MouseEventHandler, RefObject } from 'react'
 
 export default interface MenuControlProps {
   count: number

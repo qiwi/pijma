@@ -1,6 +1,5 @@
-import React, {FC} from 'react'
-
-import {LinkControl, Value, Flex, Stub, CardLnk} from '@qiwi/pijma-core'
+import { CardLnk, Flex, LinkControl, Stub, Value } from '@qiwi/pijma-core'
+import React, { FC } from 'react'
 
 export interface PaginationLinkProps {
   page: number
@@ -8,7 +7,12 @@ export interface PaginationLinkProps {
   width?: Value
   href?: string
   stub?: boolean
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
+  onClick?: (
+    href?: string,
+    target?: string,
+    download?: string | boolean,
+    rel?: string,
+  ) => void
   children: FC<{
     disabled: boolean
     hover: boolean
@@ -16,11 +20,11 @@ export interface PaginationLinkProps {
   }>
 }
 
-export const PaginationLink: FC<PaginationLinkProps> = props => (
+export const PaginationLink: FC<PaginationLinkProps> = (props) => (
   <LinkControl
     href={props.stub ? undefined : props.href}
     onClick={props.stub ? undefined : props.onClick}
-    children={renderProps => (
+    children={(renderProps) => (
       <CardLnk
         as={props.stub ? 'div' : 'a'}
         transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
@@ -43,19 +47,17 @@ export const PaginationLink: FC<PaginationLinkProps> = props => (
           justify="center"
           width={1}
           height={1}
-          children={props.stub ? (
-            <Stub
-              height={6}
-              width={6}
-              r={12}
-            />
-          ) : (
-            props.children({
-              disabled: props.disabled || false,
-              hover: renderProps.hover,
-              focus: renderProps.focus,
-            })
-          )}
+          children={
+            props.stub ? (
+              <Stub height={6} width={6} r={12} />
+            ) : (
+              props.children({
+                disabled: props.disabled || false,
+                hover: renderProps.hover,
+                focus: renderProps.focus,
+              })
+            )
+          }
         />
       </CardLnk>
     )}

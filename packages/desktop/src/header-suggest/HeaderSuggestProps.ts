@@ -1,8 +1,7 @@
-import React, {ReactElement} from 'react'
+import { SuggestControlProps } from '@qiwi/pijma-core'
+import React, { ReactElement } from 'react'
 
-import {SuggestControlProps} from '@qiwi/pijma-core'
-
-import {HeaderSuggestOptionModel} from './HeaderSuggestOptionModel'
+import { HeaderSuggestOptionModel } from './HeaderSuggestOptionModel'
 
 export interface HeaderSuggestProps<O extends HeaderSuggestOptionModel<V>, V> {
   value?: SuggestControlProps<O, V>['value']

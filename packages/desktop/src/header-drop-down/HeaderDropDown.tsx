@@ -1,15 +1,14 @@
-import React, {FC} from 'react'
-
 import {
-  SimpleTransition,
-  SimpleTransitionProps,
   Card,
-  Pos,
-  OverlayProps,
+  css,
   Icon,
   Overlay,
-  css,
+  OverlayProps,
+  Pos,
+  SimpleTransition,
+  SimpleTransitionProps,
 } from '@qiwi/pijma-core'
+import React, { FC } from 'react'
 
 export interface HeaderDropDownProps {
   show: boolean
@@ -19,21 +18,25 @@ export interface HeaderDropDownProps {
   onHide: () => void
 }
 
-const transition: FC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const transition: FC<SimpleTransitionProps> = (props) => (
+  <SimpleTransition {...props} />
+)
 
 transition.defaultProps = {
   timeout: {
     enter: 300,
     exit: 200,
   },
-  enterClassName: (timeout: number) => css({
-    opacity: 1,
-    transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-  }),
-  exitClassName: (timeout: number) => css({
-    opacity: 0,
-    transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-  }),
+  enterClassName: (timeout: number) =>
+    css({
+      opacity: 1,
+      transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+    }),
+  exitClassName: (timeout: number) =>
+    css({
+      opacity: 0,
+      transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+    }),
 }
 
 export const HeaderDropDown: FC<HeaderDropDownProps> = ({
@@ -89,7 +92,7 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
             cursor="pointer"
             onClick={onHide}
           >
-            <Icon name="cross" color="#666"/>
+            <Icon name="cross" color="#666" />
           </Pos>
         </Pos>
       </Pos>

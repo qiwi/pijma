@@ -1,6 +1,5 @@
-import React, {Fragment, FunctionComponent} from 'react'
-
-import {Breaker, Box, Stub, Typo, TypoProps} from '@qiwi/pijma-core'
+import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
+import React, { Fragment, FunctionComponent } from 'react'
 
 export interface HeadingProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -27,7 +26,9 @@ const HeadingHeight: { [size in HeadingProps['size']]: number } = {
   5: 5,
 }
 
-const HeadingTag: { [size in HeadingProps['size']]: NonNullable<HeadingProps['tag']> } = {
+const HeadingTag: {
+  [size in HeadingProps['size']]: NonNullable<HeadingProps['tag']>
+} = {
   1: 'h1',
   2: 'h2',
   3: 'h3',
@@ -67,35 +68,47 @@ const StubHeight: { [size in HeadingProps['size']]: number } = {
   5: 3,
 }
 
-const HeadingColor: { [color in NonNullable<HeadingProps['color']>]: string } = {
-  default: '#000',
-  inverse: '#fff',
-}
+const HeadingColor: { [color in NonNullable<HeadingProps['color']>]: string } =
+  {
+    default: '#000',
+    inverse: '#fff',
+  }
 
-export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'default', align, stub, clamp, children}) => (
+export const Heading: FunctionComponent<HeadingProps> = ({
+  tag,
+  size,
+  color = 'default',
+  align,
+  stub,
+  clamp,
+  children,
+}) =>
   stub ? (
     <Fragment>
-      {Array(clamp === undefined ? 1 : clamp).fill(0).map((_, i) => i % 3 === 0 ? 0.5 : i % 3 === 1 ? 0.6 : 0.4).map((width, id) => (
-        <Box
-          key={id}
-          ml={align === 'center' || align === 'right' ? 'auto' : 'none'}
-          mr={align === 'center' ? 'auto' : 'none'}
-          width={width}
-          maxWidth={1}
-        >
-          <Stub
-            top={StubOffsetTop[size]}
-            bottom={StubOffsetBottom[size]}
-            width={1}
-            height={StubHeight[size]}
-            inverse={color === 'inverse'}
-          />
-        </Box>
-      ))}
+      {new Array(clamp === undefined ? 1 : clamp)
+        .fill(0)
+        .map((_, i) => (i % 3 === 0 ? 0.5 : i % 3 === 1 ? 0.6 : 0.4))
+        .map((width, id) => (
+          <Box
+            key={id}
+            ml={align === 'center' || align === 'right' ? 'auto' : 'none'}
+            mr={align === 'center' ? 'auto' : 'none'}
+            width={width}
+            maxWidth={1}
+          >
+            <Stub
+              top={StubOffsetTop[size]}
+              bottom={StubOffsetBottom[size]}
+              width={1}
+              height={StubHeight[size]}
+              inverse={color === 'inverse'}
+            />
+          </Box>
+        ))}
     </Fragment>
   ) : (
     <Typo
-      as={tag ? tag : HeadingTag[size]}
+      as={tag || HeadingTag[size]}
       display="block"
       size={HeadingSize[size]}
       height={HeadingHeight[size]}
@@ -103,10 +116,9 @@ export const Heading: FunctionComponent<HeadingProps> = ({tag, size, color = 'de
       color={HeadingColor[color]}
       align={align}
       clamp={clamp}
-      children={<Breaker children={children}/>}
+      children={<Breaker children={children} />}
     />
   )
-)
 
 Heading.defaultProps = {
   color: 'default',
