@@ -17,3 +17,14 @@
 
 # Styleguidist
 /packages/*/styleguide/lib
+
+# Creds
+*.asc
+*.key
+*.pem
+*.cert
+
+# npm creds
+**/.npmrc
+**/.yarnrc
+**/.pnpmrc
