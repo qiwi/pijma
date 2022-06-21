@@ -11,7 +11,7 @@ jobs:
       skip: ${{ steps.ci-skip-step.outputs.ci-skip }}
       skip-not: ${{ steps.ci-skip-step.outputs.ci-skip-not }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 1
       - id: ci-skip-step
@@ -24,10 +24,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 1
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: 'yarn'
@@ -39,7 +39,7 @@ jobs:
         run: yarn build
 
       - name: Save target (artifact)
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: target
           retention-days: 1
@@ -55,15 +55,15 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 1
 
       - name: Restore target
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: target
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
       - name: Install deps
@@ -73,7 +73,7 @@ jobs:
 
 #      - name: Push coverage
 #        if: github.ref == 'refs/heads/master'
-#        uses: actions/upload-artifact@v2
+#        uses: actions/upload-artifact@v3
 #        with:
 #          name: target
 #          retention-days: 1
@@ -90,15 +90,15 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 1
 
       - name: Restore target
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: target
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
@@ -120,15 +120,17 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
-          persist-credentials: false
+          fetch-depth: 0
+          ref: master
 
       - name: Restore target
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: target
-      - uses: actions/setup-node@v2
+
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
           cache: 'yarn'
@@ -143,11 +145,12 @@ jobs:
 
       - name: Release
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_USER: 'qiwibot'
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GIT_AUTHOR_EMAIL: 'opensource@qiwi.com'
           GIT_COMMITTER_EMAIL: 'opensource@qiwi.com'
-          GIT_AUTHOR_NAME: '@qiwibot'
-          GIT_COMMITTER_NAME: '@qiwibot'
+          GIT_AUTHOR_NAME: 'QIWI Bot'
+          GIT_COMMITTER_NAME: 'QIWI Bot'
         run: npm_config_yes=true npx zx-bulk-release
