@@ -1,7 +1,7 @@
-import React, {ChangeEvent, FocusEvent, ForwardedRef, InputHTMLAttributes, PureComponent} from 'react'
+import React, { ChangeEvent, FocusEvent, ForwardedRef, InputHTMLAttributes, PureComponent } from 'react'
 import {
-  createTextMaskInputElement as tmcCreateTextMaskInputElement,
   conformToMask as tmcConformToMask,
+  createTextMaskInputElement as tmcCreateTextMaskInputElement,
 } from 'text-mask-core'
 
 export interface TextMaskInputElement {
@@ -18,7 +18,7 @@ export interface CreateTextMaskConfig {
   showMask?: boolean
 }
 
-export function createTextMaskInputElement(config: CreateTextMaskConfig): TextMaskInputElement {
+export function createTextMaskInputElement (config: CreateTextMaskConfig): TextMaskInputElement {
   return tmcCreateTextMaskInputElement(config)
 }
 
@@ -38,11 +38,11 @@ export interface ConformToMaskConfig {
   previousConformedValue?: string
 }
 
-export function conformToMask(text: string, mask: Mask, config?: ConformToMaskConfig): ConformToMaskResult {
+export function conformToMask (text: string, mask: Mask, config?: ConformToMaskConfig): ConformToMaskResult {
   return tmcConformToMask(text, mask, config)
 }
 
-function isNil(value: any) {
+function isNil (value: any) {
   return typeof value === 'undefined' || value === null
 }
 
@@ -79,34 +79,30 @@ export interface MaskedInputProps extends InputHTMLAttributes<HTMLInputElement> 
 }
 
 class MaskedInputComponent extends PureComponent<MaskedInputProps, {}> {
-
   private inputElement!: HTMLInputElement
 
   private textMaskInputElement!: TextMaskInputElement
 
-  constructor(props: MaskedInputProps) {
+  constructor (props: MaskedInputProps) {
     super(props)
     this.setRef = this.setRef.bind(this)
     this.onBlur = this.onBlur.bind(this)
     this.onChange = this.onChange.bind(this)
   }
 
-  setRef(inputElement: HTMLInputElement) {
+  setRef (inputElement: HTMLInputElement) {
     this.inputElement = inputElement
 
-    const {inputRef} = this.props
-    if (!inputRef) {
-      return
-    } else if (typeof inputRef === 'function') {
+    const { inputRef } = this.props
+    if (typeof inputRef === 'function') {
       inputRef(inputElement)
-    } else {
+    } else if (inputRef) {
       inputRef.current = inputElement
     }
-
   }
 
-  initTextMask() {
-    const {mask, guide, value, pipe, placeholderChar, keepCharPositions, showMask} = this.props
+  initTextMask () {
+    const { mask, guide, value, pipe, placeholderChar, keepCharPositions, showMask } = this.props
     this.textMaskInputElement = createTextMaskInputElement({
       inputElement: this.inputElement,
       mask,
@@ -119,12 +115,12 @@ class MaskedInputComponent extends PureComponent<MaskedInputProps, {}> {
     this.textMaskInputElement.update(value)
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.initTextMask()
   }
 
-  componentDidUpdate(prevProps: MaskedInputProps) {
-    const {value, pipe, mask, guide, placeholderChar, showMask} = this.props
+  componentDidUpdate (prevProps: MaskedInputProps) {
+    const { value, pipe, mask, guide, placeholderChar, showMask } = this.props
     const isPipeChanged = typeof pipe === 'function' && typeof prevProps.pipe === 'function' ? pipe.toString() !== prevProps.pipe.toString() : isNil(pipe) && !isNil(prevProps.pipe) || !isNil(pipe) && isNil(prevProps.pipe)
     const isMaskChanged = typeof mask === 'function' && typeof prevProps.mask === 'function' ? mask.toString() !== prevProps.mask.toString() : isNil(mask) && !isNil(prevProps.mask) || !isNil(mask) && isNil(prevProps.mask)
     const isSettingChanged = guide !== prevProps.guide || placeholderChar !== prevProps.placeholderChar || showMask !== prevProps.showMask
@@ -134,7 +130,7 @@ class MaskedInputComponent extends PureComponent<MaskedInputProps, {}> {
     }
   }
 
-  render() {
+  render () {
     const exclude = ['mask', 'guide', 'pipe', 'placeholderChar', 'keepCharPositions', 'showMask', 'value', 'onBlur', 'onChange', 'inputRef']
     const props = Object.fromEntries(Object.entries(this.props).filter(([key]) => !exclude.includes(key)))
     return (
@@ -148,28 +144,26 @@ class MaskedInputComponent extends PureComponent<MaskedInputProps, {}> {
     )
   }
 
-  onChange(event: ChangeEvent<HTMLInputElement>) {
+  onChange (event: ChangeEvent<HTMLInputElement>) {
     this.textMaskInputElement.update()
     if (typeof this.props.onChange === 'function') {
       this.props.onChange(event)
     }
   }
 
-  onBlur(event: FocusEvent<HTMLInputElement>) {
+  onBlur (event: FocusEvent<HTMLInputElement>) {
     if (typeof this.props.onBlur === 'function') {
       this.props.onBlur(event)
     }
   }
-
 }
 
 export const MaskedInput = React.forwardRef<HTMLInputElement, MaskedInputProps>((props, ref) => {
-    const inputProps = {
-      ...props,
-      inputRef: ref,
-    }
+  const inputProps = {
+    ...props,
+    inputRef: ref,
+  }
 
-    return <MaskedInputComponent {...inputProps} />
-  },
+  return <MaskedInputComponent {...inputProps} />
+},
 )
-
