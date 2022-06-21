@@ -1,5 +1,3 @@
 import MarkdownToJSX from 'markdown-to-jsx'
 
-export {
-  MarkdownToJSX,
-}
+export { MarkdownToJSX }

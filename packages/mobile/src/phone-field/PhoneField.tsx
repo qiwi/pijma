@@ -1,28 +1,27 @@
-import React, {FunctionComponent} from 'react'
-
 import {
-  PhoneFieldControl,
-  MenuControl,
   BasicInput,
   Box,
-  Pos,
   Card,
+  CardPos,
+  Flag,
   Flex,
   FlexItem,
   InputField,
-  Flag,
-  CardPos,
+  MenuControl,
+  PhoneFieldControl,
+  Pos,
 } from '@qiwi/pijma-core'
+import React, { FunctionComponent } from 'react'
 
-import {Paragraph} from '../typography'
-import {DropUp} from '../drop-up'
-import {PhoneFieldProps} from './PhoneFieldProps'
+import { DropUp } from '../drop-up'
+import { Paragraph } from '../typography'
+import { PhoneFieldProps } from './PhoneFieldProps'
 
 export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
   tabIndex = 0,
   code = 'ru',
   ...props
-}) => (
+}) =>
   props.stub ? (
     <InputField
       stub
@@ -48,8 +47,10 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
             <Pos type="relative" ref={renderProps.containerRef}>
               <InputField
                 title={props.title}
-                active={renderProps.focused || !!props.value || !!props.placeholder}
-                input={(
+                active={
+                  renderProps.focused || !!props.value || !!props.placeholder
+                }
+                input={
                   <BasicInput
                     ref={renderProps.inputRef}
                     type="tel"
@@ -69,11 +70,15 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                     onChange={renderProps.onChange}
                     onFocus={renderProps.onFocus}
                     onBlur={renderProps.onBlur}
-                    onKeyDown={renderProps.showCountries ? menuRenderProps.onKeyDown : undefined}
+                    onKeyDown={
+                      renderProps.showCountries
+                        ? menuRenderProps.onKeyDown
+                        : undefined
+                    }
                   />
-                )}
+                }
                 hint={props.hint}
-                icon={(
+                icon={
                   <Box
                     cursor="pointer"
                     width={6}
@@ -81,9 +86,9 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                     my={1}
                     onClick={renderProps.onFlagClick}
                     onMouseDown={renderProps.onFlagMouseDown}
-                    children={(<Flag code={renderProps.code || code}/>)}
+                    children={<Flag code={renderProps.code || code} />}
                   />
-                )}
+                }
                 error={props.error}
                 help={props.help}
                 action={props.action}
@@ -95,7 +100,12 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                 onKeyDown={menuRenderProps.onKeyDown}
                 onHide={renderProps.onCountriesHide}
               >
-                <CardPos ref={menuRenderProps.containerRef} type="relative" height={1} overflow="auto">
+                <CardPos
+                  ref={menuRenderProps.containerRef}
+                  type="relative"
+                  height={1}
+                  overflow="auto"
+                >
                   {menuRenderProps.items.map((country, index) => (
                     <Card
                       key={index}
@@ -103,19 +113,28 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                       width={1}
                       px={6}
                       cursor="pointer"
-                      bg={country.selected ? '#E6E6E6' : country.focused ? '#F5F5F5' : '#FFF'}
+                      bg={
+                        country.selected
+                          ? '#E6E6E6'
+                          : country.focused
+                          ? '#F5F5F5'
+                          : '#FFF'
+                      }
                       onClick={country.onClick}
                       onMouseEnter={country.onMouseEnter}
                     >
                       <Flex py={3} align="center">
                         <FlexItem shrink={1} mr={3}>
                           <Box width={6} height={4} my={1}>
-                            <Flag code={props.countries[index].code}/>
+                            <Flag code={props.countries[index].code} />
                           </Box>
                         </FlexItem>
                         <FlexItem width={16} shrink={1}>
                           <Paragraph bold>
-                            {`+${props.countries[index].mask.replace(/\D/g, '')}`}
+                            {`+${props.countries[index].mask.replace(
+                              /\D/g,
+                              '',
+                            )}`}
                           </Paragraph>
                         </FlexItem>
                         <Paragraph bold>
@@ -131,7 +150,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
         />
       )}
     />
-  ))
+  )
 
 PhoneField.defaultProps = {
   tabIndex: 0,

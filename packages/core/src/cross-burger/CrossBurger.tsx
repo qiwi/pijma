@@ -1,6 +1,6 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 
-import {Value, Svg, Path} from '../primitive'
+import { Path, Svg, Value } from '../primitive'
 
 export interface CrossBurgerProps {
   size?: Value

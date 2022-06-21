@@ -1,6 +1,5 @@
-import React, {FC, ReactNode} from 'react'
-
-import {Heading} from '@qiwi/pijma-desktop'
+import { Heading } from '@qiwi/pijma-desktop'
+import React, { FC, ReactNode } from 'react'
 
 interface SectionHeadingRendererProps {
   toolbar: ReactNode
@@ -11,9 +10,7 @@ interface SectionHeadingRendererProps {
 }
 
 const SectionHeadingRenderer: FC<SectionHeadingRendererProps> = (props) => (
-  <Heading size="1">
-    {props.children}
-  </Heading>
+  <Heading size="1">{props.children}</Heading>
 )
 
 export default SectionHeadingRenderer

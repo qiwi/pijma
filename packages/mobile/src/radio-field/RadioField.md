@@ -3,29 +3,34 @@
 Размещайте в одном списке не более 7 радиокнопок. Для остальных случаев применяйте выпадающие списки.
 
 ```jsx
-const [value, setValue] = React.useState('selected');
-<Block>
+const [value, setValue] = React.useState('selected')
+;<Block>
   <BlockContent>
     <RadioField
       title="Группа радиокнопок"
-      hint={<QuestionIcon/>}
-      options={[{
-        label: 'Выбранная радиокнопка',
-        value: 'selected',
-        disabled: false,
-      }, {
-        label: 'Невыбранная радиокнопка',
-        value: 'normal',
-        disabled: false,
-      }, {
-        label: 'Заблокированная выбранная радиокнопка',
-        value: 'selected',
-        disabled: true,
-      }, {
-        label: 'Заблокированная радиокнопка',
-        value: 'disabled',
-        disabled: true,
-      }]}
+      hint={<QuestionIcon />}
+      options={[
+        {
+          label: 'Выбранная радиокнопка',
+          value: 'selected',
+          disabled: false,
+        },
+        {
+          label: 'Невыбранная радиокнопка',
+          value: 'normal',
+          disabled: false,
+        },
+        {
+          label: 'Заблокированная выбранная радиокнопка',
+          value: 'selected',
+          disabled: true,
+        },
+        {
+          label: 'Заблокированная радиокнопка',
+          value: 'disabled',
+          disabled: true,
+        },
+      ]}
       value={value}
       onChange={(value) => setValue(value)}
     />
@@ -34,33 +39,38 @@ const [value, setValue] = React.useState('selected');
 ```
 
 ```jsx
-const [value, setValue] = React.useState('selected');
-<Block>
+const [value, setValue] = React.useState('selected')
+;<Block>
   <BlockContent>
     <RadioField
       title="Группа радиокнопок с примечаниями"
-      hint={<QuestionIcon/>}
-      options={[{
-        label: 'Выбранная радиокнопка',
-        description: 'Примечание к радиокнопке',
-        value: 'selected',
-        disabled: false,
-      }, {
-        label: 'Невыбранная радиокнопка',
-        description: 'Примечание к радиокнопке',
-        value: 'normal',
-        disabled: false,
-      }, {
-        label: 'Заблокированная выбранная радиокнопка',
-        description: 'Примечание к радиокнопке',
-        value: 'selected',
-        disabled: true,
-      }, {
-        label: 'Заблокированная радиокнопка',
-        description: 'Примечание к радиокнопке',
-        value: 'disabled',
-        disabled: true,
-      }]}
+      hint={<QuestionIcon />}
+      options={[
+        {
+          label: 'Выбранная радиокнопка',
+          description: 'Примечание к радиокнопке',
+          value: 'selected',
+          disabled: false,
+        },
+        {
+          label: 'Невыбранная радиокнопка',
+          description: 'Примечание к радиокнопке',
+          value: 'normal',
+          disabled: false,
+        },
+        {
+          label: 'Заблокированная выбранная радиокнопка',
+          description: 'Примечание к радиокнопке',
+          value: 'selected',
+          disabled: true,
+        },
+        {
+          label: 'Заблокированная радиокнопка',
+          description: 'Примечание к радиокнопке',
+          value: 'disabled',
+          disabled: true,
+        },
+      ]}
       value={value}
       onChange={(value) => setValue(value)}
     />
@@ -71,12 +81,7 @@ const [value, setValue] = React.useState('selected');
 ```jsx
 <Block>
   <BlockContent>
-    <RadioField
-      stub
-      options={[]}
-      value={null}
-      onChange={() => {}}
-    />
+    <RadioField stub options={[]} value={null} onChange={() => {}} />
   </BlockContent>
 </Block>
 ```

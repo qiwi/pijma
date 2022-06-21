@@ -1,51 +1,36 @@
-import React, {FunctionComponent} from 'react'
-
 import {
-  RadioControl,
+  Box,
+  Flex,
   OptionControl,
-  Radio,
   OptionField,
   OptionFieldItem,
-  Box,
-  Stub,
+  Radio,
+  RadioControl,
   Spacer,
-  Flex,
+  Stub,
 } from '@qiwi/pijma-core'
+import React, { FunctionComponent } from 'react'
 
-import RadioFieldProps from './RadioFieldProps'
 import RadioFieldOptionModel from './RadioFieldOptionModel'
+import RadioFieldProps from './RadioFieldProps'
 
 const RadioField: FunctionComponent<
   RadioFieldProps<RadioFieldOptionModel<any>, any>
-> = props => (
+> = (props) =>
   props.stub ? (
     <Box maxHeight={1}>
-      <Stub
-        width={24}
-        height={3}
-        top={2}
-        bottom={4}
-      />
+      <Stub width={24} height={3} top={2} bottom={4} />
       <Spacer size="s">
-        {(Array.isArray(props.stub) ? props.stub : [33, 38, 30]).map((width: number, id: number) => (
-          <Flex key={id} align="center">
-            <Stub
-              width={5}
-              height={5}
-              right={3}
-              left={0.5}
-              r={10}
-            />
-            <Box width={width} maxWidth={1}>
-              <Stub
-                width={1}
-                height={2}
-                top={2}
-                bottom={2}
-              />
-            </Box>
-          </Flex>
-        ))}
+        {(Array.isArray(props.stub) ? props.stub : [33, 38, 30]).map(
+          (width: number, id: number) => (
+            <Flex key={id} align="center">
+              <Stub width={5} height={5} right={3} left={0.5} r={10} />
+              <Box width={width} maxWidth={1}>
+                <Stub width={1} height={2} top={2} bottom={2} />
+              </Box>
+            </Flex>
+          ),
+        )}
       </Spacer>
     </Box>
   ) : (
@@ -78,7 +63,7 @@ const RadioField: FunctionComponent<
               children={(renderOptionProps) => (
                 <OptionFieldItem
                   disabled={option.disabled}
-                  icon={(
+                  icon={
                     <Box width={6}>
                       <Radio
                         disabled={option.disabled}
@@ -86,7 +71,7 @@ const RadioField: FunctionComponent<
                         focused={option.focused}
                       />
                     </Box>
-                  )}
+                  }
                   label={option.label}
                   description={option.description}
                   onClick={renderOptionProps.onClick}
@@ -100,6 +85,5 @@ const RadioField: FunctionComponent<
       )}
     />
   )
-)
 
 export default RadioField

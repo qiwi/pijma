@@ -1,15 +1,10 @@
-import {styled, StyledOptions} from '../styled'
+import { styled, StyledOptions } from '../styled'
+import { BoxNonProps, BoxProps, BoxStyles } from './Box'
+import { CardNonProps, CardProps, CardStyles } from './Card'
 
-import {CardNonProps, CardProps, CardStyles} from './Card'
-import {BoxNonProps, BoxProps, BoxStyles} from './Box'
+export interface BtnProps extends BoxProps, CardProps {}
 
-export interface BtnProps extends BoxProps, CardProps {
-}
-
-export const BtnNonProps: PropertyKey[] = [
-  ...BoxNonProps,
-  ...CardNonProps,
-]
+export const BtnNonProps: PropertyKey[] = [...BoxNonProps, ...CardNonProps]
 
 export const BtnOptions: StyledOptions<BtnProps> = {
   shouldForwardProp: (prop) => !BtnNonProps.includes(prop),

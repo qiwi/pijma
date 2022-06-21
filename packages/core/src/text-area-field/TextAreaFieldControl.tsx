@@ -3,15 +3,18 @@ import React from 'react'
 import TextAreaFieldControlProps from './TextAreaFieldControlProps'
 import TextAreaFieldControlState from './TextAreaFieldControlState'
 
-export default class TextAreaFieldControl extends React.Component<TextAreaFieldControlProps, TextAreaFieldControlState> {
-
+export default class TextAreaFieldControl extends React.Component<
+  TextAreaFieldControlProps,
+  TextAreaFieldControlState
+> {
   public state = {
     focused: false,
     rows: 1,
     animate: false,
   }
 
-  private field: React.RefObject<HTMLTextAreaElement> = React.createRef<HTMLTextAreaElement>()
+  private field: React.RefObject<HTMLTextAreaElement> =
+    React.createRef<HTMLTextAreaElement>()
 
   public componentDidMount(): void {
     this.resize(false)
@@ -36,7 +39,7 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
     cloned.style.transition = 'none'
     cloned.style.width = `${this.field.current.getBoundingClientRect().width}px`
     cloned.style.height = `${lineHeight}px`
-    cloned.value = cloned.value + '¯\_(ツ)_/¯'
+    cloned.value = cloned.value + '¯_(ツ)_/¯'
     const scrollHeight = cloned.scrollHeight - paddingTop - paddingBottom
     cloned.remove()
     this.setState({
@@ -72,7 +75,9 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
     }
   }
 
-  private onKeyDown: React.KeyboardEventHandler<HTMLTextAreaElement> = (event) => {
+  private onKeyDown: React.KeyboardEventHandler<HTMLTextAreaElement> = (
+    event,
+  ) => {
     if (this.props.onKeyDown && this.props.onKeyDown(event)) {
       event.preventDefault()
     }
@@ -97,5 +102,4 @@ export default class TextAreaFieldControl extends React.Component<TextAreaFieldC
       onKeyUp: this.onKeyUp,
     })
   }
-
 }

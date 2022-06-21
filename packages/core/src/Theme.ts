@@ -1,7 +1,6 @@
 import '@emotion/react'
 
 declare module '@emotion/react' {
-
   export interface Theme {
     scale: number
     font: {
@@ -68,7 +67,7 @@ declare module '@emotion/react' {
           simple: string
         }
       }
-    },
+    }
     link: {
       color: {
         brand: {
@@ -80,7 +79,7 @@ declare module '@emotion/react' {
           hover: string
         }
       }
-    },
+    }
     tabs: {
       icon: {
         color: {
@@ -99,7 +98,7 @@ declare module '@emotion/react' {
       border: {
         color: string
       }
-    },
+    }
     input: {
       border: {
         disabled: string
@@ -109,5 +108,4 @@ declare module '@emotion/react' {
       }
     }
   }
-
 }

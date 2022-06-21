@@ -1,9 +1,13 @@
-import React, {FC} from 'react'
-
-import {LinkControl, Stub, TypoLnk} from '@qiwi/pijma-core'
+import { LinkControl, Stub, TypoLnk } from '@qiwi/pijma-core'
+import React, { FC } from 'react'
 
 export interface NavLinkProps {
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
+  onClick?: (
+    href?: string,
+    target?: string,
+    download?: string | boolean,
+    rel?: string,
+  ) => void
   onFocus?: () => void
   onBlur?: () => void
   tabIndex?: number
@@ -15,14 +19,9 @@ export interface NavLinkProps {
   stub?: boolean
 }
 
-export const NavLink: FC<NavLinkProps> = (props) => (
+export const NavLink: FC<NavLinkProps> = (props) =>
   props.stub ? (
-    <Stub
-      top={1.5}
-      bottom={1.5}
-      height={2}
-      width={1}
-    />
+    <Stub top={1.5} bottom={1.5} height={2} width={1} />
   ) : (
     <LinkControl
       onClick={props.onClick}
@@ -59,4 +58,3 @@ export const NavLink: FC<NavLinkProps> = (props) => (
       )}
     />
   )
-)

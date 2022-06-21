@@ -1,4 +1,4 @@
-import {TransitionProps} from 'react-transition-group/Transition'
+import { TransitionProps } from 'react-transition-group/Transition'
 
 type SimpleTransitionProps = TransitionProps & {
   enterClassName?: (timeout: number) => string

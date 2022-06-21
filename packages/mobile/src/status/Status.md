@@ -2,25 +2,19 @@
 <Block>
   <BlockContent indent="m">
     <Status
-      icon={(
-        <Icon
-          name="attention"
-          color="#ff0000"
-          size={1}
-        />
-      )}
+      icon={<Icon name="attention" color="#ff0000" size={1} />}
       title="Не удалось найти информацию о никнейме"
       content="Наверное кто-то пролил кофе на сервер. \n  Попробуйте обновить страницу"
-      actions={(
+      actions={
         <Actions size="normal">
-          <Button 
-            text="Обновить страницу" 
-            type="submit" 
-            kind="simple" 
+          <Button
+            text="Обновить страницу"
+            type="submit"
+            kind="simple"
             size="normal"
           />
         </Actions>
-      )}
+      }
     />
   </BlockContent>
 </Block>
@@ -30,15 +24,9 @@
 <Block>
   <BlockContent indent="m">
     <Status
-      icon={(
-        <Icon
-          name="attention"
-          color="#ff0000"
-          size={1}
-        />
-      )}
+      icon={<Icon name="attention" color="#ff0000" size={1} />}
       title="Не удалось найти информацию о никнейме"
-      content={(
+      content={
         <Spacer size="xxs">
           <Paragraph align="center" color="support">
             Наташа, проснись!
@@ -47,47 +35,41 @@
             Мы всё уронили!!!
           </Paragraph>
         </Spacer>
-      )}
-      actions={(
+      }
+      actions={
         <Actions size="normal">
-          <Button 
-            text="Обновить страницу" 
-            type="submit" 
-            kind="simple" 
+          <Button
+            text="Обновить страницу"
+            type="submit"
+            kind="simple"
             size="normal"
           />
         </Actions>
-      )}
+      }
     />
   </BlockContent>
 </Block>
 ```
-  
+
 ```jsx
 <Block>
   <BlockContent>
     <Section>
       <Box p={11}>
         <Status
-          icon={(
-            <Icon
-              name="attention"
-              color="#ff0000"
-              size={1}
-            />
-          )}
+          icon={<Icon name="attention" color="#ff0000" size={1} />}
           title="Не удалось найти информацию о никнейме"
           content="Наверное кто-то пролил кофе на сервер. \n  Попробуйте обновить страницу"
-          actions={(
+          actions={
             <Actions size="normal">
-              <Button 
-                text="Обновить страницу" 
-                type="submit" 
-                kind="simple" 
+              <Button
+                text="Обновить страницу"
+                type="submit"
+                kind="simple"
                 size="normal"
               />
             </Actions>
-          )}
+          }
         />
       </Box>
     </Section>
@@ -103,16 +85,16 @@
     <Status
       title="Не удалось найти информацию о никнейме"
       content="Наверное кто-то пролил кофе на сервер. \n  Попробуйте обновить страницу"
-      actions={(
+      actions={
         <Actions size="normal">
-          <Button 
-            text="Обновить страницу" 
-            type="submit" 
-            kind="simple" 
+          <Button
+            text="Обновить страницу"
+            type="submit"
+            kind="simple"
             size="normal"
           />
         </Actions>
-      )}
+      }
     />
   </BlockContent>
 </Block>
@@ -126,17 +108,11 @@
     <Section>
       <Box p={12}>
         <Status
-          icon={(
-            <Icon
-              name="attention"
-              color="#ff0000"
-              size={1}
-            />
-          )}
+          icon={<Icon name="attention" color="#ff0000" size={1} />}
           title="Не удалось найти информацию о никнейме"
           content="Наверное кто-то пролил кофе на сервер. \n  Попробуйте обновить страницу"
         />
-      </Box> 
+      </Box>
     </Section>
   </BlockContent>
 </Block>
@@ -148,41 +124,31 @@
 <Block>
   <BlockContent>
     <Status
-      icon={(
-        <Icon
-          name="success"
-          color="#4bbd5c"
-          size={1}
-        />
-      )}
+      icon={<Icon name="success" color="#4bbd5c" size={1} />}
       title="Платеж проведен"
       content="Платеж №6384589229966 на 100 р"
-      actions={(
+      actions={
         <Actions size="normal">
           <Button
-              icon={<Icon name="star"/>} 
-            text="Сохранить в избранном" 
-            type="submit" 
-            kind="simple" 
+            icon={<Icon name="star" />}
+            text="Сохранить в избранном"
+            type="submit"
+            kind="simple"
             size="normal"
           />
         </Actions>
-      )}
-      children={(
+      }
+      children={
         <Spacer size="m">
           <Paragraph align="center">
-            <Link 
-              size="l" 
-              href="#"
-              children="Прислать квитанцию на почту"
-            />
+            <Link size="l" href="#" children="Прислать квитанцию на почту" />
           </Paragraph>
-          <Paragraph 
+          <Paragraph
             align="center"
             children="Чек о совершенном платеже и подробные реквизиты \n платежа вы найдете в истории платежей"
           />
         </Spacer>
-      )}
+      }
     />
   </BlockContent>
 </Block>

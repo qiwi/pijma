@@ -1,10 +1,10 @@
 ```jsx
-const [success, setSuccess] = React.useState(true);
-const [warning, setWarning] = React.useState(true);
-const [failure, setFailure] = React.useState(true);
-const [general, setGeneral] = React.useState(true);
-const [warningButton, setWarningButton] = React.useState(true);
-<Card bg="#fff" width={1}>
+const [success, setSuccess] = React.useState(true)
+const [warning, setWarning] = React.useState(true)
+const [failure, setFailure] = React.useState(true)
+const [general, setGeneral] = React.useState(true)
+const [warningButton, setWarningButton] = React.useState(true)
+;<Card bg="#fff" width={1}>
   <Striper>
     {success ? (
       <Box width={154} mx="auto">
@@ -14,9 +14,7 @@ const [warningButton, setWarningButton] = React.useState(true);
           onHide={(success) => setSuccess(success)}
         />
       </Box>
-    ) : (
-      null
-    )}
+    ) : null}
     {warning ? (
       <Box width={154} mx="auto">
         <Alert
@@ -26,9 +24,7 @@ const [warningButton, setWarningButton] = React.useState(true);
           onHide={(warning) => setWarning(warning)}
         />
       </Box>
-    ) : (
-      null
-    )}
+    ) : null}
     {failure ? (
       <Box width={154} mx="auto">
         <Alert
@@ -37,21 +33,17 @@ const [warningButton, setWarningButton] = React.useState(true);
           text="Nam rutrum, sapien vitae finibus gravida, diam sem gravida dui, eu faucibus ex tellus a mi. Aenean ut enim nec nulla maximus hendrerit."
         />
       </Box>
-    ) : (
-      null
-    )}
+    ) : null}
     {general ? (
       <Box width={154} mx="auto">
         <Alert
           width={154}
-          type="general" 
+          type="general"
           text="Sed lobortis tincidunt felis a congue."
           onHide={(general) => setGeneral(general)}
         />
       </Box>
-    ) : (
-      null
-    )}
+    ) : null}
     {warningButton ? (
       <Box width={154} mx="auto">
         <Alert
@@ -63,9 +55,7 @@ const [warningButton, setWarningButton] = React.useState(true);
           onClick={() => alert('Спасибо')}
         />
       </Box>
-    ) : (
-      null
-    )}
+    ) : null}
   </Striper>
 </Card>
 ```

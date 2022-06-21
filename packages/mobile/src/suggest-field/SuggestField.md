@@ -1,6 +1,6 @@
 ```jsx
-const types = ['object', 'markdown', 'react'];
-let type = types[Math.floor(Math.random() * 3)];
+const types = ['object', 'markdown', 'react']
+let type = types[Math.floor(Math.random() * 3)]
 const bankList = [
   {
     value: {
@@ -115,58 +115,65 @@ const bankList = [
     logo: require('./media/std.png'),
     description: 'АО «Банк Русский Стандарт»',
   },
-];
+]
 
-const [loading, setLoading] = React.useState(false);
-const [error, setError] = React.useState(false);
-const [timer, setTimer] = React.useState(undefined);
-const [banks, setBanks] = React.useState(undefined);
-const [value, setValue] = React.useState(undefined);
-const [suggest, setSuggest] = React.useState(undefined);
+const [loading, setLoading] = React.useState(false)
+const [error, setError] = React.useState(false)
+const [timer, setTimer] = React.useState(undefined)
+const [banks, setBanks] = React.useState(undefined)
+const [value, setValue] = React.useState(undefined)
+const [suggest, setSuggest] = React.useState(undefined)
 
-const filterBanks = (title) => bankList.filter(bank => {
-  return title !== '' && bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1;
-});
+const filterBanks = (title) =>
+  bankList.filter((bank) => {
+    return (
+      title !== '' &&
+      bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1
+    )
+  })
 
 const getBanks = (suggest) => {
-  setLoading(true);
-  clearTimeout(timer);
+  setLoading(true)
+  clearTimeout(timer)
   return new Promise((resolve, reject) => {
-    setTimer(setTimeout(() => {
-      setLoading(false);
-      resolve(filterBanks(suggest));
-    }, 1000));
-  });
-};
+    setTimer(
+      setTimeout(() => {
+        setLoading(false)
+        resolve(filterBanks(suggest))
+      }, 1000),
+    )
+  })
+}
 
 const onRequest = (suggest) => {
-  type = types[Math.floor(Math.random() * 3)];
-  setSuggest(suggest);
-  setError(suggest === '');
-  getBanks(suggest).then((banks) => setBanks(banks));
-};
+  type = types[Math.floor(Math.random() * 3)]
+  setSuggest(suggest)
+  setError(suggest === '')
+  getBanks(suggest).then((banks) => setBanks(banks))
+}
 
 const onCancel = () => {
-  setLoading(false);
-  setError(false);
-  setTimer(undefined);
-  setBanks(undefined);
-  setValue(undefined);
-  setSuggest(undefined);
-};
+  setLoading(false)
+  setError(false)
+  setTimer(undefined)
+  setBanks(undefined)
+  setValue(undefined)
+  setSuggest(undefined)
+}
 
 const onChange = (value) => {
-  const {title} = getBankByValue(value);
-  setBanks(undefined);
-  setValue(value);
-  setSuggest(title);
-};
+  const { title } = getBankByValue(value)
+  setBanks(undefined)
+  setValue(value)
+  setSuggest(title)
+}
 
-const equals = (a, b) => a.id === b.id;
+const equals = (a, b) => a.id === b.id
 
-const getBankByValue = (value) => bankList.find(bank => equals(bank.value, value));
+const getBankByValue = (value) =>
+  bankList.find((bank) => equals(bank.value, value))
 
-<Block>
+;<Block>
   <BlockContent>
     <Box>
       <SuggestField
@@ -180,46 +187,65 @@ const getBankByValue = (value) => bankList.find(bank => equals(bank.value, value
         onCancel={onCancel}
         onChange={onChange}
         onRequest={onRequest}
-        total={type === 'object' ? (
-          {
-            link: {
-              text: 'Показать все',
-              suggest: suggest,
+        total={
+          type === 'object' ? (
+            {
+              link: {
+                text: 'Показать все',
+                suggest: suggest,
+              },
             }
-          }
-        ) : type === 'markdown' ? (
-          "[Показать все](#)"
-        ) : (
-          <Link href="#" children="Показать все"/>
-        )}
-        empty={type === 'object' ? (
-          {
-            text: 'Ничего не найдено, попробуйте',
-            link: {
-              text: 'Сбербанк',
-              suggest: 'Сбербанк',
+          ) : type === 'markdown' ? (
+            '[Показать все](#)'
+          ) : (
+            <Link href="#" children="Показать все" />
+          )
+        }
+        empty={
+          type === 'object' ? (
+            {
+              text: 'Ничего не найдено, попробуйте',
+              link: {
+                text: 'Сбербанк',
+                suggest: 'Сбербанк',
+              },
             }
-          }
-        ) : type === 'markdown' ? (
-          "Ничего не нашлось"
-        ) : (
-          <React.Fragment>
-            <Box mb={4}>
-              <Heading size="4">
-                Ничего не нашлось
-              </Heading>
-            </Box>
-            <List
-              type="bullet"
-              children={[
-                <Paragraph>Если у вас есть квитанция с реквизитами, <Link href="#">оплатите по ним.</Link></Paragraph>,
-                <Paragraph><Link href="#">Напишите нам</Link>. Если услуги нет в кошельке, мы постараемся ее добавить.</Paragraph>,
-                <Paragraph>Уточните у поставщика услуги, можно ли ее оплачивать через QIWI.</Paragraph>,
-                <Paragraph>Провайдер был, а теперь его нет? Возможно, у него изменилось название или мы перестали с ним сотрудничать.<br/>Перейдите на сайт провайдера и оплатите услугу с помощью <Link href="#">виртуальной или пластиковой карты QIWI</Link>,<br/>баланс карт равен балансу кошелька.</Paragraph>,
-              ]}
-            />
-          </React.Fragment>
-        )}
+          ) : type === 'markdown' ? (
+            'Ничего не нашлось'
+          ) : (
+            <React.Fragment>
+              <Box mb={4}>
+                <Heading size="4">Ничего не нашлось</Heading>
+              </Box>
+              <List
+                type="bullet"
+                children={[
+                  <Paragraph>
+                    Если у вас есть квитанция с реквизитами,{' '}
+                    <Link href="#">оплатите по ним.</Link>
+                  </Paragraph>,
+                  <Paragraph>
+                    <Link href="#">Напишите нам</Link>. Если услуги нет в
+                    кошельке, мы постараемся ее добавить.
+                  </Paragraph>,
+                  <Paragraph>
+                    Уточните у поставщика услуги, можно ли ее оплачивать через
+                    QIWI.
+                  </Paragraph>,
+                  <Paragraph>
+                    Провайдер был, а теперь его нет? Возможно, у него изменилось
+                    название или мы перестали с ним сотрудничать.
+                    <br />
+                    Перейдите на сайт провайдера и оплатите услугу с помощью{' '}
+                    <Link href="#">виртуальной или пластиковой карты QIWI</Link>
+                    ,<br />
+                    баланс карт равен балансу кошелька.
+                  </Paragraph>,
+                ]}
+              />
+            </React.Fragment>
+          )
+        }
       />
     </Box>
   </BlockContent>

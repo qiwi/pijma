@@ -1,8 +1,13 @@
-import React, {FC} from 'react'
+import {
+  BoxLnk,
+  Card,
+  Image,
+  LinkControl,
+  LinkControlProps,
+} from '@qiwi/pijma-core'
+import React, { FC } from 'react'
 
-import {Card, LinkControl, LinkControlProps, Image, BoxLnk} from '@qiwi/pijma-core'
-
-import {Text} from '../typography'
+import { Text } from '../typography'
 
 export interface HeaderBankCardLinkProps {
   src: string
@@ -51,22 +56,29 @@ export const HeaderBankCardLink: FC<HeaderBankCardLinkProps> = (props) => (
           width={56}
           height={35}
           overflow="hidden"
-          transform={renderProps.hover || renderProps.active || renderProps.focus ? 'translateY(-4px)' : undefined}
+          transform={
+            renderProps.hover || renderProps.active || renderProps.focus
+              ? 'translateY(-4px)'
+              : undefined
+          }
           transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-          s={renderProps.hover || renderProps.active || renderProps.focus ? '0 8px 16px 0 rgba(0, 0, 0, 0.12)' : '0 0 16px 0 rgba(0, 0, 0, 0.12)'}
+          s={
+            renderProps.hover || renderProps.active || renderProps.focus
+              ? '0 8px 16px 0 rgba(0, 0, 0, 0.12)'
+              : '0 0 16px 0 rgba(0, 0, 0, 0.12)'
+          }
         >
-          <Image
-            width={56}
-            height={35}
-            src={props.src}
-            srcSet={props.srcSet}
-          />
+          <Image width={56} height={35} src={props.src} srcSet={props.srcSet} />
         </Card>
         <Text
           bold
           display="block"
           align="center"
-          color={renderProps.hover || renderProps.active || renderProps.focus ? 'warning' : 'default'}
+          color={
+            renderProps.hover || renderProps.active || renderProps.focus
+              ? 'warning'
+              : 'default'
+          }
           transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
           children={props.text}
         />

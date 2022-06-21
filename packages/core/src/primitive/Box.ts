@@ -1,8 +1,22 @@
-import {styled, CSSObject, StyledOptions, Interpolation, Theme} from '../styled'
+import {
+  CSSObject,
+  Interpolation,
+  styled,
+  StyledOptions,
+  Theme,
+} from '../styled'
+import { cssValue, Value } from './Value'
 
-import {Value, cssValue} from './Value'
-
-export type BoxDisplay = 'none' | 'inline' | 'block' | 'contents' | 'flex' | 'grid' | 'inline-block' | 'inline-flex' | 'table'
+export type BoxDisplay =
+  | 'none'
+  | 'inline'
+  | 'block'
+  | 'contents'
+  | 'flex'
+  | 'grid'
+  | 'inline-block'
+  | 'inline-flex'
+  | 'table'
 
 export interface BoxProps {
   css?: CSSObject
@@ -37,21 +51,46 @@ export interface BoxProps {
 }
 
 export const BoxNonProps: PropertyKey[] = [
-  'as', 'css',
-  'display', 'transition', 'animation',
-  'm', 'mt', 'mr', 'mb', 'ml', 'mx', 'my',
-  'p', 'pt', 'pr', 'pb', 'pl', 'px', 'py',
-  'width', 'minWidth', 'maxWidth',
-  'height', 'minHeight', 'maxHeight',
-  'cursor', 'opacity', 'overflow',
-  'transform', 'transformOrigin',
+  'as',
+  'css',
+  'display',
+  'transition',
+  'animation',
+  'm',
+  'mt',
+  'mr',
+  'mb',
+  'ml',
+  'mx',
+  'my',
+  'p',
+  'pt',
+  'pr',
+  'pb',
+  'pl',
+  'px',
+  'py',
+  'width',
+  'minWidth',
+  'maxWidth',
+  'height',
+  'minHeight',
+  'maxHeight',
+  'cursor',
+  'opacity',
+  'overflow',
+  'transform',
+  'transformOrigin',
 ]
 
 export const BoxOptions: StyledOptions<BoxProps> = {
   shouldForwardProp: (prop) => !BoxNonProps.includes(prop),
 }
 
-export const BoxStyles: Interpolation<BoxProps & {theme: Theme}> = ({theme, ...props}) => ({
+export const BoxStyles: Interpolation<BoxProps & { theme: Theme }> = ({
+  theme,
+  ...props
+}) => ({
   display: props.display,
   margin: cssValue(props.m, theme.scale, false),
   marginTop: cssValue(props.mt || props.my, theme.scale, false),

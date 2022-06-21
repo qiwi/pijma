@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 
 export interface FormControlProps {
   onSubmit?: () => void
@@ -8,7 +8,6 @@ export interface FormControlProps {
 }
 
 export class FormControl extends React.Component<FormControlProps> {
-
   private onSubmit: React.FormEventHandler = (event) => {
     event.preventDefault()
     if (this.props.onSubmit) {
@@ -21,5 +20,4 @@ export class FormControl extends React.Component<FormControlProps> {
       onSubmit: this.onSubmit,
     })
   }
-
 }

@@ -1,47 +1,31 @@
-import React, {FunctionComponent} from 'react'
-
 import {
-  CheckboxControl,
-  OptionControl,
+  Box,
   Check,
+  CheckboxControl,
+  Flex,
+  OptionControl,
   OptionField,
   OptionFieldItem,
-  Stub,
-  Box,
-  Flex,
   Spacer,
+  Stub,
 } from '@qiwi/pijma-core'
+import React, { FunctionComponent } from 'react'
 
-import CheckboxFieldProps from './CheckboxFieldProps'
 import CheckboxFieldOptionModel from './CheckboxFieldOptionModel'
+import CheckboxFieldProps from './CheckboxFieldProps'
 
 const CheckboxField: FunctionComponent<
   CheckboxFieldProps<CheckboxFieldOptionModel<any>, any>
-> = props => (
+> = (props) =>
   props.stub ? (
     <Box maxWidth={1}>
-      <Stub
-        width={24}
-        height={3}
-        top={2}
-        bottom={4}
-      />
+      <Stub width={24} height={3} top={2} bottom={4} />
       <Spacer size="s">
         {[33, 38, 30].map((width: number, id: number) => (
           <Flex key={id} align="center">
-            <Stub
-              width={5}
-              height={5}
-              right={3}
-              left={0.5}
-            />
+            <Stub width={5} height={5} right={3} left={0.5} />
             <Box width={width} maxWidth={1}>
-              <Stub
-                width={1}
-                height={2}
-                top={2}
-                bottom={2}
-              />
+              <Stub width={1} height={2} top={2} bottom={2} />
             </Box>
           </Flex>
         ))}
@@ -77,7 +61,7 @@ const CheckboxField: FunctionComponent<
               children={(renderOptionProps) => (
                 <OptionFieldItem
                   disabled={option.disabled}
-                  icon={(
+                  icon={
                     <Box width={6}>
                       <Check
                         disabled={option.disabled}
@@ -85,7 +69,7 @@ const CheckboxField: FunctionComponent<
                         focused={option.focused}
                       />
                     </Box>
-                  )}
+                  }
                   label={option.label}
                   description={option.description}
                   onClick={renderOptionProps.onClick}
@@ -99,6 +83,5 @@ const CheckboxField: FunctionComponent<
       )}
     />
   )
-)
 
 export default CheckboxField

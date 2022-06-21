@@ -1,26 +1,24 @@
-import React, {Fragment} from 'react'
-
 import {
-  SuggestControl,
-  Image,
-  MenuControl,
-  Icon,
-  ContentInput,
-  Pos,
   Box,
   Card,
   CardPos,
-  styled,
+  ContentInput,
+  Icon,
+  Image,
+  MenuControl,
+  Pos,
   Spacer,
+  styled,
+  SuggestControl,
 } from '@qiwi/pijma-core'
+import React, { Fragment } from 'react'
 
-import {Paragraph} from '../typography'
-import {Link} from '../link'
-import {DropDown} from '../drop-down'
-import {MenuItem} from '../menu'
-
-import ContentSuggestProps from './ContentSuggestProps'
+import { DropDown } from '../drop-down'
+import { Link } from '../link'
+import { MenuItem } from '../menu'
+import { Paragraph } from '../typography'
 import ContentSuggestOptionsModel from './ContentSuggestOptionModel'
+import ContentSuggestProps from './ContentSuggestProps'
 
 const CardMenuItem = styled(Card)().withComponent(MenuItem)
 
@@ -52,8 +50,12 @@ export const ContentSuggest = <V extends {}>({
             type="relative"
             ref={renderProps.containerRef}
             width={1}
-            transition={`box-shadow ${renderProps.focused ? 300 : 200}ms cubic-bezier(0.4, 0.0, 0.2, 1)`}
-            s={renderProps.focused ? '0 20px 64px 0 rgba(0, 0, 0, 0.16)' : 'none'}
+            transition={`box-shadow ${
+              renderProps.focused ? 300 : 200
+            }ms cubic-bezier(0.4, 0.0, 0.2, 1)`}
+            s={
+              renderProps.focused ? '0 20px 64px 0 rgba(0, 0, 0, 0.16)' : 'none'
+            }
             r={10}
           >
             <Box
@@ -72,16 +74,24 @@ export const ContentSuggest = <V extends {}>({
                 pr={14}
                 error={!!props.error}
                 focused={renderProps.focused}
-                norb={props.items !== undefined && renderProps.focused && (props.items.length > 0 || props.empty !== undefined || props.loading)}
+                norb={
+                  props.items !== undefined &&
+                  renderProps.focused &&
+                  (props.items.length > 0 ||
+                    props.empty !== undefined ||
+                    props.loading)
+                }
                 hovered={renderProps.hovered}
                 onChange={renderProps.onRequest}
                 onFocus={renderProps.onInputFocus}
                 onBlur={renderProps.onInputBlur}
-                onKeyDown={props.items !== undefined && renderProps.focused && (props.items.length > 0 || props.empty !== undefined) ? (
-                  menuRenderProps.onKeyDown
-                ) : (
-                  renderProps.onItemKeyDown
-                )}
+                onKeyDown={
+                  props.items !== undefined &&
+                  renderProps.focused &&
+                  (props.items.length > 0 || props.empty !== undefined)
+                    ? menuRenderProps.onKeyDown
+                    : renderProps.onItemKeyDown
+                }
               />
               <Pos
                 type="absolute"
@@ -89,12 +99,18 @@ export const ContentSuggest = <V extends {}>({
                 right={4}
                 top={3}
                 onClick={renderProps.onSearchClick}
-                children={<Icon name="search" color="#666"/>}
+                children={<Icon name="search" color="#666" />}
               />
             </Box>
             <DropDown
               minWidth={1}
-              show={props.items !== undefined && renderProps.focused && (props.items.length > 0 || props.empty !== undefined || props.loading === true)}
+              show={
+                props.items !== undefined &&
+                renderProps.focused &&
+                (props.items.length > 0 ||
+                  props.empty !== undefined ||
+                  props.loading === true)
+              }
               rootClose={false}
               container={renderProps.containerRef.current}
               target={renderProps.inputRef.current!}
@@ -120,9 +136,17 @@ export const ContentSuggest = <V extends {}>({
                   onMouseDown={renderProps.onResultItemsMouseDown}
                 >
                   {props.loading ? (
-                    Array(4).fill(1).map((_item, key) => (
-                      <CardMenuItem key={key} icon={true} stub text="stub" notes="stub"/>
-                    ))
+                    new Array(4)
+                      .fill(1)
+                      .map((_item, key) => (
+                        <CardMenuItem
+                          key={key}
+                          icon={true}
+                          stub
+                          text="stub"
+                          notes="stub"
+                        />
+                      ))
                   ) : (
                     <Spacer size="s">
                       {menuRenderProps.items.length > 0 ? (
@@ -137,16 +161,20 @@ export const ContentSuggest = <V extends {}>({
                               cursor="pointer"
                               text={renderProps.items[key].title}
                               notes={renderProps.items[key].description}
-                              icon={<Image width={6} height={6} src={renderProps.items[key].logo}/>}
+                              icon={
+                                <Image
+                                  width={6}
+                                  height={6}
+                                  src={renderProps.items[key].logo}
+                                />
+                              }
                               hover={item.focused}
                               active={item.selected}
                               focus={item.selected}
                             />
                           ))}
                         </Fragment>
-                      ) : (
-                        null
-                      )}
+                      ) : null}
                       {props.total && menuRenderProps.items.length > 0 ? (
                         <Box px={4}>
                           <Paragraph>
@@ -159,9 +187,7 @@ export const ContentSuggest = <V extends {}>({
                                   children={props.total.link.text}
                                 />
                               </Fragment>
-                            ) : (
-                              null
-                            )}
+                            ) : null}
                           </Paragraph>
                         </Box>
                       ) : props.empty && menuRenderProps.items.length === 0 ? (
@@ -176,14 +202,10 @@ export const ContentSuggest = <V extends {}>({
                                   children={props.empty.link.text}
                                 />
                               </Fragment>
-                            ) : (
-                              null
-                            )}
+                            ) : null}
                           </Paragraph>
                         </Box>
-                      ) : (
-                        null
-                      )}
+                      ) : null}
                     </Spacer>
                   )}
                 </CardPos>

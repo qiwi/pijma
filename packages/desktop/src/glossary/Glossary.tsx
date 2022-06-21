@@ -1,34 +1,29 @@
-import React, {FC, ReactElement} from 'react'
-import {Box, Spacer} from '@qiwi/pijma-core'
-import {Text} from '../typography'
+import { Box, Spacer } from '@qiwi/pijma-core'
+import React, { FC, ReactElement } from 'react'
+
+import { Text } from '../typography'
 
 type GlossaryText = ReactElement | string
 
 export interface GlossaryProps {
-  children: {title: GlossaryText, content: GlossaryText | GlossaryText[]}[]
-  stub?: boolean,
+  children: { title: GlossaryText; content: GlossaryText | GlossaryText[] }[]
+  stub?: boolean
 }
 
-export const Glossary: FC<GlossaryProps> = ({children, stub}) => (
+export const Glossary: FC<GlossaryProps> = ({ children, stub }) =>
   stub ? (
     <Box as="dl">
       {children.map((item, i) => (
-        <Box
-          key={i}
-          mt={i === 0 ? undefined : 5}
-        >
+        <Box key={i} mt={i === 0 ? undefined : 5}>
           <Box as="dt" mr={16}>
-            <Text
-              stub
-              display="block"
-              bold={false}
-              compact
-              size="s"
-            />
+            <Text stub display="block" bold={false} compact size="s" />
           </Box>
           <Box mt={1} as="dd">
             <Spacer size="xs">
-              {(Array.isArray(item.content) ? item.content : [item.content]).map((_content, j) => (
+              {(Array.isArray(item.content)
+                ? item.content
+                : [item.content]
+              ).map((_content, j) => (
                 <Text
                   key={`${i}.${j}`}
                   stub
@@ -46,10 +41,7 @@ export const Glossary: FC<GlossaryProps> = ({children, stub}) => (
   ) : (
     <Box as="dl">
       {children.map((item, i) => (
-        <Box
-          key={i}
-          mt={i === 0 ? undefined : 5}
-        >
+        <Box key={i} mt={i === 0 ? undefined : 5}>
           <Box as="dt">
             <Text
               bold={false}
@@ -62,7 +54,10 @@ export const Glossary: FC<GlossaryProps> = ({children, stub}) => (
           </Box>
           <Box mt={1} as="dd">
             <Spacer size="xs">
-              {(Array.isArray(item.content) ? item.content : [item.content]).map((content, j) => (
+              {(Array.isArray(item.content)
+                ? item.content
+                : [item.content]
+              ).map((content, j) => (
                 <Text
                   key={`${i}.${j}`}
                   bold={false}
@@ -78,4 +73,3 @@ export const Glossary: FC<GlossaryProps> = ({children, stub}) => (
       ))}
     </Box>
   )
-)

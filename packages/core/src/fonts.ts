@@ -1,10 +1,10 @@
 const fontFaces: string[] = []
-const fontFamily: string = 'Museo Sans'
+const fontFamily = 'Museo Sans'
 const fontWeights: number[] = [100, 300, 500, 700, 900]
 const fontStyles: string[] = ['normal', 'italic']
 
-fontWeights.forEach(fontWeight => {
-  fontStyles.forEach(fontStyle => {
+fontWeights.forEach((fontWeight) => {
+  fontStyles.forEach((fontStyle) => {
     fontFaces.push(`
       @font-face {
         font-family: '${fontFamily}';

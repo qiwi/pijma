@@ -1,17 +1,16 @@
-import React, {FC, ReactNode} from 'react'
-
 import {
+  Box,
+  Card,
   css,
+  FlexCard,
+  FlexItem,
   Modal,
+  OffsetScrollControl,
+  Pos,
   SimpleTransition,
   SimpleTransitionProps,
-  OffsetScrollControl,
-  FlexItem,
-  Card,
-  Box,
-  FlexCard,
-  Pos,
 } from '@qiwi/pijma-core'
+import React, { FC, ReactNode } from 'react'
 
 interface HeaderMenuProps {
   show: boolean
@@ -39,34 +38,59 @@ const defaultProps = (direction: HeaderMenuProps['from']) => ({
     enter: 300,
     exit: 100,
   },
-  enterClassName: (timeout: number) => css({
-    transform: 'translate3d(0, 0, 0)',
-    transition: `transform ${timeout - 1}ms cubic-bezier(0.4, 0.0, 0.2, 1) 1ms`,
-  }),
-  exitClassName: (timeout: number) => css({
-    transform: `translate3d(${translate3d[direction]})`,
-    transition: `transform ${timeout - 1}ms cubic-bezier(0.4, 0.0, 0.2, 1) 1ms`,
-  }),
+  enterClassName: (timeout: number) =>
+    css({
+      transform: 'translate3d(0, 0, 0)',
+      transition: `transform ${
+        timeout - 1
+      }ms cubic-bezier(0.4, 0.0, 0.2, 1) 1ms`,
+    }),
+  exitClassName: (timeout: number) =>
+    css({
+      transform: `translate3d(${translate3d[direction]})`,
+      transition: `transform ${
+        timeout - 1
+      }ms cubic-bezier(0.4, 0.0, 0.2, 1) 1ms`,
+    }),
 })
 
-const contentTransitionTop: FC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
-const contentTransitionRight: FC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
-const contentTransitionBottom: FC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
-const contentTransitionLeft: FC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const contentTransitionTop: FC<SimpleTransitionProps> = (props) => (
+  <SimpleTransition {...props} />
+)
+const contentTransitionRight: FC<SimpleTransitionProps> = (props) => (
+  <SimpleTransition {...props} />
+)
+const contentTransitionBottom: FC<SimpleTransitionProps> = (props) => (
+  <SimpleTransition {...props} />
+)
+const contentTransitionLeft: FC<SimpleTransitionProps> = (props) => (
+  <SimpleTransition {...props} />
+)
 
 contentTransitionTop.defaultProps = defaultProps('top')
 contentTransitionRight.defaultProps = defaultProps('right')
 contentTransitionBottom.defaultProps = defaultProps('bottom')
 contentTransitionLeft.defaultProps = defaultProps('left')
 
-const contentTransition: { [direction in HeaderMenuProps['from']]: FC<SimpleTransitionProps> } = {
+const contentTransition: {
+  [direction in HeaderMenuProps['from']]: FC<SimpleTransitionProps>
+} = {
   top: contentTransitionTop,
   right: contentTransitionRight,
   bottom: contentTransitionBottom,
   left: contentTransitionLeft,
 }
 
-export const HeaderMenu: FC<HeaderMenuProps> = ({show, zIndex = 9999, header, from, stub, onShow, onHide, children}) => (
+export const HeaderMenu: FC<HeaderMenuProps> = ({
+  show,
+  zIndex = 9999,
+  header,
+  from,
+  stub,
+  onShow,
+  onHide,
+  children,
+}) =>
   stub ? (
     <Box display="none">
       <FlexCard
@@ -123,7 +147,11 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({show, zIndex = 9999, header, fr
                 <FlexItem height={15} shrink={1}>
                   <Card
                     height={1}
-                    s={renderProps.top ? '0 1px 2px 0 rgba(0, 0, 0, 0.12)' : undefined}
+                    s={
+                      renderProps.top
+                        ? '0 1px 2px 0 rgba(0, 0, 0, 0.12)'
+                        : undefined
+                    }
                     transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
                     children={header}
                   />
@@ -138,4 +166,3 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({show, zIndex = 9999, header, fr
       )}
     />
   )
-)

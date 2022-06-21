@@ -1,24 +1,23 @@
-import React, {FunctionComponent, ReactNode, FC} from 'react'
-
 import {
-  css,
-  SelectInput,
-  SelectFieldControl,
   Box,
-  Pos,
   Card,
-  MenuControl,
-  styled,
-  InputField,
+  CardPos,
+  css,
   Icon,
+  InputField,
+  MenuControl,
   OptionModel,
   Overlay,
-  SimpleTransitionProps,
+  Pos,
+  SelectFieldControl,
+  SelectInput,
   SimpleTransition,
-  CardPos,
+  SimpleTransitionProps,
+  styled,
 } from '@qiwi/pijma-core'
+import React, { FC, FunctionComponent, ReactNode } from 'react'
 
-import {MenuItem} from '../menu'
+import { MenuItem } from '../menu'
 
 const CardMenuItem = styled(Card)().withComponent(MenuItem)
 
@@ -43,36 +42,44 @@ export interface SelectFieldItemModel<V> extends OptionModel<V> {
   text: string
 }
 
-const Transition: FC<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const Transition: FC<SimpleTransitionProps> = (props) => (
+  <SimpleTransition {...props} />
+)
 
 Transition.defaultProps = {
   timeout: {
     enter: 150,
     exit: 150,
   },
-  enteringClassName: (timeout: number) => css({
-    opacity: 0,
-    transform: `translateY(${-12}px)`,
-    transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1), transform ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-  }),
-  enteredClassName: (timeout: number) => css({
-    opacity: 1,
-    transform: `translateY(${0}px)`,
-    transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1), transform ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-  }),
-  exitingClassName: (timeout: number) => css({
-    opacity: 0,
-    transform: `translateY(${-12}px)`,
-    transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1), transform ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-  }),
-  exitedClassName: (timeout: number) => css({
-    opacity: 0,
-    transform: `translateY(${-12}px)`,
-    transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1), transform ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-  }),
+  enteringClassName: (timeout: number) =>
+    css({
+      opacity: 0,
+      transform: `translateY(${-12}px)`,
+      transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1), transform ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+    }),
+  enteredClassName: (timeout: number) =>
+    css({
+      opacity: 1,
+      transform: `translateY(${0}px)`,
+      transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1), transform ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+    }),
+  exitingClassName: (timeout: number) =>
+    css({
+      opacity: 0,
+      transform: `translateY(${-12}px)`,
+      transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1), transform ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+    }),
+  exitedClassName: (timeout: number) =>
+    css({
+      opacity: 0,
+      transform: `translateY(${-12}px)`,
+      transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1), transform ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+    }),
 }
 
-export const SelectField: FunctionComponent<SelectFieldProps<SelectFieldItemModel<any>, any>> = (props) => (
+export const SelectField: FunctionComponent<
+  SelectFieldProps<SelectFieldItemModel<any>, any>
+> = (props) =>
   props.stub ? (
     <InputField
       active={false}
@@ -98,18 +105,13 @@ export const SelectField: FunctionComponent<SelectFieldProps<SelectFieldItemMode
           onKeyDown={renderProps.onKeyDown}
           onSelect={renderProps.onItemSelect}
           children={(menuRenderProps) => (
-            <CardPos
-              ref={renderProps.containerRef}
-              type="relative"
-            >
-              <Box
-                ref={renderProps.targetRef}
-              >
+            <CardPos ref={renderProps.containerRef} type="relative">
+              <Box ref={renderProps.targetRef}>
                 <Pos
                   type="absolute"
                   top={4}
                   right={0}
-                  children={<Icon name="angle-down" color="#000"/>}
+                  children={<Icon name="angle-down" color="#000" />}
                   transform={`rotate(${renderProps.show ? 180 : 0}deg)`}
                   transition="transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1)"
                 />
@@ -119,7 +121,12 @@ export const SelectField: FunctionComponent<SelectFieldProps<SelectFieldItemMode
                   error={props.error}
                   input={
                     <SelectInput
-                      value={(renderProps.select !== undefined) && props.items[renderProps.select] ? props.items[renderProps.select].text : ''}
+                      value={
+                        renderProps.select !== undefined &&
+                        props.items[renderProps.select]
+                          ? props.items[renderProps.select].text
+                          : ''
+                      }
                       focused={renderProps.focused}
                       error={!!props.error}
                       tabIndex={props.tabIndex}
@@ -128,7 +135,11 @@ export const SelectField: FunctionComponent<SelectFieldProps<SelectFieldItemMode
                       name={props.name}
                       onFocus={renderProps.onFocus}
                       onBlur={renderProps.onBlur}
-                      onKeyDown={renderProps.show ? menuRenderProps.onKeyDown : renderProps.onKeyDown}
+                      onKeyDown={
+                        renderProps.show
+                          ? menuRenderProps.onKeyDown
+                          : renderProps.onKeyDown
+                      }
                       onClick={renderProps.onActive}
                     />
                   }
@@ -139,7 +150,9 @@ export const SelectField: FunctionComponent<SelectFieldProps<SelectFieldItemMode
                 placement="bottom"
                 target={renderProps.targetRef.current!}
                 container={renderProps.containerRef.current}
-                popperConfig={{modifiers: {computeStyle: {gpuAcceleration: false}}}}
+                popperConfig={{
+                  modifiers: { computeStyle: { gpuAcceleration: false } },
+                }}
                 transition={Transition}
                 children={(overlayRenderProps) => (
                   <CardPos
@@ -185,4 +198,3 @@ export const SelectField: FunctionComponent<SelectFieldProps<SelectFieldItemMode
       )}
     />
   )
-)

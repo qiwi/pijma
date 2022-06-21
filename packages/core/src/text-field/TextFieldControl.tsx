@@ -3,12 +3,17 @@ import React from 'react'
 import TextFieldControlProps from './TextFieldControlProps'
 import TextFieldControlState from './TextFieldControlState'
 
-export default class TextFieldControl extends React.Component<TextFieldControlProps, TextFieldControlState> {
-
+export default class TextFieldControl extends React.Component<
+  TextFieldControlProps,
+  TextFieldControlState
+> {
   public state: TextFieldControlState = {
     focused: false,
   }
-  private onChange: React.ChangeEventHandler<HTMLInputElement> = (e: React.ChangeEvent<HTMLInputElement>) => {
+
+  private onChange: React.ChangeEventHandler<HTMLInputElement> = (
+    e: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     e.preventDefault()
     if (this.props.onChange) {
       this.props.onChange(e.currentTarget.value)
@@ -35,13 +40,17 @@ export default class TextFieldControl extends React.Component<TextFieldControlPr
     }
   }
 
-  private onKeyDown: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
+  private onKeyDown: React.KeyboardEventHandler = (
+    event: React.KeyboardEvent,
+  ) => {
     if (this.props.onKeyDown && this.props.onKeyDown(event)) {
       event.preventDefault()
     }
   }
 
-  private onKeyUp: React.KeyboardEventHandler = (event: React.KeyboardEvent) => {
+  private onKeyUp: React.KeyboardEventHandler = (
+    event: React.KeyboardEvent,
+  ) => {
     if (this.props.onKeyUp && this.props.onKeyUp(event)) {
       event.preventDefault()
     }
@@ -57,5 +66,4 @@ export default class TextFieldControl extends React.Component<TextFieldControlPr
       onKeyUp: this.onKeyUp,
     })
   }
-
 }

@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 
 export interface PaginationControlProps {
   total: number
@@ -12,15 +12,24 @@ export interface PaginationControlProps {
     pages: number[]
     active: number
     total: number
-    onPageClick: (page: number, disabled: boolean) => ((href?: string, target?: string, download?: string | boolean, rel?: string) => void) | undefined
+    onPageClick: (
+      page: number,
+      disabled: boolean,
+    ) =>
+      | ((
+          href?: string,
+          target?: string,
+          download?: string | boolean,
+          rel?: string,
+        ) => void)
+      | undefined
   }>
 }
 
 export class PaginationControl extends React.Component<PaginationControlProps> {
-
   private onPageClick = (page: number, disabled: boolean) => {
     if (this.props.href || disabled) {
-      return undefined
+      return
     }
     return this.onPageChange(page)
   }
@@ -32,7 +41,7 @@ export class PaginationControl extends React.Component<PaginationControlProps> {
   }
 
   public render() {
-    const {total, count, active} = this.props
+    const { total, count, active } = this.props
     const isValidProps: boolean = active <= total && count <= total
 
     const totalPages = Math.max(Math.ceil(total), 1)
@@ -62,5 +71,4 @@ export class PaginationControl extends React.Component<PaginationControlProps> {
       onPageClick: this.onPageClick,
     })
   }
-
 }

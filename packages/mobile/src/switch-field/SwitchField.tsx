@@ -1,32 +1,26 @@
-import React, {FunctionComponent} from 'react'
-
 import {
+  Box,
   CheckboxControl,
+  Flex,
+  FlexItem,
   OptionControl,
   OptionField,
   OptionFieldItem,
-  Box,
   Spacer,
-  Flex,
-  FlexItem,
   Stub,
   Tumbler,
 } from '@qiwi/pijma-core'
+import React, { FunctionComponent } from 'react'
 
-import SwitchFieldProps from './SwitchFieldProps'
 import SwitchFieldOptionModel from './SwitchFieldOptionModel'
+import SwitchFieldProps from './SwitchFieldProps'
 
 const SwitchField: FunctionComponent<
   SwitchFieldProps<SwitchFieldOptionModel<any>, any>
-> = props => (
+> = (props) =>
   props.stub ? (
     <Box maxWidth={1}>
-      <Stub
-        width={24}
-        height={3}
-        top={2}
-        bottom={4}
-      />
+      <Stub width={24} height={3} top={2} bottom={4} />
       <Spacer size="s">
         {[33, 38, 30].map((width, index) => (
           <Flex
@@ -34,10 +28,7 @@ const SwitchField: FunctionComponent<
             direction={props.reverse ? 'row-reverse' : 'row'}
             justify={props.reverse ? 'space-between' : 'flex-start'}
           >
-            <FlexItem
-              ml={props.reverse ? 3 : 0}
-              mr={props.reverse ? 0 : 3}
-            >
+            <FlexItem ml={props.reverse ? 3 : 0} mr={props.reverse ? 0 : 3}>
               <Stub
                 width={9}
                 height={5}
@@ -49,12 +40,7 @@ const SwitchField: FunctionComponent<
               />
             </FlexItem>
             <FlexItem width={width} maxWidth={1}>
-              <Stub
-                width={1}
-                height={2}
-                top={2}
-                bottom={2}
-              />
+              <Stub width={1} height={2} top={2} bottom={2} />
             </FlexItem>
           </Flex>
         ))}
@@ -91,7 +77,7 @@ const SwitchField: FunctionComponent<
                 <OptionFieldItem
                   disabled={option.disabled}
                   reverse={props.reverse}
-                  icon={(
+                  icon={
                     <Box width={10}>
                       <Tumbler
                         disabled={option.disabled}
@@ -99,7 +85,7 @@ const SwitchField: FunctionComponent<
                         focused={option.focused}
                       />
                     </Box>
-                  )}
+                  }
                   label={option.label}
                   description={option.description}
                   onClick={renderOptionProps.onClick}
@@ -113,7 +99,6 @@ const SwitchField: FunctionComponent<
       )}
     />
   )
-)
 
 SwitchField.defaultProps = {
   tabIndex: 0,

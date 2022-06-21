@@ -1,28 +1,24 @@
-import React, {FunctionComponent} from 'react'
-
 import {
-  Tumbler,
-  SwitchControl,
-  OptionField,
-  OptionFieldItem,
   Box,
   Flex,
   FlexItem,
+  OptionField,
+  OptionFieldItem,
   Stub,
+  SwitchControl,
+  Tumbler,
 } from '@qiwi/pijma-core'
+import React, { FunctionComponent } from 'react'
 
 import SwitchProps from './SwitchProps'
 
-export const Switch: FunctionComponent<SwitchProps> = props => (
+export const Switch: FunctionComponent<SwitchProps> = (props) =>
   props.stub ? (
     <Flex
       direction={props.reverse ? 'row-reverse' : 'row'}
       justify={props.reverse ? 'space-between' : 'flex-start'}
     >
-      <FlexItem
-        ml={props.reverse ? 3 : 0}
-        mr={props.reverse ? 0 : 3}
-      >
+      <FlexItem ml={props.reverse ? 3 : 0} mr={props.reverse ? 0 : 3}>
         <Stub
           width={9}
           height={5}
@@ -34,7 +30,7 @@ export const Switch: FunctionComponent<SwitchProps> = props => (
         />
       </FlexItem>
       <FlexItem width={33} maxWidth={1}>
-        <Stub width={1} height={2} top={2} bottom={2}/>
+        <Stub width={1} height={2} top={2} bottom={2} />
       </FlexItem>
     </Flex>
   ) : (
@@ -48,13 +44,13 @@ export const Switch: FunctionComponent<SwitchProps> = props => (
           onFocus={renderProps.onFocus}
           onBlur={renderProps.onBlur}
           onKeyDown={renderProps.onKeyDown}
-          children={(
+          children={
             <OptionFieldItem
               label={props.label}
               reverse={props.reverse}
               description={props.description}
               disabled={props.disabled}
-              icon={(
+              icon={
                 <Box width={10}>
                   {props.loading ? (
                     <Stub
@@ -74,17 +70,16 @@ export const Switch: FunctionComponent<SwitchProps> = props => (
                     />
                   )}
                 </Box>
-              )}
+              }
               onMouseLeave={renderProps.onMouseLeave}
               onMouseEnter={renderProps.onMouseEnter}
               onClick={renderProps.onClick}
             />
-          )}
+          }
         />
       )}
     />
   )
-)
 
 Switch.defaultProps = {
   tabIndex: 0,

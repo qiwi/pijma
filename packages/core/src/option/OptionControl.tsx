@@ -6,7 +6,6 @@ export default class OptionControl<V> extends React.Component<
   OptionControlProps<V>,
   {}
 > {
-
   private onClick: React.MouseEventHandler<HTMLElement> = (
     event: React.MouseEvent<HTMLElement>,
   ) => {
@@ -41,5 +40,4 @@ export default class OptionControl<V> extends React.Component<
       onMouseLeave: this.onMouseLeave,
     })
   }
-
 }

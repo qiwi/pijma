@@ -3,12 +3,12 @@
 #### Состояния переключателя
 
 ```jsx
-const [checked, setChecked] = React.useState(true);
-<Block>
+const [checked, setChecked] = React.useState(true)
+;<Block>
   <BlockContent>
     <Spacer>
       <Switch
-        onChange={checked => setChecked(checked)}
+        onChange={(checked) => setChecked(checked)}
         checked={checked}
         label="Выбранный переключатель"
       />
@@ -17,21 +17,9 @@ const [checked, setChecked] = React.useState(true);
         checked={true}
         label="Выбранный заблокированный"
       />
-      <Switch
-        disabled={true}
-        label="Невыбранный заблокированный"
-      />
-      <Switch
-        loading
-        checked={checked}
-        label="Выполнение запроса"
-      />
-      <Switch
-        stub
-        checked={true}
-        label=""
-        onChange={() => {}}
-      />
+      <Switch disabled={true} label="Невыбранный заблокированный" />
+      <Switch loading checked={checked} label="Выполнение запроса" />
+      <Switch stub checked={true} label="" onChange={() => {}} />
     </Spacer>
   </BlockContent>
 </Block>
@@ -40,12 +28,12 @@ const [checked, setChecked] = React.useState(true);
 #### Инвертированный переключатель
 
 ```jsx
-const [checked, setChecked] = React.useState(false);
-<Block>
+const [checked, setChecked] = React.useState(false)
+;<Block>
   <BlockContent>
     <Spacer>
       <Switch
-        onChange={checked => setChecked(checked)}
+        onChange={(checked) => setChecked(checked)}
         reverse={true}
         checked={checked}
         label="Выбранный переключатель"
@@ -61,19 +49,8 @@ const [checked, setChecked] = React.useState(false);
         disabled={true}
         label="Невыбранный заблокированный"
       />
-      <Switch
-        loading
-        reverse
-        checked={checked}
-        label="Выполнение запроса"
-      />
-      <Switch
-        stub
-        reverse={true}
-        checked={true}
-        label=""
-        onChange={() => {}}
-      />
+      <Switch loading reverse checked={checked} label="Выполнение запроса" />
+      <Switch stub reverse={true} checked={true} label="" onChange={() => {}} />
     </Spacer>
   </BlockContent>
 </Block>

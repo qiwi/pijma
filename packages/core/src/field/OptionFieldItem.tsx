@@ -1,7 +1,7 @@
-import React, {ReactNode, MouseEventHandler} from 'react'
+import React, { MouseEventHandler, ReactNode } from 'react'
 
-import {Box, Pos, Typo, Flex} from '../primitive'
-import {Breaker} from '../breaker'
+import { Breaker } from '../breaker'
+import { Box, Flex, Pos, Typo } from '../primitive'
 
 export interface OptionFieldItemProps {
   disabled?: boolean
@@ -67,7 +67,7 @@ export const OptionFieldItem: React.FunctionComponent<OptionFieldItemProps> = ({
               size={3.5}
               height={5}
               color="#666"
-              children={<Breaker children={description}/>}
+              children={<Breaker children={description} />}
             />
           </Box>
         ) : null}

@@ -4,7 +4,7 @@
 <Flex>
   <FlexItem pr={4}>
     <BlockLink href="//qiwi.com" target="_blank">
-      {({active, focus, hover}) => (
+      {({ active, focus, hover }) => (
         <Box p={10}>
           <Text
             color={hover || active || focus ? 'warning' : 'default'}
@@ -18,7 +18,7 @@
   </FlexItem>
   <FlexItem pr={4}>
     <BlockLink href="//qiwi.com" target="_blank" accent>
-      {({active, focus, hover}) => (
+      {({ active, focus, hover }) => (
         <Box p={10}>
           <Text
             color={hover || active || focus ? 'warning' : 'default'}
@@ -37,7 +37,7 @@
 <Flex>
   <FlexItem pr={4}>
     <BlockLink href="//qiwi.com" target="_blank">
-      {({active, focus, hover}) => (
+      {({ active, focus, hover }) => (
         <Card r={10} overflow="hidden">
           <Image
             src="https://static.qiwi.com/img/qiwi_com/promo/main/banner/new/132/b.jpg"
@@ -51,7 +51,7 @@
   </FlexItem>
   <FlexItem pr={4}>
     <BlockLink href="//qiwi.com" target="_blank" accent>
-      {({active, focus, hover}) => (
+      {({ active, focus, hover }) => (
         <Card r={10} overflow="hidden">
           <Image
             src="https://static.qiwi.com/img/qiwi_com/promo/main/banner/new/132/b.jpg"

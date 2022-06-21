@@ -1,6 +1,5 @@
-import {styled} from '../styled'
-import {MaskedInput} from '../mask'
-
-import {Input} from './Input'
+import { MaskedInput } from '../mask'
+import { styled } from '../styled'
+import { Input } from './Input'
 
 export const MaskInput = styled(Input)().withComponent(MaskedInput)

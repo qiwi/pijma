@@ -1,8 +1,8 @@
-import React, {RefObject, FC} from 'react'
+import React, { FC, RefObject } from 'react'
 
+import { FlagProps } from '../flag'
+import { Mask } from '../mask'
 import PhoneFieldCountry from './PhoneFieldCountry'
-import {FlagProps} from '../flag'
-import {Mask} from '../mask'
 
 export default interface PhoneFieldControlProps {
   countries: PhoneFieldCountry[]

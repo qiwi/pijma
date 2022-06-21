@@ -1,9 +1,15 @@
-import React, {FC} from 'react'
+import {
+  AlertControl,
+  Box,
+  Flex,
+  FlexItem,
+  Icon,
+  IconProps,
+} from '@qiwi/pijma-core'
+import React, { FC } from 'react'
 
-import {Flex, FlexItem, Icon, AlertControl, IconProps, Box} from '@qiwi/pijma-core'
-
-import {Paragraph} from '../typography'
-import {Link} from '../link'
+import { Link } from '../link'
+import { Paragraph } from '../typography'
 
 export interface AlertProps {
   text: string
@@ -20,7 +26,10 @@ const AlertIconColor: Record<NonNullable<AlertProps['type']>, string> = {
   general: '#666666',
 }
 
-const AlertIconName: Record<NonNullable<AlertProps['type']>, IconProps['name']> = {
+const AlertIconName: Record<
+  NonNullable<AlertProps['type']>,
+  IconProps['name']
+> = {
   success: 'success',
   warning: 'warning',
   failure: 'attention',
@@ -36,34 +45,20 @@ export const Alert: FC<AlertProps> = ({
 }) => (
   <AlertControl
     onHide={onHide}
-    children={renderProps => (
-      <Flex
-        minHeight={16}
-        py={5}
-      >
+    children={(renderProps) => (
+      <Flex minHeight={16} py={5}>
         <FlexItem>
-          <Icon
-            name={AlertIconName[type]}
-            color={AlertIconColor[type]}
-          />
+          <Icon name={AlertIconName[type]} color={AlertIconColor[type]} />
         </FlexItem>
         <FlexItem overflow="hidden" mx={4}>
-          <Paragraph
-            children={text}
-          />
+          <Paragraph children={text} />
           {action ? (
             <Box mt={1}>
               <Paragraph>
-                <Link
-                  bold
-                  onClick={onClick}
-                  children={action}
-                />
+                <Link bold onClick={onClick} children={action} />
               </Paragraph>
             </Box>
-          ) : (
-            null
-          )}
+          ) : null}
         </FlexItem>
         {onHide ? (
           <FlexItem
@@ -75,18 +70,12 @@ export const Alert: FC<AlertProps> = ({
             onMouseMove={renderProps.onMouseEnter}
             onMouseOut={renderProps.onMouseLeave}
           >
-            <Icon
-              name="cross-small"
-              color="#666666"
-            />
+            <Icon name="cross-small" color="#666666" />
           </FlexItem>
-        ) : (
-          null
-        )}
+        ) : null}
       </Flex>
     )}
   />
-
 )
 
 Alert.defaultProps = {

@@ -1,13 +1,9 @@
 ```jsx
-const [code, setCode] = React.useState(['', '', '', '', '']);
+const [code, setCode] = React.useState(['', '', '', '', ''])
 
-<Block>
+;<Block>
   <BlockContent>
-    <CodeField
-      length={5}
-      value={code}
-      onChange={setCode}
-    />
+    <CodeField length={5} value={code} onChange={setCode} />
   </BlockContent>
 </Block>
 ```
@@ -17,11 +13,7 @@ const [code, setCode] = React.useState(['', '', '', '', '']);
 ```jsx
 <Block>
   <BlockContent>
-    <CodeField
-      stub
-      length={5}
-      value={['', '', '', '', '']}
-    />
+    <CodeField stub length={5} value={['', '', '', '', '']} />
   </BlockContent>
 </Block>
 ```
@@ -46,11 +38,7 @@ const [code, setCode] = React.useState(['', '', '', '', '']);
 ```jsx
 <Block>
   <BlockContent>
-    <CodeField
-      length={5}
-      value={['1', '2', '3', '4', '5']}
-      loading
-    />
+    <CodeField length={5} value={['1', '2', '3', '4', '5']} loading />
   </BlockContent>
 </Block>
 ```
@@ -58,7 +46,7 @@ const [code, setCode] = React.useState(['', '', '', '', '']);
 #### Example
 
 ```jsx
-const [code, setCode] = React.useState(['', '', '', '']);
+const [code, setCode] = React.useState(['', '', '', ''])
 const [stub, setStub] = React.useState(false)
 const [error, setError] = React.useState(undefined)
 const animation = keyframes({
@@ -78,24 +66,34 @@ const simulateQuery = (value) => {
       setStub(false)
     } else {
       setCode(['', '', '', ''])
-      setError(<Box css={{
-        animation: `${animation} 200ms ease-in-out`
-      }}>Неверный код, попробуйте ещё раз</Box>)
+      setError(
+        <Box
+          css={{
+            animation: `${animation} 200ms ease-in-out`,
+          }}
+        >
+          Неверный код, попробуйте ещё раз
+        </Box>,
+      )
       setStub(false)
     }
   }, 1800)
 }
-<Card width={80} align="center">
+;<Card width={80} align="center">
   <Block>
     <BlockContent>
       <Flex minHeight={142} justify="space-between" direction="column">
         <FlexItem>
           <Spacer size="l">
             <Heading size="2">
-              Введите<br/>код из SMS
+              Введите
+              <br />
+              код из SMS
             </Heading>
             <Paragraph>
-              Код отправлен на номер<br/>+7 000 000-00-00
+              Код отправлен на номер
+              <br />
+              +7 000 000-00-00
             </Paragraph>
             <Box width={41}>
               <CodeField
@@ -112,7 +110,9 @@ const simulateQuery = (value) => {
         </FlexItem>
         <FlexItem>
           <Paragraph>
-            Запросить код повторно<br/>через 120 секунд
+            Запросить код повторно
+            <br />
+            через 120 секунд
           </Paragraph>
         </FlexItem>
       </Flex>

@@ -1,8 +1,14 @@
-import React, {FunctionComponent, ReactNode} from 'react'
+import {
+  AccordionControl,
+  Box,
+  Card,
+  Flex,
+  FlexItem,
+  Icon,
+} from '@qiwi/pijma-core'
+import React, { FunctionComponent, ReactNode } from 'react'
 
-import {AccordionControl, Box, Card, Flex, FlexItem, Icon} from '@qiwi/pijma-core'
-
-import {Paragraph} from '../typography'
+import { Paragraph } from '../typography'
 
 export interface BlockAccordionProps<I> {
   items: I[]
@@ -16,21 +22,19 @@ export interface BlockAccordionItemModel {
   content: ReactNode
 }
 
-export const BlockAccordion: FunctionComponent<BlockAccordionProps<BlockAccordionItemModel>> = ({items, tabIndex = 0, opened, onChange}) => (
+export const BlockAccordion: FunctionComponent<
+  BlockAccordionProps<BlockAccordionItemModel>
+> = ({ items, tabIndex = 0, opened, onChange }) => (
   <AccordionControl<BlockAccordionItemModel>
     items={items}
     opened={opened}
     onChange={onChange}
-    children={renderProps => (
+    children={(renderProps) => (
       <Box py={2}>
         {renderProps.items.map((item, index) => (
           <Card
             key={index}
-            s={
-              index > 0
-                ? '0 -1px 0 #e6e6e6'
-                : undefined
-            }
+            s={index > 0 ? '0 -1px 0 #e6e6e6' : undefined}
             transition="box-shadow 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
             onMouseEnter={item.onMouseEnter}
             onMouseLeave={item.onMouseLeave}
@@ -60,7 +64,7 @@ export const BlockAccordion: FunctionComponent<BlockAccordionProps<BlockAccordio
                 transform={`rotate(${item.opened ? 180 : 0}deg)`}
                 transition="transform 0.3s ease-in-out"
               >
-                <Icon name="angle-small-down"/>
+                <Icon name="angle-small-down" />
               </FlexItem>
             </Flex>
             <Box px={4} pb={4} display={item.opened ? 'block' : 'none'}>

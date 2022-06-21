@@ -11,8 +11,7 @@
     "test": "yarn lint",
     "test:report": "yarn test",
     "test:unit": "yarn test",
-    "lint": "yarn workspaces foreach -p run lint",
-    "lint:fix": "yarn workspaces foreach -p run lint:fix"
+    "lint": "yarn workspaces foreach -p run lint"
   },
   "resolutions": {
     "glob-parent": "5.1.2",

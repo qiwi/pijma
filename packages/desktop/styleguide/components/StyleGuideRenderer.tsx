@@ -1,8 +1,21 @@
-import React, {FC, ReactNode} from 'react'
-
-import {cache, themes, fonts, reset, applyDefaultClickHandler, CacheProvider, ThemeProvider, Global, Box, Card, Flex, FlexItem, Icon} from '@qiwi/pijma-desktop'
-
 import '@qiwi/pijma-fonts'
+
+import {
+  applyDefaultClickHandler,
+  Box,
+  cache,
+  CacheProvider,
+  Card,
+  Flex,
+  FlexItem,
+  fonts,
+  Global,
+  Icon,
+  reset,
+  ThemeProvider,
+  themes,
+} from '@qiwi/pijma-desktop'
+import React, { FC, ReactNode } from 'react'
 
 applyDefaultClickHandler()
 
@@ -15,18 +28,24 @@ interface StyleGuideRendererProps {
 const StyleGuideRenderer: FC<StyleGuideRendererProps> = (props) => (
   <CacheProvider value={cache}>
     <ThemeProvider theme={themes.orange}>
-      <Global styles={[reset, fonts, {
-        body: {
-          minWidth: '1024px !important',
-        },
-      }]}/>
+      <Global
+        styles={[
+          reset,
+          fonts,
+          {
+            body: {
+              minWidth: '1024px !important',
+            },
+          },
+        ]}
+      />
       {props.hasSidebar ? (
         <Flex minWidth={305} minHeight={1}>
           <FlexItem width="calc(320px + (100% - 1180px) / 2)">
             <Card width={1} height={1} bg="#fff">
               <Box width={80} ml="auto" py={15} pr={15}>
                 <Box width={13} height={13} mb={10}>
-                  <Icon name="qiwi" color="#ff8c00" size={1}/>
+                  <Icon name="qiwi" color="#ff8c00" size={1} />
                 </Box>
                 {props.toc}
               </Box>

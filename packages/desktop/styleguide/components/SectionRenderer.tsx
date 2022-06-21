@@ -1,7 +1,5 @@
-import React, {FC, ReactNode} from 'react'
-
-import {Spacer} from '@qiwi/pijma-core'
-
+import { Spacer } from '@qiwi/pijma-core'
+import React, { FC, ReactNode } from 'react'
 // @ts-ignore
 import SectionHeading from 'rsg-components/SectionHeading'
 // @ts-ignore
@@ -30,9 +28,7 @@ const SectionRenderer: FC<SectionRendererProps> = (props) => (
         slotProps={props}
         children={props.name}
       />
-    ) : (
-      null
-    )}
+    ) : null}
     {props.content}
     {props.sections}
     {props.components}

@@ -1,13 +1,9 @@
-import {styled, StyledOptions} from '../styled'
+import { styled, StyledOptions } from '../styled'
+import { BoxNonProps, BoxProps, BoxStyles } from './Box'
 
-import {BoxStyles, BoxNonProps, BoxProps} from './Box'
+export type FrmProps = BoxProps
 
-export interface FrmProps extends BoxProps {
-}
-
-export const FrmNonProps: PropertyKey[] = [
-  ...BoxNonProps,
-]
+export const FrmNonProps: PropertyKey[] = [...BoxNonProps]
 
 export const FrmOptions: StyledOptions<FrmProps> = {
   shouldForwardProp: (prop) => !FrmNonProps.includes(prop),

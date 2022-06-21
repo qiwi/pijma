@@ -1,4 +1,4 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 
 export interface AlertControlProps {
   onHide?: () => void
@@ -15,7 +15,6 @@ export interface AlertControlState {
 }
 
 export class AlertControl extends React.Component<AlertControlProps> {
-
   public state: AlertControlState = {
     hover: false,
   }
@@ -47,5 +46,4 @@ export class AlertControl extends React.Component<AlertControlProps> {
       onMouseLeave: this.onItemMouseLeave,
     })
   }
-
 }

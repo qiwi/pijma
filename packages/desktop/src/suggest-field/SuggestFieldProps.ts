@@ -1,9 +1,12 @@
-import {SuggestControlProps} from '@qiwi/pijma-core'
+import { SuggestControlProps } from '@qiwi/pijma-core'
+import { ReactNode } from 'react'
 
 import SuggestFieldOptionModel from './SuggestFieldOptionModel'
-import {ReactNode} from 'react'
 
-export default interface SuggestFieldProps<O extends SuggestFieldOptionModel<V>, V> {
+export default interface SuggestFieldProps<
+  O extends SuggestFieldOptionModel<V>,
+  V,
+> {
   value?: SuggestControlProps<O, V>['value']
   suggest: SuggestControlProps<O, V>['suggest']
   items: SuggestControlProps<O, V>['items']

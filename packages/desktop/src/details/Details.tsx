@@ -1,12 +1,13 @@
-import React, {FC, ReactElement} from 'react'
-import {Box, Pos, Value} from '@qiwi/pijma-core'
-import {Text} from '../typography'
+import { Box, Pos, Value } from '@qiwi/pijma-core'
+import React, { FC, ReactElement } from 'react'
+
+import { Text } from '../typography'
 
 type DetailsText = ReactElement | string
 
 export interface DetailsProps {
   children: {
-    title: DetailsText,
+    title: DetailsText
     content: DetailsText | DetailsText[]
   }[]
   dots?: boolean
@@ -35,14 +36,14 @@ export const Details: FC<DetailsProps> = ({
   contentWidth,
   size = 'm',
   stub = false,
-}) => (
+}) =>
   stub ? (
     <Box as="dl" width="100%" display="table">
       {(Array.isArray(stub) ? stub : [0.4, 0.5, 0.3]).map((width, i) => (
-        <Box css={{display: 'table-row'}} key={`${i}`}>
+        <Box css={{ display: 'table-row' }} key={`${i}`}>
           <Box
             as="dt"
-            width={titleWidth ? titleWidth : 0.5}
+            width={titleWidth || 0.5}
             pt={i !== 0 ? 4 : undefined}
             css={{
               display: 'table-cell',
@@ -65,26 +66,18 @@ export const Details: FC<DetailsProps> = ({
                 }}
               >
                 <Box width={width} pr={indentDots[size]}>
-                  <Text
-                    display="block"
-                    size={size}
-                    stub
-                  />
+                  <Text display="block" size={size} stub />
                 </Box>
               </Pos>
             ) : (
               <Box width={width}>
-                <Text
-                  display="block"
-                  size={size}
-                  stub
-                />
+                <Text display="block" size={size} stub />
               </Box>
             )}
           </Box>
           <Box
             as="dd"
-            width={contentWidth ? contentWidth : 0.5}
+            width={contentWidth || 0.5}
             pt={i !== 0 ? 4 : undefined}
             css={{
               display: 'table-cell',
@@ -93,11 +86,7 @@ export const Details: FC<DetailsProps> = ({
             pl={indentDots[size]}
           >
             <Box width={1 - width}>
-              <Text
-                display="block"
-                size={size}
-                stub
-              />
+              <Text display="block" size={size} stub />
             </Box>
           </Box>
         </Box>
@@ -105,9 +94,9 @@ export const Details: FC<DetailsProps> = ({
     </Box>
   ) : (
     <Box as="dl" width="100%" display="table">
-      {children.map((item, i) => (
+      {children.map((item, i) =>
         ([] as DetailsText[]).concat(item.content).map((content, j) => (
-          <Box css={{display: 'table-row'}} key={`${i}.${j}`}>
+          <Box css={{ display: 'table-row' }} key={`${i}.${j}`}>
             <Box
               as="dt"
               width={titleWidth}
@@ -148,9 +137,7 @@ export const Details: FC<DetailsProps> = ({
                     children={item.title}
                   />
                 )
-              ) : (
-                null
-              )}
+              ) : null}
             </Box>
             <Box
               as="dd"
@@ -162,15 +149,10 @@ export const Details: FC<DetailsProps> = ({
               }}
               pl={indentDots[size]}
             >
-              <Text
-                bold={false}
-                size={size}
-                children={content}
-              />
+              <Text bold={false} size={size} children={content} />
             </Box>
           </Box>
-        ))
-      ))}
+        )),
+      )}
     </Box>
   )
-)

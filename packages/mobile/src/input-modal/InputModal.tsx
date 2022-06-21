@@ -1,45 +1,48 @@
+import {
+  BoxPos,
+  Card,
+  CardPos,
+  css,
+  Flex,
+  FlexItem,
+  Icon,
+  Input,
+  Modal,
+  Pos,
+  SimpleTransition,
+  SimpleTransitionProps,
+  styled,
+} from '@qiwi/pijma-core'
 import React, {
-  FunctionComponent,
   ChangeEventHandler,
+  FocusEventHandler,
+  FunctionComponent,
   KeyboardEventHandler,
   MouseEventHandler,
   RefObject,
-  FocusEventHandler,
 } from 'react'
 
-import {
-  styled,
-  css,
-  Card,
-  Modal,
-  SimpleTransition,
-  SimpleTransitionProps,
-  Icon,
-  Flex,
-  FlexItem,
-  Input,
-  BoxPos,
-  CardPos,
-  Pos,
-} from '@qiwi/pijma-core'
-
-const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => (
+  <SimpleTransition {...props} />
+)
 
 contentTransition.defaultProps = {
   timeout: {
     enter: 370,
     exit: 250,
   },
-  enterClassName: (timeout: number) => css({
-    opacity: 1,
-    transform: 'translate3d(0, 0, 0)',
-    transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
-  }),
-  exitClassName: (timeout: number) => css({
-    opacity: 0,
-    transform: 'translate3d(0, -100%, 0)',
-    transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
-  }),
+  enterClassName: (timeout: number) =>
+    css({
+      opacity: 1,
+      transform: 'translate3d(0, 0, 0)',
+      transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
+    }),
+  exitClassName: (timeout: number) =>
+    css({
+      opacity: 0,
+      transform: 'translate3d(0, -100%, 0)',
+      transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
+    }),
 }
 
 interface InputModalProps {
@@ -85,11 +88,7 @@ const InputModal: FunctionComponent<InputModalProps> = (props) => (
         overflow="auto"
         {...dialogProps}
       >
-        <Card
-          width={1}
-          height={1}
-          bg="#fff"
-        >
+        <Card width={1} height={1} bg="#fff">
           <PosFlexCard
             type="relative"
             align="center"
@@ -101,11 +100,9 @@ const InputModal: FunctionComponent<InputModalProps> = (props) => (
           >
             {props.onBack ? (
               <FlexItem shrink={0} mr={4} onClick={props.onBack}>
-                <Icon name="arrow-left" color="#000"/>
+                <Icon name="arrow-left" color="#000" />
               </FlexItem>
-            ) : (
-              null
-            )}
+            ) : null}
             <FlexItem grow={1}>
               <Input
                 value={props.value}
@@ -125,11 +122,9 @@ const InputModal: FunctionComponent<InputModalProps> = (props) => (
             </FlexItem>
             {props.onSubmit ? (
               <FlexItem shrink={0} ml={4} onClick={props.onSubmit}>
-                <Icon name="search" color="#666"/>
+                <Icon name="search" color="#666" />
               </FlexItem>
-            ) : (
-              null
-            )}
+            ) : null}
           </PosFlexCard>
           <BoxPos
             overflow="auto"

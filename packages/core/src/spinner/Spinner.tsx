@@ -1,7 +1,7 @@
-import React, {FunctionComponent} from 'react'
+import React, { FunctionComponent } from 'react'
 
-import {keyframes} from '../styled'
-import {Svg, Circle, Value} from '../primitive'
+import { Circle, Svg, Value } from '../primitive'
+import { keyframes } from '../styled'
 
 const rotate = keyframes({
   '100%': {
@@ -38,7 +38,7 @@ const Spinner: FunctionComponent<SpinnerProps> = (props) => (
     height={props.height}
     transformOrigin="center center"
     animation={props.paused ? undefined : `${rotate} 2000ms linear infinite`}
-    children={(
+    children={
       <Circle
         cx="48"
         cy="48"
@@ -50,9 +50,11 @@ const Spinner: FunctionComponent<SpinnerProps> = (props) => (
         strokeLinecap="round"
         strokeWidth="4"
         transition="stroke 333ms ease-in-out"
-        animation={props.paused ? undefined : `${progress} 1500ms ease-in-out infinite`}
+        animation={
+          props.paused ? undefined : `${progress} 1500ms ease-in-out infinite`
+        }
       />
-    )}
+    }
   />
 )
 

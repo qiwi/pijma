@@ -1,6 +1,5 @@
-import React, {FunctionComponent, Fragment} from 'react'
-
-import {Box, Breaker, Typo, TypoProps, Stub} from '@qiwi/pijma-core'
+import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
+import React, { Fragment, FunctionComponent } from 'react'
 
 export interface ParagraphProps {
   size?: 's' | 'm' | 'l'
@@ -13,43 +12,55 @@ export interface ParagraphProps {
   stub?: boolean
 }
 
-const ParagraphSize: { [size in NonNullable<ParagraphProps['size']>]: number } = {
-  s: 3.5,
-  m: 4,
-  l: 5,
-}
+const ParagraphSize: { [size in NonNullable<ParagraphProps['size']>]: number } =
+  {
+    s: 3.5,
+    m: 4,
+    l: 5,
+  }
 
-const ParagraphHeight: { [size in NonNullable<ParagraphProps['size']>]: number } = {
+const ParagraphHeight: {
+  [size in NonNullable<ParagraphProps['size']>]: number
+} = {
   s: 5,
   m: 6,
   l: 8,
 }
 
-const ParagraphHeightCompact: { [size in NonNullable<ParagraphProps['size']>]: number } = {
+const ParagraphHeightCompact: {
+  [size in NonNullable<ParagraphProps['size']>]: number
+} = {
   s: 4,
   m: 5,
   l: 7,
 }
 
-const StubOffsetTop: { [size in NonNullable<ParagraphProps['size']>]: number } = {
-  s: 2,
-  m: 1,
-  l: 3,
-}
+const StubOffsetTop: { [size in NonNullable<ParagraphProps['size']>]: number } =
+  {
+    s: 2,
+    m: 1,
+    l: 3,
+  }
 
-const StubOffsetBottom: { [size in NonNullable<ParagraphProps['size']>]: number } = {
+const StubOffsetBottom: {
+  [size in NonNullable<ParagraphProps['size']>]: number
+} = {
   s: 1,
   m: 2,
   l: 2,
 }
 
-const StubOffsetCompactTop: { [size in NonNullable<ParagraphProps['size']>]: number } = {
+const StubOffsetCompactTop: {
+  [size in NonNullable<ParagraphProps['size']>]: number
+} = {
   s: 1,
   m: 1,
   l: 3,
 }
 
-const StubOffsetCompactBottom: { [size in NonNullable<ParagraphProps['size']>]: number } = {
+const StubOffsetCompactBottom: {
+  [size in NonNullable<ParagraphProps['size']>]: number
+} = {
   s: 1,
   m: 1,
   l: 1,
@@ -61,7 +72,9 @@ const StubHeight: { [size in NonNullable<ParagraphProps['size']>]: number } = {
   l: 3,
 }
 
-const ParagraphColor: { [color in NonNullable<ParagraphProps['color']>]: string } = {
+const ParagraphColor: {
+  [color in NonNullable<ParagraphProps['color']>]: string
+} = {
   default: '#000',
   support: '#666',
   inverse: '#fff',
@@ -77,25 +90,30 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
   stub,
   clamp,
   children,
-}) => (
+}) =>
   stub ? (
     <Fragment>
-      {Array(clamp === undefined ? 3 : clamp).fill(0).map((_, i) => i % 3 === 0 ? 0.8 : i % 3 === 1 ? 0.9 : 0.7).map((width, id) => (
-        <Box
-          key={id}
-          width={width}
-          ml={align === 'center' || align === 'right' ? 'auto' : undefined}
-          mr={align === 'center' || align === 'left' ? 'auto' : undefined}
-        >
-          <Stub
-            top={compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}
-            bottom={compact ? StubOffsetCompactBottom[size] : StubOffsetBottom[size]}
-            height={StubHeight[size]}
-            width={1}
-            inverse={color === 'inverse'}
-          />
-        </Box>
-      ))}
+      {new Array(clamp === undefined ? 3 : clamp)
+        .fill(0)
+        .map((_, i) => (i % 3 === 0 ? 0.8 : i % 3 === 1 ? 0.9 : 0.7))
+        .map((width, id) => (
+          <Box
+            key={id}
+            width={width}
+            ml={align === 'center' || align === 'right' ? 'auto' : undefined}
+            mr={align === 'center' || align === 'left' ? 'auto' : undefined}
+          >
+            <Stub
+              top={compact ? StubOffsetCompactTop[size] : StubOffsetTop[size]}
+              bottom={
+                compact ? StubOffsetCompactBottom[size] : StubOffsetBottom[size]
+              }
+              height={StubHeight[size]}
+              width={1}
+              inverse={color === 'inverse'}
+            />
+          </Box>
+        ))}
     </Fragment>
   ) : (
     <Typo
@@ -108,10 +126,9 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
       transform={transform}
       align={align}
       clamp={clamp}
-      children={<Breaker children={children}/>}
+      children={<Breaker children={children} />}
     />
   )
-)
 
 Paragraph.defaultProps = {
   size: 'm',

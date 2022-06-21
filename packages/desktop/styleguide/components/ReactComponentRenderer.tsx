@@ -1,7 +1,5 @@
-import React, {FC, ReactNode} from 'react'
-
-import {Spacer} from '@qiwi/pijma-core'
-
+import { Spacer } from '@qiwi/pijma-core'
+import React, { FC, ReactNode } from 'react'
 // @ts-ignore
 import Pathline from 'rsg-components/Pathline'
 
@@ -22,11 +20,7 @@ const ReactComponentRenderer: FC<ReactComponentRendererProps> = (props) => (
   <Spacer size="xl">
     <Spacer size="s">
       {props.heading}
-      {props.pathLine ? (
-        <Pathline>{props.pathLine}</Pathline>
-      ) : (
-        null
-      )}
+      {props.pathLine ? <Pathline>{props.pathLine}</Pathline> : null}
     </Spacer>
     <Spacer size="m">
       {props.description}

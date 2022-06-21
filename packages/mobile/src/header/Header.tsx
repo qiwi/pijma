@@ -1,13 +1,16 @@
-import React, {FC} from 'react'
-
-import {Card, Pos} from '@qiwi/pijma-core'
+import { Card, Pos } from '@qiwi/pijma-core'
+import React, { FC } from 'react'
 
 interface HeaderProps {
   active?: boolean
   zIndex?: number
 }
 
-export const Header: FC<HeaderProps> = ({zIndex = 10002, active, children}) => (
+export const Header: FC<HeaderProps> = ({
+  zIndex = 10002,
+  active,
+  children,
+}) => (
   <Pos
     as="header"
     type="relative"

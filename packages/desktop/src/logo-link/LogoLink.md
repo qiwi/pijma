@@ -8,25 +8,25 @@
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
-        icon={<Icon name="qiwi" size={1}/>}
+        icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
-        icon={<Icon name="qiwi" size={1}/>}
+        icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
-        icon={<Icon name="qiwi" size={1}/>}
+        icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
-        icon={<Icon name="qiwi" size={1}/>}
+        icon={<Icon name="qiwi" size={1} />}
       />
     </Grid>
   </BlockContent>
@@ -40,32 +40,32 @@
   <BlockContent>
     <Grid columns={4} layout={[1]}>
       <LogoLink
-         href="//qiwi.com"
-         target="_blank"
-         title="Перейти на главную"
-         description="Примечание"
-         icon={<Icon name="qiwi" size={1}/>}
+        href="//qiwi.com"
+        target="_blank"
+        title="Перейти на главную"
+        description="Примечание"
+        icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
-         href="//qiwi.com"
-         target="_blank"
-         title="Перейти на главную"
-         description="Примечание"
-         icon={<Icon name="qiwi" size={1}/>}
+        href="//qiwi.com"
+        target="_blank"
+        title="Перейти на главную"
+        description="Примечание"
+        icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
-         href="//qiwi.com"
-         target="_blank"
-         title="Перейти на главную"
-         description="Примечание"
-         icon={<Icon name="qiwi" size={1}/>}
+        href="//qiwi.com"
+        target="_blank"
+        title="Перейти на главную"
+        description="Примечание"
+        icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
-         href="//qiwi.com"
-         target="_blank"
-         title="Перейти на главную"
-         description="Примечание"
-         icon={<Icon name="qiwi" size={1}/>}
+        href="//qiwi.com"
+        target="_blank"
+        title="Перейти на главную"
+        description="Примечание"
+        icon={<Icon name="qiwi" size={1} />}
       />
     </Grid>
   </BlockContent>
@@ -85,28 +85,28 @@
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
-        icon={<Icon name="qiwi" size={1}/>}
+        icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
         horizontal
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
-        icon={<Icon name="qiwi" size={1}/>}
+        icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
         horizontal
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
-        icon={<Icon name="qiwi" size={1}/>}
+        icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
         horizontal
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
-        icon={<Icon name="qiwi" size={1}/>}
+        icon={<Icon name="qiwi" size={1} />}
       />
     </Grid>
   </BlockContent>
@@ -120,39 +120,38 @@
   <BlockContent>
     <Grid columns={3} layout={[1]}>
       <LogoLink
-         horizontal
-         href="//qiwi.com"
-         target="_blank"
-         title="На главную"
-         description="Примечание"
-         icon={<Icon name="qiwi" size={1}/>}
+        horizontal
+        href="//qiwi.com"
+        target="_blank"
+        title="На главную"
+        description="Примечание"
+        icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
-         horizontal
-         href="//qiwi.com"
-         target="_blank"
-         title="На главную"
-         description="Примечание"
-         icon={<Icon name="qiwi" size={1}/>}
+        horizontal
+        href="//qiwi.com"
+        target="_blank"
+        title="На главную"
+        description="Примечание"
+        icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
-         horizontal
-         href="//qiwi.com"
-         target="_blank"
-         title="На главную"
-         description="Примечание"
-         icon={<Icon name="qiwi" size={1}/>}
+        horizontal
+        href="//qiwi.com"
+        target="_blank"
+        title="На главную"
+        description="Примечание"
+        icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
-         horizontal
-         href="//qiwi.com"
-         target="_blank"
-         title="На главную"
-         description="Примечание"
-         icon={<Icon name="qiwi" size={1}/>}
+        horizontal
+        href="//qiwi.com"
+        target="_blank"
+        title="На главную"
+        description="Примечание"
+        icon={<Icon name="qiwi" size={1} />}
       />
     </Grid>
   </BlockContent>
 </Block>
 ```
-

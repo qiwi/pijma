@@ -12,12 +12,10 @@ font-weight: 900
   <BlockContent>
     <Flex>
       <FlexItem>
-        <Heading size="1">
-          Заголовок страницы
-        </Heading>
+        <Heading size="1">Заголовок страницы</Heading>
       </FlexItem>
       <FlexItem ml={10}>
-        <Heading size="1" stub/>
+        <Heading size="1" stub />
       </FlexItem>
     </Flex>
   </BlockContent>
@@ -38,12 +36,10 @@ font-weight: 900
   <BlockContent>
     <Flex>
       <FlexItem>
-        <Heading size="2">
-          Заголовок раздела
-        </Heading>
+        <Heading size="2">Заголовок раздела</Heading>
       </FlexItem>
       <FlexItem ml={10}>
-        <Heading size="2" stub/>
+        <Heading size="2" stub />
       </FlexItem>
     </Flex>
   </BlockContent>
@@ -64,12 +60,10 @@ font-weight: 900
   <BlockContent>
     <Flex>
       <FlexItem>
-        <Heading size="3">
-          Заголовок подраздела
-        </Heading>
+        <Heading size="3">Заголовок подраздела</Heading>
       </FlexItem>
       <FlexItem ml={10}>
-        <Heading size="3" stub/>
+        <Heading size="3" stub />
       </FlexItem>
     </Flex>
   </BlockContent>
@@ -90,12 +84,10 @@ font-weight: 700
   <BlockContent>
     <Flex>
       <FlexItem>
-        <Heading size="4">
-          Заголовок блока
-        </Heading>
+        <Heading size="4">Заголовок блока</Heading>
       </FlexItem>
       <FlexItem ml={10}>
-        <Heading size="4" stub/>
+        <Heading size="4" stub />
       </FlexItem>
     </Flex>
   </BlockContent>
@@ -116,12 +108,10 @@ font-weight: 700
   <BlockContent>
     <Flex>
       <FlexItem>
-        <Heading size="5">
-          Заголовок карточки
-        </Heading>
+        <Heading size="5">Заголовок карточки</Heading>
       </FlexItem>
       <FlexItem ml={10}>
-        <Heading size="5" stub/>
+        <Heading size="5" stub />
       </FlexItem>
     </Flex>
   </BlockContent>
@@ -134,7 +124,9 @@ font-weight: 700
 <Block>
   <BlockContent>
     <Heading size="4" clamp={2}>
-      В типографических элементах есть возможность задавать максимальное количество видимых строк через свойство clamp. Если текст выходит за заданные рамки, в конце текста будет добавлено многоточие
+      В типографических элементах есть возможность задавать максимальное
+      количество видимых строк через свойство clamp. Если текст выходит за
+      заданные рамки, в конце текста будет добавлено многоточие
     </Heading>
   </BlockContent>
 </Block>

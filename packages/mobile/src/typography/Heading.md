@@ -11,10 +11,8 @@ font-weight: 900
 <Block>
   <BlockContent>
     <Spacer size="m">
-      <Heading size="1">
-        Заголовок страницы
-      </Heading>
-      <Heading size="1" stub/>
+      <Heading size="1">Заголовок страницы</Heading>
+      <Heading size="1" stub />
     </Spacer>
   </BlockContent>
 </Block>
@@ -33,10 +31,8 @@ font-weight: 900
 <Block>
   <BlockContent>
     <Spacer size="m">
-      <Heading size="2">
-        Заголовок раздела
-      </Heading>
-      <Heading size="2" stub/>
+      <Heading size="2">Заголовок раздела</Heading>
+      <Heading size="2" stub />
     </Spacer>
   </BlockContent>
 </Block>
@@ -55,10 +51,8 @@ font-weight: 900
 <Block>
   <BlockContent>
     <Spacer size="m">
-      <Heading size="3">
-        Заголовок подраздела
-      </Heading>
-      <Heading size="3" stub/>
+      <Heading size="3">Заголовок подраздела</Heading>
+      <Heading size="3" stub />
     </Spacer>
   </BlockContent>
 </Block>
@@ -77,10 +71,8 @@ font-weight: 700
 <Block>
   <BlockContent>
     <Spacer size="m">
-      <Heading size="4">
-        Заголовок блока
-      </Heading>
-      <Heading size="4" stub/>
+      <Heading size="4">Заголовок блока</Heading>
+      <Heading size="4" stub />
     </Spacer>
   </BlockContent>
 </Block>
@@ -92,7 +84,9 @@ font-weight: 700
 <Block>
   <BlockContent>
     <Heading size="4" clamp={4}>
-      В типографических элементах есть возможность задавать максимальное количество видимых строк через свойство clamp. Если текст выходит за заданные рамки, в конце текста будет добавлено многоточие
+      В типографических элементах есть возможность задавать максимальное
+      количество видимых строк через свойство clamp. Если текст выходит за
+      заданные рамки, в конце текста будет добавлено многоточие
     </Heading>
   </BlockContent>
 </Block>

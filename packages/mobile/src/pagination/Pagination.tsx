@@ -1,9 +1,8 @@
-import React, {FunctionComponent} from 'react'
+import { Card, Icon, PaginationControl } from '@qiwi/pijma-core'
+import React, { FunctionComponent } from 'react'
 
-import {PaginationControl, Card, Icon} from '@qiwi/pijma-core'
-
-import {Text} from '../typography'
-import {PaginationLink} from './PaginationLink'
+import { Text } from '../typography'
+import { PaginationLink } from './PaginationLink'
 
 export interface PaginationProps {
   total: number
@@ -30,7 +29,7 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
     active={active}
     href={href}
     onChange={onChange}
-    children={renderProps => (
+    children={(renderProps) => (
       <Card
         bg="#fff"
         s={shadowed ? '0 1px 2px 0 rgba(0,0,0,0.12)' : '0 0 0 1px #e6e6e6'}
@@ -44,12 +43,15 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           disabled={renderProps.active === 1}
           href={href ? href(renderProps.prev) : undefined}
           stub={stub}
-          onClick={renderProps.onPageClick(renderProps.prev, renderProps.active === 1)}
-          children={({disabled}) => (
-            <Icon name="angle-small-left" color={disabled ? '#ccc' : '#000'}/>
+          onClick={renderProps.onPageClick(
+            renderProps.prev,
+            renderProps.active === 1,
+          )}
+          children={({ disabled }) => (
+            <Icon name="angle-small-left" color={disabled ? '#ccc' : '#000'} />
           )}
         />
-        {renderProps.pages.map(page => (
+        {renderProps.pages.map((page) => (
           <PaginationLink
             key={page}
             page={page}
@@ -72,9 +74,12 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
           disabled={renderProps.active === renderProps.total}
           href={href ? href(renderProps.next) : undefined}
           stub={stub}
-          onClick={renderProps.onPageClick(renderProps.next, renderProps.active === renderProps.total)}
-          children={({disabled}) => (
-            <Icon name="angle-small-right" color={disabled ? '#ccc' : '#000'}/>
+          onClick={renderProps.onPageClick(
+            renderProps.next,
+            renderProps.active === renderProps.total,
+          )}
+          children={({ disabled }) => (
+            <Icon name="angle-small-right" color={disabled ? '#ccc' : '#000'} />
           )}
         />
       </Card>

@@ -3,6 +3,7 @@
 Максимальная ширина поля ввода — 528px.
 
 Ширину поля можно сократить:
+
 - Когда известно точное количество символов, которые нужно ввести.
 - Когда мы знаем ширину содержимого выпадающего списка.
 
@@ -130,19 +131,22 @@ const countries = [
     code: 'kg',
     mask: '+996dddddddddddd',
   },
-];
+]
 
-const [phone, setPhone] = React.useState(undefined);
-const [code, setCode] = React.useState(undefined);
+const [phone, setPhone] = React.useState(undefined)
+const [code, setCode] = React.useState(undefined)
 
-<Block>
+;<Block>
   <BlockContent>
     <Box width={64}>
       <PhoneField
         countries={countries}
         value={phone}
         action={code ? `Код страны: ${code}` : undefined}
-        onChange={(phone, code) => { setPhone(phone); setCode(code) }}
+        onChange={(phone, code) => {
+          setPhone(phone)
+          setCode(code)
+        }}
       />
     </Box>
   </BlockContent>
@@ -161,7 +165,10 @@ const [code, setCode] = React.useState(undefined);
         help="if you need help stub put any corrent content here"
         hint="if you need hint stub put any corrent content here"
         value=""
-        onChange={(phone, code) => { setPhone(phone); setCode(code) }}
+        onChange={(phone, code) => {
+          setPhone(phone)
+          setCode(code)
+        }}
       />
     </Box>
   </BlockContent>

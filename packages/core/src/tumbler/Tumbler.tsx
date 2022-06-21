@@ -1,6 +1,6 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 
-import {Svg, Rect} from '../primitive'
+import { Rect, Svg } from '../primitive'
 
 export interface TumblerProps {
   disabled?: boolean
@@ -8,7 +8,7 @@ export interface TumblerProps {
   checked?: boolean
 }
 
-export const Tumbler: FC<TumblerProps> = props => (
+export const Tumbler: FC<TumblerProps> = (props) => (
   <Svg viewBox="0 0 44 24" width="44" height="24">
     <defs>
       <filter

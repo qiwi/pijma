@@ -3,9 +3,9 @@
 Футер чаще всего будет использоваться как контейнер для кнопок.
 
 ```jsx
-const [show, setShow] = React.useState(undefined);
+const [show, setShow] = React.useState(undefined)
 
-<Block>
+;<Block>
   <BlockContent>
     <Actions>
       <Button
@@ -20,14 +20,16 @@ const [show, setShow] = React.useState(undefined);
       show={show}
       onHide={() => setShow(false)}
       title="Заголовок"
-      children={(
+      children={
         <Flex height={14} align="center" px={0} onClick={() => null}>
           <FlexItem ml={6}>
-            <Paragraph size="m" bold>Опция</Paragraph>
+            <Paragraph size="m" bold>
+              Опция
+            </Paragraph>
           </FlexItem>
         </Flex>
-      )}
-      footer={(
+      }
+      footer={
         <Actions>
           <Button
             kind="brand"
@@ -37,17 +39,18 @@ const [show, setShow] = React.useState(undefined);
             onClick={() => setShow(!show)}
           />
         </Actions>
-      )}
+      }
     />
   </BlockContent>
 </Block>
 ```
 
 Пример компонента с большим содержимым.
-```jsx
-const [show, setShow] = React.useState(undefined);
 
-<Block>
+```jsx
+const [show, setShow] = React.useState(undefined)
+
+;<Block>
   <BlockContent>
     <Actions>
       <Button
@@ -62,76 +65,102 @@ const [show, setShow] = React.useState(undefined);
       show={show}
       onHide={() => setShow(false)}
       title="Заголовок"
-      children={(
+      children={
         <React.Fragment>
           <Flex height={14} align="center" px={0} onClick={() => null}>
             <FlexItem ml={6}>
-              <Paragraph size="m" bold>Опция</Paragraph>
+              <Paragraph size="m" bold>
+                Опция
+              </Paragraph>
             </FlexItem>
           </Flex>
           <Flex height={14} align="center" px={0} onClick={() => null}>
             <FlexItem ml={6}>
-              <Paragraph size="m" bold>Опция</Paragraph>
+              <Paragraph size="m" bold>
+                Опция
+              </Paragraph>
             </FlexItem>
           </Flex>
           <Flex height={14} align="center" px={0} onClick={() => null}>
             <FlexItem ml={6}>
-              <Paragraph size="m" bold>Опция</Paragraph>
+              <Paragraph size="m" bold>
+                Опция
+              </Paragraph>
             </FlexItem>
           </Flex>
           <Flex height={14} align="center" px={0} onClick={() => null}>
             <FlexItem ml={6}>
-              <Paragraph size="m" bold>Опция</Paragraph>
+              <Paragraph size="m" bold>
+                Опция
+              </Paragraph>
             </FlexItem>
           </Flex>
           <Flex height={14} align="center" px={0} onClick={() => null}>
             <FlexItem ml={6}>
-              <Paragraph size="m" bold>Опция</Paragraph>
+              <Paragraph size="m" bold>
+                Опция
+              </Paragraph>
             </FlexItem>
           </Flex>
           <Flex height={14} align="center" px={0} onClick={() => null}>
             <FlexItem ml={6}>
-              <Paragraph size="m" bold>Опция</Paragraph>
+              <Paragraph size="m" bold>
+                Опция
+              </Paragraph>
             </FlexItem>
           </Flex>
           <Flex height={14} align="center" px={0} onClick={() => null}>
             <FlexItem ml={6}>
-              <Paragraph size="m" bold>Опция</Paragraph>
+              <Paragraph size="m" bold>
+                Опция
+              </Paragraph>
             </FlexItem>
           </Flex>
           <Flex height={14} align="center" px={0} onClick={() => null}>
             <FlexItem ml={6}>
-              <Paragraph size="m" bold>Опция</Paragraph>
+              <Paragraph size="m" bold>
+                Опция
+              </Paragraph>
             </FlexItem>
           </Flex>
           <Flex height={14} align="center" px={0} onClick={() => null}>
             <FlexItem ml={6}>
-              <Paragraph size="m" bold>Опция</Paragraph>
+              <Paragraph size="m" bold>
+                Опция
+              </Paragraph>
             </FlexItem>
           </Flex>
           <Flex height={14} align="center" px={0} onClick={() => null}>
             <FlexItem ml={6}>
-              <Paragraph size="m" bold>Опция</Paragraph>
+              <Paragraph size="m" bold>
+                Опция
+              </Paragraph>
             </FlexItem>
           </Flex>
           <Flex height={14} align="center" px={0} onClick={() => null}>
             <FlexItem ml={6}>
-              <Paragraph size="m" bold>Опция</Paragraph>
+              <Paragraph size="m" bold>
+                Опция
+              </Paragraph>
             </FlexItem>
           </Flex>
           <Flex height={14} align="center" px={0} onClick={() => null}>
             <FlexItem ml={6}>
-              <Paragraph size="m" bold>Опция</Paragraph>
+              <Paragraph size="m" bold>
+                Опция
+              </Paragraph>
             </FlexItem>
           </Flex>
           <Flex height={14} align="center" px={0} onClick={() => null}>
             <FlexItem ml={6}>
-              <Paragraph size="m" bold>Опция</Paragraph>
+              <Paragraph size="m" bold>
+                Опция
+              </Paragraph>
             </FlexItem>
           </Flex>
         </React.Fragment>
-      )}
-      footer={(
+      }
+      footer={
         <Actions>
           <Button
             kind="brand"
@@ -141,22 +170,21 @@ const [show, setShow] = React.useState(undefined);
             onClick={() => setShow(!show)}
           />
         </Actions>
-      )}
+      }
     />
   </BlockContent>
 </Block>
 ```
-
 
 ## DropUp второго уровня
 
 Компонент может иметь второй уровень, в этом случае рядом с заголовком появляется кнопка «Назад», для перехода на уровень выше. Количество уровней не ограничено.
 
 ```jsx
-const [show, setShow] = React.useState(undefined);
-const [showHorizontal, setShowHorizontal] = React.useState(undefined);
+const [show, setShow] = React.useState(undefined)
+const [showHorizontal, setShowHorizontal] = React.useState(undefined)
 
-<Block>
+;<Block>
   <BlockContent>
     <Actions>
       <Button
@@ -171,13 +199,15 @@ const [showHorizontal, setShowHorizontal] = React.useState(undefined);
       show={show}
       onHide={() => setShow(false)}
       title="Заголовок"
-      children={(
+      children={
         <Flex height={14} align="center" px={0} onClick={() => null}>
           <FlexItem ml={6}>
-            <Paragraph size="m" bold>Опция</Paragraph>
+            <Paragraph size="m" bold>
+              Опция
+            </Paragraph>
           </FlexItem>
         </Flex>
-      )}
+      }
       footer={
         <Actions>
           <Button
@@ -185,7 +215,10 @@ const [showHorizontal, setShowHorizontal] = React.useState(undefined);
             size="normal"
             type="button"
             text="Показать второй уровень"
-            onClick={() => { setShowHorizontal(!showHorizontal); setShow(!show) }}
+            onClick={() => {
+              setShowHorizontal(!showHorizontal)
+              setShow(!show)
+            }}
           />
           <Button
             kind="simple"
@@ -200,16 +233,21 @@ const [showHorizontal, setShowHorizontal] = React.useState(undefined);
     <DropUp
       show={showHorizontal}
       onHide={() => setShowHorizontal(false)}
-      onBack={() => { setShowHorizontal(false); setShow(true) }}
+      onBack={() => {
+        setShowHorizontal(false)
+        setShow(true)
+      }}
       horizontal
       title="Заголовок"
-      children={(
+      children={
         <Flex height={14} align="center" px={0} onClick={() => null}>
           <FlexItem ml={6}>
-            <Paragraph size="m" bold>Опция</Paragraph>
+            <Paragraph size="m" bold>
+              Опция
+            </Paragraph>
           </FlexItem>
         </Flex>
-      )}
+      }
       footer={
         <Actions>
           <Button

@@ -12,78 +12,44 @@ line-height: 32px
     <Spacer size="m">
       <Flex width={1}>
         <FlexItem width={0.5}>
-          <Text
-            size="l"
-            display="block"
-            bold
-          >
-            Body L Default 500
-            Вы можете привязать карты
-            других банков к кошельку
+          <Text size="l" display="block" bold>
+            Body L Default 500 Вы можете привязать карты других банков к
+            кошельку
           </Text>
         </FlexItem>
         <FlexItem width={0.5}>
-          <Text
-            size="l"
-            display="block" 
-            clamp={3} 
-            stub
-          />
+          <Text size="l" display="block" clamp={3} stub />
         </FlexItem>
       </Flex>
       <Flex>
         <FlexItem width={0.5}>
-          <Text
-            size="l"
-            display="block"
-            bold
-          >
+          <Text size="l" display="block" bold>
             <Text color="failure">Error </Text>
             500
           </Text>
         </FlexItem>
         <FlexItem width={0.5}>
-          <Text
-            size="l"
-            display="block" 
-            stub
-          />
+          <Text size="l" display="block" stub />
         </FlexItem>
       </Flex>
       <Flex>
         <FlexItem width={0.5}>
-          <Text
-            size="l"
-            display="block" 
-            color="success"
-          >
+          <Text size="l" display="block" color="success">
             Success
           </Text>
         </FlexItem>
         <FlexItem width={0.5}>
-          <Text
-            size="l" 
-            display="block" 
-            stub
-          />
+          <Text size="l" display="block" stub />
         </FlexItem>
       </Flex>
       <Flex>
         <FlexItem width={0.5}>
-          <Text
-            size="l"
-            display="block"
-            color="warning"
-          >
+          <Text size="l" display="block" color="warning">
             Warning
           </Text>
         </FlexItem>
         <FlexItem width={0.5}>
-          <Text
-            size="l" 
-            display="block"
-            stub
-          />
+          <Text size="l" display="block" stub />
         </FlexItem>
       </Flex>
     </Spacer>
@@ -103,25 +69,13 @@ line-height: 28px
     <Spacer size="m">
       <Flex width={1}>
         <FlexItem width={0.5}>
-          <Text
-            size="l" 
-            display="block" 
-            compact 
-            bold
-          >
-            Body L Compact 500
-            Вы можете привязать карты
-            других банков к кошельку
+          <Text size="l" display="block" compact bold>
+            Body L Compact 500 Вы можете привязать карты других банков к
+            кошельку
           </Text>
         </FlexItem>
         <FlexItem width={0.5}>
-          <Text
-            size="l"
-            display="block"
-            compact
-            clamp={3}
-            stub
-          />
+          <Text size="l" display="block" compact clamp={3} stub />
         </FlexItem>
       </Flex>
     </Spacer>
@@ -143,78 +97,44 @@ line-height: 24px
     <Spacer size="m">
       <Flex width={1}>
         <FlexItem width={0.5}>
-          <Text
-            size="m"
-            display="block"
-            bold
-          >
-            Body M Default 500
-            Вы можете привязать карты
-            других банков к кошельку
+          <Text size="m" display="block" bold>
+            Body M Default 500 Вы можете привязать карты других банков к
+            кошельку
           </Text>
         </FlexItem>
         <FlexItem width={0.5}>
-          <Text
-            size="m"
-            display="block"
-            clamp={2}
-            stub
-          />
+          <Text size="m" display="block" clamp={2} stub />
         </FlexItem>
       </Flex>
       <Flex>
         <FlexItem width={0.5}>
-          <Text
-            size="m"
-            display="block" 
-            bold
-          >
+          <Text size="m" display="block" bold>
             <Text color="failure">Error </Text>
             500
           </Text>
         </FlexItem>
         <FlexItem width={0.5}>
-          <Text
-            size="m"
-            display="block"
-            stub
-          />
+          <Text size="m" display="block" stub />
         </FlexItem>
       </Flex>
       <Flex>
         <FlexItem width={0.5}>
-          <Text
-            size="m"
-            display="block"
-            color="success"
-          >
+          <Text size="m" display="block" color="success">
             Success
           </Text>
         </FlexItem>
         <FlexItem width={0.5}>
-          <Text
-            size="m"
-            display="block"
-            stub
-          />
+          <Text size="m" display="block" stub />
         </FlexItem>
       </Flex>
       <Flex>
         <FlexItem width={0.5}>
-          <Text
-            size="m"
-            display="block"
-            color="warning"
-          >
+          <Text size="m" display="block" color="warning">
             Warning
           </Text>
         </FlexItem>
         <FlexItem width={0.5}>
-          <Text
-            size="m"
-            display="block"
-            stub
-          />
+          <Text size="m" display="block" stub />
         </FlexItem>
       </Flex>
     </Spacer>
@@ -234,25 +154,13 @@ line-height: 20px
     <Spacer size="m">
       <Flex width={1}>
         <FlexItem width={0.5}>
-          <Text
-            size="m"
-            display="block"
-            compact
-            bold
-          >
-            Body M Compact 500
-            Вы можете привязать карты
-            других банков к кошельку
+          <Text size="m" display="block" compact bold>
+            Body M Compact 500 Вы можете привязать карты других банков к
+            кошельку
           </Text>
         </FlexItem>
         <FlexItem width={0.5}>
-          <Text
-            size="m"
-            display="block"
-            compact
-            clamp={2}
-            stub
-          />
+          <Text size="m" display="block" compact clamp={2} stub />
         </FlexItem>
       </Flex>
     </Spacer>
@@ -274,78 +182,44 @@ line-height: 20px
     <Spacer size="m">
       <Flex width={1}>
         <FlexItem width={0.5}>
-          <Text
-            size="s"
-            display="block"
-            bold
-          >
-            Body S Default 500
-            Вы можете привязать карты
-            других банков к кошельку
+          <Text size="s" display="block" bold>
+            Body S Default 500 Вы можете привязать карты других банков к
+            кошельку
           </Text>
         </FlexItem>
         <FlexItem width={0.5}>
-          <Text
-            size="s"
-            display="block"
-            clamp={2} 
-            stub
-          />
+          <Text size="s" display="block" clamp={2} stub />
         </FlexItem>
       </Flex>
       <Flex>
         <FlexItem width={0.5}>
-          <Text
-            size="s"
-            display="block"
-            bold
-          >
+          <Text size="s" display="block" bold>
             <Text color="failure">Error </Text>
             500
           </Text>
         </FlexItem>
         <FlexItem width={0.5}>
-          <Text
-            size="s"
-            display="block"
-            stub
-          />
+          <Text size="s" display="block" stub />
         </FlexItem>
       </Flex>
       <Flex>
         <FlexItem width={0.5}>
-          <Text
-            size="s"
-            display="block"
-            color="success"
-          >
+          <Text size="s" display="block" color="success">
             Success
           </Text>
         </FlexItem>
         <FlexItem width={0.5}>
-          <Text
-            size="s"
-            display="block"
-            stub
-          />
+          <Text size="s" display="block" stub />
         </FlexItem>
       </Flex>
       <Flex>
         <FlexItem width={0.5}>
-          <Text
-            size="s"
-            display="block"
-            color="warning"
-          >
+          <Text size="s" display="block" color="warning">
             Warning
           </Text>
         </FlexItem>
         <FlexItem width={0.5}>
-          <Text
-            size="s"
-            display="block"
-            stub
-          />
+          <Text size="s" display="block" stub />
         </FlexItem>
       </Flex>
     </Spacer>
@@ -365,25 +239,13 @@ line-height: 16px
     <Spacer size="m">
       <Flex width={1}>
         <FlexItem width={0.5}>
-          <Text
-            size="s"
-            display="block"
-            compact
-            bold
-          >
-            Body S Compact 500
-            Вы можете привязать карты
-            других банков к кошельку
+          <Text size="s" display="block" compact bold>
+            Body S Compact 500 Вы можете привязать карты других банков к
+            кошельку
           </Text>
         </FlexItem>
         <FlexItem width={0.5}>
-          <Text
-            size="s"
-            display="block"
-            compact
-            clamp={2}
-            stub
-          />
+          <Text size="s" display="block" compact clamp={2} stub />
         </FlexItem>
       </Flex>
     </Spacer>
@@ -396,12 +258,10 @@ line-height: 16px
 ```jsx
 <Block>
   <BlockContent>
-    <Text
-      display="block"
-      size="l"
-      clamp={2}
-    >
-      В типографических элементах есть возможность задавать максимальное количество видимых строк через свойство clamp. Если текст выходит за заданные рамки, в конце текста будет добавлено многоточие
+    <Text display="block" size="l" clamp={2}>
+      В типографических элементах есть возможность задавать максимальное
+      количество видимых строк через свойство clamp. Если текст выходит за
+      заданные рамки, в конце текста будет добавлено многоточие
     </Text>
   </BlockContent>
 </Block>

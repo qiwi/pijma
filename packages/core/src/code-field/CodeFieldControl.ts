@@ -1,4 +1,4 @@
-import React, {createRef, RefObject, FC} from 'react'
+import React, { createRef, FC, RefObject } from 'react'
 
 export interface CodeFieldControlProps {
   autoFocus: boolean
@@ -14,8 +14,14 @@ export interface CodeFieldControlProps {
     values: Array<{
       focused: boolean
       ref: RefObject<HTMLInputElement>
-      onChange: (e: React.ChangeEvent, index: number) => React.ChangeEventHandler
-      onClick: (e: React.MouseEvent<HTMLInputElement, MouseEvent>, index: number) => React.MouseEventHandler
+      onChange: (
+        e: React.ChangeEvent,
+        index: number,
+      ) => React.ChangeEventHandler
+      onClick: (
+        e: React.MouseEvent<HTMLInputElement, MouseEvent>,
+        index: number,
+      ) => React.MouseEventHandler
       onFocus: (e: React.FocusEvent, index: number) => React.FocusEventHandler
       onBlur: (e: React.FocusEvent, index: number) => React.FocusEventHandler
     }>
@@ -27,8 +33,10 @@ export interface CodeFieldControlState {
   refs: RefObject<HTMLInputElement>[]
 }
 
-export class CodeFieldControl extends React.Component<CodeFieldControlProps, CodeFieldControlState> {
-
+export class CodeFieldControl extends React.Component<
+  CodeFieldControlProps,
+  CodeFieldControlState
+> {
   private preventBlur = true
 
   private preventFocus = true
@@ -37,7 +45,7 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
 
   public state: CodeFieldControlState = {
     focus: this.props.autoFocus ? 0 : -1,
-    refs: Array(this.props.value.length).fill(1).map(() => createRef()),
+    refs: new Array(this.props.value.length).fill(1).map(() => createRef()),
   }
 
   public componentDidMount() {
@@ -50,7 +58,10 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
     clearTimeout(this.onReadyTimeout)
   }
 
-  public componentDidUpdate(props: CodeFieldControlProps, state: CodeFieldControlState) {
+  public componentDidUpdate(
+    props: CodeFieldControlProps,
+    state: CodeFieldControlState,
+  ) {
     if (props.loading && state.focus !== -1) {
       this.setState({
         focus: -1,
@@ -59,16 +70,24 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
     }
   }
 
-  private onFieldChange: (e: React.ChangeEvent<HTMLInputElement>, index: number) => void = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+  private onFieldChange: (
+    e: React.ChangeEvent<HTMLInputElement>,
+    index: number,
+  ) => void = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     e.preventDefault()
     const value = e.target.value
-    if (value.length > 1 || (this.props.type === 'tel' && !/^\d?$/.test(value))) {
+    if (
+      value.length > 1 ||
+      (this.props.type === 'tel' && !/^\d?$/.test(value))
+    ) {
       return
     }
     clearTimeout(this.onReadyTimeout)
-    const newValue = this.props.value.map((item, i) => index === i ? value : item)
+    const newValue = this.props.value.map((item, i) =>
+      index === i ? value : item,
+    )
     if (newValue.includes('')) {
-      if ((this.props.value.length - 1) === index) {
+      if (this.props.value.length - 1 === index) {
         const current = this.state.refs[index]
         if (current && current.current) {
           current.current.select()
@@ -92,11 +111,17 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
     }
   }
 
-  private onFieldClick: (e: React.ChangeEvent<HTMLInputElement>, index: number) => void = (e: React.ChangeEvent<HTMLInputElement>, _index: number) => {
+  private onFieldClick: (
+    e: React.ChangeEvent<HTMLInputElement>,
+    index: number,
+  ) => void = (e: React.ChangeEvent<HTMLInputElement>, _index: number) => {
     e.preventDefault()
   }
 
-  private onKeyDown: (e: React.KeyboardEvent, index: number) => void = (e: React.KeyboardEvent, index: number) => {
+  private onKeyDown: (e: React.KeyboardEvent, index: number) => void = (
+    e: React.KeyboardEvent,
+    index: number,
+  ) => {
     switch (e.key) {
       case 'ArrowLeft':
         e.preventDefault()
@@ -134,7 +159,11 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
         }
     }
   }
-  private onFieldFocus: (e: React.ChangeEvent<HTMLInputElement>, index: number) => void = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+
+  private onFieldFocus: (
+    e: React.ChangeEvent<HTMLInputElement>,
+    index: number,
+  ) => void = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     e.preventDefault()
     this.setState({
       focus: index,
@@ -164,13 +193,15 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
   }
 
   private onMouseDown: EventListenerOrEventListenerObject = (e: any) => {
-    this.preventBlur = this.state.refs.map(item => item.current).includes(e.target)
+    this.preventBlur = this.state.refs
+      .map((item) => item.current)
+      .includes(e.target)
   }
 
   public render() {
     return this.props.children({
       onKeyDown: this.onKeyDown,
-      values: Array(this.props.value.length).fill(0).map((item, index) => ({
+      values: new Array(this.props.value.length).fill(0).map((item, index) => ({
         ...item,
         focused: this.state.focus === index,
         ref: this.state.refs[index],
@@ -181,5 +212,4 @@ export class CodeFieldControl extends React.Component<CodeFieldControlProps, Cod
       })),
     })
   }
-
 }

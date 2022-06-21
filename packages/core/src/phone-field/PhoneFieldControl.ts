@@ -1,41 +1,45 @@
-import {Component, RefObject, createRef} from 'react'
-import {findDOMNode} from 'react-dom'
+import { Component, createRef, RefObject } from 'react'
+import { findDOMNode } from 'react-dom'
 
+import { createPhoneMask } from '../mask'
 import PhoneFieldControlProps from './PhoneFieldControlProps'
 import PhoneFieldControlState from './PhoneFieldControlState'
-
 import PhoneFieldCountry from './PhoneFieldCountry'
-import {createPhoneMask} from '../mask'
 
-export default class PhoneFieldControl extends Component<PhoneFieldControlProps, PhoneFieldControlState> {
-
+export default class PhoneFieldControl extends Component<
+  PhoneFieldControlProps,
+  PhoneFieldControlState
+> {
   public componentDidMount() {
     if (this.props.value) {
       const country = this.getCountryByPhone(this.props.value)
       this.setState({
-        selectedCountry: country ? country : null,
+        selectedCountry: country || null,
       })
     }
   }
 
-  public componentDidUpdate(props: PhoneFieldControlProps, state: PhoneFieldControlState) {
+  public componentDidUpdate(
+    props: PhoneFieldControlProps,
+    state: PhoneFieldControlState,
+  ) {
     if (
-      state.selectedCountry === null || (
-        state.selectedCountry &&
+      state.selectedCountry === null ||
+      (state.selectedCountry &&
         this.state.selectedCountry &&
         state.selectedCountry.mask !== this.state.selectedCountry.mask &&
-        this.props.value
-      )
+        this.props.value)
     ) {
       const length = Math.max(
         (this.props.value || '').length,
-        (this.state.selectedCountry ? this.state.selectedCountry.mask : '').length,
+        (this.state.selectedCountry ? this.state.selectedCountry.mask : '')
+          .length,
       )
       this.inputField.setSelectionRange(length, length)
     }
     if (this.props.countries !== props.countries) {
       this.optionsRefs = new Map(
-        this.props.countries.map((country => [country, createRef()])),
+        this.props.countries.map((country) => [country, createRef()]),
       )
     }
   }
@@ -53,16 +57,18 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
 
   private dropdownRef: RefObject<HTMLDivElement> = createRef()
 
-  private optionsRefs: Map<PhoneFieldCountry, RefObject<HTMLDivElement>> = new Map(
-    this.props.countries.map((country => [country, createRef()])),
-  )
+  private optionsRefs: Map<PhoneFieldCountry, RefObject<HTMLDivElement>> =
+    new Map(this.props.countries.map((country) => [country, createRef()]))
 
-  private onCountryClick: (index: number) => React.MouseEventHandler = (index) => (event) => {
-    event.preventDefault()
-    this.selectCountry(index)
-  }
+  private onCountryClick: (index: number) => React.MouseEventHandler =
+    (index) => (event) => {
+      event.preventDefault()
+      this.selectCountry(index)
+    }
 
-  private onCountryEnter: (country: PhoneFieldCountry) => React.MouseEventHandler = (country) => (event) => {
+  private onCountryEnter: (
+    country: PhoneFieldCountry,
+  ) => React.MouseEventHandler = (country) => (event) => {
     event.preventDefault()
     this.setState({
       focusedCountry: country,
@@ -96,11 +102,15 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
   private selectCountry: (index: number) => void = (index) => {
     const country = this.props.countries[index]
     const phoneNumber = this.props.value ? this.props.value : ''
-    const currentCountryMask = this.state.selectedCountry ? this.clear(this.state.selectedCountry.mask) : ''
+    const currentCountryMask = this.state.selectedCountry
+      ? this.clear(this.state.selectedCountry.mask)
+      : ''
     const newCountryMask = this.clear(country.mask)
     if (this.props.onChange) {
       this.props.onChange(
-        `+${newCountryMask}${this.clear(phoneNumber).substr(currentCountryMask.length)}`,
+        `+${newCountryMask}${this.clear(phoneNumber).substr(
+          currentCountryMask.length,
+        )}`,
         country.code,
       )
     }
@@ -127,7 +137,7 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
       )
     }
     this.setState({
-      selectedCountry: country ? country : null,
+      selectedCountry: country || null,
     })
   }
 
@@ -160,18 +170,22 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
     return value.replace(/\D/g, '')
   }
 
-  private getCountryByPhone: (phoneNumber: string) => PhoneFieldCountry | undefined = (phoneNumber) => {
+  private getCountryByPhone: (
+    phoneNumber: string,
+  ) => PhoneFieldCountry | undefined = (phoneNumber) => {
     const clearPhone = this.clear(phoneNumber)
     return this.props.countries
-               .slice(0)
-               .sort((a, b) => this.clear(b.mask).length - this.clear(a.mask).length)
-               .find((option) => clearPhone.indexOf(this.clear(option.mask)) === 0)
+      .slice(0)
+      .sort((a, b) => this.clear(b.mask).length - this.clear(a.mask).length)
+      .find((option) => clearPhone.indexOf(this.clear(option.mask)) === 0)
   }
 
   public render() {
     return this.props.children({
       value: this.props.value || '',
-      code: this.state.selectedCountry ? this.state.selectedCountry.code : undefined,
+      code: this.state.selectedCountry
+        ? this.state.selectedCountry.code
+        : undefined,
       countries: this.props.countries.map((country, index) => ({
         ...country,
         ref: this.optionsRefs.get(country)!,
@@ -186,7 +200,9 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
       containerRef: this.containerRef,
       inputRef: this.inputRef,
       dropdownRef: this.dropdownRef,
-      mask: createPhoneMask(this.props.countries.map(country => country.mask)),
+      mask: createPhoneMask(
+        this.props.countries.map((country) => country.mask),
+      ),
       onFlagClick: this.onFlagClick,
       onFlagMouseDown: this.onFlagMouseDown,
       onCountriesHide: this.onCountriesHide,
@@ -196,5 +212,4 @@ export default class PhoneFieldControl extends Component<PhoneFieldControlProps,
       onSelectCountry: this.selectCountry,
     })
   }
-
 }

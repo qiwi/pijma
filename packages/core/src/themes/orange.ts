@@ -1,9 +1,9 @@
-import {Theme} from '../styled'
+import { Theme } from '../styled'
 
 export const orange: Theme = {
   scale: 4,
   font: {
-    family: '\'Museo Sans\', \'Helvetica Neue\', \'Helvetica\', \'Arial\', sans-serif',
+    family: "'Museo Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
     weight: {
       normal: 300,
       strong: 500,

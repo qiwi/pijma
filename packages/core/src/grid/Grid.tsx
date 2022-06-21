@@ -1,5 +1,6 @@
-import React, {FC, Children, ReactNode} from 'react'
-import {Flex, FlexItem} from '../primitive'
+import React, { Children, FC, ReactNode } from 'react'
+
+import { Flex, FlexItem } from '../primitive'
 
 export interface GridProps {
   gutter?: number
@@ -9,8 +10,12 @@ export interface GridProps {
 
 const arrSum = (arr: number[]) => arr.reduce((a: number, b: number) => a + b, 0)
 
-export const Grid: FC<GridProps> = ({gutter = 20, columns = 12, layout = columns, children}) => {
-
+export const Grid: FC<GridProps> = ({
+  gutter = 20,
+  columns = 12,
+  layout = columns,
+  children,
+}) => {
   const elements: ReactNode[] = Children.toArray(children)
   const layoutArr: number[] = Array.isArray(layout) ? layout : [layout]
   const layoutSum: number = arrSum(layoutArr)
@@ -20,15 +25,18 @@ export const Grid: FC<GridProps> = ({gutter = 20, columns = 12, layout = columns
   }
 
   const layoutLength: number = layoutArr.length
-  const rowBlocksCount: number = columns / layoutSum * layoutLength
+  const rowBlocksCount: number = (columns / layoutSum) * layoutLength
 
   return (
     <Flex wrap="wrap">
       {Children.map(elements, (child: ReactNode, index: number) => {
         const oneColumnPercent = layoutArr[index % layoutLength] / columns
-        const width = gutter === 0
-          ? `${100 * oneColumnPercent}%`
-          : `calc(${100 * oneColumnPercent}% + ${gutter * oneColumnPercent - gutter}px)`
+        const width =
+          gutter === 0
+            ? `${100 * oneColumnPercent}%`
+            : `calc(${100 * oneColumnPercent}% + ${
+                gutter * oneColumnPercent - gutter
+              }px)`
 
         return (
           <FlexItem

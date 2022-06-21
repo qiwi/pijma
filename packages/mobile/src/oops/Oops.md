@@ -2,20 +2,10 @@
 <Block>
   <BlockContent>
     <Oops
-      logo={
-        <Image
-          width={25}
-          height={10}
-          src={require('./media/logo.svg')}
-        />
-      }
+      logo={<Image width={25} height={10} src={require('./media/logo.svg')} />}
       title="Ошибочка вышла"
       error={
-        <Image
-          width={65}
-          height={65}
-          src={require('./media/error.svg')}
-        />
+        <Image width={65} height={65} src={require('./media/error.svg')} />
       }
       content={
         <Spacer>
@@ -23,13 +13,14 @@
             При попытке открыть страницу что-то пошло не так.
           </Paragraph>
           <Paragraph align="center">
-            <Link href="/" children="Перейти на главную"/>
+            <Link href="/" children="Перейти на главную" />
           </Paragraph>
         </Spacer>
       }
       footer={
         <Paragraph align="center" color="support">
-          Уверены, что страница должна быть в&nbsp;строю? Наша техподдержка у&nbsp;аппарата, звоните: 8&nbsp;800&nbsp;707&#8209;77&#8209;59
+          Уверены, что страница должна быть в&nbsp;строю? Наша техподдержка
+          у&nbsp;аппарата, звоните: 8&nbsp;800&nbsp;707&#8209;77&#8209;59
         </Paragraph>
       }
     />
@@ -41,34 +32,23 @@
 <Block>
   <BlockContent>
     <Oops
-      logo={
-        <Image
-          width={25}
-          height={10}
-          src={require('./media/logo.svg')}
-        />
-      }
+      logo={<Image width={25} height={10} src={require('./media/logo.svg')} />}
       title="Пропала из вида!"
-      error={
-        <Image
-          width={65}
-          height={65}
-          src={require('./media/404.svg')}
-        />
-      }
+      error={<Image width={65} height={65} src={require('./media/404.svg')} />}
       content={
         <Spacer>
           <Paragraph align="center">
             Такой страницы на данный момент не существует
           </Paragraph>
           <Paragraph align="center">
-            <Link href="/" children="Перейти на главную"/>
+            <Link href="/" children="Перейти на главную" />
           </Paragraph>
         </Spacer>
       }
       footer={
         <Paragraph align="center" color="support">
-          Уверены, что страница должна быть в&nbsp;строю? Наша техподдержка у&nbsp;аппарата, звоните: 8&nbsp;800&nbsp;707&#8209;77&#8209;59
+          Уверены, что страница должна быть в&nbsp;строю? Наша техподдержка
+          у&nbsp;аппарата, звоните: 8&nbsp;800&nbsp;707&#8209;77&#8209;59
         </Paragraph>
       }
     />
@@ -80,20 +60,10 @@
 <Block>
   <BlockContent>
     <Oops
-      logo={
-        <Image
-          width={25}
-          height={10}
-          src={require('./media/logo.svg')}
-        />
-      }
+      logo={<Image width={25} height={10} src={require('./media/logo.svg')} />}
       title="Эти руки не для Cookie?"
       error={
-        <Image
-          width={65}
-          height={65}
-          src={require('./media/cookie.svg')}
-        />
+        <Image width={65} height={65} src={require('./media/cookie.svg')} />
       }
       content="Включите Cookie, чтобы продолжить работу на сайте"
     />
@@ -105,20 +75,10 @@
 <Block>
   <BlockContent>
     <Oops
-      logo={
-        <Image
-          width={25}
-          height={10}
-          src={require('./media/logo.svg')}
-        />
-      }
+      logo={<Image width={25} height={10} src={require('./media/logo.svg')} />}
       title="Браузер устарел"
       error={
-        <Image
-          width={65}
-          height={65}
-          src={require('./media/jackass.svg')}
-        />
+        <Image width={65} height={65} src={require('./media/jackass.svg')} />
       }
       content={`Мы простились со старым Бро.\nОбновите браузер, чтобы попасть на сайт`}
     />
@@ -132,7 +92,7 @@
     <Oops
       logo={
         <Box width={37} height={7}>
-          <WalletLogo/>
+          <WalletLogo />
         </Box>
       }
       title="Мы не нашли страницу, которую вы ищете"
@@ -144,7 +104,7 @@
             children={`Если вы уверены, что тут что-то должно быть, позвоните нам по телефону 8\u00A0800\u00A0707\u8209;77\u8209;59`}
           />
           <Flex justify="center" mt={3}>
-            <Link href="/" children="перейти на главную"/>
+            <Link href="/" children="перейти на главную" />
           </Flex>
         </React.Fragment>
       }
@@ -159,7 +119,7 @@
     <Oops
       logo={
         <Box width={37} height={7}>
-          <WalletLogo/>
+          <WalletLogo />
         </Box>
       }
       title="Мы не нашли страницу, которую вы ищете"
@@ -171,13 +131,17 @@
             children={`Если вы уверены, что тут что-то должно быть, позвоните нам по телефону 8\u00A0800\u00A0707\u8209;77\u8209;59`}
           />
           <Flex justify="center" mt={3}>
-            <Link href="/" children="перейти на главную"/>
+            <Link href="/" children="перейти на главную" />
           </Flex>
         </React.Fragment>
       }
-      footer={(
-        <iframe src="https://qiwi.com/qcms/wallet/games/default/" width="100%" height="200"></iframe>
-      )}
+      footer={
+        <iframe
+          src="https://qiwi.com/qcms/wallet/games/default/"
+          width="100%"
+          height="200"
+        ></iframe>
+      }
     />
   </BlockContent>
 </Block>
@@ -189,7 +153,7 @@
     <Oops
       logo={
         <Box width={37} height={7}>
-          <WalletLogo/>
+          <WalletLogo />
         </Box>
       }
       title="У вас отключен JavaScript"
@@ -206,7 +170,7 @@
     <Oops
       logo={
         <Box width={37} height={7}>
-          <WalletLogo/>
+          <WalletLogo />
         </Box>
       }
       title="Ваш браузер больше не поддерживается"
@@ -214,7 +178,10 @@
       content={
         <React.Fragment>
           <Box mb={6}>
-            <Paragraph align="center" children="Пожалуйста, установите один из современных браузеров:"/>
+            <Paragraph
+              align="center"
+              children="Пожалуйста, установите один из современных браузеров:"
+            />
           </Box>
           <Flex justify="center">
             <FlexItem mr={5}>
@@ -237,11 +204,7 @@
             </FlexItem>
             <FlexItem mr={5}>
               <Link href="https://www.mozilla.org/ru/firefox/new/">
-                <Image
-                  width={12}
-                  height={12}
-                  src={require('./media/ff.png')}
-                />
+                <Image width={12} height={12} src={require('./media/ff.png')} />
               </Link>
             </FlexItem>
             <FlexItem>

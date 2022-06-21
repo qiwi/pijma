@@ -1,6 +1,6 @@
 ```jsx
-const [activePage, setActivePage] = React.useState(1);
-<Pagination
+const [activePage, setActivePage] = React.useState(1)
+;<Pagination
   total={10}
   active={activePage}
   shadowed
@@ -9,18 +9,12 @@ const [activePage, setActivePage] = React.useState(1);
 ```
 
 ```jsx
-<Pagination
-  total={10}
-  active={0}
-  shadowed
-  stub
-/>
+<Pagination total={10} active={0} shadowed stub />
 ```
 
-
 ```jsx
-const [activePage, setActivePage] = React.useState(1);
-<Block>
+const [activePage, setActivePage] = React.useState(1)
+;<Block>
   <BlockContent>
     <Pagination
       total={10}
@@ -34,11 +28,7 @@ const [activePage, setActivePage] = React.useState(1);
 ```jsx
 <Block>
   <BlockContent>
-    <Pagination
-      total={10}
-      active={0}
-      stub
-    />
+    <Pagination total={10} active={0} stub />
   </BlockContent>
 </Block>
 ```

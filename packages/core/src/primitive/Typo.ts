@@ -1,6 +1,5 @@
-import {styled, CSSObject, StyledOptions} from '../styled'
-
-import {pxValue} from './Value'
+import { CSSObject, styled, StyledOptions } from '../styled'
+import { pxValue } from './Value'
 
 export interface TypoProps {
   css?: CSSObject
@@ -19,14 +18,40 @@ export interface TypoProps {
   clamp?: number
 }
 
-export const TypoNonProps: PropertyKey[] = ['as', 'css', 'display', 'size', 'height', 'weight', 'color', 'transform', 'nowrap', 'spacing', 'transition', 'decoration', 'cursor', 'align', 'clamp']
+export const TypoNonProps: PropertyKey[] = [
+  'as',
+  'css',
+  'display',
+  'size',
+  'height',
+  'weight',
+  'color',
+  'transform',
+  'nowrap',
+  'spacing',
+  'transition',
+  'decoration',
+  'cursor',
+  'align',
+  'clamp',
+]
 
 export const TypoOptions: StyledOptions<TypoProps> = {
   shouldForwardProp: (prop) => !TypoNonProps.includes(prop),
 }
 
-export const Typo = styled('div', TypoOptions)<TypoProps>(({theme, ...props}) => ({
-  display: ([] as string[]).concat(props.display || [], props.clamp !== undefined && props.display === 'block' && props.height !== undefined ? '-webkit-box' : []),
+export const Typo = styled(
+  'div',
+  TypoOptions,
+)<TypoProps>(({ theme, ...props }) => ({
+  display: ([] as string[]).concat(
+    props.display || [],
+    props.clamp !== undefined &&
+      props.display === 'block' &&
+      props.height !== undefined
+      ? '-webkit-box'
+      : [],
+  ),
   fontFamily: theme.font.family,
   fontSize: pxValue(props.size, theme.scale),
   fontWeight: props.weight,
@@ -43,8 +68,23 @@ export const Typo = styled('div', TypoOptions)<TypoProps>(({theme, ...props}) =>
   textDecoration: props.decoration,
   textAlign: props.align,
   cursor: props.cursor,
-  maxHeight: props.clamp !== undefined && props.height !== undefined && props.display === 'block' ? pxValue(props.height * props.clamp, theme.scale) : undefined,
-  WebkitLineClamp: props.clamp !== undefined && props.height !== undefined && props.display === 'block' ? props.clamp : undefined,
-  WebkitBoxOrient: props.clamp !== undefined && props.height !== undefined && props.display === 'block' ? 'vertical' : undefined,
+  maxHeight:
+    props.clamp !== undefined &&
+    props.height !== undefined &&
+    props.display === 'block'
+      ? pxValue(props.height * props.clamp, theme.scale)
+      : undefined,
+  WebkitLineClamp:
+    props.clamp !== undefined &&
+    props.height !== undefined &&
+    props.display === 'block'
+      ? props.clamp
+      : undefined,
+  WebkitBoxOrient:
+    props.clamp !== undefined &&
+    props.height !== undefined &&
+    props.display === 'block'
+      ? 'vertical'
+      : undefined,
   ...props.css,
 }))

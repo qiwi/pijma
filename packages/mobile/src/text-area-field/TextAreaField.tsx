@@ -1,6 +1,9 @@
-import React, {FC, KeyboardEvent, ReactNode} from 'react'
-
-import {TextAreaFieldControl, InputField, BasicTextArea} from '@qiwi/pijma-core'
+import {
+  BasicTextArea,
+  InputField,
+  TextAreaFieldControl,
+} from '@qiwi/pijma-core'
+import React, { FC, KeyboardEvent, ReactNode } from 'react'
 
 export interface TextAreaFieldProps {
   value: string
@@ -35,7 +38,7 @@ export const TextAreaField: FC<TextAreaFieldProps> = (props) => (
       <InputField
         title={props.title}
         active={renderProps.focused || !!props.value || !!props.placeholder}
-        input={(
+        input={
           <BasicTextArea
             value={props.value}
             name={props.name}
@@ -46,16 +49,30 @@ export const TextAreaField: FC<TextAreaFieldProps> = (props) => (
             focused={renderProps.focused}
             maxLength={props.maxLength}
             ref={renderProps.ref}
-            rows={props.maxRows && renderProps.rows > props.maxRows ? props.maxRows : props.minRows && renderProps.rows < props.minRows ? props.minRows : renderProps.rows}
-            overflow={props.maxRows && renderProps.rows > props.maxRows ? 'auto' : 'hidden'}
-            transition={renderProps.animate ? 'all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)' : undefined}
+            rows={
+              props.maxRows && renderProps.rows > props.maxRows
+                ? props.maxRows
+                : props.minRows && renderProps.rows < props.minRows
+                ? props.minRows
+                : renderProps.rows
+            }
+            overflow={
+              props.maxRows && renderProps.rows > props.maxRows
+                ? 'auto'
+                : 'hidden'
+            }
+            transition={
+              renderProps.animate
+                ? 'all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)'
+                : undefined
+            }
             onChange={renderProps.onChange}
             onFocus={renderProps.onFocus}
             onBlur={renderProps.onBlur}
             onKeyDown={renderProps.onKeyDown}
             onKeyUp={renderProps.onKeyUp}
           />
-        )}
+        }
         error={props.error}
         help={props.help}
         action={props.action}

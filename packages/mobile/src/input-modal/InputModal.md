@@ -3,9 +3,9 @@
 В окнах применяются [Brand Button](#/Компоненты/Button) и [Simple Button](#/Компоненты/Button) в размере Normal.
 
 ```jsx
-const [show, setShow] = React.useState(undefined);
+const [show, setShow] = React.useState(undefined)
 
-<Block>
+;<Block>
   <BlockContent>
     <Actions size="normal">
       <Button

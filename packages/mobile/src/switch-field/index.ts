@@ -1,5 +1,3 @@
 import SwitchField from './SwitchField'
 
-export {
-  SwitchField,
-}
+export { SwitchField }

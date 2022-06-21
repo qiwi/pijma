@@ -1,6 +1,5 @@
-import React, {FC, ReactNode} from 'react'
-
-import {Spacer, Flex, FlexItem, Box} from '@qiwi/pijma-core'
+import { Box, Flex, FlexItem, Spacer } from '@qiwi/pijma-core'
+import React, { FC, ReactNode } from 'react'
 
 interface PlaygroundRendererProps {
   name: string
@@ -15,12 +14,8 @@ const PlaygroundRenderer: FC<PlaygroundRendererProps> = (props) => (
     <Spacer size="m">
       {props.preview}
       <Flex>
-        <FlexItem>
-          {props.tabButtons}
-        </FlexItem>
-        <FlexItem ml="auto">
-          {props.toolbar}
-        </FlexItem>
+        <FlexItem>{props.tabButtons}</FlexItem>
+        <FlexItem ml="auto">{props.toolbar}</FlexItem>
       </Flex>
       {props.tabBody}
     </Spacer>

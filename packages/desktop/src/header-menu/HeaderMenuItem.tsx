@@ -1,8 +1,15 @@
-import React, {forwardRef} from 'react'
+import {
+  Card,
+  Flex,
+  LinkControl,
+  LinkControlProps,
+  Pos,
+  PosLnk,
+  Typo,
+} from '@qiwi/pijma-core'
+import React, { forwardRef } from 'react'
 
-import {LinkControl, LinkControlProps, Flex, Pos, Card, Typo, PosLnk} from '@qiwi/pijma-core'
-
-import {Text} from '../typography'
+import { Text } from '../typography'
 
 export interface HeaderMenuItemProps {
   tabIndex?: number
@@ -18,7 +25,10 @@ export interface HeaderMenuItemProps {
   onBlur?: LinkControlProps['onBlur']
 }
 
-export const HeaderMenuItem = forwardRef<HTMLDivElement & HTMLAnchorElement, HeaderMenuItemProps>((props, ref) => (
+export const HeaderMenuItem = forwardRef<
+  HTMLDivElement & HTMLAnchorElement,
+  HeaderMenuItemProps
+>((props, ref) => (
   <LinkControl
     href={props.href}
     target={props.target}
@@ -27,7 +37,7 @@ export const HeaderMenuItem = forwardRef<HTMLDivElement & HTMLAnchorElement, Hea
     onClick={props.onClick}
     onFocus={props.onFocus}
     onBlur={props.onBlur}
-    children={renderProps => (
+    children={(renderProps) => (
       <PosLnk
         as={props.href ? 'a' : 'div'}
         ref={ref}
@@ -52,7 +62,9 @@ export const HeaderMenuItem = forwardRef<HTMLDivElement & HTMLAnchorElement, Hea
         <Flex height={1} direction="column" align="middle" justify="center">
           <Text
             bold
-            color={renderProps.hover || renderProps.focus ? 'warning' : 'default'}
+            color={
+              renderProps.hover || renderProps.focus ? 'warning' : 'default'
+            }
             transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
             decoration="none"
           >
@@ -60,21 +72,19 @@ export const HeaderMenuItem = forwardRef<HTMLDivElement & HTMLAnchorElement, Hea
             {props.attention ? (
               <Typo
                 as="span"
-                css={{marginLeft: '2px'}}
+                css={{ marginLeft: '2px' }}
                 size={4}
                 color="#ed4848"
                 height={2}
               >
                 &bull;
               </Typo>
-            ) : (
-              null
-            )}
+            ) : null}
           </Text>
         </Flex>
         {props.active ? (
           <Pos type="absolute" height="4px" bottom={0} right={0} left={0}>
-            <Card bg="#ff8c00" height={1} width={1} rtr={4} rtl={4}/>
+            <Card bg="#ff8c00" height={1} width={1} rtr={4} rtl={4} />
           </Pos>
         ) : null}
       </PosLnk>

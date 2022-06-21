@@ -1,7 +1,8 @@
-import React, {FC, Fragment} from 'react'
-import {Box} from '@qiwi/pijma-core'
-import {NavLink, NavLinkProps} from '../nav-link'
-import {Paragraph} from '../typography'
+import { Box } from '@qiwi/pijma-core'
+import React, { FC, Fragment } from 'react'
+
+import { NavLink, NavLinkProps } from '../nav-link'
+import { Paragraph } from '../typography'
 
 export interface BreadcrumbsProps {
   children?: NavLinkProps[]
@@ -11,10 +12,10 @@ export interface BreadcrumbsProps {
 export const Breadcrumbs: FC<BreadcrumbsProps> = ({
   children = [],
   stub = false,
-}) => (
+}) =>
   stub ? (
     <Box maxWidth={12} width={1}>
-      <NavLink stub/>
+      <NavLink stub />
     </Box>
   ) : (
     <Paragraph size="s" color="support">
@@ -27,13 +28,9 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
               </Box>
               &shy;
             </Fragment>
-          ) : (
-            null
-          )}
+          ) : null}
           <NavLink {...item} />
         </Fragment>
       ))}
     </Paragraph>
   )
-
-)

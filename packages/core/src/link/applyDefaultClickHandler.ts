@@ -1,6 +1,10 @@
-import {LinkControl, LinkControlProps} from './LinkControl'
+import { LinkControl, LinkControlProps } from './LinkControl'
 
-const defaultLinkClickHandler: LinkControlProps['onClick'] = (href, target, download) => {
+const defaultLinkClickHandler: LinkControlProps['onClick'] = (
+  href,
+  target,
+  download,
+) => {
   if (download && href) {
     const a = document.createElement('a')
     a.download = typeof download === 'string' ? download : ''
@@ -9,13 +13,14 @@ const defaultLinkClickHandler: LinkControlProps['onClick'] = (href, target, down
     document.body.appendChild(a)
     a.click()
     a.remove()
-  }
-  else {
+  } else {
     window.open(href, target || '_self')
   }
   return true
 }
 
-export const applyDefaultClickHandler = (onClick: LinkControlProps['onClick'] = defaultLinkClickHandler) => {
+export const applyDefaultClickHandler = (
+  onClick: LinkControlProps['onClick'] = defaultLinkClickHandler,
+) => {
   LinkControl.defaultProps.onClick = onClick
 }

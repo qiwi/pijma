@@ -1,50 +1,57 @@
-import React, {FunctionComponent, Fragment} from 'react'
-
 import {
-  css,
-  Pos,
+  Box,
   Card,
+  css,
+  Icon,
   Modal,
+  Pos,
   SimpleTransition,
   SimpleTransitionProps,
-  Icon,
-  Box,
 } from '@qiwi/pijma-core'
+import React, { Fragment, FunctionComponent } from 'react'
 
-const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => (
+  <SimpleTransition {...props} />
+)
 
 contentTransition.defaultProps = {
   timeout: {
     enter: 370,
     exit: 250,
   },
-  enterClassName: (timeout: number) => css({
-    opacity: 1,
-    transform: 'translate3d(0, 0, 0)',
-    transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
-  }),
-  exitClassName: (timeout: number) => css({
-    opacity: 0,
-    transform: 'translate3d(0, -100%, 0)',
-    transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
-  }),
+  enterClassName: (timeout: number) =>
+    css({
+      opacity: 1,
+      transform: 'translate3d(0, 0, 0)',
+      transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
+    }),
+  exitClassName: (timeout: number) =>
+    css({
+      opacity: 0,
+      transform: 'translate3d(0, -100%, 0)',
+      transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
+    }),
 }
 
-const backdropTransition: FunctionComponent<SimpleTransitionProps> = (props) => <SimpleTransition {...props}/>
+const backdropTransition: FunctionComponent<SimpleTransitionProps> = (
+  props,
+) => <SimpleTransition {...props} />
 
 backdropTransition.defaultProps = {
   timeout: {
     enter: 370,
     exit: 250,
   },
-  enterClassName: (timeout: number) => css({
-    opacity: 1,
-    transition: `opacity ${timeout}ms ease`,
-  }),
-  exitClassName: (timeout: number) => css({
-    opacity: 0,
-    transition: `opacity ${timeout}ms ease`,
-  }),
+  enterClassName: (timeout: number) =>
+    css({
+      opacity: 1,
+      transition: `opacity ${timeout}ms ease`,
+    }),
+  exitClassName: (timeout: number) =>
+    css({
+      opacity: 0,
+      transition: `opacity ${timeout}ms ease`,
+    }),
 }
 
 interface SimpleModalProps {
@@ -68,11 +75,9 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = ({
   backdropClose,
   zIndex = 10050,
   closable,
-}) => (
+}) =>
   stub ? (
-    <Box display="none">
-      {children}
-    </Box>
+    <Box display="none">{children}</Box>
   ) : (
     <Modal
       show={show}
@@ -83,8 +88,16 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = ({
       transition={contentTransition}
       backdropTransition={backdropTransition}
       renderBackdrop={(backdropProps) => (
-        <Pos type="fixed" zIndex="auto" top={0} right={0} bottom={0} left={0} {...backdropProps}>
-          <Card bg="rgba(255, 255, 255, 0.96)" width={1} height={1}/>
+        <Pos
+          type="fixed"
+          zIndex="auto"
+          top={0}
+          right={0}
+          bottom={0}
+          left={0}
+          {...backdropProps}
+        >
+          <Card bg="rgba(255, 255, 255, 0.96)" width={1} height={1} />
         </Pos>
       )}
       renderDialog={(dialogProps) => (
@@ -111,11 +124,9 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = ({
                     height={6}
                     cursor="pointer"
                     onClick={onHide}
-                    children={<Icon name="cross" color="#000"/>}
+                    children={<Icon name="cross" color="#000" />}
                   />
-                ) : (
-                  null
-                )}
+                ) : null}
                 {children}
               </Fragment>
             </Card>
@@ -124,6 +135,5 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = ({
       )}
     />
   )
-)
 
 export default SimpleModal

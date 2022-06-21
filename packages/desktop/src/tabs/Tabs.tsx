@@ -1,16 +1,15 @@
-import React, {FC, ReactNode} from 'react'
-
 import {
-  TabsControl,
-  TabHeader,
   Flex,
   FlexItem,
   IconProps,
-  TabBorder,
   styled,
+  TabBorder,
+  TabHeader,
+  TabsControl,
 } from '@qiwi/pijma-core'
+import React, { FC, ReactNode } from 'react'
 
-import {Paragraph} from '../typography'
+import { Paragraph } from '../typography'
 
 export interface TabsProps {
   items: {
@@ -45,7 +44,7 @@ export const Tabs: FC<TabsProps> = ({
   centered = false,
   stub = false,
   onChange,
-}) => (
+}) =>
   stub ? (
     <Flex direction="column">
       <FlexOverflow
@@ -53,20 +52,22 @@ export const Tabs: FC<TabsProps> = ({
         overflow="auto"
         justify={centered ? 'space-between' : 'flex-start'}
       >
-        {(Array.isArray(stub) ? stub : [true, true, true]).map((icon, index, arr) => (
-          <TabHeader
-            key={index}
-            title="stub"
-            indent={index === arr.length - 1 ? 0 : 5}
-            wrap={!centered}
-            tabIndex={-1}
-            icon={icon ? 'qiwi' : undefined}
-            vertical={vertical}
-            select={false}
-            width={centered ? 1 : undefined}
-            stub
-          />
-        ))}
+        {(Array.isArray(stub) ? stub : [true, true, true]).map(
+          (icon, index, arr) => (
+            <TabHeader
+              key={index}
+              title="stub"
+              indent={index === arr.length - 1 ? 0 : 5}
+              wrap={!centered}
+              tabIndex={-1}
+              icon={icon ? 'qiwi' : undefined}
+              vertical={vertical}
+              select={false}
+              width={centered ? 1 : undefined}
+              stub
+            />
+          ),
+        )}
         <TabBorder
           width={centered ? 'calc(33% - 20px)' : vertical ? 13 : 21}
           left={0}
@@ -74,7 +75,7 @@ export const Tabs: FC<TabsProps> = ({
         />
       </FlexOverflow>
       <FlexItem mt={4}>
-        <Paragraph stub/>
+        <Paragraph stub />
       </FlexItem>
     </Flex>
   ) : (
@@ -115,7 +116,7 @@ export const Tabs: FC<TabsProps> = ({
               left={`${renderProps.borderLeft}px`}
             />
           </FlexOverflow>
-          {items.map(({content}, index) => (
+          {items.map(({ content }, index) => (
             <TabContent
               key={index}
               display={select === index ? 'block' : 'none'}
@@ -127,7 +128,6 @@ export const Tabs: FC<TabsProps> = ({
       )}
     />
   )
-)
 
 Tabs.defaultProps = {
   select: 0,

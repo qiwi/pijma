@@ -4,8 +4,10 @@ import OptionModel from './OptionModel'
 import RadioControlProps from './RadioControlProps'
 import RadioControlState from './RadioControlState'
 
-export default class RadioControl<O extends OptionModel<V>, V> extends React.Component<RadioControlProps<O, V>, RadioControlState> {
-
+export default class RadioControl<
+  O extends OptionModel<V>,
+  V,
+> extends React.Component<RadioControlProps<O, V>, RadioControlState> {
   public state: RadioControlState = {
     focused: -1,
   }
@@ -23,7 +25,7 @@ export default class RadioControl<O extends OptionModel<V>, V> extends React.Com
   private onFocus: React.FocusEventHandler<HTMLElement> = () => {
     if (this.state.focused === -1) {
       this.setState({
-        focused: this.props.options.findIndex(option => !option.disabled),
+        focused: this.props.options.findIndex((option) => !option.disabled),
       })
     }
     if (this.props.onFocus) {
@@ -40,7 +42,9 @@ export default class RadioControl<O extends OptionModel<V>, V> extends React.Com
     }
   }
 
-  private onKeyDown: React.KeyboardEventHandler<HTMLElement> = (event: React.KeyboardEvent<HTMLElement>) => {
+  private onKeyDown: React.KeyboardEventHandler<HTMLElement> = (
+    event: React.KeyboardEvent<HTMLElement>,
+  ) => {
     switch (event.key) {
       case 'ArrowDown':
         event.preventDefault()
@@ -60,9 +64,13 @@ export default class RadioControl<O extends OptionModel<V>, V> extends React.Com
       case 'ArrowUp':
         event.preventDefault()
         event.stopPropagation()
-        let prev = this.state.focused === -1 ? this.props.options.length - 1 : this.state.focused
+        let prev =
+          this.state.focused === -1
+            ? this.props.options.length - 1
+            : this.state.focused
         while (true) {
-          prev = (prev + this.props.options.length - 1) % this.props.options.length
+          prev =
+            (prev + this.props.options.length - 1) % this.props.options.length
           if (this.props.options[prev].disabled) {
             continue
           }
@@ -91,20 +99,28 @@ export default class RadioControl<O extends OptionModel<V>, V> extends React.Com
 
   private onOptionClick = (value: V) => {
     this.setState({
-      focused: this.props.options.findIndex(option => this.equals(option.value, value)),
+      focused: this.props.options.findIndex((option) =>
+        this.equals(option.value, value),
+      ),
     })
     this.onChange(value)
   }
 
   private onOptionMouseEnter = (value: V) => {
     this.setState({
-      focused: this.props.options.findIndex(option => this.equals(option.value, value)),
+      focused: this.props.options.findIndex((option) =>
+        this.equals(option.value, value),
+      ),
     })
   }
 
   public render() {
     return this.props.children({
-      tabIndex: this.props.options.filter(option => option.disabled).length === this.props.options.length ? undefined : this.props.tabIndex || 0,
+      tabIndex:
+        this.props.options.filter((option) => option.disabled).length ===
+        this.props.options.length
+          ? undefined
+          : this.props.tabIndex || 0,
       onFocus: this.onFocus,
       onBlur: this.onBlur,
       onKeyDown: this.onKeyDown,
@@ -118,5 +134,4 @@ export default class RadioControl<O extends OptionModel<V>, V> extends React.Com
       })),
     })
   }
-
 }

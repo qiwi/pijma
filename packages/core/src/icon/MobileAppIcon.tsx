@@ -1,13 +1,13 @@
-import React, {FC, ReactElement} from 'react'
+import React, { FC, ReactElement } from 'react'
 
-import {Path, Svg} from '../primitive'
+import { Path, Svg } from '../primitive'
 
 export interface MobileAppIconProps {
   name: 'apple' | 'google' | 'huawei'
 }
 
 const appIcon: Record<MobileAppIconProps['name'], ReactElement> = {
-  'google': (
+  google: (
     <Path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -15,7 +15,7 @@ const appIcon: Record<MobileAppIconProps['name'], ReactElement> = {
       fill="#999999"
     />
   ),
-  'apple': (
+  apple: (
     <Path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -23,7 +23,7 @@ const appIcon: Record<MobileAppIconProps['name'], ReactElement> = {
       fill="#999999"
     />
   ),
-  'huawei': (
+  huawei: (
     <Path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -33,7 +33,7 @@ const appIcon: Record<MobileAppIconProps['name'], ReactElement> = {
   ),
 }
 
-export const MobileAppIcon: FC<MobileAppIconProps> = ({name}) => (
+export const MobileAppIcon: FC<MobileAppIconProps> = ({ name }) => (
   <Svg width={1} height={1} viewBox="0 0 128 40" fill="none" focusable="false">
     {appIcon[name]}
   </Svg>

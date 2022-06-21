@@ -1,6 +1,15 @@
-import React, {FC} from 'react'
-
-import {Card, Icon, IconProps, LinkControl, Flex, FlexItem, Box, Stub, CardLnk} from '@qiwi/pijma-core'
+import {
+  Box,
+  Card,
+  CardLnk,
+  Flex,
+  FlexItem,
+  Icon,
+  IconProps,
+  LinkControl,
+  Stub,
+} from '@qiwi/pijma-core'
+import React, { FC } from 'react'
 
 interface FooterOutLinkProps {
   href: string
@@ -10,15 +19,20 @@ interface FooterOutLinkProps {
   title?: string
   icon: IconProps['name']
   stub?: boolean
-  onClick?: (href?: string, target?: string, download?: string | boolean, rel?: string) => void
+  onClick?: (
+    href?: string,
+    target?: string,
+    download?: string | boolean,
+    rel?: string,
+  ) => void
   onFocus?: () => void
   onBlur?: () => void
 }
 
-const FooterOutLink: FC<FooterOutLinkProps> = (props) => (
+const FooterOutLink: FC<FooterOutLinkProps> = (props) =>
   props.stub ? (
     <Card width={10} height={10} r={20} b="solid 1px #ccc" p={1.75}>
-      <Stub height={5} width={5} r={10} top={0.5} left={0.5}/>
+      <Stub height={5} width={5} r={10} top={0.5} left={0.5} />
     </Card>
   ) : (
     <LinkControl
@@ -36,7 +50,11 @@ const FooterOutLink: FC<FooterOutLinkProps> = (props) => (
           height={10}
           r={40}
           p={1.75}
-          b={renderProps.hover || renderProps.focus || renderProps.active ? 'solid 1px #999' : 'solid 1px #ccc'}
+          b={
+            renderProps.hover || renderProps.focus || renderProps.active
+              ? 'solid 1px #999'
+              : 'solid 1px #ccc'
+          }
           href={props.href}
           rel={props.rel}
           target={props.target}
@@ -49,30 +67,38 @@ const FooterOutLink: FC<FooterOutLinkProps> = (props) => (
           onMouseLeave={renderProps.onMouseLeave}
           onMouseUp={renderProps.onMouseUp}
           onMouseDown={renderProps.onMouseDown}
-          children={(
+          children={
             <Icon
               name={props.icon}
-              color={renderProps.hover || renderProps.focus || renderProps.active ? '#666' : '#999'}
+              color={
+                renderProps.hover || renderProps.focus || renderProps.active
+                  ? '#666'
+                  : '#999'
+              }
             />
-          )}
+          }
         />
       )}
     />
   )
-
-)
 
 export interface FooterOutProps {
   children: FooterOutLinkProps[]
   stub?: number | boolean
 }
 
-export const FooterOut: FC<FooterOutProps> = ({children, stub = false}) => (
+export const FooterOut: FC<FooterOutProps> = ({ children, stub = false }) => (
   <Box overflow="hidden">
     <Flex wrap="wrap" justify="space-between" m={-1.5}>
-      {(stub ? Array(typeof stub === 'number' ? stub : 6).fill({href: '', icon: 'qiwi'}) : children).map((item, i) => (
+      {(stub
+        ? new Array(typeof stub === 'number' ? stub : 6).fill({
+            href: '',
+            icon: 'qiwi',
+          })
+        : children
+      ).map((item, i) => (
         <FlexItem key={i} m={1.5}>
-          <FooterOutLink stub={stub} {...item}/>
+          <FooterOutLink stub={stub} {...item} />
         </FlexItem>
       ))}
     </Flex>

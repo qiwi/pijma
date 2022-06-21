@@ -1,11 +1,10 @@
-import {styled} from '../styled'
-
-import {Box} from './Box'
-import {Card} from './Card'
-import {Pos} from './Pos'
-import {Lnk} from './Lnk'
-import {Flex} from './Flex'
-import {Typo} from './Typo'
+import { styled } from '../styled'
+import { Box } from './Box'
+import { Card } from './Card'
+import { Flex } from './Flex'
+import { Lnk } from './Lnk'
+import { Pos } from './Pos'
+import { Typo } from './Typo'
 
 export const BoxLnk = styled(Box)().withComponent(Lnk)
 export const CardLnk = styled(Card)().withComponent(Lnk)

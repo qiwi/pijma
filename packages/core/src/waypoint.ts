@@ -1,5 +1,3 @@
-import {Waypoint} from 'react-waypoint'
+import { Waypoint } from 'react-waypoint'
 
-export {
-  Waypoint,
-}
+export { Waypoint }
