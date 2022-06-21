@@ -656,7 +656,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/pijma-core@npm:1.149.3, @qiwi/pijma-core@workspace:packages/core":
+"@qiwi/pijma-core@workspace:*, @qiwi/pijma-core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-core@workspace:packages/core"
   dependencies:
@@ -709,8 +709,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-desktop@workspace:packages/desktop"
   dependencies:
-    "@qiwi/pijma-core": "npm:1.149.3"
-    "@qiwi/pijma-fonts": "npm:1.0.0"
+    "@qiwi/pijma-core": "workspace:*"
+    "@qiwi/pijma-fonts": "workspace:*"
+    "@qiwi/pijma-infra": "workspace:*"
     concurrently: "npm:7.2.2"
     css-loader: "npm:4.3.0"
     esbuild: "npm:0.14.47"
@@ -735,13 +736,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qiwi/pijma-fonts@npm:1.0.0, @qiwi/pijma-fonts@workspace:packages/fonts":
+"@qiwi/pijma-fonts@workspace:*, @qiwi/pijma-fonts@workspace:packages/fonts":
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-fonts@workspace:packages/fonts"
   languageName: unknown
   linkType: soft
 
-"@qiwi/pijma-infra@workspace:packages/infra":
+"@qiwi/pijma-infra@workspace:*, @qiwi/pijma-infra@workspace:packages/infra":
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-infra@workspace:packages/infra"
   dependencies:
@@ -779,8 +780,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-mobile@workspace:packages/mobile"
   dependencies:
-    "@qiwi/pijma-core": "npm:1.149.3"
-    "@qiwi/pijma-fonts": "npm:1.0.0"
+    "@qiwi/pijma-core": "workspace:*"
+    "@qiwi/pijma-fonts": "workspace:*"
+    "@qiwi/pijma-infra": "workspace:*"
     concurrently: "npm:7.2.2"
     css-loader: "npm:4.3.0"
     esbuild: "npm:0.14.47"
@@ -810,6 +812,7 @@ __metadata:
   resolution: "@qiwi/pijma-ssr@workspace:packages/ssr"
   dependencies:
     "@emotion/server": "npm:^11.4.0"
+    "@qiwi/pijma-infra": "workspace:*"
     concurrently: "npm:7.2.2"
     css-loader: "npm:4.3.0"
     esbuild: "npm:0.14.47"

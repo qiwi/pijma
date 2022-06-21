@@ -31,6 +31,7 @@
     "@emotion/server": "^11.4.0"
   },
   "devDependencies": {
+    "@qiwi/pijma-infra": "workspace:*",
     "concurrently": "7.2.2",
     "css-loader": "4.3.0",
     "esbuild": "0.14.47",
