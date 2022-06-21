@@ -135,7 +135,7 @@ class MaskedInputComponent extends PureComponent<MaskedInputProps, {}> {
   }
 
   render() {
-    const exclude = ['mask', 'guide', 'pipe', 'placeholderChar', 'keepCharPositions', 'showMask', 'value', 'onBlur', 'onChange']
+    const exclude = ['mask', 'guide', 'pipe', 'placeholderChar', 'keepCharPositions', 'showMask', 'value', 'onBlur', 'onChange', 'inputRef']
     const props = Object.fromEntries(Object.entries(this.props).filter(([key]) => !exclude.includes(key)))
     return (
       <input
