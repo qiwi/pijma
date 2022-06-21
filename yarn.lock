@@ -696,7 +696,6 @@ __metadata:
     react-waypoint: "npm:^9.0.2"
     style-loader: "npm:2.0.0"
     text-mask-core: "npm:^5.1.2"
-    ts-loader: "npm:9.3.0"
     ts-patch: "npm:2.0.1"
     ts-react-display-name: "npm:1.2.2"
     tsc-esm-fix: "npm:2.18.0"
@@ -728,7 +727,6 @@ __metadata:
     react-docgen-typescript: "npm:2.2.2"
     react-styleguidist: "npm:11.2.0"
     style-loader: "npm:2.0.0"
-    ts-loader: "npm:9.3.0"
     ts-patch: "npm:2.0.1"
     ts-react-display-name: "npm:1.2.2"
     tsc-esm-fix: "npm:2.18.0"
@@ -763,7 +761,6 @@ __metadata:
     react-docgen-typescript: "npm:2.2.2"
     react-styleguidist: "npm:11.2.0"
     style-loader: "npm:2.0.0"
-    ts-loader: "npm:9.3.0"
     ts-patch: "npm:2.0.1"
     ts-react-display-name: "npm:1.2.2"
     tsc-esm-fix: "npm:2.18.0"
@@ -800,7 +797,6 @@ __metadata:
     react-docgen-typescript: "npm:2.2.2"
     react-styleguidist: "npm:11.2.0"
     style-loader: "npm:2.0.0"
-    ts-loader: "npm:9.3.0"
     ts-patch: "npm:2.0.1"
     ts-react-display-name: "npm:1.2.2"
     tsc-esm-fix: "npm:2.18.0"
@@ -830,7 +826,6 @@ __metadata:
     react-docgen-typescript: "npm:2.2.2"
     react-styleguidist: "npm:11.2.0"
     style-loader: "npm:2.0.0"
-    ts-loader: "npm:9.3.0"
     ts-patch: "npm:2.0.1"
     ts-react-display-name: "npm:1.2.2"
     tsc-esm-fix: "npm:2.18.0"
@@ -3477,16 +3472,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enhanced-resolve@npm:^5.0.0":
-  version: 5.9.3
-  resolution: "enhanced-resolve@npm:5.9.3"
-  dependencies:
-    graceful-fs: "npm:^4.2.4"
-    tapable: "npm:^2.2.0"
-  checksum: cecc1d044c3216df18cd2c64a897c1f91df76ef7be8d0c44c072e8c34e68aaed4c14f1046dc7f40fac59e2c52a205cae3131635bd726be751540237537730221
-  languageName: node
-  linkType: hard
-
 "env-paths@npm:^2.2.0":
   version: 2.2.1
   resolution: "env-paths@npm:2.2.1"
@@ -5123,7 +5108,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graceful-fs@npm:^4.1.11, graceful-fs@npm:^4.1.15, graceful-fs@npm:^4.1.2, graceful-fs@npm:^4.1.6, graceful-fs@npm:^4.2.0, graceful-fs@npm:^4.2.4, graceful-fs@npm:^4.2.6":
+"graceful-fs@npm:^4.1.11, graceful-fs@npm:^4.1.15, graceful-fs@npm:^4.1.2, graceful-fs@npm:^4.1.6, graceful-fs@npm:^4.2.0, graceful-fs@npm:^4.2.6":
   version: 4.2.10
   resolution: "graceful-fs@npm:4.2.10"
   checksum: 6b5f9b5aeaee0459b9c37bdbf9624f788703ce291d6bf2d7751f5003942e853f232ca613aec818d1ff7622379bc8b434c635bfda99db93e0b9b8da80ec3d844d
@@ -6910,7 +6895,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromatch@npm:^4.0.0, micromatch@npm:^4.0.4":
+"micromatch@npm:^4.0.4":
   version: 4.0.5
   resolution: "micromatch@npm:4.0.5"
   dependencies:
@@ -10413,21 +10398,6 @@ __metadata:
   version: 1.0.5
   resolution: "trough@npm:1.0.5"
   checksum: e32c4797a9b920a038c639d0e378579d0f18d087a7603323cbd25eff880b9d19f4e20e10aecedf629ef24446b6ffb3189b6cdfeba669902ca969e0c77eecb2b9
-  languageName: node
-  linkType: hard
-
-"ts-loader@npm:9.3.0":
-  version: 9.3.0
-  resolution: "ts-loader@npm:9.3.0"
-  dependencies:
-    chalk: "npm:^4.1.0"
-    enhanced-resolve: "npm:^5.0.0"
-    micromatch: "npm:^4.0.0"
-    semver: "npm:^7.3.4"
-  peerDependencies:
-    typescript: "*"
-    webpack: ^5.0.0
-  checksum: b6bfbc0f4fde399db7e9761de0953e9ed067edbe6a36fa742236d6d8359e3958eb7e0f8d67f34cc98f0d45e15ca9d0ab4af1a141fe8d08d6c629ac01ab0d234e
   languageName: node
   linkType: hard
 
