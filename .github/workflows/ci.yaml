@@ -152,4 +152,5 @@ jobs:
           GIT_COMMITTER_EMAIL: 'opensource@qiwi.com'
           GIT_AUTHOR_NAME: 'QIWI Bot'
           GIT_COMMITTER_NAME: 'QIWI Bot'
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
         run: npm_config_yes=true npx zx-bulk-release
