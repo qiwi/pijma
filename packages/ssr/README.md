@@ -8,3 +8,6 @@ Pijma SSR utilities.
 npm i --save @qiwi/pijma-ssr
 yarn add @qiwi/pijma-ssr
 ```
+
+## License
+[MIT](../../LICENSE)

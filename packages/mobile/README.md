@@ -27,3 +27,6 @@ export const App: React.FC = () => (
   </CacheProvider>
 )
 ```
+
+## License
+[MIT](../../LICENSE)

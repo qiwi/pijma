@@ -10,7 +10,9 @@ yarn add @qiwi/pijma-fonts
 ```
 
 ## Usage
-
 ```javascript
 import '@qiwi/pijma-fonts'
 ```
+
+## License
+[MIT](../../LICENSE)

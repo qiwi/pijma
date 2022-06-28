@@ -7,3 +7,6 @@ Pijma core: assets, utils, primitives, themes, etc.
 npm i --save @qiwi/pijma-core
 yarn add @qiwi/pijma-core
 ```
+
+## License
+[MIT](../../LICENSE)
