@@ -10,12 +10,17 @@ jobs:
     outputs:
       skip: ${{ steps.ci-skip-step.outputs.ci-skip }}
       skip-not: ${{ steps.ci-skip-step.outputs.ci-skip-not }}
+      yarn-cache-dir: ${{ steps.yarn-cache-dir-path.outputs.dir }}
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 1
       - id: ci-skip-step
         uses: mstachniuk/ci-skip@v1
+
+      - name: Get yarn cache dir
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
   build:
     name: build
@@ -32,6 +37,14 @@ jobs:
           node-version: 16
           cache: 'yarn'
 
+      - uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ needs.init.outputs.yarn-cache-dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
       - name: Install deps
         run: yarn
 
@@ -41,7 +54,7 @@ jobs:
       - name: Save target (artifact)
         uses: actions/upload-artifact@v3
         with:
-          name: target
+          name: artifact-${{ github.run_id }}
           retention-days: 1
           path: |
             !packages/*/node_modules
@@ -50,7 +63,7 @@ jobs:
             package.json
 
   test_push:
-    needs: build
+    needs: [build, init]
     if: github.event_name == 'push'
     runs-on: ubuntu-20.04
     steps:
@@ -62,12 +75,22 @@ jobs:
       - name: Restore target
         uses: actions/download-artifact@v3
         with:
-          name: target
+          name: artifact-${{ github.run_id }}
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+
+      - uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ needs.init.outputs.yarn-cache-dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
       - name: Install deps
         run: yarn
+
       - name: Unit test only
         run: yarn test:unit
 
@@ -75,13 +98,13 @@ jobs:
 #        if: github.ref == 'refs/heads/master'
 #        uses: actions/upload-artifact@v3
 #        with:
-#          name: target
+#          name: artifact-${{ github.run_id }}
 #          retention-days: 1
 #          path: coverage
 
   test_pr:
     if: github.event_name == 'pull_request'
-    needs: build
+    needs: [build, init]
     strategy:
       matrix:
         os: [ ubuntu-20.04 ]
@@ -97,17 +120,27 @@ jobs:
       - name: Restore target
         uses: actions/download-artifact@v3
         with:
-          name: target
+          name: artifact-${{ github.run_id }}
       - uses: actions/checkout@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
 
+      - uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ needs.init.outputs.yarn-cache-dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
       - name: Install deps
         run: yarn
+
       - name: Unit test only
         if: matrix.node-version != '16' || matrix.os != 'ubuntu-20.04'
         run: yarn test:unit
+
       - name: Full test
         if: matrix.node-version == '16' && matrix.os == 'ubuntu-20.04'
         run: yarn test
@@ -116,7 +149,7 @@ jobs:
     name: Release
     # https://github.community/t/trigger-job-on-tag-push-only/18076
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-    needs: test_push
+    needs: [test_push, init]
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -128,7 +161,7 @@ jobs:
       - name: Restore target
         uses: actions/download-artifact@v3
         with:
-          name: target
+          name: artifact-${{ github.run_id }}
 
       - uses: actions/setup-node@v3
         with:
@@ -142,6 +175,14 @@ jobs:
 #        with:
 #          coverageLocations: |
 #            ${{github.workspace}}/coverage/*.lcov:lcov
+
+      - uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ needs.init.outputs.yarn-cache-dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
       - name: Release
         env:
