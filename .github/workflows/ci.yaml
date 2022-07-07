@@ -11,6 +11,7 @@ jobs:
       skip: ${{ steps.ci-skip-step.outputs.ci-skip }}
       skip-not: ${{ steps.ci-skip-step.outputs.ci-skip-not }}
       yarn-cache-dir: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+      checksum: ${{ steps.checksum.outputs.checksum }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -21,6 +22,10 @@ jobs:
       - name: Get yarn cache dir
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - name: Get src checksum
+        id: checksum
+        run: echo "::set-output name=checksum::${{ hashFiles('packages/*/src/**/*') }}"
 
   build:
     name: build
@@ -37,7 +42,13 @@ jobs:
           node-version: 16
           cache: 'yarn'
 
+      - uses: xSAVIKx/artifact-exists-action@v0
+        id: check-artifact
+        with:
+          name: artifact-${{ needs.init.outputs.checksum }}
+
       - uses: actions/cache@v3
+        if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         id: yarn-cache
         with:
           path: ${{ needs.init.outputs.yarn-cache-dir }}
@@ -46,15 +57,18 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install deps
+        if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         run: yarn
 
       - name: Build
+        if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         run: yarn build
 
       - name: Save target (artifact)
+        if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         uses: actions/upload-artifact@v3
         with:
-          name: artifact-${{ github.run_id }}
+          name: artifact-${{ needs.init.outputs.checksum }}
           retention-days: 1
           path: |
             !packages/*/node_modules
@@ -72,10 +86,11 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Restore target
+      - name: Download artifact
         uses: actions/download-artifact@v3
         with:
-          name: artifact-${{ github.run_id }}
+          name: artifact-${{ needs.init.outputs.checksum }}
+
       - uses: actions/setup-node@v3
         with:
           node-version: 16
@@ -98,7 +113,7 @@ jobs:
 #        if: github.ref == 'refs/heads/master'
 #        uses: actions/upload-artifact@v3
 #        with:
-#          name: artifact-${{ github.run_id }}
+#          name: artifact-${{ needs.init.outputs.checksum }}
 #          retention-days: 1
 #          path: coverage
 
@@ -117,10 +132,11 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Restore target
+      - name: Download artifact
+        id: download
         uses: actions/download-artifact@v3
         with:
-          name: artifact-${{ github.run_id }}
+          name: artifact-${{ needs.init.outputs.checksum }}
       - uses: actions/checkout@v3
         with:
           node-version: ${{ matrix.node-version }}
@@ -158,10 +174,10 @@ jobs:
           fetch-depth: 0
           ref: master
 
-      - name: Restore target
+      - name: Download artifact
         uses: actions/download-artifact@v3
         with:
-          name: artifact-${{ github.run_id }}
+          name: artifact-${{ needs.init.outputs.checksum }}
 
       - uses: actions/setup-node@v3
         with:
