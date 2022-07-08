@@ -42,10 +42,16 @@ jobs:
           node-version: 16
           cache: 'yarn'
 
-      - uses: xSAVIKx/artifact-exists-action@v0
-        id: check-artifact
+      - name: Download artifact
+        uses: dawidd6/action-download-artifact@v2
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
+          workflow: 'ci.yml'
+
+      - name: Check artifact
+        if: always()
+        id: check-artifact
+        run: echo "::set-output name=exists::$([ -e "artifact.tar" ] && echo true || echo false)"
 
       - uses: actions/cache@v3
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
@@ -89,9 +95,10 @@ jobs:
           node-version: 16
 
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: dawidd6/action-download-artifact@v2
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
+          workflow: ci.yml
 
       - name: Unpack artifact
         run: tar -xvf artifact.tar
@@ -147,10 +154,10 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Download artifact
-        id: download
-        uses: actions/download-artifact@v3
+        uses: dawidd6/action-download-artifact@v2
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
+          workflow: ci.yml
 
       - name: Unpack artifact
         run: tar -xvf artifact.tar
@@ -180,9 +187,10 @@ jobs:
           ref: master
 
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: dawidd6/action-download-artifact@v2
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
+          workflow: ci.yml
 
       - name: Unpack artifact
         run: tar -xvf artifact.tar
