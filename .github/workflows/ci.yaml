@@ -40,7 +40,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'yarn'
 
       - name: Download artifact
         uses: qiwi-forks/action-download-artifact@v0
@@ -143,7 +142,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
 
       - uses: actions/cache@v3
         id: yarn-cache
@@ -198,7 +196,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'yarn'
 
 #      - name: Codeclimate
 #        uses: paambaati/codeclimate-action@v2.7.5
