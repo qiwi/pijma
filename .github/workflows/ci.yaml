@@ -46,6 +46,8 @@ jobs:
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
           workflow: 'ci.yaml'
+          nothrow: true
+          search_artifacts: true
 
       - name: Check artifact
         if: always()
