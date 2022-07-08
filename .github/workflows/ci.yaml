@@ -43,10 +43,10 @@ jobs:
           cache: 'yarn'
 
       - name: Download artifact
-        uses: dawidd6/action-download-artifact@v2
+        uses: qiwi-forks/action-download-artifact@v0
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
-          workflow: 'ci.yml'
+          workflow: 'ci.yaml'
 
       - name: Check artifact
         if: always()
@@ -95,10 +95,10 @@ jobs:
           node-version: 16
 
       - name: Download artifact
-        uses: dawidd6/action-download-artifact@v2
+        uses: qiwi-forks/action-download-artifact@v0
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
-          workflow: ci.yml
+          workflow: 'ci.yaml'
 
       - name: Unpack artifact
         run: tar -xvf artifact.tar
@@ -154,10 +154,10 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Download artifact
-        uses: dawidd6/action-download-artifact@v2
+        uses: qiwi-forks/action-download-artifact@v0
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
-          workflow: ci.yml
+          workflow: 'ci.yaml'
 
       - name: Unpack artifact
         run: tar -xvf artifact.tar
@@ -187,10 +187,10 @@ jobs:
           ref: master
 
       - name: Download artifact
-        uses: dawidd6/action-download-artifact@v2
+        uses: qiwi-forks/action-download-artifact@v0
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
-          workflow: ci.yml
+          workflow: 'ci.yaml'
 
       - name: Unpack artifact
         run: tar -xvf artifact.tar
