@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.150.4](https://github.com/qiwi/pijma/compare/2022.7.8-qiwi.pijma-core.1.150.3-f0...2022.7.8-qiwi.pijma-core.1.150.4-f0) (2022-07-08)
+
+### Fixes & improvements
+* perf: tech release [ead449a](https://github.com/qiwi/pijma/commit/ead449ad732211d6b10e0468342e09d03135bd06)
+
 ## [@qiwi/pijma-core@1.150.3](https://github.com/qiwi/pijma/compare/2022.6.28-qiwi.pijma-core.1.150.2-f0...2022.7.8-qiwi.pijma-core.1.150.3-f0) (2022-07-08)
 
 ### Fixes & improvements
