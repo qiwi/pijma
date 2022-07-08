@@ -62,7 +62,9 @@ jobs:
 
       - name: Build
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
-        run: yarn build
+        run: |
+          yarn build
+          tar -cvf artifact.tar packages/*/lib packages/*/styleguide package.json
 
       - name: Save target (artifact)
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
@@ -70,11 +72,7 @@ jobs:
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
           retention-days: 1
-          path: |
-            !packages/*/node_modules
-            !packages/*/src
-            packages
-            package.json
+          path: artifact.tar
 
   test_push:
     needs: [build, init]
@@ -86,14 +84,17 @@ jobs:
         with:
           fetch-depth: 1
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
+      - name: Unpack artifact
+        run: tar -xvf artifact.tar
 
       - uses: actions/cache@v3
         id: yarn-cache
@@ -132,12 +133,7 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Download artifact
-        id: download
-        uses: actions/download-artifact@v3
-        with:
-          name: artifact-${{ needs.init.outputs.checksum }}
-      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
@@ -149,6 +145,15 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
+
+      - name: Download artifact
+        id: download
+        uses: actions/download-artifact@v3
+        with:
+          name: artifact-${{ needs.init.outputs.checksum }}
+
+      - name: Unpack artifact
+        run: tar -xvf artifact.tar
 
       - name: Install deps
         run: yarn
@@ -178,6 +183,9 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
+
+      - name: Unpack artifact
+        run: tar -xvf artifact.tar
 
       - uses: actions/setup-node@v3
         with:
