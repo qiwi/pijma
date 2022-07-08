@@ -46,7 +46,7 @@ jobs:
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
           workflow: 'ci.yaml'
-          workflow_conclusion: 'success'
+          workflow_conclusion: false
           nothrow: true
           check_artifacts: true
 
@@ -101,6 +101,7 @@ jobs:
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
           workflow: 'ci.yaml'
+          workflow_conclusion: false
           check_artifacts: true
 
       - name: Unpack artifact
@@ -160,6 +161,7 @@ jobs:
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
           workflow: 'ci.yaml'
+          workflow_conclusion: false
           check_artifacts: true
 
       - name: Unpack artifact
@@ -194,6 +196,7 @@ jobs:
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
           workflow: 'ci.yaml'
+          workflow_conclusion: false
           check_artifacts: true
 
       - name: Unpack artifact
