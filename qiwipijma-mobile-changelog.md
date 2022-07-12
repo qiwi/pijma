@@ -1,3 +1,11 @@
+## [@qiwi/pijma-mobile@1.149.0](https://github.com/qiwi/pijma/compare/2022.7.8-qiwi.pijma-mobile.1.148.4-f0...2022.7.12-qiwi.pijma-mobile.1.149.0-f0) (2022-07-12)
+
+### Features
+* feat: move media (#506) [7bafd52](https://github.com/qiwi/pijma/commit/7bafd525f04ad484ef0da223b5fb39f1c8a51006)
+
+### Dependencies
+* perf: @qiwi/pijma-core updated to 1.151.0
+
 ## [@qiwi/pijma-mobile@1.148.4](https://github.com/qiwi/pijma/compare/2022.7.8-qiwi.pijma-mobile.1.148.3-f0...2022.7.8-qiwi.pijma-mobile.1.148.4-f0) (2022-07-08)
 
 ### Dependencies
