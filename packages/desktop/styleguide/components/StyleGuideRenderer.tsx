@@ -1,5 +1,3 @@
-import '@qiwi/pijma-fonts'
-
 import {
   applyDefaultClickHandler,
   Box,

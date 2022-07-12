@@ -7,7 +7,7 @@ const bankList = [
       id: 1,
     },
     title: 'Сбербанк',
-    logo: require('./media/sber.png'),
+    logo: 'https://static.qiwi.com/img/pijma/sber.png',
     description: 'ПАО «Сбербанк России»',
   },
   {
@@ -16,7 +16,7 @@ const bankList = [
     },
     title: 'Альфа-Банк',
     suggest: 'ф',
-    logo: require('./media/alpha.png'),
+    logo: 'https://static.qiwi.com/img/pijma/alpha.png',
     description: 'АО «Альфа-Банк»',
   },
   {
@@ -24,7 +24,7 @@ const bankList = [
       id: 3,
     },
     title: 'Банк «Открытие»',
-    logo: require('./media/open.png'),
+    logo: 'https://static.qiwi.com/img/pijma/open.png',
     description: 'ПАО Банк «ФК Открытие»',
   },
   {
@@ -32,7 +32,7 @@ const bankList = [
       id: 4,
     },
     title: 'Банк ВТБ',
-    logo: require('./media/vtb.png'),
+    logo: 'https://static.qiwi.com/img/pijma/vtb.png',
     description: 'Банк ВТБ (ПАО)',
   },
   {
@@ -40,7 +40,7 @@ const bankList = [
       id: 5,
     },
     title: 'МДМ Банк',
-    logo: require('./media/mdm.png'),
+    logo: 'https://static.qiwi.com/img/pijma/mdm.png',
     description: 'ПАО «МДМ Банк»',
   },
   {
@@ -48,7 +48,7 @@ const bankList = [
       id: 6,
     },
     title: 'DeltaCredit Банк',
-    logo: require('./media/delta.png'),
+    logo: 'https://static.qiwi.com/img/pijma/delta.png',
     description: 'АО КБ ДЕЛЬТАКРЕДИТ',
   },
   {
@@ -56,7 +56,7 @@ const bankList = [
       id: 7,
     },
     title: 'ОТП Банк',
-    logo: require('./media/otp.png'),
+    logo: 'https://static.qiwi.com/img/pijma/otp.png',
     description: 'АО «ОТП-Банк»',
   },
   {
@@ -64,7 +64,7 @@ const bankList = [
       id: 8,
     },
     title: 'Почта Банк',
-    logo: require('./media/pb.png'),
+    logo: 'https://static.qiwi.com/img/pijma/pb.png',
     description: 'ПАО «Почта Банк»',
   },
   {
@@ -72,7 +72,7 @@ const bankList = [
       id: 9,
     },
     title: 'Промсвязьбанк',
-    logo: require('./media/psb.png'),
+    logo: 'https://static.qiwi.com/img/pijma/psb.png',
     description: 'ПАО «ПРОМСВЯЗЬБАНК»',
   },
   {
@@ -80,7 +80,7 @@ const bankList = [
       id: 10,
     },
     title: 'Райффайзенбанк',
-    logo: require('./media/rai.png'),
+    logo: 'https://static.qiwi.com/img/pijma/rai.png',
     description: 'АО «Райффайзенбанк»',
   },
   {
@@ -88,7 +88,7 @@ const bankList = [
       id: 11,
     },
     title: 'Ренессанс Кредит Банк',
-    logo: require('./media/rkb.png'),
+    logo: 'https://static.qiwi.com/img/pijma/rkb.png',
     description: 'КБ "Ренессанс Кредит" (ООО)',
   },
   {
@@ -96,7 +96,7 @@ const bankList = [
       id: 12,
     },
     title: 'РокетБанк',
-    logo: require('./media/roket.png'),
+    logo: 'https://static.qiwi.com/img/pijma/roket.png',
     description: 'ФИЛИАЛ РОКЕТБАНК КИВИ БАНК (АКЦИОНЕРНОЕ ОБЩЕСТВО)',
   },
   {
@@ -104,7 +104,7 @@ const bankList = [
       id: 13,
     },
     title: 'Совкомбанк',
-    logo: require('./media/sov.png'),
+    logo: 'https://static.qiwi.com/img/pijma/sov.png',
     description: 'Публичное акционерное общество «Совкомбанк»',
   },
   {

@@ -4,9 +4,9 @@
 <Block>
   <BlockContent>
     <Spacer size="xxl">
-      <Image src={require('./media/cat_1.gif')} width={75} height={52} />
-      <Image src={require('./media/cat_2.gif')} width={75} height={52} />
-      <Image src={require('./media/cat_3.gif')} width={75} height={52} />
+      <Image src="https://static.qiwi.com/img/pijma/cat_1.gif" width={75} height={52} />
+      <Image src="https://static.qiwi.com/img/pijma/cat_2.gif" width={75} height={52} />
+      <Image src="https://static.qiwi.com/img/pijma/cat_3.gif" width={75} height={52} />
     </Spacer>
   </BlockContent>
 </Block>
@@ -18,9 +18,9 @@
 <Block>
   <BlockContent>
     <Spacer size="xxl">
-      <Image src={require('./media/cat_11.gif')} width={75} height={75} />
-      <Image src={require('./media/cat_12.gif')} width={75} height={75} />
-      <Image src={require('./media/cat_13.gif')} width={75} height={75} />
+      <Image src="https://static.qiwi.com/img/pijma/cat_11.gif" width={75} height={75} />
+      <Image src="https://static.qiwi.com/img/pijma/cat_12.gif" width={75} height={75} />
+      <Image src="https://static.qiwi.com/img/pijma/cat_13.gif" width={75} height={75} />
     </Spacer>
   </BlockContent>
 </Block>
@@ -33,19 +33,19 @@
   <BlockContent>
     <Spacer size="xxl">
       <Image
-        src={require('./media/cat_21.gif')}
+        src="https://static.qiwi.com/img/pijma/cat_21.gif"
         width={75}
         height={75}
         stub={<Stub width={75} height={75} r={52} />}
       />
       <Image
-        src={require('./media/cat_22.gif')}
+        src="https://static.qiwi.com/img/pijma/cat_22.gif"
         width={75}
         height={75}
         stub={<Stub width={75} height={75} r={52} />}
       />
       <Image
-        src={require('./media/cat_23.gif')}
+        src="https://static.qiwi.com/img/pijma/cat_23.gif"
         width={75}
         height={75}
         stub={<Stub width={75} height={75} r={52} />}
@@ -64,19 +64,19 @@ dataImage =
   <BlockContent>
     <Spacer size="xxl">
       <Image
-        src={require('./media/cat_31.gif')}
+        src="https://static.qiwi.com/img/pijma/cat_31.gif"
         width={75}
         height={75}
         stub={dataImage}
       />
       <Image
-        src={require('./media/cat_32.gif')}
+        src="https://static.qiwi.com/img/pijma/cat_32.gif"
         width={75}
         height={75}
         stub={dataImage}
       />
       <Image
-        src={require('./media/cat_33.gif')}
+        src="https://static.qiwi.com/img/pijma/cat_33.gif"
         width={75}
         height={75}
         stub={dataImage}
@@ -95,25 +95,25 @@ dataImage =
       <Pos type="relative">
         <Flex>
           <FlexItem shrink={0} mr={5}>
-            <Image src={require('./media/cat_41.gif')} width={75} height={75} />
+            <Image src="https://static.qiwi.com/img/pijma/cat_41.gif" width={75} height={75} />
           </FlexItem>
           <FlexItem shrink={0} ml={5} mr={5}>
-            <Image src={require('./media/cat_42.gif')} width={75} height={75} />
+            <Image src="https://static.qiwi.com/img/pijma/cat_42.gif" width={75} height={75} />
           </FlexItem>
           <FlexItem shrink={0} ml={5} mr={5}>
-            <Image src={require('./media/cat_43.gif')} width={75} height={75} />
+            <Image src="https://static.qiwi.com/img/pijma/cat_43.gif" width={75} height={75} />
           </FlexItem>
           <FlexItem shrink={0} ml={5} mr={5}>
-            <Image src={require('./media/cat_44.gif')} width={75} height={75} />
+            <Image src="https://static.qiwi.com/img/pijma/cat_44.gif" width={75} height={75} />
           </FlexItem>
           <FlexItem shrink={0} ml={5} mr={5}>
-            <Image src={require('./media/cat_45.gif')} width={75} height={75} />
+            <Image src="https://static.qiwi.com/img/pijma/cat_45.gif" width={75} height={75} />
           </FlexItem>
           <FlexItem shrink={0} ml={5} mr={5}>
-            <Image src={require('./media/cat_46.gif')} width={75} height={75} />
+            <Image src="https://static.qiwi.com/img/pijma/cat_46.gif" width={75} height={75} />
           </FlexItem>
           <FlexItem shrink={0} ml={5}>
-            <Image src={require('./media/cat_47.gif')} width={75} height={75} />
+            <Image src="https://static.qiwi.com/img/pijma/cat_47.gif" width={75} height={75} />
           </FlexItem>
         </Flex>
       </Pos>
@@ -129,19 +129,19 @@ dataImage =
   <BlockContent>
     <Spacer size="xxl">
       <Image
-        src={require('./media/cat_51.gif')}
+        src="https://static.qiwi.com/img/pijma/cat_51.gif"
         width={75}
         height={75}
         stub={false}
       />
       <Image
-        src={require('./media/cat_52.gif')}
+        src="https://static.qiwi.com/img/pijma/cat_52.gif"
         width={75}
         height={75}
         stub={false}
       />
       <Image
-        src={require('./media/cat_53.gif')}
+        src="https://static.qiwi.com/img/pijma/cat_53.gif"
         width={75}
         height={75}
         stub={false}
