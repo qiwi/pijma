@@ -24,7 +24,6 @@
   },
   "files": [
     "README.md",
-    "CHANGELOG.md",
     "lib"
   ],
   "dependencies": {
