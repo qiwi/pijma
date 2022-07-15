@@ -16,7 +16,7 @@ jobs:
     outputs:
       skip: ${{ steps.ci-skip-step.outputs.ci-skip }}
       skip-not: ${{ steps.ci-skip-step.outputs.ci-skip-not }}
-      c: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+      yarn-cache-dir: ${{ steps.yarn-cache-dir-path.outputs.dir }}
       checksum: ${{ steps.checksum.outputs.checksum }}
     steps:
       - uses: actions/checkout@v3
