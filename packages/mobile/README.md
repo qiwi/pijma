@@ -1,6 +1,6 @@
 # @qiwi/pijma-mobile
 
-Pijma mobile ui components.
+Pijma mobile UI components.
 
 ## Demo
 * [@qiwi/pijma-mobile](https://qiwi.github.io/pijma/mobile)

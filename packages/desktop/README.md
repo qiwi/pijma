@@ -1,6 +1,6 @@
 # @qiwi/pijma-desktop
 
-Pijma desktop ui components.
+Pijma desktop UI components.
 
 ## Demo
 * [@qiwi/pijma-desktop](https://qiwi.github.io/pijma/desktop)

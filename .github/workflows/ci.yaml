@@ -25,7 +25,7 @@ jobs:
 
       - name: Get src checksum
         id: checksum
-        run: echo "::set-output name=checksum::${{ hashFiles('packages/*/src/**/*') }}-${{ hashFiles('packages/*/package.json') }}"
+        run: echo "::set-output name=checksum::${{ hashFiles('packages/*/src/**/*') }}-${{ hashFiles('packages/*/*.json') }}"
 
   build:
     needs: init
