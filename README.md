@@ -26,3 +26,6 @@ Yet another user interface components library. Weird. Slow. Our own.
 ```
 NODE_ENV=production yarn build
 ```
+
+## License
+[MIT](LICENSE)
