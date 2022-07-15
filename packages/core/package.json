@@ -53,7 +53,7 @@
   "devDependencies": {
     "concurrently": "7.2.2",
     "css-loader": "4.3.0",
-    "esbuild": "0.14.48",
+    "esbuild": "0.14.49",
     "esbuild-loader": "2.19.0",
     "esbuild-node-externals": "^1.4.1",
     "eslint": "8.19.0",
