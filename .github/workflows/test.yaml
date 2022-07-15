@@ -1,0 +1,66 @@
+name: Test
+
+on:
+  workflow_run:
+    workflows: ["Build"]
+    types: [completed]
+
+jobs:
+  init:
+    name: init
+    # if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-20.04
+    outputs:
+      skip: ${{ steps.ci-skip-step.outputs.ci-skip }}
+      skip-not: ${{ steps.ci-skip-step.outputs.ci-skip-not }}
+      yarn-cache-dir: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+      checksum: ${{ steps.checksum.outputs.checksum }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - id: ci-skip-step
+        uses: mstachniuk/ci-skip@v1
+
+      - name: Get yarn cache dir
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - name: Get src checksum
+        id: checksum
+        run: echo "::set-output name=checksum::${{ hashFiles('packages/*/src/**/*') }}-${{ hashFiles('packages/*/*.json') }}"
+
+  test:
+    needs: init
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Download artifact
+        uses: qiwi-forks/action-download-artifact@v0.2.1
+        with:
+          name: artifact-${{ needs.init.outputs.checksum }}
+          workflow: 'ci.yaml'
+          workflow_conclusion: false
+          search_artifacts: true
+
+      - name: Unpack artifact
+        run: tar -xvf artifact.tar
+
+      - uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: ${{ needs.init.outputs.yarn-cache-dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install deps
+        run: yarn
+
+      - name: Run tests
+        run: yarn test
