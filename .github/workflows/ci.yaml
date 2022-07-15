@@ -40,7 +40,7 @@ jobs:
           node-version: 16
 
       - name: Download artifact
-        uses: qiwi-forks/action-download-artifact@v0.2
+        uses: qiwi-forks/action-download-artifact@v0.2.1
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
           workflow: 'ci.yaml'
@@ -93,7 +93,7 @@ jobs:
           node-version: 16
 
       - name: Download artifact
-        uses: qiwi-forks/action-download-artifact@v0.2
+        uses: qiwi-forks/action-download-artifact@v0.2.1
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
           workflow: 'ci.yaml'
@@ -151,7 +151,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Download artifact
-        uses: qiwi-forks/action-download-artifact@v0.2
+        uses: qiwi-forks/action-download-artifact@v0.2.1
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
           workflow: 'ci.yaml'
@@ -186,7 +186,7 @@ jobs:
           ref: master
 
       - name: Download artifact
-        uses: qiwi-forks/action-download-artifact@v0.2
+        uses: qiwi-forks/action-download-artifact@v0.2.1
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
           workflow: 'ci.yaml'
