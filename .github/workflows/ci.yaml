@@ -6,7 +6,7 @@ on: [push, pull_request]
 jobs:
   init:
     name: init
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     outputs:
       skip: ${{ steps.ci-skip-step.outputs.ci-skip }}
       skip-not: ${{ steps.ci-skip-step.outputs.ci-skip-not }}
@@ -14,8 +14,7 @@ jobs:
       checksum: ${{ steps.checksum.outputs.checksum }}
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
+
       - id: ci-skip-step
         uses: mstachniuk/ci-skip@v1
 
@@ -35,8 +34,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
+
       - uses: actions/setup-node@v3
         with:
           node-version: 16
@@ -75,16 +73,16 @@ jobs:
           yarn build
           tar -cvf artifact.tar packages/*/lib packages/*/styleguide package.json
 
-      - name: Save target (artifact)
+      - name: Save artifact
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         uses: actions/upload-artifact@v3
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
-          retention-days: 1
+          retention-days: 30
           path: artifact.tar
 
       # https://github.com/actions/upload-artifact/issues/53
-      - name: Cache target (artifact)
+      - name: Cache artifact
         uses: actions/cache@v3
         id: artifact
         with:
@@ -99,8 +97,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
 
       - uses: actions/setup-node@v3
         with:
@@ -164,8 +160,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
 
       - uses: actions/setup-node@v3
         with:
@@ -216,7 +210,6 @@ jobs:
 
   release:
     name: Release
-    # https://github.community/t/trigger-job-on-tag-push-only/18076
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     needs: [test_push, init]
     runs-on: ubuntu-20.04
