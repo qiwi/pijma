@@ -31,6 +31,9 @@ jobs:
     name: build
     runs-on: ubuntu-20.04
     steps:
+      - name: Chekc inputs
+        run: echo ${{ github.event.inputs.yarn-cache-dir }} ${{ github.event.inputs.checksum }}
+
       - name: Checkout
         uses: actions/checkout@v3
 
