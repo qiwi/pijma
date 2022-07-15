@@ -1,6 +1,7 @@
 # https://github.com/actions/upload-artifact/issues/181
 # https://github.community/t/job-output-cannot-be-using-when-triggering-workflow-from-job/250825/4
 # https://github.com/afonsoc12/docker-cloudflared/blob/06ee46a846e204fe5c0fd6a6fa3954b6120a3119/.github/workflows/docker_build_master.yml
+# https://github.com/actions/runner/issues/1365
 
 name: Build
 on:
@@ -31,8 +32,8 @@ jobs:
     name: build
     runs-on: ubuntu-20.04
     steps:
-      - name: Chekc inputs
-        run: echo ${{ github.event.inputs.yarn-cache-dir }} ${{ github.event.inputs.checksum }}
+      - name: Check inputs
+        run: echo "${{ inputs.yarn-cache-dir }} ${{ inputs.checksum }}"
 
       - name: Checkout
         uses: actions/checkout@v3
@@ -44,7 +45,7 @@ jobs:
       - name: Download artifact
         uses: qiwi-forks/action-download-artifact@v0.2.1
         with:
-          name: artifact-${{ github.event.inputs.checksum }}
+          name: artifact-${{ inputs.checksum }}
           workflow: 'ci.yaml'
           workflow_conclusion: false
           nothrow: true
@@ -59,7 +60,7 @@ jobs:
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         id: yarn-cache
         with:
-          path: ${{ github.event.inputs.yarn-cache-dir }}
+          path: ${{ inputs.yarn-cache-dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
