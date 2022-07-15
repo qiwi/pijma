@@ -1,5 +1,6 @@
-# @qiwi/pijma-mobile [1.147.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.146.1...@qiwi/pijma-mobile@1.147.0) (2022-06-20)
+# [https://github.com/qiwi/pijma/blob/changelog/qiwipijma-mobile-changelog.md](https://github.com/qiwi/pijma/blob/changelog/qiwipijma-mobile-changelog.md)
 
+# @qiwi/pijma-mobile [1.147.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-mobile@1.146.1...@qiwi/pijma-mobile@1.147.0) (2022-06-20)
 
 ### Bug Fixes
 

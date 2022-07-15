@@ -1,3 +1,6 @@
+# [https://github.com/qiwi/pijma/blob/changelog/qiwipijma-desktop-changelog.md](https://github.com/qiwi/pijma/blob/changelog/qiwipijma-desktop-changelog.md)
+
+
 # @qiwi/pijma-desktop [1.147.0](https://github.com/qiwi/pijma/compare/@qiwi/pijma-desktop@1.146.1...@qiwi/pijma-desktop@1.147.0) (2022-06-20)
 
 
