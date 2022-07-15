@@ -32,7 +32,7 @@ jobs:
     if: ${{ needs.init.outputs.skip == 'false' }}
     uses: ./.github/workflows/build.yaml
     with:
-      version: ${{ needs.init.outputs.yarn-cache-dir }}
+      yarn-cache-dir: ${{ needs.init.outputs.yarn-cache-dir }}
       checksum: ${{ needs.init.outputs.checksum }}
 
   test_push:
