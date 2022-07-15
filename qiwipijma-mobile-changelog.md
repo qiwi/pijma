@@ -1,3 +1,8 @@
+## [@qiwi/pijma-mobile@1.149.2](https://github.com/qiwi/pijma/compare/2022.7.15-qiwi.pijma-mobile.1.149.1-f0...2022.7.15-qiwi.pijma-mobile.1.149.2-f0) (2022-07-15)
+
+### Fixes & improvements
+* perf: tech release [d3cb2b3](https://github.com/qiwi/pijma/commit/d3cb2b393e1778071f739945f7dbe01f1e4ef598)
+
 ## [@qiwi/pijma-mobile@1.149.1](https://github.com/qiwi/pijma/compare/2022.7.12-qiwi.pijma-mobile.1.149.0-f0...2022.7.15-qiwi.pijma-mobile.1.149.1-f0) (2022-07-15)
 
 ### Fixes & improvements
