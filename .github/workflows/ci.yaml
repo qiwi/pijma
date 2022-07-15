@@ -2,10 +2,7 @@
 # If the tests pass and this is a push to the master branch it also runs Semantic Release.
 name: CI
 on:
-  workflow_run:
-    workflows: ["Build"]
-    types:
-      - completed
+  [push, pull_request]
 
 jobs:
   init:
@@ -30,8 +27,16 @@ jobs:
         id: checksum
         run: echo "::set-output name=checksum::${{ hashFiles('packages/*/src/**/*') }}-${{ hashFiles('packages/*/package.json') }}"
 
-  test_push:
+  build:
     needs: init
+    if: ${{ needs.init.outputs.skip == 'false' }}
+    uses: ./.github/workflows/build.yaml
+    with:
+      version: ${{ needs.init.outputs.yarn-cache-dir }}
+      checksum: ${{ needs.init.outputs.checksum }}
+
+  test_push:
+    needs: [init, build]
     if: github.event_name == 'push'
     runs-on: ubuntu-20.04
     steps:
@@ -77,7 +82,7 @@ jobs:
 
   test_pr:
     if: github.event_name == 'pull_request'
-    needs: init
+    needs: [init, build]
     strategy:
       matrix:
         os: [ ubuntu-20.04 ]

@@ -1,35 +1,34 @@
-# This is a Github Workflow that runs tests on any push or pull request.
-# If the tests pass and this is a push to the master branch it also runs Semantic Release.
+# https://github.com/actions/upload-artifact/issues/181
+# https://github.community/t/job-output-cannot-be-using-when-triggering-workflow-from-job/250825/4
+# https://github.com/afonsoc12/docker-cloudflared/blob/06ee46a846e204fe5c0fd6a6fa3954b6120a3119/.github/workflows/docker_build_master.yml
+
 name: Build
-on: [push, pull_request]
+on:
+  workflow_dispatch:
+    inputs:
+      yarn-cache-dir:
+        description: The directory where the yarn cache is stored.
+        required: true
+        type: string
+      checksum:
+        description: The checksum of the src dir + yarn.lock
+        required: true
+        type: string
+
+  workflow_call:
+    inputs:
+      yarn-cache-dir:
+        description: The directory where the yarn cache is stored.
+        required: true
+        type: string
+      checksum:
+        description: The checksum of the src dir + yarn.lock
+        required: true
+        type: string
 
 jobs:
-  init:
-    name: init
-    runs-on: ubuntu-20.04
-    outputs:
-      skip: ${{ steps.ci-skip-step.outputs.ci-skip }}
-      skip-not: ${{ steps.ci-skip-step.outputs.ci-skip-not }}
-      yarn-cache-dir: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-      checksum: ${{ steps.checksum.outputs.checksum }}
-    steps:
-      - uses: actions/checkout@v3
-
-      - id: ci-skip-step
-        uses: mstachniuk/ci-skip@v1
-
-      - name: Get yarn cache dir
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
-      - name: Get src checksum
-        id: checksum
-        run: echo "::set-output name=checksum::${{ hashFiles('packages/*/src/**/*') }}-${{ hashFiles('packages/*/package.json') }}"
-
   build:
     name: build
-    needs: init
-    if: ${{ needs.init.outputs.skip == 'false' }}
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -42,7 +41,7 @@ jobs:
       - name: Download artifact
         uses: qiwi-forks/action-download-artifact@v0.2.1
         with:
-          name: artifact-${{ needs.init.outputs.checksum }}
+          name: artifact-${{ github.event.inputs.checksum }}
           workflow: 'ci.yaml'
           workflow_conclusion: false
           nothrow: true
@@ -57,7 +56,7 @@ jobs:
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         id: yarn-cache
         with:
-          path: ${{ needs.init.outputs.yarn-cache-dir }}
+          path: ${{ github.event.inputs.yarn-cache-dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
