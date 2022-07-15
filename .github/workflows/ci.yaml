@@ -82,6 +82,15 @@ jobs:
           retention-days: 1
           path: artifact.tar
 
+      # https://github.com/actions/upload-artifact/issues/53
+      - name: Cache target (artifact)
+        uses: actions/cache@v3
+        id: artifact
+        with:
+          path: artifact.tar
+          key: artifact-${{ needs.init.outputs.checksum }}
+
+
   test_push:
     needs: [build, init]
     if: github.event_name == 'push'
@@ -96,7 +105,19 @@ jobs:
         with:
           node-version: 16
 
+      - name: Restore artifact from cache (if exists)
+        uses: actions/cache@v3
+        with:
+          path: artifact.tar
+          key: artifact-${{ needs.init.outputs.checksum }}
+
+      - name: Check artifact
+        if: always()
+        id: check-artifact
+        run: echo "::set-output name=exists::$([ -e "artifact.tar" ] && echo true || echo false)"
+
       - name: Download artifact
+        if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         uses: qiwi-forks/action-download-artifact@v0.2
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
@@ -156,7 +177,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
+      - name: Restore artifact from cache (if exists)
+        uses: actions/cache@v3
+        with:
+          path: artifact.tar
+          key: artifact-${{ needs.init.outputs.checksum }}
+
+      - name: Check artifact
+        if: always()
+        id: check-artifact
+        run: echo "::set-output name=exists::$([ -e "artifact.tar" ] && echo true || echo false)"
+
       - name: Download artifact
+        if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         uses: qiwi-forks/action-download-artifact@v0.2
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
@@ -191,7 +224,19 @@ jobs:
           fetch-depth: 0
           ref: master
 
+      - name: Restore artifact from cache (if exists)
+        uses: actions/cache@v3
+        with:
+          path: artifact.tar
+          key: artifact-${{ needs.init.outputs.checksum }}
+
+      - name: Check artifact
+        if: always()
+        id: check-artifact
+        run: echo "::set-output name=exists::$([ -e "artifact.tar" ] && echo true || echo false)"
+
       - name: Download artifact
+        if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         uses: qiwi-forks/action-download-artifact@v0.2
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
