@@ -1,3 +1,11 @@
+## [@qiwi/pijma-desktop@1.149.3](https://github.com/qiwi/pijma/compare/2022.7.15-qiwi.pijma-desktop.1.149.2-f0...2022.7.15-qiwi.pijma-desktop.1.149.3-f0) (2022-07-15)
+
+### Fixes & improvements
+* perf: tech release [439bdf0](https://github.com/qiwi/pijma/commit/439bdf0510accd141fd9279a6592f6cad4516af0)
+
+### Dependencies
+* perf: @qiwi/pijma-core updated to 1.151.1
+
 ## [@qiwi/pijma-desktop@1.149.2](https://github.com/qiwi/pijma/compare/2022.7.15-qiwi.pijma-desktop.1.149.1-f0...2022.7.15-qiwi.pijma-desktop.1.149.2-f0) (2022-07-15)
 
 ### Fixes & improvements
