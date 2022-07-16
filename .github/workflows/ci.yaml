@@ -8,15 +8,10 @@ jobs:
     name: init
     runs-on: ubuntu-22.04
     outputs:
-      skip: ${{ steps.ci-skip-step.outputs.ci-skip }}
-      skip-not: ${{ steps.ci-skip-step.outputs.ci-skip-not }}
       yarn-cache-dir: ${{ steps.yarn-cache-dir-path.outputs.dir }}
       checksum: ${{ steps.checksum.outputs.checksum }}
     steps:
       - uses: actions/checkout@v3
-
-      - id: ci-skip-step
-        uses: mstachniuk/ci-skip@v1
 
       - name: Get yarn cache dir
         id: yarn-cache-dir-path
@@ -29,7 +24,6 @@ jobs:
   build:
     name: build
     needs: init
-    if: ${{ needs.init.outputs.skip == 'false' }}
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
