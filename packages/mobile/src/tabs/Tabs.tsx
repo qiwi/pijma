@@ -34,7 +34,11 @@ const FlexOverflow = styled(Flex)({
   position: 'relative',
 })
 
+FlexOverflow.displayName = 'FlexOverflow'
+
 const TabContent = styled(FlexItem)()
+
+TabContent.displayName = 'TabContent'
 
 export const Tabs: FC<TabsProps> = ({
   items,
@@ -123,6 +127,8 @@ export const Tabs: FC<TabsProps> = ({
       )}
     />
   )
+
+Tabs.displayName = 'Tabs'
 
 Tabs.defaultProps = {
   select: 0,

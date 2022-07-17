@@ -94,3 +94,5 @@ export const CardStyles: Interpolation<
 })
 
 export const Card = styled(Box, CardOptions)<CardProps>(CardStyles)
+
+Card.displayName = 'Card'

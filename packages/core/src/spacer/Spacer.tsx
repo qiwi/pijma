@@ -38,6 +38,8 @@ export const Spacer: FunctionComponent<SpacerProps> = ({
   )
 }
 
+Spacer.displayName = 'Spacer'
+
 Spacer.defaultProps = {
   size: 'm',
 }

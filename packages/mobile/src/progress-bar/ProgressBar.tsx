@@ -26,3 +26,5 @@ export const ProgressBar: FC<ProgressBarProps> = ({
       />
     </Card>
   )
+
+ProgressBar.displayName = 'ProgressBar'

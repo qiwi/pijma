@@ -82,6 +82,8 @@ const FooterOutLink: FC<FooterOutLinkProps> = (props) =>
     />
   )
 
+FooterOutLink.displayName = 'FooterOutLink'
+
 export interface FooterOutProps {
   children: FooterOutLinkProps[]
   stub?: number | boolean
@@ -104,3 +106,5 @@ export const FooterOut: FC<FooterOutProps> = ({ children, stub = false }) => (
     </Flex>
   </Box>
 )
+
+FooterOut.displayName = 'FooterOut'

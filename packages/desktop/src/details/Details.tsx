@@ -156,3 +156,5 @@ export const Details: FC<DetailsProps> = ({
       )}
     </Box>
   )
+
+Details.displayName = 'Details'

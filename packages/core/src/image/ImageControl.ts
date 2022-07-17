@@ -36,6 +36,8 @@ export class ImageControl extends Component<
   ImageControlProps,
   ImageControlState
 > {
+  public static displayName = 'ImageControl'
+
   public static defaultProps = {
     cachedDelay: 50,
     viewedDelay: 1000,

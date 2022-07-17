@@ -1,14 +1,10 @@
-import React, {FunctionComponent} from 'react'
+import React, { FunctionComponent } from 'react'
 
-import {
-  TextFieldControl,
-  InputField,
-  BasicInput,
-} from '@qiwi/pijma-core'
+import { TextFieldControl, InputField, BasicInput } from '@qiwi/pijma-core'
 
-import {TextFieldProps} from './TextFieldProps'
+import { TextFieldProps } from './TextFieldProps'
 
-export const TextField: FunctionComponent<TextFieldProps> = (props) => (
+export const TextField: FunctionComponent<TextFieldProps> = (props) =>
   props.stub ? (
     <InputField
       active={false}
@@ -30,7 +26,7 @@ export const TextField: FunctionComponent<TextFieldProps> = (props) => (
         <InputField
           title={props.title}
           active={renderProps.focused || !!props.value || !!props.placeholder}
-          input={(
+          input={
             <BasicInput
               type={props.type}
               value={props.value}
@@ -53,7 +49,7 @@ export const TextField: FunctionComponent<TextFieldProps> = (props) => (
               onKeyDown={renderProps.onKeyDown}
               onKeyUp={renderProps.onKeyUp}
             />
-          )}
+          }
           hint={props.hint}
           error={props.error}
           help={props.help}
@@ -62,7 +58,8 @@ export const TextField: FunctionComponent<TextFieldProps> = (props) => (
       )}
     />
   )
-)
+
+TextField.displayName = 'TextField'
 
 TextField.defaultProps = {
   tabIndex: 0,

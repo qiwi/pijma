@@ -58,3 +58,5 @@ export const NavLink: FC<NavLinkProps> = (props) =>
       )}
     />
   )
+
+NavLink.displayName = 'NavLink'

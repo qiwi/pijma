@@ -34,3 +34,5 @@ export const Section = forwardRef<
     />
   ),
 )
+
+Section.displayName = 'Section'

@@ -30,6 +30,8 @@ const placeholder = keyframes({
 })
 
 export class ReCaptcha extends PureComponent<ReCaptchaProps> {
+  public static displayName = 'ReCaptcha'
+
   private element: RefObject<ReCAPTCHA> = React.createRef()
 
   private wrapper: RefObject<HTMLDivElement> = React.createRef()

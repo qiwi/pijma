@@ -14,3 +14,5 @@ export const Header: FunctionComponent<HeaderProps> = (props) => (
     children={props.children}
   />
 )
+
+Header.displayName = 'Header'

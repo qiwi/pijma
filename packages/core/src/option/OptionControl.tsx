@@ -6,6 +6,8 @@ export default class OptionControl<V> extends React.Component<
   OptionControlProps<V>,
   {}
 > {
+  public static displayName = 'OptionControl'
+
   private onClick: React.MouseEventHandler<HTMLElement> = (
     event: React.MouseEvent<HTMLElement>,
   ) => {

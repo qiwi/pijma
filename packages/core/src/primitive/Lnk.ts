@@ -18,3 +18,5 @@ export const Lnk = styled(
   cursor,
   textDecoration: 'none',
 }))
+
+Lnk.displayName = 'Lnk'

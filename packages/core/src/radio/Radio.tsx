@@ -37,3 +37,5 @@ export const Radio: FunctionComponent<RadioProps> = (props) => (
     />
   </Svg>
 )
+
+Radio.displayName = 'Radio'

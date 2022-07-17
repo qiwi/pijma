@@ -27,6 +27,8 @@ export const ReCaptchaField: FC<ReCaptchaFieldProps> = (props) => (
   />
 )
 
+ReCaptchaField.displayName = 'ReCaptchaField'
+
 ReCaptchaField.defaultProps = {
   tabIndex: 0,
 }

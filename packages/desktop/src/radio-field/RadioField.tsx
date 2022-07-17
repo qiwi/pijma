@@ -86,4 +86,6 @@ const RadioField: FunctionComponent<
     />
   )
 
+RadioField.displayName = 'RadioField'
+
 export default RadioField

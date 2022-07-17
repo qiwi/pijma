@@ -44,6 +44,8 @@ const Checkbox: FunctionComponent<CheckboxProps> = (props) => (
   />
 )
 
+Checkbox.displayName = 'Checkbox'
+
 Checkbox.defaultProps = {
   tabIndex: 0,
 }

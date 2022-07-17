@@ -234,6 +234,8 @@ export const Flag: FC<FlagProps> = ({ code, width = 6, height = 4 }) => (
   </Svg>
 )
 
+Flag.displayName = 'Flag'
+
 Flag.defaultProps = {
   width: 6,
   height: 4,

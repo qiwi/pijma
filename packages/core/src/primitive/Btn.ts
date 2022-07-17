@@ -11,3 +11,5 @@ export const BtnOptions: StyledOptions<BtnProps> = {
 }
 
 export const Btn = styled('button', BtnOptions)<BtnProps>(BoxStyles, CardStyles)
+
+Btn.displayName = 'Btn'

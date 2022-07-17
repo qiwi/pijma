@@ -17,3 +17,15 @@ export const CardPos = styled(Card)().withComponent(Pos)
 export const FlexPos = styled(Flex)().withComponent(Pos)
 
 export const FlexCard = styled(Flex)().withComponent(Card)
+
+BoxLnk.displayName = 'BoxLnk'
+CardLnk.displayName = 'CardLnk'
+PosLnk.displayName = 'PosLnk'
+FlexLnk.displayName = 'FlexLnk'
+TypoLnk.displayName = 'TypoLnk'
+
+BoxPos.displayName = 'BoxPos'
+CardPos.displayName = 'CardPos'
+FlexPos.displayName = 'FlexPos'
+
+FlexCard.displayName = 'FlexCard'

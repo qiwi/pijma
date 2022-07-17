@@ -8,6 +8,8 @@ export default class RadioControl<
   O extends OptionModel<V>,
   V,
 > extends React.Component<RadioControlProps<O, V>, RadioControlState> {
+  public static displayName = 'RadioControl'
+
   public state: RadioControlState = {
     focused: -1,
   }

@@ -160,3 +160,5 @@ export const List: FunctionComponent<ListProps> = ({
     ))}
   </Box>
 )
+
+List.displayName = 'List'

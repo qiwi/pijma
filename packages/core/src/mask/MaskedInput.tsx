@@ -1,4 +1,10 @@
-import React, { ChangeEvent, FocusEvent, ForwardedRef, InputHTMLAttributes, PureComponent } from 'react'
+import React, {
+  ChangeEvent,
+  FocusEvent,
+  ForwardedRef,
+  InputHTMLAttributes,
+  PureComponent,
+} from 'react'
 import {
   conformToMask as tmcConformToMask,
   createTextMaskInputElement as tmcCreateTextMaskInputElement,
@@ -18,7 +24,9 @@ export interface CreateTextMaskConfig {
   showMask?: boolean
 }
 
-export function createTextMaskInputElement (config: CreateTextMaskConfig): TextMaskInputElement {
+export function createTextMaskInputElement(
+  config: CreateTextMaskConfig,
+): TextMaskInputElement {
   return tmcCreateTextMaskInputElement(config)
 }
 
@@ -38,11 +46,15 @@ export interface ConformToMaskConfig {
   previousConformedValue?: string
 }
 
-export function conformToMask (text: string, mask: Mask, config?: ConformToMaskConfig): ConformToMaskResult {
+export function conformToMask(
+  text: string,
+  mask: Mask,
+  config?: ConformToMaskConfig,
+): ConformToMaskResult {
   return tmcConformToMask(text, mask, config)
 }
 
-function isNil (value: any) {
+function isNil(value: any) {
   return typeof value === 'undefined' || value === null
 }
 
@@ -60,14 +72,18 @@ export interface PipeConfig {
   previousConformedValue: string
 }
 
-export type PipeResult = false | string | {
-  value: string
-  indexesOfPipedChars: number[]
-}
+export type PipeResult =
+  | false
+  | string
+  | {
+      value: string
+      indexesOfPipedChars: number[]
+    }
 
 export type Pipe = (conformedValue: string, config: PipeConfig) => PipeResult
 
-export interface MaskedInputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface MaskedInputProps
+  extends InputHTMLAttributes<HTMLInputElement> {
   mask: Mask
   value?: string
   pipe?: Pipe
@@ -79,18 +95,20 @@ export interface MaskedInputProps extends InputHTMLAttributes<HTMLInputElement> 
 }
 
 class MaskedInputComponent extends PureComponent<MaskedInputProps, {}> {
+  public static displayName = 'MaskedInputComponent'
+
   private inputElement!: HTMLInputElement
 
   private textMaskInputElement!: TextMaskInputElement
 
-  constructor (props: MaskedInputProps) {
+  constructor(props: MaskedInputProps) {
     super(props)
     this.setRef = this.setRef.bind(this)
     this.onBlur = this.onBlur.bind(this)
     this.onChange = this.onChange.bind(this)
   }
 
-  setRef (inputElement: HTMLInputElement) {
+  setRef(inputElement: HTMLInputElement) {
     this.inputElement = inputElement
 
     const { inputRef } = this.props
@@ -101,8 +119,16 @@ class MaskedInputComponent extends PureComponent<MaskedInputProps, {}> {
     }
   }
 
-  initTextMask () {
-    const { mask, guide, value, pipe, placeholderChar, keepCharPositions, showMask } = this.props
+  initTextMask() {
+    const {
+      mask,
+      guide,
+      value,
+      pipe,
+      placeholderChar,
+      keepCharPositions,
+      showMask,
+    } = this.props
     this.textMaskInputElement = createTextMaskInputElement({
       inputElement: this.inputElement,
       mask,
@@ -115,24 +141,48 @@ class MaskedInputComponent extends PureComponent<MaskedInputProps, {}> {
     this.textMaskInputElement.update(value)
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.initTextMask()
   }
 
-  componentDidUpdate (prevProps: MaskedInputProps) {
+  componentDidUpdate(prevProps: MaskedInputProps) {
     const { value, pipe, mask, guide, placeholderChar, showMask } = this.props
-    const isPipeChanged = typeof pipe === 'function' && typeof prevProps.pipe === 'function' ? pipe.toString() !== prevProps.pipe.toString() : isNil(pipe) && !isNil(prevProps.pipe) || !isNil(pipe) && isNil(prevProps.pipe)
-    const isMaskChanged = typeof mask === 'function' && typeof prevProps.mask === 'function' ? mask.toString() !== prevProps.mask.toString() : isNil(mask) && !isNil(prevProps.mask) || !isNil(mask) && isNil(prevProps.mask)
-    const isSettingChanged = guide !== prevProps.guide || placeholderChar !== prevProps.placeholderChar || showMask !== prevProps.showMask
+    const isPipeChanged =
+      typeof pipe === 'function' && typeof prevProps.pipe === 'function'
+        ? pipe.toString() !== prevProps.pipe.toString()
+        : (isNil(pipe) && !isNil(prevProps.pipe)) ||
+          (!isNil(pipe) && isNil(prevProps.pipe))
+    const isMaskChanged =
+      typeof mask === 'function' && typeof prevProps.mask === 'function'
+        ? mask.toString() !== prevProps.mask.toString()
+        : (isNil(mask) && !isNil(prevProps.mask)) ||
+          (!isNil(mask) && isNil(prevProps.mask))
+    const isSettingChanged =
+      guide !== prevProps.guide ||
+      placeholderChar !== prevProps.placeholderChar ||
+      showMask !== prevProps.showMask
     const isValueChanged = value !== this.inputElement.value
     if (isValueChanged || isSettingChanged || isPipeChanged || isMaskChanged) {
       this.initTextMask()
     }
   }
 
-  render () {
-    const exclude = ['mask', 'guide', 'pipe', 'placeholderChar', 'keepCharPositions', 'showMask', 'value', 'onBlur', 'onChange', 'inputRef']
-    const props = Object.fromEntries(Object.entries(this.props).filter(([key]) => !exclude.includes(key)))
+  render() {
+    const exclude = [
+      'mask',
+      'guide',
+      'pipe',
+      'placeholderChar',
+      'keepCharPositions',
+      'showMask',
+      'value',
+      'onBlur',
+      'onChange',
+      'inputRef',
+    ]
+    const props = Object.fromEntries(
+      Object.entries(this.props).filter(([key]) => !exclude.includes(key)),
+    )
     return (
       <input
         ref={this.setRef}
@@ -144,26 +194,22 @@ class MaskedInputComponent extends PureComponent<MaskedInputProps, {}> {
     )
   }
 
-  onChange (event: ChangeEvent<HTMLInputElement>) {
+  onChange(event: ChangeEvent<HTMLInputElement>) {
     this.textMaskInputElement.update()
     if (typeof this.props.onChange === 'function') {
       this.props.onChange(event)
     }
   }
 
-  onBlur (event: FocusEvent<HTMLInputElement>) {
+  onBlur(event: FocusEvent<HTMLInputElement>) {
     if (typeof this.props.onBlur === 'function') {
       this.props.onBlur(event)
     }
   }
 }
 
-export const MaskedInput = React.forwardRef<HTMLInputElement, MaskedInputProps>((props, ref) => {
-  const inputProps = {
-    ...props,
-    inputRef: ref,
-  }
-
-  return <MaskedInputComponent {...inputProps} />
-},
+export const MaskedInput = React.forwardRef<HTMLInputElement, MaskedInputProps>(
+  (props, ref) => <MaskedInputComponent {...props} inputRef={ref} />,
 )
+
+MaskedInput.displayName = 'MaskedInput'

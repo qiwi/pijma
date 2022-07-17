@@ -8,6 +8,8 @@ export default class MenuControl extends Component<
   MenuControlProps,
   MenuControlState
 > {
+  public static displayName = 'MenuControl'
+
   public static getDerivedStateFromProps(
     nextProps: MenuControlProps,
     prevState: MenuControlState,

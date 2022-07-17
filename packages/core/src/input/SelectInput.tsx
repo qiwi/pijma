@@ -70,6 +70,8 @@ export const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>(
   },
 )
 
+SelectInput.displayName = 'SelectInput'
+
 SelectInput.defaultProps = {
   tabIndex: 0,
 }

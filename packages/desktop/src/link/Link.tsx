@@ -127,3 +127,5 @@ export const Link: FC<LinkProps> = (props) => {
     />
   )
 }
+
+Link.displayName = 'Link'

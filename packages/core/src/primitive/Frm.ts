@@ -10,3 +10,5 @@ export const FrmOptions: StyledOptions<FrmProps> = {
 }
 
 export const Frm = styled('form', FrmOptions)<FrmProps>(BoxStyles)
+
+Frm.displayName = 'Frm'

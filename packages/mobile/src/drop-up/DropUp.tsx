@@ -16,12 +16,17 @@ import React, { FunctionComponent, ReactNode } from 'react'
 
 import { Paragraph } from '../typography'
 
-const contentTransitionVertical: FunctionComponent<SimpleTransitionProps> = (
+const ContentTransitionVertical: FunctionComponent<SimpleTransitionProps> = (
   props,
 ) => <SimpleTransition {...props} />
-const contentTransitionHorizontal: FunctionComponent<SimpleTransitionProps> = (
+
+ContentTransitionVertical.displayName = 'ContentTransitionVertical'
+
+const ContentTransitionHorizontal: FunctionComponent<SimpleTransitionProps> = (
   props,
 ) => <SimpleTransition {...props} />
+
+ContentTransitionHorizontal.displayName = 'ContentTransitionHorizontal'
 
 const translate3d = {
   vertical: '0, 100%, 0',
@@ -47,14 +52,17 @@ const defaultProps = (direction: 'vertical' | 'horizontal') => ({
     }),
 })
 
-contentTransitionVertical.defaultProps = defaultProps('vertical')
-contentTransitionHorizontal.defaultProps = defaultProps('horizontal')
+ContentTransitionVertical.defaultProps = defaultProps('vertical')
 
-const backdropTransition: FunctionComponent<SimpleTransitionProps> = (
+ContentTransitionHorizontal.defaultProps = defaultProps('horizontal')
+
+const BackdropTransition: FunctionComponent<SimpleTransitionProps> = (
   props,
 ) => <SimpleTransition {...props} />
 
-backdropTransition.defaultProps = {
+BackdropTransition.displayName = 'BackdropTransition'
+
+BackdropTransition.defaultProps = {
   timeout: {
     enter: 370,
     exit: 250,
@@ -85,6 +93,8 @@ export interface DropUpProps {
 
 const FlexPosCard = styled(FlexPos)().withComponent(Card)
 
+FlexPosCard.displayName = 'FlexPosCard'
+
 export const DropUp: FunctionComponent<DropUpProps> = (props) => (
   <Modal
     show={props.show}
@@ -92,9 +102,9 @@ export const DropUp: FunctionComponent<DropUpProps> = (props) => (
     onShow={props.onShow}
     onHide={props.onHide}
     transition={
-      props.horizontal ? contentTransitionHorizontal : contentTransitionVertical
+      props.horizontal ? ContentTransitionHorizontal : ContentTransitionVertical
     }
-    backdropTransition={backdropTransition}
+    backdropTransition={BackdropTransition}
     renderBackdrop={(backdropProps) => (
       <Pos
         type="fixed"
@@ -161,3 +171,5 @@ export const DropUp: FunctionComponent<DropUpProps> = (props) => (
     )}
   />
 )
+
+DropUp.displayName = 'DropUp'

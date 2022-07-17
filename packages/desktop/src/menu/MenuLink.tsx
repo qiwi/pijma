@@ -23,6 +23,8 @@ export interface MenuLinkProps {
 
 const MenuItemLnk = styled(Lnk)().withComponent(MenuItem)
 
+MenuItemLnk.displayName = 'MenuItemLnk'
+
 export const MenuLink: FC<MenuLinkProps> = (props) =>
   props.stub ? (
     <MenuItem
@@ -70,3 +72,5 @@ export const MenuLink: FC<MenuLinkProps> = (props) =>
       )}
     />
   )
+
+MenuLink.displayName = 'MenuLink'

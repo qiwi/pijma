@@ -30,3 +30,5 @@ export const WalletLogo: FC<WalletLogoProps> = ({ compact }) =>
       />
     </Svg>
   )
+
+WalletLogo.displayName = 'WalletLogo'

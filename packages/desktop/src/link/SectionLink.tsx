@@ -28,6 +28,8 @@ export interface SectionLinkProps {
 
 const SectionLnk = styled(Lnk)().withComponent(Section)
 
+SectionLnk.displayName = 'SectionLnk'
+
 export const SectionLink: FC<SectionLinkProps> = (props) => (
   <LinkControl
     href={props.href}
@@ -66,3 +68,5 @@ export const SectionLink: FC<SectionLinkProps> = (props) => (
     )}
   />
 )
+
+SectionLink.displayName = 'SectionLink'

@@ -41,6 +41,8 @@ export class SelectFieldControl<
   SelectFieldControlProps<O, V>,
   SelectFieldControlState
 > {
+  public static displayName = 'SelectFieldControl'
+
   private modalRef: RefObject<HTMLDivElement> = createRef()
 
   private targetRef: RefObject<HTMLDivElement> = createRef()

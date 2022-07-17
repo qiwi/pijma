@@ -86,3 +86,5 @@ export const HeaderBankCardLink: FC<HeaderBankCardLinkProps> = (props) => (
     )}
   />
 )
+
+HeaderBankCardLink.displayName = 'HeaderBankCardLink'

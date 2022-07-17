@@ -23,6 +23,8 @@ export class OffsetScrollControl extends Component<
   OffsetScrollControlProps,
   OffsetScrollControlState
 > {
+  public static displayName = 'OffsetScrollControl'
+
   public state: OffsetScrollControlState = {
     top: false,
     bottom: false,

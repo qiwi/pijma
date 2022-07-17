@@ -34,3 +34,5 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
       ))}
     </Paragraph>
   )
+
+Breadcrumbs.displayName = 'Breadcrumbs'

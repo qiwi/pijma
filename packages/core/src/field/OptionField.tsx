@@ -25,6 +25,8 @@ const Input = styled(Box, {
   shouldForwardProp: (prop) => !InputProps.includes(prop),
 })<BoxProps & Pick<OptionFieldProps, 'autoFocus'>>()
 
+Input.displayName = 'Input'
+
 export const OptionField: React.FunctionComponent<OptionFieldProps> = (
   props,
 ) => (
@@ -71,3 +73,5 @@ export const OptionField: React.FunctionComponent<OptionFieldProps> = (
     </Spacer>
   </Box>
 )
+
+OptionField.displayName = 'OptionField'

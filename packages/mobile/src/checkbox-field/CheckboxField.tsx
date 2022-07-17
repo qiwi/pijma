@@ -84,4 +84,6 @@ const CheckboxField: FunctionComponent<
     />
   )
 
+CheckboxField.displayName = 'CheckboxField'
+
 export default CheckboxField

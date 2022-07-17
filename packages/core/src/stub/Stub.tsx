@@ -70,6 +70,8 @@ export const Stub: FC<StubProps> = (props) => (
   </Box>
 )
 
+Stub.displayName = 'Stub'
+
 Stub.defaultProps = {
   r: 4,
 }

@@ -64,3 +64,5 @@ export const TextArea = styled('textarea', TextAreaOptions)<TextAreaProps>(
     },
   }),
 )
+
+TextArea.displayName = 'TextArea'

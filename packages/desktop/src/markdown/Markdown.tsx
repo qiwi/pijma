@@ -16,6 +16,8 @@ const MarkdownBox = styled(Box)({
   },
 })
 
+MarkdownBox.displayName = 'MarkdownBox'
+
 const SizeMargin: { [size in NonNullable<SizeProps['size']>]: number } = {
   s: 3,
   m: 4,
@@ -32,6 +34,8 @@ const p: FC<SizeProps> = ({ children, size }) => (
   </MarkdownBox>
 )
 
+p.displayName = 'p'
+
 interface ImageProps extends SizeProps {
   alt?: string
   src: string
@@ -40,6 +44,8 @@ interface ImageProps extends SizeProps {
 const img: FC<ImageProps> = ({ src, alt }) => (
   <Image src={src} alt={alt} width="auto" height="auto" />
 )
+
+img.displayName = 'img'
 
 interface LinkProps extends SizeProps {
   title?: string
@@ -50,11 +56,15 @@ const a: FC<LinkProps> = ({ title, href, size, children }) => (
   <Link title={title} href={href} size={size} children={children} />
 )
 
+a.displayName = 'a'
+
 const h1: FC<SizeProps> = ({ children }) => (
   <MarkdownBox mt={11}>
     <Heading size="1" children={children} />
   </MarkdownBox>
 )
+
+h1.displayName = 'h1'
 
 const h2: FC<SizeProps> = ({ children }) => (
   <MarkdownBox mt={11}>
@@ -62,11 +72,15 @@ const h2: FC<SizeProps> = ({ children }) => (
   </MarkdownBox>
 )
 
+h2.displayName = 'h2'
+
 const h3: FC<SizeProps> = ({ children }) => (
   <MarkdownBox mt={8}>
     <Heading size="3" children={children} />
   </MarkdownBox>
 )
+
+h3.displayName = 'h3'
 
 const h4: FC<SizeProps> = ({ children }) => (
   <MarkdownBox mt={7}>
@@ -74,19 +88,27 @@ const h4: FC<SizeProps> = ({ children }) => (
   </MarkdownBox>
 )
 
+h4.displayName = 'h4'
+
 const h5: FC<SizeProps> = ({ children }) => (
   <MarkdownBox mt={6}>
     <Heading size="5" children={children} />
   </MarkdownBox>
 )
 
+h5.displayName = 'h5'
+
 const strong: FC<SizeProps> = ({ children }) => (
   <Text bold children={children} />
 )
 
+strong.displayName = 'strong'
+
 const del: FC<SizeProps> = ({ children }) => (
   <Text decoration="line-through" children={children} />
 )
+
+del.displayName = 'del'
 
 const li: FC<SizeProps> = ({ size, children }) => (
   <React.Fragment>
@@ -102,11 +124,15 @@ const li: FC<SizeProps> = ({ size, children }) => (
   </React.Fragment>
 )
 
+li.displayName = 'li'
+
 const ul: FC<SizeProps> = ({ size, children }) => (
   <MarkdownBox mt={SizeMargin[size]}>
     <List size={size} type="bullet" children={Children.toArray(children)} />
   </MarkdownBox>
 )
+
+ul.displayName = 'ul'
 
 interface NumericListProps extends SizeProps {
   start: number
@@ -121,6 +147,8 @@ const ol: FC<NumericListProps> = ({ size, start, children }) => (
     />
   </MarkdownBox>
 )
+
+ol.displayName = 'ol'
 
 const overrides: { [tag: string]: FC<any> } = {
   p,
@@ -159,3 +187,5 @@ export const Markdown: FC<MarkdownProps> = ({ size = 'm', children }) => (
     }}
   />
 )
+
+Markdown.displayName = 'Markdown'

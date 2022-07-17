@@ -8,6 +8,8 @@ export default class SuggestControl<
   V,
   O extends SuggestOptionModel<V>,
 > extends Component<SuggestControlProps<O, V>, SuggestControlState> {
+  public static displayName = 'SuggestControl'
+
   public state: SuggestControlState = {
     show: false,
     focused: false,

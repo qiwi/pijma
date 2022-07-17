@@ -6,16 +6,12 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "build": "echo 'TS-PATCH START...' && ts-patch install -s && echo 'TS-PATCH DONE...'"
-  },
   "files": [],
   "devDependencies": {
+    "@swc/cli": "0.1.57",
+    "@swc/core": "1.2.215",
     "concurrently": "7.2.2",
     "css-loader": "4.3.0",
-    "esbuild": "0.14.49",
-    "esbuild-loader": "2.19.0",
-    "esbuild-node-externals": "^1.4.1",
     "eslint": "8.19.0",
     "eslint-config-qiwi": "1.17.3",
     "fast-glob": "3.2.11",
@@ -27,8 +23,7 @@
     "react-docgen-typescript": "2.2.2",
     "react-styleguidist": "11.2.0",
     "style-loader": "2.0.0",
-    "ts-patch": "2.0.1",
-    "ts-react-display-name": "1.2.2",
+    "swc-loader": "0.2.3",
     "tsc-esm-fix": "2.18.0",
     "typescript": "4.4.4",
     "webpack": "4.46.0"

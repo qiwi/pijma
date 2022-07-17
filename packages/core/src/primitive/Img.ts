@@ -47,3 +47,5 @@ export const Img = styled(
   maxHeight: cssValue(props.maxHeight, theme.scale),
   ...props.css,
 }))
+
+Img.displayName = 'Img'

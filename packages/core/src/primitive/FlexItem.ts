@@ -32,3 +32,5 @@ export const FlexItem = styled(
   alignSelf: align,
   justifySelf: justify,
 }))
+
+FlexItem.displayName = 'FlexItem'

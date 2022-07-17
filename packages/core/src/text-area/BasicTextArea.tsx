@@ -85,6 +85,8 @@ export const BasicTextArea = forwardRef<
   />
 ))
 
+BasicTextArea.displayName = 'BasicTextArea'
+
 BasicTextArea.defaultProps = {
   tabIndex: 0,
 }

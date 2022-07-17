@@ -69,3 +69,5 @@ export const PaymentSystemIcon: FC<PaymentSystemIconProps> = ({
     ))}
   </Svg>
 )
+
+PaymentSystemIcon.displayName = 'PaymentSystemIcon'

@@ -75,3 +75,5 @@ export const OptionFieldItem: React.FunctionComponent<OptionFieldItemProps> = ({
     </Flex>
   </Pos>
 )
+
+OptionFieldItem.displayName = 'OptionFieldItem'

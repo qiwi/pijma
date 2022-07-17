@@ -83,3 +83,5 @@ export const Input = styled('input', InputOptions)<InputProps>(
     '&::-webkit-inner-spin-button': appearanceNone,
   }),
 )
+
+Input.displayName = 'Input'

@@ -58,4 +58,6 @@ const Spinner: FunctionComponent<SpinnerProps> = (props) => (
   />
 )
 
+Spinner.displayName = 'Spinner'
+
 export default Spinner

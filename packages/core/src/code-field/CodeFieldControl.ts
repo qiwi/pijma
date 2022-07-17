@@ -37,6 +37,8 @@ export class CodeFieldControl extends React.Component<
   CodeFieldControlProps,
   CodeFieldControlState
 > {
+  public static displayName = 'CodeFieldControl'
+
   private preventBlur = true
 
   private preventFocus = true

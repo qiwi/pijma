@@ -17,6 +17,8 @@ import { MenuItem } from '../menu'
 
 const CardItem = styled(Card)().withComponent(MenuItem)
 
+CardItem.displayName = 'CardItem'
+
 export interface SelectFieldProps<I extends OptionModel<V>, V> {
   items: I[]
   title: string
@@ -146,3 +148,5 @@ export const SelectField: FunctionComponent<
       )}
     />
   )
+
+SelectField.displayName = 'SelectField'
