@@ -1,3 +1,12 @@
+## [@qiwi/pijma-desktop@1.150.0](https://github.com/qiwi/pijma/compare/2022.7.15-qiwi.pijma-desktop.1.149.3-f0...2022.7.18-qiwi.pijma-desktop.1.150.0-f0) (2022-07-18)
+
+### Features
+* feat: swc (#509) [8252c5d](https://github.com/qiwi/pijma/commit/8252c5db68d239815a3d2c608203c192605630c3)
+
+### Dependencies
+* perf: @qiwi/pijma-core updated to 1.152.0
+* perf: @qiwi/pijma-infra updated to 1.7.0
+
 ## [@qiwi/pijma-desktop@1.149.3](https://github.com/qiwi/pijma/compare/2022.7.15-qiwi.pijma-desktop.1.149.2-f0...2022.7.15-qiwi.pijma-desktop.1.149.3-f0) (2022-07-15)
 
 ### Fixes & improvements
