@@ -100,6 +100,8 @@ const SwitchField: FunctionComponent<
     />
   )
 
+SwitchField.displayName = 'SwitchField'
+
 SwitchField.defaultProps = {
   tabIndex: 0,
 }

@@ -22,6 +22,8 @@ import SuggestFieldProps from './SuggestFieldProps'
 
 const CardMenuItem = styled(Card)().withComponent(MenuItem)
 
+CardMenuItem.displayName = 'CardMenuItem'
+
 export const SuggestField = <V extends {}>({
   equals = (a: V, b: V) => a === b,
   ...props
@@ -203,8 +205,8 @@ export const SuggestField = <V extends {}>({
     />
   )
 
+SuggestField.displayName = 'SuggestField'
+
 SuggestField.defaultProps = {
   equals: (a: any, b: any) => a === b,
 }
-
-SuggestField.displayName = 'SuggestField'

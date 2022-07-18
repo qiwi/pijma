@@ -8,6 +8,8 @@ export interface FormControlProps {
 }
 
 export class FormControl extends React.Component<FormControlProps> {
+  public static displayName = 'FormControl'
+
   private onSubmit: React.FormEventHandler = (event) => {
     event.preventDefault()
     if (this.props.onSubmit) {

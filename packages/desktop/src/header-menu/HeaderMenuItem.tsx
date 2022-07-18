@@ -92,6 +92,8 @@ export const HeaderMenuItem = forwardRef<
   />
 ))
 
+HeaderMenuItem.displayName = 'HeaderMenuItem'
+
 HeaderMenuItem.defaultProps = {
   active: false,
 }

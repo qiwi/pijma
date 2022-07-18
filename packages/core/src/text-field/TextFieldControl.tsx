@@ -7,6 +7,8 @@ export default class TextFieldControl extends React.Component<
   TextFieldControlProps,
   TextFieldControlState
 > {
+  public static displayName = 'TextFieldControl'
+
   public state: TextFieldControlState = {
     focused: false,
   }

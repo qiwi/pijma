@@ -27,6 +27,8 @@ export interface PaginationControlProps {
 }
 
 export class PaginationControl extends React.Component<PaginationControlProps> {
+  public static displayName = 'PaginationControl'
+
   private onPageClick = (page: number, disabled: boolean) => {
     if (this.props.href || disabled) {
       return

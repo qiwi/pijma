@@ -65,4 +65,6 @@ const SimpleTransition: React.FunctionComponent<SimpleTransitionProps> = ({
   </Transition>
 )
 
+SimpleTransition.displayName = 'SimpleTransition'
+
 export default SimpleTransition

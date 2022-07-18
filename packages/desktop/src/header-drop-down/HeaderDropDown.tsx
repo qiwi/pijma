@@ -18,11 +18,13 @@ export interface HeaderDropDownProps {
   onHide: () => void
 }
 
-const transition: FC<SimpleTransitionProps> = (props) => (
+const Transition: FC<SimpleTransitionProps> = (props) => (
   <SimpleTransition {...props} />
 )
 
-transition.defaultProps = {
+Transition.displayName = 'Transition'
+
+Transition.defaultProps = {
   timeout: {
     enter: 300,
     exit: 200,
@@ -53,7 +55,7 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
     container={container}
     rootClose={true}
     onHide={onHide}
-    transition={transition}
+    transition={Transition}
     popperConfig={{
       modifiers: {
         preventOverflow: {
@@ -99,3 +101,5 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
     )}
   />
 )
+
+HeaderDropDown.displayName = 'HeaderDropDown'

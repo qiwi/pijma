@@ -7,6 +7,8 @@ export default class ButtonControl extends React.Component<
   ButtonControlProps,
   ButtonControlState
 > {
+  public static displayName = 'ButtonControl'
+
   public state: ButtonControlState = {
     active: false,
     focus: false,

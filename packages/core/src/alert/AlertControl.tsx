@@ -15,6 +15,8 @@ export interface AlertControlState {
 }
 
 export class AlertControl extends React.Component<AlertControlProps> {
+  public static displayName = 'AlertControl'
+
   public state: AlertControlState = {
     hover: false,
   }

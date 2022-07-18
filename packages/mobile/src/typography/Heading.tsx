@@ -113,6 +113,8 @@ export const Heading: FunctionComponent<HeadingProps> = ({
     />
   )
 
+Heading.displayName = 'Heading'
+
 Heading.defaultProps = {
   color: 'default',
 }

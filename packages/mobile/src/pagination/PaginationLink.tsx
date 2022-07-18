@@ -64,6 +64,8 @@ export const PaginationLink: FC<PaginationLinkProps> = (props) => (
   />
 )
 
+PaginationLink.displayName = 'PaginationLink'
+
 PaginationLink.defaultProps = {
   width: 12,
 }

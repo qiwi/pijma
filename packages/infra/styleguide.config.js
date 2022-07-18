@@ -117,16 +117,9 @@ module.exports = ({ cwd, extra = {}, components = [] }) => {
           rules: [
             {
               test: /\.tsx?$/,
-              use: [
-                {
-                  loader: 'esbuild-loader',
-                  options: {
-                    loader: 'tsx',
-                    tsconfigRaw: tsConfig,
-                    target: 'es2015',
-                  },
-                },
-              ],
+              use: {
+                loader: 'swc-loader',
+              },
               exclude: /node_modules/,
             },
             {

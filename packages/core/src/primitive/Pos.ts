@@ -35,3 +35,5 @@ export const Pos = styled(
   bottom: cssValue(props.bottom, theme.scale),
   left: cssValue(props.left, theme.scale),
 }))
+
+Pos.displayName = 'Pos'

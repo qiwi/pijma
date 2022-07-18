@@ -39,3 +39,5 @@ export const TabBorder: FC<TabBorderProps> = ({
     </Pos>
   )
 }
+
+TabBorder.displayName = 'TabBorder'

@@ -27,11 +27,15 @@ import { HeaderSuggestProps } from './HeaderSuggestProps'
 
 const CardItem = styled(Card)().withComponent(MenuItem)
 
-const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => (
+CardItem.displayName = 'CardItem'
+
+const ContentTransition: FunctionComponent<SimpleTransitionProps> = (props) => (
   <SimpleTransition {...props} />
 )
 
-contentTransition.defaultProps = {
+ContentTransition.displayName = 'ContentTransition'
+
+ContentTransition.defaultProps = {
   timeout: {
     enter: 150,
     exit: 150,
@@ -90,7 +94,7 @@ export const HeaderSuggest = <V extends {}>({
               container={props.container.current}
               show={renderProps.show}
               rootClose={true}
-              transition={contentTransition}
+              transition={ContentTransition}
               onHide={renderProps.onHide}
               children={(overlayRenderProps) => (
                 <Pos

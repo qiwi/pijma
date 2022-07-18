@@ -10,6 +10,8 @@ export default class PhoneFieldControl extends Component<
   PhoneFieldControlProps,
   PhoneFieldControlState
 > {
+  public static displayName = 'PhoneFieldControl'
+
   public componentDidMount() {
     if (this.props.value) {
       const country = this.getCountryByPhone(this.props.value)

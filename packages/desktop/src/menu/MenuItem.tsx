@@ -116,3 +116,5 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(
     </Section>
   ),
 )
+
+MenuItem.displayName = 'MenuItem'

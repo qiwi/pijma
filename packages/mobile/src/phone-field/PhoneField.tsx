@@ -152,6 +152,8 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
     />
   )
 
+PhoneField.displayName = 'PhoneField'
+
 PhoneField.defaultProps = {
   tabIndex: 0,
   code: 'ru',

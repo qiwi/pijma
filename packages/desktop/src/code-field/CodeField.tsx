@@ -105,3 +105,5 @@ export const CodeField: React.FC<CodeFieldProps> = ({
       )}
     />
   )
+
+CodeField.displayName = 'CodeField'

@@ -52,3 +52,5 @@ export const SimpleField: FC<SimpleFieldProps> = ({
     </Flex>
   </Pos>
 )
+
+SimpleField.displayName = 'SimpleField'

@@ -30,6 +30,8 @@ export interface TabsControlState {
 }
 
 export class TabsControl extends React.Component<TabsControlProps> {
+  public static displayName = 'TabsControl'
+
   public state: TabsControlState = {
     focused: -1,
     borderLeft: 0,

@@ -53,6 +53,8 @@ export const Caption: FunctionComponent<CaptionProps> = ({
     />
   )
 
+Caption.displayName = 'Caption'
+
 Caption.defaultProps = {
   color: 'support',
 }

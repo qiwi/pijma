@@ -54,31 +54,39 @@ const defaultProps = (direction: HeaderMenuProps['from']) => ({
     }),
 })
 
-const contentTransitionTop: FC<SimpleTransitionProps> = (props) => (
-  <SimpleTransition {...props} />
-)
-const contentTransitionRight: FC<SimpleTransitionProps> = (props) => (
-  <SimpleTransition {...props} />
-)
-const contentTransitionBottom: FC<SimpleTransitionProps> = (props) => (
-  <SimpleTransition {...props} />
-)
-const contentTransitionLeft: FC<SimpleTransitionProps> = (props) => (
+const ContentTransitionTop: FC<SimpleTransitionProps> = (props) => (
   <SimpleTransition {...props} />
 )
 
-contentTransitionTop.defaultProps = defaultProps('top')
-contentTransitionRight.defaultProps = defaultProps('right')
-contentTransitionBottom.defaultProps = defaultProps('bottom')
-contentTransitionLeft.defaultProps = defaultProps('left')
+const ContentTransitionRight: FC<SimpleTransitionProps> = (props) => (
+  <SimpleTransition {...props} />
+)
 
-const contentTransition: {
+const ContentTransitionBottom: FC<SimpleTransitionProps> = (props) => (
+  <SimpleTransition {...props} />
+)
+
+const ContentTransitionLeft: FC<SimpleTransitionProps> = (props) => (
+  <SimpleTransition {...props} />
+)
+
+ContentTransitionTop.displayName = 'ContentTransitionTop'
+ContentTransitionRight.displayName = 'ContentTransitionRight'
+ContentTransitionBottom.displayName = 'ContentTransitionBottom'
+ContentTransitionLeft.displayName = 'ContentTransitionLeft'
+
+ContentTransitionTop.defaultProps = defaultProps('top')
+ContentTransitionRight.defaultProps = defaultProps('right')
+ContentTransitionBottom.defaultProps = defaultProps('bottom')
+ContentTransitionLeft.defaultProps = defaultProps('left')
+
+const ContentTransition: {
   [direction in HeaderMenuProps['from']]: FC<SimpleTransitionProps>
 } = {
-  top: contentTransitionTop,
-  right: contentTransitionRight,
-  bottom: contentTransitionBottom,
-  left: contentTransitionLeft,
+  top: ContentTransitionTop,
+  right: ContentTransitionRight,
+  bottom: ContentTransitionBottom,
+  left: ContentTransitionLeft,
 }
 
 export const HeaderMenu: FC<HeaderMenuProps> = ({
@@ -121,7 +129,7 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({
       onShow={onShow}
       onHide={onHide}
       containerClassName={containerClassName}
-      transition={contentTransition[from]}
+      transition={ContentTransition[from]}
       renderDialog={(dialogProps) => (
         <Pos
           type="fixed"
@@ -166,3 +174,5 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({
       )}
     />
   )
+
+HeaderMenu.displayName = 'HeaderMenu'

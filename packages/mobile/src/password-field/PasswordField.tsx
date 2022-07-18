@@ -70,6 +70,8 @@ export const PasswordField: FunctionComponent<PasswordFieldProps> = (props) => (
   />
 )
 
+PasswordField.displayName = 'PasswordField'
+
 PasswordField.defaultProps = {
   tabIndex: 0,
   viewed: true,

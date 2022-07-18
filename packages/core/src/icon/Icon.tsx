@@ -289,6 +289,8 @@ export const Icon: FC<IconProps> = ({ name, size = 6, color = '#000' }) => (
   </Svg>
 )
 
+Icon.displayName = 'Icon'
+
 Icon.defaultProps = {
   size: 6,
   color: '#000',

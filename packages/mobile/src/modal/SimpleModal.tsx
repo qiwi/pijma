@@ -10,11 +10,13 @@ import {
 } from '@qiwi/pijma-core'
 import React, { Fragment, FunctionComponent } from 'react'
 
-const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => (
+const ContentTransition: FunctionComponent<SimpleTransitionProps> = (props) => (
   <SimpleTransition {...props} />
 )
 
-contentTransition.defaultProps = {
+ContentTransition.displayName = 'ContentTransition'
+
+ContentTransition.defaultProps = {
   timeout: {
     enter: 370,
     exit: 250,
@@ -33,11 +35,13 @@ contentTransition.defaultProps = {
     }),
 }
 
-const backdropTransition: FunctionComponent<SimpleTransitionProps> = (
+const BackdropTransition: FunctionComponent<SimpleTransitionProps> = (
   props,
 ) => <SimpleTransition {...props} />
 
-backdropTransition.defaultProps = {
+BackdropTransition.displayName = 'BackdropTransition'
+
+BackdropTransition.defaultProps = {
   timeout: {
     enter: 370,
     exit: 250,
@@ -85,8 +89,8 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = ({
       onShow={onShow}
       onHide={onHide}
       onBackdropClick={backdropClose ? onHide : undefined}
-      transition={contentTransition}
-      backdropTransition={backdropTransition}
+      transition={ContentTransition}
+      backdropTransition={BackdropTransition}
       renderBackdrop={(backdropProps) => (
         <Pos
           type="fixed"
@@ -135,5 +139,7 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = ({
       )}
     />
   )
+
+SimpleModal.displayName = 'SimpleModal'
 
 export default SimpleModal

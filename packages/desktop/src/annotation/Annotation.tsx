@@ -6,3 +6,5 @@ export const Annotation: FC = ({ children }) => (
     {children}
   </Card>
 )
+
+Annotation.displayName = 'Annotation'

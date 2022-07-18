@@ -123,6 +123,8 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
   />
 )
 
+Pagination.displayName = 'Pagination'
+
 Pagination.defaultProps = {
   shadowed: false,
   count: 5,

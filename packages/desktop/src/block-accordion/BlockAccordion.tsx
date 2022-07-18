@@ -106,6 +106,8 @@ export const BlockAccordion: FunctionComponent<
   />
 )
 
+BlockAccordion.displayName = 'BlockAccordion'
+
 BlockAccordion.defaultProps = {
   indent: 'm',
   tabIndex: 0,

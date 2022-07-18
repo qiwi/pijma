@@ -35,3 +35,5 @@ export const Status: FC<StatusProps> = ({
     {children ? <FlexItem width={1} mt={2} children={children} /> : null}
   </Flex>
 )
+
+Status.displayName = 'Status'

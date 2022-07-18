@@ -73,3 +73,5 @@ export const Tumbler: FC<TumblerProps> = (props) => (
     />
   </Svg>
 )
+
+Tumbler.displayName = 'Tumbler'

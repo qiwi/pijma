@@ -129,3 +129,5 @@ export const Text: FunctionComponent<TextProps> = ({
       children={<Breaker children={children} />}
     />
   )
+
+Text.displayName = 'Text'

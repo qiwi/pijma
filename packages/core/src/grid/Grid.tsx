@@ -52,6 +52,8 @@ export const Grid: FC<GridProps> = ({
   )
 }
 
+Grid.displayName = 'Grid'
+
 Grid.defaultProps = {
   gutter: 20,
   columns: 12,

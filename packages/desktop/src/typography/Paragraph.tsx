@@ -130,6 +130,8 @@ export const Paragraph: FunctionComponent<ParagraphProps> = ({
     />
   )
 
+Paragraph.displayName = 'Paragraph'
+
 Paragraph.defaultProps = {
   size: 'm',
   bold: false,

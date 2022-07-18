@@ -37,6 +37,8 @@ export const CrossBurger: FC<CrossBurgerProps> = ({
   </Svg>
 )
 
+CrossBurger.displayName = 'CrossBurger'
+
 CrossBurger.defaultProps = {
   size: 6,
   color: '#000',

@@ -21,3 +21,5 @@ export const Form: FC<FormProps> = ({ onSubmit, ...props }) => (
     )}
   />
 )
+
+Form.displayName = 'Form'

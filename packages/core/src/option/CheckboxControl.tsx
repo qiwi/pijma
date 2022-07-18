@@ -8,6 +8,8 @@ export default class CheckboxControl<
   O extends OptionModel<V>,
   V,
 > extends React.Component<CheckboxControlProps<O, V>, CheckboxControlState> {
+  public static displayName = 'CheckboxControl'
+
   public state: CheckboxControlState = {
     focused: -1,
   }

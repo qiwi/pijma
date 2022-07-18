@@ -22,11 +22,13 @@ import React, {
   RefObject,
 } from 'react'
 
-const contentTransition: FunctionComponent<SimpleTransitionProps> = (props) => (
+const ContentTransition: FunctionComponent<SimpleTransitionProps> = (props) => (
   <SimpleTransition {...props} />
 )
 
-contentTransition.defaultProps = {
+ContentTransition.displayName = 'ContentTransition'
+
+ContentTransition.defaultProps = {
   timeout: {
     enter: 370,
     exit: 250,
@@ -68,13 +70,15 @@ interface InputModalProps {
 
 const PosFlexCard = styled(CardPos)().withComponent(Flex)
 
+PosFlexCard.displayName = 'PosFlexCard'
+
 const InputModal: FunctionComponent<InputModalProps> = (props) => (
   <Modal
     show={props.show}
     onShow={props.onShow}
     onHide={props.onHide}
     onEscapeKeyDown={props.onEscape}
-    transition={contentTransition}
+    transition={ContentTransition}
     restoreFocus={false}
     renderDialog={(dialogProps) => (
       <Pos
@@ -138,5 +142,7 @@ const InputModal: FunctionComponent<InputModalProps> = (props) => (
     )}
   />
 )
+
+InputModal.displayName = 'InputModal'
 
 export default InputModal

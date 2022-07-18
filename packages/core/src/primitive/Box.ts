@@ -120,6 +120,8 @@ export const BoxStyles: Interpolation<BoxProps & { theme: Theme }> = ({
 
 export const Box = styled('div', BoxOptions)<BoxProps>(BoxStyles)
 
+Box.displayName = 'Box'
+
 Box.defaultProps = {
   display: 'block',
 }

@@ -140,3 +140,5 @@ export const PaymentSecurityIcon: FC<PaymentSecurityIconProps> = ({
       ))}
     </Svg>
   )
+
+PaymentSecurityIcon.displayName = 'PaymentSecurityIcon'

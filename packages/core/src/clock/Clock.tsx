@@ -56,4 +56,6 @@ const Clock: FunctionComponent<ClockProps> = ({
   </CardPos>
 )
 
+Clock.displayName = 'Clock'
+
 export default Clock

@@ -36,6 +36,8 @@ export const Svg = styled(
   transformOrigin: props.transformOrigin,
 }))
 
+Svg.displayName = 'Svg'
+
 Svg.defaultProps = {
   focusable: 'false',
 }
@@ -72,6 +74,12 @@ const SvgItem = (tag: keyof JSX.IntrinsicElements) =>
 
 export const Path = SvgItem('path')
 
+Path.displayName = 'Path'
+
 export const Rect = SvgItem('rect')
 
+Rect.displayName = 'Rect'
+
 export const Circle = SvgItem('circle')
+
+Circle.displayName = 'Circle'

@@ -88,3 +88,5 @@ export const Typo = styled(
       : undefined,
   ...props.css,
 }))
+
+Typo.displayName = 'Typo'

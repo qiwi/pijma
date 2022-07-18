@@ -27,6 +27,8 @@ export interface BlockLinkProps {
 
 const BlockCardLnk = styled(CardLnk)().withComponent(Block)
 
+BlockCardLnk.displayName = 'BlockCardLnk'
+
 export const BlockLink: FC<BlockLinkProps> = (props) => (
   <LinkControl
     onClick={props.onClick}
@@ -63,3 +65,5 @@ export const BlockLink: FC<BlockLinkProps> = (props) => (
     )}
   />
 )
+
+BlockLink.displayName = 'BlockLink'

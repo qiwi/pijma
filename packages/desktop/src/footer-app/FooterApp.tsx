@@ -54,6 +54,8 @@ const FooterAppLink: FC<FooterAppLinkProps> = (props) =>
     />
   )
 
+FooterAppLink.displayName = 'FooterAppLink'
+
 export interface FooterAppProps {
   stub?: boolean
   children: FooterAppLinkProps[]
@@ -72,3 +74,5 @@ export const FooterApp: FC<FooterAppProps> = ({ children, stub = false }) => (
     ))}
   </Flex>
 )
+
+FooterApp.displayName = 'FooterApp'

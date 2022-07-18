@@ -24,11 +24,13 @@ export interface DropDownProps {
   onHide: () => void
 }
 
-const transition: FC<SimpleTransitionProps> = (props) => (
+const Transition: FC<SimpleTransitionProps> = (props) => (
   <SimpleTransition {...props} />
 )
 
-transition.defaultProps = {
+Transition.displayName = 'Transition'
+
+Transition.defaultProps = {
   timeout: {
     enter: 300,
     exit: 200,
@@ -68,7 +70,7 @@ export const DropDown: FC<DropDownProps> = ({
       container={container}
       rootClose={rootClose}
       onHide={onHide}
-      transition={transition}
+      transition={Transition}
       children={(renderProps) => (
         <Pos
           type="absolute"
@@ -85,6 +87,8 @@ export const DropDown: FC<DropDownProps> = ({
       )}
     />
   )
+
+DropDown.displayName = 'DropDown'
 
 DropDown.defaultProps = {
   rootClose: true,

@@ -21,6 +21,8 @@ import { MenuItem } from '../menu'
 
 const CardMenuItem = styled(Card)().withComponent(MenuItem)
 
+CardMenuItem.displayName = 'CardMenuItem'
+
 export interface SelectFieldProps<I extends OptionModel<V>, V> {
   items: I[]
   title: string
@@ -45,6 +47,8 @@ export interface SelectFieldItemModel<V> extends OptionModel<V> {
 const Transition: FC<SimpleTransitionProps> = (props) => (
   <SimpleTransition {...props} />
 )
+
+Transition.displayName = 'Transition'
 
 Transition.defaultProps = {
   timeout: {
@@ -198,3 +202,5 @@ export const SelectField: FunctionComponent<
       )}
     />
   )
+
+SelectField.displayName = 'SelectField'

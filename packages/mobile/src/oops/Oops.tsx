@@ -64,3 +64,5 @@ export const Oops: FC<OopsProps> = ({
     </Flex>
   </Card>
 )
+
+Oops.displayName = 'Oops'

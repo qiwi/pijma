@@ -81,6 +81,8 @@ export const Switch: FunctionComponent<SwitchProps> = (props) =>
     />
   )
 
+Switch.displayName = 'Switch'
+
 Switch.defaultProps = {
   tabIndex: 0,
 }

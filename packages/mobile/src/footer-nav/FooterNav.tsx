@@ -30,3 +30,5 @@ export const FooterNav: FC<FooterNavProps> = ({
     </Flex>
   </Box>
 )
+
+FooterNav.displayName = 'FooterNav'

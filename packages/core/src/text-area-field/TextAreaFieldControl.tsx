@@ -7,6 +7,8 @@ export default class TextAreaFieldControl extends React.Component<
   TextAreaFieldControlProps,
   TextAreaFieldControlState
 > {
+  public static displayName = 'TextAreaFieldControl'
+
   public state = {
     focused: false,
     rows: 1,

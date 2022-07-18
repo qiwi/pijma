@@ -143,3 +143,5 @@ export const InputField: FunctionComponent<FieldProps> = ({
       </Flex>
     </Pos>
   )
+
+InputField.displayName = 'InputField'

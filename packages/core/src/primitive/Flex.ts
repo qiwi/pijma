@@ -30,6 +30,8 @@ export const Flex = styled(
   justifyContent: justify,
 }))
 
+Flex.displayName = 'Flex'
+
 Flex.defaultProps = {
   display: 'flex',
 }

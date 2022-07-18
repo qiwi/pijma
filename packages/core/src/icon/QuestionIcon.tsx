@@ -21,6 +21,8 @@ export const QuestionIcon: FC<QuestionIconProps> = ({ size }) => (
   </Svg>
 )
 
+QuestionIcon.displayName = 'QuestionIcon'
+
 QuestionIcon.defaultProps = {
   size: 6,
 }

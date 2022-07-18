@@ -23,6 +23,8 @@ export class RatingControl extends React.Component<
   RatingControlProps,
   RatingControlState
 > {
+  public static displayName = 'RatingControl'
+
   public state: RatingControlState = {
     hovered: -1,
   }

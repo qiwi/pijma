@@ -37,6 +37,8 @@ export class LinkControl extends React.Component<
   LinkControlProps,
   LinkControlState
 > {
+  public static displayName = 'LinkControl'
+
   public static defaultProps: Partial<LinkControlProps> = {}
 
   public state: LinkControlState = {

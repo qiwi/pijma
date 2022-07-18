@@ -27,6 +27,8 @@ export class SwitchControl extends React.Component<
   SwitchControlProps,
   SwitchControlState
 > {
+  public static displayName = 'SwitchControl'
+
   public state: SwitchControlState = {
     focused: false,
   }

@@ -21,6 +21,8 @@ import ContentSuggestProps from './ContentSuggestProps'
 
 const CardMenuItem = styled(Card)().withComponent(MenuItem)
 
+CardMenuItem.displayName = 'CardMenuItem'
+
 export const ContentSuggest = <V extends {}>({
   equals = (a: V, b: V) => a === b,
   ...props
@@ -178,8 +180,8 @@ export const ContentSuggest = <V extends {}>({
   />
 )
 
+ContentSuggest.displayName = 'ContentSuggest'
+
 ContentSuggest.defaultProps = {
   equals: (a: any, b: any) => a === b,
 }
-
-ContentSuggest.displayName = 'ContentSuggest'

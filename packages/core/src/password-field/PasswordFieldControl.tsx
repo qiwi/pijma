@@ -7,6 +7,8 @@ export default class PasswordFieldControl extends React.Component<
   PasswordFieldControlProps,
   PasswordFieldControlState
 > {
+  public static displayName = 'PasswordFieldControl'
+
   public state: PasswordFieldControlState = {
     focused: false,
     hidden: true,

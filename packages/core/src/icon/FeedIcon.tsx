@@ -22,6 +22,8 @@ export const FeedIcon: FC<FeedIconProps> = ({
   </Svg>
 )
 
+FeedIcon.displayName = 'FeedIcon'
+
 FeedIcon.defaultProps = {
   size: 6,
   color: '#000',

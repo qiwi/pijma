@@ -16,31 +16,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "importHelpers": true,
-    "allowSyntheticDefaultImports": true,
-    "plugins": [
-      {
-        "transform": "ts-react-display-name",
-        "onlyFileRoot": false,
-        "classTypes": [
-          "React.Component",
-          "React.PureComponent",
-          "Component",
-          "PureComponent"
-        ],
-        "funcTypes": [
-          "React.FunctionComponent",
-          "React.FC",
-          "FC",
-          "FunctionComponent"
-        ],
-        "factoryFuncs": [
-          "React.forwardRef",
-          "React.memo",
-          "forwardRef",
-          "memo",
-          "styled"
-        ]
-      }
-    ]
+    "allowSyntheticDefaultImports": true
   }
 }

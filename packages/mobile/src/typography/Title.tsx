@@ -89,6 +89,8 @@ export const Title: FunctionComponent<TitleProps> = ({
     />
   )
 
+Title.displayName = 'Title'
+
 Title.defaultProps = {
   color: 'default',
 }

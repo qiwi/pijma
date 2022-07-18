@@ -30,6 +30,8 @@ export class AccordionControl<I> extends React.Component<
   AccordionControlProps<I>,
   AccordionControlState
 > {
+  public static displayName = 'AccordionControl'
+
   public state: AccordionControlState = {
     hovered: -1,
     focused: -1,
