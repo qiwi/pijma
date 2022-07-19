@@ -1,3 +1,12 @@
+## [@qiwi/pijma-mobile@1.150.2](https://github.com/qiwi/pijma/compare/2022.7.19-qiwi.pijma-mobile.1.150.1-f0...2022.7.19-qiwi.pijma-mobile.1.150.2-f0) (2022-07-19)
+
+### Fixes & improvements
+* fix: react-docgen-typescript patch (#513) [c5b9ca7](https://github.com/qiwi/pijma/commit/c5b9ca76cd340771fbde25c61a3d7327c6c6e23a)
+
+### Dependencies
+* perf: @qiwi/pijma-core updated to 1.152.1
+* perf: @qiwi/pijma-infra updated to 1.7.1
+
 ## [@qiwi/pijma-mobile@1.150.1](https://github.com/qiwi/pijma/compare/2022.7.18-qiwi.pijma-mobile.1.150.0-f0...2022.7.19-qiwi.pijma-mobile.1.150.1-f0) (2022-07-19)
 
 ### Fixes & improvements
