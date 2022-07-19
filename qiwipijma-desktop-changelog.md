@@ -1,3 +1,8 @@
+## [@qiwi/pijma-desktop@1.150.1](https://github.com/qiwi/pijma/compare/2022.7.18-qiwi.pijma-desktop.1.150.0-f0...2022.7.19-qiwi.pijma-desktop.1.150.1-f0) (2022-07-19)
+
+### Fixes & improvements
+* fix: no fonts deps (#512) [3f4a5b5](https://github.com/qiwi/pijma/commit/3f4a5b5566071a0d62426506ad65cd3ad2d80e3d)
+
 ## [@qiwi/pijma-desktop@1.150.0](https://github.com/qiwi/pijma/compare/2022.7.15-qiwi.pijma-desktop.1.149.3-f0...2022.7.18-qiwi.pijma-desktop.1.150.0-f0) (2022-07-18)
 
 ### Features
