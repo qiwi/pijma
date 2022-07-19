@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.152.1](https://github.com/qiwi/pijma/compare/2022.7.18-qiwi.pijma-core.1.152.0-f0...2022.7.19-qiwi.pijma-core.1.152.1-f0) (2022-07-19)
+
+### Fixes & improvements
+* fix: react-docgen-typescript patch (#513) [c5b9ca7](https://github.com/qiwi/pijma/commit/c5b9ca76cd340771fbde25c61a3d7327c6c6e23a)
+
 ## [@qiwi/pijma-core@1.152.0](https://github.com/qiwi/pijma/compare/2022.7.15-qiwi.pijma-core.1.151.1-f0...2022.7.18-qiwi.pijma-core.1.152.0-f0) (2022-07-18)
 
 ### Features
