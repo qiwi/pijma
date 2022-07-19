@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.152.2](https://github.com/qiwi/pijma/compare/2022.7.19-qiwi.pijma-core.1.152.1-f0...2022.7.19-qiwi.pijma-core.1.152.2-f0) (2022-07-19)
+
+### Fixes & improvements
+* fix: use react as peer dependency (#510) [1fb1b27](https://github.com/qiwi/pijma/commit/1fb1b271879a8bbba20aaa9bcfeb46371511c660)
+
 ## [@qiwi/pijma-core@1.152.1](https://github.com/qiwi/pijma/compare/2022.7.18-qiwi.pijma-core.1.152.0-f0...2022.7.19-qiwi.pijma-core.1.152.1-f0) (2022-07-19)
 
 ### Fixes & improvements
