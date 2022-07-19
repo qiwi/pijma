@@ -1,13 +1,5 @@
-import { CheckboxControl } from './CheckboxControl'
-import { OptionControl } from './OptionControl'
-import { OptionModel } from './OptionModel'
-import { RadioControl } from './RadioControl'
-import { SwitchControl } from './SwitchControl'
-
-export {
-  OptionControl,
-  OptionModel,
-  CheckboxControl,
-  RadioControl,
-  SwitchControl,
-}
+export * from './CheckboxControl'
+export * from './OptionControl'
+export * from './OptionModel'
+export * from './RadioControl'
+export * from './SwitchControl'

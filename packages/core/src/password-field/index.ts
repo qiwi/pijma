@@ -1,9 +1,3 @@
-import { PasswordFieldControl } from './PasswordFieldControl'
-import { PasswordFieldControlProps } from './PasswordFieldControlProps'
-import { PasswordFieldControlState } from './PasswordFieldControlState'
-
-export {
-  PasswordFieldControl,
-  PasswordFieldControlProps,
-  PasswordFieldControlState,
-}
+export * from './PasswordFieldControl'
+export * from './PasswordFieldControlProps'
+export * from './PasswordFieldControlState'
