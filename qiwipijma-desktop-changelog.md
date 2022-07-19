@@ -1,3 +1,11 @@
+## [@qiwi/pijma-desktop@1.150.5](https://github.com/qiwi/pijma/compare/2022.7.19-qiwi.pijma-desktop.1.150.4-f0...2022.7.19-qiwi.pijma-desktop.1.150.5-f0) (2022-07-19)
+
+### Fixes & improvements
+* fix: re-export all (#515) [77977e2](https://github.com/qiwi/pijma/commit/77977e25852e30e276b80277dc462c20a127c7eb)
+
+### Dependencies
+* perf: @qiwi/pijma-core updated to 1.152.4
+
 ## [@qiwi/pijma-desktop@1.150.4](https://github.com/qiwi/pijma/compare/2022.7.19-qiwi.pijma-desktop.1.150.3-f0...2022.7.19-qiwi.pijma-desktop.1.150.4-f0) (2022-07-19)
 
 ### Fixes & improvements
