@@ -76,7 +76,7 @@ const ModalWidth: { [size in NonNullable<SimpleModalProps['size']>]: number } =
     l: 170,
   }
 
-const SimpleModal: FunctionComponent<SimpleModalProps> = (props) =>
+export const SimpleModal: FunctionComponent<SimpleModalProps> = (props) =>
   props.stub ? (
     <Box display="none">{props.children}</Box>
   ) : (
@@ -159,5 +159,3 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = (props) =>
   )
 
 SimpleModal.displayName = 'SimpleModal'
-
-export default SimpleModal

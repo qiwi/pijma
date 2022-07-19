@@ -1,3 +1,3 @@
-import InputModal from './InputModal'
+import { InputModal } from './InputModal'
 
 export { InputModal }

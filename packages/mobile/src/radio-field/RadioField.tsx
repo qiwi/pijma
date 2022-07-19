@@ -11,10 +11,10 @@ import {
 } from '@qiwi/pijma-core'
 import React, { FunctionComponent } from 'react'
 
-import RadioFieldOptionModel from './RadioFieldOptionModel'
-import RadioFieldProps from './RadioFieldProps'
+import { RadioFieldOptionModel } from './RadioFieldOptionModel'
+import { RadioFieldProps } from './RadioFieldProps'
 
-const RadioField: FunctionComponent<
+export const RadioField: FunctionComponent<
   RadioFieldProps<RadioFieldOptionModel<any>, any>
 > = (props) =>
   props.stub ? (
@@ -87,5 +87,3 @@ const RadioField: FunctionComponent<
   )
 
 RadioField.displayName = 'RadioField'
-
-export default RadioField

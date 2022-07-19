@@ -1,13 +1,10 @@
 import { Component, createRef, RefObject } from 'react'
 import { findDOMNode } from 'react-dom'
 
-import MenuControlProps from './MenuControlProps'
-import MenuControlState from './MenuControlState'
+import { MenuControlProps } from './MenuControlProps'
+import { MenuControlState } from './MenuControlState'
 
-export default class MenuControl extends Component<
-  MenuControlProps,
-  MenuControlState
-> {
+export class MenuControl extends Component<MenuControlProps, MenuControlState> {
   public static displayName = 'MenuControl'
 
   public static getDerivedStateFromProps(

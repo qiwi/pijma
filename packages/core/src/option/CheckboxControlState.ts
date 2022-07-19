@@ -1,3 +1,3 @@
-export default interface CheckboxControlState {
+export interface CheckboxControlState {
   focused: number
 }

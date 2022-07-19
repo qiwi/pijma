@@ -1,6 +1,6 @@
 import { Mask } from './MaskedInput'
 
-export default function createPhoneMask(masks: string[]): Mask {
+export function createPhoneMask(masks: string[]): Mask {
   function phoneMask(value: string): (string | RegExp)[] {
     const clearMasks = masks
       .map((mask) => mask.slice(1))

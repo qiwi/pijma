@@ -1,8 +1,8 @@
 import { SuggestControlProps } from '@qiwi/pijma-core'
 
-import ContentSuggestOptionModel from './ContentSuggestOptionModel'
+import { ContentSuggestOptionModel } from './ContentSuggestOptionModel'
 
-export default interface ContentSuggestProps<
+export interface ContentSuggestProps<
   O extends ContentSuggestOptionModel<V>,
   V,
 > {

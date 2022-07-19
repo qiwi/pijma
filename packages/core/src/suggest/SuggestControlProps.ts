@@ -1,11 +1,8 @@
 import React, { FC, RefObject } from 'react'
 
-import SuggestOptionModel from './SuggestOptionModel'
+import { SuggestOptionModel } from './SuggestOptionModel'
 
-export default interface SuggestControlProps<
-  O extends SuggestOptionModel<V>,
-  V,
-> {
+export interface SuggestControlProps<O extends SuggestOptionModel<V>, V> {
   items?: O[]
   value?: V
   suggest?: string

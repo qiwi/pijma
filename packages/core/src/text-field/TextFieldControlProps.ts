@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-export default interface TextFieldControlProps {
+export interface TextFieldControlProps {
   onChange?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void

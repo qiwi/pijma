@@ -2,7 +2,7 @@ import React from 'react'
 import { Transition } from 'react-transition-group'
 
 import { cx } from '../styled'
-import SimpleTransitionProps from './SimpleTransitionProps'
+import { SimpleTransitionProps } from './SimpleTransitionProps'
 
 const statusClassName = (
   status: string,
@@ -48,10 +48,9 @@ const statusClassName = (
   return undefined
 }
 
-const SimpleTransition: React.FunctionComponent<SimpleTransitionProps> = ({
-  children,
-  ...props
-}) => (
+export const SimpleTransition: React.FunctionComponent<
+  SimpleTransitionProps
+> = ({ children, ...props }) => (
   <Transition {...props}>
     {React.isValidElement(children) && React.Children.only(children)
       ? (status) =>
@@ -66,5 +65,3 @@ const SimpleTransition: React.FunctionComponent<SimpleTransitionProps> = ({
 )
 
 SimpleTransition.displayName = 'SimpleTransition'
-
-export default SimpleTransition

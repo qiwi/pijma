@@ -1,10 +1,10 @@
 import React from 'react'
 
-import CheckboxControlProps from './CheckboxControlProps'
-import CheckboxControlState from './CheckboxControlState'
-import OptionModel from './OptionModel'
+import { CheckboxControlProps } from './CheckboxControlProps'
+import { CheckboxControlState } from './CheckboxControlState'
+import { OptionModel } from './OptionModel'
 
-export default class CheckboxControl<
+export class CheckboxControl<
   O extends OptionModel<V>,
   V,
 > extends React.Component<CheckboxControlProps<O, V>, CheckboxControlState> {

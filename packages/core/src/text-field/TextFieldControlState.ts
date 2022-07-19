@@ -1,3 +1,3 @@
-export default interface TextFieldControlState {
+export interface TextFieldControlState {
   focused: boolean
 }

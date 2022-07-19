@@ -1,6 +1,6 @@
 import { RefObject } from 'react'
 
-export default interface SuggestControlState {
+export interface MenuControlState {
   refs: RefObject<HTMLDivElement>[]
   focused: number | undefined
 }

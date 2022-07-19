@@ -1,9 +1,9 @@
 import React from 'react'
 
-import PasswordFieldControlProps from './PasswordFieldControlProps'
-import PasswordFieldControlState from './PasswordFieldControlState'
+import { PasswordFieldControlProps } from './PasswordFieldControlProps'
+import { PasswordFieldControlState } from './PasswordFieldControlState'
 
-export default class PasswordFieldControl extends React.Component<
+export class PasswordFieldControl extends React.Component<
   PasswordFieldControlProps,
   PasswordFieldControlState
 > {

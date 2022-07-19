@@ -1,3 +1,3 @@
-import CheckboxField from './CheckboxField'
+import { CheckboxField } from './CheckboxField'
 
 export { CheckboxField }

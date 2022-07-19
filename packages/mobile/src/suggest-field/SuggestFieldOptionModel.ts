@@ -1,8 +1,7 @@
 import { SuggestOptionModel } from '@qiwi/pijma-core'
 import { ReactNode } from 'react'
 
-export default interface SuggestFieldOptionsModel<V>
-  extends SuggestOptionModel<V> {
+export interface SuggestFieldOptionModel<V> extends SuggestOptionModel<V> {
   title: string
   logo: string
   description: string

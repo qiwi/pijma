@@ -1,6 +1,6 @@
 import { FC, KeyboardEventHandler, MouseEventHandler, RefObject } from 'react'
 
-export default interface MenuControlProps {
+export interface MenuControlProps {
   count: number
   selected?: number | undefined
   onKeyDown?: KeyboardEventHandler

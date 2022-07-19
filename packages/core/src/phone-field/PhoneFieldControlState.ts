@@ -1,6 +1,6 @@
-import PhoneFieldCountry from './PhoneFieldCountry'
+import { PhoneFieldCountry } from './PhoneFieldCountry'
 
-export default interface PhoneFieldControlState {
+export interface PhoneFieldControlState {
   selectedCountry: PhoneFieldCountry | null
   focusedCountry: PhoneFieldCountry | null
   showCountries: boolean

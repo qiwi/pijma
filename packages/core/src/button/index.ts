@@ -1,3 +1,3 @@
-import ButtonControl from './ButtonControl'
+import { ButtonControl } from './ButtonControl'
 
 export { ButtonControl }

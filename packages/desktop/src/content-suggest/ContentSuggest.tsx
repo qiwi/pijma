@@ -17,8 +17,8 @@ import { DropDown } from '../drop-down'
 import { Link } from '../link'
 import { MenuItem } from '../menu'
 import { Paragraph } from '../typography'
-import ContentSuggestOptionsModel from './ContentSuggestOptionModel'
-import ContentSuggestProps from './ContentSuggestProps'
+import { ContentSuggestOptionModel } from './ContentSuggestOptionModel'
+import { ContentSuggestProps } from './ContentSuggestProps'
 
 const CardMenuItem = styled(Card)().withComponent(MenuItem)
 
@@ -27,8 +27,8 @@ CardMenuItem.displayName = 'CardMenuItem'
 export const ContentSuggest = <V extends {}>({
   equals = (a: V, b: V) => a === b,
   ...props
-}: ContentSuggestProps<ContentSuggestOptionsModel<V>, V>) => (
-  <SuggestControl<V, ContentSuggestOptionsModel<V>>
+}: ContentSuggestProps<ContentSuggestOptionModel<V>, V>) => (
+  <SuggestControl<V, ContentSuggestOptionModel<V>>
     value={props.value}
     suggest={props.suggest}
     items={props.items}

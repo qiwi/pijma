@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 
-import OptionModel from './OptionModel'
+import { OptionModel } from './OptionModel'
 
-export default interface RadioControlProps<O extends OptionModel<V>, V> {
+export interface RadioControlProps<O extends OptionModel<V>, V> {
   tabIndex?: number
   options: O[]
   value: V

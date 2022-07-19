@@ -17,8 +17,8 @@ import { Link } from '../link'
 import { Markdown } from '../markdown'
 import { MenuItem } from '../menu'
 import { Paragraph } from '../typography'
-import SuggestFieldOptionModel from './SuggestFieldOptionModel'
-import SuggestFieldProps from './SuggestFieldProps'
+import { SuggestFieldOptionModel } from './SuggestFieldOptionModel'
+import { SuggestFieldProps } from './SuggestFieldProps'
 
 const CardItem = styled(Card)().withComponent(MenuItem)
 

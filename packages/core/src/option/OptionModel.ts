@@ -1,4 +1,4 @@
-export default interface OptionModel<V> {
+export interface OptionModel<V> {
   value: V
   disabled?: boolean
 }

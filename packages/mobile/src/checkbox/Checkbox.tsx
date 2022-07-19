@@ -7,9 +7,9 @@ import {
 } from '@qiwi/pijma-core'
 import React, { FunctionComponent } from 'react'
 
-import CheckboxProps from './CheckboxProps'
+import { CheckboxProps } from './CheckboxProps'
 
-const Checkbox: FunctionComponent<CheckboxProps> = (props) => (
+export const Checkbox: FunctionComponent<CheckboxProps> = (props) => (
   <SwitchControl
     disabled={props.disabled}
     checked={props.checked}
@@ -49,5 +49,3 @@ Checkbox.displayName = 'Checkbox'
 Checkbox.defaultProps = {
   tabIndex: 0,
 }
-
-export default Checkbox

@@ -12,10 +12,10 @@ import {
 } from '@qiwi/pijma-core'
 import React, { FunctionComponent } from 'react'
 
-import SwitchFieldOptionModel from './SwitchFieldOptionModel'
-import SwitchFieldProps from './SwitchFieldProps'
+import { SwitchFieldOptionModel } from './SwitchFieldOptionModel'
+import { SwitchFieldProps } from './SwitchFieldProps'
 
-const SwitchField: FunctionComponent<
+export const SwitchField: FunctionComponent<
   SwitchFieldProps<SwitchFieldOptionModel<any>, any>
 > = (props) =>
   props.stub ? (
@@ -105,5 +105,3 @@ SwitchField.displayName = 'SwitchField'
 SwitchField.defaultProps = {
   tabIndex: 0,
 }
-
-export default SwitchField

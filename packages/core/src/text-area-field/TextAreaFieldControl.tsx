@@ -1,9 +1,9 @@
 import React from 'react'
 
-import TextAreaFieldControlProps from './TextAreaFieldControlProps'
-import TextAreaFieldControlState from './TextAreaFieldControlState'
+import { TextAreaFieldControlProps } from './TextAreaFieldControlProps'
+import { TextAreaFieldControlState } from './TextAreaFieldControlState'
 
-export default class TextAreaFieldControl extends React.Component<
+export class TextAreaFieldControl extends React.Component<
   TextAreaFieldControlProps,
   TextAreaFieldControlState
 > {

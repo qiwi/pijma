@@ -24,7 +24,7 @@ export interface NumberMaskOpts {
   integerLimit?: number
 }
 
-export default function createNumberMask({
+export function createNumberMask({
   prefix = '',
   suffix = emptyString,
   includeThousandsSeparator = true,

@@ -1,4 +1,4 @@
-export default interface TextAreaFieldControlState {
+export interface TextAreaFieldControlState {
   focused: boolean
   rows: number
   animate: boolean

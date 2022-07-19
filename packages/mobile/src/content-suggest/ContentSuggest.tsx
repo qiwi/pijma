@@ -16,8 +16,8 @@ import { InputModal } from '../input-modal'
 import { Link } from '../link'
 import { MenuItem } from '../menu'
 import { Paragraph } from '../typography'
-import ContentSuggestOptionModel from './ContentSuggestOptionModel'
-import ContentSuggestProps from './ContentSuggestProps'
+import { ContentSuggestOptionModel } from './ContentSuggestOptionModel'
+import { ContentSuggestProps } from './ContentSuggestProps'
 
 const CardMenuItem = styled(Card)().withComponent(MenuItem)
 

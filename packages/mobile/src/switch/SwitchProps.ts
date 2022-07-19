@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-export default interface SwitchProps {
+export interface SwitchProps {
   disabled?: boolean
   checked: boolean
   reverse?: boolean
