@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.152.3](https://github.com/qiwi/pijma/compare/2022.7.19-qiwi.pijma-core.1.152.2-f0...2022.7.19-qiwi.pijma-core.1.152.3-f0) (2022-07-19)
+
+### Fixes & improvements
+* fix: remove export default (#514) [bb5e94b](https://github.com/qiwi/pijma/commit/bb5e94b36a1d366ecb6d8c31c4c24dfc626b927a)
+
 ## [@qiwi/pijma-core@1.152.2](https://github.com/qiwi/pijma/compare/2022.7.19-qiwi.pijma-core.1.152.1-f0...2022.7.19-qiwi.pijma-core.1.152.2-f0) (2022-07-19)
 
 ### Fixes & improvements
