@@ -1,9 +1,3 @@
-import { TextAreaFieldControl } from './TextAreaFieldControl'
-import { TextAreaFieldControlProps } from './TextAreaFieldControlProps'
-import { TextAreaFieldControlState } from './TextAreaFieldControlState'
-
-export {
-  TextAreaFieldControl,
-  TextAreaFieldControlProps,
-  TextAreaFieldControlState,
-}
+export * from './TextAreaFieldControl'
+export * from './TextAreaFieldControlProps'
+export * from './TextAreaFieldControlState'

@@ -1,4 +1,2 @@
-import { SimpleTransition } from './SimpleTransition'
-import { SimpleTransitionProps } from './SimpleTransitionProps'
-
-export { SimpleTransition, SimpleTransitionProps }
+export * from './SimpleTransition'
+export * from './SimpleTransitionProps'

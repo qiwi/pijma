@@ -1,3 +1,1 @@
-import { RadioField } from './RadioField'
-
-export { RadioField }
+export * from './RadioField'

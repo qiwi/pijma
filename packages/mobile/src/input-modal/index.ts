@@ -1,3 +1,1 @@
-import { InputModal } from './InputModal'
-
-export { InputModal }
+export * from './InputModal'
