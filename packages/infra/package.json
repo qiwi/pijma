@@ -20,7 +20,7 @@
     "minimist": "1.2.6",
     "prettier": "2.7.1",
     "prettier-config-qiwi": "1.7.2",
-    "react-docgen-typescript": "2.2.2",
+    "react-docgen-typescript": "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch",
     "react-styleguidist": "11.2.0",
     "style-loader": "2.0.0",
     "swc-loader": "0.2.3",

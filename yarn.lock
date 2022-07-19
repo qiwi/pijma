@@ -691,7 +691,7 @@ __metadata:
     prettier: "npm:2.7.1"
     prettier-config-qiwi: "npm:1.7.2"
     react: "npm:>=16.8.6"
-    react-docgen-typescript: "npm:2.2.2"
+    react-docgen-typescript: "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch"
     react-dom: "npm:>=16.8.6"
     react-google-recaptcha: "npm:^2.1.0"
     react-intersection-observer: "npm:^8.24.1"
@@ -725,7 +725,7 @@ __metadata:
     minimist: "npm:1.2.6"
     prettier: "npm:2.7.1"
     prettier-config-qiwi: "npm:1.7.2"
-    react-docgen-typescript: "npm:2.2.2"
+    react-docgen-typescript: "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch"
     react-styleguidist: "npm:11.2.0"
     style-loader: "npm:2.0.0"
     ts-patch: "npm:2.0.1"
@@ -757,7 +757,7 @@ __metadata:
     minimist: "npm:1.2.6"
     prettier: "npm:2.7.1"
     prettier-config-qiwi: "npm:1.7.2"
-    react-docgen-typescript: "npm:2.2.2"
+    react-docgen-typescript: "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch"
     react-styleguidist: "npm:11.2.0"
     style-loader: "npm:2.0.0"
     swc-loader: "npm:0.2.3"
@@ -789,7 +789,7 @@ __metadata:
     minimist: "npm:1.2.6"
     prettier: "npm:2.7.1"
     prettier-config-qiwi: "npm:1.7.2"
-    react-docgen-typescript: "npm:2.2.2"
+    react-docgen-typescript: "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch"
     react-styleguidist: "npm:11.2.0"
     style-loader: "npm:2.0.0"
     ts-patch: "npm:2.0.1"
@@ -815,7 +815,7 @@ __metadata:
     minimist: "npm:1.2.6"
     prettier: "npm:2.7.1"
     prettier-config-qiwi: "npm:1.7.2"
-    react-docgen-typescript: "npm:2.2.2"
+    react-docgen-typescript: "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch"
     react-styleguidist: "npm:11.2.0"
     style-loader: "npm:2.0.0"
     ts-patch: "npm:2.0.1"
@@ -8414,6 +8414,15 @@ __metadata:
   peerDependencies:
     typescript: ">= 4.3.x"
   checksum: d066a4ee140fdc8e20ad3cd5038c9b9b07666d7557076269bd2e4c4db5b51670696c88d54c608abc4cf1a7d720dd0fb1c658f2ea34eeb12c5837c824ca2ad8b2
+  languageName: node
+  linkType: hard
+
+"react-docgen-typescript@patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch":
+  version: 2.2.2
+  resolution: "react-docgen-typescript@patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch::version=2.2.2&hash=f7f9a2"
+  peerDependencies:
+    typescript: ">= 4.3.x"
+  checksum: 64dbbf192d3bbafcda411fa928f6c6d39be9dccc50fa48eafa528d7794ae9a3a93004e744401c6a3d1b88166871116a2c5a57497a52f157b754a277630623d5c
   languageName: node
   linkType: hard
 
