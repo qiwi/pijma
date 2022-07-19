@@ -7,7 +7,7 @@
   "scripts": {
     "clean": "yarn workspaces foreach --parallel --topological-dev --no-private run clean",
     "build": "yarn workspaces foreach --parallel --topological-dev --no-private run build",
-    "watch": "yarn workspaces foreach --parallel --topological-dev --no-private run watch",
+    "watch": "yarn workspaces foreach --parallel --topological-dev --no-private --interlaced run watch",
     "test": "yarn lint",
     "test:report": "yarn test",
     "test:unit": "yarn test",
