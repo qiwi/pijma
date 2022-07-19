@@ -1,0 +1,27 @@
+diff --git a/lib/parser.js b/lib/parser.js
+index e98cd6494df9f6f8ad2d09d6641ae2898ca8dd8a..de6dfc3281630947ba3cff1c2148807415c4b150 100644
+--- a/lib/parser.js
++++ b/lib/parser.js
+@@ -792,12 +792,16 @@ function getTextValueOfFunctionProperty(exp, source, propertyName) {
+     var textValue = source.statements
+         .filter(function (statement) { return ts.isExpressionStatement(statement); })
+         .filter(function (statement) {
+-        var expr = statement
+-            .expression;
+-        return (expr.left &&
+-            expr.left.name &&
+-            expr.left.name.escapedText ===
+-                propertyName);
++          return (
++            statement.expression &&
++            statement.expression.left &&
++            statement.expression.left.name &&
++            statement.expression.left.name.escapedText === propertyName &&
++            statement.flowNode &&
++            statement.flowNode.node &&
++            statement.flowNode.node.name &&
++            statement.flowNode.node.name.escapedText === exp.escapedName
++          );
+     })
+         .filter(function (statement) {
+         return ts.isStringLiteral(statement

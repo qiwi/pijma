@@ -6,29 +6,17 @@
       "@qiwi/pijma-core": [
         "./core/src"
       ],
-      "@qiwi/pijma-core/*": [
-        "./core/src/*"
-      ],
       "@qiwi/pijma-desktop": [
         "./desktop/src"
       ],
-      "@qiwi/pijma-desktop/*": [
-        "./desktop/src/*"
-      ],
       "@qiwi/pijma-mobile": [
         "./mobile/src"
-      ],
-      "@qiwi/pijma-mobile/*": [
-        "./mobile/src/*"
       ],
       "@qiwi/pijma-fonts": [
         "./fonts"
       ],
       "@qiwi/pijma-ssr": [
         "./ssr/src"
-      ],
-      "@qiwi/pijma-ssr/": [
-        "./ssr/src/*"
       ]
     }
   }
