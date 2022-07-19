@@ -69,7 +69,7 @@ interface SimpleModalProps {
   onHide?: () => void
 }
 
-const SimpleModal: FunctionComponent<SimpleModalProps> = ({
+export const SimpleModal: FunctionComponent<SimpleModalProps> = ({
   stub,
   children,
   show,
@@ -141,5 +141,3 @@ const SimpleModal: FunctionComponent<SimpleModalProps> = ({
   )
 
 SimpleModal.displayName = 'SimpleModal'
-
-export default SimpleModal

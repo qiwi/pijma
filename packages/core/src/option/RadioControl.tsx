@@ -1,13 +1,13 @@
 import React from 'react'
 
-import OptionModel from './OptionModel'
-import RadioControlProps from './RadioControlProps'
-import RadioControlState from './RadioControlState'
+import { OptionModel } from './OptionModel'
+import { RadioControlProps } from './RadioControlProps'
+import { RadioControlState } from './RadioControlState'
 
-export default class RadioControl<
-  O extends OptionModel<V>,
-  V,
-> extends React.Component<RadioControlProps<O, V>, RadioControlState> {
+export class RadioControl<O extends OptionModel<V>, V> extends React.Component<
+  RadioControlProps<O, V>,
+  RadioControlState
+> {
   public static displayName = 'RadioControl'
 
   public state: RadioControlState = {

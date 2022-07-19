@@ -31,7 +31,7 @@ export interface SpinnerProps {
   paused?: boolean
 }
 
-const Spinner: FunctionComponent<SpinnerProps> = (props) => (
+export const Spinner: FunctionComponent<SpinnerProps> = (props) => (
   <Svg
     viewBox="24 24 48 48"
     width={props.width}
@@ -59,5 +59,3 @@ const Spinner: FunctionComponent<SpinnerProps> = (props) => (
 )
 
 Spinner.displayName = 'Spinner'
-
-export default Spinner

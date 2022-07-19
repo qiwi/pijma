@@ -1,3 +1,3 @@
-import SimpleModal from './SimpleModal'
+import { SimpleModal } from './SimpleModal'
 
 export { SimpleModal }

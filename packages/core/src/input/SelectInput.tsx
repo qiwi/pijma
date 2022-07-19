@@ -75,5 +75,3 @@ SelectInput.displayName = 'SelectInput'
 SelectInput.defaultProps = {
   tabIndex: 0,
 }
-
-export default SelectInput

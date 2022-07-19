@@ -1,4 +1,4 @@
-export default interface SuggestControlState {
+export interface SuggestControlState {
   show: boolean
   focused: boolean
   hovered: boolean

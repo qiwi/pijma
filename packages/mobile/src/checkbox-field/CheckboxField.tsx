@@ -11,10 +11,10 @@ import {
 } from '@qiwi/pijma-core'
 import React, { FunctionComponent } from 'react'
 
-import CheckboxFieldOptionModel from './CheckboxFieldOptionModel'
-import CheckboxFieldProps from './CheckboxFieldProps'
+import { CheckboxFieldOptionModel } from './CheckboxFieldOptionModel'
+import { CheckboxFieldProps } from './CheckboxFieldProps'
 
-const CheckboxField: FunctionComponent<
+export const CheckboxField: FunctionComponent<
   CheckboxFieldProps<CheckboxFieldOptionModel<any>, any>
 > = (props) =>
   props.stub ? (
@@ -85,5 +85,3 @@ const CheckboxField: FunctionComponent<
   )
 
 CheckboxField.displayName = 'CheckboxField'
-
-export default CheckboxField

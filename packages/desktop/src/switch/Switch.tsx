@@ -10,7 +10,7 @@ import {
 } from '@qiwi/pijma-core'
 import React, { FunctionComponent } from 'react'
 
-import SwitchProps from './SwitchProps'
+import { SwitchProps } from './SwitchProps'
 
 export const Switch: FunctionComponent<SwitchProps> = (props) =>
   props.stub ? (

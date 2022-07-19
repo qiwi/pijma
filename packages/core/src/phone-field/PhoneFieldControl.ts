@@ -2,11 +2,11 @@ import { Component, createRef, RefObject } from 'react'
 import { findDOMNode } from 'react-dom'
 
 import { createPhoneMask } from '../mask'
-import PhoneFieldControlProps from './PhoneFieldControlProps'
-import PhoneFieldControlState from './PhoneFieldControlState'
-import PhoneFieldCountry from './PhoneFieldCountry'
+import { PhoneFieldControlProps } from './PhoneFieldControlProps'
+import { PhoneFieldControlState } from './PhoneFieldControlState'
+import { PhoneFieldCountry } from './PhoneFieldCountry'
 
-export default class PhoneFieldControl extends Component<
+export class PhoneFieldControl extends Component<
   PhoneFieldControlProps,
   PhoneFieldControlState
 > {

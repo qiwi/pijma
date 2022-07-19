@@ -1,6 +1,6 @@
 import { Mask } from './MaskedInput'
 
-const createFilterMask = (pattern: RegExp): Mask => {
+export const createFilterMask = (pattern: RegExp): Mask => {
   return (value: string) => {
     return value
       .split('')
@@ -8,5 +8,3 @@ const createFilterMask = (pattern: RegExp): Mask => {
       .map(() => pattern)
   }
 }
-
-export default createFilterMask

@@ -1,4 +1,4 @@
-export default interface PasswordFieldControlState {
+export interface PasswordFieldControlState {
   focused: boolean
   hidden: boolean
 }

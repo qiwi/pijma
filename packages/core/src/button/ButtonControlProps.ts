@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-export default interface ButtonControlProps {
+export interface ButtonControlProps {
   onClick?: () => void
   onFocus?: () => void
   onBlur?: () => void

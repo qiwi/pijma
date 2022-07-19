@@ -72,7 +72,7 @@ const PosFlexCard = styled(CardPos)().withComponent(Flex)
 
 PosFlexCard.displayName = 'PosFlexCard'
 
-const InputModal: FunctionComponent<InputModalProps> = (props) => (
+export const InputModal: FunctionComponent<InputModalProps> = (props) => (
   <Modal
     show={props.show}
     onShow={props.onShow}
@@ -144,5 +144,3 @@ const InputModal: FunctionComponent<InputModalProps> = (props) => (
 )
 
 InputModal.displayName = 'InputModal'
-
-export default InputModal

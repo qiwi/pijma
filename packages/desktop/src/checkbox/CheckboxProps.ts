@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-export default interface CheckboxProps {
+export interface CheckboxProps {
   disabled?: boolean
   checked: boolean
   label: ReactNode

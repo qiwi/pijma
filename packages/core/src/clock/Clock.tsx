@@ -14,7 +14,7 @@ interface ClockProps {
   bg?: string
 }
 
-const Clock: FunctionComponent<ClockProps> = ({
+export const Clock: FunctionComponent<ClockProps> = ({
   size = 10,
   bg = '#FFB800',
 }) => (
@@ -57,5 +57,3 @@ const Clock: FunctionComponent<ClockProps> = ({
 )
 
 Clock.displayName = 'Clock'
-
-export default Clock

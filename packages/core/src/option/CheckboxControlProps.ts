@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 
-import OptionModel from './OptionModel'
+import { OptionModel } from './OptionModel'
 
-export default interface CheckboxControlProps<O extends OptionModel<V>, V> {
+export interface CheckboxControlProps<O extends OptionModel<V>, V> {
   tabIndex?: number
   options: O[]
   values: V[]

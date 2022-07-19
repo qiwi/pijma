@@ -120,5 +120,3 @@ BasicInput.displayName = 'BasicInput'
 BasicInput.defaultProps = {
   tabIndex: 0,
 }
-
-export default BasicInput

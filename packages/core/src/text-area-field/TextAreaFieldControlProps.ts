@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-export default interface TextAreaFieldControlProps {
+export interface TextAreaFieldControlProps {
   value: string
   onChange?: (value: string) => void
   onFocus?: () => void

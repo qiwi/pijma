@@ -17,8 +17,8 @@ import { DropDown } from '../drop-down'
 import { Link } from '../link'
 import { MenuItem } from '../menu'
 import { Paragraph } from '../typography'
-import SuggestFieldOptionsModel from './SuggestFieldOptionModel'
-import SuggestFieldProps from './SuggestFieldProps'
+import { SuggestFieldOptionModel } from './SuggestFieldOptionModel'
+import { SuggestFieldProps } from './SuggestFieldProps'
 
 const CardMenuItem = styled(Card)().withComponent(MenuItem)
 
@@ -27,7 +27,7 @@ CardMenuItem.displayName = 'CardMenuItem'
 export const SuggestField = <V extends {}>({
   equals = (a: V, b: V) => a === b,
   ...props
-}: SuggestFieldProps<SuggestFieldOptionsModel<V>, V>) =>
+}: SuggestFieldProps<SuggestFieldOptionModel<V>, V>) =>
   props.stub ? (
     <InputField
       stub
@@ -38,7 +38,7 @@ export const SuggestField = <V extends {}>({
       hint={props.hint}
     />
   ) : (
-    <SuggestControl<V, SuggestFieldOptionsModel<V>>
+    <SuggestControl<V, SuggestFieldOptionModel<V>>
       value={props.value}
       suggest={props.suggest}
       items={props.items}

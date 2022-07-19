@@ -110,5 +110,3 @@ ContentInput.displayName = 'ContentInput'
 ContentInput.defaultProps = {
   tabIndex: 0,
 }
-
-export default ContentInput

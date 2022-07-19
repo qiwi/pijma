@@ -1,3 +1,3 @@
-import RadioField from './RadioField'
+import { RadioField } from './RadioField'
 
 export { RadioField }

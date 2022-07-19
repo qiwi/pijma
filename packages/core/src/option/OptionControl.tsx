@@ -1,8 +1,8 @@
 import React from 'react'
 
-import OptionControlProps from './OptionControlProps'
+import { OptionControlProps } from './OptionControlProps'
 
-export default class OptionControl<V> extends React.Component<
+export class OptionControl<V> extends React.Component<
   OptionControlProps<V>,
   {}
 > {

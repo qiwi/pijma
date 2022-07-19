@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-export default interface OptionControlProps<V> {
+export interface OptionControlProps<V> {
   value: V
   disabled?: boolean
   onClick: (value: V) => void

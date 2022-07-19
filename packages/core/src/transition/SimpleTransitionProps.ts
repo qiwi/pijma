@@ -1,6 +1,6 @@
 import { TransitionProps } from 'react-transition-group/Transition'
 
-type SimpleTransitionProps = TransitionProps & {
+export type SimpleTransitionProps = TransitionProps & {
   enterClassName?: (timeout: number) => string
   enteredClassName?: (timeout: number) => string
   enteringClassName?: (timeout: number) => string
@@ -8,5 +8,3 @@ type SimpleTransitionProps = TransitionProps & {
   exitingClassName?: (timeout: number) => string
   exitedClassName?: (timeout: number) => string
 }
-
-export default SimpleTransitionProps

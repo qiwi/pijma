@@ -1,9 +1,9 @@
 import React from 'react'
 
-import ButtonControlProps from './ButtonControlProps'
-import ButtonControlState from './ButtonControlState'
+import { ButtonControlProps } from './ButtonControlProps'
+import { ButtonControlState } from './ButtonControlState'
 
-export default class ButtonControl extends React.Component<
+export class ButtonControl extends React.Component<
   ButtonControlProps,
   ButtonControlState
 > {

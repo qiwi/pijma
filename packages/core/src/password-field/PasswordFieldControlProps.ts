@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-export default interface PasswordFieldControlProps {
+export interface PasswordFieldControlProps {
   onChange?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void

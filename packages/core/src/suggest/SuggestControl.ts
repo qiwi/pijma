@@ -1,10 +1,10 @@
 import { Component, createRef, RefObject } from 'react'
 
-import SuggestControlProps from './SuggestControlProps'
-import SuggestControlState from './SuggestControlState'
-import SuggestOptionModel from './SuggestOptionModel'
+import { SuggestControlProps } from './SuggestControlProps'
+import { SuggestControlState } from './SuggestControlState'
+import { SuggestOptionModel } from './SuggestOptionModel'
 
-export default class SuggestControl<
+export class SuggestControl<
   V,
   O extends SuggestOptionModel<V>,
 > extends Component<SuggestControlProps<O, V>, SuggestControlState> {

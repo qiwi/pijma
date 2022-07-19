@@ -1,3 +1,3 @@
-import SwitchField from './SwitchField'
+import { SwitchField } from './SwitchField'
 
 export { SwitchField }

@@ -2,9 +2,9 @@ import React, { FC, RefObject } from 'react'
 
 import { FlagProps } from '../flag'
 import { Mask } from '../mask'
-import PhoneFieldCountry from './PhoneFieldCountry'
+import { PhoneFieldCountry } from './PhoneFieldCountry'
 
-export default interface PhoneFieldControlProps {
+export interface PhoneFieldControlProps {
   countries: PhoneFieldCountry[]
   value?: string
   hideOnBlur?: boolean
