@@ -1,3 +1,11 @@
+## [@qiwi/pijma-mobile@1.150.4](https://github.com/qiwi/pijma/compare/2022.7.19-qiwi.pijma-mobile.1.150.3-f0...2022.7.19-qiwi.pijma-mobile.1.150.4-f0) (2022-07-19)
+
+### Fixes & improvements
+* fix: remove export default (#514) [bb5e94b](https://github.com/qiwi/pijma/commit/bb5e94b36a1d366ecb6d8c31c4c24dfc626b927a)
+
+### Dependencies
+* perf: @qiwi/pijma-core updated to 1.152.3
+
 ## [@qiwi/pijma-mobile@1.150.3](https://github.com/qiwi/pijma/compare/2022.7.19-qiwi.pijma-mobile.1.150.2-f0...2022.7.19-qiwi.pijma-mobile.1.150.3-f0) (2022-07-19)
 
 ### Dependencies
