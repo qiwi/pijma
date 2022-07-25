@@ -1,7 +1,7 @@
 # This is a Github Workflow that runs tests on any push or pull request.
 # If the tests pass and this is a push to the master branch it also runs Semantic Release.
 name: CI
-on: [push, pull_request]
+on: [ push, pull_request ]
 
 jobs:
   init:
@@ -57,7 +57,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Install deps
+      - name: Install
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         run: yarn
 
@@ -85,7 +85,7 @@ jobs:
 
 
   test_push:
-    needs: [build, init]
+    needs: [ build, init ]
     if: github.event_name == 'push'
     runs-on: ubuntu-20.04
     steps:
@@ -128,27 +128,27 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Install deps
+      - name: Install
         run: yarn
 
-      - name: Unit test only
+      - name: Unit test
         run: yarn test:unit
 
-#      - name: Push coverage
-#        if: github.ref == 'refs/heads/master'
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: artifact-${{ needs.init.outputs.checksum }}
-#          retention-days: 1
-#          path: coverage
+  #      - name: Push coverage
+  #        if: github.ref == 'refs/heads/master'
+  #        uses: actions/upload-artifact@v3
+  #        with:
+  #          name: artifact-${{ needs.init.outputs.checksum }}
+  #          retention-days: 1
+  #          path: coverage
 
   test_pr:
     if: github.event_name == 'pull_request'
-    needs: [build, init]
+    needs: [ build, init ]
     strategy:
       matrix:
         os: [ ubuntu-20.04 ]
-        node-version: [ 16 ]
+        node-version: [ 16, 18 ]
     name: Test (Node v${{ matrix.node-version }}, OS ${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     steps:
@@ -191,21 +191,21 @@ jobs:
       - name: Unpack artifact
         run: tar -xvf artifact.tar
 
-      - name: Install deps
+      - name: Install
         run: yarn
 
-      - name: Unit test only
+      - name: Unit test
         if: matrix.node-version != '16' || matrix.os != 'ubuntu-20.04'
         run: yarn test:unit
 
       - name: Full test
         if: matrix.node-version == '16' && matrix.os == 'ubuntu-20.04'
-        run: yarn test
+        run: yarn test:full
 
   release:
     name: Release
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-    needs: [test_push, init]
+    needs: [ test_push, init ]
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -242,13 +242,13 @@ jobs:
         with:
           node-version: 16
 
-#      - name: Codeclimate
-#        uses: paambaati/codeclimate-action@v2.7.5
-#        env:
-#          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-#        with:
-#          coverageLocations: |
-#            ${{github.workspace}}/coverage/*.lcov:lcov
+      #      - name: Codeclimate
+      #        uses: paambaati/codeclimate-action@v2.7.5
+      #        env:
+      #          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+      #        with:
+      #          coverageLocations: |
+      #            ${{github.workspace}}/coverage/*.lcov:lcov
 
       - uses: actions/cache@v3
         id: yarn-cache

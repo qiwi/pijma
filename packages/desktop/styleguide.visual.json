@@ -1,0 +1,10 @@
+{
+  "wait": 50,
+  "threshold": 0.05,
+  "viewports": {
+    "desktop": {
+      "width": 800,
+      "height": 600
+    }
+  }
+}

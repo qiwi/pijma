@@ -17,7 +17,6 @@ const ComponentsListRenderer: FC<ComponentsListRendererProps> = (props) => {
   if (!items.length) {
     return null
   }
-  const windowHash = window.location.pathname + window.location.hash
   return (
     <Spacer size="l">
       {items.map(({ visibleName, href, content, shouldOpenInNewTab }, i) => (
@@ -27,7 +26,7 @@ const ComponentsListRenderer: FC<ComponentsListRendererProps> = (props) => {
             target={shouldOpenInNewTab ? '_blank' : undefined}
             children={visibleName}
           />
-          {windowHash.startsWith(href) ? <Box pl={4}>{content}</Box> : null}
+          <Box pl={4}>{content}</Box>
         </Spacer>
       ))}
     </Spacer>

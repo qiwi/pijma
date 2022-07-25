@@ -1,0 +1,10 @@
+{
+  "wait": 50,
+  "threshold": 0.05,
+  "viewports": {
+    "mobile": {
+      "width": 400,
+      "height": 600
+    }
+  }
+}

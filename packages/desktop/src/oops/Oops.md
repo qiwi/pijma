@@ -4,11 +4,19 @@
     <Flex justify="center" transform="scale(0.6)">
       <Oops
         logo={
-          <Image width={25} height={10} src="https://static.qiwi.com/img/pijma/logo.svg" />
+          <Image
+            width={25}
+            height={10}
+            src="https://static.qiwi.com/img/pijma/logo.svg"
+          />
         }
         title="Ошибочка вышла"
         error={
-          <Image width={100} height={65} src="https://static.qiwi.com/img/pijma/error.svg" />
+          <Image
+            width={100}
+            height={65}
+            src="https://static.qiwi.com/img/pijma/error.svg"
+          />
         }
         content={
           <Spacer>
@@ -38,11 +46,19 @@
     <Flex justify="center" transform="scale(0.6)">
       <Oops
         logo={
-          <Image width={25} height={10} src="https://static.qiwi.com/img/pijma/logo.svg" />
+          <Image
+            width={25}
+            height={10}
+            src="https://static.qiwi.com/img/pijma/logo.svg"
+          />
         }
         title="Пропала из вида!"
         error={
-          <Image width={100} height={65} src="https://static.qiwi.com/img/pijma/404.svg" />
+          <Image
+            width={100}
+            height={65}
+            src="https://static.qiwi.com/img/pijma/404.svg"
+          />
         }
         content={
           <Spacer>
@@ -70,11 +86,19 @@
     <Flex justify="center" transform="scale(0.6)">
       <Oops
         logo={
-          <Image width={25} height={10} src="https://static.qiwi.com/img/pijma/logo.svg" />
+          <Image
+            width={25}
+            height={10}
+            src="https://static.qiwi.com/img/pijma/logo.svg"
+          />
         }
         title="Эти руки не для Cookie?"
         error={
-          <Image width={100} height={65} src="https://static.qiwi.com/img/pijma/cookie.svg" />
+          <Image
+            width={100}
+            height={65}
+            src="https://static.qiwi.com/img/pijma/cookie.svg"
+          />
         }
         content="Включите Cookie, чтобы продолжить работу на сайте"
       />
@@ -89,11 +113,19 @@
     <Flex justify="center" transform="scale(0.6)">
       <Oops
         logo={
-          <Image width={25} height={10} src="https://static.qiwi.com/img/pijma/logo.svg" />
+          <Image
+            width={25}
+            height={10}
+            src="https://static.qiwi.com/img/pijma/logo.svg"
+          />
         }
         title="Браузер устарел"
         error={
-          <Image width={100} height={65} src="https://static.qiwi.com/img/pijma/jackass.svg" />
+          <Image
+            width={100}
+            height={65}
+            src="https://static.qiwi.com/img/pijma/jackass.svg"
+          />
         }
         content={`Мы простились со старым Бро.\nОбновите браузер, чтобы попасть на сайт`}
       />
@@ -211,7 +243,11 @@
                 />
               </Link>
               <Link href="https://www.mozilla.org/ru/firefox/new/">
-                <Image width={12} height={12} src="https://static.qiwi.com/img/pijma/ff.png" />
+                <Image
+                  width={12}
+                  height={12}
+                  src="https://static.qiwi.com/img/pijma/ff.png"
+                />
               </Link>
               <Link href="https://www.apple.com/ru/safari/">
                 <Image

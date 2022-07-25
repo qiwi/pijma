@@ -1,12 +1,12 @@
 import React, {
   ChangeEventHandler,
   FocusEventHandler,
-  KeyboardEventHandler,
   forwardRef,
+  KeyboardEventHandler,
 } from 'react'
 
-import { MaskInput, Input, Value } from '../primitive'
 import { isMaskDigital, Mask, Pipe } from '../mask'
+import { Input, MaskInput, Value } from '../primitive'
 import { useTheme } from '../styled'
 
 export interface BasicInputProps {

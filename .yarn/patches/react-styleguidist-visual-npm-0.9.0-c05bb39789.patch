@@ -1,0 +1,81 @@
+diff --git a/src/commands/test.js b/src/commands/test.js
+index 3a72c5b66ae674a234322fa4fdc6859044b6726e..aad0900408259bb565e11838919968a624f3b77e 100644
+--- a/src/commands/test.js
++++ b/src/commands/test.js
+@@ -6,7 +6,7 @@ const {
+   compareNewScreenshotsToRefScreenshots,
+   removeNonRefScreenshots
+ } = require('../utils/image')
+-const { getPreviews, takeNewScreenshotsOfPreviews } = require('../utils/page')
++const { getUrls, getPreviews, takeNewScreenshotsOfPreviews } = require('../utils/page')
+ const { debug, spinner } = require('../utils/debug')
+ 
+ const testSchema = joi
+@@ -78,6 +78,14 @@ async function test (partialOptions) {
+ 
+     browser = useConnect ? await puppeteer.connect(connectOptions) : await puppeteer.launch(launchOptions)
+     const page = await browser.newPage()
++    await page.setRequestInterception(true)
++    page.on('request', request => {
++      if (request.resourceType() === 'image') {
++        request.abort()
++      } else {
++        request.continue()
++      }
++    })
+ 
+     for (const viewport of Object.keys(viewports)) {
+       const progress = spinner({
+@@ -86,8 +94,15 @@ async function test (partialOptions) {
+         stop: `Finished taking screenshots for viewport ${viewport}`
+       })
+       progress.start()
++      let previews = {}
+       await page.setViewport(viewports[viewport])
+-      const previews = await getPreviews(page, { url, filter, viewport, navigationOptions })
++      const urls = await getUrls(page, { url, navigationOptions })
++      for (let i = 0; i < urls.length; i++) {
++        previews = {
++          ...previews,
++          ...await getPreviews(page, { url: urls[i], filter, viewport, navigationOptions }),
++        }
++      }
+       await takeNewScreenshotsOfPreviews(page, previews, { dir, progress, navigationOptions, wait })
+       progress.stop()
+     }
+diff --git a/src/utils/page.js b/src/utils/page.js
+index 386ba233f09798cc5b1ed553617ec5c960b5e0de..d71c60cea0fb5d407624334ce2be1de1ca1aea4b 100644
+--- a/src/utils/page.js
++++ b/src/utils/page.js
+@@ -6,6 +6,15 @@ const { debug } = require('./debug')
+ 
+ const ensureDir = promisify(fs.ensureDir)
+ 
++async function getUrls (page, { url, navigationOptions }) {
++  await goToUrl(page, url, navigationOptions)
++  return page.evaluate(getUrlsInPage)
++}
++
++function getUrlsInPage () {
++  return Array.from(document.querySelectorAll('[href^="/#/"]')).map((el) => el.href)
++}
++
+ async function getPreviews (page, { url, filter, viewport, navigationOptions }) {
+   await goToUrl(page, url, navigationOptions)
+ 
+@@ -69,6 +78,7 @@ async function takeNewScreenshotsOfPreviews (page, previewMap, { dir, progress,
+ 
+       const { url } = preview
+       await goToHashUrl(page, url)
++      await page.addStyleTag({ content: '* {animation:none !important;transition: none !important;}' })
+ 
+       for (const actionState of actionStateList) {
+         await takeNewScreenshotOfPreview(page, preview, previewIndex, actionState, { dir, wait })
+@@ -155,6 +165,7 @@ function sleep (ms) {
+ }
+ 
+ module.exports = {
++  getUrls,
+   getPreviews,
+   takeNewScreenshotsOfPreviews
+ }

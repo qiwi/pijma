@@ -2,11 +2,12 @@ module.exports = require('../infra/styleguide.config')({
   components: ['@qiwi/pijma-core', '@qiwi/pijma-mobile'],
   cwd: __dirname,
   extra: {
+    title: 'QIWI Wallet Web Mobile Guide',
     serverPort: 7070,
     theme: {
       borderRadius: '10px',
       fontFamily: {
-        base: '\'Museo Sans\', \'Helvetica Neue\', \'Helvetica\', \'Arial\', sans-serif',
+        base: '"Museo Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
         monospace: 'monospace',
       },
       mq: {
@@ -16,5 +17,5 @@ module.exports = require('../infra/styleguide.config')({
         codeBackground: '#fff',
       },
     },
-  }
+  },
 })

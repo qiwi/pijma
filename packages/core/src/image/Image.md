@@ -4,9 +4,21 @@
 <Block>
   <BlockContent>
     <Spacer size="xxl">
-      <Image src="https://static.qiwi.com/img/pijma/cat_1.gif" width={75} height={52} />
-      <Image src="https://static.qiwi.com/img/pijma/cat_2.gif" width={75} height={52} />
-      <Image src="https://static.qiwi.com/img/pijma/cat_3.gif" width={75} height={52} />
+      <Image
+        src="https://static.qiwi.com/img/pijma/cat_1.gif"
+        width={75}
+        height={52}
+      />
+      <Image
+        src="https://static.qiwi.com/img/pijma/cat_2.gif"
+        width={75}
+        height={52}
+      />
+      <Image
+        src="https://static.qiwi.com/img/pijma/cat_3.gif"
+        width={75}
+        height={52}
+      />
     </Spacer>
   </BlockContent>
 </Block>
@@ -18,9 +30,21 @@
 <Block>
   <BlockContent>
     <Spacer size="xxl">
-      <Image src="https://static.qiwi.com/img/pijma/cat_11.gif" width={75} height={75} />
-      <Image src="https://static.qiwi.com/img/pijma/cat_12.gif" width={75} height={75} />
-      <Image src="https://static.qiwi.com/img/pijma/cat_13.gif" width={75} height={75} />
+      <Image
+        src="https://static.qiwi.com/img/pijma/cat_11.gif"
+        width={75}
+        height={75}
+      />
+      <Image
+        src="https://static.qiwi.com/img/pijma/cat_12.gif"
+        width={75}
+        height={75}
+      />
+      <Image
+        src="https://static.qiwi.com/img/pijma/cat_13.gif"
+        width={75}
+        height={75}
+      />
     </Spacer>
   </BlockContent>
 </Block>
@@ -95,25 +119,53 @@ dataImage =
       <Pos type="relative">
         <Flex>
           <FlexItem shrink={0} mr={5}>
-            <Image src="https://static.qiwi.com/img/pijma/cat_41.gif" width={75} height={75} />
+            <Image
+              src="https://static.qiwi.com/img/pijma/cat_41.gif"
+              width={75}
+              height={75}
+            />
           </FlexItem>
           <FlexItem shrink={0} ml={5} mr={5}>
-            <Image src="https://static.qiwi.com/img/pijma/cat_42.gif" width={75} height={75} />
+            <Image
+              src="https://static.qiwi.com/img/pijma/cat_42.gif"
+              width={75}
+              height={75}
+            />
           </FlexItem>
           <FlexItem shrink={0} ml={5} mr={5}>
-            <Image src="https://static.qiwi.com/img/pijma/cat_43.gif" width={75} height={75} />
+            <Image
+              src="https://static.qiwi.com/img/pijma/cat_43.gif"
+              width={75}
+              height={75}
+            />
           </FlexItem>
           <FlexItem shrink={0} ml={5} mr={5}>
-            <Image src="https://static.qiwi.com/img/pijma/cat_44.gif" width={75} height={75} />
+            <Image
+              src="https://static.qiwi.com/img/pijma/cat_44.gif"
+              width={75}
+              height={75}
+            />
           </FlexItem>
           <FlexItem shrink={0} ml={5} mr={5}>
-            <Image src="https://static.qiwi.com/img/pijma/cat_45.gif" width={75} height={75} />
+            <Image
+              src="https://static.qiwi.com/img/pijma/cat_45.gif"
+              width={75}
+              height={75}
+            />
           </FlexItem>
           <FlexItem shrink={0} ml={5} mr={5}>
-            <Image src="https://static.qiwi.com/img/pijma/cat_46.gif" width={75} height={75} />
+            <Image
+              src="https://static.qiwi.com/img/pijma/cat_46.gif"
+              width={75}
+              height={75}
+            />
           </FlexItem>
           <FlexItem shrink={0} ml={5}>
-            <Image src="https://static.qiwi.com/img/pijma/cat_47.gif" width={75} height={75} />
+            <Image
+              src="https://static.qiwi.com/img/pijma/cat_47.gif"
+              width={75}
+              height={75}
+            />
           </FlexItem>
         </Flex>
       </Pos>
