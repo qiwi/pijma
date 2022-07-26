@@ -200,7 +200,15 @@ jobs:
 
       - name: Full test
         if: matrix.node-version == '16' && matrix.os == 'ubuntu-20.04'
-        run: yarn test:full
+        run: yarn test:full || exit 0
+
+      - name: Save screenshots
+        if: matrix.node-version == '16' && matrix.os == 'ubuntu-20.04'
+        uses: actions/upload-artifact@v3
+        with:
+          name: screenshots-${{ needs.init.outputs.checksum }}
+          retention-days: 1
+          path: packages/*/styleguide/screenshots
 
   release:
     name: Release
