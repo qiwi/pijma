@@ -44,7 +44,7 @@ index 3a72c5b66ae674a234322fa4fdc6859044b6726e..eee67e66b26e448b931e8c7fb2e0cc98
        progress.stop()
      }
 diff --git a/src/utils/image.js b/src/utils/image.js
-index a947e62b32350693eca7f260bc88108c1cbc13c9..2bd3ce7b1646bdd1b439b4d194c502dbb724c1bd 100644
+index a947e62b32350693eca7f260bc88108c1cbc13c9..335772ed18dd15b046aeb27b9c8a6b04eff4df8a 100644
 --- a/src/utils/image.js
 +++ b/src/utils/image.js
 @@ -48,21 +48,26 @@ async function compareNewScreenshotsToRefScreenshots ({ dir, filter, threshold,
@@ -84,7 +84,7 @@ index a947e62b32350693eca7f260bc88108c1cbc13c9..2bd3ce7b1646bdd1b439b4d194c502db
 +        }
 +      }
 +      catch (err) {
-+        failure('Error while compare %s and %s: %s', chalk.cyan(newImg), chalk.cyan(refImg), chalk.red(err))
++        failure('Error in compare %s and %s: %s', chalk.cyan(newImg), chalk.cyan(refImg), chalk.red(err.message))
        }
      }
    }
