@@ -1,11 +1,14 @@
 {
-  "wait": 500,
-  "threshold": 0.5,
+  "wait": 50,
+  "threshold": 0.1,
   "viewports": {
     "desktop": {
       "width": 1200,
       "height": 900
     }
   },
-  "deleteScreenshotsWhenAccepted": true
+  "deleteScreenshotsWhenAccepted": true,
+  "filter": [
+    "ReCaptchaField"
+  ]
 }
