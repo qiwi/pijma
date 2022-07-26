@@ -1,5 +1,5 @@
 module.exports = {
-  wait: 100,
+  wait: 50,
   threshold: 0.5,
   viewports: {
     mobile: {
@@ -8,10 +8,13 @@ module.exports = {
     },
   },
   deleteScreenshotsWhenAccepted: true,
-  launchOptions: {
-    args: [
-      '--font-render-hinting=none',
-      '--force-color-profile=srgb',
-    ],
-  },
+  // connectOptions: {
+  //   browserWSEndpoint: 'ws://localhost:3000',
+  // },
+  // launchOptions: {
+  //   args: [
+  //     '--font-render-hinting=none',
+  //     '--force-color-profile=srgb',
+  //   ],
+  // },
 }

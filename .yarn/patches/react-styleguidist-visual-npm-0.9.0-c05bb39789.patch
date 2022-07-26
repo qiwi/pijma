@@ -1,5 +1,5 @@
 diff --git a/src/commands/test.js b/src/commands/test.js
-index 3a72c5b66ae674a234322fa4fdc6859044b6726e..eee67e66b26e448b931e8c7fb2e0cc98dd5be974 100644
+index 3a72c5b66ae674a234322fa4fdc6859044b6726e..aad0900408259bb565e11838919968a624f3b77e 100644
 --- a/src/commands/test.js
 +++ b/src/commands/test.js
 @@ -6,7 +6,7 @@ const {
@@ -17,7 +17,7 @@ index 3a72c5b66ae674a234322fa4fdc6859044b6726e..eee67e66b26e448b931e8c7fb2e0cc98
      const page = await browser.newPage()
 +    await page.setRequestInterception(true)
 +    page.on('request', request => {
-+      if (request.resourceType() === 'image' || request.resourceType() === 'font') {
++      if (request.resourceType() === 'image') {
 +        request.abort()
 +      } else {
 +        request.continue()
