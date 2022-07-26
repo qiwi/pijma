@@ -1,5 +1,5 @@
 {
-  "wait": 100,
+  "wait": 200,
   "threshold": 0.1,
   "viewports": {
     "desktop": {
