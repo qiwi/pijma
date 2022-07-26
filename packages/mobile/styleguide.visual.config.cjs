@@ -8,4 +8,10 @@ module.exports = {
     },
   },
   deleteScreenshotsWhenAccepted: true,
+  launchOptions: {
+    args: [
+      '--font-render-hinting=none',
+      '--force-color-profile=srgb',
+    ],
+  },
 }
