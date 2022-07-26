@@ -26,8 +26,8 @@
     "watch": "styleguidist --config styleguide.config.cjs server",
     "serve": "http-server styleguide/lib --port 7070 --silent",
     "test": "concurrently -k -s first 'npm:serve' 'npm:visual:test'",
-    "visual:test": "styleguidist-visual test --url http://localhost:7070/ --dir styleguide/screenshots --config styleguide.visual.json",
-    "visual:approve": "styleguidist-visual approve --dir styleguide/screenshots --config styleguide.visual.json",
+    "visual:test": "styleguidist-visual test --url http://localhost:7070/ --dir styleguide/screenshots --config styleguide.visual.config.cjs",
+    "visual:approve": "styleguidist-visual approve --dir styleguide/screenshots --config styleguide.visual.config.cjs",
     "lint": "eslint --fix src styleguide/components && prettier --loglevel silent --write src styleguide/components"
   },
   "files": [
