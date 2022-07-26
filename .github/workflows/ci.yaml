@@ -200,16 +200,16 @@ jobs:
 
       - name: Full test
 #        if: matrix.os == 'macos-latest'
-#        run: yarn test:full || exit 0
-        run: yarn test:full
+        run: yarn test:full || exit 0
+#        run: yarn test:full
 
-#      - name: Save screenshots
+      - name: Save screenshots
 #        if: matrix.os == 'macos-latest'
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: screenshots-${{ needs.init.outputs.checksum }}
-#          retention-days: 1
-#          path: packages/*/styleguide/screenshots
+        uses: actions/upload-artifact@v3
+        with:
+          name: screenshots-${{ needs.init.outputs.checksum }}
+          retention-days: 1
+          path: packages/*/styleguide/screenshots
 
   release:
     name: Release
