@@ -1,6 +1,6 @@
 module.exports = {
-  wait: 100,
-  threshold: 0.5,
+  wait: 50,
+  threshold: 0.1,
   viewports: {
     desktop: {
       width: 1200,
