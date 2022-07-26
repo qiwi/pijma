@@ -762,16 +762,12 @@ __metadata:
     file-loader: "npm:6.2.0"
     husky: "npm:8.0.1"
     minimist: "npm:1.2.6"
-    pixelmatch: "patch:pixelmatch@npm%3A5.3.0#~/.yarn/patches/pixelmatch-npm-5.3.0-662974dec2.patch"
-    pngjs: "npm:6.0.0"
     prettier: "npm:2.7.1"
     prettier-config-qiwi: "npm:1.7.2"
-    puppeteer: "npm:15.5.0"
     react-docgen-typescript: "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch"
     react-styleguidist: "npm:11.2.0"
     style-loader: "npm:2.0.0"
     swc-loader: "npm:0.2.3"
-    term-img: "npm:5.0.0"
     tsc-esm-fix: "npm:2.18.0"
     typescript: "npm:4.4.4"
     webpack: "npm:4.46.0"
@@ -8385,6 +8381,17 @@ __metadata:
   bin:
     pixelmatch: bin/pixelmatch
   checksum: e86a2642606332d27fb3e1102da932420bc1ca2a5f83d79d89879fbe69334eab4e81ee574a512b1bdbd0a4701704083cb8803f2d8383a8626648dd17136944af
+  languageName: node
+  linkType: hard
+
+"pixelmatch@patch:pixelmatch@npm%3A5.3.0#~/.yarn/patches/pixelmatch-npm-5.3.0-662974dec2.patch":
+  version: 5.3.0
+  resolution: "pixelmatch@patch:pixelmatch@npm%3A5.3.0#~/.yarn/patches/pixelmatch-npm-5.3.0-662974dec2.patch::version=5.3.0&hash=013bbd"
+  dependencies:
+    pngjs: "npm:^6.0.0"
+  bin:
+    pixelmatch: bin/pixelmatch
+  checksum: c9b95c3efb56d32b8d7cf32e0045038c5513da5215ccd2113f799fcaa17acf2d494ad881075ac477a3a633213e5a79612f87b86d598bd88cbc0161d37af54cb3
   languageName: node
   linkType: hard
 
