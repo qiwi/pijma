@@ -43,6 +43,51 @@ index 3a72c5b66ae674a234322fa4fdc6859044b6726e..eee67e66b26e448b931e8c7fb2e0cc98
        await takeNewScreenshotsOfPreviews(page, previews, { dir, progress, navigationOptions, wait })
        progress.stop()
      }
+diff --git a/src/utils/image.js b/src/utils/image.js
+index a947e62b32350693eca7f260bc88108c1cbc13c9..2bd3ce7b1646bdd1b439b4d194c502dbb724c1bd 100644
+--- a/src/utils/image.js
++++ b/src/utils/image.js
+@@ -48,21 +48,26 @@ async function compareNewScreenshotsToRefScreenshots ({ dir, filter, threshold,
+     if (!refImgExists) {
+       await promoteNewScreenshot(newImg)
+     } else {
+-      const pixels = await diffScreenshots(newImg, refImg, diffImg, threshold)
+-      if (pixels === 0) {
+-        success('Screenshots %s and %s match', chalk.cyan(newImg), chalk.cyan(refImg))
+-        if (deleteScreenshotsWhenAccepted) {
+-          await remove(newImg)
+-          await remove(diffImg)
+-        }
+-      } else {
+-        failure('Screenshots %s and %s differ in %s pixels', chalk.cyan(newImg), chalk.cyan(refImg), chalk.red(pixels))
+-        termImg(diffImg, {
+-          fallback: () => {
+-            info('Check out the diff at %s', chalk.cyan(diffImg))
++      try {
++        const pixels = await diffScreenshots(newImg, refImg, diffImg, threshold)
++        if (pixels === 0) {
++          success('Screenshots %s and %s match', chalk.cyan(newImg), chalk.cyan(refImg))
++          if (deleteScreenshotsWhenAccepted) {
++            await remove(newImg)
++            await remove(diffImg)
+           }
+-        })
+-        diffCount++
++        } else {
++          failure('Screenshots %s and %s differ in %s pixels', chalk.cyan(newImg), chalk.cyan(refImg), chalk.red(pixels))
++          termImg(diffImg, {
++            fallback: () => {
++              info('Check out the diff at %s', chalk.cyan(diffImg))
++            }
++          })
++          diffCount++
++        }
++      }
++      catch (err) {
++        failure('Error while compare %s and %s: %s', chalk.cyan(newImg), chalk.cyan(refImg), chalk.red(err))
+       }
+     }
+   }
 diff --git a/src/utils/page.js b/src/utils/page.js
 index 386ba233f09798cc5b1ed553617ec5c960b5e0de..49fca66d38f72329f95b4a8e753e15ed32560f0c 100644
 --- a/src/utils/page.js
