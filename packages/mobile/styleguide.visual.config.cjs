@@ -1,5 +1,5 @@
 module.exports = {
-  wait: 200,
+  wait: 100,
   threshold: 0.5,
   viewports: {
     mobile: {
