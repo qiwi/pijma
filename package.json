@@ -8,8 +8,8 @@
     "clean": "yarn workspaces foreach --parallel --topological-dev --no-private run clean",
     "build": "yarn workspaces foreach --parallel --topological-dev --no-private run build",
     "watch": "yarn workspaces foreach --parallel --topological-dev --no-private --interlaced run watch",
-    "test:unit": "yarn workspaces foreach --parallel --interlaced run lint",
-    "test:full": "yarn workspaces foreach --parallel --interlaced run test"
+    "test:unit": "yarn workspaces foreach --interlaced run lint",
+    "test:full": "yarn workspaces foreach --interlaced run test"
   },
   "resolutions": {
     "@types/react": "16.14.28",
