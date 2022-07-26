@@ -145,12 +145,14 @@ jobs:
   test_pr:
     if: github.event_name == 'pull_request'
     needs: [ build, init ]
-    strategy:
-      matrix:
-        os: [ ubuntu-latest, macos-latest ]
-        node-version: [ 16 ]
-    name: Test (Node v${{ matrix.node-version }}, OS ${{ matrix.os }})
-    runs-on: ${{ matrix.os }}
+#    strategy:
+#      matrix:
+#        os: [ ubuntu-latest, macos-latest ]
+#        node-version: [ 16 ]
+#    name: Test (Node v${{ matrix.node-version }}, OS ${{ matrix.os }})
+    name: Test
+#    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -194,21 +196,21 @@ jobs:
       - name: Install
         run: yarn
 
-      - name: Unit test
-        if: matrix.os == 'ubuntu-latest'
-        run: yarn test:unit
+#      - name: Unit test
+#        if: matrix.os == 'ubuntu-latest'
+#        run: yarn test:unit
 
       - name: Full test
-        if: matrix.os == 'macos-latest'
+#        if: matrix.os == 'macos-latest'
         run: yarn test:full
 
-#      - name: Save screenshots
-#        if: matrix.os == 'macos-latest'
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: screenshots-${{ needs.init.outputs.checksum }}
-#          retention-days: 1
-#          path: packages/*/styleguide/screenshots
+      - name: Save screenshots
+        if: matrix.os == 'macos-latest'
+        uses: actions/upload-artifact@v3
+        with:
+          name: screenshots-${{ needs.init.outputs.checksum }}
+          retention-days: 1
+          path: packages/*/styleguide/screenshots
 
   release:
     name: Release
