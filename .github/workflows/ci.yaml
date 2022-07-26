@@ -6,7 +6,7 @@ on: [ push, pull_request ]
 jobs:
   init:
     name: init
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     outputs:
       yarn-cache-dir: ${{ steps.yarn-cache-dir-path.outputs.dir }}
       checksum: ${{ steps.checksum.outputs.checksum }}
@@ -24,7 +24,7 @@ jobs:
   build:
     name: build
     needs: init
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -87,7 +87,7 @@ jobs:
   test_push:
     needs: [ build, init ]
     if: github.event_name == 'push'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -147,8 +147,8 @@ jobs:
     needs: [ build, init ]
     strategy:
       matrix:
-        os: [ ubuntu-20.04 ]
-        node-version: [ 16, 18 ]
+        os: [ ubuntu-latest, macos-latest ]
+        node-version: [ 16 ]
     name: Test (Node v${{ matrix.node-version }}, OS ${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     steps:
@@ -195,15 +195,15 @@ jobs:
         run: yarn
 
       - name: Unit test
-        if: matrix.node-version != '16' || matrix.os != 'ubuntu-20.04'
+        if: matrix.os == 'ubuntu-latest'
         run: yarn test:unit
 
       - name: Full test
-        if: matrix.node-version == '16' && matrix.os == 'ubuntu-20.04'
+        if: matrix.os == 'macos-latest'
         run: yarn test:full || exit 0
 
       - name: Save screenshots
-        if: matrix.node-version == '16' && matrix.os == 'ubuntu-20.04'
+        if: matrix.os == 'macos-latest'
         uses: actions/upload-artifact@v3
         with:
           name: screenshots-${{ needs.init.outputs.checksum }}
@@ -214,7 +214,7 @@ jobs:
     name: Release
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     needs: [ test_push, init ]
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
