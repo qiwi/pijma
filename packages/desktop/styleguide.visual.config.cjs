@@ -8,7 +8,4 @@ module.exports = {
     },
   },
   deleteScreenshotsWhenAccepted: true,
-  filter: [
-    'ReCaptchaField',
-  ],
 }
