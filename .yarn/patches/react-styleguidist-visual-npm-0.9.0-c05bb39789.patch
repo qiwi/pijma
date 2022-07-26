@@ -44,7 +44,7 @@ index 3a72c5b66ae674a234322fa4fdc6859044b6726e..aad0900408259bb565e11838919968a6
        progress.stop()
      }
 diff --git a/src/utils/page.js b/src/utils/page.js
-index 386ba233f09798cc5b1ed553617ec5c960b5e0de..d71c60cea0fb5d407624334ce2be1de1ca1aea4b 100644
+index 386ba233f09798cc5b1ed553617ec5c960b5e0de..49fca66d38f72329f95b4a8e753e15ed32560f0c 100644
 --- a/src/utils/page.js
 +++ b/src/utils/page.js
 @@ -6,6 +6,15 @@ const { debug } = require('./debug')
@@ -67,7 +67,7 @@ index 386ba233f09798cc5b1ed553617ec5c960b5e0de..d71c60cea0fb5d407624334ce2be1de1
  
        const { url } = preview
        await goToHashUrl(page, url)
-+      await page.addStyleTag({ content: '* {animation:none !important;transition: none !important;}' })
++      await page.addStyleTag({ content: '* { animation: none !important; transition: none !important; -webkit-font-smoothing: none !important; }' })
  
        for (const actionState of actionStateList) {
          await takeNewScreenshotOfPreview(page, preview, previewIndex, actionState, { dir, wait })
