@@ -194,9 +194,11 @@ jobs:
       - name: Install
         run: yarn
 
-      - name: Docker pull
+      - name: Docker
         if: matrix.node-version == '16'
-        run: docker pull browserless/chrome
+        run: |
+          docker pull browserless/chrome
+          docker pull nginx
 
       - name: Unit test
         if: matrix.node-version == '18'

@@ -24,10 +24,10 @@
     "build:dts": "tsc --outDir lib/dts --emitDeclarationOnly",
     "build:guide": "styleguidist --config styleguide.config.cjs build",
     "watch": "styleguidist --config styleguide.config.cjs server",
-    "test": "concurrently -k -s first 'npm:visual:test' 'npm:serve' 'npm:chrome'",
-    "serve": "http-server styleguide/lib --port 7070",
-    "chrome": "docker run --name mobile --add-host=host.docker.internal:host-gateway -p 7171:3000 browserless/chrome",
-    "visual:test": "wait-on -d 5000 tcp:7070 tcp:7171 && styleguidist-visual test --config styleguide.visual.config.cjs && docker stop mobile && docker rm mobile",
+    "test": "concurrently 'npm:test:*'",
+    "test:server": "docker run -d --rm --name mobile-server -p 7070:80 -v $(pwd)/styleguide/lib:/usr/share/nginx/html nginx",
+    "test:chrome": "docker run -d --rm --name mobile-chrome -p 7171:3000 --add-host=host.docker.internal:host-gateway browserless/chrome",
+    "test:visual": "sleep 5 && styleguidist-visual test --config styleguide.visual.config.cjs",
     "visual:approve": "styleguidist-visual approve --config styleguide.visual.config.cjs",
     "lint": "eslint --fix src styleguide/components && prettier --loglevel silent --write src styleguide/components"
   },
@@ -46,7 +46,6 @@
     "eslint-config-qiwi": "1.17.3",
     "fast-glob": "3.2.11",
     "file-loader": "6.2.0",
-    "http-server": "14.1.1",
     "husky": "8.0.1",
     "minimist": "1.2.6",
     "prettier": "2.7.1",
@@ -58,7 +57,6 @@
     "ts-patch": "2.0.1",
     "tsc-esm-fix": "2.18.0",
     "typescript": "4.4.4",
-    "wait-on": "6.0.1",
     "webpack": "4.46.0"
   },
   "repository": {
