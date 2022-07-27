@@ -148,7 +148,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        node-version: [ 16 ]
+        node-version: [ 16, 18 ]
     name: Test (Node v${{ matrix.node-version }}, OS ${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     steps:
@@ -192,26 +192,19 @@ jobs:
         run: tar -xvf artifact.tar
 
       - name: Install
-        run: |
-          yarn install
-          docker pull browserless/chrome
+        run: yarn
 
-#      - name: Unit test
-#        if: matrix.os == 'ubuntu-latest'
-#        run: yarn test:unit
+      - name: Docker pull
+        if: matrix.node-version == '16'
+        run: docker pull browserless/chrome
+
+      - name: Unit test
+        if: matrix.node-version == '18'
+        run: yarn test:unit
 
       - name: Full test
-#        if: matrix.os == 'macos-latest'
-#        run: yarn test:full || exit 0
+        if: matrix.node-version == '16'
         run: yarn test:full
-
-#      - name: Save screenshots
-#        if: matrix.os == 'macos-latest'
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: screenshots-${{ needs.init.outputs.checksum }}
-#          retention-days: 1
-#          path: packages/*/styleguide/screenshots
 
   release:
     name: Release
