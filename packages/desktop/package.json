@@ -25,7 +25,7 @@
     "build:guide": "styleguidist --config styleguide.config.cjs build",
     "watch": "styleguidist --config styleguide.config.cjs server",
     "serve": "http-server styleguide/lib --port 6060",
-    "chrome": "docker run -p 6161:3000 browserless/chrome",
+    "chrome": "docker run --add-host=host.docker.internal:host-gateway -p 6161:3000 browserless/chrome",
     "visual:test": "wait-on -d 5000 tcp:6060 tcp:6161 && styleguidist-visual test --config styleguide.visual.config.cjs",
     "visual:approve": "styleguidist-visual approve --config styleguide.visual.config.cjs",
     "test": "concurrently -k -s last 'npm:serve' 'npm:chrome' 'npm:visual:test'",
