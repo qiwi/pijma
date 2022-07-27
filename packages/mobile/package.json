@@ -24,10 +24,11 @@
     "build:dts": "tsc --outDir lib/dts --emitDeclarationOnly",
     "build:guide": "styleguidist --config styleguide.config.cjs build",
     "watch": "styleguidist --config styleguide.config.cjs server",
-    "serve": "http-server styleguide/lib --port 7070 --silent",
-    "test": "concurrently -k -s first 'npm:serve' 'npm:visual:test'",
-    "visual:test": "styleguidist-visual test --url http://localhost:7070/ --dir styleguide/screenshots --config styleguide.visual.config.cjs",
-    "visual:approve": "styleguidist-visual approve --dir styleguide/screenshots --config styleguide.visual.config.cjs",
+    "serve": "http-server styleguide/lib --port 7070",
+    "chrome": "docker run -p 7171:3000 browserless/chrome",
+    "visual:test": "wait-on -d 5000 tcp:7070 tcp:7171 && styleguidist-visual test --config styleguide.visual.config.cjs",
+    "visual:approve": "styleguidist-visual approve --config styleguide.visual.config.cjs",
+    "test": "concurrently -k -s last 'npm:serve' 'npm:chrome' 'npm:visual:test'",
     "lint": "eslint --fix src styleguide/components && prettier --loglevel silent --write src styleguide/components"
   },
   "files": [
@@ -57,6 +58,7 @@
     "ts-patch": "2.0.1",
     "tsc-esm-fix": "2.18.0",
     "typescript": "4.4.4",
+    "wait-on": "6.0.1",
     "webpack": "4.46.0"
   },
   "repository": {

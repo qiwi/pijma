@@ -1,6 +1,8 @@
 module.exports = {
+  url: 'http://host.docker.internal:6060/',
+  dir: 'styleguide/screenshots',
   wait: 50,
-  threshold: 0.5,
+  threshold: 0.1,
   viewports: {
     desktop: {
       width: 1200,
@@ -8,13 +10,7 @@ module.exports = {
     },
   },
   deleteScreenshotsWhenAccepted: true,
-  // connectOptions: {
-  //   browserWSEndpoint: 'ws://localhost:3000',
-  // },
-  // launchOptions: {
-  //   args: [
-  //     '--font-render-hinting=none',
-  //     '--force-color-profile=srgb',
-  //   ],
-  // },
+  connectOptions: {
+    browserWSEndpoint: 'ws://localhost:6161',
+  },
 }
