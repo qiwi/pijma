@@ -208,6 +208,16 @@ jobs:
         if: matrix.node-version == '16'
         run: yarn test:full
 
+      - name: Save screenshots
+        if: matrix.node-version == '16' && ${{ failure() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: screenshots-${{ needs.init.outputs.checksum }}
+          retention-days: 1
+          path: |
+            packages/*/styleguide/screenshots/*.new.png
+            packages/*/styleguide/screenshots/*.diff.png
+
   release:
     name: Release
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
