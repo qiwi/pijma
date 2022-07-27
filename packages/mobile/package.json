@@ -24,10 +24,10 @@
     "build:dts": "tsc --outDir lib/dts --emitDeclarationOnly",
     "build:guide": "styleguidist --config styleguide.config.cjs build",
     "watch": "styleguidist --config styleguide.config.cjs server",
-    "test": "concurrently --kill-others --kill-others-on-fail 'npm:serve' 'npm:chrome' 'npm:visual:test'",
+    "test": "concurrently -k -s first 'npm:visual:test' 'npm:serve' 'npm:chrome'",
     "serve": "http-server styleguide/lib --port 7070",
-    "chrome": "docker run --add-host=host.docker.internal:host-gateway -p 7171:3000 browserless/chrome",
-    "visual:test": "wait-on -d 5000 tcp:7070 tcp:7171 && styleguidist-visual test --config styleguide.visual.config.cjs",
+    "chrome": "docker run --name mobile --add-host=host.docker.internal:host-gateway -p 7171:3000 browserless/chrome",
+    "visual:test": "wait-on -d 5000 tcp:7070 tcp:7171 && styleguidist-visual test --config styleguide.visual.config.cjs && docker stop mobile && docker rm mobile",
     "visual:approve": "styleguidist-visual approve --config styleguide.visual.config.cjs",
     "lint": "eslint --fix src styleguide/components && prettier --loglevel silent --write src styleguide/components"
   },
