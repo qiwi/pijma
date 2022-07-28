@@ -194,21 +194,21 @@ jobs:
       - name: Install
         run: yarn
 
-      - name: Docker
+      - name: Docker pull
         if: matrix.node-version == '16'
         run: |
           docker pull browserless/chrome
           docker pull nginx
 
-      - name: Unit test
+      - name: Unit tests
         if: matrix.node-version == '18'
         run: yarn test:unit
 
-      - name: Full test
+      - name: Visual tests
         if: matrix.node-version == '16'
-        run: yarn test:full
+        run: yarn test:visual
 
-      - name: Save screenshots
+      - name: Save failure results
         if: ${{ failure() }}
         uses: actions/upload-artifact@v3
         with:

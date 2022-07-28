@@ -12,12 +12,12 @@ Yet another user interface components library. Weird. Slow. Our own.
 * [@qiwi/pijma-mobile](https://qiwi.github.io/pijma/mobile)
 
 ## Development
-|             | Cmd             |
-| ---         | ---             |
-| **Install** | `yarn install`  |
-| **Preview** | `yarn watch`    |
-| **Build**   | `yarn build`    |
-| **Test**    | `yarn test`     |
+|             | Cmd            |
+| ---         |----------------|
+| **Install** | `yarn install` |
+| **Preview** | `yarn start`   |
+| **Build**   | `yarn build`   |
+| **Test**    | `yarn test`    |
 
 ###### Environments
 * production

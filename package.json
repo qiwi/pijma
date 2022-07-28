@@ -7,9 +7,9 @@
   "scripts": {
     "clean": "yarn workspaces foreach --parallel --topological-dev --no-private --interlaced run clean",
     "build": "yarn workspaces foreach --parallel --topological-dev --no-private --interlaced run build",
-    "watch": "yarn workspaces foreach --parallel --topological-dev --no-private --interlaced run watch",
+    "start": "yarn workspaces foreach --parallel --topological-dev --no-private --interlaced run start",
     "test:unit": "yarn workspaces foreach --parallel --interlaced run lint",
-    "test:full": "yarn workspaces foreach --parallel --interlaced run test"
+    "test:visual": "yarn workspaces foreach --parallel --interlaced run test"
   },
   "resolutions": {
     "@types/react": "16.14.28",

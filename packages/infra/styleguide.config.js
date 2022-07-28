@@ -173,6 +173,10 @@ module.exports = ({ cwd, extra = {}, components = [] }) => {
           alias,
           extensions: ['.tsx', '.ts', '.jsx', '.js'],
         },
+        devServer: {
+          historyApiFallback: true,
+          disableHostCheck: true,
+        },
       },
     },
     extra,
