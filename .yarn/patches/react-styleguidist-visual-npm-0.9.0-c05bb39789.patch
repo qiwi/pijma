@@ -1,5 +1,5 @@
 diff --git a/src/commands/test.js b/src/commands/test.js
-index 3a72c5b66ae674a234322fa4fdc6859044b6726e..aad0900408259bb565e11838919968a624f3b77e 100644
+index 3a72c5b66ae674a234322fa4fdc6859044b6726e..55276595a5a9decdf66fbee456577178af7c6b4d 100644
 --- a/src/commands/test.js
 +++ b/src/commands/test.js
 @@ -6,7 +6,7 @@ const {
@@ -26,23 +26,20 @@ index 3a72c5b66ae674a234322fa4fdc6859044b6726e..aad0900408259bb565e11838919968a6
  
      for (const viewport of Object.keys(viewports)) {
        const progress = spinner({
-@@ -86,8 +94,15 @@ async function test (partialOptions) {
-         stop: `Finished taking screenshots for viewport ${viewport}`
+@@ -87,8 +95,11 @@ async function test (partialOptions) {
        })
        progress.start()
-+      let previews = {}
        await page.setViewport(viewports[viewport])
 -      const previews = await getPreviews(page, { url, filter, viewport, navigationOptions })
+-      await takeNewScreenshotsOfPreviews(page, previews, { dir, progress, navigationOptions, wait })
 +      const urls = await getUrls(page, { url, navigationOptions })
 +      for (let i = 0; i < urls.length; i++) {
-+        previews = {
-+          ...previews,
-+          ...await getPreviews(page, { url: urls[i], filter, viewport, navigationOptions }),
-+        }
++        const previews = await getPreviews(page, { url: urls[i], filter, viewport, navigationOptions })
++        await takeNewScreenshotsOfPreviews(page, previews, { dir, progress, navigationOptions, wait })
 +      }
-       await takeNewScreenshotsOfPreviews(page, previews, { dir, progress, navigationOptions, wait })
        progress.stop()
      }
+ 
 diff --git a/src/utils/image.js b/src/utils/image.js
 index a947e62b32350693eca7f260bc88108c1cbc13c9..b5a9554bcf4880c24578a66f68a30fa19c5a0bfe 100644
 --- a/src/utils/image.js
@@ -88,10 +85,10 @@ index a947e62b32350693eca7f260bc88108c1cbc13c9..b5a9554bcf4880c24578a66f68a30fa1
        }
      }
 diff --git a/src/utils/page.js b/src/utils/page.js
-index 386ba233f09798cc5b1ed553617ec5c960b5e0de..49fca66d38f72329f95b4a8e753e15ed32560f0c 100644
+index 386ba233f09798cc5b1ed553617ec5c960b5e0de..76f78ea08c7e861e992fee4bae3bcd6ade9e3c5f 100644
 --- a/src/utils/page.js
 +++ b/src/utils/page.js
-@@ -6,6 +6,15 @@ const { debug } = require('./debug')
+@@ -6,9 +6,20 @@ const { debug } = require('./debug')
  
  const ensureDir = promisify(fs.ensureDir)
  
@@ -101,21 +98,18 @@ index 386ba233f09798cc5b1ed553617ec5c960b5e0de..49fca66d38f72329f95b4a8e753e15ed
 +}
 +
 +function getUrlsInPage () {
-+  return Array.from(document.querySelectorAll('[href^="/#/"]')).map((el) => el.href)
++  return Array.from(document.querySelectorAll('[href*="/#/"]')).map((el) => el.href || el.getAttribute('href'))
 +}
 +
  async function getPreviews (page, { url, filter, viewport, navigationOptions }) {
    await goToUrl(page, url, navigationOptions)
  
-@@ -69,6 +78,7 @@ async function takeNewScreenshotsOfPreviews (page, previewMap, { dir, progress,
++  await page.addStyleTag({ content: '* { animation: none !important; transition: none !important; -webkit-font-smoothing: none !important; }' })
++
+   return page.evaluate(getPreviewsInPage, { filter, viewport })
+ }
  
-       const { url } = preview
-       await goToHashUrl(page, url)
-+      await page.addStyleTag({ content: '* { animation: none !important; transition: none !important; -webkit-font-smoothing: none !important; }' })
- 
-       for (const actionState of actionStateList) {
-         await takeNewScreenshotOfPreview(page, preview, previewIndex, actionState, { dir, wait })
-@@ -155,6 +165,7 @@ function sleep (ms) {
+@@ -155,6 +166,7 @@ function sleep (ms) {
  }
  
  module.exports = {

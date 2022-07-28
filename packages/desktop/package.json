@@ -25,8 +25,8 @@
     "build:guide": "styleguidist --config styleguide.config.cjs build",
     "watch": "styleguidist --config styleguide.config.cjs server",
     "test": "concurrently 'npm:test:*'",
-    "test:server": "docker run -d --rm --name desktop-server -p 6060:80 -v $(pwd)/styleguide/lib:/usr/share/nginx/html nginx",
-    "test:chrome": "docker run -d --rm --name desktop-chrome -p 6161:3000 --add-host=host.docker.internal:host-gateway browserless/chrome",
+    "test:server": "(docker stop desktop-server || exit 0) && docker run -d --rm --name desktop-server -p 6060:80 -v $(pwd)/styleguide/lib:/usr/share/nginx/html nginx",
+    "test:chrome": "(docker stop desktop-chrome || exit 0) && docker run -d --rm --name desktop-chrome -p 6161:3000 --add-host=host.docker.internal:host-gateway browserless/chrome",
     "test:visual": "sleep 5 && styleguidist-visual test --config styleguide.visual.config.cjs",
     "visual:approve": "styleguidist-visual approve --config styleguide.visual.config.cjs",
     "lint": "eslint --fix src styleguide/components && prettier --loglevel silent --write src styleguide/components"

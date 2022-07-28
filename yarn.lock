@@ -9034,7 +9034,7 @@ __metadata:
 
 "react-styleguidist-visual@patch:react-styleguidist-visual@npm%3A0.9.0#~/.yarn/patches/react-styleguidist-visual-npm-0.9.0-c05bb39789.patch":
   version: 0.9.0
-  resolution: "react-styleguidist-visual@patch:react-styleguidist-visual@npm%3A0.9.0#~/.yarn/patches/react-styleguidist-visual-npm-0.9.0-c05bb39789.patch::version=0.9.0&hash=6e06e4"
+  resolution: "react-styleguidist-visual@patch:react-styleguidist-visual@npm%3A0.9.0#~/.yarn/patches/react-styleguidist-visual-npm-0.9.0-c05bb39789.patch::version=0.9.0&hash=0b25df"
   dependencies:
     chalk: "npm:^2.4.1"
     debug: "npm:^3.1.0"
@@ -9049,7 +9049,7 @@ __metadata:
     yargs: "npm:^11.0.0"
   bin:
     styleguidist-visual: src/cli.js
-  checksum: 0ba30a25c816dd851cf9c125d203524952fe381becdb3eca9ea97fcb0f9565991790ba4cb86d898f56187c5d059e25c4b7174b1ef6c4c204f66f8fd8b88cafb0
+  checksum: 5b5862d3c8f1df75485fbe274cac6632b4da0a086d725d214f9b34c3abeaecd1cf7d7768a7cadc74cfd483b7292aefae6b798ab947b31b9dda5fa7172d6d8028
   languageName: node
   linkType: hard
 
