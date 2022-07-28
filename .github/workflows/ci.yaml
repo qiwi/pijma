@@ -209,7 +209,7 @@ jobs:
         run: yarn test:full
 
       - name: Save screenshots
-        if: matrix.node-version == '16' && ${{ failure() }}
+        if: ${{ failure() }}
         uses: actions/upload-artifact@v3
         with:
           name: screenshots-${{ needs.init.outputs.checksum }}
