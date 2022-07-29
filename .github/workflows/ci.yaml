@@ -19,7 +19,7 @@ jobs:
 
       - name: Get src checksum
         id: checksum
-        run: echo "::set-output name=checksum::${{ hashFiles('yarn.lock', '*.json', 'packages/*/*.json', 'packages/*/src/**/*', 'packages/*/styleguide/*', 'packages/*/styleguide/components/**/*') }}"
+        run: echo "::set-output name=checksum::${{ hashFiles('yarn.lock', '*.json', 'packages/*/*.json', 'packages/*/src/**/*', 'packages/*/styleguide/*.*', 'packages/*/styleguide/components/**/*') }}"
 
   build:
     name: build

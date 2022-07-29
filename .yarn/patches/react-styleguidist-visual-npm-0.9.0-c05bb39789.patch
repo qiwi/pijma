@@ -42,7 +42,7 @@ index 3a72c5b66ae674a234322fa4fdc6859044b6726e..c8e6b8cb0c86e14cf43ad986440d8468
      }
  
 diff --git a/src/utils/image.js b/src/utils/image.js
-index a947e62b32350693eca7f260bc88108c1cbc13c9..e51940f6b13138e74231f5066951d7b192c70b55 100644
+index a947e62b32350693eca7f260bc88108c1cbc13c9..7751a15208c07174b3715ccba09248fe907de711 100644
 --- a/src/utils/image.js
 +++ b/src/utils/image.js
 @@ -39,6 +39,7 @@ async function compareNewScreenshotsToRefScreenshots ({ dir, filter, threshold,
@@ -58,7 +58,7 @@ index a947e62b32350693eca7f260bc88108c1cbc13c9..e51940f6b13138e74231f5066951d7b1
      const refImgExists = await pathExists(refImg)
      if (!refImgExists) {
 -      await promoteNewScreenshot(newImg)
-+      failure('Screenshot %s is new and must be approved manually', newImg)
++      failure('Screenshot %s is new and must be approved manually', chalk.cyan(newImg))
 +      apprCount++
      } else {
 -      const pixels = await diffScreenshots(newImg, refImg, diffImg, threshold)
