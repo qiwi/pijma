@@ -5,7 +5,7 @@ import {
   MenuContainer,
   TextField,
 } from '@qiwi/pijma-mobile'
-import React, { FC, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 
 interface TableOfContentsRendererProps {
   searchTerm: string
@@ -13,7 +13,16 @@ interface TableOfContentsRendererProps {
 }
 
 const TableOfContentsRenderer: FC<TableOfContentsRendererProps> = (props) => {
-  const [menuShow, setMenuShow] = useState(false)
+  const [menuShow, setMenuShow] = useState(
+    !!navigator.userAgent.match(/HeadlessChrome/),
+  )
+  useEffect(() => {
+    const timer = setTimeout(() => setMenuShow(false), 100)
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [])
+
   return (
     <Header active={menuShow}>
       <Flex height={1} px={4} align="center" justify="space-between">
