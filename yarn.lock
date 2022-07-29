@@ -673,12 +673,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@qiwi/pijma-app@workspace:packages/app":
-  version: 0.0.0-use.local
-  resolution: "@qiwi/pijma-app@workspace:packages/app"
-  languageName: unknown
-  linkType: soft
-
 "@qiwi/pijma-core@workspace:*, @qiwi/pijma-core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-core@workspace:packages/core"
@@ -787,12 +781,6 @@ __metadata:
     tsc-esm-fix: "npm:2.18.0"
     typescript: "npm:4.4.4"
     webpack: "npm:4.46.0"
-  languageName: unknown
-  linkType: soft
-
-"@qiwi/pijma-media@workspace:packages/media":
-  version: 0.0.0-use.local
-  resolution: "@qiwi/pijma-media@workspace:packages/media"
   languageName: unknown
   linkType: soft
 
@@ -8345,12 +8333,6 @@ __metadata:
   checksum: 53d52fa909026494c83009816cbfe420f014b4ebafaa0f1b702cb03172e7e72cf14678cf6b545d3d722c88bc4717ccf4dc5b79bdf689d5e1776cf795659da49b
   languageName: node
   linkType: hard
-
-"pijma@workspace:packages/landing":
-  version: 0.0.0-use.local
-  resolution: "pijma@workspace:packages/landing"
-  languageName: unknown
-  linkType: soft
 
 "pinkie-promise@npm:^2.0.0":
   version: 2.0.1
