@@ -17,7 +17,7 @@ const TableOfContentsRenderer: FC<TableOfContentsRendererProps> = (props) => {
     !!navigator.userAgent.match(/HeadlessChrome/),
   )
   useEffect(() => {
-    const timer = setTimeout(() => setMenuShow(false), 100)
+    const timer = setTimeout(() => setMenuShow(false), 200)
     return () => {
       clearTimeout(timer)
     }

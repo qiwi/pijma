@@ -1,6 +1,6 @@
 #### Ширина контейнера больше ширины рекапчи
 
-```jsx {"props":{"data-action-states":"[{\\"action\\":\\"none\\",\\"wait\\":1000}]"}}
+```jsx {"props":{"data-action-states":"[{\\"action\\":\\"none\\",\\"wait\\":2000}]"}}
 const [value1, setValue1] = React.useState(undefined)
 const [value2, setValue2] = React.useState(undefined)
 
@@ -43,7 +43,7 @@ const [value2, setValue2] = React.useState(undefined)
 
 #### Ширина контейнера меньше ширины рекапчи
 
-```jsx {"props":{"data-action-states":"[{\\"action\\":\\"none\\",\\"wait\\":1000}]"}}
+```jsx {"props":{"data-action-states":"[{\\"action\\":\\"none\\",\\"wait\\":2000}]"}}
 const [value3, setValue3] = React.useState(undefined)
 const [value4, setValue4] = React.useState(undefined)
 
