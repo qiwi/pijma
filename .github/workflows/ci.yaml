@@ -206,7 +206,7 @@ jobs:
 
       - name: Visual tests
         if: matrix.node-version == '16'
-        run: yarn test:visual
+        run: yarn test
 
       - name: Save failure results
         if: ${{ failure() }}

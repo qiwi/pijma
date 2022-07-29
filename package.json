@@ -8,8 +8,9 @@
     "clean": "yarn workspaces foreach --parallel --topological-dev --no-private --interlaced run clean",
     "build": "yarn workspaces foreach --parallel --topological-dev --no-private --interlaced run build",
     "start": "yarn workspaces foreach --parallel --topological-dev --no-private --interlaced run start",
-    "test:unit": "yarn workspaces foreach --parallel --interlaced run lint",
-    "test:visual": "yarn workspaces foreach --parallel --interlaced run test"
+    "test": "yarn workspaces foreach --parallel --topological-dev --no-private --interlaced run test",
+    "test:start": "yarn workspaces foreach --parallel --topological-dev --no-private --interlaced run test:start",
+    "test:unit": "yarn workspaces foreach --parallel --topological-dev --no-private --interlaced run lint"
   },
   "resolutions": {
     "@types/react": "16.14.28",
