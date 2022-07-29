@@ -42,12 +42,24 @@ index 3a72c5b66ae674a234322fa4fdc6859044b6726e..c8e6b8cb0c86e14cf43ad986440d8468
      }
  
 diff --git a/src/utils/image.js b/src/utils/image.js
-index a947e62b32350693eca7f260bc88108c1cbc13c9..b5a9554bcf4880c24578a66f68a30fa19c5a0bfe 100644
+index a947e62b32350693eca7f260bc88108c1cbc13c9..e51940f6b13138e74231f5066951d7b192c70b55 100644
 --- a/src/utils/image.js
 +++ b/src/utils/image.js
-@@ -48,20 +48,26 @@ async function compareNewScreenshotsToRefScreenshots ({ dir, filter, threshold,
+@@ -39,6 +39,7 @@ async function compareNewScreenshotsToRefScreenshots ({ dir, filter, threshold,
+   const newImgs = await glob(path.join(dir, `${filter || ''}*.new.png`))
+ 
+   let diffCount = 0
++  let apprCount = 0
+ 
+   for (const newImg of newImgs) {
+     const refImg = newImg.replace(/\.new\.png$/, '.png')
+@@ -46,22 +47,29 @@ async function compareNewScreenshotsToRefScreenshots ({ dir, filter, threshold,
+ 
+     const refImgExists = await pathExists(refImg)
      if (!refImgExists) {
-       await promoteNewScreenshot(newImg)
+-      await promoteNewScreenshot(newImg)
++      failure('Screenshot %s is new and must be approved manually', newImg)
++      apprCount++
      } else {
 -      const pixels = await diffScreenshots(newImg, refImg, diffImg, threshold)
 -      if (pixels === 0) {
@@ -85,6 +97,17 @@ index a947e62b32350693eca7f260bc88108c1cbc13c9..b5a9554bcf4880c24578a66f68a30fa1
          diffCount++
        }
      }
+@@ -70,6 +78,10 @@ async function compareNewScreenshotsToRefScreenshots ({ dir, filter, threshold,
+   if (diffCount > 0) {
+     throw new Error('One or more new screenshots differ from their references!')
+   }
++
++  if (apprCount > 0) {
++    throw new Error('One or more new screenshots must be approved manually!')
++  }
+ }
+ 
+ async function promoteNewScreenshots ({ dir, filter }) {
 diff --git a/src/utils/page.js b/src/utils/page.js
 index 386ba233f09798cc5b1ed553617ec5c960b5e0de..a3228bbd0bf2001fa60e01c62835c14d1b9fd519 100644
 --- a/src/utils/page.js
