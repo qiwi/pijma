@@ -1,4 +1,4 @@
-import { MenuCaption, MenuLink } from '@qiwi/pijma-mobile'
+import { Caption, Flex, FlexItem, Link } from '@qiwi/pijma-mobile'
 import React, { FC, Fragment, ReactNode } from 'react'
 
 interface ComponentsListRendererProps {
@@ -17,23 +17,27 @@ const ComponentsListRenderer: FC<ComponentsListRendererProps> = (props) => {
     return null
   }
   return (
-    <Fragment>
-      {items.map(({ visibleName, href, content, shouldOpenInNewTab }, i) =>
-        content ? (
-          <Fragment key={i}>
-            <MenuCaption text={visibleName} />
-            {content}
-          </Fragment>
-        ) : (
-          <MenuLink
-            key={i}
-            href={href}
-            target={shouldOpenInNewTab ? '_blank' : undefined}
-            title={visibleName}
-          />
-        ),
-      )}
-    </Fragment>
+    <Flex wrap="wrap">
+      {items.map(({ visibleName, href, content, shouldOpenInNewTab }, i) => (
+        <FlexItem key={i} mr={4} mt={4}>
+          {content ? (
+            <Fragment>
+              <Caption>{visibleName}</Caption>
+              {content}
+            </Fragment>
+          ) : (
+            <Link
+              key={i}
+              href={href}
+              target={shouldOpenInNewTab ? '_blank' : undefined}
+              title={visibleName}
+            >
+              {visibleName}
+            </Link>
+          )}
+        </FlexItem>
+      ))}
+    </Flex>
   )
 }
 

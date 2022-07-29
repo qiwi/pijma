@@ -3,8 +3,12 @@ import {
   cache,
   CacheProvider,
   Card,
+  Flex,
+  FlexItem,
   fonts,
   Global,
+  Header,
+  Icon,
   reset,
   ThemeProvider,
   themes,
@@ -39,9 +43,18 @@ const StyleGuideRenderer: FC<StyleGuideRendererProps> = (props) => (
         ]}
       />
       <Card bg="#f5f5f5" height={1}>
-        <Card key="toc">{props.toc}</Card>
+        <Header>
+          <Flex height={1} px={4} align="center" justify="center">
+            <FlexItem width={8} height={8} shrink={0} align="center">
+              <Icon name="qiwi" color="#ff8c00" size={1} />
+            </FlexItem>
+          </Flex>
+        </Header>
         <Card bg="#f5f5f5" px={4} py={6}>
           {props.children}
+        </Card>
+        <Card as="footer" px={4} py={6}>
+          {props.toc}
         </Card>
       </Card>
     </ThemeProvider>
