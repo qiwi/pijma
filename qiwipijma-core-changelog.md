@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.153.0](https://github.com/qiwi/pijma/compare/2022.7.19-qiwi.pijma-core.1.152.4-f0...2022.7.29-qiwi.pijma-core.1.153.0-f0) (2022-07-29)
+
+### Features
+* feat: visual tests (#516) [478ddcae](https://github.com/qiwi/pijma/commit/478ddcaefbb80f794900517878da6231bd1397de)
+
 ## [@qiwi/pijma-core@1.152.4](https://github.com/qiwi/pijma/compare/2022.7.19-qiwi.pijma-core.1.152.3-f0...2022.7.19-qiwi.pijma-core.1.152.4-f0) (2022-07-19)
 
 ### Fixes & improvements
