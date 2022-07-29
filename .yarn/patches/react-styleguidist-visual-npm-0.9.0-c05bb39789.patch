@@ -1,5 +1,5 @@
 diff --git a/src/commands/test.js b/src/commands/test.js
-index 3a72c5b66ae674a234322fa4fdc6859044b6726e..a462c7eb2c049172717f0dff58110d85f27425d1 100644
+index 3a72c5b66ae674a234322fa4fdc6859044b6726e..c8e6b8cb0c86e14cf43ad986440d846849c741dc 100644
 --- a/src/commands/test.js
 +++ b/src/commands/test.js
 @@ -6,7 +6,7 @@ const {
@@ -26,13 +26,14 @@ index 3a72c5b66ae674a234322fa4fdc6859044b6726e..a462c7eb2c049172717f0dff58110d85
  
      for (const viewport of Object.keys(viewports)) {
        const progress = spinner({
-@@ -87,8 +95,11 @@ async function test (partialOptions) {
+@@ -87,8 +95,12 @@ async function test (partialOptions) {
        })
        progress.start()
        await page.setViewport(viewports[viewport])
 -      const previews = await getPreviews(page, { url, filter, viewport, navigationOptions })
 -      await takeNewScreenshotsOfPreviews(page, previews, { dir, progress, navigationOptions, wait })
 +      const urls = await getUrls(page, { url, filter, navigationOptions })
++      await page.addStyleTag({ content: '* { animation: none !important; transition: none !important; -webkit-font-smoothing: none !important; }' })
 +      for (let i = 0; i < urls.length; i++) {
 +        const previews = await getPreviews(page, { url: urls[i], filter, viewport, navigationOptions })
 +        await takeNewScreenshotsOfPreviews(page, previews, { dir, progress, navigationOptions, wait })
@@ -85,15 +86,16 @@ index a947e62b32350693eca7f260bc88108c1cbc13c9..b5a9554bcf4880c24578a66f68a30fa1
        }
      }
 diff --git a/src/utils/page.js b/src/utils/page.js
-index 386ba233f09798cc5b1ed553617ec5c960b5e0de..01d4cba91000837d898fff8a3ae62ca2361349c3 100644
+index 386ba233f09798cc5b1ed553617ec5c960b5e0de..a3228bbd0bf2001fa60e01c62835c14d1b9fd519 100644
 --- a/src/utils/page.js
 +++ b/src/utils/page.js
-@@ -6,9 +6,26 @@ const { debug } = require('./debug')
+@@ -6,8 +6,23 @@ const { debug } = require('./debug')
  
  const ensureDir = promisify(fs.ensureDir)
  
+-async function getPreviews (page, { url, filter, viewport, navigationOptions }) {
 +async function getUrls (page, { url, filter, navigationOptions }) {
-+  await goToUrl(page, url, navigationOptions)
+   await goToUrl(page, url, navigationOptions)
 +  return page.evaluate(getUrlsInPage, { filter })
 +}
 +
@@ -107,15 +109,12 @@ index 386ba233f09798cc5b1ed553617ec5c960b5e0de..01d4cba91000837d898fff8a3ae62ca2
 +  ))
 +}
 +
- async function getPreviews (page, { url, filter, viewport, navigationOptions }) {
-   await goToUrl(page, url, navigationOptions)
++async function getPreviews (page, { url, filter, viewport, navigationOptions }) {
++  await goToHashUrl(page, url)
  
-+  await page.addStyleTag({ content: '* { animation: none !important; transition: none !important; -webkit-font-smoothing: none !important; }' })
-+
    return page.evaluate(getPreviewsInPage, { filter, viewport })
  }
- 
-@@ -155,6 +172,7 @@ function sleep (ms) {
+@@ -155,6 +170,7 @@ function sleep (ms) {
  }
  
  module.exports = {
