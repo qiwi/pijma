@@ -15,6 +15,6 @@ module.exports = {
   },
   navigateOptions: {
     timeout: 0,
-    waitUntil: 'load',
+    waitUntil: ['load', 'networkidle0'],
   },
 }
