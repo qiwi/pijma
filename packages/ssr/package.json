@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-ssr",
-  "version": "1.1.12",
+  "version": "0.0.0",
   "type": "module",
   "main": "./lib/es5/index.js",
   "module": "./lib/es6/index.js",
@@ -17,7 +17,7 @@
     "access": "public"
   },
   "scripts": {
-    "clean": "rimraf lib",
+    "clean": "rimraf lib node_modules",
     "build": "concurrently 'npm:build:*'",
     "build:es5": "swc src -d lib/es5 --config-file swc.es5.json && tsc-esm-fix --target=lib/es5 --fillBlank",
     "build:es6": "swc src -d lib/es6 --config-file swc.es6.json && tsc-esm-fix --target=lib/es6 --fillBlank",

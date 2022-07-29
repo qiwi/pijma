@@ -1,6 +1,6 @@
 {
   "name": "@qiwi/pijma-mobile",
-  "version": "1.147.0",
+  "version": "0.0.0",
   "type": "module",
   "main": "./lib/es5/index.js",
   "module": "./lib/es6/index.js",
@@ -17,13 +17,19 @@
     "access": "public"
   },
   "scripts": {
-    "clean": "rimraf lib styleguide/lib",
-    "build": "concurrently 'npm:build:*'",
+    "clean": "rimraf lib styleguide/lib node_modules",
+    "build": "concurrently 'npm:build:*' 'npm:guide:build'",
+    "start": "concurrently  --kill-others --kill-others-on-fail 'npm:guide:start' 'npm:chrome:start'",
+    "test": "concurrently --kill-others --kill-others-on-fail --success first 'npm:test:start' 'npm:static:start' 'npm:chrome:start'",
     "build:es5": "swc src -d lib/es5 --config-file swc.es5.json && tsc-esm-fix --target=lib/es5 --fillBlank",
     "build:es6": "swc src -d lib/es6 --config-file swc.es6.json && tsc-esm-fix --target=lib/es6 --fillBlank",
     "build:dts": "tsc --outDir lib/dts --emitDeclarationOnly",
-    "build:guide": "NODE_ENV=production styleguidist --config styleguide.config.cjs build",
-    "watch": "styleguidist --config styleguide.config.cjs server",
+    "guide:build": "styleguidist --config styleguide.config.cjs build",
+    "guide:start": "styleguidist --config styleguide.config.cjs server",
+    "static:start": "docker run --rm -p 7070:80 -v $(pwd)/styleguide/lib:/usr/share/nginx/html nginx",
+    "chrome:start": "docker run --rm -p 7171:3000 --add-host=host.docker.internal:host-gateway browserless/chrome",
+    "test:start": "wait-on http-get://localhost:7070/ http-get://localhost:7171/ && styleguidist-visual test --config styleguide.visual.config.cjs",
+    "test:approve": "styleguidist-visual approve --config styleguide.visual.config.cjs",
     "lint": "eslint --fix src styleguide/components && prettier --loglevel silent --write src styleguide/components"
   },
   "files": [
@@ -47,10 +53,12 @@
     "prettier-config-qiwi": "1.7.2",
     "react-docgen-typescript": "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch",
     "react-styleguidist": "11.2.0",
+    "react-styleguidist-visual": "patch:react-styleguidist-visual@npm%3A0.9.0#~/.yarn/patches/react-styleguidist-visual-npm-0.9.0-c05bb39789.patch",
     "style-loader": "2.0.0",
     "ts-patch": "2.0.1",
     "tsc-esm-fix": "2.18.0",
     "typescript": "4.4.4",
+    "wait-on": "6.0.1",
     "webpack": "4.46.0"
   },
   "repository": {

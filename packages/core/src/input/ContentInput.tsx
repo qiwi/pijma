@@ -1,13 +1,13 @@
 import React, {
   ChangeEventHandler,
   FocusEventHandler,
-  MouseEventHandler,
-  KeyboardEventHandler,
   forwardRef,
+  KeyboardEventHandler,
+  MouseEventHandler,
 } from 'react'
 
-import { MaskInput, Input, Value } from '../primitive'
 import { isMaskDigital, Mask, Pipe } from '../mask'
+import { Input, MaskInput, Value } from '../primitive'
 
 export interface ContentInputProps {
   value: string

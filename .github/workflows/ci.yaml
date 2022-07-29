@@ -1,12 +1,12 @@
 # This is a Github Workflow that runs tests on any push or pull request.
 # If the tests pass and this is a push to the master branch it also runs Semantic Release.
 name: CI
-on: [push, pull_request]
+on: [ push, pull_request ]
 
 jobs:
   init:
     name: init
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     outputs:
       yarn-cache-dir: ${{ steps.yarn-cache-dir-path.outputs.dir }}
       checksum: ${{ steps.checksum.outputs.checksum }}
@@ -19,12 +19,12 @@ jobs:
 
       - name: Get src checksum
         id: checksum
-        run: echo "::set-output name=checksum::${{ hashFiles('yarn.lock') }}-${{ hashFiles('packages/*/src/**/*') }}-${{ hashFiles('packages/*/*.json') }}"
+        run: echo "::set-output name=checksum::${{ hashFiles('yarn.lock', '*.json', 'packages/*/*.json', 'packages/*/src/**/*', 'packages/*/styleguide/*.*', 'packages/*/styleguide/components/**/*') }}"
 
   build:
     name: build
     needs: init
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -57,7 +57,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Install deps
+      - name: Install
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         run: yarn
 
@@ -65,7 +65,7 @@ jobs:
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         run: |
           yarn build
-          tar -cvf artifact.tar packages/*/lib packages/*/styleguide package.json
+          tar -cvf artifact.tar package.json packages/*/lib packages/*/styleguide/lib
 
       - name: Save artifact
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
@@ -85,9 +85,9 @@ jobs:
 
 
   test_push:
-    needs: [build, init]
+    needs: [ build, init ]
     if: github.event_name == 'push'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -128,27 +128,27 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Install deps
+      - name: Install
         run: yarn
 
-      - name: Unit test only
+      - name: Unit test
         run: yarn test:unit
 
-#      - name: Push coverage
-#        if: github.ref == 'refs/heads/master'
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: artifact-${{ needs.init.outputs.checksum }}
-#          retention-days: 1
-#          path: coverage
+  #      - name: Push coverage
+  #        if: github.ref == 'refs/heads/master'
+  #        uses: actions/upload-artifact@v3
+  #        with:
+  #          name: artifact-${{ needs.init.outputs.checksum }}
+  #          retention-days: 1
+  #          path: coverage
 
   test_pr:
     if: github.event_name == 'pull_request'
-    needs: [build, init]
+    needs: [ build, init ]
     strategy:
       matrix:
-        os: [ ubuntu-20.04 ]
-        node-version: [ 16 ]
+        os: [ ubuntu-latest ]
+        node-version: [ 16, 18 ]
     name: Test (Node v${{ matrix.node-version }}, OS ${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     steps:
@@ -191,22 +191,38 @@ jobs:
       - name: Unpack artifact
         run: tar -xvf artifact.tar
 
-      - name: Install deps
+      - name: Install
         run: yarn
 
-      - name: Unit test only
-        if: matrix.node-version != '16' || matrix.os != 'ubuntu-20.04'
+      - name: Docker pull
+        if: matrix.node-version == '16'
+        run: |
+          docker pull browserless/chrome
+          docker pull nginx
+
+      - name: Unit tests
+        if: matrix.node-version == '18'
         run: yarn test:unit
 
-      - name: Full test
-        if: matrix.node-version == '16' && matrix.os == 'ubuntu-20.04'
+      - name: Visual tests
+        if: matrix.node-version == '16'
         run: yarn test
+
+      - name: Save failure results
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: screenshots-${{ needs.init.outputs.checksum }}
+          retention-days: 1
+          path: |
+            packages/*/styleguide/screenshots/*.new.png
+            packages/*/styleguide/screenshots/*.diff.png
 
   release:
     name: Release
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-    needs: [test_push, init]
-    runs-on: ubuntu-20.04
+    needs: [ test_push, init ]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -242,13 +258,13 @@ jobs:
         with:
           node-version: 16
 
-#      - name: Codeclimate
-#        uses: paambaati/codeclimate-action@v2.7.5
-#        env:
-#          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-#        with:
-#          coverageLocations: |
-#            ${{github.workspace}}/coverage/*.lcov:lcov
+      #      - name: Codeclimate
+      #        uses: paambaati/codeclimate-action@v2.7.5
+      #        env:
+      #          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+      #        with:
+      #          coverageLocations: |
+      #            ${{github.workspace}}/coverage/*.lcov:lcov
 
       - uses: actions/cache@v3
         id: yarn-cache

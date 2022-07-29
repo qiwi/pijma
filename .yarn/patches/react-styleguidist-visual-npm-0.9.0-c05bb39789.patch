@@ -1,0 +1,147 @@
+diff --git a/src/commands/test.js b/src/commands/test.js
+index 3a72c5b66ae674a234322fa4fdc6859044b6726e..c8e6b8cb0c86e14cf43ad986440d846849c741dc 100644
+--- a/src/commands/test.js
++++ b/src/commands/test.js
+@@ -6,7 +6,7 @@ const {
+   compareNewScreenshotsToRefScreenshots,
+   removeNonRefScreenshots
+ } = require('../utils/image')
+-const { getPreviews, takeNewScreenshotsOfPreviews } = require('../utils/page')
++const { getUrls, getPreviews, takeNewScreenshotsOfPreviews } = require('../utils/page')
+ const { debug, spinner } = require('../utils/debug')
+ 
+ const testSchema = joi
+@@ -78,6 +78,14 @@ async function test (partialOptions) {
+ 
+     browser = useConnect ? await puppeteer.connect(connectOptions) : await puppeteer.launch(launchOptions)
+     const page = await browser.newPage()
++    await page.setRequestInterception(true)
++    page.on('request', request => {
++      if (request.resourceType() === 'image') {
++        request.abort()
++      } else {
++        request.continue()
++      }
++    })
+ 
+     for (const viewport of Object.keys(viewports)) {
+       const progress = spinner({
+@@ -87,8 +95,12 @@ async function test (partialOptions) {
+       })
+       progress.start()
+       await page.setViewport(viewports[viewport])
+-      const previews = await getPreviews(page, { url, filter, viewport, navigationOptions })
+-      await takeNewScreenshotsOfPreviews(page, previews, { dir, progress, navigationOptions, wait })
++      const urls = await getUrls(page, { url, filter, navigationOptions })
++      await page.addStyleTag({ content: '* { animation: none !important; transition: none !important; -webkit-font-smoothing: none !important; }' })
++      for (let i = 0; i < urls.length; i++) {
++        const previews = await getPreviews(page, { url: urls[i], filter, viewport, navigationOptions })
++        await takeNewScreenshotsOfPreviews(page, previews, { dir, progress, navigationOptions, wait })
++      }
+       progress.stop()
+     }
+ 
+diff --git a/src/utils/image.js b/src/utils/image.js
+index a947e62b32350693eca7f260bc88108c1cbc13c9..7751a15208c07174b3715ccba09248fe907de711 100644
+--- a/src/utils/image.js
++++ b/src/utils/image.js
+@@ -39,6 +39,7 @@ async function compareNewScreenshotsToRefScreenshots ({ dir, filter, threshold,
+   const newImgs = await glob(path.join(dir, `${filter || ''}*.new.png`))
+ 
+   let diffCount = 0
++  let apprCount = 0
+ 
+   for (const newImg of newImgs) {
+     const refImg = newImg.replace(/\.new\.png$/, '.png')
+@@ -46,22 +47,29 @@ async function compareNewScreenshotsToRefScreenshots ({ dir, filter, threshold,
+ 
+     const refImgExists = await pathExists(refImg)
+     if (!refImgExists) {
+-      await promoteNewScreenshot(newImg)
++      failure('Screenshot %s is new and must be approved manually', chalk.cyan(newImg))
++      apprCount++
+     } else {
+-      const pixels = await diffScreenshots(newImg, refImg, diffImg, threshold)
+-      if (pixels === 0) {
+-        success('Screenshots %s and %s match', chalk.cyan(newImg), chalk.cyan(refImg))
+-        if (deleteScreenshotsWhenAccepted) {
+-          await remove(newImg)
+-          await remove(diffImg)
+-        }
+-      } else {
+-        failure('Screenshots %s and %s differ in %s pixels', chalk.cyan(newImg), chalk.cyan(refImg), chalk.red(pixels))
+-        termImg(diffImg, {
+-          fallback: () => {
+-            info('Check out the diff at %s', chalk.cyan(diffImg))
++      try {
++        const pixels = await diffScreenshots(newImg, refImg, diffImg, threshold)
++        if (pixels === 0) {
++          success('Screenshots %s and %s match', chalk.cyan(newImg), chalk.cyan(refImg))
++          if (deleteScreenshotsWhenAccepted) {
++            await remove(newImg)
++            await remove(diffImg)
+           }
+-        })
++        } else {
++          failure('Screenshots %s and %s differ in %s pixels', chalk.cyan(newImg), chalk.cyan(refImg), chalk.red(pixels))
++          termImg(diffImg, {
++            fallback: () => {
++              info('Check out the diff at %s', chalk.cyan(diffImg))
++            }
++          })
++          diffCount++
++        }
++      }
++      catch (err) {
++        failure('Error in compare %s and %s: %s', chalk.cyan(newImg), chalk.cyan(refImg), chalk.red(err.message))
+         diffCount++
+       }
+     }
+@@ -70,6 +78,10 @@ async function compareNewScreenshotsToRefScreenshots ({ dir, filter, threshold,
+   if (diffCount > 0) {
+     throw new Error('One or more new screenshots differ from their references!')
+   }
++
++  if (apprCount > 0) {
++    throw new Error('One or more new screenshots must be approved manually!')
++  }
+ }
+ 
+ async function promoteNewScreenshots ({ dir, filter }) {
+diff --git a/src/utils/page.js b/src/utils/page.js
+index 386ba233f09798cc5b1ed553617ec5c960b5e0de..a3228bbd0bf2001fa60e01c62835c14d1b9fd519 100644
+--- a/src/utils/page.js
++++ b/src/utils/page.js
+@@ -6,8 +6,23 @@ const { debug } = require('./debug')
+ 
+ const ensureDir = promisify(fs.ensureDir)
+ 
+-async function getPreviews (page, { url, filter, viewport, navigationOptions }) {
++async function getUrls (page, { url, filter, navigationOptions }) {
+   await goToUrl(page, url, navigationOptions)
++  return page.evaluate(getUrlsInPage, { filter })
++}
++
++function getUrlsInPage ({ filter }) {
++  const urls = Array.from(document.querySelectorAll('[href*="/#/"]')).map((el) => el.href || el.getAttribute('href'))
++  if (filter == null) {
++    return urls
++  }
++  return urls.filter((url) => (
++    [].concat(filter).some(str => new RegExp(str.toLowerCase()).test(url.toLowerCase()))
++  ))
++}
++
++async function getPreviews (page, { url, filter, viewport, navigationOptions }) {
++  await goToHashUrl(page, url)
+ 
+   return page.evaluate(getPreviewsInPage, { filter, viewport })
+ }
+@@ -155,6 +170,7 @@ function sleep (ms) {
+ }
+ 
+ module.exports = {
++  getUrls,
+   getPreviews,
+   takeNewScreenshotsOfPreviews
+ }

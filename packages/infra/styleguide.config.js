@@ -49,6 +49,21 @@ module.exports = ({ cwd, extra = {}, components = [] }) => {
         {},
       ),
       styles: {
+        Playground: {
+          root: {
+            marginTop: 20,
+            marginBottom: 48,
+          },
+          preview: {
+            padding: 0,
+            border: 0,
+            borderRadius: 0,
+          },
+          controls: {
+            marginTop: 16,
+            marginBottom: 16,
+          },
+        },
         Editor: {
           root: {
             '& .cm-s-base16-light.CodeMirror': {
@@ -61,6 +76,16 @@ module.exports = ({ cwd, extra = {}, components = [] }) => {
         },
       },
       theme: {},
+      template: {
+        head: {
+          links: [
+            {
+              rel: 'stylesheet',
+              href: 'https://static.qiwi.com/fonts/museo-sans/v2/index.css',
+            },
+          ],
+        },
+      },
       require: [path.resolve(styleguideRoot, 'require.js')],
       ignore: ['**/*/index.{js,jsx,ts,tsx}'],
       skipComponentsWithoutExample: true,
@@ -97,8 +122,6 @@ module.exports = ({ cwd, extra = {}, components = [] }) => {
         warn: () => null,
       },
       webpackConfig: {
-        devtool:
-          process.env.NODE_ENV === 'development' ? 'inline-source-map' : false,
         target: 'web',
         optimization: {
           moduleIds: false,
@@ -149,6 +172,10 @@ module.exports = ({ cwd, extra = {}, components = [] }) => {
         resolve: {
           alias,
           extensions: ['.tsx', '.ts', '.jsx', '.js'],
+        },
+        devServer: {
+          historyApiFallback: true,
+          disableHostCheck: true,
         },
       },
     },
