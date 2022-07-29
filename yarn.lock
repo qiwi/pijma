@@ -483,6 +483,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hapi/hoek@npm:^9.0.0":
+  version: 9.3.0
+  resolution: "@hapi/hoek@npm:9.3.0"
+  checksum: 9c5baadfabd79e40e747faf0f5dd740f40aef12a123c475787c7834660c6c46c6228770ed9832847bb858b316031104d1fb07df1644424d0c05ccdccccca2a90
+  languageName: node
+  linkType: hard
+
+"@hapi/topo@npm:^5.0.0":
+  version: 5.1.0
+  resolution: "@hapi/topo@npm:5.1.0"
+  dependencies:
+    "@hapi/hoek": "npm:^9.0.0"
+  checksum: ff0deb4249848bf9db5c8dd3489a5d07914adb04983066d68b0395f22f82dbf6058ddac950e53d533c1b74102086199a584d5446c9db15061fb99687edfec19f
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.9.2":
   version: 0.9.5
   resolution: "@humanwhocodes/config-array@npm:0.9.5"
@@ -737,6 +753,7 @@ __metadata:
     ts-patch: "npm:2.0.1"
     tsc-esm-fix: "npm:2.18.0"
     typescript: "npm:4.4.4"
+    wait-on: "npm:6.0.1"
     webpack: "npm:4.46.0"
   languageName: unknown
   linkType: soft
@@ -802,6 +819,7 @@ __metadata:
     ts-patch: "npm:2.0.1"
     tsc-esm-fix: "npm:2.18.0"
     typescript: "npm:4.4.4"
+    wait-on: "npm:6.0.1"
     webpack: "npm:4.46.0"
   languageName: unknown
   linkType: soft
@@ -837,6 +855,29 @@ __metadata:
   resolution: "@qiwi/pijma@workspace:."
   languageName: unknown
   linkType: soft
+
+"@sideway/address@npm:^4.1.3":
+  version: 4.1.4
+  resolution: "@sideway/address@npm:4.1.4"
+  dependencies:
+    "@hapi/hoek": "npm:^9.0.0"
+  checksum: 28d3017397f1598f4343688fcf609dbe1e1c96ac5b4c00c945b29057101f47ecb7d9ecbe039a0e912dd299a1dd876bc4efe37de91fc315e84811ca5a83c2c604
+  languageName: node
+  linkType: hard
+
+"@sideway/formula@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@sideway/formula@npm:3.0.0"
+  checksum: 0c210798e48f58f10b9ba066f0b3d00098bb0485bac2d4ac01767d25e9f751c3b6890e08a7b123585207294f0024020c7ad81261dee7320fc9efe26b00b7752f
+  languageName: node
+  linkType: hard
+
+"@sideway/pinpoint@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@sideway/pinpoint@npm:2.0.0"
+  checksum: 01038f9f2f36c7181f43e2ea1730949681a5498c412c1c92a3a960532d1312e6a020bcab38368783aa42340a09a9e9fc5c1bff7196b32989f77b173fab42f819
+  languageName: node
+  linkType: hard
 
 "@swc/cli@npm:0.1.57":
   version: 0.1.57
@@ -2014,6 +2055,15 @@ __metadata:
   bin:
     atob: bin/atob.js
   checksum: af5b2c7d2b7beb2ece862c42999ef7e43ed1ecf67857f44b021ea4267fdf7aad4b8ec5f59fde2a2d581b6cbda9108e979274642e2c6ab3b32a4203ee1ddad3d2
+  languageName: node
+  linkType: hard
+
+"axios@npm:^0.25.0":
+  version: 0.25.0
+  resolution: "axios@npm:0.25.0"
+  dependencies:
+    follow-redirects: "npm:^1.14.7"
+  checksum: 2a71c86f4b5405ff35ba4f6a7a2146ff42089cd363737277efd2c83c3e2d3ab136e9784dab1cc3af4b40e449a5e8f59b4fb67e73e5552b3cdd1b914e661180e3
   languageName: node
   linkType: hard
 
@@ -4759,7 +4809,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.0.0":
+"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.14.7":
   version: 1.15.1
   resolution: "follow-redirects@npm:1.15.1"
   peerDependenciesMeta:
@@ -6381,6 +6431,19 @@ __metadata:
     isemail: "npm:3.x.x"
     topo: "npm:3.x.x"
   checksum: d4c4745c9de52e185904931410a523ab9fb45abbbaa34161547adb8d7430d6b47eca8b9a0869faa1cf548bc5eb71476439146a33a33851450788bc4bab16f48a
+  languageName: node
+  linkType: hard
+
+"joi@npm:^17.6.0":
+  version: 17.6.0
+  resolution: "joi@npm:17.6.0"
+  dependencies:
+    "@hapi/hoek": "npm:^9.0.0"
+    "@hapi/topo": "npm:^5.0.0"
+    "@sideway/address": "npm:^4.1.3"
+    "@sideway/formula": "npm:^3.0.0"
+    "@sideway/pinpoint": "npm:^2.0.0"
+  checksum: 12ab4e5f0903eef2197a14993d8ba050fe20595ed5081840c9412b89bcdb1f0574ba7d23a532512b6e2977004cb690faf5532890a2025bfae996777bcb563480
   languageName: node
   linkType: hard
 
@@ -9663,6 +9726,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rxjs@npm:^7.5.4":
+  version: 7.5.6
+  resolution: "rxjs@npm:7.5.6"
+  dependencies:
+    tslib: "npm:^2.1.0"
+  checksum: f16db58531d9fdc9e7cce0e33676cf791128db889304247249ba434885d35b1d173eed68ac255fca770da4c0277f97727c5fbbdc659b0b1f04d10fe42ed0dc67
+  languageName: node
+  linkType: hard
+
 "safe-buffer@npm:5.1.2, safe-buffer@npm:>=5.1.0, safe-buffer@npm:^5.0.1, safe-buffer@npm:^5.1.0, safe-buffer@npm:^5.1.1, safe-buffer@npm:^5.1.2, safe-buffer@npm:~5.1.0, safe-buffer@npm:~5.1.1":
   version: 5.1.2
   resolution: "safe-buffer@npm:5.1.2"
@@ -11452,6 +11524,21 @@ __metadata:
   version: 1.1.2
   resolution: "vm-browserify@npm:1.1.2"
   checksum: 49a170b02e4fed6675b843c2dfe06424f526f7c09f606af73360e07455876338942a1c1f578d7bcc05f1a496fd7dedfd648733b918bb4492c3e6eac0705c0038
+  languageName: node
+  linkType: hard
+
+"wait-on@npm:6.0.1":
+  version: 6.0.1
+  resolution: "wait-on@npm:6.0.1"
+  dependencies:
+    axios: "npm:^0.25.0"
+    joi: "npm:^17.6.0"
+    lodash: "npm:^4.17.21"
+    minimist: "npm:^1.2.5"
+    rxjs: "npm:^7.5.4"
+  bin:
+    wait-on: bin/wait-on
+  checksum: 3baaf229b3a996a6f7ea972bc13b46dd6a4639b58d644d6dcf5565fd0307d22a571362422faa7e76d510b07d2481105a019a942d7f5799ec3b2fb24cfc347116
   languageName: node
   linkType: hard
 

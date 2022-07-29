@@ -24,11 +24,11 @@
     "build:dts": "tsc --outDir lib/dts --emitDeclarationOnly",
     "build:guide": "styleguidist --config styleguide.config.cjs build",
     "start": "concurrently -k 'npm:guide' 'npm:chrome'",
-    "test": "concurrently -k -s last 'npm:server' 'npm:chrome' 'npm:visual:test'",
+    "test": "concurrently -k 'npm:server' 'npm:chrome' 'npm:visual:test'",
     "guide": "styleguidist --config styleguide.config.cjs server",
-    "server": "docker run --rm -p 6060:80 -v $(pwd)/styleguide/lib:/usr/share/nginx/html nginx",
-    "chrome": "docker run --rm -p 6161:3000 --add-host=host.docker.internal:host-gateway browserless/chrome",
-    "visual:test": "sleep 5 && styleguidist-visual test --config styleguide.visual.config.cjs",
+    "server": "docker run --rm -p 6060:80 -v $(pwd)/styleguide/lib:/usr/share/nginx/html nginx || exit 0",
+    "chrome": "docker run --rm -p 6161:3000 --add-host=host.docker.internal:host-gateway browserless/chrome || exit 0",
+    "visual:test": "wait-on http-get://localhost:6060/ http-get://localhost:6161/ && styleguidist-visual test --config styleguide.visual.config.cjs",
     "visual:approve": "styleguidist-visual approve --config styleguide.visual.config.cjs",
     "lint": "eslint --fix src styleguide/components && prettier --loglevel silent --write src styleguide/components"
   },
@@ -58,6 +58,7 @@
     "ts-patch": "2.0.1",
     "tsc-esm-fix": "2.18.0",
     "typescript": "4.4.4",
+    "wait-on": "6.0.1",
     "webpack": "4.46.0"
   },
   "repository": {
