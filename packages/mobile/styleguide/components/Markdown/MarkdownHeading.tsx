@@ -1,9 +1,10 @@
 import { Box } from '@qiwi/pijma-core'
 import { Heading, HeadingProps } from '@qiwi/pijma-mobile'
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 interface HeadingRendererProps {
   level: '1' | '2' | '3' | '4' | '5' | '6'
+  children?: ReactNode
 }
 
 const LevelSize: {

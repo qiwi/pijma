@@ -8,7 +8,7 @@ import {
   SimpleTransition,
   SimpleTransitionProps,
 } from '@qiwi/pijma-core'
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, ReactNode } from 'react'
 
 const ContentTransition: FunctionComponent<SimpleTransitionProps> = (props) => (
   <SimpleTransition {...props} />
@@ -67,6 +67,7 @@ interface SimpleModalProps {
   zIndex?: number
   onShow?: () => void
   onHide?: () => void
+  children?: ReactNode
 }
 
 export const SimpleModal: FunctionComponent<SimpleModalProps> = ({

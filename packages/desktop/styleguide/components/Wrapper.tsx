@@ -1,7 +1,11 @@
 import { ThemeProvider, themes } from '@qiwi/pijma-core'
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 
-const Wrapper: FC = (props) => (
+interface WrapperProps {
+  children?: ReactNode
+}
+
+const Wrapper: FC<WrapperProps> = (props) => (
   <ThemeProvider theme={themes.orange}>{props.children}</ThemeProvider>
 )
 

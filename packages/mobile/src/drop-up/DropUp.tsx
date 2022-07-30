@@ -89,6 +89,7 @@ export interface DropUpProps {
   footer?: ReactNode
   autoFocus?: boolean
   onKeyDown?: React.KeyboardEventHandler
+  children?: ReactNode
 }
 
 const FlexPosCard = styled(FlexPos)().withComponent(Card)

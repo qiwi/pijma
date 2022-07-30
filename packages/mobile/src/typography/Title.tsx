@@ -1,5 +1,5 @@
 import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, ReactNode } from 'react'
 
 export interface TitleProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -8,6 +8,7 @@ export interface TitleProps {
   align?: TypoProps['align']
   stub?: boolean
   clamp?: number
+  children?: ReactNode
 }
 
 const TitleSize: { [size in TitleProps['size']]: number } = {

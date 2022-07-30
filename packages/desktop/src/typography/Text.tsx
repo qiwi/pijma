@@ -1,5 +1,5 @@
 import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, ReactNode } from 'react'
 
 export interface TextProps {
   display?: 'block' | 'inline' | 'inline-block'
@@ -13,6 +13,7 @@ export interface TextProps {
   align?: TypoProps['align']
   clamp?: number
   stub?: boolean
+  children?: ReactNode
 }
 
 const TextSize: { [size in NonNullable<TextProps['size']>]: number } = {

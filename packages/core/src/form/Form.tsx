@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 import { Frm, Value } from '../primitive'
 import { FormControl } from './FormControl'
@@ -11,6 +11,7 @@ export interface FormProps {
   minHeight?: Value
   maxHeight?: Value
   onSubmit?: () => void
+  children?: ReactNode
 }
 
 export const Form: FC<FormProps> = ({ onSubmit, ...props }) => (

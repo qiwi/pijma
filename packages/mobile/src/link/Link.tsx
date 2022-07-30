@@ -1,5 +1,5 @@
 import { LinkControl, Stub, TypoLnk, useTheme } from '@qiwi/pijma-core'
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 export interface LinkProps {
   onClick?: (
@@ -21,6 +21,7 @@ export interface LinkProps {
   bold?: boolean
   stub?: boolean
   inverse?: boolean
+  children?: ReactNode
 }
 
 const LinkSize: { [size in NonNullable<LinkProps['size']>]: number } = {
