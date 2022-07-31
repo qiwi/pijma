@@ -130,6 +130,7 @@ export const DropUp: FunctionComponent<DropUpProps> = (props) => (
         {...dialogProps}
       >
         <FlexPosCard
+          role="document"
           display="flex"
           direction="column"
           width={1}
@@ -150,7 +151,13 @@ export const DropUp: FunctionComponent<DropUpProps> = (props) => (
                 <Paragraph size="m" bold>
                   {props.title}
                 </Paragraph>
-                <Box width={6} height={6} ml="auto" onClick={props.onHide}>
+                <Box
+                  aria-label="close"
+                  width={6}
+                  height={6}
+                  ml="auto"
+                  onClick={props.onHide}
+                >
                   <Icon name="cross" />
                 </Box>
               </Flex>

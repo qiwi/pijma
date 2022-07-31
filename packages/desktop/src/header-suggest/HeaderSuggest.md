@@ -1,6 +1,6 @@
 ```jsx
 const types = ['object', 'markdown', 'react']
-let type = types[Math.floor(Math.random() * 3)]
+
 const bankList = [
   {
     value: {
@@ -117,6 +117,7 @@ const bankList = [
   },
 ]
 
+const [type, setType] = React.useState(types[Math.floor(Math.random() * 3)])
 const [suggest, setSuggest] = React.useState('')
 const [loading, setLoading] = React.useState(false)
 const [banks, setBanks] = React.useState(undefined)
@@ -150,7 +151,7 @@ const getBanks = (suggest) => {
 }
 
 const onRequest = (suggest) => {
-  type = types[Math.floor(Math.random() * 3)]
+  setType(types[Math.floor(Math.random() * 3)])
   setSuggest(suggest)
   setError(suggest === '')
   getBanks(suggest).then((banks) => setBanks(banks))
@@ -183,127 +184,129 @@ const equals = (a, b) => a.id === b.id
 const getBankByValue = (value) =>
   bankList.find((bank) => equals(bank.value, value))
 
-;<Pos
-  ref={container}
-  type="relative"
-  transform="scale(0.7)"
-  transformOrigin="left"
-  width={300}
->
-  <Header>
-    <Flex height={1} justify="space-between" ref={target}>
-      <FlexItem ml={6}>
-        <Flex height={1}>
-          <FlexItem align="center" shrink={0} mr={11}>
-            <Lnk href={window.location.href}>
-              <Box
-                as="img"
-                src="https://static.qiwi.com/img/qiwi_com/header/qiwi-wallet-logo.svg"
-                width={24}
-                height={12}
+return (
+  <Pos
+    ref={container}
+    type="relative"
+    transform="scale(0.7)"
+    transformOrigin="left"
+    width={300}
+  >
+    <Header>
+      <Flex height={1} justify="space-between" ref={target}>
+        <FlexItem ml={6}>
+          <Flex height={1}>
+            <FlexItem align="center" shrink={0} mr={11}>
+              <Lnk href={window.location.href}>
+                <Box
+                  as="img"
+                  src="https://static.qiwi.com/img/qiwi_com/header/qiwi-wallet-logo.svg"
+                  width={24}
+                  height={12}
+                />
+              </Lnk>
+            </FlexItem>
+            <FlexItem shrink={0} mr={6}>
+              <HeaderMenu
+                children={[
+                  {
+                    href: `${location.href}?menu=1`,
+                    title: 'Платежи',
+                    active: true,
+                  },
+                  { href: `${location.href}?menu=2`, title: 'Переводы' },
+                ]}
               />
-            </Lnk>
-          </FlexItem>
-          <FlexItem shrink={0} mr={6}>
-            <HeaderMenu
-              children={[
-                {
-                  href: `${location.href}?menu=1`,
-                  title: 'Платежи',
-                  active: true,
-                },
-                { href: `${location.href}?menu=2`, title: 'Переводы' },
-              ]}
-            />
-          </FlexItem>
-          <FlexItem align="center" shrink={0} cursor="pointer">
-            <HeaderSuggest
-              value={value}
-              items={bankList}
-              suggest={suggest}
-              loading={loading}
-              error={error}
-              equals={equals}
-              target={target}
-              container={container}
-              onCancel={onCancel}
-              onSubmit={onSubmit}
-              onChange={onChange}
-              onRequest={onRequest}
-              total={
-                type === 'object' ? (
-                  {
-                    link: {
-                      text: 'Показать все',
-                      suggest: suggest,
-                    },
-                  }
-                ) : type === 'markdown' ? (
-                  '[Показать все](#)'
-                ) : (
-                  <Link href="#" children="Показать все" />
-                )
-              }
-              empty={
-                type === 'object' ? (
-                  {
-                    text: 'Ничего не найдено, попробуйте',
-                    link: {
-                      text: 'Сбербанк',
-                      suggest: 'Сбербанк',
-                    },
-                  }
-                ) : type === 'markdown' ? (
-                  'Ничего не нашлось'
-                ) : (
-                  <React.Fragment>
-                    <Box mb={4}>
-                      <Heading size="4">Ничего не нашлось</Heading>
-                    </Box>
-                    <List
-                      type="bullet"
-                      children={[
-                        <Paragraph>
-                          Если у вас есть квитанция с реквизитами,{' '}
-                          <Link href="#">оплатите по ним.</Link>
-                        </Paragraph>,
-                        <Paragraph>
-                          <Link href="#">Напишите нам</Link>. Если услуги нет в
-                          кошельке, мы постараемся ее добавить.
-                        </Paragraph>,
-                        <Paragraph>
-                          Уточните у поставщика услуги, можно ли ее оплачивать
-                          через QIWI.
-                        </Paragraph>,
-                        <Paragraph>
-                          Провайдер был, а теперь его нет? Возможно, у него
-                          изменилось название или мы перестали с ним
-                          сотрудничать.
-                          <br />
-                          Перейдите на сайт провайдера и оплатите услугу с
-                          помощью{' '}
-                          <Link href="#">
-                            виртуальной или пластиковой карты QIWI
-                          </Link>
-                          ,<br />
-                          баланс карт равен балансу кошелька.
-                        </Paragraph>,
-                      ]}
-                    />
-                  </React.Fragment>
-                )
-              }
-            />
-          </FlexItem>
-        </Flex>
-      </FlexItem>
-      <FlexItem align="center" shrink={0} ml={11} mr={6}>
-        <Actions size="minor">
-          <Button kind="simple" size="minor" text="Создать кошелек" />
-          <Button kind="brand" size="minor" text="Войти" />
-        </Actions>
-      </FlexItem>
-    </Flex>
-  </Header>
-</Pos>
+            </FlexItem>
+            <FlexItem align="center" shrink={0} cursor="pointer">
+              <HeaderSuggest
+                value={value}
+                items={banks}
+                suggest={suggest}
+                loading={loading}
+                error={error}
+                equals={equals}
+                target={target}
+                container={container}
+                onCancel={onCancel}
+                onSubmit={onSubmit}
+                onChange={onChange}
+                onRequest={onRequest}
+                total={
+                  type === 'object' ? (
+                    {
+                      link: {
+                        text: 'Показать все',
+                        suggest: suggest,
+                      },
+                    }
+                  ) : type === 'markdown' ? (
+                    '[Показать все](#)'
+                  ) : (
+                    <Link href="#" children="Показать все" />
+                  )
+                }
+                empty={
+                  type === 'object' ? (
+                    {
+                      text: 'Ничего не найдено, попробуйте',
+                      link: {
+                        text: 'Сбербанк',
+                        suggest: 'Сбербанк',
+                      },
+                    }
+                  ) : type === 'markdown' ? (
+                    'Ничего не нашлось'
+                  ) : (
+                    <React.Fragment>
+                      <Box mb={4}>
+                        <Heading size="4">Ничего не нашлось</Heading>
+                      </Box>
+                      <List
+                        type="bullet"
+                        children={[
+                          <Paragraph>
+                            Если у вас есть квитанция с реквизитами,{' '}
+                            <Link href="#">оплатите по ним.</Link>
+                          </Paragraph>,
+                          <Paragraph>
+                            <Link href="#">Напишите нам</Link>. Если услуги нет
+                            в кошельке, мы постараемся ее добавить.
+                          </Paragraph>,
+                          <Paragraph>
+                            Уточните у поставщика услуги, можно ли ее оплачивать
+                            через QIWI.
+                          </Paragraph>,
+                          <Paragraph>
+                            Провайдер был, а теперь его нет? Возможно, у него
+                            изменилось название или мы перестали с ним
+                            сотрудничать.
+                            <br />
+                            Перейдите на сайт провайдера и оплатите услугу с
+                            помощью{' '}
+                            <Link href="#">
+                              виртуальной или пластиковой карты QIWI
+                            </Link>
+                            ,<br />
+                            баланс карт равен балансу кошелька.
+                          </Paragraph>,
+                        ]}
+                      />
+                    </React.Fragment>
+                  )
+                }
+              />
+            </FlexItem>
+          </Flex>
+        </FlexItem>
+        <FlexItem align="center" shrink={0} ml={11} mr={6}>
+          <Actions size="minor">
+            <Button kind="simple" size="minor" text="Создать кошелек" />
+            <Button kind="brand" size="minor" text="Войти" />
+          </Actions>
+        </FlexItem>
+      </Flex>
+    </Header>
+  </Pos>
+)
 ```

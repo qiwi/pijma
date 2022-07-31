@@ -11,9 +11,11 @@
 
 ## Типографика
 
-Для плейсхолдера — [Body L 300 Compact](#/Компоненты/Heading) (серый), для введенных данных — [Body L 300 Compact]() (черный).
+Для плейсхолдера — [Body L 300 Compact](#/Компоненты/Heading) (серый), для введенных данных — [Body L 300 Compact]() (
+черный).
 
-Для заголовка и для подсказок — [Body S 300]() Compact, серый или черный, для заголовка в фокусе — оранжевый, для кликабельных элементов — синий, для ошибок — красный.
+Для заголовка и для подсказок — [Body S 300]() Compact, серый или черный, для заголовка в фокусе — оранжевый, для
+кликабельных элементов — синий, для ошибок — красный.
 
 ## Состояния полей
 
@@ -136,21 +138,23 @@ const countries = [
 const [phone, setPhone] = React.useState(undefined)
 const [code, setCode] = React.useState(undefined)
 
-;<Block>
-  <BlockContent>
-    <Box width={64}>
-      <PhoneField
-        countries={countries}
-        value={phone}
-        action={code ? `Код страны: ${code}` : undefined}
-        onChange={(phone, code) => {
-          setPhone(phone)
-          setCode(code)
-        }}
-      />
-    </Box>
-  </BlockContent>
-</Block>
+return (
+  <Block>
+    <BlockContent>
+      <Box width={64}>
+        <PhoneField
+          countries={countries}
+          value={phone}
+          action={code ? `Код страны: ${code}` : undefined}
+          onChange={(phone, code) => {
+            setPhone(phone)
+            setCode(code)
+          }}
+        />
+      </Box>
+    </BlockContent>
+  </Block>
+)
 ```
 
 #### Плейсхолдер

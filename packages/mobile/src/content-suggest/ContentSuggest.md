@@ -186,54 +186,56 @@ const equals = (a, b) => a.id === b.id
 const getBankByValue = (value) =>
   bankList.find((bank) => equals(bank.value, value))
 
-;<Block>
-  <BlockContent>
-    <Box width={64}>
-      <ContentSuggest
-        value={value}
-        items={banks}
-        suggest={suggest}
-        loading={loading}
-        error={error}
-        equals={equals}
-        onCancel={onCancel}
-        onSubmit={onSubmit}
-        onChange={onChange}
-        onRequest={onRequest}
-        total={{
-          link: {
-            text: 'Показать все',
-            suggest: suggest,
-          },
-        }}
-        empty={
-          error
-            ? {
-                text: 'Ошибка,',
-                link: {
-                  text: 'попробуйте ещё раз',
-                  suggest: suggest,
-                },
-              }
-            : {
-                text: 'Ничего не найдено, попробуйте',
-                link: {
-                  text: 'Сбербанк',
-                  suggest: 'Сбербанк',
-                },
-              }
-        }
-      />
-    </Box>
-    <SimpleModal
-      show={dialogText !== undefined}
-      onHide={hideDialog}
-      size="m"
-      closable
-      backdropClose
-    >
-      <Heading size="2">{dialogText}</Heading>
-    </SimpleModal>
-  </BlockContent>
-</Block>
+return (
+  <Block>
+    <BlockContent>
+      <Box width={64}>
+        <ContentSuggest
+          value={value}
+          items={banks}
+          suggest={suggest}
+          loading={loading}
+          error={error}
+          equals={equals}
+          onCancel={onCancel}
+          onSubmit={onSubmit}
+          onChange={onChange}
+          onRequest={onRequest}
+          total={{
+            link: {
+              text: 'Показать все',
+              suggest: suggest,
+            },
+          }}
+          empty={
+            error
+              ? {
+                  text: 'Ошибка,',
+                  link: {
+                    text: 'попробуйте ещё раз',
+                    suggest: suggest,
+                  },
+                }
+              : {
+                  text: 'Ничего не найдено, попробуйте',
+                  link: {
+                    text: 'Сбербанк',
+                    suggest: 'Сбербанк',
+                  },
+                }
+          }
+        />
+      </Box>
+      <SimpleModal
+        show={dialogText !== undefined}
+        onHide={hideDialog}
+        size="m"
+        closable
+        backdropClose
+      >
+        <Heading size="2">{dialogText}</Heading>
+      </SimpleModal>
+    </BlockContent>
+  </Block>
+)
 ```

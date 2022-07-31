@@ -121,6 +121,7 @@ export const SimpleModal: FunctionComponent<SimpleModalProps> = ({
               <Fragment>
                 {closable && onHide ? (
                   <Pos
+                    aria-label="close"
                     type="absolute"
                     top={6}
                     right={6}

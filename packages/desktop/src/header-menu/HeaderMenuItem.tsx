@@ -39,6 +39,7 @@ export const HeaderMenuItem = forwardRef<
     onBlur={props.onBlur}
     children={(renderProps) => (
       <PosLnk
+        role="menuitem"
         as={props.href ? 'a' : 'div'}
         ref={ref}
         height={1}

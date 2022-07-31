@@ -73,6 +73,7 @@ export const DropDown: FC<DropDownProps> = ({
       transition={Transition}
       children={(renderProps) => (
         <Pos
+          role="listbox"
           type="absolute"
           width={width}
           minWidth={minWidth}

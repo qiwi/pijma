@@ -1,6 +1,6 @@
 #### SuggestField
 
-```jsx
+```jsx {"id":"1","actions":[{"action":"focus","selector":"input"},{"action":"keyPress","selector":"input","key":"a"},{"action":"none","key":"result","wait":1000,"preview":"[role=listbox]"},{"action":"hover","selector":"[role=listbox] [role=option]","preview":"[role=listbox]"},{"action":"click","selector":"[role=listbox] [role=option]"}]}
 const bankList = [
   {
     value: {
@@ -174,33 +174,35 @@ const equals = (a, b) => a.id === b.id
 const getBankByValue = (value) =>
   bankList.find((bank) => equals(bank.value, value))
 
-;<Block>
-  <BlockContent>
-    <Box width={70}>
-      <SuggestField
-        value={value}
-        items={banks}
-        title="Поле ввода"
-        suggest={suggest}
-        loading={loading}
-        error={validateError}
-        equals={equals}
-        onCancel={onCancel}
-        onChange={onChange}
-        onRequest={onRequest}
-        empty={
-          suggestError
-            ? {
-                text: 'Ошибка,',
-                link: {
-                  text: 'попробуйте ещё раз',
-                  suggest: suggest,
-                },
-              }
-            : undefined
-        }
-      />
-    </Box>
-  </BlockContent>
-</Block>
+return (
+  <Block>
+    <BlockContent>
+      <Box width={70}>
+        <SuggestField
+          value={value}
+          items={banks}
+          title="Поле ввода"
+          suggest={suggest}
+          loading={loading}
+          error={validateError}
+          equals={equals}
+          onCancel={onCancel}
+          onChange={onChange}
+          onRequest={onRequest}
+          empty={
+            suggestError
+              ? {
+                  text: 'Ошибка,',
+                  link: {
+                    text: 'попробуйте ещё раз',
+                    suggest: suggest,
+                  },
+                }
+              : undefined
+          }
+        />
+      </Box>
+    </BlockContent>
+  </Block>
+)
 ```
