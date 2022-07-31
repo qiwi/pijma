@@ -2,7 +2,7 @@
 
 В окнах применяются [Brand Button](#/Компоненты/Button) и [Simple Button](#/Компоненты/Button) в размере Normal.
 
-```jsx {"id":"1","actions":[{"action":"click","selector":"button","key":"show","preview":"body > [role=dialog]"},{"action":"click","selector":"body > [role=dialog] [aria-label=close]","key":"hide"}]}
+```jsx {"id":"1","actions":[{"action":"click","selector":"button","key":"show","preview":"[role=dialog]"},{"action":"click","selector":"[role=dialog] [aria-label=close]","key":"hide"}]}
 const [deleteModal, setDeleteModal] = React.useState(undefined)
 return (
   <Block>
