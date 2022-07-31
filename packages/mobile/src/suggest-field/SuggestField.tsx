@@ -135,9 +135,10 @@ export const SuggestField = <V extends {}>({
                 ) : (
                   <Spacer size="s">
                     {menuRenderProps.items.length > 0 ? (
-                      <Fragment>
+                      <Box role="listbox">
                         {menuRenderProps.items.map((item, key) => (
                           <CardItem
+                            role="option"
                             key={key}
                             ref={item.ref}
                             onClick={item.onClick}
@@ -160,7 +161,7 @@ export const SuggestField = <V extends {}>({
                             focus={item.selected}
                           />
                         ))}
-                      </Fragment>
+                      </Box>
                     ) : null}
                     {props.total && menuRenderProps.items.length > 0 ? (
                       <Box px={6}>

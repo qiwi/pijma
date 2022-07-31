@@ -64,43 +64,45 @@ const items = [
   },
 ]
 
-;<Grid columns={3} layout={[1]}>
-  <Box>
-    <Caption>AUTOFOCUS</Caption>
-    <SelectField
-      title="Select"
-      value={value}
-      items={items}
-      equals={equals}
-      autoFocus
-      onChange={(value) => setValue(value)}
-    />
-  </Box>
-  <Box>
-    <Caption>ERROR</Caption>
-    <SelectField
-      title="Select"
-      value={value}
-      equals={equals}
-      items={items}
-      error="Error message"
-      onChange={(value) => setValue(value)}
-    />
-  </Box>
-  <Box>
-    <Caption>DISABLED</Caption>
-    <SelectField
-      title="Select"
-      value={value}
-      equals={equals}
-      items={items}
-      disabled
-      onChange={(value) => setValue(value)}
-    />
-  </Box>
-  <Box>
-    <Caption>STUB</Caption>
-    <SelectField stub title="Select" items={[]} onChange={() => null} />
-  </Box>
-</Grid>
+return (
+  <Grid columns={3} layout={[1]}>
+    <Box>
+      <Caption>AUTOFOCUS</Caption>
+      <SelectField
+        title="Select"
+        value={value}
+        items={items}
+        equals={equals}
+        autoFocus
+        onChange={(value) => setValue(value)}
+      />
+    </Box>
+    <Box>
+      <Caption>ERROR</Caption>
+      <SelectField
+        title="Select"
+        value={value}
+        equals={equals}
+        items={items}
+        error="Error message"
+        onChange={(value) => setValue(value)}
+      />
+    </Box>
+    <Box>
+      <Caption>DISABLED</Caption>
+      <SelectField
+        title="Select"
+        value={value}
+        equals={equals}
+        items={items}
+        disabled
+        onChange={(value) => setValue(value)}
+      />
+    </Box>
+    <Box>
+      <Caption>STUB</Caption>
+      <SelectField stub title="Select" items={[]} onChange={() => null} />
+    </Box>
+  </Grid>
+)
 ```

@@ -103,6 +103,45 @@ module.exports = ({ cwd, extra = {}, components = [] }) => {
           `${path.basename(componentPath, path.extname(componentPath))}.md`,
         )
       },
+      updateExample: (params, example) => {
+        const { settings, lang, content } = params
+        if (!settings) {
+          return params
+        }
+        const props = {}
+        if (settings.actions) {
+          props['data-action-states'] = JSON.stringify([
+            ...[
+              {
+                action: 'none',
+                ...(settings.wait ? { wait: settings.wait } : {}),
+              },
+            ],
+            ...settings.actions,
+          ])
+        } else if (settings.wait) {
+          props['data-action-states'] = JSON.stringify([
+            {
+              action: 'none',
+              wait: settings.wait,
+            },
+          ])
+        }
+        if (settings.id) {
+          props['data-description'] = settings.id
+        }
+        return {
+          settings: {
+            ...settings,
+            props: {
+              ...(settings.props || {}),
+              ...props,
+            },
+          },
+          lang,
+          content,
+        }
+      },
       mountPointId: 'root',
       pagePerSection: true,
       sections: [

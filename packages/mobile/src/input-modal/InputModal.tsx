@@ -92,7 +92,7 @@ export const InputModal: FunctionComponent<InputModalProps> = (props) => (
         overflow="auto"
         {...dialogProps}
       >
-        <Card width={1} height={1} bg="#fff">
+        <Card role="document" width={1} height={1} bg="#fff">
           <PosFlexCard
             type="relative"
             align="center"
@@ -103,7 +103,12 @@ export const InputModal: FunctionComponent<InputModalProps> = (props) => (
             s="0 0 25px 0 rgba(0, 0, 0, 0.08)"
           >
             {props.onBack ? (
-              <FlexItem shrink={0} mr={4} onClick={props.onBack}>
+              <FlexItem
+                aria-label="back"
+                shrink={0}
+                mr={4}
+                onClick={props.onBack}
+              >
                 <Icon name="arrow-left" color="#000" />
               </FlexItem>
             ) : null}

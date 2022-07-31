@@ -10,7 +10,7 @@ export interface HeaderMenuProps {
 }
 
 export const HeaderMenu: FC<HeaderMenuProps> = (props) => (
-  <Flex height={1} width={1} justify="flex-start">
+  <Flex height={1} width={1} justify="flex-start" role="menu">
     {props.stub
       ? (typeof props.stub === 'boolean' ? [32, 44, 26] : props.stub).map(
           (width, index) => (

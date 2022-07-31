@@ -112,7 +112,7 @@ export const SuggestField = <V extends {}>({
                 target={renderProps.inputRef.current!}
                 container={renderProps.containerRef.current}
                 minWidth={1}
-                width={1}
+                width="calc(100% + 48px)"
                 offset={3}
                 show={
                   props.items !== undefined &&
@@ -129,7 +129,6 @@ export const SuggestField = <V extends {}>({
                   maxHeight={98}
                   bg="#fff"
                   py={3}
-                  mx={-6}
                   s="0 28px 52px 0 rgba(0, 0, 0, 0.16)"
                   r={10}
                   overflow="auto"
@@ -153,6 +152,7 @@ export const SuggestField = <V extends {}>({
                         <Fragment>
                           {menuRenderProps.items.map((item, key) => (
                             <CardMenuItem
+                              role="option"
                               key={key}
                               ref={item.ref}
                               onClick={item.onClick}

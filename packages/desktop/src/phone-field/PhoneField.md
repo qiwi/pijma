@@ -136,21 +136,23 @@ const countries = [
 const [phone, setPhone] = React.useState(undefined)
 const [code, setCode] = React.useState(undefined)
 
-;<Block>
-  <BlockContent>
-    <Box width={64}>
-      <PhoneField
-        countries={countries}
-        value={phone}
-        action={code ? `Код страны: ${code}` : undefined}
-        onChange={(phone, code) => {
-          setPhone(phone)
-          setCode(code)
-        }}
-      />
-    </Box>
-  </BlockContent>
-</Block>
+return (
+  <Block>
+    <BlockContent>
+      <Box width={64}>
+        <PhoneField
+          countries={countries}
+          value={phone}
+          action={code ? `Код страны: ${code}` : undefined}
+          onChange={(phone, code) => {
+            setPhone(phone)
+            setCode(code)
+          }}
+        />
+      </Box>
+    </BlockContent>
+  </Block>
+)
 ```
 
 #### Плейсхолдер

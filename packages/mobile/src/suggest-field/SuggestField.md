@@ -1,6 +1,6 @@
-```jsx
+```jsx {"id":"1","actions":[{"action":"focus","selector":"input","preview":"[role=dialog]"},{"action":"keyPress","selector":"input","key":"a","preview":"[role=dialog]"},{"action":"none","key":"result","wait":1000,"preview":"[role=dialog] [role=document]"},{"action":"hover","selector":"[role=dialog] [role=document] [role=listbox] [role=option]","preview":"[role=dialog] [role=document]"},{"action":"click","selector":"[role=dialog] [role=document] [role=listbox] [role=option]"}]}
 const types = ['object', 'markdown', 'react']
-let type = types[Math.floor(Math.random() * 3)]
+
 const bankList = [
   {
     value: {
@@ -117,6 +117,7 @@ const bankList = [
   },
 ]
 
+const [type, setType] = React.useState(Math.floor(Math.random() * 3))
 const [loading, setLoading] = React.useState(false)
 const [error, setError] = React.useState(false)
 const [timer, setTimer] = React.useState(undefined)
@@ -125,28 +126,27 @@ const [value, setValue] = React.useState(undefined)
 const [suggest, setSuggest] = React.useState(undefined)
 
 const filterBanks = (title) =>
-  bankList.filter((bank) => {
-    return (
+  bankList.filter(
+    (bank) =>
       title !== '' &&
-      bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1
-    )
-  })
+      bank.title.toLowerCase().indexOf(title.toLowerCase()) !== -1,
+  )
 
 const getBanks = (suggest) => {
   setLoading(true)
   clearTimeout(timer)
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) =>
     setTimer(
       setTimeout(() => {
         setLoading(false)
         resolve(filterBanks(suggest))
       }, 1000),
-    )
-  })
+    ),
+  )
 }
 
 const onRequest = (suggest) => {
-  type = types[Math.floor(Math.random() * 3)]
+  setType(Math.floor(Math.random() * 3))
   setSuggest(suggest)
   setError(suggest === '')
   getBanks(suggest).then((banks) => setBanks(banks))
@@ -173,81 +173,85 @@ const equals = (a, b) => a.id === b.id
 const getBankByValue = (value) =>
   bankList.find((bank) => equals(bank.value, value))
 
-;<Block>
-  <BlockContent>
-    <Box>
-      <SuggestField
-        value={value}
-        items={banks}
-        title="Поле ввода"
-        suggest={suggest}
-        loading={loading}
-        error={error}
-        equals={equals}
-        onCancel={onCancel}
-        onChange={onChange}
-        onRequest={onRequest}
-        total={
-          type === 'object' ? (
-            {
-              link: {
-                text: 'Показать все',
-                suggest: suggest,
-              },
-            }
-          ) : type === 'markdown' ? (
-            '[Показать все](#)'
-          ) : (
-            <Link href="#" children="Показать все" />
-          )
-        }
-        empty={
-          type === 'object' ? (
-            {
-              text: 'Ничего не найдено, попробуйте',
-              link: {
-                text: 'Сбербанк',
-                suggest: 'Сбербанк',
-              },
-            }
-          ) : type === 'markdown' ? (
-            'Ничего не нашлось'
-          ) : (
-            <React.Fragment>
-              <Box mb={4}>
-                <Heading size="4">Ничего не нашлось</Heading>
-              </Box>
-              <List
-                type="bullet"
-                children={[
-                  <Paragraph>
-                    Если у вас есть квитанция с реквизитами,{' '}
-                    <Link href="#">оплатите по ним.</Link>
-                  </Paragraph>,
-                  <Paragraph>
-                    <Link href="#">Напишите нам</Link>. Если услуги нет в
-                    кошельке, мы постараемся ее добавить.
-                  </Paragraph>,
-                  <Paragraph>
-                    Уточните у поставщика услуги, можно ли ее оплачивать через
-                    QIWI.
-                  </Paragraph>,
-                  <Paragraph>
-                    Провайдер был, а теперь его нет? Возможно, у него изменилось
-                    название или мы перестали с ним сотрудничать.
-                    <br />
-                    Перейдите на сайт провайдера и оплатите услугу с помощью{' '}
-                    <Link href="#">виртуальной или пластиковой карты QIWI</Link>
-                    ,<br />
-                    баланс карт равен балансу кошелька.
-                  </Paragraph>,
-                ]}
-              />
-            </React.Fragment>
-          )
-        }
-      />
-    </Box>
-  </BlockContent>
-</Block>
+return (
+  <Block>
+    <BlockContent>
+      <Box>
+        <SuggestField
+          value={value}
+          items={banks}
+          title="Поле ввода"
+          suggest={suggest}
+          loading={loading}
+          error={error}
+          equals={equals}
+          onCancel={onCancel}
+          onChange={onChange}
+          onRequest={onRequest}
+          total={
+            type === 'object' ? (
+              {
+                link: {
+                  text: 'Показать все',
+                  suggest: suggest,
+                },
+              }
+            ) : type === 'markdown' ? (
+              '[Показать все](#)'
+            ) : (
+              <Link href="#" children="Показать все" />
+            )
+          }
+          empty={
+            type === 'object' ? (
+              {
+                text: 'Ничего не найдено, попробуйте',
+                link: {
+                  text: 'Сбербанк',
+                  suggest: 'Сбербанк',
+                },
+              }
+            ) : type === 'markdown' ? (
+              'Ничего не нашлось'
+            ) : (
+              <React.Fragment>
+                <Box mb={4}>
+                  <Heading size="4">Ничего не нашлось</Heading>
+                </Box>
+                <List
+                  type="bullet"
+                  children={[
+                    <Paragraph>
+                      Если у вас есть квитанция с реквизитами,{' '}
+                      <Link href="#">оплатите по ним.</Link>
+                    </Paragraph>,
+                    <Paragraph>
+                      <Link href="#">Напишите нам</Link>. Если услуги нет в
+                      кошельке, мы постараемся ее добавить.
+                    </Paragraph>,
+                    <Paragraph>
+                      Уточните у поставщика услуги, можно ли ее оплачивать через
+                      QIWI.
+                    </Paragraph>,
+                    <Paragraph>
+                      Провайдер был, а теперь его нет? Возможно, у него
+                      изменилось название или мы перестали с ним сотрудничать.
+                      <br />
+                      Перейдите на сайт провайдера и оплатите услугу с помощью{' '}
+                      <Link href="#">
+                        виртуальной или пластиковой карты QIWI
+                      </Link>
+                      ,<br />
+                      баланс карт равен балансу кошелька.
+                    </Paragraph>,
+                  ]}
+                />
+              </React.Fragment>
+            )
+          }
+        />
+      </Box>
+    </BlockContent>
+  </Block>
+)
 ```

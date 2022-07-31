@@ -109,7 +109,7 @@ index a947e62b32350693eca7f260bc88108c1cbc13c9..7751a15208c07174b3715ccba09248fe
  
  async function promoteNewScreenshots ({ dir, filter }) {
 diff --git a/src/utils/page.js b/src/utils/page.js
-index 386ba233f09798cc5b1ed553617ec5c960b5e0de..a3228bbd0bf2001fa60e01c62835c14d1b9fd519 100644
+index 386ba233f09798cc5b1ed553617ec5c960b5e0de..714fef0b3bb0c4ed0a6b69e1a597b5aec4fb86f4 100644
 --- a/src/utils/page.js
 +++ b/src/utils/page.js
 @@ -6,8 +6,23 @@ const { debug } = require('./debug')
@@ -137,7 +137,20 @@ index 386ba233f09798cc5b1ed553617ec5c960b5e0de..a3228bbd0bf2001fa60e01c62835c14d
  
    return page.evaluate(getPreviewsInPage, { filter, viewport })
  }
-@@ -155,6 +170,7 @@ function sleep (ms) {
+@@ -89,7 +104,11 @@ async function takeNewScreenshotOfPreview (page, preview, index, actionState, {
+ 
+   await triggerAction(page, el, actionState)
+ 
+-  const boundingBoxEl = preview.previewSelector ? await page.$(preview.previewSelector) : el
++  const boundingBoxEl = actionState.preview
++    ? await el.$(actionState.preview) || await page.$(actionState.preview)
++    : preview.previewSelector
++      ? await el.$(preview.previewSelector) || await page.$(preview.previewSelector)
++      : el
+   const boundingBox = await boundingBoxEl.boundingBox()
+ 
+   const path = await getRelativeFilepath(preview, index, actionState, dir)
+@@ -155,6 +174,7 @@ function sleep (ms) {
  }
  
  module.exports = {

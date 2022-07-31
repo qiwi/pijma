@@ -68,6 +68,7 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
     }}
     children={(renderProps) => (
       <Pos
+        role="listbox"
         type="absolute"
         zIndex={600}
         ref={renderProps.props.ref}
@@ -85,6 +86,7 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
             {children}
           </Card>
           <Pos
+            aria-label="close"
             mb="auto"
             type="absolute"
             width={6}

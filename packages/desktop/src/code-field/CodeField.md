@@ -1,11 +1,12 @@
 ```jsx
 const [code, setCode] = React.useState(['', '', '', '', ''])
-
-;<Block>
-  <BlockContent>
-    <CodeField length={5} value={code} onChange={setCode} />
-  </BlockContent>
-</Block>
+return (
+  <Block>
+    <BlockContent>
+      <CodeField length={5} value={code} onChange={setCode} />
+    </BlockContent>
+  </Block>
+)
 ```
 
 ### Stub
@@ -79,44 +80,46 @@ const simulateQuery = (value) => {
     }
   }, 1800)
 }
-;<Card width={96} align="center">
-  <Block>
-    <BlockContent>
-      <Flex minHeight={133} justify="space-between" direction="column">
-        <FlexItem>
-          <Spacer size="l">
-            <Heading size="2">
-              Введите
-              <br />
-              код из SMS
-            </Heading>
+return (
+  <Card width={96} align="center">
+    <Block>
+      <BlockContent>
+        <Flex minHeight={133} justify="space-between" direction="column">
+          <FlexItem>
+            <Spacer size="l">
+              <Heading size="2">
+                Введите
+                <br />
+                код из SMS
+              </Heading>
+              <Paragraph>
+                Код отправлен на номер
+                <br />
+                +7 000 000-00-00
+              </Paragraph>
+              <Box width={41}>
+                <CodeField
+                  type="tel"
+                  length={4}
+                  loading={stub}
+                  error={error}
+                  value={code}
+                  onChange={setCode}
+                  onReady={simulateQuery}
+                />
+              </Box>
+            </Spacer>
+          </FlexItem>
+          <FlexItem>
             <Paragraph>
-              Код отправлен на номер
+              Запросить код повторно
               <br />
-              +7 000 000-00-00
+              через 120 секунд
             </Paragraph>
-            <Box width={41}>
-              <CodeField
-                type="tel"
-                length={4}
-                loading={stub}
-                error={error}
-                value={code}
-                onChange={setCode}
-                onReady={simulateQuery}
-              />
-            </Box>
-          </Spacer>
-        </FlexItem>
-        <FlexItem>
-          <Paragraph>
-            Запросить код повторно
-            <br />
-            через 120 секунд
-          </Paragraph>
-        </FlexItem>
-      </Flex>
-    </BlockContent>
-  </Block>
-</Card>
+          </FlexItem>
+        </Flex>
+      </BlockContent>
+    </Block>
+  </Card>
+)
 ```

@@ -8,7 +8,7 @@ import {
   SimpleTransition,
   SimpleTransitionProps,
 } from '@qiwi/pijma-core'
-import React, { Fragment, FunctionComponent } from 'react'
+import React, { FunctionComponent } from 'react'
 
 const ContentTransition: FunctionComponent<SimpleTransitionProps> = (props) => (
   <SimpleTransition {...props} />
@@ -116,23 +116,22 @@ export const SimpleModal: FunctionComponent<SimpleModalProps> = ({
           zIndex={zIndex}
           {...dialogProps}
         >
-          <Pos type="relative" width={1} height={1}>
+          <Pos role="document" type="relative" width={1} height={1}>
             <Card bg="#fff" p={6} width={1} height={1} overflow="auto">
-              <Fragment>
-                {closable && onHide ? (
-                  <Pos
-                    type="absolute"
-                    top={6}
-                    right={6}
-                    width={6}
-                    height={6}
-                    cursor="pointer"
-                    onClick={onHide}
-                    children={<Icon name="cross" color="#000" />}
-                  />
-                ) : null}
-                {children}
-              </Fragment>
+              {closable && onHide ? (
+                <Pos
+                  aria-label="close"
+                  type="absolute"
+                  top={6}
+                  right={6}
+                  width={6}
+                  height={6}
+                  cursor="pointer"
+                  onClick={onHide}
+                  children={<Icon name="cross" color="#000" />}
+                />
+              ) : null}
+              {children}
             </Card>
           </Pos>
         </Pos>
