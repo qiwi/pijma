@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.153.1](https://github.com/qiwi/pijma/compare/2022.7.29-qiwi.pijma-core.1.153.0-f0...2022.7.31-qiwi.pijma-core.1.153.1-f0) (2022-07-31)
+
+### Fixes & improvements
+* fix: add some tests (#517) [96aa90db](https://github.com/qiwi/pijma/commit/96aa90db7aca3c1014306273701fd158a326215b)
+
 ## [@qiwi/pijma-core@1.153.0](https://github.com/qiwi/pijma/compare/2022.7.19-qiwi.pijma-core.1.152.4-f0...2022.7.29-qiwi.pijma-core.1.153.0-f0) (2022-07-29)
 
 ### Features
