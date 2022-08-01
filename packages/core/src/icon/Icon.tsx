@@ -284,7 +284,13 @@ export const IconPaths: { [name in IconProps['name']]: string } = {
 }
 
 export const Icon: FC<IconProps> = ({ name, size = 6, color = '#000' }) => (
-  <Svg width={size} height={size} viewBox="0 0 24 24" focusable="false">
+  <Svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    focusable="false"
+    transform="translateZ(0)"
+  >
     <Path d={IconPaths[name]} fill={color} />
   </Svg>
 )
