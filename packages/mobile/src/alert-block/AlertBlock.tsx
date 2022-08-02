@@ -75,10 +75,10 @@ export const AlertBlock: FC<AlertBlockProps> = ({
             type="relative"
             py={4}
             pl={4}
-            pr={onHide !== undefined ? 11 : 4}
+            pr={onHide !== undefined ? 14 : 4}
           >
-            <FlexItem mr={3}>{iconComponent}</FlexItem>
-            <FlexItem>
+            <FlexItem mr={2}>{iconComponent}</FlexItem>
+            <FlexItem my="2px">
               <Paragraph size="s" color={type === 'inverse' ? 'inverse' : 'default'}>
                 <Breaker children={children} />
               </Paragraph>
@@ -93,11 +93,11 @@ export const AlertBlock: FC<AlertBlockProps> = ({
                 onMouseEnter={renderProps.onCloseMouseEnter}
                 onMouseLeave={renderProps.onCloseMouseLeave}
                 transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-                color="#C6C6C6"
                 opacity={renderProps.closeHover ? 1 : 0.5}
                 children={(
                   <Icon
-                    size={4}
+                    color="#666"
+                    size={6}
                     name="cross"
                   />
                 )}

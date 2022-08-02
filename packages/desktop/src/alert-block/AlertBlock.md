@@ -33,5 +33,6 @@
   type="inverse"
   icon={<Icon name="power" size={6} color="#D0021B" />}
   children="Можно менять иконку"
+  onHide={() => {}}
 />
 ```

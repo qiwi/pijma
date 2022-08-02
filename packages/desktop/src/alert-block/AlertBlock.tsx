@@ -75,7 +75,7 @@ export const AlertBlock: FC<AlertBlockProps> = ({
             type="relative"
             py={5}
             pl={6}
-            pr={onHide !== undefined ? 11 : 6}
+            pr={onHide !== undefined ? 18 : 6}
           >
             <FlexItem mr={3}>{iconComponent}</FlexItem>
             <FlexItem>
@@ -87,17 +87,17 @@ export const AlertBlock: FC<AlertBlockProps> = ({
               <Pos
                 cursor="pointer"
                 type="absolute"
-                right={4}
-                top={4}
+                right={6}
+                top={5}
                 onClick={renderProps.onCloseClick}
                 onMouseEnter={renderProps.onCloseMouseEnter}
                 onMouseLeave={renderProps.onCloseMouseLeave}
                 transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-                color="#C6C6C6"
                 opacity={renderProps.closeHover ? 1 : 0.5}
                 children={(
                   <Icon
-                    size={4}
+                    size={6}
+                    color="#666"
                     name="cross"
                   />
                 )}
