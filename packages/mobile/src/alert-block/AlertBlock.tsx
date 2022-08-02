@@ -1,9 +1,10 @@
 import {
+  AlertBlockControl,
   Block,
   Breaker,
   Card,
-  Flex,
   FlexItem,
+  FlexPos,
   Icon,
   IconProps,
   Pos,
@@ -15,6 +16,7 @@ import { Paragraph } from '../typography'
 export interface AlertBlockProps {
   type: 'success' | 'warning' | 'waiting' | 'failure' | 'info' | 'inverse'
   icon?: ReactNode
+  onHide?: () => void
 }
 
 const AlertBlockBackground: Record<
@@ -41,7 +43,12 @@ const AlertBlockIcon: Record<
   inverse: { name: 'success', color: '#4BBD5C', bg: '#fff' },
 }
 
-export const AlertBlock: FC<AlertBlockProps> = ({ children, icon, type }) => {
+export const AlertBlock: FC<AlertBlockProps> = ({
+  children,
+  icon,
+  type,
+  onHide,
+}) => {
   const iconComponent = isValidElement(icon) ? (
     icon
   ) : icon === undefined ? (
@@ -59,16 +66,49 @@ export const AlertBlock: FC<AlertBlockProps> = ({ children, icon, type }) => {
     </Pos>
   ) : null
   return (
-    <Block bg={AlertBlockBackground[type]}>
-      <Flex p={4}>
-        <FlexItem mr={3}>{iconComponent}</FlexItem>
-        <FlexItem>
-          <Paragraph size="s" color={type === 'inverse' ? 'inverse' : 'default'}>
-            <Breaker children={children} />
-          </Paragraph>
-        </FlexItem>
-      </Flex>
-    </Block>
+    <AlertBlockControl
+      onHide={onHide}
+      children={(renderProps) => (
+        <Block bg={AlertBlockBackground[type]}>
+          <FlexPos
+            display="flex"
+            type="relative"
+            py={4}
+            pl={4}
+            pr={onHide !== undefined ? 11 : 4}
+          >
+            <FlexItem mr={3}>{iconComponent}</FlexItem>
+            <FlexItem>
+              <Paragraph size="s" color={type === 'inverse' ? 'inverse' : 'default'}>
+                <Breaker children={children} />
+              </Paragraph>
+            </FlexItem>
+            {onHide !== undefined ? (
+              <Pos
+                cursor="pointer"
+                type="absolute"
+                right={4}
+                top={4}
+                onClick={renderProps.onCloseClick}
+                onMouseEnter={renderProps.onCloseMouseEnter}
+                onMouseLeave={renderProps.onCloseMouseLeave}
+                transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+                color="#C6C6C6"
+                opacity={renderProps.closeHover ? 1 : 0.5}
+                children={(
+                  <Icon
+                    size={4}
+                    name="cross"
+                  />
+                )}
+              />
+            ) : (
+              null
+            )}
+          </FlexPos>
+        </Block>
+      )}
+    />
   )
 }
 

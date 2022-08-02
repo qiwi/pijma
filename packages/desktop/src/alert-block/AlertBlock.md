@@ -21,6 +21,10 @@
 ```
 
 ```jsx
+<AlertBlock type="info" onHide={() => {}}>Информационное сообщение с кнопкой "Закрыть"</AlertBlock>
+```
+
+```jsx
 <AlertBlock type="inverse">Цвет темный</AlertBlock>
 ```
 
