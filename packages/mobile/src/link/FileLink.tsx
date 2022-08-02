@@ -1,5 +1,5 @@
 import { FlexItem, FlexLnk, Icon, LinkControl } from '@qiwi/pijma-core'
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 import { Text } from '../typography'
 
@@ -18,6 +18,7 @@ export interface FileLinkProps {
   download?: string | boolean
   rel?: string
   title?: string
+  children?: ReactNode
 }
 
 export const FileLink: FC<FileLinkProps> = (props) => (

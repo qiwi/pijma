@@ -95,8 +95,8 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
               />
               <DropDown
                 offset={4}
-                container={renderProps.containerRef.current}
-                target={renderProps.inputRef.current!}
+                container={() => renderProps.containerRef.current}
+                target={() => renderProps.inputRef.current!}
                 show={renderProps.showCountries}
                 onHide={renderProps.onCountriesHide}
               >

@@ -1,6 +1,10 @@
 import { Box } from '@qiwi/pijma-core'
 import { Paragraph, ParagraphProps } from '@qiwi/pijma-mobile'
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
+
+interface ParagraphRendererProps {
+  children?: ReactNode
+}
 
 const SizeMargin: { [size in NonNullable<ParagraphProps['size']>]: number } = {
   s: 3,
@@ -8,7 +12,7 @@ const SizeMargin: { [size in NonNullable<ParagraphProps['size']>]: number } = {
   l: 5,
 }
 
-const ParagraphRenderer: FC = ({ children }) => (
+const ParagraphRenderer: FC<ParagraphRendererProps> = ({ children }) => (
   <Box
     my={SizeMargin.m}
     css={{

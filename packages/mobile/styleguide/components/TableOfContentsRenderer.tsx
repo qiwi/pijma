@@ -1,9 +1,10 @@
 import { Icon, Spacer, TextField } from '@qiwi/pijma-mobile'
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 interface TableOfContentsRendererProps {
   searchTerm: string
   onSearchTermChange: (value: string) => void
+  children?: ReactNode
 }
 
 const TableOfContentsRenderer: FC<TableOfContentsRendererProps> = (props) => (

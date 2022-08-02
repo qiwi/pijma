@@ -55,8 +55,8 @@
     "react-dom": ">=16.14.0"
   },
   "devDependencies": {
-    "@types/react": "16.14.28",
-    "@types/react-dom": "16.9.16",
+    "@types/react": "18.0.15",
+    "@types/react-dom": "18.0.6",
     "concurrently": "7.2.2",
     "css-loader": "4.3.0",
     "eslint": "8.19.0",
@@ -67,9 +67,9 @@
     "minimist": "1.2.6",
     "prettier": "2.7.1",
     "prettier-config-qiwi": "1.7.2",
-    "react": "16.14.0",
+    "react": "18.2.0",
     "react-docgen-typescript": "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch",
-    "react-dom": "16.14.0",
+    "react-dom": "18.2.0",
     "react-styleguidist": "11.2.0",
     "style-loader": "2.0.0",
     "ts-patch": "2.0.1",

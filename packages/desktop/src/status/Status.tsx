@@ -8,6 +8,7 @@ export interface StatusProps {
   title?: string
   actions?: ReactNode
   content?: ReactNode
+  children?: ReactNode
 }
 
 export const Status: FC<StatusProps> = ({

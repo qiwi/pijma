@@ -3,6 +3,7 @@ import React, { Children, FunctionComponent, ReactNode } from 'react'
 
 export interface ActionsProps {
   size: 'accent' | 'normal' | 'minor'
+  children?: ReactNode
 }
 
 export const Actions: FunctionComponent<ActionsProps> = (props) => {

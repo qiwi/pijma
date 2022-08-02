@@ -109,8 +109,8 @@ export const SuggestField = <V extends {}>({
                 />
               </Box>
               <DropDown
-                target={renderProps.inputRef.current!}
-                container={renderProps.containerRef.current}
+                target={() => renderProps.inputRef.current!}
+                container={() => renderProps.containerRef.current}
                 minWidth={1}
                 width="calc(100% + 48px)"
                 offset={3}

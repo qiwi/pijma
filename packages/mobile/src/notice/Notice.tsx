@@ -6,6 +6,7 @@ import { Heading, Paragraph } from '../typography/'
 export interface NoticeProps {
   icon: ReactNode
   title?: ReactNode
+  children?: ReactNode
 }
 
 export const Notice: FC<NoticeProps> = ({ icon, title, children }) => (
