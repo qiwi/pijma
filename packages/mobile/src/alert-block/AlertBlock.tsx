@@ -14,7 +14,7 @@ import React, { FC, isValidElement, ReactNode } from 'react'
 import { Paragraph } from '../typography'
 
 export interface AlertBlockProps {
-  type: 'success' | 'warning' | 'waiting' | 'failure' | 'info' | 'inverse'
+  type: 'success' | 'warning' | 'waiting' | 'failure' | 'info' | 'promo'
   icon?: ReactNode
   onHide?: () => void
 }
@@ -28,7 +28,7 @@ const AlertBlockBackground: Record<
   warning: '#FF8C001A',
   failure: '#FAE6E8',
   info: '#F5F5F5',
-  inverse: '#2D3540',
+  promo: '#2D3540',
 }
 
 const AlertBlockIcon: Record<
@@ -40,7 +40,7 @@ const AlertBlockIcon: Record<
   warning: { name: 'attention', color: '#FF8C00', bg: '#fff' },
   failure: { name: 'attention', color: '#D0021B', bg: '#fff' },
   info: { name: 'info', color: '#E6E6E6', bg: '#666666' },
-  inverse: { name: 'success', color: '#4BBD5C', bg: '#fff' },
+  promo: { name: 'success', color: '#4BBD5C', bg: '#fff' },
 }
 
 export const AlertBlock: FC<AlertBlockProps> = ({
@@ -79,7 +79,7 @@ export const AlertBlock: FC<AlertBlockProps> = ({
           >
             <FlexItem mr={2}>{iconComponent}</FlexItem>
             <FlexItem my="2px">
-              <Paragraph size="s" color={type === 'inverse' ? 'inverse' : 'default'}>
+              <Paragraph size="s" color={type === 'promo' ? 'inverse' : 'default'}>
                 <Breaker children={children} />
               </Paragraph>
             </FlexItem>

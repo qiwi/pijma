@@ -25,12 +25,12 @@
 ```
 
 ```jsx
-<AlertBlock type="inverse">Цвет темный</AlertBlock>
+<AlertBlock type="promo">Цвет темный</AlertBlock>
 ```
 
 ```jsx
 <AlertBlock
-  type="inverse"
+  type="promo"
   icon={<Icon name="power" size={6} color="#D0021B" />}
   children="Можно менять иконку"
   onHide={() => {}}
