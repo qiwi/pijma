@@ -231,6 +231,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
                           width={iconSize[props.size]}
                           height={iconSize[props.size]}
                           transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
+                          transform="translateZ(0)"
                           children={React.cloneElement(props.icon, {
                             color: props.disabled
                               ? '#666'
