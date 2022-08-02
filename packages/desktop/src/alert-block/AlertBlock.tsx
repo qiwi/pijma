@@ -92,12 +92,10 @@ export const AlertBlock: FC<AlertBlockProps> = ({
                 onClick={renderProps.onCloseClick}
                 onMouseEnter={renderProps.onCloseMouseEnter}
                 onMouseLeave={renderProps.onCloseMouseLeave}
-                transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-                opacity={renderProps.closeHover ? 1 : 0.5}
                 children={(
                   <Icon
                     size={6}
-                    color="#666"
+                    color={type === 'promo' ? '#999' : '#666'}
                     name="cross-small"
                   />
                 )}
