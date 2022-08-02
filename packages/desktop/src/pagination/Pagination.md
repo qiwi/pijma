@@ -36,3 +36,11 @@ return (
   </BlockContent>
 </Block>
 ```
+
+```jsx
+<Pagination total={5} count={10} active={0} shadowed />
+```
+
+```jsx
+<Pagination total={10} active={100} shadowed />
+```
