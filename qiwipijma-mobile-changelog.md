@@ -1,3 +1,8 @@
+## [@qiwi/pijma-mobile@1.152.1](https://github.com/qiwi/pijma/compare/2022.8.2-qiwi.pijma-mobile.1.152.0-f0...2022.8.2-qiwi.pijma-mobile.1.152.1-f0) (2022-08-02)
+
+### Fixes & improvements
+* fix: button icon safari glitch (#519) [fa54bdf6](https://github.com/qiwi/pijma/commit/fa54bdf6b9f59f5a771e70a89aa6980d87a60493)
+
 ## [@qiwi/pijma-mobile@1.152.0](https://github.com/qiwi/pijma/compare/2022.7.31-qiwi.pijma-mobile.1.151.1-f0...2022.8.2-qiwi.pijma-mobile.1.152.0-f0) (2022-08-02)
 
 ### Features
