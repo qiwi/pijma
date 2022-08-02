@@ -98,7 +98,7 @@ export const AlertBlock: FC<AlertBlockProps> = ({
                   <Icon
                     size={6}
                     color="#666"
-                    name="cross"
+                    name="cross-small"
                   />
                 )}
               />

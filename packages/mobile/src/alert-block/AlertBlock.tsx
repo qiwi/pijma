@@ -79,7 +79,7 @@ export const AlertBlock: FC<AlertBlockProps> = ({
           >
             <FlexItem mr={2}>{iconComponent}</FlexItem>
             <FlexItem my="2px">
-              <Paragraph size="s" color={type === 'promo' ? 'inverse' : 'default'}>
+              <Paragraph size="s" bold color={type === 'promo' ? 'inverse' : 'default'}>
                 <Breaker children={children} />
               </Paragraph>
             </FlexItem>
@@ -98,7 +98,7 @@ export const AlertBlock: FC<AlertBlockProps> = ({
                   <Icon
                     color="#666"
                     size={6}
-                    name="cross"
+                    name="cross-small"
                   />
                 )}
               />
