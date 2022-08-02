@@ -1,3 +1,12 @@
+## [@qiwi/pijma-mobile@1.152.0](https://github.com/qiwi/pijma/compare/2022.7.31-qiwi.pijma-mobile.1.151.1-f0...2022.8.2-qiwi.pijma-mobile.1.152.0-f0) (2022-08-02)
+
+### Features
+* feat: react 18 (#518) [44db5b14](https://github.com/qiwi/pijma/commit/44db5b14e812b2a9548cc5cde4fbb5a6c2cf58db)
+
+### Dependencies
+* perf: @qiwi/pijma-core updated to 1.154.0
+* perf: @qiwi/pijma-infra updated to 1.9.0
+
 ## [@qiwi/pijma-mobile@1.151.1](https://github.com/qiwi/pijma/compare/2022.7.29-qiwi.pijma-mobile.1.151.0-f0...2022.7.31-qiwi.pijma-mobile.1.151.1-f0) (2022-07-31)
 
 ### Fixes & improvements
