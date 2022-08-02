@@ -1,8 +1,12 @@
-import React, { FC, Fragment } from 'react'
+import React, { FC, Fragment, ReactNode } from 'react'
 
 const newLineRegex = /(\r\n|\r|\n)/g
 
-export const Breaker: FC = ({ children }) => (
+export interface BreakerProps {
+  children?: ReactNode
+}
+
+export const Breaker: FC<BreakerProps> = ({ children }) => (
   <Fragment>
     {typeof children === 'string'
       ? children

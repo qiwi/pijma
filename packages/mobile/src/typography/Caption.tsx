@@ -1,11 +1,12 @@
 import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, ReactNode } from 'react'
 
 export interface CaptionProps {
   color?: 'default' | 'support' | 'inverse'
   align?: TypoProps['align']
   clamp?: number
   stub?: boolean
+  children?: ReactNode
 }
 
 const CaptionColor: { [color in NonNullable<CaptionProps['color']>]: string } =

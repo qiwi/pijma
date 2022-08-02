@@ -1,5 +1,5 @@
 import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
-import React, { Fragment, FunctionComponent } from 'react'
+import React, { Fragment, FunctionComponent, ReactNode } from 'react'
 
 export interface HeadingProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -8,6 +8,7 @@ export interface HeadingProps {
   align?: TypoProps['align']
   clamp?: number
   stub?: boolean
+  children?: ReactNode
 }
 
 const HeadingSize: { [size in HeadingProps['size']]: number } = {

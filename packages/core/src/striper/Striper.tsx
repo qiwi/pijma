@@ -2,7 +2,11 @@ import React, { Children, FC, Fragment, ReactNode } from 'react'
 
 import { Card } from '../primitive'
 
-export const Striper: FC = ({ children }) => {
+export interface StriperProps {
+  children?: ReactNode
+}
+
+export const Striper: FC<StriperProps> = ({ children }) => {
   const elements = Children.toArray(children).filter((child) => !!child)
   if (elements.length === 0) {
     return null

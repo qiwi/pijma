@@ -114,8 +114,8 @@ export const ContentSuggest = <V extends {}>({
                   props.loading === true)
               }
               rootClose={false}
-              container={renderProps.containerRef.current}
-              target={renderProps.inputRef.current!}
+              container={() => renderProps.containerRef.current}
+              target={() => renderProps.inputRef.current!}
               onHide={renderProps.onHide}
             >
               <Card

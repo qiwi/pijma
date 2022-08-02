@@ -1,5 +1,5 @@
 import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
-import React, { Fragment, FunctionComponent } from 'react'
+import React, { Fragment, FunctionComponent, ReactNode } from 'react'
 
 export interface ParagraphProps {
   size?: 's' | 'm' | 'l'
@@ -10,6 +10,7 @@ export interface ParagraphProps {
   align?: TypoProps['align']
   clamp?: number
   stub?: boolean
+  children?: ReactNode
 }
 
 const ParagraphSize: { [size in NonNullable<ParagraphProps['size']>]: number } =

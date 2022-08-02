@@ -1,5 +1,11 @@
-import React, { FC, Fragment } from 'react'
+import React, { FC, Fragment, ReactNode } from 'react'
 
-const ExamplesRenderer: FC = (props) => <Fragment>{props.children}</Fragment>
+interface ExamplesRendererProps {
+  children?: ReactNode
+}
+
+const ExamplesRenderer: FC<ExamplesRendererProps> = (props) => (
+  <Fragment>{props.children}</Fragment>
+)
 
 export default ExamplesRenderer

@@ -4,6 +4,7 @@ import { Box } from '../primitive'
 
 export interface SpacerProps {
   size?: 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl'
+  children?: ReactNode
 }
 
 const SpacerSize: { [size in NonNullable<SpacerProps['size']>]: number } = {

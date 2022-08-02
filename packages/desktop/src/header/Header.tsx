@@ -1,8 +1,9 @@
 import { Card } from '@qiwi/pijma-core'
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, ReactNode } from 'react'
 
 export interface HeaderProps {
   underline?: boolean
+  children?: ReactNode
 }
 
 export const Header: FunctionComponent<HeaderProps> = (props) => (

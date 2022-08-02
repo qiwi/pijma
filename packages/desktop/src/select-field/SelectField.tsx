@@ -152,8 +152,8 @@ export const SelectField: FunctionComponent<
               <Overlay
                 show={renderProps.show}
                 placement="bottom"
-                target={renderProps.targetRef.current!}
-                container={renderProps.containerRef.current}
+                target={() => renderProps.targetRef.current!}
+                container={() => renderProps.containerRef.current}
                 popperConfig={{
                   modifiers: { computeStyle: { gpuAcceleration: false } },
                 }}
