@@ -1,5 +1,5 @@
 import { LinkControl, Stub, TypoLnk } from '@qiwi/pijma-core'
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 export interface NavLinkProps {
   onClick?: (
@@ -17,6 +17,7 @@ export interface NavLinkProps {
   rel?: string
   title?: string
   stub?: boolean
+  children?: ReactNode
 }
 
 export const NavLink: FC<NavLinkProps> = (props) =>

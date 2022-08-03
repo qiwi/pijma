@@ -1,9 +1,10 @@
 import { Card, Pos } from '@qiwi/pijma-core'
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 interface HeaderProps {
   active?: boolean
   zIndex?: number
+  children?: ReactNode
 }
 
 export const Header: FC<HeaderProps> = ({

@@ -1,5 +1,5 @@
 import { Box, Image, MarkdownToJSX, styled } from '@qiwi/pijma-core'
-import React, { Children, FC } from 'react'
+import React, { Children, FC, ReactNode } from 'react'
 
 import { Link } from '../link'
 import { List } from '../list'
@@ -26,6 +26,7 @@ const SizeMargin: { [size in NonNullable<SizeProps['size']>]: number } = {
 
 interface SizeProps {
   size: 's' | 'm' | 'l'
+  children?: ReactNode
 }
 
 const p: FC<SizeProps> = ({ children, size }) => (

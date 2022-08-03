@@ -7,6 +7,7 @@ interface SectionHeadingRendererProps {
   href: string
   depth: number
   deprecated: boolean
+  children?: ReactNode
 }
 
 const SectionHeadingRenderer: FC<SectionHeadingRendererProps> = (props) => (

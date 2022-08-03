@@ -6,6 +6,7 @@ export interface GridProps {
   gutter?: number
   columns?: number
   layout?: number | number[]
+  children?: ReactNode
 }
 
 const arrSum = (arr: number[]) => arr.reduce((a: number, b: number) => a + b, 0)

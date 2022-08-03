@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 import { Card } from '../primitive'
 
@@ -8,6 +8,7 @@ export interface BlockProps {
   focus?: boolean
   accent?: boolean
   bg?: string
+  children?: ReactNode
 }
 
 export const Block: FC<BlockProps> = ({

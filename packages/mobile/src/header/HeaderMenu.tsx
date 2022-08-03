@@ -20,6 +20,7 @@ interface HeaderMenuProps {
   stub?: boolean
   onShow?: () => void
   onHide?: () => void
+  children?: ReactNode
 }
 
 const containerClassName = css({

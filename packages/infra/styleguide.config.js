@@ -162,19 +162,6 @@ module.exports = ({ cwd, extra = {}, components = [] }) => {
       },
       webpackConfig: {
         target: 'web',
-        optimization: {
-          moduleIds: false,
-          chunkIds: false,
-          concatenateModules: false,
-          flagIncludedChunks: false,
-          mergeDuplicateChunks: false,
-          minimize: false,
-          portableRecords: false,
-          providedExports: false,
-          removeAvailableModules: false,
-          removeEmptyChunks: false,
-          usedExports: false,
-        },
         module: {
           rules: [
             {

@@ -1,8 +1,9 @@
 import { Box } from '@qiwi/pijma-core'
-import React, { FC } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 export interface BlockContentProps {
   indent?: 's' | 'm' | 'l'
+  children?: ReactNode
 }
 
 const BlockContentIdent: {

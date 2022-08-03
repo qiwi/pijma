@@ -4,6 +4,7 @@ import React, { Children, FunctionComponent, ReactNode } from 'react'
 export interface ActionsProps {
   size: 'accent' | 'normal' | 'minor'
   vertical?: boolean
+  children?: ReactNode
 }
 
 const margin: { [size in ActionsProps['size']]: number } = {
