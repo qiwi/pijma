@@ -16,6 +16,7 @@ import { Paragraph } from '../typography'
 export interface AlertBlockProps {
   type: 'success' | 'warning' | 'waiting' | 'failure' | 'info' | 'promo'
   icon?: ReactNode
+  children?: ReactNode
   onHide?: () => void
 }
 
