@@ -1,5 +1,6 @@
 export * from '@qiwi/pijma-core'
 
+export * from './alert-block'
 export * from './button'
 export * from './actions'
 export * from './text-field'
