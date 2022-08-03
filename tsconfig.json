@@ -1,22 +1,37 @@
 {
-  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "baseUrl": "./packages",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "target": "es5",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "strict": true,
+    "sourceMap": false,
+    "declaration": true,
+    "jsx": "react",
+    "noEmitHelpers": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "rootDir": "./",
+    "baseUrl": "./",
     "paths": {
       "@qiwi/pijma-core": [
-        "./core/src"
+        "./packages/core/src"
       ],
       "@qiwi/pijma-desktop": [
-        "./desktop/src"
+        "./packages/desktop/src"
       ],
       "@qiwi/pijma-mobile": [
-        "./mobile/src"
-      ],
-      "@qiwi/pijma-fonts": [
-        "./fonts"
+        "./packages/mobile/src"
       ],
       "@qiwi/pijma-ssr": [
-        "./ssr/src"
+        "./packages/ssr/src"
       ]
     }
   }

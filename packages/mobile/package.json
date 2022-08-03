@@ -23,7 +23,7 @@
     "test": "concurrently --kill-others --kill-others-on-fail --success first 'npm:test:start' 'npm:static:start' 'npm:chrome:start'",
     "build:es5": "swc src -d lib/es5 --config-file swc.es5.json && tsc-esm-fix --target=lib/es5 --fillBlank",
     "build:es6": "swc src -d lib/es6 --config-file swc.es6.json && tsc-esm-fix --target=lib/es6 --fillBlank",
-    "build:dts": "tsc --outDir lib/dts --emitDeclarationOnly",
+    "build:dts": "tsc --project tsconfig.dts.json",
     "guide:build": "styleguidist --config styleguide.config.cjs build",
     "guide:start": "styleguidist --config styleguide.config.cjs server",
     "static:start": "docker run --rm -p 7070:80 -v $(pwd)/styleguide/lib:/usr/share/nginx/html nginx",
