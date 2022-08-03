@@ -1,3 +1,11 @@
+## [@qiwi/pijma-desktop@1.153.0](https://github.com/qiwi/pijma/compare/2022.8.2-qiwi.pijma-desktop.1.152.1-f0...2022.8.3-qiwi.pijma-desktop.1.153.0-f0) (2022-08-03)
+
+### Features
+* feat: add alert-block (#520) [6bc25c60](https://github.com/qiwi/pijma/commit/6bc25c6052db8b3ddcbb99ad73aef5892be0791a)
+
+### Dependencies
+* perf: @qiwi/pijma-core updated to 1.155.0
+
 ## [@qiwi/pijma-desktop@1.152.1](https://github.com/qiwi/pijma/compare/2022.8.2-qiwi.pijma-desktop.1.152.0-f0...2022.8.2-qiwi.pijma-desktop.1.152.1-f0) (2022-08-02)
 
 ### Fixes & improvements
