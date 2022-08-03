@@ -165,7 +165,7 @@ module.exports = ({ cwd, extra = {}, components = [] }) => {
         module: {
           rules: [
             {
-              test: /\.tsx?$/,
+              test: /\.[cm]?[jt]sx?$/,
               use: {
                 loader: 'swc-loader',
               },
