@@ -1,3 +1,8 @@
+## [@qiwi/pijma-mobile@1.154.0](https://github.com/qiwi/pijma/compare/2022.8.3-qiwi.pijma-mobile.1.153.0-f0...2022.8.3-qiwi.pijma-mobile.1.154.0-f0) (2022-08-03)
+
+### Features
+* feat(mobile): add details (#521) [9a74056f](https://github.com/qiwi/pijma/commit/9a74056f0916440965f894a6314f4a1820ffe7dd)
+
 ## [@qiwi/pijma-mobile@1.153.0](https://github.com/qiwi/pijma/compare/2022.8.2-qiwi.pijma-mobile.1.152.1-f0...2022.8.3-qiwi.pijma-mobile.1.153.0-f0) (2022-08-03)
 
 ### Features
