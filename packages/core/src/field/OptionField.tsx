@@ -17,6 +17,7 @@ export interface OptionFieldProps {
   onFocus: FocusEventHandler
   onBlur: FocusEventHandler
   onKeyDown: KeyboardEventHandler
+  children?: ReactNode
 }
 
 const InputProps = BoxNonProps.concat(['autoFocus'])

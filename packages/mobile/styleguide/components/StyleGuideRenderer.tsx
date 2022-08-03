@@ -26,6 +26,7 @@ interface StyleGuideRendererProps {
   title: ReactNode
   toc: ReactNode
   hasSidebar: boolean
+  children?: ReactNode
 }
 
 const StyleGuideRenderer: FC<StyleGuideRendererProps> = (props) => (

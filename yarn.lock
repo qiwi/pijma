@@ -683,8 +683,8 @@ __metadata:
     "@emotion/styled": "npm:^11.9.3"
     "@swc/helpers": "npm:^0.4.3"
     "@types/dom-helpers": "npm:^3.4.1"
-    "@types/react": "npm:16.14.28"
-    "@types/react-dom": "npm:16.9.16"
+    "@types/react": "npm:18.0.15"
+    "@types/react-dom": "npm:18.0.6"
     "@types/react-google-recaptcha": "npm:^2.1.5"
     "@types/react-overlays": "npm:^1.1.3"
     "@types/react-transition-group": "npm:^4.4.4"
@@ -700,9 +700,9 @@ __metadata:
     minimist: "npm:1.2.6"
     prettier: "npm:2.7.1"
     prettier-config-qiwi: "npm:1.7.2"
-    react: "npm:16.14.0"
+    react: "npm:18.2.0"
     react-docgen-typescript: "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch"
-    react-dom: "npm:16.14.0"
+    react-dom: "npm:18.2.0"
     react-google-recaptcha: "npm:^2.1.0"
     react-intersection-observer: "npm:^8.24.1"
     react-overlays: "npm:^1.2.0"
@@ -1155,12 +1155,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:16.9.16":
-  version: 16.9.16
-  resolution: "@types/react-dom@npm:16.9.16"
+"@types/react-dom@npm:18.0.6":
+  version: 18.0.6
+  resolution: "@types/react-dom@npm:18.0.6"
   dependencies:
-    "@types/react": "npm:^16"
-  checksum: 6a94666c4179cbe5b2bc4a0f04c7fd91befe2d353610a045f883c9be4875b2facbbccfb6301326bfd0915f866cc67aaa0df7496e97becef36e230300e2af54f8
+    "@types/react": "npm:*"
+  checksum: aa49049d928c14bb0268bc7acca2ff5101d9191c73fcb748c0d8a546638bc8d2ce86b32ae57260b72ce5fe4bf2c64775208cf528db1e394768ed5755e261890a
   languageName: node
   linkType: hard
 
@@ -1192,14 +1192,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:16.14.28":
-  version: 16.14.28
-  resolution: "@types/react@npm:16.14.28"
+"@types/react@npm:18.0.15":
+  version: 18.0.15
+  resolution: "@types/react@npm:18.0.15"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 5b50433b5b0b0923608740d8cc3027dccc072554c6d6804b2f0dbe6c9d61f5aa51e37cdba09a2417cbfe5aa23b49cc8b60579dae99b6179138f1afde7a9a28db
+  checksum: 4c6dd07079c8403d8733450289a1fc1b5626af058261cf0128f8b6e0e600bcdd6b789d6304703eb9c1986236bee5f917ff4ca08559b45e06376c6871b7658f30
   languageName: node
   linkType: hard
 
@@ -8939,17 +8939,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:16.14.0":
-  version: 16.14.0
-  resolution: "react-dom@npm:16.14.0"
+"react-dom@npm:18.2.0":
+  version: 18.2.0
+  resolution: "react-dom@npm:18.2.0"
   dependencies:
     loose-envify: "npm:^1.1.0"
-    object-assign: "npm:^4.1.1"
-    prop-types: "npm:^15.6.2"
-    scheduler: "npm:^0.19.1"
+    scheduler: "npm:^0.23.0"
   peerDependencies:
-    react: ^16.14.0
-  checksum: 08b4551b6d6b3563800b8498caa6458f409c16f6ce4784bb590c9990b224ee410edcf43644c3cb563704d2c508e457a1c5ebe40d2dea403d362951be5d64f930
+    react: ^18.2.0
+  checksum: 7c5b915fb793d63563cec1f721e059e6ff0e2855ac116ab5cb7450b6c59398f5e25f95c960ce5cb93504cc58ab724a75a78e99282354e702a0e667d0d787d028
   languageName: node
   linkType: hard
 
@@ -9201,14 +9199,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:16.14.0":
-  version: 16.14.0
-  resolution: "react@npm:16.14.0"
+"react@npm:18.2.0":
+  version: 18.2.0
+  resolution: "react@npm:18.2.0"
   dependencies:
     loose-envify: "npm:^1.1.0"
-    object-assign: "npm:^4.1.1"
-    prop-types: "npm:^15.6.2"
-  checksum: 788a39b1997501aa7d6501a3bd4a85ddd704b9e9555199974853542564a663c03bbf58351cbf7fa11034c9cd65d578f77ef32c67d7e4a140a0181ab51a770187
+  checksum: 8434e5782c52b3bf18a80b666348977924ee3827895fa03ec3ffb9faca90c460049f14130428dd1546bab6cf3b2c277f2c243d3c2a856501331d2e69c24b2bb9
   languageName: node
   linkType: hard
 
@@ -9756,13 +9752,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scheduler@npm:^0.19.1":
-  version: 0.19.1
-  resolution: "scheduler@npm:0.19.1"
+"scheduler@npm:^0.23.0":
+  version: 0.23.0
+  resolution: "scheduler@npm:0.23.0"
   dependencies:
     loose-envify: "npm:^1.1.0"
-    object-assign: "npm:^4.1.1"
-  checksum: e6d3488ad5b3012c7cadfd95625ad68c00730066781df46eb460ef35fd290594754992ecda68f894a0d7a1ce2d396d5fecdd7644b57aad19302359ff31b44cb9
+  checksum: f4022b95cdc282668643da4850f55fe70c899aa956d11819f196e2ca892271bdb253613e53997852094f9351f7c72d057eea8b28d9b4bcb93bcb1c6d09985c82
   languageName: node
   linkType: hard
 

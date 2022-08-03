@@ -19,6 +19,7 @@ import React, {
   FunctionComponent,
   KeyboardEventHandler,
   MouseEventHandler,
+  ReactNode,
   RefObject,
 } from 'react'
 
@@ -66,6 +67,7 @@ interface InputModalProps {
   onShow?: React.MouseEventHandler
   onHide?: () => void
   onEscape?: () => void
+  children?: ReactNode
 }
 
 const PosFlexCard = styled(CardPos)().withComponent(Flex)
