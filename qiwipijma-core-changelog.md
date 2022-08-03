@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.155.2](https://github.com/qiwi/pijma/compare/2022.8.3-qiwi.pijma-core.1.155.1-f0...2022.8.3-qiwi.pijma-core.1.155.2-f0) (2022-08-03)
+
+### Fixes & improvements
+* fix: dts (#523) [5e8e74d1](https://github.com/qiwi/pijma/commit/5e8e74d111ae035eb79a9b0cd33acf1116b4dc60)
+
 ## [@qiwi/pijma-core@1.155.1](https://github.com/qiwi/pijma/compare/2022.8.3-qiwi.pijma-core.1.155.0-f0...2022.8.3-qiwi.pijma-core.1.155.1-f0) (2022-08-03)
 
 ### Fixes & improvements
