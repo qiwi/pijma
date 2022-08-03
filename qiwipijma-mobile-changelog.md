@@ -1,3 +1,12 @@
+## [@qiwi/pijma-mobile@1.154.2](https://github.com/qiwi/pijma/compare/2022.8.3-qiwi.pijma-mobile.1.154.1-f0...2022.8.3-qiwi.pijma-mobile.1.154.2-f0) (2022-08-03)
+
+### Fixes & improvements
+* fix: dts (#523) [5e8e74d1](https://github.com/qiwi/pijma/commit/5e8e74d111ae035eb79a9b0cd33acf1116b4dc60)
+
+### Dependencies
+* perf: @qiwi/pijma-core updated to 1.155.2
+* perf: @qiwi/pijma-infra updated to 1.9.1
+
 ## [@qiwi/pijma-mobile@1.154.1](https://github.com/qiwi/pijma/compare/2022.8.3-qiwi.pijma-mobile.1.154.0-f0...2022.8.3-qiwi.pijma-mobile.1.154.1-f0) (2022-08-03)
 
 ### Fixes & improvements
