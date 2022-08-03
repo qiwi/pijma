@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.155.1](https://github.com/qiwi/pijma/compare/2022.8.3-qiwi.pijma-core.1.155.0-f0...2022.8.3-qiwi.pijma-core.1.155.1-f0) (2022-08-03)
+
+### Fixes & improvements
+* fix: pagination corner cases (#522) [522194dc](https://github.com/qiwi/pijma/commit/522194dc56b27bfc141b08e8174abcea81558fd2)
+
 ## [@qiwi/pijma-core@1.155.0](https://github.com/qiwi/pijma/compare/2022.8.2-qiwi.pijma-core.1.154.0-f0...2022.8.3-qiwi.pijma-core.1.155.0-f0) (2022-08-03)
 
 ### Features
