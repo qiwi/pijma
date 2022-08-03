@@ -44,11 +44,13 @@ export class PaginationControl extends React.Component<PaginationControlProps> {
 
   public render() {
     const { total, count, active } = this.props
-    const isValidProps: boolean = active <= total && count <= total
 
     const totalPages = Math.max(Math.ceil(total), 1)
-    const visiblePages = Math.max(Math.ceil(count), 1)
-    const currentPage = Math.min(Math.max(Math.ceil(active), 1), totalPages)
+    const visiblePages = Math.max(Math.ceil(Math.min(count, total)), 1)
+    const currentPage = Math.min(
+      Math.max(Math.ceil(Math.min(active, total)), 1),
+      totalPages,
+    )
 
     const firstPage = Math.max(
       1,
@@ -57,10 +59,6 @@ export class PaginationControl extends React.Component<PaginationControlProps> {
         totalPages - visiblePages + 1,
       ),
     )
-
-    if (!isValidProps) {
-      return null
-    }
 
     return this.props.children({
       prev: currentPage - 1,
