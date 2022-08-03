@@ -1,3 +1,11 @@
+## [@qiwi/pijma-mobile@1.154.1](https://github.com/qiwi/pijma/compare/2022.8.3-qiwi.pijma-mobile.1.154.0-f0...2022.8.3-qiwi.pijma-mobile.1.154.1-f0) (2022-08-03)
+
+### Fixes & improvements
+* fix: pagination corner cases (#522) [522194dc](https://github.com/qiwi/pijma/commit/522194dc56b27bfc141b08e8174abcea81558fd2)
+
+### Dependencies
+* perf: @qiwi/pijma-core updated to 1.155.1
+
 ## [@qiwi/pijma-mobile@1.154.0](https://github.com/qiwi/pijma/compare/2022.8.3-qiwi.pijma-mobile.1.153.0-f0...2022.8.3-qiwi.pijma-mobile.1.154.0-f0) (2022-08-03)
 
 ### Features
