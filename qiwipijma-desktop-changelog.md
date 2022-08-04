@@ -1,3 +1,11 @@
+## [@qiwi/pijma-desktop@1.154.3](https://github.com/qiwi/pijma/compare/2022.8.3-qiwi.pijma-desktop.1.154.2-f0...2022.8.4-qiwi.pijma-desktop.1.154.3-f0) (2022-08-04)
+
+### Fixes & improvements
+* fix: back to es2021 (#524) [1798cec0](https://github.com/qiwi/pijma/commit/1798cec00afefba6a72b97d55c3e628a20ed7e46)
+
+### Dependencies
+* perf: @qiwi/pijma-core updated to 1.155.3
+
 ## [@qiwi/pijma-desktop@1.154.2](https://github.com/qiwi/pijma/compare/2022.8.3-qiwi.pijma-desktop.1.154.1-f0...2022.8.3-qiwi.pijma-desktop.1.154.2-f0) (2022-08-03)
 
 ### Fixes & improvements
