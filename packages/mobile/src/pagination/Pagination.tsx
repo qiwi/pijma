@@ -1,5 +1,5 @@
 import { Card, Icon, PaginationControl } from '@qiwi/pijma-core'
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
 import { Text } from '../typography'
 import { PaginationLink } from './PaginationLink'
@@ -14,7 +14,7 @@ export interface PaginationProps {
   onChange?: (index: number) => void
 }
 
-export const Pagination: FunctionComponent<PaginationProps> = ({
+export const Pagination: FC<PaginationProps> = ({
   total,
   count = 3,
   shadowed = false,

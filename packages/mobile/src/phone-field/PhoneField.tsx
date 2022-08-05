@@ -11,13 +11,13 @@ import {
   PhoneFieldControl,
   Pos,
 } from '@qiwi/pijma-core'
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
 import { DropUp } from '../drop-up'
 import { Paragraph } from '../typography'
 import { PhoneFieldProps } from './PhoneFieldProps'
 
-export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
+export const PhoneField: FC<PhoneFieldProps> = ({
   tabIndex = 0,
   code = 'ru',
   ...props

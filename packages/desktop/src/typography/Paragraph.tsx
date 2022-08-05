@@ -1,5 +1,5 @@
 import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
-import React, { Fragment, FunctionComponent, ReactNode } from 'react'
+import React, { FC, Fragment, ReactNode } from 'react'
 
 export interface ParagraphProps {
   size?: 's' | 'm' | 'l'
@@ -81,7 +81,7 @@ const ParagraphColor: {
   inverse: '#fff',
 }
 
-export const Paragraph: FunctionComponent<ParagraphProps> = ({
+export const Paragraph: FC<ParagraphProps> = ({
   size = 'm',
   bold = false,
   compact = false,

@@ -10,7 +10,7 @@ import {
   styled,
   SuggestControl,
 } from '@qiwi/pijma-core'
-import React, { Fragment } from 'react'
+import React, { Fragment, isValidElement } from 'react'
 
 import { InputModal } from '../input-modal'
 import { Link } from '../link'
@@ -43,12 +43,12 @@ export const SuggestField = <V extends {}>({
       suggest={props.suggest}
       items={props.items}
       total={
-        React.isValidElement(props.total) || typeof props.total === 'string'
+        isValidElement(props.total) || typeof props.total === 'string'
           ? undefined
           : props.total
       }
       empty={
-        React.isValidElement(props.empty) || typeof props.empty === 'string'
+        isValidElement(props.empty) || typeof props.empty === 'string'
           ? undefined
           : props.empty
       }
@@ -165,7 +165,7 @@ export const SuggestField = <V extends {}>({
                     ) : null}
                     {props.total && menuRenderProps.items.length > 0 ? (
                       <Box px={6}>
-                        {React.isValidElement(props.total) ? (
+                        {isValidElement(props.total) ? (
                           props.total
                         ) : typeof props.total === 'string' ? (
                           <Markdown children={props.total} />
@@ -188,7 +188,7 @@ export const SuggestField = <V extends {}>({
                       menuRenderProps.items.length === 0 &&
                       props.items !== undefined ? (
                       <Box px={6}>
-                        {React.isValidElement(props.empty) ? (
+                        {isValidElement(props.empty) ? (
                           props.empty
                         ) : typeof props.empty === 'string' ? (
                           <Markdown children={props.empty} />

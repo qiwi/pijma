@@ -9,12 +9,12 @@ import {
   Spacer,
   Stub,
 } from '@qiwi/pijma-core'
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
 import { CheckboxFieldOptionModel } from './CheckboxFieldOptionModel'
 import { CheckboxFieldProps } from './CheckboxFieldProps'
 
-export const CheckboxField: FunctionComponent<
+export const CheckboxField: FC<
   CheckboxFieldProps<CheckboxFieldOptionModel<any>, any>
 > = (props) =>
   props.stub ? (

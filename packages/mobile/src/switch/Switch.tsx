@@ -8,11 +8,11 @@ import {
   SwitchControl,
   Tumbler,
 } from '@qiwi/pijma-core'
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
 import { SwitchProps } from './SwitchProps'
 
-export const Switch: FunctionComponent<SwitchProps> = (props) =>
+export const Switch: FC<SwitchProps> = (props) =>
   props.stub ? (
     <Flex
       direction={props.reverse ? 'row-reverse' : 'row'}

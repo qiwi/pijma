@@ -1,4 +1,11 @@
-import { Component, createRef, RefObject } from 'react'
+import {
+  ChangeEventHandler,
+  Component,
+  createRef,
+  FocusEventHandler,
+  MouseEventHandler,
+  RefObject,
+} from 'react'
 import { findDOMNode } from 'react-dom'
 
 import { createPhoneMask } from '../mask'
@@ -62,22 +69,21 @@ export class PhoneFieldControl extends Component<
   private optionsRefs: Map<PhoneFieldCountry, RefObject<HTMLDivElement>> =
     new Map(this.props.countries.map((country) => [country, createRef()]))
 
-  private onCountryClick: (index: number) => React.MouseEventHandler =
+  private onCountryClick: (index: number) => MouseEventHandler =
     (index) => (event) => {
       event.preventDefault()
       this.selectCountry(index)
     }
 
-  private onCountryEnter: (
-    country: PhoneFieldCountry,
-  ) => React.MouseEventHandler = (country) => (event) => {
-    event.preventDefault()
-    this.setState({
-      focusedCountry: country,
-    })
-  }
+  private onCountryEnter: (country: PhoneFieldCountry) => MouseEventHandler =
+    (country) => (event) => {
+      event.preventDefault()
+      this.setState({
+        focusedCountry: country,
+      })
+    }
 
-  private onCountryLeave: React.MouseEventHandler = (event) => {
+  private onCountryLeave: MouseEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       focusedCountry: null,
@@ -88,15 +94,16 @@ export class PhoneFieldControl extends Component<
     return findDOMNode(this.inputRef.current!) as HTMLInputElement
   }
 
-  private onFlagClick: React.MouseEventHandler = (event) => {
+  private onFlagClick: MouseEventHandler = (event) => {
     event.preventDefault()
+    event.stopPropagation()
     this.inputField.focus()
     this.setState({
       showCountries: true,
     })
   }
 
-  private onFlagMouseDown: React.MouseEventHandler = (event) => {
+  private onFlagMouseDown: MouseEventHandler = (event) => {
     event.preventDefault()
     this.inputField.focus()
   }
@@ -129,7 +136,7 @@ export class PhoneFieldControl extends Component<
     })
   }
 
-  private onChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+  private onChange: ChangeEventHandler<HTMLInputElement> = (event) => {
     event.preventDefault()
     const country = this.getCountryByPhone(event.currentTarget.value)
     if (this.props.onChange) {
@@ -143,7 +150,7 @@ export class PhoneFieldControl extends Component<
     })
   }
 
-  private onFocus: React.FocusEventHandler = (event) => {
+  private onFocus: FocusEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       focused: true,
@@ -153,7 +160,7 @@ export class PhoneFieldControl extends Component<
     }
   }
 
-  private onBlur: React.FocusEventHandler = (event) => {
+  private onBlur: FocusEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       focused: false,

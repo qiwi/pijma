@@ -1,4 +1,10 @@
-import { Component, createRef, RefObject } from 'react'
+import {
+  Component,
+  createRef,
+  KeyboardEventHandler,
+  MouseEventHandler,
+  RefObject,
+} from 'react'
 import { findDOMNode } from 'react-dom'
 
 import { MenuControlProps } from './MenuControlProps'
@@ -39,22 +45,24 @@ export class MenuControl extends Component<MenuControlProps, MenuControlState> {
 
   private containerRef: RefObject<HTMLDivElement> = createRef()
 
-  private onItemMouseDown = (event: React.MouseEvent) => {
+  private onItemMouseDown: MouseEventHandler = (event) => {
     event.preventDefault()
     event.stopPropagation()
   }
 
-  private onItemClick = (index: number) => (event: React.MouseEvent) => {
-    event.preventDefault()
-    this.selectItem(index)
-  }
+  private onItemClick: (index: number) => MouseEventHandler =
+    (index) => (event) => {
+      event.preventDefault()
+      this.selectItem(index)
+    }
 
-  private onItemEnter = (index: number) => (event: React.MouseEvent) => {
-    event.preventDefault()
-    this.setState({
-      focused: index,
-    })
-  }
+  private onItemEnter: (index: number) => MouseEventHandler =
+    (index) => (event) => {
+      event.preventDefault()
+      this.setState({
+        focused: index,
+      })
+    }
 
   private selectItem: (index: number) => void = (index) => {
     this.setState({
@@ -92,9 +100,7 @@ export class MenuControl extends Component<MenuControlProps, MenuControlState> {
     }
   }
 
-  private onKeyDown: React.KeyboardEventHandler = (
-    event: React.KeyboardEvent,
-  ) => {
+  private onKeyDown: KeyboardEventHandler = (event) => {
     const { focused } = this.state
     if (event.key === 'ArrowDown') {
       event.preventDefault()

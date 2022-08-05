@@ -1,4 +1,12 @@
-import React, { createRef, FC, RefObject } from 'react'
+import {
+  Component,
+  createRef,
+  FC,
+  FocusEventHandler,
+  KeyboardEventHandler,
+  MouseEventHandler,
+  RefObject,
+} from 'react'
 
 import { OptionModel } from '../option'
 
@@ -20,11 +28,11 @@ export interface SelectFieldControlProps<O extends OptionModel<V>, V> {
     select?: number
     onHide: () => void
     onItemSelect: (index: number) => void
-    onActive?: React.MouseEventHandler
-    onFocus?: React.FocusEventHandler
-    onBlur?: React.FocusEventHandler
-    onMobileBlur?: React.FocusEventHandler
-    onKeyDown?: React.KeyboardEventHandler
+    onActive?: MouseEventHandler
+    onFocus?: FocusEventHandler
+    onBlur?: FocusEventHandler
+    onMobileBlur?: FocusEventHandler
+    onKeyDown?: KeyboardEventHandler
   }>
 }
 
@@ -34,10 +42,7 @@ export interface SelectFieldControlState {
   select?: number
 }
 
-export class SelectFieldControl<
-  O extends OptionModel<V>,
-  V,
-> extends React.Component<
+export class SelectFieldControl<O extends OptionModel<V>, V> extends Component<
   SelectFieldControlProps<O, V>,
   SelectFieldControlState
 > {
@@ -71,7 +76,7 @@ export class SelectFieldControl<
     }
   }
 
-  private onFocus: React.FocusEventHandler = (event) => {
+  private onFocus: FocusEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       focus: true,
@@ -81,7 +86,7 @@ export class SelectFieldControl<
     }
   }
 
-  private onBlur: React.FocusEventHandler = (event) => {
+  private onBlur: FocusEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       focus: false,
@@ -92,7 +97,7 @@ export class SelectFieldControl<
     }
   }
 
-  private onMobileBlur: React.FocusEventHandler = (event) => {
+  private onMobileBlur: FocusEventHandler = (event) => {
     event.preventDefault()
     if (!this.modalRef.current) {
       this.setState({
@@ -105,7 +110,7 @@ export class SelectFieldControl<
     }
   }
 
-  private onActive: React.MouseEventHandler = (event) => {
+  private onActive: MouseEventHandler = (event) => {
     event.preventDefault()
     this.setState(
       {
@@ -119,7 +124,7 @@ export class SelectFieldControl<
     )
   }
 
-  private onKeyDown: React.KeyboardEventHandler = (event) => {
+  private onKeyDown: KeyboardEventHandler = (event) => {
     if (event.key === 'Enter') {
       this.setState({
         show: true,
@@ -132,7 +137,7 @@ export class SelectFieldControl<
     }
   }
 
-  private onSelect: (index: number) => void = (index: number) => {
+  private onSelect: (index: number) => void = (index) => {
     const item = this.props.items[index]
     this.props.onChange(item.value)
     this.setState({

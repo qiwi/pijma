@@ -1,7 +1,9 @@
+import { CSSProperties } from 'react'
+
 import { CSSObject, styled, StyledOptions } from '../styled'
 
 export interface LnkProps {
-  css?: CSSObject
+  css?: CSSObject | CSSProperties
   cursor?: string
 }
 

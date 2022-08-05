@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
 import { Path, Rect, Svg } from '../primitive'
 
@@ -8,7 +8,7 @@ export interface CheckProps {
   checked?: boolean
 }
 
-export const Check: FunctionComponent<CheckProps> = (props) => (
+export const Check: FC<CheckProps> = (props) => (
   <Svg viewBox="0 0 24 24" width="24" height="24">
     <Rect
       width="18"

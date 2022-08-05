@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { Component, FC, FocusEventHandler, MouseEventHandler } from 'react'
 
 export interface LinkControlProps {
   onClick?: (
@@ -17,13 +17,13 @@ export interface LinkControlProps {
     active: boolean
     focus: boolean
     hover: boolean
-    onClick: React.MouseEventHandler
-    onFocus: React.FocusEventHandler
-    onBlur: React.FocusEventHandler
-    onMouseEnter: React.MouseEventHandler
-    onMouseLeave: React.MouseEventHandler
-    onMouseUp: React.MouseEventHandler
-    onMouseDown: React.MouseEventHandler
+    onClick: MouseEventHandler
+    onFocus: FocusEventHandler
+    onBlur: FocusEventHandler
+    onMouseEnter: MouseEventHandler
+    onMouseLeave: MouseEventHandler
+    onMouseUp: MouseEventHandler
+    onMouseDown: MouseEventHandler
   }>
 }
 
@@ -33,10 +33,7 @@ export interface LinkControlState {
   hover: boolean
 }
 
-export class LinkControl extends React.Component<
-  LinkControlProps,
-  LinkControlState
-> {
+export class LinkControl extends Component<LinkControlProps, LinkControlState> {
   public static displayName = 'LinkControl'
 
   public static defaultProps: Partial<LinkControlProps> = {}
@@ -47,31 +44,31 @@ export class LinkControl extends React.Component<
     hover: false,
   }
 
-  private onMouseEnter: React.MouseEventHandler = () => {
+  private onMouseEnter: MouseEventHandler = () => {
     this.setState({
       hover: true,
     })
   }
 
-  private onMouseLeave: React.MouseEventHandler = () => {
+  private onMouseLeave: MouseEventHandler = () => {
     this.setState({
       hover: false,
     })
   }
 
-  private onMouseUp: React.MouseEventHandler = () => {
+  private onMouseUp: MouseEventHandler = () => {
     this.setState({
       active: false,
     })
   }
 
-  private onMouseDown: React.MouseEventHandler = () => {
+  private onMouseDown: MouseEventHandler = () => {
     this.setState({
       active: true,
     })
   }
 
-  private onClick: React.MouseEventHandler = (e: React.MouseEvent) => {
+  private onClick: MouseEventHandler = (e) => {
     e.preventDefault()
     if (this.props.onClick) {
       const res = this.props.onClick(
@@ -88,7 +85,7 @@ export class LinkControl extends React.Component<
     }
   }
 
-  private onFocus: React.FocusEventHandler = (e: React.FocusEvent) => {
+  private onFocus: FocusEventHandler = (e) => {
     this.setState({
       focus: true,
     })
@@ -98,7 +95,7 @@ export class LinkControl extends React.Component<
     }
   }
 
-  private onBlur: React.FocusEventHandler = (e: React.FocusEvent) => {
+  private onBlur: FocusEventHandler = (e) => {
     this.setState({
       focus: false,
     })

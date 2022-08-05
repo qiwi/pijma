@@ -1,9 +1,15 @@
-import React from 'react'
+import {
+  ChangeEventHandler,
+  Component,
+  FocusEventHandler,
+  KeyboardEventHandler,
+  MouseEventHandler,
+} from 'react'
 
 import { PasswordFieldControlProps } from './PasswordFieldControlProps'
 import { PasswordFieldControlState } from './PasswordFieldControlState'
 
-export class PasswordFieldControl extends React.Component<
+export class PasswordFieldControl extends Component<
   PasswordFieldControlProps,
   PasswordFieldControlState
 > {
@@ -14,16 +20,14 @@ export class PasswordFieldControl extends React.Component<
     hidden: true,
   }
 
-  private onChange: React.ChangeEventHandler<HTMLInputElement> = (
-    e: React.ChangeEvent<HTMLInputElement>,
-  ) => {
+  private onChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     e.preventDefault()
     if (this.props.onChange) {
       this.props.onChange(e.currentTarget.value)
     }
   }
 
-  private onFocus: React.FocusEventHandler = (e: React.FocusEvent) => {
+  private onFocus: FocusEventHandler = (e) => {
     this.setState({
       focused: true,
     })
@@ -33,7 +37,7 @@ export class PasswordFieldControl extends React.Component<
     }
   }
 
-  private onBlur: React.FocusEventHandler = (e: React.FocusEvent) => {
+  private onBlur: FocusEventHandler = (e) => {
     this.setState({
       focused: false,
     })
@@ -43,25 +47,19 @@ export class PasswordFieldControl extends React.Component<
     }
   }
 
-  private onKeyDown: React.KeyboardEventHandler = (
-    event: React.KeyboardEvent,
-  ) => {
+  private onKeyDown: KeyboardEventHandler<Element> = (event) => {
     if (this.props.onKeyDown && this.props.onKeyDown(event)) {
       event.preventDefault()
     }
   }
 
-  private onKeyUp: React.KeyboardEventHandler = (
-    event: React.KeyboardEvent,
-  ) => {
+  private onKeyUp: KeyboardEventHandler = (event) => {
     if (this.props.onKeyUp && this.props.onKeyUp(event)) {
       event.preventDefault()
     }
   }
 
-  private onToggle: React.MouseEventHandler<HTMLElement> = (
-    event: React.MouseEvent<HTMLElement>,
-  ) => {
+  private onToggle: MouseEventHandler = (event) => {
     event.preventDefault()
     event.stopPropagation()
     this.setState({

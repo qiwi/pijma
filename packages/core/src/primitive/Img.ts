@@ -1,8 +1,10 @@
+import { CSSProperties } from 'react'
+
 import { cssValue, Value } from '../primitive/Value'
 import { CSSObject, styled, StyledOptions } from '../styled'
 
 export interface ImgProps {
-  css?: CSSObject
+  css?: CSSObject | CSSProperties
   src?: string
   width?: Value
   minWidth?: Value

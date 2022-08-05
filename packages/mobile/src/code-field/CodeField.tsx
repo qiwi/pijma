@@ -8,7 +8,7 @@ import {
   Stub,
   Typo,
 } from '@qiwi/pijma-core'
-import React, { Fragment } from 'react'
+import React, { FC, Fragment } from 'react'
 
 import { CodeFieldProps } from './CodeFieldProps'
 
@@ -25,7 +25,7 @@ const animation = (count: number) =>
     },
   })
 
-export const CodeField: React.FC<CodeFieldProps> = ({
+export const CodeField: FC<CodeFieldProps> = ({
   length = 4,
   autoFocus = false,
   loading = false,
@@ -80,11 +80,11 @@ export const CodeField: React.FC<CodeFieldProps> = ({
                   disabled={props.disabled || loading}
                   ref={item.ref}
                   value={loading ? '' : props.value[index]}
-                  onChange={(e) => item.onChange(e, index)}
-                  onClick={(e) => item.onClick(e, index)}
-                  onFocus={(e) => item.onFocus(e, index)}
-                  onBlur={(e) => item.onBlur(e, index)}
-                  onKeyDown={(e) => renderProps.onKeyDown(e, index)}
+                  onChange={item.onChange}
+                  onClick={item.onClick}
+                  onFocus={item.onFocus}
+                  onBlur={item.onBlur}
+                  onKeyDown={item.onKeyDown}
                 />
               </FlexItem>
             ))}

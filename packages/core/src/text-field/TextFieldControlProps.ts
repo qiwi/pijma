@@ -1,17 +1,23 @@
-import React, { FC } from 'react'
+import {
+  ChangeEventHandler,
+  FC,
+  FocusEventHandler,
+  KeyboardEvent,
+  KeyboardEventHandler,
+} from 'react'
 
 export interface TextFieldControlProps {
   onChange?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void
-  onKeyDown?: (event: React.KeyboardEvent) => boolean
-  onKeyUp?: (event: React.KeyboardEvent) => boolean
+  onKeyDown?: (event: KeyboardEvent<HTMLInputElement>) => boolean
+  onKeyUp?: (event: KeyboardEvent<HTMLInputElement>) => boolean
   children: FC<{
     focused: boolean
-    onChange: React.ChangeEventHandler
-    onFocus: React.FocusEventHandler
-    onBlur: React.FocusEventHandler
-    onKeyDown: React.KeyboardEventHandler
-    onKeyUp: React.KeyboardEventHandler
+    onChange: ChangeEventHandler
+    onFocus: FocusEventHandler
+    onBlur: FocusEventHandler
+    onKeyDown: KeyboardEventHandler
+    onKeyUp: KeyboardEventHandler
   }>
 }

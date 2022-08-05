@@ -3,8 +3,11 @@ import styled from '@emotion/styled'
 
 export { styled, createCache }
 
-export * from '@emotion/styled'
-export * from '@emotion/react'
+export type { CSSObject, Interpolation, StyledOptions } from '@emotion/styled'
+
+export type { Theme } from '@emotion/react'
+
+export { ThemeProvider, CacheProvider, Global, useTheme } from '@emotion/react'
 
 export {
   flush,

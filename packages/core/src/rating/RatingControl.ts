@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { Component, FC, MouseEventHandler } from 'react'
 
 export interface RatingControlProps {
   value: number
@@ -8,9 +8,9 @@ export interface RatingControlProps {
   children: FC<{
     items: Array<{
       active: boolean
-      onClick?: React.MouseEventHandler
-      onMouseEnter?: React.MouseEventHandler
-      onMouseLeave?: React.MouseEventHandler
+      onClick?: MouseEventHandler
+      onMouseEnter?: MouseEventHandler
+      onMouseLeave?: MouseEventHandler
     }>
   }>
 }
@@ -19,7 +19,7 @@ export interface RatingControlState {
   hovered: number
 }
 
-export class RatingControl extends React.Component<
+export class RatingControl extends Component<
   RatingControlProps,
   RatingControlState
 > {
@@ -29,7 +29,7 @@ export class RatingControl extends React.Component<
     hovered: -1,
   }
 
-  private onItemClick: (index: number) => React.MouseEventHandler =
+  private onItemClick: (index: number) => MouseEventHandler =
     (index) => (event) => {
       event.preventDefault()
       if (this.props.onChange) {
@@ -37,13 +37,13 @@ export class RatingControl extends React.Component<
       }
     }
 
-  private onItemMouseLeave: React.MouseEventHandler = () => {
+  private onItemMouseLeave: MouseEventHandler = () => {
     this.setState({
       hovered: -1,
     })
   }
 
-  private onItemMouseEnter: (index: number) => React.MouseEventHandler =
+  private onItemMouseEnter: (index: number) => MouseEventHandler =
     (index) => () => {
       this.setState({
         hovered: index,

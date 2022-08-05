@@ -5,10 +5,9 @@ import {
   OverlayProps,
   Pos,
   SimpleTransition,
-  SimpleTransitionProps,
   Value,
 } from '@qiwi/pijma-core'
-import React, { FC } from 'react'
+import React, { FC, ReactElement } from 'react'
 
 export interface DropDownProps {
   show: boolean
@@ -20,32 +19,33 @@ export interface DropDownProps {
   stub?: boolean
   target: OverlayProps['target']
   container: OverlayProps['container']
-  children: React.ReactElement
+  children: ReactElement
   onHide: () => void
 }
 
-const Transition: FC<SimpleTransitionProps> = (props) => (
-  <SimpleTransition {...props} />
+const Transition: OverlayProps['transition'] = (props) => (
+  <SimpleTransition
+    {...props}
+    timeout={{
+      enter: 300,
+      exit: 200,
+    }}
+    enterClassName={(timeout: number) =>
+      css({
+        opacity: 1,
+        transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+      })
+    }
+    exitClassName={(timeout: number) =>
+      css({
+        opacity: 0,
+        transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+      })
+    }
+  />
 )
 
 Transition.displayName = 'Transition'
-
-Transition.defaultProps = {
-  timeout: {
-    enter: 300,
-    exit: 200,
-  },
-  enterClassName: (timeout: number) =>
-    css({
-      opacity: 1,
-      transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-    }),
-  exitClassName: (timeout: number) =>
-    css({
-      opacity: 0,
-      transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-    }),
-}
 
 export const DropDown: FC<DropDownProps> = ({
   show,
@@ -71,6 +71,14 @@ export const DropDown: FC<DropDownProps> = ({
       rootClose={rootClose}
       onHide={onHide}
       transition={Transition}
+      popperConfig={{
+        modifiers: [
+          {
+            name: 'preventOverflow',
+            enabled: false,
+          },
+        ],
+      }}
       children={(renderProps) => (
         <Pos
           role="listbox"

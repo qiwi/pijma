@@ -1,9 +1,14 @@
-import React from 'react'
+import {
+  ChangeEventHandler,
+  Component,
+  FocusEventHandler,
+  KeyboardEventHandler,
+} from 'react'
 
 import { TextFieldControlProps } from './TextFieldControlProps'
 import { TextFieldControlState } from './TextFieldControlState'
 
-export class TextFieldControl extends React.Component<
+export class TextFieldControl extends Component<
   TextFieldControlProps,
   TextFieldControlState
 > {
@@ -13,16 +18,14 @@ export class TextFieldControl extends React.Component<
     focused: false,
   }
 
-  private onChange: React.ChangeEventHandler<HTMLInputElement> = (
-    e: React.ChangeEvent<HTMLInputElement>,
-  ) => {
+  private onChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     e.preventDefault()
     if (this.props.onChange) {
       this.props.onChange(e.currentTarget.value)
     }
   }
 
-  private onFocus: React.FocusEventHandler = (e: React.FocusEvent) => {
+  private onFocus: FocusEventHandler = (e) => {
     this.setState({
       focused: true,
     })
@@ -32,7 +35,7 @@ export class TextFieldControl extends React.Component<
     }
   }
 
-  private onBlur: React.FocusEventHandler = (e: React.FocusEvent) => {
+  private onBlur: FocusEventHandler = (e) => {
     this.setState({
       focused: false,
     })
@@ -42,17 +45,13 @@ export class TextFieldControl extends React.Component<
     }
   }
 
-  private onKeyDown: React.KeyboardEventHandler = (
-    event: React.KeyboardEvent,
-  ) => {
+  private onKeyDown: KeyboardEventHandler<HTMLInputElement> = (event) => {
     if (this.props.onKeyDown && this.props.onKeyDown(event)) {
       event.preventDefault()
     }
   }
 
-  private onKeyUp: React.KeyboardEventHandler = (
-    event: React.KeyboardEvent,
-  ) => {
+  private onKeyUp: KeyboardEventHandler<HTMLInputElement> = (event) => {
     if (this.props.onKeyUp && this.props.onKeyUp(event)) {
       event.preventDefault()
     }

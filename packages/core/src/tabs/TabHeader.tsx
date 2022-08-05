@@ -1,4 +1,9 @@
-import React, { forwardRef } from 'react'
+import React, {
+  FocusEventHandler,
+  forwardRef,
+  KeyboardEventHandler,
+  MouseEventHandler,
+} from 'react'
 
 import { Breaker } from '../breaker'
 import { Icon, IconProps } from '../icon'
@@ -17,12 +22,12 @@ export interface TabProps {
   focus?: boolean
   width?: number
   stub?: boolean
-  onFocus?: React.FocusEventHandler
-  onBlur?: React.FocusEventHandler
-  onMouseEnter?: React.MouseEventHandler
-  onMouseLeave?: React.MouseEventHandler
-  onKeyDown?: React.KeyboardEventHandler
-  onClick?: React.MouseEventHandler
+  onFocus?: FocusEventHandler
+  onBlur?: FocusEventHandler
+  onMouseEnter?: MouseEventHandler
+  onMouseLeave?: MouseEventHandler
+  onKeyDown?: KeyboardEventHandler
+  onClick?: MouseEventHandler
 }
 
 export const TabHeader = forwardRef<HTMLDivElement, TabProps>(

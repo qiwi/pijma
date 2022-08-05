@@ -1,21 +1,28 @@
-import React, { FC } from 'react'
+import {
+  ChangeEventHandler,
+  FC,
+  FocusEventHandler,
+  KeyboardEvent,
+  KeyboardEventHandler,
+  RefObject,
+} from 'react'
 
 export interface TextAreaFieldControlProps {
   value: string
   onChange?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void
-  onKeyDown?: (event: React.KeyboardEvent) => boolean
-  onKeyUp?: (event: React.KeyboardEvent) => boolean
+  onKeyDown?: (event: KeyboardEvent<HTMLTextAreaElement>) => boolean
+  onKeyUp?: (event: KeyboardEvent<HTMLTextAreaElement>) => boolean
   children: FC<{
     rows: number
     focused: boolean
     animate: boolean
-    ref: React.RefObject<HTMLTextAreaElement>
-    onChange: React.ChangeEventHandler
-    onFocus: React.FocusEventHandler
-    onBlur: React.FocusEventHandler
-    onKeyDown: React.KeyboardEventHandler
-    onKeyUp: React.KeyboardEventHandler
+    ref: RefObject<HTMLTextAreaElement>
+    onChange: ChangeEventHandler
+    onFocus: FocusEventHandler
+    onBlur: FocusEventHandler
+    onKeyDown: KeyboardEventHandler
+    onKeyUp: KeyboardEventHandler
   }>
 }

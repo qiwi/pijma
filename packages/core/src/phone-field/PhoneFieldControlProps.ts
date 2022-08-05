@@ -1,4 +1,10 @@
-import React, { FC, RefObject } from 'react'
+import {
+  ChangeEventHandler,
+  FC,
+  FocusEventHandler,
+  MouseEventHandler,
+  RefObject,
+} from 'react'
 
 import { FlagProps } from '../flag'
 import { Mask } from '../mask'
@@ -19,9 +25,9 @@ export interface PhoneFieldControlProps {
         ref: RefObject<HTMLDivElement>
         selected: boolean
         focused: boolean
-        onClick: React.MouseEventHandler
-        onMouseEnter: React.MouseEventHandler
-        onMouseLeave: React.MouseEventHandler
+        onClick: MouseEventHandler
+        onMouseEnter: MouseEventHandler
+        onMouseLeave: MouseEventHandler
       }
     >
     focused: boolean
@@ -29,11 +35,11 @@ export interface PhoneFieldControlProps {
     containerRef: RefObject<HTMLDivElement>
     inputRef: RefObject<HTMLInputElement>
     dropdownRef: RefObject<HTMLDivElement>
-    onChange: React.ChangeEventHandler
-    onFocus: React.FocusEventHandler
-    onBlur: React.FocusEventHandler
-    onFlagClick: React.MouseEventHandler
-    onFlagMouseDown: React.MouseEventHandler
+    onChange: ChangeEventHandler
+    onFocus: FocusEventHandler
+    onBlur: FocusEventHandler
+    onFlagClick: MouseEventHandler
+    onFlagMouseDown: MouseEventHandler
     mask: Mask
     onCountriesHide: () => void
     onSelectCountry: (index: number) => void

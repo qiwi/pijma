@@ -1,8 +1,10 @@
+import { CSSProperties } from 'react'
+
 import { CSSObject, styled, StyledOptions } from '../styled'
 import { pxValue } from './Value'
 
 export interface TypoProps {
-  css?: CSSObject
+  css?: CSSObject | CSSProperties
   display?: 'block' | 'inline' | 'inline-block'
   size?: number
   height?: number

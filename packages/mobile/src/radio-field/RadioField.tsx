@@ -9,12 +9,12 @@ import {
   Spacer,
   Stub,
 } from '@qiwi/pijma-core'
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
 import { RadioFieldOptionModel } from './RadioFieldOptionModel'
 import { RadioFieldProps } from './RadioFieldProps'
 
-export const RadioField: FunctionComponent<
+export const RadioField: FC<
   RadioFieldProps<RadioFieldOptionModel<any>, any>
 > = (props) =>
   props.stub ? (

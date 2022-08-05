@@ -1,4 +1,12 @@
-import { Component, createRef, RefObject } from 'react'
+import {
+  ChangeEventHandler,
+  Component,
+  createRef,
+  FocusEventHandler,
+  KeyboardEventHandler,
+  MouseEventHandler,
+  RefObject,
+} from 'react'
 
 import { SuggestControlProps } from './SuggestControlProps'
 import { SuggestControlState } from './SuggestControlState'
@@ -24,12 +32,12 @@ export class SuggestControl<
     return this.props.items === undefined ? [] : this.props.items
   }
 
-  private onRequest: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+  private onRequest: ChangeEventHandler<HTMLInputElement> = (event) => {
     event.preventDefault()
     this.request(event.currentTarget.value)
   }
 
-  private onSelect: (index: number) => void = (index: number) => {
+  private onSelect: (index: number) => void = (index) => {
     const item = this.items[index]
     if (item.suggest) {
       this.request(item.suggest)
@@ -41,14 +49,14 @@ export class SuggestControl<
     }
   }
 
-  private onShowFocus: React.FocusEventHandler = (event) => {
+  private onShowFocus: FocusEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       show: true,
     })
   }
 
-  private onInputFocus: React.FocusEventHandler = (event) => {
+  private onInputFocus: FocusEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       focused: true,
@@ -58,7 +66,7 @@ export class SuggestControl<
     }
   }
 
-  private onInputBlur: React.FocusEventHandler = (event) => {
+  private onInputBlur: FocusEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       focused: false,
@@ -68,7 +76,7 @@ export class SuggestControl<
     }
   }
 
-  private onModalInputBlur: React.FocusEventHandler = (event) => {
+  private onModalInputBlur: FocusEventHandler = (event) => {
     event.preventDefault()
     if (this.inputRef && this.inputRef.current) {
       this.inputRef.current.focus({ preventScroll: true })
@@ -78,21 +86,21 @@ export class SuggestControl<
     }
   }
 
-  private onInputMouseEnter: React.MouseEventHandler = (event) => {
+  private onInputMouseEnter: MouseEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       hovered: true,
     })
   }
 
-  private onInputMouseLeave: React.MouseEventHandler = (event) => {
+  private onInputMouseLeave: MouseEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       hovered: false,
     })
   }
 
-  private onItemKeyDown: React.KeyboardEventHandler = (event) => {
+  private onItemKeyDown: KeyboardEventHandler = (event) => {
     if (event.key === 'Enter') {
       this.submit()
     }
@@ -101,13 +109,13 @@ export class SuggestControl<
     }
   }
 
-  private onModalItemKeyDown: React.KeyboardEventHandler = (event) => {
+  private onModalItemKeyDown: KeyboardEventHandler = (event) => {
     if (event.key === 'Enter') {
       this.submit()
     }
   }
 
-  private onResultItemsMouseDown: React.MouseEventHandler = (event) => {
+  private onResultItemsMouseDown: MouseEventHandler = (event) => {
     event.preventDefault()
     event.stopPropagation()
   }
@@ -124,7 +132,7 @@ export class SuggestControl<
     }
   }
 
-  private onSearchClick: React.MouseEventHandler = (event) => {
+  private onSearchClick: MouseEventHandler = (event) => {
     event.preventDefault()
     this.submit()
   }
@@ -179,7 +187,7 @@ export class SuggestControl<
     return index !== -1 ? index : undefined
   }
 
-  private onBack: React.MouseEventHandler = (event) => {
+  private onBack: MouseEventHandler = (event) => {
     event.preventDefault()
     this.cancel()
   }
@@ -195,7 +203,7 @@ export class SuggestControl<
     this.show()
   }
 
-  private onShowClick: React.MouseEventHandler = (event) => {
+  private onShowClick: MouseEventHandler = (event) => {
     event.preventDefault()
     event.stopPropagation()
     this.setState({

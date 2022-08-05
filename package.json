@@ -22,12 +22,8 @@
     "puppeteer": "15.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "term-img": "5.0.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn lint"
-    }
+    "term-img": "5.0.0",
+    "yargs": "17.5.1"
   },
   "repository": {
     "type": "git",
@@ -38,5 +34,5 @@
     "url": "https://github.com/qiwi/pijma/issues"
   },
   "homepage": "https://github.com/qiwi/pijma/#readme",
-  "packageManager": "yarn@4.0.0-rc.13"
+  "packageManager": "yarn@4.0.0-rc.14"
 }

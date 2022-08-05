@@ -10,12 +10,12 @@ import {
   Stub,
   Tumbler,
 } from '@qiwi/pijma-core'
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
 import { SwitchFieldOptionModel } from './SwitchFieldOptionModel'
 import { SwitchFieldProps } from './SwitchFieldProps'
 
-export const SwitchField: FunctionComponent<
+export const SwitchField: FC<
   SwitchFieldProps<SwitchFieldOptionModel<any>, any>
 > = (props) =>
   props.stub ? (

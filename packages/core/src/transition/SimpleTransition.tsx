@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Children, cloneElement, FC, isValidElement } from 'react'
 import { Transition } from 'react-transition-group'
 
 import { cx } from '../styled'
@@ -48,13 +48,14 @@ const statusClassName = (
   return undefined
 }
 
-export const SimpleTransition: React.FunctionComponent<
-  SimpleTransitionProps
-> = ({ children, ...props }) => (
+export const SimpleTransition: FC<SimpleTransitionProps> = ({
+  children,
+  ...props
+}) => (
   <Transition {...props}>
-    {React.isValidElement(children) && React.Children.only(children)
+    {isValidElement(children) && Children.only(children)
       ? (status) =>
-          React.cloneElement(children, {
+          cloneElement(children, {
             className: cx(
               children.props.className,
               statusClassName(status, props),
