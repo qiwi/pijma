@@ -10,7 +10,7 @@ import {
   SelectInput,
   styled,
 } from '@qiwi/pijma-core'
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 import { DropUp } from '../drop-up'
 import { MenuItem } from '../menu'
@@ -41,7 +41,7 @@ export interface SelectFieldItemModel<V> extends OptionModel<V> {
   text: string
 }
 
-export const SelectField: FunctionComponent<
+export const SelectField: FC<
   SelectFieldProps<SelectFieldItemModel<any>, any>
 > = (props) =>
   props.stub ? (

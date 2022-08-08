@@ -1,5 +1,5 @@
 import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 export interface TextProps {
   display?: 'block' | 'inline' | 'inline-block'
@@ -76,7 +76,7 @@ const TextColor: { [color in NonNullable<TextProps['color']>]: string } = {
   warning: '#ff8c00',
 }
 
-export const Text: FunctionComponent<TextProps> = ({
+export const Text: FC<TextProps> = ({
   display,
   compact,
   size,

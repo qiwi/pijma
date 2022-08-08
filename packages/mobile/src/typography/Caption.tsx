@@ -1,5 +1,5 @@
 import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 export interface CaptionProps {
   color?: 'default' | 'support' | 'inverse'
@@ -16,7 +16,7 @@ const CaptionColor: { [color in NonNullable<CaptionProps['color']>]: string } =
     inverse: '#fff',
   }
 
-export const Caption: FunctionComponent<CaptionProps> = ({
+export const Caption: FC<CaptionProps> = ({
   color = 'support',
   align,
   stub,

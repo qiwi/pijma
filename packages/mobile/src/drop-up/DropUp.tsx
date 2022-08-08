@@ -7,26 +7,14 @@ import {
   FlexPos,
   Icon,
   Modal,
+  ModalProps,
   Pos,
   SimpleTransition,
-  SimpleTransitionProps,
   styled,
 } from '@qiwi/pijma-core'
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FC, KeyboardEventHandler, ReactNode } from 'react'
 
 import { Paragraph } from '../typography'
-
-const ContentTransitionVertical: FunctionComponent<SimpleTransitionProps> = (
-  props,
-) => <SimpleTransition {...props} />
-
-ContentTransitionVertical.displayName = 'ContentTransitionVertical'
-
-const ContentTransitionHorizontal: FunctionComponent<SimpleTransitionProps> = (
-  props,
-) => <SimpleTransition {...props} />
-
-ContentTransitionHorizontal.displayName = 'ContentTransitionHorizontal'
 
 const translate3d = {
   vertical: '0, 100%, 0',
@@ -52,32 +40,41 @@ const defaultProps = (direction: 'vertical' | 'horizontal') => ({
     }),
 })
 
-ContentTransitionVertical.defaultProps = defaultProps('vertical')
+const ContentTransitionVertical: ModalProps['transition'] = (props) => (
+  <SimpleTransition {...props} {...defaultProps('vertical')} />
+)
 
-ContentTransitionHorizontal.defaultProps = defaultProps('horizontal')
+ContentTransitionVertical.displayName = 'ContentTransitionVertical'
 
-const BackdropTransition: FunctionComponent<SimpleTransitionProps> = (
-  props,
-) => <SimpleTransition {...props} />
+const ContentTransitionHorizontal: ModalProps['transition'] = (props) => (
+  <SimpleTransition {...props} {...defaultProps('horizontal')} />
+)
+
+ContentTransitionHorizontal.displayName = 'ContentTransitionHorizontal'
+
+const BackdropTransition: ModalProps['backdropTransition'] = (props) => (
+  <SimpleTransition
+    {...props}
+    timeout={{
+      enter: 370,
+      exit: 250,
+    }}
+    enterClassName={(timeout: number) =>
+      css({
+        opacity: 1,
+        transition: `opacity ${timeout}ms ease`,
+      })
+    }
+    exitClassName={(timeout: number) =>
+      css({
+        opacity: 0,
+        transition: `opacity ${timeout}ms ease`,
+      })
+    }
+  />
+)
 
 BackdropTransition.displayName = 'BackdropTransition'
-
-BackdropTransition.defaultProps = {
-  timeout: {
-    enter: 370,
-    exit: 250,
-  },
-  enterClassName: (timeout: number) =>
-    css({
-      opacity: 1,
-      transition: `opacity ${timeout}ms ease`,
-    }),
-  exitClassName: (timeout: number) =>
-    css({
-      opacity: 0,
-      transition: `opacity ${timeout}ms ease`,
-    }),
-}
 
 export interface DropUpProps {
   show: boolean
@@ -88,7 +85,7 @@ export interface DropUpProps {
   title: string
   footer?: ReactNode
   autoFocus?: boolean
-  onKeyDown?: React.KeyboardEventHandler
+  onKeyDown?: KeyboardEventHandler
   children?: ReactNode
 }
 
@@ -96,7 +93,7 @@ const FlexPosCard = styled(FlexPos)().withComponent(Card)
 
 FlexPosCard.displayName = 'FlexPosCard'
 
-export const DropUp: FunctionComponent<DropUpProps> = (props) => (
+export const DropUp: FC<DropUpProps> = (props) => (
   <Modal
     show={props.show}
     autoFocus={props.autoFocus}

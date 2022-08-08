@@ -9,14 +9,14 @@ import {
   Input,
   MenuControl,
   Overlay,
+  OverlayProps,
   Pos,
   SimpleTransition,
-  SimpleTransitionProps,
   Spacer,
   styled,
   SuggestControl,
 } from '@qiwi/pijma-core'
-import React, { Fragment, FunctionComponent } from 'react'
+import React, { Fragment, isValidElement } from 'react'
 
 import { Link } from '../link'
 import { Markdown } from '../markdown'
@@ -29,28 +29,29 @@ const CardItem = styled(Card)().withComponent(MenuItem)
 
 CardItem.displayName = 'CardItem'
 
-const ContentTransition: FunctionComponent<SimpleTransitionProps> = (props) => (
-  <SimpleTransition {...props} />
+const ContentTransition: OverlayProps['transition'] = (props) => (
+  <SimpleTransition
+    {...props}
+    timeout={{
+      enter: 150,
+      exit: 150,
+    }}
+    enterClassName={(timeout: number) =>
+      css({
+        opacity: 1,
+        transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+      })
+    }
+    exitClassName={(timeout: number) =>
+      css({
+        opacity: 0,
+        transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+      })
+    }
+  />
 )
 
 ContentTransition.displayName = 'ContentTransition'
-
-ContentTransition.defaultProps = {
-  timeout: {
-    enter: 150,
-    exit: 150,
-  },
-  enterClassName: (timeout: number) =>
-    css({
-      opacity: 1,
-      transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-    }),
-  exitClassName: (timeout: number) =>
-    css({
-      opacity: 0,
-      transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-    }),
-}
 
 export const HeaderSuggest = <V extends {}>({
   equals = (a: V, b: V) => a === b,
@@ -62,12 +63,12 @@ export const HeaderSuggest = <V extends {}>({
     suggest={props.suggest}
     items={props.items}
     total={
-      React.isValidElement(props.total) || typeof props.total === 'string'
+      isValidElement(props.total) || typeof props.total === 'string'
         ? undefined
         : props.total
     }
     empty={
-      React.isValidElement(props.empty) || typeof props.empty === 'string'
+      isValidElement(props.empty) || typeof props.empty === 'string'
         ? undefined
         : props.empty
     }
@@ -85,7 +86,7 @@ export const HeaderSuggest = <V extends {}>({
         onSelect={renderProps.onItemSelect}
         onKeyDown={renderProps.onModalItemKeyDown}
         children={(menuRenderProps) => (
-          <React.Fragment>
+          <Fragment>
             <Box width={6} height={6} onClick={renderProps.onShowClick}>
               <Icon name="search" />
             </Box>
@@ -96,6 +97,14 @@ export const HeaderSuggest = <V extends {}>({
               rootClose={true}
               transition={ContentTransition}
               onHide={renderProps.onHide}
+              popperConfig={{
+                modifiers: [
+                  {
+                    name: 'preventOverflow',
+                    enabled: false,
+                  },
+                ],
+              }}
               children={(overlayRenderProps) => (
                 <Pos
                   type="absolute"
@@ -214,7 +223,7 @@ export const HeaderSuggest = <V extends {}>({
                           ) : null}
                           {props.total && menuRenderProps.items.length > 0 ? (
                             <Box px={6} pb={4}>
-                              {React.isValidElement(props.total) ? (
+                              {isValidElement(props.total) ? (
                                 props.total
                               ) : typeof props.total === 'string' ? (
                                 <Markdown children={props.total} />
@@ -237,7 +246,7 @@ export const HeaderSuggest = <V extends {}>({
                             menuRenderProps.items.length === 0 &&
                             props.items !== undefined ? (
                             <Box px={6} py={4}>
-                              {React.isValidElement(props.empty) ? (
+                              {isValidElement(props.empty) ? (
                                 props.empty
                               ) : typeof props.empty === 'string' ? (
                                 <Markdown children={props.empty} />
@@ -264,7 +273,7 @@ export const HeaderSuggest = <V extends {}>({
                 </Pos>
               )}
             />
-          </React.Fragment>
+          </Fragment>
         )}
       />
     )}

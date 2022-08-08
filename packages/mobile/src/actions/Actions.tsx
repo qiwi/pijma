@@ -1,12 +1,12 @@
 import { Box } from '@qiwi/pijma-core'
-import React, { Children, FunctionComponent, ReactNode } from 'react'
+import React, { Children, FC, ReactNode } from 'react'
 
 export interface ActionsProps {
   size: 'accent' | 'normal' | 'minor'
   children?: ReactNode
 }
 
-export const Actions: FunctionComponent<ActionsProps> = (props) => {
+export const Actions: FC<ActionsProps> = (props) => {
   const elements = Children.toArray(props.children).filter((child) => !!child)
   if (elements.length === 0) {
     return null

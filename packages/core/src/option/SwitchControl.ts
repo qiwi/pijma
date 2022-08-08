@@ -1,21 +1,27 @@
-import React, { FC } from 'react'
+import {
+  Component,
+  FC,
+  FocusEventHandler,
+  KeyboardEventHandler,
+  MouseEventHandler,
+} from 'react'
 
 export interface SwitchControlProps {
   disabled?: boolean
   tabIndex?: number
   checked: boolean
-  onFocus?: React.FocusEventHandler
-  onBlur?: React.FocusEventHandler
+  onFocus?: FocusEventHandler
+  onBlur?: FocusEventHandler
   onChange: (value: boolean) => void
   children: FC<{
     focused: boolean
     tabIndex?: number
-    onFocus: React.FocusEventHandler
-    onBlur: React.FocusEventHandler
-    onClick: React.MouseEventHandler
-    onMouseLeave: React.MouseEventHandler
-    onMouseEnter: React.MouseEventHandler
-    onKeyDown: React.KeyboardEventHandler
+    onFocus: FocusEventHandler
+    onBlur: FocusEventHandler
+    onClick: MouseEventHandler
+    onMouseLeave: MouseEventHandler
+    onMouseEnter: MouseEventHandler
+    onKeyDown: KeyboardEventHandler
   }>
 }
 
@@ -23,7 +29,7 @@ export interface SwitchControlState {
   focused: boolean
 }
 
-export class SwitchControl extends React.Component<
+export class SwitchControl extends Component<
   SwitchControlProps,
   SwitchControlState
 > {
@@ -33,9 +39,7 @@ export class SwitchControl extends React.Component<
     focused: false,
   }
 
-  private onFocus: React.FocusEventHandler<HTMLElement> = (
-    event: React.FocusEvent<HTMLElement>,
-  ) => {
+  private onFocus: FocusEventHandler<HTMLElement> = (event) => {
     this.setState({
       focused: true,
     })
@@ -46,9 +50,7 @@ export class SwitchControl extends React.Component<
     this.props.onFocus(event)
   }
 
-  private onBlur: React.FocusEventHandler<HTMLElement> = (
-    event: React.FocusEvent<HTMLElement>,
-  ) => {
+  private onBlur: FocusEventHandler<HTMLElement> = (event) => {
     this.setState({
       focused: false,
     })
@@ -80,9 +82,7 @@ export class SwitchControl extends React.Component<
     }
   }
 
-  private onKeyDown: React.KeyboardEventHandler<HTMLElement> = (
-    event: React.KeyboardEvent<HTMLElement>,
-  ) => {
+  private onKeyDown: KeyboardEventHandler<HTMLElement> = (event) => {
     switch (event.key) {
       case 'Enter':
       case ' ':

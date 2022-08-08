@@ -1,14 +1,14 @@
-import React, { FC } from 'react'
+import { FC, MouseEventHandler } from 'react'
 
 export interface OptionControlProps<V> {
   value: V
   disabled?: boolean
   onClick: (value: V) => void
   onMouseEnter: (value: V) => void
-  onMouseLeave: React.MouseEventHandler
+  onMouseLeave: MouseEventHandler
   children: FC<{
-    onClick: React.MouseEventHandler
-    onMouseEnter: React.MouseEventHandler
-    onMouseLeave: React.MouseEventHandler
+    onClick: MouseEventHandler
+    onMouseEnter: MouseEventHandler
+    onMouseLeave: MouseEventHandler
   }>
 }

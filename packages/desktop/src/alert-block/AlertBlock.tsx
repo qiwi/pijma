@@ -93,17 +93,15 @@ export const AlertBlock: FC<AlertBlockProps> = ({
                 onClick={renderProps.onCloseClick}
                 onMouseEnter={renderProps.onCloseMouseEnter}
                 onMouseLeave={renderProps.onCloseMouseLeave}
-                children={(
+                children={
                   <Icon
                     size={6}
                     color={type === 'promo' ? '#999' : '#666'}
                     name="cross-small"
                   />
-                )}
+                }
               />
-            ) : (
-              null
-            )}
+            ) : null}
           </FlexPos>
         </Block>
       )}

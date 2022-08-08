@@ -1,9 +1,9 @@
-import React from 'react'
+import { Component, FocusEventHandler, MouseEventHandler } from 'react'
 
 import { ButtonControlProps } from './ButtonControlProps'
 import { ButtonControlState } from './ButtonControlState'
 
-export class ButtonControl extends React.Component<
+export class ButtonControl extends Component<
   ButtonControlProps,
   ButtonControlState
 > {
@@ -15,19 +15,19 @@ export class ButtonControl extends React.Component<
     hover: false,
   }
 
-  private onMouseEnter: React.MouseEventHandler = () => {
+  private onMouseEnter: MouseEventHandler = () => {
     this.setState({
       hover: true,
     })
   }
 
-  private onMouseLeave: React.MouseEventHandler = () => {
+  private onMouseLeave: MouseEventHandler = () => {
     this.setState({
       hover: false,
     })
   }
 
-  private onClick: React.MouseEventHandler = (e: React.MouseEvent) => {
+  private onClick: MouseEventHandler = (e) => {
     this.setState({
       active: true,
       focus: true,
@@ -39,7 +39,7 @@ export class ButtonControl extends React.Component<
     }
   }
 
-  private onFocus: React.FocusEventHandler = (e: React.FocusEvent) => {
+  private onFocus: FocusEventHandler = (e) => {
     this.setState({
       focus: true,
     })
@@ -49,7 +49,7 @@ export class ButtonControl extends React.Component<
     }
   }
 
-  private onBlur: React.FocusEventHandler = (e: React.FocusEvent) => {
+  private onBlur: FocusEventHandler = (e) => {
     this.setState({
       active: false,
       focus: false,

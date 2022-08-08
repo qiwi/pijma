@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { Component, FC } from 'react'
 
 export interface PaginationControlProps {
   total: number
@@ -26,7 +26,7 @@ export interface PaginationControlProps {
   }>
 }
 
-export class PaginationControl extends React.Component<PaginationControlProps> {
+export class PaginationControl extends Component<PaginationControlProps> {
   public static displayName = 'PaginationControl'
 
   private onPageClick = (page: number, disabled: boolean) => {

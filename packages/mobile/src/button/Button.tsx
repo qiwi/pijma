@@ -10,7 +10,7 @@ import {
   Typo,
   useTheme,
 } from '@qiwi/pijma-core'
-import React, { Fragment, FunctionComponent, ReactElement } from 'react'
+import React, { cloneElement, FC, Fragment, ReactElement } from 'react'
 
 export interface ButtonProps {
   onClick?: () => void
@@ -82,7 +82,7 @@ const stubWidth: { [size in ButtonProps['size']]: number } = {
   minor: 19,
 }
 
-export const Button: FunctionComponent<ButtonProps> = (props) => {
+export const Button: FC<ButtonProps> = (props) => {
   const theme = useTheme()
 
   return props.stub ? (
@@ -232,7 +232,7 @@ export const Button: FunctionComponent<ButtonProps> = (props) => {
                           height={iconSize[props.size]}
                           transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
                           transform="translateZ(0)"
-                          children={React.cloneElement(props.icon, {
+                          children={cloneElement(props.icon, {
                             color: props.disabled
                               ? '#666'
                               : props.kind === 'brand'

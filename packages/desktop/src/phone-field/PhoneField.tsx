@@ -10,13 +10,13 @@ import {
   PhoneFieldControl,
   Pos,
 } from '@qiwi/pijma-core'
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
 import { DropDown } from '../drop-down'
 import { Paragraph } from '../typography'
 import { PhoneFieldProps } from './PhoneFieldProps'
 
-export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
+export const PhoneField: FC<PhoneFieldProps> = ({
   tabIndex = 0,
   code = 'ru',
   ...props
@@ -94,6 +94,7 @@ export const PhoneField: FunctionComponent<PhoneFieldProps> = ({
                 action={props.action}
               />
               <DropDown
+                minWidth={1}
                 offset={4}
                 container={() => renderProps.containerRef.current}
                 target={() => renderProps.inputRef.current!}

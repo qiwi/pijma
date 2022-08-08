@@ -1,4 +1,12 @@
-import React, { createRef, FC, RefObject } from 'react'
+import {
+  Component,
+  createRef,
+  FC,
+  FocusEventHandler,
+  KeyboardEventHandler,
+  MouseEventHandler,
+  RefObject,
+} from 'react'
 import { findDOMNode } from 'react-dom'
 
 export interface TabsControlProps {
@@ -6,18 +14,18 @@ export interface TabsControlProps {
   length: number
   onChange?: (selected: number) => void
   children: FC<{
-    onKeyDown: React.KeyboardEventHandler
+    onKeyDown: KeyboardEventHandler
     borderLeft: number
     borderWidth: number
     items: Array<{
       select: boolean
       focus: boolean
       ref: RefObject<HTMLDivElement>
-      onMouseEnter: React.MouseEventHandler
-      onMouseLeave: React.MouseEventHandler
-      onFocus: React.FocusEventHandler
-      onBlur: React.FocusEventHandler
-      onClick: React.MouseEventHandler
+      onMouseEnter: MouseEventHandler
+      onMouseLeave: MouseEventHandler
+      onFocus: FocusEventHandler
+      onBlur: FocusEventHandler
+      onClick: MouseEventHandler
     }>
   }>
 }
@@ -29,7 +37,7 @@ export interface TabsControlState {
   refs: RefObject<HTMLDivElement>[]
 }
 
-export class TabsControl extends React.Component<TabsControlProps> {
+export class TabsControl extends Component<TabsControlProps> {
   public static displayName = 'TabsControl'
 
   public state: TabsControlState = {
@@ -68,7 +76,7 @@ export class TabsControl extends React.Component<TabsControlProps> {
     }
   }
 
-  private onItemFocus: (index: number) => React.FocusEventHandler =
+  private onItemFocus: (index: number) => FocusEventHandler =
     (index) => (event) => {
       event.preventDefault()
       event.stopPropagation()
@@ -77,7 +85,7 @@ export class TabsControl extends React.Component<TabsControlProps> {
       })
     }
 
-  private onItemBlur: React.FocusEventHandler = (event) => {
+  private onItemBlur: FocusEventHandler = (event) => {
     event.preventDefault()
     event.stopPropagation()
     this.setState({
@@ -85,7 +93,7 @@ export class TabsControl extends React.Component<TabsControlProps> {
     })
   }
 
-  private onItemMouseEnter: (index: number) => React.MouseEventHandler =
+  private onItemMouseEnter: (index: number) => MouseEventHandler =
     (index) => (event) => {
       event.preventDefault()
       this.setState({
@@ -93,14 +101,14 @@ export class TabsControl extends React.Component<TabsControlProps> {
       })
     }
 
-  private onItemMouseLeave: React.MouseEventHandler = (event) => {
+  private onItemMouseLeave: MouseEventHandler = (event) => {
     event.preventDefault()
     this.setState({
       focused: -1,
     })
   }
 
-  private onItemClick: (select: number) => React.MouseEventHandler =
+  private onItemClick: (select: number) => MouseEventHandler =
     (select) => (event) => {
       event.preventDefault()
       if (this.props.onChange) {
@@ -108,9 +116,7 @@ export class TabsControl extends React.Component<TabsControlProps> {
       }
     }
 
-  private onKeyDown: React.KeyboardEventHandler<HTMLElement> = (
-    event: React.KeyboardEvent<HTMLElement>,
-  ) => {
+  private onKeyDown: KeyboardEventHandler<HTMLElement> = (event) => {
     switch (event.key) {
       case 'Enter':
       case ' ':

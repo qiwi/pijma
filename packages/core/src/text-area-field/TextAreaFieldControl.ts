@@ -1,9 +1,16 @@
-import React from 'react'
+import {
+  ChangeEventHandler,
+  Component,
+  createRef,
+  FocusEventHandler,
+  KeyboardEventHandler,
+  RefObject,
+} from 'react'
 
 import { TextAreaFieldControlProps } from './TextAreaFieldControlProps'
 import { TextAreaFieldControlState } from './TextAreaFieldControlState'
 
-export class TextAreaFieldControl extends React.Component<
+export class TextAreaFieldControl extends Component<
   TextAreaFieldControlProps,
   TextAreaFieldControlState
 > {
@@ -15,8 +22,8 @@ export class TextAreaFieldControl extends React.Component<
     animate: false,
   }
 
-  private field: React.RefObject<HTMLTextAreaElement> =
-    React.createRef<HTMLTextAreaElement>()
+  private field: RefObject<HTMLTextAreaElement> =
+    createRef<HTMLTextAreaElement>()
 
   public componentDidMount(): void {
     this.resize(false)
@@ -50,14 +57,14 @@ export class TextAreaFieldControl extends React.Component<
     })
   }
 
-  private onChange: React.ChangeEventHandler<HTMLTextAreaElement> = (event) => {
+  private onChange: ChangeEventHandler<HTMLTextAreaElement> = (event) => {
     event.preventDefault()
     if (this.props.onChange) {
       this.props.onChange(event.currentTarget.value)
     }
   }
 
-  private onFocus: React.FocusEventHandler<HTMLTextAreaElement> = (event) => {
+  private onFocus: FocusEventHandler<HTMLTextAreaElement> = (event) => {
     this.setState({
       focused: true,
     })
@@ -67,7 +74,7 @@ export class TextAreaFieldControl extends React.Component<
     }
   }
 
-  private onBlur: React.FocusEventHandler<HTMLTextAreaElement> = (event) => {
+  private onBlur: FocusEventHandler<HTMLTextAreaElement> = (event) => {
     this.setState({
       focused: false,
     })
@@ -77,15 +84,13 @@ export class TextAreaFieldControl extends React.Component<
     }
   }
 
-  private onKeyDown: React.KeyboardEventHandler<HTMLTextAreaElement> = (
-    event,
-  ) => {
+  private onKeyDown: KeyboardEventHandler<HTMLTextAreaElement> = (event) => {
     if (this.props.onKeyDown && this.props.onKeyDown(event)) {
       event.preventDefault()
     }
   }
 
-  private onKeyUp: React.KeyboardEventHandler = (event) => {
+  private onKeyUp: KeyboardEventHandler<HTMLTextAreaElement> = (event) => {
     if (this.props.onKeyUp && this.props.onKeyUp(event)) {
       event.preventDefault()
     }

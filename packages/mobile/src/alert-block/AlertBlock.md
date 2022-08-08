@@ -21,7 +21,9 @@
 ```
 
 ```jsx
-<AlertBlock type="info" onHide={() => {}}>Информационное сообщение с кнопкой "Закрыть"</AlertBlock>
+<AlertBlock type="info" onHide={() => {}}>
+  Информационное сообщение с кнопкой "Закрыть"
+</AlertBlock>
 ```
 
 ```jsx

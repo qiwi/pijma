@@ -16,7 +16,7 @@ yarn add @qiwi/pijma-mobile
 import React from 'react'
 import {cache, themes, fonts, reset, CacheProvider, ThemeProvider, Global, Button, TextField} from '@qiwi/pijma-mobile'
 
-export const App: React.FC = () => (
+export const App = () => (
   <CacheProvider value={cache}>
     <ThemeProvider theme={themes.orange}>
       <Global styles={[reset, fonts]}/>

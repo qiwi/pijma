@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
 import { CardPos } from '../primitive'
 import { keyframes } from '../styled'
@@ -14,10 +14,7 @@ interface ClockProps {
   bg?: string
 }
 
-export const Clock: FunctionComponent<ClockProps> = ({
-  size = 10,
-  bg = '#FFB800',
-}) => (
+export const Clock: FC<ClockProps> = ({ size = 10, bg = '#FFB800' }) => (
   <CardPos type="relative" width={size} height={size} r={size * 2} bg={bg}>
     <CardPos
       type="absolute"

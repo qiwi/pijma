@@ -5,11 +5,11 @@ import {
   InputField,
   PasswordFieldControl,
 } from '@qiwi/pijma-core'
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
 import { PasswordFieldProps } from './PasswordFieldProps'
 
-export const PasswordField: FunctionComponent<PasswordFieldProps> = (props) => (
+export const PasswordField: FC<PasswordFieldProps> = (props) => (
   <PasswordFieldControl
     onChange={props.onChange}
     onFocus={props.onFocus}

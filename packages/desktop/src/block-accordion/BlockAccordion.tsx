@@ -6,7 +6,7 @@ import {
   FlexItem,
   Icon,
 } from '@qiwi/pijma-core'
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 import { Paragraph } from '../typography'
 
@@ -33,7 +33,7 @@ const BlockAccordionIndent: {
   l: 17,
 }
 
-export const BlockAccordion: FunctionComponent<
+export const BlockAccordion: FC<
   BlockAccordionProps<BlockAccordionItemModel>
 > = ({ items, indent = 'm', tabIndex = 0, opened, onChange }) => (
   <AccordionControl<BlockAccordionItemModel>

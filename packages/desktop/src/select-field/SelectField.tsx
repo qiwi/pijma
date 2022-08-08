@@ -8,14 +8,14 @@ import {
   MenuControl,
   OptionModel,
   Overlay,
+  OverlayProps,
   Pos,
   SelectFieldControl,
   SelectInput,
   SimpleTransition,
-  SimpleTransitionProps,
   styled,
 } from '@qiwi/pijma-core'
-import React, { FC, FunctionComponent, ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 import { MenuItem } from '../menu'
 
@@ -44,44 +44,47 @@ export interface SelectFieldItemModel<V> extends OptionModel<V> {
   text: string
 }
 
-const Transition: FC<SimpleTransitionProps> = (props) => (
-  <SimpleTransition {...props} />
+const Transition: OverlayProps['transition'] = (props) => (
+  <SimpleTransition
+    {...props}
+    timeout={{
+      enter: 150,
+      exit: 150,
+    }}
+    enteringClassName={(timeout: number) =>
+      css({
+        opacity: 0,
+        transform: `translateY(${-12}px)`,
+        transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1), transform ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+      })
+    }
+    enteredClassName={(timeout: number) =>
+      css({
+        opacity: 1,
+        transform: `translateY(${0}px)`,
+        transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1), transform ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+      })
+    }
+    exitingClassName={(timeout: number) =>
+      css({
+        opacity: 0,
+        transform: `translateY(${-12}px)`,
+        transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1), transform ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+      })
+    }
+    exitedClassName={(timeout: number) =>
+      css({
+        opacity: 0,
+        transform: `translateY(${-12}px)`,
+        transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1), transform ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
+      })
+    }
+  />
 )
 
 Transition.displayName = 'Transition'
 
-Transition.defaultProps = {
-  timeout: {
-    enter: 150,
-    exit: 150,
-  },
-  enteringClassName: (timeout: number) =>
-    css({
-      opacity: 0,
-      transform: `translateY(${-12}px)`,
-      transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1), transform ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-    }),
-  enteredClassName: (timeout: number) =>
-    css({
-      opacity: 1,
-      transform: `translateY(${0}px)`,
-      transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1), transform ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-    }),
-  exitingClassName: (timeout: number) =>
-    css({
-      opacity: 0,
-      transform: `translateY(${-12}px)`,
-      transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1), transform ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-    }),
-  exitedClassName: (timeout: number) =>
-    css({
-      opacity: 0,
-      transform: `translateY(${-12}px)`,
-      transition: `opacity ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1), transform ${timeout}ms cubic-bezier(0.4, 0.0, 0.2, 1)`,
-    }),
-}
-
-export const SelectField: FunctionComponent<
+export const SelectField: FC<
   SelectFieldProps<SelectFieldItemModel<any>, any>
 > = (props) =>
   props.stub ? (
@@ -154,10 +157,15 @@ export const SelectField: FunctionComponent<
                 placement="bottom"
                 target={() => renderProps.targetRef.current!}
                 container={() => renderProps.containerRef.current}
-                popperConfig={{
-                  modifiers: { computeStyle: { gpuAcceleration: false } },
-                }}
                 transition={Transition}
+                popperConfig={{
+                  modifiers: [
+                    {
+                      name: 'preventOverflow',
+                      enabled: false,
+                    },
+                  ],
+                }}
                 children={(overlayRenderProps) => (
                   <CardPos
                     ref={overlayRenderProps.props.ref}

@@ -2,6 +2,7 @@ import React, {
   ChangeEvent,
   FocusEvent,
   ForwardedRef,
+  forwardRef,
   InputHTMLAttributes,
   PureComponent,
 } from 'react'
@@ -208,7 +209,7 @@ class MaskedInputComponent extends PureComponent<MaskedInputProps, {}> {
   }
 }
 
-export const MaskedInput = React.forwardRef<HTMLInputElement, MaskedInputProps>(
+export const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps>(
   (props, ref) => <MaskedInputComponent {...props} inputRef={ref} />,
 )
 

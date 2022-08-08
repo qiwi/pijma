@@ -1,16 +1,11 @@
-import React from 'react'
+import { Component, MouseEventHandler } from 'react'
 
 import { OptionControlProps } from './OptionControlProps'
 
-export class OptionControl<V> extends React.Component<
-  OptionControlProps<V>,
-  {}
-> {
+export class OptionControl<V> extends Component<OptionControlProps<V>, {}> {
   public static displayName = 'OptionControl'
 
-  private onClick: React.MouseEventHandler<HTMLElement> = (
-    event: React.MouseEvent<HTMLElement>,
-  ) => {
+  private onClick: MouseEventHandler = (event) => {
     event.preventDefault()
     event.stopPropagation()
     if (this.props.disabled) {
@@ -19,16 +14,14 @@ export class OptionControl<V> extends React.Component<
     this.props.onClick(this.props.value)
   }
 
-  private onMouseEnter: React.MouseEventHandler<HTMLElement> = () => {
+  private onMouseEnter: MouseEventHandler = () => {
     if (this.props.disabled) {
       return
     }
     this.props.onMouseEnter(this.props.value)
   }
 
-  private onMouseLeave: React.MouseEventHandler<HTMLElement> = (
-    event: React.MouseEvent<HTMLElement>,
-  ) => {
+  private onMouseLeave: MouseEventHandler = (event) => {
     if (this.props.disabled) {
       return
     }

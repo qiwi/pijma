@@ -1,16 +1,16 @@
-import React from 'react'
+import { Component, FocusEventHandler, KeyboardEventHandler } from 'react'
 
-import { CheckboxControlProps } from './CheckboxControlProps'
-import { CheckboxControlState } from './CheckboxControlState'
 import { OptionModel } from './OptionModel'
+import { RadioControlProps } from './RadioControlProps'
+import { RadioControlState } from './RadioControlState'
 
-export class CheckboxControl<
-  O extends OptionModel<V>,
-  V,
-> extends React.Component<CheckboxControlProps<O, V>, CheckboxControlState> {
-  public static displayName = 'CheckboxControl'
+export class RadioControl<O extends OptionModel<V>, V> extends Component<
+  RadioControlProps<O, V>,
+  RadioControlState
+> {
+  public static displayName = 'RadioControl'
 
-  public state: CheckboxControlState = {
+  public state: RadioControlState = {
     focused: -1,
   }
 
@@ -20,15 +20,11 @@ export class CheckboxControl<
 
   private onChange = (value: V) => {
     if (this.props.onChange) {
-      this.props.onChange(
-        this.props.values.includes(value)
-          ? this.props.values.filter((v) => !this.equals(v, value))
-          : this.props.values.concat(value),
-      )
+      this.props.onChange(value)
     }
   }
 
-  private onFocus: React.FocusEventHandler<HTMLElement> = () => {
+  private onFocus: FocusEventHandler<HTMLElement> = () => {
     if (this.state.focused === -1) {
       this.setState({
         focused: this.props.options.findIndex((option) => !option.disabled),
@@ -39,7 +35,7 @@ export class CheckboxControl<
     }
   }
 
-  private onBlur: React.FocusEventHandler<HTMLElement> = () => {
+  private onBlur: FocusEventHandler<HTMLElement> = () => {
     this.setState({
       focused: -1,
     })
@@ -48,9 +44,7 @@ export class CheckboxControl<
     }
   }
 
-  private onKeyDown: React.KeyboardEventHandler<HTMLElement> = (
-    event: React.KeyboardEvent<HTMLElement>,
-  ) => {
+  private onKeyDown: KeyboardEventHandler = (event) => {
     switch (event.key) {
       case 'ArrowDown':
         event.preventDefault()
@@ -133,10 +127,7 @@ export class CheckboxControl<
       onMouseLeave: this.onMouseLeave,
       options: this.props.options.map((option, index) => ({
         ...option,
-        checked:
-          this.props.values.findIndex((value) =>
-            this.equals(value, option.value),
-          ) !== -1,
+        checked: this.equals(this.props.value, option.value),
         focused: index === this.state.focused,
         onClick: this.onOptionClick,
         onMouseEnter: this.onOptionMouseEnter,

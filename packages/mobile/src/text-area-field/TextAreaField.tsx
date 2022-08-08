@@ -22,8 +22,8 @@ export interface TextAreaFieldProps {
   onChange?: (value: string) => void
   onFocus?: () => void
   onBlur?: () => void
-  onKeyDown?: (event: KeyboardEvent) => boolean
-  onKeyUp?: (event: KeyboardEvent) => boolean
+  onKeyDown?: (event: KeyboardEvent<HTMLTextAreaElement>) => boolean
+  onKeyUp?: (event: KeyboardEvent<HTMLTextAreaElement>) => boolean
 }
 
 export const TextAreaField: FC<TextAreaFieldProps> = (props) => (

@@ -5,11 +5,11 @@ import {
   OptionFieldItem,
   SwitchControl,
 } from '@qiwi/pijma-core'
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
 import { CheckboxProps } from './CheckboxProps'
 
-export const Checkbox: FunctionComponent<CheckboxProps> = (props) => (
+export const Checkbox: FC<CheckboxProps> = (props) => (
   <SwitchControl
     disabled={props.disabled}
     checked={props.checked}

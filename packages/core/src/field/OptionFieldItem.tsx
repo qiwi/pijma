@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, ReactNode } from 'react'
+import React, { FC, MouseEventHandler, ReactNode } from 'react'
 
 import { Breaker } from '../breaker'
 import { Box, Flex, Pos, Typo } from '../primitive'
@@ -14,7 +14,7 @@ export interface OptionFieldItemProps {
   onMouseLeave: MouseEventHandler
 }
 
-export const OptionFieldItem: React.FunctionComponent<OptionFieldItemProps> = ({
+export const OptionFieldItem: FC<OptionFieldItemProps> = ({
   disabled,
   icon,
   label,

@@ -1,12 +1,12 @@
-import React, { FC } from 'react'
+import { Component, FC, MouseEventHandler } from 'react'
 
 export interface AlertBlockControlProps {
   onHide?: () => void
   children: FC<{
     closeHover: boolean
-    onCloseClick: React.MouseEventHandler
-    onCloseMouseEnter: React.MouseEventHandler
-    onCloseMouseLeave: React.MouseEventHandler
+    onCloseClick: MouseEventHandler
+    onCloseMouseEnter: MouseEventHandler
+    onCloseMouseLeave: MouseEventHandler
   }>
 }
 
@@ -14,33 +14,33 @@ export interface AlertBlockControlState {
   closeHover: boolean
 }
 
-export class AlertBlockControl extends React.Component<AlertBlockControlProps> {
+export class AlertBlockControl extends Component<AlertBlockControlProps> {
   public static displayName = 'AlertBlockControl'
 
   public state: AlertBlockControlState = {
     closeHover: false,
   }
 
-  private onCloseClick: React.MouseEventHandler = (event) => {
+  private onCloseClick: MouseEventHandler = (event) => {
     event.preventDefault()
     if (this.props.onHide) {
       this.props.onHide()
     }
   }
 
-  private onCloseMouseEnter: React.MouseEventHandler = () => {
+  private onCloseMouseEnter: MouseEventHandler = () => {
     this.setState({
       closeHover: true,
     })
   }
 
-  private onCloseMouseLeave: React.MouseEventHandler = () => {
+  private onCloseMouseLeave: MouseEventHandler = () => {
     this.setState({
       closeHover: false,
     })
   }
 
-  public render () {
+  public render() {
     return this.props.children({
       closeHover: this.state.closeHover,
       onCloseClick: this.onCloseClick,

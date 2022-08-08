@@ -1,16 +1,21 @@
-import React from 'react'
+import {
+  Component,
+  FocusEventHandler,
+  KeyboardEventHandler,
+  MouseEventHandler,
+} from 'react'
 
+import { CheckboxControlProps } from './CheckboxControlProps'
+import { CheckboxControlState } from './CheckboxControlState'
 import { OptionModel } from './OptionModel'
-import { RadioControlProps } from './RadioControlProps'
-import { RadioControlState } from './RadioControlState'
 
-export class RadioControl<O extends OptionModel<V>, V> extends React.Component<
-  RadioControlProps<O, V>,
-  RadioControlState
+export class CheckboxControl<O extends OptionModel<V>, V> extends Component<
+  CheckboxControlProps<O, V>,
+  CheckboxControlState
 > {
-  public static displayName = 'RadioControl'
+  public static displayName = 'CheckboxControl'
 
-  public state: RadioControlState = {
+  public state: CheckboxControlState = {
     focused: -1,
   }
 
@@ -20,11 +25,15 @@ export class RadioControl<O extends OptionModel<V>, V> extends React.Component<
 
   private onChange = (value: V) => {
     if (this.props.onChange) {
-      this.props.onChange(value)
+      this.props.onChange(
+        this.props.values.includes(value)
+          ? this.props.values.filter((v) => !this.equals(v, value))
+          : this.props.values.concat(value),
+      )
     }
   }
 
-  private onFocus: React.FocusEventHandler<HTMLElement> = () => {
+  private onFocus: FocusEventHandler = () => {
     if (this.state.focused === -1) {
       this.setState({
         focused: this.props.options.findIndex((option) => !option.disabled),
@@ -35,7 +44,7 @@ export class RadioControl<O extends OptionModel<V>, V> extends React.Component<
     }
   }
 
-  private onBlur: React.FocusEventHandler<HTMLElement> = () => {
+  private onBlur: FocusEventHandler = () => {
     this.setState({
       focused: -1,
     })
@@ -44,9 +53,7 @@ export class RadioControl<O extends OptionModel<V>, V> extends React.Component<
     }
   }
 
-  private onKeyDown: React.KeyboardEventHandler<HTMLElement> = (
-    event: React.KeyboardEvent<HTMLElement>,
-  ) => {
+  private onKeyDown: KeyboardEventHandler = (event) => {
     switch (event.key) {
       case 'ArrowDown':
         event.preventDefault()
@@ -93,7 +100,7 @@ export class RadioControl<O extends OptionModel<V>, V> extends React.Component<
     }
   }
 
-  private onMouseLeave = () => {
+  private onMouseLeave: MouseEventHandler = () => {
     this.setState({
       focused: -1,
     })
@@ -129,7 +136,10 @@ export class RadioControl<O extends OptionModel<V>, V> extends React.Component<
       onMouseLeave: this.onMouseLeave,
       options: this.props.options.map((option, index) => ({
         ...option,
-        checked: this.equals(this.props.value, option.value),
+        checked:
+          this.props.values.findIndex((value) =>
+            this.equals(value, option.value),
+          ) !== -1,
         focused: index === this.state.focused,
         onClick: this.onOptionClick,
         onMouseEnter: this.onOptionMouseEnter,

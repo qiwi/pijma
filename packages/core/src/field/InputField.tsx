@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 import { Box, Card, Flex, FlexItem, Pos, Typo } from '../primitive'
 import { Stub } from '../stub'
@@ -15,7 +15,7 @@ export interface FieldProps {
   stub?: boolean
 }
 
-export const InputField: FunctionComponent<FieldProps> = ({
+export const InputField: FC<FieldProps> = ({
   title,
   active,
   input,

@@ -8,45 +8,46 @@ import {
   Icon,
   Input,
   Modal,
+  ModalProps,
   Pos,
   SimpleTransition,
-  SimpleTransitionProps,
   styled,
 } from '@qiwi/pijma-core'
 import React, {
   ChangeEventHandler,
+  FC,
   FocusEventHandler,
-  FunctionComponent,
   KeyboardEventHandler,
   MouseEventHandler,
   ReactNode,
   RefObject,
 } from 'react'
 
-const ContentTransition: FunctionComponent<SimpleTransitionProps> = (props) => (
-  <SimpleTransition {...props} />
+const ContentTransition: ModalProps['transition'] = (props) => (
+  <SimpleTransition
+    {...props}
+    timeout={{
+      enter: 370,
+      exit: 250,
+    }}
+    enterClassName={(timeout: number) =>
+      css({
+        opacity: 1,
+        transform: 'translate3d(0, 0, 0)',
+        transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
+      })
+    }
+    exitClassName={(timeout: number) =>
+      css({
+        opacity: 0,
+        transform: 'translate3d(0, -100%, 0)',
+        transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
+      })
+    }
+  />
 )
 
 ContentTransition.displayName = 'ContentTransition'
-
-ContentTransition.defaultProps = {
-  timeout: {
-    enter: 370,
-    exit: 250,
-  },
-  enterClassName: (timeout: number) =>
-    css({
-      opacity: 1,
-      transform: 'translate3d(0, 0, 0)',
-      transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
-    }),
-  exitClassName: (timeout: number) =>
-    css({
-      opacity: 0,
-      transform: 'translate3d(0, -100%, 0)',
-      transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
-    }),
-}
 
 interface InputModalProps {
   value: string
@@ -64,7 +65,7 @@ interface InputModalProps {
   onBlur?: FocusEventHandler
   onBack?: MouseEventHandler
   onSubmit?: MouseEventHandler
-  onShow?: React.MouseEventHandler
+  onShow?: () => void
   onHide?: () => void
   onEscape?: () => void
   children?: ReactNode
@@ -74,7 +75,7 @@ const PosFlexCard = styled(CardPos)().withComponent(Flex)
 
 PosFlexCard.displayName = 'PosFlexCard'
 
-export const InputModal: FunctionComponent<InputModalProps> = (props) => (
+export const InputModal: FC<InputModalProps> = (props) => (
   <Modal
     show={props.show}
     onShow={props.onShow}

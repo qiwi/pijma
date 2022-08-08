@@ -1,5 +1,5 @@
 import { Box, Image, MarkdownToJSX, styled } from '@qiwi/pijma-core'
-import React, { Children, FC, ReactNode } from 'react'
+import React, { Children, FC, Fragment, ReactNode } from 'react'
 
 import { Link } from '../link'
 import { List } from '../list'
@@ -104,8 +104,8 @@ const del: FC<SizeProps> = ({ children }) => (
 del.displayName = 'del'
 
 const li: FC<SizeProps> = ({ size, children }) => (
-  <React.Fragment>
-    {React.Children.map(children, (child, i) => (
+  <Fragment>
+    {Children.map(children, (child, i) => (
       <MarkdownBox key={i} mt={SizeMargin[size]}>
         {typeof child === 'string' ? (
           <Paragraph key={i} size={size} children={child} />
@@ -114,7 +114,7 @@ const li: FC<SizeProps> = ({ size, children }) => (
         )}
       </MarkdownBox>
     ))}
-  </React.Fragment>
+  </Fragment>
 )
 
 li.displayName = 'li'

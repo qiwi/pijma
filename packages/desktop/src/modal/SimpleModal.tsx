@@ -4,59 +4,61 @@ import {
   css,
   Icon,
   Modal,
+  ModalProps,
   Pos,
   SimpleTransition,
-  SimpleTransitionProps,
 } from '@qiwi/pijma-core'
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react'
 
-const ContentTransition: FunctionComponent<SimpleTransitionProps> = (props) => (
-  <SimpleTransition {...props} />
+const ContentTransition: ModalProps['transition'] = (props) => (
+  <SimpleTransition
+    {...props}
+    timeout={{
+      enter: 370,
+      exit: 250,
+    }}
+    enterClassName={(timeout: number) =>
+      css({
+        opacity: 1,
+        transform: 'translate3d(0, 0, 0)',
+        transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
+      })
+    }
+    exitClassName={(timeout: number) =>
+      css({
+        opacity: 0,
+        transform: 'translate3d(0, 35px, 0)',
+        transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
+      })
+    }
+  />
 )
 
 ContentTransition.displayName = 'ContentTransition'
 
-ContentTransition.defaultProps = {
-  timeout: {
-    enter: 370,
-    exit: 250,
-  },
-  enterClassName: (timeout: number) =>
-    css({
-      opacity: 1,
-      transform: 'translate3d(0, 0, 0)',
-      transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
-    }),
-  exitClassName: (timeout: number) =>
-    css({
-      opacity: 0,
-      transform: 'translate3d(0, 35px, 0)',
-      transition: `opacity ${timeout}ms ease, transform ${timeout}ms ease`,
-    }),
-}
-
-const BackdropTransition: FunctionComponent<SimpleTransitionProps> = (
-  props,
-) => <SimpleTransition {...props} />
+const BackdropTransition: ModalProps['backdropTransition'] = (props) => (
+  <SimpleTransition
+    {...props}
+    timeout={{
+      enter: 370,
+      exit: 250,
+    }}
+    enterClassName={(timeout: number) =>
+      css({
+        opacity: 1,
+        transition: `opacity ${timeout}ms ease`,
+      })
+    }
+    exitClassName={(timeout: number) =>
+      css({
+        opacity: 0,
+        transition: `opacity ${timeout}ms ease`,
+      })
+    }
+  />
+)
 
 BackdropTransition.displayName = 'BackdropTransition'
-
-BackdropTransition.defaultProps = {
-  timeout: {
-    enter: 370,
-    exit: 250,
-  },
-  enterClassName: (timeout: number) =>
-    css({
-      opacity: 1,
-      transition: `opacity ${timeout}ms ease`,
-    }),
-  exitClassName: (timeout: number) =>
-    css({
-      opacity: 0,
-      transition: `opacity ${timeout}ms ease`,
-    }),
-}
 
 interface SimpleModalProps {
   show: boolean
@@ -77,7 +79,7 @@ const ModalWidth: { [size in NonNullable<SimpleModalProps['size']>]: number } =
     l: 170,
   }
 
-export const SimpleModal: FunctionComponent<SimpleModalProps> = (props) =>
+export const SimpleModal: FC<SimpleModalProps> = (props) =>
   props.stub ? (
     <Box display="none">{props.children}</Box>
   ) : (

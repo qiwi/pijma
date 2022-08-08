@@ -5,10 +5,10 @@ import {
   FlexCard,
   FlexItem,
   Modal,
+  ModalProps,
   OffsetScrollControl,
   Pos,
   SimpleTransition,
-  SimpleTransitionProps,
 } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
 
@@ -55,34 +55,32 @@ const defaultProps = (direction: HeaderMenuProps['from']) => ({
     }),
 })
 
-const ContentTransitionTop: FC<SimpleTransitionProps> = (props) => (
-  <SimpleTransition {...props} />
-)
-
-const ContentTransitionRight: FC<SimpleTransitionProps> = (props) => (
-  <SimpleTransition {...props} />
-)
-
-const ContentTransitionBottom: FC<SimpleTransitionProps> = (props) => (
-  <SimpleTransition {...props} />
-)
-
-const ContentTransitionLeft: FC<SimpleTransitionProps> = (props) => (
-  <SimpleTransition {...props} />
+const ContentTransitionTop: ModalProps['transition'] = (props) => (
+  <SimpleTransition {...props} {...defaultProps('top')} />
 )
 
 ContentTransitionTop.displayName = 'ContentTransitionTop'
+
+const ContentTransitionRight: ModalProps['transition'] = (props) => (
+  <SimpleTransition {...props} {...defaultProps('right')} />
+)
+
 ContentTransitionRight.displayName = 'ContentTransitionRight'
+
+const ContentTransitionBottom: ModalProps['transition'] = (props) => (
+  <SimpleTransition {...props} {...defaultProps('bottom')} />
+)
+
 ContentTransitionBottom.displayName = 'ContentTransitionBottom'
+
+const ContentTransitionLeft: ModalProps['transition'] = (props) => (
+  <SimpleTransition {...props} {...defaultProps('left')} />
+)
+
 ContentTransitionLeft.displayName = 'ContentTransitionLeft'
 
-ContentTransitionTop.defaultProps = defaultProps('top')
-ContentTransitionRight.defaultProps = defaultProps('right')
-ContentTransitionBottom.defaultProps = defaultProps('bottom')
-ContentTransitionLeft.defaultProps = defaultProps('left')
-
 const ContentTransition: {
-  [direction in HeaderMenuProps['from']]: FC<SimpleTransitionProps>
+  [direction in HeaderMenuProps['from']]: ModalProps['transition']
 } = {
   top: ContentTransitionTop,
   right: ContentTransitionRight,

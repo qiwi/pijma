@@ -6,7 +6,7 @@ import {
   FlexItem,
   Icon,
 } from '@qiwi/pijma-core'
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 import { Paragraph } from '../typography'
 
@@ -22,7 +22,7 @@ export interface BlockAccordionItemModel {
   content: ReactNode
 }
 
-export const BlockAccordion: FunctionComponent<
+export const BlockAccordion: FC<
   BlockAccordionProps<BlockAccordionItemModel>
 > = ({ items, tabIndex = 0, opened, onChange }) => (
   <AccordionControl<BlockAccordionItemModel>

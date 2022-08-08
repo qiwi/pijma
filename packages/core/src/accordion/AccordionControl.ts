@@ -1,21 +1,27 @@
-import React, { FC } from 'react'
+import {
+  Component,
+  FC,
+  FocusEventHandler,
+  KeyboardEventHandler,
+  MouseEventHandler,
+} from 'react'
 
 export interface AccordionControlProps<I> {
   items: I[]
   opened: number[]
   onChange: (opened: number[]) => void
   children: FC<{
-    onKeyDown: React.KeyboardEventHandler
+    onKeyDown: KeyboardEventHandler
     items: Array<
       I & {
         opened: boolean
         hovered: boolean
         focused: boolean
-        onClick: React.MouseEventHandler
-        onMouseEnter: React.MouseEventHandler
-        onMouseLeave: React.MouseEventHandler
-        onFocus: React.FocusEventHandler
-        onBlur: React.FocusEventHandler
+        onClick: MouseEventHandler
+        onMouseEnter: MouseEventHandler
+        onMouseLeave: MouseEventHandler
+        onFocus: FocusEventHandler
+        onBlur: FocusEventHandler
       }
     >
   }>
@@ -26,7 +32,7 @@ export interface AccordionControlState {
   focused: number
 }
 
-export class AccordionControl<I> extends React.Component<
+export class AccordionControl<I> extends Component<
   AccordionControlProps<I>,
   AccordionControlState
 > {
@@ -37,19 +43,19 @@ export class AccordionControl<I> extends React.Component<
     focused: -1,
   }
 
-  private onFocus = (index: number) => () => {
+  private onFocus: (index: number) => FocusEventHandler = (index) => () => {
     this.setState({
       focused: index,
     })
   }
 
-  private onBlur = () => {
+  private onBlur: FocusEventHandler = () => {
     this.setState({
       focused: -1,
     })
   }
 
-  private onChange = (index: number) => {
+  private onChange: (index: number) => void = (index) => {
     const { opened } = this.props
     this.props.onChange(
       opened.includes(index)
@@ -58,27 +64,26 @@ export class AccordionControl<I> extends React.Component<
     )
   }
 
-  private onItemClick =
-    (index: number) => (event: React.MouseEvent<HTMLElement>) => {
+  private onItemClick: (index: number) => MouseEventHandler =
+    (index) => (event) => {
       event.preventDefault()
       this.onChange(index)
     }
 
-  private onItemMouseEnter = (index: number) => () => {
-    this.setState({
-      hovered: index,
-    })
-  }
+  private onItemMouseEnter: (index: number) => MouseEventHandler =
+    (index) => () => {
+      this.setState({
+        hovered: index,
+      })
+    }
 
-  private onItemMouseLeave = () => {
+  private onItemMouseLeave: MouseEventHandler = () => {
     this.setState({
       hovered: -1,
     })
   }
 
-  private onKeyDown: React.KeyboardEventHandler<HTMLElement> = (
-    event: React.KeyboardEvent<HTMLElement>,
-  ) => {
+  private onKeyDown: KeyboardEventHandler<HTMLElement> = (event) => {
     switch (event.key) {
       case 'Enter':
       case ' ':

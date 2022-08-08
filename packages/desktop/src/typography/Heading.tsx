@@ -1,5 +1,5 @@
 import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
-import React, { Fragment, FunctionComponent, ReactNode } from 'react'
+import React, { FC, Fragment, ReactNode } from 'react'
 
 export interface HeadingProps {
   tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
@@ -75,7 +75,7 @@ const HeadingColor: { [color in NonNullable<HeadingProps['color']>]: string } =
     inverse: '#fff',
   }
 
-export const Heading: FunctionComponent<HeadingProps> = ({
+export const Heading: FC<HeadingProps> = ({
   tag,
   size,
   color = 'default',

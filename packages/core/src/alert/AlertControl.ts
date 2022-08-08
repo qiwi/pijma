@@ -1,12 +1,12 @@
-import React, { FC } from 'react'
+import { Component, FC, MouseEventHandler } from 'react'
 
 export interface AlertControlProps {
   onHide?: () => void
   children: FC<{
     hover: boolean
-    onClick: React.MouseEventHandler
-    onMouseEnter: React.MouseEventHandler
-    onMouseLeave: React.MouseEventHandler
+    onClick: MouseEventHandler
+    onMouseEnter: MouseEventHandler
+    onMouseLeave: MouseEventHandler
   }>
 }
 
@@ -14,27 +14,27 @@ export interface AlertControlState {
   hover: boolean
 }
 
-export class AlertControl extends React.Component<AlertControlProps> {
+export class AlertControl extends Component<AlertControlProps> {
   public static displayName = 'AlertControl'
 
   public state: AlertControlState = {
     hover: false,
   }
 
-  private onClick: React.MouseEventHandler = (event) => {
+  private onClick: MouseEventHandler = (event) => {
     event.preventDefault()
     if (this.props.onHide) {
       this.props.onHide()
     }
   }
 
-  private onItemMouseEnter: React.MouseEventHandler = () => {
+  private onItemMouseEnter: MouseEventHandler = () => {
     this.setState({
       hover: true,
     })
   }
 
-  private onItemMouseLeave: React.MouseEventHandler = () => {
+  private onItemMouseLeave: MouseEventHandler = () => {
     this.setState({
       hover: false,
     })

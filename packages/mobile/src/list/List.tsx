@@ -1,5 +1,5 @@
 import { Box, Card, Flex, FlexItem, Stub } from '@qiwi/pijma-core'
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react'
 
 import { Paragraph, Text } from '../typography'
 
@@ -64,7 +64,7 @@ const StubBulletIndent: Record<NonNullable<ListProps['size']>, number> = {
   l: 3,
 }
 
-export const List: FunctionComponent<ListProps> = ({
+export const List: FC<ListProps> = ({
   stub = false,
   type,
   size = 'm',

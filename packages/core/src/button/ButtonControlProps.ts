@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, FocusEventHandler, MouseEventHandler } from 'react'
 
 export interface ButtonControlProps {
   onClick?: () => void
@@ -8,10 +8,10 @@ export interface ButtonControlProps {
     active: boolean
     focus: boolean
     hover: boolean
-    onClick: React.MouseEventHandler
-    onFocus: React.FocusEventHandler
-    onBlur: React.FocusEventHandler
-    onMouseEnter: React.MouseEventHandler
-    onMouseLeave: React.MouseEventHandler
+    onClick: MouseEventHandler
+    onFocus: FocusEventHandler
+    onBlur: FocusEventHandler
+    onMouseEnter: MouseEventHandler
+    onMouseLeave: MouseEventHandler
   }>
 }

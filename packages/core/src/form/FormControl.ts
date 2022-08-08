@@ -1,16 +1,16 @@
-import React, { FC } from 'react'
+import { Component, FC, FormEventHandler } from 'react'
 
 export interface FormControlProps {
   onSubmit?: () => void
   children: FC<{
-    onSubmit: React.FormEventHandler
+    onSubmit: FormEventHandler
   }>
 }
 
-export class FormControl extends React.Component<FormControlProps> {
+export class FormControl extends Component<FormControlProps> {
   public static displayName = 'FormControl'
 
-  private onSubmit: React.FormEventHandler = (event) => {
+  private onSubmit: FormEventHandler = (event) => {
     event.preventDefault()
     if (this.props.onSubmit) {
       this.props.onSubmit()

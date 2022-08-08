@@ -1,4 +1,5 @@
 import React, {
+  FC,
   FocusEventHandler,
   KeyboardEventHandler,
   ReactNode,
@@ -28,9 +29,7 @@ const Input = styled(Box, {
 
 Input.displayName = 'Input'
 
-export const OptionField: React.FunctionComponent<OptionFieldProps> = (
-  props,
-) => (
+export const OptionField: FC<OptionFieldProps> = (props) => (
   <Box>
     <Spacer size="s">
       {props.title ? (

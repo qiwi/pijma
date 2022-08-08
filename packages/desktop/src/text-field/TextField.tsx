@@ -1,9 +1,9 @@
 import { BasicInput, InputField, TextFieldControl } from '@qiwi/pijma-core'
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
 import { TextFieldProps } from './TextFieldProps'
 
-export const TextField: FunctionComponent<TextFieldProps> = (props) =>
+export const TextField: FC<TextFieldProps> = (props) =>
   props.stub ? (
     <InputField
       active={false}

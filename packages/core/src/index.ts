@@ -7,7 +7,6 @@ export * from './fonts'
 
 export * from './themes'
 
-export * from './waypoint'
 export * from './inview'
 export * from './markdown'
 

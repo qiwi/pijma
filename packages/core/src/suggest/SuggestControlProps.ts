@@ -1,4 +1,11 @@
-import React, { FC, RefObject } from 'react'
+import {
+  ChangeEventHandler,
+  FC,
+  FocusEventHandler,
+  KeyboardEventHandler,
+  MouseEventHandler,
+  RefObject,
+} from 'react'
 
 import { SuggestOptionModel } from './SuggestOptionModel'
 
@@ -35,19 +42,19 @@ export interface SuggestControlProps<O extends SuggestOptionModel<V>, V> {
     inputRef: RefObject<HTMLInputElement>
     containerRef: RefObject<HTMLDivElement>
     items: O[]
-    onShowFocus?: React.FocusEventHandler
-    onInputFocus?: React.FocusEventHandler
-    onInputBlur?: React.FocusEventHandler
-    onShowClick?: React.MouseEventHandler
-    onModalInputBlur?: React.FocusEventHandler
-    onSearchClick: React.MouseEventHandler
-    onBack?: React.MouseEventHandler
-    onInputMouseEnter: React.MouseEventHandler
-    onInputMouseLeave: React.MouseEventHandler
-    onItemKeyDown?: React.KeyboardEventHandler
-    onModalItemKeyDown?: React.KeyboardEventHandler
-    onRequest: React.ChangeEventHandler
-    onResultItemsMouseDown?: React.MouseEventHandler
+    onShowFocus?: FocusEventHandler
+    onInputFocus?: FocusEventHandler
+    onInputBlur?: FocusEventHandler
+    onShowClick?: MouseEventHandler
+    onModalInputBlur?: FocusEventHandler
+    onSearchClick: MouseEventHandler
+    onBack?: MouseEventHandler
+    onInputMouseEnter: MouseEventHandler
+    onInputMouseLeave: MouseEventHandler
+    onItemKeyDown?: KeyboardEventHandler
+    onModalItemKeyDown?: KeyboardEventHandler
+    onRequest: ChangeEventHandler
+    onResultItemsMouseDown?: MouseEventHandler
     onItemSelect: (index: number) => void
     onTotalClick: () => void
     onEmptyClick: () => void

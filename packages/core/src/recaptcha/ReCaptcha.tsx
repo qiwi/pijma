@@ -1,4 +1,4 @@
-import React, { PureComponent, RefObject } from 'react'
+import React, { createRef, PureComponent, RefObject } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 
 import { Card, Pos } from '../primitive'
@@ -32,9 +32,9 @@ const placeholder = keyframes({
 export class ReCaptcha extends PureComponent<ReCaptchaProps> {
   public static displayName = 'ReCaptcha'
 
-  private element: RefObject<ReCAPTCHA> = React.createRef()
+  private element: RefObject<ReCAPTCHA> = createRef()
 
-  private wrapper: RefObject<HTMLDivElement> = React.createRef()
+  private wrapper: RefObject<HTMLDivElement> = createRef()
 
   private onChange = (token: string | null) => {
     this.props.onChange(token === null ? undefined : token)

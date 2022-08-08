@@ -1,3 +1,5 @@
+import { CSSProperties } from 'react'
+
 import {
   CSSObject,
   Interpolation,
@@ -19,7 +21,7 @@ export type BoxDisplay =
   | 'table'
 
 export interface BoxProps {
-  css?: CSSObject
+  css?: CSSObject | CSSProperties
   display?: BoxDisplay
   m?: Value
   mt?: Value

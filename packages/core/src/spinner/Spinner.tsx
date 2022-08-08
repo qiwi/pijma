@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 
 import { Circle, Svg, Value } from '../primitive'
 import { keyframes } from '../styled'
@@ -31,7 +31,7 @@ export interface SpinnerProps {
   paused?: boolean
 }
 
-export const Spinner: FunctionComponent<SpinnerProps> = (props) => (
+export const Spinner: FC<SpinnerProps> = (props) => (
   <Svg
     viewBox="24 24 48 48"
     width={props.width}

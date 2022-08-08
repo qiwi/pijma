@@ -80,7 +80,11 @@ export const AlertBlock: FC<AlertBlockProps> = ({
           >
             <FlexItem mr={2}>{iconComponent}</FlexItem>
             <FlexItem my="2px">
-              <Paragraph size="s" bold color={type === 'promo' ? 'inverse' : 'default'}>
+              <Paragraph
+                size="s"
+                bold
+                color={type === 'promo' ? 'inverse' : 'default'}
+              >
                 <Breaker children={children} />
               </Paragraph>
             </FlexItem>
@@ -93,17 +97,15 @@ export const AlertBlock: FC<AlertBlockProps> = ({
                 onClick={renderProps.onCloseClick}
                 onMouseEnter={renderProps.onCloseMouseEnter}
                 onMouseLeave={renderProps.onCloseMouseLeave}
-                children={(
+                children={
                   <Icon
                     color={type === 'promo' ? '#999' : '#666'}
                     size={6}
                     name="cross-small"
                   />
-                )}
+                }
               />
-            ) : (
-              null
-            )}
+            ) : null}
           </FlexPos>
         </Block>
       )}
