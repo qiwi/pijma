@@ -678,7 +678,7 @@ __metadata:
     "@emotion/styled": "npm:^11.10.0"
     "@swc/helpers": "npm:^0.4.3"
     "@types/dom-helpers": "npm:^5.0.1"
-    "@types/react": "npm:18.0.15"
+    "@types/react": "npm:18.0.16"
     "@types/react-dom": "npm:18.0.6"
     "@types/react-google-recaptcha": "npm:^2.1.5"
     "@types/react-overlays": "npm:^3.1.0"
@@ -750,7 +750,7 @@ __metadata:
   resolution: "@qiwi/pijma-infra@workspace:packages/infra"
   dependencies:
     "@swc/cli": "npm:0.1.57"
-    "@swc/core": "npm:1.2.223"
+    "@swc/core": "npm:1.2.224"
     concurrently: "npm:7.3.0"
     css-loader: "npm:6.7.1"
     eslint: "npm:8.21.0"
@@ -878,126 +878,126 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-android-arm-eabi@npm:1.2.223":
-  version: 1.2.223
-  resolution: "@swc/core-android-arm-eabi@npm:1.2.223"
+"@swc/core-android-arm-eabi@npm:1.2.224":
+  version: 1.2.224
+  resolution: "@swc/core-android-arm-eabi@npm:1.2.224"
   dependencies:
     "@swc/wasm": "npm:1.2.122"
   conditions: os=android & cpu=arm
   languageName: node
   linkType: hard
 
-"@swc/core-android-arm64@npm:1.2.223":
-  version: 1.2.223
-  resolution: "@swc/core-android-arm64@npm:1.2.223"
+"@swc/core-android-arm64@npm:1.2.224":
+  version: 1.2.224
+  resolution: "@swc/core-android-arm64@npm:1.2.224"
   dependencies:
     "@swc/wasm": "npm:1.2.130"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-arm64@npm:1.2.223":
-  version: 1.2.223
-  resolution: "@swc/core-darwin-arm64@npm:1.2.223"
+"@swc/core-darwin-arm64@npm:1.2.224":
+  version: 1.2.224
+  resolution: "@swc/core-darwin-arm64@npm:1.2.224"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-x64@npm:1.2.223":
-  version: 1.2.223
-  resolution: "@swc/core-darwin-x64@npm:1.2.223"
+"@swc/core-darwin-x64@npm:1.2.224":
+  version: 1.2.224
+  resolution: "@swc/core-darwin-x64@npm:1.2.224"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-freebsd-x64@npm:1.2.223":
-  version: 1.2.223
-  resolution: "@swc/core-freebsd-x64@npm:1.2.223"
+"@swc/core-freebsd-x64@npm:1.2.224":
+  version: 1.2.224
+  resolution: "@swc/core-freebsd-x64@npm:1.2.224"
   dependencies:
     "@swc/wasm": "npm:1.2.130"
   conditions: os=freebsd & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm-gnueabihf@npm:1.2.223":
-  version: 1.2.223
-  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.2.223"
+"@swc/core-linux-arm-gnueabihf@npm:1.2.224":
+  version: 1.2.224
+  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.2.224"
   dependencies:
     "@swc/wasm": "npm:1.2.130"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-gnu@npm:1.2.223":
-  version: 1.2.223
-  resolution: "@swc/core-linux-arm64-gnu@npm:1.2.223"
+"@swc/core-linux-arm64-gnu@npm:1.2.224":
+  version: 1.2.224
+  resolution: "@swc/core-linux-arm64-gnu@npm:1.2.224"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-musl@npm:1.2.223":
-  version: 1.2.223
-  resolution: "@swc/core-linux-arm64-musl@npm:1.2.223"
+"@swc/core-linux-arm64-musl@npm:1.2.224":
+  version: 1.2.224
+  resolution: "@swc/core-linux-arm64-musl@npm:1.2.224"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-gnu@npm:1.2.223":
-  version: 1.2.223
-  resolution: "@swc/core-linux-x64-gnu@npm:1.2.223"
+"@swc/core-linux-x64-gnu@npm:1.2.224":
+  version: 1.2.224
+  resolution: "@swc/core-linux-x64-gnu@npm:1.2.224"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-musl@npm:1.2.223":
-  version: 1.2.223
-  resolution: "@swc/core-linux-x64-musl@npm:1.2.223"
+"@swc/core-linux-x64-musl@npm:1.2.224":
+  version: 1.2.224
+  resolution: "@swc/core-linux-x64-musl@npm:1.2.224"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@swc/core-win32-arm64-msvc@npm:1.2.223":
-  version: 1.2.223
-  resolution: "@swc/core-win32-arm64-msvc@npm:1.2.223"
+"@swc/core-win32-arm64-msvc@npm:1.2.224":
+  version: 1.2.224
+  resolution: "@swc/core-win32-arm64-msvc@npm:1.2.224"
   dependencies:
     "@swc/wasm": "npm:1.2.130"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@swc/core-win32-ia32-msvc@npm:1.2.223":
-  version: 1.2.223
-  resolution: "@swc/core-win32-ia32-msvc@npm:1.2.223"
+"@swc/core-win32-ia32-msvc@npm:1.2.224":
+  version: 1.2.224
+  resolution: "@swc/core-win32-ia32-msvc@npm:1.2.224"
   dependencies:
     "@swc/wasm": "npm:1.2.130"
   conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
-"@swc/core-win32-x64-msvc@npm:1.2.223":
-  version: 1.2.223
-  resolution: "@swc/core-win32-x64-msvc@npm:1.2.223"
+"@swc/core-win32-x64-msvc@npm:1.2.224":
+  version: 1.2.224
+  resolution: "@swc/core-win32-x64-msvc@npm:1.2.224"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
-"@swc/core@npm:1.2.223":
-  version: 1.2.223
-  resolution: "@swc/core@npm:1.2.223"
+"@swc/core@npm:1.2.224":
+  version: 1.2.224
+  resolution: "@swc/core@npm:1.2.224"
   dependencies:
-    "@swc/core-android-arm-eabi": "npm:1.2.223"
-    "@swc/core-android-arm64": "npm:1.2.223"
-    "@swc/core-darwin-arm64": "npm:1.2.223"
-    "@swc/core-darwin-x64": "npm:1.2.223"
-    "@swc/core-freebsd-x64": "npm:1.2.223"
-    "@swc/core-linux-arm-gnueabihf": "npm:1.2.223"
-    "@swc/core-linux-arm64-gnu": "npm:1.2.223"
-    "@swc/core-linux-arm64-musl": "npm:1.2.223"
-    "@swc/core-linux-x64-gnu": "npm:1.2.223"
-    "@swc/core-linux-x64-musl": "npm:1.2.223"
-    "@swc/core-win32-arm64-msvc": "npm:1.2.223"
-    "@swc/core-win32-ia32-msvc": "npm:1.2.223"
-    "@swc/core-win32-x64-msvc": "npm:1.2.223"
+    "@swc/core-android-arm-eabi": "npm:1.2.224"
+    "@swc/core-android-arm64": "npm:1.2.224"
+    "@swc/core-darwin-arm64": "npm:1.2.224"
+    "@swc/core-darwin-x64": "npm:1.2.224"
+    "@swc/core-freebsd-x64": "npm:1.2.224"
+    "@swc/core-linux-arm-gnueabihf": "npm:1.2.224"
+    "@swc/core-linux-arm64-gnu": "npm:1.2.224"
+    "@swc/core-linux-arm64-musl": "npm:1.2.224"
+    "@swc/core-linux-x64-gnu": "npm:1.2.224"
+    "@swc/core-linux-x64-musl": "npm:1.2.224"
+    "@swc/core-win32-arm64-msvc": "npm:1.2.224"
+    "@swc/core-win32-ia32-msvc": "npm:1.2.224"
+    "@swc/core-win32-x64-msvc": "npm:1.2.224"
   dependenciesMeta:
     "@swc/core-android-arm-eabi":
       optional: true
@@ -1027,7 +1027,7 @@ __metadata:
       optional: true
   bin:
     swcx: run_swcx.js
-  checksum: 799876a7ee031062233982212bac7877f098b1ee2ad2fb7006fe0b83af38b2c9833fce8c227327442eb5172396d5dbeac2c4f3cfc23e79c9bfc003abebc96dc8
+  checksum: 133f772108572f28e5e2b00f18862ed5041d545e34f7890011da938f581624e6dd6f0b78c725d2ce0727c317e6586301e9a261a4d4261e6c200e84e8cbe3b57e
   languageName: node
   linkType: hard
 
@@ -1209,14 +1209,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:18.0.15":
-  version: 18.0.15
-  resolution: "@types/react@npm:18.0.15"
+"@types/react@npm:18.0.16":
+  version: 18.0.16
+  resolution: "@types/react@npm:18.0.16"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 4c6dd07079c8403d8733450289a1fc1b5626af058261cf0128f8b6e0e600bcdd6b789d6304703eb9c1986236bee5f917ff4ca08559b45e06376c6871b7658f30
+  checksum: d041499f32b397c7ae2e2577672ebea2b4a048b440835ad3c43a978929bdbf887e6d2797fc3c05b06cb52b4f0b6cecd6c1db18de7a028705764de40ebd0d40a6
   languageName: node
   linkType: hard
 
@@ -2038,7 +2038,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"async@npm:^2.6.2":
+"async@npm:^2.6.4":
   version: 2.6.4
   resolution: "async@npm:2.6.4"
   dependencies:
@@ -3364,7 +3364,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:^3.1.0, debug@npm:^3.1.1, debug@npm:^3.2.7":
+"debug@npm:^3.1.0, debug@npm:^3.2.7":
   version: 3.2.7
   resolution: "debug@npm:3.2.7"
   dependencies:
@@ -5279,7 +5279,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"has-symbols@npm:^1.0.1, has-symbols@npm:^1.0.2, has-symbols@npm:^1.0.3":
+"has-symbols@npm:^1.0.2, has-symbols@npm:^1.0.3":
   version: 1.0.3
   resolution: "has-symbols@npm:1.0.3"
   checksum: 2d0abb3382da2945b1b8d9a4afebc8a0770fe07198e727b4fbd7f616c70796f040bf2bd8d6db47e0c590507812a2680594fc77f871238289f6c7870318cf62c9
@@ -7306,7 +7306,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mkdirp@npm:^0.5.1, mkdirp@npm:^0.5.3, mkdirp@npm:^0.5.5":
+"mkdirp@npm:^0.5.1, mkdirp@npm:^0.5.3, mkdirp@npm:^0.5.6":
   version: 0.5.6
   resolution: "mkdirp@npm:0.5.6"
   dependencies:
@@ -7688,14 +7688,14 @@ __metadata:
   linkType: hard
 
 "object.assign@npm:^4.1.2":
-  version: 4.1.2
-  resolution: "object.assign@npm:4.1.2"
+  version: 4.1.3
+  resolution: "object.assign@npm:4.1.3"
   dependencies:
-    call-bind: "npm:^1.0.0"
-    define-properties: "npm:^1.1.3"
-    has-symbols: "npm:^1.0.1"
+    call-bind: "npm:^1.0.2"
+    define-properties: "npm:^1.1.4"
+    has-symbols: "npm:^1.0.3"
     object-keys: "npm:^1.1.1"
-  checksum: e33de12dd0a3afa108ef089cbc0744625eddce4a9c0978d004e463fb1c70f3bebfd5fcd5459ee85abe95cd5066df7b4937b50c3fb4ff3439e225b9216d08f33f
+  checksum: 8bfa17d6f14be42b674bfaaef21f906f89a2eb8a0541d5069a6d55c68c3665513e40bc7c2739b487c6a6b108079600a2004c4fef0f2a8823e41647922eae6930
   languageName: node
   linkType: hard
 
@@ -8272,13 +8272,13 @@ __metadata:
   linkType: hard
 
 "portfinder@npm:^1.0.26":
-  version: 1.0.28
-  resolution: "portfinder@npm:1.0.28"
+  version: 1.0.29
+  resolution: "portfinder@npm:1.0.29"
   dependencies:
-    async: "npm:^2.6.2"
-    debug: "npm:^3.1.1"
-    mkdirp: "npm:^0.5.5"
-  checksum: 7013859036d3aabfce87b0b1c6f5fe5c638325b5f5fec2837516a57d1df1092414d95f3c1df7b960b411700566c807571853f570104231096a8362bfb138dd5a
+    async: "npm:^2.6.4"
+    debug: "npm:^3.2.7"
+    mkdirp: "npm:^0.5.6"
+  checksum: 96f5643b2d37d305c445c4c6ee5a581e87ca66956fce70a3666b7830395fddebe610e21d6884d50caf883bd2310599c99cb2ad3e07a9688e5348b65b26715de9
   languageName: node
   linkType: hard
 
@@ -8351,13 +8351,13 @@ __metadata:
   linkType: hard
 
 "postcss@npm:^8.4.7":
-  version: 8.4.14
-  resolution: "postcss@npm:8.4.14"
+  version: 8.4.16
+  resolution: "postcss@npm:8.4.16"
   dependencies:
     nanoid: "npm:^3.3.4"
     picocolors: "npm:^1.0.0"
     source-map-js: "npm:^1.0.2"
-  checksum: 1e1e4a4cc235674bea79da18dd3e02ea8ffcd51546c7ddf1fc7ba4de5e89154a83988bb8c1b30bd9566df56fc0077dce6e620d8f9ce6ababf60f659ffc53f72c
+  checksum: 474b2c445150bbbf75c67e4a539de41210ddb16d008f2f632820625a880c8c4d7b38361513c0e857e254ac921aac984256fcf1e4cce45a5d9f533b35d1c6bdaa
   languageName: node
   linkType: hard
 
