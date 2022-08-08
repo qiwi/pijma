@@ -1,3 +1,12 @@
+## [@qiwi/pijma-desktop@1.155.0](https://github.com/qiwi/pijma/compare/2022.8.4-qiwi.pijma-desktop.1.154.3-f0...2022.8.8-qiwi.pijma-desktop.1.155.0-f0) (2022-08-08)
+
+### Features
+* feat: up deps (#525) [d87926d9](https://github.com/qiwi/pijma/commit/d87926d9250475ab7009b0cd0bce7096d9dda117)
+
+### Dependencies
+* perf: @qiwi/pijma-core updated to 1.156.0
+* perf: @qiwi/pijma-infra updated to 1.10.0
+
 ## [@qiwi/pijma-desktop@1.154.3](https://github.com/qiwi/pijma/compare/2022.8.3-qiwi.pijma-desktop.1.154.2-f0...2022.8.4-qiwi.pijma-desktop.1.154.3-f0) (2022-08-04)
 
 ### Fixes & improvements
