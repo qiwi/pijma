@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Offset renders correctly 1`] = `
+<svg
+  className="css-1207ph5"
+  focusable="false"
+  viewBox="24 24 48 48"
+>
+  <circle
+    className="css-13o25m0"
+    cx="48"
+    cy="48"
+    fill="none"
+    r="20"
+    stroke="#ff8c00"
+    strokeDasharray="89, 200"
+    strokeDashoffset="0"
+    strokeLinecap="round"
+    strokeWidth="4"
+  />
+</svg>
+`;

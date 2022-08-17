@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DateRangePicker renders correctly 1`] = `
+<div
+  className="css-1b7d9rb"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  tabIndex={0}
+>
+  <div
+    className="css-wfjie5"
+  >
+    <div
+      className="css-1haykwu"
+    >
+      <div
+        className="css-1hy2az2"
+      >
+        <div
+          className="css-17ngkj6"
+        >
+          <label
+            className="css-1q7ur01"
+          >
+            Date
+          </label>
+        </div>
+      </div>
+      <div
+        className="css-1bx5ylf"
+      >
+        <div
+          className="css-70qvj9"
+        >
+          <input
+            autoComplete="off"
+            className="css-1haa77m"
+            disabled={false}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            type="text"
+            value="08.05.2019"
+          />
+          <div
+            className="css-t03j0v"
+          >
+            <div
+              onClick={[Function]}
+            >
+              <svg
+                className="css-9uy14h"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  className="css-0"
+                  d="M17 4h1.006A2.995 2.995 0 0 1 21 7.01v9.98A3.004 3.004 0 0 1 18.006 20H5.994A2.995 2.995 0 0 1 3 16.99V7.01A3.004 3.004 0 0 1 5.994 4H7V3a1 1 0 1 1 2 0v1h6V3a1 1 0 0 1 2 0v1zm0 2v1a1 1 0 0 1-2 0V6H9v1a1 1 0 1 1-2 0V6H5.994C5.45 6 5 6.45 5 7.01v9.98c0 .566.443 1.01.994 1.01h12.012c.545 0 .994-.45.994-1.01V7.01A.995.995 0 0 0 18.006 6H17zm-9 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm4 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm4 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm-8 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm4 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm4 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+                  fill="#000"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-1abbrc"
+      >
+        <div
+          className="css-13ulrxv"
+        >
+          <div
+            className="css-3fsgh8"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-1xm32e0"
+  />
+</div>
+`;

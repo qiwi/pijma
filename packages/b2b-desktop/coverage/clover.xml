@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1660749162689" clover="3.2.0">
+  <project timestamp="1660749162689" name="All files">
+    <metrics statements="527" coveredstatements="377" conditionals="224" coveredconditionals="89" methods="189" coveredmethods="86" elements="940" coveredelements="552" complexity="0" loc="527" ncloc="527" packages="29" files="40" classes="40"/>
+    <package name="main">
+      <metrics statements="28" coveredstatements="28" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/index.ts">
+        <metrics statements="28" coveredstatements="28" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="3" count="18" type="stmt"/>
+        <line num="4" count="18" type="stmt"/>
+        <line num="5" count="18" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
+        <line num="7" count="18" type="stmt"/>
+        <line num="8" count="18" type="stmt"/>
+        <line num="9" count="18" type="stmt"/>
+        <line num="10" count="18" type="stmt"/>
+        <line num="11" count="18" type="stmt"/>
+        <line num="12" count="18" type="stmt"/>
+        <line num="13" count="18" type="stmt"/>
+        <line num="14" count="18" type="stmt"/>
+        <line num="15" count="18" type="stmt"/>
+        <line num="16" count="18" type="stmt"/>
+        <line num="17" count="18" type="stmt"/>
+        <line num="18" count="18" type="stmt"/>
+        <line num="19" count="18" type="stmt"/>
+        <line num="20" count="18" type="stmt"/>
+        <line num="21" count="18" type="stmt"/>
+        <line num="22" count="18" type="stmt"/>
+        <line num="23" count="18" type="stmt"/>
+        <line num="24" count="18" type="stmt"/>
+        <line num="25" count="18" type="stmt"/>
+        <line num="26" count="18" type="stmt"/>
+        <line num="27" count="18" type="stmt"/>
+        <line num="28" count="18" type="stmt"/>
+        <line num="29" count="18" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.Icon">
+      <metrics statements="8" coveredstatements="8" conditionals="6" coveredconditionals="5" methods="4" coveredmethods="4"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/Icon/index.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="6" coveredconditionals="5" methods="4" coveredmethods="4"/>
+        <line num="5" count="18" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
+        <line num="10" count="18" type="stmt"/>
+        <line num="14" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.amount">
+      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/amount/index.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.checkbox">
+      <metrics statements="17" coveredstatements="8" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="2"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/checkbox/index.tsx">
+        <metrics statements="17" coveredstatements="8" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="4" count="18" type="stmt"/>
+        <line num="7" count="18" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="32" count="5" type="stmt"/>
+        <line num="33" count="5" type="stmt"/>
+        <line num="41" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.chip">
+      <metrics statements="7" coveredstatements="5" conditionals="3" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/chip/index.tsx">
+        <metrics statements="7" coveredstatements="5" conditionals="3" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
+        <line num="16" count="18" type="stmt"/>
+        <line num="21" count="18" type="cond" truecount="0" falsecount="1"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.date-picker">
+      <metrics statements="49" coveredstatements="30" conditionals="9" coveredconditionals="2" methods="20" coveredmethods="12"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/date-picker/index.tsx">
+        <metrics statements="42" coveredstatements="23" conditionals="9" coveredconditionals="2" methods="11" coveredmethods="3"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="3" count="18" type="stmt"/>
+        <line num="4" count="18" type="stmt"/>
+        <line num="5" count="18" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
+        <line num="8" count="18" type="stmt"/>
+        <line num="11" count="18" type="stmt"/>
+        <line num="12" count="18" type="stmt"/>
+        <line num="14" count="18" type="stmt"/>
+        <line num="22" count="18" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="76" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="83" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="84" count="0" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="91" count="1" type="stmt"/>
+        <line num="92" count="1" type="stmt"/>
+        <line num="93" count="1" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
+        <line num="118" count="0" type="stmt"/>
+        <line num="136" count="18" type="stmt"/>
+        <line num="138" count="2" type="stmt"/>
+      </file>
+      <file name="locale.ts" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/date-picker/locale.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="16" count="18" type="stmt"/>
+        <line num="26" count="18" type="stmt"/>
+      </file>
+      <file name="wrap.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/date-picker/wrap.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="3" count="18" type="stmt"/>
+        <line num="186" count="2" type="stmt"/>
+        <line num="190" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.date-range-picker">
+      <metrics statements="61" coveredstatements="43" conditionals="23" coveredconditionals="7" methods="14" coveredmethods="4"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/date-range-picker/index.tsx">
+        <metrics statements="61" coveredstatements="43" conditionals="23" coveredconditionals="7" methods="14" coveredmethods="4"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="3" count="18" type="stmt"/>
+        <line num="4" count="18" type="stmt"/>
+        <line num="5" count="18" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
+        <line num="12" count="18" type="stmt"/>
+        <line num="13" count="18" type="stmt"/>
+        <line num="14" count="18" type="stmt"/>
+        <line num="18" count="18" type="stmt"/>
+        <line num="51" count="18" type="stmt"/>
+        <line num="59" count="18" type="stmt"/>
+        <line num="64" count="18" type="stmt"/>
+        <line num="68" count="18" type="stmt"/>
+        <line num="75" count="18" type="stmt"/>
+        <line num="87" count="1" type="stmt"/>
+        <line num="88" count="1" type="stmt"/>
+        <line num="93" count="1" type="stmt"/>
+        <line num="94" count="1" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="101" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="105" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="109" count="1" type="stmt"/>
+        <line num="112" count="0" type="stmt"/>
+        <line num="115" count="1" type="stmt"/>
+        <line num="116" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="117" count="0" type="stmt"/>
+        <line num="120" count="0" type="stmt"/>
+        <line num="125" count="0" type="stmt"/>
+        <line num="126" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="128" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="129" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="133" count="1" type="stmt"/>
+        <line num="134" count="0" type="stmt"/>
+        <line num="135" count="0" type="stmt"/>
+        <line num="138" count="1" type="stmt"/>
+        <line num="139" count="0" type="stmt"/>
+        <line num="140" count="0" type="stmt"/>
+        <line num="144" count="1" type="stmt"/>
+        <line num="145" count="0" type="stmt"/>
+        <line num="149" count="1" type="stmt"/>
+        <line num="150" count="1" type="stmt"/>
+        <line num="151" count="1" type="stmt"/>
+        <line num="152" count="1" type="stmt"/>
+        <line num="153" count="1" type="stmt"/>
+        <line num="163" count="1" type="stmt"/>
+        <line num="164" count="1" type="stmt"/>
+        <line num="165" count="1" type="stmt"/>
+        <line num="166" count="1" type="stmt"/>
+        <line num="167" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="169" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="170" count="0" type="stmt"/>
+        <line num="172" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="173" count="0" type="stmt"/>
+        <line num="176" count="1" type="stmt"/>
+        <line num="209" count="0" type="stmt"/>
+        <line num="218" count="0" type="stmt"/>
+        <line num="237" count="18" type="stmt"/>
+        <line num="239" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.divider">
+      <metrics statements="7" coveredstatements="7" conditionals="8" coveredconditionals="5" methods="4" coveredmethods="4"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/divider/index.tsx">
+        <metrics statements="7" coveredstatements="7" conditionals="8" coveredconditionals="5" methods="4" coveredmethods="4"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="13" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="16" count="18" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.dropdown">
+      <metrics statements="31" coveredstatements="24" conditionals="10" coveredconditionals="3" methods="18" coveredmethods="7"/>
+      <file name="Container.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/dropdown/Container.tsx">
+        <metrics statements="16" coveredstatements="14" conditionals="6" coveredconditionals="3" methods="11" coveredmethods="3"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="3" count="18" type="stmt"/>
+        <line num="5" count="18" type="stmt"/>
+        <line num="8" count="18" type="stmt"/>
+        <line num="24" count="18" type="stmt"/>
+        <line num="28" count="18" type="stmt"/>
+        <line num="40" count="18" type="stmt"/>
+        <line num="45" count="18" type="stmt"/>
+        <line num="49" count="18" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="73" count="4" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="89" count="1" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/dropdown/index.tsx">
+        <metrics statements="15" coveredstatements="10" conditionals="4" coveredconditionals="0" methods="7" coveredmethods="4"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="4" count="18" type="stmt"/>
+        <line num="7" count="18" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="22" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="23" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="57" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.empty-page">
+      <metrics statements="7" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/empty-page/index.tsx">
+        <metrics statements="7" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="3" count="18" type="stmt"/>
+        <line num="5" count="18" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="45" count="18" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.error-message">
+      <metrics statements="8" coveredstatements="8" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/error-message/index.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="4" count="18" type="stmt"/>
+        <line num="7" count="18" type="stmt"/>
+        <line num="14" count="18" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.file-uploader">
+      <metrics statements="31" coveredstatements="13" conditionals="22" coveredconditionals="0" methods="18" coveredmethods="0"/>
+      <file name="FileUploaderControl.ts" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/file-uploader/FileUploaderControl.ts">
+        <metrics statements="9" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="5" count="18" type="stmt"/>
+        <line num="11" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="26" count="18" type="stmt"/>
+      </file>
+      <file name="FileUploaderStyles.ts" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/file-uploader/FileUploaderStyles.ts">
+        <metrics statements="8" coveredstatements="3" conditionals="10" coveredconditionals="0" methods="7" coveredmethods="0"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="3" count="18" type="stmt"/>
+        <line num="8" count="18" type="stmt"/>
+        <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
+      </file>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/file-uploader/index.tsx">
+        <metrics statements="14" coveredstatements="8" conditionals="8" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="3" count="18" type="stmt"/>
+        <line num="4" count="18" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
+        <line num="7" count="18" type="stmt"/>
+        <line num="9" count="18" type="stmt"/>
+        <line num="11" count="18" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.footer">
+      <metrics statements="15" coveredstatements="7" conditionals="6" coveredconditionals="0" methods="6" coveredmethods="0"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/footer/index.tsx">
+        <metrics statements="15" coveredstatements="7" conditionals="6" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="3" count="18" type="stmt"/>
+        <line num="5" count="18" type="stmt"/>
+        <line num="7" count="18" type="stmt"/>
+        <line num="14" count="18" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="31" count="18" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.header">
+      <metrics statements="13" coveredstatements="13" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/header/index.tsx">
+        <metrics statements="13" coveredstatements="13" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="4" count="18" type="stmt"/>
+        <line num="5" count="18" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
+        <line num="7" count="18" type="stmt"/>
+        <line num="8" count="18" type="stmt"/>
+        <line num="9" count="18" type="stmt"/>
+        <line num="12" count="18" type="stmt"/>
+        <line num="25" count="18" type="stmt"/>
+        <line num="31" count="5" type="stmt"/>
+        <line num="43" count="4" type="stmt"/>
+        <line num="45" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.logo">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/logo/index.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="4" count="18" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.menu">
+      <metrics statements="35" coveredstatements="25" conditionals="19" coveredconditionals="9" methods="7" coveredmethods="5"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/menu/index.tsx">
+        <metrics statements="35" coveredstatements="25" conditionals="19" coveredconditionals="9" methods="7" coveredmethods="5"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="4" count="18" type="stmt"/>
+        <line num="8" count="18" type="stmt"/>
+        <line num="15" count="18" type="stmt"/>
+        <line num="30" count="18" type="stmt"/>
+        <line num="55" count="18" type="stmt"/>
+        <line num="57" count="8" type="stmt"/>
+        <line num="59" count="8" type="stmt"/>
+        <line num="60" count="8" type="stmt"/>
+        <line num="61" count="8" type="stmt"/>
+        <line num="65" count="24" type="stmt"/>
+        <line num="66" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="70" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="74" count="8" type="stmt"/>
+        <line num="76" count="8" type="stmt"/>
+        <line num="88" count="24" type="cond" truecount="0" falsecount="1"/>
+        <line num="89" count="0" type="stmt"/>
+        <line num="97" count="24" type="cond" truecount="0" falsecount="1"/>
+        <line num="98" count="0" type="stmt"/>
+        <line num="99" count="0" type="stmt"/>
+        <line num="100" count="0" type="stmt"/>
+        <line num="101" count="0" type="stmt"/>
+        <line num="104" count="24" type="cond" truecount="1" falsecount="0"/>
+        <line num="105" count="24" type="stmt"/>
+        <line num="106" count="24" type="cond" truecount="3" falsecount="1"/>
+        <line num="107" count="24" type="stmt"/>
+        <line num="108" count="24" type="stmt"/>
+        <line num="109" count="24" type="cond" truecount="1" falsecount="1"/>
+        <line num="112" count="24" type="stmt"/>
+        <line num="125" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="127" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="132" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="133" count="0" type="stmt"/>
+        <line num="134" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.navigation-menu">
+      <metrics statements="15" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/navigation-menu/index.tsx">
+        <metrics statements="15" coveredstatements="15" conditionals="1" coveredconditionals="1" methods="3" coveredmethods="3"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="4" count="18" type="stmt"/>
+        <line num="7" count="18" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="17" count="8" type="stmt"/>
+        <line num="19" count="24" type="stmt"/>
+        <line num="20" count="24" type="stmt"/>
+        <line num="21" count="24" type="cond" truecount="1" falsecount="0"/>
+        <line num="22" count="16" type="stmt"/>
+        <line num="27" count="16" type="stmt"/>
+        <line num="29" count="24" type="stmt"/>
+        <line num="33" count="8" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.obfuscatedPan">
+      <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/obfuscatedPan/index.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="5" count="18" type="cond" truecount="0" falsecount="1"/>
+        <line num="6" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.offset">
+      <metrics statements="6" coveredstatements="6" conditionals="8" coveredconditionals="6" methods="5" coveredmethods="5"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/offset/index.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="8" coveredconditionals="6" methods="5" coveredmethods="5"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="5" count="18" type="stmt"/>
+        <line num="6" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="9" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="1"/>
+      </file>
+    </package>
+    <package name="main.paginator">
+      <metrics statements="27" coveredstatements="20" conditionals="14" coveredconditionals="7" methods="9" coveredmethods="5"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/paginator/index.tsx">
+        <metrics statements="27" coveredstatements="20" conditionals="14" coveredconditionals="7" methods="9" coveredmethods="5"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="3" count="18" type="stmt"/>
+        <line num="5" count="18" type="stmt"/>
+        <line num="8" count="18" type="stmt"/>
+        <line num="14" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="17" count="18" type="stmt"/>
+        <line num="31" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="53" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="58" count="2" type="stmt"/>
+        <line num="60" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="78" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="79" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="83" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="84" count="0" type="stmt"/>
+        <line num="98" count="1" type="stmt"/>
+        <line num="99" count="1" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="102" count="1" type="stmt"/>
+        <line num="104" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="106" count="1" type="stmt"/>
+        <line num="108" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="109" count="0" type="stmt"/>
+        <line num="112" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.product">
+      <metrics statements="22" coveredstatements="18" conditionals="8" coveredconditionals="6" methods="6" coveredmethods="3"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/product/index.tsx">
+        <metrics statements="22" coveredstatements="18" conditionals="8" coveredconditionals="6" methods="6" coveredmethods="3"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="4" count="18" type="stmt"/>
+        <line num="5" count="18" type="stmt"/>
+        <line num="9" count="18" type="stmt"/>
+        <line num="15" count="18" type="stmt"/>
+        <line num="21" count="18" type="stmt"/>
+        <line num="29" count="18" type="stmt"/>
+        <line num="35" count="18" type="stmt"/>
+        <line num="37" count="6" type="stmt"/>
+        <line num="40" count="5" type="stmt"/>
+        <line num="41" count="5" type="stmt"/>
+        <line num="44" count="5" type="stmt"/>
+        <line num="45" count="5" type="stmt"/>
+        <line num="46" count="5" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="61" count="5" type="stmt"/>
+        <line num="62" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="66" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.select">
+      <metrics statements="44" coveredstatements="24" conditionals="30" coveredconditionals="16" methods="13" coveredmethods="5"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/select/index.tsx">
+        <metrics statements="44" coveredstatements="24" conditionals="30" coveredconditionals="16" methods="13" coveredmethods="5"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="3" count="18" type="stmt"/>
+        <line num="4" count="18" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
+        <line num="10" count="18" type="stmt"/>
+        <line num="15" count="18" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="32" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="42" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="43" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="51" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="63" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="65" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="73" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="79" count="0" type="stmt"/>
+        <line num="93" count="1" type="stmt"/>
+        <line num="95" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="100" count="1" type="cond" truecount="4" falsecount="0"/>
+        <line num="103" count="1" type="stmt"/>
+        <line num="104" count="1" type="cond" truecount="1" falsecount="2"/>
+        <line num="105" count="0" type="stmt"/>
+        <line num="108" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.spinner">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/spinner/index.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="4" count="18" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.spreader">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/spreader/index.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="3" count="18" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.step">
+      <metrics statements="22" coveredstatements="7" conditionals="12" coveredconditionals="0" methods="7" coveredmethods="0"/>
+      <file name="StepStyle.ts" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/step/StepStyle.ts">
+        <metrics statements="13" coveredstatements="2" conditionals="9" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="5" count="18" type="stmt"/>
+        <line num="11" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="21" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/step/index.tsx">
+        <metrics statements="9" coveredstatements="5" conditionals="3" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="3" count="18" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
+        <line num="8" count="18" type="stmt"/>
+        <line num="9" count="0" type="cond" truecount="0" falsecount="1"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.stepper">
+      <metrics statements="20" coveredstatements="9" conditionals="13" coveredconditionals="0" methods="8" coveredmethods="0"/>
+      <file name="StepperControl.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/stepper/StepperControl.tsx">
+        <metrics statements="8" coveredstatements="3" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="5" count="18" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="24" count="18" type="stmt"/>
+      </file>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/stepper/index.tsx">
+        <metrics statements="12" coveredstatements="6" conditionals="9" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="4" count="18" type="stmt"/>
+        <line num="5" count="18" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
+        <line num="9" count="18" type="stmt"/>
+        <line num="15" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="28" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="43" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.theme">
+      <metrics statements="23" coveredstatements="22" conditionals="0" coveredconditionals="0" methods="22" coveredmethods="9"/>
+      <file name="color.ts" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/theme/color.ts">
+        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="5"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="3" count="18" type="stmt"/>
+        <line num="4" count="36" type="stmt"/>
+        <line num="11" count="54" type="stmt"/>
+        <line num="24" count="162" type="stmt"/>
+        <line num="37" count="18" type="stmt"/>
+        <line num="41" count="18" type="stmt"/>
+        <line num="43" count="18" type="stmt"/>
+        <line num="55" count="18" type="stmt"/>
+        <line num="67" count="18" type="stmt"/>
+        <line num="78" count="18" type="stmt"/>
+        <line num="83" count="54" type="stmt"/>
+      </file>
+      <file name="dimen.ts" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/theme/dimen.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="3" count="18" type="stmt"/>
+        <line num="5" count="18" type="stmt"/>
+      </file>
+      <file name="grid.ts" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/theme/grid.ts">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/theme/index.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+        <line num="1" count="308" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="3" count="22" type="stmt"/>
+      </file>
+      <file name="text.ts" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/theme/text.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="9" count="18" type="stmt"/>
+        <line num="11" count="18" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.trinary-check-icon">
+      <metrics statements="5" coveredstatements="5" conditionals="14" coveredconditionals="10" methods="3" coveredmethods="3"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/trinary-check-icon/index.tsx">
+        <metrics statements="5" coveredstatements="5" conditionals="14" coveredconditionals="10" methods="3" coveredmethods="3"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="53" count="18" type="stmt"/>
+      </file>
+    </package>
+    <package name="main.user-profile">
+      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="index.tsx" path="/Users/m.pismenskiy/projects/pijma/packages/b2b-desktop/src/main/user-profile/index.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="18" type="stmt"/>
+        <line num="2" count="18" type="stmt"/>
+        <line num="6" count="18" type="stmt"/>
+        <line num="13" count="18" type="stmt"/>
+        <line num="15" count="18" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

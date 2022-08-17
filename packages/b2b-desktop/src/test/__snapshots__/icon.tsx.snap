@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon renders correctly 1`] = `
+<div
+  className="css-3v1utt"
+>
+  <svg
+    className="css-1ouh3uu"
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <path
+      className="css-0"
+      d="M13 11h7a1 1 0 0 1 0 2h-7v7a1 1 0 0 1-2 0v-7H4a1 1 0 0 1 0-2h7V4a1 1 0 0 1 2 0v7z"
+      fill="#000"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Icon renders correctly 2`] = `
+<div
+  className="css-n35vkz"
+>
+  <svg
+    className="css-1ouh3uu"
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <path
+      className="css-0"
+      d="M13 11h7a1 1 0 0 1 0 2h-7v7a1 1 0 0 1-2 0v-7H4a1 1 0 0 1 0-2h7V4a1 1 0 0 1 2 0v7z"
+      fill="#FF0000"
+    />
+  </svg>
+</div>
+`;
