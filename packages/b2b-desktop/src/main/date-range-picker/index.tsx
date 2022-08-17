@@ -207,6 +207,7 @@ class DisabledInputDateRangePicker extends Component<
         >
           {() => (
             <PickerDropdown onFocus={this.onFocus}>
+              {/* @ts-ignore */}
               <DayPicker
                 className="Selectable"
                 disabledDays={disabled}

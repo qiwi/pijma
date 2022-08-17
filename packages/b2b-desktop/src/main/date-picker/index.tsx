@@ -116,6 +116,7 @@ class _DatePicker extends Component<
         >
           {() => (
             <PickerDropdown onFocus={this.onFocus.bind(this)}>
+              {/* @ts-ignore */}
               <DayPicker
                 months={MONTHS}
                 weekdaysLong={WEEKDAYS_LONG}
