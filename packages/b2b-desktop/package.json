@@ -19,6 +19,10 @@
   "scripts": {
     "clean": "rimraf lib styleguide/lib node_modules",
     "build": "concurrently 'npm:build:*' 'npm:guide:build'",
+    "guide:build": "exit 0",
+    "guide:start": "exit 0",
+    "static:start": "exit 0",
+    "chrome:start": "exit 0",
     "build:es5": "swc src -d lib/es5 --config-file swc.es5.json && tsc-esm-fix --target=lib/es5 --fillBlank",
     "build:es6": "swc src -d lib/es6 --config-file swc.es6.json && tsc-esm-fix --target=lib/es6 --fillBlank",
     "build:dts": "tsc --project tsconfig.dts.json",
