@@ -2,7 +2,7 @@ import { Card, Flex, FlexItem } from '@qiwi/pijma-core'
 import { Heading, Paragraph } from '@qiwi/pijma-desktop'
 import React, { Component } from 'react'
 
-import { B2bIcon } from '../Icon'
+import { B2bIcon } from '../icon'
 import { Offset } from '../offset'
 
 class EmptyPage extends Component {

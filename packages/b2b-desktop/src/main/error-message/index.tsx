@@ -1,7 +1,7 @@
 import { Flex, FlexItem, styled } from '@qiwi/pijma-core'
 import React, { Component } from 'react'
 
-import { B2bIcon } from '../Icon'
+import { B2bIcon } from '../icon'
 import ErrorMessageProps from './ErrorMessageProps'
 
 const ErrorMessageTitle = styled('div')`

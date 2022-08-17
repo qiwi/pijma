@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { TRenderItem } from '../../atom/dropdown/ContainerProps'
+import { TRenderItem } from '../dropdown/ContainerProps'
 
 export default interface SelectProps {
   value: string | Array<any>

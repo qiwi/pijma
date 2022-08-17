@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 
-import { TStepVariant } from '../../atom/step/interfaces'
+import { TStepVariant } from '../step/interfaces'
 
 export default interface StepperControlProps {
   step: number
