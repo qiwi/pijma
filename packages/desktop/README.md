@@ -1,4 +1,4 @@
-````# @qiwi/pijma-desktop
+# @qiwi/pijma-desktop
 
 Pijma desktop UI components.
 
