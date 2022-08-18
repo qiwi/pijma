@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`columnFactory renders correctly 1`] = `
+<div
+  className="css-10dt0en"
+>
+  <table
+    role="table"
+  >
+    <thead>
+      <tr
+        role="row"
+      >
+        <th
+          colSpan={1}
+          role="columnheader"
+        >
+           
+        </th>
+        <th
+          colSpan={1}
+          role="columnheader"
+        >
+           
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      role="rowgroup"
+    >
+      <tr
+        className="css-155ebq5"
+        data-cy="table-row"
+        role="row"
+      >
+        <td
+          onClick={[Function]}
+          role="cell"
+        >
+          qwe
+        </td>
+        <td
+          onClick={[Function]}
+          role="cell"
+        >
+          qweasd
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
