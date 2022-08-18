@@ -1,9 +1,6 @@
-# @qiwi/pijma-desktop
+````# @qiwi/pijma-desktop
 
-Pijma desktop UI components.
-
-## Demo
-* [@qiwi/pijma-desktop](https://qiwi.github.io/pijma/desktop)
+Pijma desktop extra UI components.
 
 ## Install
 ```bash
@@ -30,3 +27,4 @@ export const App = () => (
 
 ## License
 [MIT](../../LICENSE)
+````
