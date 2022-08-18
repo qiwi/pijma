@@ -1100,7 +1100,7 @@ __metadata:
     "@types/jest": "npm:^28.1.7"
     "@types/lodash-es": "npm:^4"
     "@types/react-js-pagination": "npm:^3"
-    "@types/react-table": "npm:^7"
+    "@types/react-table": "npm:^7.7.12"
     "@types/react-test-renderer": "npm:^18"
     concurrently: "npm:7.3.0"
     css-loader: "npm:6.7.1"
@@ -1122,6 +1122,7 @@ __metadata:
     react-router-dom: "npm:^6.3.0"
     react-styleguidist: "npm:11.2.0"
     react-styleguidist-visual: "patch:react-styleguidist-visual@npm%3A0.9.0#~/.yarn/patches/react-styleguidist-visual-npm-0.9.0-c05bb39789.patch"
+    react-table: "npm:^7.8.0"
     react-test-renderer: "npm:^18.2.0"
     style-loader: "npm:3.3.1"
     tsc-esm-fix: "npm:2.20.0"
@@ -1999,7 +2000,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-table@npm:^7":
+"@types/react-table@npm:^7.7.12":
   version: 7.7.12
   resolution: "@types/react-table@npm:7.7.12"
   dependencies:
@@ -11000,6 +11001,15 @@ __metadata:
   bin:
     styleguidist: lib/bin/styleguidist.js
   checksum: df6e685730fe254f26b09b25982c2917676c37fddade00cee40567f93b9c4d8912deed6404d75a9e9656aece5f3c84e8bca2799415fbb2a98847a52f3a19f14a
+  languageName: node
+  linkType: hard
+
+"react-table@npm:^7.8.0":
+  version: 7.8.0
+  resolution: "react-table@npm:7.8.0"
+  peerDependencies:
+    react: ^16.8.3 || ^17.0.0-0 || ^18.0.0
+  checksum: fb4060aac183d7b3976642d924b9e283954b41658e29dfae88908e1cbdf3943951c6f3ee91e358cd916d2cb27a0b742397b21322740783d24ac402864984e88a
   languageName: node
   linkType: hard
 

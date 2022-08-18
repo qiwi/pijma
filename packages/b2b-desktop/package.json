@@ -44,7 +44,8 @@
     "react-i18next": "^11.18.4",
     "react-js-pagination": "^3.0.3",
     "react-router": "^6.3.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "react-table": "^7.8.0"
   },
   "devDependencies": {
     "@qiwi/pijma-infra": "workspace:*",
@@ -53,7 +54,7 @@
     "@types/jest": "^28.1.7",
     "@types/lodash-es": "^4",
     "@types/react-js-pagination": "^3",
-    "@types/react-table": "^7",
+    "@types/react-table": "^7.7.12",
     "@types/react-test-renderer": "^18",
     "concurrently": "7.3.0",
     "css-loader": "6.7.1",
