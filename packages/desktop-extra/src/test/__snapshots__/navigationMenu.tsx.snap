@@ -1,0 +1,259 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavigationMenu renders correctly 1`] = `
+<nav
+  className="css-1qfyg05"
+>
+  <ul>
+    <div
+      className="css-1bnxa12"
+    >
+      <li
+        className="css-0"
+        onClick={[Function]}
+      >
+        <a
+          className=""
+          href="/txn"
+          onClick={[Function]}
+        >
+          <div
+            className="css-jsle5c"
+          >
+            Транзакции
+          </div>
+        </a>
+      </li>
+      <li
+        className="css-0"
+        onClick={[Function]}
+      >
+        <a
+          aria-current="page"
+          className="active"
+          href="/"
+          onClick={[Function]}
+        >
+          <div
+            className="css-jsle5c"
+          >
+            Статистика и аналитика
+          </div>
+        </a>
+      </li>
+      <li
+        className="css-0"
+        onClick={[Function]}
+      >
+        <a
+          className=""
+          href="/docs"
+          onClick={[Function]}
+        >
+          <div
+            className="css-jsle5c"
+          >
+            Документы
+          </div>
+        </a>
+      </li>
+      <li
+        className="css-0"
+        onClick={[Function]}
+      >
+        <a
+          className=""
+          href="/docs123"
+          onClick={[Function]}
+        >
+          <div
+            className="css-jsle5c"
+          >
+            Документы123
+          </div>
+        </a>
+      </li>
+    </div>
+  </ul>
+</nav>
+`;
+
+exports[`NavigationMenu renders correctly 2`] = `
+<nav
+  className="css-1qfyg05"
+>
+  <ul>
+    <div
+      className="css-1bnxa12"
+    />
+  </ul>
+</nav>
+`;
+
+exports[`NavigationMenu renders correctly 3`] = `
+<nav
+  className="css-1qfyg05"
+>
+  <ul>
+    <div
+      className="css-1bnxa12"
+    >
+      <li
+        className="css-0"
+        onClick={[Function]}
+      >
+        <a
+          className=""
+          href="/txn"
+          onClick={[Function]}
+        >
+          <div
+            className="css-jsle5c"
+          >
+            Транзакции
+          </div>
+        </a>
+      </li>
+      <li
+        className="css-0"
+        onClick={[Function]}
+      >
+        <a
+          aria-current="page"
+          className="active"
+          href="/"
+          onClick={[Function]}
+        >
+          <div
+            className="css-jsle5c"
+          >
+            Статистика и аналитика
+          </div>
+        </a>
+      </li>
+      <li
+        className="css-0"
+        onClick={[Function]}
+      >
+        <a
+          className=""
+          href="/docs"
+          onClick={[Function]}
+        >
+          <div
+            className="css-jsle5c"
+          >
+            Документы
+          </div>
+        </a>
+      </li>
+      <li
+        className="css-0"
+        onClick={[Function]}
+      >
+        <a
+          className=""
+          href="/docs123"
+          onClick={[Function]}
+        >
+          <div
+            className="css-jsle5c"
+          >
+            Документы123
+          </div>
+        </a>
+      </li>
+    </div>
+  </ul>
+</nav>
+`;
+
+exports[`NavigationMenu renders correctly 4`] = `
+<nav
+  className="css-1qfyg05"
+>
+  <ul>
+    <div
+      className="css-1bnxa12"
+    >
+      <li
+        className="css-0"
+        onClick={[Function]}
+      >
+        <div>
+          Транзакции
+        </div>
+      </li>
+      <li
+        className="css-0"
+        onClick={[Function]}
+      >
+        <div>
+          Статистика и аналитика
+        </div>
+      </li>
+      <li
+        className="css-0"
+        onClick={[Function]}
+      >
+        <div>
+          Документы
+        </div>
+      </li>
+      <li
+        className="css-0"
+        onClick={[Function]}
+      >
+        <div>
+          Документы123
+        </div>
+      </li>
+    </div>
+  </ul>
+</nav>
+`;
+
+exports[`NavigationMenu renders correctly 5`] = `
+<nav
+  className="css-1qfyg05"
+>
+  <ul>
+    <div
+      className="css-1bnxa12"
+    >
+      <li
+        className="css-0"
+        onClick={[Function]}
+      >
+        <div>
+          Транзакции
+        </div>
+      </li>
+      <li
+        className="css-0"
+        onClick={[Function]}
+      >
+        <div>
+          Статистика и аналитика
+        </div>
+      </li>
+      <li
+        className="css-0"
+        onClick={[Function]}
+      >
+        <div>
+          Документы
+        </div>
+      </li>
+      <li
+        className="css-0"
+        onClick={[Function]}
+      >
+        <div>
+          Документы123
+        </div>
+      </li>
+    </div>
+  </ul>
+</nav>
+`;

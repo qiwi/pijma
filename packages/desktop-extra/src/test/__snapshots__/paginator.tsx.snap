@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paginator renders correctly 1`] = `
+<div
+  className="css-1wm1qhp"
+>
+  <ul
+    className="pagination"
+  >
+    <li
+      className=""
+      onClick={[Function]}
+    >
+      <a
+        aria-label="Go to page number 1"
+        className=""
+        href="#"
+      >
+        1
+      </a>
+    </li>
+    <li
+      className="active"
+      onClick={[Function]}
+    >
+      <a
+        aria-label="Go to page number 2"
+        className="undefined"
+        href="#"
+      >
+        2
+      </a>
+    </li>
+    <li
+      className=""
+      onClick={[Function]}
+    >
+      <a
+        aria-label="Go to page number 3"
+        className=""
+        href="#"
+      >
+        3
+      </a>
+    </li>
+    <li
+      className=""
+      onClick={[Function]}
+    >
+      <a
+        aria-label="Go to page number 4"
+        className=""
+        href="#"
+      >
+        4
+      </a>
+    </li>
+  </ul>
+</div>
+`;

@@ -1,0 +1,37 @@
+{
+  "testEnvironment": "jsdom",
+  "collectCoverage": true,
+  "coveragePathIgnorePatterns": [
+    "<rootDir>/src/main/interface.ts"
+  ],
+  "collectCoverageFrom": [
+    "<rootDir>/src/main/**/*.ts",
+    "<rootDir>/src/main/**/*.tsx"
+  ],
+  "testMatch": [
+    "<rootDir>/src/test/**/*.ts",
+    "<rootDir>/src/test/**/*.tsx"
+  ],
+  "testPathIgnorePatterns": [
+    "/node_modules/",
+    "<rootDir>/src/test/stub"
+  ],
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js",
+    "jsx",
+    "json",
+    "node"
+  ],
+  "moduleNameMapper": {
+    "@qiwi/pijma-core": "<rootDir>/../../packages/core/src",
+    "@qiwi/pijma-desktop": "<rootDir>/../../packages/desktop/src"
+  },
+  "transformIgnorePatterns": [
+    "node_modules/(?!(lodash-es|@qiwi/common-formatters|@qiwi/pijma-core|@qiwi/pijma-media|@qiwi/pijma-desktop)/)"
+  ],
+  "transform": {
+    "^.+\\.(t|j)sx?$": ["@swc/jest"]
+  }
+}

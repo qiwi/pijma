@@ -1,0 +1,221 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox renders correctly checked value 1`] = `
+<div
+  className="css-rq7z01"
+  onClick={[Function]}
+>
+  <svg
+    className="css-9uy14h"
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <rect
+      className="css-qz95lw"
+      fill="#e6e6e6"
+      height="18"
+      rx="3"
+      ry="3"
+      width="18"
+      x="3"
+      y="3"
+    />
+    <path
+      className="css-qz95lw"
+      d="M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3zm1 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7z"
+      fill="transparent"
+    />
+    <rect
+      className="css-qz95lw"
+      fill="transparent"
+      fillRule="nonzero"
+      height="3"
+      rx="1.5"
+      width="10"
+      x="7"
+      y="10.5"
+    />
+    <path
+      className="css-qz95lw"
+      d="M7.553 8.732a1.5 1.5 0 1 0-2.106 2.136l4.565 4.5a1.5 1.5 0 0 0 2.156-.051l9.957-10.8a1.5 1.5 0 1 0-2.206-2.034l-8.905 9.66-3.461-3.411z"
+      fill="#000"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Checkbox renders correctly checked value in trinary mode 1`] = `
+<div
+  className="css-rq7z01"
+  onClick={[Function]}
+>
+  <svg
+    className="css-9uy14h"
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <rect
+      className="css-qz95lw"
+      fill="#e6e6e6"
+      height="18"
+      rx="3"
+      ry="3"
+      width="18"
+      x="3"
+      y="3"
+    />
+    <path
+      className="css-qz95lw"
+      d="M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3zm1 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7z"
+      fill="transparent"
+    />
+    <rect
+      className="css-qz95lw"
+      fill="transparent"
+      fillRule="nonzero"
+      height="3"
+      rx="1.5"
+      width="10"
+      x="7"
+      y="10.5"
+    />
+    <path
+      className="css-qz95lw"
+      d="M7.553 8.732a1.5 1.5 0 1 0-2.106 2.136l4.565 4.5a1.5 1.5 0 0 0 2.156-.051l9.957-10.8a1.5 1.5 0 1 0-2.206-2.034l-8.905 9.66-3.461-3.411z"
+      fill="#000"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Checkbox renders correctly half-checked value in trinary mode 1`] = `
+<div
+  className="css-rq7z01"
+  onClick={[Function]}
+>
+  <svg
+    className="css-9uy14h"
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <rect
+      className="css-qz95lw"
+      fill="#e6e6e6"
+      height="18"
+      rx="3"
+      ry="3"
+      width="18"
+      x="3"
+      y="3"
+    />
+    <path
+      className="css-qz95lw"
+      d="M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3zm1 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7z"
+      fill="transparent"
+    />
+    <rect
+      className="css-qz95lw"
+      fill="#000"
+      fillRule="nonzero"
+      height="3"
+      rx="1.5"
+      width="10"
+      x="7"
+      y="10.5"
+    />
+    <path
+      className="css-qz95lw"
+      d="M7.553 8.732a1.5 1.5 0 1 0-2.106 2.136l4.565 4.5a1.5 1.5 0 0 0 2.156-.051l9.957-10.8a1.5 1.5 0 1 0-2.206-2.034l-8.905 9.66-3.461-3.411z"
+      fill="transparent"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Checkbox renders correctly unchecked value 1`] = `
+<div
+  className="css-rq7z01"
+  onClick={[Function]}
+>
+  <svg
+    className="css-9uy14h"
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <rect
+      className="css-qz95lw"
+      fill="#e6e6e6"
+      height="18"
+      rx="3"
+      ry="3"
+      width="18"
+      x="3"
+      y="3"
+    />
+    <path
+      className="css-qz95lw"
+      d="M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3zm1 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7z"
+      fill="transparent"
+    />
+    <rect
+      className="css-qz95lw"
+      fill="transparent"
+      fillRule="nonzero"
+      height="3"
+      rx="1.5"
+      width="10"
+      x="7"
+      y="10.5"
+    />
+    <path
+      className="css-qz95lw"
+      d="M7.553 8.732a1.5 1.5 0 1 0-2.106 2.136l4.565 4.5a1.5 1.5 0 0 0 2.156-.051l9.957-10.8a1.5 1.5 0 1 0-2.206-2.034l-8.905 9.66-3.461-3.411z"
+      fill="transparent"
+    />
+  </svg>
+</div>
+`;
+
+exports[`Checkbox renders correctly unchecked value in trinary mode 1`] = `
+<div
+  className="css-rq7z01"
+  onClick={[Function]}
+>
+  <svg
+    className="css-9uy14h"
+    focusable="false"
+    viewBox="0 0 24 24"
+  >
+    <rect
+      className="css-qz95lw"
+      fill="#e6e6e6"
+      height="18"
+      rx="3"
+      ry="3"
+      width="18"
+      x="3"
+      y="3"
+    />
+    <path
+      className="css-qz95lw"
+      d="M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3zm1 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7z"
+      fill="transparent"
+    />
+    <rect
+      className="css-qz95lw"
+      fill="transparent"
+      fillRule="nonzero"
+      height="3"
+      rx="1.5"
+      width="10"
+      x="7"
+      y="10.5"
+    />
+    <path
+      className="css-qz95lw"
+      d="M7.553 8.732a1.5 1.5 0 1 0-2.106 2.136l4.565 4.5a1.5 1.5 0 0 0 2.156-.051l9.957-10.8a1.5 1.5 0 1 0-2.206-2.034l-8.905 9.66-3.461-3.411z"
+      fill="transparent"
+    />
+  </svg>
+</div>
+`;

@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown inner renders correctly 1`] = `
+<div
+  className="css-1rrak9i"
+>
+  <div
+    className="css-12khlxv"
+  >
+    <div
+      className="css-1ot1pbi"
+      onMouseDown={[Function]}
+    >
+      <div
+        className="css-1u0ewdd"
+      >
+        Все
+      </div>
+    </div>
+    <div
+      className="css-1ot1pbi"
+      onMouseDown={[Function]}
+    >
+      <div
+        className="css-1u0ewdd"
+      >
+        Проведенные
+      </div>
+    </div>
+    <div
+      className="css-1ot1pbi"
+      onMouseDown={[Function]}
+    >
+      <div
+        className="css-1u0ewdd"
+      >
+        Новые
+      </div>
+    </div>
+    <div
+      className="css-1ot1pbi"
+      onMouseDown={[Function]}
+    >
+      <div
+        className="css-1u0ewdd"
+      >
+        Отклоненные
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Dropdown renders correctly 1`] = `
+<div
+  className="css-1xm32e0"
+/>
+`;

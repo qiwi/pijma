@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product renders correctly 1`] = `
+<div
+  className="css-0"
+>
+  <div
+    className="css-wwwzs4"
+  >
+    title_qwe
+  </div>
+  <div
+    className="css-ric3kx"
+    onBlur={[Function]}
+    onClick={[Function]}
+    tabIndex={0}
+  >
+    <div
+      className="css-70qvj9"
+    >
+      <span>
+        CurrItemms123
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Product renders correctly 2`] = `
+<div
+  className="css-0"
+>
+  <div
+    className="css-wwwzs4"
+  >
+    title_qwe
+  </div>
+  <div
+    className="css-ric3kx"
+    onBlur={[Function]}
+    onClick={[Function]}
+    tabIndex={0}
+  >
+    <div
+      className="css-70qvj9"
+    >
+      <span>
+        CurrItemms123
+      </span>
+      <div
+        className="css-mucw53"
+      >
+        <svg
+          className="css-1ouh3uu"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            className="css-0"
+            d="M16.293 9.293a1 1 0 0 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 1.414-1.414L12 13.586l4.293-4.293z"
+            fill="#000"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-momvh5"
+  >
+    <div
+      className="css-1xm32e0"
+    />
+  </div>
+</div>
+`;

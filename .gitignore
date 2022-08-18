@@ -28,3 +28,6 @@
 **/.npmrc
 **/.yarnrc
 **/.pnpmrc
+
+# Coverage
+/packages/*/coverage

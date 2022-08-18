@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon renders correctly 1`] = `
+<div
+  className="css-1n0zz00"
+>
+  <div
+    className="css-1rfmcj9"
+  >
+    <div
+      className="css-3v1utt"
+    >
+      <svg
+        className="css-1ouh3uu"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          className="css-0"
+          d="M13 11h7a1 1 0 0 1 0 2h-7v7a1 1 0 0 1-2 0v-7H4a1 1 0 0 1 0-2h7V4a1 1 0 0 1 2 0v7z"
+          fill="#00FF00"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    className="css-13o7eu2"
+  >
+    <div
+      className="css-1jrogd7"
+    >
+      Заголовок ошибки
+    </div>
+    <div
+      className="css-1wyo0f4"
+    >
+      Сообщение ошибки!!!
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Icon renders correctly 2`] = `
+<div
+  className="css-1n0zz00"
+>
+  <div
+    className="css-1rfmcj9"
+  />
+  <div
+    className="css-13o7eu2"
+  >
+    <div
+      className="css-1wyo0f4"
+    >
+      Сообщение ощибки!!!
+    </div>
+  </div>
+</div>
+`;

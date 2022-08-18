@@ -27,6 +27,9 @@
       "@qiwi/pijma-desktop": [
         "./packages/desktop/src"
       ],
+      "@qiwi/pijma-desktop-extra": [
+        "./packages/desktop-extra/src"
+      ],
       "@qiwi/pijma-mobile": [
         "./packages/mobile/src"
       ],

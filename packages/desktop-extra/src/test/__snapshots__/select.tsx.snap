@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select closed renders correctly 1`] = `
+<div
+  className="css-1slgrxx"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  tabIndex={0}
+>
+  <div
+    className="css-1haykwu"
+  >
+    <div
+      className="css-1hy2az2"
+    >
+      <div
+        className="css-1mw5xg7"
+      >
+        <label
+          className="css-195rf93"
+        >
+          test
+        </label>
+      </div>
+    </div>
+    <div
+      className="css-1bx5ylf"
+    >
+      <div
+        className="css-70qvj9"
+      >
+        <input
+          autoComplete="off"
+          className="css-1haa77m"
+          disabled={false}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          type="text"
+          value=""
+        />
+        <div
+          className="css-t03j0v"
+        >
+          <div
+            className="css-mucw53"
+            onClick={[Function]}
+          >
+            <svg
+              className="css-9uy14h"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                className="css-0"
+                d="M16.293 9.293a1 1 0 0 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 1.414-1.414L12 13.586l4.293-4.293z"
+                fill="#000"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-1abbrc"
+    />
+  </div>
+  <div
+    className="css-1xm32e0"
+  />
+</div>
+`;

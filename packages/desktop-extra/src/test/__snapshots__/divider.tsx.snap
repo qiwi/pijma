@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divider renders correctly 1`] = `
+<div
+  active={true}
+  className="css-ajd5fa"
+  radius="2px"
+/>
+`;
