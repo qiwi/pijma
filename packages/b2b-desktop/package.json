@@ -1,5 +1,5 @@
 {
-  "name": "@qiwi/pijma-b2b-desktop",
+  "name": "@qiwi/pijma-desktop-extra",
   "version": "0.0.0",
   "type": "module",
   "main": "./lib/es5/index.js",

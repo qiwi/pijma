@@ -1,5 +1,5 @@
 module.exports = require('../infra/styleguide.config')({
-  components: ['@qiwi/pijma-core', '@qiwi/pijma-b2b-desktop', '@qiwi/pijma-desktop'],
+  components: ['@qiwi/pijma-core', '@qiwi/pijma-desktop-extra', '@qiwi/pijma-desktop'],
   cwd: __dirname,
   extra: {
     title: 'QIWI b2b Web Desktop Guide',
