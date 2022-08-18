@@ -1142,7 +1142,6 @@ __metadata:
     "@qiwi/pijma-infra": "workspace:*"
     "@swc/core": "npm:^1.2.233"
     "@swc/jest": "npm:^0.2.22"
-    "@tanstack/react-table": "npm:^8.5.11"
     "@types/jest": "npm:^28.1.7"
     "@types/lodash-es": "npm:^4"
     "@types/react-js-pagination": "npm:^3"
@@ -1701,25 +1700,6 @@ __metadata:
   version: 1.2.130
   resolution: "@swc/wasm@npm:1.2.130"
   checksum: ff270fbb0a77d1e697a98209f180cea0c85c6c6e91df20361d8318d9d13749a0f2c23d0a20e78079e7d721ce7e203e91f2fff62f614d1635a73c5fb0f2ad897e
-  languageName: node
-  linkType: hard
-
-"@tanstack/react-table@npm:^8.5.11":
-  version: 8.5.11
-  resolution: "@tanstack/react-table@npm:8.5.11"
-  dependencies:
-    "@tanstack/table-core": "npm:8.5.11"
-  peerDependencies:
-    react: ">=16"
-    react-dom: ">=16"
-  checksum: a122af228730c1895a200e0d48c3bc2426bf3de31370fcde392919c2712af2132e4e44a98d288a68b4285245da9c05b9c043281dda990c6a337ef3bc534dbb05
-  languageName: node
-  linkType: hard
-
-"@tanstack/table-core@npm:8.5.11":
-  version: 8.5.11
-  resolution: "@tanstack/table-core@npm:8.5.11"
-  checksum: aae32ab860fe2f659d8b7aa04cbb18f0b7087d2dd6979ac82d5bb0a3643af3d0c2a1de3a0ac92c04b4af8d87a5069a284c260627f3798901ebb9eb3ab874aa23
   languageName: node
   linkType: hard
 
