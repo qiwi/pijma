@@ -1,6 +1,9 @@
 ````# @qiwi/pijma-desktop
 
-Pijma desktop extra UI components.
+Pijma desktop UI components.
+
+## Demo
+* [@qiwi/pijma-desktop](https://qiwi.github.io/pijma/desktop)
 
 ## Install
 ```bash
