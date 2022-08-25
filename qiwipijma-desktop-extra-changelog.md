@@ -1,3 +1,9 @@
+## [@qiwi/pijma-desktop-extra@0.1.2](https://github.com/qiwi/pijma/compare/2022.8.18-qiwi.pijma-desktop-extra.0.1.1-f0...2022.8.25-qiwi.pijma-desktop-extra.0.1.2-f0) (2022-08-25)
+
+### Fixes & improvements
+* fix: fix extra header (#529) [a86b367f](https://github.com/qiwi/pijma/commit/a86b367fe2e4fa93ef98d908c164ad947ec9e71e)
+* fix(desktop-extra): fix dropdown (#528) [d2722a4b](https://github.com/qiwi/pijma/commit/d2722a4bbe8111cdc18d42c2c5ce5d129838de04)
+
 ## [@qiwi/pijma-desktop-extra@0.1.1](https://github.com/qiwi/pijma/compare/2022.8.18-qiwi.pijma-desktop-extra.0.1.0-f0...2022.8.18-qiwi.pijma-desktop-extra.0.1.1-f0) (2022-08-18)
 
 ### Fixes & improvements
