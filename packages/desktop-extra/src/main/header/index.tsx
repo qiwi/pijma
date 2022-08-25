@@ -41,14 +41,13 @@ export class Header extends Component<HeaderProps> {
     } = this.props
 
     const menuItems = navItems.map(({ name, path }) => {
+      const href = typeof path === 'string' ? path : path.value
       return {
-        // @ts-ignore
-        href: `${path && path.value}`,
+        href,
         title: name,
         active: location.pathname === path,
         onClick: () => {
-          // @ts-ignore
-          window.location.href = typeof path === 'object' ? path.value : path
+          window.location.href = href
         },
       }
     })
@@ -77,9 +76,7 @@ export class Header extends Component<HeaderProps> {
                   onChange={onItemChange}
                 />
                 <FlexItem ml={10} p={0} height={20}>
-                  <HeaderMenu
-                    children={menuItems}
-                  />
+                  <HeaderMenu children={menuItems} />
                 </FlexItem>
               </Flex>
               <FlexItem m={0} p={0}>

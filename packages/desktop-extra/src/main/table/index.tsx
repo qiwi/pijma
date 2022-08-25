@@ -2,11 +2,7 @@ import { styled } from '@qiwi/pijma-core'
 import React from 'react'
 import { useTable } from 'react-table'
 
-import {
-  activeBackground,
-  borderColor,
-  tableHoverColor,
-} from './constants'
+import { activeBackground, borderColor, tableHoverColor } from './constants'
 
 const TrWrapper = styled('tr')`
   background-color: ${(props: { active?: boolean }) =>
@@ -123,8 +119,7 @@ export const Table = ({
                     <td
                       key={i}
                       onClick={() =>
-                        typeof onSelect === 'function' &&
-                        onSelect(row.original)
+                        typeof onSelect === 'function' && onSelect(row.original)
                       }
                       {...cell.getCellProps()}
                     >
