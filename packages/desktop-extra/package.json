@@ -26,7 +26,7 @@
     "build:es5": "swc src -d lib/es5 --config-file swc.es5.json && tsc-esm-fix --target=lib/es5 --fillBlank",
     "build:es6": "swc src -d lib/es6 --config-file swc.es6.json && tsc-esm-fix --target=lib/es6 --fillBlank",
     "build:dts": "tsc --project tsconfig.dts.json",
-    "test:start": "jest",
+    "test": "jest",
     "lint": "eslint --fix src && prettier --loglevel silent --write src"
   },
   "files": [
