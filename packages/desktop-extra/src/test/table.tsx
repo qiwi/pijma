@@ -13,7 +13,7 @@ describe('columnFactory', () => {
   it('handles supported types', () => {
     const cases = ['foo', 'bar', 10, { accessor: 'baz' }]
     const mapping = { foo: { accessor: 'test' } }
-    const result = cases.map(el => columnFactory(el, mapping))
+    const result = cases.map((el) => columnFactory(el, mapping))
 
     expect(result).toEqual([
       { accessor: 'test' },
@@ -24,7 +24,9 @@ describe('columnFactory', () => {
   })
 
   it('throws err otherwise', () => {
-    expect(() => columnFactory()).toThrow('unsupported table column type: undefined')
+    expect(() => columnFactory()).toThrow(
+      'unsupported table column type: undefined',
+    )
   })
 
   it('renders correctly', () => {
@@ -32,12 +34,12 @@ describe('columnFactory', () => {
       .create(
         <Table
           data={[{ name: 'qwe', value: 'qweasd' }]}
-          onSelect={() => { /* noop */ }}
-          columns={[
-            { accessor: 'name' },
-            { accessor: 'value' },
-          ]}
-        />)
+          onSelect={() => {
+            /* noop */
+          }}
+          columns={[{ accessor: 'name' }, { accessor: 'value' }]}
+        />,
+      )
       .toJSON()
     expect(table).toMatchSnapshot()
   })
