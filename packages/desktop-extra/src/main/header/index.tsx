@@ -1,8 +1,8 @@
 import { Flex, FlexItem, styled } from '@qiwi/pijma-core'
+import { HeaderMenu } from '@qiwi/pijma-desktop'
 import React, { Component } from 'react'
 
 import { Logo } from '../logo'
-import { NavigationMenu } from '../navigation-menu'
 import { Product } from '../product'
 import { B2bSpinner } from '../spinner'
 import { COLOR, DIMEN } from '../theme'
@@ -34,13 +34,24 @@ export class Header extends Component<HeaderProps> {
       isLoading,
       title,
       selectorData,
-      link,
       navItems,
-      navActiveItem,
       userName,
       onItemChange,
       onLogout,
     } = this.props
+
+    const menuItems = navItems.map(({ name, path }) => {
+      return {
+        // @ts-ignore
+        href: `${path && path.value}`,
+        title: name,
+        active: location.pathname === path,
+        onClick: () => {
+          // @ts-ignore
+          window.location.href = typeof path === 'object' ? path.value : path
+        },
+      }
+    })
 
     return (
       <HeaderContainer>
@@ -65,11 +76,9 @@ export class Header extends Component<HeaderProps> {
                   selectorData={selectorData}
                   onChange={onItemChange}
                 />
-                <FlexItem ml={10} p={0}>
-                  <NavigationMenu
-                    link={link}
-                    items={navItems}
-                    active={(navActiveItem && navActiveItem.pathname) || ''}
+                <FlexItem ml={10} p={0} height={20}>
+                  <HeaderMenu
+                    children={menuItems}
                   />
                 </FlexItem>
               </Flex>
