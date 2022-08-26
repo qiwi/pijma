@@ -1,3 +1,8 @@
+## [@qiwi/pijma-desktop-extra@0.1.5](https://github.com/qiwi/pijma/compare/2022.8.26-qiwi.pijma-desktop-extra.0.1.4-f0...2022.8.26-qiwi.pijma-desktop-extra.0.1.5-f0) (2022-08-26)
+
+### Fixes & improvements
+* fix: rdp new version (#532) [7b454c84](https://github.com/qiwi/pijma/commit/7b454c8477c26551dd2e5d6f56af7f0d5c8f1acc)
+
 ## [@qiwi/pijma-desktop-extra@0.1.4](https://github.com/qiwi/pijma/compare/2022.8.26-qiwi.pijma-desktop-extra.0.1.3-f0...2022.8.26-qiwi.pijma-desktop-extra.0.1.4-f0) (2022-08-26)
 
 ### Fixes & improvements
