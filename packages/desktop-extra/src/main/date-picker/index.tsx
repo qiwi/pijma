@@ -10,6 +10,7 @@ import DatePickerProps from './DatePickerProps'
 import DatePickerState from './DatePickerState'
 import { locales, TLanguage } from './locale'
 import Wrap from './wrap'
+import 'react-day-picker/dist/style.css'
 
 const PickerDropdown = styled('div')`
   position: absolute;
@@ -19,6 +20,17 @@ const PickerDropdown = styled('div')`
   border-radius: 8px;
 
   .Selectable {
+    --rdp-cell-size: 40px;
+    --rdp-accent-color: rgba(255, 140, 0, 0.4);
+    --rdp-background-color: rgba(255, 140, 0.1);
+    /* Switch to dark colors for dark themes */
+    --rdp-accent-color-dark: rgba(255, 140, 0);
+    --rdp-background-color-dark: rgba(255, 140, 0.7);
+    /* Outline border for focused elements */
+    --rdp-outline: 2px solid var(--rdp-accent-color);
+    /* Outline border for focused and selected elements */
+    --rdp-outline-selected: 2px solid rgba(0, 0, 0, 0.75);
+
     .my-selected {
       padding: 0px;
       width: 40px;

@@ -26,7 +26,8 @@
   ],
   "moduleNameMapper": {
     "@qiwi/pijma-core": "<rootDir>/../../packages/core/src",
-    "@qiwi/pijma-desktop": "<rootDir>/../../packages/desktop/src"
+    "@qiwi/pijma-desktop": "<rootDir>/../../packages/desktop/src",
+    "\\.css$": "<rootDir>/src/test/__mocks__/style.js"
   },
   "transformIgnorePatterns": [
     "node_modules/(?!(lodash-es|@qiwi/common-formatters|@qiwi/pijma-core|@qiwi/pijma-media|@qiwi/pijma-desktop)/)"

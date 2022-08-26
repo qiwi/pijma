@@ -10,6 +10,7 @@ import { COLOR } from '../theme'
 import DateRangePickerState from './DateRangePickerState'
 import DateRangerPickerProps from './DateRangerPickerProps'
 import { locales, TLanguage } from '../date-picker/locale'
+import 'react-day-picker/dist/style.css'
 
 export const PickerDropdown = styled('div')`
   position: absolute;
@@ -19,6 +20,17 @@ export const PickerDropdown = styled('div')`
   box-shadow: ${COLOR.SHADOW.Z3};
 
   .Selectable {
+    --rdp-cell-size: 40px;
+    --rdp-accent-color: rgba(255, 140, 0, 0.1);
+    --rdp-background-color: rgba(255, 140, 0, 0.4);
+    /* Switch to dark colors for dark themes */
+    --rdp-accent-color-dark: rgba(255, 140, 0);
+    --rdp-background-color-dark: rgba(255, 140, 0.7);
+    /* Outline border for focused elements */
+    --rdp-outline: 2px solid var(--rdp-accent-color);
+    /* Outline border for focused and selected elements */
+    --rdp-outline-selected: 2px solid rgba(0, 0, 0, 0.75);
+
     .my-selected {
       padding: 0px;
       width: 40px;
@@ -76,18 +88,24 @@ export const PickerDropdown = styled('div')`
 
     .my-caption-start {
       .my-nav {
-        left: -6px;
+        left: -24px;
       }
     }
 
     .my-caption-end {
       .my-nav {
-        right: -6px;
+        right: -24px;
       }
     }
 
     .my-day.my-selected.my-range-end.my-range-start {
       border-radius: 50%;
+    }
+
+    .my-day.my-selected.my-range-end, .my-day.my-selected.my-range-start {
+      &:focus, &:hover {
+         background-color: rgba(255, 140, 0);
+      }
     }
 
     .my-today {
