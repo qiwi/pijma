@@ -1,3 +1,8 @@
+## [@qiwi/pijma-desktop-extra@0.1.4](https://github.com/qiwi/pijma/compare/2022.8.26-qiwi.pijma-desktop-extra.0.1.3-f0...2022.8.26-qiwi.pijma-desktop-extra.0.1.4-f0) (2022-08-26)
+
+### Fixes & improvements
+* fix(desktop-extra): fix table (#531) [536864f5](https://github.com/qiwi/pijma/commit/536864f55063356cd1bf3efa50bd5978b8cb7538)
+
 ## [@qiwi/pijma-desktop-extra@0.1.3](https://github.com/qiwi/pijma/compare/2022.8.25-qiwi.pijma-desktop-extra.0.1.2-f0...2022.8.26-qiwi.pijma-desktop-extra.0.1.3-f0) (2022-08-26)
 
 ### Fixes & improvements
