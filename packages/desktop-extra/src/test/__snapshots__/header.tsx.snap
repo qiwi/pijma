@@ -14,7 +14,7 @@ exports[`Header renders correctly 1`] = `
         className="css-70qvj9"
       >
         <div
-          className="css-1fke5tu"
+          className="css-mb6w8p"
         >
           <a
             href="http://localhost/service/core/merchants"
@@ -124,83 +124,128 @@ exports[`Header renders correctly 1`] = `
           </div>
         </div>
         <div
-          className="css-18amm0"
+          className="css-1upovfp"
         >
-          <nav
-            className="css-1qfyg05"
+          <div
+            className="css-1ns1pgm"
+            role="menu"
           >
-            <ul>
-              <div
-                className="css-1bnxa12"
+            <div
+              className="css-13o7eu2"
+            >
+              <a
+                className="css-fqzivi"
+                href="/txn"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                role="menuitem"
+                title="Транзакции"
               >
-                <li
-                  className="css-0"
-                  onClick={[Function]}
+                <div
+                  className="css-1hpx0py"
                 >
-                  <a
-                    className=""
-                    href="/txn"
-                    onClick={[Function]}
+                  <span
+                    className="css-l3al1k"
                   >
-                    <div
-                      className="css-jsle5c"
-                    >
-                      Транзакции
-                    </div>
-                  </a>
-                </li>
-                <li
-                  className="css-0"
-                  onClick={[Function]}
+                    Транзакции
+                  </span>
+                </div>
+              </a>
+            </div>
+            <div
+              className="css-1tdlxdt"
+            >
+              <a
+                className="css-fqzivi"
+                href="/"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                role="menuitem"
+                title="Статистика и аналитика"
+              >
+                <div
+                  className="css-1hpx0py"
                 >
-                  <a
-                    aria-current="page"
-                    className="active"
-                    href="/"
-                    onClick={[Function]}
+                  <span
+                    className="css-l3al1k"
                   >
-                    <div
-                      className="css-jsle5c"
-                    >
-                      Статистика и аналитика
-                    </div>
-                  </a>
-                </li>
-                <li
-                  className="css-0"
-                  onClick={[Function]}
+                    Статистика и аналитика
+                  </span>
+                </div>
+                <div
+                  className="css-1pbsily"
                 >
-                  <a
-                    className=""
-                    href="/docs"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-jsle5c"
-                    >
-                      Документы
-                    </div>
-                  </a>
-                </li>
-                <li
-                  className="css-0"
-                  onClick={[Function]}
+                  <div
+                    className="css-n2k0rv"
+                  />
+                </div>
+              </a>
+            </div>
+            <div
+              className="css-1tdlxdt"
+            >
+              <a
+                className="css-fqzivi"
+                href="/docs"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                role="menuitem"
+                title="Документы"
+              >
+                <div
+                  className="css-1hpx0py"
                 >
-                  <a
-                    className=""
-                    href="/docs123"
-                    onClick={[Function]}
+                  <span
+                    className="css-l3al1k"
                   >
-                    <div
-                      className="css-jsle5c"
-                    >
-                      Документы123
-                    </div>
-                  </a>
-                </li>
-              </div>
-            </ul>
-          </nav>
+                    Документы
+                  </span>
+                </div>
+              </a>
+            </div>
+            <div
+              className="css-1tdlxdt"
+            >
+              <a
+                className="css-fqzivi"
+                href="/docs123"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                role="menuitem"
+                title="Документы123"
+              >
+                <div
+                  className="css-1hpx0py"
+                >
+                  <span
+                    className="css-l3al1k"
+                  >
+                    Документы123
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -222,7 +267,7 @@ exports[`Header renders correctly 1`] = `
               onClick={[Function]}
             >
               <svg
-                className="css-1ouh3uu"
+                className="css-9uy14h"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -255,7 +300,7 @@ exports[`Header renders correctly 2`] = `
         className="css-70qvj9"
       >
         <div
-          className="css-1fke5tu"
+          className="css-mb6w8p"
         >
           <a
             href="http://localhost/service/core/merchants"
@@ -363,83 +408,128 @@ exports[`Header renders correctly 2`] = `
           </div>
         </div>
         <div
-          className="css-18amm0"
+          className="css-1upovfp"
         >
-          <nav
-            className="css-1qfyg05"
+          <div
+            className="css-1ns1pgm"
+            role="menu"
           >
-            <ul>
-              <div
-                className="css-1bnxa12"
+            <div
+              className="css-13o7eu2"
+            >
+              <a
+                className="css-fqzivi"
+                href="/txn"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                role="menuitem"
+                title="Транзакции"
               >
-                <li
-                  className="css-0"
-                  onClick={[Function]}
+                <div
+                  className="css-1hpx0py"
                 >
-                  <a
-                    className=""
-                    href="/txn"
-                    onClick={[Function]}
+                  <span
+                    className="css-l3al1k"
                   >
-                    <div
-                      className="css-jsle5c"
-                    >
-                      Транзакции
-                    </div>
-                  </a>
-                </li>
-                <li
-                  className="css-0"
-                  onClick={[Function]}
+                    Транзакции
+                  </span>
+                </div>
+              </a>
+            </div>
+            <div
+              className="css-1tdlxdt"
+            >
+              <a
+                className="css-fqzivi"
+                href="/"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                role="menuitem"
+                title="Статистика и аналитика"
+              >
+                <div
+                  className="css-1hpx0py"
                 >
-                  <a
-                    aria-current="page"
-                    className="active"
-                    href="/"
-                    onClick={[Function]}
+                  <span
+                    className="css-l3al1k"
                   >
-                    <div
-                      className="css-jsle5c"
-                    >
-                      Статистика и аналитика
-                    </div>
-                  </a>
-                </li>
-                <li
-                  className="css-0"
-                  onClick={[Function]}
+                    Статистика и аналитика
+                  </span>
+                </div>
+                <div
+                  className="css-1pbsily"
                 >
-                  <a
-                    className=""
-                    href="/docs"
-                    onClick={[Function]}
-                  >
-                    <div
-                      className="css-jsle5c"
-                    >
-                      Документы
-                    </div>
-                  </a>
-                </li>
-                <li
-                  className="css-0"
-                  onClick={[Function]}
+                  <div
+                    className="css-n2k0rv"
+                  />
+                </div>
+              </a>
+            </div>
+            <div
+              className="css-1tdlxdt"
+            >
+              <a
+                className="css-fqzivi"
+                href="/docs"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                role="menuitem"
+                title="Документы"
+              >
+                <div
+                  className="css-1hpx0py"
                 >
-                  <a
-                    className=""
-                    href="/docs123"
-                    onClick={[Function]}
+                  <span
+                    className="css-l3al1k"
                   >
-                    <div
-                      className="css-jsle5c"
-                    >
-                      Документы123
-                    </div>
-                  </a>
-                </li>
-              </div>
-            </ul>
-          </nav>
+                    Документы
+                  </span>
+                </div>
+              </a>
+            </div>
+            <div
+              className="css-1tdlxdt"
+            >
+              <a
+                className="css-fqzivi"
+                href="/docs123"
+                onBlur={[Function]}
+                onClick={[Function]}
+                onFocus={[Function]}
+                onMouseDown={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                role="menuitem"
+                title="Документы123"
+              >
+                <div
+                  className="css-1hpx0py"
+                >
+                  <span
+                    className="css-l3al1k"
+                  >
+                    Документы123
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -461,7 +551,7 @@ exports[`Header renders correctly 2`] = `
               onClick={[Function]}
             >
               <svg
-                className="css-1ouh3uu"
+                className="css-9uy14h"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
@@ -494,7 +584,7 @@ exports[`Header renders correctly 3`] = `
         className="css-70qvj9"
       >
         <div
-          className="css-1fke5tu"
+          className="css-mb6w8p"
         >
           <a
             href="http://localhost/service/core/merchants"
@@ -602,17 +692,12 @@ exports[`Header renders correctly 3`] = `
           </div>
         </div>
         <div
-          className="css-18amm0"
+          className="css-1upovfp"
         >
-          <nav
-            className="css-1qfyg05"
-          >
-            <ul>
-              <div
-                className="css-1bnxa12"
-              />
-            </ul>
-          </nav>
+          <div
+            className="css-1ns1pgm"
+            role="menu"
+          />
         </div>
       </div>
       <div
@@ -634,7 +719,7 @@ exports[`Header renders correctly 3`] = `
               onClick={[Function]}
             >
               <svg
-                className="css-1ouh3uu"
+                className="css-9uy14h"
                 focusable="false"
                 viewBox="0 0 24 24"
               >
