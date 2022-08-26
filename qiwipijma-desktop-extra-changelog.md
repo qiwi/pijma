@@ -1,3 +1,8 @@
+## [@qiwi/pijma-desktop-extra@0.1.3](https://github.com/qiwi/pijma/compare/2022.8.25-qiwi.pijma-desktop-extra.0.1.2-f0...2022.8.26-qiwi.pijma-desktop-extra.0.1.3-f0) (2022-08-26)
+
+### Fixes & improvements
+* fix: datePicker & dateRangePicker, tests in extra (#530) [ad9f755e](https://github.com/qiwi/pijma/commit/ad9f755ee0398757d2cd1673551223f0ae985b5b)
+
 ## [@qiwi/pijma-desktop-extra@0.1.2](https://github.com/qiwi/pijma/compare/2022.8.18-qiwi.pijma-desktop-extra.0.1.1-f0...2022.8.25-qiwi.pijma-desktop-extra.0.1.2-f0) (2022-08-25)
 
 ### Fixes & improvements
