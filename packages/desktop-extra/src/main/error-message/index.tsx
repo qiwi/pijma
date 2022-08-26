@@ -16,7 +16,7 @@ const ErrorMessageText = styled('div')`
   font-weight: 300;
 `
 
-class ErrorMessage extends Component<ErrorMessageProps> {
+export class ErrorMessage extends Component<ErrorMessageProps> {
   render() {
     const { message, title, icon, iconColor } = this.props
 
@@ -33,5 +33,3 @@ class ErrorMessage extends Component<ErrorMessageProps> {
     )
   }
 }
-
-export { ErrorMessage }
