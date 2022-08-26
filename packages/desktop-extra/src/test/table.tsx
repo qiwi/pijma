@@ -29,7 +29,7 @@ describe('columnFactory', () => {
     )
   })
 
-  it('renders correctly', () => {
+  it('renders correctly without header', () => {
     const table = renderer
       .create(
         <Table
@@ -38,6 +38,20 @@ describe('columnFactory', () => {
             /* noop */
           }}
           columns={[{ accessor: 'name' }, { accessor: 'value' }]}
+        />,
+      )
+      .toJSON()
+    expect(table).toMatchSnapshot()
+  })
+  it('renders correctly with header', () => {
+    const table = renderer
+      .create(
+        <Table
+          data={[{ name: 'qwe', value: 'qweasd' }]}
+          onSelect={() => {
+            /* noop */
+          }}
+          columns={[{ accessor: 'name', Header: 'ttest' }, { accessor: 'value', Header: 'test' }]}
         />,
       )
       .toJSON()
