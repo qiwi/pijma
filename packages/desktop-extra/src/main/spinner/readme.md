@@ -1,3 +1,5 @@
 ```javascript
-  <Spinner />
+  <Flex align='center' justify='center'>
+    <B2bSpinner />
+  </Flex>
 ```
