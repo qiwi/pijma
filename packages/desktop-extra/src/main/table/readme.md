@@ -1,23 +1,5 @@
 ```javascript
-const columns = [
-    {
-      id: '123',
-      width: 28,
-      style: {
-        paddingLeft: 0,
-        paddingRight: 0,
-      },
-      accessor: (originalRow) => {
-        return {
-          status: originalRow.status,
-          isCaptured: originalRow.isCaptured,
-        }
-      },
-      Cell: ({ value: { isCaptured, status: { value: status } } }) => {
-        return <StatusIconWrapper>{getStatusIcon(status, isCaptured)}</StatusIconWrapper>
-      },
-    },
-    {
+const columns = [{
       id: '1233',
       minWidth: 220,
       style: {
@@ -31,8 +13,15 @@ const columns = [
       Cell: ({ value: { myItem }}) => {
         return <div>{myItem}</div>
       },
-    },
-  ]
+    }, {
+      id: 'id1',
+      width: 150,
+      style: {
+        paddingRight: 0,
+      },
+      accessor: 'createdAt',
+      Cell: ({ value }) => <div>{value}</div>,
+    }]
 
   <Table
     hideHeader
