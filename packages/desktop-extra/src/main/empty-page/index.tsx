@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 import { B2bIcon } from '../icon'
 import { Offset } from '../offset'
 
-class EmptyPage extends Component {
+export class EmptyPage extends Component {
   render() {
     return (
       <div>

@@ -2,14 +2,14 @@
   "name": "@qiwi/pijma-desktop-extra",
   "version": "0.0.0",
   "type": "module",
-  "main": "./lib/es5/index.js",
-  "module": "./lib/es6/index.js",
-  "types": "./lib/dts/index.d.ts",
+  "main": "./lib/es5/main/index.js",
+  "module": "./lib/es6/main/index.js",
+  "types": "./lib/dts/main/index.d.ts",
   "exports": {
     ".": {
-      "types": "./lib/dts/index.d.ts",
-      "import": "./lib/es6/index.js",
-      "require": "./lib/es5/index.js"
+      "types": "./lib/dts/main/index.d.ts",
+      "import": "./lib/es6/main/index.js",
+      "require": "./lib/es5/main/index.js"
     }
   },
   "license": "MIT",
