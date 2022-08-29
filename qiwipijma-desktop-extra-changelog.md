@@ -1,3 +1,8 @@
+## [@qiwi/pijma-desktop-extra@0.1.6](https://github.com/qiwi/pijma/compare/2022.8.26-qiwi.pijma-desktop-extra.0.1.5-f0...2022.8.29-qiwi.pijma-desktop-extra.0.1.6-f0) (2022-08-29)
+
+### Fixes & improvements
+* fix: desktop-extra package paths (#533) [d5514705](https://github.com/qiwi/pijma/commit/d551470588b720b8d66ce8a7e5666bc4876f9d9c)
+
 ## [@qiwi/pijma-desktop-extra@0.1.5](https://github.com/qiwi/pijma/compare/2022.8.26-qiwi.pijma-desktop-extra.0.1.4-f0...2022.8.26-qiwi.pijma-desktop-extra.0.1.5-f0) (2022-08-26)
 
 ### Fixes & improvements
