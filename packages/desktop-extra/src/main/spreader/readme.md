@@ -1,0 +1,5 @@
+```javascript
+  <Spreader>
+    <App />
+  </ Spreader>
+```
