@@ -90,14 +90,20 @@ export const Table = ({
 
   // Render the UI for your table
   const headers = []
-  const thead = headerGroups.map((headerGroup: any, i: number) => (
-    <tr key={i} {...headerGroup.getHeaderGroupProps()}>
-      {headerGroup.headers.map((column: any, i: number) => {
+  const thead = headerGroups.map((headerGroup, index) => (
+    <tr {...headerGroup.getHeaderGroupProps()} key={index}>
+      {headerGroup.headers.map((column, index) => {
         const header = column.render('Header')
-        if (typeof header === 'string') {
+        const typeofHeader = typeof header
+        if (
+          typeofHeader === 'string' ||
+          (typeofHeader === 'object' &&
+            React.isValidElement(header) &&
+            header.props.children)
+        ) {
           headers.push(header)
           return (
-            <th key={i} {...column.getHeaderProps()}>
+            <th {...column.getHeaderProps()} key={index}>
               {header}
             </th>
           )
