@@ -2,11 +2,7 @@ import { styled } from '@qiwi/pijma-core'
 import React from 'react'
 import { useTable } from 'react-table'
 
-import {
-  activeBackground,
-  borderColor,
-  tableHoverColor,
-} from './constants'
+import { activeBackground, borderColor, tableHoverColor } from './constants'
 
 const TrWrapper = styled('tr')`
   background-color: ${(props: { active?: boolean }) =>
@@ -93,20 +89,32 @@ export const Table = ({
     })
 
   // Render the UI for your table
+  const headers = []
+  const thead = headerGroups.map((headerGroup: any, i: number) => (
+    <tr key={i} {...headerGroup.getHeaderGroupProps()}>
+      {headerGroup.headers.map((column: any, i: number) => {
+        const header = column.render('Header')
+        if (typeof header === 'string') {
+          headers.push(header)
+          return (
+            <th key={i} {...column.getHeaderProps()}>
+              {header}
+            </th>
+          )
+        }
+        return null
+      })}
+    </tr>
+  ))
+
   return (
     <TableWrapper>
       <table {...getTableProps()}>
-        <thead>
-          {headerGroups.map((headerGroup: any, i: number) => (
-            <tr key={i} {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column: any, i: number) => (
-                <th key={i} {...column.getHeaderProps()}>
-                  {column.render('Header')}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
+        {headerGroups && headerGroups.length > 0 ? (
+          <thead>{headers.length > 0 ? thead : null}</thead>
+        ) : (
+          <></>
+        )}
         <tbody {...getTableBodyProps()}>
           {rows.map((row: any, i: number) => {
             prepareRow(row)
@@ -123,8 +131,7 @@ export const Table = ({
                     <td
                       key={i}
                       onClick={() =>
-                        typeof onSelect === 'function' &&
-                        onSelect(row.original)
+                        typeof onSelect === 'function' && onSelect(row.original)
                       }
                       {...cell.getCellProps()}
                     >

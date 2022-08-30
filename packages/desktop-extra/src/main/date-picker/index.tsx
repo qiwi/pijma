@@ -2,14 +2,15 @@ import { Icon, Overlay, styled } from '@qiwi/pijma-core'
 import { MaskTextField } from '@qiwi/pijma-desktop'
 import { format } from 'date-fns'
 import React, { Component } from 'react'
-import DayPicker from 'react-day-picker'
+import { DayPicker } from 'react-day-picker'
 import { WithTranslation, withTranslation } from 'react-i18next'
 
 import { COLOR } from '../theme'
 import DatePickerProps from './DatePickerProps'
 import DatePickerState from './DatePickerState'
-import { getMonths, getWeekDaysLong, getWeekDaysShort } from './locale'
+import { locales, TLanguage } from './locale'
 import Wrap from './wrap'
+import 'react-day-picker/dist/style.css'
 
 const PickerDropdown = styled('div')`
   position: absolute;
@@ -17,6 +18,63 @@ const PickerDropdown = styled('div')`
   z-index: 10;
   box-shadow: ${COLOR.SHADOW.Z3};
   border-radius: 8px;
+
+  .Selectable {
+    --rdp-cell-size: 40px;
+    --rdp-accent-color: rgba(255, 140, 0, 0.4);
+    --rdp-background-color: rgba(255, 140, 0.1);
+    /* Switch to dark colors for dark themes */
+    --rdp-accent-color-dark: rgba(255, 140, 0);
+    --rdp-background-color-dark: rgba(255, 140, 0.7);
+    /* Outline border for focused elements */
+    --rdp-outline: 2px solid var(--rdp-accent-color);
+    /* Outline border for focused and selected elements */
+    --rdp-outline-selected: 2px solid rgba(0, 0, 0, 0.75);
+
+    .my-selected {
+      padding: 0px;
+      width: 40px;
+      height: 40px;
+      color: black;
+      background-color: rgba(255, 140, 0);
+      border-radius: 50%;
+    }
+
+    .my-head-cell {
+      width: 40px;
+      height: 40px;
+      padding: 4px;
+    }
+
+    .my-month {
+      margin: 1rem;
+    }
+
+    .my-caption {
+      margin-bottom: 10px;
+      margin-left: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .my-day {
+      width: 40px;
+      height: 40px;
+      padding: 4px;
+    }
+
+    .my-today {
+      color: rgb(208, 2, 27);
+    }
+
+    .my-today {
+      color: rgb(208, 2, 27);
+    }
+
+    .my-caption-label {
+      font-size: 20px;
+    }
+  }
 `
 
 const Container = styled('div')`
@@ -87,10 +145,7 @@ class _DatePicker extends Component<
   }
 
   render() {
-    const { t } = this.props
-    const MONTHS = getMonths(t)
-    const WEEKDAYS_LONG = getWeekDaysLong(t)
-    const WEEKDAYS_SHORT = getWeekDaysShort(t)
+    const { t, i18n } = this.props
 
     return (
       <Wrap onFocus={this.onFocus.bind(this)} onBlur={this.onBlur.bind(this)}>
@@ -116,15 +171,22 @@ class _DatePicker extends Component<
         >
           {() => (
             <PickerDropdown onFocus={this.onFocus.bind(this)}>
-              {/* @ts-ignore */}
               <DayPicker
-                months={MONTHS}
-                weekdaysLong={WEEKDAYS_LONG}
-                weekdaysShort={WEEKDAYS_SHORT}
+                className="Selectable"
                 onDayClick={this.handleDayClick.bind(this)}
-                selectedDays={this.state.date}
+                selected={this.state.date}
                 month={this.state.date}
-                firstDayOfWeek={1}
+                locale={locales[i18n.language as TLanguage]}
+                modifiersClassNames={{
+                  selected: 'my-selected',
+                  today: 'my-today',
+                }}
+                classNames={{
+                  day: 'my-day',
+                  head_cell: 'my-head-cell',
+                  caption: 'my-caption',
+                  month: 'my-month',
+                }}
               />
             </PickerDropdown>
           )}

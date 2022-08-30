@@ -8,7 +8,7 @@ exports[`Dropdown inner renders correctly 1`] = `
     className="css-12khlxv"
   >
     <div
-      className="css-1ot1pbi"
+      className="css-t2z796"
       onMouseDown={[Function]}
     >
       <div
@@ -18,7 +18,7 @@ exports[`Dropdown inner renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="css-1ot1pbi"
+      className="css-t2z796"
       onMouseDown={[Function]}
     >
       <div
@@ -28,7 +28,7 @@ exports[`Dropdown inner renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="css-1ot1pbi"
+      className="css-t2z796"
       onMouseDown={[Function]}
     >
       <div
@@ -38,7 +38,7 @@ exports[`Dropdown inner renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="css-1ot1pbi"
+      className="css-t2z796"
       onMouseDown={[Function]}
     >
       <div

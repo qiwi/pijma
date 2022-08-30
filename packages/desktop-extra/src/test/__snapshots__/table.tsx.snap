@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`columnFactory renders correctly 1`] = `
+exports[`columnFactory renders correctly with header 1`] = `
 <div
   className="css-10dt0en"
 >
@@ -15,16 +15,50 @@ exports[`columnFactory renders correctly 1`] = `
           colSpan={1}
           role="columnheader"
         >
-           
+          ttest
         </th>
         <th
           colSpan={1}
           role="columnheader"
         >
-           
+          test
         </th>
       </tr>
     </thead>
+    <tbody
+      role="rowgroup"
+    >
+      <tr
+        className="css-155ebq5"
+        data-cy="table-row"
+        role="row"
+      >
+        <td
+          onClick={[Function]}
+          role="cell"
+        >
+          qwe
+        </td>
+        <td
+          onClick={[Function]}
+          role="cell"
+        >
+          qweasd
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`columnFactory renders correctly without header 1`] = `
+<div
+  className="css-10dt0en"
+>
+  <table
+    role="table"
+  >
+    <thead />
     <tbody
       role="rowgroup"
     >

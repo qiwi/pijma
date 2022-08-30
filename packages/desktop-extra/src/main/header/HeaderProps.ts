@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 
 interface NavItem {
   name: string
-  path: string
+  path: string | { external: boolean; value: string }
   node?: ReactNode
   value?: string | number
 }

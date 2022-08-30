@@ -1,4 +1,4 @@
-import { css, styled, Typo } from '@qiwi/pijma-core'
+import { styled, Typo } from '@qiwi/pijma-core'
 import { CheckboxField } from '@qiwi/pijma-desktop'
 import React, { Component } from 'react'
 
@@ -25,25 +25,20 @@ export const CheckBoxContainer = styled('div')`
   padding: 5px;
 `
 
-export const ItemCss = css`
-  padding: 10px 24px;
-  width: 100%;
-  cursor: pointer;
-  :hover {
-    background-color: #f5f5f5;
-  }
-  &--active {
-    background-color: #e6e6e6 !important;
-  }
-`
-
-export const ItemActiveCss = css`
-  ${ItemCss}
-  background-color: #E6E6E6 !important;
-`
-
 export const Item = styled('div')`
-  box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px 24px;
+    width: 100%;
+    cursor: pointer;
+    :hover {
+      background-color: #f5f5f5;
+    }
+    &--active {
+      background-color: #e6e6e6 !important;
+    }
+    ${props => // @ts-ignore
+        props.active ? 'background-color: #E6E6E6 !important;' : ''
+    }
 `
 
 export const ScrollContainer = styled('div')`
@@ -72,7 +67,7 @@ class Container extends Component<ContainerProps> {
             items.map((el: DropdownItem, index: number) => (
               <Item
                 // @ts-ignore
-                css={[value === el.name ? ItemActiveCss : ItemCss]}
+                active={value === el.name}
                 key={index}
                 onMouseDown={() => onSelect(el)}
               >
