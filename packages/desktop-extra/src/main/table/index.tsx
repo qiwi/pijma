@@ -30,10 +30,10 @@ const TableWrapper = styled.div`
         text-align: start;
         user-select: none;
         :first-child {
-          padding-left: 32px;
+          padding-left: 44px;
         }
         :last-child {
-          padding-right: 20px;
+          padding-right: 44px;
         }
       }
       font-weight: 300;
@@ -53,10 +53,10 @@ const TableWrapper = styled.div`
         }
         td {
           :first-child {
-            padding-left: 32px;
+            padding-left: 44px;
           }
           :last-child {
-            padding-right: 20px;
+            padding-right: 44px;
           }
         }
       }
