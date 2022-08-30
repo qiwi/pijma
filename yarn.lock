@@ -1181,6 +1181,7 @@ __metadata:
     "@types/react-test-renderer": "npm:^18"
     concurrently: "npm:7.3.0"
     css-loader: "npm:6.7.1"
+    date-fns: "npm:^2.29.2"
     eslint: "npm:8.21.0"
     eslint-config-qiwi: "npm:1.17.4"
     fast-glob: "npm:3.2.11"
@@ -4441,6 +4442,13 @@ __metadata:
   version: 2.29.1
   resolution: "date-fns@npm:2.29.1"
   checksum: fb9e799395537cef0985f67ee6ee0af25c38bbe3f4128c1072b1dd773676042ce5ba57b16aa4195ea98fdfcf987d46f3414f83d2ce3a5eb0382344a96e0ccbdb
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^2.29.2":
+  version: 2.29.2
+  resolution: "date-fns@npm:2.29.2"
+  checksum: 4e178dd6591433644ffed5c10c9e6ff333ee48ade6a5e43d7ed48d90833e263ccd0daafdef8b94a41790ee0be3aff06d35a62d3bad70014a4737204f2a379dec
   languageName: node
   linkType: hard
 
