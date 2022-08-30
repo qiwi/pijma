@@ -1,3 +1,8 @@
+## [@qiwi/pijma-desktop-extra@0.1.7](https://github.com/qiwi/pijma/compare/2022.8.29-qiwi.pijma-desktop-extra.0.1.6-f0...2022.8.30-qiwi.pijma-desktop-extra.0.1.7-f0) (2022-08-30)
+
+### Fixes & improvements
+* docs(desktop-extra): add some docs (#534) [520990a0](https://github.com/qiwi/pijma/commit/520990a05fed04c90dc7a2256fb85b0dce4f825f)
+
 ## [@qiwi/pijma-desktop-extra@0.1.6](https://github.com/qiwi/pijma/compare/2022.8.26-qiwi.pijma-desktop-extra.0.1.5-f0...2022.8.29-qiwi.pijma-desktop-extra.0.1.6-f0) (2022-08-29)
 
 ### Fixes & improvements
