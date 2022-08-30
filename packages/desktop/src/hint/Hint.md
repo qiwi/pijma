@@ -7,7 +7,7 @@ return (
     show={show}
     placement="right"
     children="Подсказка"
-    onShow={(show) => setShow(!show)}
+    onShow={() => setShow(!show)}
     onHide={() => setShow(false)}
   />
 )
@@ -21,7 +21,7 @@ return (
   <Hint
     show={show}
     placement="right"
-    onShow={(show) => setShow(!show)}
+    onShow={() => setShow(!show)}
     onHide={() => setShow(false)}
   >
     <Spacer>

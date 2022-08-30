@@ -1,11 +1,7 @@
 ```jsx {"actions":[{"action":"click","selector":"svg","wait":500,"preview":"[role=dialog] [role=document]"}]}
 const [show, setShow] = React.useState(false)
 return (
-  <Hint
-    show={show}
-    onShow={(show) => setShow(!show)}
-    onHide={() => setShow(false)}
-  >
+  <Hint show={show} onShow={() => setShow(!show)} onHide={() => setShow(false)}>
     <Spacer>
       <Heading size="2" children="Заголовок" />
       <Paragraph>

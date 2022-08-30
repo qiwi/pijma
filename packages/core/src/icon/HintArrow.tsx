@@ -3,11 +3,11 @@ import React, { FC } from 'react'
 import { OverlayProps } from '../overlays'
 import { Path, Svg } from '../primitive'
 
-export interface QuestionArrowProps {
+export interface HintArrowProps {
   placement: NonNullable<OverlayProps['placement']>
 }
 
-const transform: Record<QuestionArrowProps['placement'], string | undefined> = {
+const transform: Record<HintArrowProps['placement'], string | undefined> = {
   'top-start': 'rotate(-90deg)',
   top: 'rotate(-90deg)',
   'top-end': 'rotate(-90deg)',
@@ -25,7 +25,7 @@ const transform: Record<QuestionArrowProps['placement'], string | undefined> = {
   'auto-end': undefined,
 }
 
-export const HintArrow: FC<QuestionArrowProps> = ({ placement }) => (
+export const HintArrow: FC<HintArrowProps> = ({ placement }) => (
   <Svg
     width={11}
     height={11}

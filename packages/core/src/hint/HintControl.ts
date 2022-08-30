@@ -4,8 +4,8 @@ export interface HintControlProps {
   show: boolean
   onShow: () => void
   children: FC<{
-    onClick: MouseEventHandler
     show: boolean
+    onClick: MouseEventHandler
     target: RefObject<HTMLDivElement>
     container: RefObject<HTMLDivElement>
   }>
@@ -16,7 +16,7 @@ export class HintControl extends Component<HintControlProps> {
 
   private container: RefObject<HTMLDivElement> = createRef()
 
-  private onItemClick: (show: boolean) => MouseEventHandler = () => (event) => {
+  private onClick: MouseEventHandler = (event) => {
     event.preventDefault()
     this.props.onShow()
   }
@@ -24,7 +24,7 @@ export class HintControl extends Component<HintControlProps> {
   public render() {
     return this.props.children({
       show: this.props.show,
-      onClick: this.onItemClick(this.props.show),
+      onClick: this.onClick,
       target: this.target,
       container: this.container,
     })
