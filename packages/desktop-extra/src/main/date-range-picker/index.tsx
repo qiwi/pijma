@@ -1,16 +1,17 @@
+import 'react-day-picker/dist/style.css'
+
 import { Icon, Overlay, styled } from '@qiwi/pijma-core'
 import { TextField } from '@qiwi/pijma-desktop'
 import { format } from 'date-fns'
 import React, { Component } from 'react'
-import { DayPicker, addToRange } from 'react-day-picker'
+import { addToRange, DayPicker } from 'react-day-picker'
 import { WithTranslation, withTranslation } from 'react-i18next'
 
+import { locales, TLanguage } from '../date-picker/locale'
 import Wrap from '../date-picker/wrap'
 import { COLOR } from '../theme'
 import DateRangePickerState from './DateRangePickerState'
 import DateRangerPickerProps from './DateRangerPickerProps'
-import { locales, TLanguage } from '../date-picker/locale'
-import 'react-day-picker/dist/style.css'
 
 export const PickerDropdown = styled('div')`
   position: absolute;

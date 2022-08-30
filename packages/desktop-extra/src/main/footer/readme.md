@@ -1,5 +1,3 @@
 ```javascript
-  <Footer
-    email='pijma-ui@qiwi.com'
-  />
+<Footer email="pijma-ui@qiwi.com" />
 ```

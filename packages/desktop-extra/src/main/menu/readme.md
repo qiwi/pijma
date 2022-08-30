@@ -1,3 +1,3 @@
 ```javascript
-    <Menu default={active} items={items} />
+<Menu default={active} items={items} />
 ```

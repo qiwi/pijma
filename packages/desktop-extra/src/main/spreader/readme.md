@@ -1,5 +1,5 @@
 ```javascript
-  <Spreader>
-    <App />
-  </ Spreader>
+<Spreader>
+  <App />
+</Spreader>
 ```

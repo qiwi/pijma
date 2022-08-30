@@ -1,4 +1,3 @@
 ```javascript
-  <Divider active={variant === 'active'} />
+<Divider active={variant === 'active'} />
 ```
-

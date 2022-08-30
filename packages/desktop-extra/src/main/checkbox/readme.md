@@ -1,15 +1,18 @@
 ```javascript
-  <Checkbox
-    title={'title'}
-    options={[{
+<Checkbox
+  title={'title'}
+  options={[
+    {
       label: 'label',
-      value: 'value'
-    }, {
+      value: 'value',
+    },
+    {
       label: 'foo',
-      value: 'bar'
-    }]}
-    values={value}
-    onChange={setValue}
-    onLayoutChange={setLayout}
-  />
+      value: 'bar',
+    },
+  ]}
+  values={value}
+  onChange={setValue}
+  onLayoutChange={setLayout}
+/>
 ```
