@@ -1,7 +1,3 @@
 ```javascript
-  <Amount
-    title={'Amount'}
-    value={value}
-    onChange={setAmount}
-  />
+<Amount title={'Amount'} value={value} onChange={setAmount} />
 ```

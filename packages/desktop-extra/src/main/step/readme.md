@@ -1,9 +1,3 @@
 ```javascript
-  <Step
-    variant={variant}
-    text={currentStep}
-    onClick={setStep}
-  />
+<Step variant={variant} text={currentStep} onClick={setStep} />
 ```
-
-

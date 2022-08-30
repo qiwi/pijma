@@ -1,3 +1,3 @@
 ```javascript
-    <UserProfile onClick={onLogout} userName={userName} />
+<UserProfile onClick={onLogout} userName={userName} />
 ```

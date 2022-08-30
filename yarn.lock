@@ -1194,7 +1194,6 @@ __metadata:
     react-day-picker: "npm:8.1.3"
     react-dropzone: "npm:^14.2.2"
     react-i18next: "npm:^11.18.4"
-    react-js-pagination: "npm:^3.0.3"
     react-router: "npm:^6.3.0"
     react-router-dom: "npm:^6.3.0"
     react-table: "npm:^7.8.0"
@@ -3166,15 +3165,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"block-stream@npm:*":
-  version: 0.0.9
-  resolution: "block-stream@npm:0.0.9"
-  dependencies:
-    inherits: "npm:~2.0.0"
-  checksum: cb0d1cbfad3a512beacedcfde9262de9a7f528a0324dc4161bb975d66131affbdf010822a9d125024b3a4cde7466ac0a3570d72805487ca3ec290e0332c5e8fc
-  languageName: node
-  linkType: hard
-
 "bluebird@npm:^3.5.5":
   version: 3.7.2
   resolution: "bluebird@npm:3.7.2"
@@ -3815,13 +3805,6 @@ __metadata:
     isobject: "npm:^3.0.0"
     static-extend: "npm:^0.1.1"
   checksum: e7fc96034dc63955d303b96c41eaa5728ca86b25aa9a14931d8a440bf7a30c6e7f52837d97337716e24bf74a46e703bbf05eba1b8ef8b67324e61955abc6b0aa
-  languageName: node
-  linkType: hard
-
-"classnames@npm:^2.2.5":
-  version: 2.3.1
-  resolution: "classnames@npm:2.3.1"
-  checksum: 282e29eeb023740bfd9d00e44d6baf2b2f023f0d0a460cd327869062eaa512cea66a1fd97d730b4f934fb94b9425c1702963be62029fa0ec1383c5e34c89f404
   languageName: node
   linkType: hard
 
@@ -6233,18 +6216,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fstream@npm:1.0.12, fstream@npm:^1.0.12":
-  version: 1.0.12
-  resolution: "fstream@npm:1.0.12"
-  dependencies:
-    graceful-fs: "npm:^4.1.2"
-    inherits: "npm:~2.0.0"
-    mkdirp: "npm:>=0.5 0"
-    rimraf: "npm:2"
-  checksum: 972268b02a904e0f1aa8bdc53bd51f6b7ed5a39e92d6a877d5958e163861cc7d894ce5002db5452395ffb19f05082ae552db5d017017ff56912fabe4c60be761
-  languageName: node
-  linkType: hard
-
 "function-bind@npm:^1.1.1":
   version: 1.1.1
   resolution: "function-bind@npm:1.1.1"
@@ -7041,7 +7012,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inherits@npm:2, inherits@npm:2.0.4, inherits@npm:^2.0.1, inherits@npm:^2.0.3, inherits@npm:^2.0.4, inherits@npm:~2.0.0, inherits@npm:~2.0.1, inherits@npm:~2.0.3":
+"inherits@npm:2, inherits@npm:2.0.4, inherits@npm:^2.0.1, inherits@npm:^2.0.3, inherits@npm:^2.0.4, inherits@npm:~2.0.1, inherits@npm:~2.0.3":
   version: 2.0.4
   resolution: "inherits@npm:2.0.4"
   checksum: ca76c7e45ec715bfe6c1dd67b780b9a15068f37b37ab56cf8b773537b2654238469a42950f5f4d301212755e7512be888f627752e778e1863d95cfedefc8b8bd
@@ -9278,7 +9249,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mkdirp@npm:>=0.5 0, mkdirp@npm:^0.5.1, mkdirp@npm:^0.5.3, mkdirp@npm:^0.5.6":
+"mkdirp@npm:^0.5.1, mkdirp@npm:^0.5.3, mkdirp@npm:^0.5.6":
   version: 0.5.6
   resolution: "mkdirp@npm:0.5.6"
   dependencies:
@@ -9965,13 +9936,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"paginator@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "paginator@npm:1.0.0"
-  checksum: 28ea6b2d0decf74750e60563f6c793ac1828f2d69cab642bdd6f376fefcf290b1d8cf9ff7033c4885ec3c2a788aaea2d0cae988a3dbb5120edd837fd2a27ecb6
-  languageName: node
-  linkType: hard
-
 "pako@npm:~1.0.5":
   version: 1.0.11
   resolution: "pako@npm:1.0.11"
@@ -10469,7 +10433,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:15.x.x - 16.x.x, prop-types@npm:^15.5.0, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.5.0, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -10911,20 +10875,6 @@ __metadata:
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: 0c9adc5d984db733fb1dd298f3e94cdec66bc328d27fb11df65971d2cc9a299008bc64baab8fe8e79943df85b445a1008b2cc9e270825d0fd056e5a0d2df8de6
-  languageName: node
-  linkType: hard
-
-"react-js-pagination@npm:^3.0.3":
-  version: 3.0.3
-  resolution: "react-js-pagination@npm:3.0.3"
-  dependencies:
-    classnames: "npm:^2.2.5"
-    fstream: "npm:1.0.12"
-    paginator: "npm:^1.0.0"
-    prop-types: "npm:15.x.x - 16.x.x"
-    react: "npm:15.x.x - 16.x.x"
-    tar: "npm:2.2.2"
-  checksum: ec0ef52814d7ca71f2f28b3f7ac703bb1b6864889ad3225e67c7ead89a59aefc76c403d02e2ebbf2e74093995b1a4f6f5eedf8d420d909a70f065e4d1f187164
   languageName: node
   linkType: hard
 
@@ -11600,17 +11550,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:2, rimraf@npm:^2.5.4, rimraf@npm:^2.6.3":
-  version: 2.7.1
-  resolution: "rimraf@npm:2.7.1"
-  dependencies:
-    glob: "npm:^7.1.3"
-  bin:
-    rimraf: ./bin.js
-  checksum: 35e2f6ca89242c02380f70895af2caf2b8a31e5a9b05b380ebf0aa5f48005ec9d242eb4fb32d8578a34c42dc012d16866dfc0e0d0b8601ec8c72ff7065755f19
-  languageName: node
-  linkType: hard
-
 "rimraf@npm:3.0.2, rimraf@npm:^3.0.2":
   version: 3.0.2
   resolution: "rimraf@npm:3.0.2"
@@ -11619,6 +11558,17 @@ __metadata:
   bin:
     rimraf: bin.js
   checksum: b786c9ad52df9fbcd9c7120e105f3150b83b39dd87d9235a93b0c7e806575e1e68936504ff64563dbe67b3f8bbbc00bdfff586157d402ee8990e7143456511c0
+  languageName: node
+  linkType: hard
+
+"rimraf@npm:^2.5.4, rimraf@npm:^2.6.3":
+  version: 2.7.1
+  resolution: "rimraf@npm:2.7.1"
+  dependencies:
+    glob: "npm:^7.1.3"
+  bin:
+    rimraf: ./bin.js
+  checksum: 35e2f6ca89242c02380f70895af2caf2b8a31e5a9b05b380ebf0aa5f48005ec9d242eb4fb32d8578a34c42dc012d16866dfc0e0d0b8601ec8c72ff7065755f19
   languageName: node
   linkType: hard
 
@@ -12648,17 +12598,6 @@ __metadata:
     inherits: "npm:^2.0.3"
     readable-stream: "npm:^3.1.1"
   checksum: c0c8df70dbca1da9fc5dc89046b972ee9703ee0d07e096749e5c60f4847dd912e99da1dbb9cb9bd87be0deba550e60dbec2477a1c44c000435ceb5a909f5db5f
-  languageName: node
-  linkType: hard
-
-"tar@npm:2.2.2":
-  version: 2.2.2
-  resolution: "tar@npm:2.2.2"
-  dependencies:
-    block-stream: "npm:*"
-    fstream: "npm:^1.0.12"
-    inherits: "npm:2"
-  checksum: b195c7ae711737d05591b98817b3608113466596b0726db0fd8bd28e139314953c99fe04a84fb7f670cbdbf5ea716b51e59c4f91846c3c7dd42ee297f9249f70
   languageName: node
   linkType: hard
 

@@ -1,3 +1,3 @@
 ```javascript
-    <Chip text={name} onRemove={removeFile} />
+<Chip text={name} onRemove={removeFile} />
 ```

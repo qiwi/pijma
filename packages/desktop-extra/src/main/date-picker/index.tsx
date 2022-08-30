@@ -1,3 +1,5 @@
+import 'react-day-picker/dist/style.css'
+
 import { Icon, Overlay, styled } from '@qiwi/pijma-core'
 import { MaskTextField } from '@qiwi/pijma-desktop'
 import { format } from 'date-fns'
@@ -10,7 +12,6 @@ import DatePickerProps from './DatePickerProps'
 import DatePickerState from './DatePickerState'
 import { locales, TLanguage } from './locale'
 import Wrap from './wrap'
-import 'react-day-picker/dist/style.css'
 
 const PickerDropdown = styled('div')`
   position: absolute;

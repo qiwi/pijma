@@ -51,7 +51,10 @@ describe('columnFactory', () => {
           onSelect={() => {
             /* noop */
           }}
-          columns={[{ accessor: 'name', Header: 'ttest' }, { accessor: 'value', Header: 'test' }]}
+          columns={[
+            { accessor: 'name', Header: 'ttest' },
+            { accessor: 'value', Header: 'test' },
+          ]}
         />,
       )
       .toJSON()

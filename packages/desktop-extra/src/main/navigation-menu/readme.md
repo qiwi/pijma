@@ -1,7 +1,7 @@
 ```javascript
 import { NavLink } from 'react-router-dom'
 
-<NavigationMenu
+;<NavigationMenu
   link={NavLink}
   active={'/txn'}
   items={[

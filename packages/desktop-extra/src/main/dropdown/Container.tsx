@@ -26,19 +26,19 @@ export const CheckBoxContainer = styled('div')`
 `
 
 export const Item = styled('div')`
-    box-sizing: border-box;
-    padding: 10px 24px;
-    width: 100%;
-    cursor: pointer;
-    :hover {
-      background-color: #f5f5f5;
-    }
-    &--active {
-      background-color: #e6e6e6 !important;
-    }
-    ${props => // @ts-ignore
-        props.active ? 'background-color: #E6E6E6 !important;' : ''
-    }
+  box-sizing: border-box;
+  padding: 10px 24px;
+  width: 100%;
+  cursor: pointer;
+  :hover {
+    background-color: #f5f5f5;
+  }
+  &--active {
+    background-color: #e6e6e6 !important;
+  }
+  ${(
+    props, // @ts-ignore
+  ) => (props.active ? 'background-color: #E6E6E6 !important;' : '')}
 `
 
 export const ScrollContainer = styled('div')`

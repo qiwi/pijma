@@ -1,7 +1,3 @@
 ```javascript
-  <Product
-    title={title}
-    selectorData={selectorData}
-    onChange={onItemChange}
-  />
+<Product title={title} selectorData={selectorData} onChange={onItemChange} />
 ```
