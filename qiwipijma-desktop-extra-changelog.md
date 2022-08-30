@@ -1,3 +1,8 @@
+## [@qiwi/pijma-desktop-extra@0.1.8](https://github.com/qiwi/pijma/compare/2022.8.30-qiwi.pijma-desktop-extra.0.1.7-f0...2022.8.30-qiwi.pijma-desktop-extra.0.1.8-f0) (2022-08-30)
+
+### Fixes & improvements
+* fix(desktop-extra): picker locale, change paginator, table (#536) [4966738f](https://github.com/qiwi/pijma/commit/4966738f2769359156aae325b10697761c298781)
+
 ## [@qiwi/pijma-desktop-extra@0.1.7](https://github.com/qiwi/pijma/compare/2022.8.29-qiwi.pijma-desktop-extra.0.1.6-f0...2022.8.30-qiwi.pijma-desktop-extra.0.1.7-f0) (2022-08-30)
 
 ### Fixes & improvements
