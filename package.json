@@ -9,6 +9,7 @@
     "build": "yarn workspaces foreach --parallel --topological-dev --no-private --interlaced run build",
     "start": "yarn workspaces foreach --parallel --no-private --interlaced run start",
     "test": "yarn workspaces foreach --parallel --no-private --interlaced run test",
+    "format": "yarn workspaces foreach --parallel --no-private --interlaced run format",
     "lint": "yarn workspaces foreach --parallel --no-private --interlaced run lint"
   },
   "resolutions": {
