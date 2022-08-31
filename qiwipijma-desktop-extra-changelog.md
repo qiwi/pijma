@@ -1,3 +1,8 @@
+## [@qiwi/pijma-desktop-extra@0.1.10](https://github.com/qiwi/pijma/compare/2022.8.31-qiwi.pijma-desktop-extra.0.1.9-f0...2022.8.31-qiwi.pijma-desktop-extra.0.1.10-f0) (2022-08-31)
+
+### Fixes & improvements
+* fix(desktop-extra): table props types (#539) [25639d39](https://github.com/qiwi/pijma/commit/25639d394f08efc7fabebf8d47321ee63c547fe8)
+
 ## [@qiwi/pijma-desktop-extra@0.1.9](https://github.com/qiwi/pijma/compare/2022.8.30-qiwi.pijma-desktop-extra.0.1.8-f0...2022.8.31-qiwi.pijma-desktop-extra.0.1.9-f0) (2022-08-31)
 
 ### Dependencies
