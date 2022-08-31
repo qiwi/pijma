@@ -9,3 +9,5 @@ export * from './MobileAppIcon'
 export * from './PaymentSecurityIcon'
 
 export * from './PaymentSystemIcon'
+
+export * from './HintArrow'
