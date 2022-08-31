@@ -1,0 +1,10 @@
+```javascript
+<Paginator
+  activePage={activePage}
+  itemsCountPerPage={size}
+  totalItemsCount={totalCount}
+  pageRangeDisplayed={4}
+  hideFirstLastPages
+  onChange={setPage}
+/>
+```

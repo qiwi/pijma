@@ -2,7 +2,7 @@
 
 exports[`columnFactory renders correctly with header 1`] = `
 <div
-  className="css-10dt0en"
+  className="css-orl4ue"
 >
   <table
     role="table"
@@ -53,7 +53,7 @@ exports[`columnFactory renders correctly with header 1`] = `
 
 exports[`columnFactory renders correctly without header 1`] = `
 <div
-  className="css-10dt0en"
+  className="css-orl4ue"
 >
   <table
     role="table"
