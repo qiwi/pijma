@@ -131,8 +131,8 @@ jobs:
       - name: Install
         run: yarn
 
-      - name: Unit test
-        run: yarn test:unit
+      - name: Lint
+        run: yarn lint
 
   #      - name: Push coverage
   #        if: github.ref == 'refs/heads/master'
@@ -200,9 +200,9 @@ jobs:
           docker pull browserless/chrome
           docker pull nginx
 
-      - name: Unit tests
+      - name: Lint
         if: matrix.node-version == '18'
-        run: yarn test:unit
+        run: yarn lint
 
       - name: Visual tests
         if: matrix.node-version == '16'
