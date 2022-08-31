@@ -1,13 +1,15 @@
 import { styled } from '@qiwi/pijma-core'
 import React from 'react'
-import { useTable } from 'react-table'
+import { TableOptions, useTable } from 'react-table'
 
 import { activeBackground, borderColor, tableHoverColor } from './constants'
 
-const TrWrapper = styled('tr')`
-  background-color: ${(props: { active?: boolean }) =>
-    props.active ? activeBackground : 'none'};
-  ${(props: any) => (props.cursor ? 'cursor: ' + props.cursor + ';' : '')};
+const TrWrapper = styled('tr')<{
+  active?: boolean
+  cursor?: CSSStyleDeclaration['cursor']
+}>`
+  background-color: ${(props) => (props.active ? activeBackground : 'none')};
+  ${(props) => (props.cursor ? 'cursor: ' + props.cursor + ';' : '')};
 `
 
 const TableWrapper = styled.div`
@@ -74,13 +76,19 @@ const TableWrapper = styled.div`
   }
 `
 
+export type TTableProps = Pick<TableOptions<any>, 'columns' | 'data'> & {
+  onSelect?: (d: any) => void
+  isActive?: (d: any) => boolean
+  rowCursor?: CSSStyleDeclaration['cursor']
+}
+
 export const Table = ({
   columns,
   data,
   onSelect,
   rowCursor,
   isActive,
-}: any) => {
+}: TTableProps) => {
   // Use the state and functions returned from useTable to build your UI
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({
@@ -90,9 +98,11 @@ export const Table = ({
 
   // Render the UI for your table
   const headers = []
-  const thead = headerGroups.map((headerGroup, index) => (
-    <tr {...headerGroup.getHeaderGroupProps()} key={index}>
-      {headerGroup.headers.map((column, index) => {
+  const thead = headerGroups.map((headerGroup) => (
+    // headerGroup.getHeaderGroupProps() returns a key
+    // eslint-disable-next-line react/jsx-key
+    <tr {...headerGroup.getHeaderGroupProps()}>
+      {headerGroup.headers.map((column) => {
         const header = column.render('Header')
         const typeofHeader = typeof header
         if (
@@ -102,11 +112,7 @@ export const Table = ({
             header.props.children)
         ) {
           headers.push(header)
-          return (
-            <th {...column.getHeaderProps()} key={index}>
-              {header}
-            </th>
-          )
+          return <th {...column.getHeaderProps()}>{header}</th>
         }
         return null
       })}
@@ -122,11 +128,12 @@ export const Table = ({
           <></>
         )}
         <tbody {...getTableBodyProps()}>
-          {rows.map((row: any, i: number) => {
+          {rows.map((row) => {
             prepareRow(row)
             return (
+              // row.getRowProps() returns a key
+              // eslint-disable-next-line react/jsx-key
               <TrWrapper
-                key={i}
                 data-cy={'table-row'}
                 {...row.getRowProps()}
                 active={isActive ? isActive(row.original) : false}
