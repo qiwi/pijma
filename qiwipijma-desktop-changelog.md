@@ -1,3 +1,11 @@
+## [@qiwi/pijma-desktop@1.156.0](https://github.com/qiwi/pijma/compare/2022.8.8-qiwi.pijma-desktop.1.155.0-f0...2022.8.31-qiwi.pijma-desktop.1.156.0-f0) (2022-08-31)
+
+### Features
+* feat: hint (#535) [1e44a0a0](https://github.com/qiwi/pijma/commit/1e44a0a020a74d41f9a253135dead2c38b40a3b8)
+
+### Dependencies
+* perf: @qiwi/pijma-core updated to 1.157.0
+
 ## [@qiwi/pijma-desktop@1.155.0](https://github.com/qiwi/pijma/compare/2022.8.4-qiwi.pijma-desktop.1.154.3-f0...2022.8.8-qiwi.pijma-desktop.1.155.0-f0) (2022-08-08)
 
 ### Features
