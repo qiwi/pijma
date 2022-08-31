@@ -27,7 +27,8 @@
     "build:es6": "swc src -d lib/es6 --config-file swc.es6.json && tsc-esm-fix --target=lib/es6 --fillBlank",
     "build:dts": "tsc --project tsconfig.dts.json",
     "test": "jest",
-    "lint": "eslint --fix src && prettier --loglevel silent --write src"
+    "format": "eslint --fix src && prettier --loglevel silent --write src",
+    "lint": "eslint src"
   },
   "files": [
     "README.md",

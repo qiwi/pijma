@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['eslint-config-qiwi'],
+  extends: ['eslint-config-qiwi', 'eslint-config-prettier'],
   rules: {
     'react/no-children-prop': 'off',
     'react/no-find-dom-node': 'off',
