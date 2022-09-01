@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { Product } from '../main'
+import { Product } from '../../main/ts'
 
 describe('Product', () => {
   it('is properly exported from lib index', () => {

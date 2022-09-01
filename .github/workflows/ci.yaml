@@ -19,7 +19,7 @@ jobs:
 
       - name: Get src checksum
         id: checksum
-        run: echo "::set-output name=checksum::${{ hashFiles('yarn.lock', '*.json', 'packages/*/*.json', 'packages/*/src/**/*', 'packages/*/styleguide/*.*', 'packages/*/styleguide/components/**/*') }}"
+        run: echo "::set-output name=checksum::${{ hashFiles('yarn.lock', '*.json', 'packages/*/*.json', 'packages/*/src/main/ts/**/*', 'packages/*/src/main/webapp/**/*') }}"
 
   build:
     name: build
@@ -65,7 +65,7 @@ jobs:
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         run: |
           yarn build
-          tar -cvf artifact.tar package.json packages/*/lib packages/*/styleguide/lib
+          tar -cvf artifact.tar package.json packages/*/target
 
       - name: Save artifact
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
@@ -215,8 +215,8 @@ jobs:
           name: screenshots-${{ needs.init.outputs.checksum }}
           retention-days: 1
           path: |
-            packages/*/styleguide/screenshots/*.new.png
-            packages/*/styleguide/screenshots/*.diff.png
+            packages/*/src/main/resources/screenshots/*.new.png
+            packages/*/src/main/resources/screenshots/*.diff.png
 
   release:
     name: Release

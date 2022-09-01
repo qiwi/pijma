@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { Amount } from '../main'
+import { Amount } from '../../main/ts'
 
 describe('Amount', () => {
   it('is properly exported from lib index', () => {

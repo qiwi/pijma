@@ -1,5 +1,5 @@
 module.exports = {
-  ghPages: 'gh-pages styleguide/lib mobile',
+  ghPages: 'gh-pages target/webapp mobile',
   cmd: 'yarn',
   changelog: 'changelog',
 }

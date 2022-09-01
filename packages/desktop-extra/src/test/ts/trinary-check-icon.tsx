@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { TrinaryCheckIcon } from '../main'
+import { TrinaryCheckIcon } from '../../main/ts'
 
 describe('TrinaryCheckIcon', () => {
   it('is properly exported from lib index', () => {

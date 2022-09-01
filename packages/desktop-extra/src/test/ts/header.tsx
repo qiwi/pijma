@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router'
 import { NavLink } from 'react-router-dom'
 import renderer from 'react-test-renderer'
 
-import { Header, ThemeProvider, themes } from '../main'
+import { Header, ThemeProvider, themes } from '../../main/ts'
 
 const navItems = [
   { name: 'Транзакции', path: '/txn' },

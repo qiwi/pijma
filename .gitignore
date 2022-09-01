@@ -3,7 +3,7 @@
 /*.log
 /node_modules
 /packages/*/node_modules
-/packages/*/lib
+/packages/*/target
 .DS_Store
 
 # Yarn berry
@@ -15,9 +15,6 @@
 !.yarn/sdks
 !.yarn/versions
 
-# Styleguidist
-/packages/*/styleguide/lib
-
 # Creds
 *.asc
 *.key
@@ -28,6 +25,3 @@
 **/.npmrc
 **/.yarnrc
 **/.pnpmrc
-
-# Coverage
-/packages/*/coverage

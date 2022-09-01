@@ -2,18 +2,25 @@ import { ThemeProvider, themes } from '@qiwi/pijma-core'
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { DatePicker } from '../main'
+import { DateRangePicker } from '../../main/ts'
 
-describe('DatePicker', () => {
+describe('DateRangePicker', () => {
   it('is properly exported from lib index', () => {
-    expect(DatePicker).not.toBeUndefined()
+    expect(DateRangePicker).not.toBeUndefined()
   })
 
   it('renders correctly', () => {
-    const datePicker = renderer
+    const dateRangePicker = renderer
       .create(
         <ThemeProvider theme={themes.orange}>
-          <DatePicker title="Date" />
+          <DateRangePicker
+            onChange={() => {
+              /* noop */
+            }}
+            dateTo={new Date('5/8/2019')}
+            dateFrom={new Date('5/8/2019')}
+            title="Date"
+          />
         </ThemeProvider>,
         {
           createNodeMock: (element) => {
@@ -30,6 +37,6 @@ describe('DatePicker', () => {
         },
       )
       .toJSON()
-    expect(datePicker).toMatchSnapshot()
+    expect(dateRangePicker).toMatchSnapshot()
   })
 })

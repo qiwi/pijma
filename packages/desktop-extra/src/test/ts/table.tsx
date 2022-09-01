@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { columnFactory, Table } from '../main'
+import { columnFactory, Table } from '../../main/ts'
 
 describe('Table', () => {
   it('is properly exported from lib index', () => {

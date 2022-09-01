@@ -22,19 +22,19 @@
     "baseUrl": "./",
     "paths": {
       "@qiwi/pijma-core": [
-        "./packages/core/src"
+        "./packages/core/src/main/ts"
       ],
       "@qiwi/pijma-desktop": [
-        "./packages/desktop/src"
+        "./packages/desktop/src/main/ts"
       ],
       "@qiwi/pijma-desktop-extra": [
-        "./packages/desktop-extra/src"
+        "./packages/desktop-extra/src/main/ts"
       ],
       "@qiwi/pijma-mobile": [
-        "./packages/mobile/src"
+        "./packages/mobile/src/main/ts"
       ],
       "@qiwi/pijma-ssr": [
-        "./packages/ssr/src"
+        "./packages/ssr/src/main/ts"
       ]
     }
   }

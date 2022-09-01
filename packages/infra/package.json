@@ -10,6 +10,7 @@
   "devDependencies": {
     "@swc/cli": "0.1.57",
     "@swc/core": "1.2.224",
+    "@swc/jest": "0.2.22",
     "concurrently": "7.3.0",
     "css-loader": "6.7.1",
     "eslint": "8.21.0",

@@ -2,7 +2,7 @@ import { ThemeProvider, themes } from '@qiwi/pijma-core'
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { Container, Dropdown } from '../main'
+import { Container, Dropdown } from '../../main/ts'
 
 describe('Dropdown', () => {
   it('is properly exported from lib index', () => {
