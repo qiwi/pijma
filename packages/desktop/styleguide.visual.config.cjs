@@ -9,9 +9,6 @@ module.exports = {
       height: 900,
     },
   },
-  filter: [
-    'Hint',
-  ],
   deleteScreenshotsWhenAccepted: true,
   connectOptions: {
     browserWSEndpoint: 'ws://localhost:6161',
