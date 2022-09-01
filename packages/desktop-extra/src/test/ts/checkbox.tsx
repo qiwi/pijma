@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { Checkbox } from '../main'
+import { Checkbox } from '../../main/ts'
 
 describe('Checkbox', () => {
   it('is properly exported from lib index', () => {

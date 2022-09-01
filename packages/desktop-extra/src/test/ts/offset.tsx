@@ -1,15 +1,15 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { B2bSpinner } from '../main'
+import { Offset } from '../../main/ts'
 
 describe('Offset', () => {
   it('is properly exported from lib index', () => {
-    expect(B2bSpinner).not.toBeUndefined()
+    expect(Offset).not.toBeUndefined()
   })
 
   it('renders correctly', () => {
-    const offset = renderer.create(<B2bSpinner />).toJSON()
+    const offset = renderer.create(<Offset />).toJSON()
     expect(offset).toMatchSnapshot()
   })
 })

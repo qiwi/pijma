@@ -5,7 +5,7 @@ const docgen = require('react-docgen-typescript')
 const glob = require('fast-glob')
 
 module.exports = ({ cwd, extra = {}, components = [] }) => {
-  const styleguideRoot = path.resolve(cwd, 'styleguide')
+  const styleguideRoot = path.resolve(cwd, 'src', 'main', 'webapp')
   const styleguideComponentsRoot = path.resolve(styleguideRoot, 'components')
   const tsConfig = require(path.resolve(cwd, '..', '..', 'tsconfig.json'))
 
@@ -38,7 +38,7 @@ module.exports = ({ cwd, extra = {}, components = [] }) => {
     {
       propsParser: docgen.parse,
       serverPort: 8080,
-      styleguideDir: path.resolve(styleguideRoot, 'lib'),
+      styleguideDir: path.resolve(cwd, 'target', 'webapp'),
       styleguideComponents: readFiles(styleguideComponentsRoot).reduce(
         (components, file) =>
           Object.assign(components, {

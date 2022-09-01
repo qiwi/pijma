@@ -1,6 +1,6 @@
 module.exports = {
   url: 'http://host.docker.internal:7070/',
-  dir: 'styleguide/screenshots',
+  dir: 'src/main/resources/screenshots',
   wait: 50,
   threshold: 0.01,
   viewports: {

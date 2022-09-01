@@ -1,20 +1,21 @@
 {
   "testEnvironment": "jsdom",
   "collectCoverage": true,
+  "coverageDirectory": "target/coverage",
   "coveragePathIgnorePatterns": [
-    "<rootDir>/src/main/interface.ts"
+    "<rootDir>/src/main/ts/interface.ts"
   ],
   "collectCoverageFrom": [
-    "<rootDir>/src/main/**/*.ts",
-    "<rootDir>/src/main/**/*.tsx"
+    "<rootDir>/src/main/ts/**/*.ts",
+    "<rootDir>/src/main/ts/**/*.tsx"
   ],
   "testMatch": [
-    "<rootDir>/src/test/**/*.ts",
-    "<rootDir>/src/test/**/*.tsx"
+    "<rootDir>/src/test/ts/**/*.ts",
+    "<rootDir>/src/test/ts/**/*.tsx"
   ],
   "testPathIgnorePatterns": [
     "/node_modules/",
-    "<rootDir>/src/test/stub"
+    "<rootDir>/src/test/ts/stub"
   ],
   "moduleFileExtensions": [
     "ts",
@@ -25,9 +26,9 @@
     "node"
   ],
   "moduleNameMapper": {
-    "@qiwi/pijma-core": "<rootDir>/../../packages/core/src",
-    "@qiwi/pijma-desktop": "<rootDir>/../../packages/desktop/src",
-    "\\.css$": "<rootDir>/src/test/__mocks__/style.js"
+    "@qiwi/pijma-core": "<rootDir>/../../packages/core/src/main/ts",
+    "@qiwi/pijma-desktop": "<rootDir>/../../packages/desktop/src/main/ts",
+    "\\.css$": "<rootDir>/src/test/ts/__mocks__/style.js"
   },
   "transformIgnorePatterns": [
     "node_modules/(?!(lodash-es|@qiwi/common-formatters|@qiwi/pijma-core|@qiwi/pijma-media|@qiwi/pijma-desktop)/)"

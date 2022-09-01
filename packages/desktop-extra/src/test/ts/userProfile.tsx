@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { UserProfile } from '../main'
+import { UserProfile } from '../../main/ts'
 
 describe('UserProfile', () => {
   it('is properly exported from lib index', () => {

@@ -1,19 +1,21 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { B2bIcon } from '../main'
+import { ErrorMessage } from '../../main/ts'
 
 describe('Icon', () => {
   it('is properly exported from lib index', () => {
-    expect(B2bIcon).not.toBeUndefined()
+    expect(ErrorMessage).not.toBeUndefined()
   })
 
   it('renders correctly', () => {
     const component = renderer
       .create(
-        <B2bIcon
-          // @ts-ignore
+        <ErrorMessage
+          message="Сообщение ошибки!!!"
+          title="Заголовок ошибки"
           icon="plus"
+          iconColor="#00FF00"
         />,
       )
       .toJSON()
@@ -22,15 +24,7 @@ describe('Icon', () => {
 
   it('renders correctly', () => {
     const component = renderer
-      .create(
-        <B2bIcon
-          // @ts-ignore
-          icon="plus"
-          iconColor="#FF0000"
-          h={50}
-          w={50}
-        />,
-      )
+      .create(<ErrorMessage message="Сообщение ощибки!!!" />)
       .toJSON()
     expect(component).toMatchSnapshot()
   })

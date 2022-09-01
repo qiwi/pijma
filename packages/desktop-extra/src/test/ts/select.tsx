@@ -2,7 +2,7 @@ import { ThemeProvider, themes } from '@qiwi/pijma-core'
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { Select } from '../main'
+import { Select } from '../../main/ts'
 
 describe('Select', () => {
   it('closed renders correctly', () => {

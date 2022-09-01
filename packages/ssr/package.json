@@ -2,14 +2,14 @@
   "name": "@qiwi/pijma-ssr",
   "version": "0.0.0",
   "type": "module",
-  "main": "./lib/es5/index.js",
-  "module": "./lib/es6/index.js",
-  "types": "./lib/dts/index.d.ts",
+  "main": "./target/es5/index.js",
+  "module": "./target/es6/index.js",
+  "types": "./target/dts/index.d.ts",
   "exports": {
     ".": {
-      "types": "./lib/dts/index.d.ts",
-      "import": "./lib/es6/index.js",
-      "require": "./lib/es5/index.js"
+      "types": "./target/dts/index.d.ts",
+      "import": "./target/es6/index.js",
+      "require": "./target/es5/index.js"
     }
   },
   "license": "MIT",
@@ -17,18 +17,18 @@
     "access": "public"
   },
   "scripts": {
-    "clean": "rimraf lib node_modules",
+    "clean": "rimraf target node_modules",
     "build": "concurrently 'npm:build:*'",
-    "build:es5": "swc src -d lib/es5 --config-file swc.es5.json && tsc-esm-fix --target=lib/es5 --fillBlank",
-    "build:es6": "swc src -d lib/es6 --config-file swc.es6.json && tsc-esm-fix --target=lib/es6 --fillBlank",
+    "build:es5": "cd src/main && swc ts -d ../../target/es5 --config-file ../../swc.es5.json && cd ../.. && tsc-esm-fix --target=target/es5 --fillBlank",
+    "build:es6": "cd src/main && swc ts -d ../../target/es6 --config-file ../../swc.es6.json && cd ../.. && tsc-esm-fix --target=target/es6 --fillBlank",
     "build:dts": "tsc --project tsconfig.dts.json",
     "format": "eslint --fix src && prettier --loglevel silent --write src",
     "lint": "eslint src"
   },
   "files": [
-    "README.md",
-    "CHANGELOG.md",
-    "lib"
+    "target/dts/**/*",
+    "target/es5/**/*",
+    "target/es6/**/*"
   ],
   "dependencies": {
     "@emotion/server": "^11.10.0"

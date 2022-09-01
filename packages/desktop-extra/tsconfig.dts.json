@@ -1,16 +1,16 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "rootDir": "./src",
-    "baseUrl": "./src",
-    "declarationDir": "./lib/dts",
+    "rootDir": "./src/main/ts",
+    "baseUrl": "./src/main/ts",
+    "declarationDir": "./target/dts",
     "emitDeclarationOnly": true,
   },
   "include": [
-    "./src"
+    "./src/main/ts"
   ],
   "exclude": [
-    "./lib",
+    "./target",
     "./node_modules"
   ]
 }

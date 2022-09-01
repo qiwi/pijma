@@ -2,14 +2,14 @@
   "name": "@qiwi/pijma-mobile",
   "version": "0.0.0",
   "type": "module",
-  "main": "./lib/es5/index.js",
-  "module": "./lib/es6/index.js",
-  "types": "./lib/dts/index.d.ts",
+  "main": "./target/es5/index.js",
+  "module": "./target/es6/index.js",
+  "types": "./target/dts/index.d.ts",
   "exports": {
     ".": {
-      "types": "./lib/dts/index.d.ts",
-      "import": "./lib/es6/index.js",
-      "require": "./lib/es5/index.js"
+      "types": "./target/dts/index.d.ts",
+      "import": "./target/es6/index.js",
+      "require": "./target/es5/index.js"
     }
   },
   "license": "MIT",
@@ -17,25 +17,26 @@
     "access": "public"
   },
   "scripts": {
-    "clean": "rimraf lib styleguide/lib node_modules",
+    "clean": "rimraf target node_modules",
     "build": "concurrently 'npm:build:*' 'npm:guide:build'",
     "start": "concurrently  --kill-others --kill-others-on-fail 'npm:guide:start' 'npm:chrome:start'",
     "test": "concurrently --kill-others --kill-others-on-fail --success first 'npm:test:start' 'npm:static:start' 'npm:chrome:start'",
-    "build:es5": "swc src -d lib/es5 --config-file swc.es5.json && tsc-esm-fix --target=lib/es5 --fillBlank",
-    "build:es6": "swc src -d lib/es6 --config-file swc.es6.json && tsc-esm-fix --target=lib/es6 --fillBlank",
+    "build:es5": "cd src/main && swc ts -d ../../target/es5 --config-file ../../swc.es5.json && cd ../.. && tsc-esm-fix --target=target/es5 --fillBlank",
+    "build:es6": "cd src/main && swc ts -d ../../target/es6 --config-file ../../swc.es6.json && cd ../.. && tsc-esm-fix --target=target/es6 --fillBlank",
     "build:dts": "tsc --project tsconfig.dts.json",
     "guide:build": "styleguidist --config styleguide.config.cjs build",
     "guide:start": "styleguidist --config styleguide.config.cjs server",
-    "static:start": "docker run --rm -p 7070:80 -v $(pwd)/styleguide/lib:/usr/share/nginx/html nginx",
+    "static:start": "docker run --rm -p 7070:80 -v $(pwd)/target/webapp:/usr/share/nginx/html nginx",
     "chrome:start": "docker run --rm -p 7171:3000 --add-host=host.docker.internal:host-gateway browserless/chrome",
     "test:start": "wait-on http-get://localhost:7070/ http-get://localhost:7171/ && styleguidist-visual test --config styleguide.visual.config.cjs",
     "test:approve": "styleguidist-visual approve --config styleguide.visual.config.cjs",
-    "format": "eslint --fix src styleguide/components && prettier --loglevel silent --write src styleguide/components",
-    "lint": "eslint src styleguide/components"
+    "format": "eslint --fix src && prettier --loglevel silent --write src",
+    "lint": "eslint src"
   },
   "files": [
-    "README.md",
-    "lib"
+    "target/dts/**/*",
+    "target/es5/**/*",
+    "target/es6/**/*"
   ],
   "dependencies": {
     "@qiwi/pijma-core": "workspace:*"

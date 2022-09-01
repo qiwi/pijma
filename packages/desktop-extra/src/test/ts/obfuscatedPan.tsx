@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { ObfuscatedPan } from '../main'
+import { ObfuscatedPan } from '../../main/ts'
 
 describe('ObfuscatedPan', () => {
   it('is properly exported from lib index', () => {

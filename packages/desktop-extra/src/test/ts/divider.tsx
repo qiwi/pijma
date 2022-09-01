@@ -2,25 +2,21 @@ import { ThemeProvider, themes } from '@qiwi/pijma-desktop'
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import { Paginator } from '../main'
+import { Divider } from '../../main/ts'
 
-describe('Paginator', () => {
+describe('Divider', () => {
   it('is properly exported from lib index', () => {
-    expect(Paginator).not.toBeUndefined()
+    expect(Divider).not.toBeUndefined()
   })
 
   it('renders correctly', () => {
-    const paginator = renderer
+    const divider = renderer
       .create(
         <ThemeProvider theme={themes.orange}>
-          <Paginator
-            activePage={2}
-            totalItemsCount={40}
-            itemsCountPerPage={10}
-          />
+          <Divider active />
         </ThemeProvider>,
       )
       .toJSON()
-    expect(paginator).toMatchSnapshot()
+    expect(divider).toMatchSnapshot()
   })
 })
