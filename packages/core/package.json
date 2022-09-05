@@ -60,7 +60,7 @@
     "concurrently": "7.3.0",
     "css-loader": "6.7.1",
     "eslint": "8.23.0",
-    "eslint-config-qiwi": "1.17.5",
+    "eslint-config-qiwi": "1.17.6",
     "fast-glob": "3.2.11",
     "file-loader": "6.2.0",
     "prettier": "2.7.1",
