@@ -9,13 +9,13 @@
   "files": [],
   "devDependencies": {
     "@swc/cli": "0.1.57",
-    "@swc/core": "1.2.224",
+    "@swc/core": "1.2.247",
     "@swc/jest": "0.2.22",
     "concurrently": "7.3.0",
     "css-loader": "6.7.1",
-    "eslint": "8.21.0",
+    "eslint": "8.23.0",
     "eslint-config-prettier": "8.5.0",
-    "eslint-config-qiwi": "1.17.4",
+    "eslint-config-qiwi": "1.17.6",
     "fast-glob": "3.2.11",
     "file-loader": "6.2.0",
     "prettier": "2.7.1",
@@ -24,8 +24,8 @@
     "react-styleguidist": "11.2.0",
     "style-loader": "3.3.1",
     "swc-loader": "0.2.3",
-    "tsc-esm-fix": "2.20.0",
-    "typescript": "4.7.4",
+    "tsc-esm-fix": "2.20.4",
+    "typescript": "4.8.2",
     "webpack": "4.46.0"
   },
   "repository": {

@@ -112,6 +112,7 @@ export const Table = ({
             header.props.children)
         ) {
           headers.push(header)
+          // eslint-disable-next-line react/jsx-key
           return <th {...column.getHeaderProps()}>{header}</th>
         }
         return null
