@@ -201,7 +201,7 @@ module.exports = ({ cwd, extra = {}, components = [] }) => {
         },
         devServer: {
           historyApiFallback: true,
-          disableHostCheck: true,
+          allowedHosts: 'all',
         },
       },
     },
