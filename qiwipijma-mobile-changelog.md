@@ -1,3 +1,12 @@
+## [@qiwi/pijma-mobile@1.156.1](https://github.com/qiwi/pijma/compare/2022.8.31-qiwi.pijma-mobile.1.156.0-f0...2022.9.7-qiwi.pijma-mobile.1.156.1-f0) (2022-09-07)
+
+### Fixes & improvements
+* perf: up deps (#541) [6d14dec8](https://github.com/qiwi/pijma/commit/6d14dec8805e5f3665cc40200d77609dcf1d6350)
+
+### Dependencies
+* perf: @qiwi/pijma-core updated to 1.157.1
+* perf: @qiwi/pijma-infra updated to 1.10.1
+
 ## [@qiwi/pijma-mobile@1.156.0](https://github.com/qiwi/pijma/compare/2022.8.8-qiwi.pijma-mobile.1.155.0-f0...2022.8.31-qiwi.pijma-mobile.1.156.0-f0) (2022-08-31)
 
 ### Features
