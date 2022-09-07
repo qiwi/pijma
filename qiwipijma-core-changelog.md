@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.157.1](https://github.com/qiwi/pijma/compare/2022.8.31-qiwi.pijma-core.1.157.0-f0...2022.9.7-qiwi.pijma-core.1.157.1-f0) (2022-09-07)
+
+### Fixes & improvements
+* perf: up deps (#541) [6d14dec8](https://github.com/qiwi/pijma/commit/6d14dec8805e5f3665cc40200d77609dcf1d6350)
+
 ## [@qiwi/pijma-core@1.157.0](https://github.com/qiwi/pijma/compare/2022.8.8-qiwi.pijma-core.1.156.0-f0...2022.8.31-qiwi.pijma-core.1.157.0-f0) (2022-08-31)
 
 ### Features
