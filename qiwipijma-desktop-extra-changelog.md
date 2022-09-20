@@ -1,3 +1,13 @@
+## [@qiwi/pijma-desktop-extra@0.2.0](https://github.com/qiwi/pijma/compare/2022.9.7-qiwi.pijma-desktop-extra.0.1.11-f0...2022.9.20-qiwi.pijma-desktop-extra.0.2.0-f0) (2022-09-20)
+
+### Features
+* feat: up react-styleguidist (#542) [ba6e6813](https://github.com/qiwi/pijma/commit/ba6e6813cf68a90c7c468cd9a943d6e207cbf49e)
+
+### Dependencies
+* perf: @qiwi/pijma-core updated to 1.158.0
+* perf: @qiwi/pijma-desktop updated to 1.157.0
+* perf: @qiwi/pijma-infra updated to 1.11.0
+
 ## [@qiwi/pijma-desktop-extra@0.1.11](https://github.com/qiwi/pijma/compare/2022.8.31-qiwi.pijma-desktop-extra.0.1.10-f0...2022.9.7-qiwi.pijma-desktop-extra.0.1.11-f0) (2022-09-07)
 
 ### Fixes & improvements
