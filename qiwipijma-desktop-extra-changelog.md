@@ -1,3 +1,9 @@
+## [@qiwi/pijma-desktop-extra@0.2.1](https://github.com/qiwi/pijma/compare/2022.9.20-qiwi.pijma-desktop-extra.0.2.0-f0...2022.9.22-qiwi.pijma-desktop-extra.0.2.1-f0) (2022-09-22)
+
+### Fixes & improvements
+* fix(desktop-extra): fix isEmpty helper [460ec83f](https://github.com/qiwi/pijma/commit/460ec83fa76214211b44a24452911f5c098571f8)
+* fix(desktop-extra): rm lodash-es [b991980c](https://github.com/qiwi/pijma/commit/b991980c3d8f3c0d92aaf20c32b147bb23b5f42d)
+
 ## [@qiwi/pijma-desktop-extra@0.2.0](https://github.com/qiwi/pijma/compare/2022.9.7-qiwi.pijma-desktop-extra.0.1.11-f0...2022.9.20-qiwi.pijma-desktop-extra.0.2.0-f0) (2022-09-20)
 
 ### Features
