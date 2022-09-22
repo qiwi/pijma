@@ -1,11 +1,13 @@
 import { Icon, styled } from '@qiwi/pijma-core'
 import { TextField } from '@qiwi/pijma-desktop'
-import { isEmpty } from 'lodash-es'
 import React, { Component } from 'react'
 
 import { Dropdown } from '../dropdown'
 import SelectProps from './SelectProps'
 import SelectState from './SelectState'
+
+// https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_isempty
+const isEmpty = obj => [Object, Array].includes((obj || {}).constructor) && !Object.entries((obj || {})).length;
 
 const Container = styled('div')`
   position: relative;

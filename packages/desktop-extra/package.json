@@ -39,7 +39,6 @@
     "@types/react-js-pagination": "^3.0.4",
     "@types/react-table": "^7.7.12",
     "date-fns": "^2.29.2",
-    "lodash-es": "^4.17.21",
     "react-day-picker": "^8.2.0",
     "react-dropzone": "^14.2.2",
     "react-i18next": "^11.18.5",
