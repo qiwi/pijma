@@ -1,3 +1,8 @@
+## [@qiwi/pijma-desktop-extra@0.2.2](https://github.com/qiwi/pijma/compare/2022.9.22-qiwi.pijma-desktop-extra.0.2.1-f0...2022.9.23-qiwi.pijma-desktop-extra.0.2.2-f0) (2022-09-23)
+
+### Fixes & improvements
+* fix(desktop-extra): fix footer (#543) [a98d0515](https://github.com/qiwi/pijma/commit/a98d051522f7848a32523677d4ed01d543c39344)
+
 ## [@qiwi/pijma-desktop-extra@0.2.1](https://github.com/qiwi/pijma/compare/2022.9.20-qiwi.pijma-desktop-extra.0.2.0-f0...2022.9.22-qiwi.pijma-desktop-extra.0.2.1-f0) (2022-09-22)
 
 ### Fixes & improvements
