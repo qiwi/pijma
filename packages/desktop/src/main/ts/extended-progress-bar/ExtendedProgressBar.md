@@ -1,12 +1,13 @@
 ```jsx
 <Block>
   <BlockContent>
-    <Spacer size="l">
+    <Spacer size="xl">
       <ExtendedProgressBar value={0} />
       <ExtendedProgressBar value={0.25} />
       <ExtendedProgressBar value={0.5} />
       <ExtendedProgressBar value={0.75} />
       <ExtendedProgressBar value={1} />
+      <ExtendedProgressBar stub />
       <ExtendedProgressBar
         value={250}
         maxValue={1000}
@@ -14,7 +15,6 @@
         titleEnd="Осталось"
         valueAffix="\u20BD"
       />
-      <ExtendedProgressBar stub />
       <ExtendedProgressBar stub titleStart="stub" titleEnd="stub" />
     </Spacer>
   </BlockContent>

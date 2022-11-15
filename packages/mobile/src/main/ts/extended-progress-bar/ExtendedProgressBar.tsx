@@ -20,70 +20,34 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
   titleStart,
   titleEnd,
   stub = false,
-}) => stub ? (
-  <Spacer size="xs">
-    {titleStart || titleEnd ? (
-      <Flex justify="space-between">
-        {titleStart ? (
-          <FlexItem width={0.15}>
-            <Text size="s" display="block" compact stub/>
-          </FlexItem>
-        ) : (
-          null
-        )}
-        {titleEnd ? (
-          <FlexItem width={0.15}>
-            <Text size="s" display="block" compact stub/>
-          </FlexItem>
-        ) : (
-          null
-        )}
-      </Flex>
-    ) : (
-      null
-    )}
-    <Stub height="4px" width={1} r={2} />
-    {titleStart || titleEnd ? (
-      <Flex justify="space-between">
-        {titleStart ? (
-          <FlexItem width={0.2}>
-            <Text size="s" display="block" compact stub/>
-          </FlexItem>
-        ) : (
-          null
-        )}
-        {titleEnd ? (
-          <FlexItem width={0.2}>
-            <Text size="s" display="block" compact stub/>
-          </FlexItem>
-        ) : (
-          null
-        )}
-      </Flex>
-    ) : (
-      null
-    )}
-  </Spacer>
-) : (
+}) => (
   <Spacer size="xxs">
     {titleStart || titleEnd ? (
       <Flex justify='space-between'>
-        <FlexItem>
+        <FlexItem width={stub ? 0.15 : undefined}>
           {titleStart ? (
-            <Text size="s" compact bold={false}>
-              {value}
-              {valueAffix ? ` ${valueAffix}` : ''}
-            </Text>
+            <Text
+              size="s"
+              bold={false}
+              stub={stub}
+              display={stub ? 'block' : undefined}
+              children={stub ? undefined : value + (valueAffix ? ` ${valueAffix}` : '')}
+              compact
+            />
           ) : (
             null
           )}
         </FlexItem>
-        <FlexItem>
+        <FlexItem width={stub ? 0.15 : undefined}>
           {titleEnd ? (
-            <Text size="s" compact bold={false}>
-              {maxValue - value}
-              {valueAffix ? ` ${valueAffix}` : ''}
-            </Text>
+            <Text
+              size="s"
+              bold={false}
+              stub={stub}
+              display={stub ? 'block' : undefined}
+              children={stub ? undefined : (maxValue - value) + (valueAffix ? ` ${valueAffix}` : '')}
+              compact
+            />
           ) : (
             null
           )}
@@ -94,13 +58,17 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
     )}
     <Flex>
       <FlexItem
-        width={value / maxValue}
+        width={stub ? 1 : value / maxValue}
         minWidth={2}
         transition="width 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
       >
-        <Card height="4px" width={1} r={2} bg="#FF8C00"/>
+        {stub ? (
+          <Stub height="4px" width={1} r={2} />
+        ) : (
+          <Card height="4px" width={1} r={2} bg="#FF8C00"/>
+        )}
       </FlexItem>
-      {value < maxValue ? (
+      {!stub && (value < maxValue) ? (
         <FlexItem ml="2px" grow={1} minWidth={2}>
           <Card height="4px" width={1} r={2} bg="#F5F5F5"/>
         </FlexItem>
@@ -110,20 +78,32 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
     </Flex>
     {titleStart || titleEnd ? (
       <Flex justify='space-between'>
-        <FlexItem>
+        <FlexItem width={stub ? 0.2 : undefined}>
           {titleStart ? (
-            <Text size="s" compact bold={false} color="support">
-              {titleStart}
-            </Text>
+            <Text
+              size="s"
+              bold={false}
+              stub={stub}
+              color="support"
+              display={stub ? 'block' : undefined}
+              children={titleStart}
+              compact
+            />
           ) : (
             null
           )}
         </FlexItem>
-        <FlexItem>
+        <FlexItem width={stub ? 0.2 : undefined}>
           {titleEnd ? (
-            <Text size="s" compact bold={false} color="support">
-              {titleEnd}
-            </Text>
+            <Text
+              size="s"
+              bold={false}
+              stub={stub}
+              color="support"
+              display={stub ? 'block' : undefined}
+              children={titleEnd}
+              compact
+            />
           ) : (
             null
           )}
