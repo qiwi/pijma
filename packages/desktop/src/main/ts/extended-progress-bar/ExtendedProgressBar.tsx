@@ -1,4 +1,4 @@
-import { Card, Flex, FlexItem, Spacer, Stub, Typo } from '@qiwi/pijma-core'
+import { Card, Flex, FlexItem, Spacer, Stub } from '@qiwi/pijma-core'
 import React, { FC } from 'react'
 
 import { Paragraph, Text } from '../typography'
@@ -68,10 +68,10 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
           {titleStart ? (
             <Paragraph size="s">
               <Text color="support">{titleStart}: </Text>
-              <Typo color="#FF8C00" display="inline">
+              <Text>
                 {value}
                 {valueAffix ? ` ${valueAffix}` : ''}
-              </Typo>
+              </Text>
             </Paragraph>
           ): (
             null
