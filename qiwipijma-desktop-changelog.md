@@ -1,3 +1,8 @@
+## [@qiwi/pijma-desktop@1.158.0](https://github.com/qiwi/pijma/compare/2022.9.20-qiwi.pijma-desktop.1.157.0-f0...2022.11.16-qiwi.pijma-desktop.1.158.0-f0) (2022-11-16)
+
+### Features
+* feat: add extended progress bar (#546) [422cc35a](https://github.com/qiwi/pijma/commit/422cc35a673c7d94560e379b0e71dd7e3578be3a)
+
 ## [@qiwi/pijma-desktop@1.157.0](https://github.com/qiwi/pijma/compare/2022.9.7-qiwi.pijma-desktop.1.156.1-f0...2022.9.20-qiwi.pijma-desktop.1.157.0-f0) (2022-09-20)
 
 ### Features
