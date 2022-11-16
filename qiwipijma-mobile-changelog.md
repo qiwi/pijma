@@ -1,3 +1,8 @@
+## [@qiwi/pijma-mobile@1.158.1](https://github.com/qiwi/pijma/compare/2022.11.16-qiwi.pijma-mobile.1.158.0-f0...2022.11.16-qiwi.pijma-mobile.1.158.1-f0) (2022-11-16)
+
+### Fixes & improvements
+* fix(extended-progress-bar): add exports (#548) [01ff55ec](https://github.com/qiwi/pijma/commit/01ff55ec48db779d5d4455d5208436f2a3e23b01)
+
 ## [@qiwi/pijma-mobile@1.158.0](https://github.com/qiwi/pijma/compare/2022.9.20-qiwi.pijma-mobile.1.157.0-f0...2022.11.16-qiwi.pijma-mobile.1.158.0-f0) (2022-11-16)
 
 ### Features
