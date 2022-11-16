@@ -71,7 +71,7 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
     <Flex>
       <FlexItem
         width={stub ? 1 : value / maxValue}
-        minWidth={2}
+        minWidth="4px"
         transition="width 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
       >
         {stub ? (
@@ -81,7 +81,7 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
         )}
       </FlexItem>
       {!stub && (value < maxValue) ? (
-        <FlexItem ml="2px" grow={1} minWidth={2}>
+        <FlexItem ml="2px" grow={1} minWidth="4px">
           <Card height="4px" width={1} r={2} bg="#F5F5F5"/>
         </FlexItem>
       ) : (
