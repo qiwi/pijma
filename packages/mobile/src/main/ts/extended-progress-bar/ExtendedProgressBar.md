@@ -13,7 +13,7 @@
         maxValue={1000}
         titleStart="Потрачено"
         titleEnd="Осталось"
-        valueAffix="\u20BD"
+        formatValue={(value) => `${value} \u20BD`}
       />
       <ExtendedProgressBar stub titleStart="stub" titleEnd="stub" />
     </Spacer>

@@ -7,19 +7,19 @@ import { Text } from '../typography'
 export interface ExtendedProgressBarProps {
   value: number
   maxValue?: number
-  valueAffix?: string,
   titleStart?: string
   titleEnd?: string
   stub?: boolean
+  formatValue?: (value: number) => string
 }
 
 export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
   value,
   maxValue = 1,
-  valueAffix,
   titleStart,
   titleEnd,
   stub = false,
+  formatValue,
 }) => (
   <Spacer size="xxs">
     {titleStart || titleEnd ? (
@@ -31,7 +31,13 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
               bold={false}
               stub={stub}
               display={stub ? 'block' : undefined}
-              children={stub ? undefined : value + (valueAffix ? ` ${valueAffix}` : '')}
+              children={stub ? (
+                undefined
+              ) : formatValue !== undefined ? (
+                formatValue(value)
+              ) : (
+                value
+              )}
               compact
             />
           ) : (
@@ -45,7 +51,13 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
               bold={false}
               stub={stub}
               display={stub ? 'block' : undefined}
-              children={stub ? undefined : (maxValue - value) + (valueAffix ? ` ${valueAffix}` : '')}
+              children={stub ? (
+                undefined
+              ) : formatValue !== undefined ? (
+                formatValue(maxValue - value)
+              ) : (
+                maxValue - value
+              )}
               compact
             />
           ) : (

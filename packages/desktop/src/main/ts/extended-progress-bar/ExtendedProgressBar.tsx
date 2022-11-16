@@ -7,19 +7,19 @@ import { Paragraph, Text } from '../typography'
 export interface ExtendedProgressBarProps {
   value: number
   maxValue?: number
-  valueAffix?: string,
   titleStart?: string
   titleEnd?: string
   stub?: boolean
+  formatValue?: (value: number) => string 
 }
 
 export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
   value,
   maxValue = 1,
-  valueAffix,
   titleStart,
   titleEnd,
   stub = false,
+  formatValue,
 }) => (
   <Spacer size="xs">
     <Flex>
@@ -50,8 +50,7 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
             <Paragraph size="s">
               <Text color="support">{titleStart}: </Text>
               <Text>
-                {value}
-                {valueAffix ? ` ${valueAffix}` : ''}
+                {formatValue !== undefined ? formatValue(value) : value}
               </Text>
             </Paragraph>
           ) : (
@@ -65,8 +64,7 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
             <Paragraph size="s">
               <Text color="support">{titleEnd}: </Text>
               <Text>
-                {maxValue - value}
-                {valueAffix ? ` ${valueAffix}` : ''}
+                {formatValue !== undefined ? formatValue(maxValue - value) : maxValue - value}
               </Text>
             </Paragraph>
           ): (
