@@ -10,6 +10,7 @@ export interface ExtendedProgressBarProps {
   titleStart?: string
   titleEnd?: string
   stub?: boolean
+  disabled?: boolean
   formatValue?: (value: number) => string 
 }
 
@@ -19,21 +20,27 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
   titleStart,
   titleEnd,
   stub = false,
+  disabled = false,
   formatValue,
 }) => (
   <Spacer size="xs">
     <Flex>
       <FlexItem
-        width={stub ? 1 : value / maxValue}
+        width={stub || disabled || maxValue === 0 ? 1 : value / maxValue}
         minWidth={2}
         transition="width 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         children={stub ? (
           <Stub height={2} width={1} r={4} />
         ) : (
-          <Card height={2} width={1} r={4} bg="#FF8C00"/>
+          <Card
+            height={2}
+            width={1}
+            r={4}
+            bg={disabled ? '#E6E6E6' : maxValue === 0 ? '#F5F5F5' : '#FF8C00'}
+          />
         )}
       />
-      {!stub && (value < maxValue) ? (
+      {!stub && !disabled && value < maxValue ? (
         <FlexItem ml={1} grow={1} minWidth={2}>
           <Card height={2} width={1} r={4} bg="#F5F5F5"/>
         </FlexItem>
@@ -45,13 +52,17 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
       <Flex mt={2} justify="space-between">
         <FlexItem width={stub ? 0.15 : undefined}>
           {stub && titleStart ? (
-            <Text size="s" display="block" stub/>
+            <Text size="s" display="block" compact stub/>
           ) : titleStart ? (
-            <Paragraph size="s">
-              <Text color="support">{titleStart}: </Text>
-              <Text>
-                {formatValue !== undefined ? formatValue(value) : value}
-              </Text>
+            <Paragraph size="s" compact>
+              <Text color="support">{titleStart}{value !== undefined ? ': ' : ''}</Text>
+              {value !== undefined ? (
+                <Text>
+                  {formatValue !== undefined ? formatValue(value) : value}
+                </Text>
+              ) : (
+                null
+              )}
             </Paragraph>
           ) : (
             null
@@ -59,13 +70,19 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
         </FlexItem>
         <FlexItem width={stub ? 0.15 : undefined}>
           {stub && titleEnd ? (
-            <Text size="s" display="block" stub/>
+            <Text size="s" display="block" compact stub/>
           ) : titleEnd ? (
-            <Paragraph size="s">
-              <Text color="support">{titleEnd}: </Text>
-              <Text>
-                {formatValue !== undefined ? formatValue(maxValue - value) : maxValue - value}
+            <Paragraph size="s" compact>
+              <Text color="support">
+                {titleEnd}{value !== undefined && maxValue !== undefined ? ': ' : ''}
               </Text>
+              {value !== undefined && maxValue !== undefined ? (
+                <Text>
+                  {formatValue !== undefined ? formatValue(maxValue - value) : maxValue - value}
+                </Text>
+              ) : (
+                null
+              )}
             </Paragraph>
           ): (
             null
