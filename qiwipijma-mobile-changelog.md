@@ -1,3 +1,8 @@
+## [@qiwi/pijma-mobile@1.159.0](https://github.com/qiwi/pijma/compare/2022.11.16-qiwi.pijma-mobile.1.158.1-f0...2022.11.24-qiwi.pijma-mobile.1.159.0-f0) (2022-11-24)
+
+### Features
+* feat(progress-bar): add disabled state, fix maxLimit=0 state (#549) [95887e25](https://github.com/qiwi/pijma/commit/95887e254b9c8afa5a1754b2724222e600ee5959)
+
 ## [@qiwi/pijma-mobile@1.158.1](https://github.com/qiwi/pijma/compare/2022.11.16-qiwi.pijma-mobile.1.158.0-f0...2022.11.16-qiwi.pijma-mobile.1.158.1-f0) (2022-11-16)
 
 ### Fixes & improvements
