@@ -30,8 +30,8 @@
     "chrome:start": "docker run --rm -p 6161:3000 --add-host=host.docker.internal:host-gateway browserless/chrome",
     "test:start": "wait-on http-get://localhost:6060/ http-get://localhost:6161/ && styleguidist-visual test --config styleguide.visual.config.cjs",
     "test:approve": "styleguidist-visual approve --config styleguide.visual.config.cjs",
-    "format": "cat .eslintcache && DEBUG=eslint:lint-result-cache eslint --cache --cache-strategy metadata --fix src && prettier --loglevel silent --write src",
-    "lint": "cat .eslintcache && DEBUG=eslint:lint-result-cache eslint --cache --cache-strategy metadata src"
+    "format": "cat .eslintcache && DEBUG=eslint:lint-result-cache eslint --cache --cache-strategy content --fix src && prettier --loglevel silent --write src",
+    "lint": "cat .eslintcache && DEBUG=eslint:lint-result-cache eslint --cache --cache-strategy content src"
   },
   "files": [
     "target/dts/**/*",
@@ -45,12 +45,12 @@
     "@qiwi/pijma-infra": "workspace:*",
     "concurrently": "7.4.0",
     "css-loader": "6.7.1",
-    "eslint": "8.23.0",
-    "eslint-config-qiwi": "1.17.6",
+    "eslint": "8.28.0",
+    "eslint-config-qiwi": "1.17.9",
     "fast-glob": "3.2.11",
     "file-loader": "6.2.0",
-    "prettier": "2.7.1",
-    "prettier-config-qiwi": "1.7.2",
+    "prettier": "2.8.0",
+    "prettier-config-qiwi": "1.7.3",
     "react-docgen-typescript": "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch",
     "react-styleguidist": "12.0.0",
     "react-styleguidist-visual": "patch:react-styleguidist-visual@npm%3A0.9.0#~/.yarn/patches/react-styleguidist-visual-npm-0.9.0-c05bb39789.patch",

@@ -76,7 +76,7 @@ export const AlertBlock: FC<AlertBlockProps> = ({
             type="relative"
             py={5}
             pl={6}
-            pr={onHide !== undefined ? 18 : 6}
+            pr={onHide === undefined ? 6 : 18}
           >
             <FlexItem mr={3}>{iconComponent}</FlexItem>
             <FlexItem>
@@ -84,7 +84,7 @@ export const AlertBlock: FC<AlertBlockProps> = ({
                 <Breaker children={children} />
               </Paragraph>
             </FlexItem>
-            {onHide !== undefined ? (
+            {onHide === undefined ? null : (
               <Pos
                 cursor="pointer"
                 type="absolute"
@@ -101,7 +101,7 @@ export const AlertBlock: FC<AlertBlockProps> = ({
                   />
                 }
               />
-            ) : null}
+            )}
           </FlexPos>
         </Block>
       )}

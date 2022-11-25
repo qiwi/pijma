@@ -184,7 +184,7 @@ export class SuggestControl<
     const index = this.items.findIndex((item) =>
       this.props.equals(item.value, this.props.value!),
     )
-    return index !== -1 ? index : undefined
+    return index === -1 ? undefined : index
   }
 
   private onBack: MouseEventHandler = (event) => {

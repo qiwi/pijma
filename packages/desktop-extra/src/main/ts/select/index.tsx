@@ -131,9 +131,9 @@ export class Select extends Component<SelectProps, SelectState> {
               : this.onBlur
           }
           value={
-            !isEmpty(multiValue)
-              ? [multiValue].flat().join(', ')
-              : emptyValue || ''
+            isEmpty(multiValue)
+              ? emptyValue || ''
+              : [multiValue].flat().join(', ')
           }
           hint={
             <IconWrapper onClick={this.focusOnInput}>

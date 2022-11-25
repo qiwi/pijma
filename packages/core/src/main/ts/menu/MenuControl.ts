@@ -134,7 +134,7 @@ export class MenuControl extends Component<MenuControlProps, MenuControlState> {
     }
     if (event.key === 'Enter') {
       event.preventDefault()
-      const item = focused !== undefined ? focused : this.props.selected
+      const item = focused === undefined ? this.props.selected : focused
       if (item !== undefined) {
         return this.selectItem(item)
       }
@@ -150,7 +150,7 @@ export class MenuControl extends Component<MenuControlProps, MenuControlState> {
     if (focused === undefined && selected === undefined) {
       return 0
     }
-    const current = focused !== undefined ? focused : selected!
+    const current = focused === undefined ? selected! : focused
     return current + 1 >= count ? 0 : current + 1
   }
 
@@ -160,7 +160,7 @@ export class MenuControl extends Component<MenuControlProps, MenuControlState> {
     if (focused === undefined && selected === undefined) {
       return count - 1
     }
-    const current = focused !== undefined ? focused : selected!
+    const current = focused === undefined ? selected! : focused
     return current === 0 ? count - 1 : current - 1
   }
 
@@ -170,8 +170,8 @@ export class MenuControl extends Component<MenuControlProps, MenuControlState> {
     return this.props.children({
       items: new Array(count).fill(1).map((_item, index) => ({
         ref: this.state.refs[index],
-        focused: focused !== undefined ? focused === index : false,
-        selected: selected !== undefined ? selected === index : false,
+        focused: focused === undefined ? false : focused === index,
+        selected: selected === undefined ? false : selected === index,
         onClick: this.onItemClick(index),
         onMouseDown: this.onItemMouseDown,
         onMouseEnter: this.onItemEnter(index),

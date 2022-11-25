@@ -124,7 +124,7 @@ export class CodeFieldControl extends Component<
   private onFieldKeyDown: (index: number) => KeyboardEventHandler =
     (index) => (e) => {
       switch (e.key) {
-        case 'ArrowLeft':
+        case 'ArrowLeft': {
           e.preventDefault()
           const prev = this.state.refs[index - 1]
           if (prev && prev.current) {
@@ -132,7 +132,8 @@ export class CodeFieldControl extends Component<
             prev.current.focus()
           }
           break
-        case 'ArrowRight':
+        }
+        case 'ArrowRight': {
           e.preventDefault()
           const next = this.state.refs[index + 1]
           if (next && next.current) {
@@ -140,7 +141,8 @@ export class CodeFieldControl extends Component<
             next.current.focus()
           }
           break
-        case 'Backspace':
+        }
+        case 'Backspace': {
           if (this.props.value[index] === '') {
             const prev = this.state.refs[index - 1]
             if (prev && prev.current) {
@@ -149,7 +151,8 @@ export class CodeFieldControl extends Component<
             }
           }
           break
-        default:
+        }
+        default: {
           if (this.props.value[index] === e.key) {
             e.preventDefault()
             const next = this.state.refs[index + 1]
@@ -158,6 +161,7 @@ export class CodeFieldControl extends Component<
               next.current.focus()
             }
           }
+        }
       }
     }
 

@@ -56,13 +56,13 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
             <Paragraph size="s" compact>
               <Text color="support">
                 {titleStart}
-                {value !== undefined ? ': ' : ''}
+                {value === undefined ? '' : ': '}
               </Text>
-              {value !== undefined ? (
+              {value === undefined ? null : (
                 <Text>
-                  {formatValue !== undefined ? formatValue(value) : value}
+                  {formatValue === undefined ? value : formatValue(value)}
                 </Text>
-              ) : null}
+              )}
             </Paragraph>
           ) : null)}
         </FlexItem>
@@ -77,9 +77,9 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
               </Text>
               {value !== undefined && maxValue !== undefined ? (
                 <Text>
-                  {formatValue !== undefined
-                    ? formatValue(maxValue - value)
-                    : maxValue - value}
+                  {formatValue === undefined
+                    ? maxValue - value
+                    : formatValue(maxValue - value)}
                 </Text>
               ) : null}
             </Paragraph>

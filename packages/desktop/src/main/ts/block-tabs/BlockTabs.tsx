@@ -79,9 +79,9 @@ export const BlockTabs: FC<BlockTabsProps> = ({
     <Pos type="relative">
       <Flex
         direction="column"
-        pt={pt !== undefined ? pt : BlockTabsIndent[indent][0]}
+        pt={pt === undefined ? BlockTabsIndent[indent][0] : pt}
         pr={BlockTabsIndent[indent][1]}
-        pb={pb !== undefined ? pb : BlockTabsIndent[indent][2]}
+        pb={pb === undefined ? BlockTabsIndent[indent][2] : pb}
         pl={BlockTabsIndent[indent][3]}
       >
         <FlexOverflow
@@ -133,9 +133,9 @@ export const BlockTabs: FC<BlockTabsProps> = ({
         <Pos type="relative">
           <Flex
             direction="column"
-            pt={pt !== undefined ? pt : BlockTabsIndent[indent][0]}
+            pt={pt === undefined ? BlockTabsIndent[indent][0] : pt}
             pr={BlockTabsIndent[indent][1]}
-            pb={pb !== undefined ? pb : BlockTabsIndent[indent][2]}
+            pb={pb === undefined ? BlockTabsIndent[indent][2] : pb}
             pl={BlockTabsIndent[indent][3]}
           >
             <FlexOverflow

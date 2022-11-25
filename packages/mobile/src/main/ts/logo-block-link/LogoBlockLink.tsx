@@ -126,7 +126,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({
                     <FlexItem
                       pl={index === 0 ? 2 : undefined}
                       align="center"
-                      ml={index !== 0 ? 3 : 'auto'}
+                      ml={index === 0 ? 'auto' : 3}
                       key={index}
                       children={action}
                     />
@@ -171,7 +171,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({
               <Flex mt={3} mx="auto" align="baseline" justify="center">
                 {actions.map((action, index) => (
                   <FlexItem
-                    ml={index !== 0 ? 3 : undefined}
+                    ml={index === 0 ? undefined : 3}
                     key={index}
                     children={action}
                   />

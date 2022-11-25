@@ -56,7 +56,7 @@ export function conformToMask(
 }
 
 function isNil(value: any) {
-  return typeof value === 'undefined' || value === null
+  return value === undefined || value === null
 }
 
 export type MaskArray = (string | RegExp)[] | boolean
