@@ -40,9 +40,9 @@ export const PaginationLink: FC<PaginationLinkProps> = (props) => (
         }
         s={
           (renderProps.hover || renderProps.focus) && !props.disabled
-            ? props.shadowed
+            ? (props.shadowed
               ? 'inset 0 1px 0 0 #e6e6e6, 0 -1px 0 1px #e6e6e6'
-              : '0px -1px 0 1px #e6e6e6'
+              : '0px -1px 0 1px #e6e6e6')
             : '1px 0 0 #e6e6e6'
         }
         href={props.stub ? undefined : props.href}

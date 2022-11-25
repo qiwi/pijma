@@ -90,9 +90,9 @@ export const TabHeader = forwardRef<HTMLDivElement, TabProps>(
                     color={
                       select
                         ? theme.tabs.icon.color.select
-                        : focus
+                        : (focus
                         ? theme.tabs.icon.color.hover
-                        : theme.tabs.icon.color.default
+                        : theme.tabs.icon.color.default)
                     }
                     name={icon}
                   />
@@ -108,9 +108,9 @@ export const TabHeader = forwardRef<HTMLDivElement, TabProps>(
                   color={
                     select
                       ? theme.tabs.text.color.select
-                      : focus
+                      : (focus
                       ? theme.tabs.text.color.hover
-                      : theme.tabs.text.color.default
+                      : theme.tabs.text.color.default)
                   }
                   display="block"
                   align={vertical || !wrap ? 'center' : 'left'}

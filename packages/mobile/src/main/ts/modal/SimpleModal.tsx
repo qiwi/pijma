@@ -80,7 +80,7 @@ export const SimpleModal: FC<SimpleModalProps> = ({
   onShow,
   onHide,
   backdropClose,
-  zIndex = 10050,
+  zIndex = 10_050,
   closable,
 }) =>
   stub ? (

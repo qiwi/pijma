@@ -39,9 +39,9 @@ export const TrinaryCheckIcon = ({
         d="M7.553 8.732a1.5 1.5 0 1 0-2.106 2.136l4.565 4.5a1.5 1.5 0 0 0 2.156-.051l9.957-10.8a1.5 1.5 0 1 0-2.206-2.034l-8.905 9.66-3.461-3.411z"
         fill={
           value === 2 || value === true
-            ? disabled
+            ? (disabled
               ? '#ccc'
-              : '#000'
+              : '#000')
             : 'transparent'
         }
         transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"

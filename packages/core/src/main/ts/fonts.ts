@@ -3,8 +3,8 @@ const fontFamily = 'Museo Sans'
 const fontWeights: number[] = [100, 300, 500, 700, 900]
 const fontStyles: string[] = ['normal', 'italic']
 
-fontWeights.forEach((fontWeight) => {
-  fontStyles.forEach((fontStyle) => {
+for (const fontWeight of fontWeights) {
+  for (const fontStyle of fontStyles) {
     fontFaces.push(`
       @font-face {
         font-family: '${fontFamily}';
@@ -16,7 +16,7 @@ fontWeights.forEach((fontWeight) => {
              url(https://static.qiwi.com/fonts/museo-sans/v2/${fontWeight}_${fontStyle}.woff) format('woff');
       }
     `)
-  })
-})
+  }
+}
 
 export const fonts = fontFaces.join('\n')

@@ -116,9 +116,9 @@ export const PhoneField: FC<PhoneFieldProps> = ({
                       bg={
                         country.selected
                           ? '#E6E6E6'
-                          : country.focused
+                          : (country.focused
                           ? '#F5F5F5'
-                          : '#FFF'
+                          : '#FFF')
                       }
                       onClick={country.onClick}
                       onMouseEnter={country.onMouseEnter}

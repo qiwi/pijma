@@ -23,27 +23,27 @@ const statusClassName = (
     case 'entering':
       return enteringClassName
         ? enteringClassName(enter)
-        : enterClassName
+        : (enterClassName
         ? enterClassName(enter)
-        : undefined
+        : undefined)
     case 'entered':
       return enteredClassName
         ? enteredClassName(enter)
-        : enterClassName
+        : (enterClassName
         ? enterClassName(enter)
-        : undefined
+        : undefined)
     case 'exiting':
       return exitingClassName
         ? exitingClassName(exit)
-        : exitClassName
+        : (exitClassName
         ? exitClassName(enter)
-        : undefined
+        : undefined)
     case 'exited':
       return exitedClassName
         ? exitedClassName(exit)
-        : exitClassName
+        : (exitClassName
         ? exitClassName(enter)
-        : undefined
+        : undefined)
   }
   return undefined
 }

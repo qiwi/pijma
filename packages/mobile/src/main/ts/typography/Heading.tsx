@@ -81,7 +81,7 @@ export const Heading: FC<HeadingProps> = ({
     <Fragment>
       {new Array(clamp === undefined ? 1 : clamp)
         .fill(0)
-        .map((_, i) => (i % 3 === 0 ? 0.5 : i % 3 === 1 ? 0.6 : 0.4))
+        .map((_, i) => (i % 3 === 0 ? 0.5 : (i % 3 === 1 ? 0.6 : 0.4)))
         .map((width, id) => (
           <Box
             key={id}

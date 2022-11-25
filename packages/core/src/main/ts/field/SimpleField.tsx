@@ -27,7 +27,7 @@ export const SimpleField: FC<SimpleFieldProps> = ({
           height={4}
           children={error}
         />
-      ) : help ? (
+      ) : (help ? (
         <Typo
           display="block"
           color="#666"
@@ -36,7 +36,7 @@ export const SimpleField: FC<SimpleFieldProps> = ({
           height={4}
           children={help}
         />
-      ) : null}
+      ) : null)}
       {action ? (
         <FlexItem pl={6} ml="auto">
           <Typo

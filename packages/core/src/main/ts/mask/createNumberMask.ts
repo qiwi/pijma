@@ -68,7 +68,7 @@ export function createNumberMask({
     const isNegative = rawValue[0] === minus && allowNegative
 
     if (isNegative) {
-      rawValue = rawValue.toString().substr(1)
+      rawValue = rawValue.toString().slice(1)
     }
 
     const indexOfLastDecimal1 = rawValue.lastIndexOf(period)
@@ -94,11 +94,7 @@ export function createNumberMask({
       fraction = rawValue.slice(indexOfLastDecimal + 1, rawValueLength)
       fraction = convertToMask(fraction.replace(nonDigitsRegExp, emptyString))
     } else {
-      if (rawValue.slice(0, prefixLength) === prefix) {
-        integer = rawValue.slice(prefixLength)
-      } else {
-        integer = rawValue
-      }
+      integer = rawValue.slice(0, prefixLength) === prefix ? rawValue.slice(prefixLength) : rawValue;
     }
 
     if (integerLimit) {

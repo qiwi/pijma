@@ -96,7 +96,7 @@ export const Paragraph: FC<ParagraphProps> = ({
     <Fragment>
       {new Array(clamp === undefined ? 3 : clamp)
         .fill(0)
-        .map((_, i) => (i % 3 === 0 ? 0.8 : i % 3 === 1 ? 0.9 : 0.7))
+        .map((_, i) => (i % 3 === 0 ? 0.8 : (i % 3 === 1 ? 0.9 : 0.7)))
         .map((width, id) => (
           <Box
             key={id}

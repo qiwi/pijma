@@ -99,12 +99,12 @@ export const Link: FC<LinkProps> = (props) => {
           onMouseDown={renderProps.onMouseDown}
           color={
             renderProps.hover || renderProps.focus
-              ? props.inverse
+              ? (props.inverse
                 ? theme.link.color.inverse.hover
-                : theme.link.color.brand.hover
-              : props.inverse
+                : theme.link.color.brand.hover)
+              : (props.inverse
               ? theme.link.color.inverse.default
-              : theme.link.color.brand.default
+              : theme.link.color.brand.default)
           }
           transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
           cursor="pointer"
@@ -116,12 +116,12 @@ export const Link: FC<LinkProps> = (props) => {
           size={
             props.size === undefined
               ? undefined
-              : props.compact
+              : (props.compact
               ? LinkHeightCompact[props.size]
-              : LinkSize[props.size]
+              : LinkSize[props.size])
           }
           height={props.size === undefined ? undefined : LinkHeight[props.size]}
-          weight={props.bold === undefined ? undefined : props.bold ? 500 : 300}
+          weight={props.bold === undefined ? undefined : (props.bold ? 500 : 300)}
           children={props.children}
         />
       )}

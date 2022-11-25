@@ -171,20 +171,14 @@ export const Markdown: FC<MarkdownProps> = ({ size = 'm', children }) => (
   <MarkdownToJSX
     children={children}
     options={{
-      overrides: Object.keys(overrides).reduce(
-        (prev, tag) => ({
-          ...prev,
-          ...{
-            [tag]: {
+      overrides: Object.fromEntries(Object.keys(overrides).map(
+        ( tag) => [tag, {
               component: overrides[tag],
               props: {
                 size,
               },
-            },
-          },
-        }),
-        {},
-      ),
+            }],
+      )),
     }}
   />
 )

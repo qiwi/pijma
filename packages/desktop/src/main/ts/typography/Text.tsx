@@ -116,11 +116,11 @@ export const Text: FC<TextProps> = ({
       height={
         size === undefined
           ? undefined
-          : compact
+          : (compact
           ? TextHeightCompact[size]
-          : TextHeight[size]
+          : TextHeight[size])
       }
-      weight={bold === undefined ? undefined : bold ? 500 : 300}
+      weight={bold === undefined ? undefined : (bold ? 500 : 300)}
       color={color === undefined ? undefined : TextColor[color]}
       decoration={decoration}
       transform={transform}

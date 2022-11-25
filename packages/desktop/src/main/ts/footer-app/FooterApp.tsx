@@ -63,7 +63,7 @@ export interface FooterAppProps {
 
 export const FooterApp: FC<FooterAppProps> = ({ children, stub = false }) => (
   <Flex>
-    {(stub ? new Array(3).fill(0) : children).map((item, i) => (
+    {(stub ? Array.from({length: 3}).fill(0) : children).map((item, i) => (
       <FlexItem
         key={i}
         width={32}

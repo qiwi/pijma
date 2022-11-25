@@ -117,7 +117,7 @@ export class PhoneFieldControl extends Component<
     const newCountryMask = this.clear(country.mask)
     if (this.props.onChange) {
       this.props.onChange(
-        `+${newCountryMask}${this.clear(phoneNumber).substr(
+        `+${newCountryMask}${this.clear(phoneNumber).slice(
           currentCountryMask.length,
         )}`,
         country.code,
@@ -183,8 +183,7 @@ export class PhoneFieldControl extends Component<
     phoneNumber: string,
   ) => PhoneFieldCountry | undefined = (phoneNumber) => {
     const clearPhone = this.clear(phoneNumber)
-    return this.props.countries
-      .slice(0)
+    return [...this.props.countries]
       .sort((a, b) => this.clear(b.mask).length - this.clear(a.mask).length)
       .find((option) => clearPhone.indexOf(this.clear(option.mask)) === 0)
   }

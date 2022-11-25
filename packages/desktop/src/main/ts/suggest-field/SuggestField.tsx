@@ -135,7 +135,7 @@ export const SuggestField = <V extends {}>({
                   onMouseDown={renderProps.onResultItemsMouseDown}
                 >
                   {props.loading ? (
-                    new Array(4)
+                    Array.from({length: 4})
                       .fill(1)
                       .map((_item, key) => (
                         <CardMenuItem

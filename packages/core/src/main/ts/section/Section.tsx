@@ -29,7 +29,7 @@ export const Section = forwardRef<
       as={tag}
       ref={ref}
       r={flat ? undefined : 10}
-      bg={active ? '#e6e6e6' : hover || focus ? '#f5f5f5' : undefined}
+      bg={active ? '#e6e6e6' : (hover || focus ? '#f5f5f5' : undefined)}
       {...props}
     />
   ),

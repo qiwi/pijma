@@ -23,9 +23,9 @@ export class MenuControl extends Component<MenuControlProps, MenuControlState> {
       focused:
         count === 0
           ? undefined
-          : focused !== undefined && count <= focused
+          : (focused !== undefined && count <= focused
           ? count - 1
-          : focused,
+          : focused),
       refs: new Array(count).fill(1).map(() => createRef()),
     }
   }

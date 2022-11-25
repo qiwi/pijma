@@ -169,7 +169,7 @@ class MaskedInputComponent extends PureComponent<MaskedInputProps, {}> {
   }
 
   render() {
-    const exclude = [
+    const exclude = new Set([
       'mask',
       'guide',
       'pipe',
@@ -180,9 +180,9 @@ class MaskedInputComponent extends PureComponent<MaskedInputProps, {}> {
       'onBlur',
       'onChange',
       'inputRef',
-    ]
+    ])
     const props = Object.fromEntries(
-      Object.entries(this.props).filter(([key]) => !exclude.includes(key)),
+      Object.entries(this.props).filter(([key]) => !exclude.has(key)),
     )
     return (
       <input

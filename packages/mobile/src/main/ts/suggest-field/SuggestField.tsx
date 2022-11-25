@@ -127,7 +127,7 @@ export const SuggestField = <V extends {}>({
                 }
               >
                 {props.loading ? (
-                  new Array(4)
+                  Array.from({length: 4})
                     .fill(1)
                     .map((_item, key) => (
                       <CardItem key={key} icon stub text="stub" notes="stub" />
@@ -167,7 +167,7 @@ export const SuggestField = <V extends {}>({
                       <Box px={6}>
                         {isValidElement(props.total) ? (
                           props.total
-                        ) : typeof props.total === 'string' ? (
+                        ) : (typeof props.total === 'string' ? (
                           <Markdown children={props.total} />
                         ) : (
                           <Paragraph>
@@ -182,15 +182,15 @@ export const SuggestField = <V extends {}>({
                               </Fragment>
                             ) : null}
                           </Paragraph>
-                        )}
+                        ))}
                       </Box>
-                    ) : props.empty &&
+                    ) : (props.empty &&
                       menuRenderProps.items.length === 0 &&
                       props.items !== undefined ? (
                       <Box px={6}>
                         {isValidElement(props.empty) ? (
                           props.empty
-                        ) : typeof props.empty === 'string' ? (
+                        ) : (typeof props.empty === 'string' ? (
                           <Markdown children={props.empty} />
                         ) : (
                           <Paragraph>
@@ -205,9 +205,9 @@ export const SuggestField = <V extends {}>({
                               </Fragment>
                             ) : null}
                           </Paragraph>
-                        )}
+                        ))}
                       </Box>
-                    ) : null}
+                    ) : null)}
                   </Spacer>
                 )}
               </InputModal>

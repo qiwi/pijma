@@ -41,11 +41,11 @@ export const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>(
       b: 'none',
       bb: props.disabled
         ? '1px dotted #999'
-        : props.error
+        : (props.error
         ? '2px solid #d0021b'
         : props.focused
         ? '2px solid #ff8c00'
-        : '1px solid rgba(0, 0, 0, 0.2)',
+        : '1px solid rgba(0, 0, 0, 0.2)'),
       valueSize: 5,
       valueWeight: 300,
       valueColor: props.disabled ? '#666' : '#000',

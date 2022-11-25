@@ -73,7 +73,7 @@ export const Tabs: FC<TabsProps> = ({
           ),
         )}
         <TabBorder
-          width={centered ? 'calc(33% - 20px)' : vertical ? 13 : 21}
+          width={centered ? 'calc(33% - 20px)' : (vertical ? 13 : 21)}
           left={0}
           stub
         />

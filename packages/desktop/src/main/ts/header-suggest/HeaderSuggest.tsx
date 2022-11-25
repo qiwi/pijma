@@ -109,7 +109,7 @@ export const HeaderSuggest = <V extends {}>({
                 <Pos
                   type="absolute"
                   top={0}
-                  zIndex={10050}
+                  zIndex={10_050}
                   width={1}
                   ref={overlayRenderProps.props.ref}
                 >
@@ -182,7 +182,7 @@ export const HeaderSuggest = <V extends {}>({
                     <Box width={295} mx="auto">
                       {props.loading && props.items !== undefined ? (
                         <Box pt={4}>
-                          {new Array(4).fill(1).map((_item, key) => (
+                          {Array.from({length: 4}).fill(1).map((_item, key) => (
                             <CardItem
                               key={key}
                               icon={true}
@@ -225,7 +225,7 @@ export const HeaderSuggest = <V extends {}>({
                             <Box px={6} pb={4}>
                               {isValidElement(props.total) ? (
                                 props.total
-                              ) : typeof props.total === 'string' ? (
+                              ) : (typeof props.total === 'string' ? (
                                 <Markdown children={props.total} />
                               ) : (
                                 <Paragraph>
@@ -240,15 +240,15 @@ export const HeaderSuggest = <V extends {}>({
                                     </Fragment>
                                   ) : null}
                                 </Paragraph>
-                              )}
+                              ))}
                             </Box>
-                          ) : props.empty &&
+                          ) : (props.empty &&
                             menuRenderProps.items.length === 0 &&
                             props.items !== undefined ? (
                             <Box px={6} py={4}>
                               {isValidElement(props.empty) ? (
                                 props.empty
-                              ) : typeof props.empty === 'string' ? (
+                              ) : (typeof props.empty === 'string' ? (
                                 <Markdown children={props.empty} />
                               ) : (
                                 <Paragraph>
@@ -263,9 +263,9 @@ export const HeaderSuggest = <V extends {}>({
                                     </Fragment>
                                   ) : null}
                                 </Paragraph>
-                              )}
+                              ))}
                             </Box>
-                          ) : null}
+                          ) : null)}
                         </Spacer>
                       )}
                     </Box>

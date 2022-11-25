@@ -142,16 +142,16 @@ export const Button: FC<ButtonProps> = (props) => {
           bg={
             props.disabled
               ? '#e6e6e6'
-              : renderProps.hover || renderProps.focus
+              : (renderProps.hover || renderProps.focus
               ? theme.button.bg.hover[props.kind]
-              : theme.button.bg.kind[props.kind]
+              : theme.button.bg.kind[props.kind])
           }
           b={
             props.disabled
               ? 'none'
-              : renderProps.hover || renderProps.focus
+              : (renderProps.hover || renderProps.focus
               ? theme.button.border.hover[props.kind]
-              : theme.button.border.kind[props.kind]
+              : theme.button.border.kind[props.kind])
           }
           r={props.radius ?? buttonRadius[props.size]}
           transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
@@ -186,11 +186,11 @@ export const Button: FC<ButtonProps> = (props) => {
                         left={0}
                         opacity={
                           props.loading
-                            ? renderProps.hover ||
+                            ? (renderProps.hover ||
                               renderProps.active ||
                               renderProps.focus
                               ? 0.9
-                              : 1
+                              : 1)
                             : 0
                         }
                         transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
@@ -221,11 +221,11 @@ export const Button: FC<ButtonProps> = (props) => {
                           opacity={
                             props.loading
                               ? 0
-                              : renderProps.hover ||
+                              : (renderProps.hover ||
                                 renderProps.active ||
                                 renderProps.focus
                               ? 0.9
-                              : 1
+                              : 1)
                           }
                           mr={props.text ? iconMargin[props.size] : 0}
                           width={iconSize[props.size]}
@@ -235,9 +235,9 @@ export const Button: FC<ButtonProps> = (props) => {
                           children={cloneElement(props.icon, {
                             color: props.disabled
                               ? '#666'
-                              : props.kind === 'brand'
+                              : (props.kind === 'brand'
                               ? '#fff'
-                              : '#000',
+                              : '#000'),
                             size: 1,
                           })}
                         />
@@ -247,11 +247,11 @@ export const Button: FC<ButtonProps> = (props) => {
                           opacity={
                             props.loading
                               ? 0
-                              : renderProps.hover ||
+                              : (renderProps.hover ||
                                 renderProps.active ||
                                 renderProps.focus
                               ? 0.9
-                              : 1
+                              : 1)
                           }
                           overflow="hidden"
                           transition="all 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"

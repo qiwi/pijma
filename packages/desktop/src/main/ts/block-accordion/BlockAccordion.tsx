@@ -48,13 +48,13 @@ export const BlockAccordion: FC<
             s={
               item.hovered || item.focused
                 ? '0 0 16px 0 rgba(0, 0, 0, 0.12)'
-                : index > 0 &&
+                : (index > 0 &&
                   !(
                     renderProps.items[index - 1].hovered ||
                     renderProps.items[index - 1].focused
                   )
                 ? '0 -1px 0 #e6e6e6'
-                : undefined
+                : undefined)
             }
             transition="box-shadow 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
             onMouseEnter={item.onMouseEnter}

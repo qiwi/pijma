@@ -14,7 +14,7 @@ interface ComponentsListRendererProps {
 
 const ComponentsListRenderer: FC<ComponentsListRendererProps> = (props) => {
   const items = props.items.filter((item) => item.visibleName)
-  if (!items.length) {
+  if (items.length === 0) {
     return null
   }
   return (

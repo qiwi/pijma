@@ -40,10 +40,10 @@ export const cssValue = (
 export const customScroll = (() => {
   try {
     const element = document.createElement('div')
-    document.body.appendChild(element)
+    document.body.append(element)
     element.style.overflow = 'scroll'
     const result = element.offsetWidth !== element.clientWidth
-    document.body.removeChild(element)
+    element.remove()
     return result
-  } catch (e) {}
+  } catch {}
 })()

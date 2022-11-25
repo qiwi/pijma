@@ -1,3 +1,1 @@
-import createEmotionServer from '@emotion/server/create-instance'
-
-export { createEmotionServer }
+export { default as createEmotionServer } from '@emotion/server/create-instance'

@@ -58,9 +58,9 @@ export const ContentInput = forwardRef<HTMLInputElement, ContentInputProps>(
       cursor: 'text',
       bg: props.focused
         ? '#fff'
-        : props.hovered
+        : (props.hovered
         ? 'rgba(224, 224, 224, 0.65)'
-        : '#e6e6e6',
+        : '#e6e6e6'),
       transition: 'all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)',
       value: props.value,
       name: props.name,
@@ -83,12 +83,12 @@ export const ContentInput = forwardRef<HTMLInputElement, ContentInputProps>(
         {...common}
         type={
           props.type === undefined
-            ? isMaskDigital(props.mask)
+            ? (isMaskDigital(props.mask)
               ? 'tel'
-              : 'text'
-            : ['text', 'password', 'tel'].includes(props.type)
+              : 'text')
+            : (['text', 'password', 'tel'].includes(props.type)
             ? props.type
-            : 'text'
+            : 'text')
         }
         mask={props.mask}
         pipe={props.pipe}

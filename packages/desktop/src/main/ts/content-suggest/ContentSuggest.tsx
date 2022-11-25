@@ -138,7 +138,7 @@ export const ContentSuggest = <V extends {}>({
                   onMouseDown={renderProps.onResultItemsMouseDown}
                 >
                   {props.loading ? (
-                    new Array(4)
+                    Array.from({length: 4})
                       .fill(1)
                       .map((_item, key) => (
                         <CardMenuItem
@@ -192,7 +192,7 @@ export const ContentSuggest = <V extends {}>({
                             ) : null}
                           </Paragraph>
                         </Box>
-                      ) : props.empty && menuRenderProps.items.length === 0 ? (
+                      ) : (props.empty && menuRenderProps.items.length === 0 ? (
                         <Box px={4}>
                           <Paragraph>
                             {props.empty.text}
@@ -207,7 +207,7 @@ export const ContentSuggest = <V extends {}>({
                             ) : null}
                           </Paragraph>
                         </Box>
-                      ) : null}
+                      ) : null)}
                     </Spacer>
                   )}
                 </CardPos>

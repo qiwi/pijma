@@ -63,7 +63,7 @@ export interface FooterAppProps {
 
 export const FooterApp: FC<FooterAppProps> = ({ children, stub = false }) => (
   <Flex wrap="wrap" width={68} justify="space-between">
-    {(stub ? new Array(3).fill(0) : children).map((item, i) => (
+    {(stub ? Array.from({length: 3}).fill(0) : children).map((item, i) => (
       <FlexItem
         key={i}
         mt={i > 1 ? 3 : 0}

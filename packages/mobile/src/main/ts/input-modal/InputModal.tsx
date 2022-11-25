@@ -86,7 +86,7 @@ export const InputModal: FC<InputModalProps> = (props) => (
     renderDialog={(dialogProps) => (
       <Pos
         type="fixed"
-        zIndex={10050}
+        zIndex={10_050}
         top={0}
         bottom={0}
         left={0}

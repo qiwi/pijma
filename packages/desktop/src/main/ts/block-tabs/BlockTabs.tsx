@@ -106,7 +106,7 @@ export const BlockTabs: FC<BlockTabsProps> = ({
             ),
           )}
           <TabBorder
-            width={centered ? 'calc(33% - 20px)' : vertical ? 13 : 21}
+            width={centered ? 'calc(33% - 20px)' : (vertical ? 13 : 21)}
             left={0}
             radius={hr}
             stub

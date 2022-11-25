@@ -52,7 +52,7 @@ export const AlertBlock: FC<AlertBlockProps> = ({
 }) => {
   const iconComponent = isValidElement(icon) ? (
     icon
-  ) : icon === undefined ? (
+  ) : (icon === undefined ? (
     <Pos type="relative">
       <Pos type="absolute" top="4px" left="4px">
         <Card bg={AlertBlockIcon[type].bg} width={4} height={4} r={8} />
@@ -65,7 +65,7 @@ export const AlertBlock: FC<AlertBlockProps> = ({
         />
       </Pos>
     </Pos>
-  ) : null
+  ) : null)
   return (
     <AlertBlockControl
       onHide={onHide}
