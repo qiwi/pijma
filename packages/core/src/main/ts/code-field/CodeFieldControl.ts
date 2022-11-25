@@ -50,7 +50,9 @@ export class CodeFieldControl extends Component<
 
   public state: CodeFieldControlState = {
     focus: this.props.autoFocus ? 0 : -1,
-    refs: Array.from({length: this.props.value.length}).fill(1).map(() => createRef()),
+    refs: Array.from({ length: this.props.value.length })
+      .fill(1)
+      .map(() => createRef()),
   }
 
   public componentDidMount() {
@@ -197,16 +199,17 @@ export class CodeFieldControl extends Component<
 
   public render() {
     return this.props.children({
-      values: Array.from({length: this.props.value.length}).fill(0).map((item, index) => ({
-        ...item,
-        focused: this.state.focus === index,
-        ref: this.state.refs[index],
-        onKeyDown: this.onFieldKeyDown(index),
-        onChange: this.onFieldChange(index),
-        onClick: this.onFieldClick,
-        onFocus: this.onFieldFocus(index),
-        onBlur: this.onFieldBlur,
-      })),
+      values: Array.from({ length: this.props.value.length })
+        .fill(0)
+        .map((_item, index) => ({
+          focused: this.state.focus === index,
+          ref: this.state.refs[index],
+          onKeyDown: this.onFieldKeyDown(index),
+          onChange: this.onFieldChange(index),
+          onClick: this.onFieldClick,
+          onFocus: this.onFieldFocus(index),
+          onBlur: this.onFieldBlur,
+        })),
     })
   }
 }
