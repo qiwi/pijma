@@ -24,7 +24,7 @@
     "build:dts": "tsc --project tsconfig.dts.json",
     "test": "jest",
     "format": "DEBUG=eslint:lint-result-cache eslint --cache --cache-strategy content --fix src && prettier --loglevel silent --write src",
-    "lint": "DEBUG=eslint:lint-result-cache eslint --cache --cache-strategy content src&& cat .eslintcache"
+    "lint": "DEBUG=eslint:lint-result-cache eslint --cache --cache-strategy content src && cat .eslintcache"
   },
   "files": [
     "target/dts/**/*",
