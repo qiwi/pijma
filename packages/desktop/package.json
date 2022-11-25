@@ -30,8 +30,8 @@
     "chrome:start": "docker run --rm -p 6161:3000 --add-host=host.docker.internal:host-gateway browserless/chrome",
     "test:start": "wait-on http-get://localhost:6060/ http-get://localhost:6161/ && styleguidist-visual test --config styleguide.visual.config.cjs",
     "test:approve": "styleguidist-visual approve --config styleguide.visual.config.cjs",
-    "format": "cat .eslintcache && DEBUG=eslint:lint-result-cache eslint --cache --cache-strategy content --fix src && prettier --loglevel silent --write src",
-    "lint": "cat .eslintcache && DEBUG=eslint:lint-result-cache eslint --cache --cache-strategy content src"
+    "format": "DEBUG=eslint:lint-result-cache eslint --cache --cache-strategy content --fix src && prettier --loglevel silent --write src",
+    "lint": "DEBUG=eslint:lint-result-cache eslint --cache --cache-strategy content src"
   },
   "files": [
     "target/dts/**/*",
