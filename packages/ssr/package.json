@@ -22,8 +22,8 @@
     "build:es5": "cd src/main && swc ts -d ../../target/es5 --config-file ../../swc.es5.json && cd ../.. && tsc-esm-fix --target=target/es5 --fillBlank",
     "build:es6": "cd src/main && swc ts -d ../../target/es6 --config-file ../../swc.es6.json && cd ../.. && tsc-esm-fix --target=target/es6 --fillBlank",
     "build:dts": "tsc --project tsconfig.dts.json",
-    "format": "DEBUG=eslint:lint-result-cache eslint --cache --cache-strategy content --fix src && prettier --loglevel silent --write src",
-    "lint": "DEBUG=eslint:lint-result-cache eslint --cache --cache-strategy content src"
+    "format": "cat .eslintcache && DEBUG=eslint:lint-result-cache eslint --cache --cache-strategy content --fix src && prettier --loglevel silent --write src",
+    "lint": "cat .eslintcache && DEBUG=eslint:lint-result-cache eslint --cache --cache-strategy content src"
   },
   "files": [
     "target/dts/**/*",
