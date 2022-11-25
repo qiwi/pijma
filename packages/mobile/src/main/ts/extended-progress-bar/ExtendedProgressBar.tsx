@@ -3,7 +3,6 @@ import React, { FC } from 'react'
 
 import { Text } from '../typography'
 
-
 export interface ExtendedProgressBarProps {
   value: number
   maxValue?: number
@@ -25,7 +24,7 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
 }) => (
   <Spacer size="xxs">
     {titleStart || titleEnd ? (
-      <Flex justify='space-between'>
+      <Flex justify="space-between">
         <FlexItem width={stub ? 0.15 : undefined}>
           {titleStart && value !== undefined ? (
             <Text
@@ -33,18 +32,16 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
               bold={false}
               stub={stub}
               display={stub ? 'block' : undefined}
-              children={stub ? (
-                undefined
-              ) : formatValue !== undefined ? (
-                formatValue(value)
-              ) : (
-                value
-              )}
+              children={
+                stub
+                  ? undefined
+                  : (formatValue === undefined
+                  ? value
+                  : formatValue(value))
+              }
               compact
             />
-          ) : (
-            null
-          )}
+          ) : null}
         </FlexItem>
         <FlexItem width={stub ? 0.15 : undefined}>
           {titleEnd && value !== undefined && maxValue !== undefined ? (
@@ -53,49 +50,45 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
               bold={false}
               stub={stub}
               display={stub ? 'block' : undefined}
-              children={stub ? (
-                undefined
-              ) : formatValue !== undefined ? (
-                formatValue(maxValue - value)
-              ) : (
-                maxValue - value
-              )}
+              children={
+                stub
+                  ? undefined
+                  : (formatValue === undefined
+                  ? maxValue - value
+                  : formatValue(maxValue - value))
+              }
               compact
             />
-          ) : (
-            null
-          )}
+          ) : null}
         </FlexItem>
       </Flex>
-    ) : (
-      null
-    )}
+    ) : null}
     <Flex>
       <FlexItem
         width={stub || disabled || maxValue === 0 ? 1 : value / maxValue}
         minWidth="4px"
         transition="width 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-        children={stub ? (
-          <Stub height="4px" width={1} r={2} />
-        ) : (
-          <Card
-            height="4px"
-            width={1}
-            r={2}
-            bg={disabled ? '#E6E6E6' : maxValue === 0 ? '#F5F5F5' : '#FF8C00'}
-          />
-        )}
+        children={
+          stub ? (
+            <Stub height="4px" width={1} r={2} />
+          ) : (
+            <Card
+              height="4px"
+              width={1}
+              r={2}
+              bg={disabled ? '#E6E6E6' : (maxValue === 0 ? '#F5F5F5' : '#FF8C00')}
+            />
+          )
+        }
       />
       {!stub && !disabled && value < maxValue ? (
         <FlexItem ml={1} grow={1} minWidth="4px">
-          <Card height="4px" width={1} r={2} bg="#F5F5F5"/>
+          <Card height="4px" width={1} r={2} bg="#F5F5F5" />
         </FlexItem>
-      ) : (
-        null
-      )}
+      ) : null}
     </Flex>
     {titleStart || titleEnd ? (
-      <Flex justify='space-between'>
+      <Flex justify="space-between">
         <FlexItem width={stub ? 0.2 : undefined}>
           {titleStart ? (
             <Text
@@ -107,9 +100,7 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
               children={titleStart}
               compact
             />
-          ) : (
-            null
-          )}
+          ) : null}
         </FlexItem>
         <FlexItem width={stub ? 0.2 : undefined}>
           {titleEnd ? (
@@ -122,14 +113,10 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
               children={titleEnd}
               compact
             />
-          ) : (
-            null
-          )}
+          ) : null}
         </FlexItem>
       </Flex>
-    ) : (
-      null
-    )}
+    ) : null}
   </Spacer>
 )
 

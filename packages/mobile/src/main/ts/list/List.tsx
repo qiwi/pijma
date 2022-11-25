@@ -94,7 +94,7 @@ export const List: FC<ListProps> = ({
               </Text>
             )}
           </FlexItem>
-        ) : type === 'bullet' ? (
+        ) : (type === 'bullet' ? (
           <FlexItem width={5} shrink={0}>
             {stub ? (
               <Stub
@@ -140,7 +140,7 @@ export const List: FC<ListProps> = ({
               </FlexItem>
             )}
           </Flex>
-        ) : null}
+        ) : null)}
         <FlexItem mt={ListItemYMargin[type]} width={1}>
           {stub ? (
             type === 'step' ? (
@@ -150,11 +150,11 @@ export const List: FC<ListProps> = ({
                 <Text display="block" size={size} stub />
               </Box>
             )
-          ) : typeof item === 'string' ? (
+          ) : (typeof item === 'string' ? (
             <Paragraph size={size}>{item}</Paragraph>
           ) : (
             item
-          )}
+          ))}
         </FlexItem>
       </Flex>
     ))}

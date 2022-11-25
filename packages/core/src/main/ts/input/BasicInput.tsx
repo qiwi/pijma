@@ -56,11 +56,11 @@ export const BasicInput = forwardRef<HTMLInputElement, BasicInputProps>(
       b: 'none',
       bb: props.disabled
         ? theme.input.border.disabled
-        : props.error
+        : (props.error
         ? theme.input.border.error
         : props.focused
         ? theme.input.border.focused
-        : theme.input.border.default,
+        : theme.input.border.default),
       valueSize: 5,
       valueWeight: 300,
       valueColor: props.disabled ? '#666' : '#000',
@@ -73,9 +73,9 @@ export const BasicInput = forwardRef<HTMLInputElement, BasicInputProps>(
       autoComplete:
         typeof props.autoComplete === 'string'
           ? props.autoComplete
-          : props.autoComplete
+          : (props.autoComplete
           ? 'on'
-          : 'off',
+          : 'off'),
       autoFocus: props.autoFocus,
       placeholder: props.placeholder,
       inputMode: props.inputMode,
@@ -93,12 +93,12 @@ export const BasicInput = forwardRef<HTMLInputElement, BasicInputProps>(
         {...common}
         type={
           props.type === undefined
-            ? isMaskDigital(props.mask)
+            ? (isMaskDigital(props.mask)
               ? 'tel'
-              : 'text'
-            : ['text', 'password', 'tel'].includes(props.type)
+              : 'text')
+            : (['text', 'password', 'tel'].includes(props.type)
             ? props.type
-            : 'text'
+            : 'text')
         }
         mask={props.mask}
         pipe={props.pipe}

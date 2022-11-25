@@ -1,23 +1,27 @@
 import { BoxLnk, Flex, FlexItem, LinkControl, Stub } from '@qiwi/pijma-core'
 import React, { FC, ReactElement } from 'react'
 
-interface FooterAppLinkProps {
-  href: string
-  target?: string
-  download?: string | boolean
-  rel?: string
-  title?: string
-  icon: ReactElement
-  stub?: boolean
-  onClick?: (
-    href?: string,
-    target?: string,
-    download?: string | boolean,
-    rel?: string,
-  ) => void
-  onFocus?: () => void
-  onBlur?: () => void
-}
+type FooterAppLinkProps =
+  | {
+      stub?: false
+      href: string
+      target?: string
+      download?: string | boolean
+      rel?: string
+      title?: string
+      icon: ReactElement
+      onClick?: (
+        href?: string,
+        target?: string,
+        download?: string | boolean,
+        rel?: string,
+      ) => void
+      onFocus?: () => void
+      onBlur?: () => void
+    }
+  | {
+      stub: true
+    }
 
 const FooterAppLink: FC<FooterAppLinkProps> = (props) =>
   props.stub ? (
@@ -57,13 +61,16 @@ const FooterAppLink: FC<FooterAppLinkProps> = (props) =>
 FooterAppLink.displayName = 'FooterAppLink'
 
 export interface FooterAppProps {
-  children: FooterAppLinkProps[]
   stub?: boolean
+  children: FooterAppLinkProps[]
 }
 
 export const FooterApp: FC<FooterAppProps> = ({ children, stub = false }) => (
   <Flex wrap="wrap" width={68} justify="space-between">
-    {(stub ? new Array(3).fill(0) : children).map((item, i) => (
+    {(stub
+      ? Array.from<FooterAppLinkProps>({ length: 3 }).fill({ stub })
+      : children
+    ).map((item, i) => (
       <FlexItem
         key={i}
         mt={i > 1 ? 3 : 0}

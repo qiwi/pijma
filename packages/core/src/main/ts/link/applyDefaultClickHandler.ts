@@ -10,7 +10,7 @@ const defaultLinkClickHandler: LinkControlProps['onClick'] = (
     a.download = typeof download === 'string' ? download : ''
     a.href = href
     a.target = target || '_blank'
-    document.body.appendChild(a)
+    document.body.append(a)
     a.click()
     a.remove()
   } else {

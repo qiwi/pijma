@@ -1,6 +1,6 @@
 import { Mask } from './MaskedInput'
 
-const digits = [
+const digits = new Set([
   /\d/,
   /\d/,
   /0/,
@@ -13,7 +13,7 @@ const digits = [
   /7/,
   /8/,
   /9/,
-].map((r) => r.toString())
+].map((r) => r.toString()))
 
 export const isMaskDigital = (mask: Mask): boolean => {
   if (!Array.isArray(mask)) {
@@ -22,5 +22,5 @@ export const isMaskDigital = (mask: Mask): boolean => {
   return mask
     .filter((s) => s instanceof RegExp)
     .map((r) => r.toString())
-    .every((s) => digits.includes(s))
+    .every((s) => digits.has(s))
 }

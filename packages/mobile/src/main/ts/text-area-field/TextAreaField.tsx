@@ -52,9 +52,9 @@ export const TextAreaField: FC<TextAreaFieldProps> = (props) => (
             rows={
               props.maxRows && renderProps.rows > props.maxRows
                 ? props.maxRows
-                : props.minRows && renderProps.rows < props.minRows
+                : (props.minRows && renderProps.rows < props.minRows
                 ? props.minRows
-                : renderProps.rows
+                : renderProps.rows)
             }
             overflow={
               props.maxRows && renderProps.rows > props.maxRows

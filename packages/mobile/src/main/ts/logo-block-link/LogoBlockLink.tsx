@@ -62,7 +62,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({
       ) : (
         <Box
           p={4}
-          height={actions ? (description ? 56 : 50) : description ? 43 : 42}
+          height={actions ? (description ? 56 : 50) : (description ? 43 : 42)}
         >
           <Box width={14} height={14} mt={2} mx="auto">
             <Stub height={14} width={14} r={28} />
@@ -126,7 +126,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({
                     <FlexItem
                       pl={index === 0 ? 2 : undefined}
                       align="center"
-                      ml={index !== 0 ? 3 : 'auto'}
+                      ml={index === 0 ? 'auto' : 3}
                       key={index}
                       children={action}
                     />
@@ -137,7 +137,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({
         ) : (
           <Box
             p={4}
-            height={actions ? (description ? 56 : 50) : description ? 43 : 42}
+            height={actions ? (description ? 56 : 50) : (description ? 43 : 42)}
           >
             <Box width={14} height={14} mt={2} mx="auto">
               {typeof icon === 'string' ? (
@@ -171,7 +171,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({
               <Flex mt={3} mx="auto" align="baseline" justify="center">
                 {actions.map((action, index) => (
                   <FlexItem
-                    ml={index !== 0 ? 3 : undefined}
+                    ml={index === 0 ? undefined : 3}
                     key={index}
                     children={action}
                   />

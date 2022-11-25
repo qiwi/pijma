@@ -83,14 +83,14 @@ export const CardStyles: Interpolation<
           backgroundColor: 'transparent',
         },
       }
-    : customScroll === undefined
+    : (customScroll === undefined
     ? {
         '&::-webkit-scrollbar': {
           width: 0,
           height: 0,
         },
       }
-    : {}),
+    : {})),
 })
 
 export const Card = styled(Box, CardOptions)<CardProps>(CardStyles)

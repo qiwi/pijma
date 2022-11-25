@@ -1,21 +1,26 @@
 module.exports = {
-  extends: ['eslint-config-qiwi', 'eslint-config-prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:react-hooks/recommended',
+    'plugin:sonarjs/recommended',
+    'plugin:unicorn/recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
+  env: {
+    browser: true,
+    node: true,
+    jest: true,
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   rules: {
-    'react/no-children-prop': 'off',
-    'react/no-find-dom-node': 'off',
-    'unicorn/no-null': 'off',
-    'unicorn/prefer-add-event-listener': 'off',
-    'unicorn/explicit-length-check': 'off',
-    'unicorn/prefer-spread': 'off',
-    'sonarjs/no-identical-functions': 'off',
-    'sonarjs/no-duplicate-string': 'off',
-    'space-before-function-paren': 'off',
-    'no-use-before-define': 'off',
-    'no-useless-escape': 'off',
-    'no-case-declarations': 'off',
-    'no-mixed-operators': 'off',
-    '@typescript-eslint/ban-types': 'off',
-    '@typescript-eslint/no-unused-vars': 'off',
-    '@typescript-eslint/no-non-null-assertion': 'off',
+    'unicorn/filename-case': 'off',
+    'unicorn/no-abusive-eslint-disable': 'off',
+    'unicorn/prevent-abbreviations': 'off',
+    'unicorn/no-array-reduce': 'off',
   },
 }

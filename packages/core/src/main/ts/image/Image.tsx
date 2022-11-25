@@ -75,11 +75,11 @@ export const Image: FC<ImageProps> = ({
                       r={width === height ? '100%' : undefined}
                     />
                   </Pos>
-                ) : isValidElement(stub) && Children.only(stub) ? (
+                ) : (isValidElement(stub) && Children.only(stub) ? (
                   <Pos as="span" type="absolute" width={width} height={height}>
                     {stub}
                   </Pos>
-                ) : null}
+                ) : null)}
                 <Box
                   as="span"
                   opacity={typeof stub === 'string' ? 1 : 0}

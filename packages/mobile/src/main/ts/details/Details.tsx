@@ -42,7 +42,7 @@ export const Details: FC<DetailsProps> = ({
           <Box
             as="dt"
             width={titleWidth || 0.5}
-            pt={i !== 0 ? 2 : undefined}
+            pt={i === 0 ? undefined : 2}
             css={{
               display: 'table-cell',
               verticalAlign: 'bottom',
@@ -76,7 +76,7 @@ export const Details: FC<DetailsProps> = ({
           <Box
             as="dd"
             width={contentWidth || 0.5}
-            pt={i !== 0 ? 2 : undefined}
+            pt={i === 0 ? undefined : 2}
             css={{
               display: 'table-cell',
               verticalAlign: 'bottom',

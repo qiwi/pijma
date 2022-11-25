@@ -21,10 +21,10 @@ export interface OptionFieldProps {
   children?: ReactNode
 }
 
-const InputProps = BoxNonProps.concat(['autoFocus'])
+const InputProps = new Set(BoxNonProps.concat(['autoFocus']))
 
 const Input = styled(Box, {
-  shouldForwardProp: (prop) => !InputProps.includes(prop),
+  shouldForwardProp: (prop) => !InputProps.has(prop),
 })<BoxProps & Pick<OptionFieldProps, 'autoFocus'>>()
 
 Input.displayName = 'Input'

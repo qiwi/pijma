@@ -65,7 +65,7 @@ export class PaginationControl extends Component<PaginationControlProps> {
       next: currentPage + 1,
       active: currentPage,
       total: totalPages,
-      pages: new Array(Math.min(visiblePages, totalPages))
+      pages: Array.from({length: Math.min(visiblePages, totalPages)})
         .fill(0)
         .map((_, i) => firstPage + i),
       onPageClick: this.onPageClick,

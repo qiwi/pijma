@@ -68,13 +68,13 @@ export class ImageControl extends Component<
       const image = document.createElement('img')
       image.src = this.props.src
       image.srcset = this.props.srcSet || ''
-      image.onload = () => {
+      image.addEventListener('load', () => {
         clearTimeout(this.viewedTimer)
         clearTimeout(this.cachedTimer)
         this.setState({
           step: Step.LOAD,
         })
-      }
+      })
       this.cachedTimer = setTimeout(() => {
         image.onload = null
         image.src = ''

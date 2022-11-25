@@ -44,7 +44,7 @@ export const Details: FC<DetailsProps> = ({
           <Box
             as="dt"
             width={titleWidth || 0.5}
-            pt={i !== 0 ? 4 : undefined}
+            pt={i === 0 ? undefined : 4}
             css={{
               display: 'table-cell',
               verticalAlign: 'bottom',
@@ -78,7 +78,7 @@ export const Details: FC<DetailsProps> = ({
           <Box
             as="dd"
             width={contentWidth || 0.5}
-            pt={i !== 0 ? 4 : undefined}
+            pt={i === 0 ? undefined : 4}
             css={{
               display: 'table-cell',
               verticalAlign: 'bottom',
@@ -100,7 +100,7 @@ export const Details: FC<DetailsProps> = ({
             <Box
               as="dt"
               width={titleWidth}
-              pt={j !== 0 ? 2 : i !== 0 ? 4 : undefined}
+              pt={j === 0 ? (i === 0 ? undefined : 4) : 2}
               css={{
                 display: 'table-cell',
                 verticalAlign: 'bottom',
@@ -142,7 +142,7 @@ export const Details: FC<DetailsProps> = ({
             <Box
               as="dd"
               width={contentWidth}
-              pt={j !== 0 ? 2 : i !== 0 ? 4 : undefined}
+              pt={j === 0 ? (i === 0 ? undefined : 4) : 2}
               css={{
                 display: 'table-cell',
                 verticalAlign: 'bottom',

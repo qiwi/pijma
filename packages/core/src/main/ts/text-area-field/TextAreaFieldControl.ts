@@ -40,11 +40,11 @@ export class TextAreaFieldControl extends Component<
       return
     }
     const cloned = this.field.current.cloneNode(true) as HTMLTextAreaElement
-    document.body.appendChild(cloned)
+    document.body.append(cloned)
     const style = getComputedStyle(cloned)
-    const lineHeight = parseInt(style.lineHeight || '0', 10)
-    const paddingTop = parseInt(style.paddingTop || '0', 10)
-    const paddingBottom = parseInt(style.paddingBottom || '0', 10)
+    const lineHeight = Number.parseInt(style.lineHeight || '0', 10)
+    const paddingTop = Number.parseInt(style.paddingTop || '0', 10)
+    const paddingBottom = Number.parseInt(style.paddingBottom || '0', 10)
     cloned.style.transition = 'none'
     cloned.style.width = `${this.field.current.getBoundingClientRect().width}px`
     cloned.style.height = `${lineHeight}px`

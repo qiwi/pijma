@@ -44,7 +44,7 @@ export const Grid: FC<GridProps> = ({
             key={index}
             width={width}
             mt={index >= rowBlocksCount ? `${gutter}px` : 0}
-            ml={index % rowBlocksCount !== 0 ? `${gutter}px` : 0}
+            ml={index % rowBlocksCount === 0 ? 0 : `${gutter}px`}
             children={child}
           />
         )

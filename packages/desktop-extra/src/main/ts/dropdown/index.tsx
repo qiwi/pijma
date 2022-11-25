@@ -54,4 +54,6 @@ class Dropdown extends Component<DropdownProps> {
   }
 }
 
-export { Dropdown, Container }
+export { Dropdown,  }
+
+export {Container} from './Container'

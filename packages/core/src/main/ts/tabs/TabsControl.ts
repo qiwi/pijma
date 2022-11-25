@@ -44,7 +44,7 @@ export class TabsControl extends Component<TabsControlProps> {
     focused: -1,
     borderLeft: 0,
     borderWidth: 0,
-    refs: new Array(this.props.length).fill(1).map(() => createRef()),
+    refs: Array.from({length: this.props.length}).fill(1).map(() => createRef()),
   }
 
   private calculateBorder() {
@@ -119,13 +119,14 @@ export class TabsControl extends Component<TabsControlProps> {
   private onKeyDown: KeyboardEventHandler<HTMLElement> = (event) => {
     switch (event.key) {
       case 'Enter':
-      case ' ':
+      case ' ': {
         event.preventDefault()
         event.stopPropagation()
         if (this.state.focused !== -1 && this.props.onChange) {
           this.props.onChange(this.state.focused)
         }
         break
+      }
     }
   }
 
@@ -134,7 +135,7 @@ export class TabsControl extends Component<TabsControlProps> {
       onKeyDown: this.onKeyDown,
       borderLeft: this.state.borderLeft,
       borderWidth: this.state.borderWidth,
-      items: new Array(this.props.length).fill(0).map((_item, index) => ({
+      items: Array.from({length: this.props.length}).fill(0).map((_item, index) => ({
         select: index === this.props.select,
         focus: index === this.state.focused,
         ref: this.state.refs[index],

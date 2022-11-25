@@ -58,9 +58,9 @@ export const PasswordField: FC<PasswordFieldProps> = (props) => (
                 />
               }
             />
-          ) : props.hint ? (
+          ) : (props.hint ? (
             props.hint
-          ) : null
+          ) : null)
         }
         error={props.error}
         help={props.help}

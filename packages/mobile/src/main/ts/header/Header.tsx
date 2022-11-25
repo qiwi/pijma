@@ -8,7 +8,7 @@ interface HeaderProps {
 }
 
 export const Header: FC<HeaderProps> = ({
-  zIndex = 10002,
+  zIndex = 10_002,
   active,
   children,
 }) => (

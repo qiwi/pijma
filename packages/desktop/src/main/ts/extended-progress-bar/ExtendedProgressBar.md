@@ -18,7 +18,7 @@
       </Spacer>
       <Spacer size="s">
         <Heading size={5}>MaxValue = 0</Heading>
-        <ExtendedProgressBar value={0} maxValue={0}/>
+        <ExtendedProgressBar value={0} maxValue={0} />
       </Spacer>
       <Spacer size="s">
         <Heading size={5}>Stub</Heading>
@@ -36,11 +36,7 @@
       </Spacer>
       <Spacer size="s">
         <Heading size={5}>Disabled with titles</Heading>
-        <ExtendedProgressBar
-          disabled
-          titleStart="Начало"
-          titleEnd="Конец"
-        />
+        <ExtendedProgressBar disabled titleStart="Начало" titleEnd="Конец" />
       </Spacer>
       <Spacer size="s">
         <Heading size={5}>MaxValue = 0 with titles</Heading>
