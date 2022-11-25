@@ -3,7 +3,6 @@ import React, { FC } from 'react'
 
 import { Paragraph, Text } from '../typography'
 
-
 export interface ExtendedProgressBarProps {
   value: number
   maxValue?: number
@@ -11,7 +10,7 @@ export interface ExtendedProgressBarProps {
   titleEnd?: string
   stub?: boolean
   disabled?: boolean
-  formatValue?: (value: number) => string 
+  formatValue?: (value: number) => string
 }
 
 export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
@@ -29,69 +28,65 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
         width={stub || disabled || maxValue === 0 ? 1 : value / maxValue}
         minWidth={2}
         transition="width 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-        children={stub ? (
-          <Stub height={2} width={1} r={4} />
-        ) : (
-          <Card
-            height={2}
-            width={1}
-            r={4}
-            bg={disabled ? '#E6E6E6' : maxValue === 0 ? '#F5F5F5' : '#FF8C00'}
-          />
-        )}
+        children={
+          stub ? (
+            <Stub height={2} width={1} r={4} />
+          ) : (
+            <Card
+              height={2}
+              width={1}
+              r={4}
+              bg={disabled ? '#E6E6E6' : (maxValue === 0 ? '#F5F5F5' : '#FF8C00')}
+            />
+          )
+        }
       />
       {!stub && !disabled && value < maxValue ? (
         <FlexItem ml={1} grow={1} minWidth={2}>
-          <Card height={2} width={1} r={4} bg="#F5F5F5"/>
+          <Card height={2} width={1} r={4} bg="#F5F5F5" />
         </FlexItem>
-      ) : (
-        null
-      )}
+      ) : null}
     </Flex>
     {titleStart || titleEnd ? (
       <Flex mt={2} justify="space-between">
         <FlexItem width={stub ? 0.15 : undefined}>
           {stub && titleStart ? (
-            <Text size="s" display="block" compact stub/>
-          ) : titleStart ? (
+            <Text size="s" display="block" compact stub />
+          ) : (titleStart ? (
             <Paragraph size="s" compact>
-              <Text color="support">{titleStart}{value !== undefined ? ': ' : ''}</Text>
+              <Text color="support">
+                {titleStart}
+                {value !== undefined ? ': ' : ''}
+              </Text>
               {value !== undefined ? (
                 <Text>
                   {formatValue !== undefined ? formatValue(value) : value}
                 </Text>
-              ) : (
-                null
-              )}
+              ) : null}
             </Paragraph>
-          ) : (
-            null
-          )}
+          ) : null)}
         </FlexItem>
         <FlexItem width={stub ? 0.15 : undefined}>
           {stub && titleEnd ? (
-            <Text size="s" display="block" compact stub/>
-          ) : titleEnd ? (
+            <Text size="s" display="block" compact stub />
+          ) : (titleEnd ? (
             <Paragraph size="s" compact>
               <Text color="support">
-                {titleEnd}{value !== undefined && maxValue !== undefined ? ': ' : ''}
+                {titleEnd}
+                {value !== undefined && maxValue !== undefined ? ': ' : ''}
               </Text>
               {value !== undefined && maxValue !== undefined ? (
                 <Text>
-                  {formatValue !== undefined ? formatValue(maxValue - value) : maxValue - value}
+                  {formatValue !== undefined
+                    ? formatValue(maxValue - value)
+                    : maxValue - value}
                 </Text>
-              ) : (
-                null
-              )}
+              ) : null}
             </Paragraph>
-          ): (
-            null
-          )}
+          ) : null)}
         </FlexItem>
       </Flex>
-    ) : (
-      null
-    )}
+    ) : null}
   </Spacer>
 )
 

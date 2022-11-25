@@ -7,7 +7,9 @@ import SelectProps from './SelectProps'
 import SelectState from './SelectState'
 
 // https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_isempty
-const isEmpty = (obj: any): boolean => [Object, Array].includes((obj || {}).constructor) && !Object.entries((obj || {})).length;
+const isEmpty = (obj: any): boolean =>
+  [Object, Array].includes((obj || {}).constructor) &&
+  Object.entries(obj || {}).length === 0
 
 const Container = styled('div')`
   position: relative;
@@ -130,7 +132,7 @@ export class Select extends Component<SelectProps, SelectState> {
           }
           value={
             !isEmpty(multiValue)
-              ? [].concat(multiValue).join(', ')
+              ? [multiValue].flat().join(', ')
               : emptyValue || ''
           }
           hint={
