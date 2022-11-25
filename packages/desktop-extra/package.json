@@ -23,8 +23,8 @@
     "build:es6": "cd src/main && swc ts -d ../../target/es6 --config-file ../../swc.es6.json && cd ../.. && tsc-esm-fix --target=target/es6 --fillBlank",
     "build:dts": "tsc --project tsconfig.dts.json",
     "test": "jest",
-    "format": "eslint --fix src && prettier --loglevel silent --write src",
-    "lint": "eslint src"
+    "format": "eslint --cache --fix src && prettier --loglevel silent --write src",
+    "lint": "eslint --cache src"
   },
   "files": [
     "target/dts/**/*",
