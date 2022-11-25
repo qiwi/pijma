@@ -23,8 +23,8 @@
     "build:es6": "cd src/main && swc ts -d ../../target/es6 --config-file ../../swc.es6.json && cd ../.. && tsc-esm-fix --target=target/es6 --fillBlank",
     "build:dts": "tsc --project tsconfig.dts.json",
     "test": "jest",
-    "format": "eslint --cache --cache-strategy content --fix src && prettier --loglevel silent --write src",
-    "lint": "eslint --cache --cache-strategy content src"
+    "format": "DEBUG=eslint:lint-result-cache eslint --cache --cache-strategy content --fix src && prettier --loglevel silent --write src",
+    "lint": "DEBUG=eslint:lint-result-cache eslint --cache --cache-strategy content src"
   },
   "files": [
     "target/dts/**/*",
