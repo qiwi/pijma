@@ -56,9 +56,9 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
               children={stub ? (
                 undefined
               ) : formatValue !== undefined ? (
-                formatValue(maxValue - value)
+                formatValue(Math.max(maxValue - value, 0))
               ) : (
-                maxValue - value
+                Math.max(maxValue - value, 0)
               )}
               compact
             />
@@ -72,7 +72,7 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
     )}
     <Flex>
       <FlexItem
-        width={stub || disabled || maxValue === 0 ? 1 : value / maxValue}
+        width={stub || disabled || maxValue === 0 || value >= maxValue ? 1 : value / maxValue}
         minWidth="4px"
         transition="width 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         children={stub ? (

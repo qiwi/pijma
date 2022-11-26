@@ -52,6 +52,15 @@
         />
       </Spacer>
       <Spacer size="s">
+        <Heading size={5}>Value more than maxValue</Heading>
+        <ExtendedProgressBar
+          value={1000}
+          maxValue={400}
+          titleStart="Потрачено"
+          titleEnd="Осталось"
+        />
+      </Spacer>
+      <Spacer size="s">
         <Heading size={5}>Stub with titles</Heading>
         <ExtendedProgressBar stub titleStart="stub" titleEnd="stub" />
       </Spacer>
