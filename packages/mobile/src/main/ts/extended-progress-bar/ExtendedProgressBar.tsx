@@ -21,7 +21,7 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
   titleEnd,
   disabled = false,
   stub = false,
-  formatValue,
+  formatValue = v => v,
 }) => (
   <Spacer size="xxs">
     {titleStart || titleEnd ? (
