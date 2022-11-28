@@ -1,3 +1,8 @@
+## [@qiwi/pijma-mobile@1.159.1](https://github.com/qiwi/pijma/compare/2022.11.24-qiwi.pijma-mobile.1.159.0-f0...2022.11.28-qiwi.pijma-mobile.1.159.1-f0) (2022-11-28)
+
+### Fixes & improvements
+* fix(extended-progress-bar): corner-case with value more than maxValue (#552) [bc9c4af5](https://github.com/qiwi/pijma/commit/bc9c4af5d69dd5ccda5705664b04403c9b721df4)
+
 ## [@qiwi/pijma-mobile@1.159.0](https://github.com/qiwi/pijma/compare/2022.11.16-qiwi.pijma-mobile.1.158.1-f0...2022.11.24-qiwi.pijma-mobile.1.159.0-f0) (2022-11-24)
 
 ### Features
