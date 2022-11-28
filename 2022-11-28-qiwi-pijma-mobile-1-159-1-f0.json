@@ -1,0 +1,12 @@
+{
+  "META_VERSION": "1",
+  "name": "@qiwi/pijma-mobile",
+  "hash": "bc9c4af5d69dd5ccda5705664b04403c9b721df4",
+  "version": "1.159.1",
+  "dependencies": {
+    "@qiwi/pijma-core": "1.158.0"
+  },
+  "devDependencies": {
+    "@qiwi/pijma-infra": "1.11.0"
+  }
+}
