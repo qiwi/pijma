@@ -33,13 +33,7 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
               bold={false}
               stub={stub}
               display={stub ? 'block' : undefined}
-              children={stub ? (
-                undefined
-              ) : formatValue !== undefined ? (
-                formatValue(value)
-              ) : (
-                value
-              )}
+              children={stub ? undefined : formatValue(value)}
               compact
             />
           ) : (
@@ -53,13 +47,7 @@ export const ExtendedProgressBar: FC<ExtendedProgressBarProps> = ({
               bold={false}
               stub={stub}
               display={stub ? 'block' : undefined}
-              children={stub ? (
-                undefined
-              ) : formatValue !== undefined ? (
-                formatValue(Math.max(maxValue - value, 0))
-              ) : (
-                Math.max(maxValue - value, 0)
-              )}
+              children={stub ? undefined : formatValue(Math.max(maxValue - value, 0))}
               compact
             />
           ) : (
