@@ -1,3 +1,8 @@
+## [@qiwi/pijma-mobile@1.159.2](https://github.com/qiwi/pijma/compare/2022.11.28-qiwi.pijma-mobile.1.159.1-f0...2023.1.17-qiwi.pijma-mobile.1.159.2-f0) (2023-01-17)
+
+### Fixes & improvements
+* fix: export suggest field interfaces (#554) [a71270f8](https://github.com/qiwi/pijma/commit/a71270f8e2af3781409eb76e282297578b5e27e1)
+
 ## [@qiwi/pijma-mobile@1.159.1](https://github.com/qiwi/pijma/compare/2022.11.24-qiwi.pijma-mobile.1.159.0-f0...2022.11.28-qiwi.pijma-mobile.1.159.1-f0) (2022-11-28)
 
 ### Fixes & improvements
