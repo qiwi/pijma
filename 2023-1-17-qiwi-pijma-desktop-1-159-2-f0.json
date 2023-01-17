@@ -1,0 +1,12 @@
+{
+  "META_VERSION": "1",
+  "name": "@qiwi/pijma-desktop",
+  "hash": "a71270f8e2af3781409eb76e282297578b5e27e1",
+  "version": "1.159.2",
+  "dependencies": {
+    "@qiwi/pijma-core": "1.158.0"
+  },
+  "devDependencies": {
+    "@qiwi/pijma-infra": "1.11.0"
+  }
+}
