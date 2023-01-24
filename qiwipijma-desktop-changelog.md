@@ -1,3 +1,8 @@
+## [@qiwi/pijma-desktop@1.159.3](https://github.com/qiwi/pijma/compare/2023.1.17-qiwi.pijma-desktop.1.159.2-f0...2023.1.24-qiwi.pijma-desktop.1.159.3-f0) (2023-01-24)
+
+### Fixes & improvements
+* fix: export hint (#556) [0fea04c3](https://github.com/qiwi/pijma/commit/0fea04c3f3eff356da24a108bf03e8583e430f91)
+
 ## [@qiwi/pijma-desktop@1.159.2](https://github.com/qiwi/pijma/compare/2022.11.28-qiwi.pijma-desktop.1.159.1-f0...2023.1.17-qiwi.pijma-desktop.1.159.2-f0) (2023-01-17)
 
 ### Fixes & improvements
