@@ -5,6 +5,7 @@
   <BlockContent>
     <Grid columns={4} layout={[1]}>
       <LogoLink
+        data-testid="logo-link"
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
@@ -17,12 +18,14 @@
         icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
+        data-testid="logo-link"
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
         icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
+        data-testid="logo-link"
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
@@ -40,6 +43,7 @@
   <BlockContent>
     <Grid columns={4} layout={[1]}>
       <LogoLink
+        data-testid="logo-link"
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
@@ -47,6 +51,7 @@
         icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
+        data-testid="logo-link"
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
@@ -54,6 +59,7 @@
         icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
+        data-testid="logo-link"
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
@@ -61,6 +67,7 @@
         icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
+        data-testid="logo-link"
         href="//qiwi.com"
         target="_blank"
         title="Перейти на главную"
@@ -81,6 +88,7 @@
   <BlockContent>
     <Grid columns={3} layout={[1]}>
       <LogoLink
+        data-testid="logo-link"
         horizontal
         href="//qiwi.com"
         target="_blank"
@@ -88,6 +96,7 @@
         icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
+        data-testid="logo-link"
         horizontal
         href="//qiwi.com"
         target="_blank"
@@ -95,6 +104,7 @@
         icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
+        data-testid="logo-link"
         horizontal
         href="//qiwi.com"
         target="_blank"
@@ -102,6 +112,7 @@
         icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
+        data-testid="logo-link"
         horizontal
         href="//qiwi.com"
         target="_blank"
@@ -120,6 +131,7 @@
   <BlockContent>
     <Grid columns={3} layout={[1]}>
       <LogoLink
+        data-testid="logo-link"
         horizontal
         href="//qiwi.com"
         target="_blank"
@@ -128,6 +140,7 @@
         icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
+        data-testid="logo-link"
         horizontal
         href="//qiwi.com"
         target="_blank"
@@ -136,6 +149,7 @@
         icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
+        data-testid="logo-link"
         horizontal
         href="//qiwi.com"
         target="_blank"
@@ -144,6 +158,7 @@
         icon={<Icon name="qiwi" size={1} />}
       />
       <LogoLink
+        data-testid="logo-link"
         horizontal
         href="//qiwi.com"
         target="_blank"

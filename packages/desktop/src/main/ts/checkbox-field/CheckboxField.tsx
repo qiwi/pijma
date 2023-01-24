@@ -3,6 +3,7 @@ import {
   Check,
   CheckboxControl,
   Flex,
+  getDataProps,
   OptionControl,
   OptionField,
   OptionFieldItem,
@@ -42,6 +43,7 @@ export const CheckboxField: FC<
       onBlur={props.onBlur}
       children={(renderProps) => (
         <OptionField
+          {...getDataProps(props).data}
           title={props.title}
           hint={props.hint}
           help={props.help}

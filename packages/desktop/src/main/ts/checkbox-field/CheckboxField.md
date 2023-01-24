@@ -6,6 +6,7 @@ return (
   <Block>
     <BlockContent>
       <CheckboxField
+        data-testid="checkbox-field"
         title="Группа чекбоксов"
         hint={<QuestionIcon />}
         options={[
@@ -44,6 +45,7 @@ return (
   <Block>
     <BlockContent>
       <CheckboxField
+        data-testid="checkbox-field"
         title="Группа чекбоксов с примечаниями"
         hint={<QuestionIcon />}
         options={[
@@ -83,7 +85,13 @@ return (
 ```jsx
 <Block>
   <BlockContent>
-    <CheckboxField options={[]} values={[]} onChange={() => {}} stub />
+    <CheckboxField
+      data-testid="no"
+      options={[]}
+      values={[]}
+      onChange={() => {}}
+      stub
+    />
   </BlockContent>
 </Block>
 ```

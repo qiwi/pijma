@@ -1,4 +1,4 @@
-import { Flex, FlexItem } from '@qiwi/pijma-core'
+import { Flex, FlexItem, getDataProps } from '@qiwi/pijma-core'
 import React, { FC } from 'react'
 
 import { Link } from '../link'
@@ -10,7 +10,13 @@ export interface HeaderMenuProps {
 }
 
 export const HeaderMenu: FC<HeaderMenuProps> = (props) => (
-  <Flex height={1} width={1} justify="flex-start" role="menu">
+  <Flex
+    {...getDataProps(props).data}
+    height={1}
+    width={1}
+    justify="flex-start"
+    role="menu"
+  >
     {props.stub
       ? (typeof props.stub === 'boolean' ? [32, 44, 26] : props.stub).map(
           (width, index) => (

@@ -69,6 +69,7 @@ return (
     <Box>
       <Caption>AUTOFOCUS</Caption>
       <SelectField
+        data-testid="select-field"
         title="Select"
         value={value}
         items={items}
@@ -80,6 +81,7 @@ return (
     <Box>
       <Caption>ERROR</Caption>
       <SelectField
+        data-testid="select-field"
         title="Select"
         value={value}
         equals={equals}
@@ -91,6 +93,7 @@ return (
     <Box>
       <Caption>DISABLED</Caption>
       <SelectField
+        data-testid="select-field"
         title="Select"
         value={value}
         equals={equals}
@@ -101,7 +104,13 @@ return (
     </Box>
     <Box>
       <Caption>STUB</Caption>
-      <SelectField stub title="Select" items={[]} onChange={() => null} />
+      <SelectField
+        data-testid="no"
+        stub
+        title="Select"
+        items={[]}
+        onChange={() => null}
+      />
     </Box>
   </Grid>
 )

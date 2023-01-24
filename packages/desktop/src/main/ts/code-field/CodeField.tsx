@@ -3,6 +3,7 @@ import {
   CodeFieldControl,
   Flex,
   FlexItem,
+  getDataProps,
   Input,
   keyframes,
   Stub,
@@ -51,7 +52,7 @@ export const CodeField: FC<CodeFieldProps> = ({
       onBlur={props.onBlur}
       onReady={props.onReady}
       children={(renderProps) => (
-        <Box width={1} minHeight={12}>
+        <Box {...getDataProps(props).data} width={1} minHeight={12}>
           <Flex>
             {renderProps.values.map((item, index) => (
               <FlexItem ml={index === 0 ? 0 : 3} align="top" key={index}>

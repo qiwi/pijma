@@ -189,6 +189,7 @@ return (
     <BlockContent>
       <Box width={128}>
         <ContentSuggest
+          data-testid="content-suggest"
           value={value}
           items={banks}
           suggest={suggest}

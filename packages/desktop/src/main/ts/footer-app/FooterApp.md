@@ -1,6 +1,7 @@
 ```jsx
 <Spacer>
   <FooterApp
+    data-testid="footer-app"
     children={[
       {
         href: '//play.google.com/store/apps/details?id=ru.mw',
@@ -19,6 +20,6 @@
       },
     ]}
   />
-  <FooterApp stub children={[]} />
+  <FooterApp data-testid="no" stub children={[]} />
 </Spacer>
 ```

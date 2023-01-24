@@ -1,5 +1,6 @@
 ```jsx
 <FooterOut
+  data-testid="footer-out"
   children={[
     { href: '//vk.com/qiwirussia', target: '_blank', icon: 'vk' },
     { href: '//ok.ru/qiwirussia', target: '_blank', icon: 'ok' },
@@ -20,9 +21,9 @@
 ```
 
 ```jsx
-<FooterOut children={[]} stub />
+<FooterOut data-testid="no" children={[]} stub />
 ```
 
 ```jsx
-<FooterOut stub={3} children={[]} />
+<FooterOut data-testid="no" stub={3} children={[]} />
 ```

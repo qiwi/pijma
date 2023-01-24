@@ -11,17 +11,20 @@ return (
         <Checkbox
           onChange={(checked) => setChecked(checked)}
           checked={checked}
+          data-testid="checkbox"
           label="Выбранный чекбокс"
         />
         <Checkbox
           disabled={true}
           checked={true}
+          data-testid="checkbox"
           label="Выбранный заблокированный"
         />
         <Checkbox disabled={true} label="Невыбранный заблокированный" />
         <Checkbox
           onChange={(checked) => setChecked(checked)}
           checked={checked}
+          data-testid="checkbox"
           label={
             <Paragraph>
               Ознакомлен с <Link href="#" children="офертой" />

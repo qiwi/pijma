@@ -2,6 +2,7 @@ import {
   Box,
   Card,
   css,
+  getDataProps,
   Icon,
   Modal,
   ModalProps,
@@ -84,6 +85,7 @@ export const SimpleModal: FC<SimpleModalProps> = (props) =>
     <Box display="none">{props.children}</Box>
   ) : (
     <Modal
+      {...getDataProps(props).data}
       show={props.show}
       keyboard={props.escapeClose}
       onShow={props.onShow}

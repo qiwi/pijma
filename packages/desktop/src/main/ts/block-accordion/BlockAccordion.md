@@ -3,6 +3,7 @@ const [opened, setOpened] = React.useState([])
 return (
   <Block>
     <BlockAccordion
+      data-testid="block-accordion"
       opened={opened}
       onChange={(opened) => setOpened(opened)}
       items={[

@@ -1,4 +1,11 @@
-import { CardLnk, Flex, LinkControl, Stub, Value } from '@qiwi/pijma-core'
+import {
+  CardLnk,
+  Flex,
+  getDataProps,
+  LinkControl,
+  Stub,
+  Value,
+} from '@qiwi/pijma-core'
 import React, { FC } from 'react'
 
 export interface PaginationLinkProps {
@@ -27,6 +34,7 @@ export const PaginationLink: FC<PaginationLinkProps> = (props) => (
     onClick={props.stub ? undefined : props.onClick}
     children={(renderProps) => (
       <CardLnk
+        {...(props.stub ? {} : getDataProps(props).data)}
         as={props.stub ? 'div' : 'a'}
         transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         height={12}

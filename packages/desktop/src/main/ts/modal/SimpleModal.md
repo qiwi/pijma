@@ -17,6 +17,7 @@ return (
         />
       </Actions>
       <SimpleModal
+        data-testid="simple-modal"
         show={deleteModal}
         size="m"
         closable
@@ -82,6 +83,7 @@ return (
         />
       </Actions>
       <SimpleModal
+        data-testid="simple-modal"
         show={s}
         size="s"
         closable
@@ -94,6 +96,7 @@ return (
         }
       />
       <SimpleModal
+        data-testid="simple-modal"
         show={m}
         size="m"
         closable
@@ -106,6 +109,7 @@ return (
         }
       />
       <SimpleModal
+        data-testid="simple-modal"
         show={l}
         size="l"
         closable
@@ -141,6 +145,7 @@ return (
         />
       </Actions>
       <SimpleModal
+        data-testid="simple-modal"
         show={notification}
         size="m"
         closable
@@ -196,6 +201,7 @@ return (
         />
       </Actions>
       <SimpleModal
+        data-testid="simple-modal"
         show={email}
         size="m"
         closable
@@ -248,6 +254,7 @@ return (
         />
       </Actions>
       <SimpleModal
+        data-testid="simple-modal"
         show={snapping}
         size="m"
         closable

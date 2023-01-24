@@ -1,4 +1,4 @@
-import { Card, Icon, PaginationControl } from '@qiwi/pijma-core'
+import { Card, getDataProps, Icon, PaginationControl } from '@qiwi/pijma-core'
 import React, { FC } from 'react'
 
 import { Text } from '../typography'
@@ -22,6 +22,7 @@ export const Pagination: FC<PaginationProps> = ({
   href,
   stub = false,
   onChange,
+  ...rest
 }) => (
   <PaginationControl
     total={total}
@@ -31,6 +32,7 @@ export const Pagination: FC<PaginationProps> = ({
     onChange={onChange}
     children={(renderProps) => (
       <Card
+        {...(stub ? {} : getDataProps(rest).data)}
         bg="#fff"
         s={shadowed ? '0 1px 2px 0 rgba(0,0,0,0.12)' : '0 0 0 1px #e6e6e6'}
         height={12}

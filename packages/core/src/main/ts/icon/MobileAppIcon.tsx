@@ -1,5 +1,6 @@
 import React, { FC, ReactElement } from 'react'
 
+import { getDataProps } from '../getDataProps'
 import { Path, Svg } from '../primitive'
 
 export interface MobileAppIconProps {
@@ -33,8 +34,15 @@ const appIcon: Record<MobileAppIconProps['name'], ReactElement> = {
   ),
 }
 
-export const MobileAppIcon: FC<MobileAppIconProps> = ({ name }) => (
-  <Svg width={1} height={1} viewBox="0 0 128 40" fill="none" focusable="false">
+export const MobileAppIcon: FC<MobileAppIconProps> = ({ name, ...rest }) => (
+  <Svg
+    {...getDataProps(rest).data}
+    width={1}
+    height={1}
+    viewBox="0 0 128 40"
+    fill="none"
+    focusable="false"
+  >
     {appIcon[name]}
   </Svg>
 )

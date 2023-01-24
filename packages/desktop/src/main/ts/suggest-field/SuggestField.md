@@ -179,6 +179,7 @@ return (
     <BlockContent>
       <Box width={70}>
         <SuggestField
+          data-testid="suggest-field"
           value={value}
           items={banks}
           title="Поле ввода"

@@ -1,4 +1,10 @@
-import { LinkControl, Stub, TypoLnk, useTheme } from '@qiwi/pijma-core'
+import {
+  getDataProps,
+  LinkControl,
+  Stub,
+  TypoLnk,
+  useTheme,
+} from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
 
 export interface LinkProps {
@@ -88,6 +94,7 @@ export const Link: FC<LinkProps> = (props) => {
       rel={props.rel}
       children={(renderProps) => (
         <TypoLnk
+          {...getDataProps(props).data}
           tabIndex={props.tabIndex}
           href={props.href}
           onClick={renderProps.onClick}

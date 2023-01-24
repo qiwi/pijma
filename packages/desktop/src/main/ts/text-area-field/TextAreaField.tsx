@@ -1,5 +1,6 @@
 import {
   BasicTextArea,
+  getDataProps,
   InputField,
   TextAreaFieldControl,
 } from '@qiwi/pijma-core'
@@ -36,6 +37,7 @@ export const TextAreaField: FC<TextAreaFieldProps> = (props) => (
     value={props.value}
     children={(renderProps) => (
       <InputField
+        {...getDataProps(props).data}
         title={props.title}
         active={renderProps.focused || !!props.value || !!props.placeholder}
         input={

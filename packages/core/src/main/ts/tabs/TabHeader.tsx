@@ -6,6 +6,7 @@ import React, {
 } from 'react'
 
 import { Breaker } from '../breaker'
+import { getDataProps } from '../getDataProps'
 import { Icon, IconProps } from '../icon'
 import { Flex, FlexItem, Pos, Typo } from '../primitive'
 import { Stub } from '../stub'
@@ -49,6 +50,7 @@ export const TabHeader = forwardRef<HTMLDivElement, TabProps>(
       onMouseLeave,
       onKeyDown,
       onClick,
+      ...rest
     },
     ref,
   ) => {
@@ -56,6 +58,7 @@ export const TabHeader = forwardRef<HTMLDivElement, TabProps>(
 
     return (
       <FlexItem
+        {...getDataProps(rest).data}
         mr={indent}
         width={width}
         ref={ref}

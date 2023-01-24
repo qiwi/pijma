@@ -4,6 +4,7 @@ import {
   CardLnk,
   Flex,
   FlexItem,
+  getDataProps,
   Icon,
   IconProps,
   LinkControl,
@@ -89,8 +90,12 @@ export interface FooterOutProps {
   stub?: number | boolean
 }
 
-export const FooterOut: FC<FooterOutProps> = ({ children, stub = false }) => (
-  <Box overflow="hidden">
+export const FooterOut: FC<FooterOutProps> = ({
+  children,
+  stub = false,
+  ...rest
+}) => (
+  <Box overflow="hidden" {...(stub ? {} : getDataProps(rest).data)}>
     <Flex wrap="wrap" justify="space-between" m={-1.5}>
       {(stub
         ? new Array(typeof stub === 'number' ? stub : 6).fill({

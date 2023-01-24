@@ -1,4 +1,4 @@
-import { Card, Flex, FlexItem, Typo } from '@qiwi/pijma-core'
+import { Card, Flex, FlexItem, getDataProps, Typo } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
 
 import { Paragraph, Title } from '../typography'
@@ -17,8 +17,16 @@ export const Oops: FC<OopsProps> = ({
   title,
   content,
   footer,
+  ...restProps
 }) => (
-  <Card minWidth={295} width="100%" py={22} minHeight="100%" bg="#fff">
+  <Card
+    {...getDataProps(restProps).data}
+    minWidth={295}
+    width="100%"
+    py={22}
+    minHeight="100%"
+    bg="#fff"
+  >
     <Flex mx="auto" width={235} direction="column">
       {logo ? <FlexItem shrink={0} children={logo} /> : null}
       <FlexItem my={30}>

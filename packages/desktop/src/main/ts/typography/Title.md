@@ -7,10 +7,12 @@
   <BlockContent>
     <Flex>
       <FlexItem>
-        <Title size="1">Title H1</Title>
+        <Title data-testid="title" size="1">
+          Title H1
+        </Title>
       </FlexItem>
       <FlexItem ml={10}>
-        <Title size="1" stub />
+        <Title data-testid="no" size="1" stub />
       </FlexItem>
     </Flex>
   </BlockContent>
@@ -33,10 +35,12 @@ font-weight: 900
   <BlockContent>
     <Flex>
       <FlexItem>
-        <Title size="2">Title H2</Title>
+        <Title data-testid="title" size="2">
+          Title H2
+        </Title>
       </FlexItem>
       <FlexItem ml={10}>
-        <Title size="2" stub />
+        <Title data-testid="no" size="2" stub />
       </FlexItem>
     </Flex>
   </BlockContent>
@@ -55,7 +59,7 @@ font-weight: 900
 ```jsx
 <Block>
   <BlockContent>
-    <Title size="2" clamp={3}>
+    <Title size="2" data-testid="title" clamp={3}>
       В типографических элементах есть возможность задавать максимальное
       количество видимых строк через свойство clamp. Если текст выходит за
       заданные рамки, в конце текста будет добавлено многоточие

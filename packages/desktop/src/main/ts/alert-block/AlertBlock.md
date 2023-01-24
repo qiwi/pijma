@@ -1,33 +1,43 @@
 ```jsx
-<AlertBlock type="success">Операция прошла успешно</AlertBlock>
+<AlertBlock data-testid="alert-block" type="success">
+  Операция прошла успешно
+</AlertBlock>
 ```
 
 ```jsx
-<AlertBlock type="warning">Сообщение с предупреждением</AlertBlock>
+<AlertBlock data-testid="alert-block" type="warning">
+  Сообщение с предупреждением
+</AlertBlock>
 ```
 
 ```jsx
-<AlertBlock type="waiting">Есть какая-то обработка операции</AlertBlock>
+<AlertBlock data-testid="alert-block" type="waiting">
+  Есть какая-то обработка операции
+</AlertBlock>
 ```
 
 ```jsx
-<AlertBlock type="failure">
+<AlertBlock data-testid="alert-block" type="failure">
   {'Критическое сообщение. Иконка остается в левом верхнем углу\nВторая строка'}
 </AlertBlock>
 ```
 
 ```jsx
-<AlertBlock type="info">Просто информационное сообщение</AlertBlock>
+<AlertBlock data-testid="alert-block" type="info">
+  Просто информационное сообщение
+</AlertBlock>
 ```
 
 ```jsx
-<AlertBlock type="info" onHide={() => {}}>
+<AlertBlock data-testid="alert-block" type="info" onHide={() => {}}>
   Информационное сообщение с кнопкой "Закрыть"
 </AlertBlock>
 ```
 
 ```jsx
-<AlertBlock type="promo">Цвет темный</AlertBlock>
+<AlertBlock data-testid="alert-block" type="promo">
+  Цвет темный
+</AlertBlock>
 ```
 
 ```jsx

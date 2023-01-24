@@ -8,6 +8,7 @@ return (
     <Block>
       <BlockContent>
         <ReCaptchaField
+          data-testid="recaptcha-field"
           siteKey="6Le0iiETAAAAAPNu6albLuW5O2Zz7FO8N95lisA1"
           value={value1}
           action={
@@ -24,6 +25,7 @@ return (
     <Block>
       <BlockContent>
         <ReCaptchaField
+          data-testid="recaptcha-field"
           siteKey="6Le0iiETAAAAAPNu6albLuW5O2Zz7FO8N95lisA1"
           value={value2}
           error="Кажется, вы робот"
@@ -52,6 +54,7 @@ return (
     <Block>
       <BlockContent>
         <ReCaptchaField
+          data-testid="recaptcha-field"
           siteKey="6Le0iiETAAAAAPNu6albLuW5O2Zz7FO8N95lisA1"
           value={value3}
           action={
@@ -68,6 +71,7 @@ return (
     <Block>
       <BlockContent>
         <ReCaptchaField
+          data-testid="recaptcha-field"
           siteKey="6Le0iiETAAAAAPNu6albLuW5O2Zz7FO8N95lisA1"
           value={value4}
           error="Кажется, вы робот"

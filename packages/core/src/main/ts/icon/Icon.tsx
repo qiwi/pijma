@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 
+import { getDataProps } from '../getDataProps'
 import { Path, Svg, Value } from '../primitive'
 
 export interface IconProps {
@@ -283,8 +284,19 @@ export const IconPaths: { [name in IconProps['name']]: string } = {
     'M21.582 7.186C22 8.746 22 12 22 12s0 3.254-.418 4.814a2.505 2.505 0 0 1-1.768 1.768C18.254 19 12 19 12 19s-6.254 0-7.814-.418a2.505 2.505 0 0 1-1.768-1.768C2 15.254 2 12 2 12s0-3.254.418-4.814c.23-.86.908-1.538 1.768-1.768C5.746 5 12 5 12 5s6.254 0 7.814.418c.86.23 1.538.908 1.768 1.768zM9.955 14.955L15.182 12 9.955 9.045v5.91z',
 }
 
-export const Icon: FC<IconProps> = ({ name, size = 6, color = '#000' }) => (
-  <Svg width={size} height={size} viewBox="0 0 24 24" focusable="false">
+export const Icon: FC<IconProps> = ({
+  name,
+  size = 6,
+  color = '#000',
+  ...rest
+}) => (
+  <Svg
+    {...getDataProps(rest).data}
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    focusable="false"
+  >
     <Path d={IconPaths[name]} fill={color} />
   </Svg>
 )

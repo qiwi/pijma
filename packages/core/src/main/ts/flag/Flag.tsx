@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 
+import { getDataProps } from '../getDataProps'
 import { Path, Svg, Value } from '../primitive'
 
 type FlagCode =
@@ -220,8 +221,19 @@ export const FlagFillPaths: { [code in FlagCode]: [string, string][] } = {
   ],
 }
 
-export const Flag: FC<FlagProps> = ({ code, width = 6, height = 4 }) => (
-  <Svg width={width} height={height} viewBox="0 0 24 16" focusable="false">
+export const Flag: FC<FlagProps> = ({
+  code,
+  width = 6,
+  height = 4,
+  ...rest
+}) => (
+  <Svg
+    {...getDataProps(rest).data}
+    width={width}
+    height={height}
+    viewBox="0 0 24 16"
+    focusable="false"
+  >
     {FlagFillPaths[code].map((flag, i) => (
       <Path key={i} fill={flag[0]} d={flag[1]} />
     ))}

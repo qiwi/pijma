@@ -1,6 +1,7 @@
 import {
   BasicInput,
   Box,
+  getDataProps,
   Icon,
   InputField,
   PasswordFieldControl,
@@ -19,6 +20,7 @@ export const PasswordField: FC<PasswordFieldProps> = (props) => (
     onToggle={props.onToggle}
     children={(renderProps) => (
       <InputField
+        {...getDataProps(props).data}
         title={props.title}
         active={renderProps.focused || !!props.value || !!props.placeholder}
         input={

@@ -1,4 +1,11 @@
-import { Flex, FlexItem, Icon, RatingControl, Stub } from '@qiwi/pijma-core'
+import {
+  Flex,
+  FlexItem,
+  getDataProps,
+  Icon,
+  RatingControl,
+  Stub,
+} from '@qiwi/pijma-core'
 import React, { FC } from 'react'
 
 export interface RatingProps {
@@ -27,6 +34,7 @@ export const Rating: FC<RatingProps> = ({
   count = 5,
   stub = false,
   onChange,
+  ...rest
 }) =>
   stub ? (
     <Flex>
@@ -43,7 +51,7 @@ export const Rating: FC<RatingProps> = ({
       disabled={disabled}
       onChange={onChange}
       children={(renderProps) => (
-        <Flex>
+        <Flex {...getDataProps(rest).data}>
           {renderProps.items.map((item, index) => (
             <FlexItem
               key={index}

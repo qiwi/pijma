@@ -1,4 +1,10 @@
-import { LinkControl, LinkControlProps, Lnk, styled } from '@qiwi/pijma-core'
+import {
+  getDataProps,
+  LinkControl,
+  LinkControlProps,
+  Lnk,
+  styled,
+} from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
 
 import { MenuItem } from '../menu'
@@ -46,6 +52,7 @@ export const MenuLink: FC<MenuLinkProps> = (props) =>
       onBlur={props.onBlur}
       children={(renderProps) => (
         <MenuItemLnk
+          {...getDataProps(props).data}
           tag={props.href ? 'a' : undefined}
           notes={props.notes}
           text={props.title}

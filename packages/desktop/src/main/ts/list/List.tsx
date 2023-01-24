@@ -1,4 +1,4 @@
-import { Box, Card, Flex, FlexItem, Stub } from '@qiwi/pijma-core'
+import { Box, Card, Flex, FlexItem, getDataProps, Stub } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
 
 import { Paragraph, Text } from '../typography'
@@ -69,8 +69,9 @@ export const List: FC<ListProps> = ({
   type,
   size = 'm',
   children,
+  ...rest
 }) => (
-  <Box as={ListType[type]}>
+  <Box {...(stub ? {} : getDataProps(rest).data)} as={ListType[type]}>
     {(stub ? [0, 0] : children).map((item, index, array) => (
       <Flex key={index} as="li" mt={index > 0 ? ItemIndent[type] : 0}>
         {type === 'number' ? (

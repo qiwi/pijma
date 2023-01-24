@@ -3,6 +3,7 @@ import {
   BoxProps,
   Card,
   css,
+  getDataProps,
   HintArrow,
   HintControl,
   Overlay,
@@ -218,6 +219,7 @@ export const Hint: FC<HintProps> = ({
   flip,
   onShow,
   onHide,
+  ...rest
 }) => {
   const small = typeof children === 'string'
   return (
@@ -225,7 +227,11 @@ export const Hint: FC<HintProps> = ({
       show={show}
       onShow={onShow}
       children={(renderProps) => (
-        <Pos type="relative" ref={renderProps.container}>
+        <Pos
+          {...getDataProps(rest).data}
+          type="relative"
+          ref={renderProps.container}
+        >
           <Box
             cursor="pointer"
             onClick={renderProps.onClick}

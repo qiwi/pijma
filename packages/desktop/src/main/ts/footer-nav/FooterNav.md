@@ -2,6 +2,7 @@
 <Block>
   <BlockContent>
     <FooterNav
+      data-testid="footer-nav"
       children={[
         { href: '#', target: '_self', children: 'Карта QIWI терминалов' },
         { href: '#', target: '_self', children: 'Идентификация' },
@@ -25,7 +26,7 @@
 ```jsx
 <Block>
   <BlockContent>
-    <FooterNav stub={[32, 40, 26]} />
+    <FooterNav data-testid="no" stub={[32, 40, 26]} />
   </BlockContent>
 </Block>
 ```

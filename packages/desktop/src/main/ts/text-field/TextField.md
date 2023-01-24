@@ -27,6 +27,7 @@ return (
     <BlockContent>
       <Box width={64}>
         <TextField
+          data-testid="text-field"
           title="Поле ввода"
           type="text"
           value={text}
@@ -45,6 +46,7 @@ return (
   <BlockContent>
     <Box width={64}>
       <TextField
+        data-testid="text-field"
         stub
         title="if you need title stub put any corrent content here"
         help="if you need help stub put any corrent content here"
@@ -65,6 +67,7 @@ return (
     <BlockContent>
       <Box width={64}>
         <TextField
+          data-testid="text-field"
           title="Поле ввода"
           help="Подсказка"
           type="text"

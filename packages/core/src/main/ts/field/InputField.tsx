@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from 'react'
 
+import { getDataProps } from '../getDataProps'
 import { Box, Card, Flex, FlexItem, Pos, Typo } from '../primitive'
 import { Stub } from '../stub'
 
@@ -25,6 +26,7 @@ export const InputField: FC<FieldProps> = ({
   help,
   icon,
   stub = false,
+  ...rest
 }) =>
   stub ? (
     <Box>
@@ -59,7 +61,7 @@ export const InputField: FC<FieldProps> = ({
       )}
     </Box>
   ) : (
-    <Pos type="relative" width={1}>
+    <Pos {...getDataProps(rest).data} type="relative" width={1}>
       <Pos type="relative" height={4}>
         <Pos
           type="absolute"

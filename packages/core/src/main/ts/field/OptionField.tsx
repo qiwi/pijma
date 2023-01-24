@@ -5,6 +5,7 @@ import React, {
   ReactNode,
 } from 'react'
 
+import { getDataProps } from '../getDataProps'
 import { Box, BoxNonProps, BoxProps, Flex, FlexItem, Typo } from '../primitive'
 import { Spacer } from '../spacer'
 import { styled } from '../styled'
@@ -30,7 +31,7 @@ const Input = styled(Box, {
 Input.displayName = 'Input'
 
 export const OptionField: FC<OptionFieldProps> = (props) => (
-  <Box>
+  <Box {...getDataProps(props).data}>
     <Spacer size="s">
       {props.title ? (
         <Flex justify="flex-start" width={1}>

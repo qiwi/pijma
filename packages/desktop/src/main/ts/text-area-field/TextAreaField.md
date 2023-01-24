@@ -7,6 +7,7 @@ return (
     <BlockContent>
       <Box width={64}>
         <TextAreaField
+          data-testid="text-area-field"
           title="Поле ввода"
           value={text}
           onChange={(text) => setText(text)}
@@ -28,6 +29,7 @@ return (
     <BlockContent>
       <Box width={64}>
         <TextAreaField
+          data-testid="text-area-field"
           title="Поле ввода"
           minRows={2}
           maxRows={4}
@@ -49,6 +51,7 @@ return (
     <BlockContent>
       <Box width={64}>
         <TextAreaField
+          data-testid="text-area-field"
           title="Поле ввода"
           placeholder="Только многострочный текст"
           minRows={2}
@@ -71,6 +74,7 @@ return (
     <BlockContent>
       <Box width={64}>
         <TextAreaField
+          data-testid="text-area-field"
           title="Поле ввода"
           help="Подсказка"
           value={text}
@@ -91,6 +95,7 @@ return (
     <BlockContent>
       <Box width={64}>
         <TextAreaField
+          data-testid="text-area-field"
           title="Поле ввода"
           action={<a href="#/Fields/TextAreaField">Сылка-кнопка</a>}
           value={text}
@@ -111,6 +116,7 @@ return (
     <BlockContent>
       <Box width={64}>
         <TextAreaField
+          data-testid="text-area-field"
           title="Поле ввода"
           error="Подсказка"
           value={text}
@@ -128,7 +134,11 @@ return (
 <Block>
   <BlockContent>
     <Box width={64}>
-      <TextAreaField title="Поле ввода" disabled={true} />
+      <TextAreaField
+        data-testid="text-area-field"
+        title="Поле ввода"
+        disabled={true}
+      />
     </Box>
   </BlockContent>
 </Block>
@@ -143,6 +153,7 @@ return (
     <BlockContent>
       <Box width={64}>
         <TextAreaField
+          data-testid="text-area-field"
           title="Поле ввода"
           maxLength={60}
           maxRows={3}
