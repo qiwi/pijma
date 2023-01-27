@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from 'react'
 
-import { getDataProps } from '../getDataProps'
+import { getDataProps } from '../dataProps'
 import { Path, Svg } from '../primitive'
 
 export interface MobileAppIconProps {
@@ -36,7 +36,7 @@ const appIcon: Record<MobileAppIconProps['name'], ReactElement> = {
 
 export const MobileAppIcon: FC<MobileAppIconProps> = ({ name, ...rest }) => (
   <Svg
-    {...getDataProps(rest).data}
+    {...getDataProps(rest)}
     width={1}
     height={1}
     viewBox="0 0 128 40"

@@ -228,7 +228,7 @@ export const Hint: FC<HintProps> = ({
       onShow={onShow}
       children={(renderProps) => (
         <Pos
-          {...getDataProps(rest).data}
+          {...getDataProps(rest)}
           type="relative"
           ref={renderProps.container}
         >

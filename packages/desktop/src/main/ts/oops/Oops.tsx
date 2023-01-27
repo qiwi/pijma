@@ -20,7 +20,7 @@ export const Oops: FC<OopsProps> = ({
   ...restProps
 }) => (
   <Card
-    {...getDataProps(restProps).data}
+    {...getDataProps(restProps)}
     minWidth={295}
     width="100%"
     py={22}

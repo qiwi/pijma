@@ -48,7 +48,7 @@ export const Alert: FC<AlertProps> = ({
   <AlertControl
     onHide={onHide}
     children={(renderProps) => (
-      <Flex {...getDataProps(rest).data} minHeight={16} py={5}>
+      <Flex {...getDataProps(rest)} minHeight={16} py={5}>
         <FlexItem>
           <Icon name={AlertIconName[type]} color={AlertIconColor[type]} />
         </FlexItem>

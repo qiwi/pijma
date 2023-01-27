@@ -5,7 +5,7 @@ import React, {
   KeyboardEventHandler,
 } from 'react'
 
-import { getDataProps } from '../getDataProps'
+import { getDataProps } from '../dataProps'
 import { isMaskDigital, Mask, Pipe } from '../mask'
 import { Input, MaskInput, Value } from '../primitive'
 import { useTheme } from '../styled'
@@ -88,7 +88,7 @@ export const BasicInput = forwardRef<HTMLInputElement, BasicInputProps>(
       onKeyDown: props.onKeyDown,
       onKeyUp: props.onKeyUp,
       ref,
-      ...getDataProps(props).data,
+      ...getDataProps(props),
     }
 
     return props.mask ? (

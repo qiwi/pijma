@@ -85,7 +85,7 @@ export const SimpleModal: FC<SimpleModalProps> = (props) =>
     <Box display="none">{props.children}</Box>
   ) : (
     <Modal
-      {...getDataProps(props).data}
+      {...getDataProps(props)}
       show={props.show}
       keyboard={props.escapeClose}
       onShow={props.onShow}

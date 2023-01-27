@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { getDataProps } from '../getDataProps'
+import { getDataProps } from '../dataProps'
 import { Path, Svg } from '../primitive'
 import { Stub } from '../stub'
 
@@ -132,7 +132,7 @@ export const PaymentSecurityIcon: FC<PaymentSecurityIconProps> = ({
     <Stub width={1} height={1} />
   ) : (
     <Svg
-      {...getDataProps(rest).data}
+      {...getDataProps(rest)}
       width={1}
       height={1}
       viewBox="0 0 64 24"

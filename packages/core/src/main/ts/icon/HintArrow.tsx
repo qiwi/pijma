@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { getDataProps } from '../getDataProps'
+import { getDataProps } from '../dataProps'
 import { OverlayProps } from '../overlays'
 import { Path, Svg } from '../primitive'
 
@@ -28,7 +28,7 @@ const transform: Record<HintArrowProps['placement'], string | undefined> = {
 
 export const HintArrow: FC<HintArrowProps> = ({ placement, ...rest }) => (
   <Svg
-    {...getDataProps(rest).data}
+    {...getDataProps(rest)}
     width={11}
     height={11}
     viewBox="0 0 44 18"

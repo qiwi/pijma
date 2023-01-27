@@ -126,7 +126,7 @@ export const Paragraph: FC<ParagraphProps> = ({
     </Fragment>
   ) : (
     <Typo
-      {...getDataProps(rest).data}
+      {...getDataProps(rest)}
       as="p"
       display="block"
       size={ParagraphSize[size]}

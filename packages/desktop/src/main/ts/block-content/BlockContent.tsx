@@ -20,7 +20,7 @@ export const BlockContent: FC<BlockContentProps> = ({
   ...rest
 }) => (
   <Box
-    {...getDataProps(rest).data}
+    {...getDataProps(rest)}
     p={BlockContentIdent[indent]}
     children={children}
   />

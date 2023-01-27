@@ -1,7 +1,7 @@
 import React, { FC, MouseEventHandler, ReactNode } from 'react'
 
 import { Breaker } from '../breaker'
-import { getDataProps } from '../getDataProps'
+import { getDataProps } from '../dataProps'
 import { Box, Flex, Pos, Typo } from '../primitive'
 
 export interface OptionFieldItemProps {
@@ -27,7 +27,7 @@ export const OptionFieldItem: FC<OptionFieldItemProps> = ({
   ...rest
 }) => (
   <Pos
-    {...getDataProps(rest).data}
+    {...getDataProps(rest)}
     type="relative"
     cursor={disabled ? 'not-allowed' : 'pointer'}
     onClick={onClick}

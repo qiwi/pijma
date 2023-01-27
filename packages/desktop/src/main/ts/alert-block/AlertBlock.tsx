@@ -72,7 +72,7 @@ export const AlertBlock: FC<AlertBlockProps> = ({
     <AlertBlockControl
       onHide={onHide}
       children={(renderProps) => (
-        <Block {...getDataProps(rest).data} bg={AlertBlockBackground[type]}>
+        <Block {...getDataProps(rest)} bg={AlertBlockBackground[type]}>
           <FlexPos
             display="flex"
             type="relative"

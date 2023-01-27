@@ -48,7 +48,7 @@ export const Caption: FC<CaptionProps> = ({
     </Box>
   ) : (
     <Typo
-      {...getDataProps(rest).data}
+      {...getDataProps(rest)}
       as="h6"
       display="block"
       size={3.5}

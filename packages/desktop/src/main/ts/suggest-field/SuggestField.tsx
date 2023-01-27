@@ -58,7 +58,7 @@ export const SuggestField = <V extends {}>({
           onKeyDown={renderProps.onItemKeyDown}
           children={(menuRenderProps) => (
             <Pos
-              {...getDataProps(props).data}
+              {...getDataProps(props)}
               type="relative"
               ref={renderProps.containerRef}
               transition={`box-shadow ${

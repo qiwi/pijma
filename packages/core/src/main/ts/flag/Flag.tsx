@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { getDataProps } from '../getDataProps'
+import { getDataProps } from '../dataProps'
 import { Path, Svg, Value } from '../primitive'
 
 type FlagCode =
@@ -228,7 +228,7 @@ export const Flag: FC<FlagProps> = ({
   ...rest
 }) => (
   <Svg
-    {...getDataProps(rest).data}
+    {...getDataProps(rest)}
     width={width}
     height={height}
     viewBox="0 0 24 16"

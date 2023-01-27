@@ -38,7 +38,7 @@ export const FileLink: FC<FileLinkProps> = (props) => (
     rel={props.rel}
     children={(renderProps) => (
       <FlexLnk
-        {...getDataProps(props).data}
+        {...getDataProps(props)}
         tabIndex={props.tabIndex}
         href={props.href}
         target={props.target}

@@ -35,7 +35,7 @@ export const LogoLink: FC<LogoLinkProps> = ({
   ...props
 }) => (
   <SectionLink
-    {...getDataProps(props).data}
+    {...getDataProps(props)}
     href={props.href}
     target={props.target}
     download={props.download}

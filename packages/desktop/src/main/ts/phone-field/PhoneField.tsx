@@ -46,7 +46,7 @@ export const PhoneField: FC<PhoneFieldProps> = ({
           onSelect={renderProps.onSelectCountry}
           children={(menuRenderProps) => (
             <Pos
-              {...getDataProps(props).data}
+              {...getDataProps(props)}
               type="relative"
               ref={renderProps.containerRef}
             >

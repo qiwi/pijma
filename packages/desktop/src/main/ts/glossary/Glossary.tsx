@@ -39,7 +39,7 @@ export const Glossary: FC<GlossaryProps> = ({ children, stub, ...rest }) =>
       ))}
     </Box>
   ) : (
-    <Box {...getDataProps(rest).data} as="dl">
+    <Box {...getDataProps(rest)} as="dl">
       {children.map((item, i) => (
         <Box key={i} mt={i === 0 ? undefined : 5}>
           <Box as="dt">

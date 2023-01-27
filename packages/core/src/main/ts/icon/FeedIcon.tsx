@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { getDataProps } from '../getDataProps'
+import { getDataProps } from '../dataProps'
 import { Circle, Path, Svg } from '../primitive'
 
 export interface FeedIconProps {
@@ -16,7 +16,7 @@ export const FeedIcon: FC<FeedIconProps> = ({
   ...rest
 }) => (
   <Svg
-    {...getDataProps(rest).data}
+    {...getDataProps(rest)}
     width={size}
     height={size}
     viewBox="0 0 24 24"

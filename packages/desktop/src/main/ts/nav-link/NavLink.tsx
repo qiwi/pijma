@@ -34,7 +34,7 @@ export const NavLink: FC<NavLinkProps> = (props) =>
       rel={props.rel}
       children={(renderProps) => (
         <TypoLnk
-          {...getDataProps(props).data}
+          {...getDataProps(props)}
           tabIndex={props.tabIndex}
           href={props.href}
           onClick={renderProps.onClick}

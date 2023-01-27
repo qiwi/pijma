@@ -6,7 +6,7 @@ import React, {
   MouseEventHandler,
 } from 'react'
 
-import { getDataProps } from '../getDataProps'
+import { getDataProps } from '../dataProps'
 import { isMaskDigital, Mask, Pipe } from '../mask'
 import { Input, MaskInput, Value } from '../primitive'
 
@@ -78,7 +78,7 @@ export const ContentInput = forwardRef<HTMLInputElement, ContentInputProps>(
       onMouseEnter: props.onMouseEnter,
       onMouseLeave: props.onMouseLeave,
       ref,
-      ...getDataProps(props).data,
+      ...getDataProps(props),
     }
 
     return props.mask ? (

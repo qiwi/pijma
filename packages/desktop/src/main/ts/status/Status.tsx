@@ -19,7 +19,7 @@ export const Status: FC<StatusProps> = ({
   children,
   ...rest
 }) => (
-  <Flex {...getDataProps(rest).data} align="center" direction="column">
+  <Flex {...getDataProps(rest)} align="center" direction="column">
     {icon ? <FlexItem height={16} width={16} mb={8} children={icon} /> : null}
     {title ? <Heading align="center" size="4" children={title} /> : null}
     {content ? (

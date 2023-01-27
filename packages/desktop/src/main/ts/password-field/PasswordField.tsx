@@ -20,7 +20,7 @@ export const PasswordField: FC<PasswordFieldProps> = (props) => (
     onToggle={props.onToggle}
     children={(renderProps) => (
       <InputField
-        {...getDataProps(props).data}
+        {...getDataProps(props)}
         title={props.title}
         active={renderProps.focused || !!props.value || !!props.placeholder}
         input={

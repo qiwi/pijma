@@ -1,6 +1,6 @@
 import React, { Component, createRef, FC, ReactNode, RefObject } from 'react'
 
-import { getDataProps } from '../getDataProps'
+import { getDataProps } from '../dataProps'
 import { InView } from '../inview'
 import { Box } from '../primitive'
 
@@ -63,7 +63,7 @@ export class OffsetScrollControl extends Component<
       bottom: this.state.bottom,
       children: (
         <Box
-          {...getDataProps(this.props).data}
+          {...getDataProps(this.props)}
           height={1}
           overflow="auto"
           ref={this.ref}

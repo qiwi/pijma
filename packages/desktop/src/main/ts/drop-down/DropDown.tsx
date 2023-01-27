@@ -83,7 +83,7 @@ export const DropDown: FC<DropDownProps> = ({
       }}
       children={(renderProps) => (
         <Pos
-          {...getDataProps(rest).data}
+          {...getDataProps(rest)}
           role="listbox"
           type="absolute"
           width={width}

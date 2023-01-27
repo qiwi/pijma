@@ -11,7 +11,7 @@ export interface HeaderMenuProps {
 
 export const HeaderMenu: FC<HeaderMenuProps> = (props) => (
   <Flex
-    {...getDataProps(props).data}
+    {...getDataProps(props)}
     height={1}
     width={1}
     justify="flex-start"

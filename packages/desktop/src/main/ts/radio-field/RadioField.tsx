@@ -45,7 +45,7 @@ export const RadioField: FC<
       onBlur={props.onBlur}
       children={(renderProps) => (
         <OptionField
-          {...getDataProps(props).data}
+          {...getDataProps(props)}
           title={props.title}
           hint={props.hint}
           help={props.help}

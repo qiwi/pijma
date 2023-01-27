@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { getDataProps } from '../getDataProps'
+import { getDataProps } from '../dataProps'
 import { Card, Pos } from '../primitive'
 import { useTheme } from '../styled'
 
@@ -22,7 +22,7 @@ export const TabBorder: FC<TabBorderProps> = ({
 
   return stub ? null : (
     <Pos
-      {...getDataProps(rest).data}
+      {...getDataProps(rest)}
       transition="left 300ms cubic-bezier(0.4, 0.0, 0.2, 1), width 300ms cubic-bezier(0.4, 0.0, 0.2, 1)"
       type="absolute"
       height="4px"

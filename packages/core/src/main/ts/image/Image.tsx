@@ -1,6 +1,6 @@
 import React, { Children, FC, isValidElement, ReactNode } from 'react'
 
-import { getDataProps } from '../getDataProps'
+import { getDataProps } from '../dataProps'
 import { InView } from '../inview'
 import { Box, Img, Pos, Value } from '../primitive'
 import { Stub } from '../stub'
@@ -47,7 +47,7 @@ export const Image: FC<ImageProps> = ({
       children={(renderProps) =>
         renderProps.loaded ? (
           <Img
-            {...getDataProps(rest).data}
+            {...getDataProps(rest)}
             key={src}
             width={width}
             height={height}
@@ -113,7 +113,7 @@ export const Image: FC<ImageProps> = ({
     />
   ) : (
     <Img
-      {...getDataProps(rest).data}
+      {...getDataProps(rest)}
       width={width}
       height={height}
       src={src}

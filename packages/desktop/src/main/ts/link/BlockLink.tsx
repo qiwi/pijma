@@ -41,7 +41,7 @@ export const BlockLink: FC<BlockLinkProps> = (props) => (
     rel={props.rel}
     children={(renderProps) => (
       <BlockCardLnk
-        {...getDataProps(props).data}
+        {...getDataProps(props)}
         accent={props.accent}
         hover={renderProps.hover}
         focus={renderProps.focus}

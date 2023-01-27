@@ -42,7 +42,7 @@ export const BlockAccordion: FC<
     opened={opened}
     onChange={onChange}
     children={(renderProps) => (
-      <Box {...getDataProps(rest).data} py={3}>
+      <Box {...getDataProps(rest)} py={3}>
         {renderProps.items.map((item, index) => (
           <Card
             key={index}

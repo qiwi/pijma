@@ -50,7 +50,7 @@ export const ContentSuggest = <V extends {}>({
         onKeyDown={renderProps.onItemKeyDown}
         children={(menuRenderProps) => (
           <CardPos
-            {...getDataProps(props).data}
+            {...getDataProps(props)}
             type="relative"
             ref={renderProps.containerRef}
             width={1}

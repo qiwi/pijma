@@ -95,7 +95,7 @@ export const FooterOut: FC<FooterOutProps> = ({
   stub = false,
   ...rest
 }) => (
-  <Box overflow="hidden" {...(stub ? {} : getDataProps(rest).data)}>
+  <Box overflow="hidden" {...(stub ? {} : getDataProps(rest))}>
     <Flex wrap="wrap" justify="space-between" m={-1.5}>
       {(stub
         ? new Array(typeof stub === 'number' ? stub : 6).fill({

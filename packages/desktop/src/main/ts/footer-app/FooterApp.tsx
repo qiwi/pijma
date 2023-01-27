@@ -73,7 +73,7 @@ export const FooterApp: FC<FooterAppProps> = ({
   stub = false,
   ...rest
 }) => (
-  <Flex {...(stub ? {} : getDataProps(rest).data)}>
+  <Flex {...(stub ? {} : getDataProps(rest))}>
     {(stub ? new Array(3).fill(0) : children).map((item, i) => (
       <FlexItem
         key={i}

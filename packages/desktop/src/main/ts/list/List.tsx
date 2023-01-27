@@ -71,7 +71,7 @@ export const List: FC<ListProps> = ({
   children,
   ...rest
 }) => (
-  <Box {...(stub ? {} : getDataProps(rest).data)} as={ListType[type]}>
+  <Box {...(stub ? {} : getDataProps(rest))} as={ListType[type]}>
     {(stub ? [0, 0] : children).map((item, index, array) => (
       <Flex key={index} as="li" mt={index > 0 ? ItemIndent[type] : 0}>
         {type === 'number' ? (

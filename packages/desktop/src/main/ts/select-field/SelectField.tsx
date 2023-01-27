@@ -114,7 +114,7 @@ export const SelectField: FC<
           onSelect={renderProps.onItemSelect}
           children={(menuRenderProps) => (
             <CardPos
-              {...getDataProps(props).data}
+              {...getDataProps(props)}
               ref={renderProps.containerRef}
               type="relative"
             >

@@ -86,7 +86,7 @@ export const Title: FC<TitleProps> = ({
     </Box>
   ) : (
     <Typo
-      {...getDataProps(rest).data}
+      {...getDataProps(rest)}
       as={tag || TitleTag[size]}
       display="block"
       size={TitleSize[size]}

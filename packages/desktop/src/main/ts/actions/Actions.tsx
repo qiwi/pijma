@@ -29,7 +29,7 @@ export const Actions: FC<ActionsProps> = (props) => {
     />
   ))
 
-  const dataProps = getDataProps(props).data
+  const dataProps = getDataProps(props)
 
   if (props.vertical) {
     return (

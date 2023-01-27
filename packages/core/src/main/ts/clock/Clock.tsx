@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { getDataProps } from '../getDataProps'
+import { getDataProps } from '../dataProps'
 import { CardPos } from '../primitive'
 import { keyframes } from '../styled'
 
@@ -21,7 +21,7 @@ export const Clock: FC<ClockProps> = ({
   ...rest
 }) => (
   <CardPos
-    {...getDataProps(rest).data}
+    {...getDataProps(rest)}
     type="relative"
     width={size}
     height={size}

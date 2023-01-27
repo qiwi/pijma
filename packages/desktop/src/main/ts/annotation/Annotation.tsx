@@ -7,7 +7,7 @@ export interface AnnotationProps {
 
 export const Annotation: FC<AnnotationProps> = ({ children, ...rest }) => (
   <Card
-    {...getDataProps(rest).data}
+    {...getDataProps(rest)}
     px={11}
     pt={11}
     pb={12}

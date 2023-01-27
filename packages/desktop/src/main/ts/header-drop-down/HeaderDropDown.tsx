@@ -68,7 +68,7 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
     }}
     children={(renderProps) => (
       <Pos
-        {...getDataProps(rest).data}
+        {...getDataProps(rest)}
         role="listbox"
         type="absolute"
         zIndex={600}

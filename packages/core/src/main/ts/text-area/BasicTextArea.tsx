@@ -5,7 +5,7 @@ import React, {
   KeyboardEventHandler,
 } from 'react'
 
-import { getDataProps } from '../getDataProps'
+import { getDataProps } from '../dataProps'
 import { TextArea } from '../primitive'
 
 export interface BasicTextAreaProps {
@@ -35,7 +35,7 @@ export const BasicTextArea = forwardRef<
   BasicTextAreaProps
 >((props, ref) => (
   <TextArea
-    {...getDataProps(props).data}
+    {...getDataProps(props)}
     ref={ref}
     rows={props.rows}
     width={1}

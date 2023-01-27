@@ -90,7 +90,7 @@ export const Tabs: FC<TabsProps> = ({
       length={items.length}
       onChange={onChange}
       children={(renderProps) => (
-        <Flex {...getDataProps(rest).data} direction="column">
+        <Flex {...getDataProps(rest)} direction="column">
           <FlexOverflow
             direction="row"
             overflow="auto"

@@ -32,7 +32,7 @@ export const Pagination: FC<PaginationProps> = ({
     onChange={onChange}
     children={(renderProps) => (
       <Card
-        {...(stub ? {} : getDataProps(rest).data)}
+        {...(stub ? {} : getDataProps(rest))}
         bg="#fff"
         s={shadowed ? '0 1px 2px 0 rgba(0,0,0,0.12)' : '0 0 0 1px #e6e6e6'}
         height={12}

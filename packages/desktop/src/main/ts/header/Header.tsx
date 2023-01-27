@@ -8,7 +8,7 @@ export interface HeaderProps {
 
 export const Header: FC<HeaderProps> = (props) => (
   <Card
-    {...getDataProps(props).data}
+    {...getDataProps(props)}
     bg="#fff"
     s={props.underline ? 'inset 0px -1px 0px 0px #e6e6e6' : undefined}
     width={1}

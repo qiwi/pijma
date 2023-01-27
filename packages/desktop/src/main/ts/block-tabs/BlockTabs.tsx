@@ -132,7 +132,7 @@ export const BlockTabs: FC<BlockTabsProps> = ({
       length={items.length}
       onChange={onChange}
       children={(renderProps) => (
-        <Pos {...getDataProps(rest).data} type="relative">
+        <Pos {...getDataProps(rest)} type="relative">
           <Flex
             direction="column"
             pt={pt !== undefined ? pt : BlockTabsIndent[indent][0]}

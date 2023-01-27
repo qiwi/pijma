@@ -19,7 +19,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
       <NavLink stub />
     </Box>
   ) : (
-    <Paragraph {...getDataProps(rest).data} size="s" color="support">
+    <Paragraph {...getDataProps(rest)} size="s" color="support">
       {children.map((item, i) => (
         <Fragment key={i}>
           {i > 0 ? (

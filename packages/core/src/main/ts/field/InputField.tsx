@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from 'react'
 
-import { getDataProps } from '../getDataProps'
+import { getDataProps } from '../dataProps'
 import { Box, Card, Flex, FlexItem, Pos, Typo } from '../primitive'
 import { Stub } from '../stub'
 
@@ -61,7 +61,7 @@ export const InputField: FC<FieldProps> = ({
       )}
     </Box>
   ) : (
-    <Pos {...getDataProps(rest).data} type="relative" width={1}>
+    <Pos {...getDataProps(rest)} type="relative" width={1}>
       <Pos type="relative" height={4}>
         <Pos
           type="absolute"

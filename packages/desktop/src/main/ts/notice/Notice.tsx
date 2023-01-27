@@ -15,7 +15,7 @@ export const Notice: FC<NoticeProps> = ({
   children,
   ...restProps
 }) => (
-  <Flex {...getDataProps(restProps).data}>
+  <Flex {...getDataProps(restProps)}>
     <FlexItem shrink={0} basis={6} mr={title ? 4 : 2} children={icon} />
     {title || children ? (
       <FlexItem>

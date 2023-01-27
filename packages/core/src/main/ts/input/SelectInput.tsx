@@ -6,7 +6,7 @@ import React, {
   MouseEventHandler,
 } from 'react'
 
-import { getDataProps } from '../getDataProps'
+import { getDataProps } from '../dataProps'
 import { Input, Value } from '../primitive'
 
 export interface SelectInputProps {
@@ -66,7 +66,7 @@ export const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>(
       onKeyUp: props.onKeyUp,
       onClick: props.onClick,
       readOnly: true,
-      ...getDataProps(props).data,
+      ...getDataProps(props),
     }
 
     return <Input {...common} />

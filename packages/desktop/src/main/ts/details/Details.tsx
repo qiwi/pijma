@@ -94,7 +94,7 @@ export const Details: FC<DetailsProps> = ({
       ))}
     </Box>
   ) : (
-    <Box {...getDataProps(rest).data} as="dl" width="100%" display="table">
+    <Box {...getDataProps(rest)} as="dl" width="100%" display="table">
       {children.map((item, i) =>
         ([] as DetailsText[]).concat(item.content).map((content, j) => (
           <Box css={{ display: 'table-row' }} key={`${i}.${j}`}>

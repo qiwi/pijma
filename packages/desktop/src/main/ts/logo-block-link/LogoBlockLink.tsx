@@ -82,7 +82,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({
     </Block>
   ) : (
     <BlockLink
-      {...getDataProps(props).data}
+      {...getDataProps(props)}
       title={title}
       accent
       tabIndex={props.tabIndex}

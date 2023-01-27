@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { getDataProps } from '../getDataProps'
+import { getDataProps } from '../dataProps'
 import { Path, Svg } from '../primitive'
 
 export interface PaymentSystemIconProps {
@@ -61,7 +61,7 @@ export const PaymentSystemIcon: FC<PaymentSystemIconProps> = ({
   ...rest
 }) => (
   <Svg
-    {...getDataProps(rest).data}
+    {...getDataProps(rest)}
     width={1}
     height={1}
     viewBox="0 0 48 24"

@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { getDataProps } from '../getDataProps'
+import { getDataProps } from '../dataProps'
 import { Box, CardPos, Value } from '../primitive'
 import { keyframes } from '../styled'
 
@@ -26,7 +26,7 @@ export interface StubProps {
 
 export const Stub: FC<StubProps> = (props) => (
   <Box
-    {...getDataProps(props).data}
+    {...getDataProps(props)}
     as="span"
     pt={props.top}
     pb={props.bottom}

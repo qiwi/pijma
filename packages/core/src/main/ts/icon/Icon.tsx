@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import { getDataProps } from '../getDataProps'
+import { getDataProps } from '../dataProps'
 import { Path, Svg, Value } from '../primitive'
 
 export interface IconProps {
@@ -291,7 +291,7 @@ export const Icon: FC<IconProps> = ({
   ...rest
 }) => (
   <Svg
-    {...getDataProps(rest).data}
+    {...getDataProps(rest)}
     width={size}
     height={size}
     viewBox="0 0 24 24"

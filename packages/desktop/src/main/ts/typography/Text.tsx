@@ -118,7 +118,7 @@ export const Text: FC<TextProps> = ({
     )
   ) : (
     <Typo
-      {...getDataProps(rest).data}
+      {...getDataProps(rest)}
       as="span"
       display={display}
       size={size === undefined ? undefined : TextSize[size]}

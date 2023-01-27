@@ -17,7 +17,7 @@ export const Checkbox: FC<CheckboxProps> = (props) => (
     onChange={props.onChange}
     children={(renderProps) => (
       <OptionField
-        {...getDataProps(props).data}
+        {...getDataProps(props)}
         tabIndex={props.tabIndex}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}

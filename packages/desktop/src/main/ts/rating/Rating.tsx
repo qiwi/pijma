@@ -51,7 +51,7 @@ export const Rating: FC<RatingProps> = ({
       disabled={disabled}
       onChange={onChange}
       children={(renderProps) => (
-        <Flex {...getDataProps(rest).data}>
+        <Flex {...getDataProps(rest)}>
           {renderProps.items.map((item, index) => (
             <FlexItem
               key={index}

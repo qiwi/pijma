@@ -13,7 +13,7 @@ export const FooterNav: FC<FooterNavProps> = ({
   stub = false,
   ...rest
 }) => (
-  <Box {...(stub ? {} : getDataProps(rest).data)} overflow="hidden">
+  <Box {...(stub ? {} : getDataProps(rest))} overflow="hidden">
     <Flex wrap="wrap" mx={-2} my={-2.5}>
       {stub
         ? (typeof stub === 'boolean' ? [32, 40, 26] : stub).map(

@@ -42,7 +42,7 @@ export const SectionLink: FC<SectionLinkProps> = (props) => (
     onBlur={props.onBlur}
     children={(renderProps) => (
       <SectionLnk
-        {...getDataProps(props).data}
+        {...getDataProps(props)}
         tag="a"
         flat={props.flat}
         active={props.active ? props.active : renderProps.active}

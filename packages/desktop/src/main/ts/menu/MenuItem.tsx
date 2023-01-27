@@ -5,6 +5,7 @@ import {
   getDataProps,
   Icon,
   Image,
+  omitDataProps,
   Section,
   Stub,
 } from '@qiwi/pijma-core'
@@ -49,7 +50,6 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(
     },
     ref,
   ) => {
-    const dataProps = getDataProps(rest)
     return (
       <Section
         tag={tag}
@@ -58,8 +58,8 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(
         focus={focus}
         hover={hover}
         flat={!round}
-        {...(stub ? {} : dataProps.data)}
-        {...dataProps.rest}
+        {...(stub ? {} : getDataProps(rest))}
+        {...omitDataProps(rest)}
       >
         <Flex px={6} py={2} minHeight={14}>
           {icon ? (

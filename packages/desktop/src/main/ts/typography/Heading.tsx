@@ -117,7 +117,7 @@ export const Heading: FC<HeadingProps> = ({
     </Fragment>
   ) : (
     <Typo
-      {...getDataProps(rest).data}
+      {...getDataProps(rest)}
       as={tag || HeadingTag[size]}
       display="block"
       size={HeadingSize[size]}

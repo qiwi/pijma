@@ -28,7 +28,7 @@ export const TextField: FC<TextFieldProps> = (props) =>
       onKeyUp={props.onKeyUp}
       children={(renderProps) => (
         <InputField
-          {...getDataProps(props).data}
+          {...getDataProps(props)}
           title={props.title}
           active={renderProps.focused || !!props.value || !!props.placeholder}
           input={
