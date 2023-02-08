@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from 'react'
 
+import { getDataProps } from '../dataProps'
 import { SimpleField } from '../field'
 import { ReCaptcha, ReCaptchaProps } from '../recaptcha'
 
@@ -11,6 +12,7 @@ export interface ReCaptchaFieldProps extends ReCaptchaProps {
 
 export const ReCaptchaField: FC<ReCaptchaFieldProps> = (props) => (
   <SimpleField
+    {...getDataProps(props)}
     input={
       <ReCaptcha
         siteKey={props.siteKey}

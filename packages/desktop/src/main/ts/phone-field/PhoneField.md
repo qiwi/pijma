@@ -141,6 +141,7 @@ return (
     <BlockContent>
       <Box width={64}>
         <PhoneField
+          data-testid="phone-field"
           countries={countries}
           value={phone}
           action={code ? `Код страны: ${code}` : undefined}
@@ -162,6 +163,7 @@ return (
   <BlockContent>
     <Box width={64}>
       <PhoneField
+        data-testid="no"
         stub
         title="if you need title stub put any corrent content here"
         help="if you need help stub put any corrent content here"

@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 
+import { getDataProps } from '../dataProps'
 import { Path, Svg } from '../primitive'
 import { Stub } from '../stub'
 
@@ -125,11 +126,18 @@ export const PaymentSecurityIcon: FC<PaymentSecurityIconProps> = ({
   gray,
   name,
   stub,
+  ...rest
 }) =>
   stub ? (
     <Stub width={1} height={1} />
   ) : (
-    <Svg width={1} height={1} viewBox="0 0 64 24" focusable="false">
+    <Svg
+      {...getDataProps(rest)}
+      width={1}
+      height={1}
+      viewBox="0 0 64 24"
+      focusable="false"
+    >
       {IconPath[name].map((path, i) => (
         <Path
           key={i}

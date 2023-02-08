@@ -1,4 +1,4 @@
-import { Box, Pos, Value } from '@qiwi/pijma-core'
+import { Box, getDataProps, Pos, Value } from '@qiwi/pijma-core'
 import React, { FC, ReactElement } from 'react'
 
 import { Text } from '../typography'
@@ -36,6 +36,7 @@ export const Details: FC<DetailsProps> = ({
   contentWidth,
   size = 'm',
   stub = false,
+  ...rest
 }) =>
   stub ? (
     <Box as="dl" width="100%" display="table">
@@ -93,7 +94,7 @@ export const Details: FC<DetailsProps> = ({
       ))}
     </Box>
   ) : (
-    <Box as="dl" width="100%" display="table">
+    <Box {...getDataProps(rest)} as="dl" width="100%" display="table">
       {children.map((item, i) =>
         ([] as DetailsText[]).concat(item.content).map((content, j) => (
           <Box css={{ display: 'table-row' }} key={`${i}.${j}`}>

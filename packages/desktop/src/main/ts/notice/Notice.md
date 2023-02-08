@@ -2,6 +2,7 @@
 <Block>
   <BlockContent>
     <Notice
+      data-testid="notice"
       icon={<Icon name="attention" color="#ff0000" />}
       title="Заголовок какого-нибудь алерта"
       children={
@@ -16,6 +17,7 @@
 <Block>
   <BlockContent>
     <Notice
+      data-testid="notice"
       icon={<Icon name="attention" />}
       children={
         'Заголовок какого-нибудь алерта \n Заголовок какого-нибудь алерта'

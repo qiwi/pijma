@@ -1,5 +1,6 @@
 import React, { Children, FC, ReactNode } from 'react'
 
+import { getDataProps } from '../dataProps'
 import { Flex, FlexItem } from '../primitive'
 
 export interface GridProps {
@@ -16,6 +17,7 @@ export const Grid: FC<GridProps> = ({
   columns = 12,
   layout = columns,
   children,
+  ...rest
 }) => {
   const elements: ReactNode[] = Children.toArray(children)
   const layoutArr: number[] = Array.isArray(layout) ? layout : [layout]
@@ -29,7 +31,7 @@ export const Grid: FC<GridProps> = ({
   const rowBlocksCount: number = (columns / layoutSum) * layoutLength
 
   return (
-    <Flex wrap="wrap">
+    <Flex {...getDataProps(rest)} wrap="wrap">
       {Children.map(elements, (child: ReactNode, index: number) => {
         const oneColumnPercent = layoutArr[index % layoutLength] / columns
         const width =

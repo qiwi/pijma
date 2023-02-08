@@ -3,7 +3,7 @@
 ```jsx
 <Flex>
   <FlexItem pr={4}>
-    <BlockLink href="//qiwi.com" target="_blank">
+    <BlockLink data-testid="block-link" href="//qiwi.com" target="_blank">
       {({ active, focus, hover }) => (
         <Box p={10}>
           <Text
@@ -17,7 +17,12 @@
     </BlockLink>
   </FlexItem>
   <FlexItem pr={4}>
-    <BlockLink href="//qiwi.com" target="_blank" accent>
+    <BlockLink
+      data-testid="block-link"
+      href="//qiwi.com"
+      target="_blank"
+      accent
+    >
       {({ active, focus, hover }) => (
         <Box p={10}>
           <Text
@@ -36,7 +41,7 @@
 ```jsx
 <Flex>
   <FlexItem pr={4}>
-    <BlockLink href="//qiwi.com" target="_blank">
+    <BlockLink data-testid="block-link" href="//qiwi.com" target="_blank">
       {({ active, focus, hover }) => (
         <Card r={10} overflow="hidden">
           <Image
@@ -50,7 +55,12 @@
     </BlockLink>
   </FlexItem>
   <FlexItem pr={4}>
-    <BlockLink href="//qiwi.com" target="_blank" accent>
+    <BlockLink
+      data-testid="block-link"
+      href="//qiwi.com"
+      target="_blank"
+      accent
+    >
       {({ active, focus, hover }) => (
         <Card r={10} overflow="hidden">
           <Image

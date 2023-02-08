@@ -3,6 +3,7 @@
   <BlockContent>
     <Flex justify="center" transform="scale(0.6)">
       <Oops
+        data-testid="oops"
         logo={
           <Image
             width={25}
@@ -45,6 +46,7 @@
   <BlockContent>
     <Flex justify="center" transform="scale(0.6)">
       <Oops
+        data-testid="oops"
         logo={
           <Image
             width={25}
@@ -85,6 +87,7 @@
   <BlockContent>
     <Flex justify="center" transform="scale(0.6)">
       <Oops
+        data-testid="oops"
         logo={
           <Image
             width={25}
@@ -112,6 +115,7 @@
   <BlockContent>
     <Flex justify="center" transform="scale(0.6)">
       <Oops
+        data-testid="oops"
         logo={
           <Image
             width={25}
@@ -139,6 +143,7 @@
   <BlockContent>
     <Flex justify="center" transform="scale(0.6)">
       <Oops
+        data-testid="oops"
         logo={
           <Box width={60} height={10}>
             <WalletLogo />
@@ -164,6 +169,7 @@
   <BlockContent>
     <Flex justify="center" transform="scale(0.6)">
       <Oops
+        data-testid="oops"
         logo={
           <Box width={60} height={10}>
             <WalletLogo />
@@ -196,6 +202,7 @@
   <BlockContent>
     <Flex justify="center" transform="scale(0.6)">
       <Oops
+        data-testid="oops"
         logo={
           <Box width={60} height={10}>
             <WalletLogo />
@@ -215,6 +222,7 @@
   <BlockContent>
     <Flex justify="center" transform="scale(0.6)">
       <Oops
+        data-testid="oops"
         logo={
           <Box width={60} height={10}>
             <WalletLogo />

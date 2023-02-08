@@ -1,13 +1,20 @@
 import React, { FC } from 'react'
 
+import { getDataProps } from '../dataProps'
 import { Path, Svg } from '../primitive'
 
 export interface QuestionIconProps {
   size?: number
 }
 
-export const QuestionIcon: FC<QuestionIconProps> = ({ size }) => (
-  <Svg width={size} height={size} viewBox="0 0 24 24" focusable="false">
+export const QuestionIcon: FC<QuestionIconProps> = ({ size, ...rest }) => (
+  <Svg
+    {...getDataProps(rest)}
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    focusable="false"
+  >
     <Path
       d="M21.5 12c0-5.245-4.255-9.5-9.5-9.5S2.5 6.755 2.5 12s4.255 9.5 9.5 9.5 9.5-4.255 9.5-9.5z"
       fill="#fff"

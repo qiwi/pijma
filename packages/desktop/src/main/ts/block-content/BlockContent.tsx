@@ -1,4 +1,4 @@
-import { Box } from '@qiwi/pijma-core'
+import { Box, getDataProps } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
 
 export interface BlockContentProps {
@@ -17,7 +17,14 @@ const BlockContentIdent: {
 export const BlockContent: FC<BlockContentProps> = ({
   indent = 'm',
   children,
-}) => <Box p={BlockContentIdent[indent]} children={children} />
+  ...rest
+}) => (
+  <Box
+    {...getDataProps(rest)}
+    p={BlockContentIdent[indent]}
+    children={children}
+  />
+)
 
 BlockContent.displayName = 'BlockContent'
 

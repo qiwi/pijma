@@ -3,6 +3,7 @@ import {
   Card,
   CardPos,
   ContentInput,
+  getDataProps,
   Icon,
   Image,
   MenuControl,
@@ -49,6 +50,7 @@ export const ContentSuggest = <V extends {}>({
         onKeyDown={renderProps.onItemKeyDown}
         children={(menuRenderProps) => (
           <CardPos
+            {...getDataProps(props)}
             type="relative"
             ref={renderProps.containerRef}
             width={1}

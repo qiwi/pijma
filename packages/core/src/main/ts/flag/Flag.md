@@ -12,7 +12,7 @@
           mx={2}
         >
           <FlexItem mb={4} shrink={0}>
-            <Flag code={code} height={11} width={16} />
+            <Flag data-testid="flag" code={code} height={11} width={16} />
           </FlexItem>
           <FlexItem>
             <Paragraph size="s">

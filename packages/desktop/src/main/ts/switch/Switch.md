@@ -9,11 +9,13 @@ return (
     <BlockContent>
       <Spacer>
         <Switch
+          data-testid="switch"
           onChange={(checked) => setChecked(checked)}
           checked={checked}
           label="Выбранный переключатель"
         />
         <Switch
+          data-testid="switch"
           disabled={true}
           checked={true}
           label="Выбранный заблокированный"
@@ -36,24 +38,34 @@ return (
     <BlockContent>
       <Spacer>
         <Switch
+          data-testid="switch"
           onChange={(checked) => setChecked(checked)}
           reverse={true}
           checked={checked}
           label="Выбранный переключатель"
         />
         <Switch
+          data-testid="switch"
           reverse={true}
           disabled={true}
           checked={true}
           label="Выбранный заблокированный"
         />
         <Switch
+          data-testid="switch"
           reverse={true}
           disabled={true}
           label="Невыбранный заблокированный"
         />
-        <Switch loading reverse checked={checked} label="Выполнение запроса" />
         <Switch
+          data-testid="switch"
+          loading
+          reverse
+          checked={checked}
+          label="Выполнение запроса"
+        />
+        <Switch
+          data-testid="no"
           stub
           reverse={true}
           checked={true}

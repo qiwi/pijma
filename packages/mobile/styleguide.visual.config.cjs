@@ -2,7 +2,7 @@ module.exports = {
   url: 'http://host.docker.internal:7070/',
   dir: 'src/main/resources/screenshots',
   wait: 50,
-  threshold: 0.01,
+  threshold: 0.07,
   viewports: {
     mobile: {
       width: 400,

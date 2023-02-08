@@ -1,6 +1,7 @@
 import {
   Card,
   css,
+  getDataProps,
   Icon,
   Overlay,
   OverlayProps,
@@ -47,6 +48,7 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
   container,
   onHide,
   children,
+  ...rest
 }) => (
   <Overlay
     show={show}
@@ -66,6 +68,7 @@ export const HeaderDropDown: FC<HeaderDropDownProps> = ({
     }}
     children={(renderProps) => (
       <Pos
+        {...getDataProps(rest)}
         role="listbox"
         type="absolute"
         zIndex={600}

@@ -12,6 +12,7 @@ return (
         </Paragraph>
         <Flex justify="center">
           <Rating
+            data-testid="rating"
             value={value}
             size="m"
             onChange={(value) => setValue(value)}
@@ -36,7 +37,7 @@ return (
       <Paragraph size="s" color="support">
         15 июня 2018
       </Paragraph>
-      <Rating value={4} size="s" disabled />
+      <Rating data-testid="rating" value={4} size="s" disabled />
       <Paragraph size="m">
         Получил маленький подарок в виде возврата 4% от суммы после получения
         товара! Если бы переводили из рублей в доллары по нормальной цене было
@@ -52,7 +53,7 @@ return (
   <BlockContent>
     <Spacer size="s">
       <Heading size="4" stub />
-      <Rating stub size="s" disabled />
+      <Rating data-testid="no" stub size="s" disabled />
       <Paragraph stub size="m">
         Получил маленький подарок в виде возврата 4% от суммы после получения
         товара! Если бы переводили из рублей в доллары по нормальной цене было

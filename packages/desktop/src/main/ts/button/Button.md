@@ -8,29 +8,63 @@
     <Spacer size="xl">
       <Flex align="flex-start">
         <FlexItem pr={4}>
-          <Button kind="brand" size="accent" text="Нажать" />
+          <Button
+            data-testid="button"
+            kind="brand"
+            size="accent"
+            text="Нажать"
+          />
         </FlexItem>
         <FlexItem pr={4}>
-          <Button kind="brand" size="normal" text="Нажать" />
+          <Button
+            data-testid="button"
+            kind="brand"
+            size="normal"
+            text="Нажать"
+          />
         </FlexItem>
         <FlexItem>
-          <Button kind="brand" size="minor" text="Нажать" />
-        </FlexItem>
-      </Flex>
-      <Flex align="flex-start">
-        <FlexItem pr={4}>
-          <Button disabled kind="brand" size="accent" text="Нажать" />
-        </FlexItem>
-        <FlexItem pr={4}>
-          <Button disabled kind="brand" size="normal" text="Нажать" />
-        </FlexItem>
-        <FlexItem pr={4}>
-          <Button disabled kind="brand" size="minor" text="Нажать" />
+          <Button
+            data-testid="button"
+            kind="brand"
+            size="minor"
+            text="Нажать"
+          />
         </FlexItem>
       </Flex>
       <Flex align="flex-start">
         <FlexItem pr={4}>
           <Button
+            data-testid="button"
+            disabled
+            kind="brand"
+            size="accent"
+            text="Нажать"
+          />
+        </FlexItem>
+        <FlexItem pr={4}>
+          <Button
+            data-testid="button"
+            disabled
+            kind="brand"
+            size="normal"
+            text="Нажать"
+          />
+        </FlexItem>
+        <FlexItem pr={4}>
+          <Button
+            data-testid="button"
+            disabled
+            kind="brand"
+            size="minor"
+            text="Нажать"
+          />
+        </FlexItem>
+      </Flex>
+      <Flex align="flex-start">
+        <FlexItem pr={4}>
+          <Button
+            data-testid="no"
             size="accent"
             kind="brand"
             type="button"
@@ -40,6 +74,7 @@
         </FlexItem>
         <FlexItem pr={4}>
           <Button
+            data-testid="no"
             size="normal"
             kind="brand"
             type="button"
@@ -49,6 +84,7 @@
         </FlexItem>
         <FlexItem pr={4}>
           <Button
+            data-testid="no"
             size="minor"
             kind="brand"
             type="button"
@@ -72,29 +108,63 @@
     <Spacer size="xl">
       <Flex align="flex-start">
         <FlexItem pr={4}>
-          <Button kind="simple" size="accent" text="Нажать" />
+          <Button
+            data-testid="button"
+            kind="simple"
+            size="accent"
+            text="Нажать"
+          />
         </FlexItem>
         <FlexItem pr={4}>
-          <Button kind="simple" size="normal" text="Нажать" />
+          <Button
+            data-testid="button"
+            kind="simple"
+            size="normal"
+            text="Нажать"
+          />
         </FlexItem>
         <FlexItem>
-          <Button kind="simple" size="minor" text="Нажать" />
-        </FlexItem>
-      </Flex>
-      <Flex align="flex-start">
-        <FlexItem pr={4}>
-          <Button disabled kind="simple" size="accent" text="Нажать" />
-        </FlexItem>
-        <FlexItem pr={4}>
-          <Button disabled kind="simple" size="normal" text="Нажать" />
-        </FlexItem>
-        <FlexItem pr={4}>
-          <Button disabled kind="simple" size="minor" text="Нажать" />
+          <Button
+            data-testid="button"
+            kind="simple"
+            size="minor"
+            text="Нажать"
+          />
         </FlexItem>
       </Flex>
       <Flex align="flex-start">
         <FlexItem pr={4}>
           <Button
+            data-testid="button"
+            disabled
+            kind="simple"
+            size="accent"
+            text="Нажать"
+          />
+        </FlexItem>
+        <FlexItem pr={4}>
+          <Button
+            data-testid="button"
+            disabled
+            kind="simple"
+            size="normal"
+            text="Нажать"
+          />
+        </FlexItem>
+        <FlexItem pr={4}>
+          <Button
+            data-testid="button"
+            disabled
+            kind="simple"
+            size="minor"
+            text="Нажать"
+          />
+        </FlexItem>
+      </Flex>
+      <Flex align="flex-start">
+        <FlexItem pr={4}>
+          <Button
+            data-testid="no"
             size="accent"
             kind="brand"
             type="button"
@@ -104,6 +174,7 @@
         </FlexItem>
         <FlexItem pr={4}>
           <Button
+            data-testid="no"
             size="normal"
             kind="brand"
             type="button"
@@ -113,6 +184,7 @@
         </FlexItem>
         <FlexItem pr={4}>
           <Button
+            data-testid="no"
             size="minor"
             kind="brand"
             type="button"
@@ -136,24 +208,60 @@
     <Spacer size="xl">
       <Flex align="flex-start">
         <FlexItem pr={4}>
-          <Button loading kind="brand" size="accent" text="Нажать" />
+          <Button
+            data-testid="button"
+            loading
+            kind="brand"
+            size="accent"
+            text="Нажать"
+          />
         </FlexItem>
         <FlexItem pr={4}>
-          <Button loading kind="brand" size="normal" text="Нажать" />
+          <Button
+            data-testid="button"
+            loading
+            kind="brand"
+            size="normal"
+            text="Нажать"
+          />
         </FlexItem>
         <FlexItem>
-          <Button loading kind="brand" size="minor" text="Нажать" />
+          <Button
+            data-testid="button"
+            loading
+            kind="brand"
+            size="minor"
+            text="Нажать"
+          />
         </FlexItem>
       </Flex>
       <Flex align="flex-start">
         <FlexItem pr={4}>
-          <Button loading kind="simple" size="accent" text="Нажать" />
+          <Button
+            data-testid="button"
+            loading
+            kind="simple"
+            size="accent"
+            text="Нажать"
+          />
         </FlexItem>
         <FlexItem pr={4}>
-          <Button loading kind="simple" size="normal" text="Нажать" />
+          <Button
+            data-testid="button"
+            loading
+            kind="simple"
+            size="normal"
+            text="Нажать"
+          />
         </FlexItem>
         <FlexItem pr={4}>
-          <Button loading kind="simple" size="minor" text="Нажать" />
+          <Button
+            data-testid="button"
+            loading
+            kind="simple"
+            size="minor"
+            text="Нажать"
+          />
         </FlexItem>
       </Flex>
     </Spacer>
@@ -172,6 +280,7 @@
       <Flex align="flex-start">
         <FlexItem pr={4}>
           <Button
+            data-testid="button"
             kind="brand"
             size="accent"
             icon={<Icon name="star" />}
@@ -180,6 +289,7 @@
         </FlexItem>
         <FlexItem pr={4}>
           <Button
+            data-testid="button"
             kind="brand"
             size="normal"
             icon={<Icon name="star" />}
@@ -188,6 +298,7 @@
         </FlexItem>
         <FlexItem>
           <Button
+            data-testid="button"
             kind="brand"
             size="minor"
             icon={<Icon name="star" />}
@@ -198,6 +309,7 @@
       <Flex align="flex-start">
         <FlexItem pr={4}>
           <Button
+            data-testid="button"
             kind="simple"
             size="accent"
             icon={<Icon name="star" />}
@@ -206,6 +318,7 @@
         </FlexItem>
         <FlexItem pr={4}>
           <Button
+            data-testid="button"
             kind="simple"
             size="normal"
             icon={<Icon name="star" />}
@@ -214,6 +327,7 @@
         </FlexItem>
         <FlexItem pr={4}>
           <Button
+            data-testid="button"
             kind="simple"
             size="minor"
             icon={<Icon name="star" />}
@@ -224,6 +338,7 @@
       <Flex align="flex-start">
         <FlexItem pr={4}>
           <Button
+            data-testid="no"
             size="accent"
             kind="brand"
             type="button"
@@ -234,6 +349,7 @@
         </FlexItem>
         <FlexItem pr={4}>
           <Button
+            data-testid="no"
             size="normal"
             kind="brand"
             type="button"
@@ -244,6 +360,7 @@
         </FlexItem>
         <FlexItem pr={4}>
           <Button
+            data-testid="no"
             size="minor"
             kind="brand"
             type="button"
@@ -266,35 +383,86 @@
     <Spacer size="xl">
       <Flex align="flex-start">
         <FlexItem pr={4}>
-          <Button kind="brand" size="accent" icon={<Icon name="star" />} />
+          <Button
+            data-testid="button"
+            kind="brand"
+            size="accent"
+            icon={<Icon name="star" />}
+          />
         </FlexItem>
         <FlexItem pr={4}>
-          <Button kind="brand" size="normal" icon={<Icon name="star" />} />
+          <Button
+            data-testid="button"
+            kind="brand"
+            size="normal"
+            icon={<Icon name="star" />}
+          />
         </FlexItem>
         <FlexItem>
-          <Button kind="brand" size="minor" icon={<Icon name="star" />} />
+          <Button
+            data-testid="button"
+            kind="brand"
+            size="minor"
+            icon={<Icon name="star" />}
+          />
         </FlexItem>
       </Flex>
       <Flex align="flex-start">
         <FlexItem pr={4}>
-          <Button kind="simple" size="accent" icon={<Icon name="star" />} />
+          <Button
+            data-testid="button"
+            kind="simple"
+            size="accent"
+            icon={<Icon name="star" />}
+          />
         </FlexItem>
         <FlexItem pr={4}>
-          <Button kind="simple" size="normal" icon={<Icon name="star" />} />
+          <Button
+            data-testid="button"
+            kind="simple"
+            size="normal"
+            icon={<Icon name="star" />}
+          />
         </FlexItem>
         <FlexItem pr={4}>
-          <Button kind="simple" size="minor" icon={<Icon name="star" />} />
+          <Button
+            data-testid="button"
+            kind="simple"
+            size="minor"
+            icon={<Icon name="star" />}
+          />
         </FlexItem>
       </Flex>
       <Flex align="flex-start">
         <FlexItem pr={4}>
-          <Button size="accent" kind="brand" type="button" icon stub />
+          <Button
+            data-testid="no"
+            size="accent"
+            kind="brand"
+            type="button"
+            icon
+            stub
+          />
         </FlexItem>
         <FlexItem pr={4}>
-          <Button size="normal" kind="brand" type="button" icon stub />
+          <Button
+            data-testid="no"
+            size="normal"
+            kind="brand"
+            type="button"
+            icon
+            stub
+          />
         </FlexItem>
         <FlexItem pr={4}>
-          <Button size="minor" kind="brand" type="button" icon stub />
+          <Button
+            data-testid="no"
+            size="minor"
+            kind="brand"
+            type="button"
+            icon
+            stub
+          />
         </FlexItem>
       </Flex>
     </Spacer>

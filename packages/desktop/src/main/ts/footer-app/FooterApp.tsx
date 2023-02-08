@@ -1,4 +1,11 @@
-import { BoxLnk, Flex, FlexItem, LinkControl, Stub } from '@qiwi/pijma-core'
+import {
+  BoxLnk,
+  Flex,
+  FlexItem,
+  getDataProps,
+  LinkControl,
+  Stub,
+} from '@qiwi/pijma-core'
 import React, { FC, ReactElement } from 'react'
 
 interface FooterAppLinkProps {
@@ -61,8 +68,12 @@ export interface FooterAppProps {
   children: FooterAppLinkProps[]
 }
 
-export const FooterApp: FC<FooterAppProps> = ({ children, stub = false }) => (
-  <Flex>
+export const FooterApp: FC<FooterAppProps> = ({
+  children,
+  stub = false,
+  ...rest
+}) => (
+  <Flex {...(stub ? {} : getDataProps(rest))}>
     {(stub ? new Array(3).fill(0) : children).map((item, i) => (
       <FlexItem
         key={i}

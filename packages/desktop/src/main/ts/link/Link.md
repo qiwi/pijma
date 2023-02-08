@@ -6,22 +6,22 @@
     <Spacer size="m">
       <Flex width={1}>
         <FlexItem width={0.5}>
-          <Link size="l" href="https://qiwi.com">
+          <Link data-testid="link" size="l" href="https://qiwi.com">
             Link L
           </Link>
         </FlexItem>
         <FlexItem width={0.5}>
-          <Link size="l" href stub />
+          <Link data-testid="link" size="l" href stub />
         </FlexItem>
       </Flex>
       <Flex width={1}>
         <FlexItem width={0.5}>
-          <Link href="https://qiwi.com" target="_blank">
+          <Link data-testid="link" href="https://qiwi.com" target="_blank">
             Link M
           </Link>
         </FlexItem>
         <FlexItem width={0.5}>
-          <Link size="m" href stub />
+          <Link data-testid="link" size="m" href stub />
         </FlexItem>
       </Flex>
       <Flex width={1}>
@@ -36,7 +36,7 @@
           </Link>
         </FlexItem>
         <FlexItem width={0.5}>
-          <Link size="s" href stub />
+          <Link data-testid="link" size="s" href stub />
         </FlexItem>
       </Flex>
     </Spacer>

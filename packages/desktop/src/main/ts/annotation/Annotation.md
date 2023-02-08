@@ -1,5 +1,5 @@
 ```jsx
-<Annotation>
+<Annotation data-testid="annotation">
   <Paragraph>
     Какой-то пояснительный текст, обычно справа, но внутри может быть любая
     структура.

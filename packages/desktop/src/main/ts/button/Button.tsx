@@ -4,6 +4,7 @@ import {
   Card,
   Flex,
   FlexItem,
+  getDataProps,
   Pos,
   Spinner,
   Stub,
@@ -125,6 +126,7 @@ export const Button: FC<ButtonProps> = (props) => {
       onBlur={props.onBlur}
       children={(renderProps) => (
         <Btn
+          {...getDataProps(props)}
           disabled={props.disabled}
           type={props.type}
           width={!props.icon || props.text ? 1 : buttonSize[props.size]}

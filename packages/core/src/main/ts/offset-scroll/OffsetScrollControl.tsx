@@ -1,5 +1,6 @@
 import React, { Component, createRef, FC, ReactNode, RefObject } from 'react'
 
+import { getDataProps } from '../dataProps'
 import { InView } from '../inview'
 import { Box } from '../primitive'
 
@@ -61,7 +62,12 @@ export class OffsetScrollControl extends Component<
       top: this.state.top,
       bottom: this.state.bottom,
       children: (
-        <Box height={1} overflow="auto" ref={this.ref}>
+        <Box
+          {...getDataProps(this.props)}
+          height={1}
+          overflow="auto"
+          ref={this.ref}
+        >
           <InView
             root={this.ref.current}
             rootMargin={`${this.props.top || '0px'} 0px 0px 0px`}

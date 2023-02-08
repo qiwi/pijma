@@ -4,6 +4,7 @@
     <Flex>
       <FlexItem width={0.5}>
         <Glossary
+          data-testid="glossary"
           children={[
             { title: 'Title 1', content: 'Text 1' },
             { title: 'Title 2', content: 'Text 2' },
@@ -13,6 +14,7 @@
       </FlexItem>
       <FlexItem width={0.5}>
         <Glossary
+          data-testid="no"
           stub
           children={[
             { title: 'title', content: 'content' },
@@ -32,6 +34,7 @@
     <Flex>
       <FlexItem width={0.5}>
         <Glossary
+          data-testid="glossary"
           children={[
             { title: 'Допустимый остаток на балансе', content: 'До 15 000 ₽' },
             {
@@ -52,6 +55,7 @@
       </FlexItem>
       <FlexItem width={0.5}>
         <Glossary
+          data-testid="no"
           stub
           children={[
             { title: 'title', content: 'content' },

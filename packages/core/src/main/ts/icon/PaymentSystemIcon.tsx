@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 
+import { getDataProps } from '../dataProps'
 import { Path, Svg } from '../primitive'
 
 export interface PaymentSystemIconProps {
@@ -57,8 +58,15 @@ const IconPath: {
 export const PaymentSystemIcon: FC<PaymentSystemIconProps> = ({
   name,
   gray,
+  ...rest
 }) => (
-  <Svg width={1} height={1} viewBox="0 0 48 24" focusable="false">
+  <Svg
+    {...getDataProps(rest)}
+    width={1}
+    height={1}
+    viewBox="0 0 48 24"
+    focusable="false"
+  >
     {IconPath[name].map((path, i) => (
       <Path
         key={i}

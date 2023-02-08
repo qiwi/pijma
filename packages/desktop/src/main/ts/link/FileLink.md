@@ -3,11 +3,13 @@
   <BlockContent>
     <Spacer>
       <FileLink
+        data-testid="file-link"
         href="https://static.qiwi.com/img/qiwi_com/header/qiwi-wallet-logo.svg"
         download
         children="Qiwi Wallet Logo"
       />
       <FileLink
+        data-testid="file-link"
         href="/build/main.bundle.js"
         download
         children="main.bundle.js"

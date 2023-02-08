@@ -1,6 +1,7 @@
 import {
   BoxLnk,
   Card,
+  getDataProps,
   Image,
   LinkControl,
   LinkControlProps,
@@ -35,6 +36,7 @@ export const HeaderBankCardLink: FC<HeaderBankCardLinkProps> = (props) => (
     onBlur={props.onBlur}
     children={(renderProps) => (
       <BoxLnk
+        {...getDataProps(props)}
         display="block"
         width={56}
         tabIndex={props.tabIndex}

@@ -2,6 +2,7 @@ import {
   Card,
   Flex,
   FlexItem,
+  getDataProps,
   IconProps,
   Pos,
   styled,
@@ -74,6 +75,7 @@ export const BlockTabs: FC<BlockTabsProps> = ({
   pt,
   pb,
   onChange,
+  ...rest
 }) =>
   stub ? (
     <Pos type="relative">
@@ -130,7 +132,7 @@ export const BlockTabs: FC<BlockTabsProps> = ({
       length={items.length}
       onChange={onChange}
       children={(renderProps) => (
-        <Pos type="relative">
+        <Pos {...getDataProps(rest)} type="relative">
           <Flex
             direction="column"
             pt={pt !== undefined ? pt : BlockTabsIndent[indent][0]}

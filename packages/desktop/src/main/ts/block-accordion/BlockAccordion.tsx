@@ -4,6 +4,7 @@ import {
   Card,
   Flex,
   FlexItem,
+  getDataProps,
   Icon,
 } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
@@ -35,13 +36,13 @@ const BlockAccordionIndent: {
 
 export const BlockAccordion: FC<
   BlockAccordionProps<BlockAccordionItemModel>
-> = ({ items, indent = 'm', tabIndex = 0, opened, onChange }) => (
+> = ({ items, indent = 'm', tabIndex = 0, opened, onChange, ...rest }) => (
   <AccordionControl<BlockAccordionItemModel>
     items={items}
     opened={opened}
     onChange={onChange}
     children={(renderProps) => (
-      <Box py={3}>
+      <Box {...getDataProps(rest)} py={3}>
         {renderProps.items.map((item, index) => (
           <Card
             key={index}

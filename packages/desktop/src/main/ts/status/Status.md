@@ -2,6 +2,7 @@
 <Block>
   <BlockContent indent="m">
     <Status
+      data-testid="status"
       icon={<Icon name="attention" color="#ff0000" size={1} />}
       title="Не удалось найти информацию о никнейме"
       content="Наверное кто-то пролил кофе на сервер. \n  Попробуйте обновить страницу"
@@ -24,6 +25,7 @@
 <Block>
   <BlockContent indent="m">
     <Status
+      data-testid="status"
       icon={<Icon name="attention" color="#ff0000" size={1} />}
       title="Не удалось найти информацию о никнейме"
       content={
@@ -57,6 +59,7 @@
     <Section>
       <Box p={11}>
         <Status
+          data-testid="status"
           icon={<Icon name="attention" color="#ff0000" size={1} />}
           title="Не удалось найти информацию о никнейме"
           content="Наверное кто-то пролил кофе на сервер. \n  Попробуйте обновить страницу"
@@ -83,6 +86,7 @@
 <Block>
   <BlockContent>
     <Status
+      data-testid="status"
       title="Не удалось найти информацию о никнейме"
       content="Наверное кто-то пролил кофе на сервер. \n  Попробуйте обновить страницу"
       actions={
@@ -108,6 +112,7 @@
     <Section>
       <Box p={12}>
         <Status
+          data-testid="status"
           icon={<Icon name="attention" color="#ff0000" size={1} />}
           title="Не удалось найти информацию о никнейме"
           content="Наверное кто-то пролил кофе на сервер. \n  Попробуйте обновить страницу"
@@ -124,6 +129,7 @@
 <Block>
   <BlockContent>
     <Status
+      data-testid="status"
       icon={<Icon name="success" color="#4bbd5c" size={1} />}
       title="Платеж проведен"
       content="Платеж №6384589229966 на 100 р"

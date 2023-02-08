@@ -1,5 +1,6 @@
 import { CSSProperties } from 'react'
 
+import { getDataProps } from '../dataProps'
 import { CSSObject, styled, StyledOptions } from '../styled'
 import { pxValue } from './Value'
 
@@ -89,6 +90,7 @@ export const Typo = styled(
       ? 'vertical'
       : undefined,
   ...props.css,
+  ...getDataProps(props),
 }))
 
 Typo.displayName = 'Typo'

@@ -8,6 +8,7 @@ return (
   <Block>
     <BlockContent>
       <RadioField
+        data-testid="radio-field"
         title="Группа радиокнопок"
         hint={<QuestionIcon />}
         options={[
@@ -46,6 +47,7 @@ return (
   <Block>
     <BlockContent>
       <RadioField
+        data-testid="radio-field"
         title="Группа радиокнопок с примечаниями"
         hint={<QuestionIcon />}
         options={[
@@ -85,7 +87,13 @@ return (
 ```jsx
 <Block>
   <BlockContent>
-    <RadioField stub options={[]} value={null} onChange={() => {}} />
+    <RadioField
+      data-testid="no"
+      stub
+      options={[]}
+      value={null}
+      onChange={() => {}}
+    />
   </BlockContent>
 </Block>
 ```

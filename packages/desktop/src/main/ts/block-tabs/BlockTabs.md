@@ -5,6 +5,7 @@ const [select, setSelect] = React.useState(0)
 return (
   <Block>
     <BlockTabs
+      data-testid="block-tabs"
       select={select}
       onChange={setSelect}
       items={[
@@ -65,6 +66,7 @@ return (
       <Caption>CENTERED FALSE</Caption>
       <Block>
         <BlockTabs
+          data-testid="block-tabs"
           select={selectLeft}
           onChange={setSelectLeft}
           items={[
@@ -119,6 +121,7 @@ return (
       <Caption>CENTERED TRUE</Caption>
       <Block>
         <BlockTabs
+          data-testid="block-tabs"
           centered
           select={selectRight}
           onChange={setSelectRight}
@@ -178,13 +181,13 @@ return (
   <Spacer size="l">
     <Caption>HR FALSE</Caption>
     <Block>
-      <BlockTabs hr={false} stub items={[]} />
+      <BlockTabs data-testid="no" hr={false} stub items={[]} />
     </Block>
   </Spacer>
   <Spacer size="l">
     <Caption>HR TRUE</Caption>
     <Block>
-      <BlockTabs stub items={[]} />
+      <BlockTabs data-testid="no" stub items={[]} />
     </Block>
   </Spacer>
 </Grid>
@@ -197,6 +200,7 @@ const [select, setSelect] = React.useState(0)
 return (
   <Block>
     <BlockTabs
+      data-testid="block-tabs"
       vertical
       hr={false}
       select={select}
@@ -259,6 +263,7 @@ return (
       <Caption>CENTERED FALSE</Caption>
       <Block>
         <BlockTabs
+          data-testid="block-tabs"
           select={selectLeft}
           vertical
           onChange={setSelectLeft}
@@ -314,6 +319,7 @@ return (
       <Caption>CENTERED TRUE</Caption>
       <Block>
         <BlockTabs
+          data-testid="block-tabs"
           centered
           vertical
           select={selectRight}
@@ -377,13 +383,13 @@ return (
   <Spacer size="l">
     <Caption>CENTERED FALSE</Caption>
     <Block>
-      <BlockTabs vertical stub items={[]} />
+      <BlockTabs data-testid="no" vertical stub items={[]} />
     </Block>
   </Spacer>
   <Spacer size="l">
     <Caption>CENTERED TRUE</Caption>
     <Block>
-      <BlockTabs vertical centered stub items={[]} />
+      <BlockTabs data-testid="no" vertical centered stub items={[]} />
     </Block>
   </Spacer>
 </Grid>

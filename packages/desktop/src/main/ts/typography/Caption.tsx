@@ -1,4 +1,11 @@
-import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
+import {
+  Box,
+  Breaker,
+  getDataProps,
+  Stub,
+  Typo,
+  TypoProps,
+} from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
 
 export interface CaptionProps {
@@ -22,6 +29,7 @@ export const Caption: FC<CaptionProps> = ({
   stub,
   clamp,
   children,
+  ...rest
 }) =>
   stub ? (
     <Box
@@ -40,6 +48,7 @@ export const Caption: FC<CaptionProps> = ({
     </Box>
   ) : (
     <Typo
+      {...getDataProps(rest)}
       as="h6"
       display="block"
       size={3.5}
