@@ -1,3 +1,11 @@
+## [@qiwi/pijma-desktop@1.160.0](https://github.com/qiwi/pijma/compare/2023.1.24-qiwi.pijma-desktop.1.159.3-f0...2023.2.8-qiwi.pijma-desktop.1.160.0-f0) (2023-02-08)
+
+### Features
+* feat(core,desktop): allow to pass data attrs (#555) [753c04b0](https://github.com/qiwi/pijma/commit/753c04b0c4717dd4db89932914829bfd209cdd83)
+
+### Dependencies
+* perf: @qiwi/pijma-core updated to 1.159.0
+
 ## [@qiwi/pijma-desktop@1.159.3](https://github.com/qiwi/pijma/compare/2023.1.17-qiwi.pijma-desktop.1.159.2-f0...2023.1.24-qiwi.pijma-desktop.1.159.3-f0) (2023-01-24)
 
 ### Fixes & improvements
