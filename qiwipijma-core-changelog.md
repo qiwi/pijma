@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.159.0](https://github.com/qiwi/pijma/compare/2022.9.20-qiwi.pijma-core.1.158.0-f0...2023.2.8-qiwi.pijma-core.1.159.0-f0) (2023-02-08)
+
+### Features
+* feat(core,desktop): allow to pass data attrs (#555) [753c04b0](https://github.com/qiwi/pijma/commit/753c04b0c4717dd4db89932914829bfd209cdd83)
+
 ## [@qiwi/pijma-core@1.158.0](https://github.com/qiwi/pijma/compare/2022.9.7-qiwi.pijma-core.1.157.1-f0...2022.9.20-qiwi.pijma-core.1.158.0-f0) (2022-09-20)
 
 ### Features
