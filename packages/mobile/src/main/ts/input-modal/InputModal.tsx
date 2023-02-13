@@ -1,3 +1,13 @@
+import React, {
+  ChangeEventHandler,
+  FC,
+  FocusEventHandler,
+  KeyboardEventHandler,
+  MouseEventHandler,
+  ReactNode,
+  RefObject,
+} from 'react'
+
 import {
   BoxPos,
   Card,
@@ -13,15 +23,6 @@ import {
   SimpleTransition,
   styled,
 } from '@qiwi/pijma-core'
-import React, {
-  ChangeEventHandler,
-  FC,
-  FocusEventHandler,
-  KeyboardEventHandler,
-  MouseEventHandler,
-  ReactNode,
-  RefObject,
-} from 'react'
 
 const ContentTransition: ModalProps['transition'] = (props) => (
   <SimpleTransition
@@ -86,7 +87,7 @@ export const InputModal: FC<InputModalProps> = (props) => (
     renderDialog={(dialogProps) => (
       <Pos
         type="fixed"
-        zIndex={10050}
+        zIndex={10_050}
         top={0}
         bottom={0}
         left={0}

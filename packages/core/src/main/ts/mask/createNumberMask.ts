@@ -36,10 +36,9 @@ export function createNumberMask({
   allowLeadingZeroes = false,
   integerLimit = 6,
 }: NumberMaskOpts = {}): Mask {
-  const prefixLength = (prefix && prefix.length) || 0
-  const suffixLength = (suffix && suffix.length) || 0
-  const thousandsSeparatorSymbolLength =
-    (thousandsSeparatorSymbol && thousandsSeparatorSymbol.length) || 0
+  const prefixLength = prefix?.length || 0
+  const suffixLength = suffix?.length || 0
+  const thousandsSeparatorSymbolLength = thousandsSeparatorSymbol?.length || 0
 
   function numberMask(rawValue = emptyString) {
     const rawValueLength = rawValue.length
@@ -94,11 +93,10 @@ export function createNumberMask({
       fraction = rawValue.slice(indexOfLastDecimal + 1, rawValueLength)
       fraction = convertToMask(fraction.replace(nonDigitsRegExp, emptyString))
     } else {
-      if (rawValue.slice(0, prefixLength) === prefix) {
-        integer = rawValue.slice(prefixLength)
-      } else {
-        integer = rawValue
-      }
+      integer =
+        rawValue.slice(0, prefixLength) === prefix
+          ? rawValue.slice(prefixLength)
+          : rawValue
     }
 
     if (integerLimit) {

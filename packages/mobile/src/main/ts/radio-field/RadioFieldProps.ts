@@ -1,5 +1,6 @@
-import { OptionModel } from '@qiwi/pijma-core'
 import { ReactNode } from 'react'
+
+import { OptionModel } from '@qiwi/pijma-core'
 
 export interface RadioFieldProps<O extends OptionModel<V>, V> {
   title?: ReactNode

@@ -1,3 +1,5 @@
+import React, { FC } from 'react'
+
 import {
   Box,
   Flex,
@@ -9,7 +11,6 @@ import {
   Spacer,
   Stub,
 } from '@qiwi/pijma-core'
-import React, { FC } from 'react'
 
 import { RadioFieldOptionModel } from './RadioFieldOptionModel'
 import { RadioFieldProps } from './RadioFieldProps'

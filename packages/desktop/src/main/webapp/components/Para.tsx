@@ -1,6 +1,8 @@
-import { Box } from '@qiwi/pijma-core'
-import { Paragraph, ParagraphProps } from '@qiwi/pijma-desktop'
 import React, { FC, ReactNode } from 'react'
+
+import { Box } from '@qiwi/pijma-core'
+
+import { Paragraph, ParagraphProps } from '../../ts'
 
 const SizeMargin: { [size in NonNullable<ParagraphProps['size']>]: number } = {
   s: 3,

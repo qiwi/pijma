@@ -1,4 +1,5 @@
 import { TRenderItem } from './ContainerProps'
+
 export default interface DropdownProps {
   value?: string | Array<any>
   multiSelect?: boolean

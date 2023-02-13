@@ -1,5 +1,6 @@
-import { Heading } from '@qiwi/pijma-mobile'
 import React, { FC, ReactNode } from 'react'
+
+import { Heading } from '../../ts'
 
 interface SectionHeadingRendererProps {
   toolbar: ReactNode

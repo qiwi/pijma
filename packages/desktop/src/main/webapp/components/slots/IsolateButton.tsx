@@ -3,6 +3,7 @@ import React, { FC } from 'react'
 import { MdFullscreen, MdFullscreenExit } from 'react-icons/md'
 // @ts-ignore
 import getUrl from 'react-styleguidist/lib/client/utils/getUrl'
+
 // @ts-ignore
 import ToolbarButton from 'rsg-components/ToolbarButton'
 

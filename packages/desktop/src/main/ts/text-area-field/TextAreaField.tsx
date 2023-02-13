@@ -1,10 +1,11 @@
+import React, { FC, KeyboardEvent, ReactNode } from 'react'
+
 import {
   BasicTextArea,
   getDataProps,
   InputField,
   TextAreaFieldControl,
 } from '@qiwi/pijma-core'
-import React, { FC, KeyboardEvent, ReactNode } from 'react'
 
 export interface TextAreaFieldProps {
   value: string

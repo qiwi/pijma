@@ -1,5 +1,6 @@
-import { Box, getDataProps, Pos, Value } from '@qiwi/pijma-core'
 import React, { FC, ReactElement } from 'react'
+
+import { Box, getDataProps, Pos, Value } from '@qiwi/pijma-core'
 
 import { Text } from '../typography'
 

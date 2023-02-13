@@ -1,5 +1,6 @@
-import { LinkControl, Stub, TypoLnk, useTheme } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
+
+import { LinkControl, Stub, TypoLnk, useTheme } from '@qiwi/pijma-core'
 
 export interface LinkProps {
   onClick?: (

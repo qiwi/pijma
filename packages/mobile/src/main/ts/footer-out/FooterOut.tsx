@@ -1,3 +1,5 @@
+import React, { FC } from 'react'
+
 import {
   Box,
   Card,
@@ -9,7 +11,6 @@ import {
   LinkControl,
   Stub,
 } from '@qiwi/pijma-core'
-import React, { FC } from 'react'
 
 interface FooterOutLinkProps {
   href: string

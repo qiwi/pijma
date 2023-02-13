@@ -1,5 +1,6 @@
-import { getDataProps, LinkControl, Stub, TypoLnk } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
+
+import { getDataProps, LinkControl, Stub, TypoLnk } from '@qiwi/pijma-core'
 
 export interface NavLinkProps {
   onClick?: (

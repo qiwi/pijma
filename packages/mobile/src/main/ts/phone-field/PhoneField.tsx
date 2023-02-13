@@ -1,3 +1,5 @@
+import React, { FC } from 'react'
+
 import {
   BasicInput,
   Box,
@@ -11,7 +13,6 @@ import {
   PhoneFieldControl,
   Pos,
 } from '@qiwi/pijma-core'
-import React, { FC } from 'react'
 
 import { DropUp } from '../drop-up'
 import { Paragraph } from '../typography'

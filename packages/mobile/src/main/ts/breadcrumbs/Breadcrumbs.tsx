@@ -1,5 +1,6 @@
-import { Box } from '@qiwi/pijma-core'
 import React, { FC, Fragment } from 'react'
+
+import { Box } from '@qiwi/pijma-core'
 
 import { NavLink, NavLinkProps } from '../nav-link'
 import { Paragraph } from '../typography'

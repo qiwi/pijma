@@ -1,5 +1,6 @@
-import { LinkControl, LinkControlProps, Lnk, styled } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
+
+import { LinkControl, LinkControlProps, Lnk, styled } from '@qiwi/pijma-core'
 
 import { MenuItem } from '../menu'
 

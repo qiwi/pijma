@@ -1,5 +1,6 @@
-import { css, Flex, styled } from '@qiwi/pijma-core'
 import React, { Component } from 'react'
+
+import { css, Flex, styled } from '@qiwi/pijma-core'
 
 import { COLOR } from '../theme'
 import { TMenuItem } from './interfaces'

@@ -1,3 +1,5 @@
+import React, { FC, ReactElement } from 'react'
+
 import {
   Card,
   css,
@@ -8,7 +10,6 @@ import {
   Pos,
   SimpleTransition,
 } from '@qiwi/pijma-core'
-import React, { FC, ReactElement } from 'react'
 
 export interface HeaderDropDownProps {
   show: boolean

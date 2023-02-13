@@ -101,7 +101,7 @@ export class MenuControl extends Component<MenuControlProps, MenuControlState> {
   }
 
   private onKeyDown: KeyboardEventHandler = (event) => {
-    const { focused } = this.state
+    const { focused, refs } = this.state
     if (event.key === 'ArrowDown') {
       event.preventDefault()
       const next = this.next
@@ -111,7 +111,7 @@ export class MenuControl extends Component<MenuControlProps, MenuControlState> {
       this.setState({
         focused: next,
       })
-      const itemRef = this.state.refs[next]
+      const itemRef = refs[next]
       if (itemRef) {
         this.scrollToItem(itemRef)
       }
@@ -126,7 +126,7 @@ export class MenuControl extends Component<MenuControlProps, MenuControlState> {
       this.setState({
         focused: prev,
       })
-      const itemRef = this.state.refs[prev]
+      const itemRef = refs[prev]
       if (itemRef) {
         this.scrollToItem(itemRef)
       }
@@ -165,11 +165,11 @@ export class MenuControl extends Component<MenuControlProps, MenuControlState> {
   }
 
   public render() {
-    const { focused } = this.state
+    const { focused, refs } = this.state
     const { selected, count } = this.props
     return this.props.children({
       items: new Array(count).fill(1).map((_item, index) => ({
-        ref: this.state.refs[index],
+        ref: refs[index],
         focused: focused !== undefined ? focused === index : false,
         selected: selected !== undefined ? selected === index : false,
         onClick: this.onItemClick(index),

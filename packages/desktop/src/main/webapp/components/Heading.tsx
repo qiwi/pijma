@@ -1,5 +1,6 @@
-import { Heading, HeadingProps } from '@qiwi/pijma-desktop'
 import React, { FC, ReactNode } from 'react'
+
+import { Heading, HeadingProps } from '../../ts'
 
 interface HeadingRendererProps {
   level: '1' | '2' | '3' | '4' | '5' | '6'

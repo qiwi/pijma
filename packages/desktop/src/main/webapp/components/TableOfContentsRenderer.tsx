@@ -1,6 +1,8 @@
-import { Icon, Spacer } from '@qiwi/pijma-core'
-import { TextField } from '@qiwi/pijma-desktop'
 import React, { FC, ReactNode } from 'react'
+
+import { Icon, Spacer } from '@qiwi/pijma-core'
+
+import { TextField } from '../../ts'
 
 interface TableOfContentsRendererProps {
   searchTerm: string

@@ -1,5 +1,6 @@
-import { Icon, Spacer, TextField } from '@qiwi/pijma-mobile'
 import React, { FC, ReactNode } from 'react'
+
+import { Icon, Spacer, TextField } from '../../ts'
 
 interface TableOfContentsRendererProps {
   searchTerm: string

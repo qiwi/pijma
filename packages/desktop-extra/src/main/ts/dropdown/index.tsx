@@ -1,5 +1,6 @@
-import { Overlay, styled } from '@qiwi/pijma-core'
 import React, { Component, Fragment } from 'react'
+
+import { Overlay, styled } from '@qiwi/pijma-core'
 
 import { Container } from './Container'
 import DropdownProps from './DropdownProps'
@@ -9,7 +10,7 @@ export const ContainerModal = styled('div')`
   width: 100%;
 `
 
-class Dropdown extends Component<DropdownProps> {
+export class Dropdown extends Component<DropdownProps> {
   myRef: any
 
   constructor(props: DropdownProps) {
@@ -54,4 +55,4 @@ class Dropdown extends Component<DropdownProps> {
   }
 }
 
-export { Dropdown, Container }
+export { Container } from './Container'

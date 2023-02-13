@@ -65,6 +65,7 @@ jobs:
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         run: |
           yarn build
+          yarn build:rsg
           tar -cvf artifact.tar package.json packages/*/target
 
       - name: Save artifact
@@ -206,7 +207,9 @@ jobs:
 
       - name: Visual tests
         if: matrix.node-version == '16'
-        run: yarn test
+        run: |
+          yarn test
+          yarn test:rsg
 
       - name: Save failure results
         if: ${{ failure() }}

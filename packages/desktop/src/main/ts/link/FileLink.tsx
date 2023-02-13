@@ -1,3 +1,5 @@
+import React, { FC, ReactNode } from 'react'
+
 import {
   FlexItem,
   FlexLnk,
@@ -5,7 +7,6 @@ import {
   Icon,
   LinkControl,
 } from '@qiwi/pijma-core'
-import React, { FC, ReactNode } from 'react'
 
 import { Text } from '../typography'
 

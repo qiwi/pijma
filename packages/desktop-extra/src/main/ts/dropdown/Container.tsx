@@ -1,6 +1,7 @@
+import React, { Component } from 'react'
+
 import { styled, Typo } from '@qiwi/pijma-core'
 import { CheckboxField } from '@qiwi/pijma-desktop'
-import React, { Component } from 'react'
 
 import { COLOR } from '../theme'
 import ContainerProps, { DropdownItem } from './ContainerProps'

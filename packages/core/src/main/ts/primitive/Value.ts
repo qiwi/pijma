@@ -45,5 +45,7 @@ export const customScroll = (() => {
     const result = element.offsetWidth !== element.clientWidth
     document.body.removeChild(element)
     return result
-  } catch (e) {}
+  } catch (e) {
+    //
+  }
 })()

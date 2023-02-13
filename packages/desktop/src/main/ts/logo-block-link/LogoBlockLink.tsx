@@ -1,3 +1,5 @@
+import React, { FC, ReactElement, ReactNode } from 'react'
+
 import {
   Block,
   Box,
@@ -11,7 +13,6 @@ import {
   Spacer,
   Stub,
 } from '@qiwi/pijma-core'
-import React, { FC, ReactElement, ReactNode } from 'react'
 
 import { BlockLink } from '../link'
 import { Paragraph, Text } from '../typography'

@@ -1,5 +1,6 @@
-import { Path, Rect, Svg } from '@qiwi/pijma-core'
 import React from 'react'
+
+import { Path, Rect, Svg } from '@qiwi/pijma-core'
 
 import TrinaryCheckboxProps from './TrinaryCheckboxProps'
 

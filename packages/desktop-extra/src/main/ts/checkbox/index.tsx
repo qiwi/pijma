@@ -1,5 +1,6 @@
-import { styled } from '@qiwi/pijma-core'
 import React, { Component } from 'react'
+
+import { styled } from '@qiwi/pijma-core'
 
 import TrinaryCheckIcon from '../trinary-check-icon'
 import CheckboxProps from './CheckboxProps'

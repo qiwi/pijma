@@ -1,5 +1,6 @@
-import { Card, Flex, FlexItem, getDataProps, Typo } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
+
+import { Card, Flex, FlexItem, getDataProps, Typo } from '@qiwi/pijma-core'
 
 import { Paragraph, Title } from '../typography'
 

@@ -1,3 +1,5 @@
+import React, { FC, ReactNode } from 'react'
+
 import {
   Box,
   BoxProps,
@@ -13,7 +15,6 @@ import {
   QuestionIcon,
   SimpleTransition,
 } from '@qiwi/pijma-core'
-import React, { FC, ReactNode } from 'react'
 
 import { Paragraph } from '../typography'
 

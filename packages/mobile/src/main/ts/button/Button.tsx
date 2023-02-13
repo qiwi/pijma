@@ -1,3 +1,5 @@
+import React, { cloneElement, FC, Fragment, ReactElement } from 'react'
+
 import {
   Btn,
   ButtonControl,
@@ -10,7 +12,6 @@ import {
   Typo,
   useTheme,
 } from '@qiwi/pijma-core'
-import React, { cloneElement, FC, Fragment, ReactElement } from 'react'
 
 export interface ButtonProps {
   onClick?: () => void

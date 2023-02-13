@@ -1,5 +1,6 @@
-import { Box, Flex, FlexItem } from '@qiwi/pijma-core'
 import React, { FC } from 'react'
+
+import { Box, Flex, FlexItem } from '@qiwi/pijma-core'
 
 import { NavLink, NavLinkProps } from '../nav-link'
 

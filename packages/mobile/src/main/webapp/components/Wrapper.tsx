@@ -1,5 +1,6 @@
-import { ThemeProvider, themes } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
+
+import { ThemeProvider, themes } from '@qiwi/pijma-core'
 
 interface WrapperProps {
   children?: ReactNode

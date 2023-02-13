@@ -1,5 +1,6 @@
-import { Box } from '@qiwi/pijma-core'
 import React from 'react'
+
+import { Box } from '@qiwi/pijma-core'
 
 export const Logo = () => (
   <Box width={'266px'} height={'64px'}>

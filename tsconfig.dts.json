@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "rootDir": "./"
+  },
+  "references": [
+    {
+      "path": "./packages/core/tsconfig.dts.json"
+    },
+    {
+      "path": "./packages/desktop/tsconfig.dts.json"
+    },
+    {
+      "path": "./packages/desktop-extra/tsconfig.dts.json"
+    },
+    {
+      "path": "./packages/mobile/tsconfig.dts.json"
+    },
+    {
+      "path": "./packages/ssr/tsconfig.dts.json"
+    }
+  ],
+  "files": []
+}

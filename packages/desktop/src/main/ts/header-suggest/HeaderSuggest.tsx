@@ -1,3 +1,5 @@
+import React, { Fragment, isValidElement } from 'react'
+
 import {
   Box,
   Card,
@@ -16,7 +18,6 @@ import {
   styled,
   SuggestControl,
 } from '@qiwi/pijma-core'
-import React, { Fragment, isValidElement } from 'react'
 
 import { Link } from '../link'
 import { Markdown } from '../markdown'
@@ -109,7 +110,7 @@ export const HeaderSuggest = <V extends {}>({
                 <Pos
                   type="absolute"
                   top={0}
-                  zIndex={10050}
+                  zIndex={10_050}
                   width={1}
                   ref={overlayRenderProps.props.ref}
                 >

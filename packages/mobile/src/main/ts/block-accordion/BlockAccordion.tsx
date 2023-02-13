@@ -1,3 +1,5 @@
+import React, { FC, ReactNode } from 'react'
+
 import {
   AccordionControl,
   Box,
@@ -6,7 +8,6 @@ import {
   FlexItem,
   Icon,
 } from '@qiwi/pijma-core'
-import React, { FC, ReactNode } from 'react'
 
 import { Paragraph } from '../typography'
 

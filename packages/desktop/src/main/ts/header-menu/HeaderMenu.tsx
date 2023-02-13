@@ -1,5 +1,6 @@
-import { Flex, FlexItem, getDataProps } from '@qiwi/pijma-core'
 import React, { FC } from 'react'
+
+import { Flex, FlexItem, getDataProps } from '@qiwi/pijma-core'
 
 import { Link } from '../link'
 import { HeaderMenuItem, HeaderMenuItemProps } from './HeaderMenuItem'

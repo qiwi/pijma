@@ -1,6 +1,7 @@
+import React, { Component } from 'react'
+
 import { Flex, FlexItem, styled } from '@qiwi/pijma-core'
 import { HeaderMenu } from '@qiwi/pijma-desktop'
-import React, { Component } from 'react'
 
 import { Logo } from '../logo'
 import { Product } from '../product'

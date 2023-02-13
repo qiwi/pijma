@@ -1,5 +1,6 @@
-import { Box } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
+
+import { Box } from '@qiwi/pijma-core'
 
 export interface BlockContentProps {
   indent?: 'm' | 'l'

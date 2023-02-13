@@ -1,5 +1,6 @@
-import { Card, Stub } from '@qiwi/pijma-core'
 import React, { FC } from 'react'
+
+import { Card, Stub } from '@qiwi/pijma-core'
 
 export interface ProgressBarProps {
   value: number

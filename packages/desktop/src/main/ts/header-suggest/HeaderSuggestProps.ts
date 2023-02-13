@@ -1,5 +1,6 @@
-import { SuggestControlProps } from '@qiwi/pijma-core'
 import { ReactElement, RefObject } from 'react'
+
+import { SuggestControlProps } from '@qiwi/pijma-core'
 
 import { HeaderSuggestOptionModel } from './HeaderSuggestOptionModel'
 

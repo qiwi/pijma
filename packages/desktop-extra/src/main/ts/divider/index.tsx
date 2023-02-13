@@ -1,5 +1,6 @@
-import { Box, styled, Value } from '@qiwi/pijma-core'
 import React from 'react'
+
+import { Box, styled, Value } from '@qiwi/pijma-core'
 
 import DividerProps from './DividerProps'
 

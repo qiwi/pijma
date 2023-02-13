@@ -1,6 +1,7 @@
-import { Flex, styled } from '@qiwi/pijma-core'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+
+import { Flex, styled } from '@qiwi/pijma-core'
 
 import Spreader from '../spreader'
 

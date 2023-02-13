@@ -1,3 +1,5 @@
+import React, { FC, KeyboardEventHandler, ReactNode } from 'react'
+
 import {
   Box,
   Card,
@@ -12,7 +14,6 @@ import {
   SimpleTransition,
   styled,
 } from '@qiwi/pijma-core'
-import React, { FC, KeyboardEventHandler, ReactNode } from 'react'
 
 import { Paragraph } from '../typography'
 

@@ -1,3 +1,5 @@
+import React, { FC } from 'react'
+
 import {
   Box,
   CheckboxControl,
@@ -10,7 +12,6 @@ import {
   Stub,
   Tumbler,
 } from '@qiwi/pijma-core'
-import React, { FC } from 'react'
 
 import { SwitchFieldOptionModel } from './SwitchFieldOptionModel'
 import { SwitchFieldProps } from './SwitchFieldProps'

@@ -1,7 +1,10 @@
-import { Spacer } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
+
+import { Spacer } from '@qiwi/pijma-core'
+
 // @ts-ignore
 import SectionHeading from 'rsg-components/SectionHeading'
+
 // @ts-ignore
 // import Markdown from 'rsg-components/Markdown'
 

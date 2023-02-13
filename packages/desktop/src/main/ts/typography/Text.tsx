@@ -1,3 +1,5 @@
+import React, { FC, ReactNode } from 'react'
+
 import {
   Box,
   Breaker,
@@ -6,7 +8,6 @@ import {
   Typo,
   TypoProps,
 } from '@qiwi/pijma-core'
-import React, { FC, ReactNode } from 'react'
 
 export interface TextProps {
   display?: 'block' | 'inline' | 'inline-block'
