@@ -6,9 +6,9 @@ import React, {
   MouseEventHandler,
 } from 'react'
 
-import {getDataProps} from '../dataProps'
-import {isMaskDigital, Mask, Pipe} from '../mask'
-import {Input, MaskInput, Value} from '../primitive'
+import { getDataProps } from '../dataProps'
+import { isMaskDigital, Mask, Pipe } from '../mask'
+import { Input, MaskInput, Value } from '../primitive'
 
 export interface ContentInputProps {
   value: string
