@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.160.0](https://github.com/qiwi/pijma/compare/2023.2.8-qiwi.pijma-core.1.159.0-f0...2023.2.16-qiwi.pijma-core.1.160.0-f0) (2023-02-16)
+
+### Features
+* feat: add norr and norl to ContentInput (#560) [4e3a4c23](https://github.com/qiwi/pijma/commit/4e3a4c23b98894fa9a5ae2e270bcab4157e6b4d3)
+
 ## [@qiwi/pijma-core@1.159.0](https://github.com/qiwi/pijma/compare/2022.9.20-qiwi.pijma-core.1.158.0-f0...2023.2.8-qiwi.pijma-core.1.159.0-f0) (2023-02-08)
 
 ### Features
