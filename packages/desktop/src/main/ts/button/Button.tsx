@@ -17,6 +17,8 @@ export interface ButtonProps {
   onClick?: () => void
   onFocus?: () => void
   onBlur?: () => void
+  onKeyDown?: () => void
+  onKeyUp?: () => void
   tabIndex?: number
   disabled?: boolean
   kind: 'brand' | 'simple'
@@ -163,6 +165,8 @@ export const Button: FC<ButtonProps> = (props) => {
           onClick={renderProps.onClick}
           onFocus={renderProps.onFocus}
           onBlur={renderProps.onBlur}
+          onKeyDown={props.onKeyDown}
+          onKeyUp={props.onKeyUp}
           onMouseEnter={renderProps.onMouseEnter}
           onMouseLeave={renderProps.onMouseLeave}
           children={
