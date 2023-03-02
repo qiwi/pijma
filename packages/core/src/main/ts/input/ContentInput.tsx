@@ -50,8 +50,8 @@ export const ContentInput = forwardRef<HTMLInputElement, ContentInputProps>(
       pl: props.pl ? props.pl : 4,
       py: 3,
       r: `${props.nort || props.norl ? '0' : '10px'} ${
-        props.nort || props.norr ? '0' : '10px'} ${
-        props.norb || props.norr ? '0' : '10px'} ${
+        props.nort || props.norr ? '0' : '10px'
+      } ${props.norb || props.norr ? '0' : '10px'} ${
         props.norb || props.norl ? '0' : '10px'
       }`,
       b: 'none',
