@@ -86,14 +86,13 @@ export class AccordionControl<I> extends Component<
   private onKeyDown: KeyboardEventHandler<HTMLElement> = (event) => {
     switch (event.key) {
       case 'Enter':
-      case ' ': {
+      case ' ':
         event.preventDefault()
         event.stopPropagation()
         if (this.state.focused !== -1) {
           this.onChange(this.state.focused)
         }
         break
-      }
     }
   }
 

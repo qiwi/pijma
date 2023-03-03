@@ -85,14 +85,13 @@ export class SwitchControl extends Component<
   private onKeyDown: KeyboardEventHandler<HTMLElement> = (event) => {
     switch (event.key) {
       case 'Enter':
-      case ' ': {
+      case ' ':
         event.preventDefault()
         event.stopPropagation()
         if (this.state.focused) {
           this.onClick()
         }
         break
-      }
     }
   }
 

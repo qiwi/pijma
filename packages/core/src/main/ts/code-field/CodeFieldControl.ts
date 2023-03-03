@@ -140,7 +140,7 @@ export class CodeFieldControl extends Component<
           }
           break
         }
-        case 'Backspace': {
+        case 'Backspace':
           if (this.props.value[index] === '') {
             const prev = this.state.refs[index - 1]
             if (prev && prev.current) {
@@ -149,8 +149,7 @@ export class CodeFieldControl extends Component<
             }
           }
           break
-        }
-        default: {
+        default:
           if (this.props.value[index] === e.key) {
             e.preventDefault()
             const next = this.state.refs[index + 1]
@@ -159,7 +158,6 @@ export class CodeFieldControl extends Component<
               next.current.focus()
             }
           }
-        }
       }
     }
 

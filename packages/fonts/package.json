@@ -14,8 +14,8 @@
   },
   "homepage": "https://github.com/qiwi/pijma/#readme",
   "devDependencies": {
-    "@packasso/dev-license": "0.8.4",
-    "@packasso/release-zx-semrel": "0.14.4"
+    "@packasso/dev-license": "0.8.5",
+    "@packasso/release-zx-semrel": "0.14.5"
   },
   "license": "MIT",
   "version": "0.0.0",

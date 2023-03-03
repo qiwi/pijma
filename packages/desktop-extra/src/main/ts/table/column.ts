@@ -3,17 +3,13 @@ export function columnFactory(
   mapping?: any,
 ): any {
   switch (typeof el) {
-    case 'string': {
+    case 'string':
       return mapping[el] || { accessor: el }
-    }
-    case 'number': {
+    case 'number':
       return { width: el }
-    }
-    case 'object': {
+    case 'object':
       return el
-    }
-    default: {
+    default:
       throw new Error(`unsupported table column type: ${typeof el}`)
-    }
   }
 }

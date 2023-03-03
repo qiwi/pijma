@@ -9,39 +9,31 @@ export default styled.button<{ variant: TStepVariant }>`
   border-radius: 50%;
   color: ${({ variant, theme }) => {
     switch (variant) {
-      case 'active': {
+      case 'active':
         return theme.color.brand
-      }
-      case 'focus': {
+      case 'focus':
         return theme.color.white
-      }
-      default: {
+      default:
         return theme.color.black
-      }
     }
   }};
   border-color: ${({ variant, theme }) => {
     switch (variant) {
-      case 'active': {
+      case 'active':
         return theme.color.brand
-      }
-      case 'focus': {
+      case 'focus':
         return 'transparent'
-      }
       default:
     }
   }};
   background-color: ${({ variant, theme }) => {
     switch (variant) {
-      case 'active': {
+      case 'active':
         return theme.color.white
-      }
-      case 'focus': {
+      case 'focus':
         return theme.color.brand
-      }
-      default: {
+      default:
         return '#e6e6e6'
-      }
     }
   }};
 `

@@ -83,14 +83,13 @@ export class RadioControl<O extends OptionModel<V>, V> extends Component<
         break
       }
       case 'Enter':
-      case ' ': {
+      case ' ':
         event.preventDefault()
         event.stopPropagation()
         if (this.state.focused !== -1) {
           this.onChange(this.props.options[this.state.focused].value)
         }
         break
-      }
     }
   }
 

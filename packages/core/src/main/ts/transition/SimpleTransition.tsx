@@ -20,34 +20,30 @@ const statusClassName = (
   const enter = typeof timeout === 'number' ? timeout : timeout?.enter || 0
   const exit = typeof timeout === 'number' ? timeout : timeout?.exit || 0
   switch (status) {
-    case 'entering': {
+    case 'entering':
       return enteringClassName
         ? enteringClassName(enter)
         : enterClassName
         ? enterClassName(enter)
         : undefined
-    }
-    case 'entered': {
+    case 'entered':
       return enteredClassName
         ? enteredClassName(enter)
         : enterClassName
         ? enterClassName(enter)
         : undefined
-    }
-    case 'exiting': {
+    case 'exiting':
       return exitingClassName
         ? exitingClassName(exit)
         : exitClassName
         ? exitClassName(enter)
         : undefined
-    }
-    case 'exited': {
+    case 'exited':
       return exitedClassName
         ? exitedClassName(exit)
         : exitClassName
         ? exitClassName(enter)
         : undefined
-    }
   }
   return undefined
 }

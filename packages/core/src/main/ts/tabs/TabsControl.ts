@@ -119,14 +119,13 @@ export class TabsControl extends Component<TabsControlProps> {
   private onKeyDown: KeyboardEventHandler<HTMLElement> = (event) => {
     switch (event.key) {
       case 'Enter':
-      case ' ': {
+      case ' ':
         event.preventDefault()
         event.stopPropagation()
         if (this.state.focused !== -1 && this.props.onChange) {
           this.props.onChange(this.state.focused)
         }
         break
-      }
     }
   }
 
