@@ -1,9 +1,4 @@
 {
-  "moduleNameMapper": {
-    "\\.css$": "identity-obj-proxy",
-    "@qiwi/pijma-core": "<rootDir>/../core/src/main/ts",
-    "@qiwi/pijma-desktop": "<rootDir>/../desktop/src/main/ts"
-  },
   "testEnvironment": "jsdom",
   "testMatch": [
     "<rootDir>/src/test/[jt]s/**/*.(spec|test).[jt]s?(x)"
@@ -35,5 +30,10 @@
       }
     ]
   },
-  "displayName": "@qiwi/pijma-desktop-extra"
+  "displayName": "@qiwi/pijma-desktop-extra",
+  "moduleNameMapper": {
+    "\\.css$": "identity-obj-proxy",
+    "@qiwi/pijma-core": "<rootDir>/../core/src/main/ts",
+    "@qiwi/pijma-desktop": "<rootDir>/../desktop/src/main/ts"
+  }
 }
