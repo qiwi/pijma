@@ -1,6 +1,8 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
+import { describe, expect, it } from '@jest/globals'
+
 import { UserProfile } from '../../main/ts'
 
 describe('UserProfile', () => {

@@ -3,6 +3,8 @@ import { MemoryRouter } from 'react-router'
 import { NavLink } from 'react-router-dom'
 import renderer from 'react-test-renderer'
 
+import { describe, expect, it } from '@jest/globals'
+
 import { NavigationMenu } from '../../main/ts'
 
 const navItems = [

@@ -1,0 +1,27 @@
+{
+  "rules": {
+    "no-constant-condition": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "react/no-children-prop": "off",
+    "react/no-find-dom-node": "off",
+    "sonarjs/cognitive-complexity": "off",
+    "sonarjs/no-duplicate-string": "off",
+    "unicorn/no-negated-condition": "off",
+    "unicorn/no-new-array": "off",
+    "unicorn/prefer-add-event-listener": "off",
+    "unicorn/prefer-dom-node-append": "off",
+    "unicorn/prefer-dom-node-remove": "off",
+    "unicorn/prefer-logical-operator-over-ternary": "off",
+    "unicorn/prefer-number-properties": "off",
+    "unicorn/prefer-optional-catch-binding": "off",
+    "unicorn/prefer-regexp-test": "off",
+    "unicorn/prefer-set-has": "off",
+    "unicorn/prefer-spread": "off",
+    "unicorn/prefer-string-slice": "off"
+  },
+  "extends": "eslint-config-qiwi"
+}

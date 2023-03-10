@@ -3,6 +3,8 @@ import renderer from 'react-test-renderer'
 
 import { ThemeProvider, themes } from '@qiwi/pijma-core'
 
+import { describe, expect, it } from '@jest/globals'
+
 import { DatePicker } from '../../main/ts'
 
 describe('DatePicker', () => {

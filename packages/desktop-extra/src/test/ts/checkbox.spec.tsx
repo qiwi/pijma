@@ -1,6 +1,8 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
+import { describe, expect, it } from '@jest/globals'
+
 import { Checkbox } from '../../main/ts'
 
 describe('Checkbox', () => {

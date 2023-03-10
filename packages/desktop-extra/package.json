@@ -1,20 +1,15 @@
 {
   "name": "@qiwi/pijma-desktop-extra",
+  "version": "0.0.0",
   "packasso": [
     "@packasso/dev-ts",
     "@packasso/dev-license",
     "@packasso/build-ts-swc",
-    "@packasso/style-eslint-prettier",
+    "@packasso/style-eslint",
+    "@packasso/style-prettier",
     "@packasso/release-zx-semrel",
     "@packasso/test-jest"
   ],
-  "scripts": {
-    "test:jest": "jest",
-    "build": "packasso build",
-    "lint": "packasso lint",
-    "format": "packasso format",
-    "test": "packasso test"
-  },
   "dependencies": {
     "@qiwi/common-formatters": "^1.2.1",
     "@qiwi/pijma-core": "workspace:*",
@@ -27,12 +22,13 @@
     "react-table": "^7.8.0"
   },
   "devDependencies": {
-    "@packasso/build-ts-swc": "0.16.1",
-    "@packasso/dev-license": "0.9.0",
-    "@packasso/dev-ts": "0.16.0",
-    "@packasso/release-zx-semrel": "0.15.1",
-    "@packasso/style-eslint-prettier": "0.15.1",
-    "@packasso/test-jest": "0.16.1",
+    "@packasso/build-ts-swc": "0.17.0",
+    "@packasso/dev-license": "0.10.0",
+    "@packasso/dev-ts": "0.17.0",
+    "@packasso/release-zx-semrel": "0.16.0",
+    "@packasso/style-eslint": "0.1.0",
+    "@packasso/style-prettier": "0.1.0",
+    "@packasso/test-jest": "0.17.2",
     "@swc/cli": "0.1.62",
     "@swc/core": "1.3.37",
     "@swc/helpers": "0.4.14",
@@ -43,7 +39,6 @@
     "css-loader": "6.7.1",
     "eslint": "8.35.0",
     "eslint-config-qiwi": "2.0.9",
-    "fast-glob": "3.2.11",
     "file-loader": "6.2.0",
     "globby-cp": "1.1.3",
     "identity-obj-proxy": "3.0.0",
@@ -72,32 +67,11 @@
     "url": "https://github.com/qiwi/pijma/issues"
   },
   "homepage": "https://github.com/qiwi/pijma/#readme",
-  "eslintConfig": {
-    "rules": {
-      "no-constant-condition": "off",
-      "@typescript-eslint/ban-ts-comment": "off",
-      "@typescript-eslint/ban-types": "off",
-      "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/no-non-null-assertion": "off",
-      "@typescript-eslint/no-unused-vars": "off",
-      "react/no-children-prop": "off",
-      "react/no-find-dom-node": "off",
-      "sonarjs/cognitive-complexity": "off",
-      "sonarjs/no-duplicate-string": "off",
-      "unicorn/no-negated-condition": "off",
-      "unicorn/no-new-array": "off",
-      "unicorn/prefer-add-event-listener": "off",
-      "unicorn/prefer-dom-node-append": "off",
-      "unicorn/prefer-dom-node-remove": "off",
-      "unicorn/prefer-logical-operator-over-ternary": "off",
-      "unicorn/prefer-number-properties": "off",
-      "unicorn/prefer-optional-catch-binding": "off",
-      "unicorn/prefer-regexp-test": "off",
-      "unicorn/prefer-set-has": "off",
-      "unicorn/prefer-spread": "off",
-      "unicorn/prefer-string-slice": "off"
-    },
-    "extends": "eslint-config-qiwi"
+  "scripts": {
+    "build": "packasso build",
+    "lint": "packasso lint",
+    "format": "packasso format",
+    "test": "packasso test"
   },
   "license": "MIT",
   "type": "module",
@@ -117,13 +91,7 @@
     "target/esm/**/*",
     "target/dts/**/*"
   ],
-  "prettier": "prettier-config-qiwi",
-  "version": "0.0.0",
   "publishConfig": {
     "access": "public"
-  },
-  "release": {
-    "cmd": "yarn",
-    "changelog": "changelog"
   }
 }
