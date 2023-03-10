@@ -15,6 +15,7 @@
   },
   "homepage": "https://github.com/qiwi/pijma/#readme",
   "devDependencies": {
+    "@packasso/cli": "0.16.0",
     "@packasso/dev-license": "0.10.0",
     "@packasso/release-zx-semrel": "0.16.0"
   },

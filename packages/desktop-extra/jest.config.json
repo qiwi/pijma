@@ -22,6 +22,7 @@
     "<rootDir>/node_modules",
     "<rootDir>/target"
   ],
+  "snapshotResolver": "@packasso/jest-snapshot-resolver",
   "transform": {
     "^.+\\.[jt]sx?$": [
       "@swc/jest",

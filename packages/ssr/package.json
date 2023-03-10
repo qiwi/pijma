@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@packasso/build-ts-swc": "0.17.0",
+    "@packasso/cli": "0.16.0",
     "@packasso/dev-license": "0.10.0",
     "@packasso/dev-ts": "0.17.0",
     "@packasso/release-zx-semrel": "0.16.0",
