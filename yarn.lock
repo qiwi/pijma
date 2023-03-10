@@ -1441,30 +1441,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@packasso/build-ts-swc@npm:0.17.0":
-  version: 0.17.0
-  resolution: "@packasso/build-ts-swc@npm:0.17.0"
+"@packasso/build-ts-swc@npm:0.17.2":
+  version: 0.17.2
+  resolution: "@packasso/build-ts-swc@npm:0.17.2"
   dependencies:
-    "@packasso/core": "npm:0.17.0"
-  checksum: 1dff26ab6f107d024c27d2bfc04e1b5f85faa947456b46eba4054708d9fc31b121ba78e6c24deef217b2a356ffd9272eda55857182b3904e4d1e19c05c0f2a4a
+    "@packasso/core": "npm:0.17.1"
+  checksum: 46b4a10698b3f7565379731790c48f393e0c1feb5f521bc74350325eaccb7967e90f193ab656be928fded906a4916da1f0436a458983b289f8d0d206edb189f0
   languageName: node
   linkType: hard
 
-"@packasso/cli@npm:0.16.0":
-  version: 0.16.0
-  resolution: "@packasso/cli@npm:0.16.0"
+"@packasso/cli@npm:0.16.1":
+  version: 0.16.1
+  resolution: "@packasso/cli@npm:0.16.1"
   dependencies:
-    "@packasso/core": "npm:0.17.0"
+    "@packasso/core": "npm:0.17.1"
     minimist: "npm:1.2.8"
   bin:
     packasso: target/esm/index.mjs
-  checksum: a05e70ece60f6eaa5b4a9f06c6d83e6e6921055a09c5ddb7ec753d933eb8af05319ee503a810d7b21f723c6aefdad224b38606ad6bd6dd3c3689690197a458e8
+  checksum: 55f373124413fd5b14a84a2e25e9cf28029c322d2d655ff0c8e3dbebabfb2686c2de337eae89092b31bbe868c4d5a04b297103aa37ab3e75ed3887ba4230fe06
   languageName: node
   linkType: hard
 
-"@packasso/core@npm:0.17.0":
-  version: 0.17.0
-  resolution: "@packasso/core@npm:0.17.0"
+"@packasso/core@npm:0.17.1":
+  version: 0.17.1
+  resolution: "@packasso/core@npm:0.17.1"
   dependencies:
     "@antongolub/git-root": "npm:1.5.10"
     "@semrel-extra/topo": "npm:1.5.0"
@@ -1474,69 +1474,69 @@ __metadata:
     fast-glob: "npm:3.2.12"
     lodash-es: "npm:4.17.21"
     read-pkg: "npm:7.1.0"
-  checksum: f66b5b4946bcf97d17aab85b9e82a529eee0b052bd8216f25d7a302ecba8b83b989aeeab1d67e90a582bf9e579b4eb1067e8b1a7ce2d51aca54bfa39d93289d5
+  checksum: 2b25396451310ff62504d8deb26e4a71dca5d9292405692e0dfa0d98342b6251a645a7ff57004744eb4b903d810970cd0840b5dc9f77f604a88627a7c026d18d
   languageName: node
   linkType: hard
 
-"@packasso/dev-license@npm:0.10.0":
-  version: 0.10.0
-  resolution: "@packasso/dev-license@npm:0.10.0"
+"@packasso/dev-license@npm:0.10.1":
+  version: 0.10.1
+  resolution: "@packasso/dev-license@npm:0.10.1"
   dependencies:
-    "@packasso/core": "npm:0.17.0"
-  checksum: 003397118de7b17a8c4d6721d1c2ec9b5a9edf94ee2ed6a0399f2020f3ea7dc8bb82e1410818d680e392431882dc83dd5a9902d91f1073d4fbdea1accf28a1ac
+    "@packasso/core": "npm:0.17.1"
+  checksum: 53d6430aba9f0da5064beaf3c580af49bfa95505e1e7c926b96f64cc149a289beaaa89b82828f6ba1ff192610497f6a04d796009c16d18df8f8e356666f4a195
   languageName: node
   linkType: hard
 
-"@packasso/dev-ts@npm:0.17.0":
-  version: 0.17.0
-  resolution: "@packasso/dev-ts@npm:0.17.0"
+"@packasso/dev-ts@npm:0.17.1":
+  version: 0.17.1
+  resolution: "@packasso/dev-ts@npm:0.17.1"
   dependencies:
-    "@packasso/core": "npm:0.17.0"
-  checksum: 5e2704d3cb30b1aca08ba81e07093fe66759bbcc566041b8eb959ac693069c4e3f0ad9b387ffb2428373bce69aaac64fbb9a5ce322c7c01ae485fde8a7dcab55
+    "@packasso/core": "npm:0.17.1"
+  checksum: 5657a4f4138e0d292d3770fb3d232faa5738a5e60a0b3beaa3a6fa36913671eec9a85d075c9b5153cb62ba573167ecebbbc3789245eede7357e0777ee31aae09
   languageName: node
   linkType: hard
 
-"@packasso/jest-snapshot-resolver@npm:0.1.0":
-  version: 0.1.0
-  resolution: "@packasso/jest-snapshot-resolver@npm:0.1.0"
-  checksum: a305b130d16f05295ac8b5b4c1a19a2c17f8916df52ab9eb446c9984c7371f178f6887c6dbd3247752ecf0232e1932a7bf87d764a932be3471dfb75a0ebb4051
+"@packasso/jest-snapshot-resolver@npm:0.1.1":
+  version: 0.1.1
+  resolution: "@packasso/jest-snapshot-resolver@npm:0.1.1"
+  checksum: 6859a4d9b253df3fc2dbf7c87085a6781b47f9bec126f7e91366aed0f0edd44f075e84ab330852cd22053d7a5feb91cb2a7e62d9520fd72818099e88c7dfff7e
   languageName: node
   linkType: hard
 
-"@packasso/release-zx-semrel@npm:0.16.0":
-  version: 0.16.0
-  resolution: "@packasso/release-zx-semrel@npm:0.16.0"
+"@packasso/release-zx-semrel@npm:0.16.1":
+  version: 0.16.1
+  resolution: "@packasso/release-zx-semrel@npm:0.16.1"
   dependencies:
-    "@packasso/core": "npm:0.17.0"
-  checksum: e45dc8c0e3290a97dd27e38a2035288240a450ccfdeebb83576c20926e28bb2f8a844b4db84f9fe4a47422ef6e32234ac3db97473e078806caface984b841b22
+    "@packasso/core": "npm:0.17.1"
+  checksum: c311498b942ab53d75c47c1fcd0a07ab958f03cedf8d38b9c8fbcbf06fcb088083db18321c6902b127d0be9e99a067b5a537347797fed9a4491ad63efe5d7c5c
   languageName: node
   linkType: hard
 
-"@packasso/style-eslint@npm:0.1.0":
-  version: 0.1.0
-  resolution: "@packasso/style-eslint@npm:0.1.0"
+"@packasso/style-eslint@npm:0.1.1":
+  version: 0.1.1
+  resolution: "@packasso/style-eslint@npm:0.1.1"
   dependencies:
-    "@packasso/core": "npm:0.17.0"
-  checksum: cae0727922510ce2f36ad0e08a9bdcbc8dab5ec3f0e410f38027e255edc58db403f30fde5e406fe9a6e82a615f9220e12adcbb8f197eaf48e83f1b452c419aa8
+    "@packasso/core": "npm:0.17.1"
+  checksum: a0f62bd90576e0b9eaff94afb6be5d5297ec67581052b6090983440ff44ec343d0df85cc8b9c1826ff01de15d35be0d7c7e2040f92687f4668fe10f43e1c9a61
   languageName: node
   linkType: hard
 
-"@packasso/style-prettier@npm:0.1.0":
-  version: 0.1.0
-  resolution: "@packasso/style-prettier@npm:0.1.0"
+"@packasso/style-prettier@npm:0.1.1":
+  version: 0.1.1
+  resolution: "@packasso/style-prettier@npm:0.1.1"
   dependencies:
-    "@packasso/core": "npm:0.17.0"
-  checksum: f824c207b8fe96fcf3aaf5fb98c93b9ed520d0139e4d39bfa2fbe04ab3f13706b3cdcdb344c41d6b7477bfac01843150f74b1ef6c5bfbc888d5cb04be4001316
+    "@packasso/core": "npm:0.17.1"
+  checksum: 613cbd7a48fce4ff561e6eaf9179758c68c9e877e9c21415aa4ed2ff60885d6c80651d038ad73cbe2a094e4af79a8eacf45ccdbe16961b2f223aa6961de4c2a3
   languageName: node
   linkType: hard
 
-"@packasso/test-jest@npm:0.18.0":
-  version: 0.18.0
-  resolution: "@packasso/test-jest@npm:0.18.0"
+"@packasso/test-jest@npm:0.18.1":
+  version: 0.18.1
+  resolution: "@packasso/test-jest@npm:0.18.1"
   dependencies:
-    "@packasso/core": "npm:0.17.0"
-    "@packasso/jest-snapshot-resolver": "npm:0.1.0"
-  checksum: a45aaa9f2a0ae1248487fa91a4255eac4fbc4e4f5ce64931748b4be940d1d07b7b4d5e488579f09aa2555278a9835e27fff28984ece1c1246c4fa6836ae8c8e6
+    "@packasso/core": "npm:0.17.1"
+    "@packasso/jest-snapshot-resolver": "npm:0.1.1"
+  checksum: 6fbcad69cd5921e2f338258703d42090a1b5f799283a06ddbe9be8f9d2f7609011b9e25ce0a8dc6fe5ce2d12fc9e58ab12516167b3c611f46fe6ad64a448337f
   languageName: node
   linkType: hard
 
@@ -1564,13 +1564,13 @@ __metadata:
     "@emotion/css": "npm:^11.10.0"
     "@emotion/react": "npm:^11.10.4"
     "@emotion/styled": "npm:^11.10.4"
-    "@packasso/build-ts-swc": "npm:0.17.0"
-    "@packasso/cli": "npm:0.16.0"
-    "@packasso/dev-license": "npm:0.10.0"
-    "@packasso/dev-ts": "npm:0.17.0"
-    "@packasso/release-zx-semrel": "npm:0.16.0"
-    "@packasso/style-eslint": "npm:0.1.0"
-    "@packasso/style-prettier": "npm:0.1.0"
+    "@packasso/build-ts-swc": "npm:0.17.2"
+    "@packasso/cli": "npm:0.16.1"
+    "@packasso/dev-license": "npm:0.10.1"
+    "@packasso/dev-ts": "npm:0.17.1"
+    "@packasso/release-zx-semrel": "npm:0.16.1"
+    "@packasso/style-eslint": "npm:0.1.1"
+    "@packasso/style-prettier": "npm:0.1.1"
     "@swc/cli": "npm:0.1.62"
     "@swc/core": "npm:1.3.37"
     "@swc/helpers": "npm:0.4.14"
@@ -1616,14 +1616,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-desktop-extra@workspace:packages/desktop-extra"
   dependencies:
-    "@packasso/build-ts-swc": "npm:0.17.0"
-    "@packasso/cli": "npm:0.16.0"
-    "@packasso/dev-license": "npm:0.10.0"
-    "@packasso/dev-ts": "npm:0.17.0"
-    "@packasso/release-zx-semrel": "npm:0.16.0"
-    "@packasso/style-eslint": "npm:0.1.0"
-    "@packasso/style-prettier": "npm:0.1.0"
-    "@packasso/test-jest": "npm:0.18.0"
+    "@packasso/build-ts-swc": "npm:0.17.2"
+    "@packasso/cli": "npm:0.16.1"
+    "@packasso/dev-license": "npm:0.10.1"
+    "@packasso/dev-ts": "npm:0.17.1"
+    "@packasso/release-zx-semrel": "npm:0.16.1"
+    "@packasso/style-eslint": "npm:0.1.1"
+    "@packasso/style-prettier": "npm:0.1.1"
+    "@packasso/test-jest": "npm:0.18.1"
     "@qiwi/common-formatters": "npm:^1.2.1"
     "@qiwi/pijma-core": "workspace:*"
     "@qiwi/pijma-desktop": "workspace:*"
@@ -1668,14 +1668,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-desktop@workspace:packages/desktop"
   dependencies:
-    "@packasso/build-ts-swc": "npm:0.17.0"
-    "@packasso/cli": "npm:0.16.0"
-    "@packasso/dev-license": "npm:0.10.0"
-    "@packasso/dev-ts": "npm:0.17.0"
-    "@packasso/release-zx-semrel": "npm:0.16.0"
-    "@packasso/style-eslint": "npm:0.1.0"
-    "@packasso/style-prettier": "npm:0.1.0"
-    "@packasso/test-jest": "npm:0.18.0"
+    "@packasso/build-ts-swc": "npm:0.17.2"
+    "@packasso/cli": "npm:0.16.1"
+    "@packasso/dev-license": "npm:0.10.1"
+    "@packasso/dev-ts": "npm:0.17.1"
+    "@packasso/release-zx-semrel": "npm:0.16.1"
+    "@packasso/style-eslint": "npm:0.1.1"
+    "@packasso/style-prettier": "npm:0.1.1"
+    "@packasso/test-jest": "npm:0.18.1"
     "@qiwi/pijma-core": "workspace:*"
     "@swc/cli": "npm:0.1.62"
     "@swc/core": "npm:1.3.37"
@@ -1707,9 +1707,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-fonts@workspace:packages/fonts"
   dependencies:
-    "@packasso/cli": "npm:0.16.0"
-    "@packasso/dev-license": "npm:0.10.0"
-    "@packasso/release-zx-semrel": "npm:0.16.0"
+    "@packasso/cli": "npm:0.16.1"
+    "@packasso/dev-license": "npm:0.10.1"
+    "@packasso/release-zx-semrel": "npm:0.16.1"
   languageName: unknown
   linkType: soft
 
@@ -1717,13 +1717,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma-mobile@workspace:packages/mobile"
   dependencies:
-    "@packasso/build-ts-swc": "npm:0.17.0"
-    "@packasso/cli": "npm:0.16.0"
-    "@packasso/dev-license": "npm:0.10.0"
-    "@packasso/dev-ts": "npm:0.17.0"
-    "@packasso/release-zx-semrel": "npm:0.16.0"
-    "@packasso/style-eslint": "npm:0.1.0"
-    "@packasso/style-prettier": "npm:0.1.0"
+    "@packasso/build-ts-swc": "npm:0.17.2"
+    "@packasso/cli": "npm:0.16.1"
+    "@packasso/dev-license": "npm:0.10.1"
+    "@packasso/dev-ts": "npm:0.17.1"
+    "@packasso/release-zx-semrel": "npm:0.16.1"
+    "@packasso/style-eslint": "npm:0.1.1"
+    "@packasso/style-prettier": "npm:0.1.1"
     "@qiwi/pijma-core": "workspace:*"
     "@swc/cli": "npm:0.1.62"
     "@swc/core": "npm:1.3.37"
@@ -1756,13 +1756,13 @@ __metadata:
   resolution: "@qiwi/pijma-ssr@workspace:packages/ssr"
   dependencies:
     "@emotion/server": "npm:^11.10.0"
-    "@packasso/build-ts-swc": "npm:0.17.0"
-    "@packasso/cli": "npm:0.16.0"
-    "@packasso/dev-license": "npm:0.10.0"
-    "@packasso/dev-ts": "npm:0.17.0"
-    "@packasso/release-zx-semrel": "npm:0.16.0"
-    "@packasso/style-eslint": "npm:0.1.0"
-    "@packasso/style-prettier": "npm:0.1.0"
+    "@packasso/build-ts-swc": "npm:0.17.2"
+    "@packasso/cli": "npm:0.16.1"
+    "@packasso/dev-license": "npm:0.10.1"
+    "@packasso/dev-ts": "npm:0.17.1"
+    "@packasso/release-zx-semrel": "npm:0.16.1"
+    "@packasso/style-eslint": "npm:0.1.1"
+    "@packasso/style-prettier": "npm:0.1.1"
     "@swc/cli": "npm:0.1.62"
     "@swc/core": "npm:1.3.37"
     "@swc/helpers": "npm:0.4.14"
@@ -1788,7 +1788,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@qiwi/pijma@workspace:."
   dependencies:
-    "@packasso/cli": "npm:0.16.0"
+    "@packasso/cli": "npm:0.16.1"
     "@swc/cli": "npm:0.1.62"
     "@swc/core": "npm:1.3.37"
     "@swc/jest": "npm:0.2.24"

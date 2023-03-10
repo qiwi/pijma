@@ -8,9 +8,6 @@
     "declarationDir": "./target/dts",
     "tsBuildInfoFile": "./target/dts/.tsbuildinfo"
   },
-  "include": [
-    "./src/main/ts"
-  ],
   "references": [
     {
       "path": "../core/tsconfig.dts.json"
