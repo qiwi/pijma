@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.160.1](https://github.com/qiwi/pijma/compare/2023.2.16-qiwi.pijma-core.1.160.0-f0...2023.4.25-qiwi.pijma-core.1.160.1-f0) (2023-04-25)
+
+### Fixes & improvements
+* docs: add spinner demo (#564) [c0b1b066](https://github.com/qiwi/pijma/commit/c0b1b0661911fb309c435365ab3f0b6043cae53f)
+
 ## [@qiwi/pijma-core@1.160.0](https://github.com/qiwi/pijma/compare/2023.2.8-qiwi.pijma-core.1.159.0-f0...2023.2.16-qiwi.pijma-core.1.160.0-f0) (2023-02-16)
 
 ### Features
