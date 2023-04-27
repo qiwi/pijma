@@ -17,7 +17,7 @@ export interface InputProps extends BoxProps, CardProps {
   valueColor?: string
   valueTransform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
   valueSpacing?: number
-  valueTextOverflow?: 'clip' | 'ellipsis' | 'fade'
+  valueTextOverflow?: string
   placeholderSize?: number
   placeholderWeight?: number
   placeholderColor?: string
