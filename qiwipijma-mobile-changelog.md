@@ -1,3 +1,11 @@
+## [@qiwi/pijma-mobile@1.160.3](https://github.com/qiwi/pijma/compare/2023.4.25-qiwi.pijma-mobile.1.160.2-f0...2023.4.27-qiwi.pijma-mobile.1.160.3-f0) (2023-04-27)
+
+### Fixes & improvements
+* fix: adding text-overflow ellipsis for select-field input (#565) [59d25901](https://github.com/qiwi/pijma/commit/59d25901d0d7e18d4e02391e073d28a0c4350d1c)
+
+### Dependencies
+* perf: dependencies @qiwi/pijma-core updated to 1.160.2
+
 ## [@qiwi/pijma-mobile@1.160.2](https://github.com/qiwi/pijma/compare/2023.2.16-qiwi.pijma-mobile.1.160.1-f0...2023.4.25-qiwi.pijma-mobile.1.160.2-f0) (2023-04-25)
 
 ### Fixes & improvements
