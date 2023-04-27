@@ -84,6 +84,7 @@ export const SelectField: FC<
                 error={props.error}
                 input={
                   <SelectInput
+                    pr={6}
                     value={
                       renderProps.select !== undefined &&
                       props.items[renderProps.select]

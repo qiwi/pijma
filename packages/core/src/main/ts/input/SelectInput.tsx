@@ -54,7 +54,7 @@ export const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>(
       cursor: props.disabled ? 'not-allowed' : 'pointer',
       bg: 'transparent',
       transition: 'all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)',
-      textOverflow: 'ellipsis',
+      valueTextOverflow: 'ellipsis',
       value: props.value,
       name: props.name,
       autoComplete: props.autoComplete ? 'on' : 'off',
