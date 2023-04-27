@@ -139,6 +139,7 @@ export const SelectField: FC<
                           ? props.items[renderProps.select].text
                           : ''
                       }
+                      pr={6}
                       focused={renderProps.focused}
                       error={!!props.error}
                       tabIndex={props.tabIndex}
