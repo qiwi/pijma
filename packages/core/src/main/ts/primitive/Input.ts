@@ -35,6 +35,7 @@ export const InputNonProps: PropertyKey[] = [
   'placeholderColor',
   'placeholderTransform',
   'placeholderSpacing',
+  'textOverflow',
   ...BoxNonProps,
   ...CardNonProps,
 ]
@@ -53,6 +54,7 @@ export const Input = styled('input', InputOptions)<InputProps>(
     lineHeight: pxValue(props.valueSize, theme.scale),
     color: props.valueColor,
     textTransform: props.valueTransform,
+    textOverflow: props.textOverflow,
     textIndent: 0,
     letterSpacing: pxValue(props.valueSpacing),
     outline: 'none',
