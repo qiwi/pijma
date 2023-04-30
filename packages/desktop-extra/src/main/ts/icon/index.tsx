@@ -1,9 +1,10 @@
+import React, { Component, Fragment } from 'react'
+
 import {
   Icon as PijmaIcon,
   IconProps as PijmaIconProps,
   styled,
 } from '@qiwi/pijma-core'
-import React, { Component, Fragment } from 'react'
 
 import IconProps from './IconProps'
 

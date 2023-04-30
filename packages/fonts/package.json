@@ -1,11 +1,11 @@
 {
   "name": "@qiwi/pijma-fonts",
   "version": "0.0.0",
+  "packasso": [
+    "@packasso/dev-license",
+    "@packasso/release-zx-semrel"
+  ],
   "main": "index.css",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qiwi/pijma.git"
@@ -13,5 +13,14 @@
   "bugs": {
     "url": "https://github.com/qiwi/pijma/issues"
   },
-  "homepage": "https://github.com/qiwi/pijma/#readme"
+  "homepage": "https://github.com/qiwi/pijma/#readme",
+  "devDependencies": {
+    "@packasso/cli": "0.16.1",
+    "@packasso/dev-license": "0.10.1",
+    "@packasso/release-zx-semrel": "0.16.1"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }

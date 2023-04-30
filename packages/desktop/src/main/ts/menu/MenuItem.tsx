@@ -1,3 +1,5 @@
+import React, { forwardRef, ReactNode } from 'react'
+
 import {
   Box,
   Flex,
@@ -9,7 +11,6 @@ import {
   Section,
   Stub,
 } from '@qiwi/pijma-core'
-import React, { forwardRef, ReactNode } from 'react'
 
 import { Paragraph, Text } from '../typography'
 

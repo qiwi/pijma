@@ -1,3 +1,5 @@
+import React, { forwardRef } from 'react'
+
 import {
   Card,
   Flex,
@@ -7,7 +9,6 @@ import {
   PosLnk,
   Typo,
 } from '@qiwi/pijma-core'
-import React, { forwardRef } from 'react'
 
 import { Text } from '../typography'
 

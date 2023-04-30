@@ -1,3 +1,5 @@
+import React, { FC, ReactNode } from 'react'
+
 import {
   Box,
   Card,
@@ -8,7 +10,6 @@ import {
   Pos,
   SimpleTransition,
 } from '@qiwi/pijma-core'
-import React, { FC, ReactNode } from 'react'
 
 const ContentTransition: ModalProps['transition'] = (props) => (
   <SimpleTransition
@@ -80,7 +81,7 @@ export const SimpleModal: FC<SimpleModalProps> = ({
   onShow,
   onHide,
   backdropClose,
-  zIndex = 10050,
+  zIndex = 10_050,
   closable,
 }) =>
   stub ? (

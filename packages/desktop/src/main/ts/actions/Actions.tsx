@@ -1,5 +1,6 @@
-import { Box, Flex, getDataProps } from '@qiwi/pijma-core'
 import React, { Children, FC, ReactNode } from 'react'
+
+import { Box, Flex, getDataProps } from '@qiwi/pijma-core'
 
 export interface ActionsProps {
   size: 'accent' | 'normal' | 'minor'

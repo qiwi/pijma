@@ -1,5 +1,6 @@
-import { Card, Icon, PaginationControl } from '@qiwi/pijma-core'
 import React, { FC } from 'react'
+
+import { Card, Icon, PaginationControl } from '@qiwi/pijma-core'
 
 import { Text } from '../typography'
 import { PaginationLink } from './PaginationLink'

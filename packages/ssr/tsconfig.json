@@ -1,3 +1,23 @@
 {
-  "extends": "../../tsconfig.json"
+  "compilerOptions": {
+    "module": "es2022",
+    "target": "es2022",
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "removeComments": true,
+    "importHelpers": true,
+    "baseUrl": "./",
+    "paths": {}
+  },
+  "include": [
+    "./src/main/ts"
+  ],
+  "exclude": [
+    "./node_modules"
+  ]
 }

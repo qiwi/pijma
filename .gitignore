@@ -1,27 +1,29 @@
-/.idea
-/*.iml
-/*.log
-/node_modules
-/packages/*/node_modules
-/packages/*/target
+# misc
+
 .DS_Store
+/.idea
 
-# Yarn berry
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+# yarn
 
-# Creds
-*.asc
-*.key
+/.pnp.*
+/.yarn/cache
+/.yarn/unplugged
+/.yarn/install-state.gz
+/yarn-error.log
+
+# open-ssl
+
+*.ca
+*.crt
+*.csr
+*.der
+*.kdb
+*.org
+*.p12
 *.pem
-*.cert
+*.rnd
+*.ssleay
+*.smime
 
-# npm creds
-**/.npmrc
-**/.yarnrc
-**/.pnpmrc
+/node_modules
+/target

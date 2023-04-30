@@ -1,5 +1,6 @@
-import { BasicInputProps, Mask, Pipe } from '@qiwi/pijma-core'
 import { KeyboardEvent, ReactNode } from 'react'
+
+import { BasicInputProps, Mask, Pipe } from '@qiwi/pijma-core'
 
 export interface PasswordFieldProps {
   value: string

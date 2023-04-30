@@ -1,3 +1,5 @@
+import React, { FC } from 'react'
+
 import {
   CardLnk,
   Flex,
@@ -6,7 +8,6 @@ import {
   Stub,
   Value,
 } from '@qiwi/pijma-core'
-import React, { FC } from 'react'
 
 export interface PaginationLinkProps {
   page: number

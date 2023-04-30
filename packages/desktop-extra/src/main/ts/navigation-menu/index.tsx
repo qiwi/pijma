@@ -1,5 +1,6 @@
-import { styled } from '@qiwi/pijma-core'
 import React, { Component } from 'react'
+
+import { styled } from '@qiwi/pijma-core'
 
 import { Menu } from '../menu'
 import NavigationMenuProps from './NavigationMenuProps'
@@ -11,8 +12,7 @@ const ItemWrap = styled('div')`
 
 export class NavigationMenu extends Component<NavigationMenuProps> {
   render() {
-    const Link = this.props.link
-    const { items, isItemSelected, onChange } = this.props
+    const { link: Link, items, isItemSelected, onChange, active } = this.props
 
     const menuItems = items.map(
       ({ name, path, node: _node, value: _value }) => {
@@ -32,7 +32,7 @@ export class NavigationMenu extends Component<NavigationMenuProps> {
 
     return (
       <Menu
-        default={this.props.active}
+        default={active}
         items={menuItems}
         isItemSelected={isItemSelected}
         onChange={onChange}

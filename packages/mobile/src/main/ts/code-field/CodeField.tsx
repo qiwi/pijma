@@ -1,3 +1,5 @@
+import React, { FC, Fragment } from 'react'
+
 import {
   Box,
   CodeFieldControl,
@@ -8,7 +10,6 @@ import {
   Stub,
   Typo,
 } from '@qiwi/pijma-core'
-import React, { FC, Fragment } from 'react'
 
 import { CodeFieldProps } from './CodeFieldProps'
 

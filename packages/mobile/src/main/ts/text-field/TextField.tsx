@@ -1,5 +1,6 @@
-import { BasicInput, InputField, TextFieldControl } from '@qiwi/pijma-core'
 import React, { FC } from 'react'
+
+import { BasicInput, InputField, TextFieldControl } from '@qiwi/pijma-core'
 
 import { TextFieldProps } from './TextFieldProps'
 

@@ -1,5 +1,6 @@
-import { Flex, FlexItem, getDataProps, Spacer } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
+
+import { Flex, FlexItem, getDataProps, Spacer } from '@qiwi/pijma-core'
 
 import { Heading, Paragraph } from '../typography/'
 

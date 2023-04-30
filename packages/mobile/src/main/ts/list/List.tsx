@@ -1,5 +1,6 @@
-import { Box, Card, Flex, FlexItem, Stub } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
+
+import { Box, Card, Flex, FlexItem, Stub } from '@qiwi/pijma-core'
 
 import { Paragraph, Text } from '../typography'
 

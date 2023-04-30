@@ -1,5 +1,6 @@
-import { Box, HintControl, QuestionIcon } from '@qiwi/pijma-core'
 import React, { FC, Fragment, ReactNode } from 'react'
+
+import { Box, HintControl, QuestionIcon } from '@qiwi/pijma-core'
 
 import { SimpleModal } from '../modal'
 import { Paragraph } from '../typography'

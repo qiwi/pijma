@@ -1,5 +1,6 @@
-import { Flex, FlexItem, Icon, RatingControl, Stub } from '@qiwi/pijma-core'
 import React, { FC } from 'react'
+
+import { Flex, FlexItem, Icon, RatingControl, Stub } from '@qiwi/pijma-core'
 
 export interface RatingProps {
   value?: number

@@ -1,5 +1,7 @@
-import { Spacer } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
+
+import { Spacer } from '@qiwi/pijma-core'
+
 // @ts-ignore
 import Pathline from 'rsg-components/Pathline'
 

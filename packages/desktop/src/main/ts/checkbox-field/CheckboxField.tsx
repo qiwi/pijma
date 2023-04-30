@@ -1,3 +1,5 @@
+import React, { FC } from 'react'
+
 import {
   Box,
   Check,
@@ -10,7 +12,6 @@ import {
   Spacer,
   Stub,
 } from '@qiwi/pijma-core'
-import React, { FC } from 'react'
 
 import { CheckboxFieldOptionModel } from './CheckboxFieldOptionModel'
 import { CheckboxFieldProps } from './CheckboxFieldProps'

@@ -1,3 +1,5 @@
+import React, { FC, isValidElement, ReactNode } from 'react'
+
 import {
   AlertBlockControl,
   Block,
@@ -9,7 +11,6 @@ import {
   IconProps,
   Pos,
 } from '@qiwi/pijma-core'
-import React, { FC, isValidElement, ReactNode } from 'react'
 
 import { Paragraph } from '../typography'
 

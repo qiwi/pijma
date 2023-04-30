@@ -1,5 +1,6 @@
-import { formatMoney } from '@qiwi/common-formatters'
 import React from 'react'
+
+import { formatMoney } from '@qiwi/common-formatters'
 
 import AmountProps from './AmountProps'
 

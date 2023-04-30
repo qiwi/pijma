@@ -1,3 +1,5 @@
+import React, { Fragment } from 'react'
+
 import {
   BasicInput,
   Box,
@@ -12,7 +14,6 @@ import {
   styled,
   SuggestControl,
 } from '@qiwi/pijma-core'
-import React, { Fragment } from 'react'
 
 import { DropDown } from '../drop-down'
 import { Link } from '../link'

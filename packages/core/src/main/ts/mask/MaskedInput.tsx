@@ -6,6 +6,7 @@ import React, {
   InputHTMLAttributes,
   PureComponent,
 } from 'react'
+
 import {
   conformToMask as tmcConformToMask,
   createTextMaskInputElement as tmcCreateTextMaskInputElement,
@@ -56,7 +57,7 @@ export function conformToMask(
 }
 
 function isNil(value: any) {
-  return typeof value === 'undefined' || value === null
+  return value === undefined || value === null
 }
 
 export type MaskArray = (string | RegExp)[] | boolean

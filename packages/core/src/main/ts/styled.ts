@@ -1,8 +1,3 @@
-import createCache from '@emotion/cache'
-import styled from '@emotion/styled'
-
-export { styled, createCache }
-
 export type { CSSObject, Interpolation, StyledOptions } from '@emotion/styled'
 
 export type { Theme } from '@emotion/react'
@@ -18,3 +13,7 @@ export {
   keyframes,
   cache,
 } from '@emotion/css'
+
+export { default as styled } from '@emotion/styled'
+
+export { default as createCache } from '@emotion/cache'

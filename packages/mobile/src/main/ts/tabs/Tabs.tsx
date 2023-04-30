@@ -1,3 +1,5 @@
+import React, { FC, ReactNode } from 'react'
+
 import {
   Flex,
   FlexItem,
@@ -7,7 +9,6 @@ import {
   TabHeader,
   TabsControl,
 } from '@qiwi/pijma-core'
-import React, { FC, ReactNode } from 'react'
 
 import { Paragraph } from '../typography'
 

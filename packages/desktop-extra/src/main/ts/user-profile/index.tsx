@@ -1,5 +1,6 @@
-import { Flex, Icon, styled } from '@qiwi/pijma-core'
 import React, { Component } from 'react'
+
+import { Flex, Icon, styled } from '@qiwi/pijma-core'
 
 import UserProfileProps from './UserProfileProps'
 

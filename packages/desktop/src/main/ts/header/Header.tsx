@@ -1,5 +1,6 @@
-import { Card, getDataProps } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
+
+import { Card, getDataProps } from '@qiwi/pijma-core'
 
 export interface HeaderProps {
   underline?: boolean

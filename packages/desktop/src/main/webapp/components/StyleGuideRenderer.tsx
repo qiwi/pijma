@@ -1,3 +1,5 @@
+import React, { FC, ReactNode } from 'react'
+
 import {
   applyDefaultClickHandler,
   Box,
@@ -12,8 +14,7 @@ import {
   reset,
   ThemeProvider,
   themes,
-} from '@qiwi/pijma-desktop'
-import React, { FC, ReactNode } from 'react'
+} from '../../ts'
 
 applyDefaultClickHandler()
 

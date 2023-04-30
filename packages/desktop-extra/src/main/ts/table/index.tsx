@@ -1,6 +1,7 @@
-import { styled } from '@qiwi/pijma-core'
 import React from 'react'
 import { TableOptions, useTable } from 'react-table'
+
+import { styled } from '@qiwi/pijma-core'
 
 import { activeBackground, borderColor, tableHoverColor } from './constants'
 

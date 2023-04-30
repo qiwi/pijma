@@ -1,5 +1,6 @@
-import { Pagination } from '@qiwi/pijma-desktop'
 import React, { Component } from 'react'
+
+import { Pagination } from '@qiwi/pijma-desktop'
 
 import PaginatorProps from './PaginatorProps'
 

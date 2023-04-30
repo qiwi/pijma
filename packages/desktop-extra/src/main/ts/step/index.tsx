@@ -1,6 +1,7 @@
+import React, { FC } from 'react'
+
 import { ButtonControl, Typo } from '@qiwi/pijma-core'
 import { Text } from '@qiwi/pijma-desktop'
-import React, { FC } from 'react'
 
 import StepProps from './StepProps'
 import StepButton from './StepStyle'

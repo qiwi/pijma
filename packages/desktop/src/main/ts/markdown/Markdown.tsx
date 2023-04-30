@@ -1,5 +1,6 @@
-import { Box, Image, MarkdownToJSX, styled } from '@qiwi/pijma-core'
 import React, { Children, FC, Fragment, ReactNode } from 'react'
+
+import { Box, Image, MarkdownToJSX, styled } from '@qiwi/pijma-core'
 
 import { Link } from '../link'
 import { List } from '../list'
@@ -171,19 +172,16 @@ export const Markdown: FC<MarkdownProps> = ({ size = 'm', children }) => (
   <MarkdownToJSX
     children={children}
     options={{
-      overrides: Object.keys(overrides).reduce(
-        (prev, tag) => ({
-          ...prev,
-          ...{
-            [tag]: {
-              component: overrides[tag],
-              props: {
-                size,
-              },
+      overrides: Object.fromEntries(
+        Object.keys(overrides).map((tag) => [
+          tag,
+          {
+            component: overrides[tag],
+            props: {
+              size,
             },
           },
-        }),
-        {},
+        ]),
       ),
     }}
   />

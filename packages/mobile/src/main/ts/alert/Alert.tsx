@@ -1,3 +1,5 @@
+import React, { FC } from 'react'
+
 import {
   AlertControl,
   Box,
@@ -6,7 +8,6 @@ import {
   Icon,
   IconProps,
 } from '@qiwi/pijma-core'
-import React, { FC } from 'react'
 
 import { Link } from '../link'
 import { Paragraph } from '../typography'

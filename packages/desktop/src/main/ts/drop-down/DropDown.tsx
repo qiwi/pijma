@@ -1,3 +1,5 @@
+import React, { FC, ReactElement } from 'react'
+
 import {
   Box,
   css,
@@ -8,7 +10,6 @@ import {
   SimpleTransition,
   Value,
 } from '@qiwi/pijma-core'
-import React, { FC, ReactElement } from 'react'
 
 export interface DropDownProps {
   show: boolean

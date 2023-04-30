@@ -1,5 +1,6 @@
-import { Caption, Flex, FlexItem, Link } from '@qiwi/pijma-mobile'
 import React, { FC, Fragment, ReactNode } from 'react'
+
+import { Caption, Flex, FlexItem, Link } from '../../ts'
 
 interface ComponentsListRendererProps {
   items: Array<{
@@ -13,7 +14,7 @@ interface ComponentsListRendererProps {
 
 const ComponentsListRenderer: FC<ComponentsListRendererProps> = (props) => {
   const items = props.items.filter((item) => item.visibleName)
-  if (!items.length) {
+  if (items.length === 0) {
     return null
   }
   return (

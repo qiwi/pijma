@@ -1,3 +1,5 @@
+import React, { FC } from 'react'
+
 import {
   BoxLnk,
   Card,
@@ -6,7 +8,6 @@ import {
   LinkControl,
   LinkControlProps,
 } from '@qiwi/pijma-core'
-import React, { FC } from 'react'
 
 import { Text } from '../typography'
 

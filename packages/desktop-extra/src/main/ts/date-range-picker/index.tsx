@@ -1,11 +1,12 @@
+import React, { Component } from 'react'
+import { addToRange, DayPicker } from 'react-day-picker'
 import 'react-day-picker/dist/style.css'
+import { WithTranslation, withTranslation } from 'react-i18next'
 
 import { Icon, Overlay, styled } from '@qiwi/pijma-core'
 import { TextField } from '@qiwi/pijma-desktop'
+
 import { format } from 'date-fns'
-import React, { Component } from 'react'
-import { addToRange, DayPicker } from 'react-day-picker'
-import { WithTranslation, withTranslation } from 'react-i18next'
 
 import { locales, TLanguage } from '../date-picker/locale'
 import Wrap from '../date-picker/wrap'

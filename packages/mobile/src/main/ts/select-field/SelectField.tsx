@@ -1,3 +1,5 @@
+import React, { FC, ReactNode } from 'react'
+
 import {
   Card,
   CardPos,
@@ -10,7 +12,6 @@ import {
   SelectInput,
   styled,
 } from '@qiwi/pijma-core'
-import React, { FC, ReactNode } from 'react'
 
 import { DropUp } from '../drop-up'
 import { MenuItem } from '../menu'

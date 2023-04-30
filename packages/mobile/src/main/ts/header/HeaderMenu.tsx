@@ -1,3 +1,5 @@
+import React, { FC, ReactNode } from 'react'
+
 import {
   Box,
   Card,
@@ -10,7 +12,6 @@ import {
   Pos,
   SimpleTransition,
 } from '@qiwi/pijma-core'
-import React, { FC, ReactNode } from 'react'
 
 interface HeaderMenuProps {
   show: boolean

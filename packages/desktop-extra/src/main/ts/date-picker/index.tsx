@@ -1,11 +1,12 @@
+import React, { Component } from 'react'
+import { DayPicker } from 'react-day-picker'
 import 'react-day-picker/dist/style.css'
+import { WithTranslation, withTranslation } from 'react-i18next'
 
 import { Icon, Overlay, styled } from '@qiwi/pijma-core'
 import { MaskTextField } from '@qiwi/pijma-desktop'
+
 import { format } from 'date-fns'
-import React, { Component } from 'react'
-import { DayPicker } from 'react-day-picker'
-import { WithTranslation, withTranslation } from 'react-i18next'
 
 import { COLOR } from '../theme'
 import DatePickerProps from './DatePickerProps'
@@ -146,13 +147,13 @@ class _DatePicker extends Component<
   }
 
   render() {
-    const { t, i18n } = this.props
+    const { t, i18n, title } = this.props
 
     return (
       <Wrap onFocus={this.onFocus.bind(this)} onBlur={this.onBlur.bind(this)}>
         <MaskTextField
           type="text"
-          title={this.props.title || t('datePicker:date')}
+          title={title || t('datePicker:date')}
           hint={<Icon name="calendar" />}
           onChange={this.onChange.bind(this)}
           value={this.state.value}

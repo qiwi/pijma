@@ -1,3 +1,5 @@
+import React, { FC, ReactNode } from 'react'
+
 import {
   Box,
   Flex,
@@ -7,7 +9,6 @@ import {
   LinkControlProps,
   Spacer,
 } from '@qiwi/pijma-core'
-import React, { FC, ReactNode } from 'react'
 
 import { SectionLink } from '../link'
 import { Paragraph } from '../typography'

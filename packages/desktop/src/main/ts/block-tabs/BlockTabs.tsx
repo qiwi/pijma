@@ -1,3 +1,5 @@
+import React, { FC, ReactNode } from 'react'
+
 import {
   Card,
   Flex,
@@ -11,7 +13,6 @@ import {
   TabsControl,
   Value,
 } from '@qiwi/pijma-core'
-import React, { FC, ReactNode } from 'react'
 
 import { Paragraph } from '../typography'
 

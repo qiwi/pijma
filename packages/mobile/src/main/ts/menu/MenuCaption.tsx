@@ -1,5 +1,6 @@
-import { Box } from '@qiwi/pijma-core'
 import React, { FC } from 'react'
+
+import { Box } from '@qiwi/pijma-core'
 
 import { Caption } from '../typography'
 

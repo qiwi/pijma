@@ -1,3 +1,5 @@
+import React, { FC } from 'react'
+
 import {
   Box,
   Check,
@@ -6,7 +8,6 @@ import {
   OptionFieldItem,
   SwitchControl,
 } from '@qiwi/pijma-core'
-import React, { FC } from 'react'
 
 import { CheckboxProps } from './CheckboxProps'
 

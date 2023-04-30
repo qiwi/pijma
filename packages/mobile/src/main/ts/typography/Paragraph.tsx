@@ -1,5 +1,6 @@
-import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
 import React, { FC, Fragment, ReactNode } from 'react'
+
+import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
 
 export interface ParagraphProps {
   size?: 's' | 'm' | 'l'

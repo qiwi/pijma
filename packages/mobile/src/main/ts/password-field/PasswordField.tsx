@@ -1,3 +1,5 @@
+import React, { FC } from 'react'
+
 import {
   BasicInput,
   Box,
@@ -5,7 +7,6 @@ import {
   InputField,
   PasswordFieldControl,
 } from '@qiwi/pijma-core'
-import React, { FC } from 'react'
 
 import { PasswordFieldProps } from './PasswordFieldProps'
 

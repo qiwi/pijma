@@ -1,39 +1,41 @@
 {
+  "moduleNameMapper": {
+    "\\.css$": "identity-obj-proxy",
+    "@qiwi/pijma-core": "<rootDir>/../core/src/main/ts",
+    "@qiwi/pijma-desktop": "<rootDir>/../desktop/src/main/ts"
+  },
+  "injectGlobals": false,
   "testEnvironment": "jsdom",
-  "collectCoverage": true,
-  "coverageDirectory": "target/coverage",
-  "coveragePathIgnorePatterns": [
-    "<rootDir>/src/main/ts/interface.ts"
-  ],
-  "collectCoverageFrom": [
-    "<rootDir>/src/main/ts/**/*.ts",
-    "<rootDir>/src/main/ts/**/*.tsx"
-  ],
   "testMatch": [
-    "<rootDir>/src/test/ts/**/*.ts",
-    "<rootDir>/src/test/ts/**/*.tsx"
+    "<rootDir>/src/test/[jt]s/**/*.(spec|test).[jt]s?(x)"
   ],
   "testPathIgnorePatterns": [
-    "/node_modules/",
-    "<rootDir>/src/test/ts/stub"
+    "__mocks__",
+    "__snapshots__"
   ],
-  "moduleFileExtensions": [
-    "ts",
-    "tsx",
-    "js",
-    "jsx",
-    "json",
-    "node"
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "<rootDir>/src/main/[jt]s/**/*.[jt]s?(x)"
   ],
-  "moduleNameMapper": {
-    "@qiwi/pijma-core": "<rootDir>/../../packages/core/src/main/ts",
-    "@qiwi/pijma-desktop": "<rootDir>/../../packages/desktop/src/main/ts",
-    "\\.css$": "<rootDir>/src/test/ts/__mocks__/style.js"
-  },
-  "transformIgnorePatterns": [
-    "node_modules/(?!(lodash-es|@qiwi/common-formatters|@qiwi/pijma-core|@qiwi/pijma-media|@qiwi/pijma-desktop)/)"
+  "coverageDirectory": "<rootDir>/target/coverage",
+  "coveragePathIgnorePatterns": [
+    "<rootDir>/node_modules",
+    "<rootDir>/target"
   ],
+  "snapshotResolver": "@packasso/jest-snapshot-resolver",
   "transform": {
-    "^.+\\.(t|j)sx?$": ["@swc/jest"]
-  }
+    "^.+\\.[jt]sx?$": [
+      "@swc/jest",
+      {
+        "jsc": {
+          "transform": {
+            "react": {
+              "runtime": "automatic"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "displayName": "@qiwi/pijma-desktop-extra"
 }

@@ -1,3 +1,5 @@
+import React, { FC, ReactNode } from 'react'
+
 import {
   applyDefaultClickHandler,
   cache,
@@ -12,8 +14,7 @@ import {
   reset,
   ThemeProvider,
   themes,
-} from '@qiwi/pijma-mobile'
-import React, { FC, ReactNode } from 'react'
+} from '../../ts'
 
 applyDefaultClickHandler()
 

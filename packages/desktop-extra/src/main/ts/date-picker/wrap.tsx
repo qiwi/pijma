@@ -180,18 +180,24 @@ export default styled('div')`
     color: #dce0e0;
   }
 
-  .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(
+      .DayPicker-Day--outside
+    ) {
     position: relative;
     color: #f0f8ff;
     background-color: ${(props: any) => props.theme.color.brand};
   }
 
-  .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+  .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(
+      .DayPicker-Day--outside
+    ):hover {
     background-color: ${(props: any) => props.theme.color.brand};
   }
 
   .DayPicker:not(.DayPicker--interactionDisabled)
-    .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+    .DayPicker-Day:not(.DayPicker-Day--disabled):not(
+      .DayPicker-Day--selected
+    ):not(.DayPicker-Day--outside):hover {
     background-color: #f0f8ff;
   }
 

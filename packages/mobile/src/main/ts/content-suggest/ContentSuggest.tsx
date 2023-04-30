@@ -1,3 +1,5 @@
+import React, { Fragment } from 'react'
+
 import {
   Box,
   Card,
@@ -10,7 +12,6 @@ import {
   styled,
   SuggestControl,
 } from '@qiwi/pijma-core'
-import React, { Fragment } from 'react'
 
 import { InputModal } from '../input-modal'
 import { Link } from '../link'

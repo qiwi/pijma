@@ -55,7 +55,7 @@ export class CheckboxControl<O extends OptionModel<V>, V> extends Component<
 
   private onKeyDown: KeyboardEventHandler = (event) => {
     switch (event.key) {
-      case 'ArrowDown':
+      case 'ArrowDown': {
         event.preventDefault()
         event.stopPropagation()
         let next = this.state.focused === -1 ? 0 : this.state.focused
@@ -70,7 +70,8 @@ export class CheckboxControl<O extends OptionModel<V>, V> extends Component<
           focused: next,
         })
         break
-      case 'ArrowUp':
+      }
+      case 'ArrowUp': {
         event.preventDefault()
         event.stopPropagation()
         let prev =
@@ -89,6 +90,7 @@ export class CheckboxControl<O extends OptionModel<V>, V> extends Component<
           focused: prev,
         })
         break
+      }
       case 'Enter':
       case ' ':
         event.preventDefault()

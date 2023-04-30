@@ -1,5 +1,6 @@
-import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
+
+import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
 
 export interface CaptionProps {
   color?: 'default' | 'support' | 'inverse'

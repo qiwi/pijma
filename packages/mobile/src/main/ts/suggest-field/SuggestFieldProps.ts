@@ -1,5 +1,6 @@
-import { SuggestControlProps } from '@qiwi/pijma-core'
 import { ReactElement, ReactNode } from 'react'
+
+import { SuggestControlProps } from '@qiwi/pijma-core'
 
 import { SuggestFieldOptionModel } from './SuggestFieldOptionModel'
 

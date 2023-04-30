@@ -1,5 +1,6 @@
-import { Box, Icon, styled, Typo } from '@qiwi/pijma-core'
 import React, { FC } from 'react'
+
+import { Box, Icon, styled, Typo } from '@qiwi/pijma-core'
 
 import ChipProps from './ChipProps'
 

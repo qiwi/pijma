@@ -1,3 +1,5 @@
+import React, { FC, ReactNode } from 'react'
+
 import {
   Box,
   Card,
@@ -9,7 +11,6 @@ import {
   Pos,
   SimpleTransition,
 } from '@qiwi/pijma-core'
-import React, { FC, ReactNode } from 'react'
 
 const ContentTransition: ModalProps['transition'] = (props) => (
   <SimpleTransition

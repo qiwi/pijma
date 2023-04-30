@@ -1,5 +1,6 @@
-import { FlexItem, FlexLnk, Icon, LinkControl } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
+
+import { FlexItem, FlexLnk, Icon, LinkControl } from '@qiwi/pijma-core'
 
 import { Text } from '../typography'
 

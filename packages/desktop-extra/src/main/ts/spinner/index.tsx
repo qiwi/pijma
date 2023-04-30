@@ -1,5 +1,6 @@
-import { Spinner } from '@qiwi/pijma-core'
 import React from 'react'
+
+import { Spinner } from '@qiwi/pijma-core'
 
 import { COLOR, DIMEN } from '../theme'
 

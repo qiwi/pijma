@@ -1,5 +1,6 @@
-import { Flex, FlexItem } from '@qiwi/pijma-core'
 import React, { FC, Fragment } from 'react'
+
+import { Flex, FlexItem } from '@qiwi/pijma-core'
 
 import { Divider } from '../divider'
 import { Step } from '../step'

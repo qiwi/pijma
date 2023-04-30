@@ -1,35 +1,14 @@
 {
   "name": "@qiwi/pijma-desktop-extra",
   "version": "0.0.0",
-  "type": "module",
-  "main": "./target/es5/index.js",
-  "module": "./target/es6/index.js",
-  "types": "./target/dts/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./target/dts/index.d.ts",
-      "import": "./target/es6/index.js",
-      "require": "./target/es5/index.js"
-    }
-  },
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "clean": "rimraf target node_modules",
-    "build": "concurrently 'npm:build:*'",
-    "build:es5": "cd src/main && swc ts -d ../../target/es5 --config-file ../../swc.es5.json && cd ../.. && tsc-esm-fix --target=target/es5 --fillBlank",
-    "build:es6": "cd src/main && swc ts -d ../../target/es6 --config-file ../../swc.es6.json && cd ../.. && tsc-esm-fix --target=target/es6 --fillBlank",
-    "build:dts": "tsc --project tsconfig.dts.json",
-    "test": "jest",
-    "format": "eslint --fix src && prettier --loglevel silent --write src",
-    "lint": "eslint src"
-  },
-  "files": [
-    "target/dts/**/*",
-    "target/es5/**/*",
-    "target/es6/**/*"
+  "packasso": [
+    "@packasso/dev-ts",
+    "@packasso/dev-license",
+    "@packasso/build-ts-swc",
+    "@packasso/style-eslint",
+    "@packasso/style-prettier",
+    "@packasso/release-zx-semrel",
+    "@packasso/test-jest"
   ],
   "dependencies": {
     "@qiwi/common-formatters": "^1.2.1",
@@ -43,27 +22,40 @@
     "react-table": "^7.8.0"
   },
   "devDependencies": {
-    "@qiwi/pijma-infra": "workspace:*",
-    "@types/jest": "^29.0.0",
+    "@packasso/build-ts-swc": "0.17.2",
+    "@packasso/cli": "0.16.1",
+    "@packasso/dev-license": "0.10.1",
+    "@packasso/dev-ts": "0.17.1",
+    "@packasso/release-zx-semrel": "0.16.1",
+    "@packasso/style-eslint": "0.1.1",
+    "@packasso/style-prettier": "0.1.1",
+    "@packasso/test-jest": "0.18.1",
+    "@swc/cli": "0.1.62",
+    "@swc/core": "1.3.37",
+    "@swc/helpers": "0.4.14",
+    "@swc/jest": "0.2.24",
+    "@types/jest": "29.4.0",
     "@types/react-test-renderer": "^18.0.0",
-    "concurrently": "7.4.0",
+    "concurrently": "7.6.0",
     "css-loader": "6.7.1",
-    "eslint": "8.23.0",
-    "eslint-config-qiwi": "1.17.6",
-    "fast-glob": "3.2.11",
+    "eslint": "8.35.0",
+    "eslint-config-qiwi": "2.0.9",
     "file-loader": "6.2.0",
-    "jest": "^29.0.2",
-    "jest-environment-jsdom": "^29.0.2",
-    "prettier": "2.7.1",
-    "prettier-config-qiwi": "1.7.2",
+    "globby-cp": "1.1.3",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "29.4.3",
+    "jest-environment-jsdom": "29.4.3",
+    "prettier": "2.8.4",
+    "prettier-config-qiwi": "2.0.1",
     "react-i18next": "^11.18.5",
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
     "react-test-renderer": "^18.2.0",
+    "rimraf": "4.2.0",
     "style-loader": "3.3.1",
-    "tsc-esm-fix": "2.20.4",
-    "typescript": "4.8.2",
-    "webpack": "5.74.0"
+    "tsc-esm-fix": "2.20.12",
+    "typescript": "4.9.5",
+    "webpack": "5.75.0"
   },
   "peerDependencies": {
     "react-i18next": "^11.18.5"
@@ -75,5 +67,32 @@
   "bugs": {
     "url": "https://github.com/qiwi/pijma/issues"
   },
-  "homepage": "https://github.com/qiwi/pijma/#readme"
+  "homepage": "https://github.com/qiwi/pijma/#readme",
+  "scripts": {
+    "build": "packasso build",
+    "lint": "packasso lint",
+    "format": "packasso format",
+    "test": "packasso test"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "./target/cjs/index.cjs",
+  "module": "./target/esm/index.mjs",
+  "types": "./target/dts/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./target/cjs/index.cjs",
+      "import": "./target/esm/index.mjs",
+      "types": "./target/dts/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "target/cjs/**/*",
+    "target/esm/**/*",
+    "target/dts/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }

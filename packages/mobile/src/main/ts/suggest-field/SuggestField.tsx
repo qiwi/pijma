@@ -1,3 +1,5 @@
+import React, { Fragment, isValidElement } from 'react'
+
 import {
   BasicInput,
   Box,
@@ -10,7 +12,6 @@ import {
   styled,
   SuggestControl,
 } from '@qiwi/pijma-core'
-import React, { Fragment, isValidElement } from 'react'
 
 import { InputModal } from '../input-modal'
 import { Link } from '../link'

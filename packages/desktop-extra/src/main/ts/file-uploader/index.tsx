@@ -1,7 +1,8 @@
-import { Box, Icon } from '@qiwi/pijma-core'
-import { Text } from '@qiwi/pijma-desktop'
 import React, { FC } from 'react'
 import DropZone from 'react-dropzone'
+
+import { Box, Icon } from '@qiwi/pijma-core'
+import { Text } from '@qiwi/pijma-desktop'
 
 import { Chip } from '../chip'
 import FileUploaderControl from './FileUploaderControl'

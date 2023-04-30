@@ -1,64 +1,61 @@
 {
   "name": "@qiwi/pijma-desktop",
   "version": "0.0.0",
-  "type": "module",
-  "main": "./target/es5/index.js",
-  "module": "./target/es6/index.js",
-  "types": "./target/dts/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./target/dts/index.d.ts",
-      "import": "./target/es6/index.js",
-      "require": "./target/es5/index.js"
-    }
-  },
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "clean": "rimraf target node_modules",
-    "build": "concurrently 'npm:build:*' 'npm:guide:build'",
-    "start": "concurrently  --kill-others --kill-others-on-fail 'npm:guide:start' 'npm:chrome:start'",
-    "test": "concurrently --kill-others --kill-others-on-fail --success first 'npm:test:start' 'npm:static:start' 'npm:chrome:start'",
-    "build:es5": "cd src/main && swc ts -d ../../target/es5 --config-file ../../swc.es5.json && cd ../.. && tsc-esm-fix --target=target/es5 --fillBlank",
-    "build:es6": "cd src/main && swc ts -d ../../target/es6 --config-file ../../swc.es6.json && cd ../.. && tsc-esm-fix --target=target/es6 --fillBlank",
-    "build:dts": "tsc --project tsconfig.dts.json",
-    "guide:build": "styleguidist --config styleguide.config.cjs build",
-    "guide:start": "styleguidist --config styleguide.config.cjs server",
-    "static:start": "docker run --rm -p 6060:80 -v $(pwd)/target/webapp:/usr/share/nginx/html nginx",
-    "chrome:start": "docker run --rm -p 6161:3000 --add-host=host.docker.internal:host-gateway browserless/chrome",
-    "test:start": "wait-on http-get://localhost:6060/ http-get://localhost:6161/ && styleguidist-visual test --config styleguide.visual.config.cjs",
-    "test:approve": "styleguidist-visual approve --config styleguide.visual.config.cjs",
-    "format": "eslint --fix src && prettier --loglevel silent --write src",
-    "lint": "eslint src"
-  },
-  "files": [
-    "target/dts/**/*",
-    "target/es5/**/*",
-    "target/es6/**/*"
+  "packasso": [
+    "@packasso/dev-ts",
+    "@packasso/dev-license",
+    "@packasso/build-ts-swc",
+    "@packasso/style-eslint",
+    "@packasso/style-prettier",
+    "@packasso/release-zx-semrel"
   ],
+  "scripts": {
+    "start:rsg": "styleguidist --config styleguide.config.cjs server",
+    "build:rsg": "yarn styleguidist --config styleguide.config.cjs build",
+    "test:rsg": "concurrently --kill-others --kill-others-on-fail --success first 'npm:test:rsg:main' 'npm:test:rsg:nginx' 'npm:test:rsg:chrome'",
+    "test:rsg:main": "wait-on http-get://localhost:6060/ http-get://localhost:6161/ && styleguidist-visual test --config styleguide.visual.config.cjs",
+    "test:rsg:nginx": "docker run --rm -p 6060:80 -v $(pwd)/target/webapp:/usr/share/nginx/html nginx",
+    "test:rsg:chrome": "docker run --rm -p 6161:3000 --add-host=host.docker.internal:host-gateway browserless/chrome",
+    "test:rsg:approve": "styleguidist-visual approve --config styleguide.visual.config.cjs",
+    "build": "packasso build",
+    "lint": "packasso lint",
+    "format": "packasso format"
+  },
   "dependencies": {
     "@qiwi/pijma-core": "workspace:*"
   },
   "devDependencies": {
-    "@qiwi/pijma-infra": "workspace:*",
-    "concurrently": "7.4.0",
+    "@packasso/build-ts-swc": "0.17.2",
+    "@packasso/cli": "0.16.1",
+    "@packasso/dev-license": "0.10.1",
+    "@packasso/dev-ts": "0.17.1",
+    "@packasso/release-zx-semrel": "0.16.1",
+    "@packasso/style-eslint": "0.1.1",
+    "@packasso/style-prettier": "0.1.1",
+    "@packasso/test-jest": "0.18.1",
+    "@swc/cli": "0.1.62",
+    "@swc/core": "1.3.37",
+    "@swc/helpers": "0.4.14",
+    "concurrently": "7.6.0",
     "css-loader": "6.7.1",
-    "eslint": "8.23.0",
-    "eslint-config-qiwi": "1.17.6",
-    "fast-glob": "3.2.11",
+    "eslint": "8.35.0",
+    "eslint-config-qiwi": "2.0.9",
+    "fast-glob": "3.2.12",
     "file-loader": "6.2.0",
-    "prettier": "2.7.1",
-    "prettier-config-qiwi": "1.7.2",
+    "globby-cp": "1.1.3",
+    "prettier": "2.8.4",
+    "prettier-config-qiwi": "2.0.1",
     "react-docgen-typescript": "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch",
     "react-styleguidist": "12.0.0",
     "react-styleguidist-visual": "patch:react-styleguidist-visual@npm%3A0.9.0#~/.yarn/patches/react-styleguidist-visual-npm-0.9.0-c05bb39789.patch",
+    "rimraf": "4.2.0",
     "style-loader": "3.3.1",
-    "tsc-esm-fix": "2.20.4",
-    "typescript": "4.8.2",
+    "swc-loader": "0.2.3",
+    "tsc-esm-fix": "2.20.12",
+    "tsconfig-paths-webpack-plugin": "4.0.0",
+    "typescript": "4.9.5",
     "wait-on": "6.0.1",
-    "webpack": "5.74.0"
+    "webpack": "5.75.0"
   },
   "repository": {
     "type": "git",
@@ -67,5 +64,26 @@
   "bugs": {
     "url": "https://github.com/qiwi/pijma/issues"
   },
-  "homepage": "https://github.com/qiwi/pijma/#readme"
+  "homepage": "https://github.com/qiwi/pijma/#readme",
+  "license": "MIT",
+  "type": "module",
+  "main": "./target/cjs/index.cjs",
+  "module": "./target/esm/index.mjs",
+  "types": "./target/dts/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./target/cjs/index.cjs",
+      "import": "./target/esm/index.mjs",
+      "types": "./target/dts/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "target/cjs/**/*",
+    "target/esm/**/*",
+    "target/dts/**/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
