@@ -17,6 +17,7 @@ export interface InputProps extends BoxProps, CardProps {
   valueColor?: string
   valueTransform?: 'lowercase' | 'uppercase' | 'capitalize' | 'none'
   valueSpacing?: number
+  valueTextOverflow?: string
   placeholderSize?: number
   placeholderWeight?: number
   placeholderColor?: string
@@ -30,6 +31,7 @@ export const InputNonProps: PropertyKey[] = [
   'valueColor',
   'valueTransform',
   'valueSpacing',
+  'valueTextOverflow',
   'placeholderSize',
   'placeholderWeight',
   'placeholderColor',
@@ -53,6 +55,7 @@ export const Input = styled('input', InputOptions)<InputProps>(
     lineHeight: pxValue(props.valueSize, theme.scale),
     color: props.valueColor,
     textTransform: props.valueTransform,
+    textOverflow: props.valueTextOverflow,
     textIndent: 0,
     letterSpacing: pxValue(props.valueSpacing),
     outline: 'none',
