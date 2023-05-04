@@ -1128,7 +1128,7 @@ __metadata:
     text-mask-core: "npm:^5.1.2"
     tsc-esm-fix: "npm:2.20.4"
     typescript: "npm:4.8.2"
-    webpack: "npm:5.74.0"
+    webpack: "npm:5.76.0"
   peerDependencies:
     "@types/react": ">=16.14.0"
     "@types/react-dom": ">=16.9.0"
@@ -1170,7 +1170,7 @@ __metadata:
     style-loader: "npm:3.3.1"
     tsc-esm-fix: "npm:2.20.4"
     typescript: "npm:4.8.2"
-    webpack: "npm:5.74.0"
+    webpack: "npm:5.76.0"
   peerDependencies:
     react-i18next: ^11.18.5
   languageName: unknown
@@ -1197,7 +1197,7 @@ __metadata:
     tsc-esm-fix: "npm:2.20.4"
     typescript: "npm:4.8.2"
     wait-on: "npm:6.0.1"
-    webpack: "npm:5.74.0"
+    webpack: "npm:5.76.0"
   languageName: unknown
   linkType: soft
 
@@ -1229,7 +1229,7 @@ __metadata:
     swc-loader: "npm:0.2.3"
     tsc-esm-fix: "npm:2.20.4"
     typescript: "npm:4.8.2"
-    webpack: "npm:5.74.0"
+    webpack: "npm:5.76.0"
   languageName: unknown
   linkType: soft
 
@@ -1254,7 +1254,7 @@ __metadata:
     tsc-esm-fix: "npm:2.20.4"
     typescript: "npm:4.8.2"
     wait-on: "npm:6.0.1"
-    webpack: "npm:5.74.0"
+    webpack: "npm:5.76.0"
   languageName: unknown
   linkType: soft
 
@@ -1277,7 +1277,7 @@ __metadata:
     style-loader: "npm:3.3.1"
     tsc-esm-fix: "npm:2.20.4"
     typescript: "npm:4.8.2"
-    webpack: "npm:5.74.0"
+    webpack: "npm:5.76.0"
   languageName: unknown
   linkType: soft
 
@@ -11683,9 +11683,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:5.74.0":
-  version: 5.74.0
-  resolution: "webpack@npm:5.74.0"
+"webpack@npm:5.76.0":
+  version: 5.76.0
+  resolution: "webpack@npm:5.76.0"
   dependencies:
     "@types/eslint-scope": "npm:^3.7.3"
     "@types/estree": "npm:^0.0.51"
@@ -11716,7 +11716,7 @@ __metadata:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: d6416e650775ec1ac2087daa1f0db738a07bd709b1ab2784d902d4add2d75bdbfa1c6103ce1191ddc11aaa08ad99cc99c49bfcf885a4b89553286716c3c1a9b4
+  checksum: a1cc2608abf2fdad83ec8773155f9b19dc259a16bdca131fcdb28048a0366df476355eaf18761108fb21b43a6c6cb59bfd2add0b964d00602a911447dbd67e29
   languageName: node
   linkType: hard
 
