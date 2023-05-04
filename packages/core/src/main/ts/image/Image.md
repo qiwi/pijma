@@ -5,16 +5,19 @@
   <BlockContent>
     <Spacer size="xxl">
       <Image
+        data-testid="image"
         src="https://static.qiwi.com/img/pijma/cat_1.gif"
         width={75}
         height={52}
       />
       <Image
+        data-testid="image"
         src="https://static.qiwi.com/img/pijma/cat_2.gif"
         width={75}
         height={52}
       />
       <Image
+        data-testid="image"
         src="https://static.qiwi.com/img/pijma/cat_3.gif"
         width={75}
         height={52}
@@ -31,16 +34,19 @@
   <BlockContent>
     <Spacer size="xxl">
       <Image
+        data-testid="image"
         src="https://static.qiwi.com/img/pijma/cat_11.gif"
         width={75}
         height={75}
       />
       <Image
+        data-testid="image"
         src="https://static.qiwi.com/img/pijma/cat_12.gif"
         width={75}
         height={75}
       />
       <Image
+        data-testid="image"
         src="https://static.qiwi.com/img/pijma/cat_13.gif"
         width={75}
         height={75}
@@ -57,18 +63,21 @@
   <BlockContent>
     <Spacer size="xxl">
       <Image
+        data-testid="no"
         src="https://static.qiwi.com/img/pijma/cat_21.gif"
         width={75}
         height={75}
         stub={<Stub width={75} height={75} r={52} />}
       />
       <Image
+        data-testid="no"
         src="https://static.qiwi.com/img/pijma/cat_22.gif"
         width={75}
         height={75}
         stub={<Stub width={75} height={75} r={52} />}
       />
       <Image
+        data-testid="no"
         src="https://static.qiwi.com/img/pijma/cat_23.gif"
         width={75}
         height={75}
@@ -89,18 +98,21 @@ return (
     <BlockContent>
       <Spacer size="xxl">
         <Image
+          data-testid="no"
           src="https://static.qiwi.com/img/pijma/cat_31.gif"
           width={75}
           height={75}
           stub={dataImage}
         />
         <Image
+          data-testid="no"
           src="https://static.qiwi.com/img/pijma/cat_32.gif"
           width={75}
           height={75}
           stub={dataImage}
         />
         <Image
+          data-testid="no"
           src="https://static.qiwi.com/img/pijma/cat_33.gif"
           width={75}
           height={75}
@@ -122,6 +134,7 @@ return (
         <Flex>
           <FlexItem shrink={0} mr={5}>
             <Image
+              data-testid="image"
               src="https://static.qiwi.com/img/pijma/cat_41.gif"
               width={75}
               height={75}
@@ -129,6 +142,7 @@ return (
           </FlexItem>
           <FlexItem shrink={0} ml={5} mr={5}>
             <Image
+              data-testid="image"
               src="https://static.qiwi.com/img/pijma/cat_42.gif"
               width={75}
               height={75}
@@ -136,6 +150,7 @@ return (
           </FlexItem>
           <FlexItem shrink={0} ml={5} mr={5}>
             <Image
+              data-testid="image"
               src="https://static.qiwi.com/img/pijma/cat_43.gif"
               width={75}
               height={75}
@@ -143,6 +158,7 @@ return (
           </FlexItem>
           <FlexItem shrink={0} ml={5} mr={5}>
             <Image
+              data-testid="image"
               src="https://static.qiwi.com/img/pijma/cat_44.gif"
               width={75}
               height={75}
@@ -150,6 +166,7 @@ return (
           </FlexItem>
           <FlexItem shrink={0} ml={5} mr={5}>
             <Image
+              data-testid="image"
               src="https://static.qiwi.com/img/pijma/cat_45.gif"
               width={75}
               height={75}
@@ -157,6 +174,7 @@ return (
           </FlexItem>
           <FlexItem shrink={0} ml={5} mr={5}>
             <Image
+              data-testid="image"
               src="https://static.qiwi.com/img/pijma/cat_46.gif"
               width={75}
               height={75}
@@ -164,6 +182,7 @@ return (
           </FlexItem>
           <FlexItem shrink={0} ml={5}>
             <Image
+              data-testid="image"
               src="https://static.qiwi.com/img/pijma/cat_47.gif"
               width={75}
               height={75}
@@ -183,18 +202,21 @@ return (
   <BlockContent>
     <Spacer size="xxl">
       <Image
+        data-testid="image"
         src="https://static.qiwi.com/img/pijma/cat_51.gif"
         width={75}
         height={75}
         stub={false}
       />
       <Image
+        data-testid="image"
         src="https://static.qiwi.com/img/pijma/cat_52.gif"
         width={75}
         height={75}
         stub={false}
       />
       <Image
+        data-testid="image"
         src="https://static.qiwi.com/img/pijma/cat_53.gif"
         width={75}
         height={75}

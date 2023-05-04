@@ -1,4 +1,11 @@
-import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
+import {
+  Box,
+  Breaker,
+  getDataProps,
+  Stub,
+  Typo,
+  TypoProps,
+} from '@qiwi/pijma-core'
 import React, { FC, Fragment, ReactNode } from 'react'
 
 export interface HeadingProps {
@@ -83,6 +90,7 @@ export const Heading: FC<HeadingProps> = ({
   stub,
   clamp,
   children,
+  ...rest
 }) =>
   stub ? (
     <Fragment>
@@ -109,6 +117,7 @@ export const Heading: FC<HeadingProps> = ({
     </Fragment>
   ) : (
     <Typo
+      {...getDataProps(rest)}
       as={tag || HeadingTag[size]}
       display="block"
       size={HeadingSize[size]}

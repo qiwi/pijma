@@ -6,7 +6,7 @@ padding: 44px 68px 48px;
 
 ```jsx
 <Block>
-  <BlockContent indent="l">
+  <BlockContent data-testid="block-content" indent="l">
     <Spacer size="m">
       <Paragraph size="m">
         Самым нашумевшим стало заявление о возможном обнаружении первого
@@ -31,7 +31,7 @@ padding: 44px 44px 48px;
 
 ```jsx
 <Block>
-  <BlockContent indent="m">
+  <BlockContent data-testid="block-content" indent="m">
     <Spacer size="m">
       <Paragraph size="m">
         Самым нашумевшим стало заявление о возможном обнаружении первого
@@ -56,7 +56,7 @@ padding: 32px;
 
 ```jsx
 <Block>
-  <BlockContent indent="s">
+  <BlockContent data-testid="block-content" indent="s">
     <Spacer size="m">
       <Paragraph size="m">
         Самым нашумевшим стало заявление о возможном обнаружении первого

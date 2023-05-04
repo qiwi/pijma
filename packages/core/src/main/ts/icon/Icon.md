@@ -12,7 +12,7 @@
           mx={5}
         >
           <FlexItem mb={4} shrink={0}>
-            <Icon name={name} />
+            <Icon data-testid="icon" name={name} />
           </FlexItem>
           <FlexItem>
             <Paragraph size="s" align="center">
@@ -31,7 +31,7 @@
 ```jsx
 <Block>
   <BlockContent>
-    <Icon name="qiwi" />
+    <Icon data-testid="icon" name="qiwi" />
   </BlockContent>
 </Block>
 ```
@@ -47,7 +47,7 @@ return (
     <BlockContent>
       <Flex>
         <FlexItem width={6} height={6} mr={6} cursor="pointer">
-          <QuestionIcon />
+          <QuestionIcon data-testid="icon" />
         </FlexItem>
         <FlexItem
           width={6}
@@ -56,7 +56,7 @@ return (
           cursor="pointer"
           onClick={() => setFilterIconActive(!filterIconActive)}
         >
-          <FilterIcon active={filterIconActive} />
+          <FilterIcon data-testid="icon" active={filterIconActive} />
         </FlexItem>
         <FlexItem
           width={6}
@@ -73,7 +73,7 @@ return (
           cursor="pointer"
           onClick={() => setFeedIconActive(!feedIconActive)}
         >
-          <FeedIcon active={feedIconActive} />
+          <FeedIcon data-testid="icon" active={feedIconActive} />
         </FlexItem>
       </Flex>
     </BlockContent>
@@ -88,24 +88,24 @@ return (
   <BlockContent>
     <Flex>
       <FlexItem width={12} height={6} mr={6}>
-        <PaymentSystemIcon name="mastercard" />
+        <PaymentSystemIcon data-testid="icon" name="mastercard" />
       </FlexItem>
       <FlexItem width={12} height={6} mr={6}>
-        <PaymentSystemIcon name="mir" />
+        <PaymentSystemIcon data-testid="icon" name="mir" />
       </FlexItem>
       <FlexItem width={12} height={6}>
-        <PaymentSystemIcon name="visa" />
+        <PaymentSystemIcon data-testid="icon" name="visa" />
       </FlexItem>
     </Flex>
     <Flex mt={6}>
       <FlexItem width={12} height={6} mr={6}>
-        <PaymentSystemIcon name="mastercard" gray />
+        <PaymentSystemIcon data-testid="icon" name="mastercard" gray />
       </FlexItem>
       <FlexItem width={12} height={6} mr={6}>
-        <PaymentSystemIcon name="mir" gray />
+        <PaymentSystemIcon data-testid="icon" name="mir" gray />
       </FlexItem>
       <FlexItem width={12} height={6}>
-        <PaymentSystemIcon name="visa" gray />
+        <PaymentSystemIcon data-testid="icon" name="visa" gray />
       </FlexItem>
     </Flex>
   </BlockContent>
@@ -119,53 +119,61 @@ return (
   <BlockContent>
     <Flex>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="pci-dss" />
+        <PaymentSecurityIcon data-testid="icon" name="pci-dss" />
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="mir-accept" />
+        <PaymentSecurityIcon data-testid="icon" name="mir-accept" />
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="visa-verified" />
+        <PaymentSecurityIcon data-testid="icon" name="visa-verified" />
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="mastercard-id-check" />
+        <PaymentSecurityIcon data-testid="icon" name="mastercard-id-check" />
       </FlexItem>
       <FlexItem width={16} height={6}>
-        <PaymentSecurityIcon name="apple-pay" />
+        <PaymentSecurityIcon data-testid="icon" name="apple-pay" />
       </FlexItem>
     </Flex>
     <Flex mt={6}>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="pci-dss" gray />
+        <PaymentSecurityIcon data-testid="icon" name="pci-dss" gray />
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="mir-accept" gray />
+        <PaymentSecurityIcon data-testid="icon" name="mir-accept" gray />
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="visa-verified" gray />
+        <PaymentSecurityIcon data-testid="icon" name="visa-verified" gray />
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="mastercard-id-check" gray />
+        <PaymentSecurityIcon
+          data-testid="icon"
+          name="mastercard-id-check"
+          gray
+        />
       </FlexItem>
       <FlexItem width={16} height={6}>
-        <PaymentSecurityIcon name="apple-pay" gray />
+        <PaymentSecurityIcon data-testid="icon" name="apple-pay" gray />
       </FlexItem>
     </Flex>
     <Flex mt={6}>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="pci-dss" stub />
+        <PaymentSecurityIcon data-testid="icon" name="pci-dss" stub />
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="mir-accept" stub />
+        <PaymentSecurityIcon data-testid="icon" name="mir-accept" stub />
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="visa-verified" stub />
+        <PaymentSecurityIcon data-testid="icon" name="visa-verified" stub />
       </FlexItem>
       <FlexItem width={16} height={6} mr={2}>
-        <PaymentSecurityIcon name="mastercard-id-check" stub />
+        <PaymentSecurityIcon
+          data-testid="icon"
+          name="mastercard-id-check"
+          stub
+        />
       </FlexItem>
       <FlexItem width={16} height={6}>
-        <PaymentSecurityIcon name="apple-pay" stub />
+        <PaymentSecurityIcon data-testid="icon" name="apple-pay" stub />
       </FlexItem>
     </Flex>
   </BlockContent>
@@ -179,13 +187,13 @@ return (
   <BlockContent>
     <Flex>
       <FlexItem width={37} height={11} mr={6}>
-        <MobileAppIcon name="google" />
+        <MobileAppIcon data-testid="icon" name="google" />
       </FlexItem>
       <FlexItem width={37} height={11}>
-        <MobileAppIcon name="apple" />
+        <MobileAppIcon data-testid="icon" name="apple" />
       </FlexItem>
       <FlexItem width={37} height={11}>
-        <MobileAppIcon name="huawei" />
+        <MobileAppIcon data-testid="icon" name="huawei" />
       </FlexItem>
     </Flex>
   </BlockContent>

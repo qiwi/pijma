@@ -1,6 +1,7 @@
 import React, { createRef, PureComponent, RefObject } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 
+import { getDataProps } from '../dataProps'
 import { Card, Pos } from '../primitive'
 import { keyframes } from '../styled'
 
@@ -84,7 +85,7 @@ export class ReCaptcha extends PureComponent<ReCaptchaProps> {
 
   public render() {
     return (
-      <Pos type="relative" ref={this.wrapper}>
+      <Pos {...getDataProps(this.props)} type="relative" ref={this.wrapper}>
         <Pos
           type="absolute"
           top={0}

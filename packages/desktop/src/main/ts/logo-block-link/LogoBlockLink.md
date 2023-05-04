@@ -3,6 +3,7 @@
 ```jsx
 <Grid columns={5} layout={1}>
   <LogoBlockLink
+    data-testid="logo-block-link"
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
@@ -10,6 +11,7 @@
     icon={<Icon name="passport" size={1} />}
   />
   <LogoBlockLink
+    data-testid="logo-block-link"
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
@@ -17,6 +19,7 @@
     icon={<Icon name="passport" size={1} />}
   />
   <LogoBlockLink
+    data-testid="logo-block-link"
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
@@ -24,6 +27,7 @@
     icon={<Icon name="passport" size={1} />}
   />
   <LogoBlockLink
+    data-testid="logo-block-link"
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
@@ -31,6 +35,7 @@
     icon={<Icon name="passport" size={1} />}
   />
   <LogoBlockLink
+    data-testid="logo-block-link"
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
@@ -45,6 +50,7 @@
 ```jsx
 <Grid columns={4} layout={1}>
   <LogoBlockLink
+    data-testid="logo-block-link"
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
@@ -55,6 +61,7 @@
     ]}
   />
   <LogoBlockLink
+    data-testid="logo-block-link"
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
@@ -66,6 +73,7 @@
     ]}
   />
   <LogoBlockLink
+    data-testid="logo-block-link"
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
@@ -76,6 +84,7 @@
     ]}
   />
   <LogoBlockLink
+    data-testid="logo-block-link"
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
@@ -93,6 +102,7 @@
 ```jsx
 <Grid columns={4} layout={1}>
   <LogoBlockLink
+    data-testid="no"
     icon="required"
     title="required"
     href="required"
@@ -100,6 +110,7 @@
     stub
   />
   <LogoBlockLink
+    data-testid="no"
     icon="required"
     title="required"
     href="required"
@@ -107,6 +118,7 @@
     stub
   />
   <LogoBlockLink
+    data-testid="no"
     icon="required"
     title="required"
     href="required"
@@ -114,6 +126,7 @@
     stub
   />
   <LogoBlockLink
+    data-testid="no"
     icon="required"
     title="required"
     href="required"
@@ -128,6 +141,14 @@
 ```jsx
 <Grid columns={4} layout={[1]}>
   <LogoBlockLink
+    data-testid="logo-block-link"
+    href="//qiwi.com"
+    target="_blank"
+    title="Перейти на главную"
+    icon={<Icon name="passport" size={1} />}
+  />
+  <LogoBlockLink
+    data-testid="logo-block-link"
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
@@ -140,12 +161,7 @@
     icon={<Icon name="passport" size={1} />}
   />
   <LogoBlockLink
-    href="//qiwi.com"
-    target="_blank"
-    title="Перейти на главную"
-    icon={<Icon name="passport" size={1} />}
-  />
-  <LogoBlockLink
+    data-testid="logo-block-link"
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
@@ -159,6 +175,7 @@
 ```jsx
 <Grid columns={4} layout={[1]}>
   <LogoBlockLink
+    data-testid="logo-block-link"
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
@@ -168,6 +185,7 @@
     ]}
   />
   <LogoBlockLink
+    data-testid="logo-block-link"
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
@@ -178,6 +196,7 @@
     ]}
   />
   <LogoBlockLink
+    data-testid="logo-block-link"
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
@@ -187,6 +206,7 @@
     ]}
   />
   <LogoBlockLink
+    data-testid="logo-block-link"
     href="//qiwi.com"
     target="_blank"
     title="Перейти на главную"
@@ -202,11 +222,41 @@
 
 ```jsx
 <Grid columns={5} layout={1}>
-  <LogoBlockLink icon="required" title="required" href="required" stub />
-  <LogoBlockLink icon="required" title="required" href="required" stub />
-  <LogoBlockLink icon="required" title="required" href="required" stub />
-  <LogoBlockLink icon="required" title="required" href="required" stub />
-  <LogoBlockLink icon="required" title="required" href="required" stub />
+  <LogoBlockLink
+    data-testid="no"
+    icon="required"
+    title="required"
+    href="required"
+    stub
+  />
+  <LogoBlockLink
+    data-testid="no"
+    icon="required"
+    title="required"
+    href="required"
+    stub
+  />
+  <LogoBlockLink
+    data-testid="no"
+    icon="required"
+    title="required"
+    href="required"
+    stub
+  />
+  <LogoBlockLink
+    data-testid="no"
+    icon="required"
+    title="required"
+    href="required"
+    stub
+  />
+  <LogoBlockLink
+    data-testid="no"
+    icon="required"
+    title="required"
+    href="required"
+    stub
+  />
 </Grid>
 ```
 

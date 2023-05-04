@@ -1,4 +1,4 @@
-import { Box, Spacer } from '@qiwi/pijma-core'
+import { Box, getDataProps, Spacer } from '@qiwi/pijma-core'
 import React, { FC, ReactElement } from 'react'
 
 import { Text } from '../typography'
@@ -10,7 +10,7 @@ export interface GlossaryProps {
   stub?: boolean
 }
 
-export const Glossary: FC<GlossaryProps> = ({ children, stub }) =>
+export const Glossary: FC<GlossaryProps> = ({ children, stub, ...rest }) =>
   stub ? (
     <Box as="dl">
       {children.map((item, i) => (
@@ -39,7 +39,7 @@ export const Glossary: FC<GlossaryProps> = ({ children, stub }) =>
       ))}
     </Box>
   ) : (
-    <Box as="dl">
+    <Box {...getDataProps(rest)} as="dl">
       {children.map((item, i) => (
         <Box key={i} mt={i === 0 ? undefined : 5}>
           <Box as="dt">

@@ -12,15 +12,17 @@ letter-spacing: 1.5
     <Flex>
       <FlexItem>
         <Spacer size="m">
-          <Caption>Caption Gray</Caption>
-          <Caption color="default">Caption Black</Caption>
+          <Caption data-testid="caption">Caption Gray</Caption>
+          <Caption data-testid="caption" color="default">
+            Caption Black
+          </Caption>
         </Spacer>
       </FlexItem>
       <FlexItem>
         <Box ml={10}>
           <Spacer size="m">
-            <Caption stub />
-            <Caption stub />
+            <Caption data-testid="no" stub />
+            <Caption data-testid="no" stub />
           </Spacer>
         </Box>
       </FlexItem>
@@ -34,7 +36,7 @@ letter-spacing: 1.5
 ```jsx
 <Block>
   <BlockContent>
-    <Caption clamp={2}>
+    <Caption data-testid="caption" clamp={2}>
       В типографических элементах есть возможность задавать максимальное
       количество видимых строк через свойство clamp. Если текст выходит за
       заданные рамки, в конце текста будет добавлено многоточие

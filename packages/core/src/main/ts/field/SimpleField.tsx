@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from 'react'
 
+import { getDataProps } from '../dataProps'
 import { Box, Flex, FlexItem, Pos, Typo } from '../primitive'
 
 export interface SimpleFieldProps {
@@ -14,8 +15,9 @@ export const SimpleField: FC<SimpleFieldProps> = ({
   error,
   action,
   help,
+  ...rest
 }) => (
-  <Pos type="relative" width={1}>
+  <Pos {...getDataProps(rest)} type="relative" width={1}>
     <Box width={1}>{input}</Box>
     <Flex justify="flex-start" minHeight={4} mt={1}>
       {error ? (

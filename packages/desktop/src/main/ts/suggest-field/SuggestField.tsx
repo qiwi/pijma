@@ -3,6 +3,7 @@ import {
   Box,
   Card,
   CardPos,
+  getDataProps,
   Image,
   InputField,
   MenuControl,
@@ -57,6 +58,7 @@ export const SuggestField = <V extends {}>({
           onKeyDown={renderProps.onItemKeyDown}
           children={(menuRenderProps) => (
             <Pos
+              {...getDataProps(props)}
               type="relative"
               ref={renderProps.containerRef}
               transition={`box-shadow ${

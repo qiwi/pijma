@@ -1,5 +1,5 @@
 ```jsx
-<Header>
+<Header data-testid="header">
   <Flex width={1} height={1} justify="space-between">
     <FlexItem ml={6}>
       <Flex height={1}>

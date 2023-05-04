@@ -1,7 +1,7 @@
 ```jsx
 <Block>
   <BlockContent>
-    <Clock />
+    <Clock data-testid="clock" />
   </BlockContent>
 </Block>
 ```

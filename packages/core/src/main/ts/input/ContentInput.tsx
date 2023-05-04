@@ -6,6 +6,7 @@ import React, {
   MouseEventHandler,
 } from 'react'
 
+import { getDataProps } from '../dataProps'
 import { isMaskDigital, Mask, Pipe } from '../mask'
 import { Input, MaskInput, Value } from '../primitive'
 
@@ -25,6 +26,8 @@ export interface ContentInputProps {
   focused: boolean
   nort?: boolean
   norb?: boolean
+  norr?: boolean
+  norl?: boolean
   hovered: boolean
   mask?: Mask
   pipe?: Pipe
@@ -46,8 +49,10 @@ export const ContentInput = forwardRef<HTMLInputElement, ContentInputProps>(
       pr: props.pr ? props.pr : 4,
       pl: props.pl ? props.pl : 4,
       py: 3,
-      r: `${props.nort ? '0 0' : '10px 10px'} ${
-        props.norb ? '0 0' : '10px 10px'
+      r: `${props.nort || props.norl ? '0' : '10px'} ${
+        props.nort || props.norr ? '0' : '10px'} ${
+        props.norb || props.norr ? '0' : '10px'} ${
+        props.norb || props.norl ? '0' : '10px'
       }`,
       b: 'none',
       bb: props.error ? '2px solid #d0021b' : 'none',
@@ -77,7 +82,9 @@ export const ContentInput = forwardRef<HTMLInputElement, ContentInputProps>(
       onMouseEnter: props.onMouseEnter,
       onMouseLeave: props.onMouseLeave,
       ref,
+      ...getDataProps(props),
     }
+
     return props.mask ? (
       <MaskInput
         {...common}

@@ -1,6 +1,7 @@
 import {
   Box,
   css,
+  getDataProps,
   Overlay,
   OverlayProps,
   Pos,
@@ -59,6 +60,7 @@ export const DropDown: FC<DropDownProps> = ({
   container,
   onHide,
   children,
+  ...rest
 }) =>
   stub ? (
     <Box display="none">{children}</Box>
@@ -81,6 +83,7 @@ export const DropDown: FC<DropDownProps> = ({
       }}
       children={(renderProps) => (
         <Pos
+          {...getDataProps(rest)}
           role="listbox"
           type="absolute"
           width={width}

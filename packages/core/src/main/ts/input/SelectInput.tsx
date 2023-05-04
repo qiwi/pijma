@@ -6,6 +6,7 @@ import React, {
   MouseEventHandler,
 } from 'react'
 
+import { getDataProps } from '../dataProps'
 import { Input, Value } from '../primitive'
 
 export interface SelectInputProps {
@@ -53,6 +54,7 @@ export const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>(
       cursor: props.disabled ? 'not-allowed' : 'pointer',
       bg: 'transparent',
       transition: 'all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)',
+      valueTextOverflow: 'ellipsis',
       value: props.value,
       name: props.name,
       autoComplete: props.autoComplete ? 'on' : 'off',
@@ -65,7 +67,9 @@ export const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>(
       onKeyUp: props.onKeyUp,
       onClick: props.onClick,
       readOnly: true,
+      ...getDataProps(props),
     }
+
     return <Input {...common} />
   },
 )

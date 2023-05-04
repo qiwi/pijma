@@ -7,6 +7,7 @@ return (
     <BlockContent>
       <Box width={64}>
         <PasswordField
+          data-testid="password-field"
           name="password"
           title="Пароль"
           viewed={false}
@@ -28,6 +29,7 @@ return (
     <BlockContent>
       <Box width={64}>
         <PasswordField
+          data-testid="password-field"
           name="password"
           title="Пароль"
           viewed
@@ -49,6 +51,7 @@ return (
     <BlockContent>
       <Box width={64}>
         <PasswordField
+          data-testid="password-field"
           name="password"
           title="Пароль"
           viewed

@@ -4,6 +4,7 @@
 const [show, setShow] = React.useState(false)
 return (
   <Hint
+    data-testid="hint"
     show={show}
     placement="right"
     children="Подсказка"
@@ -19,6 +20,7 @@ return (
 const [show, setShow] = React.useState(false)
 return (
   <Hint
+    data-testid="hint"
     show={show}
     placement="right"
     onShow={() => setShow(!show)}

@@ -5,6 +5,7 @@ import {
   Card,
   FlexItem,
   FlexPos,
+  getDataProps,
   Icon,
   IconProps,
   Pos,
@@ -49,6 +50,7 @@ export const AlertBlock: FC<AlertBlockProps> = ({
   icon,
   type,
   onHide,
+  ...rest
 }) => {
   const iconComponent = isValidElement(icon) ? (
     icon
@@ -70,7 +72,7 @@ export const AlertBlock: FC<AlertBlockProps> = ({
     <AlertBlockControl
       onHide={onHide}
       children={(renderProps) => (
-        <Block bg={AlertBlockBackground[type]}>
+        <Block {...getDataProps(rest)} bg={AlertBlockBackground[type]}>
           <FlexPos
             display="flex"
             type="relative"

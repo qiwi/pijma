@@ -3,7 +3,12 @@ const [code, setCode] = React.useState(['', '', '', '', ''])
 return (
   <Block>
     <BlockContent>
-      <CodeField length={5} value={code} onChange={setCode} />
+      <CodeField
+        data-testid="code-field"
+        length={5}
+        value={code}
+        onChange={setCode}
+      />
     </BlockContent>
   </Block>
 )
@@ -14,7 +19,7 @@ return (
 ```jsx
 <Block>
   <BlockContent>
-    <CodeField stub length={5} value={['', '', '', '', '']} />
+    <CodeField data-testid="no" stub length={5} value={['', '', '', '', '']} />
   </BlockContent>
 </Block>
 ```
@@ -25,6 +30,7 @@ return (
 <Block>
   <BlockContent>
     <CodeField
+      data-testid="code-field"
       length={5}
       value={['1', '2', '3', '4', '5']}
       disabled
@@ -39,7 +45,12 @@ return (
 ```jsx
 <Block>
   <BlockContent>
-    <CodeField length={5} value={['1', '2', '3', '4', '5']} loading />
+    <CodeField
+      data-testid="code-field"
+      length={5}
+      value={['1', '2', '3', '4', '5']}
+      loading
+    />
   </BlockContent>
 </Block>
 ```
@@ -99,6 +110,7 @@ return (
               </Paragraph>
               <Box width={41}>
                 <CodeField
+                  data-testid="code-field"
                   type="tel"
                   length={4}
                   loading={stub}

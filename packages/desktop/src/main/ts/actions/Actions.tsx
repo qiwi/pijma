@@ -1,4 +1,4 @@
-import { Box, Flex } from '@qiwi/pijma-core'
+import { Box, Flex, getDataProps } from '@qiwi/pijma-core'
 import React, { Children, FC, ReactNode } from 'react'
 
 export interface ActionsProps {
@@ -28,11 +28,23 @@ export const Actions: FC<ActionsProps> = (props) => {
       children={child}
     />
   ))
+
+  const dataProps = getDataProps(props)
+
   if (props.vertical) {
-    return <Box display="inline-block" maxWidth={1} children={content} />
+    return (
+      <Box
+        {...dataProps}
+        display="inline-block"
+        maxWidth={1}
+        children={content}
+      />
+    )
   }
+
   return (
     <Flex
+      {...dataProps}
       display="inline-flex"
       align="center"
       maxWidth={1}

@@ -2,6 +2,7 @@
 <Block>
   <BlockContent>
     <Details
+      data-testid="details"
       children={[
         { title: 'Title 1', content: 'Text 1' },
         { title: 'Title 2', content: 'Text2' },
@@ -19,6 +20,7 @@
 <Block>
   <BlockContent>
     <Details
+      data-testid="details"
       dots
       children={[
         {
@@ -48,6 +50,7 @@
 <Block>
   <BlockContent>
     <Details
+      data-testid="details"
       dots
       children={[
         { title: 'Допустимый остаток на балансе:', content: 'До 15 000 ₽' },
@@ -75,6 +78,7 @@
 <Block>
   <BlockContent>
     <Details
+      data-testid="details"
       dots
       children={[
         { title: 'Срок действия карты', content: '3 года' },
@@ -103,6 +107,7 @@
 <Block>
   <BlockContent>
     <Details
+      data-testid="details"
       titleWidth={75}
       dots
       children={[
@@ -136,6 +141,7 @@
 <Block>
   <BlockContent>
     <Details
+      data-testid="details"
       size="s"
       dots
       children={[
@@ -163,6 +169,7 @@
 <Block>
   <BlockContent>
     <Details
+      data-testid="details"
       size="l"
       dots
       children={[
@@ -189,7 +196,7 @@
 ```jsx
 <Block>
   <BlockContent>
-    <Details size="s" dots children={[]} stub />
+    <Details data-testid="no" size="s" dots children={[]} stub />
   </BlockContent>
 </Block>
 ```

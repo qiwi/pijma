@@ -6,6 +6,7 @@ return (
   <Block>
     <BlockContent>
       <SwitchField
+        data-testid="switch-field"
         title="Группа переключателей"
         hint={<QuestionIcon />}
         options={[
@@ -41,7 +42,13 @@ return (
 ```jsx
 <Block>
   <BlockContent>
-    <SwitchField stub options={[]} values={[]} onChange={() => {}} />
+    <SwitchField
+      data-testid="stub"
+      stub
+      options={[]}
+      values={[]}
+      onChange={() => {}}
+    />
   </BlockContent>
 </Block>
 ```
@@ -52,6 +59,7 @@ return (
   <Block>
     <BlockContent>
       <SwitchField
+        data-testid="switch-field"
         title="Группа инвертированных переключателей"
         hint={<QuestionIcon />}
         reverse={true}
@@ -88,7 +96,14 @@ return (
 ```jsx
 <Block>
   <BlockContent>
-    <SwitchField stub reverse options={[]} values={[]} onChange={() => {}} />
+    <SwitchField
+      data-testid="stub"
+      stub
+      reverse
+      options={[]}
+      values={[]}
+      onChange={() => {}}
+    />
   </BlockContent>
 </Block>
 ```
@@ -99,6 +114,7 @@ return (
   <Block>
     <BlockContent>
       <SwitchField
+        data-testid="switch-field"
         title="Группа переключателей с примечаниями"
         hint={<QuestionIcon />}
         options={[

@@ -2,6 +2,7 @@
 const [activePage, setActivePage] = React.useState(1)
 return (
   <Pagination
+    data-testid="pagination"
     total={10}
     active={activePage}
     shadowed
@@ -11,7 +12,7 @@ return (
 ```
 
 ```jsx
-<Pagination total={10} active={0} shadowed stub />
+<Pagination data-testid="no" total={10} active={0} shadowed stub />
 ```
 
 ```jsx
@@ -20,6 +21,7 @@ return (
   <Block>
     <BlockContent>
       <Pagination
+        data-testid="pagination"
         total={10}
         active={activePage}
         onChange={(activePage) => setActivePage(activePage)}
@@ -32,15 +34,15 @@ return (
 ```jsx
 <Block>
   <BlockContent>
-    <Pagination total={10} active={0} stub />
+    <Pagination data-testid="no" total={10} active={0} stub />
   </BlockContent>
 </Block>
 ```
 
 ```jsx
-<Pagination total={5} count={10} active={0} shadowed />
+<Pagination data-testid="pagination" total={5} count={10} active={0} shadowed />
 ```
 
 ```jsx
-<Pagination total={10} active={100} shadowed />
+<Pagination data-testid="pagination" total={10} active={100} shadowed />
 ```

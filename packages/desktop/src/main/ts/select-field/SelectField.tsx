@@ -3,6 +3,7 @@ import {
   Card,
   CardPos,
   css,
+  getDataProps,
   Icon,
   InputField,
   MenuControl,
@@ -112,7 +113,11 @@ export const SelectField: FC<
           onKeyDown={renderProps.onKeyDown}
           onSelect={renderProps.onItemSelect}
           children={(menuRenderProps) => (
-            <CardPos ref={renderProps.containerRef} type="relative">
+            <CardPos
+              {...getDataProps(props)}
+              ref={renderProps.containerRef}
+              type="relative"
+            >
               <Box ref={renderProps.targetRef}>
                 <Pos
                   type="absolute"
@@ -134,6 +139,7 @@ export const SelectField: FC<
                           ? props.items[renderProps.select].text
                           : ''
                       }
+                      pr={6}
                       focused={renderProps.focused}
                       error={!!props.error}
                       tabIndex={props.tabIndex}

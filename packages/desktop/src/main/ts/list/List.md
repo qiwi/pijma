@@ -4,6 +4,7 @@
 <Block>
   <BlockContent>
     <List
+      data-testid="list"
       type="number"
       children={[
         'Элемент списка 1',
@@ -25,7 +26,7 @@
 ```jsx
 <Block>
   <BlockContent>
-    <List type="number" children={[]} stub />
+    <List data-testid="list" type="number" children={[]} stub />
   </BlockContent>
 </Block>
 ```
@@ -36,6 +37,7 @@
 <Block>
   <BlockContent>
     <List
+      data-testid="list"
       type="bullet"
       children={['Элемент списка 1', 'Элемент списка 2', 'Элемент списка 3']}
     />
@@ -46,7 +48,7 @@
 ```jsx
 <Block>
   <BlockContent>
-    <List type="bullet" children={[]} stub />
+    <List data-testid="list" type="bullet" children={[]} stub />
   </BlockContent>
 </Block>
 ```
@@ -57,6 +59,7 @@
 <Block>
   <BlockContent>
     <List
+      data-testid="list"
       type="step"
       children={['Элемент списка 1', 'Элемент списка 2', 'Элемент списка 3']}
     />
@@ -67,7 +70,7 @@
 ```jsx
 <Block>
   <BlockContent>
-    <List type="step" children={[]} stub />
+    <List data-testid="no" type="step" children={[]} stub />
   </BlockContent>
 </Block>
 ```

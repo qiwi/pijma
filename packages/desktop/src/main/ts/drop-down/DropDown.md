@@ -19,6 +19,7 @@ return (
             </Box>
           </Actions>
           <DropDown
+            data-testid="dropdown"
             show={show}
             container={container.current}
             target={button.current}

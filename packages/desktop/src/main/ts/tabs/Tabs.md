@@ -4,6 +4,7 @@
 const [select, setSelect] = React.useState(0)
 return (
   <Tabs
+    data-testid="tabs"
     select={select}
     onChange={setSelect}
     items={[
@@ -74,6 +75,7 @@ return (
     <Spacer size="l">
       <Caption>CENTERED FALSE</Caption>
       <Tabs
+        data-testid="tabs"
         select={selectLeft}
         onChange={setSelectLeft}
         items={[
@@ -181,6 +183,7 @@ return (
     <Spacer size="l">
       <Caption>CENTERED TRUE</Caption>
       <Tabs
+        data-testid="tabs"
         select={selectRight}
         centered
         onChange={setSelectRight}
@@ -253,11 +256,11 @@ return (
 <Grid columns={2} layout={1}>
   <Spacer size="l">
     <Caption>CENTERED FALSE</Caption>
-    <Tabs stub items={[]} />
+    <Tabs data-testid="no" stub items={[]} />
   </Spacer>
   <Spacer size="l">
     <Caption>CENTERED TRUE</Caption>
-    <Tabs stub centered items={[]} />
+    <Tabs data-testid="no" stub centered items={[]} />
   </Spacer>
 </Grid>
 ```
@@ -268,6 +271,7 @@ return (
 const [select, setSelect] = React.useState(0)
 return (
   <Tabs
+    data-testid="tabs"
     vertical
     centered
     select={select}
@@ -340,6 +344,7 @@ return (
     <Spacer size="l">
       <Caption>CENTERED FALSE</Caption>
       <Tabs
+        data-testid="tabs"
         vertical
         select={selectLeft}
         onChange={setSelectLeft}
@@ -448,6 +453,7 @@ return (
     <Spacer size="l">
       <Caption>CENTERED TRUE</Caption>
       <Tabs
+        data-testid="tabs"
         vertical
         select={selectRight}
         centered
@@ -524,11 +530,11 @@ return (
 <Grid columns={2} layout={1}>
   <Spacer size="l">
     <Caption>CENTERED FALSE</Caption>
-    <Tabs stub vertical items={[]} />
+    <Tabs data-testid="stub" stub vertical items={[]} />
   </Spacer>
   <Spacer size="l">
     <Caption>CENTERED TRUE</Caption>
-    <Tabs stub centered vertical items={[]} />
+    <Tabs data-testid="stub" stub centered vertical items={[]} />
   </Spacer>
 </Grid>
 ```

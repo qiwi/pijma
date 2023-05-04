@@ -10,6 +10,7 @@ return (
       {success ? (
         <Box width={154} mx="auto">
           <Alert
+            data-testid="alert"
             type="success"
             text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             onHide={(success) => setSuccess(success)}
@@ -19,6 +20,7 @@ return (
       {warning ? (
         <Box width={154} mx="auto">
           <Alert
+            data-testid="alert"
             width={154}
             type="warning"
             text="Duis viverra hendrerit tortor, nec euismod quam mattis ac. Curabitur rutrum finibus tellus, non venenatis ante ornare vitae. Donec dolor magna, malesuada eget magna in, placerat finibus massa. Aliquam at leo sit amet arcu vestibulum venenatis quis vel neque."
@@ -29,6 +31,7 @@ return (
       {failure ? (
         <Box width={154} mx="auto">
           <Alert
+            data-testid="alert"
             width={154}
             type="failure"
             text="Nam rutrum, sapien vitae finibus gravida, diam sem gravida dui, eu faucibus ex tellus a mi. Aenean ut enim nec nulla maximus hendrerit."
@@ -38,6 +41,7 @@ return (
       {general ? (
         <Box width={154} mx="auto">
           <Alert
+            data-testid="alert"
             width={154}
             type="general"
             text="Sed lobortis tincidunt felis a congue."
@@ -48,6 +52,7 @@ return (
       {warningButton ? (
         <Box width={154} mx="auto">
           <Alert
+            data-testid="alert"
             width={154}
             type="warning"
             text="Ограничения в вашем кошельке."

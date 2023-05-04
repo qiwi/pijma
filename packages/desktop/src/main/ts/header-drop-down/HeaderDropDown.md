@@ -31,6 +31,7 @@ return (
       </Header>
     </Pos>
     <HeaderDropDown
+      data-testid="header-drop-down"
       show={show === 1}
       target={target.current}
       container={container.current}
@@ -46,6 +47,7 @@ return (
       </Box>
     </HeaderDropDown>
     <HeaderDropDown
+      data-testid="header-drop-down"
       show={show === 2}
       target={target.current}
       container={container.current}
