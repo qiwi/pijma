@@ -1075,6 +1075,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@npmcli/promise-spawn@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "@npmcli/promise-spawn@npm:6.0.1"
+  dependencies:
+    which: "npm:^3.0.0"
+  checksum: cf53e15285531f9a5b9bfd9199fac2fced65aa15fc022509679c8f382f8342dfcd2da382a46a32a3346c9190a7a715d410e1124e67146eab44f9b4a24615f4aa
+  languageName: node
+  linkType: hard
+
 "@popperjs/core@npm:^2.8.6, @popperjs/core@npm:^2.9.0":
   version: 2.11.6
   resolution: "@popperjs/core@npm:2.11.6"
@@ -1114,6 +1123,7 @@ __metadata:
     fast-glob: "npm:3.2.11"
     file-loader: "npm:6.2.0"
     markdown-to-jsx: "npm:^7.1.7"
+    paralint: "npm:1.1.2"
     prettier: "npm:2.7.1"
     prettier-config-qiwi: "npm:1.7.2"
     react: "npm:18.2.0"
@@ -1158,6 +1168,7 @@ __metadata:
     file-loader: "npm:6.2.0"
     jest: "npm:^29.0.2"
     jest-environment-jsdom: "npm:^29.0.2"
+    paralint: "npm:1.1.2"
     prettier: "npm:2.7.1"
     prettier-config-qiwi: "npm:1.7.2"
     react-day-picker: "npm:^8.2.0"
@@ -1188,6 +1199,7 @@ __metadata:
     eslint-config-qiwi: "npm:1.17.6"
     fast-glob: "npm:3.2.11"
     file-loader: "npm:6.2.0"
+    paralint: "npm:1.1.2"
     prettier: "npm:2.7.1"
     prettier-config-qiwi: "npm:1.7.2"
     react-docgen-typescript: "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch"
@@ -1221,6 +1233,7 @@ __metadata:
     eslint-config-qiwi: "npm:1.17.6"
     fast-glob: "npm:3.2.11"
     file-loader: "npm:6.2.0"
+    paralint: "npm:1.1.2"
     prettier: "npm:2.7.1"
     prettier-config-qiwi: "npm:1.7.2"
     react-docgen-typescript: "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch"
@@ -1245,6 +1258,7 @@ __metadata:
     eslint-config-qiwi: "npm:1.17.6"
     fast-glob: "npm:3.2.11"
     file-loader: "npm:6.2.0"
+    paralint: "npm:1.1.2"
     prettier: "npm:2.7.1"
     prettier-config-qiwi: "npm:1.7.2"
     react-docgen-typescript: "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch"
@@ -1270,6 +1284,7 @@ __metadata:
     eslint-config-qiwi: "npm:1.17.6"
     fast-glob: "npm:3.2.11"
     file-loader: "npm:6.2.0"
+    paralint: "npm:1.1.2"
     prettier: "npm:2.7.1"
     prettier-config-qiwi: "npm:1.7.2"
     react-docgen-typescript: "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch"
@@ -3861,6 +3876,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dargs@npm:^8.1.0":
+  version: 8.1.0
+  resolution: "dargs@npm:8.1.0"
+  checksum: a0569eb93a4a1604dbda0181c0efcba3888e481e0c2aedfe1abdde3e4d719fbde77208cb8d0556ef56662ab4f04c52b06124586041f75b4d9159e43f4e16983b
+  languageName: node
+  linkType: hard
+
 "data-urls@npm:^3.0.2":
   version: 3.0.2
   resolution: "data-urls@npm:3.0.2"
@@ -5005,6 +5027,19 @@ __metadata:
     merge2: "npm:^1.3.0"
     micromatch: "npm:^4.0.4"
   checksum: 73b4cb60ed75a9138533f6020f6c3f451a9d8f0e7e7e38e2555f281c93e9dcef1565e4801dd264d766dd5ade870a4ebd32b113c66fce75ea09bd5bc6dc66b939
+  languageName: node
+  linkType: hard
+
+"fast-glob@npm:^3.2.12":
+  version: 3.2.12
+  resolution: "fast-glob@npm:3.2.12"
+  dependencies:
+    "@nodelib/fs.stat": "npm:^2.0.2"
+    "@nodelib/fs.walk": "npm:^1.2.3"
+    glob-parent: "npm:^5.1.2"
+    merge2: "npm:^1.3.0"
+    micromatch: "npm:^4.0.4"
+  checksum: 3b98e0cadbf2aea3fa2be76e28b0c895bb18d920ccb7b3d3f603a464e3dc2c6a89a8afb9f9765226bd4d4d74b70e880721ff7a57a267c2eaa11353f35d42d11b
   languageName: node
   linkType: hard
 
@@ -7901,6 +7936,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"minimist@npm:^1.2.7":
+  version: 1.2.7
+  resolution: "minimist@npm:1.2.7"
+  checksum: 7bb50119bb59f48228a834e293a566c4b0e1b6c4648db83fb88830b4f932bfeaca72158bcdcc8a74130b339167eda92ec4cabb65faf07ab8d32542889a451676
+  languageName: node
+  linkType: hard
+
 "minipass-collect@npm:^1.0.2":
   version: 1.0.2
   resolution: "minipass-collect@npm:1.0.2"
@@ -8574,6 +8616,21 @@ __metadata:
   version: 2.2.0
   resolution: "p-try@npm:2.2.0"
   checksum: 1b9a6b5d6f42a46e36f053ee737a72cbe8f7990ee65e0d7bc3f8f8324e233d5b5e790f9f660bcc44d93738a2b12108dec1f7a39c9650d276fd1f9d73d54d4f55
+  languageName: node
+  linkType: hard
+
+"paralint@npm:1.1.2":
+  version: 1.1.2
+  resolution: "paralint@npm:1.1.2"
+  dependencies:
+    "@npmcli/promise-spawn": "npm:^6.0.1"
+    dargs: "npm:^8.1.0"
+    fast-glob: "npm:^3.2.12"
+    minimist: "npm:^1.2.7"
+    tslib: "npm:^2.4.0"
+  bin:
+    paralint: target/es6/cli.js
+  checksum: fcfd333754039d670138392ef3e6b8ae7dbb7749b4240c833a8b8ff99a4cf3cd1d3f08fb24e34cc13e5563daacbdfc7c9040281afd239018ecc5359b4f7b8ef8
   languageName: node
   linkType: hard
 
@@ -11813,6 +11870,17 @@ __metadata:
   bin:
     node-which: ./bin/node-which
   checksum: 3728616c789b289c36ba2572887145e0736f06fe3435b8fef17e27eb5ec0696f61a21e356dd7fa58486346e57186863afa1b6c27c7665f7e674c8124f7f61157
+  languageName: node
+  linkType: hard
+
+"which@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "which@npm:3.0.0"
+  dependencies:
+    isexe: "npm:^2.0.0"
+  bin:
+    node-which: bin/which.js
+  checksum: c946888017dd9f52eccff68c892432a757401abeb9cf1e8e0d40a04a0996844e28e2870aaa4071c52f3cc3b20ff908db40be6ab1be0bed29dc0431e353c98bb5
   languageName: node
   linkType: hard
 

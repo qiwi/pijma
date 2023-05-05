@@ -30,8 +30,8 @@
     "chrome:start": "docker run --rm -p 6161:3000 --add-host=host.docker.internal:host-gateway browserless/chrome",
     "test:start": "wait-on http-get://localhost:6060/ http-get://localhost:6161/ && styleguidist-visual test --config styleguide.visual.config.cjs",
     "test:approve": "styleguidist-visual approve --config styleguide.visual.config.cjs",
-    "format": "eslint --fix src && prettier --loglevel silent --write src",
-    "lint": "eslint src"
+    "format": "paralint --concurrency 2 --fix src && prettier --loglevel silent --write src",
+    "lint": "paralint --concurrency 2 src"
   },
   "files": [
     "target/dts/**/*",
@@ -49,6 +49,7 @@
     "eslint-config-qiwi": "1.17.6",
     "fast-glob": "3.2.11",
     "file-loader": "6.2.0",
+    "paralint": "1.1.2",
     "prettier": "2.7.1",
     "prettier-config-qiwi": "1.7.2",
     "react-docgen-typescript": "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch",
