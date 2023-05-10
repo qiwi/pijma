@@ -1,3 +1,3 @@
 module.exports = {
-  cmd: 'yarn'
+  buildCmd: 'yarn build',
 }

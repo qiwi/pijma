@@ -1,3 +1,4 @@
 module.exports = {
-  cmd: 'yarn',
+  npmPublish: false,
+  cmd: 'exit 0',
 }
