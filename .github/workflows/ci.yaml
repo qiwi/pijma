@@ -274,6 +274,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
+      - name: Install
+        run: yarn
+
       - name: Release
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
