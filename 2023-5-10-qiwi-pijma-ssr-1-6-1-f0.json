@@ -1,0 +1,9 @@
+{
+  "META_VERSION": "1",
+  "name": "@qiwi/pijma-ssr",
+  "hash": "0858e27ff714cc1aa48141ecfc1175cac25ad4d5",
+  "version": "1.6.1",
+  "devDependencies": {
+    "@qiwi/pijma-infra": "1.11.1"
+  }
+}
