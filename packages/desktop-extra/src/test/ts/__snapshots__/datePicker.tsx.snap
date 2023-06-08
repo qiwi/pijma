@@ -39,6 +39,7 @@ exports[`DatePicker renders correctly 1`] = `
           onKeyDown={[Function]}
           onKeyUp={[Function]}
           type="text"
+          value=""
         />
         <div
           className="css-t03j0v"
