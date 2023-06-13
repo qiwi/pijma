@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.160.4](https://github.com/qiwi/pijma/compare/2023.5.10-qiwi.pijma-core.1.160.3-f0...2023.6.13-qiwi.pijma-core.1.160.4-f0) (2023-06-13)
+
+### Fixes & improvements
+* fix: masked input trigger change handler on remove whole value (#567) [2a260c3c](https://github.com/qiwi/pijma/commit/2a260c3c3de265402b484718dd23ced25310640d)
+
 ## [@qiwi/pijma-core@1.160.3](https://github.com/qiwi/pijma/compare/2023.4.27-qiwi.pijma-core.1.160.2-f0...2023.5.10-qiwi.pijma-core.1.160.3-f0) (2023-05-10)
 
 ### Fixes & improvements
