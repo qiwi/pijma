@@ -1,3 +1,12 @@
+## [@qiwi/pijma-desktop-extra@0.2.14](https://github.com/qiwi/pijma/compare/2023.5.10-qiwi.pijma-desktop-extra.0.2.13-f0...2023.6.13-qiwi.pijma-desktop-extra.0.2.14-f0) (2023-06-13)
+
+### Fixes & improvements
+* fix: masked input trigger change handler on remove whole value (#567) [2a260c3c](https://github.com/qiwi/pijma/commit/2a260c3c3de265402b484718dd23ced25310640d)
+
+### Dependencies
+* perf: dependencies @qiwi/pijma-core updated to 1.160.4
+* perf: dependencies @qiwi/pijma-desktop updated to 1.160.5
+
 ## [@qiwi/pijma-desktop-extra@0.2.13](https://github.com/qiwi/pijma/compare/2023.4.27-qiwi.pijma-desktop-extra.0.2.12-f0...2023.5.10-qiwi.pijma-desktop-extra.0.2.13-f0) (2023-05-10)
 
 ### Fixes & improvements
