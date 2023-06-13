@@ -197,8 +197,8 @@ jobs:
       - name: Docker pull
         if: matrix.node-version == '16'
         run: |
-          docker pull browserless/chrome
-          docker pull nginx
+          docker pull browserless/chrome@sha256:9865ed5b7c1e699cba7e97ad5567559c31cfc3a945cca5881aac6f44881bddc2
+          docker pull nginx@sha256:63b44e8ddb83d5dd8020327c1f40436e37a6fffd3ef2498a6204df23be6e7e94
 
       - name: Lint
         if: matrix.node-version == '18'
