@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.160.6](https://github.com/qiwi/pijma/compare/2023.6.19-qiwi.pijma-core.1.160.5-f0...2023.7.4-qiwi.pijma-core.1.160.6-f0) (2023-07-04)
+
+### Fixes & improvements
+* fix: working fix for change handler (#570) [51e7a906](https://github.com/qiwi/pijma/commit/51e7a90662eafbae37332ba73d0d4713f6050e8a)
+
 ## [@qiwi/pijma-core@1.160.5](https://github.com/qiwi/pijma/compare/2023.6.13-qiwi.pijma-core.1.160.4-f0...2023.6.19-qiwi.pijma-core.1.160.5-f0) (2023-06-19)
 
 ### Fixes & improvements
