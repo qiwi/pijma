@@ -189,7 +189,7 @@ class MaskedInputComponent extends PureComponent<MaskedInputProps, {}> {
         ref={this.setRef}
         onBlur={this.onBlur}
         onChange={this.onChange}
-        defaultValue={this.props.value}
+        defaultValue=''
         {...props}
       />
     )
