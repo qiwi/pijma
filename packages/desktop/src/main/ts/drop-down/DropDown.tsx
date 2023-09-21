@@ -18,6 +18,7 @@ export interface DropDownProps {
   maxWidth?: Value
   rootClose?: boolean
   stub?: boolean
+  placement?: OverlayProps['placement']
   target: OverlayProps['target']
   container: OverlayProps['container']
   children: ReactElement
@@ -56,6 +57,7 @@ export const DropDown: FC<DropDownProps> = ({
   maxWidth,
   rootClose = true,
   stub = false,
+  placement = 'bottom',
   target,
   container,
   onHide,
@@ -67,7 +69,7 @@ export const DropDown: FC<DropDownProps> = ({
   ) : (
     <Overlay
       show={show}
-      placement="bottom"
+      placement={placement}
       target={target}
       container={container}
       rootClose={rootClose}
