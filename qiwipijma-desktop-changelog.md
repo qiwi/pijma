@@ -1,3 +1,8 @@
+## [@qiwi/pijma-desktop@1.161.0](https://github.com/qiwi/pijma/compare/2023.7.4-qiwi.pijma-desktop.1.160.7-f0...2023.9.25-qiwi.pijma-desktop.1.161.0-f0) (2023-09-25)
+
+### Features
+* feat: add placement prop for DropDown (#574) [354ea637](https://github.com/qiwi/pijma/commit/354ea637f8e6920abf63eac41bdabc4b5caaabfc)
+
 ## [@qiwi/pijma-desktop@1.160.7](https://github.com/qiwi/pijma/compare/2023.6.19-qiwi.pijma-desktop.1.160.6-f0...2023.7.4-qiwi.pijma-desktop.1.160.7-f0) (2023-07-04)
 
 ### Dependencies
