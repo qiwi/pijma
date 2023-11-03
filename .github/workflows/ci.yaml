@@ -59,7 +59,7 @@ jobs:
 
       - name: Install
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
-        run: yarn
+        run: yarn --immutable
 
       - name: Build
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
@@ -129,7 +129,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install
-        run: yarn
+        run: yarn --immutable
 
       - name: Lint
         run: yarn lint
@@ -192,7 +192,7 @@ jobs:
         run: tar -xvf artifact.tar
 
       - name: Install
-        run: yarn
+        run: yarn --immutable
 
       - name: Docker pull
         if: matrix.node-version == '18'
@@ -275,7 +275,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install
-        run: yarn
+        run: yarn --immutable
 
       - name: Release
         env:
