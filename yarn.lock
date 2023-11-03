@@ -2041,7 +2041,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:18.0.18":
+"@types/react@npm:*, @types/react@npm:>=16.9.11, @types/react@npm:18.0.18":
   version: 18.0.18
   resolution: "@types/react@npm:18.0.18"
   dependencies:
@@ -9376,7 +9376,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pixelmatch@npm:5.3.0":
+"pixelmatch@npm:5.3.0, pixelmatch@npm:^4.0.2":
   version: 5.3.0
   resolution: "pixelmatch@npm:5.3.0"
   dependencies:
@@ -9423,7 +9423,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pngjs@npm:6.0.0":
+"pngjs@npm:^6.0.0, pngjs@npm:^3.3.3":
   version: 6.0.0
   resolution: "pngjs@npm:6.0.0"
   checksum: 2df9dc0e6ed485c6f66d33e9d26178c175fa235fc3dc6345d74e20c9b92dcee390332d05f4979d83a315e4a3b5e1a2f79988fdfe54c7a33c097cb9ada4a33d65
@@ -9668,7 +9668,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"puppeteer@npm:15.5.0":
+"puppeteer@npm:15.5.0, puppeteer@npm:^1.5.0":
   version: 15.5.0
   resolution: "puppeteer@npm:15.5.0"
   dependencies:
