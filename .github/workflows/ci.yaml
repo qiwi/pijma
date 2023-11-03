@@ -31,7 +31,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
 
       - name: Download artifact
         uses: qiwi-forks/action-download-artifact@v2
@@ -94,7 +94,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
 
       - name: Restore artifact from cache (if exists)
         uses: actions/cache@v3
@@ -148,7 +148,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        node-version: [ 16, 18, 20 ]
+        node-version: [ 18, 20 ]
     name: Test (Node v${{ matrix.node-version }}, OS ${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     steps:
@@ -195,17 +195,17 @@ jobs:
         run: yarn
 
       - name: Docker pull
-        if: matrix.node-version == '16'
+        if: matrix.node-version == '18'
         run: |
           docker pull browserless/chrome@sha256:4655517b70d598367f363e15fa311ea514879f6b4908ba9199d6714d6f8269a3
           docker pull nginx@sha256:480868e8c8c797794257e2abd88d0f9a8809b2fe956cbfbc05dcc0bca1f7cd43
 
       - name: Lint
-        if: matrix.node-version == '18'
+        if: matrix.node-version == '20'
         run: yarn lint
 
       - name: Visual tests
-        if: matrix.node-version == '16'
+        if: matrix.node-version == '18'
         run: yarn test
 
       - name: Save failure results
@@ -256,7 +256,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
 
       #      - name: Codeclimate
       #        uses: paambaati/codeclimate-action@v2.7.5
