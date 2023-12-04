@@ -1,3 +1,8 @@
+## [@qiwi/pijma-mobile@1.160.8](https://github.com/qiwi/pijma/compare/2023.7.4-qiwi.pijma-mobile.1.160.7-f0...2023.12.4-qiwi.pijma-mobile.1.160.8-f0) (2023-12-04)
+
+### Dependencies
+* perf: dependencies @qiwi/pijma-core updated to 1.161.0
+
 ## [@qiwi/pijma-mobile@1.160.7](https://github.com/qiwi/pijma/compare/2023.6.19-qiwi.pijma-mobile.1.160.6-f0...2023.7.4-qiwi.pijma-mobile.1.160.7-f0) (2023-07-04)
 
 ### Dependencies
