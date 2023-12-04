@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.161.0](https://github.com/qiwi/pijma/compare/2023.7.4-qiwi.pijma-core.1.160.6-f0...2023.12.4-qiwi.pijma-core.1.161.0-f0) (2023-12-04)
+
+### Features
+* feat: add telegam icon and transition for svg path (#577) [c08018db](https://github.com/qiwi/pijma/commit/c08018db4476c90a4e2d0028c64fa4b96fc6492d)
+
 ## [@qiwi/pijma-core@1.160.6](https://github.com/qiwi/pijma/compare/2023.6.19-qiwi.pijma-core.1.160.5-f0...2023.7.4-qiwi.pijma-core.1.160.6-f0) (2023-07-04)
 
 ### Fixes & improvements
