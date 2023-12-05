@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.162.0](https://github.com/qiwi/pijma/compare/2023.12.4-qiwi.pijma-core.1.161.0-f0...2023.12.5-qiwi.pijma-core.1.162.0-f0) (2023-12-05)
+
+### Features
+* feat: add copy icon (#578) [56670db1](https://github.com/qiwi/pijma/commit/56670db1683c524630ec3c19705791b014f2bdc0)
+
 ## [@qiwi/pijma-core@1.161.0](https://github.com/qiwi/pijma/compare/2023.7.4-qiwi.pijma-core.1.160.6-f0...2023.12.4-qiwi.pijma-core.1.161.0-f0) (2023-12-04)
 
 ### Features
