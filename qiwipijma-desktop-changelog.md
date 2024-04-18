@@ -1,3 +1,8 @@
+## [@qiwi/pijma-desktop@1.161.3](https://github.com/qiwi/pijma/compare/2023.12.5-qiwi.pijma-desktop.1.161.2-f0...2024.4.18-qiwi.pijma-desktop.1.161.3-f0) (2024-04-18)
+
+### Fixes & improvements
+* fix: add swc/helpers as dependency (#586) [57c4b033](https://github.com/qiwi/pijma/commit/57c4b0338f92e1979ed680f0a4cbf0e68ba518c1)
+
 ## [@qiwi/pijma-desktop@1.161.2](https://github.com/qiwi/pijma/compare/2023.12.4-qiwi.pijma-desktop.1.161.1-f0...2023.12.5-qiwi.pijma-desktop.1.161.2-f0) (2023-12-05)
 
 ### Dependencies
