@@ -31,7 +31,8 @@
     "target/es6/**/*"
   ],
   "dependencies": {
-    "@emotion/server": "^11.11.0"
+    "@emotion/server": "^11.11.0",
+    "@swc/helpers": "^0.5.1"
   },
   "devDependencies": {
     "@qiwi/pijma-infra": "workspace:*",
