@@ -70,10 +70,17 @@ return (
         <FlexItem
           width={6}
           height={6}
+          mr={6}
           cursor="pointer"
           onClick={() => setFeedIconActive(!feedIconActive)}
         >
           <FeedIcon data-testid="icon" active={feedIconActive} />
+        </FlexItem>
+        <FlexItem
+          width={6}
+          height={6}
+        >
+          <CircleBellIcon data-testid="icon" color="#865ED3" />
         </FlexItem>
       </Flex>
     </BlockContent>
