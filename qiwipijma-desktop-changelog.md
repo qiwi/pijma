@@ -1,3 +1,11 @@
+## [@qiwi/pijma-desktop@1.162.0](https://github.com/qiwi/pijma/compare/2024.4.18-qiwi.pijma-desktop.1.161.3-f0...2024.6.6-qiwi.pijma-desktop.1.162.0-f0) (2024-06-06)
+
+### Features
+* feat: custom-alert (#587) [2829a472](https://github.com/qiwi/pijma/commit/2829a47248728dce0ceb9074844f5edd8d9a2435)
+
+### Dependencies
+* perf: dependencies @qiwi/pijma-core updated to 1.163.0
+
 ## [@qiwi/pijma-desktop@1.161.3](https://github.com/qiwi/pijma/compare/2023.12.5-qiwi.pijma-desktop.1.161.2-f0...2024.4.18-qiwi.pijma-desktop.1.161.3-f0) (2024-04-18)
 
 ### Fixes & improvements
