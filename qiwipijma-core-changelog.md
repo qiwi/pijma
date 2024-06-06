@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.163.0](https://github.com/qiwi/pijma/compare/2023.12.5-qiwi.pijma-core.1.162.0-f0...2024.6.6-qiwi.pijma-core.1.163.0-f0) (2024-06-06)
+
+### Features
+* feat: custom-alert (#587) [2829a472](https://github.com/qiwi/pijma/commit/2829a47248728dce0ceb9074844f5edd8d9a2435)
+
 ## [@qiwi/pijma-core@1.162.0](https://github.com/qiwi/pijma/compare/2023.12.4-qiwi.pijma-core.1.161.0-f0...2023.12.5-qiwi.pijma-core.1.162.0-f0) (2023-12-05)
 
 ### Features
