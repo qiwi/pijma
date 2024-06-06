@@ -1,3 +1,8 @@
+## [@qiwi/pijma-mobile@1.162.0](https://github.com/qiwi/pijma/compare/2024.6.6-qiwi.pijma-mobile.1.161.0-f0...2024.6.6-qiwi.pijma-mobile.1.162.0-f0) (2024-06-06)
+
+### Features
+* feat: add exports for custom-alert (#588) [6fc557b8](https://github.com/qiwi/pijma/commit/6fc557b8a2e6658c26ad36f104c2bc0beb9a14da)
+
 ## [@qiwi/pijma-mobile@1.161.0](https://github.com/qiwi/pijma/compare/2024.4.18-qiwi.pijma-mobile.1.160.10-f0...2024.6.6-qiwi.pijma-mobile.1.161.0-f0) (2024-06-06)
 
 ### Features
