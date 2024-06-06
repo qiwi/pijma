@@ -1,6 +1,6 @@
 ```jsx
 <CustomAlert
-    data-testid="cutsom-alert"
+    data-testid="custom-alert"
     icon={<CircleBellIcon color="#865ED3"/>}
     bg="#EEE4FF"
     onHide={() => null}
