@@ -45,8 +45,8 @@ export const CustomAlert: FC<CustomAlertProps> = ({
             pl={6}
             pr={onHide !== undefined ? 18 : 6}
           >
-            {icon && <FlexItem mr={3}>{icon}</FlexItem>}
-            <FlexItem>
+            {icon && <FlexItem display="flex" mr={3}>{icon}</FlexItem>}
+            <FlexItem display="flex" grow={1}>
               {children}
             </FlexItem>
             {onHide !== undefined ? (
