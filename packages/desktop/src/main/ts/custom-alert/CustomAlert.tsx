@@ -1,6 +1,5 @@
 import {
   AlertBlockControl,
-  Breaker,
   Card,
   FlexItem,
   FlexPos,
@@ -10,7 +9,6 @@ import {
 } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
 
-import { Paragraph } from '../typography'
 
 export interface CustomAlertProps {
   icon?: ReactNode
@@ -22,14 +20,14 @@ export interface CustomAlertProps {
 }
 
 export const CustomAlert: FC<CustomAlertProps> = ({
-  children,
-  icon,
-  bg,
-  shadow,
-  textColor,
-  onHide,
-  ...rest
-}) => {
+                                                    children,
+                                                    icon,
+                                                    bg,
+                                                    shadow,
+                                                    textColor,
+                                                    onHide,
+                                                    ...rest
+                                                  }) => {
   return (
     <AlertBlockControl
       onHide={onHide}
@@ -50,9 +48,7 @@ export const CustomAlert: FC<CustomAlertProps> = ({
           >
             {icon && <FlexItem mr={3}>{icon}</FlexItem>}
             <FlexItem>
-              <Paragraph color={textColor}>
-                <Breaker children={children} />
-              </Paragraph>
+              {children}
             </FlexItem>
             {onHide !== undefined ? (
               <Pos
