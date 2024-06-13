@@ -1,3 +1,8 @@
+## [@qiwi/pijma-mobile@1.162.1](https://github.com/qiwi/pijma/compare/2024.6.6-qiwi.pijma-mobile.1.162.0-f0...2024.6.13-qiwi.pijma-mobile.1.162.1-f0) (2024-06-13)
+
+### Fixes & improvements
+* fix: markup for CustomAlert (#591) [95b76241](https://github.com/qiwi/pijma/commit/95b76241833f23b5e39b8971691d82eedee84529)
+
 ## [@qiwi/pijma-mobile@1.162.0](https://github.com/qiwi/pijma/compare/2024.6.6-qiwi.pijma-mobile.1.161.0-f0...2024.6.6-qiwi.pijma-mobile.1.162.0-f0) (2024-06-06)
 
 ### Features
