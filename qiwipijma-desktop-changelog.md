@@ -1,3 +1,8 @@
+## [@qiwi/pijma-desktop@1.163.2](https://github.com/qiwi/pijma/compare/2024.6.13-qiwi.pijma-desktop.1.163.1-f0...2024.6.13-qiwi.pijma-desktop.1.163.2-f0) (2024-06-13)
+
+### Fixes & improvements
+* fix: markup for content of custom alert (#592) [5a00ece8](https://github.com/qiwi/pijma/commit/5a00ece815ca167a666500179bc97d77a5394134)
+
 ## [@qiwi/pijma-desktop@1.163.1](https://github.com/qiwi/pijma/compare/2024.6.6-qiwi.pijma-desktop.1.163.0-f0...2024.6.13-qiwi.pijma-desktop.1.163.1-f0) (2024-06-13)
 
 ### Fixes & improvements
