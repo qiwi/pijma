@@ -19,14 +19,14 @@ export interface CustomAlertProps {
 }
 
 export const CustomAlert: FC<CustomAlertProps> = ({
-                                                    children,
-                                                    icon,
-                                                    bg,
-                                                    shadow,
-                                                    textColor,
-                                                    onHide,
-                                                    ...rest
-                                                  }) => {
+  children,
+  icon,
+  bg,
+  shadow,
+  textColor,
+  onHide,
+  ...rest
+}) => {
   return (
     <AlertBlockControl
       onHide={onHide}

@@ -9,7 +9,6 @@ import {
 } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
 
-
 export interface CustomAlertProps {
   icon?: ReactNode
   shadow?: string
@@ -20,14 +19,14 @@ export interface CustomAlertProps {
 }
 
 export const CustomAlert: FC<CustomAlertProps> = ({
-                                                    children,
-                                                    icon,
-                                                    bg,
-                                                    shadow,
-                                                    textColor,
-                                                    onHide,
-                                                    ...rest
-                                                  }) => {
+  children,
+  icon,
+  bg,
+  shadow,
+  textColor,
+  onHide,
+  ...rest
+}) => {
   return (
     <AlertBlockControl
       onHide={onHide}
