@@ -43,7 +43,7 @@ export const CustomAlert: FC<CustomAlertProps> = ({
             type="relative"
             py={4}
             pl={4}
-            pr={onHide !== undefined ? 14 : 4}
+            pr={onHide !== undefined ? 11.5 : 4}
           >
             {icon && <FlexItem display="flex" mr={2}>{icon}</FlexItem>}
             <FlexItem display="flex" my="2px">
@@ -53,8 +53,8 @@ export const CustomAlert: FC<CustomAlertProps> = ({
               <Pos
                 cursor="pointer"
                 type="absolute"
-                right={4}
-                top={4}
+                right={1.5}
+                top={1.5}
                 onClick={renderProps.onCloseClick}
                 onMouseEnter={renderProps.onCloseMouseEnter}
                 onMouseLeave={renderProps.onCloseMouseLeave}
