@@ -1,3 +1,8 @@
+## [@qiwi/pijma-desktop@1.163.3](https://github.com/qiwi/pijma/compare/2024.6.13-qiwi.pijma-desktop.1.163.2-f0...2024.6.17-qiwi.pijma-desktop.1.163.3-f0) (2024-06-17)
+
+### Fixes & improvements
+* fix: markup for close icon of custom alert (#593) [ba96539e](https://github.com/qiwi/pijma/commit/ba96539e0c50cbc9d62bae93532c64a50d21b1a6)
+
 ## [@qiwi/pijma-desktop@1.163.2](https://github.com/qiwi/pijma/compare/2024.6.13-qiwi.pijma-desktop.1.163.1-f0...2024.6.13-qiwi.pijma-desktop.1.163.2-f0) (2024-06-13)
 
 ### Fixes & improvements
