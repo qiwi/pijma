@@ -141,10 +141,3 @@ export const Paragraph: FC<ParagraphProps> = ({
   )
 
 Paragraph.displayName = 'Paragraph'
-
-Paragraph.defaultProps = {
-  size: 'm',
-  bold: false,
-  compact: false,
-  color: 'default',
-}

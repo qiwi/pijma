@@ -64,7 +64,3 @@ export const Caption: FC<CaptionProps> = ({
   )
 
 Caption.displayName = 'Caption'
-
-Caption.defaultProps = {
-  color: 'support',
-}

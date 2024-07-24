@@ -115,7 +115,3 @@ export const Heading: FC<HeadingProps> = ({
   )
 
 Heading.displayName = 'Heading'
-
-Heading.defaultProps = {
-  color: 'default',
-}

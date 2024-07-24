@@ -100,7 +100,3 @@ export const Title: FC<TitleProps> = ({
   )
 
 Title.displayName = 'Title'
-
-Title.defaultProps = {
-  color: 'default',
-}
