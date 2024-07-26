@@ -1,3 +1,8 @@
+## [@qiwi/pijma-desktop@1.164.0](https://github.com/qiwi/pijma/compare/2024.6.17-qiwi.pijma-desktop.1.163.3-f0...2024.7.26-qiwi.pijma-desktop.1.164.0-f0) (2024-07-26)
+
+### Features
+* feat: remove typography default props [7e378541](https://github.com/qiwi/pijma/commit/7e3785416f6fa8e85e1561b4b985d7fcc38bebcf)
+
 ## [@qiwi/pijma-desktop@1.163.3](https://github.com/qiwi/pijma/compare/2024.6.13-qiwi.pijma-desktop.1.163.2-f0...2024.6.17-qiwi.pijma-desktop.1.163.3-f0) (2024-06-17)
 
 ### Fixes & improvements
