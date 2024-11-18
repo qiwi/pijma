@@ -1327,7 +1327,7 @@ __metadata:
     eslint-config-qiwi: "npm:1.17.6"
     fast-glob: "npm:3.2.12"
     file-loader: "npm:6.2.0"
-    markdown-to-jsx: "npm:^7.2.0"
+    markdown-to-jsx: "npm:^7.4.0"
     prettier: "npm:2.8.8"
     prettier-config-qiwi: "npm:1.7.2"
     react: "npm:18.2.0"
@@ -8442,12 +8442,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-to-jsx@npm:^7.2.0":
-  version: 7.2.0
-  resolution: "markdown-to-jsx@npm:7.2.0"
+"markdown-to-jsx@npm:^7.4.0":
+  version: 7.6.2
+  resolution: "markdown-to-jsx@npm:7.6.2"
   peerDependencies:
     react: ">= 0.14.0"
-  checksum: 72c8ef94d98340677568f30feb279ad94b9b65fd11afea84100086563c5d3044cc26e61d28ad646ccfe843a1298c20d70e78f3b2a44814acd211ad238026a6e9
+  checksum: eecfeba9fbd99f6b312687c7379b6b8e5612770000ebbea60528315e674ead44ba877d984011d4c41f0dc123072be4244e4c354d75cdbd537e7eaf140fe7019b
   languageName: node
   linkType: hard
 
