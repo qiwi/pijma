@@ -81,7 +81,7 @@ module.exports = ({ cwd, extra = {}, components = [] }) => {
           links: [
             {
               rel: 'stylesheet',
-              href: 'https://static.qiwi.com/fonts/museo-sans/v2/index.css',
+              href: 'https://assets.qiwi.com/ao-qw/fonts/museo-sans/v2/index.css',
             },
           ],
         },
