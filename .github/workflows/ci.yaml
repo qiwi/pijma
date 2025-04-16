@@ -11,7 +11,7 @@ jobs:
       yarn-cache-dir: ${{ steps.yarn-cache-dir-path.outputs.dir }}
       checksum: ${{ steps.checksum.outputs.checksum }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Get yarn cache dir
         id: yarn-cache-dir-path
@@ -27,11 +27,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          cache: 'yarn'
+          node-version: 20
 
       - name: Download artifact
         uses: qiwi-forks/action-download-artifact@v2
@@ -48,7 +49,7 @@ jobs:
         id: check-artifact
         run: echo "::set-output name=exists::$([ -e "artifact.tar" ] && echo true || echo false)"
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         id: yarn-cache
         with:
@@ -69,7 +70,7 @@ jobs:
 
       - name: Save artifact
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
           retention-days: 30
@@ -77,7 +78,7 @@ jobs:
 
       # https://github.com/actions/upload-artifact/issues/53
       - name: Cache artifact
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         id: artifact
         with:
           path: artifact.tar
@@ -90,14 +91,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 18
 
       - name: Restore artifact from cache (if exists)
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: artifact.tar
           key: artifact-${{ needs.init.outputs.checksum }}
@@ -120,7 +121,7 @@ jobs:
       - name: Unpack artifact
         run: tar -xvf artifact.tar
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         id: yarn-cache
         with:
           path: ${{ needs.init.outputs.yarn-cache-dir }}
@@ -136,7 +137,7 @@ jobs:
 
   #      - name: Push coverage
   #        if: github.ref == 'refs/heads/master'
-  #        uses: actions/upload-artifact@v3
+  #        uses: actions/upload-artifact@v4
   #        with:
   #          name: artifact-${{ needs.init.outputs.checksum }}
   #          retention-days: 1
@@ -148,18 +149,19 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        node-version: [ 16, 18, 20 ]
+        node-version: [ 16, 20 ]
     name: Test (Node v${{ matrix.node-version }}, OS ${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         id: yarn-cache
         with:
           path: ${{ needs.init.outputs.yarn-cache-dir }}
@@ -168,7 +170,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Restore artifact from cache (if exists)
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: artifact.tar
           key: artifact-${{ needs.init.outputs.checksum }}
@@ -201,7 +203,7 @@ jobs:
           docker pull nginx@sha256:480868e8c8c797794257e2abd88d0f9a8809b2fe956cbfbc05dcc0bca1f7cd43
 
       - name: Lint
-        if: matrix.node-version == '18'
+        if: matrix.node-version == '20'
         run: yarn lint
 
       - name: Visual tests
@@ -210,7 +212,7 @@ jobs:
 
       - name: Save failure results
         if: ${{ failure() }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: screenshots-${{ needs.init.outputs.checksum }}
           retention-days: 1
@@ -225,13 +227,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: master
 
       - name: Restore artifact from cache (if exists)
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: artifact.tar
           key: artifact-${{ needs.init.outputs.checksum }}
@@ -254,9 +255,10 @@ jobs:
       - name: Unpack artifact
         run: tar -xvf artifact.tar
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 18
+          cache: 'yarn'
 
       #      - name: Codeclimate
       #        uses: paambaati/codeclimate-action@v2.7.5
@@ -266,7 +268,7 @@ jobs:
       #          coverageLocations: |
       #            ${{github.workspace}}/coverage/*.lcov:lcov
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         id: yarn-cache
         with:
           path: ${{ needs.init.outputs.yarn-cache-dir }}
