@@ -1,3 +1,12 @@
+## [@qiwi/pijma-mobile@1.163.1](https://github.com/qiwi/pijma/compare/2024.7.25-qiwi.pijma-mobile.1.163.0-f0...2025.4.18-qiwi.pijma-mobile.1.163.1-f0) (2025-04-18)
+
+### Fixes & improvements
+* fix: move fonts from static.qiwi.com -> assets.qiwi.com (#607) [1b50da86](https://github.com/qiwi/pijma/commit/1b50da86b82b8e1d6978d11891c718d6d65b2cea)
+
+### Dependencies
+* perf: dependencies @qiwi/pijma-core updated to 1.163.1
+* perf: devDependencies @qiwi/pijma-infra updated to 1.11.2
+
 ## [@qiwi/pijma-mobile@1.162.3](https://github.com/qiwi/pijma/compare/2024.6.13-qiwi.pijma-mobile.1.162.2-f0...2024.6.17-qiwi.pijma-mobile.1.162.3-f0) (2024-06-17)
 
 ### Fixes & improvements
