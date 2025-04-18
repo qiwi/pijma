@@ -72,7 +72,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
           cache: 'yarn'
 
       - name: Download artifact
@@ -103,7 +103,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
-        node-version: [ 16, 20 ]
+        node-version: [ 16, 22 ]
     name: Test (Node v${{ matrix.node-version }}, OS ${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     steps:
@@ -133,7 +133,7 @@ jobs:
           docker pull nginx@sha256:480868e8c8c797794257e2abd88d0f9a8809b2fe956cbfbc05dcc0bca1f7cd43
 
       - name: Lint
-        if: matrix.node-version == '20'
+        if: matrix.node-version == '22'
         run: yarn lint
 
       - name: Visual tests
@@ -171,7 +171,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22
           cache: 'yarn'
 
       #      - name: Codeclimate
