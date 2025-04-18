@@ -8,15 +8,9 @@ jobs:
     name: init
     runs-on: ubuntu-latest
     outputs:
-      yarn-cache-dir: ${{ steps.yarn-cache-dir-path.outputs.dir }}
       checksum: ${{ steps.checksum.outputs.checksum }}
     steps:
       - uses: actions/checkout@v4
-
-      - name: Get yarn cache dir
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
-
       - name: Get src checksum
         id: checksum
         run: echo "::set-output name=checksum::${{ hashFiles('yarn.lock', '*.json', 'packages/*/*.json', 'packages/*/src/main/ts/**/*', 'packages/*/src/main/webapp/**/*') }}"
@@ -48,15 +42,6 @@ jobs:
         if: always()
         id: check-artifact
         run: echo "::set-output name=exists::$([ -e "artifact.tar" ] && echo true || echo false)"
-
-      - uses: actions/cache@v4
-        if: ${{ steps.check-artifact.outputs.exists == 'false' }}
-        id: yarn-cache
-        with:
-          path: ${{ needs.init.outputs.yarn-cache-dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
 
       - name: Install
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
@@ -121,14 +106,6 @@ jobs:
       - name: Unpack artifact
         run: tar -xvf artifact.tar
 
-      - uses: actions/cache@v4
-        id: yarn-cache
-        with:
-          path: ${{ needs.init.outputs.yarn-cache-dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
       - name: Install
         run: yarn
 
@@ -160,14 +137,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
-
-      - uses: actions/cache@v4
-        id: yarn-cache
-        with:
-          path: ${{ needs.init.outputs.yarn-cache-dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
 
       - name: Restore artifact from cache (if exists)
         uses: actions/cache@v4
@@ -267,14 +236,6 @@ jobs:
       #        with:
       #          coverageLocations: |
       #            ${{github.workspace}}/coverage/*.lcov:lcov
-
-      - uses: actions/cache@v4
-        id: yarn-cache
-        with:
-          path: ${{ needs.init.outputs.yarn-cache-dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
 
       - name: Install
         run: yarn
