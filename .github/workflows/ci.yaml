@@ -41,7 +41,7 @@ jobs:
       - name: Check artifact
         if: always()
         id: check-artifact
-        run: echo exists=green $([ -e "artifact.tar" ] && echo true || echo false) >> "$GITHUB_OUTPUT"
+        run: echo exists=$([ -e "artifact.tar" ] && echo true || echo false) >> "$GITHUB_OUTPUT"
 
       - name: Install
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}

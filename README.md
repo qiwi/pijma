@@ -1,6 +1,6 @@
 # Pijma
 
-[![Build Status](https://travis-ci.com/qiwi/pijma.svg?branch=master)](https://travis-ci.com/qiwi/pijma)
+[![CI](https://github.com/qiwi/pijma/actions/workflows/ci.yaml/badge.svg)](https://github.com/qiwi/pijma/actions/workflows/ci.yaml)
 [![Known Vulnerabilities](https://snyk.io/test/github/qiwi/pijma/badge.svg)](https://snyk.io/test/github/qiwi/pijma)
 [![npm (scoped)](https://img.shields.io/npm/v/@qiwi/pijma-desktop?label=%40qiwi%2Fpijma-desktop&color=39f)](https://www.npmjs.com/package/@qiwi/pijma-desktop)
 [![npm (scoped)](https://img.shields.io/npm/v/@qiwi/pijma-mobile?label=%40qiwi%2Fpijma-mobile&color=39f)](https://www.npmjs.com/package/@qiwi/pijma-mobile)
