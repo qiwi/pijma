@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Get src checksum
         id: checksum
-        run: echo "::set-output name=checksum::${{ hashFiles('yarn.lock', '*.json', 'packages/*/*.json', 'packages/*/src/main/ts/**/*', 'packages/*/src/main/webapp/**/*') }}"
+        run: echo checksum=${{ hashFiles('yarn.lock', '*.json', 'packages/*/*.json', 'packages/*/src/main/ts/**/*', 'packages/*/src/main/webapp/**/*') }} >> "$GITHUB_OUTPUT"
 
   build:
     name: build
@@ -41,7 +41,7 @@ jobs:
       - name: Check artifact
         if: always()
         id: check-artifact
-        run: echo "::set-output name=exists::$([ -e "artifact.tar" ] && echo true || echo false)"
+        run: echo exists=green $([ -e "artifact.tar" ] && echo true || echo false) >> "$GITHUB_OUTPUT"
 
       - name: Install
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
@@ -54,8 +54,8 @@ jobs:
           tar -cvf artifact.tar package.json packages/*/target
 
       - name: Save artifact
-        if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         uses: actions/upload-artifact@v4
+        if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
           retention-days: 30
@@ -71,7 +71,7 @@ jobs:
 
 
   test_push:
-    needs: [ build, init ]
+    needs: build
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
@@ -82,26 +82,11 @@ jobs:
         with:
           node-version: 18
 
-      - name: Restore artifact from cache (if exists)
+      - name: Restore artifact from cache
         uses: actions/cache@v4
         with:
           path: artifact.tar
           key: artifact-${{ needs.init.outputs.checksum }}
-
-      - name: Check artifact
-        if: always()
-        id: check-artifact
-        run: echo "::set-output name=exists::$([ -e "artifact.tar" ] && echo true || echo false)"
-
-      - name: Download artifact
-        if: ${{ steps.check-artifact.outputs.exists == 'false' }}
-        uses: qiwi-forks/action-download-artifact@v2
-        with:
-          name: artifact-${{ needs.init.outputs.checksum }}
-          workflow: 'ci.yaml'
-          workflow_conclusion: false
-          search_artifacts: true
-          search_depth: 10
 
       - name: Unpack artifact
         run: tar -xvf artifact.tar
@@ -122,7 +107,7 @@ jobs:
 
   test_pr:
     if: github.event_name == 'pull_request'
-    needs: [ build, init ]
+    needs: build
     strategy:
       matrix:
         os: [ ubuntu-latest ]
@@ -138,26 +123,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
 
-      - name: Restore artifact from cache (if exists)
+      - name: Restore artifact from cache
         uses: actions/cache@v4
         with:
           path: artifact.tar
           key: artifact-${{ needs.init.outputs.checksum }}
-
-      - name: Check artifact
-        if: always()
-        id: check-artifact
-        run: echo "::set-output name=exists::$([ -e "artifact.tar" ] && echo true || echo false)"
-
-      - name: Download artifact
-        if: ${{ steps.check-artifact.outputs.exists == 'false' }}
-        uses: qiwi-forks/action-download-artifact@v2
-        with:
-          name: artifact-${{ needs.init.outputs.checksum }}
-          workflow: 'ci.yaml'
-          workflow_conclusion: false
-          search_artifacts: true
-          search_depth: 10
 
       - name: Unpack artifact
         run: tar -xvf artifact.tar
@@ -192,7 +162,7 @@ jobs:
   release:
     name: Release
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-    needs: [ test_push, init ]
+    needs: test_push
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -200,26 +170,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Restore artifact from cache (if exists)
+      - name: Restore artifact from cache
         uses: actions/cache@v4
         with:
           path: artifact.tar
           key: artifact-${{ needs.init.outputs.checksum }}
-
-      - name: Check artifact
-        if: always()
-        id: check-artifact
-        run: echo "::set-output name=exists::$([ -e "artifact.tar" ] && echo true || echo false)"
-
-      - name: Download artifact
-        if: ${{ steps.check-artifact.outputs.exists == 'false' }}
-        uses: qiwi-forks/action-download-artifact@v2
-        with:
-          name: artifact-${{ needs.init.outputs.checksum }}
-          workflow: 'ci.yaml'
-          workflow_conclusion: false
-          search_artifacts: true
-          search_depth: 10
 
       - name: Unpack artifact
         run: tar -xvf artifact.tar
@@ -237,8 +192,8 @@ jobs:
       #          coverageLocations: |
       #            ${{github.workspace}}/coverage/*.lcov:lcov
 
-      - name: Install
-        run: yarn
+#      - name: Install
+#        run: yarn
 
       - name: Release
         env:
@@ -250,4 +205,4 @@ jobs:
           GIT_AUTHOR_NAME: 'QIWI Bot'
           GIT_COMMITTER_NAME: 'QIWI Bot'
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
-        run: npm_config_yes=true npx zx-bulk-release
+        run: npm_config_yes=true npx zx-bulk-release --no-build
