@@ -76,9 +76,14 @@ jobs:
           cache: 'yarn'
 
       - name: Download artifact
-        uses: actions/download-artifact@v4
+        uses: qiwi-forks/action-download-artifact@v2
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
+          workflow: 'ci.yaml'
+          workflow_conclusion: false
+          nothrow: true
+          search_artifacts: true
+          search_depth: 10
 
       - name: Unpack artifact
         run: tar -xvf artifact.tar
@@ -116,9 +121,14 @@ jobs:
           cache: 'yarn'
 
       - name: Download artifact
-        uses: actions/download-artifact@v4
+        uses: qiwi-forks/action-download-artifact@v2
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
+          workflow: 'ci.yaml'
+          workflow_conclusion: false
+          nothrow: true
+          search_artifacts: true
+          search_depth: 10
 
       - name: Unpack artifact
         run: tar -xvf artifact.tar
@@ -162,9 +172,14 @@ jobs:
           fetch-depth: 0
 
       - name: Download artifact
-        uses: actions/download-artifact@v4
+        uses: qiwi-forks/action-download-artifact@v2
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
+          workflow: 'ci.yaml'
+          workflow_conclusion: false
+          nothrow: true
+          search_artifacts: true
+          search_depth: 10
 
       - name: Unpack artifact
         run: tar -xvf artifact.tar
