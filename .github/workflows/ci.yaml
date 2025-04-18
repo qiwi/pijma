@@ -37,9 +37,9 @@ jobs:
           nothrow: true
           search_artifacts: true
           search_depth: 10
+      - run: ls -l
 
       - name: Check artifact
-        if: always()
         id: check-artifact
         run: echo exists=$([ -e "artifact.tar" ] && echo true || echo false) >> "$GITHUB_OUTPUT"
 
