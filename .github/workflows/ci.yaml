@@ -23,11 +23,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          cache: 'yarn'
-          node-version: 20
-
       - name: Download artifact
         uses: qiwi-forks/action-download-artifact@v2
         with:
@@ -43,7 +38,13 @@ jobs:
         id: check-artifact
         run: echo exists=$([ -e "artifact.tar" ] && echo true || echo false) >> "$GITHUB_OUTPUT"
 
-      - name: Install
+      - uses: actions/setup-node@v4
+        if: ${{ steps.check-artifact.outputs.exists == 'false' }}
+        with:
+          cache: 'yarn'
+          node-version: 20
+
+      - name: Install deps
         if: ${{ steps.check-artifact.outputs.exists == 'false' }}
         run: yarn
 
