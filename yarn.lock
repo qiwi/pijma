@@ -918,14 +918,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hapi/hoek@npm:^9.0.0":
+"@hapi/hoek@npm:^9.0.0, @hapi/hoek@npm:^9.3.0":
   version: 9.3.0
   resolution: "@hapi/hoek@npm:9.3.0"
   checksum: 9c5baadfabd79e40e747faf0f5dd740f40aef12a123c475787c7834660c6c46c6228770ed9832847bb858b316031104d1fb07df1644424d0c05ccdccccca2a90
   languageName: node
   linkType: hard
 
-"@hapi/topo@npm:^5.0.0":
+"@hapi/topo@npm:^5.1.0":
   version: 5.1.0
   resolution: "@hapi/topo@npm:5.1.0"
   dependencies:
@@ -1717,7 +1717,7 @@ __metadata:
     style-loader: "npm:3.3.2"
     tsc-esm-fix: "npm:2.20.13"
     typescript: "npm:4.8.2"
-    wait-on: "npm:6.0.1"
+    wait-on: "npm:8.0.3"
     webpack: "npm:5.99.6"
   languageName: unknown
   linkType: soft
@@ -1775,7 +1775,7 @@ __metadata:
     style-loader: "npm:3.3.2"
     tsc-esm-fix: "npm:2.20.13"
     typescript: "npm:4.8.2"
-    wait-on: "npm:6.0.1"
+    wait-on: "npm:8.0.3"
     webpack: "npm:5.99.6"
   languageName: unknown
   linkType: soft
@@ -1835,16 +1835,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sideway/address@npm:^4.1.3":
-  version: 4.1.4
-  resolution: "@sideway/address@npm:4.1.4"
+"@sideway/address@npm:^4.1.5":
+  version: 4.1.5
+  resolution: "@sideway/address@npm:4.1.5"
   dependencies:
     "@hapi/hoek": "npm:^9.0.0"
-  checksum: 28d3017397f1598f4343688fcf609dbe1e1c96ac5b4c00c945b29057101f47ecb7d9ecbe039a0e912dd299a1dd876bc4efe37de91fc315e84811ca5a83c2c604
+  checksum: b20cd077d1f88c2a322adecdd7e0883fbc805f6ef35e2efdbce6f932a2601254b484c18ee2153d132b6b04957703734b0b944c949ba4b77bad43055aee5da31e
   languageName: node
   linkType: hard
 
-"@sideway/formula@npm:^3.0.0":
+"@sideway/formula@npm:^3.0.1":
   version: 3.0.1
   resolution: "@sideway/formula@npm:3.0.1"
   checksum: 9231660aaf01b4b45e73efe299f6613d2a6d191ade9116dd47b6bd99a5a84805bf438a7c6c2343a526c8e7b06dd1c3c39f969dbe9eee2770f54e3e9f0b6d1c8c
@@ -3480,12 +3480,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.25.0":
-  version: 0.25.0
-  resolution: "axios@npm:0.25.0"
+"axios@npm:^1.8.2":
+  version: 1.8.4
+  resolution: "axios@npm:1.8.4"
   dependencies:
-    follow-redirects: "npm:^1.14.7"
-  checksum: 2a71c86f4b5405ff35ba4f6a7a2146ff42089cd363737277efd2c83c3e2d3ab136e9784dab1cc3af4b40e449a5e8f59b4fb67e73e5552b3cdd1b914e661180e3
+    follow-redirects: "npm:^1.15.6"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: d0fdddcf3860e65c4b94abc62764d274b5057f3b7e4ce3a816ab22ea445c124d8afc43b8dc45963f80b8d2007892c0fda3b4c12f9603f6b96295d8e8b45c5698
   languageName: node
   linkType: hard
 
@@ -6236,13 +6238,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.14.7":
+"follow-redirects@npm:^1.0.0":
   version: 1.15.6
   resolution: "follow-redirects@npm:1.15.6"
   peerDependenciesMeta:
     debug:
       optional: true
   checksum: 6c901e5591f99ed82e3a7af8ad8cc95b751967128cf98206bbd72fc91b5f7f6abb241f57d5b600a8373b59a3d4a954d151d4eacf56134d5bd2d6630b0ba080ce
+  languageName: node
+  linkType: hard
+
+"follow-redirects@npm:^1.15.6":
+  version: 1.15.9
+  resolution: "follow-redirects@npm:1.15.9"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: c332c60fb9205796d5afb68a7fea37742072d0e9a1821dbaa6c81f9becf98a7448d242281319f0d03fe24e2dc4e8e090bcf147946a42019d7c660c4f597d7ad2
   languageName: node
   linkType: hard
 
@@ -8356,16 +8368,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"joi@npm:^17.6.0":
-  version: 17.6.0
-  resolution: "joi@npm:17.6.0"
+"joi@npm:^17.13.3":
+  version: 17.13.3
+  resolution: "joi@npm:17.13.3"
   dependencies:
-    "@hapi/hoek": "npm:^9.0.0"
-    "@hapi/topo": "npm:^5.0.0"
-    "@sideway/address": "npm:^4.1.3"
-    "@sideway/formula": "npm:^3.0.0"
+    "@hapi/hoek": "npm:^9.3.0"
+    "@hapi/topo": "npm:^5.1.0"
+    "@sideway/address": "npm:^4.1.5"
+    "@sideway/formula": "npm:^3.0.1"
     "@sideway/pinpoint": "npm:^2.0.0"
-  checksum: 12ab4e5f0903eef2197a14993d8ba050fe20595ed5081840c9412b89bcdb1f0574ba7d23a532512b6e2977004cb690faf5532890a2025bfae996777bcb563480
+  checksum: 59db9f835f0dcea99e4ce62b1b88ec56d5dabc01f2e888ed9a196ad15fc710756035eb4126309a1f77ea9566047894e26d16c26fcbd71c2f34d79f3c0b40d7f4
   languageName: node
   linkType: hard
 
@@ -9261,6 +9273,13 @@ __metadata:
   version: 1.2.6
   resolution: "minimist@npm:1.2.6"
   checksum: b0286df020a110fa0173e71d8c9903748eb2cc939396d04a61bc224635393c564bc264d04a16e36d51e5489be513f98d7dbe5c2cf11598da11c91f6a18b9449e
+  languageName: node
+  linkType: hard
+
+"minimist@npm:^1.2.8":
+  version: 1.2.8
+  resolution: "minimist@npm:1.2.8"
+  checksum: 8598f846f2b7546b22b01ce486df27da216a302367afe17f2a032da12fcb8d33bfbf2c523051230864abf0b806748bd60d4cd0863fae35fe104da1ff6194a185
   languageName: node
   linkType: hard
 
@@ -10471,7 +10490,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"proxy-from-env@npm:1.1.0":
+"proxy-from-env@npm:1.1.0, proxy-from-env@npm:^1.1.0":
   version: 1.1.0
   resolution: "proxy-from-env@npm:1.1.0"
   checksum: 0bba2ef7c8374b384e94e4477764e53df66fcdfa7d19e2c4a063cb39eea979c139ce13981970223665422e72b7d149609a927046e2e40ab340b84d91af082591
@@ -11533,15 +11552,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rxjs@npm:^7.5.4":
-  version: 7.5.6
-  resolution: "rxjs@npm:7.5.6"
-  dependencies:
-    tslib: "npm:^2.1.0"
-  checksum: f16db58531d9fdc9e7cce0e33676cf791128db889304247249ba434885d35b1d173eed68ac255fca770da4c0277f97727c5fbbdc659b0b1f04d10fe42ed0dc67
-  languageName: node
-  linkType: hard
-
 "rxjs@npm:^7.8.0":
   version: 7.8.1
   resolution: "rxjs@npm:7.8.1"
@@ -11551,7 +11561,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rxjs@npm:^7.8.1":
+"rxjs@npm:^7.8.1, rxjs@npm:^7.8.2":
   version: 7.8.2
   resolution: "rxjs@npm:7.8.2"
   dependencies:
@@ -13323,18 +13333,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wait-on@npm:6.0.1":
-  version: 6.0.1
-  resolution: "wait-on@npm:6.0.1"
+"wait-on@npm:8.0.3":
+  version: 8.0.3
+  resolution: "wait-on@npm:8.0.3"
   dependencies:
-    axios: "npm:^0.25.0"
-    joi: "npm:^17.6.0"
+    axios: "npm:^1.8.2"
+    joi: "npm:^17.13.3"
     lodash: "npm:^4.17.21"
-    minimist: "npm:^1.2.5"
-    rxjs: "npm:^7.5.4"
+    minimist: "npm:^1.2.8"
+    rxjs: "npm:^7.8.2"
   bin:
     wait-on: bin/wait-on
-  checksum: 3baaf229b3a996a6f7ea972bc13b46dd6a4639b58d644d6dcf5565fd0307d22a571362422faa7e76d510b07d2481105a019a942d7f5799ec3b2fb24cfc347116
+  checksum: 02e42083f828d7a996cb831f9a10a7df453eeb1af19575e3706f18165d5b36de286190c127f69181647d236f6c2744966ad108d1a703324161936ff3d69b2606
   languageName: node
   linkType: hard
 
