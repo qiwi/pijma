@@ -208,3 +208,33 @@
   </BlockContent>
 </Block>
 ```
+
+## Отключение ссылок
+
+```jsx
+<Block>
+  <BlockContent>
+    <Markdown>{`
+####disableLinks = false
+
+Киви кошелек: https://qiwi.com
+
+Игровая витрина: <a href="https://games.qiwi.com">games.qiwi.com</a>
+    `}</Markdown>
+  </BlockContent>
+</Block>
+```
+
+```jsx
+<Block>
+  <BlockContent>
+    <Markdown disableLinks>{`
+####disableLinks = true
+
+Киви кошелек: https://qiwi.com
+
+Игровая витрина: <a href="https://games.qiwi.com">games.qiwi.com</a>
+    `}</Markdown>
+  </BlockContent>
+</Block>
+```

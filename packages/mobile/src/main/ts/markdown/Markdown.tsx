@@ -6,6 +6,7 @@ import { List } from '../list'
 import { Heading, Paragraph, Text } from '../typography'
 
 export interface MarkdownProps {
+  disableLinks?: boolean
   size?: 's' | 'm' | 'l'
   children: string
 }
@@ -49,13 +50,20 @@ const img: FC<ImageProps> = ({ src, alt }) => (
 img.displayName = 'img'
 
 interface LinkProps extends SizeProps {
+  disableLinks?: boolean
   title?: string
   href?: string
 }
 
-const a: FC<LinkProps> = ({ title, href, size, children }) => (
-  <Link title={title} href={href} size={size} children={children} />
-)
+const a: FC<LinkProps> = ({ disableLinks, title, href, size, children }) => {
+  if (disableLinks) {
+    return <Text size={size} children={children} />
+  }
+
+  return (
+    <Link title={title} href={href} size={size} children={children} />
+  )
+}
 
 a.displayName = 'a'
 
@@ -158,10 +166,15 @@ const overrides: { [tag: string]: FC<any> } = {
   img,
 }
 
-export const Markdown: FC<MarkdownProps> = ({ size = 'm', children }) => (
+export const Markdown: FC<MarkdownProps> = ({
+  size = 'm',
+  disableLinks = false,
+  children
+}) => (
   <MarkdownToJSX
     children={children}
     options={{
+      disableAutoLink: disableLinks,
       overrides: Object.keys(overrides).reduce(
         (prev, tag) => ({
           ...prev,
@@ -170,6 +183,7 @@ export const Markdown: FC<MarkdownProps> = ({ size = 'm', children }) => (
               component: overrides[tag],
               props: {
                 size,
+                disableLinks
               },
             },
           },
