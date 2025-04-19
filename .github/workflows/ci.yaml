@@ -111,6 +111,10 @@ jobs:
         node-version: [ 16, 22 ]
     name: Test (Node v${{ matrix.node-version }}, OS ${{ matrix.os }})
     runs-on: ${{ matrix.os }}
+    env:
+      # enables fetch for Node 16
+      NODE_OPTIONS: '--experimental-fetch'
+      YARN_IGNORE_NODE: 1
     steps:
       - name: Checkout
         uses: actions/checkout@v4
