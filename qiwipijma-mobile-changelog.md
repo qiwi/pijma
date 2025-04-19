@@ -1,3 +1,8 @@
+## [@qiwi/pijma-mobile@1.164.0](https://github.com/qiwi/pijma/compare/2025.4.18-qiwi.pijma-mobile.1.163.1-f0...2025.4.19-qiwi.pijma-mobile.1.164.0-f0) (2025-04-19)
+
+### Features
+* feat: add disableLinks props for Markdown (#604) [2106dbe6](https://github.com/qiwi/pijma/commit/2106dbe63ab2a745a2f9ad7b29df4fccc2477036)
+
 ## [@qiwi/pijma-mobile@1.163.1](https://github.com/qiwi/pijma/compare/2024.7.25-qiwi.pijma-mobile.1.163.0-f0...2025.4.18-qiwi.pijma-mobile.1.163.1-f0) (2025-04-18)
 
 ### Fixes & improvements
