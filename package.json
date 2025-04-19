@@ -5,12 +5,12 @@
     "packages/*"
   ],
   "scripts": {
-    "clean": "yarn workspaces foreach --parallel --no-private --interlaced run clean",
-    "build": "yarn workspaces foreach --parallel --topological-dev --no-private --interlaced run build",
-    "start": "yarn workspaces foreach --parallel --no-private --interlaced run start",
-    "test": "yarn workspaces foreach --parallel --no-private --interlaced run test",
-    "format": "yarn workspaces foreach --parallel --no-private --interlaced run format",
-    "lint": "yarn workspaces foreach --parallel --no-private --interlaced run lint"
+    "clean": "yarn workspaces foreach -A --parallel --no-private --interlaced run clean",
+    "build": "yarn workspaces foreach -A --parallel --topological-dev --no-private --interlaced run build",
+    "start": "yarn workspaces foreach -A --parallel --no-private --interlaced run start",
+    "test": "yarn workspaces foreach -A --parallel --no-private --interlaced run test",
+    "format": "yarn workspaces foreach -A --parallel --no-private --interlaced run format",
+    "lint": "yarn workspaces foreach -A --parallel --no-private --interlaced run lint"
   },
   "resolutions": {
     "@types/react": "18.0.18",
@@ -19,7 +19,8 @@
     "pngjs": "6.0.0",
     "puppeteer": "15.5.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "tar-fs": "2.1.2"
   },
   "repository": {
     "type": "git",
@@ -30,5 +31,5 @@
     "url": "https://github.com/qiwi/pijma/issues"
   },
   "homepage": "https://github.com/qiwi/pijma/#readme",
-  "packageManager": "yarn@4.0.0-rc.14"
+  "packageManager": "yarn@4.9.1"
 }
