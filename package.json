@@ -19,7 +19,8 @@
     "pngjs": "6.0.0",
     "puppeteer": "15.5.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "tar-fs": "2.1.2"
   },
   "repository": {
     "type": "git",
