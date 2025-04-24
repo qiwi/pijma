@@ -2,14 +2,14 @@
   "name": "@qiwi/pijma-mobile",
   "version": "0.0.0",
   "type": "module",
-  "main": "./target/es5/index.js",
-  "module": "./target/es6/index.js",
+  "main": "./target/es5/ts/index.js",
+  "module": "./target/es6/ts/index.js",
   "types": "./target/dts/index.d.ts",
   "exports": {
     ".": {
       "types": "./target/dts/index.d.ts",
-      "import": "./target/es6/index.js",
-      "require": "./target/es5/index.js"
+      "import": "./target/es6/ts/index.js",
+      "require": "./target/es5/ts/index.js"
     }
   },
   "license": "MIT",
