@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.163.2](https://github.com/qiwi/pijma/compare/2025.4.18-qiwi.pijma-core.1.163.1-f0...2025.4.24-qiwi.pijma-core.1.163.2-f0) (2025-04-24)
+
+### Fixes & improvements
+* fix: update dist path (#617) [0c1bb90b](https://github.com/qiwi/pijma/commit/0c1bb90bd05d31419f415c4d466701a53de70957)
+
 ## [@qiwi/pijma-core@1.163.1](https://github.com/qiwi/pijma/compare/2024.6.6-qiwi.pijma-core.1.163.0-f0...2025.4.18-qiwi.pijma-core.1.163.1-f0) (2025-04-18)
 
 ### Fixes & improvements
