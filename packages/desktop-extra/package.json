@@ -19,17 +19,17 @@
   "scripts": {
     "clean": "rimraf target node_modules",
     "build": "concurrently 'npm:build:*'",
-    "build:es5": "cd src/main && swc ts -d ../../target/es5 --config-file ../../swc.es5.json && cd ../.. && tsc-esm-fix --target=target/es5 --fillBlank",
-    "build:es6": "cd src/main && swc ts -d ../../target/es6 --config-file ../../swc.es6.json && cd ../.. && tsc-esm-fix --target=target/es6 --fillBlank",
+    "build:es5": "cd src/main/ts && swc . -d ../../../target/es5 --config-file ../../../swc.es5.json && cd ../../.. && tsc-esm-fix --target=target/es5 --fillBlank",
+    "build:es6": "cd src/main/ts && swc . -d ../../../target/es6 --config-file ../../../swc.es6.json && cd ../../.. && tsc-esm-fix --target=target/es6 --fillBlank",
     "build:dts": "tsc --project tsconfig.dts.json",
     "test": "jest",
     "format": "eslint --fix src && prettier --loglevel silent --write src",
     "lint": "eslint src"
   },
   "files": [
-    "target/dts/**/*",
-    "target/es5/**/*",
-    "target/es6/**/*"
+    "target/dts",
+    "target/es5",
+    "target/es6"
   ],
   "dependencies": {
     "@qiwi/common-formatters": "^1.2.3",
