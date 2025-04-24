@@ -2,14 +2,14 @@
   "name": "@qiwi/pijma-desktop",
   "version": "0.0.0",
   "type": "module",
-  "main": "./target/es5/ts/index.js",
-  "module": "./target/es6/ts/index.js",
+  "main": "./target/es5/index.js",
+  "module": "./target/es6/index.js",
   "types": "./target/dts/index.d.ts",
   "exports": {
     ".": {
       "types": "./target/dts/index.d.ts",
-      "import": "./target/es6/ts/index.js",
-      "require": "./target/es5/ts/index.js"
+      "import": "./target/es6/index.js",
+      "require": "./target/es5/index.js"
     }
   },
   "license": "MIT",
@@ -21,8 +21,8 @@
     "build": "concurrently 'npm:build:*' 'npm:guide:build'",
     "start": "concurrently  --kill-others --kill-others-on-fail 'npm:guide:start' 'npm:chrome:start'",
     "test": "concurrently --kill-others --kill-others-on-fail --success first 'npm:test:start' 'npm:static:start' 'npm:chrome:start'",
-    "build:es5": "cd src/main && swc ts -d ../../target/es5 --config-file ../../swc.es5.json && cd ../.. && tsc-esm-fix --target=target/es5 --fillBlank",
-    "build:es6": "cd src/main && swc ts -d ../../target/es6 --config-file ../../swc.es6.json && cd ../.. && tsc-esm-fix --target=target/es6 --fillBlank",
+    "build:es5": "cd src/main/ts && swc . -d ../../../target/es5 --config-file ../../../swc.es5.json && cd ../../.. && tsc-esm-fix --target=target/es5 --fillBlank",
+    "build:es6": "cd src/main/ts && swc . -d ../../../target/es6 --config-file ../../../swc.es6.json && cd ../../.. && tsc-esm-fix --target=target/es6 --fillBlank",
     "build:dts": "tsc --project tsconfig.dts.json",
     "guide:build": "styleguidist --config styleguide.config.cjs build",
     "guide:start": "styleguidist --config styleguide.config.cjs server",
@@ -34,9 +34,9 @@
     "lint": "eslint src"
   },
   "files": [
-    "target/dts/**/*",
-    "target/es5/**/*",
-    "target/es6/**/*"
+    "target/dts",
+    "target/es5",
+    "target/es6"
   ],
   "dependencies": {
     "@qiwi/pijma-core": "workspace:*",
