@@ -1,3 +1,8 @@
+## [@qiwi/pijma-desktop@1.165.2](https://github.com/qiwi/pijma/compare/2025.4.24-qiwi.pijma-desktop.1.165.1-f0...2025.4.28-qiwi.pijma-desktop.1.165.2-f0) (2025-04-28)
+
+### Dependencies
+* perf: dependencies @qiwi/pijma-core updated to 1.163.3
+
 ## [@qiwi/pijma-desktop@1.165.1](https://github.com/qiwi/pijma/compare/2025.4.19-qiwi.pijma-desktop.1.165.0-f0...2025.4.24-qiwi.pijma-desktop.1.165.1-f0) (2025-04-24)
 
 ### Fixes & improvements
