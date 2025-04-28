@@ -8,10 +8,10 @@ exports[`Header renders correctly 1`] = `
     className="css-1oydas4"
   >
     <div
-      className="css-1be31ax"
+      className="css-nxj2ex"
     >
       <div
-        className="css-70qvj9"
+        className="css-1qsie2a"
       >
         <div
           className="css-mb6w8p"
@@ -115,7 +115,7 @@ exports[`Header renders correctly 1`] = `
             tabIndex={0}
           >
             <div
-              className="css-70qvj9"
+              className="css-1qsie2a"
             >
               <span>
                 Test_Agent
@@ -127,7 +127,7 @@ exports[`Header renders correctly 1`] = `
           className="css-1upovfp"
         >
           <div
-            className="css-1ns1pgm"
+            className="css-110ky2x"
             role="menu"
           >
             <div
@@ -147,7 +147,7 @@ exports[`Header renders correctly 1`] = `
                 title="Транзакции"
               >
                 <div
-                  className="css-1hpx0py"
+                  className="css-8jgow6"
                 >
                   <span
                     className="css-l3al1k"
@@ -174,7 +174,7 @@ exports[`Header renders correctly 1`] = `
                 title="Статистика и аналитика"
               >
                 <div
-                  className="css-1hpx0py"
+                  className="css-8jgow6"
                 >
                   <span
                     className="css-l3al1k"
@@ -208,7 +208,7 @@ exports[`Header renders correctly 1`] = `
                 title="Документы"
               >
                 <div
-                  className="css-1hpx0py"
+                  className="css-8jgow6"
                 >
                   <span
                     className="css-l3al1k"
@@ -235,7 +235,7 @@ exports[`Header renders correctly 1`] = `
                 title="Документы123"
               >
                 <div
-                  className="css-1hpx0py"
+                  className="css-8jgow6"
                 >
                   <span
                     className="css-l3al1k"
@@ -255,7 +255,7 @@ exports[`Header renders correctly 1`] = `
           className="css-0"
         >
           <div
-            className="css-k008qs"
+            className="css-1v83fon"
           >
             <div
               className="css-0"
@@ -294,10 +294,10 @@ exports[`Header renders correctly 2`] = `
     className="css-1oydas4"
   >
     <div
-      className="css-1be31ax"
+      className="css-nxj2ex"
     >
       <div
-        className="css-70qvj9"
+        className="css-1qsie2a"
       >
         <div
           className="css-mb6w8p"
@@ -401,7 +401,7 @@ exports[`Header renders correctly 2`] = `
             tabIndex={0}
           >
             <div
-              className="css-70qvj9"
+              className="css-1qsie2a"
             >
               <span />
             </div>
@@ -411,7 +411,7 @@ exports[`Header renders correctly 2`] = `
           className="css-1upovfp"
         >
           <div
-            className="css-1ns1pgm"
+            className="css-110ky2x"
             role="menu"
           >
             <div
@@ -431,7 +431,7 @@ exports[`Header renders correctly 2`] = `
                 title="Транзакции"
               >
                 <div
-                  className="css-1hpx0py"
+                  className="css-8jgow6"
                 >
                   <span
                     className="css-l3al1k"
@@ -458,7 +458,7 @@ exports[`Header renders correctly 2`] = `
                 title="Статистика и аналитика"
               >
                 <div
-                  className="css-1hpx0py"
+                  className="css-8jgow6"
                 >
                   <span
                     className="css-l3al1k"
@@ -492,7 +492,7 @@ exports[`Header renders correctly 2`] = `
                 title="Документы"
               >
                 <div
-                  className="css-1hpx0py"
+                  className="css-8jgow6"
                 >
                   <span
                     className="css-l3al1k"
@@ -519,7 +519,7 @@ exports[`Header renders correctly 2`] = `
                 title="Документы123"
               >
                 <div
-                  className="css-1hpx0py"
+                  className="css-8jgow6"
                 >
                   <span
                     className="css-l3al1k"
@@ -539,7 +539,7 @@ exports[`Header renders correctly 2`] = `
           className="css-0"
         >
           <div
-            className="css-k008qs"
+            className="css-1v83fon"
           >
             <div
               className="css-0"
@@ -578,10 +578,10 @@ exports[`Header renders correctly 3`] = `
     className="css-1oydas4"
   >
     <div
-      className="css-1be31ax"
+      className="css-nxj2ex"
     >
       <div
-        className="css-70qvj9"
+        className="css-1qsie2a"
       >
         <div
           className="css-mb6w8p"
@@ -685,7 +685,7 @@ exports[`Header renders correctly 3`] = `
             tabIndex={0}
           >
             <div
-              className="css-70qvj9"
+              className="css-1qsie2a"
             >
               <span />
             </div>
@@ -695,7 +695,7 @@ exports[`Header renders correctly 3`] = `
           className="css-1upovfp"
         >
           <div
-            className="css-1ns1pgm"
+            className="css-110ky2x"
             role="menu"
           />
         </div>
@@ -707,7 +707,7 @@ exports[`Header renders correctly 3`] = `
           className="css-0"
         >
           <div
-            className="css-k008qs"
+            className="css-1v83fon"
           >
             <div
               className="css-0"
@@ -746,7 +746,7 @@ exports[`Header renders correctly 4`] = `
     className="css-1oydas4"
   >
     <div
-      className="css-1jqza1t"
+      className="css-c3vyji"
     >
       <svg
         className="css-1207ph5"

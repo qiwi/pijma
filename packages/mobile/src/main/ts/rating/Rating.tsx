@@ -72,11 +72,3 @@ export const Rating: FC<RatingProps> = ({
   )
 
 Rating.displayName = 'Rating'
-
-Rating.defaultProps = {
-  value: 0,
-  size: 'm',
-  disabled: false,
-  count: 5,
-  stub: false,
-}

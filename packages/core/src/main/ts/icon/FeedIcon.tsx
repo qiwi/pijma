@@ -31,9 +31,3 @@ export const FeedIcon: FC<FeedIconProps> = ({
 )
 
 FeedIcon.displayName = 'FeedIcon'
-
-FeedIcon.defaultProps = {
-  size: 6,
-  color: '#000',
-  active: false,
-}

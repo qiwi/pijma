@@ -216,7 +216,7 @@ export const Hint: FC<HintProps> = ({
   placement,
   children,
   show,
-  flip,
+  flip = true,
   onShow,
   onHide,
   ...rest
@@ -304,8 +304,4 @@ export const Hint: FC<HintProps> = ({
       )}
     />
   )
-}
-
-Hint.defaultProps = {
-  flip: true,
 }

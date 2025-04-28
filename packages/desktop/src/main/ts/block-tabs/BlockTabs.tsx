@@ -194,13 +194,3 @@ export const BlockTabs: FC<BlockTabsProps> = ({
   )
 
 BlockTabs.displayName = 'BlockTabs'
-
-BlockTabs.defaultProps = {
-  select: 0,
-  tabIndex: 0,
-  vertical: false,
-  centered: false,
-  stub: false,
-  hr: true,
-  indent: 'm',
-}

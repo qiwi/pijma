@@ -41,7 +41,7 @@ export interface ContentInputProps {
 }
 
 export const ContentInput = forwardRef<HTMLInputElement, ContentInputProps>(
-  (props, ref) => {
+  ({ tabIndex = 0, ...props }, ref) => {
     const common = {
       width: 1,
       height: 12,
@@ -113,7 +113,3 @@ export const ContentInput = forwardRef<HTMLInputElement, ContentInputProps>(
 )
 
 ContentInput.displayName = 'ContentInput'
-
-ContentInput.defaultProps = {
-  tabIndex: 0,
-}

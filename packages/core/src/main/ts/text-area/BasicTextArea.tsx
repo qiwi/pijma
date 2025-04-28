@@ -33,7 +33,12 @@ export interface BasicTextAreaProps {
 export const BasicTextArea = forwardRef<
   HTMLTextAreaElement,
   BasicTextAreaProps
->((props, ref) => (
+>(({
+  tabIndex = 0,
+  ...props
+},
+  ref
+) => (
   <TextArea
     {...getDataProps(props)}
     ref={ref}
@@ -88,7 +93,3 @@ export const BasicTextArea = forwardRef<
 ))
 
 BasicTextArea.displayName = 'BasicTextArea'
-
-BasicTextArea.defaultProps = {
-  tabIndex: 0,
-}

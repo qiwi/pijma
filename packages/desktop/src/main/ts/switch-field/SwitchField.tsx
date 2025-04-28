@@ -18,7 +18,10 @@ import { SwitchFieldProps } from './SwitchFieldProps'
 
 export const SwitchField: FC<
   SwitchFieldProps<SwitchFieldOptionModel<any>, any>
-> = (props) =>
+> = ({
+  tabIndex = 0,
+  ...props
+}) =>
   props.stub ? (
     <Box maxWidth={1}>
       <Stub width={24} height={3} top={2} bottom={4} />
@@ -49,7 +52,7 @@ export const SwitchField: FC<
     </Box>
   ) : (
     <CheckboxControl<SwitchFieldOptionModel<any>, any>
-      tabIndex={props.tabIndex}
+      tabIndex={tabIndex}
       options={props.options}
       values={props.values}
       equals={props.equals}
@@ -103,7 +106,3 @@ export const SwitchField: FC<
   )
 
 SwitchField.displayName = 'SwitchField'
-
-SwitchField.defaultProps = {
-  tabIndex: 0,
-}

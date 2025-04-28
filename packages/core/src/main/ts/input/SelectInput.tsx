@@ -29,7 +29,7 @@ export interface SelectInputProps {
 }
 
 export const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>(
-  (props, ref) => {
+  ({ tabIndex = 0, ...props }, ref) => {
     const common = {
       ref,
       width: 1,
@@ -75,7 +75,3 @@ export const SelectInput = forwardRef<HTMLInputElement, SelectInputProps>(
 )
 
 SelectInput.displayName = 'SelectInput'
-
-SelectInput.defaultProps = {
-  tabIndex: 0,
-}

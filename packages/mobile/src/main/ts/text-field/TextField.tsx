@@ -3,7 +3,10 @@ import React, { FC } from 'react'
 
 import { TextFieldProps } from './TextFieldProps'
 
-export const TextField: FC<TextFieldProps> = (props) =>
+export const TextField: FC<TextFieldProps> = ({
+  tabIndex = 0,
+  ...props
+}) =>
   props.stub ? (
     <InputField
       active={false}
@@ -59,7 +62,3 @@ export const TextField: FC<TextFieldProps> = (props) =>
   )
 
 TextField.displayName = 'TextField'
-
-TextField.defaultProps = {
-  tabIndex: 0,
-}
