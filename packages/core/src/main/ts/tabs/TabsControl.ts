@@ -7,8 +7,6 @@ import {
   MouseEventHandler,
   RefObject,
 } from 'react'
-import { findDOMNode } from 'react-dom'
-
 export interface TabsControlProps {
   select: number
   length: number
@@ -48,9 +46,10 @@ export class TabsControl extends Component<TabsControlProps> {
   }
 
   private calculateBorder() {
-    const element = findDOMNode(
-      this.state.refs[this.props.select].current,
-    ) as HTMLDivElement
+    const element = this.state.refs[this.props.select].current
+    if (!element) {
+      return
+    }
     this.setState({
       borderLeft: element.offsetLeft,
       borderWidth: element.offsetWidth,

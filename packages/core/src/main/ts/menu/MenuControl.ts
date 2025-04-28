@@ -5,7 +5,6 @@ import {
   MouseEventHandler,
   RefObject,
 } from 'react'
-import { findDOMNode } from 'react-dom'
 
 import { MenuControlProps } from './MenuControlProps'
 import { MenuControlState } from './MenuControlState'
@@ -74,10 +73,8 @@ export class MenuControl extends Component<MenuControlProps, MenuControlState> {
   }
 
   private scrollToItem: (item: RefObject<HTMLDivElement>) => void = (item) => {
-    const containerElement = findDOMNode(
-      this.containerRef.current,
-    ) as HTMLDivElement
-    const itemElement = findDOMNode(item.current) as HTMLDivElement
+    const containerElement = this.containerRef.current
+    const itemElement = item.current
     if (!containerElement || !itemElement) {
       return
     }
