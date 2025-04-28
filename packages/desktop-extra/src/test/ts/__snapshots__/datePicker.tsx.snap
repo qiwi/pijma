@@ -26,11 +26,11 @@ exports[`DatePicker renders correctly 1`] = `
       className="css-1bx5ylf"
     >
       <div
-        className="css-70qvj9"
+        className="css-1qsie2a"
       >
         <input
           autoComplete="off"
-          className="css-1haa77m"
+          className="css-1fb1yqj"
           defaultValue=""
           disabled={false}
           onBlur={[Function]}
@@ -58,7 +58,7 @@ exports[`DatePicker renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="css-1abbrc"
+      className="css-hnykp"
     />
   </div>
   <div

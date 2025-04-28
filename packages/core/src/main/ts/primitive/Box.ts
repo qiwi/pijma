@@ -90,10 +90,11 @@ export const BoxOptions: StyledOptions<BoxProps> = {
 }
 
 export const BoxStyles: Interpolation<BoxProps & { theme: Theme }> = ({
+  display = 'block',
   theme,
   ...props
 }) => ({
-  display: props.display,
+  display,
   margin: cssValue(props.m, theme.scale, false),
   marginTop: cssValue(props.mt || props.my, theme.scale, false),
   marginRight: cssValue(props.mr || props.mx, theme.scale, false),
@@ -123,7 +124,3 @@ export const BoxStyles: Interpolation<BoxProps & { theme: Theme }> = ({
 export const Box = styled('div', BoxOptions)<BoxProps>(BoxStyles)
 
 Box.displayName = 'Box'
-
-Box.defaultProps = {
-  display: 'block',
-}

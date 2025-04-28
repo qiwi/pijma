@@ -10,13 +10,16 @@ export interface ReCaptchaFieldProps extends ReCaptchaProps {
   help?: ReactNode
 }
 
-export const ReCaptchaField: FC<ReCaptchaFieldProps> = (props) => (
+export const ReCaptchaField: FC<ReCaptchaFieldProps> = ({
+  tabIndex = 0,
+  ...props
+}) => (
   <SimpleField
     {...getDataProps(props)}
     input={
       <ReCaptcha
         siteKey={props.siteKey}
-        tabIndex={props.tabIndex}
+        tabIndex={tabIndex}
         value={props.value}
         onChange={props.onChange}
         onErrored={props.onErrored}
@@ -30,7 +33,3 @@ export const ReCaptchaField: FC<ReCaptchaFieldProps> = (props) => (
 )
 
 ReCaptchaField.displayName = 'ReCaptchaField'
-
-ReCaptchaField.defaultProps = {
-  tabIndex: 0,
-}

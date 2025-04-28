@@ -126,7 +126,3 @@ export const Image: FC<ImageProps> = ({
   )
 
 Image.displayName = 'Image'
-
-Image.defaultProps = {
-  stub: true,
-}

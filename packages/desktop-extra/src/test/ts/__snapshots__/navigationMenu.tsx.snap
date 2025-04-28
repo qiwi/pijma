@@ -6,7 +6,7 @@ exports[`NavigationMenu renders correctly 1`] = `
 >
   <ul>
     <div
-      className="css-1bnxa12"
+      className="css-1suygkb"
     >
       <li
         className="css-0"
@@ -84,7 +84,7 @@ exports[`NavigationMenu renders correctly 2`] = `
 >
   <ul>
     <div
-      className="css-1bnxa12"
+      className="css-1suygkb"
     />
   </ul>
 </nav>
@@ -96,7 +96,7 @@ exports[`NavigationMenu renders correctly 3`] = `
 >
   <ul>
     <div
-      className="css-1bnxa12"
+      className="css-1suygkb"
     >
       <li
         className="css-0"
@@ -174,7 +174,7 @@ exports[`NavigationMenu renders correctly 4`] = `
 >
   <ul>
     <div
-      className="css-1bnxa12"
+      className="css-1suygkb"
     >
       <li
         className="css-0"
@@ -219,7 +219,7 @@ exports[`NavigationMenu renders correctly 5`] = `
 >
   <ul>
     <div
-      className="css-1bnxa12"
+      className="css-1suygkb"
     >
       <li
         className="css-0"

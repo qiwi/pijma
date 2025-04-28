@@ -31,9 +31,3 @@ export const FilterIcon: FC<FilterIconProps> = ({
 )
 
 FilterIcon.displayName = 'FilterIcon'
-
-FilterIcon.defaultProps = {
-  size: 6,
-  color: '#000',
-  active: false,
-}

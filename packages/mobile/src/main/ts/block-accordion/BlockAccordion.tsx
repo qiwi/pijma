@@ -82,7 +82,3 @@ export const BlockAccordion: FC<
 )
 
 BlockAccordion.displayName = 'BlockAccordion'
-
-BlockAccordion.defaultProps = {
-  tabIndex: 0,
-}

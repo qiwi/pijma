@@ -126,9 +126,3 @@ export const Pagination: FC<PaginationProps> = ({
 )
 
 Pagination.displayName = 'Pagination'
-
-Pagination.defaultProps = {
-  shadowed: false,
-  count: 5,
-  stub: false,
-}

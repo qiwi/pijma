@@ -36,11 +36,3 @@ export const Block: FC<BlockProps> = ({
 )
 
 Block.displayName = 'Block'
-
-Block.defaultProps = {
-  active: false,
-  focus: false,
-  hover: false,
-  accent: false,
-  bg: '#fff',
-}

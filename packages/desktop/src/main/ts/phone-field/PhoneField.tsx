@@ -165,8 +165,3 @@ export const PhoneField: FC<PhoneFieldProps> = ({
   )
 
 PhoneField.displayName = 'PhoneField'
-
-PhoneField.defaultProps = {
-  tabIndex: 0,
-  code: 'ru',
-}

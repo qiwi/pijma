@@ -81,7 +81,3 @@ export const Alert: FC<AlertProps> = ({
 )
 
 Alert.displayName = 'Alert'
-
-Alert.defaultProps = {
-  type: 'general',
-}

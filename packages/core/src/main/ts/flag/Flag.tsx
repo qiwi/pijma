@@ -247,8 +247,3 @@ export const Flag: FC<FlagProps> = ({
 )
 
 Flag.displayName = 'Flag'
-
-Flag.defaultProps = {
-  width: 6,
-  height: 4,
-}

@@ -7,7 +7,7 @@ export interface QuestionIconProps {
   size?: number
 }
 
-export const QuestionIcon: FC<QuestionIconProps> = ({ size, ...rest }) => (
+export const QuestionIcon: FC<QuestionIconProps> = ({ size = 6, ...rest }) => (
   <Svg
     {...getDataProps(rest)}
     width={size}
@@ -29,7 +29,3 @@ export const QuestionIcon: FC<QuestionIconProps> = ({ size, ...rest }) => (
 )
 
 QuestionIcon.displayName = 'QuestionIcon'
-
-QuestionIcon.defaultProps = {
-  size: 6,
-}

@@ -219,7 +219,3 @@ export const SuggestField = <V extends {}>({
   )
 
 SuggestField.displayName = 'SuggestField'
-
-SuggestField.defaultProps = {
-  equals: (a: any, b: any) => a === b,
-}

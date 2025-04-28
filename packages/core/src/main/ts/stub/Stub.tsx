@@ -24,7 +24,10 @@ export interface StubProps {
   r?: Value
 }
 
-export const Stub: FC<StubProps> = (props) => (
+export const Stub: FC<StubProps> = ({
+  r = 4,
+  ...props
+}) => (
   <Box
     {...getDataProps(props)}
     as="span"
@@ -43,7 +46,7 @@ export const Stub: FC<StubProps> = (props) => (
     <CardPos
       as="span"
       type="relative"
-      r={props.r}
+      r={r}
       overflow="hidden"
       bg={props.inverse ? 'rgba(255, 255, 255, 0.14)' : '#E6E6E6'}
       width={1}
@@ -73,7 +76,3 @@ export const Stub: FC<StubProps> = (props) => (
 )
 
 Stub.displayName = 'Stub'
-
-Stub.defaultProps = {
-  r: 4,
-}

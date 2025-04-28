@@ -310,8 +310,3 @@ export const Icon: FC<IconProps> = ({
 )
 
 Icon.displayName = 'Icon'
-
-Icon.defaultProps = {
-  size: 6,
-  color: '#000',
-}

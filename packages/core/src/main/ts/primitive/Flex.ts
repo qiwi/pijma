@@ -23,7 +23,14 @@ export const FlexOptions: StyledOptions<FlexProps> = {
 export const Flex = styled(
   Box,
   FlexOptions,
-)<FlexProps>(({ wrap, direction, align, justify }) => ({
+)<FlexProps>(({
+  display = 'flex',
+  wrap,
+  direction,
+  align,
+  justify
+}) => ({
+  display,
   flexWrap: wrap,
   flexDirection: direction,
   alignItems: align,
@@ -31,7 +38,3 @@ export const Flex = styled(
 }))
 
 Flex.displayName = 'Flex'
-
-Flex.defaultProps = {
-  display: 'flex',
-}
