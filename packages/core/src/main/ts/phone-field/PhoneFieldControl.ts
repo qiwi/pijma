@@ -6,7 +6,6 @@ import {
   MouseEventHandler,
   RefObject,
 } from 'react'
-import { findDOMNode } from 'react-dom'
 
 import { createPhoneMask } from '../mask'
 import { PhoneFieldControlProps } from './PhoneFieldControlProps'
@@ -91,7 +90,7 @@ export class PhoneFieldControl extends Component<
   }
 
   private get inputField(): HTMLInputElement {
-    return findDOMNode(this.inputRef.current!) as HTMLInputElement
+    return this.inputRef.current!
   }
 
   private onFlagClick: MouseEventHandler = (event) => {
