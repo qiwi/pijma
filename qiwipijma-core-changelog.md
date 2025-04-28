@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.163.3](https://github.com/qiwi/pijma/compare/2025.4.24-qiwi.pijma-core.1.163.2-f0...2025.4.28-qiwi.pijma-core.1.163.3-f0) (2025-04-28)
+
+### Fixes & improvements
+* refactor: remove deprecated findDOMNode (#619) [006a8ec2](https://github.com/qiwi/pijma/commit/006a8ec2f61ce2dd685bdf24672cbe8c976c0948)
+
 ## [@qiwi/pijma-core@1.163.2](https://github.com/qiwi/pijma/compare/2025.4.18-qiwi.pijma-core.1.163.1-f0...2025.4.24-qiwi.pijma-core.1.163.2-f0) (2025-04-24)
 
 ### Fixes & improvements
