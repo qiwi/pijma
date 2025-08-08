@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.163.4](https://github.com/qiwi/pijma/compare/2025.4.28-qiwi.pijma-core.1.163.3-f0...2025.8.8-qiwi.pijma-core.1.163.4-f0) (2025-08-08)
+
+### Fixes & improvements
+* perf: tech release (#624) [bc3c6fe4](https://github.com/qiwi/pijma/commit/bc3c6fe4abb36cee37c363248cb4f6367081f6e2)
+
 ## [@qiwi/pijma-core@1.163.3](https://github.com/qiwi/pijma/compare/2025.4.24-qiwi.pijma-core.1.163.2-f0...2025.4.28-qiwi.pijma-core.1.163.3-f0) (2025-04-28)
 
 ### Fixes & improvements
