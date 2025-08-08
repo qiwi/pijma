@@ -34,14 +34,14 @@
     "@emotion/core": "^11.0.0",
     "@emotion/css": "^11.13.5",
     "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@swc/helpers": "^0.5.17",
     "@types/dom-helpers": "^5.0.1",
     "@types/react-google-recaptcha": "^2.1.9",
     "@types/react-overlays": "^3.1.0",
     "@types/react-transition-group": "^4.4.12",
     "dom-helpers": "^5.2.1",
-    "markdown-to-jsx": "^7.7.4",
+    "markdown-to-jsx": "^7.7.13",
     "react-google-recaptcha": "^2.1.0",
     "react-intersection-observer": "^9.16.0",
     "react-overlays": "^5.2.1",
@@ -71,8 +71,8 @@
     "react-styleguidist": "12.0.1",
     "style-loader": "3.3.2",
     "tsc-esm-fix": "2.20.13",
-    "typescript": "4.8.2",
-    "webpack": "5.99.6"
+    "typescript": "4.9.5",
+    "webpack": "5.101.0"
   },
   "repository": {
     "type": "git",
