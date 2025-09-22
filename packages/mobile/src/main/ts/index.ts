@@ -46,6 +46,7 @@ export * from './switch-field'
 export * from './select-field'
 export * from './code-field'
 export * from './hint'
+export * from './details'
 
 export { TextField as MaskTextField } from './text-field'
 export { PasswordField as MaskPasswordField } from './password-field'
