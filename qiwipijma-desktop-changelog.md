@@ -1,3 +1,8 @@
+## [@qiwi/pijma-desktop@1.166.0](https://github.com/qiwi/pijma/compare/2025.8.8-qiwi.pijma-desktop.1.165.3-f0...2025.10.15-qiwi.pijma-desktop.1.166.0-f0) (2025-10-15)
+
+### Features
+* feat: add getDataProps for mobile components (#626) [bd116e93](https://github.com/qiwi/pijma/commit/bd116e93e17f1b7ba050d47e3e98d5bede35cdcf)
+
 ## [@qiwi/pijma-desktop@1.165.3](https://github.com/qiwi/pijma/compare/2025.4.28-qiwi.pijma-desktop.1.165.2-f0...2025.8.8-qiwi.pijma-desktop.1.165.3-f0) (2025-08-08)
 
 ### Fixes & improvements
