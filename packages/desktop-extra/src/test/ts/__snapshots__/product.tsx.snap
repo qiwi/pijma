@@ -16,7 +16,7 @@ exports[`Product renders correctly 1`] = `
     tabIndex={0}
   >
     <div
-      className="css-70qvj9"
+      className="css-1qsie2a"
     >
       <span>
         CurrItemms123
@@ -42,7 +42,7 @@ exports[`Product renders correctly 2`] = `
     tabIndex={0}
   >
     <div
-      className="css-70qvj9"
+      className="css-1qsie2a"
     >
       <span>
         CurrItemms123

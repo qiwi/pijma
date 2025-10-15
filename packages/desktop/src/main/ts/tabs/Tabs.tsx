@@ -136,11 +136,3 @@ export const Tabs: FC<TabsProps> = ({
   )
 
 Tabs.displayName = 'Tabs'
-
-Tabs.defaultProps = {
-  select: 0,
-  tabIndex: 0,
-  vertical: false,
-  centered: false,
-  stub: false,
-}

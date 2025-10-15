@@ -37,7 +37,3 @@ export const Spacer: FC<SpacerProps> = ({ size = 'm', children }) => {
 }
 
 Spacer.displayName = 'Spacer'
-
-Spacer.defaultProps = {
-  size: 'm',
-}

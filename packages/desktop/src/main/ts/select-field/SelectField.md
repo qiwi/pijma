@@ -69,6 +69,7 @@ return (
     <Box>
       <Caption>AUTOFOCUS</Caption>
       <SelectField
+        tabIndex={0}
         data-testid="select-field"
         title="Select"
         value={value}

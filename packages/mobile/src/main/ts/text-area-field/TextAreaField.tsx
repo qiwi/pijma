@@ -26,7 +26,10 @@ export interface TextAreaFieldProps {
   onKeyUp?: (event: KeyboardEvent<HTMLTextAreaElement>) => boolean
 }
 
-export const TextAreaField: FC<TextAreaFieldProps> = (props) => (
+export const TextAreaField: FC<TextAreaFieldProps> = ({
+  tabIndex = 0,
+  ...props
+}) => (
   <TextAreaFieldControl
     onChange={props.onChange}
     onFocus={props.onFocus}
@@ -82,7 +85,3 @@ export const TextAreaField: FC<TextAreaFieldProps> = (props) => (
 )
 
 TextAreaField.displayName = 'TextAreaField'
-
-TextAreaField.defaultProps = {
-  tabIndex: 0,
-}

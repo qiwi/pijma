@@ -28,7 +28,11 @@ export interface PaginationLinkProps {
   }>
 }
 
-export const PaginationLink: FC<PaginationLinkProps> = (props) => (
+export const PaginationLink: FC<PaginationLinkProps> = ({
+  width = 12,
+  shadowed = false,
+  ...props
+}) => (
   <LinkControl
     href={props.stub ? undefined : props.href}
     onClick={props.stub ? undefined : props.onClick}
@@ -38,7 +42,7 @@ export const PaginationLink: FC<PaginationLinkProps> = (props) => (
         as={props.stub ? 'div' : 'a'}
         transition="all 100ms cubic-bezier(0.4, 0.0, 0.2, 1)"
         height={12}
-        width={props.width}
+        width={width}
         display="inline-flex"
         cursor={props.stub || props.disabled ? 'default' : 'pointer'}
         bg={
@@ -48,7 +52,7 @@ export const PaginationLink: FC<PaginationLinkProps> = (props) => (
         }
         s={
           (renderProps.hover || renderProps.focus) && !props.disabled
-            ? props.shadowed
+            ? shadowed
               ? 'inset 0 1px 0 0 #e6e6e6, 0 -1px 0 1px #e6e6e6'
               : '0px -1px 0 1px #e6e6e6'
             : '1px 0 0 #e6e6e6'
@@ -85,8 +89,3 @@ export const PaginationLink: FC<PaginationLinkProps> = (props) => (
 )
 
 PaginationLink.displayName = 'PaginationLink'
-
-PaginationLink.defaultProps = {
-  width: 12,
-  shadowed: false,
-}

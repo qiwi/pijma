@@ -13,7 +13,10 @@ import React, { FC } from 'react'
 
 import { SwitchProps } from './SwitchProps'
 
-export const Switch: FC<SwitchProps> = (props) =>
+export const Switch: FC<SwitchProps> = ({
+  tabIndex = 0,
+  ...props
+}) =>
   props.stub ? (
     <Flex
       direction={props.reverse ? 'row-reverse' : 'row'}
@@ -42,7 +45,7 @@ export const Switch: FC<SwitchProps> = (props) =>
       children={(renderProps) => (
         <OptionField
           {...getDataProps(props)}
-          tabIndex={props.tabIndex}
+          tabIndex={tabIndex}
           onFocus={renderProps.onFocus}
           onBlur={renderProps.onBlur}
           onKeyDown={renderProps.onKeyDown}
@@ -84,7 +87,3 @@ export const Switch: FC<SwitchProps> = (props) =>
   )
 
 Switch.displayName = 'Switch'
-
-Switch.defaultProps = {
-  tabIndex: 0,
-}

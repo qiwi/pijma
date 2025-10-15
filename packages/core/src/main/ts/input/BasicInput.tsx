@@ -43,7 +43,12 @@ export interface BasicInputProps {
 }
 
 export const BasicInput = forwardRef<HTMLInputElement, BasicInputProps>(
-  (props, ref) => {
+  ({
+     tabIndex = 0,
+     ...props
+   },
+   ref
+  ) => {
     const theme = useTheme()
 
     const common = {
@@ -119,7 +124,3 @@ export const BasicInput = forwardRef<HTMLInputElement, BasicInputProps>(
 )
 
 BasicInput.displayName = 'BasicInput'
-
-BasicInput.defaultProps = {
-  tabIndex: 0,
-}

@@ -9,7 +9,11 @@ import React, { FC } from 'react'
 
 import { PasswordFieldProps } from './PasswordFieldProps'
 
-export const PasswordField: FC<PasswordFieldProps> = (props) => (
+export const PasswordField: FC<PasswordFieldProps> = ({
+  tabIndex = 0,
+  viewed = true,
+  ...props
+}) => (
   <PasswordFieldControl
     onChange={props.onChange}
     onFocus={props.onFocus}
@@ -23,7 +27,7 @@ export const PasswordField: FC<PasswordFieldProps> = (props) => (
         active={renderProps.focused || !!props.value || !!props.placeholder}
         input={
           <BasicInput
-            type={props.viewed && !renderProps.hidden ? 'text' : 'password'}
+            type={viewed && !renderProps.hidden ? 'text' : 'password'}
             value={props.value}
             name={props.name}
             autoComplete={props.autoComplete}
@@ -31,7 +35,7 @@ export const PasswordField: FC<PasswordFieldProps> = (props) => (
             placeholder={props.placeholder}
             inputMode={props.inputMode}
             disabled={props.disabled}
-            pr={props.hint || props.viewed ? 7 : undefined}
+            pr={props.hint || viewed ? 7 : undefined}
             error={!!props.error}
             focused={renderProps.focused}
             maxLength={props.maxLength}
@@ -45,7 +49,7 @@ export const PasswordField: FC<PasswordFieldProps> = (props) => (
           />
         }
         hint={
-          props.viewed ? (
+          viewed ? (
             <Box
               display="inline-block"
               width={1}
@@ -71,8 +75,3 @@ export const PasswordField: FC<PasswordFieldProps> = (props) => (
 )
 
 PasswordField.displayName = 'PasswordField'
-
-PasswordField.defaultProps = {
-  tabIndex: 0,
-  viewed: true,
-}

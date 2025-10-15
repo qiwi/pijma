@@ -19,7 +19,3 @@ export const BlockContent: FC<BlockContentProps> = ({
 }) => <Box p={BlockContentIdent[indent]} children={children} />
 
 BlockContent.displayName = 'BlockContent'
-
-BlockContent.defaultProps = {
-  indent: 'm',
-}

@@ -2,7 +2,7 @@
 
 exports[`Icon renders correctly 1`] = `
 <div
-  className="css-1n0zz00"
+  className="css-12rtanj"
 >
   <div
     className="css-1rfmcj9"
@@ -42,7 +42,7 @@ exports[`Icon renders correctly 1`] = `
 
 exports[`Icon renders correctly 2`] = `
 <div
-  className="css-1n0zz00"
+  className="css-12rtanj"
 >
   <div
     className="css-1rfmcj9"

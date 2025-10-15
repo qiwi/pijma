@@ -38,9 +38,3 @@ export const CrossBurger: FC<CrossBurgerProps> = ({
 )
 
 CrossBurger.displayName = 'CrossBurger'
-
-CrossBurger.defaultProps = {
-  size: 6,
-  color: '#000',
-  active: false,
-}

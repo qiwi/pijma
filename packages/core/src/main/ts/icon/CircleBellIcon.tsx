@@ -27,8 +27,3 @@ export const CircleBellIcon: FC<CircleBellIconProps> = ({ size = 6, color = '#00
 )
 
 CircleBellIcon.displayName = 'CircleBellIcon'
-
-CircleBellIcon.defaultProps = {
-  size: 6,
-  color: '#000',
-}

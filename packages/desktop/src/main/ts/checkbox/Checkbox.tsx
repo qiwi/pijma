@@ -10,7 +10,10 @@ import React, { FC } from 'react'
 
 import { CheckboxProps } from './CheckboxProps'
 
-export const Checkbox: FC<CheckboxProps> = (props) => (
+export const Checkbox: FC<CheckboxProps> = ({
+  tabIndex = 0,
+  ...props
+}) => (
   <SwitchControl
     disabled={props.disabled}
     checked={props.checked}
@@ -18,7 +21,7 @@ export const Checkbox: FC<CheckboxProps> = (props) => (
     children={(renderProps) => (
       <OptionField
         {...getDataProps(props)}
-        tabIndex={props.tabIndex}
+        tabIndex={tabIndex}
         onFocus={renderProps.onFocus}
         onBlur={renderProps.onBlur}
         onKeyDown={renderProps.onKeyDown}
@@ -47,7 +50,3 @@ export const Checkbox: FC<CheckboxProps> = (props) => (
 )
 
 Checkbox.displayName = 'Checkbox'
-
-Checkbox.defaultProps = {
-  tabIndex: 0,
-}

@@ -108,8 +108,3 @@ export const BlockAccordion: FC<
 )
 
 BlockAccordion.displayName = 'BlockAccordion'
-
-BlockAccordion.defaultProps = {
-  indent: 'm',
-  tabIndex: 0,
-}
