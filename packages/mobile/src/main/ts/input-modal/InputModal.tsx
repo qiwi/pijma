@@ -5,6 +5,7 @@ import {
   css,
   Flex,
   FlexItem,
+  getDataProps,
   Icon,
   Input,
   Modal,
@@ -85,6 +86,7 @@ export const InputModal: FC<InputModalProps> = (props) => (
     restoreFocus={false}
     renderDialog={(dialogProps) => (
       <Pos
+        {...getDataProps(props)}
         type="fixed"
         zIndex={10050}
         top={0}

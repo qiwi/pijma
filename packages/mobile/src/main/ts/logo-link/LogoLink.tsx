@@ -2,6 +2,7 @@ import {
   Box,
   Flex,
   FlexItem,
+  getDataProps,
   Image,
   LinkControlProps,
   Spacer,
@@ -34,6 +35,7 @@ export const LogoLink: FC<LogoLinkProps> = ({
   ...props
 }) => (
   <SectionLink
+    {...getDataProps(props)}
     href={props.href}
     target={props.target}
     download={props.download}

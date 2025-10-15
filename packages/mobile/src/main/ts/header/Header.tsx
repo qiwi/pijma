@@ -1,4 +1,4 @@
-import { Card, Pos } from '@qiwi/pijma-core'
+import { Card, getDataProps, Pos } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
 
 interface HeaderProps {
@@ -11,6 +11,7 @@ export const Header: FC<HeaderProps> = ({
   zIndex = 10002,
   active,
   children,
+  ...rest
 }) => (
   <Pos
     as="header"
@@ -18,6 +19,7 @@ export const Header: FC<HeaderProps> = ({
     zIndex={active ? zIndex : undefined}
     width={1}
     height={15}
+    {...getDataProps(rest)}
   >
     <Pos
       type={active ? 'fixed' : 'relative'}

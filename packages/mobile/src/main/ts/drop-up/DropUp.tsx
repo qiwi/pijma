@@ -5,6 +5,7 @@ import {
   Flex,
   FlexItem,
   FlexPos,
+  getDataProps,
   Icon,
   Modal,
   ModalProps,
@@ -137,6 +138,7 @@ export const DropUp: FC<DropUpProps> = (props) => (
           type="absolute"
           bottom={0}
           s="0px 0px 64px 0px rgba(0, 0, 0, 0.16)"
+          {...getDataProps(props)}
         >
           <Pos zIndex={1}>
             <Card width={1} px={6} py={4} s="0 1px 2px 0 rgba(0, 0, 0, 0.12)">

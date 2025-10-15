@@ -1,4 +1,4 @@
-import { BasicInput, InputField, TextFieldControl } from '@qiwi/pijma-core'
+import { BasicInput, getDataProps, InputField, TextFieldControl } from '@qiwi/pijma-core'
 import React, { FC } from 'react'
 
 import { TextFieldProps } from './TextFieldProps'
@@ -23,6 +23,7 @@ export const TextField: FC<TextFieldProps> = (props) =>
       onKeyUp={props.onKeyUp}
       children={(renderProps) => (
         <InputField
+          {...getDataProps(props)}
           title={props.title}
           active={renderProps.focused || !!props.value || !!props.placeholder}
           input={

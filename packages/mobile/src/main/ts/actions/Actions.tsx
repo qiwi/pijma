@@ -1,4 +1,4 @@
-import { Box } from '@qiwi/pijma-core'
+import { Box, getDataProps } from '@qiwi/pijma-core'
 import React, { Children, FC, ReactNode } from 'react'
 
 export interface ActionsProps {
@@ -13,6 +13,7 @@ export const Actions: FC<ActionsProps> = (props) => {
   }
   return (
     <Box
+      {...getDataProps(props)}
       width={1}
       children={Children.map(elements, (child: ReactNode, key: number) => (
         <Box

@@ -1,4 +1,4 @@
-import { Box, Flex, FlexItem } from '@qiwi/pijma-core'
+import { Box, Flex, FlexItem, getDataProps } from '@qiwi/pijma-core'
 import React, { FC } from 'react'
 
 import { NavLink, NavLinkProps } from '../nav-link'
@@ -11,8 +11,9 @@ export interface FooterNavProps {
 export const FooterNav: FC<FooterNavProps> = ({
   children = [],
   stub = false,
+  ...rest
 }) => (
-  <Box overflow="hidden">
+  <Box {...(stub ? {} : getDataProps(rest))} overflow="hidden">
     <Flex wrap="wrap" mx={-2} my={-2.5}>
       {stub
         ? (typeof stub === 'boolean' ? [24, 30, 18] : stub).map(

@@ -1,4 +1,4 @@
-import { Flex, FlexItem, Spacer } from '@qiwi/pijma-core'
+import { Flex, FlexItem, getDataProps, Spacer } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
 
 import { Heading, Paragraph } from '../typography/'
@@ -9,8 +9,8 @@ export interface NoticeProps {
   children?: ReactNode
 }
 
-export const Notice: FC<NoticeProps> = ({ icon, title, children }) => (
-  <Flex>
+export const Notice: FC<NoticeProps> = ({ icon, title, children, ...rest }) => (
+  <Flex {...getDataProps(rest)}>
     <FlexItem shrink={0} basis={6} mr={title ? 4 : 2} children={icon} />
     {title || children ? (
       <FlexItem>

@@ -1,4 +1,4 @@
-import { Box, HintControl, QuestionIcon } from '@qiwi/pijma-core'
+import { Box, getDataProps, HintControl, QuestionIcon } from '@qiwi/pijma-core'
 import React, { FC, Fragment, ReactNode } from 'react'
 
 import { SimpleModal } from '../modal'
@@ -11,12 +11,12 @@ export interface HintProps {
   onHide: () => void
 }
 
-export const Hint: FC<HintProps> = ({ children, show, onShow, onHide }) => (
+export const Hint: FC<HintProps> = ({ children, show, onShow, onHide, ...rest }) => (
   <HintControl
     show={show}
     onShow={onShow}
     children={(renderProps) => (
-      <Fragment>
+      <Fragment {...getDataProps(rest)}>
         <Box
           cursor="pointer"
           onClick={renderProps.onClick}

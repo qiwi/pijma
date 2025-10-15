@@ -3,6 +3,7 @@ import {
   Box,
   Flex,
   FlexItem,
+  getDataProps,
   Image,
   LinkControlProps,
   Spacer,
@@ -80,6 +81,7 @@ export const LogoBlockLink: FC<LogoBlockLinkProps> = ({
     </Block>
   ) : (
     <BlockLink
+      {...getDataProps(props)}
       title={title}
       accent
       tabIndex={props.tabIndex}

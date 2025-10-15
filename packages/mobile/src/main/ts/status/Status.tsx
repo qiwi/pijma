@@ -1,4 +1,4 @@
-import { Flex, FlexItem } from '@qiwi/pijma-core'
+import { Flex, FlexItem, getDataProps } from '@qiwi/pijma-core'
 import React, { FC, ReactNode } from 'react'
 
 import { Heading, Paragraph } from '../typography'
@@ -17,8 +17,9 @@ export const Status: FC<StatusProps> = ({
   actions,
   content,
   children,
+  ...rest
 }) => (
-  <Flex align="center" direction="column">
+  <Flex {...getDataProps(rest)} align="center" direction="column">
     {icon ? <FlexItem height={16} width={16} mb={6} children={icon} /> : null}
     {title ? <Heading align="center" size="4" children={title} /> : null}
     {content ? (
