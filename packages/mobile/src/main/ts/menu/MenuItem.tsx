@@ -2,8 +2,10 @@ import {
   Box,
   Flex,
   FlexItem,
+  getDataProps,
   Icon,
   Image,
+  omitDataProps,
   Section,
   Stub,
   Typo,
@@ -45,7 +47,7 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(
       size = 's',
       attention = false,
       stub = false,
-      ...props
+      ...rest
     },
     ref,
   ) => (
@@ -55,7 +57,9 @@ export const MenuItem = forwardRef<HTMLDivElement, MenuItemProps>(
       focus={focus}
       hover={hover}
       flat={!round}
-      {...props}
+      {...rest}
+      {...(stub ? {} : getDataProps(rest))}
+      {...omitDataProps(rest)}
     >
       <Flex px={6} py={2} minHeight={14}>
         {icon ? (

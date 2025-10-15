@@ -6,6 +6,7 @@ import {
   Flag,
   Flex,
   FlexItem,
+  getDataProps,
   InputField,
   MenuControl,
   PhoneFieldControl,
@@ -44,7 +45,7 @@ export const PhoneField: FC<PhoneFieldProps> = ({
           count={props.countries.length}
           onSelect={renderProps.onSelectCountry}
           children={(menuRenderProps) => (
-            <Pos type="relative" ref={renderProps.containerRef}>
+            <Pos type="relative" ref={renderProps.containerRef} {...getDataProps(props)}>
               <InputField
                 title={props.title}
                 active={

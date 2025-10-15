@@ -4,6 +4,7 @@ import {
   css,
   FlexCard,
   FlexItem,
+  getDataProps,
   Modal,
   ModalProps,
   OffsetScrollControl,
@@ -97,6 +98,7 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({
   onShow,
   onHide,
   children,
+  ...rest
 }) =>
   stub ? (
     <Box display="none">
@@ -131,6 +133,7 @@ export const HeaderMenu: FC<HeaderMenuProps> = ({
       transition={ContentTransition[from]}
       renderDialog={(dialogProps) => (
         <Pos
+          {...getDataProps(rest)}
           type="fixed"
           zIndex={zIndex}
           top={0}

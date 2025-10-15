@@ -1,4 +1,4 @@
-import { Card, Stub } from '@qiwi/pijma-core'
+import { Card, getDataProps, Stub } from '@qiwi/pijma-core'
 import React, { FC } from 'react'
 
 export interface ProgressBarProps {
@@ -11,11 +11,12 @@ export const ProgressBar: FC<ProgressBarProps> = ({
   value,
   disabled = false,
   stub = false,
+  ...rest
 }) =>
   stub ? (
     <Stub height={6} width={1} r={12} />
   ) : (
-    <Card bg="#f5f5f5" height={6} r={12} p={1}>
+    <Card {...getDataProps(rest)} bg="#f5f5f5" height={6} r={12} p={1}>
       <Card
         bg={disabled ? '#ccc' : 'linear-gradient(268deg, #ff8c00 99%, #ff7700)'}
         height={4}

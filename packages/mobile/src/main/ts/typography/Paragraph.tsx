@@ -1,4 +1,4 @@
-import { Box, Breaker, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
+import { Box, Breaker, getDataProps, Stub, Typo, TypoProps } from '@qiwi/pijma-core'
 import React, { FC, Fragment, ReactNode } from 'react'
 
 export interface ParagraphProps {
@@ -91,6 +91,7 @@ export const Paragraph: FC<ParagraphProps> = ({
   stub,
   clamp,
   children,
+  ...rest
 }) =>
   stub ? (
     <Fragment>
@@ -118,6 +119,7 @@ export const Paragraph: FC<ParagraphProps> = ({
     </Fragment>
   ) : (
     <Typo
+      {...getDataProps(rest)}
       as="p"
       display="block"
       size={ParagraphSize[size]}

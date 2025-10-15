@@ -1,6 +1,7 @@
 import {
   Flex,
   FlexItem,
+  getDataProps,
   IconProps,
   styled,
   TabBorder,
@@ -48,6 +49,7 @@ export const Tabs: FC<TabsProps> = ({
   centered = false,
   stub = false,
   onChange,
+  ...rest
 }) =>
   stub ? (
     <Flex direction="column">
@@ -83,7 +85,7 @@ export const Tabs: FC<TabsProps> = ({
       length={items.length}
       onChange={onChange}
       children={(renderProps) => (
-        <Flex direction="column">
+        <Flex direction="column"  {...getDataProps(rest)}>
           <FlexOverflow
             direction="row"
             overflow="auto"

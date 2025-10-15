@@ -2,6 +2,7 @@ import {
   Box,
   Card,
   css,
+  getDataProps,
   Icon,
   Modal,
   ModalProps,
@@ -82,11 +83,13 @@ export const SimpleModal: FC<SimpleModalProps> = ({
   backdropClose,
   zIndex = 10050,
   closable,
+  ...rest
 }) =>
   stub ? (
     <Box display="none">{children}</Box>
   ) : (
     <Modal
+      {...getDataProps(rest)}
       show={show}
       keyboard={escapeClose}
       onShow={onShow}

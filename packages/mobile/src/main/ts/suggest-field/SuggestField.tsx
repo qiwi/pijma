@@ -2,6 +2,7 @@ import {
   BasicInput,
   Box,
   Card,
+  getDataProps,
   Image,
   InputField,
   MenuControl,
@@ -60,7 +61,7 @@ export const SuggestField = <V extends {}>({
       onCancel={props.onCancel}
       onSubmit={props.onSubmit}
       children={(renderProps) => (
-        <Pos type="relative">
+        <Pos type="relative" {...getDataProps(props)}>
           <Box
             width={1}
             onMouseEnter={renderProps.onInputMouseEnter}

@@ -3,6 +3,7 @@ import {
   Box,
   Flex,
   FlexItem,
+  getDataProps,
   Icon,
   IconProps,
 } from '@qiwi/pijma-core'
@@ -42,11 +43,12 @@ export const Alert: FC<AlertProps> = ({
   action,
   onHide,
   onClick,
+  ...rest
 }) => (
   <AlertControl
     onHide={onHide}
     children={(renderProps) => (
-      <Flex minHeight={14} justify="flex-start" p={4}>
+      <Flex minHeight={14} justify="flex-start" p={4} {...getDataProps(rest)}>
         <FlexItem mr={3}>
           <Icon name={AlertIconName[type]} color={AlertIconColor[type]} />
         </FlexItem>
