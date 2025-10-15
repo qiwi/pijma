@@ -1,3 +1,8 @@
+## [@qiwi/pijma-mobile@1.165.0](https://github.com/qiwi/pijma/compare/2025.8.8-qiwi.pijma-mobile.1.164.4-f0...2025.10.15-qiwi.pijma-mobile.1.165.0-f0) (2025-10-15)
+
+### Features
+* feat: add getDataProps for mobile components (#626) [bd116e93](https://github.com/qiwi/pijma/commit/bd116e93e17f1b7ba050d47e3e98d5bede35cdcf)
+
 ## [@qiwi/pijma-mobile@1.164.4](https://github.com/qiwi/pijma/compare/2025.8.7-qiwi.pijma-mobile.1.164.3-f0...2025.8.8-qiwi.pijma-mobile.1.164.4-f0) (2025-08-08)
 
 ### Fixes & improvements
