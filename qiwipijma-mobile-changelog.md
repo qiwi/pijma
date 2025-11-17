@@ -1,3 +1,8 @@
+## [@qiwi/pijma-mobile@1.166.0](https://github.com/qiwi/pijma/compare/2025.10.15-qiwi.pijma-mobile.1.165.0-f0...2025.11.17-qiwi.pijma-mobile.1.166.0-f0) (2025-11-17)
+
+### Features
+* feat: add position props for header-menu (#628) [8add24af](https://github.com/qiwi/pijma/commit/8add24af57988f70a08bae1c861cc1d15e411474)
+
 ## [@qiwi/pijma-mobile@1.165.0](https://github.com/qiwi/pijma/compare/2025.8.8-qiwi.pijma-mobile.1.164.4-f0...2025.10.15-qiwi.pijma-mobile.1.165.0-f0) (2025-10-15)
 
 ### Features
