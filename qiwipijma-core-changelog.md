@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.164.0](https://github.com/qiwi/pijma/compare/2025.8.8-qiwi.pijma-core.1.163.4-f0...2025.11.21-qiwi.pijma-core.1.164.0-f0) (2025-11-21)
+
+### Features
+* feat: add rustore like mobile app icon (#630) [1adf4512](https://github.com/qiwi/pijma/commit/1adf4512db29bd737137f9bcaa799a5e887cd964)
+
 ## [@qiwi/pijma-core@1.163.4](https://github.com/qiwi/pijma/compare/2025.4.28-qiwi.pijma-core.1.163.3-f0...2025.8.8-qiwi.pijma-core.1.163.4-f0) (2025-08-08)
 
 ### Fixes & improvements
