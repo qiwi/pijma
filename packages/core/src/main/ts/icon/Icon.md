@@ -196,11 +196,14 @@ return (
       <FlexItem width={37} height={11} mr={6}>
         <MobileAppIcon data-testid="icon" name="google" />
       </FlexItem>
-      <FlexItem width={37} height={11}>
+      <FlexItem width={37} height={11} mr={6}>
         <MobileAppIcon data-testid="icon" name="apple" />
       </FlexItem>
-      <FlexItem width={37} height={11}>
+      <FlexItem width={37} height={11} mr={6}>
         <MobileAppIcon data-testid="icon" name="huawei" />
+      </FlexItem>
+      <FlexItem width={37} height={11}>
+        <MobileAppIcon data-testid="icon" name="rustore" />
       </FlexItem>
     </Flex>
   </BlockContent>
