@@ -1,3 +1,8 @@
+## [@qiwi/pijma-core@1.165.0](https://github.com/qiwi/pijma/compare/2025.11.21-qiwi.pijma-core.1.164.0-f0...2025.11.26-qiwi.pijma-core.1.165.0-f0) (2025-11-26)
+
+### Features
+* feat: add info-outline icon (#631) [a816e5df](https://github.com/qiwi/pijma/commit/a816e5df268a969c6688ecbe641f39cbc426c140)
+
 ## [@qiwi/pijma-core@1.164.0](https://github.com/qiwi/pijma/compare/2025.8.8-qiwi.pijma-core.1.163.4-f0...2025.11.21-qiwi.pijma-core.1.164.0-f0) (2025-11-21)
 
 ### Features
