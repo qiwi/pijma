@@ -7,6 +7,7 @@ import { HeaderMenuItem, HeaderMenuItemProps } from './HeaderMenuItem'
 export interface HeaderMenuProps {
   children: HeaderMenuItemProps[]
   stub?: Array<number> | boolean
+  justify?: string
 }
 
 export const HeaderMenu: FC<HeaderMenuProps> = (props) => (
@@ -14,7 +15,7 @@ export const HeaderMenu: FC<HeaderMenuProps> = (props) => (
     {...getDataProps(props)}
     height={1}
     width={1}
-    justify="flex-start"
+    justify={props.justify ? props.justify : 'flex-start'}
     role="menu"
   >
     {props.stub
