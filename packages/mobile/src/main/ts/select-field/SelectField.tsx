@@ -27,6 +27,7 @@ export interface SelectFieldProps<I extends OptionModel<V>, V> {
   stub?: boolean
   tabIndex?: number
   error?: ReactNode
+  help?: ReactNode
   disabled?: boolean
   name?: string
   autoFocus?: boolean
@@ -51,6 +52,7 @@ export const SelectField: FC<
       input={false}
       title={props.title}
       error={props.error}
+      help={props.help}
       stub
     />
   ) : (
@@ -83,6 +85,7 @@ export const SelectField: FC<
                 title={props.title}
                 active={renderProps.select !== undefined}
                 error={props.error}
+                help={props.help}
                 input={
                   <SelectInput
                     pr={6}

@@ -138,6 +138,18 @@ return (
       />
     </Box>
     <Box>
+      <Caption>Поле с подсказкой</Caption>
+      <SelectField
+        data-testid="select-field"
+        title="Select"
+        value={value}
+        items={items}
+        help="Нужна подсказка?"
+        equals={equals}
+        onChange={(value) => setValue(value)}
+      />
+    </Box>
+    <Box>
       <Caption>ERROR</Caption>
       <SelectField
         title="Select"
