@@ -203,6 +203,7 @@ jobs:
       - name: Recover incomplete releases
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_USER: 'qiwibot'
         run: npx zx-bulk-release --recover
 
       - name: Release
