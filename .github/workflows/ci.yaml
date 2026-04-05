@@ -172,6 +172,10 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     needs: [test_push, init]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -196,19 +200,14 @@ jobs:
           node-version: 22
           cache: 'yarn'
 
-      #      - name: Codeclimate
-      #        uses: paambaati/codeclimate-action@v2.7.5
-      #        env:
-      #          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-      #        with:
-      #          coverageLocations: |
-      #            ${{github.workspace}}/coverage/*.lcov:lcov
-
-#      - name: Install
-#        run: yarn
+      - name: Recover incomplete releases
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: npx zx-bulk-release --recover
 
       - name: Release
         env:
+          NPM_OIDC: true
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_USER: 'qiwibot'
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
