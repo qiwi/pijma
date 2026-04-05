@@ -8,6 +8,11 @@
 ### Features
 * feat: add help to select field (#642) [c5dbd096](https://github.com/qiwi/pijma/commit/c5dbd0967cfeb96689ba5b1f73d3bdb3ae73a588)
 
+## [@qiwi/pijma-mobile@1.167.0](https://github.com/qiwi/pijma/compare/2025.11.26-qiwi.pijma-mobile.1.166.2-f0...2026.4.5-qiwi.pijma-mobile.1.167.0-f0) (2026-04-05)
+
+### Features
+* feat: add help to select field (#642) [c5dbd096](https://github.com/qiwi/pijma/commit/c5dbd0967cfeb96689ba5b1f73d3bdb3ae73a588)
+
 ## [@qiwi/pijma-mobile@1.167.0](https://github.com/qiwi/pijma/compare/2025.11.26-qiwi.pijma-mobile.1.166.2-f0...2026.4.3-qiwi.pijma-mobile.1.167.0-f0) (2026-04-03)
 
 ### Features
