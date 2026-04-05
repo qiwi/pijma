@@ -42,7 +42,7 @@ jobs:
           workflow_conclusion: false
           nothrow: true
           search_artifacts: true
-          search_depth: 10
+          search_depth: 20
       - run: ls -l
 
       - name: Check artifact
@@ -99,7 +99,7 @@ jobs:
           workflow_conclusion: false
           nothrow: true
           search_artifacts: true
-          search_depth: 10
+          search_depth: 20
 
       - name: Unpack artifact
         run: tar -xvf artifact.tar
@@ -145,7 +145,7 @@ jobs:
           workflow_conclusion: false
           nothrow: true
           search_artifacts: true
-          search_depth: 10
+          search_depth: 20
 
       - name: Unpack artifact
         run: tar -xvf artifact.tar
@@ -201,7 +201,7 @@ jobs:
           workflow_conclusion: false
           nothrow: true
           search_artifacts: true
-          search_depth: 10
+          search_depth: 20
 
       - name: Unpack artifact
         run: tar -xvf artifact.tar
