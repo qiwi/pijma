@@ -3,14 +3,20 @@
 name: CI
 on: [ push, pull_request ]
 
+permissions: {}
+
 jobs:
   init:
     name: init
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     outputs:
       checksum: ${{ steps.checksum.outputs.checksum }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Get src checksum
         id: checksum
         run: echo checksum=${{ hashFiles('yarn.lock', '*.json', 'packages/*/*.json', 'packages/*/src/main/ts/**/*', 'packages/*/src/main/webapp/**/*') }} >> "$GITHUB_OUTPUT"
@@ -19,9 +25,14 @@ jobs:
     name: build
     needs: init
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Download artifact
         uses: qiwi-forks/action-download-artifact@v2
@@ -66,9 +77,14 @@ jobs:
     needs: [build, init]
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - uses: actions/setup-node@v4
         with:
@@ -94,14 +110,6 @@ jobs:
       - name: Lint
         run: yarn lint
 
-  #      - name: Push coverage
-  #        if: github.ref == 'refs/heads/master'
-  #        uses: actions/upload-artifact@v4
-  #        with:
-  #          name: artifact-${{ needs.init.outputs.checksum }}
-  #          retention-days: 1
-  #          path: coverage
-
   test_pr:
     if: github.event_name == 'pull_request'
     needs: [build, init]
@@ -111,6 +119,9 @@ jobs:
         node-version: [ 16, 22 ]
     name: Test (Node v${{ matrix.node-version }}, OS ${{ matrix.os }})
     runs-on: ${{ matrix.os }}
+    permissions:
+      contents: read
+      actions: read
     env:
       # enables fetch for Node 16
       NODE_OPTIONS: '--experimental-fetch'
@@ -118,6 +129,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - uses: actions/setup-node@v4
         with:
@@ -145,9 +158,6 @@ jobs:
         run: ./node_modules/.bin/concurrently --max-parallel 2 \
           "docker pull browserless/chrome@sha256:4655517b70d598367f363e15fa311ea514879f6b4908ba9199d6714d6f8269a3" \
           "docker pull nginx@sha256:480868e8c8c797794257e2abd88d0f9a8809b2fe956cbfbc05dcc0bca1f7cd43"
-#        run: |
-#          docker pull browserless/chrome@sha256:4655517b70d598367f363e15fa311ea514879f6b4908ba9199d6714d6f8269a3
-#          docker pull nginx@sha256:480868e8c8c797794257e2abd88d0f9a8809b2fe956cbfbc05dcc0bca1f7cd43
 
       - name: Lint
         if: matrix.node-version == '22'
@@ -176,6 +186,7 @@ jobs:
       contents: write
       packages: write
       id-token: write
+      actions: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4

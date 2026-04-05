@@ -1,0 +1,14 @@
+rules:
+  unpinned-uses:
+    config:
+      policies:
+        '*': hash-pin
+        'actions/*': ref-pin
+        'github/codeql-action/*': ref-pin
+        'qiwi-forks/*': ref-pin
+  artipacked:
+    ignore:
+      - ci.yaml:191
+  secrets-outside-env:
+    ignore:
+      - ci.yaml
