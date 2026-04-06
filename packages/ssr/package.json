@@ -32,24 +32,24 @@
   ],
   "dependencies": {
     "@emotion/server": "^11.11.0",
-    "@swc/helpers": "^0.5.17"
+    "@swc/helpers": "^0.5.21"
   },
   "devDependencies": {
     "@qiwi/pijma-infra": "workspace:*",
     "concurrently": "8.2.2",
-    "css-loader": "6.7.3",
+    "css-loader": "6.11.0",
     "eslint": "8.40.0",
-    "eslint-config-qiwi": "1.17.6",
+    "eslint-config-qiwi": "1.17.9",
     "fast-glob": "3.3.3",
     "file-loader": "6.2.0",
     "prettier": "2.8.8",
     "prettier-config-qiwi": "1.7.2",
     "react-docgen-typescript": "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch",
     "react-styleguidist": "12.0.1",
-    "style-loader": "3.3.2",
-    "tsc-esm-fix": "2.20.13",
+    "style-loader": "3.3.4",
+    "tsc-esm-fix": "2.20.27",
     "typescript": "4.9.5",
-    "webpack": "5.101.0"
+    "webpack": "5.105.4"
   },
   "repository": {
     "type": "git",
