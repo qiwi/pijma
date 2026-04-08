@@ -21,7 +21,7 @@ export interface ButtonProps {
   disabled?: boolean
   kind: 'brand' | 'simple'
   size: 'accent' | 'normal' | 'minor'
-  type: 'button' | 'submit'
+  type: 'button' | 'submit' | 'reset'
   text?: string
   icon?: ReactElement
   loading?: boolean
@@ -131,6 +131,7 @@ export const Button: FC<ButtonProps> = (props) => {
     </Card>
   ) : (
     <ButtonControl
+      type={props.type}
       onClick={props.onClick}
       onFocus={props.onFocus}
       onBlur={props.onBlur}
