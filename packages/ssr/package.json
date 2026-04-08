@@ -18,12 +18,12 @@
   },
   "scripts": {
     "clean": "rimraf target node_modules",
-    "build": "concurrently 'npm:build:*'",
-    "build:es5": "cd src/main/ts && swc . -d ../../../target/es5 --config-file ../../../swc.es5.json && cd ../../.. && tsc-esm-fix --target=target/es5 --fillBlank",
-    "build:es6": "cd src/main/ts && swc . -d ../../../target/es6 --config-file ../../../swc.es6.json && cd ../../.. && tsc-esm-fix --target=target/es6 --fillBlank",
-    "build:dts": "tsc --project tsconfig.dts.json",
-    "format": "eslint --fix src && prettier --loglevel silent --write src",
-    "lint": "eslint src"
+    "build": "yarn build:all",
+    "build:es5": "yarn build:swc:es5",
+    "build:es6": "yarn build:swc:es6",
+    "build:dts": "yarn build:tsc",
+    "format": "yarn fmt",
+    "lint": "yarn lint:eslint"
   },
   "files": [
     "target/dts",
@@ -32,31 +32,18 @@
   ],
   "dependencies": {
     "@emotion/server": "^11.11.0",
-    "@swc/helpers": "^0.5.17"
+    "@swc/helpers": "^0.5.21"
   },
   "devDependencies": {
-    "@qiwi/pijma-infra": "workspace:*",
-    "concurrently": "8.2.2",
-    "css-loader": "6.7.3",
-    "eslint": "8.40.0",
-    "eslint-config-qiwi": "1.17.6",
-    "fast-glob": "3.3.3",
-    "file-loader": "6.2.0",
-    "prettier": "2.8.8",
-    "prettier-config-qiwi": "1.7.2",
-    "react-docgen-typescript": "patch:react-docgen-typescript@npm%3A2.2.2#~/.yarn/patches/react-docgen-typescript-npm-2.2.2-afb9698a32.patch",
-    "react-styleguidist": "12.0.1",
-    "style-loader": "3.3.2",
-    "tsc-esm-fix": "2.20.13",
-    "typescript": "4.9.5",
-    "webpack": "5.101.0"
+    "@qiwi/pijma-infra": "workspace:*"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qiwi/pijma.git"
+    "url": "git+https://github.com/qiwi/pijma.git",
+    "directory": "packages/ssr"
   },
   "bugs": {
     "url": "https://github.com/qiwi/pijma/issues"
   },
-  "homepage": "https://github.com/qiwi/pijma/#readme"
+  "homepage": "https://github.com/qiwi/pijma/tree/master/packages/ssr#readme"
 }
