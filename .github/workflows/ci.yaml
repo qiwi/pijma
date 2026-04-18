@@ -199,7 +199,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: 'yarn'
 
       - name: Receive
         id: receive
@@ -227,11 +226,6 @@ jobs:
 
       - name: Unpack build artifact
         run: tar -xvf artifact.tar
-
-      - name: Install deps
-        run: yarn
-        env:
-          YARN_ENABLE_IMMUTABLE_INSTALLS: false
 
       - name: Pack
         if: steps.receive.outputs.status == 'proceed'
