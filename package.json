@@ -10,7 +10,8 @@
     "start": "yarn workspaces foreach -A --parallel --no-private --interlaced run start",
     "test": "yarn workspaces foreach -A --parallel --no-private --interlaced run test",
     "format": "yarn workspaces foreach -A --parallel --no-private --interlaced run format",
-    "lint": "yarn workspaces foreach -A --parallel --no-private --interlaced run lint"
+    "lint": "yarn workspaces foreach -A --parallel --no-private --interlaced run lint",
+    "audit:fix": "yarn dlx yarn-berry-audit-fix"
   },
   "resolutions": {
     "@types/react": "18.0.18",
