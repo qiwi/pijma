@@ -1,6 +1,7 @@
 import { FC, FocusEventHandler, MouseEventHandler } from 'react'
 
 export interface ButtonControlProps {
+  type?: 'button' | 'submit' | 'reset'
   onClick?: () => void
   onFocus?: () => void
   onBlur?: () => void

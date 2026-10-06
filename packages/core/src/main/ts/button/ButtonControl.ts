@@ -32,7 +32,9 @@ export class ButtonControl extends Component<
       active: true,
       focus: true,
     })
-    e.preventDefault()
+    if (this.props.type !== 'submit' && this.props.type !== 'reset') {
+      e.preventDefault()
+    }
     e.stopPropagation()
     if (this.props.onClick) {
       this.props.onClick()
