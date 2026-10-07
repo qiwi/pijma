@@ -1,7 +1,11 @@
 # This is a Github Workflow that runs tests on any push or pull request.
 # If the tests pass and this is a push to the master branch it also runs Semantic Release.
 name: CI
-on: [ push, pull_request ]
+on:
+  push:
+    branches: ['**']
+    tags: ['zbr-rebuild.*']
+  pull_request:
 
 permissions: {}
 
@@ -177,23 +181,40 @@ jobs:
             packages/*/src/main/resources/screenshots/*.new.png
             packages/*/src/main/resources/screenshots/*.diff.png
 
-  release:
-    name: Release
+  release_build:
+    name: 'Release: receive & pack'
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     needs: [test_push, init]
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      packages: write
-      id-token: write
+      contents: read
       actions: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false
 
-      - name: Download artifact
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Receive
+        id: receive
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_USER: 'qiwibot'
+        run: npx zx-bulk-release --receive
+
+      - name: Upload context
+        uses: actions/upload-artifact@v4
+        with:
+          name: zbr-context-${{ github.run_id }}
+          path: zbr-context.json
+          retention-days: 1
+
+      - name: Download build artifact
         uses: qiwi-forks/action-download-artifact@v2
         with:
           name: artifact-${{ needs.init.outputs.checksum }}
@@ -203,21 +224,58 @@ jobs:
           search_artifacts: true
           search_depth: 20
 
-      - name: Unpack artifact
+      - name: Unpack build artifact
         run: tar -xvf artifact.tar
 
+      - name: Pack
+        if: steps.receive.outputs.status == 'proceed'
+        run: npx zx-bulk-release --pack --no-build --no-test
+
+      - name: Upload parcels
+        if: steps.receive.outputs.status == 'proceed'
+        uses: actions/upload-artifact@v4
+        with:
+          name: parcels-${{ github.run_id }}
+          path: parcels/
+          retention-days: 1
+
+  release_deliver:
+    name: 'Release: verify & deliver'
+    needs: [release_build]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      id-token: write
+    steps:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: 'yarn'
 
-      - name: Recover incomplete releases
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GH_USER: 'qiwibot'
-        run: npx zx-bulk-release --recover
+      - name: Download context
+        id: context
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: zbr-context-${{ github.run_id }}
+          path: .
 
-      - name: Release
+      - name: Download parcels
+        id: download
+        if: steps.context.outcome == 'success'
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: parcels-${{ github.run_id }}
+          path: parcels-unverified/
+
+      - name: Verify
+        if: steps.context.outcome == 'success' && steps.download.outcome == 'success'
+        run: npx zx-bulk-release --verify parcels-unverified/:parcels/
+
+      - name: Deliver
+        if: steps.context.outcome == 'success' && steps.download.outcome == 'success'
         env:
           NPM_OIDC: true
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -227,5 +285,13 @@ jobs:
           GIT_COMMITTER_EMAIL: 'opensource@qiwi.com'
           GIT_AUTHOR_NAME: 'QIWI Bot'
           GIT_COMMITTER_NAME: 'QIWI Bot'
-          YARN_ENABLE_IMMUTABLE_INSTALLS: false
-        run: npm_config_yes=true npx zx-bulk-release --no-build
+        run: npx zx-bulk-release --deliver
+
+      - name: Update delivery status
+        if: steps.context.outcome == 'success' && steps.download.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: parcels-${{ github.run_id }}
+          path: parcels
+          overwrite: true
+          retention-days: 1
