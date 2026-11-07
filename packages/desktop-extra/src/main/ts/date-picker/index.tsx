@@ -8,6 +8,7 @@ import { DayPicker } from 'react-day-picker'
 import { WithTranslation, withTranslation } from 'react-i18next'
 
 import { COLOR } from '../theme'
+import { WithTranslationComponent } from '../with-translation'
 import DatePickerProps from './DatePickerProps'
 import DatePickerState from './DatePickerState'
 import { locales, TLanguage } from './locale'
@@ -197,6 +198,7 @@ class _DatePicker extends Component<
   }
 }
 
-const DatePicker = withTranslation()(_DatePicker)
+const DatePicker: WithTranslationComponent<DatePickerProps> =
+  withTranslation()(_DatePicker)
 
 export { DatePicker }

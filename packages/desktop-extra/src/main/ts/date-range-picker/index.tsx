@@ -10,6 +10,7 @@ import { WithTranslation, withTranslation } from 'react-i18next'
 import { locales, TLanguage } from '../date-picker/locale'
 import Wrap from '../date-picker/wrap'
 import { COLOR } from '../theme'
+import { WithTranslationComponent } from '../with-translation'
 import DateRangePickerState from './DateRangePickerState'
 import DateRangerPickerProps from './DateRangerPickerProps'
 
@@ -305,6 +306,7 @@ class DisabledInputDateRangePicker extends Component<
   }
 }
 
-const DateRangePicker = withTranslation()(DisabledInputDateRangePicker)
+const DateRangePicker: WithTranslationComponent<DateRangerPickerProps> =
+  withTranslation()(DisabledInputDateRangePicker)
 
 export { DateRangePicker }
